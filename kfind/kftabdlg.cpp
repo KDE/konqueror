@@ -306,7 +306,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     QLabel * textL   =new QLabel(i18n("C&ontaining text:"), pages[2]);
     textL->setBuddy( textEdit );
 
-    connect( textEdit, SIGNAL(returnPressed(const QString &)), SIGNAL( startSearch()));
+    connect( textEdit, SIGNAL(returnPressed(QString)), SIGNAL(startSearch()));
 
     const QString containingtext
       = i18n("<qt>If specified, only files that contain this text"
@@ -368,9 +368,9 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 
     if ( editRegExp ) {
       // The editor was available, so lets use it.
-      connect( regexpContentCb, SIGNAL(toggled(bool) ), editRegExp, SLOT(setEnabled(bool)) );
+      connect( regexpContentCb, SIGNAL(toggled(bool)), editRegExp, SLOT(setEnabled(bool)) );
       editRegExp->setEnabled(false);
-      connect( editRegExp, SIGNAL(clicked()), this, SLOT( slotEditRegExp() ) );
+      connect( editRegExp, SIGNAL(clicked()), this, SLOT(slotEditRegExp()) );
     }
     else
         regexpContentCb->hide();

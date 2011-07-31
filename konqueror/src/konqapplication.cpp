@@ -33,10 +33,10 @@ KonquerorApplication::KonquerorApplication()
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "reparseConfiguration", this, SLOT(slotReparseConfiguration()));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "updateAllProfileList", this, SLOT(slotUpdateProfileList()));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "addToCombo", this,
-                 SLOT(slotAddToCombo(const QString&, const QDBusMessage&)));
+                 SLOT(slotAddToCombo(QString,QDBusMessage)));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "removeFromCombo", this,
-                 SLOT(slotRemoveFromCombo(const QString&, const QDBusMessage&)));
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "comboCleared", this, SLOT(slotComboCleared(const QDBusMessage&)));
+                 SLOT(slotRemoveFromCombo(QString,QDBusMessage)));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "comboCleared", this, SLOT(slotComboCleared(QDBusMessage)));
 }
 
 void KonquerorApplication::slotReparseConfiguration()

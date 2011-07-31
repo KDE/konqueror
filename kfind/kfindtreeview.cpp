@@ -330,37 +330,37 @@ KFindTreeView::KFindTreeView( QWidget *parent,  KfindDlg * findDialog )
     setDragEnabled( true );
     setContextMenuPolicy( Qt::CustomContextMenu );
 
-    connect( this, SIGNAL( customContextMenuRequested( const QPoint &) ),
-                 this, SLOT( contextMenuRequested( const QPoint & )));
+    connect( this, SIGNAL(customContextMenuRequested(QPoint)),
+                 this, SLOT(contextMenuRequested(QPoint)));
            
     //Mouse single/double click settings
     connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)), this, SLOT(reconfigureMouseSettings()) );
     reconfigureMouseSettings();
     
     // TODO: this is a workaround until  Qt-issue 176832 has been fixed (from Dolphin)
-    connect(this, SIGNAL(pressed(const QModelIndex&)), this, SLOT(updateMouseButtons()));
+    connect(this, SIGNAL(pressed(QModelIndex)), this, SLOT(updateMouseButtons()));
                 
     //Generate popup menu actions
     m_actionCollection = new KActionCollection( this );
     m_actionCollection->addAssociatedWidget(this);
 
-    KAction * open = KStandardAction::open(this, SLOT( slotExecuteSelected() ), this);
+    KAction * open = KStandardAction::open(this, SLOT(slotExecuteSelected()), this);
     m_actionCollection->addAction( "file_open", open );
     
-    KAction * copy = KStandardAction::copy(this, SLOT( copySelection() ), this);
+    KAction * copy = KStandardAction::copy(this, SLOT(copySelection()), this);
     m_actionCollection->addAction( "edit_copy", copy );
     
     KAction * openFolder = new KAction( KIcon("window-new"), i18n("&Open containing folder(s)"), this );
-    connect( openFolder, SIGNAL(triggered()), this, SLOT( openContainingFolder() ) );
+    connect( openFolder, SIGNAL(triggered()), this, SLOT(openContainingFolder()) );
     m_actionCollection->addAction( "openfolder", openFolder );
     
     KAction * del = new KAction( KIcon("edit-delete"), i18n("&Delete"), this );
-    connect( del, SIGNAL(triggered()), this, SLOT( deleteSelectedFiles() ) );
+    connect( del, SIGNAL(triggered()), this, SLOT(deleteSelectedFiles()) );
     del->setShortcut(Qt::SHIFT + Qt::Key_Delete);
     m_actionCollection->addAction( "del", del );
    
     KAction * trash = new KAction( KIcon("user-trash"), i18n("&Move to Trash"), this );
-    connect( trash, SIGNAL(triggered()), this, SLOT( moveToTrashSelectedFiles() ) );
+    connect( trash, SIGNAL(triggered()), this, SLOT(moveToTrashSelectedFiles()) );
     trash->setShortcut(Qt::Key_Delete);
     m_actionCollection->addAction( "trash", trash );
     

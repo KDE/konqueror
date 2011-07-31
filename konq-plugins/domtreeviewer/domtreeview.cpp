@@ -129,14 +129,14 @@ DOMTreeView::DOMTreeView(QWidget *parent, bool /*allowSaving*/)
   const QFont font(KGlobalSettings::generalFont());
   m_listView->setFont( font );
 
-  connect(m_listView, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this,
-	  SLOT(slotItemClicked(QTreeWidgetItem *)));
+  connect(m_listView, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this,
+	  SLOT(slotItemClicked(QTreeWidgetItem*)));
   m_listView->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(m_listView, SIGNAL(customContextMenuRequested(const QPoint &)),
-  	SLOT(showDOMTreeContextMenu(const QPoint &)));
+  connect(m_listView, SIGNAL(customContextMenuRequested(QPoint)),
+  	SLOT(showDOMTreeContextMenu(QPoint)));
 #if 0 // ### port to Qt 4
-  connect(m_listView, SIGNAL(moved(Q3PtrList<QTreeWidgetItem> &, Q3PtrList<QTreeWidgetItem> &, Q3PtrList<QTreeWidgetItem> &)),
-          SLOT(slotMovedItems(Q3PtrList<QTreeWidgetItem> &, Q3PtrList<QTreeWidgetItem> &, Q3PtrList<QTreeWidgetItem> &)));
+  connect(m_listView, SIGNAL(moved(Q3PtrList<QTreeWidgetItem>&,Q3PtrList<QTreeWidgetItem>&,Q3PtrList<QTreeWidgetItem>&)),
+          SLOT(slotMovedItems(Q3PtrList<QTreeWidgetItem>&,Q3PtrList<QTreeWidgetItem>&,Q3PtrList<QTreeWidgetItem>&)));
 #endif
 
   // set up message line
@@ -146,7 +146,7 @@ DOMTreeView::DOMTreeView(QWidget *parent, bool /*allowSaving*/)
 
   installEventFilter(m_listView);
 
-  ManipulationCommand::connect(SIGNAL(nodeChanged(const DOM::Node &)), this, SLOT(slotRefreshNode(const DOM::Node &)));
+  ManipulationCommand::connect(SIGNAL(nodeChanged(DOM::Node)), this, SLOT(slotRefreshNode(DOM::Node)));
   ManipulationCommand::connect(SIGNAL(structureChanged()), this, SLOT(refresh()));
 
   initDOMNodeInfo();
@@ -862,8 +862,8 @@ void DOMTreeView::disconnectFromTornDownPart()
 void DOMTreeView::connectToPart()
 {
   if (part) {
-    connect(part, SIGNAL(nodeActivated(const DOM::Node &)), this,
-	  SLOT(activateNode(const DOM::Node &)));
+    connect(part, SIGNAL(nodeActivated(DOM::Node)), this,
+	  SLOT(activateNode(DOM::Node)));
     connect(part, SIGNAL(completed()), this, SLOT(refresh()));
 
     if (!part->document().isNull()) {
@@ -1063,20 +1063,20 @@ public:
 
 void DOMTreeView::initDOMNodeInfo()
 {
-  connect(m_listView, SIGNAL(itemClicked(QTreeWidgetItem *, int)),
-	  SLOT(initializeOptionsFromListItem(QTreeWidgetItem *)));
+  connect(m_listView, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+	  SLOT(initializeOptionsFromListItem(QTreeWidgetItem*)));
 
-  connect(nodeAttributes, SIGNAL(itemRenamed(QTreeWidgetItem *, const QString &, int)),
-	SLOT(slotItemRenamed(QTreeWidgetItem *, const QString &, int)));
-  connect(nodeAttributes, SIGNAL(itemClicked(QTreeWidgetItem *, int)),
-	  SLOT(slotEditAttribute(QTreeWidgetItem *, int)));
+  connect(nodeAttributes, SIGNAL(itemRenamed(QTreeWidgetItem*,QString,int)),
+	SLOT(slotItemRenamed(QTreeWidgetItem*,QString,int)));
+  connect(nodeAttributes, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+	  SLOT(slotEditAttribute(QTreeWidgetItem*,int)));
   nodeAttributes->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(nodeAttributes, SIGNAL(customContextMenuRequested(const QPoint &)),
-          SLOT(showInfoPanelContextMenu(const QPoint &)));
+  connect(nodeAttributes, SIGNAL(customContextMenuRequested(QPoint)),
+          SLOT(showInfoPanelContextMenu(QPoint)));
 
   connect(applyContent, SIGNAL(clicked()), SLOT(slotApplyContent()));
 
-  ManipulationCommand::connect(SIGNAL(nodeChanged(const DOM::Node &)), this, SLOT(initializeOptionsFromNode(const DOM::Node &)));
+  ManipulationCommand::connect(SIGNAL(nodeChanged(DOM::Node)), this, SLOT(initializeOptionsFromNode(DOM::Node)));
 
   // ### nodeAttributes->setRenameable(0, true);
   // ### nodeAttributes->setRenameable(1, true);

@@ -165,8 +165,8 @@ FavIconWebGrabber::FavIconWebGrabber(KParts::ReadOnlyPart *part, const KUrl &url
     : m_part(part), m_url(url) {
 
     //FIXME only connect to result?
-//  connect(part, SIGNAL( result(KIO::Job * job)),
-//          this, SLOT( slotCompleted()));
+//  connect(part, SIGNAL(result(KIO::Job*job)),
+//          this, SLOT(slotCompleted()));
     connect(part, SIGNAL(canceled(QString)),
             this, SLOT(slotCanceled(QString)));
     connect(part, SIGNAL(completed(bool)),
@@ -178,10 +178,10 @@ FavIconWebGrabber::FavIconWebGrabber(KParts::ReadOnlyPart *part, const KUrl &url
     kDebug() << "starting KIO::get() on" << m_url;
     KIO::Job *job = KIO::get(m_url, KIO::NoReload, KIO::HideProgressInfo);
     job->addMetaData( QString("cookies"), QString("none") );
-    connect(job, SIGNAL( result( KJob *)),
-            this, SLOT( slotFinished(KJob *) ));
-    connect(job, SIGNAL( mimetype( KIO::Job *, const QString &) ),
-            this, SLOT( slotMimetype(KIO::Job *, const QString &) ));
+    connect(job, SIGNAL(result(KJob*)),
+            this, SLOT(slotFinished(KJob*)));
+    connect(job, SIGNAL(mimetype(KIO::Job*,QString)),
+            this, SLOT(slotMimetype(KIO::Job*,QString)));
 }
 
 void FavIconWebGrabber::slotMimetype(KIO::Job *job, const QString & /*type*/) {

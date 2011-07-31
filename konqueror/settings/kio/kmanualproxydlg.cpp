@@ -63,19 +63,19 @@ void KManualProxyDlg::init()
     mDlg->sbHttps->setRange( 0, MAX_PORT_VALUE );
     mDlg->sbFtp->setRange( 0, MAX_PORT_VALUE );
 
-    connect( mDlg->pbNew, SIGNAL( clicked() ), SLOT( newPressed() ) );
-    connect( mDlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
-    connect( mDlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
-    connect( mDlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
+    connect( mDlg->pbNew, SIGNAL(clicked()), SLOT(newPressed()) );
+    connect( mDlg->pbChange, SIGNAL(clicked()), SLOT(changePressed()) );
+    connect( mDlg->pbDelete, SIGNAL(clicked()), SLOT(deletePressed()) );
+    connect( mDlg->pbDeleteAll, SIGNAL(clicked()), SLOT(deleteAllPressed()) );
 
     connect( mDlg->lbExceptions, SIGNAL(itemSelectionChanged()), SLOT(updateButtons()) );
-    connect( mDlg->lbExceptions, SIGNAL(itemDoubleClicked (QListWidgetItem *)), SLOT(changePressed()));
+    connect( mDlg->lbExceptions, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(changePressed()));
 
-    connect( mDlg->cbSameProxy, SIGNAL( toggled(bool) ), SLOT( sameProxy(bool) ) );
-    connect( mDlg->pbCopyDown, SIGNAL( clicked() ), SLOT( copyDown() ) );
+    connect( mDlg->cbSameProxy, SIGNAL(toggled(bool)), SLOT(sameProxy(bool)) );
+    connect( mDlg->pbCopyDown, SIGNAL(clicked()), SLOT(copyDown()) );
 
-    connect( mDlg->leHttp, SIGNAL(textChanged(const QString&)), SLOT(textChanged(const QString&)) );
-    connect( mDlg->sbHttp, SIGNAL(valueChanged(int)), SLOT(valueChanged (int)) );
+    connect( mDlg->leHttp, SIGNAL(textChanged(QString)), SLOT(textChanged(QString)) );
+    connect( mDlg->sbHttp, SIGNAL(valueChanged(int)), SLOT(valueChanged(int)) );
 
     connect( this, SIGNAL(okClicked()), this, SLOT(slotOk()));
 }

@@ -86,7 +86,7 @@ AkregatorMenu::AkregatorMenu( KonqPopupMenu * popupmenu, const QStringList& /* l
             QAction *action = actionCollection()->addAction( "akregatorkonqplugin_mnu");
             action->setText(i18n("Add Feed to Akregator"));
             action->setIcon(KIcon("akregator"));
-            connect(action, SIGNAL(triggered()), this, SLOT( slotAddFeed() ));
+            connect(action, SIGNAL(triggered()), this, SLOT(slotAddFeed()));
             //addAction( action );
             addSeparator();
 	    m_feedURL = it.url().url();

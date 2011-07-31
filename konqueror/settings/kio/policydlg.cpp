@@ -74,8 +74,8 @@ PolicyDlg::PolicyDlg (const QString& caption, QWidget *parent,
   m_dlgUI->cbPolicy->setMinimumWidth( m_dlgUI->cbPolicy->fontMetrics().maxWidth() * 25 );
   
   enableButtonOk( false );
-  connect(m_dlgUI->leDomain, SIGNAL(textChanged(const QString&)),
-    SLOT(slotTextChanged(const QString&)));
+  connect(m_dlgUI->leDomain, SIGNAL(textChanged(QString)),
+    SLOT(slotTextChanged(QString)));
 
   setFixedSize (sizeHint());
   m_dlgUI->leDomain->setFocus ();

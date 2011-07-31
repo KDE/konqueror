@@ -62,9 +62,9 @@ void KEnvVarProxyDlg::init()
 {
   m_bHasValidData = false;
 
-  connect( mDlg->cbShowValue, SIGNAL( clicked() ), SLOT( showValue() ) );
-  connect( mDlg->pbVerify, SIGNAL( clicked() ), SLOT( verifyPressed() ) );
-  connect( mDlg->pbDetect, SIGNAL( clicked() ), SLOT( autoDetectPressed() ) );
+  connect( mDlg->cbShowValue, SIGNAL(clicked()), SLOT(showValue()) );
+  connect( mDlg->pbVerify, SIGNAL(clicked()), SLOT(verifyPressed()) );
+  connect( mDlg->pbDetect, SIGNAL(clicked()), SLOT(autoDetectPressed()) );
 }
 
 void KEnvVarProxyDlg::setProxyData( const KProxyData& data )

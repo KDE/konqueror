@@ -65,8 +65,8 @@ UAChangerPlugin::UAChangerPlugin( QObject* parent,
                                actionCollection() );
   actionCollection()->addAction("changeuseragent", m_pUAMenu);
   m_pUAMenu->setDelayed( false );
-  connect( m_pUAMenu->menu(), SIGNAL( aboutToShow() ),
-           this, SLOT( slotAboutToShow() ) );
+  connect( m_pUAMenu->menu(), SIGNAL(aboutToShow()),
+           this, SLOT(slotAboutToShow()) );
 
   if (parent) {
       m_part = qobject_cast<KParts::ReadOnlyPart *>(parent );

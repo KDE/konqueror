@@ -215,11 +215,11 @@ void BookmarkInfoWidget::slotUpdate()
 BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, KBookmarkModel* model, QWidget *parent)
     : QWidget(parent), m_model(model), mBookmarkListView(lv) {
 
-    connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
-            SLOT( slotUpdate()));
+    connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            SLOT(slotUpdate()));
 
-    connect(mBookmarkListView->model(), SIGNAL(dataChanged( const QModelIndex &, const QModelIndex &)),
-            SLOT( slotUpdate()));
+    connect(mBookmarkListView->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+            SLOT(slotUpdate()));
 
     timer = new QTimer(this);
     timer->setSingleShot(true);
@@ -239,25 +239,25 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, KBookmarkModel* mo
     m_title_le->setClearButtonShown(true);
     form1->addRow(i18n("Name:"), m_title_le);
 
-    connect(m_title_le, SIGNAL( textChanged(const QString &) ),
-                        SLOT( slotTextChangedTitle(const QString &) ));
-    connect(m_title_le, SIGNAL( editingFinished() ), SLOT( commitTitle() ));
+    connect(m_title_le, SIGNAL(textChanged(QString)),
+                        SLOT(slotTextChangedTitle(QString)));
+    connect(m_title_le, SIGNAL(editingFinished()), SLOT(commitTitle()));
 
     m_url_le = new KLineEdit(this);
     m_url_le->setClearButtonShown(true);
     form1->addRow(i18n("Location:"), m_url_le);
 
-    connect(m_url_le, SIGNAL( textChanged(const QString &) ),
-                      SLOT( slotTextChangedURL(const QString &) ));
-    connect(m_url_le, SIGNAL( editingFinished() ), SLOT( commitURL() ));
+    connect(m_url_le, SIGNAL(textChanged(QString)),
+                      SLOT(slotTextChangedURL(QString)));
+    connect(m_url_le, SIGNAL(editingFinished()), SLOT(commitURL()));
 
     m_comment_le = new KLineEdit(this);
     m_comment_le->setClearButtonShown(true);
     form1->addRow(i18n("Comment:"), m_comment_le);
 
-    connect(m_comment_le, SIGNAL( textChanged(const QString &) ),
-                          SLOT( slotTextChangedComment(const QString &) ));
-    connect(m_comment_le, SIGNAL( editingFinished() ), SLOT( commitComment() ));
+    connect(m_comment_le, SIGNAL(textChanged(QString)),
+                          SLOT(slotTextChangedComment(QString)));
+    connect(m_comment_le, SIGNAL(editingFinished()), SLOT(commitComment()));
 
     m_credate_le = new KLineEdit(this);
     form2->addRow(i18n("First viewed:"), m_credate_le);

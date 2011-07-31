@@ -210,7 +210,7 @@ PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QVariantLis
     if (!parent || !parent->inherits("Part")) {
         KAction *action = actionCollection()->addAction("saveDocument");
         action->setText(i18n("&Save As..."));
-        connect(action, SIGNAL(triggered(bool) ), SLOT(saveAs()));
+        connect(action, SIGNAL(triggered(bool)), SLOT(saveAs()));
         action->setShortcut(Qt::CTRL+Qt::Key_S);
         setXMLFile("nspluginpart.rc");
     }

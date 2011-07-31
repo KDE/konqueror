@@ -109,16 +109,16 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
 
     // allow the view to change the statusbar and caption
 #if 0
-    connect(m_view, SIGNAL(signalChangeStatusbar(const QString&)),
-            this,   SLOT(changeStatusbar(const QString&)));
-    connect(m_view, SIGNAL(signalChangeCaption(const QString&)),
-            this,   SLOT(changeCaption(const QString&)));
+    connect(m_view, SIGNAL(signalChangeStatusbar(QString)),
+            this,   SLOT(changeStatusbar(QString)));
+    connect(m_view, SIGNAL(signalChangeCaption(QString)),
+            this,   SLOT(changeCaption(QString)));
 #endif
-    connect(view(), SIGNAL(htmlPartChanged(KHTMLPart *)),
-    		SLOT(slotHtmlPartChanged(KHTMLPart *)));
+    connect(view(), SIGNAL(htmlPartChanged(KHTMLPart*)),
+    		SLOT(slotHtmlPartChanged(KHTMLPart*)));
 
-    ManipulationCommand::connect(SIGNAL(error(int, const QString &)),
-    				this, SLOT(addMessage(int, const QString &)));
+    ManipulationCommand::connect(SIGNAL(error(int,QString)),
+    				this, SLOT(addMessage(int,QString)));
 
     infopanel_ctx = createInfoPanelAttrContextMenu();
     domtree_ctx = createDOMTreeViewContextMenu();
@@ -401,10 +401,10 @@ void DOMTreeWindow::slotHtmlPartChanged(KHTMLPart *p)
 
     part_manager = p->manager();
 
-    connect(part_manager, SIGNAL(activePartChanged(KParts::Part *)),
-    	SLOT(slotActivePartChanged(KParts::Part *)));
-    connect(part_manager, SIGNAL(partRemoved(KParts::Part *)),
-    	SLOT(slotPartRemoved(KParts::Part *)));
+    connect(part_manager, SIGNAL(activePartChanged(KParts::Part*)),
+    	SLOT(slotActivePartChanged(KParts::Part*)));
+    connect(part_manager, SIGNAL(partRemoved(KParts::Part*)),
+    	SLOT(slotPartRemoved(KParts::Part*)));
 
     // set up browser extension connections
     connect(p, SIGNAL(docCreated()), SLOT(slotClosePart()));

@@ -94,8 +94,8 @@ void TestNSPlugin::newView()
    if ( win )
    {
       m_plugins.append( win );
-      connect( win, SIGNAL(destroyed(NSPluginInstance *)),
-               this, SLOT(viewDestroyed(NSPluginInstance *)) );
+      connect( win, SIGNAL(destroyed(NSPluginInstance*)),
+               this, SLOT(viewDestroyed(NSPluginInstance*)) );
       m_layout->addWidget( win );
       win->show();
    } else

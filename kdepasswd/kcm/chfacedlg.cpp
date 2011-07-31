@@ -64,9 +64,9 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
 
   setMainWidget(faceDlg);
 
-  connect( ui.m_FacesWidget, SIGNAL( currentItemChanged( QListWidgetItem *, QListWidgetItem * ) ), SLOT( slotFaceWidgetSelectionChanged( QListWidgetItem * ) ) );
+  connect( ui.m_FacesWidget, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(slotFaceWidgetSelectionChanged(QListWidgetItem*)) );
 
-  connect( ui.m_FacesWidget, SIGNAL( doubleClicked( const QModelIndex & ) ), SLOT(accept()) );
+  connect( ui.m_FacesWidget, SIGNAL(doubleClicked(QModelIndex)), SLOT(accept()) );
   connect( this, SIGNAL(okClicked()), this, SLOT(accept()));
 
   connect( this, SIGNAL(user1Clicked()), this, SLOT(slotGetCustomImage()) );
@@ -98,7 +98,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
 
 
   enableButtonOk( false );
-  //connect( this, SIGNAL( okClicked() ), SLOT( slotSaveCustomImage() ) );
+  //connect( this, SIGNAL(okClicked()), SLOT(slotSaveCustomImage()) );
 
   resize( 420, 400 );
 }

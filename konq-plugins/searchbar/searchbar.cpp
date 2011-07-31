@@ -73,8 +73,8 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 {
     m_searchCombo = new SearchBarCombo(0);
     m_searchCombo->lineEdit()->installEventFilter(this);
-    connect(m_searchCombo, SIGNAL(activated(const QString &)),
-            SLOT(startSearch(const QString &)));
+    connect(m_searchCombo, SIGNAL(activated(QString)),
+            SLOT(startSearch(QString)));
     connect(m_searchCombo, SIGNAL(iconClicked()), SLOT(showSelectionMenu()));
     m_searchCombo->setWhatsThis(i18n("Search Bar<p>"
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));
@@ -99,12 +99,12 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     // parent is the KonqMainWindow and we want to listen to PartActivateEvent events.
     parent->installEventFilter(this);
 
-    connect(m_searchCombo->lineEdit(), SIGNAL(textEdited(const QString &)),
-            SLOT(searchTextChanged(const QString &)));
-    connect(m_openSearchManager, SIGNAL(suggestionReceived(const QStringList &)),
-            SLOT(addSearchSuggestion(const QStringList &)));
-    connect(m_openSearchManager, SIGNAL(openSearchEngineAdded(const QString &, const QString &, const QString &)),
-            SLOT(openSearchEngineAdded(const QString &, const QString &, const QString &)));
+    connect(m_searchCombo->lineEdit(), SIGNAL(textEdited(QString)),
+            SLOT(searchTextChanged(QString)));
+    connect(m_openSearchManager, SIGNAL(suggestionReceived(QStringList)),
+            SLOT(addSearchSuggestion(QStringList)));
+    connect(m_openSearchManager, SIGNAL(openSearchEngineAdded(QString,QString,QString)),
+            SLOT(openSearchEngineAdded(QString,QString,QString)));
     
     QDBusConnection::sessionBus().connect(QString(), QString(), "org.kde.KUriFilterPlugin",
                                           "configure", this, SLOT(reloadConfiguration()));
@@ -146,7 +146,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
               nextSearchEntry();
 
             connect(m_part, SIGNAL(completed()), this, SLOT(HTMLDocLoaded()));
-            connect(m_part, SIGNAL(started(KIO::Job *)), this, SLOT(HTMLLoadingStarted()));
+            connect(m_part, SIGNAL(started(KIO::Job*)), this, SLOT(HTMLLoadingStarted()));
         }
         // Delay since when destroying tabs part 0 gets activated for a bit, before the proper part
         QTimer::singleShot(0, this, SLOT(updateComboVisibility()));
@@ -305,7 +305,7 @@ void SearchBarPlugin::showSelectionMenu()
         m_popupMenu->addSeparator();
         m_popupMenu->addAction(KIcon("preferences-web-browser-shortcuts"), i18n("Select Search Engines..."),
                                this, SLOT(selectSearchEngines()));
-        connect(m_popupMenu, SIGNAL(triggered(QAction *)), SLOT(menuActionTriggered(QAction *)));
+        connect(m_popupMenu, SIGNAL(triggered(QAction*)), SLOT(menuActionTriggered(QAction*)));
     } else {
         Q_FOREACH (KAction *action, m_addSearchActions) {
             m_popupMenu->removeAction(action);
@@ -514,8 +514,8 @@ void SearchBarPlugin::openSearchEngineAdded(const QString &name, const QString &
         m_addWSWidget = new WebShortcutWidget(m_searchCombo);
         m_addWSWidget->setWindowFlags(Qt::Popup);
 
-        connect(m_addWSWidget, SIGNAL(webShortcutSet(const QString &, const QString &, const QString &)),
-                this, SLOT(webShortcutSet(const QString &, const QString &, const QString &)));
+        connect(m_addWSWidget, SIGNAL(webShortcutSet(QString,QString,QString)),
+                this, SLOT(webShortcutSet(QString,QString,QString)));
     }
 
     QPoint pos = m_searchCombo->mapToGlobal(QPoint(m_searchCombo->width()-m_addWSWidget->width(), m_searchCombo->height() + 1));

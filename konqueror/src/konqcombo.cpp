@@ -148,10 +148,10 @@ KonqCombo::KonqCombo( QWidget *parent )
     setTrapReturnKey( true );
 
     connect( KonqHistoryManager::kself(), SIGNAL(cleared()), SLOT(slotCleared()) );
-    connect( this, SIGNAL(cleared() ), SLOT(slotCleared()) );
-    connect( this, SIGNAL(highlighted( int )), SLOT(slotSetIcon( int )) );
-    connect( this, SIGNAL(activated( const QString& )),
-             SLOT(slotActivated( const QString& )) );
+    connect( this, SIGNAL(cleared()), SLOT(slotCleared()) );
+    connect( this, SIGNAL(highlighted(int)), SLOT(slotSetIcon(int)) );
+    connect( this, SIGNAL(activated(QString)),
+             SLOT(slotActivated(QString)) );
 }
 
 KonqCombo::~KonqCombo()

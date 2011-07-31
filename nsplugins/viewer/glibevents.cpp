@@ -29,7 +29,7 @@ GlibEvents::GlibEvents()
     {
     checkedEventLoop = false;
     g_main_context_ref( g_main_context_default());
-    connect( &timer, SIGNAL( timeout()), SLOT( process()));
+    connect( &timer, SIGNAL(timeout()), SLOT(process()));
     // TODO Poll for now
     timer.start( 10 );
     }

@@ -52,7 +52,7 @@ KonqFrameContainer::KonqFrameContainer( Qt::Orientation o,
   m_pSecondChild = 0L;
   m_pActiveChild = 0L;
   setOpaqueResize( KGlobalSettings::opaqueResize() );
-  connect(this, SIGNAL(splitterMoved(int, int)), this, SIGNAL(setRubberbandCalled()));
+  connect(this, SIGNAL(splitterMoved(int,int)), this, SIGNAL(setRubberbandCalled()));
 //### CHECKME
 }
 

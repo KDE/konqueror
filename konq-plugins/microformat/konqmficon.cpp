@@ -58,7 +58,7 @@ KonqMFIcon::KonqMFIcon(QObject *parent, const QVariantList &)
 void KonqMFIcon::waitPartToLoad() {
 	connect(m_part, SIGNAL(completed()), this, SLOT(addMFIcon()));
 	connect(m_part, SIGNAL(completed(bool)), this, SLOT(addMFIcon())); // to make pages with metarefresh to work
-	connect(m_part, SIGNAL(started(KIO::Job *)), this, SLOT(removeMFIcon()));
+	connect(m_part, SIGNAL(started(KIO::Job*)), this, SLOT(removeMFIcon()));
 }
 
 

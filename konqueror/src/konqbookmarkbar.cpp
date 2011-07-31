@@ -77,13 +77,13 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
     if (d->m_contextMenu)
     {
         m_toolBar->setContextMenuPolicy(Qt::CustomContextMenu);
-        connect(m_toolBar, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(contextMenu(const QPoint &)));
+        connect(m_toolBar, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextMenu(QPoint)));
     }
 
-    connect( mgr, SIGNAL( changed(const QString &, const QString &) ),
-             SLOT( slotBookmarksChanged(const QString &) ) );
-    connect( mgr, SIGNAL( configChanged() ),
-             SLOT( slotConfigChanged() ) );
+    connect( mgr, SIGNAL(changed(QString,QString)),
+             SLOT(slotBookmarksChanged(QString)) );
+    connect( mgr, SIGNAL(configChanged()),
+             SLOT(slotConfigChanged()) );
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar( toolbar );

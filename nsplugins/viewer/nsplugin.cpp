@@ -1312,8 +1312,8 @@ NSPluginViewer::NSPluginViewer( QObject *parent )
    QDBusConnection::sessionBus().registerObject( "/Viewer", this );
 
     QObject::connect(QDBusConnection::sessionBus().interface(),
-                     SIGNAL(serviceOwnerChanged(const QString&, const QString&, const QString&)),
-                     this, SLOT(appChanged( const QString&, const QString&, const QString&)));
+                     SIGNAL(serviceOwnerChanged(QString,QString,QString)),
+                     this, SLOT(appChanged(QString,QString,QString)));
 }
 
 
@@ -1915,15 +1915,15 @@ bool NSPluginStream::get( const QString& url, const QString& mimeType,
         if (reload) {
             _job->addMetaData("cache", "reload");
         }
-        connect(_job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-                SLOT(data(KIO::Job *, const QByteArray &)));
-        connect(_job, SIGNAL(result(KJob *)), SLOT(result(KJob *)));
-        connect(_job, SIGNAL(totalSize(KJob *, qulonglong )),
-                SLOT(totalSize(KJob *, qulonglong)));
-        connect(_job, SIGNAL(mimetype(KIO::Job *, const QString &)),
-                SLOT(mimetype(KIO::Job *, const QString &)));
-        connect(_job, SIGNAL(redirection(KIO::Job *, const KUrl&)),
-                SLOT(redirection(KIO::Job *, const KUrl&)));
+        connect(_job, SIGNAL(data(KIO::Job*,QByteArray)),
+                SLOT(data(KIO::Job*,QByteArray)));
+        connect(_job, SIGNAL(result(KJob*)), SLOT(result(KJob*)));
+        connect(_job, SIGNAL(totalSize(KJob*,qulonglong)),
+                SLOT(totalSize(KJob*,qulonglong)));
+        connect(_job, SIGNAL(mimetype(KIO::Job*,QString)),
+                SLOT(mimetype(KIO::Job*,QString)));
+        connect(_job, SIGNAL(redirection(KIO::Job*,KUrl)),
+                SLOT(redirection(KIO::Job*,KUrl)));
     }
 
     return false;
@@ -1943,15 +1943,15 @@ bool NSPluginStream::post( const QString& url, const QByteArray& data,
         _job->addMetaData("errorPage", "false");
         _job->addMetaData("PropagateHttpHeader", "true");
         _job->addMetaData("AllowCompressedPage", "false");
-        connect(_job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-                SLOT(data(KIO::Job *, const QByteArray &)));
-        connect(_job, SIGNAL(result(KJob *)), SLOT(result(KJob *)));
-        connect(_job, SIGNAL(totalSize(KJob *, qulonglong )),
-                SLOT(totalSize(KJob *, qulonglong)));
-        connect(_job, SIGNAL(mimetype(KIO::Job *, const QString &)),
-                SLOT(mimetype(KIO::Job *, const QString &)));
-        connect(_job, SIGNAL(redirection(KIO::Job *, const KUrl&)),
-                SLOT(redirection(KIO::Job *, const KUrl&)));
+        connect(_job, SIGNAL(data(KIO::Job*,QByteArray)),
+                SLOT(data(KIO::Job*,QByteArray)));
+        connect(_job, SIGNAL(result(KJob*)), SLOT(result(KJob*)));
+        connect(_job, SIGNAL(totalSize(KJob*,qulonglong)),
+                SLOT(totalSize(KJob*,qulonglong)));
+        connect(_job, SIGNAL(mimetype(KIO::Job*,QString)),
+                SLOT(mimetype(KIO::Job*,QString)));
+        connect(_job, SIGNAL(redirection(KIO::Job*,KUrl)),
+                SLOT(redirection(KIO::Job*,KUrl)));
     }
 
     return false;

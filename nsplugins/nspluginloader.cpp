@@ -328,7 +328,7 @@ bool NSPluginLoader::loadViewer()
    tmp.sprintf("org.kde.nspluginviewer-%d",pid);
    _viewerDBusId =tmp.toLatin1();
 
-   connect( &_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+   connect( &_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(processTerminated()) );
 
     QTime t;

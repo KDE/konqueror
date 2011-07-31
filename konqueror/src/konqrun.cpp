@@ -176,8 +176,8 @@ void KonqRun::init()
     // (in case it goes to scanFile, this will be done below)
     KIO::StatJob *job = dynamic_cast<KIO::StatJob*>(KRun::job());
     if (job && !job->error() && m_pView) {
-        connect(job, SIGNAL(infoMessage(KJob*, const QString&, const QString&)),
-                 m_pView, SLOT(slotInfoMessage(KJob*, const QString&)));
+        connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
+                 m_pView, SLOT(slotInfoMessage(KJob*,QString)));
     }
 }
 
@@ -188,11 +188,11 @@ void KonqRun::scanFile()
     // BrowserRun changes
     KIO::TransferJob *job = dynamic_cast<KIO::TransferJob*>(KRun::job());
     if (job && !job->error()) {
-        connect(job, SIGNAL(redirection(KIO::Job *, const KUrl&)),
-                SLOT(slotRedirection(KIO::Job *, const KUrl&)));
+        connect(job, SIGNAL(redirection(KIO::Job*,KUrl)),
+                SLOT(slotRedirection(KIO::Job*,KUrl)));
         if (m_pView && m_pView->service()->desktopEntryName() != "konq_sidebartng") {
-            connect(job, SIGNAL(infoMessage(KJob*, const QString&, const QString&)),
-                    m_pView, SLOT(slotInfoMessage(KJob*, const QString&)));
+            connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
+                    m_pView, SLOT(slotInfoMessage(KJob*,QString)));
         }
     }
 }

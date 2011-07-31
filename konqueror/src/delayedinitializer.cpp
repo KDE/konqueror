@@ -40,7 +40,7 @@ bool DelayedInitializer::eventFilter( QObject *receiver, QEvent *event )
     // Move the emitting of the event to the end of the eventQueue
     // so we are absolutely sure the event we get here is handled before
     // the initialize is fired.
-    QTimer::singleShot( 0, this, SLOT( slotInitialize() ) );
+    QTimer::singleShot( 0, this, SLOT(slotInitialize()) );
 
     return false;
 }

@@ -82,8 +82,8 @@ KEBApp::KEBApp(
     else
         createGUI("keditbookmarks-genui.rc");
 
-    connect(qApp->clipboard(), SIGNAL( dataChanged() ),
-                               SLOT( slotClipboardDataChanged() ));
+    connect(qApp->clipboard(), SIGNAL(dataChanged()),
+                               SLOT(slotClipboardDataChanged()));
 
     KGlobal::locale()->insertCatalog("libkonq");
 
@@ -123,10 +123,10 @@ KEBApp::KEBApp(
     slotClipboardDataChanged();
     setAutoSaveSettings();
 
-    connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(  const QItemSelection &, const QItemSelection & )),
+    connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(selectionChanged()));
 
-    connect(mBookmarkFolderView->selectionModel(), SIGNAL(selectionChanged(  const QItemSelection &, const QItemSelection & )),
+    connect(mBookmarkFolderView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(selectionChanged()));
 
     setCancelFavIconUpdatesEnabled(false);
@@ -471,8 +471,8 @@ void KEBApp::notifyCommandExecuted() {
 void KEBApp::slotConfigureToolbars() {
     saveMainWindowSettings(KConfigGroup( KGlobal::config(), "MainWindow") );
     KEditToolBar dlg(actionCollection(), this);
-    connect(&dlg, SIGNAL( newToolBarConfig() ),
-                  SLOT( slotNewToolbarConfig() ));
+    connect(&dlg, SIGNAL(newToolBarConfig()),
+                  SLOT(slotNewToolbarConfig()));
     dlg.exec();
 }
 

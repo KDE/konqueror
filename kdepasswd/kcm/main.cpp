@@ -69,10 +69,10 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 	connect( _mw->btnChangePassword, SIGNAL(clicked()), SLOT(slotChangePassword()));
 	_mw->btnChangePassword->setGuiItem( KGuiItem( i18n("Change &Password..."), "preferences-desktop-user-password" ));
 
-	connect( _mw->leRealname, SIGNAL(textChanged(const QString&)), SLOT(changed()));
-	connect( _mw->leOrganization, SIGNAL(textChanged(const QString&)), SLOT(changed()));
-	connect( _mw->leEmail, SIGNAL(textChanged(const QString&)), SLOT(changed()));
-	connect( _mw->leSMTP, SIGNAL(textChanged(const QString&)), SLOT(changed()));
+	connect( _mw->leRealname, SIGNAL(textChanged(QString)), SLOT(changed()));
+	connect( _mw->leOrganization, SIGNAL(textChanged(QString)), SLOT(changed()));
+	connect( _mw->leEmail, SIGNAL(textChanged(QString)), SLOT(changed()));
+	connect( _mw->leSMTP, SIGNAL(textChanged(QString)), SLOT(changed()));
 
 	_ku = new KUser();
 	_kes = new KEMailSettings();

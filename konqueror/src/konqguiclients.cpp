@@ -88,7 +88,7 @@ QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, 
     KAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
     act->setText( name );
     act->setIcon( KIcon(service->icon()) );
-    QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT( slotOpenEmbedded() ));
+    QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT(slotOpenEmbedded()));
     return act;
 }
 
@@ -142,8 +142,8 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
     if ( (*cIt)->icon() != "unknown" )
       action->setIcon( KIcon((*cIt)->icon()) );
 
-    connect( action, SIGNAL( toggled( bool ) ),
-             this, SLOT( slotToggleView( bool ) ) );
+    connect( action, SIGNAL(toggled(bool)),
+             this, SLOT(slotToggleView(bool)) );
 
     m_actions.insert( name, action );
 
@@ -152,10 +152,10 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
     m_mapOrientation.insert( name, horizontal );
   }
 
-  connect( m_mainWindow, SIGNAL( viewAdded( KonqView * ) ),
-           this, SLOT( slotViewAdded( KonqView * ) ) );
-  connect( m_mainWindow, SIGNAL( viewRemoved( KonqView * ) ),
-           this, SLOT( slotViewRemoved( KonqView * ) ) );
+  connect( m_mainWindow, SIGNAL(viewAdded(KonqView*)),
+           this, SLOT(slotViewAdded(KonqView*)) );
+  connect( m_mainWindow, SIGNAL(viewRemoved(KonqView*)),
+           this, SLOT(slotViewRemoved(KonqView*)) );
 }
 
 ToggleViewGUIClient::~ToggleViewGUIClient()
@@ -260,11 +260,11 @@ void ToggleViewGUIClient::slotViewAdded( KonqView *view )
 
   if ( action )
   {
-    disconnect( action, SIGNAL( toggled( bool ) ),
-                this, SLOT( slotToggleView( bool ) ) );
+    disconnect( action, SIGNAL(toggled(bool)),
+                this, SLOT(slotToggleView(bool)) );
     static_cast<KToggleAction *>( action )->setChecked( true );
-    connect( action, SIGNAL( toggled( bool ) ),
-             this, SLOT( slotToggleView( bool ) ) );
+    connect( action, SIGNAL(toggled(bool)),
+             this, SLOT(slotToggleView(bool)) );
 
     saveConfig( true, name );
 
@@ -294,11 +294,11 @@ void ToggleViewGUIClient::slotViewRemoved( KonqView *view )
 
   if ( action )
   {
-    disconnect( action, SIGNAL( toggled( bool ) ),
-             this, SLOT( slotToggleView( bool ) ) );
+    disconnect( action, SIGNAL(toggled(bool)),
+             this, SLOT(slotToggleView(bool)) );
     static_cast<KToggleAction *>( action )->setChecked( false );
-    connect( action, SIGNAL( toggled( bool ) ),
-             this, SLOT( slotToggleView( bool ) ) );
+    connect( action, SIGNAL(toggled(bool)),
+             this, SLOT(slotToggleView(bool)) );
     saveConfig( false, name );
   }
 }

@@ -69,8 +69,8 @@ void TestLinkItr::doAction()
     m_job->addMetaData( QString("cookies"), QString("none") );
     m_job->addMetaData( QString("errorPage"), QString("false") );
 
-    connect(m_job, SIGNAL( result( KJob *)),
-            this, SLOT( slotJobResult(KJob *)));
+    connect(m_job, SIGNAL(result(KJob*)),
+            this, SLOT(slotJobResult(KJob*)));
 
     m_oldStatus = currentBookmark().metaDataItem("linkstate");
     setStatus(i18n("Checking..."));

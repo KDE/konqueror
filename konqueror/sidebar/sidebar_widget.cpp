@@ -635,14 +635,14 @@ void Sidebar_Widget::showHidePage(int page)
             m_buttonBar->setTab(page,true);
 
             connect(buttonInfo.module,
-                    SIGNAL(setIcon(const QString&)),
+                    SIGNAL(setIcon(QString)),
                     m_buttonBar->tab(page),
-                    SLOT(setIcon(const QString&)));
+                    SLOT(setIcon(QString)));
 
             connect(buttonInfo.module,
-                    SIGNAL(setCaption(const QString&)),
+                    SIGNAL(setCaption(QString)),
                     m_buttonBar->tab(page),
-                    SLOT(setText(const QString&)));
+                    SLOT(setText(QString)));
 
             m_area->addWidget(buttonInfo.dock);
             buttonInfo.dock->show();
@@ -756,7 +756,7 @@ void Sidebar_Widget::doEnableActions()
 
 void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
 {
-    connect(mod,SIGNAL(started(KIO::Job *)),this, SIGNAL(started(KIO::Job*)));
+    connect(mod,SIGNAL(started(KIO::Job*)),this, SIGNAL(started(KIO::Job*)));
     connect(mod,SIGNAL(completed()),this,SIGNAL(completed()));
 
     connect(mod, SIGNAL(popupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
@@ -770,9 +770,9 @@ void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
     // TODO define in base class
     if (mod->metaObject()->indexOfSignal("submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)") != -1) {
         connect(mod,
-                SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
+                SIGNAL(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)),
                 this,
-                SLOT(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)));
+                SLOT(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)));
     }
 
     connect(mod, SIGNAL(enableAction(KonqSidebarModule*,const char*,bool)),

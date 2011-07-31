@@ -56,8 +56,8 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
   enableJavaScriptGloballyCB->setWhatsThis( i18n("Enables the execution of scripts written in ECMA-Script "
         "(also known as JavaScript) that can be contained in HTML pages. "
         "Note that, as with any browser, enabling scripting languages can be a security problem.") );
-  connect( enableJavaScriptGloballyCB, SIGNAL( clicked() ), SLOT( changed() ) );
-  connect( enableJavaScriptGloballyCB, SIGNAL( clicked() ), this, SLOT( slotChangeJSEnabled() ) );
+  connect( enableJavaScriptGloballyCB, SIGNAL(clicked()), SLOT(changed()) );
+  connect( enableJavaScriptGloballyCB, SIGNAL(clicked()), this, SLOT(slotChangeJSEnabled()) );
   toplevel->addWidget(enableJavaScriptGloballyCB);
 
   // the global checkbox
@@ -67,13 +67,13 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
 
   jsDebugWindow = new QCheckBox( i18n( "Enable debu&gger" ) );
   jsDebugWindow->setWhatsThis( i18n( "Enables builtin JavaScript debugger." ) );
-  connect( jsDebugWindow, SIGNAL( clicked() ), SLOT( changed() ) );
+  connect( jsDebugWindow, SIGNAL(clicked()), SLOT(changed()) );
   hbox->addWidget(jsDebugWindow);
 
   reportErrorsCB = new QCheckBox( i18n( "Report &errors" ) );
   reportErrorsCB->setWhatsThis( i18n("Enables the reporting of errors that occur when JavaScript "
 	"code is executed.") );
-  connect( reportErrorsCB, SIGNAL( clicked() ), SLOT( changed() ) );
+  connect( reportErrorsCB, SIGNAL(clicked()), SLOT(changed()) );
   hbox->addWidget(reportErrorsCB);
 
   // the domain-specific listview

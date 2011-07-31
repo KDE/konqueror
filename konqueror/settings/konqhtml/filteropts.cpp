@@ -93,7 +93,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     vbox->addWidget(mListBox);
 
     QLabel *exprLabel = new QLabel( i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"), this );
-    connect( exprLabel, SIGNAL(linkActivated(const QString &)), SLOT(slotInfoLinkActivated(const QString &)) );
+    connect( exprLabel, SIGNAL(linkActivated(QString)), SLOT(slotInfoLinkActivated(QString)) );
     vbox->addWidget(exprLabel);
 
     mString = new KLineEdit;
@@ -123,33 +123,33 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     mRefreshFreqSpinBox->setSuffix(ki18np(" day", " days"));
 
     /** connect signals and slots */
-    connect( &mAutomaticFilterModel, SIGNAL( changed( bool ) ), this, SIGNAL( changed( bool ) ) );
-    connect( mRefreshFreqSpinBox, SIGNAL( valueChanged( int ) ), this, SLOT( spinBoxChanged( int ) ) );
+    connect( &mAutomaticFilterModel, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)) );
+    connect( mRefreshFreqSpinBox, SIGNAL(valueChanged(int)), this, SLOT(spinBoxChanged(int)) );
 
     mInsertButton = new KPushButton( KIcon("list-add"), i18n("Insert"), buttonBox );
-    connect( mInsertButton, SIGNAL( clicked() ), SLOT( insertFilter() ) );
+    connect( mInsertButton, SIGNAL(clicked()), SLOT(insertFilter()) );
     mUpdateButton = new KPushButton( KIcon("document-edit"), i18n("Update"), buttonBox );
-    connect( mUpdateButton, SIGNAL( clicked() ), SLOT( updateFilter() ) );
+    connect( mUpdateButton, SIGNAL(clicked()), SLOT(updateFilter()) );
     mRemoveButton = new KPushButton( KIcon("list-remove"), i18n("Remove"), buttonBox );
-    connect( mRemoveButton, SIGNAL( clicked() ), SLOT( removeFilter() ) );
+    connect( mRemoveButton, SIGNAL(clicked()), SLOT(removeFilter()) );
 
     mImportButton = new KPushButton( KIcon("document-import"), i18n("Import..."),buttonBox);
-    connect( mImportButton, SIGNAL( clicked() ), SLOT( importFilters() ) );
+    connect( mImportButton, SIGNAL(clicked()), SLOT(importFilters()) );
     mExportButton = new KPushButton( KIcon("document-export"), i18n("Export..."),buttonBox);
-    connect( mExportButton, SIGNAL( clicked() ), SLOT( exportFilters() ) );
+    connect( mExportButton, SIGNAL(clicked()), SLOT(exportFilters()) );
 
     KHBox *impexpBox = new KHBox;
     QLabel *impexpLabel = new QLabel( i18n("<qt>More information on "
                                                "<a href=\"importhelp\">import format</a>, "
                                                "<a href=\"exporthelp\">export format</a>"), impexpBox );
-    connect( impexpLabel, SIGNAL(linkActivated(const QString &)), SLOT(slotInfoLinkActivated(const QString &)) );
+    connect( impexpLabel, SIGNAL(linkActivated(QString)), SLOT(slotInfoLinkActivated(QString)) );
 
     vbox->addWidget(impexpBox,0,Qt::AlignRight);
 
-    connect( mEnableCheck, SIGNAL( toggled(bool)), this, SLOT( slotEnableChecked()));
-    connect( mKillCheck, SIGNAL( clicked()), this, SLOT( slotKillChecked()));
+    connect( mEnableCheck, SIGNAL(toggled(bool)), this, SLOT(slotEnableChecked()));
+    connect( mKillCheck, SIGNAL(clicked()), this, SLOT(slotKillChecked()));
     connect( mListBox, SIGNAL(itemSelectionChanged()),this, SLOT(slotItemSelected()));
-    connect( mString, SIGNAL(textChanged(const QString& ) ), this, SLOT( updateButton() ) );
+    connect( mString, SIGNAL(textChanged(QString)), this, SLOT(updateButton()) );
 /*
  * Whats this items
  */

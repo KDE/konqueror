@@ -42,7 +42,7 @@ void PluginDomtreeviewer::slotShowDOMTree()
   if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent()))
   {
     m_dialog = new DOMTreeWindow(this);
-    connect( m_dialog, SIGNAL( destroyed() ), this, SLOT( slotDestroyed() ) );
+    connect( m_dialog, SIGNAL(destroyed()), this, SLOT(slotDestroyed()) );
     m_dialog->view()->setHtmlPart(part);
     m_dialog->show();
   }

@@ -115,7 +115,7 @@ KonqView::~KonqView()
   {
     finishedWithCurrentURL();
     if ( isPassiveMode() )
-      disconnect( m_pPart, SIGNAL( destroyed() ), m_pMainWindow->viewManager(), SLOT( slotObjectDestroyed() ) );
+      disconnect( m_pPart, SIGNAL(destroyed()), m_pMainWindow->viewManager(), SLOT(slotObjectDestroyed()) );
 
     if (m_pPart->manager())
       m_pPart->manager()->removePart(m_pPart); // ~Part does this, but we have to do it before (#213876, #207173)
@@ -359,16 +359,16 @@ bool KonqView::changePart(const QString &mimeType,
 void KonqView::connectPart()
 {
   //kDebug();
-  connect( m_pPart, SIGNAL( started( KIO::Job * ) ),
-           this, SLOT( slotStarted( KIO::Job * ) ) );
-  connect( m_pPart, SIGNAL( completed() ),
-           this, SLOT( slotCompleted() ) );
-  connect( m_pPart, SIGNAL( completed(bool) ),
-           this, SLOT( slotCompleted(bool) ) );
-  connect( m_pPart, SIGNAL( canceled( const QString & ) ),
-           this, SLOT( slotCanceled( const QString & ) ) );
-  connect( m_pPart, SIGNAL( setWindowCaption( const QString & ) ),
-           this, SLOT( setCaption( const QString & ) ) );
+  connect( m_pPart, SIGNAL(started(KIO::Job*)),
+           this, SLOT(slotStarted(KIO::Job*)) );
+  connect( m_pPart, SIGNAL(completed()),
+           this, SLOT(slotCompleted()) );
+  connect( m_pPart, SIGNAL(completed(bool)),
+           this, SLOT(slotCompleted(bool)) );
+  connect( m_pPart, SIGNAL(canceled(QString)),
+           this, SLOT(slotCanceled(QString)) );
+  connect( m_pPart, SIGNAL(setWindowCaption(QString)),
+           this, SLOT(setCaption(QString)) );
   if (!internalViewMode().isEmpty()) {
       // Update checked action in "View Mode" menu when switching view mode in dolphin
       connect(m_pPart, SIGNAL(viewModeChanged()),
@@ -381,8 +381,8 @@ void KonqView::connectPart()
   {
       ext->setBrowserInterface( m_browserIface );
 
-      connect( ext, SIGNAL( openUrlRequestDelayed(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &) ),
-               m_pMainWindow, SLOT( slotOpenURLRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments & ) ) );
+      connect( ext, SIGNAL(openUrlRequestDelayed(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+               m_pMainWindow, SLOT(slotOpenURLRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
 
       if ( m_bPopupMenuEnabled )
       {
@@ -390,56 +390,56 @@ void KonqView::connectPart()
           enablePopupMenu( true );
       }
 
-      connect( ext, SIGNAL( setLocationBarUrl( const QString & ) ),
-               this, SLOT( setLocationBarURL( const QString & ) ) );
+      connect( ext, SIGNAL(setLocationBarUrl(QString)),
+               this, SLOT(setLocationBarURL(QString)) );
 
-      connect( ext, SIGNAL( setIconUrl( const KUrl & ) ),
-               this, SLOT( setIconURL( const KUrl & ) ) );
+      connect( ext, SIGNAL(setIconUrl(KUrl)),
+               this, SLOT(setIconURL(KUrl)) );
 
-      connect( ext, SIGNAL( setPageSecurity( int ) ),
-               this, SLOT( setPageSecurity( int ) ) );
+      connect( ext, SIGNAL(setPageSecurity(int)),
+               this, SLOT(setPageSecurity(int)) );
 
-      connect( ext, SIGNAL( createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**) ),
-               m_pMainWindow, SLOT( slotCreateNewWindow( const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**) ) );
+      connect( ext, SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)),
+               m_pMainWindow, SLOT(slotCreateNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)) );
 
-      connect( ext, SIGNAL( loadingProgress( int ) ),
-               m_pKonqFrame->statusbar(), SLOT( slotLoadingProgress( int ) ) );
+      connect( ext, SIGNAL(loadingProgress(int)),
+               m_pKonqFrame->statusbar(), SLOT(slotLoadingProgress(int)) );
 
-      connect( ext, SIGNAL( speedProgress( int ) ),
-               m_pKonqFrame->statusbar(), SLOT( slotSpeedProgress( int ) ) );
+      connect( ext, SIGNAL(speedProgress(int)),
+               m_pKonqFrame->statusbar(), SLOT(slotSpeedProgress(int)) );
 
-      connect( ext, SIGNAL( selectionInfo( const KFileItemList& ) ),
-               this, SLOT( slotSelectionInfo( const KFileItemList& ) ) );
+      connect( ext, SIGNAL(selectionInfo(KFileItemList)),
+               this, SLOT(slotSelectionInfo(KFileItemList)) );
 
-      connect( ext, SIGNAL( mouseOverInfo( const KFileItem& ) ),
-               this, SLOT( slotMouseOverInfo( const KFileItem& ) ) );
+      connect( ext, SIGNAL(mouseOverInfo(KFileItem)),
+               this, SLOT(slotMouseOverInfo(KFileItem)) );
 
-      connect( ext, SIGNAL( openUrlNotify() ),
-               this, SLOT( slotOpenURLNotify() ) );
+      connect( ext, SIGNAL(openUrlNotify()),
+               this, SLOT(slotOpenURLNotify()) );
 
-      connect( ext, SIGNAL( enableAction( const char *, bool ) ),
-               this, SLOT( slotEnableAction( const char *, bool ) ) );
+      connect( ext, SIGNAL(enableAction(const char*,bool)),
+               this, SLOT(slotEnableAction(const char*,bool)) );
 
-      connect( ext, SIGNAL( setActionText( const char *, const QString& ) ),
-               this, SLOT( slotSetActionText( const char *, const QString& ) ) );
+      connect( ext, SIGNAL(setActionText(const char*,QString)),
+               this, SLOT(slotSetActionText(const char*,QString)) );
 
-      connect( ext, SIGNAL( moveTopLevelWidget( int, int ) ),
-               this, SLOT( slotMoveTopLevelWidget( int, int ) ) );
+      connect( ext, SIGNAL(moveTopLevelWidget(int,int)),
+               this, SLOT(slotMoveTopLevelWidget(int,int)) );
 
-      connect( ext, SIGNAL( resizeTopLevelWidget( int, int ) ),
-               this, SLOT( slotResizeTopLevelWidget( int, int ) ) );
+      connect( ext, SIGNAL(resizeTopLevelWidget(int,int)),
+               this, SLOT(slotResizeTopLevelWidget(int,int)) );
 
-      connect( ext, SIGNAL( requestFocus(KParts::ReadOnlyPart *) ),
-               this, SLOT( slotRequestFocus(KParts::ReadOnlyPart *) ) );
+      connect( ext, SIGNAL(requestFocus(KParts::ReadOnlyPart*)),
+               this, SLOT(slotRequestFocus(KParts::ReadOnlyPart*)) );
 
       if (service()->desktopEntryName() != "konq_sidebartng") {
-          connect( ext, SIGNAL( infoMessage( const QString & ) ),
-               m_pKonqFrame->statusbar(), SLOT( message( const QString & ) ) );
+          connect( ext, SIGNAL(infoMessage(QString)),
+               m_pKonqFrame->statusbar(), SLOT(message(QString)) );
 
           connect( ext,
-                   SIGNAL( addWebSideBar(const KUrl&, const QString&) ),
+                   SIGNAL(addWebSideBar(KUrl,QString)),
                    m_pMainWindow,
-                   SLOT( slotAddWebSideBar(const KUrl&, const QString&) ) );
+                   SLOT(slotAddWebSideBar(KUrl,QString)) );
       }
   }
 
@@ -506,9 +506,9 @@ void KonqView::slotStarted( KIO::Job * job )
       kDebug(7035) << "Window ID =" << m_pMainWindow->window()->winId();
       job->ui()->setWindow (m_pMainWindow->window());
 
-      connect( job, SIGNAL( percent( KJob *, unsigned long ) ), this, SLOT( slotPercent( KJob *, unsigned long ) ) );
-      connect( job, SIGNAL( speed( KJob *, unsigned long ) ), this, SLOT( slotSpeed( KJob *, unsigned long ) ) );
-      connect( job, SIGNAL( infoMessage( KJob *, const QString &, const QString & ) ), this, SLOT( slotInfoMessage( KJob *, const QString & ) ) );
+      connect( job, SIGNAL(percent(KJob*,ulong)), this, SLOT(slotPercent(KJob*,ulong)) );
+      connect( job, SIGNAL(speed(KJob*,ulong)), this, SLOT(slotSpeed(KJob*,ulong)) );
+      connect( job, SIGNAL(infoMessage(KJob*,QString,QString)), this, SLOT(slotInfoMessage(KJob*,QString)) );
   }
 }
 

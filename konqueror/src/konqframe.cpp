@@ -95,7 +95,7 @@ KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
    m_pStatusBar = new KonqFrameStatusBar( this);
    m_pStatusBar->setSizePolicy(QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
    connect(m_pStatusBar, SIGNAL(clicked()), this, SLOT(slotStatusBarClicked()));
-   connect( m_pStatusBar, SIGNAL( linkedViewClicked( bool ) ), this, SLOT( slotLinkedViewClicked( bool ) ) );
+   connect( m_pStatusBar, SIGNAL(linkedViewClicked(bool)), this, SLOT(slotLinkedViewClicked(bool)) );
    m_separator = 0;
    m_pParentContainer = parentContainer;
 }
@@ -180,8 +180,8 @@ void KonqFrame::setView( KonqView* child )
    m_pView = child;
    if (m_pView)
    {
-     connect(m_pView,SIGNAL(sigPartChanged(KonqView *, KParts::ReadOnlyPart *,KParts::ReadOnlyPart *)),
-             m_pStatusBar,SLOT(slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *,KParts::ReadOnlyPart *)));
+     connect(m_pView,SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
+             m_pStatusBar,SLOT(slotConnectToNewView(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
    }
 }
 

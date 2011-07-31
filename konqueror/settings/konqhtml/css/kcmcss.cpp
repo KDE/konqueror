@@ -67,7 +67,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
   connect(configWidget->useDefault,     SIGNAL(clicked()),      SIGNAL(changed()));
   connect(configWidget->useAccess,      SIGNAL(clicked()),      SIGNAL(changed()));
   connect(configWidget->useUser,        SIGNAL(clicked()),      SIGNAL(changed()));
-  connect(configWidget->urlRequester, SIGNAL(textChanged(const QString&)),SIGNAL(changed()));
+  connect(configWidget->urlRequester, SIGNAL(textChanged(QString)),SIGNAL(changed()));
   connect(configWidget->customize,      SIGNAL(clicked()),      SLOT(slotCustomize()));
   connect(customDialog,                 SIGNAL(changed()),      SIGNAL(changed()));
 
@@ -308,8 +308,8 @@ CSSCustomDialog::CSSCustomDialog( QWidget *parent )
   connect(blackOnWhite,   SIGNAL(clicked()),      SIGNAL(changed()));
   connect(whiteOnBlack,   SIGNAL(clicked()),      SIGNAL(changed()));
   connect(customColor,    SIGNAL(clicked()),      SIGNAL(changed()));
-  connect(foregroundColorButton, SIGNAL(changed(const QColor &)),SIGNAL(changed()));
-  connect(backgroundColorButton, SIGNAL(changed(const QColor &)),SIGNAL(changed()));
+  connect(foregroundColorButton, SIGNAL(changed(QColor)),SIGNAL(changed()));
+  connect(backgroundColorButton, SIGNAL(changed(QColor)),SIGNAL(changed()));
   connect(fontFamily, SIGNAL(activated(int)),   SIGNAL(changed()));
   connect(fontFamily, SIGNAL(editTextChanged(QString)),SIGNAL(changed()));
   connect(sameFamily,     SIGNAL(clicked()),      SIGNAL(changed()));

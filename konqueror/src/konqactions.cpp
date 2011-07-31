@@ -111,11 +111,11 @@ void KonqMostOftenURLSAction::parseHistory() // only ever called once
 {
     KonqHistoryManager *mgr = KonqHistoryManager::kself();
 
-    connect( mgr, SIGNAL( entryAdded( const KonqHistoryEntry& )),
-             SLOT( slotEntryAdded( const KonqHistoryEntry& )));
-    connect( mgr, SIGNAL( entryRemoved( const KonqHistoryEntry& )),
-             SLOT( slotEntryRemoved( const KonqHistoryEntry& )));
-    connect( mgr, SIGNAL( cleared() ), SLOT( slotHistoryCleared() ));
+    connect( mgr, SIGNAL(entryAdded(KonqHistoryEntry)),
+             SLOT(slotEntryAdded(KonqHistoryEntry)));
+    connect( mgr, SIGNAL(entryRemoved(KonqHistoryEntry)),
+             SLOT(slotEntryRemoved(KonqHistoryEntry)));
+    connect( mgr, SIGNAL(cleared()), SLOT(slotHistoryCleared()));
 
     const KonqHistoryList mgrEntries = mgr->entries();
     KonqHistoryList::const_iterator it = mgrEntries.begin();

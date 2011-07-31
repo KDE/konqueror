@@ -63,7 +63,7 @@ void FavIconTest::waitForSignal()
 {
     // Wait for signals - indefinitely
     QEventLoop eventLoop;
-    QObject::connect(&m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ), &eventLoop, SLOT(quit()));
+    QObject::connect(&m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)), &eventLoop, SLOT(quit()));
     eventLoop.exec( QEventLoop::ExcludeUserInputEvents );
 
     // or: wait for signals for a certain amount of time...
@@ -87,12 +87,12 @@ void FavIconTest::testSetIconForURL()
     if ( !checkNetworkAccess() )
         QSKIP( "no network access", SkipAll );
 
-    QSignalSpy spy( &m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ) );
+    QSignalSpy spy( &m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)) );
     QVERIFY( spy.isValid() );
     QCOMPARE( spy.count(), 0 );
 
     // The call to connect() triggers qdbus initialization stuff, while QSignalSpy doesn't...
-    connect(&m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ), &m_eventLoop, SLOT(quit()));
+    connect(&m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)), &m_eventLoop, SLOT(quit()));
 
     m_favIconModule.setIconForUrl( QString( s_hostUrl ), QString( s_altIconUrl ) );
 
@@ -118,7 +118,7 @@ void FavIconTest::testSetIconForURL()
     QCOMPARE( spy[1][1].toString(), QString( s_hostUrl ) );
     QCOMPARE( spy[1][2].toString(), QString( "favicons/www.google.com" ) );
 
-    disconnect(&m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ), &m_eventLoop, SLOT(quit()));
+    disconnect(&m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)), &m_eventLoop, SLOT(quit()));
 }
 
 void FavIconTest::testIconForURL()
@@ -139,7 +139,7 @@ void FavIconTest::testDownloadHostIcon()
     if ( !checkNetworkAccess() )
         QSKIP( "no network access", SkipAll );
 
-    QSignalSpy spy( &m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ) );
+    QSignalSpy spy( &m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)) );
     QVERIFY( spy.isValid() );
     QCOMPARE( spy.count(), 0 );
 

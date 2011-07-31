@@ -27,7 +27,7 @@ SCWMainWindow::SCWMainWindow( QWidget* parent )
 {
     QLabel* widget1 = new QLabel( "widget1" );
     setCentralWidget( widget1 );
-    QTimer::singleShot( 10, this, SLOT( slotSwitchCentralWidget() ) );
+    QTimer::singleShot( 10, this, SLOT(slotSwitchCentralWidget()) );
 }
 
 void SCWMainWindow::slotSwitchCentralWidget()

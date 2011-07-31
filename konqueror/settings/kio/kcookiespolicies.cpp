@@ -95,10 +95,10 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     mainLayout->addWidget(dlg);
 
     // Connect the main swicth :) Enable/disable cookie support
-    connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
-             SLOT( cookiesEnabled(bool) ) );
-    connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
-             SLOT( configChanged() ) );
+    connect( dlg->cbEnableCookies, SIGNAL(toggled(bool)),
+             SLOT(cookiesEnabled(bool)) );
+    connect( dlg->cbEnableCookies, SIGNAL(toggled(bool)),
+             SLOT(configChanged()) );
 
     // Connect the preference check boxes...
     connect ( dlg->cbRejectCrossDomainCookies, SIGNAL(toggled(bool)),
@@ -122,14 +122,14 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     // Connect signals from the domain specific policy listview.
     connect( dlg->lvDomainPolicy, SIGNAL(itemSelectionChanged()),
              SLOT(selectionChanged()) );
-    connect( dlg->lvDomainPolicy, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)),
-             SLOT(changePressed() ) );
+    connect( dlg->lvDomainPolicy, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+             SLOT(changePressed()) );
 
     // Connect the buttons...
-    connect( dlg->pbNew, SIGNAL(clicked()), SLOT( addPressed() ) );
-    connect( dlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
-    connect( dlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
-    connect( dlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
+    connect( dlg->pbNew, SIGNAL(clicked()), SLOT(addPressed()) );
+    connect( dlg->pbChange, SIGNAL(clicked()), SLOT(changePressed()) );
+    connect( dlg->pbDelete, SIGNAL(clicked()), SLOT(deletePressed()) );
+    connect( dlg->pbDeleteAll, SIGNAL(clicked()), SLOT(deleteAllPressed()) );
 }
 
 KCookiesPolicies::~KCookiesPolicies()

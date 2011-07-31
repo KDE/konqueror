@@ -43,12 +43,12 @@ int main(int argc, char* argv[])
   QObject::connect(&w,SIGNAL(returnPressed(TreeMapItem*)),
                    &w,SLOT(selected(TreeMapItem*)));
   QObject::connect(&w,
-                   SIGNAL(contextMenuRequested(TreeMapItem*,const QPoint&)),
-                   &w,SLOT(contextMenu(TreeMapItem*, const QPoint&)));
+                   SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
+                   &w,SLOT(contextMenu(TreeMapItem*,QPoint)));
 
   w.setPath(path);
   w.show();
 
-  a.connect( &a, SIGNAL( lastWindowClosed() ), &w, SLOT( quit() ) );
+  a.connect( &a, SIGNAL(lastWindowClosed()), &w, SLOT(quit()) );
   return a.exec();
 }

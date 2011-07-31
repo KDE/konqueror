@@ -45,11 +45,11 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
 		tree = new KonqSidebarTree(this, widget, virt, path);
 	}
 
-	connect(tree, SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
-		this,SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)));
+	connect(tree, SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+		this,SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
-	connect(tree,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)),
-		this,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)));
+	connect(tree,SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+		this,SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
         connect(tree, SIGNAL(copy()),
                 this, SLOT(copy()));

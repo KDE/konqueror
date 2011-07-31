@@ -399,8 +399,8 @@ static int directCommand(KCmdLineArgs *args)
                                                        timeout );
         KDialog::centerOnScreen( popup );
         QTimer *timer = new QTimer();
-        QObject::connect( timer, SIGNAL( timeout() ), qApp, SLOT( quit() ) );
-        QObject::connect( popup, SIGNAL( clicked() ), qApp, SLOT( quit() ) );
+        QObject::connect( timer, SIGNAL(timeout()), qApp, SLOT(quit()) );
+        QObject::connect( popup, SIGNAL(clicked()), qApp, SLOT(quit()) );
         timer->setSingleShot( true );
         timer->start( timeout );
 

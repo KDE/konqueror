@@ -69,22 +69,22 @@ KViewSearchLine::KViewSearchLine(QWidget *parent, QAbstractItemView *v) :
     d->treeView = dynamic_cast<QTreeView *>(v);
     d->listView = dynamic_cast<QListView *>(v);
 
-    connect(this, SIGNAL(textChanged(const QString &)),
-            this, SLOT(queueSearch(const QString &)));
+    connect(this, SIGNAL(textChanged(QString)),
+            this, SLOT(queueSearch(QString)));
 
     if(view()) {
         connect(view(), SIGNAL(destroyed()),
                 this, SLOT(listViewDeleted()));
-        connect(model(), SIGNAL(dataChanged(const QModelIndex &, const QModelIndex &)),
-                this, SLOT(slotDataChanged(const QModelIndex &, const QModelIndex &)));
-        connect(model(), SIGNAL(rowsInserted(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsInserted(const QModelIndex &, int, int)));
-        connect(model(), SIGNAL(rowsRemoved(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsRemoved(const QModelIndex &, int, int)));
-        connect(model(), SIGNAL(columnsInserted(const QModelIndex &, int, int )),
-                this, SLOT(slotColumnsInserted(const QModelIndex &, int, int )));
-        connect(model(), SIGNAL(columnsRemoved(const QModelIndex &, int, int)),
-                this, SLOT(slotColumnsRemoved(const QModelIndex &, int, int)));
+        connect(model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+                this, SLOT(slotDataChanged(QModelIndex,QModelIndex)));
+        connect(model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                this, SLOT(slotRowsInserted(QModelIndex,int,int)));
+        connect(model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotRowsRemoved(QModelIndex,int,int)));
+        connect(model(), SIGNAL(columnsInserted(QModelIndex,int,int)),
+                this, SLOT(slotColumnsInserted(QModelIndex,int,int)));
+        connect(model(), SIGNAL(columnsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotColumnsRemoved(QModelIndex,int,int)));
         connect(model(), SIGNAL(modelReset()), this, SLOT(slotModelReset()));
     }
     else
@@ -101,8 +101,8 @@ KViewSearchLine::KViewSearchLine(QWidget *parent) :
     d->treeView = 0;
     d->listView = 0;
 
-    connect(this, SIGNAL(textChanged(const QString &)),
-            this, SLOT(queueSearch(const QString &)));
+    connect(this, SIGNAL(textChanged(QString)),
+            this, SLOT(queueSearch(QString)));
 
     setEnabled(false);
 }
@@ -171,16 +171,16 @@ void KViewSearchLine::setView(QAbstractItemView *v)
     if(view()) {
         disconnect(view(), SIGNAL(destroyed()),
                    this, SLOT(listViewDeleted()));
-        disconnect(model(), SIGNAL(dataChanged(const QModelIndex &, const QModelIndex &)),
-                this, SLOT(slotDataChanged(const QModelIndex &, const QModelIndex &)));
-        disconnect(model(), SIGNAL(rowsInserted(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsInserted(const QModelIndex &, int, int)));
-        disconnect(model(), SIGNAL(rowsRemoved(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsRemoved(const QModelIndex &, int, int)));
-        disconnect(model(), SIGNAL(columnsInserted(const QModelIndex &, int, int )),
-                this, SLOT(slotColumnsInserted(const QModelIndex &, int, int )));
-        disconnect(model(), SIGNAL(columnsRemoved(const QModelIndex &, int, int)),
-                this, SLOT(slotColumnsRemoved(const QModelIndex &, int, int)));
+        disconnect(model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+                this, SLOT(slotDataChanged(QModelIndex,QModelIndex)));
+        disconnect(model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                this, SLOT(slotRowsInserted(QModelIndex,int,int)));
+        disconnect(model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotRowsRemoved(QModelIndex,int,int)));
+        disconnect(model(), SIGNAL(columnsInserted(QModelIndex,int,int)),
+                this, SLOT(slotColumnsInserted(QModelIndex,int,int)));
+        disconnect(model(), SIGNAL(columnsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotColumnsRemoved(QModelIndex,int,int)));
         disconnect(model(), SIGNAL(modelReset()), this, SLOT(slotModelReset()));
     }
 
@@ -191,16 +191,16 @@ void KViewSearchLine::setView(QAbstractItemView *v)
         connect(view(), SIGNAL(destroyed()),
                 this, SLOT(listViewDeleted()));
 
-        connect(model(), SIGNAL(dataChanged(const QModelIndex &, const QModelIndex &)),
-                this, SLOT(slotDataChanged(const QModelIndex &, const QModelIndex &)));
-        connect(model(), SIGNAL(rowsInserted(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsInserted(const QModelIndex &, int, int)));
-        connect(model(), SIGNAL(rowsRemoved(const QModelIndex &, int , int )),
-                this, SLOT(slotRowsRemoved(const QModelIndex &, int, int)));
-        connect(model(), SIGNAL(columnsInserted(const QModelIndex &, int, int )),
-                this, SLOT(slotColumnsInserted(const QModelIndex &, int, int )));
-        connect(model(), SIGNAL(columnsRemoved(const QModelIndex &, int, int)),
-                this, SLOT(slotColumnsRemoved(const QModelIndex &, int, int)));
+        connect(model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+                this, SLOT(slotDataChanged(QModelIndex,QModelIndex)));
+        connect(model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                this, SLOT(slotRowsInserted(QModelIndex,int,int)));
+        connect(model(), SIGNAL(rowsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotRowsRemoved(QModelIndex,int,int)));
+        connect(model(), SIGNAL(columnsInserted(QModelIndex,int,int)),
+                this, SLOT(slotColumnsInserted(QModelIndex,int,int)));
+        connect(model(), SIGNAL(columnsRemoved(QModelIndex,int,int)),
+                this, SLOT(slotColumnsRemoved(QModelIndex,int,int)));
         connect(model(), SIGNAL(modelReset()), this, SLOT(slotModelReset()));
 
     }
@@ -301,7 +301,7 @@ void KViewSearchLine::contextMenuEvent( QContextMenuEvent*e )
                 allVisibleAct->setChecked(true);
                 d->searchColumns.clear();
             }
-            connect(submenu, SIGNAL(triggered ( QAction * )), this, SLOT(searchColumnsMenuActivated(QAction *)));
+            connect(submenu, SIGNAL(triggered(QAction*)), this, SLOT(searchColumnsMenuActivated(QAction*)));
         }
     }
     popup->exec( e->globalPos() );

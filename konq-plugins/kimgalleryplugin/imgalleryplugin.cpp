@@ -90,7 +90,7 @@ void KImGalleryPlugin::slotExecute()
         KUrl url(m_configDlg->getImageUrl());
         if ( !url.isEmpty() && url.isValid()) {
             m_progressDlg = new QProgressDialog(m_part->widget());
-            QObject::connect(m_progressDlg, SIGNAL( cancelled() ), this, SLOT( slotCancelled() ) );
+            QObject::connect(m_progressDlg, SIGNAL(cancelled()), this, SLOT(slotCancelled()) );
 
             m_progressDlg->setLabelText( i18n("Creating thumbnails") );
             m_progressDlg->setCancelButton(new KPushButton(KStandardGuiItem::cancel(),m_progressDlg));

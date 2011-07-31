@@ -60,8 +60,8 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
   m_bLoadingProfile = false;
   m_tabContainer = 0;
 
-  connect( this, SIGNAL( activePartChanged ( KParts::Part * ) ),
-           this, SLOT( slotActivePartChanged ( KParts::Part * ) ) );
+  connect( this, SIGNAL(activePartChanged(KParts::Part*)),
+           this, SLOT(slotActivePartChanged(KParts::Part*)) );
 }
 
 KonqView* KonqViewManager::createFirstView( const QString &mimeType, const QString &serviceName )
@@ -670,7 +670,7 @@ void KonqViewManager::slotPassiveModePartDeleted()
   // Passive mode parts aren't registered to the part manager,
   // so we have to handle suicidal ones ourselves
   KParts::ReadOnlyPart * part = const_cast<KParts::ReadOnlyPart *>( static_cast<const KParts::ReadOnlyPart *>( sender() ) );
-  disconnect( part, SIGNAL( destroyed() ), this, SLOT( slotPassiveModePartDeleted() ) );
+  disconnect( part, SIGNAL(destroyed()), this, SLOT(slotPassiveModePartDeleted()) );
   kDebug() << "part=" << part;
   KonqView * view = m_pMainWindow->childView( part );
   kDebug() << "view=" << view;
@@ -836,8 +836,8 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
                               m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode );
   //kDebug() << "KonqView created - v=" << v << "v->part()=" << v->part();
 
-  QObject::connect( v, SIGNAL( sigPartChanged( KonqView *, KParts::ReadOnlyPart *, KParts::ReadOnlyPart * ) ),
-                    m_pMainWindow, SLOT( slotPartChanged( KonqView *, KParts::ReadOnlyPart *, KParts::ReadOnlyPart * ) ) );
+  QObject::connect( v, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
+                    m_pMainWindow, SLOT(slotPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)) );
 
   m_pMainWindow->insertChildView( v );
 
@@ -860,7 +860,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
   else
   {
     // Passive views aren't registered, but we still want to detect the suicidal ones
-    connect( v->part(), SIGNAL( destroyed() ), this, SLOT( slotPassiveModePartDeleted() ) );
+    connect( v->part(), SIGNAL(destroyed()), this, SLOT(slotPassiveModePartDeleted()) );
   }
 
   if (!m_bLoadingProfile)
@@ -1367,8 +1367,8 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 void KonqViewManager::setProfiles( KActionMenu *profiles )
 {
     m_pamProfiles = profiles;
-    connect(m_pamProfiles->menu(), SIGNAL(triggered(QAction *)),
-            this, SLOT(slotProfileActivated(QAction *)));
+    connect(m_pamProfiles->menu(), SIGNAL(triggered(QAction*)),
+            this, SLOT(slotProfileActivated(QAction*)));
     connect(m_pamProfiles->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotProfileListAboutToShow()));
     //KonqMainWindow::enableAllActions will call it anyway
@@ -1607,7 +1607,7 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
 #endif
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
     // Delay the opening of the URL for #106641
-    bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*, KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*, KUrl)), Qt::QueuedConnection);
+    bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*,KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*,KUrl)), Qt::QueuedConnection);
     Q_ASSERT(ok);
     Q_UNUSED(ok);
     applyConfiguration();

@@ -96,7 +96,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 
   query = new KQuery(frame);
     connect(query, SIGNAL(result(int)), SLOT(slotResult(int)));
-    connect(query, SIGNAL(foundFileList(QList< QPair<KFileItem,QString> >)), SLOT(addFiles(QList< QPair<KFileItem,QString> >)));
+    connect(query, SIGNAL(foundFileList(QList<QPair<KFileItem,QString> >)), SLOT(addFiles(QList<QPair<KFileItem,QString> >)));
 
   KHelpMenu *helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), true);
   setButtonMenu( Help, helpMenu->menu() );
@@ -146,8 +146,8 @@ void KfindDlg::startSearch()
 
   delete dirwatch;
   dirwatch=new KDirWatch();
-  connect(dirwatch, SIGNAL(created(const QString&)), this, SLOT(slotNewItems(const QString&)));
-  connect(dirwatch, SIGNAL(deleted(const QString&)), this, SLOT(slotDeleteItem(const QString&)));
+  connect(dirwatch, SIGNAL(created(QString)), this, SLOT(slotNewItems(QString)));
+  connect(dirwatch, SIGNAL(deleted(QString)), this, SLOT(slotDeleteItem(QString)));
   dirwatch->addDir(query->url().path(), KDirWatch::WatchFiles);
 
 #if 0

@@ -45,7 +45,7 @@ KQuery::KQuery(QObject *parent)
   processLocate = new KProcess(this);
   connect(processLocate,SIGNAL(readyReadStandardOutput()),this,SLOT(slotreadyReadStandardOutput()));
   connect(processLocate,SIGNAL(readyReadStandardError()),this,SLOT(slotreadyReadStandardError()));
-  connect(processLocate,SIGNAL(finished(int, QProcess::ExitStatus)),this,SLOT(slotendProcessLocate(int, QProcess::ExitStatus)));
+  connect(processLocate,SIGNAL(finished(int,QProcess::ExitStatus)),this,SLOT(slotendProcessLocate(int,QProcess::ExitStatus)));
 
   // Files with these mime types can be ignored, even if
   // findFormatByFileContent() in some cases may claim that
@@ -120,10 +120,10 @@ void KQuery::start()
     else
       job = KIO::listDir( m_url, KIO::HideProgressInfo );
 
-    connect(job, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
-        SLOT(slotListEntries(KIO::Job *, const KIO::UDSEntryList &)));
-    connect(job, SIGNAL(result(KJob *)), SLOT(slotResult(KJob *)));
-    connect(job, SIGNAL(canceled(KJob *)), SLOT(slotCanceled(KJob *)));
+    connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
+        SLOT(slotListEntries(KIO::Job*,KIO::UDSEntryList)));
+    connect(job, SIGNAL(result(KJob*)), SLOT(slotResult(KJob*)));
+    connect(job, SIGNAL(canceled(KJob*)), SLOT(slotCanceled(KJob*)));
   }
 }
 

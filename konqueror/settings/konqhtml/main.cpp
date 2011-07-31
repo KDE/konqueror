@@ -88,11 +88,11 @@ KJSParts::KJSParts(QWidget *parent, const QVariantList&)
   // ### the groupname is duplicated in KJSParts::save
   java = new KJavaOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
   tab->addTab( java, i18n( "&Java" ) );
-  connect( java, SIGNAL( changed( bool ) ), SIGNAL( changed( bool ) ) );
+  connect( java, SIGNAL(changed(bool)), SIGNAL(changed(bool)) );
 
   javascript = new KJavaScriptOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
   tab->addTab( javascript, i18n( "Java&Script" ) );
-  connect( javascript, SIGNAL( changed( bool ) ), SIGNAL( changed( bool ) ) );
+  connect( javascript, SIGNAL(changed(bool)), SIGNAL(changed(bool)) );
 }
 
 void KJSParts::load()
