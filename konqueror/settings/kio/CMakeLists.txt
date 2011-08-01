@@ -11,9 +11,6 @@ set(kcm_kio_PART_SRCS
     kcookiespolicyselectiondlg.cpp
     smbrodlg.cpp
     useragentdlg.cpp
-    kproxydlgbase.cpp
-    kmanualproxydlg.cpp
-    kenvvarproxydlg.cpp
     kproxydlg.cpp
     useragentinfo.cpp
     useragentselectordlg.cpp
@@ -27,8 +24,6 @@ kde4_add_ui_files(kcm_kio_PART_SRCS
     cache.ui
     useragentselectordlg.ui
     useragentdlg.ui
-    manualproxy.ui
-    envvarproxy.ui
     kproxydlg.ui
     kcookiespolicies.ui
     kcookiesmanagement.ui

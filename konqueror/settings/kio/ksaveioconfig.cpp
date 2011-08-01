@@ -26,9 +26,10 @@
 // KDE
 #include <kconfig.h>
 #include <klocale.h>
+#include <kdebug.h>
 #include <kmessagebox.h>
-#include <kio/ioslave_defaults.h>
 #include <kconfiggroup.h>
+#include <kio/ioslave_defaults.h>
 
 class KSaveIOConfigPrivate
 {
@@ -42,7 +43,8 @@ public:
 
 K_GLOBAL_STATIC(KSaveIOConfigPrivate, d)
 
-KSaveIOConfigPrivate::KSaveIOConfigPrivate (): config(0), http_config(0)
+KSaveIOConfigPrivate::KSaveIOConfigPrivate ()
+                     : config(0), http_config(0)
 {
 }
 
@@ -68,6 +70,19 @@ static KConfig* http_config()
   return d->http_config;
 }
 
+int KSaveIOConfig::proxyDisplayUrlFlags()
+{
+    KConfigGroup cfg (config(), QString());
+    return cfg.readEntry("ProxyUrlDisplayFlags", 0);
+}
+
+void KSaveIOConfig::setProxyDisplayUrlFlags (int flags)
+{
+    KConfigGroup cfg (config(), QString());
+    cfg.writeEntry("ProxyUrlDisplayFlags", flags);
+    cfg.sync();
+}
+
 void KSaveIOConfig::reparseConfiguration ()
 {
   delete d->config;
@@ -78,170 +93,144 @@ void KSaveIOConfig::reparseConfiguration ()
 
 void KSaveIOConfig::setReadTimeout( int _timeout )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry("ReadTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry("ReadTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
+  cfg.sync();
 }
 
 void KSaveIOConfig::setConnectTimeout( int _timeout )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry("ConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry("ConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
+  cfg.sync();
 }
 
 void KSaveIOConfig::setProxyConnectTimeout( int _timeout )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry("ProxyConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry("ProxyConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
+  cfg.sync();
 }
 
 void KSaveIOConfig::setResponseTimeout( int _timeout )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry("ResponseTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry("ResponseTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
+  cfg.sync();
 }
 
 
 void KSaveIOConfig::setMarkPartial( bool _mode )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry( "MarkPartial", _mode );
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry( "MarkPartial", _mode );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setMinimumKeepSize( int _size )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry( "MinimumKeepSize", _size );
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry( "MinimumKeepSize", _size );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setAutoResume( bool _mode )
 {
-  KConfig* cfg = config();
-  cfg->group("").writeEntry( "AutoResume", _mode );
-  cfg->sync();
+  KConfigGroup cfg (config(), QString());
+  cfg.writeEntry( "AutoResume", _mode );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setUseCache( bool _mode )
 {
-  KConfig* cfg = http_config();
-  cfg->group("").writeEntry( "UseCache", _mode );
-  cfg->sync();
+  KConfigGroup cfg (http_config(), QString());
+  cfg.writeEntry( "UseCache", _mode );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setMaxCacheSize( int cache_size )
 {
-  KConfig* cfg = http_config();
-  cfg->group("").writeEntry( "MaxCacheSize", cache_size );
-  cfg->sync();
+  KConfigGroup cfg (http_config(), QString());
+  cfg.writeEntry( "MaxCacheSize", cache_size );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setCacheControl(KIO::CacheControl policy)
 {
-  KConfig* cfg = http_config();
+  KConfigGroup cfg (http_config(), QString());
   QString tmp = KIO::getCacheControlString(policy);
-  cfg->group("").writeEntry("cache", tmp);
-  cfg->sync();
+  cfg.writeEntry("cache", tmp);
+  cfg.sync();
 }
 
 void KSaveIOConfig::setMaxCacheAge( int cache_age )
 {
-  KConfig* cfg = http_config();
-  cfg->group("").writeEntry( "MaxCacheAge", cache_age );
-  cfg->sync();
+  KConfigGroup cfg (http_config(), QString());
+  cfg.writeEntry( "MaxCacheAge", cache_age );
+  cfg.sync();
 }
 
 void KSaveIOConfig::setUseReverseProxy( bool mode )
 {
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry("ReversedException", mode);
-  cfg->sync();
+  KConfigGroup cfg (config(), "Proxy Settings");
+  cfg.writeEntry("ReversedException", mode);
+  cfg.sync();
 }
 
 void KSaveIOConfig::setProxyType(KProtocolManager::ProxyType type)
 {
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry( "ProxyType", static_cast<int>(type) );
-  cfg->sync();
-}
-
-void KSaveIOConfig::setProxyAuthMode(KProtocolManager::ProxyAuthMode mode)
-{
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry( "AuthMode", static_cast<int>(mode) );
-  cfg->sync();
+  KConfigGroup cfg (config(), "Proxy Settings");
+  cfg.writeEntry("ProxyType", static_cast<int>(type));
+  cfg.sync();
 }
 
 void KSaveIOConfig::setNoProxyFor( const QString& _noproxy )
 {
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry( "NoProxyFor", _noproxy );
-  cfg->sync();
+  KConfigGroup cfg (config(), "Proxy Settings");
+  cfg.writeEntry("NoProxyFor", _noproxy);
+  cfg.sync();
 }
 
 void KSaveIOConfig::setProxyFor( const QString& protocol,
                                  const QString& _proxy )
 {
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry( protocol.toLower() + "Proxy", _proxy );
-  cfg->sync();
+  KConfigGroup cfg (config(), "Proxy Settings");
+  cfg.writeEntry(protocol.toLower() + "Proxy", _proxy);
+  cfg.sync();
 }
 
 void KSaveIOConfig::setProxyConfigScript( const QString& _url )
 {
-  KConfig* cfg = config();
-  cfg->group("Proxy Settings").writeEntry( "Proxy Config Script", _url );
-  cfg->sync();
-}
-
-void KSaveIOConfig::setPersistentProxyConnection( bool enable )
-{
-  KConfig* cfg = config();
-  cfg->group("").writeEntry( "PersistentProxyConnection", enable );
-  cfg->sync();
-}
-
-void KSaveIOConfig::setPersistentConnections( bool enable )
-{
-  KConfig* cfg = config();
-  cfg->group("").writeEntry( "PersistentConnections", enable );
-  cfg->sync();
+  KConfigGroup cfg (config(), "Proxy Settings");
+  cfg.writeEntry("Proxy Config Script", _url);
+  cfg.sync();
 }
 
 void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
 {
   // Inform all running io-slaves about the changes...
   // if we cannot update, ioslaves inform the end user...
-  QDBusMessage message =
-          QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration");
+  QDBusMessage message = QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration");
   message << QString();
   if (!QDBusConnection::sessionBus().send(message))
   {
-    QString caption = i18nc("@title:window", "Update Failed");
-    QString message = i18n("You have to restart the running applications "
-                           "for these changes to take effect.");
-    KMessageBox::information (parent, message, caption);
-    return;
+    KMessageBox::information (parent,
+                              i18n("You have to restart the running applications "
+                                   "for these changes to take effect."),
+                              i18nc("@title:window", "Update Failed"));
   }
 }
 
 void KSaveIOConfig::updateProxyScout( QWidget * parent )
 {
-  // Inform the proxyscout kded module about changes
-  // if we cannot update, ioslaves inform the end user...
-    QDBusInterface kded("org.kde.kded", "/modules/proxyscout", "org.kde.KPAC.ProxyScout");
-    QDBusReply<void> reply = kded.call( "reset" );
+  // Inform the proxyscout kded module about changes if we cannot update,
+  // ioslaves inform the end user...
+  QDBusInterface kded("org.kde.kded", "/modules/proxyscout", "org.kde.KPAC.ProxyScout");
+  QDBusReply<void> reply = kded.call("reset");
   if (!reply.isValid())
   {
-    QString caption = i18nc("@title:window", "Update Failed");
-    QString message = i18n("You have to restart KDE "
-                           "for these changes to take effect.");
-    KMessageBox::information (parent, message, caption);
-    return;
+    KMessageBox::information (parent,
+                              i18n("You have to restart KDE for these changes to take effect."),
+                              i18nc("@title:window", "Update Failed"));
   }
 }
-

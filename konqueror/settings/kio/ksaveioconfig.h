@@ -26,60 +26,56 @@ class QWidget;
 
 namespace KSaveIOConfig
 {
-  /* Reload config file (kioslaverc) */
-  void reparseConfiguration();
+int proxyDisplayUrlFlags();
+void setProxyDisplayUrlFlags (int);
 
-  /** Timeout Settings */
-  void setReadTimeout( int );
+/* Reload config file (kioslaverc) */
+void reparseConfiguration();
 
-  void setConnectTimeout( int );
+/** Timeout Settings */
+void setReadTimeout (int);
 
-  void setProxyConnectTimeout( int );
+void setConnectTimeout (int);
 
-  void setResponseTimeout( int );
+void setProxyConnectTimeout (int);
 
-
-  /** Cache Settings */
-  void setMaxCacheAge( int );
-
-  void setUseCache( bool );
-
-  void setMaxCacheSize( int );
-
-  void setCacheControl( KIO::CacheControl );
+void setResponseTimeout (int);
 
 
-  /** Proxy Settings */
-  void setUseReverseProxy( bool );
+/** Cache Settings */
+void setMaxCacheAge (int);
 
-  void setProxyType( KProtocolManager::ProxyType );
+void setUseCache (bool);
 
-  void setProxyAuthMode( KProtocolManager::ProxyAuthMode );
+void setMaxCacheSize (int);
 
-  void setProxyConfigScript( const QString&  );
-
-  void setProxyFor( const QString&, const QString&  );
-
-  void setNoProxyFor( const QString& );
+void setCacheControl (KIO::CacheControl);
 
 
-  /** Miscellaneous Settings */
-  void setMarkPartial( bool );
+/** Proxy Settings */
+void setUseReverseProxy (bool);
 
-  void setMinimumKeepSize( int );
+void setProxyType (KProtocolManager::ProxyType);
 
-  void setAutoResume( bool );
+void setProxyConfigScript (const QString&);
 
-  void setPersistentConnections( bool );
+void setProxyFor (const QString&, const QString&);
 
-  void setPersistentProxyConnection( bool );
+void setNoProxyFor (const QString&);
 
 
-  /** Update all running io-slaves */
-  void updateRunningIOSlaves (QWidget * parent = 0L);
+/** Miscellaneous Settings */
+void setMarkPartial (bool);
 
-  /** Update proxy scout */
-  void updateProxyScout( QWidget * parent = 0L );
+void setMinimumKeepSize (int);
+
+void setAutoResume (bool);
+
+/** Update all running io-slaves */
+void updateRunningIOSlaves (QWidget* parent = 0L);
+
+/** Update proxy scout */
+void updateProxyScout (QWidget* parent = 0L);
 }
 
 #endif
