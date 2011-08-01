@@ -1,7 +1,7 @@
 /*
    kproxydlg.h - Proxy configuration dialog
 
-   Copyright (C) 2001- Dawit Alemayehu <adawit@kde.org>
+   Copyright (C) 2001, 2011 Dawit Alemayehu <adawit@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -23,36 +23,48 @@
 #define KPROXYDLG_H
 
 #include <kcmodule.h>
-#include "kproxydlgbase.h"
 #include "ui_kproxydlg.h"
 
 class KProxyDialog : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  KProxyDialog(QWidget *parent, const QVariantList &args);
-  ~KProxyDialog();
+    enum DisplayUrlFlag {
+        HideNone = 0x00,
+        HideHttpUrlScheme = 0x01,
+        HideHttpsUrlScheme = 0x02,
+        HideFtpUrlScheme = 0x04,
+        HideSocksUrlScheme = 0x08
+    };
+    Q_DECLARE_FLAGS(DisplayUrlFlags, DisplayUrlFlag)
 
-  virtual void load();
-  virtual void save();
-  virtual void defaults();
-  QString quickHelp() const;
+    KProxyDialog(QWidget* parent, const QVariantList& args);
+    ~KProxyDialog();
+
+    virtual void load();
+    virtual void save();
+    virtual void defaults();
+    QString quickHelp() const;
 
 private Q_SLOTS:
-  void slotChanged();
-  void slotUseProxyChanged();
+    void on_autoDetectButton_clicked();
+    void on_showEnvValueCheckBox_toggled(bool);
+    void on_useSameProxyCheckBox_clicked(bool);
 
-  void setupManProxy();
-  void setupEnvProxy();
+    void on_manualProxyHttpEdit_textChanged(const QString&);
+    void on_manualNoProxyEdit_textChanged(const QString&);    
+    void on_manualProxyHttpEdit_textEdited(const QString&);
+    void on_manualProxyHttpSpinBox_valueChanged(int);
+
+    void slotChanged();
 
 private:
-  void showInvalidMessage( const QString& _msg = QString() );
-
-private:
-  Ui::KProxyDialogUI mUi;
-  KProxyData mData;
-  bool mDefaultData;
+    Ui::ProxyDialogUI mUi;
+    QStringList mNoProxyForList;
+    QMap<QString, QString> mProxyMap;
 };
+
+Q_DECLARE_OPERATORS_FOR_FLAGS (KProxyDialog::DisplayUrlFlags)
 
 #endif // KPROXYDLG_H
