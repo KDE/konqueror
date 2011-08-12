@@ -78,6 +78,7 @@ KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget* parent) :
     d->m_closeButton->setAutoRaise(true);
     d->m_closeButton->setIcon(KIcon("dialog-close"));
     d->m_closeButton->setToolTip(i18nc("@info", "Close"));
+    d->m_closeButton->setAccessibleName(i18n("Close"));
     d->m_closeButton->hide();
     connect(d->m_closeButton, SIGNAL(clicked()),
             this, SLOT(closeErrorMessage()));
@@ -154,6 +155,13 @@ void KonqStatusBarMessageLabel::setMessage(const QString& text,
 
     d->m_pixmap = (iconName == 0) ? QPixmap() : SmallIcon(iconName);
     QTimer::singleShot(GeometryTimeout, this, SLOT(assureVisibleText()));
+
+    if (type == Error) {
+        setAccessibleName(i18n("Error: %1", text));
+    } else {
+        setAccessibleName(text);
+    }
+
     update();
 }
 
