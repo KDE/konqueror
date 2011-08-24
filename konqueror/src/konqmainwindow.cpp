@@ -4923,7 +4923,11 @@ void KonqMainWindow::slotInternalViewModeChanged()
 void KonqMainWindow::plugViewModeActions()
 {
     QList<QAction*> lst;
-    lst.append( m_viewModeMenu );
+
+    if (m_viewModeMenu) {
+        lst.append( m_viewModeMenu );
+    }
+
     plugActionList( "viewmode", lst );
 }
 
