@@ -873,7 +873,7 @@ void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url
         connect(m_passwordBar, SIGNAL(saveFormDataRejected(QString)),
                 wallet, SLOT(rejectSaveFormDataRequest(QString)));
         connect(m_passwordBar, SIGNAL(done()),
-                wallet, SLOT(slotSaveFormDataDone()));
+                this, SLOT(slotSaveFormDataDone()));
     }
 
     Q_ASSERT(m_passwordBar);
