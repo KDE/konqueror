@@ -183,7 +183,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
 KWebKitPart::~KWebKitPart()
 {
-    m_browserExtension->saveHistoryState();
 }
 
 

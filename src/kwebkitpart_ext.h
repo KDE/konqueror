@@ -30,6 +30,7 @@
 class KUrl;
 class KWebKitPart;
 class WebView;
+class KSaveFile;
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
 {
@@ -40,7 +41,6 @@ public:
                            const QString& historyFileName);
     ~WebKitBrowserExtension();
 
-    void saveHistoryState();
     virtual int xOffset();
     virtual int yOffset();
     virtual void saveState(QDataStream &);
@@ -99,7 +99,7 @@ private:
     WebView* view();
     QWeakPointer<KWebKitPart> m_part;
     QWeakPointer<WebView> m_view;
-    QString m_historyFileName;
+    KSaveFile* m_historyContentSaver;
 };
 
 /**
