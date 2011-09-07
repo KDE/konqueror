@@ -555,6 +555,10 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     KIO::AccessManager::putReplyOnHold(reply);
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
+        if (qobject_cast<NewWindowPage*>(this) && m_part.data()->url().url() == QL1S("about:blank")) {
+            m_part.data()->closeUrl();
+            delete m_part.data();
+        }
         return;
     }
 #else
