@@ -317,6 +317,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
             // We have it already, we could just call asyncDrop.
             // But popping up a menu in the middle of a DND operation confuses and crashes Qt (#157630)
             // So let's delay it.
+            qRegisterMetaType<KFileItem>("KFileItem");
             QMetaObject::invokeMethod(op, "asyncDrop", Qt::QueuedConnection, Q_ARG(KFileItem, destItem));
         }
         else
