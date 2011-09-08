@@ -544,6 +544,11 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     }
 }
 
+static bool isBlankUrl(const KUrl& url)
+{
+    return (url.isEmpty() || url.url() == QL1S("about:blank"));
+}
+
 void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 {
     kDebug() << reply->url();
@@ -555,9 +560,14 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     KIO::AccessManager::putReplyOnHold(reply);
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
-        if (qobject_cast<NewWindowPage*>(this) && m_part.data()->url().url() == QL1S("about:blank")) {
+        kDebug() << "*******" << m_part.data()->arguments().metaData() << m_part.data()->url();
+        if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part.data()->url())) {
             m_part.data()->closeUrl();
-            delete m_part.data();
+            if (m_part.data()->arguments().metaData().contains(QL1S("new-window"))) {
+                m_part.data()->widget()->topLevelWidget()->close();
+            } else {
+                delete m_part.data();
+            }
         }
         return;
     }
@@ -837,8 +847,13 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         part()->browserExtension()->createNewWindow(KUrl(), uargs, bargs, wargs, &newWindowPart);
         kDebug() << "Created new window" << newWindowPart;
 
-        if (!newWindowPart)
+        if (!newWindowPart) {
             return false;
+        } else if (newWindowPart->widget()->topLevelWidget() != part()->widget()->topLevelWidget()) {
+            KParts::OpenUrlArguments args;
+            args.metaData().insert(QL1S("new-window"), QL1S("true"));
+            newWindowPart->setArguments(args);
+        }
 
         // Get the webview...
         KWebKitPart* webkitPart = qobject_cast<KWebKitPart*>(newWindowPart);
@@ -930,6 +945,12 @@ void NewWindowPage::slotLoadFinished(bool ok)
     WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
 
     if (webView) {
+        // if a new window is created, set a new window meta-data flag.
+        if (newWindowPart->widget()->topLevelWidget() != part()->widget()->topLevelWidget()) {
+            KParts::OpenUrlArguments args;
+            args.metaData().insert(QL1S("new-window"), QL1S("true"));
+            newWindowPart->setArguments(args);
+        }
         // Reparent this page to the new webview to prevent memory leaks.
         setParent(webView);
         // Replace the webpage of the new webview with this one. Nice trick...
