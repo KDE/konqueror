@@ -99,7 +99,8 @@ private:
     WebView* view();
     QWeakPointer<KWebKitPart> m_part;
     QWeakPointer<WebView> m_view;
-    KSaveFile* m_historyContentSaver;
+    QString m_historyFileName;
+    QByteArray m_historyHash;
 };
 
 /**
