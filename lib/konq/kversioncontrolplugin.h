@@ -30,55 +30,13 @@ class QAction;
 /**
  * @brief Base class for version control plugins.
  *
- * Enables the file manager to show the version state
- * of a versioned file. To write a custom plugin, the following
- * steps are required (in the example below it is assumed that a plugin for
- * Subversion will be written):
- *
- * - Create a fileviewsvnplugin.desktop file with the following content:
- *   <code>
- *   [Desktop Entry]
- *   Type=Service
- *   Name=Subversion
- *   X-KDE-ServiceTypes=FileViewVersionControlPlugin
- *   MimeType=text/plain;
- *   X-KDE-Library=fileviewsvnplugin
- *   </code>
- *
- * - Create a class FileViewSvnPlugin derived from KVersionControlPlugin and
- *   implement all abstract interfaces (fileviewsvnplugin.h, fileviewsvnplugin.cpp).
- *
- * - Take care that the constructor has the following signature:
- *   <code>
- *   FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args);
- *   </code>
- *
- * - Add the following lines at the top of fileviewsvnplugin.cpp:
- *   <code>
- *   #include <KPluginFactory>
- *   #include <KPluginLoader>
- *   K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
- *   K_EXPORT_PLUGIN(FileViewSvnPluginFactory("fileviewsvnplugin"))
- *   </code>
- *
- * - Add the following lines to your CMakeLists.txt file:
- *   <code>
- *   kde4_add_plugin(fileviewsvnplugin fileviewsvnplugin.cpp)
- *   target_link_libraries(fileviewsvnplugin konq)
- *   install(FILES fileviewsvnplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
- *   </code>
- *
- * General implementation notes:
- *
- *  - The implementations of beginRetrieval(), endRetrieval() and versionState()
- *    can contain blocking operations, as Dolphin will execute
- *    those methods in a separate thread. It is assured that
- *    all other methods are invoked in a serialized way, so that it is not necessary for
- *    the plugin to use any mutex.
- *
- * -  Dolphin keeps only one instance of the plugin, which is instantiated shortly after
- *    starting Dolphin. Take care that the constructor does no expensive and time
- *    consuming operations.
+ * It is recommended to use the KVersionControlPlugin2 interface. KVersionControlPlugin2
+ * allows having context menu actions also for non-versioned directories and provides
+ * some interface cleanups. It replaces:
+ * - contextMenuActions() by KVersionControlPlugin2::actions()
+ * - versionState() by KVersionControlPlugin2::itemVersion()
+ * - versionStatesChanged() by KVersionControlPlugin2::itemVersionsChanged()
+ * - VersionState by ItemState
  *
  * @since 4.4
  */
@@ -163,8 +121,9 @@ public:
      * It is assured that KVersionControlPlugin::beginInfoRetrieval() has been
      * invoked before and that the file is part of the directory specified
      * in beginInfoRetrieval().
+     *
+     * @deprecated Use KVersionControlPlugin2::itemVersion() instead.
      */
-    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual VersionState versionState(const KFileItem& item) = 0;
     
     /**
@@ -172,16 +131,18 @@ public:
      * for the files \p items. It is assured that the passed list is not empty.
      * If an action triggers a change of the versions, the signal
      * KVersionControlPlugin::versionStatesChanged() must be emitted.
+     *
+     * @deprecated Use KVersionControlPlugin2::actions() instead.
      */
-    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual QList<QAction*> contextMenuActions(const KFileItemList& items) = 0;
 
     /**
      * Returns the list of actions that should be shown in the context menu
      * for the directory \p directory. If an action triggers a change of the versions,
      * the signal KVersionControlPlugin::versionStatesChanged() must be emitted.
+     *
+     * @deprecated Use KVersionControlPlugin2::actions() instead.
      */
-    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual QList<QAction*> contextMenuActions(const QString& directory) = 0;
 
 signals:
@@ -193,6 +154,8 @@ signals:
      * KVersionControlPlugin::beginRetrieval(),
      * KVersionControlPlugin::versionState() and
      * KVersionControlPlugin::endRetrieval().
+     *
+     * @deprecated Use KVersionControlPlugin2::itemVersionsChanged() instead.
      */
     void versionStatesChanged();
 
