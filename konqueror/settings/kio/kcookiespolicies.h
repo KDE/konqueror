@@ -34,15 +34,6 @@
 
 class QTreeWidgetItem;
 
-class KCookiesPolicyDlgUI : public QWidget, public Ui::KCookiesPolicyDlgUI
-{
-public:
-  KCookiesPolicyDlgUI( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-
 class KCookiesPolicies : public KCModule
 {
     Q_OBJECT
@@ -80,7 +71,7 @@ private:
 
 private:
     int d_itemsSelected;
-    KCookiesPolicyDlgUI* dlg;
+    Ui::KCookiesPolicyDlgUI mUi;
     QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
 };
 
