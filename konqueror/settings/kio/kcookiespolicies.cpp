@@ -27,6 +27,9 @@
 // Own
 #include "kcookiespolicies.h"
 
+// Local
+#include "ksaveioconfig.h"
+
 // Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
@@ -44,7 +47,6 @@
 #include <kurl.h>
 #include <kdebug.h>
 
-#include "ksaveioconfig.h"
 
 // QUrl::fromAce/toAce don't accept a domain that starts with a '.', like we do here.
 // So we use these wrappers.
@@ -169,7 +171,8 @@ void KCookiesPolicies::autoAcceptSessionCookies (bool enable)
 
 void KCookiesPolicies::addNewPolicy (const QString& domain)
 {
-    PolicyDlg pdlg (i18nc ("@title:window", "New Cookie Policy"), this);
+    KCookiesPolicySelectionDlg pdlg (this);
+    pdlg.setWindowTitle (i18nc ("@title:window", "New Cookie Policy"));
     pdlg.setEnableHostEdit (true, domain);
 
     if (mUi.rbPolicyAccept->isChecked())
@@ -206,7 +209,8 @@ void KCookiesPolicies::changePressed()
 
     QString oldDomain = index->text (0);
 
-    PolicyDlg pdlg (i18nc ("@title:window", "Change Cookie Policy"), this);
+    KCookiesPolicySelectionDlg pdlg (this);
+    pdlg.setWindowTitle (i18nc ("@title:window", "Change Cookie Policy"));
     pdlg.setPolicy (KCookieAdvice::strToAdvice (m_pDomainPolicy[index]));
     pdlg.setEnableHostEdit (true, oldDomain);
 
