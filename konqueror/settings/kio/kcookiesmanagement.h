@@ -28,7 +28,7 @@
 #include <QtCore/QHash>
 
 #include <kcmodule.h>
-#include "ui_kcookiesmanagementdlg.h"
+#include "ui_kcookiesmanagement.h"
 
 struct CookieProp;
 
@@ -83,7 +83,7 @@ private:
     
     bool mDeleteAllFlag;
     QWidget* mMainWidget;
-    Ui::KCookiesManagementDlgUI mUi;
+    Ui::KCookiesManagementUI mUi;
 
     QStringList mDeletedDomains;
     typedef QList<CookieProp *> CookiePropList;

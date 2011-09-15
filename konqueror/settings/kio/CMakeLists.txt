@@ -4,17 +4,17 @@ add_subdirectory( uasproviders )
 ########### next target ###############
 
 set(kcm_kio_PART_SRCS
-    policydlg.cpp
+    main.cpp
     kcookiesmain.cpp
     kcookiespolicies.cpp
-    main.cpp
+    kcookiesmanagement.cpp
+    kcookiespolicyselectiondlg.cpp
     smbrodlg.cpp
     useragentdlg.cpp
     kproxydlgbase.cpp
     kmanualproxydlg.cpp
     kenvvarproxydlg.cpp
     kproxydlg.cpp
-    kcookiesmanagement.cpp
     useragentinfo.cpp
     useragentselectordlg.cpp
     netpref.cpp
@@ -22,8 +22,17 @@ set(kcm_kio_PART_SRCS
     bookmarks.cpp
     ksaveioconfig.cpp)
 
-
-kde4_add_ui_files(kcm_kio_PART_SRCS bookmarks.ui cache.ui manualproxy.ui envvarproxy.ui policydlg.ui useragentselectordlg.ui kcookiesmanagementdlg.ui useragentdlg.ui kproxydlg.ui kcookiespoliciesdlg.ui kcookiesmanagementdlg.ui)
+kde4_add_ui_files(kcm_kio_PART_SRCS
+    bookmarks.ui
+    cache.ui
+    useragentselectordlg.ui
+    useragentdlg.ui
+    manualproxy.ui
+    envvarproxy.ui
+    kproxydlg.ui
+    kcookiespolicies.ui
+    kcookiesmanagement.ui
+    kcookiespolicyselectiondlg.ui)
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})
 

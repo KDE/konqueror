@@ -22,33 +22,33 @@
 // KDE
 #include <kdialog.h>
 
+#include "ui_useragentselectordlg.h"
+
 // Forward declarations
 class UserAgentInfo;
-class UserAgentSelectorWidget;
 
 class UserAgentSelectorDlg : public KDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit UserAgentSelectorDlg( const QString& caption, UserAgentInfo* info,
-                          QWidget *parent = 0, Qt::WindowFlags f = 0 );
-  ~UserAgentSelectorDlg();
+    explicit UserAgentSelectorDlg (UserAgentInfo* info, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ~UserAgentSelectorDlg();
 
-  void setSiteName( const QString& );
-  void setIdentity( const QString& );
+    void setSiteName (const QString&);
+    void setIdentity (const QString&);
 
-  QString siteName();
-  QString identity();
-  QString alias();
+    QString siteName();
+    QString identity();
+    QString alias();
 
 protected Q_SLOTS:
-  void onHostNameChanged( const QString& );
-  void onAliasChanged( const QString& );
+    void onHostNameChanged (const QString&);
+    void onAliasChanged (const QString&);
 
 private:
-  UserAgentInfo* m_userAgentInfo;
-  UserAgentSelectorWidget* m_widget;
+    UserAgentInfo* mUserAgentInfo;
+    Ui::UserAgentSelectorUI mUi;
 };
 
 #endif // USERAGENTSELECTORDLG_H

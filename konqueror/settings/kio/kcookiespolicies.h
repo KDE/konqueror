@@ -29,8 +29,9 @@
 #include <QtCore/QMap>
 #include <kcmodule.h>
 
-#include "policydlg.h"
-#include "ui_kcookiespoliciesdlg.h"
+#include "kcookiespolicyselectiondlg.h"
+#include "ui_kcookiespolicies.h"
+
 
 class QTreeWidgetItem;
 
@@ -71,7 +72,7 @@ private:
 
 private:
     int d_itemsSelected;
-    Ui::KCookiesPolicyDlgUI mUi;
+    Ui::KCookiePoliciesUI mUi;
     QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
 };
 
