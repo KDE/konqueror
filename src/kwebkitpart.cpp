@@ -846,10 +846,12 @@ void KWebKitPart::slotPrintRequested(QWebFrame* frame)
     if (!frame)
         return;
 
-    QPrintPreviewDialog dlg(m_webView);
-    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+    // Make it non-modal, in case a redirection deletes the part
+    QPrintPreviewDialog* dlg = new QPrintPreviewDialog(m_webView);
+    connect(dlg, SIGNAL(paintRequested(QPrinter*)),
             frame, SLOT(print(QPrinter*)));
-    dlg.exec();
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    dlg->show();
 }
 
 void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
