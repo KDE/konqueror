@@ -317,6 +317,8 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
   }
+
+  dlg->lvDomainPolicy->sortItems(0, Qt::AscendingOrder);
 }
 
 void KCookiesPolicies::selectionChanged ()
