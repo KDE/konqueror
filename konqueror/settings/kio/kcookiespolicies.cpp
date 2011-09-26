@@ -304,7 +304,9 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
                     i18n (KCookieAdvice::adviceToStr (advice)));
             m_pDomainPolicy[index] = KCookieAdvice::adviceToStr (advice);
         }
-    }
+    }    
+
+    mUi.lvDomainPolicy->sortItems(0, Qt::AscendingOrder);
 }
 
 void KCookiesPolicies::selectionChanged ()
