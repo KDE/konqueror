@@ -18,6 +18,8 @@
  *****************************************************************************/
 
 #include "kversioncontrolplugin2.h"
+#include <KFileItem>
+#include <KFileItemList>
 
 KVersionControlPlugin2::KVersionControlPlugin2(QObject* parent) :
     KVersionControlPlugin(parent)
