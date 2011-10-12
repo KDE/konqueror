@@ -79,7 +79,6 @@ private:
 	KEMailSettings *_kes;
 	KUser *_ku;
 	MainWidget *_mw;
-	FacePerm _facePerm;
 	QPixmap _facePixmap;
 
 };

@@ -148,55 +148,12 @@ void KCMUserAccount::load()
 	_mw->leOrganization->setText( _kes->getSetting( KEMailSettings::Organization ));
 	_mw->leSMTP->setText( _kes->getSetting( KEMailSettings::OutServer ));
 
-	QString _userPicsDir = KCFGUserAccount::faceDir() +
-		KGlobal::dirs()->resourceDirs("data").last() + "kdm/faces/";
-
-	QString fs = KCFGUserAccount::faceSource();
-	if (fs == QLatin1String("UserOnly"))
-		_facePerm = userOnly;
-	else if (fs == QLatin1String("PreferUser"))
-		_facePerm = userFirst;
-	else if (fs == QLatin1String("PreferAdmin"))
-		_facePerm = adminFirst;
-	else
-		_facePerm = adminOnly; // Admin Only
-
-	if ( _facePerm == adminFirst )
-	{ 	// If the administrator's choice takes preference
-		_facePixmap = QPixmap( _userPicsDir + _ku->loginName() + ".face.icon" );
-
-		if ( _facePixmap.isNull() )
-			_facePerm = userFirst;
-		else
-			_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
+	// load user face
+	_facePixmap = QPixmap( KCFGUserAccount::faceFile() );
+	_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
+	if (!_facePixmap.isNull()) {
+		_mw->btnChangeFace->setIconSize(_facePixmap.size());
 	}
-
-	if ( _facePerm >= userFirst )
-	{
-		// If the user's choice takes preference
-		_facePixmap = QPixmap( KCFGUserAccount::faceFile() );
-
-		// The user has no face, should we check for the admin's setting?
-		if ( _facePixmap.isNull() && _facePerm == userFirst )
-			_facePixmap = QPixmap( _userPicsDir + _ku->loginName() + ".face.icon" );
-
-		if ( _facePixmap.isNull() )
-			_facePixmap = QPixmap( _userPicsDir + KCFGUserAccount::defaultFile() );
-
-		_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
-	}
-	else if ( _facePerm <= adminOnly )
-	{
-		// Admin only
-		_facePixmap = QPixmap( _userPicsDir + _ku->loginName() + ".face.icon" );
-		if ( _facePixmap.isNull() )
-			_facePixmap = QPixmap( _userPicsDir + KCFGUserAccount::defaultFile() );
-		_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
-	}
-
-        if (!_facePixmap.isNull()) {
-            _mw->btnChangeFace->setIconSize(_facePixmap.size());
-        }
 
 	KCModule::load(); /* KConfigXT */
 
@@ -267,9 +224,6 @@ void KCMUserAccount::save()
 
 void KCMUserAccount::changeFace(const QPixmap &pix)
 {
-  if ( _facePerm < userFirst )
-    return; // If the user isn't allowed to change their face, don't!
-
   if ( pix.isNull() ) {
     KMessageBox::sorry( this, i18n("There was an error loading the image.") );
     return;
@@ -283,12 +237,6 @@ void KCMUserAccount::changeFace(const QPixmap &pix)
 
 void KCMUserAccount::slotFaceButtonClicked()
 {
-  if ( _facePerm < userFirst )
-  {
-    KMessageBox::sorry( this, i18n("Your administrator has disallowed changing your image.") );
-    return;
-  }
-
   ChFaceDlg* pDlg = new ChFaceDlg( KGlobal::dirs()->resourceDirs("data").last() +
 	"/kdm/pics/users/", this );
 
@@ -317,13 +265,6 @@ bool KCMUserAccount::eventFilter(QObject *, QEvent *e)
 
 	if (e->type() == QEvent::Drop)
 	{
-		if ( _facePerm < userFirst )
-		{
-			KMessageBox::sorry( this, i18n("Your administrator "
-				"has disallowed changing your image.") );
-			return true;
-		}
-
 		KUrl *url = decodeImgDrop( (QDropEvent *) e, this);
 		if (url)
 		{
