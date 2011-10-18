@@ -68,7 +68,9 @@ KCookiesPolicySelectionDlg::KCookiesPolicySelectionDlg (QWidget* parent, Qt::Win
 
     enableButtonOk(false);
     connect(mUi.leDomain, SIGNAL(textEdited(QString)),
-            SLOT(slotTextChanged (QString)));
+            SLOT(slotTextChanged(QString)));
+    connect(mUi.cbPolicy, SIGNAL(currentIndexChanged(QString)),
+            SLOT(slotTextChanged(QString)));
 
     mUi.leDomain->setFocus();
 }
@@ -83,8 +85,11 @@ void KCookiesPolicySelectionDlg::setEnableHostEdit (bool state, const QString& h
 
 void KCookiesPolicySelectionDlg::setPolicy (int policy)
 {
-    if (policy > -1 && policy <= static_cast<int> (mUi.cbPolicy->count()))
+    if (policy > -1 && policy <= static_cast<int> (mUi.cbPolicy->count())) {
+        const bool blocked = mUi.cbPolicy->blockSignals(true);
         mUi.cbPolicy->setCurrentIndex (policy - 1);
+        mUi.cbPolicy->blockSignals(blocked);
+    }
 
     if (!mUi.leDomain->isEnabled())
         mUi.cbPolicy->setFocus();
