@@ -75,8 +75,9 @@ PolicyDlg::PolicyDlg (const QString& caption, QWidget *parent,
   
   enableButtonOk( false );
   connect(m_dlgUI->leDomain, SIGNAL(textChanged(const QString&)),
-    SLOT(slotTextChanged(const QString&)));
-
+          SLOT(slotTextChanged(const QString&)));
+  connect(m_dlgUI->cbPolicy,SIGNAL(currentIndexChanged(QString)),
+          SLOT(slotTextChanged(QString)));
   setFixedSize (sizeHint());
   m_dlgUI->leDomain->setFocus ();
 }
@@ -90,8 +91,11 @@ void PolicyDlg::setEnableHostEdit( bool state, const QString& host )
 
 void PolicyDlg::setPolicy (int policy)
 {
-  if ( policy > -1 && policy <= static_cast<int>(m_dlgUI->cbPolicy->count()) )
+  if ( policy > -1 && policy <= static_cast<int>(m_dlgUI->cbPolicy->count()) ) {
+    const bool blocked = m_dlgUI->cbPolicy->blockSignals(true);
     m_dlgUI->cbPolicy->setCurrentIndex(policy-1);
+    m_dlgUI->cbPolicy->blockSignals(blocked);
+  }
 
   if ( !m_dlgUI->leDomain->isEnabled() )
     m_dlgUI->cbPolicy->setFocus();
