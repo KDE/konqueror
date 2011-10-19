@@ -122,6 +122,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
             }
         }
         m_historyHash = hash;
+        d.close();
     }
 }
 
@@ -144,6 +145,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
         if (file.open(QIODevice::ReadOnly)) {
             QDataStream stream (&file);
             stream >> *history;
+            file.close();
         }
 
         if (file.exists())
