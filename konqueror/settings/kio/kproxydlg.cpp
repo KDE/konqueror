@@ -56,6 +56,9 @@ class InputValidator : public QValidator
 {
 public:
     State validate(QString& input, int& pos) const {
+        if (input.isEmpty())
+            return Acceptable;
+
         const QChar ch = input.at((pos > 0 ? pos - 1 : pos));
         if (ch.isSpace())
             return Invalid;
