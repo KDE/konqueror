@@ -181,8 +181,8 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
 KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QString& _path)
 {
   Q_UNUSED(parent); // Useful if we want to change the error handling again
-  if (!_url.startsWith( "about:" )) // Don't filter "about:" URLs
-  {
+
+  if ( !_url.startsWith( QLatin1String("about:") ) ) { // Don't filter "about:" URLs
     KUriFilterData data(_url);
 
     if( !_path.isEmpty() )
@@ -192,8 +192,7 @@ KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, cons
     // from the location bar.
     data.setCheckForExecutables (false);
 
-    if( KUriFilter::self()->filterUri( data ) )
-    {
+    if( KUriFilter::self()->filterUri( data ) ) {
       if( data.uriType() == KUriFilterData::Error ) {
         if (data.errorMsg().isEmpty()) {
           return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
@@ -204,17 +203,17 @@ KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, cons
         return data.uri();
       }
     }
-  }
-  else if (_url != "about:blank" && _url != "about:plugins" && !_url.startsWith("about:konqueror")) {
-    return KUrl("about:");
+
+    // NOTE: a valid URL like http://kde.org always passes the filtering test.
+    // As such, this point could only be reached when _url is NOT a valid URL.
+    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
   }
 
-  // return the original url if it cannot be filtered. But only if it gives a valid KUrl.
-  KUrl url(_url);
-  if (!url.isValid()) {
-      return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
-  }
-  return url;
+  const bool isKnownAbout = (_url == QLatin1String("about:blank")
+                             || _url == QLatin1String("about:plugins")
+                             || _url.startsWith(QLatin1String("about:konqueror")));
+
+  return isKnownAbout ? KUrl(_url) : KUrl("about:");
 }
 
 QString KonqMisc::defaultProfileName()
