@@ -365,9 +365,9 @@ void KonqFrameTabs::slotSubPopupMenuTabActivated( QAction *action )
 
 void KonqFrameTabs::slotMouseMiddleClick()
 {
-    KonqMainWindow* mainWindow = m_pViewManager->mainWindow();
+  KonqMainWindow* mainWindow = m_pViewManager->mainWindow();
   KUrl filteredURL ( KonqMisc::konqFilteredURL( mainWindow, QApplication::clipboard()->text(QClipboard::Selection) ) );
-  if ( !filteredURL.isEmpty() ) {
+  if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
     KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
     mainWindow->openUrl( newView, filteredURL, QString() );
@@ -382,7 +382,7 @@ void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
         slotCloseRequest(w);
     } else {
         KUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
-        if (!filteredURL.isEmpty()) {
+        if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
             KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
             if (frame) {
                 m_pViewManager->mainWindow()->openUrl(frame->activeChildView(), filteredURL);
