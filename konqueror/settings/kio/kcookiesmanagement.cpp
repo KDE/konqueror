@@ -249,10 +249,9 @@ void KCookiesManagement::on_reloadButton_clicked()
       reset();
 
   CookieListViewItem *dom;
-  QListIterator<QString> it (reply.value());
-  while (it.hasNext())
+  const QStringList domains (reply.value());
+  Q_FOREACH(const QString& domain, domains)
   {
-    const QString domain = it.next();
     const QString siteName = (domain.startsWith(QLatin1Char('.')) ? domain.mid(1) : domain);
     if (mUi.cookiesTreeWidget->findItems(siteName, Qt::MatchFixedString).isEmpty()) {
         dom = new CookieListViewItem(mUi.cookiesTreeWidget, domain);
@@ -278,7 +277,7 @@ void KCookiesManagement::on_cookiesTreeWidget_itemExpanded(QTreeWidgetItem *item
   QList<int> fields;
   fields << 0 << 1 << 2 << 3;  
   // Always check for cookies in both "foo.bar" and ".foo.bar" domains...
-  const QString domain = cookieDom->domain() % QLatin1String(" .") % cookieDom->domain();
+  const QString domain = cookieDom->domain() + QLatin1String(" .") + cookieDom->domain();
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());  
   QDBusReply<QStringList> reply = kded.call("findCookies", QVariant::fromValue(fields),
                                             domain, QString(), QString(), QString());
@@ -362,7 +361,7 @@ void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem
       mUi.secureLineEdit->setText(cookie->secure);
     }
 
-    mUi.changePolicyButton->setEnabled (true);
+    mUi.changePolicyButton->setEnabled(true);
   }
   else
   {
