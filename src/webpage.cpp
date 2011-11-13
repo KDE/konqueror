@@ -258,20 +258,21 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 {
     switch (extension) {
     case QWebPage::ErrorPageExtension: {
-        if (m_ignoreError)
-            break;
-        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
-        if (extOption->domain != QWebPage::QtNetwork)
-            break;
-        QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
-        extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
-        extOutput->baseUrl = extOption->url;
-        return true;
+        if (!m_ignoreError) {
+          const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
+          QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
+          if (extOutput && extOption && extOption->domain == QWebPage::QtNetwork) {
+            extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+            extOutput->baseUrl = extOption->url;
+            return true;
+          }
+        }
+        break;
     }
     case QWebPage::ChooseMultipleFilesExtension: {
         const QWebPage::ChooseMultipleFilesExtensionOption* extOption = static_cast<const QWebPage::ChooseMultipleFilesExtensionOption*> (option);
         QWebPage::ChooseMultipleFilesExtensionReturn *extOutput = static_cast<QWebPage::ChooseMultipleFilesExtensionReturn*>(output);
-        if (currentFrame() == extOption->parentFrame) {
+        if (extOutput && extOption && currentFrame() == extOption->parentFrame) {
             if (extOption->suggestedFileNames.isEmpty())
                 extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(), QString(), view(),
                                                                      i18n("Choose files to upload"));
