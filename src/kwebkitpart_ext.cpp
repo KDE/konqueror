@@ -74,11 +74,11 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
 
 WebView* WebKitBrowserExtension::view()
 {
-    if (!m_part)
-        return 0;
-
-    if (!m_view)
+    if (!m_view) {
+        if (!m_part)
+            return 0;
         m_view = QWeakPointer<WebView>(qobject_cast<WebView*>(m_part.data()->view()));
+    }
 
     return m_view.data();
 }
