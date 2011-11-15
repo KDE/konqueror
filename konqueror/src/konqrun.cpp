@@ -150,7 +150,7 @@ bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror
     else if (mime &&
              (mime->is("text/html")
               || mime->name().startsWith("image/")) // #83513
-             && !m_pView->showsDirectory()) {
+              && (m_pView && !m_pView->showsDirectory())) {
             m_req.forceAutoEmbed = true;
     }
 
