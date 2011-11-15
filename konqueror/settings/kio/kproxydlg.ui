@@ -435,7 +435,7 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="whatsThis">
-           <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
+           <string>Enter the port number of the HTTP proxy server.</string>
           </property>
           <property name="maximum">
            <number>65536</number>
@@ -495,7 +495,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="KIntSpinBox" name="manualProxyHttpsSpinBox">
           <property name="whatsThis">
-           <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
+           <string>Enter the port number of the HTTPS proxy server.</string>
           </property>
           <property name="maximum">
            <number>65536</number>
@@ -548,7 +548,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="KIntSpinBox" name="manualProxyFtpSpinBox">
           <property name="whatsThis">
-           <string>Enter the port number of the FTP proxy server. Default 8080. Another common value is 3128.</string>
+           <string>Enter the port number of the FTP proxy server.</string>
           </property>
           <property name="maximum">
            <number>65536</number>
@@ -598,7 +598,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="KIntSpinBox" name="manualProxySocksSpinBox">
           <property name="whatsThis">
-           <string>Enter the port number of the FTP proxy server. Default 8080. Another common value is 3128.</string>
+           <string>Enter the port number of the SOCKS proxy server.</string>
           </property>
           <property name="maximum">
            <number>65536</number>
