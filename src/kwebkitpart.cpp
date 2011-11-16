@@ -88,6 +88,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_emitOpenUrlNotify(true),
              m_pageRestored(false),
              m_hasCachedFormData(false),
+             m_loadStarted(false),
              m_statusBarWalletLabel(0),
              m_passwordBar(0)
 {
@@ -432,12 +433,17 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
+    m_loadStarted = true;
     emit started(0);
     slotWalletClosed();
 }
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
+    if (!m_loadStarted)
+        return;
+
+    m_loadStarted = false;
     m_emitOpenUrlNotify = true;
 
     if (ok) {
