@@ -63,7 +63,6 @@ K_EXPORT_PLUGIN(SearchBarPluginFactory("searchbarplugin"))
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :
     KParts::Plugin(parent),
-    m_part(0),
     m_popupMenu(0),
     m_addWSWidget(0),
     m_searchMode(UseSearchProvider),
@@ -127,7 +126,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
         KParts::PartActivateEvent* partEvent = static_cast<KParts::PartActivateEvent *>(e);
         KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(partEvent->part());
         //kDebug() << "Embedded part changed to " << part;
-        if (part && (part != m_part)) {
+        if (part && (!m_part || part != m_part.data())) {
             m_part = part;
 
             // Delete the popup menu so a new one can be created with the
@@ -145,8 +144,8 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
             if (m_searchMode == FindInThisPage && enableFindInPage())
               nextSearchEntry();
 
-            connect(m_part, SIGNAL(completed()), this, SLOT(HTMLDocLoaded()));
-            connect(m_part, SIGNAL(started(KIO::Job *)), this, SLOT(HTMLLoadingStarted()));
+            connect(part, SIGNAL(completed()), this, SLOT(HTMLDocLoaded()));
+            connect(part, SIGNAL(started(KIO::Job*)), this, SLOT(HTMLLoadingStarted()));
         }
         // Delay since when destroying tabs part 0 gets activated for a bit, before the proper part
         QTimer::singleShot(0, this, SLOT(updateComboVisibility()));
@@ -213,7 +212,7 @@ void SearchBarPlugin::startSearch(const QString &search)
     m_lastSearch = search;
 
     if (m_searchMode == FindInThisPage) {
-        KParts::TextExtension* textExt = KParts::TextExtension::childObject(m_part);
+        KParts::TextExtension* textExt = KParts::TextExtension::childObject(m_part.data());
         if (textExt)
             textExt->findText(search, 0);
     } else if (m_searchMode == UseSearchProvider) {
@@ -227,7 +226,7 @@ void SearchBarPlugin::startSearch(const QString &search)
             return;
         }
         
-        KParts::BrowserExtension * ext = KParts::BrowserExtension::childObject(m_part);
+        KParts::BrowserExtension * ext = KParts::BrowserExtension::childObject(m_part.data());
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
             KParts::OpenUrlArguments arguments;
             KParts::BrowserArguments browserArguments;
@@ -237,7 +236,8 @@ void SearchBarPlugin::startSearch(const QString &search)
         } else {
             if (ext) {
                 emit ext->openUrlRequest(data.uri());
-                m_part->widget()->setFocus(); // #152923
+                if (m_part)
+                    m_part.data()->widget()->setFocus(); // #152923
             }
         }
     }
@@ -356,7 +356,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
         const QString openSearchHref = m_openSearchDescs.value(openSearchTitle);
         KUrl url;
         if (QUrl(openSearchHref).isRelative()) {
-            KUrl docUrl = m_part->url();
+            const KUrl docUrl = m_part ? m_part.data()->url() : KUrl();
             QString host = docUrl.scheme() + QLatin1String("://") + docUrl.host();
             if (docUrl.port() != -1) {
                 host += QLatin1String(":") + QString::number(docUrl.port());
@@ -373,7 +373,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KRun::runCommand("kcmshell4 ebrowsing", (m_part ? m_part->widget() : 0));
+    KRun::runCommand("kcmshell4 ebrowsing", (m_part ? m_part.data()->widget() : 0));
 }
 
 void SearchBarPlugin::configurationChanged()
@@ -421,9 +421,11 @@ void SearchBarPlugin::reloadConfiguration()
 
 void SearchBarPlugin::updateComboVisibility()
 {
+    if (!m_part)
+        return;
     // NOTE: We hide the search combobox if the embedded kpart is ReadWrite
     // because web browsers by their very nature are ReadOnly kparts...
-    m_searchComboAction->setVisible((!qobject_cast<KParts::ReadWritePart *>(m_part) &&
+    m_searchComboAction->setVisible((!m_part.data()->inherits("ReadWritePart") &&
                                      !m_searchComboAction->associatedWidgets().isEmpty()));
     m_openSearchDescs.clear();
 }
@@ -467,11 +469,11 @@ void SearchBarPlugin::enableSuggestion(bool enable)
 
 void SearchBarPlugin::HTMLDocLoaded()
 {
-    if (!m_part || m_part->url().host().isEmpty())
+    if (!m_part || m_part.data()->url().host().isEmpty())
         return;
     
     // Testcase for this code: http://search.iwsearch.net
-    KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(m_part);
+    KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(m_part.data());
     KParts::SelectorInterface* selectorInterface = qobject_cast<KParts::SelectorInterface*>(ext);
 
     if (selectorInterface) {

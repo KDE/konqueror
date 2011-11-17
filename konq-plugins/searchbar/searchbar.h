@@ -199,7 +199,7 @@ private:
     void nextSearchEntry();
     void previousSearchEntry();
 
-    KParts::ReadOnlyPart* m_part;
+    QWeakPointer<KParts::ReadOnlyPart> m_part;
     SearchBarCombo* m_searchCombo;
     KAction* m_searchComboAction;
     QList<KAction *> m_addSearchActions;
