@@ -87,7 +87,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 
     KAction *a = actionCollection()->addAction("focus_search_bar");
     a->setText(i18n("Focus Searchbar"));
-    a->setShortcut(Qt::CTRL+Qt::Key_S);
+    a->setShortcut(QKeySequence(Qt::CTRL+Qt::ALT+Qt::Key_S));
     connect(a, SIGNAL(triggered()), this, SLOT(focusSearchbar()));
 
     configurationChanged();
