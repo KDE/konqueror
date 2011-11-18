@@ -848,6 +848,9 @@ const HistoryEntry * KonqView::historyAt(int pos)
 
 void KonqView::copyHistory( KonqView *other )
 {
+    if (!other)
+        return;
+
     qDeleteAll( m_lstHistory );
     m_lstHistory.clear();
 
