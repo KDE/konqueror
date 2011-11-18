@@ -79,14 +79,20 @@ void KWebKitFactory::slotSaveYourself()
 
 void KWebKitFactory::slotDestroyed(QObject * obj)
 {
-    //kDebug() << "Discard the session history file of" << obj << "?" << m_discardSessionFiles;
-    if (m_discardSessionFiles) {
-        const QString sessionFile =  m_sessionFileLookup.take(obj);
-        disconnect (obj, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
-        //kDebug() << "Discarding session history File" << sessionFile;
-        if (!QFile::remove(sessionFile))
-            kWarning() << "Failed to discard the session history file";
+    disconnect (obj, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
+    QStringList sessionFiles = m_sessionFileLookup.values(obj);
+
+    if (!m_discardSessionFiles) {
+        sessionFiles.removeLast(); // Only keep the last session file.
     }
+
+    Q_FOREACH(const QString& sessionFile, sessionFiles) {
+      kDebug() << "Discarding session history File" << sessionFile;
+      if (!QFile::remove(sessionFile))
+          kWarning() << "Failed to discard the session history file";
+    }
+
+    m_sessionFileLookup.remove(obj);
 }
 
 K_EXPORT_PLUGIN(KWebKitFactory)

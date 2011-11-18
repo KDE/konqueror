@@ -23,7 +23,7 @@
 
 #include <kpluginfactory.h>
 
-#include <QtCore/QHash>
+#include <QtCore/QMultiHash>
 
 class KWebKitFactory : public KPluginFactory
 {
@@ -39,7 +39,7 @@ private Q_SLOTS:
 
 private:
     bool m_discardSessionFiles;
-    QHash<QObject*, QString> m_sessionFileLookup;
+    QMultiHash<QObject*, QString> m_sessionFileLookup;
 };
 
 #endif // WEBKITPARTFACTORY
