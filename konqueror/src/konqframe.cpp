@@ -116,7 +116,7 @@ bool KonqFrame::isActivePart()
 
 void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int /*id*/, int /*depth*/ )
 {
-  childView()->saveConfig(config, prefix, options);
+  if (m_pView) m_pView->saveConfig(config, prefix, options);
   //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
   if (this == docContainer) config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
 
@@ -129,7 +129,8 @@ void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const K
 void KonqFrame::copyHistory( KonqFrameBase *other )
 {
     assert(other->frameType() == KonqFrameBase::View);
-    childView()->copyHistory( static_cast<KonqFrame *>( other )->childView() );
+    if (m_pView)
+        m_pView->copyHistory( static_cast<KonqFrame *>( other )->childView() );
 }
 
  KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
