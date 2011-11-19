@@ -134,7 +134,7 @@ void WebView::dropEvent(QDropEvent* ev)
     // See https://bugs.webkit.org/show_bug.cgi?id=53320.
     if (ev) {
         QWebHitTestResult hitResult = page()->currentFrame()->hitTestContent(ev->pos());
-        if (hitTestResult.isNull() || hitResult.element().tagName() != QL1S("input")) {
+        if (hitResult.isNull() || hitResult.element().tagName() != QL1S("input")) {
             const QMimeData* mimeData = ev ? ev->mimeData() : 0;
             if (mimeData && mimeData->hasUrls()) {
                 KUrl url (mimeData->urls().first());
