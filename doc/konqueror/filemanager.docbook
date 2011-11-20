@@ -5,12 +5,12 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2010-10-26</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
+<date>2011-11-20</date>
+<releaseinfo>&kde; 4.8</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; the File Manager</title>
-<!-- 4.5 -->
+
 <sect1 id="dirfolders">
 <title>Folders and Paths</title>
 <para>In &UNIX; and &Linux; all folders are arranged in a simple 
@@ -61,13 +61,19 @@ are outlined below.
 
 <note><para>In File Manager mode, &konqueror; uses an embedded a &dolphin;  
 component.</para></note>
-
-<itemizedlist>
 <!-- begin copy from dolphin docbook --> 
+<itemizedlist>
+
 <listitem><para>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
-shown for subfolders.
+shown for subfolders. The names of folders and files are displaed below the icons.
+</para></listitem>
+
+<listitem><para>
+In the <guilabel>Compact</guilabel> view shows the folder contents as icons with 
+the name beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+in the &kde; file dialog.
 </para></listitem>
 
 <listitem><para>
@@ -76,22 +82,11 @@ as a detailed list which contains the name, size and last modification time of
 each item. Additional columns can be added by clicking a column header with the
 &RMB;.
 </para>
-
 <para>
-The details view offers the option <guilabel>Expandable Folders</guilabel>,
-which can be enabled in the <menuchoice><guimenu>File Management</guimenu>
-<guimenuitem>View Modes</guimenuitem></menuchoice> 
-section of the settings. This option permits to view the current directory
+The details view permits to view the current directory
 in a tree-like fashion: Each subfolder of the current folder can be
-<quote>expanded</quote> by clicking on the <guiicon>+</guiicon> button next to it.
-</para></listitem>
-
-<listitem><para>
-In the <guilabel>Columns</guilabel> view, multiple levels of the folder
-structure can be viewed at once. If a subfolder is clicked, a new pane showing
-the contents of that folder is opened at the right edge of the view.
-</para></listitem>
-
+<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
+or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 <!-- end copy from dolphin docbook --> 
 <sect2 id="filetipinfo">
@@ -106,8 +101,7 @@ a file or folder name or icon.
 
 <sect2 id="previews">
 <title>File Previews</title>
-<para>The <guilabel>Previews
-</guilabel> tab of the <menuchoice><guimenu>File Management</guimenu>
+<para>The <guilabel>Previews</guilabel> tab of the <menuchoice><guimenu>File Management</guimenu>
 <guimenuitem>General</guimenuitem></menuchoice> settings page 
 lets you enable file previews for certain types of file.</para>
 <para>Generally this means that the file's icon will be replaced by a small 
@@ -126,12 +120,12 @@ the extra data would take too long set a file size limit at the bottom of the
 
 <para>
 The following settings control how the contents of a folder are displayed in the
-&konqueror; view, and are stored on a per-folder basis by default:
+&dolphin; view, and are stored on a per-folder basis by default:
 
 <itemizedlist>
 
 <listitem><para>
-The view mode (Icons, Details, Columns)
+The view mode (Icons, Compact, Details)
 </para></listitem>
 
 <listitem><para>
@@ -151,7 +145,7 @@ Previews &ndash; are they shown instead of icons (based on the settings made in
 </para></listitem>
 
 <listitem><para>
-Are items shown in groups in the Icons view?
+Are items shown in groups in the views?
 </para></listitem>
 
 <listitem><para>
@@ -204,7 +198,6 @@ properties yet.
 </sect1>
 <!-- end copy from dolphin docbook -->
 
-<!-- 4.5 -->
 <sect1 id="navigation">
 <title>Navigation</title>
 <para>To get to a file with &konqueror; you first need to navigate 
