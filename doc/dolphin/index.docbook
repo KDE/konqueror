@@ -73,8 +73,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-06-13</date>
-<releaseinfo>1.6.9 (&kde; 4.7.0)</releaseinfo>
+<date>2011-11-18</date>
+<releaseinfo>2.0 (&kde; 4.8)</releaseinfo>
 
 <abstract>
 <para>
@@ -324,7 +324,13 @@ view modes.
 <listitem><para>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
-shown for subfolders.
+shown for subfolders. The names of folders and files are displaed below the icons.
+</para></listitem>
+
+<listitem><para>
+In the <guilabel>Compact</guilabel> view shows the folder contents as icons with 
+the name beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+in the &kde; file dialog.
 </para></listitem>
 
 <listitem><para>
@@ -333,21 +339,11 @@ as a detailed list which contains the name, size and last modification time of
 each item. Additional columns can be added by clicking a column header with the
 &RMB;.
 </para>
-
 <para>
-The details view offers the option <guilabel>Expandable Folders</guilabel>,
-which can be enabled in the <link linkend="preferences-dialog-viewmodes"><quote>View Modes</quote>
-section of the settings</link>. This option permits to view the current directory
+The details view permits to view the current directory
 in a tree-like fashion: Each subfolder of the current folder can be
-<quote>expanded</quote> by clicking on the <guiicon>+</guiicon> button next to it.
-</para></listitem>
-
-<listitem><para>
-In the <guilabel>Columns</guilabel> view, multiple levels of the folder
-structure can be viewed at once. If a subfolder is clicked, a new pane showing
-the contents of that folder is opened at the right edge of the view.
-</para></listitem>
-
+<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
+or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 
 </para>
@@ -877,7 +873,7 @@ for details.
 
 <para>
 This group contains settings which control the behavior of &dolphin;'s view
-modes. The three view modes (Icons, Details, and Columns) are accessible via the
+modes. The three view modes (Icons, Compact, and Details) are accessible via the
 tab bar on top.
 
 <screenshot>
@@ -940,79 +936,12 @@ In the <guilabel>Text</guilabel> section:
 <itemizedlist>
 
 <listitem><para>
-<guilabel>Number of lines</guilabel> is the number of lines of text which appear
-next to the icons. If the name of a file or folder is too long to fit into the
-chosen number of lines, it will be abbreviated, and <quote>...</quote> will be
-added at the end.
-</para></listitem>
-
-<listitem><para>
 <guilabel>Text Width</guilabel> controls the maximum width that is reserved for
 the text of a file item.
 </para></listitem>
 
 </itemizedlist>
 
-</para></listitem>
-
-<listitem><para>
-
-In the <guilabel>Grid</guilabel> section:
-
-<itemizedlist>
-
-<listitem><para>
-If <guilabel>Arrangement</guilabel> is set to <guilabel>Rows</guilabel> or
-<guilabel>Columns</guilabel>, the items will be arranged in rows from left to right or
-in columns from top to bottom, respectively.
-</para></listitem>
-
-<listitem><para>
-<guilabel>Grid spacing</guilabel> controls how far the items are apart in the view.
-</para></listitem>
-
-</itemizedlist>
-
-</para></listitem>
-
-</itemizedlist>
-
-</para>
-
-</sect3>
-
-<sect3 id="preferences-dialog-viewmodes-details">
-<title>Details</title>
-
-<para>
-Besides the <link linkend="preferences-dialog-viewmodes-common">common settings
-of all view modes</link>, the details view has only one setting:
-
-<itemizedlist>
-
-<listitem><para>
-If <guilabel>Expandable Folders</guilabel> is enabled, the details view can show
-the contents of all subfolders of the current folder as a tree. A branch of the
-tree can be expanded or collapsed by clicking the <guibutton>&lt;</guibutton> or
-<guibutton>v</guibutton> button next to each subfolder.
-</para></listitem>
-
-</itemizedlist>
-
-</para>
-</sect3>
-
-<sect3 id="preferences-dialog-viewmodes-columns">
-<title>Columns</title>
-
-<para>
-Besides the <link linkend="preferences-dialog-viewmodes-common">common settings
-of all view modes</link>, the columns view has only one setting:
-
-<itemizedlist>
-
-<listitem><para>
-The <guilabel>Text Width</guilabel> setting controls the width of each column in the view.
 </para></listitem>
 
 </itemizedlist>
@@ -1078,13 +1007,28 @@ This group offers a selection of services that can be shown in the
 <guisubmenu>Actions</guisubmenu> submenu of &dolphin;'s context menu which
 appears when clicking a file or folder with the &RMB;.
 </para>
+
+<screenshot>
+<screeninfo>Screenshot of the Services settings in &dolphin;'s preferences dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="preferences-services.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Services Settings.</phrase>
+</textobject>
+<caption><para>Services Settings in &dolphin;'s Preferences Dialog.</para></caption>
+</mediaobject>
+</screenshot>
+
 <para>
 Using the <guibutton>Download New Services</guibutton> you can fetch additional 
 service menu.
 </para>
 
 <para>
-If you have installed &dolphin;'s plugins for <guilabel>Git</guilabel> or 
+If you have installed &dolphin;'s plugins for <guilabel>Bazaar</guilabel>, 
+<guilabel>Mercurial</guilabel>, <guilabel>Git</guilabel> or 
 <guilabel>Subversion</guilabel> from the kdesdk module an additional group
 <guilabel>Version Control Systems</guilabel> is displayed.
 If these plugins are enabled and you enter a folder which is under version control, 
@@ -1175,13 +1119,13 @@ folder or if common view properties are to be used for all folders.
 In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
 are shown before potentially harmful actions can be enabled.
 </para></listitem>
-
+<!--removed in 4.8
 <listitem><para>
 If <guilabel>Rename Inline</guilabel> is enabled, no dialog asking for a new
 file name will be opened when renaming a file or folder. Instead, the name can
 be edited directly inside the view.
 </para></listitem>
-
+-->
 <listitem><para>
 When hovering a file or folder with the mouse, a small window with information
 about it is shown next to it if <guilabel>Show tooltips</guilabel> is enabled.
@@ -1282,7 +1226,7 @@ The following settings control how the contents of a folder are displayed in the
 <itemizedlist>
 
 <listitem><para>
-The view mode (Icons, Details, Columns)
+The view mode (Icons, Compact, Details)
 </para></listitem>
 
 <listitem><para>
@@ -1302,7 +1246,7 @@ tab of &dolphin;'s General settings</link>) or not?
 </para></listitem>
 
 <listitem><para>
-Are items shown in groups in the Icons view?
+Are items shown in groups in the views?
 </para></listitem>
 
 <listitem><para>
@@ -1598,8 +1542,8 @@ Selects all unselected items and deselects all selected items in the current fol
 <guisubmenu>View Mode</guisubmenu>
 </menuchoice></term>
 <listitem><para><action>Changes the view mode to <guimenuitem>Icons</guimenuitem>
-(<keycombo action="simul">&Ctrl;<keycap>1</keycap></keycombo>), <guimenuitem>Details</guimenuitem>
-(<keycombo action="simul">&Ctrl;<keycap>2</keycap></keycombo>) or <guimenuitem>Columns</guimenuitem>
+(<keycombo action="simul">&Ctrl;<keycap>1</keycap></keycombo>), <guimenuitem>Compact</guimenuitem>
+(<keycombo action="simul">&Ctrl;<keycap>2</keycap></keycombo>) or <guimenuitem>Details</guimenuitem>
 (<keycombo action="simul">&Ctrl;<keycap>3</keycap></keycombo>).</action></para></listitem>
 </varlistentry>
 
@@ -1607,7 +1551,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu>
-</menuchoice> (only available in the Icons view mode)</term>
+</menuchoice></term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
@@ -1647,7 +1591,7 @@ view modes.</para></listitem>
 </menuchoice></term>
 <listitem><para><action>Displays</action> the content of the
 current folder grouped by the option selected in <guimenuitem>Sort By</guimenuitem> 
-(only available in the Icons view mode).</para></listitem>
+.</para></listitem>
 </varlistentry>
 
 <varlistentry>
