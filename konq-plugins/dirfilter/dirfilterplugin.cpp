@@ -130,9 +130,12 @@ DirFilterPlugin::DirFilterPlugin (QObject* parent,
   if ( !m_part )
     return;
 
-  m_dirModel = qFindChild<KDirLister*>( m_part );
-  if ( !m_dirModel )
+  m_dirModel = qFindChild<KDirLister*>(m_part);
+  if (!m_dirModel && m_part->widget()) {
+    m_dirModel = qFindChild<KDirLister*>(m_part->widget());
+    if ( !m_dirModel )
       return;
+  }
 
   m_pFilterMenu = new KActionMenu (KIcon("view-filter"),i18n("View F&ilter"),
                                    actionCollection());
@@ -172,7 +175,7 @@ DirFilterPlugin::~DirFilterPlugin()
 
 void DirFilterPlugin::slotOpenURL ()
 {
-  KUrl url = m_part->url();
+  const KUrl url (m_part->url());
 
   //kDebug(90190) << "DirFilterPlugin: Current URL: " << m_pURL.url();
 
@@ -323,9 +326,8 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     // We'd maybe benefit from an extra  Q_PROPERTY in the DolphinPart
     // for setting the mime filter, here. For now, just refresh
     // the model - refreshing the DolphinPart is more complex.
-    KUrl url = m_part->url();
+    const KUrl url (m_part->url());
     m_dirModel->openUrl (url);
-
     globalSessionManager->save (url, filters);
   }
 }
@@ -409,12 +411,11 @@ void DirFilterPlugin::slotReset()
   for (; it != m_pMimeInfo.end(); ++it)
     it.value().useAsFilter = false;
 
-  QStringList filters;
-  KUrl url = m_part->url();
-
+  const QStringList filters;
+  const KUrl url (m_part->url());
   m_dirModel->setMimeFilter (filters);
-  m_part->openUrl (url);
-  globalSessionManager->save (m_part->url(), filters);
+  m_dirModel->openUrl (url);
+  globalSessionManager->save (url, filters);
 }
 
 void DirFilterPlugin::slotShowCount()
@@ -432,8 +433,8 @@ void DirFilterPlugin::slotMultipleFilters()
 
 void DirFilterPlugin::slotTimeout()
 {
-  if (m_part)
-    m_part->openUrl (m_part->url());
+  if (m_dirModel)
+    m_dirModel->openUrl (m_part->url());
 }
 
 void DirFilterPlugin::slotFilterTextEdited(const QString& nextText)
