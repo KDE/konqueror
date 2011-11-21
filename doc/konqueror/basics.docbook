@@ -96,10 +96,7 @@ linkend="menubar">Menubar</link> section of this document.</para>
 
 <para>The <interface>Toolbar</interface> contains icons for commonly used
 operations. <mousebutton>Left</mousebutton> clicking on an icon will activate
-it. If you have enabled tooltips in the &systemsettings; using <guilabel>Configure Buttons</guilabel> in
-<menuchoice><guimenu>Workspace Appearance</guimenu>
-<guisubmenu>Window Decorations</guisubmenu></menuchoice>, 
-a brief description of what that icon does will appear when you hover
+it. A brief description of what that icon does will appear when you hover
 the pointer over it.</para>
 
 <para>Some icons, for example the Up and Back icons in the previous screenshot,
@@ -176,11 +173,9 @@ this entire document if you take advantage of <guilabel>Tooltips</guilabel> and
 button it should bring up a terse description of what that button does.</para>
 
 <para><guimenuitem>What's This?</guimenuitem> is invoked by the Menubar
-<menuchoice><guimenu>Help</guimenu><guimenuitem>What's This?</guimenuitem></menuchoice> item, by
-<keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo>, or by 
-just &LMB; clicking on the question mark near the top right hand corner of 
-&konqueror;'s window. It changes the cursor to show a question mark alongside 
-the arrow.</para>
+<menuchoice><guimenu>Help</guimenu><guimenuitem>What's This?</guimenuitem></menuchoice> item 
+or by <keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo>.
+It changes the cursor to show a question mark alongside the arrow.</para>
 
 <para>When this question mark is visible, a &LMB; click won't actually do
 anything until you have clicked on a control (or the text alongside it) that

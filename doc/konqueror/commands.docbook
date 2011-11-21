@@ -530,7 +530,7 @@ page you are previewing.</para></listitem>
 views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>Embedded Advanced 
 Text Editor</guimenuitem> and more embedded views.</para>
 <para>In file manager mode this submenu holds items to select <guimenuitem>Icon</guimenuitem>,
-<guimenuitem>Details</guimenuitem>, <guimenuitem>Columns</guimenuitem>,
+<guimenuitem>Details</guimenuitem>, <guimenuitem>Compact</guimenuitem>,
 <guimenuitem>Terminal Emulator</guimenuitem> and more view modes.</para></listitem>
 </varlistentry>
 
@@ -538,7 +538,7 @@ Text Editor</guimenuitem> and more embedded views.</para>
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guimenuitem>Use index.html</guimenuitem>
-</menuchoice></term>
+</menuchoice> (File Manager mode)</term>
 <listitem><para>If a selected folder contains a file 
 <filename>index.html</filename>, it will be opened as a web
 page rather than showing the folder as a list of
@@ -705,7 +705,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode, only in Icons view)</term>
+<guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode)</term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,

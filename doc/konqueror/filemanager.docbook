@@ -71,7 +71,7 @@ shown for subfolders. The names of folders and files are displayed below the ico
 </para></listitem>
 
 <listitem><para>
-In the <guilabel>Compact</guilabel> view shows the folder contents as icons with 
+The <guilabel>Compact</guilabel> view shows the folder contents as icons with 
 the name beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
 in the &kde; file dialog.
 </para></listitem>
@@ -120,7 +120,7 @@ the extra data would take too long set a file size limit at the bottom of the
 
 <para>
 The following settings control how the contents of a folder are displayed in the
-&dolphin; view, and are stored on a per-folder basis by default:
+&konqueror; view, and are stored on a per-folder basis by default:
 
 <itemizedlist>
 
@@ -212,8 +212,8 @@ tree:</para>
 </mousebutton> click on its name or
 icon -- or if you have already <quote>selected</quote> it (see below) -- then just press
 &Enter;.</para></listitem> 
-<listitem><para>To go up the folder tree you can click on the <guiicon>Up
-</guiicon> button in the Toolbar, use<keycombo action="simul">&Alt;<keysym>Up</keysym></keycombo>, or use the Menubar
+<listitem><para>To go up the folder tree you can click on the <guiicon>Up</guiicon> 
+button in the Toolbar, use<keycombo action="simul">&Alt;<keysym>Up</keysym></keycombo>, or use the Menubar
 <menuchoice><guimenu>Go</guimenu><guimenuitem>Up</guimenuitem></menuchoice>
 option.</para></listitem>
 </itemizedlist>
@@ -225,13 +225,12 @@ The selected item will be highlighted and some information about it
 will be displayed in the Status Bar.</para>
 
 <para>Setting the <link linkend="viewmode">View Mode</link> to <guimenuitem>
-Details</guimenuitem> with the option <guilabel>Expandable Folders</guilabel> 
-can help you locate folders in the tree below the 
+Details</guimenuitem> can help you locate folders in the tree below the 
 current folder; in this mode each folder is shown with a small box at 
-the left. If the box contains a <keycap>+</keycap> sign, <mousebutton>left
+the left. If the box contains a <keycap>&gt;</keycap> sign, <mousebutton>left
 </mousebutton> clicking on the box (not on the folder name or icon) will 
 display a sub tree showing files and subfolders contained in that folder. 
-The small box will then change to show a <keycap>-</keycap> sign. 
+The small box will then change to show a <keycap>v</keycap> sign. 
 <mousebutton>Left</mousebutton> click on that to collapse the sub tree. Once 
 you have found the folder you are looking for, <mousebutton>left
 </mousebutton> click on the folder name or icon to open it.</para>
@@ -272,8 +271,8 @@ items in the <guimenu>Go</guimenu> menu brings up a submenu of recently visited 
 <para>If you don't know or can't remember where a file or folder is within
 your system, then use the Toolbar <guiicon>Find File</guiicon> button or the
 Menubar <menuchoice><guimenu>Tools</guimenu><guimenuitem>Find 
-File...</guimenuitem></menuchoice> option.  This will embed the file finder 
-application &kfind; into &konqueror;'s window. See the &kfind; Handbook 
+File...</guimenuitem></menuchoice> option.  This start the file finder 
+application &kfind;. See the <ulink url="help:/kfind/index.html">&kfind; Handbook</ulink> 
 for help in using &kfind;.
 </para>
 
@@ -282,10 +281,12 @@ it is a <quote>hidden</quote> file or folder, and will not normally be shown
 by &konqueror;. To see hidden files or folders use the Menubar <menuchoice>
 <guimenu>View</guimenu><guimenuitem>Show Hidden Files</guimenuitem>
 </menuchoice> option.</para>
+<!-- not available in 4.8, see https://bugs.kde.org/show_bug.cgi?id=279281 Comment #4
 <para>Another reason &konqueror; may not show the file or folder you are 
 looking for is that you may have the <link linkend="konq-plugin"><guisubmenu>
 View Filter</guisubmenu></link> plugin set to display only certain types of 
-file.</para></note>
+  file.</para> -->
+</note>
 
 </sect2>
 
@@ -309,6 +310,11 @@ it is no longer available. </para>
 <para>How you do this will depend on how your system:</para>
 
 <itemizedlist>
+<!--FIXME
+<listitem><para>Device Notifier</para></listitem>
+removable devices
+link to plasma-desktop/"device-notifier"
+-->
 <listitem><para>You may have an <application>Automount</application> facility,
 in which case you don't have to bother about explicitly mounting and
 unmounting,
@@ -710,25 +716,10 @@ confusion.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Illustration Document...</guimenuitem></term>
-<listitem><para>Creates a new OpenDocument Drawing.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Presentation Document...</guimenuitem></term>
-<listitem><para>Creates a skeleton OpenDocument Presentation document.
-  </para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Spread Sheet Document...</guimenuitem></term>
-<listitem><para>Use this to create a new OpenDocument Spread Sheet file.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Text Document...</guimenuitem></term>
-<listitem><para>Creates a skeleton OpenDocument Text file.</para></listitem>
+<term><guimenuitem><replaceable>Type of Document</replaceable> Document...</guimenuitem></term>
+<listitem><para>Depending on the installed applications and file associations
+several menuitems for different types of documents are displayed and enable you 
+to create skeleton documents of the selected type.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -781,7 +772,7 @@ panel.</para>
 </varlistentry>
 
 <varlistentry>
-<term><guisubmenu>Device</guisubmenu></term>
+<term><guisubmenu>Link to Device</guisubmenu></term>
 <listitem><para>Use the options in this submenu to create an icon that will mount a device
 and open an instance of &konqueror; showing it's contents. To unmount the
 device when you have finished with it <mousebutton>right</mousebutton> click on
