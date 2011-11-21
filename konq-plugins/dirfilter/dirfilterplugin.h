@@ -74,11 +74,7 @@ protected:
 
   struct MimeInfo
   {
-    MimeInfo()
-    {
-      action = 0;
-      useAsFilter = false;
-    };
+    MimeInfo() : action(0), useAsFilter(false) {}
 
     QAction *action;
     bool useAsFilter;

@@ -203,7 +203,8 @@ void DirFilterPlugin::slotShowPopup()
   m_pFilterMenu->menu()->clear();
   m_pFilterMenu->menu()->addTitle (i18n("Only Show Items of Type"));
 
-  for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != m_pMimeInfo.end() ; ++it)
+  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
+  for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd ; ++it)
   {
     if (it.key().startsWith("inode"))
     {
@@ -237,27 +238,27 @@ void DirFilterPlugin::slotShowPopup()
   {
     m_pFilterMenu->menu()->addSeparator ();
 
-    for (QStringList::Iterator it = inodes.begin(); it != inodes.end(); ++it)
+    Q_FOREACH(const QString& inode, inodes)
     {
       if (!globalSessionManager->showCount)
-        label = m_pMimeInfo[(*it)].mimeComment;
+        label = m_pMimeInfo[inode].mimeComment;
       else
       {
-        label = m_pMimeInfo[(*it)].mimeComment;
+        label = m_pMimeInfo[inode].mimeComment;
         label += "  (";
-        label += QString::number (m_pMimeInfo[(*it)].filenames.size ());
+        label += QString::number (m_pMimeInfo[inode].filenames.size ());
         label += ')';
       }
 
       QAction *action = m_pFilterMenu->menu()->addAction (
-                              KIcon(m_pMimeInfo[(*it)].iconName), label);
+                              KIcon(m_pMimeInfo[inode].iconName), label);
       action->setCheckable( true );
-      if (m_pMimeInfo[(*it)].useAsFilter)
+      if (m_pMimeInfo[inode].useAsFilter)
       {
         action->setChecked( true );
         enableReset ++;
       }
-      m_pMimeInfo[(*it)].action = action;
+      m_pMimeInfo[inode].action = action;
     }
   }
   m_pFilterMenu->menu()->addSeparator ();
@@ -283,10 +284,11 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     return;
 
   MimeInfoMap::iterator it = m_pMimeInfo.begin();
-  while (it != m_pMimeInfo.end () && action != it.value().action)
+  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
+  while (it != itEnd && action != it.value().action)
     it++;
 
-  if (it != m_pMimeInfo.end())
+  if (it != itEnd)
   {
     MimeInfo& mimeInfo = it.value();
     QStringList filters;
@@ -300,7 +302,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     }
     else
     {
-        m_pMimeInfo[it.key()].useAsFilter = true;
+      m_pMimeInfo[it.key()].useAsFilter = true;
 
       if (globalSessionManager->useMultipleFilters)
       {
@@ -312,7 +314,8 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
         filters << it.key();
 
         MimeInfoMap::iterator item = m_pMimeInfo.begin();
-        while ( item != m_pMimeInfo.end() )
+        const MimeInfoMap::const_iterator itemEnd = m_pMimeInfo.end();
+        while ( item != itemEnd )
         {
           if ( item != it )
             item.value().useAsFilter = false;
@@ -347,9 +350,8 @@ void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
   if (!m_pFilterMenu->isEnabled())
     m_pFilterMenu->setEnabled (true);
 
-  KFileItemList::const_iterator kit = list.begin();
   const KFileItemList::const_iterator kend = list.end();
-  for (; kit != kend; ++kit )
+  for (KFileItemList::const_iterator kit = list.begin(); kit != kend; ++kit )
   {
     QString name = (*kit).name();
     KMimeType::Ptr mime = (*kit).mimeTypePtr(); // don't resolve mimetype if unknown
@@ -376,7 +378,7 @@ void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
 
 void DirFilterPlugin::slotItemRemoved (const KFileItem& item)
 {
-    if (!m_dirModel)
+  if (!m_dirModel)
     return;
 
   QString mimeType = item.mimetype().trimmed();
@@ -407,8 +409,8 @@ void DirFilterPlugin::slotReset()
   if (!m_part || !m_dirModel)
     return;
 
-  MimeInfoMap::iterator it = m_pMimeInfo.begin();
-  for (; it != m_pMimeInfo.end(); ++it)
+  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
+  for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd; ++it)
     it.value().useAsFilter = false;
 
   const QStringList filters;
@@ -456,3 +458,4 @@ K_PLUGIN_FACTORY(DirFilterFactory, registerPlugin<DirFilterPlugin>();)
 K_EXPORT_PLUGIN(DirFilterFactory("dirfilterplugin"))
 
 #include "dirfilterplugin.moc"
+
