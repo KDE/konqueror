@@ -109,16 +109,12 @@ Automatic detection is performed using the &lt;b&gt;Web Proxy Auto-Discovery Pro
       </sizepolicy>
      </property>
      <property name="whatsThis">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use proxy settings defined on the system.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Some platforms offer system wide proxy configuration information and selecting this option allows you to use those settings.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;On Mac platforms&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;On Windows platforms&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;On Unix and Linux platforms, such system proxy settings are usually defined through environment variables. The following environment variables are detected and used when present: &lt;span style=&quot; font-weight:600;&quot;&gt;HTTP_PROXY&lt;/span&gt;,  &lt;span style=&quot; font-weight:600;&quot;&gt;HTTPS_PROXY&lt;/span&gt;, &lt;span style=&quot; font-weight:600;&quot;&gt;FTP_PROXY&lt;/span&gt;, &lt;span style=&quot; font-weight:600;&quot;&gt;NO_PROXY.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;qt&gt;&lt;p&gt;Use proxy settings defined on the system.&lt;/p&gt;
+&lt;p&gt;Some platforms offer system wide proxy configuration information and selecting this option allows you to use those settings.&lt;/p&gt;
+&lt;p&gt;On Mac platforms&lt;/p&gt;
+&lt;p&gt;On Windows platforms&lt;/p&gt;
+&lt;p&gt;On Unix and Linux platforms, such system proxy settings are usually defined through environment variables. The following environment variables are detected and used when present: &lt;b&gt;HTTP_PROXY&lt;/b&gt;, &lt;b&gt;HTTPS_PROXY&lt;/b&gt;, &lt;b&gt;FTP_PROXY&lt;/b&gt;, &lt;b&gt;NO_PROXY&lt;/b&gt;.&lt;/p&gt;
+&lt;/qt&gt;</string>
      </property>
      <property name="text">
       <string>Use system proxy configuration:</string>
@@ -265,7 +261,7 @@ Alternatively, you can click on the &lt;b&gt;&quot;Auto Detect&quot;&lt;/b&gt; b
        <widget class="QLabel" name="systemProxySocksLabel">
         <property name="whatsThis">
          <string>&lt;qt&gt;
-Enter the name of the environment variable, e.g. &lt;b&gt;FTP_PROXY&lt;/b&gt;, used to store the address of the FTP proxy server.&lt;p&gt;
+Enter the name of the environment variable, e.g. &lt;b&gt;SOCKS_PROXY&lt;/b&gt;, used to store the address of the SOCKS proxy server.&lt;p&gt;
 Alternatively, you can click on the &lt;b&gt;&quot;Auto Detect&quot;&lt;/b&gt; button to attempt an automatic discovery of this variable.&lt;/p&gt;
 &lt;/qt&gt;</string>
         </property>
@@ -289,12 +285,7 @@ Alternatively, you can click on the &lt;b&gt;&quot;Auto Detect&quot;&lt;/b&gt; b
          </sizepolicy>
         </property>
         <property name="whatsThis">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter the name of the environment variable, e.g. &lt;span style=&quot; font-weight:600;&quot;&gt;SOCKS_PROXY&lt;/span&gt;, used to store the address of the FTP proxy server.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alternatively, you can click on the &lt;span style=&quot; font-weight:600;&quot;&gt;&amp;quot;Auto Detect&amp;quot;&lt;/span&gt; button to attempt an automatic discovery of this variable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;qt&gt;Enter the name of the environment variable, e.g. &lt;b&gt;SOCKS_PROXY&lt;/b&gt;, used to store the address of the SOCKS proxy server.&lt;p&gt;Alternatively, you can click on the &lt;b&gt;&amp;quot;Auto Detect&amp;quot;&lt;/b&gt; button to attempt an automatic discovery of this variable.&lt;/p&gt;&lt;/qt&gt;</string>
         </property>
        </widget>
       </item>
@@ -326,12 +317,7 @@ Alternatively, you can click on the &lt;b&gt;&quot;Auto Detect&quot;&lt;/b&gt; b
          </sizepolicy>
         </property>
         <property name="whatsThis">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter the environment variable, e.g. &lt;span style=&quot; font-weight:600;&quot;&gt;NO_PROXY&lt;/span&gt;, used to store the addresses of sites for which the above proxy settings should not be used.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alternatively, you can click on the &lt;span style=&quot; font-weight:600;&quot;&gt;&amp;quot;Auto Detect&amp;quot;&lt;/span&gt; button to attempt an automatic discovery of this variable. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;qt&gt;Enter the environment variable, e.g. &lt;b&gt;NO_PROXY&lt;/b&gt;, used to store the addresses of sites for which the above proxy settings should not be used.&lt;p&gt;Alternatively, you can click on the &lt;b&gt;&amp;quot;Auto Detect&amp;quot;&lt;/b&gt; button to attempt an automatic discovery of this variable.&lt;/p&gt;&lt;/qt&gt;</string>
         </property>
        </widget>
       </item>
@@ -638,16 +624,11 @@ Alternatively, you can click on the &lt;b&gt;&quot;Auto Detect&quot;&lt;/b&gt; b
          </sizepolicy>
         </property>
         <property name="whatsThis">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Enter a comma separated list of hostnames or ip addresses that should be excluded from using the above proxy settings.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;If you want to exclude all hosts for a given domain, then simply enter the domain name preceded by a dot. For example, to exclude all hostnames for &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-style:italic;&quot;&gt;kde.org&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;, enter &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-style:italic;&quot;&gt;.kde.org&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;. Wildcard characters such as '*' or '?' are not supported and will have no effect. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif';&quot;&gt;Additionally, you can also enter IP addresses, e.g. 127.0.0.1 and IP addresses with a subnet, e.g. 192.168.0.1/24.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;qt&gt;
+&lt;p&gt;Enter a comma separated list of hostnames or ip addresses that should be excluded from using the above proxy settings.&lt;/p&gt;
+&lt;p&gt;If you want to exclude all hosts for a given domain, then simply enter the domain name preceded by a dot. For example, to exclude all hostnames for &lt;i&gt;kde.org&lt;/i&gt;, enter &lt;i;&gt;.kde.org&lt;/i&gt;. Wildcard characters such as '*' or '?' are not supported and will have no effect.&lt;/p&gt;
+&lt;p&gt;Additionally, you can also enter IP addresses, e.g. 127.0.0.1 and IP addresses with a subnet, e.g. 192.168.0.1/24.&lt;/p&gt;
+&lt;/qt&gt;</string>
         </property>
        </widget>
       </item>
@@ -657,11 +638,8 @@ p, li { white-space: pre-wrap; }
          <bool>false</bool>
         </property>
         <property name="whatsThis">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Check this box if you want the above proxy settings to apply only to the addresses listed in the &lt;span style=&quot; font-style:italic;&quot;&gt;Exceptions&lt;/span&gt; list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;qt&gt;
+Check this box if you want the above proxy settings to apply only to the addresses listed in the &lt;i&gt;Exceptions&lt;/i&gt; list.&lt;/qt&gt;</string>
         </property>
         <property name="text">
          <string>Use proxy settings only for addresses in the Exceptions list</string>
