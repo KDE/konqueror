@@ -108,7 +108,20 @@ option.</para>
 <menuchoice><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem></menuchoice> option.</para>
 
-<para>If you want to stop the download for any reason then use the
+<!-- copy from okular Navigating -->
+<para>
+There are multiple ways of scrolling the viewing area. One is to use the 
+<keycap>Up Arrow</keycap> and <keycap>Down Arrow</keycap> keys. You may also use
+the scrollbar, your mousewheel or the <keycap>Page Up</keycap> and <keycap>Page Down</keycap>
+keys.</para>
+<para>If you want to read a long webpage use the automatic scrolling feature of &konqueror;.
+Start automatic scrolling with <keycombo action="simul">&Shift;<keysym>Down Arrow</keysym></keycombo> or 
+<keycombo action="simul">&Shift;<keysym>Up Arrow</keysym></keycombo>. Then use these keys to increase and 
+decrease the scrolling speed. You can start or stop automatic scrolling temporarily by pressing the &Shift; key;
+pressing any other key deactivates this feature.
+</para>
+
+<para>If you want to stop a download for any reason then use the
 &Esc; key, the Toolbar <guibutton>Stop</guibutton> button or the
 Menubar <menuchoice><guimenu>View</guimenu>
 <guimenuitem>Stop</guimenuitem></menuchoice> item.</para>
