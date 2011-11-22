@@ -31,10 +31,9 @@ is the subfolder <filename class="directory">pam</filename> of the subfolder
 represents the top level folder.</para>
 
 <para>Every folder accessible by your system &mdash; including those on
-other hard disk partitions, your floppy and &CD-ROM; &mdash; will appear
+other hard disk partitions, an USB device or &CD-ROM; &mdash; will appear
 in the tree descending from /, their exact paths will depend on how your system
-was set up (see also the section on <link linkend="floppy-cd">Floppy and
-&CD-ROM; Drives</link>).
+was set up (see also the section on <link linkend="removable-devices">Removable Devices</link>).
 </para>
 <para>Every user on a &UNIX; / &Linux; system has their own <quote>home</quote> 
 folder to hold their personal files and settings; for example
@@ -46,7 +45,7 @@ folder, so that <filename>~/letter.txt</filename> refers to the file
 <para>Note that the term <quote>directory</quote> is often used instead of 
 <quote>folder</quote>.</para>
 </sect1>
-<!-- 4.5 -->
+
 <sect1 id="viewmode">
 <title>View Modes</title>
 <para>In File Manager mode, &konqueror; lists which files and subfolders are
@@ -290,70 +289,49 @@ file.</para>
 
 </sect2>
 
-<sect2 id="floppy-cd">
-<title>Floppy and &CD-ROM; Drives</title>
+<sect2 id="removable-devices">
+<title>Removable Devices</title>
 
-<para>Any floppy disk, &CD; drive or other hard disk partition that you have 
-on your system will usually appear in the <filename class="directory">/
+<para>Any removable device (USB stick, floppy disk, &CD; drive or other hard disk partition that you have 
+on your system) will usually appear in the <filename class="directory">/
 </filename>,  <filename class="directory">/media</filename>, <filename class="directory">/mnt</filename> or 
 <filename class="directory">/auto</filename> folder, having a path something 
 like <filename class="directory">/mnt/floppy</filename> or
 <filename class="directory">/cdrom</filename>. The details will depend on
 how your system was set up.</para>
 
-<para>&UNIX; / &Linux; requires that you <command>mount</command> a floppy disk 
-or &CD-ROM; when you have inserted it into the drive, and <command>mount
+<para>&UNIX; / &Linux; requires that you <command>mount</command> a removable device
+when you have inserted it into the drive, and <command>mount
 </command> other hard disk partitions when you want to access them. You also 
-need to unmount a floppy disk or &CD-ROM; before removing it to register that 
-it is no longer available. </para>
+need to unmount a removable device before removing it to register that 
+it is no longer available.</para>
 
-<para>How you do this will depend on how your system:</para>
+<para>How you do this will depend on your system setup:</para>
 
 <itemizedlist>
-<!--FIXME
-<listitem><para>Device Notifier</para></listitem>
-removable devices
-link to plasma-desktop/"device-notifier"
--->
-<listitem><para>You may have an <application>Automount</application> facility,
-in which case you don't have to bother about explicitly mounting and
-unmounting,
-although you may find that the &CD-ROM; occasionally starts up by itself for no
-apparent reason.</para></listitem>
 
-<listitem><para>You may have <guiicon>Floppy</guiicon>, &CD-ROM; and hard disk 
-icons on your desktop, in which case &LMB; click on the icon to mount it. 
+<listitem><para>Using the <guilabel>Device Notifier</guilabel></para>
+<para>In a &kde; session the <ulink 
+url="help:/plasma-desktop/index.html#device-notifier">Device Notifier</ulink> 
+window will popup, when you insert a removable device and allows you to select 
+an appropriate application for this media or only mount the device.</para>
+</listitem>
+
+<listitem><para>You may have icons for removable devices on your desktop, 
+in which case &LMB; click on the icon to mount it. 
 Doing this should also bring up a &konqueror; window showing the contents of 
-the floppy, &CD-ROM; or partition. To unmount, <mousebutton>right</mousebutton> 
+the device. To unmount, <mousebutton>right</mousebutton> 
 click on the icon and choose the <guimenuitem>Unmount</guimenuitem> item.  
 Visit the section <link linkend="making">Create New...</link> in this Handbook 
 to see how to create such an icon.</para></listitem>
 
 <listitem><para>Or you can do it the traditional way by typing into a text
 console window:</para>
-
 <para><userinput><command>mount /mnt/floppy</command></userinput></para>
-
-<!-- This markup doesn't work properly, it puts 'mount' and '/mnt/floppy' 
-on separate lines
-<screen>
-<userinput><command>mount</command>
- <option><replaceable>/mnt/floppy</replaceable></option></userinput>
-</screen> -->
-
 <para>to mount, for example, the floppy drive, and</para>
-
-<!-- Same as above
-<screen>
-<userinput><command>umount</command>
- <option><replaceable>/mnt/floppy</replaceable></option></userinput></screen>
--->
-
 <para><userinput><command>umount /mnt/floppy</command></userinput></para>
-
 <para>to unmount it (<command>umount</command> not <command>unmount</command>).
 </para>
-
 <note><para>Rather than having to open a text console to type the
 <command>mount
 </command> or <command>umount</command> commands, you may prefer to use

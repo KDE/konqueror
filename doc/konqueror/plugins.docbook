@@ -6,8 +6,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-05-16</date>
-<releaseinfo>&kde; 4.7</releaseinfo>
+<date>2011-11-22</date>
+<releaseinfo>&kde; 4.8</releaseinfo>
 </chapterinfo>
 
 
@@ -31,6 +31,56 @@ and allows you to scan for plugins.</para>
 Browser Plugins</ulink> help page.</para>
 
 </sect1>
+
+<!-- 
+missing from extragear base:
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled)
+
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+searchbar
+Comment=Provides a text box for easier access to search engines like Google.
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para><ulink url="help:/konq-plugins/mediaplayer/index.html">The Embedded Media
+Player</ulink></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
 
 <sect1 id="konq-plugin">
 <title>&konqueror; Plugins</title>
