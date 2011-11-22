@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-12-18</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
+<date>2011-11-22</date>
+<releaseinfo>&kde; 4.8</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -27,10 +27,7 @@
 </articleinfo>
 <sect1 id="konq-general-behavior">
 <title>General &konqueror; Behavior</title>
-<!-- 4.6 
-Provide an easier way to select the preferred web engine in Konqueror
-http://lists.kde.org/?l=kde-doc-english&m=128516638109185&w=2
--->
+
 <para>On this page you find settings for home and start page and the behavior 
 of tabbed browsing both for &konqueror;'s file manager and browser mode.</para>
 
@@ -55,6 +52,16 @@ changes to take effect.</para>
 <para>When &konqueror; is used in file manager mode, the <guilabel>Home Page</guilabel> 
 button in the toolbar is replaced by a <guilabel>Home Folder</guilabel> button 
 which makes it jump to your local home folder instead.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Default web browser engine</guilabel></term>
+<listitem><para>
+This option provides an easy way to select the preferred web engine in &konqueror;, either 
+<guilabel>KHTML</guilabel> or <guilabel>Webkit</guilabel>, if installed.
+Using the <menuchoice><guimenu>View</guimenu><guimenuitem>View Mode</guimenuitem></menuchoice> 
+menu allows you to change the web engine temporarily on the fly.
+</para>
 </listitem>
 </varlistentry>
 
