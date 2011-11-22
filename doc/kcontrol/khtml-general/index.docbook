@@ -5,7 +5,7 @@
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
 
-<article lang="&language;">
+<article lang="&language;" id="konq-general-behavior">
 <title>General &konqueror; Behavior</title>
 <articleinfo>
 
@@ -17,17 +17,7 @@
 <date>2011-11-22</date>
 <releaseinfo>&kde; 4.8</releaseinfo>
 
-<keywordset>
-<keyword>KDE</keyword>
-<keyword>Systemsettings</keyword>
-<keyword>Konqueror</keyword>
-<keyword>Behavior</keyword>
-</keywordset>
-
 </articleinfo>
-<sect1 id="konq-general-behavior">
-<title>General &konqueror; Behavior</title>
-
 <para>On this page you find settings for home and start page and the behavior 
 of tabbed browsing both for &konqueror;'s file manager and browser mode.</para>
 
@@ -141,7 +131,5 @@ you close the current active tab instead of the one right to the current tab.</p
 </varlistentry>
 
 </variablelist>
-
-</sect1>
 
 </article>
