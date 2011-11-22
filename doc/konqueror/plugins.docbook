@@ -126,6 +126,9 @@ to validate your &HTML; and &CSS;.</para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
 </varlistentry>
 
 <varlistentry>
@@ -242,7 +245,6 @@ archive file name to view the saved page.
 <variablelist>
 <title>File Manager Mode</title>
 
-<!-- not available in 4.8, see https://bugs.kde.org/show_bug.cgi?id=279281 Comment #4 
 <varlistentry>
 <term>Folder View Filter</term>
 <listitem><para>This is controlled by
@@ -250,7 +252,7 @@ archive file name to view the saved page.
 Filter</guisubmenu></menuchoice> and allows you to choose which types of item
 are displayed in a folder.</para></listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term>Image Gallery</term>
 <listitem><para>In File Manager mode, you can select
