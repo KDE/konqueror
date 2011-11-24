@@ -5,8 +5,8 @@
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
-
-<article lang="&language;">
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
 <articleinfo>
 <title>AdBlocK Filters</title>
 <authorgroup>
@@ -14,21 +14,9 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-11-24</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
-
-<keywordset>
-<keyword>KDE</keyword>
-<keyword>Systemsettings</keyword>
-<keyword>konqueror</keyword>
-<keyword>browsing</keyword>
-<keyword>filter</keyword>
-</keywordset>
-
+<date>2011-11-22</date>
+<releaseinfo>&kde; 4.8</releaseinfo>
 </articleinfo>
-
-<sect1 id="khtml-adblock">
-<title>AdBlocK</title>
 
 <para>&konqueror; AdBlocK can be configured to replace or remove
 images or frames from web pages that match a series of filters.</para>
@@ -40,7 +28,11 @@ blocked images are completely removed from the page and the space they
 occupied is reclaimed. If the option is disabled then a placeholder
 image is used in place of filtered images.</para>
 
-<para><guilabel>URL Expressions to Filter</guilabel> is a list of
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term><guilabel>Manual Filter</guilabel></term>
+<listitem>
+<para>The main part of this tab is a list of
 URLs that will be compared against image and frame names to decide
 on fitlering actions. The wildcards can be given as filename style
 regular expressions.</para>
@@ -57,13 +49,38 @@ by enclosing the filter with forward slashes (e.g. //(ads|dclk)\./).</para>
 filter.</para>
 
 <para><guilabel>Import</guilabel> and <guilabel>Export</guilabel> will 
-save or read the current filter list to a
-plain text file. Lines prefixed with an exclamation mark (!) are treated
-as comments and can be used to clarify or label a set of filters.</para>
+save or read the current filter list to a plain text file. The file begins with a 
+header line <userinput>[AdBlock]</userinput>, then all of the filters follow each 
+on a  separate line. Lines prefixed with an exclamation mark (<userinput>!</userinput>) 
+and the header line are treated as comments and can be used 
+to clarify or label a set of filters.</para>
 
 <para>Highlight an entry from the list to change it in the edit box or remove this item.
 Enter a new filter string here and add it to the list using the <guibutton>
 Insert</guibutton> button.</para>
-</sect1>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term><guilabel>Automatic Filter</guilabel></term>
+<listitem>
+<para>
+This tab shows a list of names and &URL;'s with predefined AdBlock filter entries. 
+To enable an entry tick the checkbox beside the filter name and adjust the
+<guilabel>Automatic update interval</guilabel> (default 7 days).
+</para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para>If AdBlock filters are enabled, an icon at the right side of status bar is shown.
+Use a &RMB; click on this icon to open the context menu with actions to show all blockable 
+elements on a web page, open this &systemsettings; module and disable blocking for a site 
+or page temporarily.</para>
+
+<para>A click with the &LMB; shows the dialog with all blockable elements on the opened web page
+as well. From this dialog you can add new filters directly without opening this &systemsettings; 
+module.</para>
 
 </article>
