@@ -203,8 +203,8 @@ void DirFilterPlugin::slotShowPopup()
   m_pFilterMenu->menu()->clear();
   m_pFilterMenu->menu()->addTitle (i18n("Only Show Items of Type"));
 
-  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
-  for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd ; ++it)
+  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.constEnd();
+  for (MimeInfoMap::const_iterator it = m_pMimeInfo.constBegin(); it != itEnd ; ++it)
   {
     if (it.key().startsWith("inode"))
     {
@@ -284,7 +284,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     return;
 
   MimeInfoMap::iterator it = m_pMimeInfo.begin();
-  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
+  const MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
   while (it != itEnd && action != it.value().action)
     it++;
 
@@ -314,7 +314,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
         filters << it.key();
 
         MimeInfoMap::iterator item = m_pMimeInfo.begin();
-        const MimeInfoMap::const_iterator itemEnd = m_pMimeInfo.end();
+        const MimeInfoMap::iterator itemEnd = m_pMimeInfo.end();
         while ( item != itemEnd )
         {
           if ( item != it )
@@ -409,7 +409,7 @@ void DirFilterPlugin::slotReset()
   if (!m_part || !m_dirModel)
     return;
 
-  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
+  const MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
   for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd; ++it)
     it.value().useAsFilter = false;
 
