@@ -447,7 +447,7 @@ void WebKitBrowserExtension::slotBlockHost()
 
     QUrl url (view()->contextMenuResult().imageUrl());
     url.setPath(QL1S("/*"));
-    WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveAuthority));
+    WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveUserInfo | QUrl::RemovePort));
     reparseConfiguration();
 }
 
