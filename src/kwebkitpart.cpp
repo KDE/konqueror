@@ -88,7 +88,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_emitOpenUrlNotify(true),
              m_pageRestored(false),
              m_hasCachedFormData(false),
-             m_loadStarted(false),
              m_statusBarWalletLabel(0),
              m_passwordBar(0)
 {
@@ -295,6 +294,8 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     if (wallet) {
         connect(wallet, SIGNAL(saveFormDataRequested(QString,QUrl)),
                 this, SLOT(slotSaveFormDataRequested(QString,QUrl)));
+        connect(wallet, SIGNAL(fillFormRequestCompleted(bool)),
+                this, SLOT(slotFillFormRequestCompleted(bool)));
         connect(wallet, SIGNAL(walletClosed()), this, SLOT(slotWalletClosed()));
     }
 }
@@ -433,18 +434,22 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
-    m_loadStarted = true;
     emit started(0);
     slotWalletClosed();
 }
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
-    if (!m_loadStarted)
-        return;
+    const QUrl currentUrl = m_webView->url();
 
-    m_loadStarted = false;
+    if (m_lastUrl == currentUrl) {
+      kDebug() << "****** Ignoring load finished signal";
+      return;
+    }
+
+    m_lastUrl = currentUrl;
     m_emitOpenUrlNotify = true;
+    KWebPage* p = page();
 
     if (ok) {
         if (m_webView->title().trimmed().isEmpty()) {
@@ -459,36 +464,28 @@ void KWebKitPart::slotLoadFinished(bool ok)
             slotUrlChanged(m_webView->url());
         }
 
-        const QUrl mainUrl = m_webView->url();
-        if (mainUrl != sAboutBlankUrl && page()) {
-            // Fill form data from wallet...
-            KWebWallet *webWallet = page()->wallet();
-            if (webWallet) {
-                webWallet->fillFormData(page()->mainFrame());
-                KWebWallet::WebFormList list = webWallet->formsWithCachedData(page()->mainFrame());
-                if (!list.isEmpty()) {
-                    if (!m_statusBarWalletLabel) {
-                        m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
-                        m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
-                        m_statusBarWalletLabel->setUseCursor(false);
-                        m_statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
-                        connect(m_statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
-                        connect(m_statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
-                    }
+        if (currentUrl != sAboutBlankUrl && p) {
+            m_hasCachedFormData = false;
 
-                    m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
-                    m_hasCachedFormData = true;
+            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
+                addWalletStatusBarIcon(); // Add wallet status
+            } else {
+                // Attempt to fill the web form...
+                KWebWallet *webWallet = p->wallet();
+                kDebug() << webWallet;
+                if (webWallet) {
+                    webWallet->fillFormData(p->mainFrame());
                 }
             }
 
             // Set the favicon specified through the <link> tag...
             if (WebKitSettings::self()->favIconsEnabled() &&
-                mainUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
-                const QWebElement element = page()->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
+                currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+                const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
                                                                                         "head>link[rel=\"shortcut icon\"]"));
                 KUrl shortcutIconUrl;
                 if (element.isNull()) {
-                    shortcutIconUrl = page()->mainFrame()->baseUrl();
+                    shortcutIconUrl = p->mainFrame()->baseUrl();
                     QString urlPath = shortcutIconUrl.path();
                     const int index = urlPath.indexOf(QL1C('/'));
                     if (index > -1)
@@ -496,7 +493,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
                     urlPath += QL1S("/favicon.ico");
                     shortcutIconUrl.setPath(urlPath);
                 } else {
-                    shortcutIconUrl = KUrl (page()->mainFrame()->baseUrl(), element.attribute("href"));
+                    shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
                 }
 
                 kDebug() << "setting favicon to" << shortcutIconUrl;
@@ -513,8 +510,8 @@ void KWebKitPart::slotLoadFinished(bool ok)
         if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
             const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
             const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
-            if (page()) {
-                page()->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+            if (p) {
+                p->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
                 setArguments(args);
             }
         }
@@ -526,11 +523,11 @@ void KWebKitPart::slotLoadFinished(bool ok)
     */
     bool pending = false;
 #if QT_VERSION >= 0x040700
-    if (page() && page()->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count()) {
+    if (p && p->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count()) {
         if (WebKitSettings::self()->autoPageRefresh())
             pending = true;
         else
-            page()->triggerAction(QWebPage::StopScheduledPageRefresh);
+            p->triggerAction(QWebPage::StopScheduledPageRefresh);
     }
 #endif
     emit completed((ok && pending));
@@ -775,7 +772,7 @@ void KWebKitPart::slotShowWalletMenu()
     if (m_webView && WebKitSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
       menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
 
-    if (page() && m_hasCachedFormData)
+    if (m_hasCachedFormData)
       menu->addAction(i18n("Remove all cached passwords for this site"), this, SLOT(slotRemoveCachedPasswords()));
 
     menu->addSeparator();
@@ -905,4 +902,25 @@ void KWebKitPart::slotSaveFormDataDone()
     QVBoxLayout* lay = qobject_cast<QVBoxLayout*>(widget()->layout());
     if (lay)
         lay->removeWidget(m_passwordBar);
+}
+
+void KWebKitPart::addWalletStatusBarIcon ()
+{
+    if (m_statusBarWalletLabel) {
+        m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
+    } else {
+        m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
+        m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+        m_statusBarWalletLabel->setUseCursor(false);
+        m_statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
+        connect(m_statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
+        connect(m_statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+    }
+    m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
+}
+
+void KWebKitPart::slotFillFormRequestCompleted (bool ok)
+{
+    if ((m_hasCachedFormData = ok))
+        addWalletStatusBarIcon();
 }

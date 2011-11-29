@@ -136,15 +136,17 @@ private Q_SLOTS:
     void slotPrintRequested(QWebFrame*);
     void slotSaveFormDataRequested(const QString &, const QUrl &);
     void slotSaveFormDataDone();
+    void slotFillFormRequestCompleted(bool);
 
 private:
     WebPage* page();
     void initActions();
+    void addWalletStatusBarIcon();
 
+    KUrl m_lastUrl;
     bool m_emitOpenUrlNotify;
     bool m_pageRestored;
     bool m_hasCachedFormData;
-    bool m_loadStarted;
     KUrlLabel* m_statusBarWalletLabel;
     KDEPrivate::SearchBar* m_searchBar;
     KDEPrivate::PasswordBar* m_passwordBar;
