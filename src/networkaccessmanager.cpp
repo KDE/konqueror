@@ -23,6 +23,8 @@
 
 #include <KDE/KDebug>
 #include <KDE/KLocalizedString>
+#include <KDE/KProtocolInfo>
+#include <KDE/KRun>
 
 #include <QtCore/QTimer>
 #include <QtNetwork/QNetworkReply>
@@ -80,8 +82,13 @@ static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& reques
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (!blockRequest(op, req.url()))
+    if (!blockRequest(op, req.url())) {
+        if (KProtocolInfo::isHelperProtocol(req.url())) {
+            (void) new KRun(req.url(), 0 /*widget missing*/);
+            return new NullNetworkReply(req, this);
+        }
         return KIO::AccessManager::createRequest(op, req, outgoingData);
+    }
 
     QWebFrame* frame = qobject_cast<QWebFrame*>(req.originatingObject());
     if (frame) {
