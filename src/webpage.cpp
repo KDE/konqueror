@@ -728,6 +728,7 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     while (it.hasNext()) {
         QPair<QString, QString> queryItem = it.next();
         if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
+            // ### DF: this hack breaks mailto:faure@kde.org, kmail doesn't expect mailto:?to=faure@kde.org
             queryItem.second = queryItem.first;
             queryItem.first = "to";
         } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
