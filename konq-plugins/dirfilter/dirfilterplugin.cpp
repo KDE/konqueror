@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2000, 2001, 2002 Dawit Alemayehu <adawit@kde.org>
+   Copyright (C) 2000-2011 Dawit Alemayehu <adawit@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -130,10 +130,10 @@ DirFilterPlugin::DirFilterPlugin (QObject* parent,
   if ( !m_part )
     return;
 
-  m_dirModel = qFindChild<KDirLister*>(m_part);
-  if (!m_dirModel && m_part->widget()) {
-    m_dirModel = qFindChild<KDirLister*>(m_part->widget());
-    if ( !m_dirModel )
+  m_dirLister = qFindChild<KDirLister*>(m_part);
+  if (!m_dirLister && m_part->widget()) {
+    m_dirLister = qFindChild<KDirLister*>(m_part->widget());
+    if ( !m_dirLister )
       return;
   }
 
@@ -148,24 +148,13 @@ DirFilterPlugin::DirFilterPlugin (QObject* parent,
   connect(  m_pFilterMenu->menu(), SIGNAL(triggered(QAction*)),
            SLOT(slotItemSelected(QAction*)) );
 
-  connect (m_dirModel, SIGNAL (deleteItem(KFileItem)),
+  connect (m_dirLister, SIGNAL (deleteItem(KFileItem)),
            SLOT(slotItemRemoved(KFileItem)));
-  connect (m_dirModel, SIGNAL (newItems(KFileItemList)),
+  connect (m_dirLister, SIGNAL (newItems(KFileItemList)),
            SLOT (slotItemsAdded(KFileItemList)));
-  connect (m_dirModel, SIGNAL (itemsFilteredByMime(KFileItemList)),
+  connect (m_dirLister, SIGNAL (itemsFilteredByMime(KFileItemList)),
            SLOT (slotItemsAdded(KFileItemList)));
   connect (m_part, SIGNAL(aboutToOpenURL()), SLOT(slotOpenURL()));
-
-  // Create, add and connect the widget for editing the current filter string.
-  KLineEdit *filterEdit = new KLineEdit();
-  filterEdit->setMaximumWidth(150);
-  filterEdit->setClearButtonShown (true);
-  connect (filterEdit, SIGNAL(textEdited(QString)), this, SLOT(slotFilterTextEdited(QString)));
-
-  KAction *filterAction = actionCollection()->addAction("toolbar_filter_field");
-  filterAction->setText(i18n("Filter Field"));
-  filterAction->setDefaultWidget( filterEdit );
-  filterAction->setShortcutConfigurable(false);
 }
 
 DirFilterPlugin::~DirFilterPlugin()
@@ -183,7 +172,7 @@ void DirFilterPlugin::slotOpenURL ()
   {
     m_pURL = url;
     m_pMimeInfo.clear();
-    m_dirModel->setMimeFilter (globalSessionManager->restore(url));
+    m_dirLister->setMimeFilter (globalSessionManager->restore(url));
   }
 }
 
@@ -280,7 +269,7 @@ void DirFilterPlugin::slotShowPopup()
 
 void DirFilterPlugin::slotItemSelected (QAction *action)
 {
-  if (!m_part || !m_dirModel || !action)
+  if (!m_part || !m_dirLister || !action)
     return;
 
   MimeInfoMap::iterator it = m_pMimeInfo.begin();
@@ -296,9 +285,9 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     if (mimeInfo.useAsFilter)
     {
       mimeInfo.useAsFilter = false;
-      filters = m_dirModel->mimeFilters();
+      filters = m_dirLister->mimeFilters();
       if (filters.removeAll(it.key()))
-        m_dirModel->setMimeFilter (filters);
+        m_dirLister->setMimeFilter (filters);
     }
     else
     {
@@ -306,7 +295,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
 
       if (globalSessionManager->useMultipleFilters)
       {
-        filters = m_dirModel->mimeFilters();
+        filters = m_dirLister->mimeFilters();
         filters << it.key();
       }
       else
@@ -323,23 +312,23 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
         }
       }
 
-      m_dirModel->setMimeFilter (filters);
+      m_dirLister->setMimeFilter (filters);
     }
 
     // We'd maybe benefit from an extra  Q_PROPERTY in the DolphinPart
     // for setting the mime filter, here. For now, just refresh
     // the model - refreshing the DolphinPart is more complex.
     const KUrl url (m_part->url());
-    m_dirModel->openUrl (url);
+    m_dirLister->openUrl (url);
     globalSessionManager->save (url, filters);
   }
 }
 
 void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
 {
- if (list.count() == 0 || !m_dirModel || !m_dirModel->nameFilter().isEmpty())
+ if (list.count() == 0 || !m_dirLister || !m_dirLister->nameFilter().isEmpty())
   {
-    if (m_dirModel) m_pFilterMenu->setEnabled (m_dirModel->nameFilter().isEmpty());
+    if (m_dirLister) m_pFilterMenu->setEnabled (m_dirLister->nameFilter().isEmpty());
     return;
   }
 
@@ -362,7 +351,7 @@ void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
     if (!m_pMimeInfo.contains (mimeType))
     {
       MimeInfo& mimeInfo = m_pMimeInfo[mimeType];
-      QStringList filters = m_dirModel->mimeFilters();
+      QStringList filters = m_dirLister->mimeFilters();
       mimeInfo.useAsFilter = (!filters.isEmpty () &&
                               filters.contains (mimeType));
       mimeInfo.mimeComment = (*kit).mimeComment();
@@ -378,7 +367,7 @@ void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
 
 void DirFilterPlugin::slotItemRemoved (const KFileItem& item)
 {
-  if (!m_dirModel)
+  if (!m_dirLister)
     return;
 
   QString mimeType = item.mimetype().trimmed();
@@ -393,9 +382,9 @@ void DirFilterPlugin::slotItemRemoved (const KFileItem& item)
     } else {
       if (info.useAsFilter)
       {
-        QStringList filters = m_dirModel->mimeFilters();
+        QStringList filters = m_dirLister->mimeFilters();
         filters.removeAll(mimeType);
-        m_dirModel->setMimeFilter(filters);
+        m_dirLister->setMimeFilter(filters);
         globalSessionManager->save (m_part->url(), filters);
         QTimer::singleShot( 0, this, SLOT(slotTimeout()) );
       }
@@ -406,7 +395,7 @@ void DirFilterPlugin::slotItemRemoved (const KFileItem& item)
 
 void DirFilterPlugin::slotReset()
 {
-  if (!m_part || !m_dirModel)
+  if (!m_part || !m_dirLister)
     return;
 
   const MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
@@ -415,8 +404,8 @@ void DirFilterPlugin::slotReset()
 
   const QStringList filters;
   const KUrl url (m_part->url());
-  m_dirModel->setMimeFilter (filters);
-  m_dirModel->openUrl (url);
+  m_dirLister->setMimeFilter (filters);
+  m_dirLister->openUrl (url);
   globalSessionManager->save (url, filters);
 }
 
@@ -435,23 +424,8 @@ void DirFilterPlugin::slotMultipleFilters()
 
 void DirFilterPlugin::slotTimeout()
 {
-  if (m_dirModel)
-    m_dirModel->openUrl (m_part->url());
-}
-
-void DirFilterPlugin::slotFilterTextEdited(const QString& nextText)
-{
-    // Again, we probably need some additional Q_PROPERTIES (in addition to
-    // setNameFilter(...) added to DolphinPart.  This works for now, though.
-    KDirSortFilterProxyModel *proxyModel = qFindChild<KDirSortFilterProxyModel*>( m_part );
-    if (proxyModel)
-    {
-        proxyModel->setFilterRegExp(nextText);
-    }
-    else
-    {
-        kWarning() << "Could not find KDirSortFilterProxyModel for the Part!";
-    }
+  if (m_dirLister)
+    m_dirLister->openUrl (m_part->url());
 }
 
 K_PLUGIN_FACTORY(DirFilterFactory, registerPlugin<DirFilterPlugin>();)
