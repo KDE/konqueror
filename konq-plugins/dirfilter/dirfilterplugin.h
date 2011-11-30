@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2000, 2001, 2002 Dawit Alemayehu <adawit@kde.org>
+   Copyright (C) 2000-2011 Dawit Alemayehu <adawit@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -16,11 +16,11 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef __DIR_FILTER_PLUGIN_H
-#define __DIR_FILTER_PLUGIN_H
+#ifndef DIR_FILTER_PLUGIN_H
+#define DIR_FILTER_PLUGIN_H
 
-#include <qset.h>
-#include <qstringlist.h>
+#include <QtCore/QSet>
+#include <QtCore/QStringList>
 
 #include <kparts/plugin.h>
 
@@ -33,10 +33,6 @@ namespace KParts
 {
     class ReadOnlyPart;
 }
-
-namespace KIO
-{
-  }
 
 class SessionManager
 {
@@ -99,13 +95,12 @@ private slots:
   void slotItemSelected(QAction*);
   void slotItemRemoved(const KFileItem &);
   void slotItemsAdded(const KFileItemList &);
-  void slotFilterTextEdited(const QString &);
 
 private:
   KUrl m_pURL;
   KParts::ReadOnlyPart* m_part;
   KActionMenu* m_pFilterMenu;
-  KDirLister* m_dirModel;
+  KDirLister* m_dirLister;
 
   typedef QMap<QString,MimeInfo> MimeInfoMap;
   MimeInfoMap m_pMimeInfo;
