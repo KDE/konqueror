@@ -440,79 +440,76 @@ void KWebKitPart::slotLoadStarted()
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
+    KWebPage* p = page();
     const QUrl currentUrl = m_webView->url();
 
-    if (m_lastUrl == currentUrl) {
-      kDebug() << "****** Ignoring load finished signal";
-      return;
-    }
+    if (m_lastUrl != currentUrl) {
+        m_lastUrl = currentUrl;
+        m_emitOpenUrlNotify = true;
 
-    m_lastUrl = currentUrl;
-    m_emitOpenUrlNotify = true;
-    KWebPage* p = page();
+        if (ok) {
+            if (m_webView->title().trimmed().isEmpty()) {
+                // If the document title is empty, then set it to the current url
+                const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
+                emit setWindowCaption(caption);
 
-    if (ok) {
-        if (m_webView->title().trimmed().isEmpty()) {
-            // If the document title is empty, then set it to the current url
-            const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
-            emit setWindowCaption(caption);
-
-            // The urlChanged signal is emitted if and only if the main frame
-            // receives the title of the page so we manually invoke the slot as
-            // a work around here for pages that do not contain it, such as
-            // text documents...
-            slotUrlChanged(m_webView->url());
-        }
-
-        if (currentUrl != sAboutBlankUrl && p) {
-            m_hasCachedFormData = false;
-
-            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
-                addWalletStatusBarIcon(); // Add wallet status
-            } else {
-                // Attempt to fill the web form...
-                KWebWallet *webWallet = p->wallet();
-                kDebug() << webWallet;
-                if (webWallet) {
-                    webWallet->fillFormData(p->mainFrame());
-                }
+                // The urlChanged signal is emitted if and only if the main frame
+                // receives the title of the page so we manually invoke the slot as
+                // a work around here for pages that do not contain it, such as
+                // text documents...
+                slotUrlChanged(m_webView->url());
             }
 
-            // Set the favicon specified through the <link> tag...
-            if (WebKitSettings::self()->favIconsEnabled() &&
-                currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
-                const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                                        "head>link[rel=\"shortcut icon\"]"));
-                KUrl shortcutIconUrl;
-                if (element.isNull()) {
-                    shortcutIconUrl = p->mainFrame()->baseUrl();
-                    QString urlPath = shortcutIconUrl.path();
-                    const int index = urlPath.indexOf(QL1C('/'));
-                    if (index > -1)
-                      urlPath.truncate(index);
-                    urlPath += QL1S("/favicon.ico");
-                    shortcutIconUrl.setPath(urlPath);
+            if (currentUrl != sAboutBlankUrl && p) {
+                m_hasCachedFormData = false;
+
+                if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
+                    addWalletStatusBarIcon(); // Add wallet status
                 } else {
-                    shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
+                    // Attempt to fill the web form...
+                    KWebWallet *webWallet = p->wallet();
+                    kDebug() << webWallet;
+                    if (webWallet) {
+                        webWallet->fillFormData(p->mainFrame());
+                    }
                 }
 
-                kDebug() << "setting favicon to" << shortcutIconUrl;
-                m_browserExtension->setIconUrl(shortcutIconUrl);
+                // Set the favicon specified through the <link> tag...
+                if (WebKitSettings::self()->favIconsEnabled() &&
+                    currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+                    const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
+                                                                                            "head>link[rel=\"shortcut icon\"]"));
+                    KUrl shortcutIconUrl;
+                    if (element.isNull()) {
+                        shortcutIconUrl = p->mainFrame()->baseUrl();
+                        QString urlPath = shortcutIconUrl.path();
+                        const int index = urlPath.indexOf(QL1C('/'));
+                        if (index > -1)
+                          urlPath.truncate(index);
+                        urlPath += QL1S("/favicon.ico");
+                        shortcutIconUrl.setPath(urlPath);
+                    } else {
+                        shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
+                    }
+
+                    kDebug() << "setting favicon to" << shortcutIconUrl;
+                    m_browserExtension->setIconUrl(shortcutIconUrl);
+                }
             }
         }
-    }
 
-    // Set page restored to false, if the page was restored...
-    if (m_pageRestored) {
-        m_pageRestored = false;
-        // Restore the scroll postions if present...
-        KParts::OpenUrlArguments args = arguments();
-        if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
-            const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
-            const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
-            if (p) {
-                p->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
-                setArguments(args);
+        // Set page restored to false, if the page was restored...
+        if (m_pageRestored) {
+            m_pageRestored = false;
+            // Restore the scroll postions if present...
+            KParts::OpenUrlArguments args = arguments();
+            if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
+                const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
+                const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
+                if (p) {
+                    p->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+                    setArguments(args);
+                }
             }
         }
     }
