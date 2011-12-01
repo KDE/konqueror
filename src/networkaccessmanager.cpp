@@ -27,6 +27,7 @@
 #include <KDE/KRun>
 
 #include <QtCore/QTimer>
+#include <QtGui/QWidget>
 #include <QtNetwork/QNetworkReply>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElementCollection>
@@ -84,7 +85,7 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
 {
     if (!blockRequest(op, req.url())) {
         if (KProtocolInfo::isHelperProtocol(req.url())) {
-            (void) new KRun(req.url(), 0 /*widget missing*/);
+            (void) new KRun(req.url(), qobject_cast<QWidget*>(req.originatingObject()));
             return new NullNetworkReply(req, this);
         }
         return KIO::AccessManager::createRequest(op, req, outgoingData);
