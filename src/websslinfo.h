@@ -47,7 +47,7 @@ public:
   QList<QSslCertificate> certificateChain() const;
 
   bool saveTo(QMap<QString, QVariant>&) const;
-  void restoreFrom(const QVariant &, const QUrl& = QUrl());
+  void restoreFrom(const QVariant &, const QUrl& = QUrl(), bool reset = false);
 
   void setUrl (const QUrl &url);
   WebSslInfo& operator = (const WebSslInfo&);

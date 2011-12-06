@@ -407,8 +407,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
         if (isMainFrameRequest) {
             setRequestMetaData(QL1S("main_frame_request"), QL1S("TRUE"));
-            if (m_sslInfo.isValid() && !domainSchemeMatch(request.url(), m_sslInfo.url()))
-                m_sslInfo = WebSslInfo();
         } else {
             setRequestMetaData(QL1S("main_frame_request"), QL1S("FALSE"));
         }
@@ -499,23 +497,24 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     if (!frame)
         return;
 
-    // Only deal with non-redirect responses...    
+    const bool shouldResetSslInfo = (m_sslInfo.isValid() && !domainSchemeMatch(requestUrl, m_sslInfo.url()));
+    // Only deal with non-redirect responses...
     const QVariant redirectVar = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
     if (redirectVar.isValid()) {
         m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
-                              reply->url());
+                              reply->url(), shouldResetSslInfo);
         return;
     }
 
     const int errCode = errorCodeFromReply(reply);
-    const bool isMainFrameRequest = (frame == mainFrame()); 
+    const bool isMainFrameRequest = (frame == mainFrame());
     // Handle any error...
     switch (errCode) {
         case 0:
         case KIO::ERR_NO_CONTENT:
             if (isMainFrameRequest) {
                 m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
-                                        reply->url());
+                                      reply->url(), shouldResetSslInfo);
                 setPageJScriptPolicy(reply->url());
             }
             break;

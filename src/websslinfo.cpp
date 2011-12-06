@@ -147,8 +147,12 @@ bool WebSslInfo::saveTo(QMap<QString, QVariant>& data) const
   return ok;
 }
 
-void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url)
+void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url, bool reset)
 {
+  if (reset) {
+      *this = WebSslInfo();
+  }
+
   if (value.isValid() && value.type() == QVariant::Map) {
     QMap<QString,QVariant> metaData = value.toMap();
     if (metaData.value("ssl_in_use", false).toBool()) {
