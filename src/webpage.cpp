@@ -142,31 +142,40 @@ void WebPage::setSslInfo (const WebSslInfo& info)
     m_sslInfo = info;
 }
 
+static void checkForDownloadManager(QWidget* widget, QString& cmd)
+{
+    cmd.clear();
+    KGlobal::locale();
+    KConfigGroup cfg (KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals), "HTML Settings");
+    const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
+    if (fileName.isEmpty())
+        return;
+
+    const QString exeName = KStandardDirs::findExe(fileName);
+    if (exeName.isEmpty()) {
+        KMessageBox::detailedSorry(widget,
+                                   i18n("The download manager (%1) could not be found in your installation.", fileName),
+                                   i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled."));
+        cfg.writePathEntry("DownloadManager", QString());
+        cfg.sync();
+        return;
+    }
+
+    cmd = exeName;
+}
+
 void WebPage::downloadRequest(const QNetworkRequest &request)
 {
     const KUrl url(request.url());
 
     // Integration with a download manager...
     if (!url.isLocalFile()) {
-        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
-        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
-
-        if (!downloadManger.isEmpty()) {
-            // then find the download manager location
-            //kDebug() << "Using: " << downloadManger << " as Download Manager";
-            QString cmd = KStandardDirs::findExe(downloadManger);
-            if (cmd.isEmpty()) {
-                QString errMsg = i18n("The download manager (%1) could not be found in your installation.", downloadManger);
-                QString errMsgEx = i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled.");
-                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
-                cfg.writePathEntry("DownloadManager", QString());
-                cfg.sync();
-            } else {
-                cmd += ' ' + KShell::quoteArg(url.url());
-                //kDebug() << "Calling command" << cmd;
-                KRun::runCommand(cmd, view());
-                return;
-            }
+        QString managerExe;
+        checkForDownloadManager(view(), managerExe);
+        if (!managerExe.isEmpty()) {
+            //kDebug() << "Calling command" << cmd;
+            KRun::runCommand((managerExe + QLatin1Char(' ') + KShell::quoteArg(url.url())), view());
+            return;
         }
     }
 
@@ -183,25 +192,19 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
 
     stream >> errorName >> techName >> description >> causes >> solutions;
 
-    QString url, protocol, datetime;
-    url = reqUrl.url();
-    protocol = reqUrl.protocol();
-    datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(), KLocale::LongDate );
-
-    QString filename (KStandardDirs::locate ("data", QL1S("kwebkitpart/error.html")));
-    QFile file( filename );
+    QFile file (KStandardDirs::locate ("data", QL1S("kwebkitpart/error.html")));
     if ( !file.open( QIODevice::ReadOnly ) )
         return i18n("<html><body><h3>Unable to display error message</h3>"
                     "<p>The error template file <em>error.html</em> could not be "
                     "found.</p></body></html>");
 
-    QString html = QString( QL1S( file.readAll() ) );
+    QString html( QL1S(file.readAll()) );
 
     html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
     html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
     html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
 
-    QString doc = QL1S( "<h1>" );
+    QString doc (QL1S( "<h1>" ));
     doc += i18n( "The requested operation could not be completed" );
     doc += QL1S( "</h1><h2>" );
     doc += errorName;
@@ -216,15 +219,17 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
     doc += QL1S( "<h3>" );
     doc += i18n( "Details of the Request:" );
     doc += QL1S( "</h3><ul><li>" );
-    doc += i18n( "URL: %1" ,  url );
+    doc += i18n( "URL: %1", reqUrl.url() );
     doc += QL1S( "</li><li>" );
 
+    const QString protocol (reqUrl.protocol());
     if ( !protocol.isNull() ) {
         doc += i18n( "Protocol: %1", protocol );
         doc += QL1S( "</li><li>" );
     }
 
-    doc += i18n( "Date and Time: %1" ,  datetime );
+    doc += i18n( "Date and Time: %1",
+                 KGlobal::locale()->formatDateTime(QDateTime::currentDateTime(), KLocale::LongDate) );
     doc += QL1S( "</li><li>" );
     doc += i18n( "Additional Information: %1" ,  text );
     doc += QL1S( "</li></ul><h3>" );
@@ -307,7 +312,7 @@ bool WebPage::supportsExtension(Extension extension) const
 
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
-    kDebug() << "window type:" << type;
+    // kDebug() << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
@@ -550,8 +555,7 @@ static bool isBlankUrl(const KUrl& url)
 
 void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 {
-    kDebug() << reply->url();
-
+    //kDebug() << reply->url();
     QString mimeType;
     KIO::MetaData metaData;
 
@@ -559,7 +563,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     KIO::AccessManager::putReplyOnHold(reply);
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
-        kDebug() << "*******" << m_part.data()->arguments().metaData() << m_part.data()->url();
         if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part.data()->url())) {
             m_part.data()->closeUrl();
             if (m_part.data()->arguments().metaData().contains(QL1S("new-window"))) {
@@ -576,7 +579,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     return;
 #endif
 
-    kDebug() << "mimetype=" << mimeType << "metadata:" << metaData;
+    //kDebug() << "mimetype=" << mimeType << "metadata:" << metaData;
 
     if (reply->request().originatingObject() == this->mainFrame()) {
         KParts::OpenUrlArguments args;
@@ -824,7 +827,7 @@ NewWindowPage::~NewWindowPage()
 
 bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+    //kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
     if (m_createNewWindow) {
         if (!part() && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
             return false;
