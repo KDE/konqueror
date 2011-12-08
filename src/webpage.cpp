@@ -560,6 +560,11 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 
 #if KDE_IS_VERSION(4,6,41)
     KIO::AccessManager::putReplyOnHold(reply);
+    QString downloadCmd;
+    checkForDownloadManager(view(), downloadCmd);
+    if (!downloadCmd.isEmpty()) {
+        reply->setProperty("DownloadManagerExe", downloadCmd);
+    }
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
         if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part.data()->url())) {
