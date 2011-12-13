@@ -218,9 +218,6 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
 void KonqView::switchView( KonqViewFactory &viewFactory )
 {
     //kDebug();
-  if ( m_pPart )
-    m_pPart->widget()->hide();
-
   KParts::ReadOnlyPart *oldPart = m_pPart;
   m_pPart = m_pKonqFrame->attach( viewFactory ); // creates the part
 
