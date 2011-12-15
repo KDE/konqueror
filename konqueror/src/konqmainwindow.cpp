@@ -4223,6 +4223,7 @@ void KonqMainWindow::enableAllActions( bool enable )
 
   }
   actionCollection()->action( "quit" )->setEnabled( true );
+  actionCollection()->action( "link" )->setEnabled( false );
 }
 
 void KonqMainWindow::disableActionsNoView()
