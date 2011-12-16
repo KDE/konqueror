@@ -277,9 +277,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
 
-    connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(clear()));
-    connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(hide()));
-
     connect(m_webView, SIGNAL(linkShiftClicked(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
 

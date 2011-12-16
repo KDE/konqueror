@@ -27,8 +27,10 @@
 
 #include <QtGui/QWidget>
 
-namespace KDEPrivate {
+class QEvent;
 
+namespace KDEPrivate {
+ 
 /**
  * This is the widget that shows up when the search is initiated.
  */
@@ -46,9 +48,10 @@ public:
     void setFoundMatch(bool match);
     void setSearchText(const QString&);
 
+    virtual bool event(QEvent* e);
+
 public Q_SLOTS:
-    void show();
-    void hide();
+    virtual void setVisible(bool visible);
     void clear();
     void findNext();
     void findPrevious();
@@ -56,9 +59,6 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void searchTextChanged(const QString& text, bool backward = false);
-
-private Q_SLOTS:
-    void searchAsYouTypeChanged(bool);
 
 private:
     class SearchBarPrivate;

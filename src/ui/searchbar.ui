@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>582</width>
+    <width>564</width>
     <height>34</height>
    </rect>
   </property>
@@ -22,9 +22,6 @@
      <property name="toolTip">
       <string>Close the search bar</string>
      </property>
-     <property name="shortcut">
-      <string>Esc</string>
-     </property>
      <property name="autoRaise">
       <bool>true</bool>
      </property>
@@ -36,17 +33,17 @@
       <string>&amp;Find:</string>
      </property>
      <property name="buddy">
-      <cstring>searchLineEdit</cstring>
+      <cstring>searchComboBox</cstring>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="KLineEdit" name="searchLineEdit">
-     <property name="toolTip">
-      <string>Enter the text to search for here</string>
-     </property>
-     <property name="showClearButton" stdset="0">
-      <bool>true</bool>
+    <widget class="KHistoryComboBox" name="searchComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
     </widget>
    </item>
@@ -88,9 +85,12 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::MinimumExpanding</enum>
+     </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>26</width>
+       <width>20</width>
        <height>20</height>
       </size>
      </property>
@@ -130,9 +130,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KHistoryComboBox</class>
+   <extends>KComboBox</extends>
+   <header>khistorycombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
