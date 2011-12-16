@@ -148,7 +148,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     // Connect the signals/slots from the webview...
     connect(m_webView, SIGNAL(titleChanged(QString)),
             this, SIGNAL(setWindowCaption(QString)));
-    connect(m_webView, SIGNAL(loadFinished(bool)),
+    connect(m_webView->page()->mainFrame(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
     connect(m_webView, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotUrlChanged(QUrl)));
@@ -260,7 +260,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     if (!page)
         return;
 
-    connect(page, SIGNAL(loadStarted()),
+    connect(page->mainFrame(), SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
     connect(page, SIGNAL(loadAborted(KUrl)),
             this, SLOT(slotLoadAborted(KUrl)));
@@ -438,60 +438,57 @@ void KWebKitPart::slotLoadStarted()
 void KWebKitPart::slotLoadFinished(bool ok)
 {
     KWebPage* p = page();
-    const QUrl currentUrl = m_webView->url();
+    m_emitOpenUrlNotify = true;
 
-    if (m_lastUrl != currentUrl) {
-        m_lastUrl = currentUrl;
-        m_emitOpenUrlNotify = true;
+    if (ok) {
+        if (m_webView->title().trimmed().isEmpty()) {
+            // If the document title is empty, then set it to the current url
+            const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
+            emit setWindowCaption(caption);
 
-        if (ok) {
-            if (m_webView->title().trimmed().isEmpty()) {
-                // If the document title is empty, then set it to the current url
-                const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
-                emit setWindowCaption(caption);
+            // The urlChanged signal is emitted if and only if the main frame
+            // receives the title of the page so we manually invoke the slot as
+            // a work around here for pages that do not contain it, such as
+            // text documents...
+            slotUrlChanged(m_webView->url());
+        }
 
-                // The urlChanged signal is emitted if and only if the main frame
-                // receives the title of the page so we manually invoke the slot as
-                // a work around here for pages that do not contain it, such as
-                // text documents...
-                slotUrlChanged(m_webView->url());
+        const QUrl currentUrl (m_webView->url());
+
+        if (currentUrl != sAboutBlankUrl && p) {
+            m_hasCachedFormData = false;
+
+            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
+                addWalletStatusBarIcon(); // Add wallet status
+            } else {
+                // Attempt to fill the web form...
+                KWebWallet *webWallet = p->wallet();
+                kDebug() << webWallet;
+                if (webWallet) {
+                    webWallet->fillFormData(p->mainFrame());
+                }
             }
 
-            if (currentUrl != sAboutBlankUrl && p) {
-                m_hasCachedFormData = false;
-
-                if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
-                    addWalletStatusBarIcon(); // Add wallet status
+            // Set the favicon specified through the <link> tag...
+            if (WebKitSettings::self()->favIconsEnabled() &&
+                currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+                const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
+                                                                                        "head>link[rel=\"shortcut icon\"]"));
+                KUrl shortcutIconUrl;
+                if (element.isNull()) {
+                    shortcutIconUrl = p->mainFrame()->baseUrl();
+                    QString urlPath = shortcutIconUrl.path();
+                    const int index = urlPath.indexOf(QL1C('/'));
+                    if (index > -1)
+                      urlPath.truncate(index);
+                    urlPath += QL1S("/favicon.ico");
+                    shortcutIconUrl.setPath(urlPath);
                 } else {
-                    // Attempt to fill the web form...
-                    KWebWallet *webWallet = p->wallet();
-                    kDebug() << webWallet;
-                    if (webWallet) {
-                        webWallet->fillFormData(p->mainFrame());
-                    }
+                    shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
                 }
 
-                // Set the favicon specified through the <link> tag...
-                if (WebKitSettings::self()->favIconsEnabled() &&
-                    currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
-                    const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                                            "head>link[rel=\"shortcut icon\"]"));
-                    KUrl shortcutIconUrl;
-                    if (element.isNull()) {
-                        shortcutIconUrl = p->mainFrame()->baseUrl();
-                        QString urlPath = shortcutIconUrl.path();
-                        const int index = urlPath.indexOf(QL1C('/'));
-                        if (index > -1)
-                          urlPath.truncate(index);
-                        urlPath += QL1S("/favicon.ico");
-                        shortcutIconUrl.setPath(urlPath);
-                    } else {
-                        shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
-                    }
-
-                    kDebug() << "setting favicon to" << shortcutIconUrl;
-                    m_browserExtension->setIconUrl(shortcutIconUrl);
-                }
+                kDebug() << "setting favicon to" << shortcutIconUrl;
+                m_browserExtension->setIconUrl(shortcutIconUrl);
             }
         }
 

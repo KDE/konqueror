@@ -143,7 +143,6 @@ private:
     void initActions();
     void addWalletStatusBarIcon();
 
-    KUrl m_lastUrl;
     bool m_emitOpenUrlNotify;
     bool m_pageRestored;
     bool m_hasCachedFormData;
