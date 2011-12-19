@@ -63,7 +63,7 @@ QString KonqPixmapProvider::iconNameFor( const KUrl& url )
     if ( it != iconMap.end() ) {
         icon = it.value();
         if ( !icon.isEmpty() )
-	    return icon;
+            return icon;
     }
 
     if ( url.url().isEmpty() ) {
@@ -95,35 +95,31 @@ void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
 {
     iconMap.clear();
     const QStringList list = kc.readPathEntry( key, QStringList() );
-    QStringList::ConstIterator it = list.begin();
-    QString url, icon;
-    while ( it != list.end() ) {
-	url = (*it);
-	if ( ++it == list.end() )
-	    break;
-	icon = (*it);
-	iconMap.insert( KUrl( url ), icon );
-
-	++it;
+    QStringList::const_iterator it = list.begin();
+    QStringList::const_iterator itEnd = list.end();
+    while ( it != itEnd ) {
+        const QString url (*it);
+        if ( (++it) == itEnd )
+            break;
+        const QString icon (*it);
+        iconMap.insert( KUrl( url ), icon );
+        ++it;
     }
 }
 
 // only saves the cache for the given list of items to prevent the cache
 // from growing forever.
 void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
-			       const QStringList& items )
+                               const QStringList& items )
 {
     QStringList list;
-    QStringList::ConstIterator it = items.begin();
-    QMap<KUrl,QString>::const_iterator mit;
-    while ( it != items.end() ) {
-	mit = iconMap.constFind( KUrl(*it) );
-	if ( mit != iconMap.constEnd() ) {
-	    list.append( mit.key().url() );
-	    list.append( mit.value() );
-	}
-
-	++it;
+    QStringList::const_iterator itEnd = items.end();
+    for (QStringList::const_iterator it = items.begin(); it != itEnd; ++it) {
+        QMap<KUrl,QString>::const_iterator mit = iconMap.constFind( KUrl(*it) );
+        if ( mit != iconMap.constEnd() ) {
+            list.append( mit.key().url() );
+            list.append( mit.value() );
+        }
     }
     kc.writePathEntry( key, list );
 }
@@ -132,11 +128,11 @@ void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
     const QString& iconName )
 {
     KUrl u;
-    if ( !isHost ) u = hostOrURL;
+    if ( !isHost )
+        u = hostOrURL;
 
-    for ( QMap<KUrl,QString>::iterator it = iconMap.begin();
-          it != iconMap.end();
-          ++it )
+    QMap<KUrl,QString>::const_iterator itEnd = iconMap.end();
+    for ( QMap<KUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
     {
         KUrl url( it.key() );
         if ( !url.protocol().startsWith( "http" ) ) continue;
@@ -162,7 +158,7 @@ void KonqPixmapProvider::clear()
 QPixmap KonqPixmapProvider::loadIcon( const QString& icon, int size )
 {
     if ( size <= KIconLoader::SizeSmall )
-	return SmallIcon( icon, size );
+        return SmallIcon( icon, size );
 
     return KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
 }
