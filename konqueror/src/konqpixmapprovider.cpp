@@ -135,7 +135,6 @@ void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
     for ( QMap<KUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
     {
         KUrl url( it.key() );
-        if ( !url.protocol().startsWith( "http" ) ) continue;
         if ( ( isHost && url.host() == hostOrURL ) ||
              ( !isHost && url.host() == u.host() && url.path() == u.path() ) )
         {
