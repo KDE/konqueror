@@ -40,6 +40,7 @@
 #include <KDE/KProtocolInfo>
 #include <KDE/KInputDialog>
 #include <KDE/KLocalizedString>
+#include <KDE/KTemporaryFile>
 #include <kdeversion.h>
 
 #include <QtCore/QBuffer>
@@ -467,7 +468,7 @@ void WebKitBrowserExtension::slotViewDocumentSource()
 {
     if (!view())
         return;
-#if 1
+#if 0
     //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
     //a means to obtain the original content of the frame. Actually it does, but the
     //returned content is royally screwed up! *sigh*
@@ -487,7 +488,7 @@ void WebKitBrowserExtension::slotViewFrameSource()
 {
     if (!view())
         return;
-#if 1
+#if 0
     //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
     //a means to obtain the original content of the frame. Actually it does, but the
     //returned content is royally screwed up! *sigh*
