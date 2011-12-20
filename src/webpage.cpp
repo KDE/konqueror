@@ -821,7 +821,7 @@ NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* par
             this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
-    connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
+    connect(mainFrame(), SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
 }
 
 NewWindowPage::~NewWindowPage()
