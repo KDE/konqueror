@@ -470,10 +470,9 @@ void KWebKitPart::slotLoadFinished(bool ok)
             }
 
             // Set the favicon specified through the <link> tag...
-            if (WebKitSettings::self()->favIconsEnabled() &&
-                currentUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+            if (WebKitSettings::self()->favIconsEnabled()) {
                 const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                                        "head>link[rel=\"shortcut icon\"]"));
+                                                                                  "head>link[rel=\"shortcut icon\"]"));
                 KUrl shortcutIconUrl;
                 if (element.isNull()) {
                     shortcutIconUrl = p->mainFrame()->baseUrl();
