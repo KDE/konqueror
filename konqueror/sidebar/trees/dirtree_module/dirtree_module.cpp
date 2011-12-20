@@ -517,7 +517,7 @@ void KonqSidebarDirTreeModule::slotDeleteItem( const KFileItem &fileItem )
     // All items are in m_ptrdictSubDirs, so look it up fast
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem * item;
-    lookupItems(m_ptrdictSubDirs, fileItem, item, itemList);
+    lookupItems(m_dictSubDirs, fileItem.url().url( KUrl::RemoveTrailingSlash ), item, itemList);
     while(item)
     {
         removeSubDir( item );
