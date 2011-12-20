@@ -131,7 +131,7 @@ void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
     if ( !isHost )
         u = hostOrURL;
 
-    QMap<KUrl,QString>::const_iterator itEnd = iconMap.end();
+    QMap<KUrl,QString>::iterator itEnd = iconMap.end();
     for ( QMap<KUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
     {
         KUrl url( it.key() );
