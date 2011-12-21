@@ -148,8 +148,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     // Connect the signals/slots from the webview...
     connect(m_webView, SIGNAL(titleChanged(QString)),
             this, SIGNAL(setWindowCaption(QString)));
-    connect(m_webView->page()->mainFrame(), SIGNAL(loadFinished(bool)),
-            this, SLOT(slotLoadFinished(bool)));
     connect(m_webView, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotUrlChanged(QUrl)));
     connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(KUrl)),
@@ -262,6 +260,8 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     connect(page->mainFrame(), SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
+    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
+            this, SLOT(slotLoadFinished(bool)));
     connect(page, SIGNAL(loadAborted(KUrl)),
             this, SLOT(slotLoadAborted(KUrl)));
     connect(page, SIGNAL(linkHovered(QString,QString,QString)),
