@@ -258,9 +258,9 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     if (!page)
         return;
 
-    connect(page->mainFrame(), SIGNAL(loadStarted()),
+    connect(page, SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
-    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
+    connect(page, SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
     connect(page, SIGNAL(loadAborted(KUrl)),
             this, SLOT(slotLoadAborted(KUrl)));
@@ -309,6 +309,10 @@ bool KWebKitPart::openUrl(const KUrl &u)
     // automatically does that itself.
     m_emitOpenUrlNotify = false;
 
+    // Pointer to the page object...
+    WebPage* p = page();
+    Q_ASSERT(p);
+
     // Handle error conditions...
     if (u.protocol().compare(QL1S("error"), Qt::CaseInsensitive) == 0 && u.hasSubUrl()) {
         /**
@@ -330,8 +334,8 @@ bool KWebKitPart::openUrl(const KUrl &u)
             urls.pop_front();
             KUrl reqUrl = KUrl::join( urls );
             emit m_browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-            if (page()) {
-                m_webView->setHtml(page()->errorPage(error, errorText, reqUrl));
+            if (p) {
+                m_webView->setHtml(p->errorPage(error, errorText, reqUrl));
                 return true;
             }
         }
@@ -342,15 +346,15 @@ bool KWebKitPart::openUrl(const KUrl &u)
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
-    if ((sAboutBlankUrl != u) && page()) {
+    if ((sAboutBlankUrl != u) && p) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
             m_pageRestored = true;
-            const int historyCount = page()->history()->count();
+            const int historyCount = p->history()->count();
             const int historyIndex = args.metaData().take(QL1S("kwebkitpart-restore-state")).toInt();
             if (historyCount > 0 && historyIndex > -1 && historyIndex < historyCount ) {
-                QWebHistoryItem historyItem = page()->history()->itemAt(historyIndex);
+                QWebHistoryItem historyItem = p->history()->itemAt(historyIndex);
                 const bool restoreScrollPos = args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"));
                 if (restoreScrollPos) {
                     QMap<QString, QVariant> data;
@@ -365,9 +369,9 @@ bool KWebKitPart::openUrl(const KUrl &u)
                     if (historyItem.userData().isValid()) {
                         WebSslInfo sslInfo;
                         sslInfo.restoreFrom(historyItem.userData());
-                        page()->setSslInfo(sslInfo);
+                        p->setSslInfo(sslInfo);
                     }
-                    page()->history()->goToItem(historyItem);
+                    p->history()->goToItem(historyItem);
                     // Update the part's OpenUrlArguments after removing all of the
                     // 'kwebkitpart-restore-x' metadata entries...
                     setArguments(args);
@@ -381,7 +385,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
             WebSslInfo sslInfo;
             sslInfo.restoreFrom(KIO::MetaData(args.metaData()).toVariant());
             sslInfo.setUrl(u);
-            page()->setSslInfo(sslInfo);
+            p->setSslInfo(sslInfo);
         }
 
         // Update the part's OpenUrlArguments after removing all of the
@@ -441,7 +445,9 @@ void KWebKitPart::slotLoadFinished(bool ok)
     m_emitOpenUrlNotify = true;
 
     if (ok) {
-        if (m_webView->title().trimmed().isEmpty()) {
+        const bool isMainFrameRequest = (p->mainFrame() == p->currentFrame());
+
+        if (isMainFrameRequest && m_webView->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
             const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
             emit setWindowCaption(caption);
@@ -465,12 +471,12 @@ void KWebKitPart::slotLoadFinished(bool ok)
                 KWebWallet *webWallet = p->wallet();
                 kDebug() << webWallet;
                 if (webWallet) {
-                    webWallet->fillFormData(p->mainFrame());
+                    webWallet->fillFormData(p->currentFrame());
                 }
             }
 
             // Set the favicon specified through the <link> tag...
-            if (WebKitSettings::self()->favIconsEnabled()) {
+            if (isMainFrameRequest && WebKitSettings::self()->favIconsEnabled()) {
                 const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
                                                                                   "head>link[rel=\"shortcut icon\"]"));
                 KUrl shortcutIconUrl;
@@ -491,7 +497,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
             }
         }
 
-        // Set page restored to false, if the page was restored...
+        // Restore page settings...
         if (m_pageRestored) {
             m_pageRestored = false;
             // Restore the scroll postions if present...
@@ -500,7 +506,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
                 const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
                 const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
                 if (p) {
-                    p->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+                    p->currentFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
                     setArguments(args);
                 }
             }

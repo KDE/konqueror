@@ -312,7 +312,14 @@ void WebKitBrowserExtension::slotFrameInWindow()
 
     KParts::BrowserArguments bargs;
     bargs.setForcesNewWindow(true);
-    emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
+
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(true);
+
+    QUrl url (view()->page()->currentFrame()->baseUrl());
+    url.resolved(view()->page()->currentFrame()->url());
+
+    emit createNewWindow(KUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotFrameInTab()
@@ -320,10 +327,16 @@ void WebKitBrowserExtension::slotFrameInTab()
     if (!view())
         return;
 
-    KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
-    bargs.setNewTab(true);
-    emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(true);
 
+    KParts::BrowserArguments bargs;
+    bargs.setNewTab(true);
+
+    QUrl url (view()->page()->currentFrame()->baseUrl());
+    url.resolved(view()->page()->currentFrame()->url());
+
+    emit createNewWindow(KUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
