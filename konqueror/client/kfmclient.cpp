@@ -562,6 +562,8 @@ bool ClientApp::doIt()
   {
     // compatibility with KDE 3 and xdg-open
     QStringList kioclientArgs;
+    if (!s_interactive)
+        kioclientArgs << QLatin1String("--noninteractive");
     kioclientArgs << "exec" << args->arg(1);
     if (argc == 3)
         kioclientArgs << args->arg(2);
