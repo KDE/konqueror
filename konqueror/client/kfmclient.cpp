@@ -344,7 +344,8 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
     kDebug() << url << "mimetype=" << mimetype;
     needInstance();
 
-    if (url.protocol().startsWith(QLatin1String("http")))
+    if (url.protocol().startsWith(QLatin1String("http")) ||
+        url.protocol() == QLatin1String("file"))
     {
         KConfig config(QLatin1String("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
