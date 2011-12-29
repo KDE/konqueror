@@ -686,14 +686,21 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
             if (page()) {
                 QWebFrame* frame = page()->currentFrame();
                 if (frame) {
-                    const QString query = QL1S("a[href*=\"") + link + QL1S("\"]");
-                    const QWebElement element = frame->findFirstElement(query);
-                    const QString target = element.attribute(QL1S("target"));
-                    if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
-                        target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
-                        message += i18n(" (In new window)");
-                    } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
-                        message += i18n(" (In parent frame)");
+                    const QWebElementCollection collection = frame->findAllElements(QL1S("a[href]"));
+                    Q_FOREACH(const QWebElement& element, collection) {
+                        if (!element.hasAttribute(QL1S("target")))
+                            continue;
+                        if (linkUrl == frame->baseUrl().resolved(QUrl(element.attribute(QL1S("href"))))) {
+                            const QString target (element.attribute(QL1S("target")));
+                            if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
+                                target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
+                                message += i18n(" (In new window)");
+                            } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
+                                message += i18n(" (In parent frame)");
+                            }
+                            message = KStringHandler::csqueeze(message, 160);
+                            break;
+                        }
                     }
                 }
             }
