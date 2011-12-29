@@ -405,11 +405,13 @@ void KonqMainWindow::initBookmarkBar()
 
   if (!bar) return;
 
+  const bool wasVisible = bar->isVisible();
+
   delete m_paBookmarkBar;
   m_paBookmarkBar = new KBookmarkBar( s_bookmarkManager, m_pBookmarksOwner, bar, this );
 
   // hide if empty
-  if (bar->actions().count() == 0 )
+  if (bar->actions().count() == 0 || !wasVisible)
      bar->hide();
 }
 
