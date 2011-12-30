@@ -4886,7 +4886,10 @@ void KonqMainWindow::updateViewModeActions()
 
             // Create a KToggleAction for this view mode, and plug it into the menu
             KToggleAction* action = new KToggleAction(KIcon(service->icon()), serviceText, this);
-            actionCollection()->addAction(desktopEntryName, action);
+            // NOTE: "-viewmode" is appended to desktopEntryName to avoid overwritting existing
+            // action, e.g. konsolepart added through ToggleViewGUIClient in the ctor will be
+            // overwritten by the view mode konsolepart action added here.  #266517.
+            actionCollection()->addAction(desktopEntryName + QLatin1String("-viewmode"), action);
             action->setObjectName(desktopEntryName);
             action->setActionGroup(m_viewModesGroup);
             m_viewModeMenu->menu()->addAction(action);
