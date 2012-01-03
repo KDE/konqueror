@@ -116,7 +116,7 @@ void LoadPlugin() {
 		DEB( ef, "gNP_Shutdown = %x\n", gNP_Shutdown );
 		DEB( ef, "gNP_GetValue = %x\n", gNP_GetValue );
 		
-		if ( !gNP_GetMIMEDescription || !gNP_Initialize || !gNP_Initialize || !gNP_GetValue ) {
+		if ( !gNP_GetMIMEDescription || !gNP_Initialize || !gNP_Shutdown || !gNP_GetValue ) {
 			DEB( ef, "<- LoadPlugin - will unload before\n" );
 		 	UnloadPlugin();
 		} else
