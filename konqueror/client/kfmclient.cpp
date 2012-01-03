@@ -344,7 +344,8 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
     kDebug() << url << "mimetype=" << mimetype;
     needInstance();
 
-    if (url.protocol().startsWith(QLatin1String("http")))
+    if (url.protocol().startsWith(QLatin1String("http")) ||
+        url.protocol() == QLatin1String("file"))
     {
         KConfig config(QLatin1String("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
@@ -561,6 +562,8 @@ bool ClientApp::doIt()
   {
     // compatibility with KDE 3 and xdg-open
     QStringList kioclientArgs;
+    if (!s_interactive)
+        kioclientArgs << QLatin1String("--noninteractive");
     kioclientArgs << "exec" << args->arg(1);
     if (argc == 3)
         kioclientArgs << args->arg(2);

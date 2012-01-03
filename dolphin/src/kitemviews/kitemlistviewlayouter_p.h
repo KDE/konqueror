@@ -108,13 +108,6 @@ public:
     int maximumVisibleItems() const;
 
     /**
-     * @return Maximum number of items that can be shown in the same row
-     *          (= vertical scrolldirection) or same column
-     *          (= horizontal scrolldirection).
-     */
-    int itemsPerOffset() const;
-
-    /**
      * @return True if the item with the index \p itemIndex
      *         is the first item within a group.
      */
@@ -126,6 +119,16 @@ private:
     void doLayout();
     void updateVisibleIndexes();
     bool createGroupHeaders();
+
+    /**
+     * @return Minimum width of group headers when grouping is enabled in the horizontal
+     *         alignment mode. The header alignment is done like this:
+     *         Header-1 Header-2 Header-3
+     *         Item 1   Item 4   Item 7
+     *         Item 2   Item 5   Item 8
+     *         Item 3   Item 6   Item 9
+     */
+    qreal minimumGroupHeaderWidth() const;
 
 private:
     bool m_dirty;
