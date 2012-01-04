@@ -292,13 +292,23 @@ void KonqCombo::saveState()
 {
     m_cursorPos = cursorPosition();
     m_currentText = currentText();
+    m_selectedText = lineEdit()->selectedText();
     m_currentIndex = currentIndex();
 }
 
 void KonqCombo::restoreState()
 {
     setTemporary( m_currentText );
-    lineEdit()->setCursorPosition( m_cursorPos );
+    if (m_selectedText.isEmpty()) {
+        lineEdit()->setCursorPosition( m_cursorPos );
+    } else {
+        const int index = m_currentText.indexOf(m_selectedText);
+        if (index == -1) {
+            lineEdit()->setCursorPosition( m_cursorPos );
+        } else {
+            lineEdit()->setSelection(index, m_selectedText.length());
+        }
+    }
 }
 
 void KonqCombo::updatePixmaps()
