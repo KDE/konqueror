@@ -104,6 +104,7 @@ private:
     int m_cursorPos;
     int m_currentIndex;
     QString m_currentText;
+    QString m_selectedText;
     QPoint m_dragStart;
     int m_pageSecurity;
 
