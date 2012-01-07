@@ -73,17 +73,21 @@ void WebView::loadUrl(const KUrl& url, const KParts::OpenUrlArguments& args, con
 {
     page()->setProperty("NavigationTypeUrlEntered", true);
 
-    if (args.reload()) {
+    if (args.reload() && url == this->url()) {
       reload();
       return;
     }
 
-    if (bargs.postData.isEmpty()) {
-        KWebView::load(QNetworkRequest(url));
-        return;
+    QNetworkRequest request(url);
+    if (args.reload()) {
+        request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
     }
 
-    KWebView::load(QNetworkRequest(url), QNetworkAccessManager::PostOperation, bargs.postData);
+    if (bargs.postData.isEmpty()) {
+        KWebView::load(request);
+    } else {
+        KWebView::load(request, QNetworkAccessManager::PostOperation, bargs.postData);
+    }
 }
 
 QWebHitTestResult WebView::contextMenuResult() const
