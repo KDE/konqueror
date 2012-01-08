@@ -260,8 +260,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     connect(page, SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
-    connect(page, SIGNAL(loadFinished(bool)),
-            this, SLOT(slotLoadFinished(bool)));
     connect(page, SIGNAL(loadAborted(KUrl)),
             this, SLOT(slotLoadAborted(KUrl)));
     connect(page, SIGNAL(linkHovered(QString,QString,QString)),
@@ -276,6 +274,8 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             this, SLOT(slotWindowCloseRequested()));
     connect(page, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
+    connect(page, SIGNAL(frameCreated(QWebFrame*)),
+            this, SLOT(slotFrameCreated(QWebFrame*)));
 
     connect(m_webView, SIGNAL(linkShiftClicked(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
@@ -286,6 +286,11 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             m_browserExtension, SLOT(updateEditActions()));
     connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
+
+    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
+            this, SLOT(slotLoadFinished(bool)));
+    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
+            this, SLOT(slotMainFrameLoadFinished(bool)));
 
     KWebWallet *wallet = page->wallet();
     if (wallet) {
@@ -435,98 +440,118 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
+    kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
     emit started(0);
     slotWalletClosed();
 }
 
-void KWebKitPart::slotLoadFinished(bool ok)
+static bool hasPendingMetaRedirect(QWebFrame* frame)
 {
-    KWebPage* p = page();
-    m_emitOpenUrlNotify = true;
-
-    if (ok) {
-        const bool isMainFrameRequest = (p->mainFrame() == p->currentFrame());
-
-        if (isMainFrameRequest && m_webView->title().trimmed().isEmpty()) {
-            // If the document title is empty, then set it to the current url
-            const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
-            emit setWindowCaption(caption);
-
-            // The urlChanged signal is emitted if and only if the main frame
-            // receives the title of the page so we manually invoke the slot as
-            // a work around here for pages that do not contain it, such as
-            // text documents...
-            slotUrlChanged(m_webView->url());
-        }
-
-        const QUrl currentUrl (m_webView->url());
-
-        if (currentUrl != sAboutBlankUrl && p) {
-            m_hasCachedFormData = false;
-
-            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
-                addWalletStatusBarIcon(); // Add wallet status
-            } else {
-                // Attempt to fill the web form...
-                KWebWallet *webWallet = p->wallet();
-                kDebug() << webWallet;
-                if (webWallet) {
-                    webWallet->fillFormData(p->currentFrame());
-                }
-            }
-
-            // Set the favicon specified through the <link> tag...
-            if (isMainFrameRequest && WebKitSettings::self()->favIconsEnabled()) {
-                const QWebElement element = p->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                                  "head>link[rel=\"shortcut icon\"]"));
-                KUrl shortcutIconUrl;
-                if (element.isNull()) {
-                    shortcutIconUrl = p->mainFrame()->baseUrl();
-                    QString urlPath = shortcutIconUrl.path();
-                    const int index = urlPath.indexOf(QL1C('/'));
-                    if (index > -1)
-                      urlPath.truncate(index);
-                    urlPath += QL1S("/favicon.ico");
-                    shortcutIconUrl.setPath(urlPath);
-                } else {
-                    shortcutIconUrl = KUrl (p->mainFrame()->baseUrl(), element.attribute("href"));
-                }
-
-                kDebug() << "setting favicon to" << shortcutIconUrl;
-                m_browserExtension->setIconUrl(shortcutIconUrl);
-            }
-        }
-
-        // Restore page settings...
-        if (m_pageRestored) {
-            m_pageRestored = false;
-            // Restore the scroll postions if present...
-            KParts::OpenUrlArguments args = arguments();
-            if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
-                const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
-                const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
-                if (p) {
-                    p->currentFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
-                    setArguments(args);
-                }
-            }
-        }
-    }
-
+    bool pending = false;
     /*
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
       2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
     */
-    bool pending = false;
 #if QT_VERSION >= 0x040700
-    if (p && p->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count()) {
-        if (WebKitSettings::self()->autoPageRefresh())
+    if (!frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
+        if (WebKitSettings::self()->autoPageRefresh()) {
             pending = true;
-        else
-            p->triggerAction(QWebPage::StopScheduledPageRefresh);
+        } else {
+            frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
+        }
     }
 #endif
-    emit completed((ok && pending));
+    return pending;
+}
+
+void KWebKitPart::slotLoadFinished(bool ok)
+{
+    m_emitOpenUrlNotify = true;
+    QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
+
+    if (ok) {
+        const QUrl currentUrl (frame->baseUrl().resolved(frame->url()));
+        kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << frame;
+        kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
+
+        if (currentUrl != sAboutBlankUrl) {
+            m_hasCachedFormData = false;
+
+            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
+                addWalletStatusBarIcon();
+            } else {
+                // Attempt to fill the web form...
+                KWebWallet *webWallet = page() ? page()->wallet() : 0;
+                kDebug() << webWallet;
+                if (webWallet) {
+                    webWallet->fillFormData(frame, false);
+                }
+            }
+        }
+    }
+
+    emit completed((ok && hasPendingMetaRedirect(frame)));
+}
+
+void KWebKitPart::slotMainFrameLoadFinished (bool ok)
+{
+    if (!ok)
+        return;
+
+    // If the document contains no <title> tag, then set it to the current url.
+    if (m_webView->title().trimmed().isEmpty()) {
+        // If the document title is empty, then set it to the current url
+        const QUrl url (m_webView->url());
+        const QString caption (url.toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
+        emit setWindowCaption(caption);
+
+        // The urlChanged signal is emitted if and only if the main frame
+        // receives the title of the page so we manually invoke the slot as a
+        // work around here for pages that do not contain it, such as text
+        // documents...
+        slotUrlChanged(url);
+    }
+
+   QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
+
+    if (!frame || frame->url() == sAboutBlankUrl)
+        return;
+
+    // Set the favicon specified through the <link> tag...
+    if (WebKitSettings::self()->favIconsEnabled()) {
+        const QWebElement element = frame->findFirstElement(QL1S("head>link[rel=icon], "
+                                                                 "head>link[rel=\"shortcut icon\"]"));
+        KUrl shortcutIconUrl;
+        if (element.isNull()) {
+            shortcutIconUrl = frame->baseUrl();
+            QString urlPath = shortcutIconUrl.path();
+            const int index = urlPath.indexOf(QL1C('/'));
+            if (index > -1)
+              urlPath.truncate(index);
+            urlPath += QL1S("/favicon.ico");
+            shortcutIconUrl.setPath(urlPath);
+        } else {
+            shortcutIconUrl = KUrl (frame->baseUrl(), element.attribute("href"));
+        }
+
+        kDebug() << "setting favicon to" << shortcutIconUrl;
+        m_browserExtension->setIconUrl(shortcutIconUrl);
+    }
+
+    // Restore page settings...
+    if (m_pageRestored) {
+        m_pageRestored = false;
+        // Restore the scroll postions if present...
+        KParts::OpenUrlArguments args = arguments();
+        if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
+            const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
+            const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
+            frame->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+            setArguments(args);
+        }
+    }
+
+    emit completed((ok && hasPendingMetaRedirect(frame)));
 }
 
 void KWebKitPart::slotLoadAborted(const KUrl & url)
@@ -926,4 +951,12 @@ void KWebKitPart::slotFillFormRequestCompleted (bool ok)
 {
     if ((m_hasCachedFormData = ok))
         addWalletStatusBarIcon();
+}
+
+void KWebKitPart::slotFrameCreated (QWebFrame* frame)
+{
+    if (frame == page()->mainFrame())
+        return;
+
+    connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)), Qt::UniqueConnection);
 }

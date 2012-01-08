@@ -116,6 +116,7 @@ private Q_SLOTS:
     void slotLoadStarted();
     void slotLoadFinished(bool);
     void slotLoadAborted(const KUrl &);
+    void slotMainFrameLoadFinished(bool);
 
     void slotSearchForText(const QString &text, bool backward);
     void slotLinkHovered(const QString &, const QString&, const QString &);
@@ -137,6 +138,7 @@ private Q_SLOTS:
     void slotSaveFormDataRequested(const QString &, const QUrl &);
     void slotSaveFormDataDone();
     void slotFillFormRequestCompleted(bool);
+    void slotFrameCreated(QWebFrame*);
 
 private:
     WebPage* page();
