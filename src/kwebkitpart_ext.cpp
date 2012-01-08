@@ -641,8 +641,11 @@ KWebKitPart* KWebKitTextExtension::part() const
 
 bool KWebKitTextExtension::hasSelection() const
 {
-    // looks a bit slow
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
+    return part()->view()->hasSelection();
+#else
     return !part()->view()->selectedText().isEmpty();
+#endif
 }
 
 QString KWebKitTextExtension::selectedText(Format format) const
@@ -651,9 +654,11 @@ QString KWebKitTextExtension::selectedText(Format format) const
     case PlainText:
         return part()->view()->selectedText();
     case HTML:
-        // selectedTextAsHTML is missing in QWebKit:
-        // https://bugs.webkit.org/show_bug.cgi?id=35028
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
+        return part()->view()->selectedHtml();
+#else
         return part()->view()->page()->currentFrame()->toHtml();
+#endif
     }
     return QString();
 }
@@ -683,9 +688,12 @@ KUrl KWebKitHtmlExtension::baseUrl() const
 }
 
 bool KWebKitHtmlExtension::hasSelection() const
-{   // Hmm... QWebPage needs something faster than this to check
-    // whether there is selected content...
+{
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
+    return part()->view()->hasSelection();
+#else
     return !part()->view()->selectedText().isEmpty();
+#endif
 }
 
 KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMethods() const
