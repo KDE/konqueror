@@ -550,7 +550,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     url.setFileName( QString() );
   }
 
-    m_combo->lineEdit()->setModified(false);
+    if (m_combo)
+        m_combo->lineEdit()->setModified(false);
 
     KonqView *view = _view;
 
@@ -587,7 +588,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
         }
     }
 
-  const QString oldLocationBarURL = m_combo->currentText();
+  const QString oldLocationBarURL = (m_combo ? m_combo->currentText() : QString());
   if ( view )
   {
     if ( view == m_currentView )
@@ -1457,7 +1458,8 @@ void KonqMainWindow::slotSendFile()
 void KonqMainWindow::slotOpenLocation()
 {
     focusLocationBar();
-    m_combo->lineEdit()->selectAll();
+    if (m_combo)
+        m_combo->lineEdit()->selectAll();
 }
 
 void KonqMainWindow::slotOpenFile()
@@ -1476,7 +1478,8 @@ void KonqMainWindow::slotOpenFile()
 void KonqMainWindow::slotIconsChanged()
 {
     kDebug();
-    m_combo->updatePixmaps();
+    if (m_combo)
+        m_combo->updatePixmaps();
     m_pViewManager->updatePixmaps();
     updateWindowIcon();
 }
@@ -2061,7 +2064,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   //         << m_currentView->locationBarURL() << "m_currentView=" << m_currentView;
 
   // Make sure the location bar gets updated when the view(tab) is changed.
-  if (oldView != newView) {
+  if (oldView != newView && m_combo) {
     m_combo->lineEdit()->setModified(false);
   }
   m_currentView->setLocationBarURL( m_currentView->locationBarURL() );
@@ -3062,7 +3065,7 @@ void KonqMainWindow::slotRotation( KCompletionBase::KeyBindingType type )
 // Handle match() from m_pURLCompletion
 void KonqMainWindow::slotMatch( const QString &match )
 {
-  if ( match.isEmpty() ) // this case is handled directly
+  if ( match.isEmpty() || !m_combo)
     return;
 
   // Check flag to avoid match() raised by rotation
@@ -3212,16 +3215,19 @@ void KonqMainWindow::slotClipboardDataChanged()
 
 void KonqMainWindow::slotCheckComboSelection()
 {
-  bool hasSelection = m_combo->lineEdit()->hasSelectedText();
-  //kDebug() << "m_combo->lineEdit()->hasMarkedText():" << hasSelection;
-  m_paCopy->setEnabled( hasSelection );
-  m_paCut->setEnabled( hasSelection );
+    if (m_combo) {
+        const bool hasSelection = m_combo->lineEdit()->hasSelectedText();
+        //kDebug() << "m_combo->lineEdit()->hasMarkedText():" << hasSelection;
+        m_paCopy->setEnabled( hasSelection );
+        m_paCut->setEnabled( hasSelection );
+    }
 }
 
 void KonqMainWindow::slotClearLocationBar()
 {
     slotStop();
-    m_combo->clearTemporary();
+    if (m_combo)
+        m_combo->clearTemporary();
     focusLocationBar();
 }
 
@@ -3319,7 +3325,7 @@ void KonqMainWindow::setLocationBarURL( const QString &url )
 {
     // Don't set the location bar URL if it hasn't changed
     // or if the user had time to edit the url since the last call to openUrl (#64868)
-    if (url != m_combo->lineEdit()->text() && !m_combo->lineEdit()->isModified()) {
+    if (m_combo && url != m_combo->lineEdit()->text() && !m_combo->lineEdit()->isModified()) {
         //kDebug() << "url=" << url;
         m_combo->setURL( url );
         updateWindowIcon();
@@ -3328,7 +3334,8 @@ void KonqMainWindow::setLocationBarURL( const QString &url )
 
 void KonqMainWindow::setPageSecurity( PageSecurity pageSecurity )
 {
-  m_combo->setPageSecurity( pageSecurity );
+  if (m_combo)
+    m_combo->setPageSecurity( pageSecurity );
 }
 
 void KonqMainWindow::showPageSecurity()
@@ -3374,12 +3381,12 @@ void KonqMainWindow::comboAction( int action, const QString& url, const QString&
 
 QString KonqMainWindow::locationBarURL() const
 {
-    return m_combo->currentText();
+    return (m_combo ? m_combo->currentText() : QString());
 }
 
 void KonqMainWindow::focusLocationBar()
 {
-  if ( m_combo->isVisible() || !isVisible() )
+  if (m_combo && (m_combo->isVisible() || !isVisible()))
     m_combo->setFocus();
 }
 
@@ -5093,7 +5100,7 @@ void KonqMainWindow::slotIntro()
 
 void KonqMainWindow::goURL()
 {
-  QLineEdit *lineEdit = m_combo->lineEdit();
+  QLineEdit *lineEdit = m_combo ? m_combo->lineEdit() : 0;
   if ( !lineEdit )
     return;
 
