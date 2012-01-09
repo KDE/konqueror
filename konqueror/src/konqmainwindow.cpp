@@ -945,6 +945,9 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
               // (first fixed in r168902 from 2002!, see also unittest KonqHtmlTest::textThenHtml())
 
               if (!req.typedUrl.isEmpty() || !serviceName.isEmpty()) {
+                  if (childView->isLoading()) { // Stop the view first, #282641.
+                      childView->stop();
+                  }
                   ok = childView->changePart( mimeType, serviceName, forceAutoEmbed );
               } else {
                   ok = childView->ensureViewSupports( mimeType, forceAutoEmbed );
