@@ -2910,8 +2910,9 @@ void KonqMainWindow::checkDisableClearButton()
          break;
      }
   }
-  if (KLineEdit* kle = qobject_cast<KLineEdit*>(m_combo->lineEdit()))
-      kle->setClearButtonShown( enable );
+  KLineEdit* lineEdit = (m_combo ? qobject_cast<KLineEdit*>(m_combo->lineEdit()) : 0);
+  if (lineEdit)
+      lineEdit->setClearButtonShown(enable);
 }
 
 void KonqMainWindow::initCombo()
