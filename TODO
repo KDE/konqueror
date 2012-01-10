@@ -1,11 +1,12 @@
 * Proper support for KWebKitPart in the following Konqueror plugins:
-      - kget       Only the "download selected links only" feature is not supported
-                   due to deficiencies of QtWebKit. See http://webkit.org/b/48013.
+      - kget       Everything except the "download selected links only" feature
+                   works and even that functionality is missing due to
+                   deficiencies of QtWebKit. See http://webkit.org/b/48013.
 
-      - adblock    This plugin needs to be changed to use the KPart plugin
-                   extensions so that it is not KHTML specific. Otherwise,
-                   kwebkitpart supports all of the ad filtering functionality
-                   supported by khtml.
+      - adblock    This plugin's GUI needs to be changed to use the KPart plugin
+                   extensions so that it is not khtml specific. Other than that
+                   kwebkitpart supports the ad filtering functionalities supported
+                   by khtml for the most part.
 
 * Add KPartStatusBarExtension support for the following plugins/features:
       - Popup blocker (non-plugin)
