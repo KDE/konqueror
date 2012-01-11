@@ -146,6 +146,7 @@ private:
     int m_kioErrorCode;
     bool m_ignoreError;
     bool m_ignoreHistoryNavigationRequest;
+    bool m_noJSOpenWindowCheck;
 
     WebSslInfo m_sslInfo;
     QList<QUrl> m_requestQueue;
@@ -169,7 +170,8 @@ class NewWindowPage : public WebPage
 {
     Q_OBJECT
 public:
-    NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* parent = 0);
+    NewWindowPage(WebWindowType windowType, KWebKitPart* part,
+                  bool disableJSWindowOpenCheck= false, QWidget* parent = 0);
     virtual ~NewWindowPage();
 
 protected:
@@ -186,6 +188,7 @@ private:
     KParts::WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
+    bool m_disableJSOpenwindowCheck;
 };
 
 #endif // WEBPAGE_H

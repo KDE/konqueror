@@ -42,6 +42,7 @@
 #include <KDE/KFileDialog>
 #include <KDE/KProtocolInfo>
 #include <KDE/KGlobalSettings>
+#include <KDE/KStringHandler>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
@@ -67,6 +68,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_ignoreHistoryNavigationRequest(true),
+         m_noJSOpenWindowCheck(false),
          m_part(QWeakPointer<KWebKitPart>(part))
 {
     // FIXME: Need a better way to handle request filtering than to inherit
@@ -316,7 +318,9 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
-    return new NewWindowPage(type, part(), 0);
+    NewWindowPage* page = new NewWindowPage(type, part(), m_noJSOpenWindowCheck, 0);
+    m_noJSOpenWindowCheck = false;
+    return page;
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -414,6 +418,9 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         // Insert the request into the queue...
         reqUrl.setUserInfo(QString());
         m_requestQueue << reqUrl;
+    } else {
+        // If request came from javascript, set m_noJSOpenWindowCheck to true.
+        m_noJSOpenWindowCheck = (!isTypedUrl && type != QWebPage::NavigationTypeOther);
     }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -809,9 +816,9 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
 
 /************************************* Begin NewWindowPage ******************************************/
 
-NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* parent)
-              :WebPage(part, parent),
-               m_type(type), m_createNewWindow(true)
+NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, bool disableJSOpenwindowCheck, QWidget* parent)
+              :WebPage(part, parent) , m_type(type) , m_createNewWindow(true)
+              , m_disableJSOpenwindowCheck(disableJSOpenwindowCheck)
 {
     Q_ASSERT_X (part, "NewWindowPage", "Must specify a valid KPart");
 
@@ -831,8 +838,41 @@ NewWindowPage::~NewWindowPage()
 
 bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    //kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+    // kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
     if (m_createNewWindow) {
+        const KUrl reqUrl (request.url());
+
+        if (!m_disableJSOpenwindowCheck) {
+            const WebKitSettings::KJSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
+            switch (policy) {
+            case WebKitSettings::KJSWindowOpenDeny:
+                // TODO: Implement a way for showing the blocked popup dialog.
+                this->deleteLater();
+                return false;
+            case WebKitSettings::KJSWindowOpenAsk: {
+                const QString message = (reqUrl.isEmpty() ?
+                                          i18n("This site is requesting to open up a popup window.\n"
+                                               "Do you want to allow this?") :
+                                          i18n("<qt>This site is requesting to open a popup window to"
+                                               "<p>%1</p><br/>Do you want to allow this?</qt>",
+                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.prettyUrl()), 100))
+                                        );
+                if (KMessageBox::questionYesNo(view(), message,
+                                               i18n("Javascript Popup Confirmation"),
+                                               KGuiItem(i18n("Allow")),
+                                               KGuiItem(i18n("Do Not Allow"))) == KMessageBox::Yes) {
+                    break;
+                } else {
+                    // TODO: Implement a way for showing the blocked popup dialog.
+                    this->deleteLater();
+                    return false;
+                }
+            }
+            default:
+                break;
+            }
+        }
+
         if (!part() && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
             return false;
 
@@ -868,7 +908,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
 
         // If the newly created window is NOT a webkitpart...
         if (!webView) {
-            newWindowPart->openUrl(KUrl(request.url()));
+            newWindowPart->openUrl(reqUrl);
             this->deleteLater();
             return false;
         }
