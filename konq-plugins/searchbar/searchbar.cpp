@@ -400,9 +400,9 @@ void SearchBarPlugin::configurationChanged()
 
     //kDebug() << "Found search engines:" << m_searchEngines;
     KConfigGroup config = KConfigGroup(KGlobal::config(), "SearchBar");
-    m_searchMode = (SearchModes) config.readEntry("Mode", (int) UseSearchProvider);
-    m_currentEngine = config.readEntry("CurrentEngine",
-            m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first());
+    m_searchMode = (SearchModes) config.readEntry("Mode", static_cast<int>(UseSearchProvider));
+    const QString defaultSearchEngine ((m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first()));
+    m_currentEngine = config.readEntry("CurrentEngine", defaultSearchEngine);
     m_suggestionEnabled = config.readEntry("SuggestionEnabled", true);
 
     m_searchCombo->setSuggestionEnabled(m_suggestionEnabled);
