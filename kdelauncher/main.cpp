@@ -36,7 +36,9 @@
 #include <KDE/KCmdLineArgs>
 #include <KDE/KDebug>
 #include <KDE/KIO/AccessManager>
-#include <kurifilter.h>
+#include <KDE/KUriFilter>
+#include <KDE/KInputDialog>
+#include <KDE/KLineEdit>
 
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebPage>
@@ -52,8 +54,6 @@
 
 #include <QtGui/QAction>
 #include <QtGui/QCompleter>
-#include <QtGui/QInputDialog>
-#include <QtGui/QLineEdit>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
@@ -170,10 +170,10 @@ protected slots:
 
     void print() {
 #if !defined(QT_NO_PRINTER)
-        QPrintPreviewDialog dlg(this);
-        connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+        QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(this));
+        connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
                 view, SLOT(print(QPrinter*)));
-        dlg.exec();
+        dlg->exec();
 #endif
     }
 
@@ -188,15 +188,15 @@ protected slots:
 
     void selectElements() {
         bool ok;
-        QString str = QInputDialog::getText(this,
-                                            i18nc("input dialog window title for selecting html elements", "Select elements"),
+        QString str = KInputDialog::getText(i18nc("input dialog window title for selecting html elements", "Select elements"),
                                             i18nc("input dialog text for selecting html elements", "Choose elements"),
-                                            QLineEdit::Normal, "a", &ok);
+                                            QLatin1String("a"), &ok, this);
         if (ok && !str.isEmpty()) {
-            QWebElementCollection result =  view->page()->mainFrame()->findAllElements(str);
-            foreach (QWebElement e, result)
-                e.setStyleProperty("background-color", "yellow");
-            statusBar()->showMessage(i18np("%1 element selected", "%1 elements selected", result.count()), 5000);
+            QWebElementCollection collection = view->page()->mainFrame()->findAllElements(str);
+            const int count = collection.count();
+            for (int i=0; i < count; i++)
+                collection.at(i).setStyleProperty("background-color", "yellow");
+            statusBar()->showMessage(i18np("%1 element selected", "%1 elements selected", count), 5000);
         }
     }
 
@@ -225,7 +225,7 @@ private:
         connect(view, SIGNAL(loadProgress(int)), progress, SLOT(setValue(int)));
         connect(view, SIGNAL(loadFinished(bool)), progress, SLOT(hide()));
 
-        urlEdit = new QLineEdit(this);
+        urlEdit = new KLineEdit(this);
         urlEdit->setSizePolicy(QSizePolicy::Expanding, urlEdit->sizePolicy().verticalPolicy());
         connect(urlEdit, SIGNAL(returnPressed()),
                 SLOT(changeLocation()));
@@ -304,7 +304,7 @@ private:
     }
 
     QWebView *view;
-    QLineEdit *urlEdit;
+    KLineEdit *urlEdit;
     QProgressBar *progress;
 
     QAction *formatMenuAction;

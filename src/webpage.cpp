@@ -41,7 +41,6 @@
 #include <KDE/KDebug>
 #include <KDE/KFileDialog>
 #include <KDE/KProtocolInfo>
-#include <KDE/KGlobalSettings>
 #include <KDE/KStringHandler>
 #include <KIO/Job>
 #include <KIO/AccessManager>

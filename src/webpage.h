@@ -42,7 +42,7 @@ class WebPage : public KWebPage
 {
     Q_OBJECT
 public:
-    WebPage(KWebKitPart *wpart, QWidget *parent = 0);
+    explicit WebPage(KWebKitPart *wpart, QWidget *parent = 0);
     ~WebPage();
 
     /**

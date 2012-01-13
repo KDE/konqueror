@@ -423,7 +423,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
               else
                   d->adBlackList.addFilter(url);
           }
-          else if (name.startsWith("HTMLFilterListName-") && (id = name.mid(19).toInt()) > 0)
+          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = name.mid(19).toInt()) > 0)
           {
               /** check if entry is enabled */
               bool filterEnabled = cgFilter.readEntry(QString("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
@@ -436,7 +436,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
                   QString localFile = cgFilter.readEntry(QString("HTMLFilterListLocalFilename-").append(QString::number(id)));
                   localFile = KStandardDirs::locateLocal("data", "khtml/" + localFile);
 
-                  /** determine existance and age of cache file */
+                  /** determine existence and age of cache file */
                   QFileInfo fileInfo(localFile);
 
                   /** load cached file if it exists, irrespective of age */

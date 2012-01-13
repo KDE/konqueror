@@ -69,7 +69,7 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-static const QUrl sAboutBlankUrl (QL1S("about:blank"));
+K_GLOBAL_STATIC_WITH_ARGS(QUrl, globalBlankUrl, ("about:blank"))
 
 static inline int convertStr2Int(const QString& value)
 {
@@ -351,7 +351,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
-    if ((sAboutBlankUrl != u) && p) {
+    if ((u != *globalBlankUrl) && p) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
@@ -474,7 +474,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
         kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << frame;
         kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
 
-        if (currentUrl != sAboutBlankUrl) {
+        if (currentUrl != *globalBlankUrl) {
             m_hasCachedFormData = false;
 
             if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
@@ -514,7 +514,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 
    QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
 
-    if (!frame || frame->url() == sAboutBlankUrl)
+    if (!frame || frame->url() == *globalBlankUrl)
         return;
 
     // Set the favicon specified through the <link> tag...
@@ -577,7 +577,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     setUrl(u);
 
     // Do not update the location bar with about:blank
-    if (url == sAboutBlankUrl)
+    if (url == *globalBlankUrl)
         return;
 
     kDebug() << "Setting location bar to" << u.prettyUrl();
@@ -678,9 +678,11 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
               linkUrl = QUrl(scheme + '?' + linkUrl.path());
 
             QMap<QString, QStringList> fields;
-            QPair<QString, QString> queryItem;
+            QList<QPair<QString, QString> > queryItems = linkUrl.queryItems();
+            const int count = queryItems.count();
 
-            Q_FOREACH (queryItem, linkUrl.queryItems()) {
+            for(int i = 0; i < count; ++i) {
+                const QPair<QString, QString> queryItem (queryItems.at(i));
                 //kDebug() << "query: " << queryItem.first << queryItem.second;
                 if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty())
                     fields["to"] << queryItem.first;

@@ -196,10 +196,10 @@ void WebKitBrowserExtension::print()
     if (!view())
         return;
 
-    QPrintPreviewDialog dlg(view());
-    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
+    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
             view(), SLOT(print(QPrinter*)));
-    dlg.exec();
+    dlg->exec();
 }
 
 void WebKitBrowserExtension::printFrame()
@@ -207,10 +207,10 @@ void WebKitBrowserExtension::printFrame()
     if (!view())
         return;
 
-    QPrintPreviewDialog dlg(view());
-    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
+    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
             view()->page()->currentFrame(), SLOT(print(QPrinter*)));
-    dlg.exec();
+    dlg->exec();
 }
 
 void WebKitBrowserExtension::updateEditActions()
