@@ -219,7 +219,7 @@ static void setProxyInformation(const QString& value,
         } else {
             manEdit->setText(urlStr);
         }
-        
+
         if (spinBox && portNum > -1) {
             spinBox->setValue(portNum);
         }
@@ -252,6 +252,7 @@ KProxyDialog::KProxyDialog(QWidget* parent, const QVariantList& args)
     connect(mUi.systemProxyRadioButton, SIGNAL(toggled(bool)), mUi.systemProxyGroupBox, SLOT(setVisible(bool)));
 #else
     mUi.autoDetectButton->setVisible(false);
+    connect(mUi.systemProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
 #endif
 
     // signals and slots connections
