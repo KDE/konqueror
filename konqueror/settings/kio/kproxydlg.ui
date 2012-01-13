@@ -123,9 +123,6 @@ Automatic detection is performed using the &lt;b&gt;Web Proxy Auto-Discovery Pro
    </item>
    <item row="4" column="3">
     <widget class="QPushButton" name="autoDetectButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
      <property name="whatsThis">
       <string>&lt;qt&gt;Attempt automatic discovery of the environment variables used for setting system wide proxy information.&lt;p&gt; This feature works by searching for commonly used variable names such as HTTP_PROXY, FTP_PROXY and NO_PROXY.&lt;/qt&gt;</string>
      </property>
