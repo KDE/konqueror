@@ -738,8 +738,11 @@ static int directCommand(KCmdLineArgs *args)
 	KIconDialog dlg((QWidget*)0L);
 	kapp->setTopWidget( &dlg );
 	dlg.setup( group, context);
+        dlg.setIconSize(KIconLoader::SizeHuge);
+
 	if (!title.isEmpty())
 	    dlg.setCaption(title);
+
 	Widgets::handleXGeometry(&dlg);
 
 	QString result = dlg.openDialog();
@@ -842,7 +845,6 @@ int main(int argc, char *argv[])
   aboutData.addAuthor(ki18n("Dawit Alemayehu"),KLocalizedString(),"adawit@kde.org");
   aboutData.addAuthor(ki18n("Kai Uwe Broulik"),KLocalizedString(),"kde@privat.broulik.de");
   aboutData.setProgramIconName("system-run");
-
 
   KCmdLineArgs::init(argc, argv, &aboutData);
 
