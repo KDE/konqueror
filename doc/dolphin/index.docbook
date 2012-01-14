@@ -73,7 +73,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-11-18</date>
+<date>2012-01-14</date>
 <releaseinfo>2.0 (&kde; 4.8)</releaseinfo>
 
 <abstract>
@@ -231,8 +231,6 @@ by default, for more information see <link linkend="panels"><guilabel>Panels</gu
 The view displays all files and folders in the current folder. These items
 can be accessed or manipulated in different ways:
 
- <!--FIXME add png with Grouping Support? http://ppenz.blogspot.com/2012/01/dolphin-20-status-update.html -->
- 
 <itemizedlist>
 
 <listitem><para>
@@ -349,6 +347,20 @@ or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 <!-- end copy to konqueror filemanager.docbook -->
 </para>
+
+<screenshot>
+<screeninfo>Grouped View</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Grouped View</phrase>
+</textobject>
+<caption><para>All view modes support grouping by the sort type selected in 
+<menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
+</mediaobject>
+</screenshot>
 
 </sect3>
 
@@ -537,11 +549,35 @@ menu which offers quick access to <quote>places</quote> and storage media. See t
 <link linkend="places-panel">section about the Places Panel</link> for details.
 </para>
 
-<para>The context menü of the location bar offers action to switch between the modes and 
+<screenshot>
+<screeninfo>Location bar with Places icon</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="locationbar-places-icon.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Location bar with Places icon</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>The context menu of the location bar offers action to switch between the modes and 
 to copy and paste the path using the clipboard. Check the last option in this context menu to
 display either the full path starting with the root folder of the file system or to display 
 the path starting with the current places entry.
 </para>
+
+<screenshot>
+<screeninfo>Location bar context menu</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="locationbar-context-menu.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Location bar  context menu</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
 
 </sect2>
 
