@@ -3,6 +3,9 @@ project(KDEBASE_APPS)
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules )
 
+include(CTest)
+include(CTestConfig.cmake)
+
 #search packages used by KDE
 set(KDE_MIN_VERSION "4.7.97")
 set(SOPRANO_MIN_VERSION "2.7.56")
