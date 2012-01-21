@@ -440,7 +440,7 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
-    kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
+    // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
     emit started(0);
     slotWalletClosed();
 }
@@ -471,8 +471,8 @@ void KWebKitPart::slotLoadFinished(bool ok)
 
     if (ok) {
         const QUrl currentUrl (frame->baseUrl().resolved(frame->url()));
-        kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << frame;
-        kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
+        // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << frame;
+        // kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
 
         if (currentUrl != *globalBlankUrl) {
             m_hasCachedFormData = false;
@@ -534,7 +534,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
             shortcutIconUrl = KUrl (frame->baseUrl(), element.attribute("href"));
         }
 
-        kDebug() << "setting favicon to" << shortcutIconUrl;
+        //kDebug() << "setting favicon to" << shortcutIconUrl;
         m_browserExtension->setIconUrl(shortcutIconUrl);
     }
 
@@ -580,7 +580,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     if (url == *globalBlankUrl)
         return;
 
-    kDebug() << "Setting location bar to" << u.prettyUrl();
+    //kDebug() << "Setting location bar to" << u.prettyUrl();
     emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
 }
 
@@ -846,7 +846,7 @@ void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
     if (!localSettings)
         return;
 
-    kDebug() << codec->name();
+    // kDebug() << codec->name();
 
     localSettings->setDefaultTextEncoding(codec->name());
     openUrl(url());
