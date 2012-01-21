@@ -119,7 +119,6 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
             if (saveFile.open()) {
                 QDataStream stream (&saveFile);
                 stream << d.buffer();
-                saveFile.finalize();
             }
         }
         m_historyHash = hash;
@@ -130,7 +129,6 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
 {
     KUrl u;
-    KParts::OpenUrlArguments args;
     qint32 xOfs, yOfs, historyItemIndex;
 
     QWebHistory* history = view() ? view()->page()->history() : 0;
@@ -141,7 +139,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     } else {
         QString historyFileName;
         stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyFileName;
-        //kDebug() << "Attempting to restore history from" << historyFileName;
+        kDebug() << "Attempting to restore history from" << historyFileName;
         QFile file (historyFileName);
         if (file.open(QIODevice::ReadOnly)) {
             QDataStream stream (&file);
@@ -154,6 +152,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     }
 
     // kDebug() << "Restoring item #" << historyItemIndex << "of" << view()->page()->history()->count() << "at offset (" << xOfs << yOfs << ")";
+    KParts::OpenUrlArguments args;
     args.metaData().insert(QL1S("kwebkitpart-restore-state"), QString::number(historyItemIndex));
     args.metaData().insert(QL1S("kwebkitpart-restore-scrollx"), QString::number(xOfs));
     args.metaData().insert(QL1S("kwebkitpart-restore-scrolly"), QString::number(yOfs));
