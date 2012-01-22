@@ -714,10 +714,8 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
             if (page()) {
                 QWebFrame* frame = page()->currentFrame();
                 if (frame) {
-                    const QWebElementCollection collection = frame->findAllElements(QL1S("a[href]"));
+                    const QWebElementCollection collection = frame->findAllElements(QL1S("a[href][target]"));
                     Q_FOREACH(const QWebElement& element, collection) {
-                        if (!element.hasAttribute(QL1S("target")))
-                            continue;
                         if (linkUrl == frame->baseUrl().resolved(QUrl(element.attribute(QL1S("href"))))) {
                             const QString target (element.attribute(QL1S("target")));
                             if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
@@ -726,7 +724,6 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
                             } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
                                 message += i18n(" (In parent frame)");
                             }
-                            message = KStringHandler::csqueeze(message, 160);
                             break;
                         }
                     }
@@ -855,7 +852,7 @@ void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
 
 void KWebKitPart::slotSetStatusBarText(const QString& text)
 {
-    const QString host = page() ? page()->mainFrame()->url().host() : QString();
+    const QString host (page() ? page()->currentFrame()->url().host() : QString());
     if (WebKitSettings::self()->windowStatusPolicy(host) == WebKitSettings::KJSWindowStatusAllow)
         emit setStatusBarText(text);
 }
