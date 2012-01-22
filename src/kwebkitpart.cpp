@@ -425,8 +425,9 @@ bool KWebKitPart::isModified() const
 
 void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {
-    Q_UNUSED(event);
-    // just overwrite, but do nothing for the moment
+    if (event && event->activated() && m_webView) {
+        emit setWindowCaption(m_webView->title());
+    }
 }
 
 bool KWebKitPart::openFile()
