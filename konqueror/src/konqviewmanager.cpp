@@ -1616,6 +1616,7 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
 void KonqViewManager::applyConfiguration()
 {
     tabContainer()->setAlwaysTabbedMode( KonqSettings::alwaysTabbedMode() );
+    tabContainer()->setTabsClosable( KonqSettings::permanentCloseButton() );
 }
 
 KonqMainWindow* KonqViewManager::duplicateWindow()
