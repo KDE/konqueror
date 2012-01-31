@@ -5,21 +5,40 @@
 <body>
 
 <form name="testform">
-<label>Enter text:<input type="text" name="testinputtext"/></label>
-<br/>
-<label><input type="checkbox" name="testinputcheckbox" value="checked">Check this box</label>
-<br/>
-<label>File to upload:<input type="file" name="testinputfile"></label>
-<br/>
-<label><input type="radio" name="testinputradio" value="one">One</label><br/>
-<label><input type="radio" name="testinputradio" value="two">Two</label><br/>
-<label><input type="radio" name="testinputradio" value="three">Three</label><br/>
+<label>Enter text:</label>
+<input type="text" name="testinputtext">
+<br>
+<label>Check this box</label>
+<input type="checkbox" name="testinputcheckbox" value="checked">
+<br>
+<label>File to upload:</label>
+<input type="file" name="testinputfile">
+<br>
+<label>One</label>
+<input type="radio" name="testinputradio" value="one">
+<br>
+<label>Two</label>
+<input type="radio" name="testinputradio" value="two">
+<br>
+<label>Three</label>
+<input type="radio" name="testinputradio" value="three">
+<br>
 </form>
 
 <p>
 Enter some text in the box below:<br/>
 <textarea name="testtextarea"></textarea>
-</p><p/>
+</p>
+
+<p>
+Disabled test area:<br/>
+<textarea name="testtextarea" disabled></textarea>
+</p>
+
+<p>
+Text are with spell check disabled:<br/>
+<textarea name="testtextarea" spellcheck="false"></textarea>
+</p>
 
 <p>
 Choose one:
