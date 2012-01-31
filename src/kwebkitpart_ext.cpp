@@ -41,6 +41,8 @@
 #include <KDE/KInputDialog>
 #include <KDE/KLocalizedString>
 #include <KDE/KTemporaryFile>
+#include <Sonnet/Dialog>
+#include <sonnet/backgroundchecker.h>
 #include <kdeversion.h>
 
 #include <QtCore/QBuffer>
@@ -624,6 +626,70 @@ void WebKitBrowserExtension::slotCopyMedia()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
+void WebKitBrowserExtension::slotTextDirectionChanged()
+{
+    KAction* action = qobject_cast<KAction*>(sender());
+    if (action) {
+        bool ok = false;
+        const int value = action->data().toInt(&ok);
+        if (ok) {
+            view()->triggerPageAction(static_cast<QWebPage::WebAction>(value));
+        }
+    }
+}
+
+void WebKitBrowserExtension::slotCheckSpelling()
+{
+    QString text (view()->contextMenuResult().element().evaluateJavaScript(QL1S("this.value")).toString());
+
+    kDebug() << "text to check:" << view()->contextMenuResult().element().toPlainText();
+
+    if ( text.isEmpty() ) {
+        return;
+    }
+
+    view()->triggerPageAction(QWebPage::MoveToStartOfBlock);
+
+    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
+    connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
+    connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
+    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
+    spellDialog->setBuffer(text);
+    spellDialog->show();
+}
+
+void WebKitBrowserExtension::slotSpellCheckDone(const QString& txt)
+{
+    QWebElement element (view()->contextMenuResult().element());
+    QString text (element.evaluateJavaScript(QL1S("this.value")).toString());
+    if (txt == text) {
+        return;
+    }
+    element.evaluateJavaScript(QL1S("this.value=\"") + text + QL1C('"'));
+}
+
+void WebKitBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
+{
+    QWebElement element (view()->contextMenuResult().element());
+    QString text (element.evaluateJavaScript(QL1S("this.value")).toString());
+    //kDebug() << "before correction:" << text;
+    //kDebug() << "replacing" << original << "at" << pos << "with" << replacement;
+    text.replace(pos, original.length(), replacement);
+    //kDebug() << "after correction:" << text;
+    element.evaluateJavaScript(QL1S("this.value=\"") + text + QL1C('"'));
+}
+
+void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
+{
+    // kDebug() << text << pos;
+    QWebElement element (view()->contextMenuResult().element());
+    QString selectionScript (QL1S("this.setSelectionRange("));
+    selectionScript += QString::number(pos);
+    selectionScript += QL1C(',');
+    selectionScript += QString::number(pos + text.length());
+    selectionScript += QL1C(')');
+    element.evaluateJavaScript(selectionScript);
+}
 
 ////
 

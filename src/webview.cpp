@@ -156,10 +156,6 @@ void WebView::dropEvent(QDropEvent* ev)
 void WebView::contextMenuEvent(QContextMenuEvent* e)
 {
     m_result = page()->mainFrame()->hitTestContent(e->pos());
-    if (m_result.isContentEditable()) {
-        KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
-        return;
-    }
 
     // Clear the previous collection entries first...
     m_actionCollection->clear();
@@ -169,7 +165,13 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     QString mimeType (QL1S("text/html"));
 
     KUrl emitUrl;
-    if (isMultimediaElement(m_result.element())) {
+    if (m_result.isContentEditable()) {
+        if (m_result.element().hasAttribute(QL1S("disabled"))) {
+            return;
+        }
+        flags |= KParts::BrowserExtension::ShowTextSelectionItems;
+        editableContentActionPopupMenu(mapAction);
+    } else if (isMultimediaElement(m_result.element())) {
         multimediaActionPopupMenu(mapAction);
     } else if (!m_result.linkUrl().isValid()) {
         if (m_result.imageUrl().isValid()) {
@@ -207,6 +209,108 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     args.setMimeType(mimeType);
     emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
 }
+
+static bool showSpellCheckAction(const QWebElement& element)
+{
+    if (element.hasAttribute(QL1S("readonly")))
+        return false;
+
+    if (element.attribute(QL1S("spellcheck"), QL1S("true")).compare(QL1S("false"), Qt::CaseInsensitive) == 0)
+        return false;
+
+    if (element.hasAttribute(QL1S("type"))
+        && element.attribute(QL1S("type")).compare(QL1S("text"), Qt::CaseInsensitive) != 0)
+        return false;
+
+    return true;
+}
+
+void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
+{
+    QList<QAction*> editableContentActions;
+
+    KActionMenu* menu = new KActionMenu(i18nc("Text direction", "Direction"), this);
+    QActionGroup* group = new QActionGroup(this);
+    group->setExclusive(true);
+
+    KAction *action = m_actionCollection->addAction(QL1S("text-direction-default"),  m_part.data()->browserExtension(), SLOT(slotTextDirectionChanged()));
+    action->setText(i18n("Default"));
+    action->setCheckable(true);
+    action->setData(QWebPage::SetTextDirectionDefault);
+    action->setEnabled(pageAction(QWebPage::SetTextDirectionDefault)->isEnabled());
+    action->setCheckable(pageAction(QWebPage::SetTextDirectionDefault)->isChecked());
+    action->setActionGroup(group);
+    menu->addAction(action);
+
+    action = m_actionCollection->addAction(QL1S("text-direction-left-to-right"),  m_part.data()->browserExtension(), SLOT(slotTextDirectionChanged()));
+    action->setText(i18n("Left to right"));
+    action->setCheckable(true);
+    action->setData(QWebPage::SetTextDirectionLeftToRight);
+    action->setEnabled(pageAction(QWebPage::SetTextDirectionLeftToRight)->isEnabled());
+    action->setChecked(pageAction(QWebPage::SetTextDirectionLeftToRight)->isChecked());
+    action->setActionGroup(group);
+    menu->addAction(action);
+
+    action = m_actionCollection->addAction(QL1S("text-direction-right-to-left"),  m_part.data()->browserExtension(), SLOT(slotTextDirectionChanged()));
+    action->setText(i18n("Right to left"));
+    action->setCheckable(true);
+    action->setData(QWebPage::SetTextDirectionRightToLeft);
+    action->setEnabled(pageAction(QWebPage::SetTextDirectionRightToLeft)->isEnabled());
+    action->setChecked(pageAction(QWebPage::SetTextDirectionRightToLeft)->isChecked());
+    action->setActionGroup(group);
+    menu->addAction(action);
+
+    editableContentActions.append(menu);
+
+    action = new KAction(m_actionCollection);
+    action->setSeparator(true);
+    editableContentActions.append(action);
+
+    action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
+    action->setEnabled(pageAction(QWebPage::Copy)->isEnabled());
+    editableContentActions.append(action);
+
+    action = m_actionCollection->addAction(KStandardAction::Cut, "cut",  m_part.data()->browserExtension(), SLOT(cut()));
+    action->setEnabled(pageAction(QWebPage::Cut)->isEnabled());
+    editableContentActions.append(action);
+
+    action = m_actionCollection->addAction(KStandardAction::Paste, "paste",  m_part.data()->browserExtension(), SLOT(paste()));
+    action->setEnabled(pageAction(QWebPage::Paste)->isEnabled());
+    editableContentActions.append(action);
+
+    action = new KAction(m_actionCollection);
+    action->setSeparator(true);
+    editableContentActions.append(action);
+
+    action = m_actionCollection->addAction(KStandardAction::SelectAll, "selectall",  m_part.data()->browserExtension(), SLOT(slotSelectAll()));
+    action->setEnabled(pageAction(QWebPage::SelectAll)->isEnabled());
+    editableContentActions.append(action);
+
+    if (showSpellCheckAction(m_result.element())) {
+        action = new KAction(m_actionCollection);
+        action->setSeparator(true);
+        editableContentActions.append(action);
+        action = m_actionCollection->addAction(KStandardAction::Spelling, "spelling", m_part.data()->browserExtension(), SLOT(slotCheckSpelling()));
+        action->setText(i18n("Check Spelling..."));
+        action->setEnabled(!m_result.element().evaluateJavaScript("this.value").toString().isEmpty());
+        editableContentActions.append(action);
+    }
+
+    if (settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled)) {
+        if (!m_webInspector) {
+            m_webInspector = new QWebInspector;
+            m_webInspector->setPage(page());
+            connect(page(), SIGNAL(destroyed()), m_webInspector, SLOT(deleteLater()));
+        }
+        action = new KAction(m_actionCollection);
+        action->setSeparator(true);
+        editableContentActions.append(action);
+        editableContentActions.append(pageAction(QWebPage::InspectElement));
+    }
+
+    partGroupMap.insert("editactions" , editableContentActions);
+}
+
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {

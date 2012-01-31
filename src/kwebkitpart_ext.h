@@ -92,6 +92,11 @@ public Q_SLOTS:
     void slotShowMediaControls();
     void slotSaveMedia();
     void slotCopyMedia();
+    void slotTextDirectionChanged();
+    void slotCheckSpelling();
+    void slotSpellCheckDone(const QString&);
+    void spellCheckerCorrected(const QString&, int, const QString&);
+    void spellCheckerMisspelling(const QString&, int);
 
 private:
     WebView* view();

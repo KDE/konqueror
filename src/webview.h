@@ -70,6 +70,7 @@ protected:
      */
     virtual void contextMenuEvent(QContextMenuEvent*);
 
+    void editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &);
