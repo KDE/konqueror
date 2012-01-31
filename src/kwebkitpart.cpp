@@ -154,6 +154,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             this, SLOT(slotLinkMiddleOrCtrlClicked(KUrl)));
     connect(m_webView, SIGNAL(selectionClipboardUrlPasted(KUrl,QString)),
             this, SLOT(slotSelectionClipboardUrlPasted(KUrl,QString)));
+    connect(m_webView, SIGNAL(loadFinished(bool)),
+            this, SLOT(slotLoadFinished(bool)));
 
     // Connect the signals from the page...
     connectWebPageSignals(page());
@@ -287,8 +289,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
 
-    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
-            this, SLOT(slotLoadFinished(bool)));
     connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotMainFrameLoadFinished(bool)));
 
@@ -446,33 +446,13 @@ void KWebKitPart::slotLoadStarted()
     slotWalletClosed();
 }
 
-static bool hasPendingMetaRedirect(QWebFrame* frame)
+void KWebKitPart::slotFrameLoadFinished(bool ok)
 {
-    bool pending = false;
-    /*
-      NOTE: Support for stopping meta data redirects is implemented in QtWebKit
-      2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
-    */
-#if QT_VERSION >= 0x040700
-    if (!frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
-        if (WebKitSettings::self()->autoPageRefresh()) {
-            pending = true;
-        } else {
-            frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
-        }
-    }
-#endif
-    return pending;
-}
-
-void KWebKitPart::slotLoadFinished(bool ok)
-{
-    m_emitOpenUrlNotify = true;
     QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
 
     if (ok) {
         const QUrl currentUrl (frame->baseUrl().resolved(frame->url()));
-        // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << frame;
+        kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
         // kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
 
         if (currentUrl != *globalBlankUrl) {
@@ -483,15 +463,13 @@ void KWebKitPart::slotLoadFinished(bool ok)
             } else {
                 // Attempt to fill the web form...
                 KWebWallet *webWallet = page() ? page()->wallet() : 0;
-                kDebug() << webWallet;
+                // kDebug() << webWallet << frame;
                 if (webWallet) {
                     webWallet->fillFormData(frame, false);
                 }
             }
         }
     }
-
-    emit completed((ok && hasPendingMetaRedirect(frame)));
 }
 
 void KWebKitPart::slotMainFrameLoadFinished (bool ok)
@@ -552,7 +530,27 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         }
     }
 
-    emit completed((ok && hasPendingMetaRedirect(frame)));
+    slotFrameLoadFinished(ok);
+}
+
+void KWebKitPart::slotLoadFinished(bool ok)
+{
+    bool pending = false;
+    QWebFrame* frame = page() ? page()->currentFrame() : 0;
+    /*
+      NOTE: Support for stopping meta data redirects is implemented in QtWebKit
+      2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
+    */
+#if QT_VERSION >= 0x040700
+    if (!frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
+        if (WebKitSettings::self()->autoPageRefresh()) {
+            pending = true;
+        } else {
+            frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
+        }
+    }
+#endif
+    emit completed ((ok && pending));
 }
 
 void KWebKitPart::slotLoadAborted(const KUrl & url)
@@ -958,5 +956,5 @@ void KWebKitPart::slotFrameCreated (QWebFrame* frame)
     if (frame == page()->mainFrame())
         return;
 
-    connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)), Qt::UniqueConnection);
+    connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotFrameLoadFinished(bool)), Qt::UniqueConnection);
 }
