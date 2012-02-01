@@ -288,7 +288,7 @@ void KonqSidebarTree::followURL( const KUrl &url )
         return;
     }
 
-    kDebug(1201) << "KonqDirTree::followURL: " << url.url();
+    kDebug(1201) << url.url();
     Q3PtrListIterator<KonqSidebarTreeTopLevelItem> topItem ( m_topLevelItems );
     for (; topItem.current(); ++topItem )
     {
@@ -298,7 +298,7 @@ void KonqSidebarTree::followURL( const KUrl &url )
             return; // done
         }
     }
-    kDebug(1201) << "KonqDirTree::followURL: Not found";
+    kDebug(1201) << "Not found";
 }
 
 void KonqSidebarTree::contentsDragEnterEvent( QDragEnterEvent *ev )
@@ -506,7 +506,7 @@ void KonqSidebarTree::leaveEvent( QEvent *e )
 
 void KonqSidebarTree::slotDoubleClicked( Q3ListViewItem *item )
 {
-    //kDebug(1201) << "KonqSidebarTree::slotDoubleClicked " << item;
+    //kDebug(1201) << item;
     if ( !item )
         return;
 
@@ -519,7 +519,7 @@ void KonqSidebarTree::slotDoubleClicked( Q3ListViewItem *item )
 
 void KonqSidebarTree::slotExecuted( Q3ListViewItem *item )
 {
-    kDebug(1201) << "KonqSidebarTree::slotExecuted " << item;
+    kDebug(1201) << item;
     if ( !item )
         return;
 
@@ -579,18 +579,18 @@ void KonqSidebarTree::slotAutoOpenFolder()
 
 void KonqSidebarTree::rescanConfiguration()
 {
-     kDebug(1201) << "KonqSidebarTree::rescanConfiguration()";
+    kDebug(1201);
     m_autoOpenTimer->stop();
     clearTree();
     if (m_dirtreeDir.type==VIRT_Folder)
     {
-        kDebug(1201)<<"KonqSidebarTree::rescanConfiguration()-->scanDir";
+        kDebug(1201) << "-->scanDir";
         scanDir( 0, m_dirtreeDir.dir.path(), true);
 
     }
     else
     {
-        kDebug(1201)<<"KonqSidebarTree::rescanConfiguration()-->loadTopLevel";
+        kDebug(1201)<<"-->loadTopLevel";
         loadTopLevelItem( 0, m_dirtreeDir.dir.path() );
     }
 }
@@ -610,7 +610,7 @@ void KonqSidebarTree::slotSelectionChanged()
 void KonqSidebarTree::slotFilesAdded( const QString & dir )
 {
     KUrl urlDir( dir );
-    kDebug(1201) << "KonqSidebarTree::slotFilesAdded " << dir;
+    kDebug(1201) << dir;
     if ( m_dirtreeDir.dir.isParentOf( urlDir ) )
         // We use a timer in case of DBus re-entrance..
         QTimer::singleShot( 0, this, SLOT(rescanConfiguration()) );
@@ -626,7 +626,7 @@ void KonqSidebarTree::slotFilesRemoved( const QStringList & urls )
         if ( m_dirtreeDir.dir.isParentOf( u ) )
         {
             QTimer::singleShot( 0, this, SLOT(rescanConfiguration()) );
-            kDebug(1201) << "KonqSidebarTree::slotFilesRemoved done";
+            kDebug(1201) << "done";
             return;
         }
     }
@@ -646,7 +646,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
     if ( !dir.isReadable() )
         return;
 
-    kDebug(1201) << "scanDir " << path;
+    kDebug(1201) << "scanDir" << path;
 
     QStringList entries = dir.entryList( QDir::Files );
     QStringList dirEntries = dir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
@@ -668,7 +668,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             KConfig versionCfg( path + "/.directory", KConfig::SimpleConfig);
             KConfigGroup generalGroup( &versionCfg, "General" );
             int versionNumber = generalGroup.readEntry( key, 1 );
-            kDebug(1201) << "KonqSidebarTree::scanDir found version " << versionNumber;
+            kDebug(1201) << "found version " << versionNumber;
             if ( versionNumber < currentVersion ) {
                 generalGroup.writeEntry( key, currentVersion );
                 versionCfg.sync();
@@ -681,7 +681,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
 
 
 //            QString dirtree_dir = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/").last();  // most global
-//            kDebug(1201) << "KonqSidebarTree::scanDir dirtree_dir=" << dirtree_dir;
+//            kDebug(1201) << "dirtree_dir=" << dirtree_dir;
 
             /*
             // debug code
@@ -690,7 +690,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             QStringList::ConstIterator eIt = blah.constBegin();
             QStringList::ConstIterator eEnd = blah.constEnd();
             for (; eIt != eEnd; ++eIt )
-            kDebug(1201) << "KonqSidebarTree::scanDir findDirs got me " << *eIt;
+            kDebug(1201) << "findDirs got me " << *eIt;
             // end debug code
             */
 
@@ -707,7 +707,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
                     QStringList::ConstIterator eEnd = globalDirEntries.constEnd();
                     for (; eIt != eEnd; ++eIt )
                     {
-                        //kDebug(1201) << "KonqSidebarTree::scanDir dirtree_dir contains " << *eIt;
+                        //kDebug(1201) << "dirtree_dir contains " << *eIt;
                         if ( *eIt != "." && *eIt != ".."
                              && !entries.contains( *eIt ) && !dirEntries.contains( *eIt ) )
                         { // we don't have that one yet -> copy it.
@@ -715,7 +715,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
                             cp += KShell::quoteArg(dirtree_dir + *eIt);
                             cp += ' ';
                             cp += KShell::quoteArg(path);
-                            kDebug(1201) << "KonqSidebarTree::scanDir executing " << cp;
+                            kDebug(1201) << "executing " << cp;
                             ::system( QFile::encodeName(cp) );
                         }
                     }
@@ -775,7 +775,7 @@ void KonqSidebarTree::loadTopLevelGroup( KonqSidebarTreeItem *parent, const QStr
     KonqSidebarTreeTopLevelItem *item;
     if ( parent )
     {
-        kDebug(1201) << "KonqSidebarTree::loadTopLevelGroup Inserting new group under parent ";
+        kDebug(1201) << "Inserting new group under parent ";
         item = new KonqSidebarTreeTopLevelItem( parent, 0 /* no module */, path );
     }
     else
