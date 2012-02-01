@@ -57,7 +57,7 @@ KUrl::List KonqSidebarDirTreeModule::selectedUrls()
     KonqSidebarDirTreeItem *selection = static_cast<KonqSidebarDirTreeItem *>( m_pTree->selectedItem() );
     if( !selection )
     {
-        kError() << "KonqSidebarDirTreeModule::selectedUrls: no selection!" << endl;
+        kError() << "no selection!" << endl;
         return lst;
     }
     lst.append(selection->fileItem().url());
@@ -67,7 +67,7 @@ KUrl::List KonqSidebarDirTreeModule::selectedUrls()
 void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * item )
 {
     if(m_topLevelItem) // We can handle only one at a time !
-        kError() << "KonqSidebarDirTreeModule::addTopLevelItem: Impossible, we can have only one toplevel item !" << endl;
+        kError() << "Impossible, we can have only one toplevel item !" << endl;
 
     KDesktopFile cfg( item->path() );
     KConfigGroup desktopGroup = cfg.desktopGroup();
@@ -126,7 +126,7 @@ void KonqSidebarDirTreeModule::openTopLevelItem( KonqSidebarTreeTopLevelItem * i
 void KonqSidebarDirTreeModule::addSubDir( KonqSidebarTreeItem *item )
 {
     QString id = item->externalURL().url( KUrl::RemoveTrailingSlash );
-    kDebug(1201) << this << " KonqSidebarDirTreeModule::addSubDir " << id;
+    kDebug(1201) << this << id;
     m_dictSubDirs.insert(id, item );
 
     KonqSidebarDirTreeItem *ditem = dynamic_cast<KonqSidebarDirTreeItem*>(item);
@@ -257,7 +257,7 @@ static void lookupItems(QHash<KFileItem, KonqSidebarTreeItem*> &dict, const KFil
 
 void KonqSidebarDirTreeModule::removeSubDir( KonqSidebarTreeItem *item, bool childrenOnly )
 {
-    kDebug(1201) << this << " KonqSidebarDirTreeModule::removeSubDir item=" << item;
+    kDebug(1201) << this << "item=" << item;
     if ( item->firstChild() )
     {
         KonqSidebarTreeItem * it = static_cast<KonqSidebarTreeItem *>(item->firstChild());
@@ -289,7 +289,7 @@ void KonqSidebarDirTreeModule::removeSubDir( KonqSidebarTreeItem *item, bool chi
 
 void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
 {
-    kDebug(1201) << this << " openSubFolder( " << item->externalURL().prettyUrl() << " )";
+    kDebug(1201) << this << "openSubFolder(" << item->externalURL().prettyUrl() << ")";
 
     if ( !m_dirLister ) // created on demand
     {
@@ -392,7 +392,7 @@ void KonqSidebarDirTreeModule::listDirectory( KonqSidebarTreeItem *item )
 
 void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
 {
-    kDebug(1201) << this << " KonqSidebarDirTreeModule::slotNewItems " << entries.count();
+    kDebug(1201) << this << entries.count();
 
     Q_ASSERT(entries.count());
     const KFileItem firstItem = entries.first();
@@ -400,7 +400,7 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
     // Find parent item - it's the same for all the items
     KUrl dir( firstItem.url().url( KUrl::RemoveTrailingSlash ) );
     dir.setFileName( "" );
-    kDebug(1201) << this << " KonqSidebarDirTreeModule::slotNewItems dir=" << dir.url( KUrl::RemoveTrailingSlash );
+    kDebug(1201) << this << "dir=" << dir.url( KUrl::RemoveTrailingSlash );
 
     Q3PtrList<KonqSidebarTreeItem> *parentItemList;
     KonqSidebarTreeItem * parentItem;
@@ -457,7 +457,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const QList<QPair<KFileItem, KF
 {
     int size = KIconLoader::global()->currentSize( KIconLoader::Small );
 
-    kDebug(1201) << "KonqSidebarDirTreeModule::slotRefreshItems " << entries.count() << " entries. First: " << entries.first().second.url().url();
+    kDebug(1201) << entries.count() << " entries. First: " << entries.first().second.url().url();
 
     for ( int i = 0; i < entries.count(); ++i )
     {
@@ -512,7 +512,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const QList<QPair<KFileItem, KF
 
 void KonqSidebarDirTreeModule::slotDeleteItem( const KFileItem &fileItem )
 {
-    kDebug(1201) << "KonqSidebarDirTreeModule::slotDeleteItem( " << fileItem.url().url( KUrl::RemoveTrailingSlash ) << " )";
+    kDebug(1201) << fileItem.url().url( KUrl::RemoveTrailingSlash );
 
     // All items are in m_ptrdictSubDirs, so look it up fast
     Q3PtrList<KonqSidebarTreeItem> *itemList;
@@ -628,7 +628,7 @@ void KonqSidebarDirTreeModule::followURL( const KUrl & url )
         } else
         {
             m_selectAfterOpening = url;
-            //kDebug() << "KonqSidebarDirTreeModule::followURL: m_selectAfterOpening=" << m_selectAfterOpening.url();
+            //kDebug() << "m_selectAfterOpening=" << m_selectAfterOpening.url();
         }
     }
 }
