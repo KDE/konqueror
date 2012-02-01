@@ -273,9 +273,7 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
                 parentGroup = bm.toGroup();
             else
                 return;
-        }
-        else if(parent == m_topLevelItem)
-        {
+        } else if(parent == m_topLevelItem) {
             parentGroup = s_bookmarkManager->root();
         }
     } else {
@@ -300,24 +298,23 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
 {
     KonqSidebarBookmarkItem *bi = dynamic_cast<KonqSidebarBookmarkItem*>( tree()->selectedItem() );
     KBookmarkGroup parentGroup;
-    if (bi)
-    {
-	if (bi->bookmark().isGroup())
-	    parentGroup = bi->bookmark().toGroup();
-	else
-	    parentGroup = bi->bookmark().parentGroup();
+    if (bi) {
+        if (bi->bookmark().isGroup()) {
+            parentGroup = bi->bookmark().toGroup();
+        } else {
+            parentGroup = bi->bookmark().parentGroup();
+        }
+    } else if(tree()->selectedItem() == m_topLevelItem) {
+        parentGroup = s_bookmarkManager->root();
     }
-    else if(tree()->selectedItem() == m_topLevelItem)
-    {
-	parentGroup = s_bookmarkManager->root();
+    else {
+        return;
     }
-    else
-	return;
 
     KBookmark bookmark = parentGroup.createNewFolder("");//TODO use Dialog
-    if(bi && !(bi->bookmark().isGroup()))
-	parentGroup.moveBookmark(bookmark, bi->bookmark());
-
+    if (bi && !(bi->bookmark().isGroup())) {
+        parentGroup.moveBookmark(bookmark, bi->bookmark());
+    }
     s_bookmarkManager->emitChanged( parentGroup );
 }
 
