@@ -43,6 +43,7 @@
 #include <kmessagebox.h>
 #include <kstandardaction.h>
 #include <kparts/part.h>
+#include <kinputdialog.h>
 
 KBookmarkManager* s_bookmarkManager = 0;
 
@@ -311,7 +312,14 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
         return;
     }
 
-    KBookmark bookmark = parentGroup.createNewFolder("");//TODO use Dialog
+    bool ok;
+    const QString str = KInputDialog::getText(i18nc("@title:window", "Create New Bookmark Folder"),
+                                              i18n("New folder:"), QString(), &ok, tree());
+    if (!ok) {
+        return;
+    }
+
+    KBookmark bookmark = parentGroup.createNewFolder(str);
     if (bi && !(bi->bookmark().isGroup())) {
         parentGroup.moveBookmark(bookmark, bi->bookmark());
     }
