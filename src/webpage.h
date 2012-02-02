@@ -145,7 +145,6 @@ private:
 
     int m_kioErrorCode;
     bool m_ignoreError;
-    bool m_ignoreHistoryNavigationRequest;
     bool m_noJSOpenWindowCheck;
 
     WebSslInfo m_sslInfo;

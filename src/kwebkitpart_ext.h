@@ -35,8 +35,7 @@ class WebKitBrowserExtension : public KParts::BrowserExtension
     Q_OBJECT
 
 public:
-    WebKitBrowserExtension(KWebKitPart *parent,
-                           const QString& historyFileName);
+    WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& historyData);
     ~WebKitBrowserExtension();
 
     virtual int xOffset();
@@ -46,6 +45,7 @@ public:
 
 Q_SIGNALS:
     void saveUrl(const KUrl &);
+    void saveHistory(QObject*, const QByteArray&);
 
 public Q_SLOTS:
     void cut();
@@ -99,13 +99,12 @@ public Q_SLOTS:
     void slotSpellCheckCancelled();
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
+    void slotSaveHistory();
 
 private:
     WebView* view();
     QWeakPointer<KWebKitPart> m_part;
     QWeakPointer<WebView> m_view;
-    QString m_historyFileName;
-    QByteArray m_historyHash;
     QString m_spellCheckText;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;

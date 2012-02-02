@@ -23,23 +23,23 @@
 
 #include <kpluginfactory.h>
 
-#include <QtCore/QMultiHash>
+#include <QtCore/QHash>
+
+class QWidget;
 
 class KWebKitFactory : public KPluginFactory
 {
     Q_OBJECT
 public:
-    KWebKitFactory();
     virtual ~KWebKitFactory();
     virtual QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword);
 
 private Q_SLOTS:
-    void slotDestroyed(QObject * obj);
-    void slotSaveYourself();
+    void slotDestroyed(QObject* object);
+    void slotSaveHistory(QObject* widget, const QByteArray&);
 
 private:
-    bool m_discardSessionFiles;
-    QMultiHash<QObject*, QString> m_sessionFileLookup;
+    QHash<QObject*, QByteArray> m_historyBufContainer;
 };
 
 #endif // WEBKITPARTFACTORY

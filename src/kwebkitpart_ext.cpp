@@ -60,15 +60,30 @@
 #define QL1C(x)     QLatin1Char(x)
 
 
-WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QString &historyFileName)
+WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& historyData)
                        :KParts::BrowserExtension(parent),
-                        m_part(QWeakPointer<KWebKitPart>(parent)),
-                        m_historyFileName(historyFileName)
+                        m_part(QWeakPointer<KWebKitPart>(parent))
 {
     enableAction("cut", false);
     enableAction("copy", false);
     enableAction("paste", false);
     enableAction("print", true);
+    connect(this, SIGNAL(openUrlNotify()), this, SLOT(slotSaveHistory()));
+
+    if (!historyData.isEmpty()) {
+        QBuffer buffer;
+        buffer.setData(historyData);
+        if (buffer.open(QIODevice::ReadOnly)) {
+            // NOTE: When restoring history, webkit automatically navigates to
+            // the previous "currentItem". Since we do not want that to happen
+            // in this case, we prevent it by setting the dynamic property
+            // below on the WebPage object. We then check for its presence in
+            // its "acceptNavigationRequest" and if present reject the request.
+            view()->page()->setProperty("HistoryNavigationLocked", true);
+            QDataStream s (&buffer);
+            s >> *(view()->history());
+        }
+    }
 }
 
 WebKitBrowserExtension::~WebKitBrowserExtension()
@@ -104,60 +119,66 @@ int WebKitBrowserExtension::yOffset()
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
+    QWebHistory* history = (view() ? view()->page()->history() : 0);
     stream << m_part.data()->url()
-           << static_cast<qint32>(xOffset())
-           << static_cast<qint32>(yOffset())
-           << static_cast<qint32>(view()->page()->history()->currentItemIndex())
-           << m_historyFileName;
-
-    QBuffer d;
-    if (d.open(QIODevice::WriteOnly)) {
-        QDataStream datastream (&d);
-        datastream << *(view()->page()->history());
-        QByteArray hash = QCryptographicHash::hash(d.buffer(), QCryptographicHash::Sha1);
-
-        if (m_historyHash != hash) {
-            KSaveFile saveFile (m_historyFileName);
-            if (saveFile.open()) {
-                QDataStream stream (&saveFile);
-                stream << d.buffer();
-            }
-        }
-        m_historyHash = hash;
-        d.close();
+        << static_cast<qint32>(xOffset())
+        << static_cast<qint32>(yOffset())
+        << static_cast<qint32>(history ? history->currentItemIndex() : -1);
+    if (history) {
+        stream << *history;
     }
 }
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
 {
     KUrl u;
-    qint32 xOfs, yOfs, historyItemIndex;
+    qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
+    stream >> u >> xOfs >> yOfs >> historyItemIndex;
 
-    QWebHistory* history = view() ? view()->page()->history() : 0;
-    //kDebug() << "# of items in history:" << (history ? history->count() : 0);
-
-    if (history && history->count() > 0) {
-        stream >> u >> xOfs >> yOfs >> historyItemIndex;
-    } else {
-        QString historyFileName;
-        stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyFileName;
-        kDebug() << "Attempting to restore history from" << historyFileName;
-        QFile file (historyFileName);
-        if (file.open(QIODevice::ReadOnly)) {
-            QDataStream stream (&file);
-            stream >> *history;
-            file.close();
+    // We attempt to restore history
+    QWebHistory* history = (view() ? view()->page()->history() : 0);
+    if (history) {
+        bool success = false;
+        if (history->count() == 0) {
+            // NOTE 1: The following Konqueror specific workaround is necessary
+            // because Konqueror only preserves information for the last visited
+            // page. However, we save the entire history content in saveState and
+            // and hence need to elimiate all but the current item here.
+            // NOTE 2: This condition only applies when Konqueror is restored from
+            // abnormal termination ; a crash and/or a session restoration.
+            if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
+                view()->page()->setProperty("HistoryNavigationLocked", true);
+                stream >> *history;
+                if (history->count()) {
+                    QWebHistoryItem currentItem (history->currentItem());
+                    history->clear();
+                    m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
+                    history->goToItem(currentItem);
+                }
+            } else {
+                stream >> *history;
+                kDebug() << "history count:" << history->count() << "current index:" << historyItemIndex;
+            }
+            success = (history->count() > 0);
+        } else {
+            if (history->count() > historyItemIndex && historyItemIndex > -1) {
+                QWebHistoryItem item (history->itemAt(historyItemIndex));
+                if (u == item.url()) {
+                    m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
+                    history->goToItem(item);
+                    success = true;
+                    kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
+                }
+            }
         }
-
-        if (file.exists())
-            file.remove();
+        if (success) {
+            return;
+        }
     }
 
-    // kDebug() << "Restoring item #" << historyItemIndex << "of" << view()->page()->history()->count() << "at offset (" << xOfs << yOfs << ")";
+    // Last resort option in case the above history restoration logic fails!
+    kWarning() << "Normal history navgation logic failed! Attempting to use a workaround!";
     KParts::OpenUrlArguments args;
-    args.metaData().insert(QL1S("kwebkitpart-restore-state"), QString::number(historyItemIndex));
-    args.metaData().insert(QL1S("kwebkitpart-restore-scrollx"), QString::number(xOfs));
-    args.metaData().insert(QL1S("kwebkitpart-restore-scrolly"), QString::number(yOfs));
     m_part.data()->setArguments(args);
     m_part.data()->openUrl(u);
 }
@@ -730,6 +751,29 @@ void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int po
     execJScript(view(), selectionScript);
 }
 
+void WebKitBrowserExtension::slotSaveHistory()
+{
+    QByteArray histData;
+    QBuffer buff (&histData);
+    if (!buff.open(QIODevice::WriteOnly)) {
+        kWarning() << "Failed to save history data!";
+        return;
+    }
+
+    QWebHistory* history = view() ? view()->history() : 0;
+    if (history && history->count() > 0) {
+        QDataStream stream (&buff);
+        stream << *history;
+        // kDebug() << "# of items:" << history->count();
+        QWidget* mainWidget = m_part.data() ? m_part.data()->widget() : 0;
+        QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : 0;
+        if (frameWidget) {
+            emit saveHistory(frameWidget, histData);
+        }
+    }
+}
+
+
 ////
 
 KWebKitTextExtension::KWebKitTextExtension(KWebKitPart* part)
@@ -869,7 +913,6 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     default:
         break;
     }
-        
     return elements;
 }
 

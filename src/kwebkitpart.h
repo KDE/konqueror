@@ -57,8 +57,9 @@ class KWebKitPart : public KParts::ReadOnlyPart
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
 public:
-    explicit KWebKitPart(QWidget *parentWidget = 0, QObject *parent = 0,
-                         const QStringList &/*args*/ = QStringList());
+    explicit KWebKitPart(QWidget* parentWidget = 0, QObject* parent = 0,
+                         const QByteArray& cachedHistory = QByteArray(),
+                         const QStringList& = QStringList());
     ~KWebKitPart();
 
     /**
@@ -147,7 +148,6 @@ private:
     void addWalletStatusBarIcon();
 
     bool m_emitOpenUrlNotify;
-    bool m_pageRestored;
     bool m_hasCachedFormData;
     KUrlLabel* m_statusBarWalletLabel;
     KDEPrivate::SearchBar* m_searchBar;
