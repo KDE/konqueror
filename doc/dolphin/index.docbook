@@ -73,7 +73,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-11-18</date>
+<date>2012-01-14</date>
 <releaseinfo>2.0 (&kde; 4.8)</releaseinfo>
 
 <abstract>
@@ -348,6 +348,20 @@ or <guiicon>v</guiicon> icon next to it.</para></listitem>
 <!-- end copy to konqueror filemanager.docbook -->
 </para>
 
+<screenshot>
+<screeninfo>Grouped View</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Grouped View</phrase>
+</textobject>
+<caption><para>All view modes support grouping by the sort type selected in 
+<menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
+</mediaobject>
+</screenshot>
+
 </sect3>
 
 <sect3 id="preview">
@@ -485,13 +499,6 @@ that folder. Moreover, clicking the <quote>&gt;</quote> sign to the right of a
 folder opens a menu which permits to quickly open a subfolder of that folder.
 </para>
 
-<para>
-The icon in front of the path can be clicked in both modes to open a menu which
-offers quick access to <quote>places</quote> and storage media. You can add and
-edit places, see the <link linkend="places-panel">section about the Places Panel</link>
-for details.
-</para>
-
 <screenshot>
 <screeninfo>Screenshot of the location bar in bread crumb mode</screeninfo>
 <mediaobject>
@@ -527,6 +534,48 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 <phrase>Location bar in editable mode.</phrase>
 </textobject>
 <caption><para>Location bar in editable mode.</para></caption>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+<sect2 id="location-place-context">
+<title>Places and Context</title>
+
+<para>
+If the <guilabel>Places</guilabel> panel is hidden; in both modes an additional icon 
+in front of the path is displayed. This icon can be clicked with the &LMB; to open a 
+menu which offers quick access to <quote>places</quote> and storage media. See the 
+<link linkend="places-panel">section about the Places Panel</link> for details.
+</para>
+
+<screenshot>
+<screeninfo>Location bar with Places icon</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="locationbar-places-icon.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Location bar with Places icon</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>The context menu of the location bar offers action to switch between the modes and 
+to copy and paste the path using the clipboard. Check the last option in this context menu to
+display either the full path starting with the root folder of the file system or to display 
+the path starting with the current places entry.
+</para>
+
+<screenshot>
+<screeninfo>Location bar context menu</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="locationbar-context-menu.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Location bar  context menu</phrase>
+</textobject>
 </mediaobject>
 </screenshot>
 
