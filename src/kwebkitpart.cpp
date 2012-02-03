@@ -535,7 +535,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
-    bool done = true;
+    bool pending = false;
     /*
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
       2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
@@ -544,13 +544,13 @@ void KWebKitPart::slotLoadFinished(bool ok)
     QWebFrame* frame = page() ? page()->currentFrame() : 0;
     if (ok && !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
         if (WebKitSettings::self()->autoPageRefresh()) {
-            done = false;
+            pending = false;
         } else {
             frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
         }
     }
 #endif
-    emit completed (done);
+    emit completed ((ok && pending));
 }
 
 void KWebKitPart::slotLoadAborted(const KUrl & url)
