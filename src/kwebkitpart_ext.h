@@ -94,7 +94,9 @@ public Q_SLOTS:
     void slotCopyMedia();
     void slotTextDirectionChanged();
     void slotCheckSpelling();
+    void slotSpellCheckSelection();
     void slotSpellCheckDone(const QString&);
+    void slotSpellCheckCancelled();
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
 
@@ -104,6 +106,9 @@ private:
     QWeakPointer<WebView> m_view;
     QString m_historyFileName;
     QByteArray m_historyHash;
+    QString m_spellCheckText;
+    quint32 m_spellTextSelectionStart;
+    quint32 m_spellTextSelectionEnd;
 };
 
 /**

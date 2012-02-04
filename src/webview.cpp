@@ -150,7 +150,7 @@ void WebView::dropEvent(QDropEvent* ev)
     }
 #else
     QWebView::dropEvent(ev);
-#endif    
+#endif
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)
@@ -203,11 +203,15 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         partActionPopupMenu(mapAction);
     }
 
+    if (!mapAction.isEmpty()) {
+        KParts::OpenUrlArguments args;
+        KParts::BrowserArguments bargs;
+        args.setMimeType(mimeType);
+        emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
+        return;
+    }
 
-    KParts::OpenUrlArguments args;
-    KParts::BrowserArguments bargs;
-    args.setMimeType(mimeType);
-    emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
+    KWebView::contextMenuEvent(e);
 }
 
 static bool showSpellCheckAction(const QWebElement& element)
@@ -266,15 +270,15 @@ void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGro
     action->setSeparator(true);
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
+    action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part.data()->browserExtension(), SLOT(copy()));
     action->setEnabled(pageAction(QWebPage::Copy)->isEnabled());
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Cut, "cut",  m_part.data()->browserExtension(), SLOT(cut()));
+    action = m_actionCollection->addAction(KStandardAction::Cut, QL1S("cut"),  m_part.data()->browserExtension(), SLOT(cut()));
     action->setEnabled(pageAction(QWebPage::Cut)->isEnabled());
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Paste, "paste",  m_part.data()->browserExtension(), SLOT(paste()));
+    action = m_actionCollection->addAction(KStandardAction::Paste, QL1S("paste"),  m_part.data()->browserExtension(), SLOT(paste()));
     action->setEnabled(pageAction(QWebPage::Paste)->isEnabled());
     editableContentActions.append(action);
 
@@ -282,17 +286,24 @@ void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGro
     action->setSeparator(true);
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::SelectAll, "selectall",  m_part.data()->browserExtension(), SLOT(slotSelectAll()));
-    action->setEnabled(pageAction(QWebPage::SelectAll)->isEnabled());
+    const bool hasContent = (!m_result.element().evaluateJavaScript(QL1S("this.value")).toString().isEmpty());
+    action = m_actionCollection->addAction(KStandardAction::SelectAll, QL1S("selectall"),  m_part.data()->browserExtension(), SLOT(slotSelectAll()));
+    action->setEnabled((pageAction(QWebPage::SelectAll)->isEnabled() && hasContent));
     editableContentActions.append(action);
 
     if (showSpellCheckAction(m_result.element())) {
         action = new KAction(m_actionCollection);
         action->setSeparator(true);
         editableContentActions.append(action);
-        action = m_actionCollection->addAction(KStandardAction::Spelling, "spelling", m_part.data()->browserExtension(), SLOT(slotCheckSpelling()));
+        action = m_actionCollection->addAction(KStandardAction::Spelling, QL1S("spelling"), m_part.data()->browserExtension(), SLOT(slotCheckSpelling()));
         action->setText(i18n("Check Spelling..."));
-        action->setEnabled(!m_result.element().evaluateJavaScript("this.value").toString().isEmpty());
+        action->setEnabled(hasContent);
+        editableContentActions.append(action);
+
+        const bool hasSelection = (hasContent && m_result.isContentSelected());
+        action = m_actionCollection->addAction(KStandardAction::Spelling, QL1S("spellcheckSelection"), m_part.data()->browserExtension(), SLOT(slotSpellCheckSelection()));
+        action->setText(i18n("Spellcheck selection..."));
+        action->setEnabled(hasSelection);
         editableContentActions.append(action);
     }
 
@@ -353,7 +364,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
             if (!m_result.imageUrl().host().isEmpty() &&
                 !m_result.imageUrl().scheme().isEmpty())
             {
-                action = new KAction( i18n( "Block Images From %1" , m_result.imageUrl().host()), this );
+                action = new KAction(i18n("Block Images From %1" , m_result.imageUrl().host()), this);
                 m_actionCollection->addAction(QL1S("blockhost"), action);
                 connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockHost()));
                 partActions.append(action);
@@ -454,7 +465,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
 {
     QList<QAction*> selectActions;
 
-    KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
+    KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part.data()->browserExtension(), SLOT(copy()));
     copyAction->setText(i18n("&Copy Text"));
     copyAction->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
     selectActions.append(copyAction);
@@ -487,7 +498,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
     KAction* action;
 
     if (m_result.isContentSelected()) {
-        action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
+        action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part.data()->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
         action->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
         linkActions.append(action);
