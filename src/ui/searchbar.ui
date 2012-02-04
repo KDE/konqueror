@@ -49,6 +49,9 @@
    </item>
    <item>
     <widget class="QToolButton" name="nextButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="toolTip">
       <string>Find the next match for the current search phrase</string>
      </property>
@@ -59,6 +62,9 @@
    </item>
    <item>
     <widget class="QToolButton" name="previousButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="toolTip">
       <string>Find the previous match for the current search phrase</string>
      </property>

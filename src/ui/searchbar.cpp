@@ -191,7 +191,8 @@ bool SearchBar::event(QEvent* e)
         QKeyEvent* kev = static_cast<QKeyEvent*>(e);
         if (kev->key() == Qt::Key_Escape) {
             e->accept();
-            hide();
+            clearFocus();
+            setVisible(false);
             return true;
         }
     }
