@@ -743,16 +743,18 @@ QHash<QByteArray, QVariant> KFileItemModelRolesUpdater::rolesData(const KFileIte
     const bool getSizeRole = m_roles.contains("size");
     const bool getIsExpandableRole = m_roles.contains("isExpandable");
 
-    if ((getSizeRole || getIsExpandableRole) && item.isDir() && item.isLocalFile()) {
-        const QString path = item.localPath();
-        const int count = subItemsCount(path);
-        if (count >= 0) {
+    if ((getSizeRole || getIsExpandableRole) && item.isDir()) {
+        if (item.isLocalFile()) {
+            const QString path = item.localPath();
+            const int count = subItemsCount(path);
             if (getSizeRole) {
-                data.insert("size", KIO::filesize_t(count));
+                data.insert("size", count);
             }
             if (getIsExpandableRole) {
                 data.insert("isExpandable", count > 0);
             }
+        } else if (getSizeRole) {
+            data.insert("size", -1); // -1 indicates an unknown number of items
         }
     }
 
@@ -839,7 +841,9 @@ int KFileItemModelRolesUpdater::subItemsCount(const QString& path) const
                 }
             }
 
-            if (!showFoldersOnly || dirEntry->d_type == DT_DIR) {
+            // If only directories are counted, consider an unknown file type also
+            // as directory instead of trying to do an expensive stat() (see bug 292642).
+            if (!showFoldersOnly || dirEntry->d_type == DT_DIR || dirEntry->d_type == DT_UNKNOWN) {
                 ++count;
             }
         }
