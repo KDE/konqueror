@@ -704,26 +704,23 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
             if (fields.contains(QL1S("subject")))
                 message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
         } else if (scheme == QL1S("javascript")) {
-            message = KStringHandler::rsqueeze(link, 80);
+            message = KStringHandler::rsqueeze(link, 150);
             if (link.startsWith(QL1S("javascript:window.open")))
                 message += i18n(" (In new window)");
         } else {
             message = link;
-            if (page()) {
-                QWebFrame* frame = page()->currentFrame();
+            QWebPage* p = page();
+            if (p) {
+                QWebFrame* frame = p->currentFrame();
                 if (frame) {
-                    const QWebElementCollection collection = frame->findAllElements(QL1S("a[href][target]"));
-                    Q_FOREACH(const QWebElement& element, collection) {
-                        if (linkUrl == frame->baseUrl().resolved(QUrl(element.attribute(QL1S("href"))))) {
-                            const QString target (element.attribute(QL1S("target")));
-                            if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
-                                target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
-                                message += i18n(" (In new window)");
-                            } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
-                                message += i18n(" (In parent frame)");
-                            }
-                            break;
-                        }
+                    QWebHitTestResult result = frame->hitTestContent(p->view()->mapFromGlobal(QCursor::pos()));
+                    const QWebElement element (result.linkElement());
+                    const QString target (element.attribute(QL1S("target")));
+                    if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
+                        target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
+                        message += i18n(" (In new window)");
+                    } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
+                        message += i18n(" (In parent frame)");
                     }
                 }
             }
