@@ -694,10 +694,11 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                 const bool allowExecution = trustedSource || KParts::BrowserRun::allowExecution( mimeType, url );
                 if ( allowExecution )
                 {
+                    const bool isExecutable = KonqRun::isExecutable( mimeType );
                     // Open with no offer means the user clicked on "Open With..." button.
-                    if (!offer) {
+                    if (!offer && !isExecutable) {
                         (void) KRun::displayOpenWithDialog(lst, this);
-                    } else if (KonqRun::isExecutable( mimeType ) || !KRun::run( *offer, lst, this ) ) {
+                    } else if (isExecutable || !KRun::run( *offer, lst, this ) ) {
                         setLocationBarURL( oldLocationBarURL ); // Revert to previous locationbar URL
                         (void)new KRun( url, this );
                     }
