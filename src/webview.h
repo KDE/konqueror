@@ -70,22 +70,42 @@ protected:
      */
     virtual void contextMenuEvent(QContextMenuEvent*);
 
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::keyPressEvent
+     * @internal
+     */
+    virtual void keyPressEvent(QKeyEvent*);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QObject::timerEvent
+     * @internal
+     */
+    virtual void timerEvent(QTimerEvent*);
+
+private Q_SLOTS:
+    void slotOpenSelection();
+    void slotStopAutoScroll();
+
+private:
     void editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &);
     void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
-
-private Q_SLOTS:
-    void slotOpenSelection();
-
-private:
     void addSearchActions(QList<QAction*>& selectActions, QWebView*);
 
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;
     QWeakPointer<KWebKitPart> m_part;
     QWebInspector* m_webInspector;
+
+    qint32 m_autoScrollTimerId;
+    qint32 m_verticalAutoScrollSpeed;
+    qint32 m_horizontalAutoScrollSpeed;
 };
 
 #endif // WEBVIEW_H

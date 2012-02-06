@@ -38,6 +38,7 @@
 #include <KDE/KActionMenu>
 #include <KDE/KIO/AccessManager>
 #include <KDE/KStringHandler>
+#include <KDE/KDebug>
 
 #include <QtCore/QMimeData>
 #include <QtGui/QDropEvent>
@@ -56,12 +57,17 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
         :KWebView(parent, false),
          m_actionCollection(new KActionCollection(this)),
          m_part(QWeakPointer<KWebKitPart>(part)),
-         m_webInspector(0)
+         m_webInspector(0),
+         m_autoScrollTimerId(-1),
+         m_verticalAutoScrollSpeed(0),
+         m_horizontalAutoScrollSpeed(0)
 {
     setAcceptDrops(true);
 
     // Create the custom page...
     setPage(new WebPage(part, this));
+
+    connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
 }
 
 WebView::~WebView()
@@ -213,6 +219,105 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 
     KWebView::contextMenuEvent(e);
 }
+
+static bool isEditableElement(QWebPage* page)
+{
+    if (page) {
+        const QString tagName = page->mainFrame()->evaluateJavaScript(QL1S("document.activeElement.tagName")).toString();
+        const bool isEditable = page->mainFrame()->evaluateJavaScript(QL1S("document.activeElement.isContentEditable")).toBool();
+        return (tagName.compare(QL1S("input"), Qt::CaseInsensitive) == 0
+                || tagName.compare(QL1S("textarea"), Qt::CaseInsensitive) == 0
+                || tagName.compare(QL1S("select"), Qt::CaseInsensitive) == 0
+                || isEditable);
+    }
+    return false;
+}
+
+void WebView::keyPressEvent(QKeyEvent* e)
+{
+    if (e && hasFocus()) {
+        const int key = e->key();
+        if (e->modifiers() & Qt::ShiftModifier) {
+            switch (key) {
+            case Qt::Key_Up:
+                if (!isEditableElement(page())) {
+                    m_verticalAutoScrollSpeed--;
+                    if (m_autoScrollTimerId == -1)
+                        m_autoScrollTimerId = startTimer(100);
+                    e->accept();
+                    return;
+                }
+                break;
+            case Qt::Key_Down:
+                if (!isEditableElement(page())) {
+                    m_verticalAutoScrollSpeed++;
+                    if (m_autoScrollTimerId == -1)
+                        m_autoScrollTimerId = startTimer(100);
+                    e->accept();
+                    return;
+                }
+                break;
+            case Qt::Key_Left:
+                if (!isEditableElement(page())) {
+                    m_horizontalAutoScrollSpeed--;
+                    if (m_autoScrollTimerId == -1)
+                        m_autoScrollTimerId = startTimer(100);
+                    e->accept();
+                    return;
+                }
+                break;
+            case Qt::Key_Right:
+                if (!isEditableElement(page())) {
+                    m_horizontalAutoScrollSpeed--;
+                    if (m_autoScrollTimerId == -1)
+                        m_autoScrollTimerId = startTimer(100);
+                    e->accept();
+                    return;
+                }
+                break;
+            default:
+                break;
+            }
+        } else {
+            // kDebug() << key << e->modifiers();
+            slotStopAutoScroll();
+        }
+    }
+    QWebView::keyPressEvent(e);
+}
+
+void WebView::timerEvent(QTimerEvent* e)
+{
+    if (e && e->timerId() == m_autoScrollTimerId) {
+        // do the scrolling
+        page()->currentFrame()->scroll(m_horizontalAutoScrollSpeed, m_verticalAutoScrollSpeed);
+
+        // check if we reached the end
+        const int y = page()->currentFrame()->scrollPosition().y();
+        if (y == page()->currentFrame()->scrollBarMinimum(Qt::Vertical)
+            || y == page()->currentFrame()->scrollBarMaximum(Qt::Vertical)) {
+            m_verticalAutoScrollSpeed = 0;
+        }
+
+        const int x = page()->currentFrame()->scrollPosition().x();
+        if (x == page()->currentFrame()->scrollBarMinimum(Qt::Horizontal)
+            || x == page()->currentFrame()->scrollBarMaximum(Qt::Horizontal)) {
+            m_horizontalAutoScrollSpeed = 0;
+        }
+
+        // Kill the timer once the max/min scroll limit is reached.
+        if (m_horizontalAutoScrollSpeed == 0  && m_verticalAutoScrollSpeed == 0) {
+            killTimer(m_autoScrollTimerId);
+            m_autoScrollTimerId = -1;
+        }
+
+        e->accept();
+        return;
+    }
+    QWidget::timerEvent(e);
+}
+
+
 
 static bool showSpellCheckAction(const QWebElement& element)
 {
@@ -596,6 +701,19 @@ void WebView::slotOpenSelection()
         browserArgs.frameName = "_blank";
         emit m_part.data()->browserExtension()->openUrlRequest(action->data().toUrl(), KParts::OpenUrlArguments(), browserArgs);
     }
+}
+
+void WebView::slotStopAutoScroll()
+{
+    if (m_autoScrollTimerId == -1)  {
+        return;
+    }
+
+    killTimer(m_autoScrollTimerId);
+    m_autoScrollTimerId = -1;
+    m_verticalAutoScrollSpeed = 0;
+    m_horizontalAutoScrollSpeed = 0;
+
 }
 
 void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
