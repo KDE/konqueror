@@ -84,6 +84,8 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteA
             s >> *(view()->history());
         }
     }
+
+    kDebug() << actionSlotMap();
 }
 
 WebKitBrowserExtension::~WebKitBrowserExtension()
@@ -240,9 +242,16 @@ void WebKitBrowserExtension::updateEditActions()
     if (!view())
         return;
 
-    enableAction("cut", view()->pageAction(QWebPage::Cut));
-    enableAction("copy", view()->pageAction(QWebPage::Copy));
-    enableAction("paste", view()->pageAction(QWebPage::Paste));
+    enableAction("cut", view()->pageAction(QWebPage::Cut)->isEnabled());
+    enableAction("copy", view()->pageAction(QWebPage::Copy)->isEnabled());
+    enableAction("paste", view()->pageAction(QWebPage::Paste)->isEnabled());
+}
+
+void WebKitBrowserExtension::updateActions()
+{
+    const QString protocol (m_part.data()->url().protocol());
+    const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
+    enableAction("print", isValidDocument);
 }
 
 void WebKitBrowserExtension::searchProvider()

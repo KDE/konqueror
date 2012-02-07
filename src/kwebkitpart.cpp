@@ -253,6 +253,27 @@ void KWebKitPart::initActions()
                                            m_searchBar, SLOT(findPrevious()));
 }
 
+void KWebKitPart::updateActions()
+{
+    QAction* action = actionCollection()->action(QL1S("saveDocument"));
+    if (action) {
+        const QString protocol (url().protocol());
+        action->setEnabled(protocol != QL1S("about") && protocol != QL1S("error"));
+    }
+
+    const bool hasChildFrames = !view()->page()->mainFrame()->childFrames().isEmpty();
+    action = actionCollection()->action(QL1S("printFrame"));
+    if (action) {
+        action->setEnabled(hasChildFrames);
+    }
+
+    action = actionCollection()->action(QL1S("saveFrame"));
+    if (action) {
+        action->setEnabled(hasChildFrames);
+    }
+}
+
+
 void KWebKitPart::connectWebPageSignals(WebPage* page)
 {
     if (!page)
@@ -406,6 +427,8 @@ void KWebKitPart::slotLoadStarted()
     // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
     emit started(0);
     slotWalletClosed();
+    updateActions();
+    m_browserExtension->updateActions();
 }
 
 void KWebKitPart::slotFrameLoadFinished(bool ok)
@@ -485,6 +508,9 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
+    updateActions();
+    m_browserExtension->updateActions();
+
     bool pending = false;
     /*
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit

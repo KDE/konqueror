@@ -86,6 +86,8 @@ public Q_SLOTS:
     void slotViewFrameSource();
 
     void updateEditActions();
+    void updateActions();
+
     void slotPlayMedia();
     void slotMuteMedia();
     void slotLoopMedia();

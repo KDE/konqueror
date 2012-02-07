@@ -145,6 +145,7 @@ private Q_SLOTS:
 private:
     WebPage* page();
     void initActions();
+    void updateActions();
     void addWalletStatusBarIcon();
 
     bool m_emitOpenUrlNotify;
