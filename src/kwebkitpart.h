@@ -136,7 +136,6 @@ private Q_SLOTS:
     void slotSetTextEncoding(QTextCodec*);
     void slotSetStatusBarText(const QString& text);
     void slotWindowCloseRequested();
-    void slotPrintRequested(QWebFrame*);
     void slotSaveFormDataRequested(const QString &, const QUrl &);
     void slotSaveFormDataDone();
     void slotFillFormRequestCompleted(bool);

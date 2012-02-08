@@ -50,6 +50,7 @@
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
 #include <QtGui/QPrinter>
+#include <QtGui/QPrintDialog>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebHistory>
@@ -217,24 +218,8 @@ void WebKitBrowserExtension::slotSaveFrame()
 
 void WebKitBrowserExtension::print()
 {
-    if (!view())
-        return;
-
-    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
-    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
-            view(), SLOT(print(QPrinter*)));
-    dlg->exec();
-}
-
-void WebKitBrowserExtension::printFrame()
-{
-    if (!view())
-        return;
-
-    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
-    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
-            view()->page()->currentFrame(), SLOT(print(QPrinter*)));
-    dlg->exec();
+    if (view())
+        slotPrintRequested(view()->page()->currentFrame());
 }
 
 void WebKitBrowserExtension::updateEditActions()
@@ -780,6 +765,27 @@ void WebKitBrowserExtension::slotSaveHistory()
             emit saveHistory(frameWidget, histData);
         }
     }
+}
+
+void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
+{
+    if (!frame)
+        return;
+
+    // Make it non-modal, in case a redirection deletes the part
+    QScopedPointer<QPrintDialog> dlg (new QPrintDialog(view()));
+    if (dlg->exec() == QPrintDialog::Accepted) {
+        frame->print(dlg->printer());
+    }
+}
+
+void WebKitBrowserExtension::slotPrintPreview()
+{
+    // Make it non-modal, in case a redirection deletes the part
+    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
+    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
+            view()->page()->currentFrame(), SLOT(print(QPrinter*)));
+    dlg->exec();
 }
 
 

@@ -198,9 +198,9 @@ void KWebKitPart::initActions()
     actionCollection()->addAction("saveFrame", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
 
-    action = new KAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
-    actionCollection()->addAction("printFrame", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(printFrame()));
+    action = new KAction(KIcon("document-print-preview"), i18n("Print Preview"), this);
+    actionCollection()->addAction("printPreview", action);
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotPrintPreview()));
 
     action = new KAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
@@ -255,24 +255,24 @@ void KWebKitPart::initActions()
 
 void KWebKitPart::updateActions()
 {
+    m_browserExtension->updateActions();
+
     QAction* action = actionCollection()->action(QL1S("saveDocument"));
     if (action) {
         const QString protocol (url().protocol());
         action->setEnabled(protocol != QL1S("about") && protocol != QL1S("error"));
     }
 
-    const bool hasChildFrames = !view()->page()->mainFrame()->childFrames().isEmpty();
-    action = actionCollection()->action(QL1S("printFrame"));
+    action = actionCollection()->action(QL1S("printPreview"));
     if (action) {
-        action->setEnabled(hasChildFrames);
+        action->setEnabled(m_browserExtension->isActionEnabled("print"));
     }
 
     action = actionCollection()->action(QL1S("saveFrame"));
     if (action) {
-        action->setEnabled(hasChildFrames);
+        action->setEnabled(!view()->page()->mainFrame()->childFrames().isEmpty());
     }
 }
-
 
 void KWebKitPart::connectWebPageSignals(WebPage* page)
 {
@@ -294,7 +294,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
     connect(page, SIGNAL(printRequested(QWebFrame*)),
-            this, SLOT(slotPrintRequested(QWebFrame*)));
+            m_browserExtension, SLOT(slotPrintRequested(QWebFrame*)));
     connect(page, SIGNAL(frameCreated(QWebFrame*)),
             this, SLOT(slotFrameCreated(QWebFrame*)));
 
@@ -428,7 +428,6 @@ void KWebKitPart::slotLoadStarted()
     emit started(0);
     slotWalletClosed();
     updateActions();
-    m_browserExtension->updateActions();
 }
 
 void KWebKitPart::slotFrameLoadFinished(bool ok)
@@ -509,7 +508,6 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 void KWebKitPart::slotLoadFinished(bool ok)
 {
     updateActions();
-    m_browserExtension->updateActions();
 
     bool pending = false;
     /*
@@ -847,19 +845,6 @@ void KWebKitPart::slotWindowCloseRequested()
         return;
 #endif
     this->deleteLater();
-}
-
-void KWebKitPart::slotPrintRequested(QWebFrame* frame)
-{
-    if (!frame)
-        return;
-
-    // Make it non-modal, in case a redirection deletes the part
-    QPrintPreviewDialog* dlg = new QPrintPreviewDialog(m_webView);
-    connect(dlg, SIGNAL(paintRequested(QPrinter*)),
-            frame, SLOT(print(QPrinter*)));
-    dlg->setAttribute(Qt::WA_DeleteOnClose);
-    dlg->show();
 }
 
 void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
