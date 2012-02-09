@@ -447,8 +447,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
                   if (!fileInfo.exists() || fileInfo.lastModified().daysTo(QDateTime::currentDateTime()) > htmlFilterListMaxAgeDays)
                   {
                       /** ... in this case, refetch list asynchronously */
-                      kDebug(6000) << "Asynchronously fetching filter list from" << url << "to" << localFile;
-
+                      // kDebug() << "Fetching filter list from" << url << "to" << localFile;
                       KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
                       QObject::connect( job, SIGNAL(result(KJob*)), d, SLOT(adblockFilterResult(KJob*)) );
                       /** for later reference, store name of cache file */
