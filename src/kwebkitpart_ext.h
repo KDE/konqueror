@@ -98,8 +98,6 @@ public Q_SLOTS:
     void slotTextDirectionChanged();
     void slotCheckSpelling();
     void slotSpellCheckSelection();
-    void slotSpellCheckDone(const QString&);
-    void slotSpellCheckCancelled();
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
     void slotSaveHistory();
@@ -110,7 +108,6 @@ private:
     WebView* view();
     QWeakPointer<KWebKitPart> m_part;
     QWeakPointer<WebView> m_view;
-    QString m_spellCheckText;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
 };

@@ -677,9 +677,9 @@ static QVariant execJScript(WebView* view, const QString& script)
 
 void WebKitBrowserExtension::slotCheckSpelling()
 {
-    m_spellCheckText = execJScript(view(), QL1S("this.value")).toString();
+    const QString text (execJScript(view(), QL1S("this.value")).toString());
 
-    if ( m_spellCheckText.isEmpty() ) {
+    if ( text.isEmpty() ) {
         return;
     }
 
@@ -690,16 +690,15 @@ void WebKitBrowserExtension::slotCheckSpelling()
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
     connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
-    connect(spellDialog, SIGNAL(cancel()), this, SLOT(slotSpellCheckCancelled()));
-    spellDialog->setBuffer(m_spellCheckText);
+    spellDialog->setBuffer(text);
     spellDialog->show();
 }
 
 void WebKitBrowserExtension::slotSpellCheckSelection()
 {
-    m_spellCheckText = execJScript(view(), QL1S("this.value")).toString();
+    QString text (execJScript(view(), QL1S("this.value")).toString());
 
-    if ( m_spellCheckText.isEmpty() ) {
+    if ( text.isEmpty() ) {
         return;
     }
 
@@ -710,41 +709,35 @@ void WebKitBrowserExtension::slotSpellCheckSelection()
     Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
-    connect(spellDialog, SIGNAL(cancel()), this, SLOT(slotSpellCheckCancelled()));
-    spellDialog->setBuffer(m_spellCheckText.mid(m_spellTextSelectionStart, m_spellTextSelectionEnd));
+    spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, m_spellTextSelectionEnd));
     spellDialog->show();
-
-}
-
-void WebKitBrowserExtension::slotSpellCheckDone(const QString& text)
-{
-    if (m_spellCheckText == text) {
-        return;
-    }
-
-    const QString script (QL1S("this.value=\"") + m_spellCheckText + QL1C('"'));
-    execJScript(view(), script);
-    m_spellCheckText.clear();
-}
-
-void WebKitBrowserExtension::slotSpellCheckCancelled()
-{
-    m_spellCheckText.clear();
 }
 
 void WebKitBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
 {
-    m_spellCheckText.replace(pos + m_spellTextSelectionStart, original.length(), replacement);
-    QString script(QL1S("this.value=\"") + m_spellCheckText + QL1C('"'));
-    if (m_spellTextSelectionStart > 0 || m_spellTextSelectionEnd > 0) {
+    // Adjust the selection end...
+    if (m_spellTextSelectionEnd > 0) {
         m_spellTextSelectionEnd += qMax (0, (replacement.length() - original.length()));
+    }
+
+    const int index = pos + m_spellTextSelectionStart;
+    QString script(QL1S("this.value=this.value.substring(0,"));
+    script += QString::number(index);
+    script += QL1S(") + \"");
+    script +=  replacement;
+    script += QL1S("\" + this.value.substring(");
+    script += QString::number(index + original.length());
+    script += QL1S(")");
+
+    if (m_spellTextSelectionStart > 0 || m_spellTextSelectionEnd > 0) {
+
         script += QL1S("; this.setSelectionRange(");
         script += QString::number(m_spellTextSelectionStart);
         script += QL1C(',');
         script += QString::number(m_spellTextSelectionEnd);
         script += QL1C(')');
     }
+    //kDebug() << "**** script:" << script;
     execJScript(view(), script);
 }
 
