@@ -223,12 +223,14 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 static bool isEditableElement(QWebPage* page)
 {
     if (page) {
-        const QString tagName = page->mainFrame()->evaluateJavaScript(QL1S("document.activeElement.tagName")).toString();
-        const bool isEditable = page->mainFrame()->evaluateJavaScript(QL1S("document.activeElement.isContentEditable")).toBool();
-        return (tagName.compare(QL1S("input"), Qt::CaseInsensitive) == 0
-                || tagName.compare(QL1S("textarea"), Qt::CaseInsensitive) == 0
-                || tagName.compare(QL1S("select"), Qt::CaseInsensitive) == 0
-                || isEditable);
+        QWebFrame* frame = page->currentFrame();
+        if (frame) {
+            QWebElement element = frame->findFirstElement(":focus");
+            if (!element.isNull()) {
+                // kDebug() << "Focus element?" << element.tagName() << ", editable?" << frame->hitTestContent(element.geometry().topLeft()).isContentEditable();
+                return (frame->hitTestContent(element.geometry().topLeft()).isContentEditable() || page->isContentEditable());
+            }
+        }
     }
     return false;
 }
