@@ -222,14 +222,15 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 
 static bool isEditableElement(QWebPage* page)
 {
-    if (page) {
-        QWebFrame* frame = page->currentFrame();
-        if (frame) {
-            QWebElement element = frame->findFirstElement(":focus");
-            if (!element.isNull()) {
-                // kDebug() << "Focus element?" << element.tagName() << ", editable?" << frame->hitTestContent(element.geometry().topLeft()).isContentEditable();
-                return (frame->hitTestContent(element.geometry().topLeft()).isContentEditable() || page->isContentEditable());
-            }
+    QWebFrame* frame = page ? page->currentFrame() : 0;
+    if (frame) {
+        const QWebElement element (frame->findFirstElement(QL1S(":focus")));
+        if (!element.isNull()) {
+            // We go 1 point inside the deletected element to ensure the hit
+            // text below checks the correct element to see if it is editable.
+            const QPoint point (element.geometry().topLeft() + QPoint(1,1));
+            // kDebug() << "Found" << element.tagName() << "@" << point << "Editable?" << element.webFrame()->hitTestContent(point).isContentEditable();
+            return (element.webFrame()->hitTestContent(point).isContentEditable() || page->isContentEditable());
         }
     }
     return false;
