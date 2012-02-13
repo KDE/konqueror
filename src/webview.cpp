@@ -226,11 +226,12 @@ static bool isEditableElement(QWebPage* page)
     if (frame) {
         const QWebElement element (frame->findFirstElement(QL1S(":focus")));
         if (!element.isNull()) {
-            // We go 1 point inside the deletected element to ensure the hit
-            // text below checks the correct element to see if it is editable.
-            const QPoint point (element.geometry().topLeft() + QPoint(1,1));
-            // kDebug() << "Found" << element.tagName() << "@" << point << "Editable?" << element.webFrame()->hitTestContent(point).isContentEditable();
-            return (element.webFrame()->hitTestContent(point).isContentEditable() || page->isContentEditable());
+            // To ensure the hit test that is preformed below uses the correct
+            // geometery of the focus element, we have to subtract the value of
+            // the current scrollbar position.
+            const QPoint point (element.geometry().topLeft() - frame->scrollPosition());
+            // kDebug() << "Found" << element.tagName() << "@" << point << "Editable?" << frame->hitTestContent(point).isContentEditable();
+            return (frame->hitTestContent(point).isContentEditable() || page->isContentEditable());
         }
     }
     return false;

@@ -689,7 +689,6 @@ void WebKitBrowserExtension::slotCheckSpelling()
     Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
     spellDialog->setBuffer(text);
     spellDialog->show();
 }
