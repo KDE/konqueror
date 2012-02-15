@@ -222,16 +222,17 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 
 static bool isEditableElement(QWebPage* page)
 {
-    QWebFrame* frame = page ? page->currentFrame() : 0;
-    if (frame) {
-        const QWebElement element (frame->findFirstElement(QL1S(":focus")));
-        if (!element.isNull()) {
-            // To ensure the hit test that is preformed below uses the correct
-            // geometery of the focus element, we have to subtract the value of
-            // the current scrollbar position.
-            const QPoint point (element.geometry().topLeft() - frame->scrollPosition());
-            // kDebug() << "Found" << element.tagName() << "@" << point << "Editable?" << frame->hitTestContent(point).isContentEditable();
-            return (frame->hitTestContent(point).isContentEditable() || page->isContentEditable());
+    const QWebFrame* frame = (page ? page->currentFrame() : 0);
+    const QWebElement element = (frame ? frame->findFirstElement(QL1S(":focus")) : QWebElement());
+    if (!element.isNull()) {
+        const QString tagName(element.tagName());
+        if (tagName.compare(QL1S("textarea"), Qt::CaseInsensitive) == 0) {
+            return true;
+        }
+        const QString type(element.attribute(QL1S("type")).toLower());
+        if (tagName.compare(QL1S("input"), Qt::CaseInsensitive) == 0
+            && (type.isEmpty() || type == QL1S("text") || type == QL1S("password"))) {
+            return true;
         }
     }
     return false;

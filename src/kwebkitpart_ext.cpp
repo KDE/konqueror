@@ -687,6 +687,7 @@ void WebKitBrowserExtension::slotCheckSpelling()
     m_spellTextSelectionEnd = 0;
 
     Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
+    spellDialog->showSpellCheckCompletionMessage(true);
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
     spellDialog->setBuffer(text);
@@ -706,9 +707,11 @@ void WebKitBrowserExtension::slotSpellCheckSelection()
     // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
     Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
+    spellDialog->showSpellCheckCompletionMessage(true);
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-    spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, m_spellTextSelectionEnd));
+    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
+    spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, (m_spellTextSelectionEnd - m_spellTextSelectionStart)));
     spellDialog->show();
 }
 
@@ -728,14 +731,6 @@ void WebKitBrowserExtension::spellCheckerCorrected(const QString& original, int 
     script += QString::number(index + original.length());
     script += QL1S(")");
 
-    if (m_spellTextSelectionStart > 0 || m_spellTextSelectionEnd > 0) {
-
-        script += QL1S("; this.setSelectionRange(");
-        script += QString::number(m_spellTextSelectionStart);
-        script += QL1C(',');
-        script += QString::number(m_spellTextSelectionEnd);
-        script += QL1C(')');
-    }
     //kDebug() << "**** script:" << script;
     execJScript(view(), script);
 }
@@ -750,6 +745,21 @@ void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int po
     selectionScript += QL1C(')');
     execJScript(view(), selectionScript);
 }
+
+void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
+{
+    // Restore the text selection of one was present before we started the
+    // spell check.
+    if (m_spellTextSelectionStart > 0 || m_spellTextSelectionEnd > 0) {
+        QString script (QL1S("; this.setSelectionRange("));
+        script += QString::number(m_spellTextSelectionStart);
+        script += QL1C(',');
+        script += QString::number(m_spellTextSelectionEnd);
+        script += QL1C(')');
+        execJScript(view(), script);
+    }
+}
+
 
 void WebKitBrowserExtension::slotSaveHistory()
 {

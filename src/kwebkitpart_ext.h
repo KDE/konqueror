@@ -98,6 +98,7 @@ public Q_SLOTS:
     void slotTextDirectionChanged();
     void slotCheckSpelling();
     void slotSpellCheckSelection();
+    void slotSpellCheckDone(const QString&);
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
     void slotSaveHistory();
