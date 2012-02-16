@@ -654,8 +654,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
     }
 
     bool check_old_java = true;
-    if( ( reset || cgJava.hasKey( "JavaDomainSettings" ) )
-    	&& check_old_java_settings )
+    if( (reset || cgJava.hasKey("JavaDomainSettings")) && check_old_java_settings)
     {
       check_old_java = false;
       const QStringList domainList = cgJava.readEntry( "JavaDomainSettings", QStringList() );
@@ -667,17 +666,15 @@ void WebKitSettings::init( KConfig * config, bool reset )
         KJavaScriptAdvice javaAdvice;
         KJavaScriptAdvice javaScriptAdvice;
         splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-        setup_per_domain_policy(d,domain).m_bEnableJava =
-		javaAdvice == KJavaScriptAccept;
+        setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KJavaScriptAccept;
 #ifdef DEBUG_SETTINGS
-	setup_per_domain_policy(d,domain).dump("JavaDomainSettings 4 "+domain);
+        setup_per_domain_policy(d,domain).dump("JavaDomainSettings 4 "+domain);
 #endif
       }
     }
 
     bool check_old_ecma = true;
-    if( ( reset || cgJava.hasKey( "ECMADomainSettings" ) )
-	&& check_old_ecma_settings )
+    if( ( reset || cgJava.hasKey( "ECMADomainSettings" ) ) && check_old_ecma_settings )
     {
       check_old_ecma = false;
       const QStringList domainList = cgJava.readEntry( "ECMADomainSettings", QStringList() );
@@ -711,44 +708,13 @@ void WebKitSettings::init( KConfig * config, bool reset )
         KJavaScriptAdvice javaScriptAdvice;
         splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
         if( check_old_java )
-          setup_per_domain_policy(d,domain).m_bEnableJava =
-	  		javaAdvice == KJavaScriptAccept;
+          setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KJavaScriptAccept;
         if( check_old_ecma )
-          setup_per_domain_policy(d,domain).m_bEnableJavaScript =
-	  		javaScriptAdvice == KJavaScriptAccept;
+          setup_per_domain_policy(d,domain).m_bEnableJavaScript = javaScriptAdvice == KJavaScriptAccept;
 #ifdef DEBUG_SETTINGS
-	setup_per_domain_policy(d,domain).dump("JavaScriptDomainAdvice 4 "+domain);
+        setup_per_domain_policy(d,domain).dump("JavaScriptDomainAdvice 4 "+domain);
 #endif
       }
-
-      //save all the settings into the new keywords if they don't exist
-#if 0
-      if( check_old_java )
-      {
-        QStringList domainConfig;
-        PolicyMap::Iterator it;
-        for( it = d->javaDomainPolicy.begin(); it != d->javaDomainPolicy.end(); ++it )
-        {
-          QByteArray javaPolicy = adviceToStr( it.value() );
-          QByteArray javaScriptPolicy = adviceToStr( KJavaScriptDunno );
-          domainConfig.append(QString::fromLatin1("%1:%2:%3").arg(it.key()).arg(javaPolicy).arg(javaScriptPolicy));
-        }
-        cg.writeEntry( "JavaDomainSettings", domainConfig );
-      }
-
-      if( check_old_ecma )
-      {
-        QStringList domainConfig;
-        PolicyMap::Iterator it;
-        for( it = d->javaScriptDomainPolicy.begin(); it != d->javaScriptDomainPolicy.end(); ++it )
-        {
-          QByteArray javaPolicy = adviceToStr( KJavaScriptDunno );
-          QByteArray javaScriptPolicy = adviceToStr( it.value() );
-          domainConfig.append(QString::fromLatin1("%1:%2:%3").arg(it.key()).arg(javaPolicy).arg(javaScriptPolicy));
-        }
-        cg.writeEntry( "ECMADomainSettings", domainConfig );
-      }
-#endif
     }
   }
 

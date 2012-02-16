@@ -181,7 +181,6 @@ public:
     bool isHideAdsEnabled() const;
     void addAdFilter( const QString &url );
     QString adFilteredBy( const QString &url, bool *isWhiteListed = 0 ) const;
-    
 
     // Access Keys
     bool accessKeysEnabled() const;
@@ -198,7 +197,7 @@ public:
     // helpers for parsing domain-specific configuration, used in KControl module as well
     static KJavaScriptAdvice strToAdvice(const QString& _str);
     static void splitDomainAdvice(const QString& configStr, QString &domain,
-				  KJavaScriptAdvice &javaAdvice, KJavaScriptAdvice& javaScriptAdvice);
+                                  KJavaScriptAdvice &javaAdvice, KJavaScriptAdvice& javaScriptAdvice);
     static const char* adviceToStr(KJavaScriptAdvice _advice);
 
     /** reads from @p config's current group, forcing initialization
@@ -210,7 +209,7 @@ public:
       *		settings.
       */
     void readDomainSettings(const KConfigGroup &config, bool reset,
-			bool global, KPerDomainSettings &pd_settings);
+                            bool global, KPerDomainSettings &pd_settings);
 
     QString settingsToCSS() const;
     static const QString &availableFamilies();
