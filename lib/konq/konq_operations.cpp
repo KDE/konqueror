@@ -98,7 +98,7 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
 
 void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List & selectedUrls )
 {
-    kDebug(1203) << "KonqOperations::del " << parent->metaObject()->className();
+    kDebug(1203) << parent->metaObject()->className();
     if ( selectedUrls.isEmpty() )
     {
         kWarning(1203) << "Empty URL list !" ;
@@ -271,7 +271,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
 KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent,
                                         const QList<QAction*> & userActions  )
 {
-    kDebug(1203) << "doDrop: dest:" << dest;
+    kDebug(1203) << "dest:" << dest;
     QMap<QString, QString> metaData;
     // Prefer local urls if possible, to avoid problems with desktop:/ urls from other users (#184403)
     const KUrl::List lst = KUrl::List::fromMimeData(ev->mimeData(), KUrl::List::PreferLocalUrls, &metaData);
@@ -305,7 +305,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
         {
             modifiers |= Qt::ControlModifier | Qt::ShiftModifier;
             action = Qt::LinkAction;
-            kDebug(1203) << "KonqOperations::doDrop Bookmark -> emulating Link";
+            kDebug(1203) << "Bookmark -> emulating Link";
         }
 
         KonqOperations * op = new KonqOperations(parent);
@@ -352,7 +352,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
     bool m_destIsLocal = false;
     m_destUrl = destItem.mostLocalUrl(m_destIsLocal); // #168154
 
-    //kDebug(1203) << "KonqOperations::asyncDrop destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
+    //kDebug(1203) << "destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
     // Check what the destination is
     if ( destItem.isDir() )
     {
@@ -415,7 +415,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
     {
         // Should be a local executable
         // (If this fails, there is a bug in KFileItem::acceptsDrops / KDirModel::flags)
-        kDebug(1203) << "KonqOperations::doDrop " << m_destUrl.path() << "should be an executable";
+        kDebug(1203) << m_destUrl.path() << "should be an executable";
         Q_ASSERT ( access( QFile::encodeName(m_destUrl.path()), X_OK ) == 0 );
         // Launch executable for each of the files
         QStringList args;
@@ -643,7 +643,7 @@ void KonqOperations::doDropFileCopy()
         KIO::FileUndoManager::self()->recordCopyJob(job);
         return;
     case Qt::LinkAction :
-        kDebug(1203) << "KonqOperations::asyncDrop lst.count=" << lst.count();
+        kDebug(1203) << "lst.count=" << lst.count();
         job = KIO::link( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, LINK, m_destUrl );
@@ -716,7 +716,7 @@ static QString translatePath( QString path ) // krazy:exclude=passbyvalue
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
 {
-    kDebug(1203) << "KonqOperations::rename oldurl=" << oldurl << " newurl=" << newurl;
+    kDebug(1203) << "oldurl=" << oldurl << " newurl=" << newurl;
     if ( oldurl == newurl )
         return;
 
