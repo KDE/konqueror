@@ -370,8 +370,13 @@ void WebKitSettings::init()
 
   KConfig cssConfig ( "kcmcssrc", KConfig::NoGlobals );
   KConfigGroup cssCg( &cssConfig, "Stylesheet");
-  if (cssCg.exists() && cssCg.readEntry("Use", QString()) == QLatin1String("user"))
-    QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(cssCg.readEntry("SheetName", QString())));
+  const QString cssType (cssCg.readEntry("Use", QString()));
+  if (cssType  == QLatin1String("user") || cssType == QLatin1String("access")) {
+    const QUrl userStyleSheetUrl (cssCg.readEntry("SheetName", QString()));
+    QWebSettings::globalSettings()->setUserStyleSheetUrl(userStyleSheetUrl);
+  } else if (QWebSettings::globalSettings()->userStyleSheetUrl().isValid()) {
+    QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl());
+  }
 
   delete d->nonPasswordStorableSites;
   d->nonPasswordStorableSites = 0;
