@@ -938,6 +938,94 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     return elements;
 }
 
+QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const
+{
+    QWebView* view = part() ? part()->view() : 0;
+    QWebPage* page = view ? view->page() : 0;
+    QWebSettings* settings = page ? page->settings() : 0;
+
+    if (settings) {
+        switch (type) {
+        case KParts::HtmlSettingsInterface::AutoLoadImages:
+            return settings->testAttribute(QWebSettings::AutoLoadImages);
+        case KParts::HtmlSettingsInterface::JavaEnabled:
+            return settings->testAttribute(QWebSettings::JavaEnabled);
+        case KParts::HtmlSettingsInterface::JavascriptEnabled:
+            return settings->testAttribute(QWebSettings::JavascriptEnabled);
+        case KParts::HtmlSettingsInterface::PluginsEnabled:
+            return settings->testAttribute(QWebSettings::PluginsEnabled);
+        case KParts::HtmlSettingsInterface::DnsPrefetchEnabled:
+            return settings->testAttribute(QWebSettings::DnsPrefetchEnabled);
+        case KParts::HtmlSettingsInterface::MetaRefreshEnabled:
+            return view->pageAction(QWebPage::StopScheduledPageRefresh)->isEnabled();
+        case KParts::HtmlSettingsInterface::LocalStorageEnabled:
+            return settings->setAttribute(QWebSettings::LocalStorageEnabled);
+        case KParts::HtmlSettingsInterface::OfflineStorageDatabaseEnabled:
+            return settings->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled);
+        case KParts::HtmlSettingsInterface::OfflineWebApplicationCacheEnabled:
+            return settings->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled);
+        case KParts::HtmlSettingsInterface::PrivateBrowsingEnabled:
+            return settings->setAttribute(QWebSettings::PrivateBrowsingEnabled);
+        case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
+            return settings->userStyleSheetUrl();
+        default:
+            break;
+        }
+    }
+
+    return QVariant();
+}
+
+bool KWebKitHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type, const QVariant& value)
+{
+    QWebView* view = part() ? part()->view() : 0;
+    QWebPage* page = view ? view->page() : 0;
+    QWebSettings* settings = page ? page->settings() : 0;
+
+    if (settings) {
+        switch (type) {
+        case KParts::HtmlSettingsInterface::AutoLoadImages:
+            settings->setAttribute(QWebSettings::AutoLoadImages, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::JavaEnabled:
+            settings->setAttribute(QWebSettings::JavaEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::JavascriptEnabled:
+            settings->setAttribute(QWebSettings::JavascriptEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::PluginsEnabled:
+            settings->setAttribute(QWebSettings::PluginsEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::DnsPrefetchEnabled:
+            settings->setAttribute(QWebSettings::DnsPrefetchEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::MetaRefreshEnabled:
+            view->triggerPageAction(QWebPage::StopScheduledPageRefresh);
+            return true;
+        case KParts::HtmlSettingsInterface::LocalStorageEnabled:
+            settings->setAttribute(QWebSettings::LocalStorageEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::OfflineStorageDatabaseEnabled:
+            settings->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::OfflineWebApplicationCacheEnabled:
+            settings->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::PrivateBrowsingEnabled:
+            settings->setAttribute(QWebSettings::PrivateBrowsingEnabled, value.toBool());
+            return true;
+        case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
+            //kDebug() << "Setting user style sheet for" << page << "to" << value.toUrl();
+            settings->setUserStyleSheetUrl(value.toUrl());
+            return true;
+        default:
+            break;
+        }
+    }
+
+    return false;
+}
+
 KWebKitPart* KWebKitHtmlExtension::part() const
 {
     return static_cast<KWebKitPart*>(parent());

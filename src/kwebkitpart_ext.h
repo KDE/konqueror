@@ -138,10 +138,12 @@ private:
  * Implements the HtmlExtension interface
  */
 class KWebKitHtmlExtension : public KParts::HtmlExtension,
-                             public KParts::SelectorInterface
+                             public KParts::SelectorInterface,
+                             public KParts::HtmlSettingsInterface
 {
     Q_OBJECT
     Q_INTERFACES(KParts::SelectorInterface)
+    Q_INTERFACES(KParts::HtmlSettingsInterface)
 
 public:
     KWebKitHtmlExtension(KWebKitPart* part);
@@ -155,6 +157,11 @@ public:
     virtual Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
     virtual QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
 
+    // HtmlSettingsInterface
+    virtual QVariant htmlSettingsProperty(HtmlSettingsType type) const;
+    virtual bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value);
+
+private:
     KWebKitPart* part() const;
 };
 
