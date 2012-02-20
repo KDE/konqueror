@@ -17,26 +17,29 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konqsidebar_oldtreemodule.h"
 #include "dirtree_item.h"
-#include <kfileitemlistproperties.h>
+
 #include "dirtree_module.h"
+#include "konqsidebar_oldtreemodule.h"
+
+#include <kfileitemlistproperties.h>
 #include <kactioncollection.h>
 #include <konq_operations.h>
 #include <kdebug.h>
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
-#include <QtGui/QApplication>
-#include <QtGui/QClipboard>
 #include <kio/paste.h>
 #include <kconfiggroup.h>
+#include <kiconloader.h>
+#include <konqmimedata.h>
+#include <kde_file.h>
+
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
 #include <QtGui/QPainter>
-#include <kiconloader.h>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
 #include <QtGui/QCursor>
-#include <konqmimedata.h>
-#include <kde_file.h>
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())
 

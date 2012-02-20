@@ -16,14 +16,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef dirtree_item_h
-#define dirtree_item_h
+#ifndef DIRTREE_ITEM_H
+#define DIRTREE_ITEM_H
 
 #include "konq_sidebartreeitem.h"
+
 #include <kfileitem.h>
 #include <kurl.h>
-#include <QtCore/QStringList>
 #include <konq_operations.h>
+
+#include <QtCore/QStringList>
 
 class QDropEvent;
 
