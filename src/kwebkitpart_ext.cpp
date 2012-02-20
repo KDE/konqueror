@@ -63,7 +63,8 @@
 
 WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& historyData)
                        :KParts::BrowserExtension(parent),
-                        m_part(QWeakPointer<KWebKitPart>(parent))
+                        m_part(QWeakPointer<KWebKitPart>(parent)),
+                        m_currentHistoryItemIndex(-1)
 {
     enableAction("cut", false);
     enableAction("copy", false);
@@ -119,26 +120,11 @@ int WebKitBrowserExtension::yOffset()
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
-    QByteArray historyData;
-    QWebHistory* history = (view() ? view()->page()->history() : 0);
-
-    // Since history data can grow large, we compress it in order to limit
-    // memeory usage before providing it to the hosting app for storage.
-    if (history) {
-        QBuffer buffer (&historyData);
-        if (!buffer.open(QIODevice::WriteOnly))
-            return;
-
-        QDataStream stream (&buffer);
-        stream << *history;
-        historyData = qCompress(historyData, 9);
-    }
-
     stream << m_part.data()->url()
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
-           << static_cast<qint32>(history ? history->currentItemIndex() : -1)
-           << historyData;
+           << m_currentHistoryItemIndex
+           << m_historyData;
 }
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
@@ -774,12 +760,17 @@ void WebKitBrowserExtension::slotSaveHistory()
     if (history && history->count() > 0) {
         QDataStream stream (&buff);
         stream << *history;
+        m_historyData = qCompress(histData, 9);
+        m_currentHistoryItemIndex = history->currentItemIndex();
         //kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         QWidget* mainWidget = m_part.data() ? m_part.data()->widget() : 0;
         QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : 0;
         if (frameWidget) {
-            emit saveHistory(frameWidget, histData);
+            emit saveHistory(frameWidget, m_historyData);
         }
+    } else {
+        m_historyData.clear();
+        m_currentHistoryItemIndex = -1;
     }
 }
 

@@ -24,6 +24,7 @@
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KParts/TextExtension>
 #include <KDE/KParts/HtmlExtension>
+#include <KDE/KParts/BrowserSettingsExtension>
 
 class KUrl;
 class KWebKitPart;
@@ -111,6 +112,8 @@ private:
     QWeakPointer<WebView> m_view;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
+    quint32 m_currentHistoryItemIndex;
+    QByteArray m_historyData;
 };
 
 /**
@@ -127,6 +130,7 @@ public:
     virtual QString selectedText(Format format) const;
     virtual QString completeText(Format format) const;
 
+private:
     KWebKitPart* part() const;
 };
 

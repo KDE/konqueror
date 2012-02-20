@@ -55,7 +55,7 @@ QObject *KWebKitFactory::create(const char* iface, QWidget *parentWidget, QObjec
 void KWebKitFactory::slotSaveHistory(QObject* widget, const QByteArray& buffer)
 {
     // kDebug() << "Caching history data from" << widget;
-    m_historyBufContainer.insert(widget, qCompress(buffer, 5));
+    m_historyBufContainer.insert(widget, buffer);
 }
 
 void KWebKitFactory::slotDestroyed(QObject* object)
