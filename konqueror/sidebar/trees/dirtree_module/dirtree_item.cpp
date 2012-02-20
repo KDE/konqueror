@@ -308,5 +308,8 @@ void KonqSidebarDirTreeItem::rename()
 
 void KonqSidebarDirTreeItem::rename( const QString & name )
 {
-    KonqOperations::rename( tree(), m_fileItem.url(), name );
+    KUrl url (m_fileItem.url());
+    KonqOperations::rename( tree(), url, name );
+    url.setPath( url.directory( KUrl::AppendTrailingSlash ) + name );
+    m_fileItem.setUrl(url);
 }
