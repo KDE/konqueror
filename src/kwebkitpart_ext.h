@@ -24,7 +24,6 @@
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KParts/TextExtension>
 #include <KDE/KParts/HtmlExtension>
-#include <KDE/KParts/BrowserSettingsExtension>
 
 class KUrl;
 class KWebKitPart;
