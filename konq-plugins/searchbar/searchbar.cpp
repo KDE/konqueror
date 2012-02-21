@@ -30,7 +30,7 @@
 #include <KDE/KSharedConfig>
 #include <KDE/KDebug>
 #include <KDE/KDesktopFile>
-#include <KDE/KGenericFactory>
+#include <KDE/KPluginFactory>
 #include <KDE/KGlobal>
 #include <KDE/KIconLoader>
 #include <KDE/KLocale>
