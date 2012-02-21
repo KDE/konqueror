@@ -208,6 +208,7 @@ Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.png"
 
 [Desktop Action convToTIF]
 Name=TIFF
+Name[ar]=TIFF
 Name[bg]=TIFF
 Name[bs]=TIFF
 Name[ca]=TIFF
