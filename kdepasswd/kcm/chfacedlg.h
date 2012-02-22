@@ -43,10 +43,13 @@ class ChFaceDlg : public KDialog
 public:
 
 
-  explicit ChFaceDlg(const QString& picsdirs, 
+  explicit ChFaceDlg(const QString& picsdirs,
                      QWidget *parent=0);
 
 
+  /**
+   * Will return the currently selected face, or a null pixmap if the user hit the "remove image" button
+   */
   QPixmap getFaceImage() const
   {
     if(ui.m_FacesWidget->currentItem())
@@ -57,10 +60,11 @@ public:
 
 private Q_SLOTS:
   void slotFaceWidgetSelectionChanged( QListWidgetItem *item )
-  	{ enableButton( Ok, !item->icon().isNull() ); }
+    { enableButton( Ok, !item->icon().isNull() ); }
 
   void slotGetCustomImage();
   //void slotSaveCustomImage();
+  void slotRemoveImage();
 
 private:
   void addCustomPixmap( const QString &imPath, bool saveCopy );

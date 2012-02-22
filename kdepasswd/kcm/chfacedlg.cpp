@@ -54,10 +54,11 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   : KDialog( parent )
 {
   setCaption( i18nc("@title:window", "Change your Face") );
-  setButtons( Ok|Cancel|User1 );
+  setButtons( Ok|Cancel|User1|User2 );
   setDefaultButton( Ok );
 
-  setButtonText( User1, "Custom image" );
+  setButtonText( User1, i18n("Custom Image...") );
+  setButtonText( User2, i18n("Remove Image") );
 
   QWidget *faceDlg = new QWidget;
   ui.setupUi(faceDlg);
@@ -70,6 +71,8 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   connect( this, SIGNAL(okClicked()), this, SLOT(accept()));
 
   connect( this, SIGNAL(user1Clicked()), this, SLOT(slotGetCustomImage()) );
+
+  connect( this, SIGNAL(user2Clicked()), this, SLOT(slotRemoveImage()) );
 
 #if 0
   QPushButton *acquireBtn = new QPushButton( i18n("&Acquire Image..."), page );
@@ -97,7 +100,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   }
 
 
-  enableButtonOk( false );
+  enableButtonOk( false ); // since no item is pre-selected, we must only enable the Ok button once a selection is done!
   //connect( this, SIGNAL(okClicked()), SLOT(slotSaveCustomImage()) );
 
   resize( 420, 400 );
@@ -153,6 +156,12 @@ void ChFaceDlg::slotGetCustomImage(  )
   dlg.setPreviewWidget( ip );
   if (dlg.exec() == QDialog::Accepted)
       addCustomPixmap( dlg.selectedFile(), checkWidget->isChecked() );
+}
+
+void ChFaceDlg::slotRemoveImage()
+{
+  ui.m_FacesWidget->clearSelection();
+  accept();
 }
 
 #if 0

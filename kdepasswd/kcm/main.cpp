@@ -211,7 +211,12 @@ void KCMUserAccount::save()
 		{
 			KMessageBox::error( this, i18n("There was an error saving the image: %1" ,
 				KCFGUserAccount::faceFile()) );
-			return;
+		}
+	}
+	else { // delete existing image
+		if ( !KIO::NetAccess::del(KCFGUserAccount::faceFile(), this) ) {
+			KMessageBox::error( this, i18n("There was an error deleting the image: %1" ,
+				KCFGUserAccount::faceFile()) );
 		}
 	}
 
@@ -224,14 +229,10 @@ void KCMUserAccount::save()
 
 void KCMUserAccount::changeFace(const QPixmap &pix)
 {
-  if ( pix.isNull() ) {
-    KMessageBox::sorry( this, i18n("There was an error loading the image.") );
-    return;
-  }
-
   _facePixmap = pix;
   _mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
-  _mw->btnChangeFace->setIconSize(_facePixmap.size());
+  if ( !_facePixmap.isNull() )
+    _mw->btnChangeFace->setIconSize(_facePixmap.size());
   emit changed( true );
 }
 
@@ -240,7 +241,7 @@ void KCMUserAccount::slotFaceButtonClicked()
   ChFaceDlg* pDlg = new ChFaceDlg( KGlobal::dirs()->resourceDirs("data").last() +
 	"/kdm/pics/users/", this );
 
-  if ( pDlg->exec() == QDialog::Accepted && !pDlg->getFaceImage().isNull() )
+  if ( pDlg->exec() == QDialog::Accepted )
       changeFace( pDlg->getFaceImage() );
 
   delete pDlg;
