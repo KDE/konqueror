@@ -1061,12 +1061,15 @@ const QString &WebKitSettings::availableFamilies()
 
 QString WebKitSettings::lookupFont(int i) const
 {
-    QString font;
-    if (d->fonts.count() > i)
-       font = d->fonts[i];
-    if (font.isEmpty())
-        font = d->defaultFonts[i];
-    return font;
+    if (d->fonts.count() > i) {
+        return d->fonts.at(i);
+    }
+
+    if (d->defaultFonts.count() > i) {
+        return d->defaultFonts.at(i);
+    }
+
+    return QString();
 }
 
 QString WebKitSettings::stdFontName() const
