@@ -959,13 +959,13 @@ QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterfac
         case KParts::HtmlSettingsInterface::MetaRefreshEnabled:
             return view->pageAction(QWebPage::StopScheduledPageRefresh)->isEnabled();
         case KParts::HtmlSettingsInterface::LocalStorageEnabled:
-            return settings->setAttribute(QWebSettings::LocalStorageEnabled);
+            return settings->testAttribute(QWebSettings::LocalStorageEnabled);
         case KParts::HtmlSettingsInterface::OfflineStorageDatabaseEnabled:
-            return settings->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled);
+            return settings->testAttribute(QWebSettings::OfflineStorageDatabaseEnabled);
         case KParts::HtmlSettingsInterface::OfflineWebApplicationCacheEnabled:
-            return settings->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled);
+            return settings->testAttribute(QWebSettings::OfflineWebApplicationCacheEnabled);
         case KParts::HtmlSettingsInterface::PrivateBrowsingEnabled:
-            return settings->setAttribute(QWebSettings::PrivateBrowsingEnabled);
+            return settings->testAttribute(QWebSettings::PrivateBrowsingEnabled);
         case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
             return settings->userStyleSheetUrl();
         default:
