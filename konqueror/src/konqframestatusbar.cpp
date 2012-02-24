@@ -31,6 +31,13 @@
 #include <klocale.h>
 #include <kactioncollection.h>
 
+static QPixmap statusBarIcon(const char* name)
+{
+    return KIconLoader::global()->loadIcon(QLatin1String(name),
+                                           KIconLoader::User,
+                                           KIconLoader::SizeSmall);
+}
+
 /**
  * A CheckBox with a special paintEvent(). It looks like the
  * unchecked radiobutton in b2k style if unchecked and contains a little
@@ -58,13 +65,13 @@ protected:
 private:
     const QPixmap& connectPixmap() const
     {
-        static QPixmap indicator_connect( UserIcon( "indicator_connect" ) );
+        static QPixmap indicator_connect(statusBarIcon("indicator_connect"));
         return indicator_connect;
     }
 
     const QPixmap& noConnectPixmap() const
     {
-        static QPixmap indicator_noconnect( UserIcon( "indicator_noconnect" ) );
+        static QPixmap indicator_noconnect(statusBarIcon("indicator_noconnect"));
         return indicator_noconnect;
     }
 };
@@ -282,8 +289,8 @@ void KonqFrameStatusBar::updateActiveStatus()
     palette.setColor(backgroundRole(), hasFocus ? midLight : Mid);
     setPalette(palette);
 
-    static QPixmap indicator_viewactive( UserIcon( "indicator_viewactive" ) );
-    static QPixmap indicator_empty( UserIcon( "indicator_empty" ) );
+    static QPixmap indicator_viewactive(statusBarIcon("indicator_viewactive"));
+    static QPixmap indicator_empty(statusBarIcon("indicator_empty"));
     m_led->setPixmap( hasFocus ? indicator_viewactive : indicator_empty );
 }
 
