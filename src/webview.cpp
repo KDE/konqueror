@@ -288,7 +288,7 @@ void WebView::keyPressEvent(QKeyEvent* e)
             slotStopAutoScroll();
         }
     }
-    QWebView::keyPressEvent(e);
+    KWebView::keyPressEvent(e);
 }
 
 void WebView::timerEvent(QTimerEvent* e)
@@ -319,10 +319,19 @@ void WebView::timerEvent(QTimerEvent* e)
         e->accept();
         return;
     }
-    QWidget::timerEvent(e);
+    KWebView::timerEvent(e);
 }
 
-
+void WebView::mouseReleaseEvent(QMouseEvent* e)
+{
+    if (e && e->button() == Qt::LeftButton) {
+        const QWebHitTestResult result = page()->currentFrame()->hitTestContent(e->pos());
+        if (isMultimediaElement(result.element())) {
+            result.element().evaluateJavaScript(QL1S("this.paused ? this.play() : this.pause();"));
+        }
+    }
+    KWebView::mouseReleaseEvent(e);
+}
 
 static bool showSpellCheckAction(const QWebElement& element)
 {

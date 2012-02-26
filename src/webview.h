@@ -86,6 +86,14 @@ protected:
      */
     virtual void timerEvent(QTimerEvent*);
 
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::mouseReleaseEvent
+     * @internal
+     */
+    virtual void mouseReleaseEvent(QMouseEvent*);
+
 private Q_SLOTS:
     void slotOpenSelection();
     void slotStopAutoScroll();
