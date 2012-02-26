@@ -270,7 +270,7 @@ void KWebKitPart::updateActions()
 
     action = actionCollection()->action(QL1S("saveFrame"));
     if (action) {
-        action->setEnabled(!view()->page()->mainFrame()->childFrames().isEmpty());
+        action->setEnabled((view()->page()->currentFrame() != view()->page()->mainFrame()));
     }
 }
 
