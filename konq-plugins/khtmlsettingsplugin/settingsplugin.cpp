@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "settingsplugin.h"
 
 #include <kaction.h>
 #include <kconfig.h>
@@ -33,9 +34,9 @@
 #include <kactioncollection.h>
 #include <kselectaction.h>
 #include <kactionmenu.h>
-#include "settingsplugin.h"
-#include <QtDBus>
 #include <kicon.h>
+
+#include <QtDBus>
 
 static const KAboutData aboutdata("khtmlsettingsplugin", 0, ki18n("HTML Settings") , "1.0" );
 K_PLUGIN_FACTORY( SettingsPluginFactory, registerPlugin<SettingsPlugin>(); )
@@ -48,54 +49,49 @@ SettingsPlugin::SettingsPlugin( QObject* parent,
 
     setComponentData(SettingsPluginFactory::componentData());
 
-
-    KActionMenu *menu = new KActionMenu(KIcon("configure"), i18n("HTML Settings"),
-					 actionCollection() );
+    KActionMenu *menu = new KActionMenu(KIcon("configure"), i18n("HTML Settings"), actionCollection() );
     actionCollection()->addAction( "action menu", menu );
     menu->setDelayed( false );
 
-    KToggleAction *action;
-
-
-    action = actionCollection()->add<KToggleAction>( "javascript" );
+    KToggleAction* action = actionCollection()->add<KToggleAction>(QLatin1String("javascript"));
     action->setText( i18n("Java&Script") );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleJavascript(bool)) );
     menu->addAction( action );
 
-    action = actionCollection()->add<KToggleAction>( "java" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("java"));
     action->setText(i18n("&Java")  );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleJava(bool)) );
     menu->addAction( action );
 
-    action = actionCollection()->add<KToggleAction>( "cookies" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("cookies"));
     action->setText(i18n("&Cookies")  );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleCookies(bool)) );
     menu->addAction( action );
 
-    action = actionCollection()->add<KToggleAction>( "plugins" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("plugins"));
     action->setText(i18n("&Plugins")  );
     connect( action, SIGNAL(toggled(bool)), SLOT(togglePlugins(bool)) );
     menu->addAction( action );
 
-    action = actionCollection()->add<KToggleAction>( "imageloading" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("imageloading"));
     action->setText(i18n("Autoload &Images")  );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleImageLoading(bool)) );
     menu->addAction( action );
 
     //menu->addAction( new KSeparatorAction(actionCollection()) );
 
-    action = actionCollection()->add<KToggleAction>( "useproxy" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("useproxy"));
     action->setText(i18n("Enable Pro&xy") );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleProxy(bool)) );
     menu->addAction( action );
 
-    action = actionCollection()->add<KToggleAction>( "usecache" );
+    action = actionCollection()->add<KToggleAction>(QLatin1String("usecache"));
     action->setText(i18n("Enable Cac&he") );
     connect( action, SIGNAL(toggled(bool)), SLOT(toggleCache(bool)) );
     menu->addAction( action );
 
 
-    KSelectAction* sAction = actionCollection()->add<KSelectAction>( "cachepolicy" );
+    KSelectAction* sAction = actionCollection()->add<KSelectAction>(QLatin1String("cachepolicy"));
     sAction->setText(i18n("Cache Po&licy") );
     QStringList policies;
     policies += i18n( "&Keep Cache in Sync" );
@@ -111,7 +107,7 @@ SettingsPlugin::SettingsPlugin( QObject* parent,
 
 SettingsPlugin::~SettingsPlugin()
 {
-  delete mConfig;
+    delete mConfig;
 }
 
 void SettingsPlugin::showPopup()
@@ -121,39 +117,38 @@ void SettingsPlugin::showPopup()
         return;
     }
 
-  if (!mConfig)
+    if (!mConfig)
     mConfig = new KConfig("settingspluginrc", KConfig::NoGlobals);
 
 
-  KProtocolManager::reparseConfiguration();
-  const bool cookies = cookiesEnabled( part->url().url() );
+    KProtocolManager::reparseConfiguration();
+    const bool cookies = cookiesEnabled( part->url().url() );
 
-  ((KToggleAction*)actionCollection()->action("useproxy"))->setChecked(KProtocolManager::useProxy());
-  ((KToggleAction*)actionCollection()->action("java"))->setChecked( part->javaEnabled() );
-  ((KToggleAction*)actionCollection()->action("javascript"))->setChecked( part->jScriptEnabled() );
-  ((KToggleAction*)actionCollection()->action("cookies"))->setChecked( cookies );
-  ((KToggleAction*)actionCollection()->action("plugins"))->setChecked( part->pluginsEnabled() );
-  ((KToggleAction*)actionCollection()->action("imageloading"))->setChecked( part->autoloadImages() );
-  ((KToggleAction*)actionCollection()->action("usecache"))->setChecked(KProtocolManager::useCache());
+    actionCollection()->action(QLatin1String("useproxy"))->setChecked(KProtocolManager::useProxy());
+    actionCollection()->action(QLatin1String("java"))->setChecked( part->javaEnabled() );
+    actionCollection()->action(QLatin1String("javascript"))->setChecked( part->jScriptEnabled() );
+    actionCollection()->action(QLatin1String("cookies"))->setChecked( cookies );
+    actionCollection()->action(QLatin1String("plugins"))->setChecked( part->pluginsEnabled() );
+    actionCollection()->action(QLatin1String("imageloading"))->setChecked( part->autoloadImages() );
+    actionCollection()->action(QLatin1String("usecache"))->setChecked(KProtocolManager::useCache());
 
-  KIO::CacheControl cc = KProtocolManager::cacheControl();
-  switch ( cc )
-  {
-      case KIO::CC_Verify:
-          ((KSelectAction*)actionCollection()->action("cachepolicy"))->setCurrentItem( 0 );
-          break;
-      case KIO::CC_CacheOnly:
-          ((KSelectAction*)actionCollection()->action("cachepolicy"))->setCurrentItem( 2 );
-          break;
-      case KIO::CC_Cache:
-          ((KSelectAction*)actionCollection()->action("cachepolicy"))->setCurrentItem( 1 );
-          break;
-      case KIO::CC_Reload: // nothing for now
-      case KIO::CC_Refresh:
-      default:
-          break;
-
-  }
+    KIO::CacheControl cc = KProtocolManager::cacheControl();
+    switch ( cc )
+    {
+        case KIO::CC_Verify:
+            static_cast<KSelectAction*>(actionCollection()->action(QLatin1String("cachepolicy")))->setCurrentItem( 0 );
+            break;
+        case KIO::CC_CacheOnly:
+            static_cast<KSelectAction*>(actionCollection()->action(QLatin1String("cachepolicy")))->setCurrentItem( 2 );
+            break;
+        case KIO::CC_Cache:
+            static_cast<KSelectAction*>(actionCollection()->action(QLatin1String("cachepolicy")))->setCurrentItem( 1 );
+            break;
+        case KIO::CC_Reload: // nothing for now
+        case KIO::CC_Refresh:
+        default:
+            break;
+    }
 }
 
 void SettingsPlugin::toggleJava( bool checked )
@@ -173,13 +168,15 @@ void SettingsPlugin::toggleJavascript( bool checked )
 void SettingsPlugin::toggleCookies( bool checked )
 {
     if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
-        const QString advice = checked ? "Accept" : "Reject";
+        const QString advice((checked ? QLatin1String("Accept") : QLatin1String("Reject")));
 
         // TODO generate interface from the installed org.kde.KCookieServer.xml file
         // but not until 4.3 is released, since 4.2 had "void setDomainAdvice"
         // while 4.3 has "bool setDomainAdvice".
 
-        QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
+        QDBusInterface kded(QLatin1String("org.kde.kded"),
+                            QLatin1String("/modules/kcookiejar"),
+                            QLatin1String("org.kde.KCookieServer"));
         QDBusReply<void> reply = kded.call("setDomainAdvice", part->url().url(), advice);
 
         if ( !reply.isValid() )
@@ -206,7 +203,9 @@ void SettingsPlugin::toggleImageLoading( bool checked )
 
 bool SettingsPlugin::cookiesEnabled( const QString& url )
 {
-    QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
+    QDBusInterface kded(QLatin1String("org.kde.kded"),
+                        QLatin1String("/modules/kcookiejar"),
+                        QLatin1String("org.kde.KCookieServer"));
     QDBusReply<QString> reply = kded.call( "getDomainAdvice", url);
 
     bool enabled = false;
@@ -214,13 +213,12 @@ bool SettingsPlugin::cookiesEnabled( const QString& url )
     if ( reply.isValid() )
     {
         QString advice = reply;
-        enabled = ( advice == "Accept" );
-        if ( !enabled && advice == "Dunno" ) {
+        enabled = ( advice == QLatin1String("Accept") );
+        if ( !enabled && advice == QLatin1String("Dunno") ) {
             // TODO, check the global setting via dcop
             KConfig _kc( "kcookiejarrc", KConfig::NoGlobals  );
             KConfigGroup kc(&_kc, "Cookie Policy" );
-            enabled =
-          (kc.readEntry( "CookieGlobalAdvice", "Reject" ) == "Accept");
+            enabled = (kc.readEntry("CookieGlobalAdvice", "Reject") == QLatin1String("Accept"));
         }
     }
 
@@ -238,9 +236,9 @@ void SettingsPlugin::toggleProxy( bool checked )
     int type;
 
     if (checked) {
-        type = grp.readEntry( "SavedProxyType", int(KProtocolManager::ManualProxy) );
+        type = grp.readEntry("SavedProxyType", static_cast<int>(KProtocolManager::ManualProxy));
     } else {
-        grp.writeEntry( "SavedProxyType", int(KProtocolManager::proxyType()) );
+        grp.writeEntry("SavedProxyType", static_cast<int>(KProtocolManager::proxyType()));
         type = KProtocolManager::NoProxy;
     }
 
@@ -248,7 +246,7 @@ void SettingsPlugin::toggleProxy( bool checked )
     KConfigGroup config(&_config, "Proxy Settings" );
     config.writeEntry( "ProxyType", type );
 
-    ((KToggleAction*)actionCollection()->action("useproxy"))->setChecked(checked);
+    actionCollection()->action(QLatin1String("useproxy"))->setChecked(checked);
     updateIOSlaves();
 }
 
@@ -258,7 +256,7 @@ void SettingsPlugin::toggleCache( bool checked )
     KConfig config("kio_httprc", KConfig::NoGlobals);
     KConfigGroup grp(&config, QString());
     grp.writeEntry( "UseCache", checked );
-    ((KToggleAction*)actionCollection()->action("usecache"))->setChecked( checked );
+    actionCollection()->action(QLatin1String("usecache"))->setChecked( checked );
 
     updateIOSlaves();
 }
@@ -268,15 +266,15 @@ void SettingsPlugin::cachePolicyChanged( int p )
     QString policy;
 
     switch ( p ) {
-        case 0:
-            policy = KIO::getCacheControlString( KIO::CC_Verify );
-            break;
-        case 1:
-            policy = KIO::getCacheControlString( KIO::CC_Cache );
-            break;
-        case 2:
-            policy = KIO::getCacheControlString( KIO::CC_CacheOnly );
-            break;
+    case 0:
+        policy = KIO::getCacheControlString( KIO::CC_Verify );
+        break;
+    case 1:
+        policy = KIO::getCacheControlString( KIO::CC_Cache );
+        break;
+    case 2:
+        policy = KIO::getCacheControlString( KIO::CC_CacheOnly );
+        break;
     };
 
     if ( !policy.isEmpty() ) {
@@ -290,8 +288,9 @@ void SettingsPlugin::cachePolicyChanged( int p )
 
 void SettingsPlugin::updateIOSlaves()
 {
-    QDBusMessage message =
-            QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration");
+    QDBusMessage message = QDBusMessage::createSignal(QLatin1String("/KIO/Scheduler"),
+                                                      QLatin1String("org.kde.KIO.Scheduler"),
+                                                      QLatin1String("reparseSlaveConfiguration"));
     message << QString();
     QDBusConnection::sessionBus().send(message);
 }
