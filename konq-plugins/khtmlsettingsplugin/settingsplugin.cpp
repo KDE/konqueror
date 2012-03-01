@@ -35,6 +35,8 @@
 #include <kselectaction.h>
 #include <kactionmenu.h>
 #include <kicon.h>
+#include <kparts/part.h>
+#include <kparts/htmlextension.h>
 
 #include <QtDBus>
 
@@ -110,10 +112,17 @@ SettingsPlugin::~SettingsPlugin()
     delete mConfig;
 }
 
+static KParts::HtmlSettingsInterface* settingsInterfaceFor(QObject* obj)
+{
+    KParts::HtmlExtension* extension = KParts::HtmlExtension::childObject(obj);
+    return qobject_cast< KParts::HtmlSettingsInterface*>(extension);
+}
+
 void SettingsPlugin::showPopup()
 {
-    KHTMLPart *part = qobject_cast<KHTMLPart *>( parent() );
-    if (!part) {
+    KParts::ReadOnlyPart* part = qobject_cast<KParts::ReadOnlyPart*>(parent());
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(part);
+    if (!settings) {
         return;
     }
 
@@ -123,14 +132,14 @@ void SettingsPlugin::showPopup()
 
     KProtocolManager::reparseConfiguration();
     const bool cookies = cookiesEnabled( part->url().url() );
-
+    actionCollection()->action(QLatin1String("cookies"))->setChecked(cookies);
     actionCollection()->action(QLatin1String("useproxy"))->setChecked(KProtocolManager::useProxy());
-    actionCollection()->action(QLatin1String("java"))->setChecked( part->javaEnabled() );
-    actionCollection()->action(QLatin1String("javascript"))->setChecked( part->jScriptEnabled() );
-    actionCollection()->action(QLatin1String("cookies"))->setChecked( cookies );
-    actionCollection()->action(QLatin1String("plugins"))->setChecked( part->pluginsEnabled() );
-    actionCollection()->action(QLatin1String("imageloading"))->setChecked( part->autoloadImages() );
     actionCollection()->action(QLatin1String("usecache"))->setChecked(KProtocolManager::useCache());
+    actionCollection()->action(QLatin1String("java"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled).toBool());
+    actionCollection()->action(QLatin1String("javascript"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled).toBool());
+    actionCollection()->action(QLatin1String("plugins"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled).toBool());
+    actionCollection()->action(QLatin1String("imageloading"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages).toBool());
+    
 
     KIO::CacheControl cc = KProtocolManager::cacheControl();
     switch ( cc )
@@ -153,21 +162,24 @@ void SettingsPlugin::showPopup()
 
 void SettingsPlugin::toggleJava( bool checked )
 {
-    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
-        part->setJavaEnabled( checked );
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(parent());
+    if (settings) {
+        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled, checked);
     }
 }
 
 void SettingsPlugin::toggleJavascript( bool checked )
 {
-    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
-        part->setJScriptEnabled( checked );
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(parent());
+    if (settings) {
+        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled, checked);
     }
 }
 
 void SettingsPlugin::toggleCookies( bool checked )
 {
-    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
+    KParts::ReadOnlyPart* part = qobject_cast<KParts::ReadOnlyPart*>(parent());
+    if (part) {
         const QString advice((checked ? QLatin1String("Accept") : QLatin1String("Reject")));
 
         // TODO generate interface from the installed org.kde.KCookieServer.xml file
@@ -189,15 +201,17 @@ void SettingsPlugin::toggleCookies( bool checked )
 
 void SettingsPlugin::togglePlugins( bool checked )
 {
-    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
-        part->setPluginsEnabled( checked );
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(parent());
+    if (settings) {
+        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled, checked);
     }
 }
 
 void SettingsPlugin::toggleImageLoading( bool checked )
 {
-    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
-        part->setAutoloadImages( checked );
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(parent());
+    if (settings) {
+        settings->setHtmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages, checked);
     }
 }
 
