@@ -488,6 +488,11 @@ void KonqPopupMenu::setURLTitle( const QString& urlTitle )
     d->m_urlTitle = urlTitle;
 }
 
+KFileItemActions* KonqPopupMenu::fileItemActions() const
+{
+    return &(d->m_menuActions);
+}
+
 void KonqPopupMenuPrivate::slotPopupNewView()
 {
     Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {

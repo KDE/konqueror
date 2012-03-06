@@ -35,6 +35,7 @@
 #include <libkonq_export.h>
 
 class KNewFileMenu;
+class KFileItemActions;
 
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
@@ -102,6 +103,7 @@ public:
    * This is used if the user chooses to add a bookmark for this URL.
    */
   void setURLTitle( const QString& urlTitle );
+  KFileItemActions* fileItemActions() const;
 
 private:
   Q_PRIVATE_SLOT(d, void slotPopupNewDir())
