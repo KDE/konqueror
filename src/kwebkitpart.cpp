@@ -424,9 +424,8 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
-    // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
+    // kDebug() << "main frame:" << page()->mainFrame() << "current frame:" << page()->currentFrame();
     emit started(0);
-    slotWalletClosed();
     updateActions();
 }
 
@@ -587,6 +586,10 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     if (!frame || !item) {
         return;
+    }
+
+    if (!frame->parentFrame()) {
+        slotWalletClosed();
     }
 
     // If "NoEmitOpenUrlNotification" property is set to true, do not
