@@ -368,16 +368,6 @@ void WebKitSettings::init()
   KConfigGroup cookieCg ( &cookieConfig, "Cookie Policy");
   d->m_useCookieJar = cookieCg.readEntry("Cookies", false);
 
-  KConfig cssConfig ( "kcmcssrc", KConfig::NoGlobals );
-  KConfigGroup cssCg( &cssConfig, "Stylesheet");
-  const QString cssType (cssCg.readEntry("Use", QString()));
-  if (cssType  == QLatin1String("user") || cssType == QLatin1String("access")) {
-    const QUrl userStyleSheetUrl (cssCg.readEntry("SheetName", QString()));
-    QWebSettings::globalSettings()->setUserStyleSheetUrl(userStyleSheetUrl);
-  } else if (QWebSettings::globalSettings()->userStyleSheetUrl().isValid()) {
-    QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl());
-  }
-
   delete d->nonPasswordStorableSites;
   d->nonPasswordStorableSites = 0;
 }
@@ -547,9 +537,11 @@ void WebKitSettings::init( KConfig * config, bool reset )
         d->m_zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
     }
 
-    if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
-        if ( reset || cgHtml.hasKey( "UserStyleSheet" ) )
-            d->m_userSheet = cgHtml.readEntry( "UserStyleSheet", "" );
+    if (cgHtml.readEntry("UserStyleSheetEnabled", false)) {
+        if (reset || cgHtml.hasKey("UserStyleSheet"))
+            d->m_userSheet = cgHtml.readEntry("UserStyleSheet", QString());
+    } else {
+        d->m_userSheet.clear();
     }
 
     d->m_formCompletionEnabled = cgHtml.readEntry("FormCompletion", true);
@@ -738,9 +730,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
   if (!d->m_encoding.isEmpty())
       QWebSettings::globalSettings()->setDefaultTextEncoding(d->m_encoding);
 
-  if (!userStyleSheet().isEmpty()) {
-      QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(userStyleSheet()));
-  }
+  QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl::fromLocalFile(userStyleSheet()));
+
   QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, autoLoadImages());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, isJavaScriptEnabled());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavaEnabled, isJavaEnabled());

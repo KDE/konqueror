@@ -110,13 +110,6 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
-    // Set the per page user style sheet as specified in WebKitSettings...
-    // TODO: Determine how a per page style sheets settings interacts with a
-    // global one. Is it an intersection of the two or a complete override ?
-    if (!QWebSettings::globalSettings()->userStyleSheetUrl().isValid())
-        settings()->setUserStyleSheetUrl(QString(QL1S("data:text/css;charset=utf-8;base64,") +
-                                          WebKitSettings::self()->settingsToCSS().toUtf8().toBase64()));
-
     connect(this, SIGNAL(geometryChangeRequested(QRect)),
             this, SLOT(slotGeometryChangeRequested(QRect)));
     connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
