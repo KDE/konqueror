@@ -780,19 +780,21 @@ void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
         return;
 
     // Make it non-modal, in case a redirection deletes the part
-    QScopedPointer<QPrintDialog> dlg (new QPrintDialog(view()));
+    QPointer<QPrintDialog> dlg (new QPrintDialog(view()));
     if (dlg->exec() == QPrintDialog::Accepted) {
         frame->print(dlg->printer());
     }
+    delete dlg;
 }
 
 void WebKitBrowserExtension::slotPrintPreview()
 {
     // Make it non-modal, in case a redirection deletes the part
-    QScopedPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
+    QPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
     connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
             view()->page()->currentFrame(), SLOT(print(QPrinter*)));
     dlg->exec();
+    delete dlg;
 }
 
 
