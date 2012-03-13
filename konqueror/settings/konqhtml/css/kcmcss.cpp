@@ -21,8 +21,9 @@
 #include <kurlrequester.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
-#include <khtml_part.h>
-#include <khtmlview.h>
+#include <kmimetypetrader.h>
+#include <kdebug.h>
+#include <kparts/part.h>
 
 // Local
 #include "template.h"
@@ -79,6 +80,8 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
 
 void CSSConfig::load()
 {
+  const bool signalsBlocked = customDialog->blockSignals(true);
+
   KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
   KConfigGroup group = c->group("Stylesheet");
   QString u = group.readEntry("Use", "default");
@@ -91,13 +94,13 @@ void CSSConfig::load()
   customDialog->basefontsize->setEditText(QString::number(group.readEntry("BaseSize", 12)));
   customDialog->dontScale->setChecked(group.readEntry("DontScale", false));
 
-  QString fname = group.readEntry("Family", "Arial");
-  for (int i=0; i < customDialog->fontFamily->count(); ++i)
-    if (customDialog->fontFamily->itemText(i) == fname)
-      {
-	customDialog->fontFamily->setCurrentIndex(i);
-	break;
-      }
+  const QString fname (group.readEntry("Family", "Arial"));
+  for (int i=0; i < customDialog->fontFamily->count(); ++i) {
+    if (customDialog->fontFamily->itemText(i) == fname) {
+      customDialog->fontFamily->setCurrentIndex(i);
+      break;
+    }
+  }
 
   customDialog->sameFamily->setChecked(group.readEntry("SameFamily", false));
 
@@ -118,6 +121,7 @@ void CSSConfig::load()
   customDialog->hideImages->setChecked(group.readEntry("Hide", false));
   customDialog->hideBackground->setChecked(group.readEntry("HideBackground", true));
 
+  customDialog->blockSignals(signalsBlocked);
   delete c;
 }
 
@@ -160,17 +164,14 @@ void CSSConfig::save()
   delete c;
 
   // generate CSS template
-  QString templ = KStandardDirs::locate("data", "kcmcss/template.css");
   QString dest;
-  if (!templ.isEmpty())
-    {
-      CSSTemplate css(templ);
-
-      dest = KGlobal::mainComponent().dirs()->saveLocation("data", "kcmcss");
-      dest += "/override.css";
-
-      css.expandToFile(dest, customDialog->cssDict());
-    }
+  const QString templ(KStandardDirs::locate("data", "kcmcss/template.css"));
+  if (!templ.isEmpty()) {
+    CSSTemplate css(templ);
+    dest = KGlobal::mainComponent().dirs()->saveLocation("data", "kcmcss");
+    dest += "override.css";
+    css.expandToFile(dest, customDialog->cssDict());
+  }
 
   // make konqueror use the right stylesheet
   c = new KConfig("konquerorrc", KConfig::NoGlobals);
@@ -197,13 +198,13 @@ void CSSConfig::defaults()
   customDialog->basefontsize->setEditText(QString::number(12));
   customDialog->dontScale->setChecked(false);
 
-  QString fname =  "Arial";
-  for (int i=0; i < customDialog->fontFamily->count(); ++i)
-    if (customDialog->fontFamily->itemText(i) == fname)
-      {
-	customDialog->fontFamily->setCurrentIndex(i);
-	break;
-      }
+  const QString fname (QLatin1String("Arial"));
+  for (int i=0; i < customDialog->fontFamily->count(); ++i) {
+    if (customDialog->fontFamily->itemText(i) == fname) {
+      customDialog->fontFamily->setCurrentIndex(i);
+      break;
+    }
+  }
 
   customDialog->sameFamily->setChecked(false);
   customDialog->blackOnWhite->setChecked(true);
@@ -294,10 +295,8 @@ void CSSConfig::slotCustomize()
   customDialogBase->exec();
 }
 
-
 CSSCustomDialog::CSSCustomDialog( QWidget *parent )
   : QWidget( parent )
-  , part(new KHTMLPart(this))
 {
   setupUi( this );
   connect(this,SIGNAL(changed()),SLOT(slotPreview()));
@@ -320,39 +319,50 @@ CSSCustomDialog::CSSCustomDialog( QWidget *parent )
   //QStringList fonts;
   //KFontChooser::getFontList(fonts, 0);
   //fontFamily->addItems(fonts);
-  
-  part->setAlwaysHonourDoctype(false);
+  part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(QLatin1String("text/html"), parent, this);
   QVBoxLayout* l= new QVBoxLayout(previewBox);
   l->addWidget(part->widget());
 }
 
+
+static QUrl toDataUri(const QString& content, const QByteArray& contentType)
+{
+  QByteArray data ("data:");
+  data += contentType;
+  data += ";charset=utf-8;base64,";
+  data += content.toUtf8().toBase64();
+  return QUrl::fromEncoded(data);
+ }
+
 void CSSCustomDialog::slotPreview()
 {
-  QString templ = KStandardDirs::locate("data", "kcmcss/template.css");
-  QString dest;
-  if (templ.isEmpty()) return;
+  const QString templ (KStandardDirs::locate("data", "kcmcss/template.css"));
+
+  if (templ.isEmpty())
+    return;
 
   CSSTemplate css(templ);
-  
-  part->begin();
-  part->setUserStyleSheet(css.expandToString(cssDict()));
-  part->write( i18n("<html>\n"
-"\n"
-"<h1>Heading 1</h1>\n"
-"<h2>Heading 2</h2>\n"
-"<h3>Heading 3</h3>\n"
-"\n"
-"<p>User defined stylesheets allow increased\n"
-"accessibility for visually handicapped\n"
-"people.</p>\n"
-"\n"
-"</html>\n")
-);
-  part->end();
 
+  QString data (i18n("<html>\n<head>\n<style>\n<!--\n"));
+  data += css.expandToString(cssDict());
+  data += i18n("\n-->\n</style>\n</head>\n"
+               "<body>\n"
+               "<h1>Heading 1</h1>\n"
+               "<h2>Heading 2</h2>\n"
+               "<h3>Heading 3</h3>\n"
+               "\n"
+               "<p>User defined stylesheets allow increased\n"
+               "accessibility for visually handicapped\n"
+               "people.</p>\n"
+               "\n"
+               "</body>\n"
+               "</html>\n");
+
+  KParts::OpenUrlArguments args(part->arguments());
+  args.setReload(true); // Make sure the content is always freshly reloaded.
+  part->setArguments(args);
+  part->openUrl(toDataUri(data, "text/html"));
 }
-
-
 
 #include "kcmcss.moc"
 

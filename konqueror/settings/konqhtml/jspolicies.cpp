@@ -61,24 +61,19 @@ void JSPolicies::load() {
 //  enableJavaScriptDebugCB->setChecked( m_pConfig->readEntry("EnableJavaScriptDebug", QVariant(false)).toBool());
 //  enableDebugOutputCB->setChecked( m_pConfig->readEntry("EnableJSDebugOutput", QVariant(false)).toBool() );
   key = prefix + "WindowOpenPolicy";
-  window_open = cg.readEntry(key,
-  	is_global ? KHTMLSettings::KJSWindowOpenSmart : INHERIT_POLICY);
+  window_open = cg.readEntry(key, (is_global ? KParts::HtmlSettingsInterface::JSWindowOpenSmart : INHERIT_POLICY));
 
   key = prefix + "WindowResizePolicy";
-  window_resize = cg.readEntry(key,
-  	is_global ? KHTMLSettings::KJSWindowResizeAllow : INHERIT_POLICY);
+  window_resize = cg.readEntry(key, (is_global ? KParts::HtmlSettingsInterface::JSWindowResizeAllow : INHERIT_POLICY));
 
   key = prefix + "WindowMovePolicy";
-  window_move = cg.readEntry(key,
-  	is_global ? KHTMLSettings::KJSWindowMoveAllow : INHERIT_POLICY);
+  window_move = cg.readEntry(key, (is_global ? KParts::HtmlSettingsInterface::JSWindowMoveAllow : INHERIT_POLICY));
 
   key = prefix + "WindowFocusPolicy";
-  window_focus = cg.readEntry(key,
-  	is_global ? KHTMLSettings::KJSWindowFocusAllow : INHERIT_POLICY);
+  window_focus = cg.readEntry(key, (is_global ? KParts::HtmlSettingsInterface::JSWindowFocusAllow : INHERIT_POLICY));
 
   key = prefix + "WindowStatusPolicy";
-  window_status = cg.readEntry(key,
-  	is_global ? KHTMLSettings::KJSWindowStatusAllow : INHERIT_POLICY);
+  window_status = cg.readEntry(key, (is_global ? KParts::HtmlSettingsInterface::JSWindowStatusAllow : INHERIT_POLICY));
 }
 
 void JSPolicies::defaults() {
@@ -87,11 +82,11 @@ void JSPolicies::defaults() {
 //  enableJavaScriptDebugCB->setChecked( false );
 //  js_popup->setButton(0);
  // enableDebugOutputCB->setChecked( false );
-  window_open = is_global ? KHTMLSettings::KJSWindowOpenSmart : INHERIT_POLICY;
-  window_resize = is_global ? KHTMLSettings::KJSWindowResizeAllow : INHERIT_POLICY;
-  window_move = is_global ? KHTMLSettings::KJSWindowMoveAllow : INHERIT_POLICY;
-  window_focus = is_global ? KHTMLSettings::KJSWindowFocusAllow : INHERIT_POLICY;
-  window_status = is_global ? KHTMLSettings::KJSWindowStatusAllow : INHERIT_POLICY;
+  window_open = (is_global ? KParts::HtmlSettingsInterface::JSWindowOpenSmart : INHERIT_POLICY);
+  window_resize = (is_global ? KParts::HtmlSettingsInterface::JSWindowResizeAllow : INHERIT_POLICY);
+  window_move = (is_global ? KParts::HtmlSettingsInterface::JSWindowMoveAllow : INHERIT_POLICY);
+  window_focus = (is_global ? KParts::HtmlSettingsInterface::JSWindowFocusAllow : INHERIT_POLICY);
+  window_status = (is_global ? KParts::HtmlSettingsInterface::JSWindowStatusAllow : INHERIT_POLICY);
 }
 
 void JSPolicies::save() {
@@ -166,19 +161,19 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 
   policy_btn = new QRadioButton(i18n("Allow"), this);
   policy_btn->setWhatsThis(i18n("Accept all popup window requests."));
-  js_popup->addButton(policy_btn,KHTMLSettings::KJSWindowOpenAllow);
+  js_popup->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowOpenAllow);
   this_layout->addWidget(policy_btn,0,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
   policy_btn = new QRadioButton(i18n("Ask"), this);
   policy_btn->setWhatsThis(i18n("Prompt every time a popup window is requested."));
-  js_popup->addButton(policy_btn,KHTMLSettings::KJSWindowOpenAsk);
+  js_popup->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowOpenAsk);
   this_layout->addWidget(policy_btn,0,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
   policy_btn = new QRadioButton(i18n("Deny"), this);
   policy_btn->setWhatsThis(i18n("Reject all popup window requests."));
-  js_popup->addButton(policy_btn,KHTMLSettings::KJSWindowOpenDeny);
+  js_popup->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowOpenDeny);
   this_layout->addWidget(policy_btn,0,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -186,7 +181,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   policy_btn->setWhatsThis( i18n("Accept popup window requests only when "
                                    "links are activated through an explicit "
                                    "mouse click or keyboard operation."));
-  js_popup->addButton(policy_btn,KHTMLSettings::KJSWindowOpenSmart);
+  js_popup->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowOpenSmart);
   this_layout->addWidget(policy_btn,0,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -220,7 +215,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 
   policy_btn = new QRadioButton(i18n("Allow"), this);
   policy_btn->setWhatsThis(i18n("Allow scripts to change the window size."));
-  js_resize->addButton(policy_btn,KHTMLSettings::KJSWindowResizeAllow);
+  js_resize->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowResizeAllow);
   this_layout->addWidget(policy_btn,1,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -228,7 +223,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   policy_btn->setWhatsThis(i18n("Ignore attempts of scripts to change the window size. "
   				"The web page will <i>think</i> it changed the "
 				"size but the actual window is not affected."));
-  js_resize->addButton(policy_btn,KHTMLSettings::KJSWindowResizeIgnore);
+  js_resize->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowResizeIgnore);
   this_layout->addWidget(policy_btn,1,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -257,7 +252,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 
   policy_btn = new QRadioButton(i18n("Allow"), this);
   policy_btn->setWhatsThis(i18n("Allow scripts to change the window position."));
-  js_move->addButton(policy_btn,KHTMLSettings::KJSWindowMoveAllow);
+  js_move->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowMoveAllow);
   this_layout->addWidget(policy_btn,2,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -265,7 +260,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   policy_btn->setWhatsThis(i18n("Ignore attempts of scripts to change the window position. "
   				"The web page will <i>think</i> it moved the "
 				"window but the actual position is not affected."));
-  js_move->addButton(policy_btn,KHTMLSettings::KJSWindowMoveIgnore);
+  js_move->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowMoveIgnore);
   this_layout->addWidget(policy_btn,2,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -294,7 +289,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 
   policy_btn = new QRadioButton(i18n("Allow"), this);
   policy_btn->setWhatsThis(i18n("Allow scripts to focus the window.") );
-  js_focus->addButton(policy_btn,KHTMLSettings::KJSWindowFocusAllow);
+  js_focus->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowFocusAllow);
   this_layout->addWidget(policy_btn,3,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -303,7 +298,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   				"The web page will <i>think</i> it brought "
 				"the focus to the window but the actual "
 				"focus will remain unchanged.") );
-  js_focus->addButton(policy_btn,KHTMLSettings::KJSWindowFocusIgnore);
+  js_focus->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowFocusIgnore);
   this_layout->addWidget(policy_btn,3,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -334,7 +329,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 
   policy_btn = new QRadioButton(i18n("Allow"), this);
   policy_btn->setWhatsThis(i18n("Allow scripts to change the text of the status bar."));
-  js_statusbar->addButton(policy_btn,KHTMLSettings::KJSWindowStatusAllow);
+  js_statusbar->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowStatusAllow);
   this_layout->addWidget(policy_btn,4,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
@@ -343,7 +338,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   				"The web page will <i>think</i> it changed "
 				"the text but the actual text will remain "
 				"unchanged.") );
-  js_statusbar->addButton(policy_btn,KHTMLSettings::KJSWindowStatusIgnore);
+  js_statusbar->addButton(policy_btn,KParts::HtmlSettingsInterface::JSWindowStatusIgnore);
   this_layout->addWidget(policy_btn,4,colIdx++);
   this_layout->addItem(new QSpacerItem(10,0),0,colIdx++);
 
