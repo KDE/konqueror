@@ -51,6 +51,7 @@ private:
     QCheckBox* m_pOnlyMarkedBookmarksCheckBox;
     QCheckBox* m_pAccessKeys;
     QCheckBox* m_pDoNotTrack;
+    QCheckBox* m_pOfferToSaveWebsitePassword;
     KIntNumInput* m_pMaxFormCompletionItems;
 };
 

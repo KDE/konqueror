@@ -138,6 +138,11 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     connect(m_pDoNotTrack, SIGNAL(toggled(bool)), SLOT(changed()));
     fl->addRow(m_pDoNotTrack);
 
+    m_pOfferToSaveWebsitePassword = new QCheckBox(i18n("Offer to save website passwords"), this);
+    m_pOfferToSaveWebsitePassword->setWhatsThis(i18n("Uncheck this box to prevent being prompted to save website passwords"));
+    connect(m_pOfferToSaveWebsitePassword, SIGNAL(toggled(bool)), SLOT(changed()));
+    fl->addRow(m_pOfferToSaveWebsitePassword);
+
     lay->addWidget( bgMisc);
     lay->addStretch(5);
 
@@ -165,6 +170,7 @@ void KMiscHTMLOptions::load()
     m_pFormCompletionCheckBox->setChecked( cg.readEntry( "FormCompletion", true ) );
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
+    m_pOfferToSaveWebsitePassword->setChecked(cg.readEntry("OfferToSaveWebsitePassword", true));
 
     cg2 = KConfigGroup(khtmlrcConfig, "Access Keys");
     m_pAccessKeys->setChecked(cg2.readEntry("Enabled", true));
@@ -186,6 +192,7 @@ void KMiscHTMLOptions::defaults()
     m_pAdvancedAddBookmarkCheckBox->setChecked(false);
     m_pOnlyMarkedBookmarksCheckBox->setChecked(false);
     m_pDoNotTrack->setChecked(false);
+    m_pOfferToSaveWebsitePassword->setChecked(true);
 }
 
 void KMiscHTMLOptions::save()
@@ -193,12 +200,13 @@ void KMiscHTMLOptions::save()
     KConfigGroup cg(m_pConfig, "MainView Settings");
     cg.writeEntry( "OpenMiddleClick", m_pOpenMiddleClick->isChecked() );
     cg.writeEntry( "BackRightClick", m_pBackRightClick->isChecked() );
+
     cg = KConfigGroup(m_pConfig, "HTML Settings" );
     cg.writeEntry( "ChangeCursor", m_cbCursor->isChecked() );
     cg.writeEntry( "AutoDelayedActions", m_pAutoRedirectCheckBox->isChecked() );
     cg.writeEntry( "FormCompletion", m_pFormCompletionCheckBox->isChecked() );
     cg.writeEntry( "MaxFormCompletionItems", m_pMaxFormCompletionItems->value() );
-
+    cg.writeEntry( "OfferToSaveWebsitePassword", m_pOfferToSaveWebsitePassword->isChecked() );
     cg.sync();
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
