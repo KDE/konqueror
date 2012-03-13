@@ -34,9 +34,9 @@
 #include <kdebug.h>
 #include <klineedit.h>
 #include <klocale.h>
-#include <khtml_settings.h>
 #include <knuminput.h>
 #include <khbox.h>
+#include <kparts/htmlextension.h>
 
 // Local
 #include "htmlopts.h"
@@ -297,20 +297,20 @@ void JavaDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
     domainSpecificLV->clear();
     JavaPolicies pol(config,group,false);
     pol.defaults();
-    for ( QStringList::ConstIterator it = domainConfig.begin();
-          it != domainConfig.end(); ++it)
+    const QStringList::ConstIterator itEnd = domainConfig.end();
+    for (QStringList::ConstIterator it = domainConfig.begin(); it != itEnd; ++it)
     {
         QString domain;
-        KHTMLSettings::KJavaScriptAdvice javaAdvice;
-        KHTMLSettings::KJavaScriptAdvice javaScriptAdvice;
-        KHTMLSettings::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-	if (javaAdvice != KHTMLSettings::KJavaScriptDunno) {
-          QTreeWidgetItem* index = new QTreeWidgetItem( domainSpecificLV, QStringList() << domain <<
-                                                  i18n(KHTMLSettings::adviceToStr(javaAdvice))  );
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+        KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+        if (javaAdvice != KParts::HtmlSettingsInterface::JavaScriptDunno) {
+          QTreeWidgetItem* index = new QTreeWidgetItem(domainSpecificLV, QStringList() << domain <<
+                                                       i18n(KParts::HtmlSettingsInterface::javascriptAdviceToText(javaAdvice)));
           pol.setDomain(domain);
-          pol.setFeatureEnabled(javaAdvice != KHTMLSettings::KJavaScriptReject);
+          pol.setFeatureEnabled(javaAdvice != KParts::HtmlSettingsInterface::JavaScriptReject);
           domainPolicies[index] = new JavaPolicies(pol);
-	}
+        }
     }
 }
 

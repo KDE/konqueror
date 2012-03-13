@@ -15,13 +15,14 @@
  *  along with this program; if not, write to the Free Software
  */
 
-#ifndef __KCMCSS_H__
-#define __KCMCSS_H__
+#ifndef KCMCSS_H
+#define KCMCSS_H
 
 
 #include <QtCore/QMap>
 
-#include <kcmodule.h>
+#include <KParts/ReadOnlyPart>
+
 #include "ui_csscustom.h"
 
 class KDialog;
@@ -37,12 +38,12 @@ public:
 
 public Q_SLOTS:
   void slotPreview();
-  
+
 Q_SIGNALS:
   void changed();
 
 private:
-  KHTMLPart* part;
+  KParts::ReadOnlyPart* part;
 };
 
 

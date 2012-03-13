@@ -32,7 +32,6 @@
 
 // Local
 #include "ui_advancedTabOptions.h"
-#include "khtml_settings.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 

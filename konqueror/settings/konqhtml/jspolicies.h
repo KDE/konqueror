@@ -19,13 +19,12 @@
 
 */
 
-#ifndef __JSPOLICIES_H__
-#define __JSPOLICIES_H__
+#ifndef JSPOLICIES_H
+#define JSPOLICIES_H
 
 #include <QtGui/QGroupBox>
 
-
-#include <khtml_settings.h>
+#include <kparts/htmlextension.h>
 
 #include "policies.h"
 
@@ -43,14 +42,6 @@ class QButtonGroup;
  */
 class JSPolicies : public Policies {
 public:
-#if 0
-  /**
-   * Enumeration for all policies
-   */
-  enum Policies { JavaScriptEnabled = 0, WindowOpen, WindowResize,
-  		WindowMove, WindowFocus, WindowStatus, NumPolicies };
-#endif
-
   /**
    * constructor
    * @param config configuration to initialize this instance from
@@ -86,8 +77,8 @@ public:
    * This will return an illegal value if isWindowOpenPolicyInherited is
    * true.
    */
-  KHTMLSettings::KJSWindowOpenPolicy windowOpenPolicy() const {
-    return (KHTMLSettings::KJSWindowOpenPolicy)window_open;
+  KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy() const {
+    return static_cast<KParts::HtmlSettingsInterface::JSWindowOpenPolicy>(window_open);
   }
 
   /**
@@ -102,8 +93,8 @@ public:
    * This will return an illegal value if isWindowResizePolicyInherited is
    * true.
    */
-  KHTMLSettings::KJSWindowResizePolicy windowResizePolicy() const {
-    return (KHTMLSettings::KJSWindowResizePolicy)window_resize;
+  KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy() const {
+    return static_cast<KParts::HtmlSettingsInterface::JSWindowResizePolicy>(window_resize);
   }
 
   /**
@@ -118,8 +109,8 @@ public:
    * This will return an illegal value if isWindowMovePolicyInherited is
    * true.
    */
-  KHTMLSettings::KJSWindowMovePolicy windowMovePolicy() const {
-    return (KHTMLSettings::KJSWindowMovePolicy)window_move;
+  KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy() const {
+    return static_cast<KParts::HtmlSettingsInterface::JSWindowMovePolicy>(window_move);
   }
 
   /**
@@ -134,8 +125,8 @@ public:
    * This will return an illegal value if isWindowFocusPolicyInherited is
    * true.
    */
-  KHTMLSettings::KJSWindowFocusPolicy windowFocusPolicy() const {
-    return (KHTMLSettings::KJSWindowFocusPolicy)window_focus;
+  KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy() const {
+    return static_cast<KParts::HtmlSettingsInterface::JSWindowFocusPolicy>(window_focus);
   }
 
   /**
@@ -150,8 +141,8 @@ public:
    * This will return an illegal value if isWindowStatusPolicyInherited is
    * true.
    */
-  KHTMLSettings::KJSWindowStatusPolicy windowStatusPolicy() const {
-    return (KHTMLSettings::KJSWindowStatusPolicy)window_status;
+  KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy() const {
+    return static_cast<KParts::HtmlSettingsInterface::JSWindowStatusPolicy>(window_status);
   }
 
   /**
@@ -168,15 +159,15 @@ public:
   virtual void defaults();
 
 private:
-  // one of KHTMLSettings::KJSWindowOpenPolicy or INHERIT_POLICY
+  // one of KParts::HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY
   unsigned int window_open;
-  // one of KHTMLSettings::KJSWindowResizePolicy or INHERIT_POLICY
+  // one of KParts::HtmlSettingsInterface::JSWindowResizePolicy or INHERIT_POLICY
   unsigned int window_resize;
-  // one of KHTMLSettings::KJSWindowMovePolicy or INHERIT_POLICY
+  // one of KParts::HtmlSettingsInterface::JSWindowMovePolicy or INHERIT_POLICY
   unsigned int window_move;
-  // one of KHTMLSettings::KJSWindowFocusPolicy or INHERIT_POLICY
+  // one of KParts::HtmlSettingsInterface::JSWindowFocusPolicy or INHERIT_POLICY
   unsigned int window_focus;
-  // one of KHTMLSettings::KJSWindowStatusPolicy or INHERIT_POLICY
+  // one of KParts::HtmlSettingsInterface::JSWindowStatusPolicy or INHERIT_POLICY
   unsigned int window_status;
 
   friend class JSPoliciesFrame;	// for changing policies
@@ -209,8 +200,7 @@ public:
    * @param title title for group box
    * @param parent parent widget
    */
-  JSPoliciesFrame(JSPolicies *policies, const QString &title,
-		QWidget* parent = 0);
+  JSPoliciesFrame(JSPolicies *policies, const QString &title, QWidget* parent = 0);
 
   virtual ~JSPoliciesFrame();
 
@@ -263,6 +253,4 @@ private:
   QButtonGroup *js_statusbar;
 };
 
-
 #endif		// __JSPOLICIES_H__
-

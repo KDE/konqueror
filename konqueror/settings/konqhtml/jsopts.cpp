@@ -31,6 +31,7 @@
 #include <kdebug.h>
 #include <kurlrequester.h>
 #include <klocale.h>
+#include <kparts/htmlextension.h>
 
 // Local
 #include "htmlopts.h"
@@ -190,16 +191,16 @@ void JSDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
     for (QStringList::ConstIterator it = domainConfig.begin();
          it != domainConfig.end(); ++it) {
       QString domain;
-      KHTMLSettings::KJavaScriptAdvice javaAdvice;
-      KHTMLSettings::KJavaScriptAdvice javaScriptAdvice;
-      KHTMLSettings::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-      if (javaScriptAdvice != KHTMLSettings::KJavaScriptDunno) {
+      KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+      KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+      KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+      if (javaScriptAdvice != KParts::HtmlSettingsInterface::JavaScriptDunno) {
         QTreeWidgetItem *index =
           new QTreeWidgetItem( domainSpecificLV, QStringList() << domain <<
-                i18n(KHTMLSettings::adviceToStr(javaScriptAdvice)) );
+                i18n(KParts::HtmlSettingsInterface::javascriptAdviceToText(javaScriptAdvice)) );
 
         pol.setDomain(domain);
-        pol.setFeatureEnabled(javaScriptAdvice != KHTMLSettings::KJavaScriptReject);
+        pol.setFeatureEnabled(javaScriptAdvice != KParts::HtmlSettingsInterface::JavaScriptReject);
         domainPolicies[index] = new JSPolicies(pol);
       }
     }
