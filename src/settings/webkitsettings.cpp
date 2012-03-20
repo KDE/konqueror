@@ -46,11 +46,11 @@ struct KPerDomainSettings {
     bool m_bEnableJavaScript : 1;
     bool m_bEnablePlugins : 1;
     // don't forget to maintain the bitfields as the enums grow
-    WebKitSettings::KJSWindowOpenPolicy m_windowOpenPolicy : 2;
-    WebKitSettings::KJSWindowStatusPolicy m_windowStatusPolicy : 1;
-    WebKitSettings::KJSWindowFocusPolicy m_windowFocusPolicy : 1;
-    WebKitSettings::KJSWindowMovePolicy m_windowMovePolicy : 1;
-    WebKitSettings::KJSWindowResizePolicy m_windowResizePolicy : 1;
+    KParts::HtmlSettingsInterface::JSWindowOpenPolicy m_windowOpenPolicy;
+    KParts::HtmlSettingsInterface::JSWindowStatusPolicy m_windowStatusPolicy;
+    KParts::HtmlSettingsInterface::JSWindowFocusPolicy m_windowFocusPolicy;
+    KParts::HtmlSettingsInterface::JSWindowMovePolicy m_windowMovePolicy;
+    KParts::HtmlSettingsInterface::JSWindowResizePolicy m_windowResizePolicy;
 
 #ifdef DEBUG_SETTINGS
     void dump(const QString &infix = QString()) const {
@@ -753,8 +753,15 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
 
+  // TODO: Make all of these WebKit specific options configurable, i.e. create a webkit config
+  // module that gets embeded into Konqueror's kcm.
 #if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
+  // Turn on WebGL support
   QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, true);
+  // Turn on HTML 5 local and offline storage capabilities...
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, true);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, true);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
 #endif
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
