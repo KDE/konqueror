@@ -72,22 +72,14 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // FIXME: Need a better way to handle request filtering than to inherit
     // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
-    QWidget* window = parent ? parent->window() : 0;
-
-    if (window) {
-#if KDE_IS_VERSION(4,6,41)
-        manager->setWindow(window);
-#else
-        manager->setCookieJarWindowId(window->winId());
-#endif
-    }
-
-#if KDE_IS_VERSION(4,6,41)
     manager->setEmitReadyReadOnMetaDataChange(true);
-#endif
-
     manager->setCache(0);
+    QWidget* window = parent ? parent->window() : 0;
+    if (window) {
+        manager->setWindow(window);
+    }
     setNetworkAccessManager(manager);
+
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
 
     // Set font sizes accordingly...
@@ -551,13 +543,13 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     QString mimeType;
     KIO::MetaData metaData;
 
-#if KDE_IS_VERSION(4,6,41)
     KIO::AccessManager::putReplyOnHold(reply);
     QString downloadCmd;
     checkForDownloadManager(view(), downloadCmd);
     if (!downloadCmd.isEmpty()) {
         reply->setProperty("DownloadManagerExe", downloadCmd);
     }
+
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
         if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part.data()->url())) {
@@ -570,11 +562,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         }
         return;
     }
-#else
-    downloadResponse(reply);
-    reply->deleteLater();
-    return;
-#endif
 
     //kDebug() << "mimetype=" << mimeType << "metadata:" << metaData;
 
