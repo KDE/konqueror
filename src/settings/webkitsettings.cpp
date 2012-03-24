@@ -46,11 +46,11 @@ struct KPerDomainSettings {
     bool m_bEnableJavaScript : 1;
     bool m_bEnablePlugins : 1;
     // don't forget to maintain the bitfields as the enums grow
-    KParts::HtmlSettingsInterface::JSWindowOpenPolicy m_windowOpenPolicy;
-    KParts::HtmlSettingsInterface::JSWindowStatusPolicy m_windowStatusPolicy;
-    KParts::HtmlSettingsInterface::JSWindowFocusPolicy m_windowFocusPolicy;
-    KParts::HtmlSettingsInterface::JSWindowMovePolicy m_windowMovePolicy;
-    KParts::HtmlSettingsInterface::JSWindowResizePolicy m_windowResizePolicy;
+    WebKitSettings::KJSWindowOpenPolicy m_windowOpenPolicy : 2;
+    WebKitSettings::KJSWindowStatusPolicy m_windowStatusPolicy : 1;
+    WebKitSettings::KJSWindowFocusPolicy m_windowFocusPolicy : 1;
+    WebKitSettings::KJSWindowMovePolicy m_windowMovePolicy : 1;
+    WebKitSettings::KJSWindowResizePolicy m_windowResizePolicy : 1;
 
 #ifdef DEBUG_SETTINGS
     void dump(const QString &infix = QString()) const {
