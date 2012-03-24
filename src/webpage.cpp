@@ -364,7 +364,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             // If history navigation is locked, ignore all such requests...
             if (property("HistoryNavigationLocked").toBool()) {
                 setProperty("HistoryNavigationLocked", QVariant());
-                // kDebug() << "Rejected history navigation request because \"HistoryNavigationLocked\" is set!";
+                kDebug() << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
                 return false;
             }
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()

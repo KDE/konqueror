@@ -61,7 +61,7 @@
 #define QL1C(x)     QLatin1Char(x)
 
 
-WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& historyData)
+WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
                        :KParts::BrowserExtension(parent),
                         m_part(QWeakPointer<KWebKitPart>(parent)),
                         m_currentHistoryItemIndex(-1)
@@ -70,21 +70,6 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteA
     enableAction("copy", false);
     enableAction("paste", false);
     enableAction("print", true);
-    connect(this, SIGNAL(openUrlNotify()), this, SLOT(slotSaveHistory()));
-
-    if (!historyData.isEmpty()) {
-        QBuffer buffer;
-        buffer.setData(historyData);
-        if (buffer.open(QIODevice::ReadOnly)) {
-            // NOTE: When restoring history, webkit automatically navigates to
-            // the previous "currentItem". Since we do not want that to happen,
-            // we set a property on the WebPage object that is used to allow or
-            // disallow history navigation in WebPage::acceptNavigationRequest.
-            view()->page()->setProperty("HistoryNavigationLocked", true);
-            QDataStream s (&buffer);
-            s >> *(view()->history());
-        }
-    }
 }
 
 WebKitBrowserExtension::~WebKitBrowserExtension()
@@ -93,9 +78,7 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
 
 WebView* WebKitBrowserExtension::view()
 {
-    if (!m_view) {
-        if (!m_part)
-            return 0;
+    if (!m_view && m_part) {
         m_view = QWeakPointer<WebView>(qobject_cast<WebView*>(m_part.data()->view()));
     }
 
@@ -120,6 +103,7 @@ int WebKitBrowserExtension::yOffset()
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
+    // TODO: Save information such as form data from the current page.
     stream << m_part.data()->url()
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
@@ -137,44 +121,52 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     QWebHistory* history = (view() ? view()->page()->history() : 0);
     if (history) {
         bool success = false;
-        if (history->count() == 0) {
-            historyData = qUncompress(historyData); // uncompress the history data...
-            QBuffer buffer (&historyData);
-            if (buffer.open(QIODevice::ReadOnly)) {
-                QDataStream stream (&buffer);
-                view()->page()->setProperty("HistoryNavigationLocked", true);
-                stream >> *history;
-                QWebHistoryItem currentItem (history->currentItem());
-                if (currentItem.isValid()) {
-                    if (currentItem.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
-                        const QPoint scrollPos (xOfs, yOfs);
-                        currentItem.setUserData(scrollPos);
+        if (history->count() == 0) {   // Handle restoration: crash recovery, tab close undo, session restore
+            if (!historyData.isEmpty()) {
+                historyData = qUncompress(historyData); // uncompress the history data...
+                QBuffer buffer (&historyData);
+                if (buffer.open(QIODevice::ReadOnly)) {
+                    QDataStream stream (&buffer);
+                    view()->page()->setProperty("HistoryNavigationLocked", true);
+                    stream >> *history;
+                    QWebHistoryItem currentItem (history->currentItem());
+                    if (currentItem.isValid()) {
+                        if (currentItem.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
+                            const QPoint scrollPos (xOfs, yOfs);
+                            currentItem.setUserData(scrollPos);
+                        }
+                        // NOTE 1: The following Konqueror specific workaround is necessary
+                        // because Konqueror only preserves information for the last visited
+                        // page. However, we save the entire history content in saveState and
+                        // and hence need to elimiate all but the current item here.
+                        // NOTE 2: This condition only applies when Konqueror is restored from
+                        // abnormal termination ; a crash and/or a session restoration.
+                        if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
+                            history->clear();
+                        }
+                        m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
+                        history->goToItem(currentItem);
                     }
-                    // NOTE 1: The following Konqueror specific workaround is necessary
-                    // because Konqueror only preserves information for the last visited
-                    // page. However, we save the entire history content in saveState and
-                    // and hence need to elimiate all but the current item here.
-                    // NOTE 2: This condition only applies when Konqueror is restored from
-                    // abnormal termination ; a crash and/or a session restoration.
-                    if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
-                        history->clear();
-                    }
-                    m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
-                    history->goToItem(currentItem);
                 }
             }
             success = (history->count() > 0);
-        } else {
+        } else {        // Handle navigation: back and forward button navigation.
+            kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
             if (history->count() > historyItemIndex && historyItemIndex > -1) {
                 QWebHistoryItem item (history->itemAt(historyItemIndex));
+                kDebug() << "URL:" << u << "Item URL:" << item.url();
                 if (u == item.url()) {
+                    if (item.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
+                        const QPoint scrollPos (xOfs, yOfs);
+                        item.setUserData(scrollPos);
+                    }
                     m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
                     history->goToItem(item);
                     success = true;
-                    //kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
                 }
             }
         }
+
         if (success) {
             return;
         }
@@ -182,9 +174,31 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
 
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
-    kWarning() << "Normal history navgation logic failed! Attempting to use a workaround!";
+    kDebug() << "Normal history navgation logic failed! Falling back to a workaround!";
     m_part.data()->openUrl(u);
 }
+
+void WebKitBrowserExtension::restoreHistoryFromData (const QByteArray& data)
+{
+    if (data.isEmpty()) {
+        return;
+    }
+
+    QBuffer buffer;
+    buffer.setData(data);
+    if (!buffer.open(QIODevice::ReadOnly)) {
+        return;
+    }
+
+    // NOTE: When restoring history, webkit automatically navigates to
+    // the previous "currentItem". Since we do not want that to happen,
+    // we set a property on the WebPage object that is used to allow or
+    // disallow history navigation in WebPage::acceptNavigationRequest.
+    view()->page()->setProperty("HistoryNavigationLocked", true);
+    QDataStream s (&buffer);
+    s >> *(view()->history());
+}
+
 
 void WebKitBrowserExtension::cut()
 {
@@ -762,11 +776,11 @@ void WebKitBrowserExtension::slotSaveHistory()
         stream << *history;
         m_historyData = qCompress(histData, 9);
         m_currentHistoryItemIndex = history->currentItemIndex();
-        //kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         QWidget* mainWidget = m_part.data() ? m_part.data()->widget() : 0;
         QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : 0;
         if (frameWidget) {
             emit saveHistory(frameWidget, m_historyData);
+            // kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         }
     } else {
         m_historyData.clear();

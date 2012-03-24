@@ -82,7 +82,8 @@ static inline int convertStr2Int(const QString& value)
    return 0;
 }
 
-KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QByteArray& cachedHistory, const QStringList& /*args*/)
+KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
+                         const QByteArray& cachedHistory, const QStringList& /*args*/)
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
              m_hasCachedFormData(false),
@@ -125,7 +126,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QByteArra
 
     // Create the browser extension. The first item of 'args' is used to pass
     // the session history filename.
-    m_browserExtension = new WebKitBrowserExtension(this, cachedHistory);
+    m_browserExtension = new WebKitBrowserExtension(this);
+    m_browserExtension->restoreHistoryFromData(cachedHistory);
 
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
@@ -307,9 +309,12 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             m_browserExtension, SLOT(updateEditActions()));
     connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
+    connect(m_browserExtension, SIGNAL(openUrlNotify()),
+            m_browserExtension, SLOT(slotSaveHistory()));
 
     connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotMainFrameLoadFinished(bool)));
+
 
     KWebWallet *wallet = page->wallet();
     if (wallet) {
@@ -383,7 +388,6 @@ bool KWebKitPart::openUrl(const KUrl &u)
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
     m_webView->loadUrl(u, args, bargs);
-    m_browserExtension->slotSaveHistory();
     return true;
 }
 
@@ -459,7 +463,10 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
     if (!ok)
         return;
 
-    m_emitOpenUrlNotify = true; // Save history once page loading is done.
+    if (!m_emitOpenUrlNotify) {
+        m_browserExtension->slotSaveHistory(); // Cache this contents of QWebHistory
+        m_emitOpenUrlNotify = true; // Save history once page loading is done.
+    }
 
     // If the document contains no <title> tag, then set it to the current url.
     if (m_webView->title().trimmed().isEmpty()) {
@@ -600,7 +607,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 
     if (m_emitOpenUrlNotify && !frame->parentFrame()) {
-        // kDebug() << "***** EMITTING openUrlNotify" << item->url();
+        kDebug() << "***** EMITTING openUrlNotify" << item->url();
         emit m_browserExtension->openUrlNotify();
     }
 
