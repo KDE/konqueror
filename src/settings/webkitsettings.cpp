@@ -46,11 +46,11 @@ struct KPerDomainSettings {
     bool m_bEnableJavaScript : 1;
     bool m_bEnablePlugins : 1;
     // don't forget to maintain the bitfields as the enums grow
-    WebKitSettings::KJSWindowOpenPolicy m_windowOpenPolicy : 2;
-    WebKitSettings::KJSWindowStatusPolicy m_windowStatusPolicy : 1;
-    WebKitSettings::KJSWindowFocusPolicy m_windowFocusPolicy : 1;
-    WebKitSettings::KJSWindowMovePolicy m_windowMovePolicy : 1;
-    WebKitSettings::KJSWindowResizePolicy m_windowResizePolicy : 1;
+    KParts::HtmlSettingsInterface::JSWindowOpenPolicy m_windowOpenPolicy : 2;
+    KParts::HtmlSettingsInterface::JSWindowStatusPolicy m_windowStatusPolicy : 1;
+    KParts::HtmlSettingsInterface::JSWindowFocusPolicy m_windowFocusPolicy : 1;
+    KParts::HtmlSettingsInterface::JSWindowMovePolicy m_windowMovePolicy : 1;
+    KParts::HtmlSettingsInterface::JSWindowResizePolicy m_windowResizePolicy : 1;
 
 #ifdef DEBUG_SETTINGS
     void dump(const QString &infix = QString()) const {
@@ -200,71 +200,18 @@ static KPerDomainSettings &setup_per_domain_policy(WebKitSettingsPrivate* const 
   return *it;
 }
 
-
-WebKitSettings::KJavaScriptAdvice WebKitSettings::strToAdvice(const QString& _str)
+template<typename T>
+static T readEntry(const KConfigGroup& config, const QString& key, int defaultValue)
 {
-  KJavaScriptAdvice ret = KJavaScriptDunno;
-
-  if (_str.isNull())
-        ret = KJavaScriptDunno;
-
-  if (_str.toLower() == QLatin1String("accept"))
-        ret = KJavaScriptAccept;
-  else if (_str.toLower() == QLatin1String("reject"))
-        ret = KJavaScriptReject;
-
-  return ret;
-}
-
-const char* WebKitSettings::adviceToStr(KJavaScriptAdvice _advice)
-{
-    switch( _advice ) {
-        case KJavaScriptAccept: return I18N_NOOP("Accept");
-        case KJavaScriptReject: return I18N_NOOP("Reject");
-        default: return 0;
-    }
-    return 0;
-}
-
-
-void WebKitSettings::splitDomainAdvice(const QString& configStr, QString &domain,
-                                      KJavaScriptAdvice &javaAdvice, KJavaScriptAdvice& javaScriptAdvice)
-{
-    QString tmp(configStr);
-    int splitIndex = tmp.indexOf(':');
-    if ( splitIndex == -1)
-    {
-        domain = configStr.toLower();
-        javaAdvice = KJavaScriptDunno;
-        javaScriptAdvice = KJavaScriptDunno;
-    }
-    else
-    {
-        domain = tmp.left(splitIndex).toLower();
-        QString adviceString = tmp.mid( splitIndex+1, tmp.length() );
-        int splitIndex2 = adviceString.indexOf( ':' );
-        if( splitIndex2 == -1 ) {
-            // Java advice only
-            javaAdvice = strToAdvice( adviceString );
-            javaScriptAdvice = KJavaScriptDunno;
-        } else {
-            // Java and JavaScript advice
-            javaAdvice = strToAdvice( adviceString.left( splitIndex2 ) );
-            javaScriptAdvice = strToAdvice( adviceString.mid( splitIndex2+1,
-                                                              adviceString.length() ) );
-        }
-    }
+    return static_cast<T>(config.readEntry(key, defaultValue));
 }
 
 void WebKitSettings::readDomainSettings(const KConfigGroup &config, bool reset,
                                         bool global, KPerDomainSettings &pd_settings)
 {
-  QString jsPrefix = global ? QString()
-  				: QString::fromLatin1("javascript.");
-  QString javaPrefix = global ? QString()
-  				: QString::fromLatin1("java.");
-  QString pluginsPrefix = global ? QString()
-  				: QString::fromLatin1("plugins.");
+  const QString javaPrefix ((global ? QString() : QLatin1String("java.")));
+  const QString jsPrefix ((global ? QString() : QLatin1String("javascript.")));
+  const QString pluginsPrefix (global ? QString() : QLatin1String("plugins."));
 
   // The setting for Java
   QString key = javaPrefix + QLatin1String("EnableJava");
@@ -290,44 +237,38 @@ void WebKitSettings::readDomainSettings(const KConfigGroup &config, bool reset,
   // window property policies
   key = jsPrefix + QLatin1String("WindowOpenPolicy");
   if ( (global && reset) || config.hasKey( key ) )
-    pd_settings.m_windowOpenPolicy = (KJSWindowOpenPolicy)
-    		config.readEntry( key, uint(KJSWindowOpenSmart) );
+    pd_settings.m_windowOpenPolicy = readEntry<KParts::HtmlSettingsInterface::JSWindowOpenPolicy>(config, key, KParts::HtmlSettingsInterface::JSWindowOpenSmart);
   else if ( !global )
     pd_settings.m_windowOpenPolicy = d->global.m_windowOpenPolicy;
 
   key = jsPrefix + QLatin1String("WindowMovePolicy");
   if ( (global && reset) || config.hasKey( key ) )
-    pd_settings.m_windowMovePolicy = (KJSWindowMovePolicy)
-    		config.readEntry( key, uint(KJSWindowMoveAllow) );
+    pd_settings.m_windowMovePolicy = readEntry<KParts::HtmlSettingsInterface::JSWindowMovePolicy>(config, key, KParts::HtmlSettingsInterface::JSWindowMoveAllow);
   else if ( !global )
     pd_settings.m_windowMovePolicy = d->global.m_windowMovePolicy;
 
   key = jsPrefix + QLatin1String("WindowResizePolicy");
   if ( (global && reset) || config.hasKey( key ) )
-    pd_settings.m_windowResizePolicy = (KJSWindowResizePolicy)
-    		config.readEntry( key, uint(KJSWindowResizeAllow) );
+    pd_settings.m_windowResizePolicy = readEntry<KParts::HtmlSettingsInterface::JSWindowResizePolicy>(config, key, KParts::HtmlSettingsInterface::JSWindowResizeAllow);
   else if ( !global )
     pd_settings.m_windowResizePolicy = d->global.m_windowResizePolicy;
 
   key = jsPrefix + QLatin1String("WindowStatusPolicy");
   if ( (global && reset) || config.hasKey( key ) )
-    pd_settings.m_windowStatusPolicy = (KJSWindowStatusPolicy)
-    		config.readEntry( key, uint(KJSWindowStatusAllow) );
+    pd_settings.m_windowStatusPolicy = readEntry<KParts::HtmlSettingsInterface::JSWindowStatusPolicy>(config, key, KParts::HtmlSettingsInterface::JSWindowStatusAllow);
   else if ( !global )
     pd_settings.m_windowStatusPolicy = d->global.m_windowStatusPolicy;
 
   key = jsPrefix + QLatin1String("WindowFocusPolicy");
   if ( (global && reset) || config.hasKey( key ) )
-    pd_settings.m_windowFocusPolicy = (KJSWindowFocusPolicy)
-    		config.readEntry( key, uint(KJSWindowFocusAllow) );
+    pd_settings.m_windowFocusPolicy = readEntry<KParts::HtmlSettingsInterface::JSWindowFocusPolicy>(config, key, KParts::HtmlSettingsInterface::JSWindowFocusAllow);
   else if ( !global )
     pd_settings.m_windowFocusPolicy = d->global.m_windowFocusPolicy;
-
 }
 
 
 WebKitSettings::WebKitSettings()
-	:d (new WebKitSettingsPrivate)
+  :d (new WebKitSettingsPrivate)
 {
   init();
 }
@@ -660,10 +601,10 @@ void WebKitSettings::init( KConfig * config, bool reset )
       for ( ; it != itEnd; ++it)
       {
         QString domain;
-        KJavaScriptAdvice javaAdvice;
-        KJavaScriptAdvice javaScriptAdvice;
-        splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-        setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KJavaScriptAccept;
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+        KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+        setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
 #ifdef DEBUG_SETTINGS
         setup_per_domain_policy(d,domain).dump("JavaDomainSettings 4 "+domain);
 #endif
@@ -680,11 +621,11 @@ void WebKitSettings::init( KConfig * config, bool reset )
       for ( ; it != itEnd; ++it)
       {
         QString domain;
-        KJavaScriptAdvice javaAdvice;
-        KJavaScriptAdvice javaScriptAdvice;
-        splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+        KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
         setup_per_domain_policy(d,domain).m_bEnableJavaScript =
-			javaScriptAdvice == KJavaScriptAccept;
+			javaScriptAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
 #ifdef DEBUG_SETTINGS
 	setup_per_domain_policy(d,domain).dump("ECMADomainSettings 4 "+domain);
 #endif
@@ -701,13 +642,13 @@ void WebKitSettings::init( KConfig * config, bool reset )
       for ( ; it != itEnd; ++it)
       {
         QString domain;
-        KJavaScriptAdvice javaAdvice;
-        KJavaScriptAdvice javaScriptAdvice;
-        splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
+        KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
+        KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
         if( check_old_java )
-          setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KJavaScriptAccept;
+          setup_per_domain_policy(d,domain).m_bEnableJava = javaAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
         if( check_old_ecma )
-          setup_per_domain_policy(d,domain).m_bEnableJavaScript = javaScriptAdvice == KJavaScriptAccept;
+          setup_per_domain_policy(d,domain).m_bEnableJavaScript = javaScriptAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
 #ifdef DEBUG_SETTINGS
         setup_per_domain_policy(d,domain).dump("JavaScriptDomainAdvice 4 "+domain);
 #endif
@@ -738,8 +679,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, isPluginsEnabled());
 
   // By default disable JS window.open when policy is deny or smart.
-  const KJSWindowOpenPolicy policy = windowOpenPolicy();
-  if (policy == WebKitSettings::KJSWindowOpenDeny || policy == WebKitSettings::KJSWindowOpenSmart)
+  const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = windowOpenPolicy();
+  if (policy == KParts::HtmlSettingsInterface::JSWindowOpenDeny || policy == KParts::HtmlSettingsInterface::JSWindowOpenSmart)
       QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, false);
   else
       QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
@@ -784,9 +725,8 @@ void WebKitSettings::computeFontSizes( int logicalDpi )
   *
   * In case of doubt, the global domain is returned.
   */
-static const KPerDomainSettings &lookup_hostname_policy(
-			const WebKitSettingsPrivate* const d,
-			const QString& hostname)
+static const KPerDomainSettings &lookup_hostname_policy(const WebKitSettingsPrivate* const d,
+                                                        const QString& hostname)
 {
 #ifdef DEBUG_SETTINGS
   kDebug() << "lookup_hostname_policy(" << hostname << ")";
@@ -965,27 +905,27 @@ bool WebKitSettings::isPluginsEnabled( const QString& hostname ) const
   return lookup_hostname_policy(d,hostname.toLower()).m_bEnablePlugins;
 }
 
-WebKitSettings::KJSWindowOpenPolicy WebKitSettings::windowOpenPolicy(
+KParts::HtmlSettingsInterface::JSWindowOpenPolicy WebKitSettings::windowOpenPolicy(
 				const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowOpenPolicy;
 }
 
-WebKitSettings::KJSWindowMovePolicy WebKitSettings::windowMovePolicy(
+KParts::HtmlSettingsInterface::JSWindowMovePolicy WebKitSettings::windowMovePolicy(
 				const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowMovePolicy;
 }
 
-WebKitSettings::KJSWindowResizePolicy WebKitSettings::windowResizePolicy(
+KParts::HtmlSettingsInterface::JSWindowResizePolicy WebKitSettings::windowResizePolicy(
 				const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowResizePolicy;
 }
 
-WebKitSettings::KJSWindowStatusPolicy WebKitSettings::windowStatusPolicy(
+KParts::HtmlSettingsInterface::JSWindowStatusPolicy WebKitSettings::windowStatusPolicy(
 				const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowStatusPolicy;
 }
 
-WebKitSettings::KJSWindowFocusPolicy WebKitSettings::windowFocusPolicy(
+KParts::HtmlSettingsInterface::JSWindowFocusPolicy WebKitSettings::windowFocusPolicy(
 				const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowFocusPolicy;
 }

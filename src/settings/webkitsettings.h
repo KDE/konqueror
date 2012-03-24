@@ -26,6 +26,8 @@ class KConfigGroup;
 #include <QtGui/QColor>
 #include <QtCore/QStringList>
 #include <QtCore/QPair>
+
+#include <KParts/HtmlExtension>
 #include <kdewebkit_export.h>
 
 struct KPerDomainSettings;
@@ -38,15 +40,6 @@ class KDEWEBKIT_EXPORT WebKitSettings
 {
 public:
 
-    /**
-     * This enum specifies whether Java/JavaScript execution is allowed.
-     */
-    enum KJavaScriptAdvice {
-        KJavaScriptDunno=0,
-        KJavaScriptAccept,
-        KJavaScriptReject
-    };
-
     enum KAnimationAdvice {
         KAnimationDisabled=0,
         KAnimationLoopOnce,
@@ -57,48 +50,6 @@ public:
         KSmoothScrollingDisabled=0,
         KSmoothScrollingWhenEfficient,
         KSmoothScrollingEnabled
-    };
-
-    /**
-     * This enum specifies the policy for window.open
-     */
-    enum KJSWindowOpenPolicy {
-        KJSWindowOpenAllow=0,
-        KJSWindowOpenAsk,
-        KJSWindowOpenDeny,
-        KJSWindowOpenSmart
-    };
-
-    /**
-     * This enum specifies the policy for window.status and .defaultStatus
-     */
-    enum KJSWindowStatusPolicy {
-        KJSWindowStatusAllow=0,
-        KJSWindowStatusIgnore
-    };
-
-    /**
-     * This enum specifies the policy for window.moveBy and .moveTo
-     */
-    enum KJSWindowMovePolicy {
-        KJSWindowMoveAllow=0,
-        KJSWindowMoveIgnore
-    };
-
-    /**
-     * This enum specifies the policy for window.resizeBy and .resizeTo
-     */
-    enum KJSWindowResizePolicy {
-        KJSWindowResizeAllow=0,
-        KJSWindowResizeIgnore
-    };
-
-    /**
-     * This enum specifies the policy for window.focus
-     */
-    enum KJSWindowFocusPolicy {
-        KJSWindowFocusAllow=0,
-        KJSWindowFocusIgnore
     };
 
     /**
@@ -188,17 +139,11 @@ public:
     // Favicons
     bool favIconsEnabled() const;
 
-    KJSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
-    KJSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
-    KJSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
-    KJSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
-    KJSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
-
-    // helpers for parsing domain-specific configuration, used in KControl module as well
-    static KJavaScriptAdvice strToAdvice(const QString& _str);
-    static void splitDomainAdvice(const QString& configStr, QString &domain,
-                                  KJavaScriptAdvice &javaAdvice, KJavaScriptAdvice& javaScriptAdvice);
-    static const char* adviceToStr(KJavaScriptAdvice _advice);
+    KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
 
     /** reads from @p config's current group, forcing initialization
       * if @p reset is true.

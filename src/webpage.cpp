@@ -45,6 +45,7 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
+#include <KParts/HtmlExtension>
 
 #include <QtCore/QFile>
 #include <QtGui/QApplication>
@@ -584,7 +585,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     // time of its creation, which is always the case in QWebPage::createWindow,
     // then any move operation will seem not to work. That is because the new
     // window will be in maximized mode where moving it will not be possible...
-    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
+    if (WebKitSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
         emit part()->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
@@ -605,7 +606,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
         return;
     }
 
-    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+    if (WebKitSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
         //kDebug() << "resizing to " << width << "x" << height;
         emit part()->browserExtension()->resizeTopLevelWidget(width, height);
     }
@@ -620,7 +621,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
 
-    if ((moveByX || moveByY) && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow)
+    if ((moveByX || moveByY) && WebKitSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow)
         emit part()->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
@@ -777,10 +778,10 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
     settings()->setAttribute(QWebSettings::JavascriptEnabled,
                              WebKitSettings::self()->isJavaScriptEnabled(hostname));
 
-    const WebKitSettings::KJSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(hostname);
+    const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(hostname);
     settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
-                             (policy != WebKitSettings::KJSWindowOpenDeny &&
-                              policy != WebKitSettings::KJSWindowOpenSmart));
+                             (policy != KParts::HtmlSettingsInterface::JSWindowOpenDeny &&
+                              policy != KParts::HtmlSettingsInterface::JSWindowOpenSmart));
 }
 
 
@@ -816,13 +817,13 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         const KUrl reqUrl (request.url());
 
         if (!m_disableJSOpenwindowCheck) {
-            const WebKitSettings::KJSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
+            const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
             switch (policy) {
-            case WebKitSettings::KJSWindowOpenDeny:
+            case KParts::HtmlSettingsInterface::JSWindowOpenDeny:
                 // TODO: Implement a way for showing the blocked popup dialog.
                 this->deleteLater();
                 return false;
-            case WebKitSettings::KJSWindowOpenAsk: {
+            case KParts::HtmlSettingsInterface::JSWindowOpenAsk: {
                 const QString message = (reqUrl.isEmpty() ?
                                           i18n("This site is requesting to open up a popup window.\n"
                                                "Do you want to allow this?") :

@@ -841,7 +841,7 @@ void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
 void KWebKitPart::slotSetStatusBarText(const QString& text)
 {
     const QString host (page() ? page()->currentFrame()->url().host() : QString());
-    if (WebKitSettings::self()->windowStatusPolicy(host) == WebKitSettings::KJSWindowStatusAllow)
+    if (WebKitSettings::self()->windowStatusPolicy(host) == KParts::HtmlSettingsInterface::JSWindowStatusAllow)
         emit setStatusBarText(text);
 }
 
