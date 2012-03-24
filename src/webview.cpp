@@ -223,7 +223,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 static bool isEditableElement(QWebPage* page)
 {
     const QWebFrame* frame = (page ? page->currentFrame() : 0);
-    const QWebElement element = (frame ? frame->findFirstElement(QL1S(":focus")) : QWebElement());
+    QWebElement element = (frame ? frame->findFirstElement(QL1S(":focus")) : QWebElement());
     if (!element.isNull()) {
         const QString tagName(element.tagName());
         if (tagName.compare(QL1S("textarea"), Qt::CaseInsensitive) == 0) {
@@ -232,6 +232,9 @@ static bool isEditableElement(QWebPage* page)
         const QString type(element.attribute(QL1S("type")).toLower());
         if (tagName.compare(QL1S("input"), Qt::CaseInsensitive) == 0
             && (type.isEmpty() || type == QL1S("text") || type == QL1S("password"))) {
+            return true;
+        }
+        if (element.evaluateJavaScript("this.isContentEditable").toBool()) {
             return true;
         }
     }
