@@ -286,9 +286,11 @@ void WebView::keyPressEvent(QKeyEvent* e)
             default:
                 break;
             }
-        } else {
-            // kDebug() << key << e->modifiers();
+        } else if (m_autoScrollTimerId != -1) {
+            // kDebug() << "scroll timer id:" << m_autoScrollTimerId;
             slotStopAutoScroll();
+            e->accept();
+            return;
         }
     }
     KWebView::keyPressEvent(e);
@@ -711,7 +713,7 @@ void WebView::slotOpenSelection()
 
 void WebView::slotStopAutoScroll()
 {
-    if (m_autoScrollTimerId == -1)  {
+    if (m_autoScrollTimerId == -1) {
         return;
     }
 
