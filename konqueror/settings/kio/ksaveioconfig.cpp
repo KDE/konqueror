@@ -221,7 +221,7 @@ void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
   }
 }
 
-void KSaveIOConfig::updateProxyScout( QWidget * parent )
+void KSaveIOConfig::updateProxyScout(QWidget * parent)
 {
   // Inform the proxyscout kded module about changes if we cannot update,
   // ioslaves inform the end user...
