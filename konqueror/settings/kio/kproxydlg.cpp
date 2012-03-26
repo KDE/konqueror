@@ -344,8 +344,14 @@ void KProxyDialog::load()
     }
 }
 
+static bool isPACProxyType(KProtocolManager::ProxyType type)
+{
+    return (type == KProtocolManager::PACProxy || type == KProtocolManager::WPADProxy);
+}
+
 void KProxyDialog::save()
 {
+    const KProtocolManager::ProxyType lastProxyType = KProtocolManager::proxyType();
     KProtocolManager::ProxyType proxyType = KProtocolManager::NoProxy;
     DisplayUrlFlags displayUrlFlags = static_cast<DisplayUrlFlags>(KSaveIOConfig::proxyDisplayUrlFlags());
 
@@ -386,7 +392,7 @@ void KProxyDialog::save()
     KSaveIOConfig::setNoProxyFor (mProxyMap.value(QL1S("NoProxy")));
 
     KSaveIOConfig::updateRunningIOSlaves (this);
-    if (proxyType == KProtocolManager::PACProxy || proxyType == KProtocolManager::WPADProxy) {
+    if (isPACProxyType(lastProxyType) || isPACProxyType(proxyType)) {
         KSaveIOConfig::updateProxyScout (this);
     }
 
