@@ -20,11 +20,11 @@
 #include "kcookiespolicyselectiondlg.h"
 
 // Qt
-#include <QtGui/QPushButton>
-#include <QtGui/QWhatsThis>
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QValidator>
+#include <QPushButton>
+#include <QWhatsThis>
+#include <QLayout>
+#include <QLabel>
+#include <QValidator>
 
 // KDE
 #include <klineedit.h>

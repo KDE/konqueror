@@ -26,8 +26,8 @@
 #include <KDE/KParts/Plugin>
 
 #include <QtCore/QStringList>
-#include <QtGui/QItemDelegate>
-#include <QtGui/QPixmap>
+#include <QItemDelegate>
+#include <QPixmap>
 
 namespace KParts {
     class Part;

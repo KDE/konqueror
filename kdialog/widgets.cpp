@@ -24,10 +24,10 @@
 
 // Qt
 #include <QtCore/QFile>
-#include <QtGui/QDesktopWidget>
+#include <QDesktopWidget>
 #include <QtCore/QTextStream>
-#include <QtGui/QTextCursor>
-#include <QtGui/QLabel>
+#include <QTextCursor>
+#include <QLabel>
 
 // KDE
 #include <klocale.h>

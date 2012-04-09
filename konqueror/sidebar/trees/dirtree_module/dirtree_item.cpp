@@ -36,10 +36,10 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
-#include <QtGui/QPainter>
-#include <QtGui/QApplication>
-#include <QtGui/QClipboard>
-#include <QtGui/QCursor>
+#include <QPainter>
+#include <QApplication>
+#include <QClipboard>
+#include <QCursor>
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())
 

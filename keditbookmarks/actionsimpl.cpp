@@ -34,7 +34,7 @@
 
 #include <stdlib.h>
 
-#include <QtGui/QClipboard>
+#include <QClipboard>
 #include <QtCore/QMimeData>
 #include <QApplication>
 

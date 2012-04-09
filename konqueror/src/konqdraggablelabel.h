@@ -20,7 +20,7 @@
 #define KONQDRAGGABLELABEL_H
 
 #include <kurl.h>
-#include <QtGui/QLabel>
+#include <QLabel>
 class KonqMainWindow;
 
 class KonqDraggableLabel : public QLabel

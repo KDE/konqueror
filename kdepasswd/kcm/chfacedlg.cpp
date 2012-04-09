@@ -27,13 +27,13 @@
 
 #include "chfacedlg.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QPixmap>
-#include <QtGui/QImage>
-#include <QtGui/QPushButton>
+#include <QLayout>
+#include <QLabel>
+#include <QPixmap>
+#include <QImage>
+#include <QPushButton>
 #include <QtCore/QDir>
-#include <QtGui/QCheckBox>
+#include <QCheckBox>
 
 #include <klocale.h>
 #include <kfiledialog.h>

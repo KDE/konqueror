@@ -17,10 +17,10 @@
 
 #include "centralwidget.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QLabel>
+#include <QApplication>
+#include <QLabel>
 #include <QtCore/QTimer>
-#include <QtGui/QSplitter>
+#include <QSplitter>
 
 SCWMainWindow::SCWMainWindow( QWidget* parent )
     : QMainWindow( parent )

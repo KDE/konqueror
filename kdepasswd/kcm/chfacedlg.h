@@ -29,7 +29,7 @@
 #define CHFACEDLG_H
 
 #include <QtCore/QObject>
-#include <QtGui/QPixmap>
+#include <QPixmap>
 
 #include <KDialog>
 

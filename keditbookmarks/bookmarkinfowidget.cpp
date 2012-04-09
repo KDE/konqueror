@@ -26,9 +26,9 @@
 #include <stdlib.h>
 
 #include <QtCore/QTimer>
-#include <QtGui/QLabel>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QFormLayout>
+#include <QLabel>
+#include <QHBoxLayout>
+#include <QFormLayout>
 
 #include <klocale.h>
 #include <kdebug.h>

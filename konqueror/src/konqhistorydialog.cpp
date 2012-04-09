@@ -25,10 +25,10 @@
 #include "konqmisc.h"
 
 #include <QtCore/QTimer>
-#include <QtGui/QMenu>
-#include <QtGui/QToolBar>
-#include <QtGui/QToolButton>
-#include <QtGui/QVBoxLayout>
+#include <QMenu>
+#include <QToolBar>
+#include <QToolButton>
+#include <QVBoxLayout>
 #include <QModelIndex>
 #include <QTreeView>
 

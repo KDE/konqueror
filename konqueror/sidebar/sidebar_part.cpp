@@ -20,7 +20,7 @@
 #include <kparts/part.h>
 #include <konq_events.h>
 #include <kdebug.h>
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <kacceleratormanager.h>
 
 static KAboutData createAboutData()

@@ -21,7 +21,7 @@
 #define BOOKMARKINFOWIDGET_H
 
 #include <kbookmark.h>
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class KBookmarkModel;
 class BookmarkListView;

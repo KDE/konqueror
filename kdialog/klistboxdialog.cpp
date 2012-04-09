@@ -19,7 +19,7 @@
 #include "klistboxdialog.h"
 #include "klistboxdialog.moc"
 
-#include <QtGui/QLabel>
+#include <QLabel>
 #include <kvbox.h>
 
 #include "klocale.h"

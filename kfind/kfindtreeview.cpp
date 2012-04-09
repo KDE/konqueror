@@ -24,9 +24,9 @@
 #include <QtCore/QTextStream>
 #include <QtCore/QTextCodec>
 #include <QtCore/QFileInfo>
-#include <QtGui/QClipboard>
-#include <QtGui/QHeaderView>
-#include <QtGui/QApplication>
+#include <QClipboard>
+#include <QHeaderView>
+#include <QApplication>
 #include <QtCore/QDate>
 
 #include <kfiledialog.h>

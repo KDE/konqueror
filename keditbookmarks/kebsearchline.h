@@ -19,7 +19,7 @@
 #define __kebsearchline_h
 
 #include <klineedit.h>
-#include <QtGui/QAbstractItemView>
+#include <QAbstractItemView>
 #include <QtCore/QLinkedList>
 
 

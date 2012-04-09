@@ -27,10 +27,10 @@
 #include <kicon.h>
 #include <klocale.h>
 
-#include <QtGui/QHeaderView>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QMenu>
+#include <QHeaderView>
+#include <QBoxLayout>
+#include <QKeyEvent>
+#include <QMenu>
 
 
 

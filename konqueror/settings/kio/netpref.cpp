@@ -3,11 +3,11 @@
 #include "netpref.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QFormLayout>
+#include <QLayout>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QBoxLayout>
+#include <QFormLayout>
 
 // KDE
 #include <kio/ioslave_defaults.h>

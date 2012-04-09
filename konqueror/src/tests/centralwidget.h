@@ -18,7 +18,7 @@
 #ifndef CENTRALWIDGET_H
 #define CENTRALWIDGET_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 
 // SCW == Switch (or Set) Central Widget
 class SCWMainWindow : public QMainWindow

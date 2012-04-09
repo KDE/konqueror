@@ -39,7 +39,7 @@
 #include <kiconloader.h>
 
 #include <QtCore/QTimer>
-#include <QtGui/QDesktopWidget>
+#include <QDesktopWidget>
 
 #include <iostream>
 
@@ -54,7 +54,7 @@
 #endif
 
 #ifdef Q_WS_WIN
-#include <QtGui/QFileDialog>
+#include <QFileDialog>
 #endif
 #include <unistd.h>
 

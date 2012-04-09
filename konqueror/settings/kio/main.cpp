@@ -22,9 +22,9 @@
 
 // Qt
 #include <QtCore/QFile>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QTabWidget>
+#include <QLabel>
+#include <QLayout>
+#include <QTabWidget>
 
 // KDE
 #include <kcmoduleloader.h>

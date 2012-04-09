@@ -24,7 +24,7 @@
 #include <KDE/KIconLoader>
 
 #include <QtCore/QEvent>
-#include <QtGui/QToolBar>
+#include <QToolBar>
 
 KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)
     : KAnimatedButton(parent)

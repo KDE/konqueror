@@ -35,9 +35,9 @@
 
 #include <stdlib.h>
 
-#include <QtGui/QClipboard>
-#include <QtGui/QSplitter>
-#include <QtGui/QApplication>
+#include <QClipboard>
+#include <QSplitter>
+#include <QApplication>
 
 #include <kaction.h>
 #include <kactioncollection.h>

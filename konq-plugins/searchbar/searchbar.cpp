@@ -46,14 +46,14 @@
 
 //#include <kparts/mainwindow.h>
 
-#include <QtGui/QLineEdit>
-#include <QtGui/QApplication>
+#include <QLineEdit>
+#include <QApplication>
 #include <QtCore/QTimer>
-#include <QtGui/QMenu>
-#include <QtGui/QStyle>
-#include <QtGui/QPixmap>
-#include <QtGui/QPainter>
-#include <QtGui/QMouseEvent>
+#include <QMenu>
+#include <QStyle>
+#include <QPixmap>
+#include <QPainter>
+#include <QMouseEvent>
 #include <QtDBus/QtDBus>
 
 

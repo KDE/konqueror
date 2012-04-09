@@ -23,7 +23,7 @@
 
 #include <kdialog.h>
 
-#include <QtGui/QListWidget>
+#include <QListWidget>
 
 class QLabel;
 

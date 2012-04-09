@@ -23,10 +23,10 @@
 
 // Qt
 #include <QtDBus/QtDBus>
-#include <QtGui/QCheckBox>
-#include <QtGui/QGroupBox>
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QLayout>
+#include <QLabel>
 
 // KDE
 #include <klocale.h>

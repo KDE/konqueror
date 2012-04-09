@@ -20,7 +20,7 @@
 #ifndef KONQ_HISTORYSETTINGS_H
 #define KONQ_HISTORYSETTINGS_H
 
-#include <QtGui/QFont>
+#include <QFont>
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>
 

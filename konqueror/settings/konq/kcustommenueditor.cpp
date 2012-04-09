@@ -23,8 +23,8 @@
 // Qt
 #include <QtCore/QDir>
 #include <QtCore/QRegExp>
-#include <QtGui/QImage>
-#include <QtGui/QPushButton>
+#include <QImage>
+#include <QPushButton>
 
 // KDE
 #include <k3listview.h>

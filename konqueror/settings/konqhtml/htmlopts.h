@@ -8,9 +8,9 @@
 #ifndef HTMLOPTS_H
 #define HTMLOPTS_H
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QLineEdit>
-#include <QtGui/QComboBox>
+#include <QCheckBox>
+#include <QLineEdit>
+#include <QComboBox>
 
 //-----------------------------------------------------------------------------
 // The "Misc Options" Tab for the HTML view contains :

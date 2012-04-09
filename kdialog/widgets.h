@@ -23,7 +23,7 @@
 
 #include <QDate>
 #include <QtCore/QByteRef>
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <QtCore/QStringList>
 
 namespace Widgets

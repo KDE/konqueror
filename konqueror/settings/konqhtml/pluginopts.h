@@ -11,7 +11,7 @@
 #ifndef PLUGINOPTS_H
 #define PLUGINOPTS_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #include "domainlistview.h"
 #include "policies.h"

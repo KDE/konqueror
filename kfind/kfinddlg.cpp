@@ -19,8 +19,8 @@
 #include "kfinddlg.h"
 #include "kfinddlg.moc"
 
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
+#include <QLayout>
+#include <QPushButton>
 
 #include <klocale.h>
 #include <kglobal.h>

@@ -24,10 +24,10 @@
 
 // Qt
 #include <QButtonGroup>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QRadioButton>
-#include <QtGui/QGridLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QRadioButton>
+#include <QGridLayout>
 
 // KDE
 #include <kconfig.h>

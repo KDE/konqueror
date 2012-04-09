@@ -20,10 +20,10 @@
 #ifndef KFINDTREEVIEW__H
 #define KFINDTREEVIEW__H
 
-#include <QtGui/QTreeView>
+#include <QTreeView>
 #include <QtCore/QAbstractTableModel>
-#include <QtGui/QSortFilterProxyModel>
-#include <QtGui/QDragMoveEvent>
+#include <QSortFilterProxyModel>
+#include <QDragMoveEvent>
 
 #include <kurl.h>
 #include <kicon.h>

@@ -21,7 +21,7 @@
 
 #include <konq_sidebartreemodule.h>
 #include <kfileitem.h>
-#include <QtGui/QPixmap>
+#include <QPixmap>
 #include <Qt3Support/Q3Dict>
 #include <Qt3Support/Q3PtrDict>
 

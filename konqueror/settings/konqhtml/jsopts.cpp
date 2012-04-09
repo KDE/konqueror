@@ -23,8 +23,8 @@
 #include "jsopts.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QTreeWidget>
+#include <QLayout>
+#include <QTreeWidget>
 
 // KDE
 #include <kconfig.h>

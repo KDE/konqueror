@@ -19,7 +19,7 @@
 #ifndef BOOKMARKMODEL_BOOKMARKVIEW_H
 #define BOOKMARKMODEL_BOOKMARKVIEW_H
 
-#include <QtGui/QTreeView>
+#include <QTreeView>
 
 #include "kbookmarkmodel_export.h"
 

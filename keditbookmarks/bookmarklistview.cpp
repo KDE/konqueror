@@ -24,12 +24,12 @@
 #include "settings.h"
 #include "kbookmarkmodel/commands.h"
 
-#include <QtGui/QHeaderView>
-#include <QtGui/QItemSelection>
-#include <QtGui/QMenu>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QBrush>
-#include <QtGui/QPalette>
+#include <QHeaderView>
+#include <QItemSelection>
+#include <QMenu>
+#include <QKeyEvent>
+#include <QBrush>
+#include <QPalette>
 
 #include <kdebug.h>
 

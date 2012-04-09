@@ -28,9 +28,9 @@
 #include <Qt3Support/Q3StrList>
 
 //Added by qt3to4:
-#include <QtGui/QPixmap>
+#include <QPixmap>
 #include <QtCore/QByteRef>
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 #include <Qt3Support/Q3PtrList>
 #include <QtCore/QEvent>
 

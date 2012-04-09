@@ -23,8 +23,8 @@
 
 // Qt
 #include <QtCore/QTextCodec>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
+#include <QLabel>
+#include <QLayout>
 
 // KDE
 #include <kcharsets.h>

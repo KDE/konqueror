@@ -19,7 +19,7 @@
 #ifndef KFTABDLG_H
 #define KFTABDLG_H
 
-#include <QtGui/QValidator> // for KDigitValidator
+#include <QValidator> // for KDigitValidator
 
 #include <kurl.h>
 #include <ktabwidget.h>

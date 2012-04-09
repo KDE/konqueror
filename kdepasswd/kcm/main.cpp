@@ -22,13 +22,13 @@
 
 #include "main.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
+#include <QLayout>
+#include <QLabel>
+#include <QLineEdit>
 #include <QtCore/QEvent>
-#include <QtGui/QPixmap>
+#include <QPixmap>
 #include <QtCore/QStringList>
-#include <QtGui/QDragEnterEvent>
+#include <QDragEnterEvent>
 
 #include <kpushbutton.h>
 #include <kguiitem.h>

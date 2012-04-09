@@ -24,11 +24,11 @@
 #include "kcmhistory.h"
 
 // Qt
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QRadioButton>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QLayout>
+#include <QPushButton>
+#include <QRadioButton>
 
 // KDE
 #include <kapplication.h>

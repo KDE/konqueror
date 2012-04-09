@@ -22,7 +22,7 @@
 #ifndef JSPOLICIES_H
 #define JSPOLICIES_H
 
-#include <QtGui/QGroupBox>
+#include <QGroupBox>
 
 #include <kparts/htmlextension.h>
 

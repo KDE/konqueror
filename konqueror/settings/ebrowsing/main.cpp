@@ -20,8 +20,8 @@
 #include "main.h"
 
 // Qt
-#include <QtGui/QTabWidget>
-#include <QtGui/QBoxLayout>
+#include <QTabWidget>
+#include <QBoxLayout>
 
 // KDE
 #include <kurifilter.h>

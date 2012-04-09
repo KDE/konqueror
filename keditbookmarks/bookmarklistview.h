@@ -19,7 +19,7 @@
 #ifndef __bookmarklistview_h
 #define __bookmarklistview_h
 
-#include <QtGui/QTreeView>
+#include <QTreeView>
 #include <QSortFilterProxyModel>
 
 #include "kbookmarkmodel/view.h"

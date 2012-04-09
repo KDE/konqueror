@@ -21,7 +21,7 @@
 
 #include <kxmlguiwindow.h>
 #include <kbookmark.h>
-#include <QtGui/QMenu>
+#include <QMenu>
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
