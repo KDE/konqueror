@@ -36,7 +36,6 @@
 #ifndef QXTEVENTLOOP_H
 #define QXTEVENTLOOP_H
 
-#include <QtCore/QBool>
 
 #include <QEventLoop>
 #include <QSocketNotifier>
