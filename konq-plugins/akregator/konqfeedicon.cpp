@@ -38,6 +38,7 @@
 #include <kstatusbar.h>
 #include <kurllabel.h>
 #include <kurl.h>
+#include <kicon.h>
 #include <kprotocolinfo.h>
 
 #include <qcursor.h>

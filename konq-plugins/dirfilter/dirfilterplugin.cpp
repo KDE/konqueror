@@ -33,6 +33,7 @@
 
 #include <kaction.h>
 #include <kmenu.h>
+#include <kmimetype.h>
 #include <kmessagebox.h>
 #include <kiconloader.h>
 #include <klineedit.h>

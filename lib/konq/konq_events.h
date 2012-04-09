@@ -25,6 +25,7 @@
 #include <QtCore/QList>
 #include <libkonq_export.h>
 #include <kfileitem.h>
+#include <kconfigbase.h>
 
 namespace KParts
 {

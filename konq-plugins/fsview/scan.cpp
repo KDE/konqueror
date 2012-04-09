@@ -20,6 +20,7 @@
 #include <qstringlist.h>
 
 #include <kdebug.h>
+#include <kurl.h>
 #include <kauthorized.h>
 
 #include "scan.h"

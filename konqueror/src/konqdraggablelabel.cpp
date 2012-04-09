@@ -22,6 +22,7 @@
 #include "konqview.h"
 #include <QMouseEvent>
 #include <QApplication>
+#include <QDrag>
 
 
 KonqDraggableLabel::KonqDraggableLabel( KonqMainWindow* mw, const QString& text )

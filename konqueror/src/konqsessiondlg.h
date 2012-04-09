@@ -21,6 +21,7 @@
 #define __konq_sessiondlg_h__
 
 #include <kdialog.h>
+#include <kurl.h>
 
 #include <QtCore/QMap>
 #include <QString>

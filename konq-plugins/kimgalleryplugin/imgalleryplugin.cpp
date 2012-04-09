@@ -34,6 +34,7 @@ Boston, MA 02110-1301, USA.
 #include <kmessagebox.h>
 #include <kurl.h>
 #include <kimageio.h>
+#include <kicon.h>
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kio/netaccess.h>
