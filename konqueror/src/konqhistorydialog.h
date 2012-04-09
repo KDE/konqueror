@@ -21,6 +21,7 @@
 #define KONQ_HISTORYDIALOG_H
 
 #include <kdialog.h>
+#include <kurl.h>
 
 class KonqMainWindow;
 class KonqHistoryView;

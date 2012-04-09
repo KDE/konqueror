@@ -35,6 +35,7 @@
 #include <kpassworddialog.h>
 #include <kuser.h>
 #include <kdialog.h>
+#include <kicon.h>
 #include <kimageio.h>
 #include <kmimetype.h>
 #include <kstandarddirs.h>

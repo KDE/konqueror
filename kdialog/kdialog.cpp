@@ -37,6 +37,7 @@
 #include <kcolordialog.h>
 #include <kwindowsystem.h>
 #include <kiconloader.h>
+#include <klocale.h>
 
 #include <QtCore/QTimer>
 #include <QDesktopWidget>

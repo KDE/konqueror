@@ -32,6 +32,8 @@
 #include <kactioncollection.h>
 #include <kpluginfactory.h>
 
+#include <KIcon>
+
 AutoRefresh::AutoRefresh( QObject* parent, const QVariantList & /*args*/ )
     : Plugin( parent )
 {

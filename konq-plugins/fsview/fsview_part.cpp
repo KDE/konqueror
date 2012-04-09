@@ -47,6 +47,7 @@
 #include <ktoolinvocation.h>
 #include <kconfiggroup.h>
 #include <KDebug>
+#include <KIcon>
 
 #include <QApplication>
 

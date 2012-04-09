@@ -24,6 +24,7 @@
 // Qt
 #include <QPainter>
 #include <QStyle>
+#include <QDrag>
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QItemDelegate>

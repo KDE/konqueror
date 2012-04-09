@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QMenu>
+#include <QDrag>
 #include <QToolButton>
 
 #include <kapplication.h>

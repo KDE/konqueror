@@ -28,6 +28,7 @@
 #include <qstring.h>
 #include <kmenu.h>
 
+#include <kurl.h>
 #include <kmimetype.h>
 #include <kconfiggroup.h>
 

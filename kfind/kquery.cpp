@@ -25,6 +25,7 @@
 #include <QtCore/QTextStream>
 #include <QtCore/QList>
 #include <kdebug.h>
+#include <kmimetype.h>
 #include <kfileitem.h>
 #include <kfilemetainfo.h>
 #include <kapplication.h>

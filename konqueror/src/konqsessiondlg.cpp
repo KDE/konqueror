@@ -36,6 +36,7 @@
 #include <ktempdir.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
+#include <kicon.h>
 #include <kdirlister.h>
 #include <kdirmodel.h>
 #include <kstandardguiitem.h>
