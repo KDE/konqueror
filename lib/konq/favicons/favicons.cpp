@@ -35,8 +35,8 @@
 #include <QtCore/QFile>
 #include <QtCore/QCache>
 #include <QtCore/QTimer>
-#include <QtGui/QImage>
-#include <QtGui/QImageReader>
+#include <QImage>
+#include <QImageReader>
 
 #include <ctime>
 

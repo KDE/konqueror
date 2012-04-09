@@ -13,9 +13,9 @@
 #include <k3listviewsearchline.h>
 
 #include <QAction>
-#include <QtGui/QClipboard>
-#include <QtGui/QToolButton>
-#include <QtGui/QApplication>
+#include <QClipboard>
+#include <QToolButton>
+#include <QApplication>
 
 KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
                                    const QString &desktopName_, const KConfigGroup& configGroup)

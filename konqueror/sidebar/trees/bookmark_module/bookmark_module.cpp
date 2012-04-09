@@ -22,12 +22,12 @@
 
 // Qt
 #include <QtCore/QList>
-#include <QtGui/QClipboard>
-#include <QtGui/QCursor>
-#include <QtGui/QGridLayout>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QLabel>
-#include <QtGui/QMenu>
+#include <QClipboard>
+#include <QCursor>
+#include <QGridLayout>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QMenu>
 
 // KDE
 #include <k3bookmarkdrag.h>

@@ -20,7 +20,7 @@
 #ifndef WEBSHORTCUTWIDGET_H
 #define WEBSHORTCUTWIDGET_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 class QLabel;
 class QLineEdit;

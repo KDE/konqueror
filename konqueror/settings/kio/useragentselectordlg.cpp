@@ -23,13 +23,13 @@
 #include "useragentinfo.h"
 
 // Qt
-#include <QtGui/QBoxLayout>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QValidator>
-#include <QtGui/QWidget>
+#include <QBoxLayout>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QLayout>
+#include <QPushButton>
+#include <QValidator>
+#include <QWidget>
 
 // KDE
 #include <kcombobox.h>

@@ -10,7 +10,7 @@
 
 #include <kdialog.h>
 
-#include <QtGui/QLineEdit>
+#include <QLineEdit>
 #include <QtCore/QStringList>
 
 class QLabel;

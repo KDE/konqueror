@@ -21,7 +21,7 @@
 #define __kfmclient_h
 
 #include <kglobal.h>
-#include <QtGui/QApplication>
+#include <QApplication>
 class KJob;
 class KUrl;
 

@@ -22,12 +22,12 @@
 #include "konqsettingsxt.h"
 #include "ui_konqprofiledlg_base.h"
 
-#include <QtGui/QCheckBox>
+#include <QCheckBox>
 #include <QtCore/QDir>
 #include <kvbox.h>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QListWidgetItem>
+#include <QLabel>
+#include <QLineEdit>
+#include <QListWidgetItem>
 
 #include <kdebug.h>
 #include <kstandardguiitem.h>

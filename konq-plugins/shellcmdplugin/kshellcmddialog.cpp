@@ -21,8 +21,8 @@
 #include "kshellcmddialog.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
+#include <QLayout>
+#include <QLabel>
 
 // KDE
 #include <klocale.h>

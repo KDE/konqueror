@@ -29,8 +29,8 @@
 #include <unistd.h>
 
 // Qt
-#include <QtGui/QTabWidget>
-#include <QtGui/QLayout>
+#include <QTabWidget>
+#include <QLayout>
 #include <QtDBus/QtDBus>
 
 // KDE

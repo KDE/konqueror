@@ -22,12 +22,12 @@
 #include "konqcombo.h"
 
 // Qt
-#include <QtGui/QPainter>
-#include <QtGui/QStyle>
-#include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QItemDelegate>
-#include <QtGui/QListWidgetItem>
+#include <QPainter>
+#include <QStyle>
+#include <QPixmap>
+#include <QKeyEvent>
+#include <QItemDelegate>
+#include <QListWidgetItem>
 #include <QtCore/QEvent>
 
 // KDE

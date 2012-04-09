@@ -3,12 +3,12 @@
 #include "kcmcss.h"
 
 // Qt
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QLayout>
-#include <QtGui/QRadioButton>
-#include <QtGui/QTextBrowser>
-#include <QtGui/QBoxLayout>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QLayout>
+#include <QRadioButton>
+#include <QTextBrowser>
+#include <QBoxLayout>
 
 // KDE
 #include <kapplication.h>

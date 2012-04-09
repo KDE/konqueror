@@ -23,10 +23,10 @@
 #include "domainlistview.h"
 
 // Qt
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QTreeWidget>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QTreeWidget>
 
 // KDE
 #include <kconfig.h>

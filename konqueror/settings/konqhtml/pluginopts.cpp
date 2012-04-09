@@ -21,10 +21,10 @@
 #include <QtCore/QTextStream>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QSlider>
-#include <QtGui/QTreeWidget>
+#include <QLabel>
+#include <QLayout>
+#include <QSlider>
+#include <QTreeWidget>
 
 // KDE
 #include <kprocess.h>

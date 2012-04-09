@@ -22,7 +22,7 @@
 #define KONQ_STATUSBARMESSAGELABEL_H
 
 #include "libkonq_export.h"
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QPaintEvent;
 class QResizeEvent;

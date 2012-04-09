@@ -9,8 +9,8 @@
 #ifndef GENERALOPTS_H
 #define GENERALOPTS_H
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
+#include <QCheckBox>
+#include <QComboBox>
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>

@@ -21,9 +21,9 @@
 #ifndef __SMBRODLG_H
 #define __SMBRODLG_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QLineEdit>
-#include <QtGui/QCheckBox>
+#include <QWidget>
+#include <QLineEdit>
+#include <QCheckBox>
 
 #include <kcmodule.h>
 #include <kcomponentdata.h>

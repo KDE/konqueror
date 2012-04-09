@@ -27,9 +27,9 @@
 #include <kconfiggroup.h>
 #include <kfileitem.h>
 #include <kmimetype.h>
-#include <QtGui/QApplication>
-#include <QtGui/QClipboard>
-#include <QtGui/QCursor>
+#include <QApplication>
+#include <QClipboard>
+#include <QCursor>
 #include <QtCore/QMimeData>
 #include <konqmimedata.h>
 #include <kdesktopfile.h>

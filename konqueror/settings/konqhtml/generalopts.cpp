@@ -15,10 +15,10 @@
 // Qt
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
-#include <QtGui/QGroupBox>
-#include <QtGui/QFormLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLabel>
+#include <QGroupBox>
+#include <QFormLayout>
+#include <QVBoxLayout>
+#include <QLabel>
 
 // KDE
 #include <kcombobox.h>

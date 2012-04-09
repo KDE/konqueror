@@ -19,7 +19,7 @@
 #ifndef KONQVIEWMGRTEST_H
 #define KONQVIEWMGRTEST_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 
 #include <QObject>
 #include <kcomponentdata.h>

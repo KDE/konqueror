@@ -23,11 +23,11 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QTextStream>
 #include <QtDBus/QtDBus>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QTreeView>
-#include <QtGui/QWhatsThis>
+#include <QCheckBox>
+#include <QLabel>
+#include <QLayout>
+#include <QTreeView>
+#include <QWhatsThis>
 
 // KDE
 #include <kaboutdata.h>

@@ -44,14 +44,14 @@
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QtCore/QArgument>
 #include <QtCore/QObject>
 #include <QtCore/QByteRef>
 #include <QtCore/QEvent>
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 #include <QtCore/QFile>
-#include <QtGui/QScrollArea>
+#include <QScrollArea>
 
 
 //#define DEBUG_HISTORY

@@ -42,7 +42,7 @@
 #include <QLayout>
 #include <QObject>
 #include <QPushButton>
-#include <QtGui/QX11EmbedContainer>
+#include <QX11EmbedContainer>
 #include <QTextStream>
 #include <QRegExp>
 #include <QTimer>

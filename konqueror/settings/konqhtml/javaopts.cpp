@@ -23,10 +23,10 @@
 #include "javaopts.h"
 
 // Qt
-#include <QtGui/QFormLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QLabel>
-#include <QtGui/QTreeWidget>
+#include <QFormLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QTreeWidget>
 
 // KDE
 #include <config-apps.h>

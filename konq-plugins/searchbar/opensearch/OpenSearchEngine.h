@@ -22,7 +22,7 @@
 #define OPENSEARCHENGINE_H
 
 #include <QtCore/QPair>
-#include <QtGui/QImage>
+#include <QImage>
 
 #include <KUrl>
 

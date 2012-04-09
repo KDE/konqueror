@@ -19,7 +19,7 @@
 #ifndef bookmark_module_h
 #define bookmark_module_h
 
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 #include <QtCore/QMap>
 #include <QtCore/QObject>
 

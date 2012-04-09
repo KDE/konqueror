@@ -21,7 +21,7 @@
 #define KONQ_FRAMECONTAINER_H
 
 #include "konqframe.h"
-#include <QtGui/QSplitter>
+#include <QSplitter>
 
 /**
  * Base class for containers

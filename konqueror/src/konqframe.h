@@ -23,12 +23,12 @@
 #include <kparts/part.h> // for the inline QPointer usage
 
 #include <QtCore/QPointer>
-#include <QtGui/QColor>
-#include <QtGui/QWidget>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLabel>
-#include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
+#include <QColor>
+#include <QWidget>
+#include <QCheckBox>
+#include <QLabel>
+#include <QPixmap>
+#include <QKeyEvent>
 #include <QtCore/QEvent>
 #include <QtCore/QList>
 

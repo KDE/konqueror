@@ -26,7 +26,7 @@
 #include <assert.h>
 
 // Qt
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <QtCore/QFile>
 #include <QtCore/QCoreApplication>
 

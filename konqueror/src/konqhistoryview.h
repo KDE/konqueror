@@ -22,7 +22,7 @@
 #define KONQHISTORYVIEW_H
 
 #include <konqprivate_export.h>
-#include <QtGui/QWidget>
+#include <QWidget>
 class KUrl;
 class QModelIndex;
 class QTreeView;

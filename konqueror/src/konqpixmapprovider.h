@@ -27,7 +27,7 @@
 #include "favicon_interface.h"
 
 #include <QtCore/QMap>
-#include <QtGui/QPixmap>
+#include <QPixmap>
 
 class KConfigGroup;
 class KConfig;

@@ -26,11 +26,11 @@
 // Qt
 #include <QDebug>
 #include <QtCore/QDir>
-#include <QtGui/QPushButton>
-#include <QtGui/QLayout>
-#include <QtGui/QSplitter>
+#include <QPushButton>
+#include <QLayout>
+#include <QSplitter>
 #include <QtCore/QStringList>
-#include <QtGui/QMenu>
+#include <QMenu>
 
 // KDE
 #include <klocale.h>

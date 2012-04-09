@@ -26,7 +26,7 @@
 #include "konqframecontainer.h"
 
 #include <ktabwidget.h>
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 #include <QtCore/QList>
 
 class QMenu;

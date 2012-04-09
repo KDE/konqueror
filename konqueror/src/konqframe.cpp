@@ -28,11 +28,11 @@
 #include "konqframestatusbar.h"
 
 // Qt
-#include <QtGui/QKeyEvent>
-#include <QtGui/QApplication>
+#include <QKeyEvent>
+#include <QApplication>
 #include <QtCore/QEvent>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
+#include <QLabel>
+#include <QBoxLayout>
 
 // KDE
 #include <kactioncollection.h>

@@ -7,9 +7,9 @@
 #ifndef __KHTTPOPTDLG_H
 #define __KHTTPOPTDLG_H
 
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QCheckBox>
+#include <QLabel>
+#include <QLineEdit>
+#include <QCheckBox>
 
 
 #include <kcmodule.h>

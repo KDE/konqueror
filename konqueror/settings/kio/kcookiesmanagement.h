@@ -24,7 +24,7 @@
 
 #include <QtCore/QList>
 #include <QtCore/QStringList>
-#include <QtGui/QTreeWidget>
+#include <QTreeWidget>
 #include <QtCore/QHash>
 
 #include <kcmodule.h>

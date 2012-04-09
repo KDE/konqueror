@@ -1,12 +1,12 @@
 #include "kcmcss.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
-#include <QtGui/QFormLayout>
-#include <QtGui/QLineEdit>
+#include <QLabel>
+#include <QLayout>
+#include <QFormLayout>
+#include <QLineEdit>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
-#include <QtGui/QGroupBox>
+#include <QGroupBox>
 
 #include <kapplication.h>
 #include <kcharsets.h>

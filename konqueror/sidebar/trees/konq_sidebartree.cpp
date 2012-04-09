@@ -22,17 +22,17 @@
 #include "konq_sidebartreemodule.h"
 #include "konqsidebar_oldtreemodule.h"
 
-#include <QtGui/QClipboard>
-#include <QtGui/QCursor>
+#include <QClipboard>
+#include <QCursor>
 #include <QtCore/QDir>
 #include <Qt3Support/Q3Header>
-#include <QtGui/QMenu>
+#include <QMenu>
 #include <QtCore/QTimer>
 #include <QApplication>
-#include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
+#include <QPixmap>
+#include <QKeyEvent>
 #include <QtCore/QEvent>
-#include <QtGui/QFrame>
+#include <QFrame>
 
 #include <kaction.h>
 #include <kactioncollection.h>

@@ -9,10 +9,10 @@
 #include "policydlg.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QComboBox>
-#include <QtGui/QPushButton>
+#include <QLayout>
+#include <QLabel>
+#include <QComboBox>
+#include <QPushButton>
 
 // KDE
 #include <klocale.h>

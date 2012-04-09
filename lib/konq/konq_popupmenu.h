@@ -24,7 +24,7 @@
 #include <sys/types.h>
 
 #include <QtCore/QMap>
-#include <QtGui/QMenu>
+#include <QMenu>
 
 #include <kaction.h>
 #include <kactioncollection.h>

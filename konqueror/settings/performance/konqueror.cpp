@@ -20,9 +20,9 @@
 
 #include <kconfig.h>
 #include <QtDBus/QtDBus>
-#include <QtGui/QRadioButton>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
+#include <QRadioButton>
+#include <QLabel>
+#include <QCheckBox>
 #include <klocale.h>
 
 namespace KCMPerformance

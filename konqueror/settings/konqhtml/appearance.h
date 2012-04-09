@@ -17,7 +17,7 @@
 #ifndef APPEARANCE_H
 #define APPEARANCE_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <QtCore/QMap>
 
 #include <kcmodule.h>

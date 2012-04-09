@@ -20,7 +20,7 @@
 #ifndef KSORTFILTERPROXYMODEL_H
 #define KSORTFILTERPROXYMODEL_H
 
-#include <QtGui/QSortFilterProxyModel>
+#include <QSortFilterProxyModel>
 
 /**
  * @class KSortFilterProxyModel

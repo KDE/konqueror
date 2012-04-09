@@ -20,8 +20,8 @@
 
 #include <kconfig.h>
 
-#include <QtGui/QCheckBox>
-#include <QtGui/QLabel>
+#include <QCheckBox>
+#include <QLabel>
 #include <klocale.h>
 
 namespace KCMPerformance

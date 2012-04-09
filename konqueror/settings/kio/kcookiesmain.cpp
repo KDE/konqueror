@@ -15,8 +15,8 @@
 #include "kcookiesmanagement.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QTabWidget>
+#include <QLayout>
+#include <QTabWidget>
 #include <QtDBus/QtDBus>
 
 // KDE

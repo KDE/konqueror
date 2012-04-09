@@ -21,7 +21,7 @@
 #define _konqsidebarplugin_h_
 
 #include <kconfiggroup.h>
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <kurl.h>
 
 #include <kparts/part.h>

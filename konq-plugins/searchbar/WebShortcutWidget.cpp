@@ -20,11 +20,11 @@
 #include "WebShortcutWidget.h"
 
 #include <QtCore/QTimer>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QFormLayout>
+#include <QBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QFormLayout>
 
 #include <KGlobalSettings>
 #include <KIcon>

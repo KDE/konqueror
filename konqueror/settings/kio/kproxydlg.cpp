@@ -34,10 +34,10 @@
 #include <kdebug.h>
 
 // Qt
-#include <QtGui/QLabel>
-#include <QtGui/QRadioButton>
-#include <QtGui/QLineEdit>
-#include <QtGui/QSpinBox>
+#include <QLabel>
+#include <QRadioButton>
+#include <QLineEdit>
+#include <QSpinBox>
 
 
 #define QL1C(x)         QLatin1Char(x)

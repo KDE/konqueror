@@ -78,20 +78,20 @@
 #include <unistd.h>
 
 #include <QtCore/QFile>
-#include <QtGui/QClipboard>
+#include <QClipboard>
 #include <QtCore/QArgument>
-#include <QtGui/QLayout>
+#include <QLayout>
 #include <QStackedWidget>
 #include <QtCore/QFileInfo>
 #ifdef Q_WS_X11
 #include <QX11Info>
 #endif
 #include <QtCore/QEvent>
-#include <QtGui/QKeyEvent>
+#include <QKeyEvent>
 #include <QtCore/QByteRef>
 #include <QtCore/QList>
-#include <QtGui/QPixmap>
-#include <QtGui/QLineEdit>
+#include <QPixmap>
+#include <QLineEdit>
 
 #include <kaboutdata.h>
 #include <ktoolbar.h>

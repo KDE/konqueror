@@ -31,12 +31,12 @@
 #include "useragentselectordlg.h"
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QTreeWidget>
+#include <QLayout>
+#include <QCheckBox>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QBoxLayout>
+#include <QTreeWidget>
 
 // KDE
 #include <kdebug.h>

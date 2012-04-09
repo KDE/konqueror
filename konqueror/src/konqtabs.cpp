@@ -21,10 +21,10 @@
 
 #include "konqtabs.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QClipboard>
-#include <QtGui/QMenu>
-#include <QtGui/QToolButton>
+#include <QApplication>
+#include <QClipboard>
+#include <QMenu>
+#include <QToolButton>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>
@@ -42,9 +42,9 @@
 #include <kacceleratormanager.h>
 #include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
-#include <QtGui/QTabBar>
+#include <QTabBar>
 
-#include <QtGui/QStyle>
+#include <QStyle>
 
 
 //###################################################################

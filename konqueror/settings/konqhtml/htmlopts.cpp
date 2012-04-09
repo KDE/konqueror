@@ -11,11 +11,11 @@
 #include "htmlopts.h"
 
 // Qt
-#include <QtGui/QGroupBox>
-#include <QtGui/QFormLayout>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
+#include <QGroupBox>
+#include <QFormLayout>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 
