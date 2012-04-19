@@ -608,7 +608,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 
     if (m_emitOpenUrlNotify && !frame->parentFrame()) {
-        kDebug() << "***** EMITTING openUrlNotify" << item->url();
+        // kDebug() << "***** EMITTING openUrlNotify" << item->url();
         emit m_browserExtension->openUrlNotify();
     }
 

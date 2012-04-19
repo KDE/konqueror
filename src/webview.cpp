@@ -173,6 +173,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     KUrl emitUrl;
     if (m_result.isContentEditable()) {
         if (m_result.element().hasAttribute(QL1S("disabled"))) {
+            e->accept();
             return;
         }
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
@@ -214,6 +215,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         KParts::BrowserArguments bargs;
         args.setMimeType(mimeType);
         emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
+        e->accept();
         return;
     }
 
