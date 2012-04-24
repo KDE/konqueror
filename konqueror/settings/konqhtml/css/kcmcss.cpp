@@ -356,7 +356,7 @@ void CSSCustomDialog::slotPreview()
                "people.</p>\n"
                "\n"
                "</body>\n"
-               "</html>\n", css.expandToString(cssDict()));
+               "</html>\n", css.expandToString(cssDict())));
 
   KParts::OpenUrlArguments args(part->arguments());
   args.setReload(true); // Make sure the content is always freshly reloaded.
