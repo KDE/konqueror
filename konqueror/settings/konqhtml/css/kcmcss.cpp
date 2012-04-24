@@ -343,9 +343,9 @@ void CSSCustomDialog::slotPreview()
 
   CSSTemplate css(templ);
 
-  QString data (i18n("<html>\n<head>\n<style>\n<!--\n"));
-  data += css.expandToString(cssDict());
-  data += i18n("\n-->\n</style>\n</head>\n"
+  QString data (i18n("<html>\n<head>\n<style>\n<!--\n"
+               "%1"
+               "\n-->\n</style>\n</head>\n"
                "<body>\n"
                "<h1>Heading 1</h1>\n"
                "<h2>Heading 2</h2>\n"
@@ -356,7 +356,7 @@ void CSSCustomDialog::slotPreview()
                "people.</p>\n"
                "\n"
                "</body>\n"
-               "</html>\n");
+               "</html>\n", css.expandToString(cssDict()));
 
   KParts::OpenUrlArguments args(part->arguments());
   args.setReload(true); // Make sure the content is always freshly reloaded.
