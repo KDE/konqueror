@@ -63,7 +63,7 @@ installed on feel more responsive. </para>
 <para><emphasis>Preloading</emphasis> refers to loading an instance of &konqueror; into memory before a user asks to start &konqueror;.  The positive effect of this is that when a user asks &kde; to load &konqueror; the window appears instantly
  because most of the application has been preloaded.  The negative effect is that this instance of &konqueror; uses memory that 
 could be used by other programs. By default, when a user closes &konqueror;, &kde; does not close the instance.
-This means that the next time a user wants &konqueror; loaded, it is nearly instantanous again.</para>
+This means that the next time a user wants &konqueror; loaded, it is nearly instantaneous again.</para>
 <para>The spinbox labeled <guilabel>Maximum number of instances kept preloaded:</guilabel> can be used to adjust the maximum number of preloaded instances.  This option does not affect instances when they are loaded.  It also does not limit the number of instances that can be used by active windows.  It only affects the number of preloaded instances.</para>
 <para>The check box labeled <guilabel>Preload an instance after &kde; startup</guilabel> does just what it says.  It tells 
 &kde; to preload one instance of &konqueror; at the startup of &kde;.</para>
