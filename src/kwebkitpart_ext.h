@@ -24,6 +24,7 @@
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KParts/TextExtension>
 #include <KDE/KParts/HtmlExtension>
+#include <kparts/scriptableextension.h>
 
 class KUrl;
 class KWebKitPart;
@@ -164,6 +165,33 @@ public:
 
 private:
     KWebKitPart* part() const;
+};
+
+class KWebKitScriptableExtension : public KParts::ScriptableExtension
+{
+  Q_OBJECT
+
+public:
+    KWebKitScriptableExtension(KWebKitPart* part);
+
+    virtual QVariant rootObject();
+
+    virtual QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName);
+
+    virtual bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value);
+
+    virtual bool setException(ScriptableExtension* callerPrincipal, const QString& message);
+
+    virtual QVariant evaluateScript(ScriptableExtension* callerPrincipal,
+                                    quint64 contextObjectId,
+                                    const QString& code,
+                                    ScriptLanguage language = ECMAScript);
+
+    virtual bool isScriptLanguageSupported(ScriptLanguage lang) const;
+
+private:
+     virtual QVariant encloserForKid(KParts::ScriptableExtension* kid);
+     KWebKitPart* part();
 };
 
 #endif // WEBKITPART_EXT_H

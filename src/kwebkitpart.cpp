@@ -139,6 +139,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     // Add text and html extensions...
     new KWebKitTextExtension(this);
     new KWebKitHtmlExtension(this);
+    new KWebKitScriptableExtension(this);
 
     // Create the search bar...
     m_searchBar = new KDEPrivate::SearchBar(mainWidget);

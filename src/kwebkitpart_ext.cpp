@@ -46,6 +46,7 @@
 #include <kdeversion.h>
 
 #include <QtCore/QBuffer>
+#include <QtCore/QMapIterator>
 #include <QtCore/QCryptographicHash>
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
@@ -1045,6 +1046,90 @@ bool KWebKitHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface
 KWebKitPart* KWebKitHtmlExtension::part() const
 {
     return static_cast<KWebKitPart*>(parent());
+}
+
+KWebKitScriptableExtension::KWebKitScriptableExtension(KWebKitPart* part)
+    : ScriptableExtension(part)
+{
+}
+
+QVariant KWebKitScriptableExtension::rootObject()
+{
+    return QVariant::fromValue(KParts::ScriptableExtension::Object(this, reinterpret_cast<quint64>(this)));
+}
+
+bool KWebKitScriptableExtension::setException (KParts::ScriptableExtension* callerPrincipal, const QString& message)
+{
+    return KParts::ScriptableExtension::setException (callerPrincipal, message);
+}
+
+QVariant KWebKitScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
+{
+    kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
+    return callerPrincipal->get (0, objId, propName);
+}
+
+bool KWebKitScriptableExtension::put (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value)
+{
+    return KParts::ScriptableExtension::put (callerPrincipal, objId, propName, value);
+}
+
+static QVariant exception(const char* msg)
+{
+    kWarning(6031) << msg;
+    return QVariant::fromValue(KParts::ScriptableExtension::Exception(QString::fromLatin1(msg)));
+}
+
+QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension* callerPrincipal,
+                                                     quint64 contextObjectId,
+                                                     const QString& code,
+                                                     KParts::ScriptableExtension::ScriptLanguage lang)
+{
+    kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
+
+    if (lang != ECMAScript)
+        return exception("unsupported language");
+
+
+    KParts::ReadOnlyPart* part = callerPrincipal ? qobject_cast<KParts::ReadOnlyPart*>(callerPrincipal->parent()) : 0;
+    QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
+    if (!frame)
+        return exception("failed to resolve principal");
+
+    QVariant result (frame->evaluateJavaScript(code));
+
+    if (result.type() == QVariant::Map) {
+        const QVariantMap map (result.toMap());
+        for (QVariantMap::const_iterator it = map.constBegin(), itEnd = map.constEnd(); it != itEnd; ++it) {
+            callerPrincipal->put(callerPrincipal, 0, it.key(), it.value());
+        }
+    } else {
+        const QString propName(code.contains(QLatin1String("__nsplugin")) ? QLatin1String("__nsplugin") : QString());
+        callerPrincipal->put(callerPrincipal, 0, propName, result.toString());
+    }
+
+    return QVariant::fromValue(ScriptableExtension::Null());
+}
+
+bool KWebKitScriptableExtension::isScriptLanguageSupported (KParts::ScriptableExtension::ScriptLanguage lang) const
+{
+    return (lang == KParts::ScriptableExtension::ECMAScript);
+}
+
+QVariant KWebKitScriptableExtension::encloserForKid (KParts::ScriptableExtension* kid)
+{
+    KParts::ReadOnlyPart* part = kid ? qobject_cast<KParts::ReadOnlyPart*>(kid->parent()) : 0;
+    QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
+    if (frame) {
+        return QVariant::fromValue(KParts::ScriptableExtension::Object(kid, reinterpret_cast<quint64>(kid)));
+    }
+
+    return QVariant::fromValue(ScriptableExtension::Null());
+}
+
+KWebKitPart* KWebKitScriptableExtension::part()
+{
+    return qobject_cast<KWebKitPart*>(parent());
 }
 
 #include "kwebkitpart_ext.moc"

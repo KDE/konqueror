@@ -10,6 +10,7 @@ set(kwebkit_LIB_SRCS
     websslinfo.cpp
     webhistoryinterface.cpp
     networkaccessmanager.cpp
+    webpluginfactory.cpp
     settings/webkitsettings.cpp
     settings/webkit_filter.cpp
     ui/searchbar.cpp

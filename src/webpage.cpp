@@ -28,6 +28,7 @@
 #include "sslinfodialog_p.h"
 #include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
+#include "webpluginfactory.h"
 
 #include <kdeversion.h>
 #include <KDE/KMessageBox>
@@ -80,6 +81,8 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         manager->setWindow(window);
     }
     setNetworkAccessManager(manager);
+
+    setPluginFactory(new WebPluginFactory(part));
 
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
 
