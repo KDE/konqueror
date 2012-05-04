@@ -114,7 +114,11 @@ on the left of the page.</para>
 that host. Clicking the <guibutton>Delete</guibutton> button removes the
 policy for the selected host; after deletion, the global settings will
 then apply to that host.</para>
-
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
 <para>The final set of options in the section <guilabel>Global JavaScript 
 Policies</guilabel> determine what happens
 when a page uses JavaScript for specific actions.</para>
@@ -123,7 +127,7 @@ when a page uses JavaScript for specific actions.</para>
 to manipulate your windows by moving, resizing or changing focus.  You
 can also disable JavaScript from changing the status bar text, so that
 for instance, you can always see where links will take you when
-clicked.The choices for these options are <guilabel>Allow</guilabel> and
+clicked. The choices for these options are <guilabel>Allow</guilabel> and
 <guilabel>Ignore</guilabel>.</para>
 
 <para>For opening a new window, there is even more control.  You can
