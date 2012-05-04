@@ -18,9 +18,8 @@
 */
 
 #include "webkitsettings.h"
-#include "webkitdefaults.h"
 
-#include "khtml_filter_p.h"
+#include "webkit_filter.h"
 
 #include <KDE/KConfig>
 #include <KDE/KConfigGroup>
@@ -36,6 +35,20 @@
 #include <QtWebKit/QWebSettings>
 #include <QtGui/QFontDatabase>
 #include <QtCore/QFileInfo>
+
+// browser window color defaults -- Bernd
+#define HTML_DEFAULT_LNK_COLOR Qt::blue
+#define HTML_DEFAULT_TXT_COLOR Qt::black
+#define HTML_DEFAULT_VLNK_COLOR Qt::magenta
+#define HTML_DEFAULT_BASE_COLOR Qt::white
+
+#define HTML_DEFAULT_VIEW_FONT "Sans Serif"
+#define HTML_DEFAULT_VIEW_FIXED_FONT "Monospace"
+#define HTML_DEFAULT_VIEW_SERIF_FONT "Serif"
+#define HTML_DEFAULT_VIEW_SANSSERIF_FONT "Sans Serif"
+#define HTML_DEFAULT_VIEW_CURSIVE_FONT "Sans Serif"
+#define HTML_DEFAULT_VIEW_FANTASY_FONT "Sans Serif"
+#define HTML_DEFAULT_MIN_FONT_SIZE 7 // everything smaller is usually unreadable.
 
 /**
  * @internal
@@ -73,8 +86,6 @@ typedef QMap<QString,KPerDomainSettings> PolicyMap;
 class WebKitSettingsData
 {
 public:  
-    WebKitSettingsData() : nonPasswordStorableSites (0) {}
-
     bool m_bChangeCursor : 1;
     bool m_bOpenMiddleClick : 1;
     bool m_bBackRightClick : 1;
@@ -99,6 +110,7 @@ public:
     bool m_useCookieJar : 1;
     bool m_bAutoRefreshPage: 1;
     bool m_bEnableFavicon:1;
+    bool m_disableInternalPluginHandling:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -121,11 +133,11 @@ public:
     QStringList fonts;
     QStringList defaultFonts;
 
-    khtml::FilterSet adBlackList;
-    khtml::FilterSet adWhiteList;
+    KDEPrivate::FilterSet adBlackList;
+    KDEPrivate::FilterSet adWhiteList;
     QList< QPair< QString, QChar > > m_fallbackAccessKeysAssignments;
 
-    KConfig *nonPasswordStorableSites;  
+    KSharedConfig::Ptr nonPasswordStorableSites;
 };
 
 class WebKitSettingsPrivate : public QObject, public WebKitSettingsData
@@ -275,7 +287,6 @@ WebKitSettings::WebKitSettings()
 
 WebKitSettings::~WebKitSettings()
 {
-  delete d->nonPasswordStorableSites;
   delete d;
 }
 
@@ -300,17 +311,12 @@ void WebKitSettings::init()
   init( &global, true );
 
   KSharedConfig::Ptr local = KGlobal::config();
-  if ( !local )
-    return;
+  if ( local ) {
+      init( local.data(), false );
+  }
 
-  init( local.data(), false );
-
-  KConfig cookieConfig ( "kcookiejarrc", KConfig::NoGlobals );
-  KConfigGroup cookieCg ( &cookieConfig, "Cookie Policy");
-  d->m_useCookieJar = cookieCg.readEntry("Cookies", false);
-
-  delete d->nonPasswordStorableSites;
-  d->nonPasswordStorableSites = 0;
+  initCookieJarSettings();
+  initWebKitSettings();
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
@@ -665,7 +671,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
         QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, true);
     else
         QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, false);
-  }  
+  }
 
   // Sync with QWebSettings.
   if (!d->m_encoding.isEmpty())
@@ -1183,24 +1189,25 @@ bool WebKitSettings::isCookieJarEnabled() const
 }
 
 // Password storage...
-bool WebKitSettings::isNonPasswordStorableSite(const QString &host) const
+static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
 {
-    if (!d->nonPasswordStorableSites) {
-        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
+    if (!configPtr) {
+        configPtr = KSharedConfig::openConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"), KConfig::NoGlobals);
     }
 
-    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
-    QStringList sites =  cg.readEntry("Sites", QStringList());
+    return KConfigGroup(configPtr, "NonPasswordStorableSites");
+}
+
+bool WebKitSettings::isNonPasswordStorableSite(const QString &host) const
+{
+    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
+    const QStringList sites = cg.readEntry("Sites", QStringList());
     return sites.contains(host);
 }
 
 void WebKitSettings::addNonPasswordStorableSite(const QString &host)
 {
-    if (!d->nonPasswordStorableSites) {
-        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
-    }
-
-    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
+    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
     QStringList sites = cg.readEntry("Sites", QStringList());
     sites.append(host);
     cg.writeEntry("Sites", sites);
@@ -1209,15 +1216,34 @@ void WebKitSettings::addNonPasswordStorableSite(const QString &host)
 
 void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
 {
-    if (!d->nonPasswordStorableSites) {
-        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
-    }
-
-    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
+    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
     QStringList sites = cg.readEntry("Sites", QStringList());
     sites.removeOne(host);
     cg.writeEntry("Sites", sites);
     cg.sync();
+}
+
+bool WebKitSettings::isInternalPluginHandlingDisabled() const
+{
+    kDebug() << "******** Disabled internal flash and java applet handling?" << d->m_disableInternalPluginHandling;
+    return d->m_disableInternalPluginHandling;
+}
+
+void WebKitSettings::initWebKitSettings()
+{
+    KConfig cfg ("kwebkitpartrc", KConfig::NoGlobals);
+    KConfigGroup generalCfg (&cfg, "General");
+    d->m_disableInternalPluginHandling = generalCfg.readEntry("DisableInternalPluginHandling", false);
+
+    // Force the reloading of the non password storable sites settings.
+    d->nonPasswordStorableSites.clear();
+}
+
+void WebKitSettings::initCookieJarSettings()
+{
+    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcookiejarrc", KConfig::NoGlobals);
+    KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
+    d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
 }
 
 WebKitSettings* WebKitSettings::self()

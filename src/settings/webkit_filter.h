@@ -20,45 +20,25 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KHTML_FILTER_P_H
-#define KHTML_FILTER_P_H
+#ifndef WEBKIT_FILTER_P_H
+#define WEBKIT_FILTER_P_H
 
 #include <QString>
 #include <QRegExp>
 #include <QVector>
-#include <QHash>
-#include <QBitArray>
+#include <kwebkitpart.h>
 
-namespace khtml {
+class StringsMatcher;
 
-// Updateable Multi-String Matcher based on Rabin-Karp's algorithm
-class StringsMatcher {
-public:
-    // add filter to matching set
-    void addString(const QString& pattern);
-
-    // check if string match at least one string from matching set
-    bool isMatched(const QString& str, QString *by = 0) const;
-
-    // add filter to matching set with wildcards (*,?) in it
-    void addWildedString(const QString& prefix, const QRegExp& rx);
-
-    void clear();
-
-private:
-    QVector<QString> stringFilters;
-    QVector<QString> shortStringFilters;
-    QVector<QRegExp> reFilters;
-    QVector<QString> rePrefixes;
-    QBitArray fastLookUp;
-
-    QHash<int, QVector<int> > stringFiltersHash;
-};
-
+namespace KDEPrivate
+{
 // This represents a set of filters that may match URLs.
 // Currently it supports a subset of AddBlock Plus functionality.
 class FilterSet {
 public:
+    FilterSet();
+    ~FilterSet();
+
     // Parses and registers a filter. This will also strip @@ for exclusion rules, skip comments, etc.
     // The user does have to split black and white lists into separate sets, however
     void addFilter(const QString& filter);
@@ -70,11 +50,11 @@ public:
 
 private:
     QVector<QRegExp> reFilters;
-    StringsMatcher stringFiltersMatcher;
+    StringsMatcher* stringFiltersMatcher;
 };
 
 }
 
-#endif // KHTML_FILTER_P_H
+#endif // WEBKIT_FILTER_P_H
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

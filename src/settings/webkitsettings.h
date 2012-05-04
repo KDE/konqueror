@@ -28,7 +28,6 @@ class KConfigGroup;
 #include <QtCore/QPair>
 
 #include <KParts/HtmlExtension>
-#include <kdewebkit_export.h>
 
 struct KPerDomainSettings;
 class WebKitSettingsPrivate;
@@ -36,7 +35,7 @@ class WebKitSettingsPrivate;
 /**
  * Settings for the HTML view.
  */
-class KDEWEBKIT_EXPORT WebKitSettings
+class WebKitSettings
 {
 public:
 
@@ -125,6 +124,7 @@ public:
     bool isJavaScriptDebugEnabled( const QString& hostname = QString() ) const;
     bool isJavaScriptErrorReportingEnabled( const QString& hostname = QString() ) const;
     bool isPluginsEnabled( const QString& hostname = QString() ) const;
+    bool isInternalPluginHandlingDisabled() const;
 
     // AdBlocK Filtering
     bool isAdFiltered( const QString &url ) const;
@@ -192,6 +192,8 @@ private:
     WebKitSettings();
   
     QString lookupFont(int i) const;
+    void initWebKitSettings();
+    void initCookieJarSettings();
 
     WebKitSettingsPrivate* const d;
     static QString *avFamilies;

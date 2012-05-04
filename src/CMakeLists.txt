@@ -11,7 +11,7 @@ set(kwebkit_LIB_SRCS
     webhistoryinterface.cpp
     networkaccessmanager.cpp
     settings/webkitsettings.cpp
-    settings/khtml_filter.cpp
+    settings/webkit_filter.cpp
     ui/searchbar.cpp
     ui/passwordbar.cpp
 )
