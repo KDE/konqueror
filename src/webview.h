@@ -38,7 +38,7 @@ class WebView : public KWebView
     Q_OBJECT
 public:
     WebView(KWebKitPart* part, QWidget* parent);
-    ~WebView();   
+    ~WebView();
 
     /**
      * Same as QWebPage::load, but with KParts style arguments instead.

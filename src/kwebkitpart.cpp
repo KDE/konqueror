@@ -60,6 +60,7 @@
 #include <QtCore/QTextCodec>
 #include <QtGui/QApplication>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QLayout>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
@@ -117,15 +118,16 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
                                                 .arg(KDE::versionMinor())
                                                 .arg(KDE::versionRelease()));
 
+    setXMLFile(QL1S("kwebkitpart.rc"));
+
+    // Create this KPart's widget
     QWidget *mainWidget = new QWidget (parentWidget);
     mainWidget->setObjectName("kwebkitpart");
-    setWidget(mainWidget);
 
     // Create the WebView...
-    m_webView = new WebView (this, mainWidget);
+    m_webView = new WebView (this, parentWidget);
 
-    // Create the browser extension. The first item of 'args' is used to pass
-    // the session history filename.
+    // Create the browser extension.
     m_browserExtension = new WebKitBrowserExtension(this);
     m_browserExtension->restoreHistoryFromData(cachedHistory);
 
@@ -142,11 +144,27 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     new KWebKitScriptableExtension(this);
 
     // Create the search bar...
-    m_searchBar = new KDEPrivate::SearchBar(mainWidget);
+    m_searchBar = new KDEPrivate::SearchBar(parentWidget);
+
+    // Layout the GUI...
+    QVBoxLayout* l = new QVBoxLayout(mainWidget);
+    l->setContentsMargins(0, 0, 0, 0);
+    l->addWidget(m_webView);
+    l->addWidget(m_searchBar);
+    mainWidget->setLayout(l);
+
+    // Set the part's widget
+    setWidget(mainWidget);
+
+    // Set the web view as the the focus object
+    mainWidget->setFocusProxy(m_webView);
+
+
+    // Connect the signals from the search bar
     connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
             this, SLOT(slotSearchForText(QString,bool)));
 
-    // Connect the signals/slots from the webview...
+    // Connect the signals from the webview
     connect(m_webView, SIGNAL(titleChanged(QString)),
             this, SIGNAL(setWindowCaption(QString)));
     connect(m_webView, SIGNAL(urlChanged(QUrl)),
@@ -160,18 +178,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
     // Connect the signals from the page...
     connectWebPageSignals(page());
-
-    // Layout the GUI...
-    QVBoxLayout* lay = new QVBoxLayout(mainWidget);
-    lay->setMargin(0);
-    lay->setSpacing(0);
-    lay->addWidget(m_webView);
-    lay->addWidget(m_searchBar);
-
-    // Set the web view as the the focus object...
-    mainWidget->setFocusProxy(m_webView);
-
-    setXMLFile(QL1S("kwebkitpart.rc"));
 
     // Init the QAction we are going to use...
     initActions();
@@ -704,19 +710,16 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
                 message += i18n(" (In new window)");
         } else {
             message = link;
-            QWebPage* p = page();
-            if (p) {
-                QWebFrame* frame = p->currentFrame();
-                if (frame) {
-                    QWebHitTestResult result = frame->hitTestContent(p->view()->mapFromGlobal(QCursor::pos()));
-                    const QWebElement element (result.linkElement());
-                    const QString target (element.attribute(QL1S("target")));
-                    if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
-                        target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
-                        message += i18n(" (In new window)");
-                    } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
-                        message += i18n(" (In parent frame)");
-                    }
+            QWebFrame* frame = page() ? page()->currentFrame() : 0;
+            if (frame) {
+                QWebHitTestResult result = frame->hitTestContent(page()->view()->mapFromGlobal(QCursor::pos()));
+                const QWebElement element (result.linkElement());
+                const QString target (element.attribute(QL1S("target")));
+                if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
+                    target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
+                    message += i18n(" (In new window)");
+                } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
+                    message += i18n(" (In parent frame)");
                 }
             }
             KFileItem item (linkUrl, QString(), KFileItem::Unknown);

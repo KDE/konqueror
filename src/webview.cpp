@@ -50,8 +50,8 @@
 #include <QtWebKit/QWebInspector>
 
 #define QL1S(x)   QLatin1String(x)
-#define ALTERNATE_DEFAULT_PROVIDER    QL1S("google")
-#define ALTERNATE_SEARCH_PROVIDERS    QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
+#define ALTERNATE_DEFAULT_WEB_SHORTCUT    QL1S("google")
+#define ALTERNATE_WEB_SHORTCUTS           QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
 
 WebView::WebView(KWebKitPart* part, QWidget* parent)
         :KWebView(parent, false),
@@ -214,8 +214,8 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         KParts::OpenUrlArguments args;
         KParts::BrowserArguments bargs;
         args.setMimeType(mimeType);
-        emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
         e->accept();
+        emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, -1, args, bargs, flags, mapAction);
         return;
     }
 
@@ -725,8 +725,8 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
 
     KUriFilterData data;
     data.setData(selectedText);
-    data.setAlternateDefaultSearchProvider(ALTERNATE_DEFAULT_PROVIDER);
-    data.setAlternateSearchProviders(ALTERNATE_SEARCH_PROVIDERS);
+    data.setAlternateDefaultSearchProvider(ALTERNATE_DEFAULT_WEB_SHORTCUT);
+    data.setAlternateSearchProviders(ALTERNATE_WEB_SHORTCUTS);
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         const QString squeezedText = KStringHandler::rsqueeze(selectedText, 20);
