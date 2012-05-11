@@ -107,6 +107,9 @@ public Q_SLOTS:
     void slotPrintRequested(QWebFrame*);
     void slotPrintPreview();
 
+    void slotOpenSelection();
+    void slotLinkInTop();
+
 private:
     WebView* view();
     QWeakPointer<KWebKitPart> m_part;

@@ -485,7 +485,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
                 partActions.append(action);
             }
         }
-    } else if (m_result.frame()->parentFrame() && !m_result.isContentSelected()) {
+    } else if (m_result.frame()->parentFrame() && !m_result.isContentSelected() && m_result.linkUrl().isEmpty()) {
         KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
 
         KAction* action = new KAction(KIcon("window-new"), i18n("Open in New &Window"), this);
@@ -595,7 +595,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
                                             KStringHandler::rsqueeze(data.uri().url(), 18)), this);
         m_actionCollection->addAction(QL1S("openSelection"), action);
         action->setData(QUrl(data.uri()));
-        connect(action, SIGNAL(triggered(bool)), this, SLOT(slotOpenSelection()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotOpenSelection()));
         selectActions.append(action);
     }
 
@@ -701,16 +701,6 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     multimediaActions.append(action);
 
     mmGroupMap.insert("partactions", multimediaActions);
-}
-
-void WebView::slotOpenSelection()
-{
-    QAction *action = qobject_cast<KAction*>(sender());
-    if (action) {
-        KParts::BrowserArguments browserArgs;
-        browserArgs.frameName = "_blank";
-        emit m_part.data()->browserExtension()->openUrlRequest(action->data().toUrl(), KParts::OpenUrlArguments(), browserArgs);
-    }
 }
 
 void WebView::slotStopAutoScroll()

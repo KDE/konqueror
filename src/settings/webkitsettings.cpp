@@ -1225,7 +1225,6 @@ void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
 
 bool WebKitSettings::isInternalPluginHandlingDisabled() const
 {
-    kDebug() << "******** Disabled internal flash and java applet handling?" << d->m_disableInternalPluginHandling;
     return d->m_disableInternalPluginHandling;
 }
 

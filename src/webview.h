@@ -87,7 +87,6 @@ protected:
     virtual void timerEvent(QTimerEvent*);
 
 private Q_SLOTS:
-    void slotOpenSelection();
     void slotStopAutoScroll();
 
 private:

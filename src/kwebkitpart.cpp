@@ -466,7 +466,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         return;
 
     if (!m_emitOpenUrlNotify) {
-        m_browserExtension->slotSaveHistory(); // Cache this contents of QWebHistory
+        m_browserExtension->slotSaveHistory(); // Cache contents of QWebHistory
         m_emitOpenUrlNotify = true; // Save history once page loading is done.
     }
 
@@ -490,7 +490,8 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         return;
 
     // Set the favicon specified through the <link> tag...
-    if (WebKitSettings::self()->favIconsEnabled()) {
+    if (WebKitSettings::self()->favIconsEnabled()
+        && !frame->page()->settings()->testAttribute(QWebSettings::PrivateBrowsingEnabled)) {
         const QWebElement element = frame->findFirstElement(QL1S("head>link[rel=icon], "
                                                                  "head>link[rel=\"shortcut icon\"]"));
         KUrl shortcutIconUrl;

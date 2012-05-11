@@ -375,9 +375,16 @@ void WebKitBrowserExtension::slotFrameInTop()
     if (!view())
         return;
 
-    KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(true);
+
+    KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
-    emit openUrlRequest(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
+
+    QUrl url (view()->page()->currentFrame()->baseUrl());
+    url.resolved(view()->page()->currentFrame()->url());
+
+    emit openUrlRequest(KUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotReloadFrame()
@@ -812,6 +819,31 @@ void WebKitBrowserExtension::slotPrintPreview()
     delete dlg;
 }
 
+void WebKitBrowserExtension::slotOpenSelection()
+{
+    QAction *action = qobject_cast<KAction*>(sender());
+    if (action) {
+        KParts::BrowserArguments browserArgs;
+        browserArgs.frameName = "_blank";
+        emit openUrlRequest(KUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+    }
+}
+
+void WebKitBrowserExtension::slotLinkInTop()
+{
+    if (!view())
+        return;
+
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(true);
+
+    KParts::BrowserArguments bargs;
+    bargs.frameName = QL1S("_top");
+
+    const KUrl url (view()->contextMenuResult().linkUrl());
+
+    emit openUrlRequest(url, uargs, bargs);
+}
 
 ////
 
