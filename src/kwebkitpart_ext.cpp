@@ -509,6 +509,15 @@ void WebKitBrowserExtension::slotCopyLinkURL()
         view()->triggerPageAction(QWebPage::CopyLinkToClipboard);
 }
 
+void WebKitBrowserExtension::slotCopyLinkText()
+{
+    if (view()) {
+        QMimeData* data = new QMimeData;
+        data->setText(view()->contextMenuResult().linkText());
+        QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
+    }
+}
+
 void WebKitBrowserExtension::slotSaveLinkAs()
 {
     if (view())

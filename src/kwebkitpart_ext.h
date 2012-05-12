@@ -83,6 +83,7 @@ public Q_SLOTS:
     void slotBlockHost();
 
     void slotCopyLinkURL();
+    void slotCopyLinkText();
     void slotSaveLinkAs();
 
     void slotViewDocumentSource();

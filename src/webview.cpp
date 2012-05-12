@@ -625,7 +625,14 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkURL()));
         linkActions.append(action);
     } else {
-        action = new KAction(i18n("&Copy Link URL"), this);
+        if (!m_result.isContentSelected()) {
+            action = new KAction(KIcon("edit-copy"), i18n("Copy Link &Text"), this);
+            m_actionCollection->addAction(QL1S("copylinktext"), action);
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkText()));
+            linkActions.append(action);
+        }
+
+        action = new KAction(i18n("Copy Link &URL"), this);
         m_actionCollection->addAction(QL1S("copylinkurl"), action);
         connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkURL()));
         linkActions.append(action);
@@ -635,6 +642,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveLinkAs()));
         linkActions.append(action);
     }
+
     linkGroupMap.insert("linkactions", linkActions);
 }
 
