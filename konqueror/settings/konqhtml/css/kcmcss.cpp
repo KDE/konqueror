@@ -351,7 +351,7 @@ void CSSCustomDialog::slotPreview()
                "<h2>Heading 2</h2>\n"
                "<h3>Heading 3</h3>\n"
                "\n"
-               "<p>User defined stylesheets allow increased\n"
+               "<p>User-defined stylesheets allow increased\n"
                "accessibility for visually handicapped\n"
                "people.</p>\n"
                "\n"
