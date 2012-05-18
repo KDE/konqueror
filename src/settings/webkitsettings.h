@@ -181,6 +181,7 @@ public:
     bool isNonPasswordStorableSite(const QString &host) const;
     void addNonPasswordStorableSite(const QString &host);
     void removeNonPasswordStorableSite(const QString &host);
+    bool askToSaveSitePassword() const;
 
     // Global config object stuff.
     static WebKitSettings* self();

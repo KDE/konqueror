@@ -879,6 +879,9 @@ void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url
     if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
         return;
 
+    if (!WebKitSettings::self()->askToSaveSitePassword())
+        return;
+
     if (m_passwordBar && m_passwordBar->isVisible())
         return;
 

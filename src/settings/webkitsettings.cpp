@@ -111,6 +111,7 @@ public:
     bool m_bAutoRefreshPage: 1;
     bool m_bEnableFavicon:1;
     bool m_disableInternalPluginHandling:1;
+    bool m_offerToSaveWebSitePassword:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -502,6 +503,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
             d->m_fallbackAccessKeysAssignments.append( qMakePair( (*it).mid( 2 ), (*it)[ 0 ] ));
 
     d->m_bEnableFavicon = cgHtml.readEntry("EnableFavicon", true);
+    d->m_offerToSaveWebSitePassword = cgHtml.readEntry("OfferToSaveWebsitePassword", true);
   }
 
   // Colors
@@ -1221,6 +1223,11 @@ void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
     sites.removeOne(host);
     cg.writeEntry("Sites", sites);
     cg.sync();
+}
+
+bool WebKitSettings::askToSaveSitePassword() const
+{
+    return d->m_offerToSaveWebSitePassword;
 }
 
 bool WebKitSettings::isInternalPluginHandlingDisabled() const
