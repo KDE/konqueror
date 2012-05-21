@@ -52,6 +52,7 @@
 #include <KDE/KStatusBar>
 #include <KDE/KFileItem>
 #include <KDE/KMessageWidget>
+#include <KDE/KProtocolInfo>
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QUrl>
@@ -334,13 +335,23 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     }
 }
 
-bool KWebKitPart::openUrl(const KUrl &u)
+bool KWebKitPart::openUrl(const KUrl &_u)
 {
+    KUrl u (_u);
+
     kDebug() << u;
 
     // Ignore empty requests...
     if (u.isEmpty())
         return false;
+
+    // If the URL given is a supported local protocol, e.g. "bookmark" but lacks
+    // a path component, we set the path to "/" here so that the security context
+    // will properly allow access to local resources.
+    if (u.host().isEmpty() && u.path().isEmpty()
+        && KProtocolInfo::protocolClass(u.protocol()) == QL1S(":local")) {
+        u.setPath(QL1S("/"));
+    }
 
     // Do not emit update history when url is typed in since the embedding part
     // should handle that automatically itself. At least Konqueror does that.
