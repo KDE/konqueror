@@ -25,7 +25,6 @@
 
 #include <QHash>
 #include <QBitArray>
-#include <X11/Intrinsic.h>
 
 // rolling hash parameters
 #define HASH_P (1997)
