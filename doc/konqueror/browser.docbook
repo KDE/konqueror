@@ -119,8 +119,10 @@ Start automatic scrolling with <keycombo action="simul">&Shift;<keysym>Down Arro
 <keycombo action="simul">&Shift;<keysym>Up Arrow</keysym></keycombo>. Then use these keys to increase and 
 decrease the scrolling speed. You can start or stop automatic scrolling temporarily by pressing the &Shift; key;
 pressing any other key deactivates this feature.
+  <!--FIXME works only with KHTML not with WebKit -->
 </para>
-
+<para>Automatic scrolling works only in the view mode <guimenuitem>KHTML</guimenuitem>.
+</para>
 <para>If you want to stop a download for any reason then use the
 &Esc; key, the Toolbar <guibutton>Stop</guibutton> button or the
 Menubar <menuchoice><guimenu>View</guimenu>
