@@ -88,9 +88,21 @@ in a tree-like fashion: Each subfolder of the current folder can be
 or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 
- <!--FIXME add grouping view png here see dolphin docbook-->
-
+<screenshot>
+<screeninfo>Grouped View</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Grouped View</phrase>
+</textobject>
+<caption><para>All view modes support grouping by the sort type selected in 
+<menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
+</mediaobject>
+</screenshot>
 <!-- end copy from dolphin docbook --> 
+
 <sect2 id="filetipinfo">
 <title>File Tip Info</title>
 <para>Checking the <guilabel>Show tooltips</guilabel> box in the <menuchoice>
