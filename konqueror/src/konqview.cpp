@@ -325,9 +325,6 @@ bool KonqView::changePart(const QString &mimeType,
 
   if ( viewFactory.isNull() )
   {
-    // Revert location bar's URL to the working one
-    if(currentHistoryEntry())
-      setLocationBarURL( currentHistoryEntry()->locationBarURL );
     return false;
   }
 
