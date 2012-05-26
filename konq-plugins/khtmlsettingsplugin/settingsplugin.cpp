@@ -120,26 +120,25 @@ static KParts::HtmlSettingsInterface* settingsInterfaceFor(QObject* obj)
 
 void SettingsPlugin::showPopup()
 {
-    KParts::ReadOnlyPart* part = qobject_cast<KParts::ReadOnlyPart*>(parent());
-    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(part);
-    if (!settings) {
-        return;
+    if (!mConfig) {
+        mConfig = new KConfig("settingspluginrc", KConfig::NoGlobals);
     }
 
-    if (!mConfig)
-    mConfig = new KConfig("settingspluginrc", KConfig::NoGlobals);
-
+    KParts::ReadOnlyPart* part = qobject_cast<KParts::ReadOnlyPart*>(parent());
 
     KProtocolManager::reparseConfiguration();
     const bool cookies = cookiesEnabled( part->url().url() );
     actionCollection()->action(QLatin1String("cookies"))->setChecked(cookies);
     actionCollection()->action(QLatin1String("useproxy"))->setChecked(KProtocolManager::useProxy());
     actionCollection()->action(QLatin1String("usecache"))->setChecked(KProtocolManager::useCache());
-    actionCollection()->action(QLatin1String("java"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled).toBool());
-    actionCollection()->action(QLatin1String("javascript"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled).toBool());
-    actionCollection()->action(QLatin1String("plugins"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled).toBool());
-    actionCollection()->action(QLatin1String("imageloading"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages).toBool());
-    
+
+    KParts::HtmlSettingsInterface* settings = settingsInterfaceFor(part);
+    if (settings) {
+        actionCollection()->action(QLatin1String("java"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavaEnabled).toBool());
+        actionCollection()->action(QLatin1String("javascript"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::JavascriptEnabled).toBool());
+        actionCollection()->action(QLatin1String("plugins"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::PluginsEnabled).toBool());
+        actionCollection()->action(QLatin1String("imageloading"))->setChecked(settings->htmlSettingsProperty(KParts::HtmlSettingsInterface::AutoLoadImages).toBool());
+    }
 
     KIO::CacheControl cc = KProtocolManager::cacheControl();
     switch ( cc )
