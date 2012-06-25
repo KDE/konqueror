@@ -1312,8 +1312,12 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     if ( view ) {
         if ( !windowArgs.scrollBarsVisible() )
             view->disableScrolling();
-        if ( !windowArgs.isStatusBarVisible() )
+        if ( !windowArgs.isStatusBarVisible() ) {
             view->frame()->statusbar()->hide();
+            mainWindow->m_paShowStatusBar->setChecked( false );
+        } else {
+          mainWindow->m_paShowStatusBar->setChecked( true );
+        }
     }
 
     if ( !windowArgs.isResizable() )
@@ -1969,7 +1973,11 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   }
 
     kDebug() << "New current view" << newView;
-  m_currentView = newView;
+    m_currentView = newView;
+    if (newView) {
+      m_paShowStatusBar->setChecked( newView->frame()->statusbar()->isVisible() );
+    }
+
     if (!part) {
       //kDebug() << "No part activated - returning";
     unplugViewModeActions();
@@ -3245,6 +3253,22 @@ void KonqMainWindow::slotShowMenuBar()
   slotForceSaveMainWindowSettings();
 }
 
+void KonqMainWindow::slotShowStatusBar()
+{
+  if (m_currentView)
+    m_currentView->frame()->statusbar()->setVisible( m_paShowStatusBar->isChecked() );
+
+  // An alternative: this will change simultaneously all of the status bars on
+  // all of the current views.
+  //MapViews::const_iterator end = m_mapViews.constEnd();
+  //for (MapViews::const_iterator it = m_mapViews.constBegin(); it != end; ++it) {
+  //  KonqView* view = it.value();
+  //  view->frame()->statusbar()->setVisible(on);
+  //}
+
+  slotForceSaveMainWindowSettings();
+}
+
 void KonqMainWindow::slotUpdateFullScreen( bool set )
 {
   KToggleFullScreenAction::setFullScreen( this, set );
@@ -3778,6 +3802,9 @@ void KonqMainWindow::initActions()
   m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT(slotShowMenuBar()), this );
   actionCollection()->addAction( KStandardAction::name(KStandardAction::ShowMenubar), m_paShowMenuBar );
 
+  m_paShowStatusBar = KStandardAction::showStatusbar( this, SLOT(slotShowStatusBar()), this );
+  actionCollection()->addAction( KStandardAction::name(KStandardAction::ShowStatusbar), m_paShowStatusBar );
+
   action = actionCollection()->addAction( "konqintro" );
   action->setText( i18n( "Kon&queror Introduction" ) );
   connect(action, SIGNAL(triggered()), SLOT(slotIntro()));
@@ -4303,6 +4330,8 @@ void KonqMainWindow::showEvent(QShowEvent *event)
   // view profiles store toolbar info, and that info is read after
   // construct time.
   m_paShowMenuBar->setChecked( !menuBar()->isHidden() );
+  if ( m_currentView )
+    m_paShowStatusBar->setChecked( m_currentView->frame()->statusbar()->isVisible() );
   updateBookmarkBar(); // hide if empty
 
   // Call parent method

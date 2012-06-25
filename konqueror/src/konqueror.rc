@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="69">
+<gui name="Konqueror" version="70">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -54,6 +54,7 @@
  <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
   <Merge name="StandardToolBarMenuHandler" />
   <Action name="options_show_menubar"/>
+  <Action name="options_show_statusbar"/>
   <ActionList name="toggleview" />
   <Separator/>
   <Action name="fullscreen"/>

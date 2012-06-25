@@ -500,6 +500,7 @@ private Q_SLOTS:
   void slotCheckComboSelection();
 
   void slotShowMenuBar();
+  void slotShowStatusBar();
 
   void slotOpenURL( const KUrl& );
 
@@ -677,6 +678,7 @@ private: // members
   KToggleAction *m_ptaUseHTML;
 
   KToggleAction *m_paShowMenuBar;
+  KToggleAction *m_paShowStatusBar;
 
   KToggleFullScreenAction *m_ptaFullScreen;
 
