@@ -144,7 +144,13 @@ void KCMUserAccount::load()
 
 	_kes->setProfile(_kes->defaultProfileName());
 
-	_mw->leRealname->setText( _kes->getSetting( KEMailSettings::RealName ));
+	QString realName = _kes->getSetting( KEMailSettings::RealName );
+
+	if (realName.isEmpty()) {
+		realName = _ku->property(KUser::FullName).toString();
+	}
+
+	_mw->leRealname->setText( realName );
 	_mw->leEmail->setText( _kes->getSetting( KEMailSettings::EmailAddress ));
 	_mw->leOrganization->setText( _kes->getSetting( KEMailSettings::Organization ));
 	_mw->leSMTP->setText( _kes->getSetting( KEMailSettings::OutServer ));
