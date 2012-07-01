@@ -368,3 +368,35 @@ bool Widgets::calendar( QWidget *parent, const QString &title, const QString &te
     return retcode;
 }
 
+QString Widgets::parseString(const QString &str)
+{
+    QString ret;
+    ret.reserve(str.size());
+    bool escaped = false;
+    for (int i = 0; i < str.size(); i++) {
+       QChar c = str.at(i);
+       if (escaped) {
+           escaped = false;
+           if (c == '\\') {
+               ret += c;
+           } else if (c == 'n') {
+               ret += '\n';
+           } else {
+               kWarning() << qPrintable(QString::fromLatin1("Unrecognized escape sequence \\%1").arg(c));
+               ret += '\\';
+               ret += c;
+           }
+       } else {
+           if (c == '\\') {
+               escaped = true;
+           } else {
+               ret += c;
+           }
+       }
+    }
+    if (escaped) {
+        kWarning() << "Unterminated escape sequence";
+        ret += '\\';
+    }
+    return ret;
+}
