@@ -451,16 +451,13 @@ static int directCommand(KCmdLineArgs *args)
 	h = args->arg(2).toInt();
       }
 
-      QStringList list;
-      list.append(args->getOption("textinputbox"));
-
+      QString init;
       if (args->count() >= 1) {
-	for (int i = 0; i < args->count(); i++)
-	  list.append(args->arg(i));
+	  init = args->arg(0);
       }
 
       QString result;
-      int ret = Widgets::textInputBox(0, w, h, title, list, result);
+      int ret = Widgets::textInputBox(0, w, h, title, args->getOption("textinputbox"), init, result);
       cout << qPrintable(result) << endl;
       return ret;
     }
