@@ -307,12 +307,7 @@ static int directCommand(KCmdLineArgs *args)
         }
         int ret;
 
-        QString text = args->getOption( option );
-        int pos;
-        while ((pos = text.indexOf( QLatin1String("\\n") )) >= 0)
-        {
-            text.replace(pos, 2, QLatin1String("\n"));
-        }
+        QString text = Widgets::parseString(args->getOption(option));
 
         if ( type == KMessageBox::WarningContinueCancel ) {
             ret = KMessageBox::messageBox( 0, type, text, title, continueButton,

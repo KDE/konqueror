@@ -42,6 +42,7 @@ namespace Widgets
 
     void handleXGeometry(QWidget * dlg);
 
+    QString parseString(const QString &str);
 }
 
 #endif
