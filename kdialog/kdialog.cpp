@@ -446,9 +446,9 @@ static int directCommand(KCmdLineArgs *args)
       int w = 400;
       int h = 200;
 
-      if (args->count() == 4) {
-	w = args->arg(2).toInt();
-	h = args->arg(3).toInt();
+      if (args->count() >= 3) {
+	w = args->arg(1).toInt();
+	h = args->arg(2).toInt();
       }
 
       QStringList list;
