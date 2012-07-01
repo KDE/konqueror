@@ -371,7 +371,7 @@ static int directCommand(KCmdLineArgs *args)
 	}
 
         // try to use more stylish notifications
-        if (sendVisualNotification(args->getOption("passivepopup"), title, icon, timeout))
+        if (sendVisualNotification(Widgets::parseString(args->getOption("passivepopup")), title, icon, timeout))
           return 0;
 
         // ...did not work, use KPassivePopup as fallback
@@ -390,7 +390,7 @@ static int directCommand(KCmdLineArgs *args)
         }
         KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Boxed, // style
                                                        title,
-                                                       args->getOption("passivepopup"),
+                                                       Widgets::parseString(args->getOption("passivepopup")),
                                                        passiveicon,
                                                        (QWidget*)0UL, // parent
                                                        timeout );
@@ -448,11 +448,11 @@ static int directCommand(KCmdLineArgs *args)
 
       QString init;
       if (args->count() >= 1) {
-	  init = args->arg(0);
+	  init = Widgets::parseString(args->arg(0));
       }
 
       QString result;
-      int ret = Widgets::textInputBox(0, w, h, title, args->getOption("textinputbox"), init, result);
+      int ret = Widgets::textInputBox(0, w, h, title, Widgets::parseString(args->getOption("textinputbox")), init, result);
       cout << qPrintable(result) << endl;
       return ret;
     }
@@ -464,7 +464,7 @@ static int directCommand(KCmdLineArgs *args)
             for (int i = 0; i < args->count(); i++) {
                 list.append(args->arg(i));
             }
-            const QString text = args->getOption("combobox");
+            const QString text = Widgets::parseString(args->getOption("combobox"));
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
@@ -483,7 +483,7 @@ static int directCommand(KCmdLineArgs *args)
             for (int i = 0; i < args->count(); i++) {
                 list.append(args->arg(i));
             }
-            const QString text = args->getOption("menu");
+            const QString text = Widgets::parseString(args->getOption("menu"));
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
@@ -505,7 +505,7 @@ static int directCommand(KCmdLineArgs *args)
                 list.append(args->arg(i));
             }
 
-            const QString text = args->getOption("checklist");
+            const QString text = Widgets::parseString(args->getOption("checklist"));
             QStringList result;
 
             const bool retcode = Widgets::checkList(0, title, text, list, separateOutput, result);
@@ -527,7 +527,7 @@ static int directCommand(KCmdLineArgs *args)
                 list.append(args->arg(i));
             }
 
-            const QString text = args->getOption("radiolist");
+            const QString text = Widgets::parseString(args->getOption("radiolist"));
             QString result;
             const bool retcode = Widgets::radioBox(0, title, text, list, result);
             cout << result.toLocal8Bit().data() << endl;
@@ -542,7 +542,7 @@ static int directCommand(KCmdLineArgs *args)
         QString filter;
         startDir = args->getOption("getopenfilename");
         if (args->count() >= 1)  {
-            filter = args->arg(0);
+            filter = Widgets::parseString(args->arg(0));
         }
 	KFileDialog dlg( startDir, filter, 0 );
 	dlg.setOperationMode( KFileDialog::Opening );
@@ -585,7 +585,7 @@ static int directCommand(KCmdLineArgs *args)
 	    startDir = args->getOption("getsaveurl");
 	}
         if (args->count() >= 1)  {
-            filter = args->arg(0);
+            filter = Widgets::parseString(args->arg(0));
         }
 	// copied from KFileDialog::getSaveFileName(), so we can add geometry
 	bool specialDir = ( startDir.at(0) == ':' );
@@ -658,7 +658,7 @@ static int directCommand(KCmdLineArgs *args)
         QString filter;
         startDir = args->getOption("getopenurl");
         if (args->count() >= 1)  {
-            filter = args->arg(0);
+            filter = Widgets::parseString(args->arg(0));
         }
 	KFileDialog dlg( startDir, filter, 0 );
 	dlg.setOperationMode( KFileDialog::Opening );
@@ -756,7 +756,7 @@ static int directCommand(KCmdLineArgs *args)
        close(1);
 
        int totalsteps = 100;
-       const QString text = args->getOption("progressbar");
+       const QString text = Widgets::parseString(args->getOption("progressbar"));
 
        if (args->count() == 1)
            totalsteps = args->arg(0).toInt();
@@ -793,7 +793,7 @@ static int directCommand(KCmdLineArgs *args)
        int miniValue = 0;
        int maxValue = 0;
        int step = 0;
-       const QString text = args->getOption( "slider" );
+       const QString text = Widgets::parseString(args->getOption("slider"));
        if ( args->count() == 3 )
        {
            miniValue = args->arg(0).toInt();
@@ -809,7 +809,7 @@ static int directCommand(KCmdLineArgs *args)
     }
     if (args->isSet("calendar"))
     {
-       const QString text = args->getOption( "calendar" );
+       const QString text = Widgets::parseString(args->getOption("calendar"));
        QDate result;
 
        const bool returnCode = Widgets::calendar(0, title, text, result);
