@@ -109,6 +109,7 @@ int Widgets::textBox(QWidget *parent, int width, int height, const QString& titl
 
   KTextEdit *edit = new KTextEdit( vbox );
   edit->setReadOnly(true);
+  edit->setFocus();
 
   QFile f(file);
   if (!f.open(QIODevice::ReadOnly))
@@ -187,6 +188,7 @@ bool Widgets::comboBox(QWidget *parent, const QString& title, const QString& tex
   KComboBox combo (vbox);
   combo.insertItems (0, args);
   combo.setCurrentIndex( combo.findText( defaultEntry ) );
+  combo.setFocus();
 
   handleXGeometry(&dlg);
 
@@ -330,6 +332,7 @@ bool Widgets::slider( QWidget *parent, const QString& title, const QString& text
     slider.setSingleStep( step );
     slider.setTickPosition ( QSlider::TicksAbove );
     slider.setOrientation( Qt::Horizontal );
+    slider.setFocus();
     handleXGeometry(&dlg);
 
     const bool retcode = (dlg.exec() == QDialog::Accepted);
@@ -355,6 +358,7 @@ bool Widgets::calendar( QWidget *parent, const QString &title, const QString &te
     QLabel label (vbox);
     label.setText (text);
     KDatePicker dateWidget( vbox );
+    dateWidget.setFocus();
     handleXGeometry(&dlg);
 
     const bool retcode = (dlg.exec() == QDialog::Accepted);
