@@ -926,8 +926,8 @@ bool KWebKitHtmlExtension::hasSelection() const
 
 KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMethods() const
 {
-    // TODO: Add support for selected content...
-    return KParts::SelectorInterface::EntireContent;
+    return (KParts::SelectorInterface::EntireContent
+            | KParts::SelectorInterface::SelectedContent);
 }
 
 static KParts::SelectorInterface::Element convertWebElement(const QWebElement& webElem)
@@ -938,6 +938,56 @@ static KParts::SelectorInterface::Element convertWebElement(const QWebElement& w
         element.setAttribute(attr, webElem.attribute(attr));
     }
     return element;
+}
+
+
+static QString queryOne(const QString& query)
+{
+   QString jsQuery = QL1S("(function(query) { var element; var selectedElement = window.getSelection().getRangeAt(0).cloneContents().querySelector(\"");
+   jsQuery += query;
+   jsQuery += QL1S("\"); if (selectedElement && selectedElement.length > 0) { element = new Object; "
+                   "element.tagName = selectedElements[0].tagName; element.href = selectedElements[0].href; } "
+                   "return element; }())");
+
+   kDebug() << jsQuery;
+   return jsQuery;
+}
+
+static QString queryAll(const QString& query)
+{
+   QString jsQuery = QL1S("(function(query) { var elements = []; var selectedElements = window.getSelection().getRangeAt(0).cloneContents().querySelectorAll(\"");
+   jsQuery += query;
+   jsQuery += QL1S("\"); var numSelectedElements = (selectedElements ? selectedElements.length : 0);"
+                   "for (var i = 0; i < numSelectedElements; ++i) { var element = new Object; "
+                   "element.tagName = selectedElements[i].tagName; element.href = selectedElements[i].href;"
+                   "elements.push(element); } return elements; } ())");
+   kDebug() << jsQuery;
+   return jsQuery;
+}
+
+static KParts::SelectorInterface::Element convertSelectionElement(const QVariant& variant)
+{
+    KParts::SelectorInterface::Element element;
+    if (!variant.isNull() && variant.type() == QVariant::Map) {
+        const QVariantMap elementMap (variant.toMap());
+        element.setTagName(elementMap.value(QL1S("tagName")).toString());
+        element.setAttribute(QL1S("href"), elementMap.value(QL1S("href")).toString());
+    }
+    return element;
+}
+
+static QList<KParts::SelectorInterface::Element> convertSelectionElements(const QVariant& variant)
+{
+    QList<KParts::SelectorInterface::Element> elements;
+    const QVariantList resultList (variant.toList());
+    Q_FOREACH(const QVariant& result, resultList) {
+        const QVariantMap elementMap = result.toMap();
+        KParts::SelectorInterface::Element element;
+        element.setTagName(elementMap.value(QL1S("tagName")).toString());
+        element.setAttribute(QL1S("href"), elementMap.value(QL1S("href")).toString());
+        elements.append(element);
+    }
+    return elements;
 }
 
 KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
@@ -958,8 +1008,11 @@ KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QSt
         element = convertWebElement(webFrame->findFirstElement(query));
         break;
     }
-    case KParts::SelectorInterface::SelectedContent:
-        // TODO: Implement support for querying only selected content...
+    case KParts::SelectorInterface::SelectedContent: {
+        QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        element = convertSelectionElement(webFrame->evaluateJavaScript(queryOne(query)));
+        break;
+    }
     default:
         break;
     }
@@ -988,8 +1041,11 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
             elements.append(convertWebElement(element));
         break;
     }
-    case KParts::SelectorInterface::SelectedContent:
-        // TODO: Implement support for querying only selected content...
+    case KParts::SelectorInterface::SelectedContent: {
+        QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        elements = convertSelectionElements(webFrame->evaluateJavaScript(queryAll(query)));
+        break;
+    }
     default:
         break;
     }
