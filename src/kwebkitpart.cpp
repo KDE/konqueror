@@ -412,9 +412,7 @@ bool KWebKitPart::openUrl(const KUrl &_u)
 
 bool KWebKitPart::closeUrl()
 {
-#if QT_VERSION >= 0x040700
     m_webView->triggerPageAction(QWebPage::StopScheduledPageRefresh);
-#endif
     m_webView->stop();
     return true;
 }
@@ -540,7 +538,6 @@ void KWebKitPart::slotLoadFinished(bool ok)
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
       2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
     */
-#if QT_VERSION >= 0x040700
     QWebFrame* frame = page() ? page()->currentFrame() : 0;
     if (ok && !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
         if (WebKitSettings::self()->autoPageRefresh()) {
@@ -549,7 +546,6 @@ void KWebKitPart::slotLoadFinished(bool ok)
             frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
         }
     }
-#endif
     emit completed ((ok && pending));
 }
 
@@ -579,7 +575,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     if (url == *globalBlankUrl)
         return;
 
-    //kDebug() << "Setting location bar to" << u.prettyUrl();
+    //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
     emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
 }
 
@@ -620,13 +616,15 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 
     // If "NoEmitOpenUrlNotification" property is set to true, do not
-    // emit the open url notification.
-    if (property("NoEmitOpenUrlNotification").toBool()) {
-        m_emitOpenUrlNotify = false;
+    // emit the open url notification. Property is set by this part's
+    // extension to prevent openUrl notification being sent when
+    // handling history navigation requests.
+    const bool doNotEmitOpenUrl = property("NoEmitOpenUrlNotification").toBool();
+    if (doNotEmitOpenUrl) {
         setProperty("NoEmitOpenUrlNotification", QVariant());
     }
 
-    if (m_emitOpenUrlNotify && !frame->parentFrame()) {
+    if (m_emitOpenUrlNotify && !doNotEmitOpenUrl && !frame->parentFrame()) {
         // kDebug() << "***** EMITTING openUrlNotify" << item->url();
         emit m_browserExtension->openUrlNotify();
     }
@@ -637,6 +635,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     // slotRestoreFrameState.
     const QPoint scrollPos (frame->scrollPosition());
     if (!scrollPos.isNull()) {
+        // kDebug() << "Saving scroll position:" << scrollPos;
         item->setUserData(scrollPos);
     }
 }
@@ -659,7 +658,6 @@ void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
     if (frame->baseUrl().resolved(frame->url()) == currentHistoryItem.url()) {
         const QPoint currentPos (frame->scrollPosition());
         const QPoint desiredPos (currentHistoryItem.userData().toPoint());
-        // kDebug() << frame << "scroll position: current=" << currentPos << ", desired=" << desiredPos;
         if (currentPos.isNull() && !desiredPos.isNull()) {
             frame->setScrollPosition(desiredPos);
         }
@@ -766,9 +764,7 @@ void KWebKitPart::slotShowSearchBar()
 
 void KWebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 {
-    KParts::OpenUrlArguments args;
-    args.setActionRequestedByUser(true);
-    emit m_browserExtension->createNewWindow(linkUrl, args);
+    emit m_browserExtension->createNewWindow(linkUrl);
 }
 
 void KWebKitPart::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl, const QString& searchText)
