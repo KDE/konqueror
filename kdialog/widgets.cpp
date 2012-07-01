@@ -134,7 +134,7 @@ int Widgets::textBox(QWidget *parent, int width, int height, const QString& titl
   return (dlg.exec() == KDialog::Accepted) ? 0 : 1;
 }
 
-int Widgets::textInputBox(QWidget *parent, int width, int height, const QString& title, const QStringList& args, QString &result)
+int Widgets::textInputBox(QWidget *parent, int width, int height, const QString& title, const QString& text, const QString& init, QString &result)
 {
 //  KTextBox dlg(parent, 0, true, width, height, file);
   KDialog dlg( parent );
@@ -147,18 +147,17 @@ int Widgets::textInputBox(QWidget *parent, int width, int height, const QString&
 
   dlg.setMainWidget(vbox);
 
-  if( args.count() > 0 )
+  if( !text.isEmpty() )
   {
     QLabel *label = new QLabel(vbox);
-    label->setText(args[0]);
+    label->setText(text);
   }
 
   KTextEdit *edit = new KTextEdit( vbox );
   edit->setReadOnly(false);
   edit->setFocus();
 
-  if( args.count() > 1 )
-    edit->insertPlainText( args[1] );
+  edit->insertPlainText( init );
 
   if ( width > 0 && height > 0 )
     dlg.setInitialSize( QSize( width, height ) );
