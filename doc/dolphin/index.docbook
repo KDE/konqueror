@@ -73,8 +73,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2012-01-14</date>
-<releaseinfo>2.0 (&kde; 4.8)</releaseinfo>
+<date>2012-07-02</date>
+<releaseinfo>2.1 (&kde; 4.9)</releaseinfo>
 
 <abstract>
 <para>
@@ -109,8 +109,8 @@ interface for the specific task of file management.
 
 <para>
 Please report any problems or feature requests to the &dolphin; author via the
-bug report dialog. This is accessible either from the <guibutton>Configure and control 
-&dolphin;</guibutton> button at the right of the toolbar in the default mode without
+bug report dialog. This is accessible either from the <guibutton>Control</guibutton> 
+button at the right of the toolbar in the default mode without
 menu bar; or from <menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
 menu of the application, if the menubar is shown.
 </para>
@@ -150,7 +150,7 @@ The toolbar, which can be used for quick access to frequently used actions. The
 toolbar can be customized by clicking it with the &RMB; and choosing
 <menuchoice><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice>
 from the context menu, with <guimenuitem>Configure Toolbars...</guimenuitem>
-from the <guibutton>Configure and control &dolphin;</guibutton> button at the 
+from the <guibutton>Control</guibutton> button at the 
 right of the toolbar or via <menuchoice><guimenu>Settings</guimenu>
 <guimenuitem>Configure Toolbars...</guimenuitem></menuchoice>
 from the main menu.
@@ -168,7 +168,7 @@ from the main menu.
 <para>
 Toolbar items where the icon is sufficient for knowing the command do not have a text
 alongside the icons. This can be changed by a &RMB; click and selecting the item text 
-below <guilabel>Show Text</guilabel>. The <guibutton>Configure and control &dolphin;</guibutton> 
+below <guilabel>Show Text</guilabel>. The <guibutton>Control</guibutton> 
 button at the right side of the toolbar is only displayed if the menubar is hidden.
 </para>
 </caption>
@@ -205,7 +205,7 @@ The menu bar (hidden by default), which provides access to all commands and conf
 See the <link linkend="commands-menubar">Command Reference</link> for a list of
 all menu commands. The menu bar can be toggled with 
 <guimenuitem>Show Menubar</guimenuitem> from the <guimenu>Settings</guimenu>
-menu or the <guibutton>Configure and control &dolphin;</guibutton> button 
+menu or the <guibutton>Control</guibutton> button 
 (<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>).
 </para></listitem>
 
@@ -325,11 +325,13 @@ view modes.
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
 shown for subfolders. The names of folders and files are displayed below the icons.
+ <!--FIXME + any selected item from View->Additional Information-->
 </para></listitem>
 
 <listitem><para>
 The <guilabel>Compact</guilabel> view shows the folder contents as icons with 
-the name beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+the name <!--FIXME + any selected item from View->Additional Information-->
+beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
 in the &kde; file dialog.
 </para></listitem>
 
@@ -339,13 +341,23 @@ as a detailed list which contains the name, size and last modification time of
 each item. Additional columns can be added by clicking a column header with the
 &RMB;.
 </para>
+<para>In the context menu of the header line you can choose between custom or automatic 
+column width. Automatic width adjusts the width of all columns once to display the longest 
+item in the column completely, except for the <guilabel>Name</guilabel> column where 
+the extension is replaced by "..." 
+<!--FIXME change width manually = automatic is disabled-->
+</para>
+<para>The order of columns can be changed by drag and drop of column headers.
+<!--, except for the Name column.FIXME regression? leave it out?-->
+</para>
 <para>
 The details view permits to view the current directory
-in a tree-like fashion: Each subfolder of the current folder can be
+in a tree-like fashion if <link linkend="preferences-dialog-viewmodes-details">
+<guilabel>Expandable folders</guilabel></link> are enabled: 
+Each subfolder of the current folder can be
 <quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
 or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
-<!-- end copy to konqueror filemanager.docbook -->
 </para>
 
 <screenshot>
@@ -361,6 +373,7 @@ or <guiicon>v</guiicon> icon next to it.</para></listitem>
 <menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
 </mediaobject>
 </screenshot>
+<!-- end copy to konqueror filemanager.docbook -->
 
 </sect3>
 
@@ -473,6 +486,12 @@ in the view.
 selection state of all items in the view.
 </para></listitem>
 
+<listitem><para>
+Select a file or folder by typing the first few letters of its name and the 
+the first matching item is selected. 
+To clear the selection and cancel the keyboard search press &Esc; or wait longer than
+the timeout of 1 second.
+</para></listitem>
 </itemizedlist>
 
 </sect3>
@@ -480,6 +499,9 @@ selection state of all items in the view.
 </sect2>
 
 </sect1>
+
+<!--FIXME replace with links to KDE Fundamentals when location bar in file dialog
+has all features from in dolphin-->
 
 <sect1 id="location-bar">
 <title>Location Bar</title>
@@ -541,7 +563,7 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 
 <sect2 id="location-place-context">
 <title>Places and Context</title>
-
+<!--FIXME is this already in file dialog in 4.9 ??-->
 <para>
 If the <guilabel>Places</guilabel> panel is hidden; in both modes an additional icon 
 in front of the path is displayed. This icon can be clicked with the &LMB; to open a 
@@ -648,7 +670,9 @@ affect the &dolphin; view.
 </para>
 
 </sect2>
-
+<!--FIXME
+add search via keyboard from
+http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
 <sect2 id="search-panel">
 <title>Search</title>
 
@@ -964,39 +988,52 @@ custom font can be chosen.
 
 </itemizedlist>
 
-The settings which apply to only one of the view modes are discussed below.
+The other settings in the <guilabel>Text</guilabel> section which apply to only 
+one of the view modes are discussed below.
 </para>
 
 </sect3>
 
 <sect3 id="preferences-dialog-viewmodes-icons">
 <title>Icons</title>
-
 <para>
-Besides the <link linkend="preferences-dialog-viewmodes-common">common settings
-of all view modes</link>, the icons view has the following settings:
-
 <itemizedlist>
-
 <listitem><para>
-
-In the <guilabel>Text</guilabel> section:
-
-<itemizedlist>
-
-<listitem><para>
-<guilabel>Text Width</guilabel> controls the maximum width that is reserved for
+<guilabel>Width</guilabel> controls the minimum width that is reserved for
 the text of a file item.
+</para></listitem> <!--FIXME Small, Medium, Large, Hugh -->
+<listitem><para>
+  <guilabel>Maximum lines</guilabel> <!--(Unlimited...1-5) -->
+means maximum number of text lines <!--Fixme each for name + any selected items from 
+  View->Additional Information--> below the icon.
 </para></listitem>
-
 </itemizedlist>
-
-</para></listitem>
-
-</itemizedlist>
-
 </para>
+</sect3>
 
+<sect3 id="preferences-dialog-viewmodes-compact">
+<title>Compact</title>
+<para>
+<itemizedlist>
+<listitem><para>
+<guilabel>Maximum width</guilabel> controls the maximum width that is reserved for
+the text of a file item.
+</para></listitem> <!-- FIXME Unlimited = all text ist shown?, Small, Medium, Large -->
+</itemizedlist>
+</para>
+</sect3>
+
+<sect3 id="preferences-dialog-viewmodes-details">
+<title>Details</title>
+<para>
+<itemizedlist>
+<listitem><para>
+<guilabel>Expandable folders</guilabel> If checked the folder withd subfolders are displayed 
+in a tree view where the sub items can be expanded clicking the <guiicon>&lt;</guiicon> icon 
+and collapsed clicking the <guiicon>v</guiicon> icon.<!--FIXME needs better wording-->.
+</para></listitem>
+</itemizedlist>
+</para>
 </sect3>
 
 </sect2>
@@ -1074,19 +1111,23 @@ appears when clicking a file or folder with the &RMB;.
 Using the <guibutton>Download New Services</guibutton> you can fetch additional 
 service menu.
 </para>
-
 <para>
 If you have installed &dolphin;'s plugins for <guilabel>Bazaar</guilabel>, 
 <guilabel>Mercurial</guilabel>, <guilabel>Git</guilabel> or 
-<guilabel>Subversion</guilabel> from the kdesdk module an additional group
-<guilabel>Version Control Systems</guilabel> is displayed.
+<guilabel>Subversion</guilabel> from the kdesdk module these services are shown in the list.
 If these plugins are enabled and you enter a folder which is under version control, 
 the version state (locally changed, up to date &etc;) is indicated by icons 
 and you have additional entries in the 
 context menu like commit, update, add, remove &etc;
 </para>
 <para>
-&dolphin; has to be restarted to activate changes of these settings.
+In the service list it can be chosen as well if the <guimenuitem>Delete</guimenuitem>,
+<guimenuitem>Copy To</guimenuitem>, and <guimenuitem>Move To</guimenuitem>
+commands are shown in the context menu.
+</para>
+<para>
+&dolphin; has to be restarted to activate the changes for some of these settings.
+<!--FIXME wrong for Copy To + Move To + Delete, what about the other items?-->
 </para>
 
 </sect2>
@@ -1159,22 +1200,10 @@ tab bar on top.
 <itemizedlist>
 
 <listitem><para>
-In the <guilabel>View Properties</guilabel> section, it can be configured if the
+In the <guilabel>View</guilabel> section, it can be configured if the
 <link linkend="view-properties"> view properties</link> are stored for each
 folder or if common view properties are to be used for all folders.
 </para></listitem>
-
-<listitem><para>
-In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
-are shown before potentially harmful actions can be enabled.
-</para></listitem>
-<!--removed in 4.8
-<listitem><para>
-If <guilabel>Rename Inline</guilabel> is enabled, no dialog asking for a new
-file name will be opened when renaming a file or folder. Instead, the name can
-be edited directly inside the view.
-</para></listitem>
--->
 <listitem><para>
 When hovering a file or folder with the mouse, a small window with information
 about it is shown next to it if <guilabel>Show tooltips</guilabel> is enabled.
@@ -1215,27 +1244,20 @@ leads to the sort order
 
 <para>
 In this tab, it can be configured for which file types previews are shown.
-Moreover, the maximum filesize for which previews are generated can be chosen,
-and it can be configured if thumbnails embedded in files are used or not.
+Moreover, the maximum size of remote files for which previews are generated can be chosen.
 </para>
-
 <para>
 If previews are enabled for folders, previews of some files in the folder will
 be shown inside a folder's icon.
 </para>
-
 </sect3>
 
-<sect3 id="preferences-dialog-general-contextmenu">
-<title>Context Menu Tab</title>
-
+<sect3 id="preferences-dialog-general-confirmations">
+<title>Confirmations Tab</title>
 <para>
-In this tab, it can be chosen if the <guimenuitem>Delete</guimenuitem>,
-<guimenuitem>Copy To</guimenuitem>, and <guimenuitem>Move To</guimenuitem>
-commands are shown in the context menu which appears when right-clicking a file
-or folder.
+In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
+are shown before potentially harmful actions can be enabled.
 </para>
-
 </sect3>
 
 <sect3 id="preferences-dialog-general-statusbar">
@@ -1258,6 +1280,11 @@ A bar that shows how much space is free on the current drive.
 </itemizedlist>
 
 </para>
+<note><para>
+Since &dolphin; 4.9 the <guimenuitem>Delete</guimenuitem>,
+<guimenuitem>Copy To</guimenuitem>, and <guimenuitem>Move To</guimenuitem>
+commands of the context menu have to be enabled on the Services page.
+</para></note>
 
 </sect3>
 
@@ -1352,8 +1379,8 @@ properties yet.
 <chapter id="command-reference">
 <title>Command Reference</title>
 <para>By default the menubar is not shown. All actions described here either can 
-be accessed with toolbar buttons or with items in the menu of the <guibutton>Configure 
-and control &dolphin;</guibutton> toolbar button.</para>
+be accessed with toolbar buttons or with items in the menu of the 
+<guibutton>Control</guibutton> toolbar button.</para>
 
 <sect1 id="commands-menubar">
 <title>The Menubar in &dolphin;'s Main Window</title>
@@ -1416,7 +1443,7 @@ folder.</action></para>
 <guimenu>File</guimenu>
 <guimenuitem>Rename</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Renames the currently selected item(s).</action></para></listitem>
+<listitem><para><action>Renames the currently selected item(s) inline.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1603,6 +1630,15 @@ Selects all unselected items and deselects all selected items in the current fol
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu>
+<!--FIXME 
+Name Size Date 
+Type Rating Tags Comment 
+Document Word Count Line Count 
+Image Image Size Orientation
+Audio Artist Album Duration Track
+Other Path Link Destination Copied From Permissions Owner Group
+Same menu items in contextmenu of header + View -> Additional Information
+-->
 </menuchoice></term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
@@ -1625,6 +1661,9 @@ Selects all unselected items and deselects all selected items in the current fol
 <guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
 <guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
 in the different views.</para></listitem>
+<!--FIXME changed to Document, Image, Audio, Other with checkable subitems 
+  What is Other->Copied From?
+Document, Image, Audio requires running Nepomuk and Strigi services -->
 </varlistentry>
 
 <varlistentry>
@@ -1699,10 +1738,12 @@ folder.</action></para></listitem>
 (<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>), 
 <guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>) and
 <guimenuitem>Search</guimenuitem> (<keycap>F12</keycap>).
+<!--FIXME Search F12 requires Nepomuk/Strigi -->
 With <guimenuitem>Lock Panels</guimenuitem> the panel header with caption and two buttons is  
 hidden to save space and the panels are immutable, with <guimenuitem>Unlock Panels</guimenuitem>
 the header is visible and the panel can be moved to the right or left  or even
 outside the main window.
+<!-- FIXME Places header always visible ?-->
 </para></listitem>
 </varlistentry>
 
@@ -1859,59 +1900,13 @@ connection manually.</action></para></listitem>
 </sect2>
 
 <sect2>
-<title>The Settings Menu</title>
+<title>The Settings and Help Menu</title> 
 <para>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
-</shortcut>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Menubar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Hides and shows the menubar.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guisubmenu>Show Toolbar</guisubmenu>
-</menuchoice></term>
-<listitem><para><action>Hides and shows the toolbar.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens the shortcut configuration dialog.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens the toolbar configuration dialog.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure &dolphin;...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens the &dolphin; configuration dialog.</action></para></listitem>
-</varlistentry>
-</variablelist>
+&dolphin; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
 </para>
-</sect2>
-
-<sect2>
-<title>The Help Menu</title>
-&help.menu.documentation;
 </sect2>
 
 </sect1>
@@ -2026,12 +2021,13 @@ Documentation copyright 2009 Frank Reininghaus <email>frank78ac@googlemail.com</
 
 <appendix id="installation">
 <title>How to get &dolphin;</title>
-
 <para>&dolphin; is part of the kdebase package which is an essential part of
 &kde;.</para>
 
 <para>For instructions on acquiring &kde; please see <ulink
-url="http://www.kde.org">http://www.kde.org</ulink>.</para>
+url="http://www.kde.org">http://www.kde.org</ulink> or read the chapter 
+<ulink url="help:/fundamentals/install.html">Installing &kde;</ulink> 
+in the &kde; Fundamentals.</para>
 
 <para>For further information about &dolphin; you might want to visit
 <ulink url="http://dolphin.kde.org">http://dolphin.kde.org</ulink> or
