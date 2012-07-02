@@ -5,8 +5,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2011-11-20</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
+<date>2012-07-02</date>
+<releaseinfo>&kde; 4.9</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; the File Manager</title>
@@ -67,11 +67,13 @@ component.</para></note>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
 shown for subfolders. The names of folders and files are displayed below the icons.
+ <!--FIXME + any selected item from View->Additional Information-->
 </para></listitem>
 
 <listitem><para>
 The <guilabel>Compact</guilabel> view shows the folder contents as icons with 
-the name beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+the name <!--FIXME + any selected item from View->Additional Information-->
+beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
 in the &kde; file dialog.
 </para></listitem>
 
@@ -81,11 +83,23 @@ as a detailed list which contains the name, size and last modification time of
 each item. Additional columns can be added by clicking a column header with the
 &RMB;.
 </para>
+<para>In the context menu of the header line you can choose between custom or automatic 
+column width. Automatic width adjusts the width of all columns once to display the longest 
+item in the column completely, except for the <guilabel>Name</guilabel> column where 
+the extension is replaced by "..." 
+<!--FIXME change width manually = automatic is disabled-->
+</para>
+<para>The order of columns can be changed by drag and drop of column headers.
+<!--, except for the Name column.FIXME regression? leave it out?-->
+</para>
 <para>
 The details view permits to view the current directory
-in a tree-like fashion: Each subfolder of the current folder can be
+in a tree-like fashion if 
+<guilabel>Expandable folders</guilabel> are enabled: 
+Each subfolder of the current folder can be
 <quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
-or <guiicon>v</guiicon> icon next to it.</para></listitem>
+or <guiicon>v</guiicon> icon next to it.</para>
+</listitem>
 </itemizedlist>
 
 <screenshot>
@@ -134,7 +148,7 @@ the extra data would take too long set a file size limit at the bottom of the
 
 <para>
 The following settings control how the contents of a folder are displayed in the
-&konqueror; view, and are stored on a per-folder basis by default:
+&dolphin; view, and are stored on a per-folder basis by default:
 
 <itemizedlist>
 
@@ -154,8 +168,8 @@ Sorting of folders and files &ndash; are folders shown first or not?
 
 <listitem><para>
 Previews &ndash; are they shown instead of icons (based on the settings made in
-<guilabel>Previews</guilabel> tab of &konqueror;'s <menuchoice><guimenu>File Management</guimenu>
-<guimenuitem>General</guimenuitem></menuchoice> settings) or not?
+<link linkend="previews"><guilabel>Previews</guilabel>
+tab of &konqueror;'s General settings</link>) or not?
 </para></listitem>
 
 <listitem><para>
@@ -449,9 +463,8 @@ you do the <guimenuitem>Paste</guimenuitem> into the new folder.</para>
 the context menu you get when you <mousebutton>right</mousebutton> click on
 an file or folder name in the File Manager window.</para>
 <para>To enable this feature select <guilabel>Show 'Copy To' and 'Move To' 
-commands</guilabel> on the <guilabel>Context Menu</guilabel> tab of the
-<menuchoice><guimenu>File Management</guimenu>
-<guimenuitem>General</guimenuitem></menuchoice> section of the settings.</para>
+commands</guilabel> on the <menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>Services</guimenuitem></menuchoice> page section of the settings.</para>
 <note><para>You may not be able to copy or move a file or folder if
 you don't have the necessary permissions. <!--See the section on <link
 linkend="super-user">Super User Mode</link> for further
