@@ -362,7 +362,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
             KGlobal::setAllowQuit( true );
-            KRun * run = new KRun( url, 0L, false, false /* no progress window */ );
+            KRun * run = new KRun( url, 0L, 0, false, false /* no progress window */ );
             QObject::connect( run, SIGNAL(finished()), qApp, SLOT(delayedQuit()));
             QObject::connect( run, SIGNAL(error()), qApp, SLOT(delayedQuit()));
             qApp->exec();
