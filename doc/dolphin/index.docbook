@@ -204,9 +204,8 @@ of the icons in the view.
 The menu bar (hidden by default), which provides access to all commands and configuration options.
 See the <link linkend="commands-menubar">Command Reference</link> for a list of
 all menu commands. The menu bar can be toggled with 
-<guimenuitem>Show Menubar</guimenuitem> from the <guimenu>Settings</guimenu>
-menu or the <guibutton>Control</guibutton> button 
-(<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>).
+<guimenuitem>Show Menubar</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>) 
+from the <guimenu>Settings</guimenu> menu or the <guibutton>Control</guibutton> button.
 </para></listitem>
 
 <listitem><para>
@@ -230,7 +229,7 @@ by default, for more information see <link linkend="panels"><guilabel>Panels</gu
 <para>
 The view displays all files and folders in the current folder. These items
 can be accessed or manipulated in different ways:
-
+<!--FIXME for better extraction add </para> -->
 <itemizedlist>
 
 <listitem><para>
@@ -255,7 +254,7 @@ Items can even be dropped in another application to open them in this applicatio
 </para></listitem>
 
 </itemizedlist>
-
+<!--FIXME for better extraction add <para> -->
 &dolphin; remembers the history of visited folders. To navigate backward or
 forward in the history, the corresponding buttons in the toolbar can be used:
 </para>
@@ -969,7 +968,7 @@ tab bar on top.
 
 <para>
 All three view modes have some common settings:
-
+  <!--FIXME for better extraction add </para> -->
 <itemizedlist>
 
 <listitem><para>
@@ -987,7 +986,7 @@ custom font can be chosen.
 </para></listitem>
 
 </itemizedlist>
-
+  <!--FIXME for better extraction add <para> -->
 The other settings in the <guilabel>Text</guilabel> section which apply to only 
 one of the view modes are discussed below.
 </para>
@@ -1298,7 +1297,7 @@ commands of the context menu have to be enabled on the Services page.
 <para>
 The following settings control how the contents of a folder are displayed in the
 &kappname; view, and are stored on a per-folder basis by default:
-
+  <!--FIXME for better extraction add </para> -->
 <itemizedlist>
 
 <listitem><para>
@@ -1334,7 +1333,7 @@ What additional information (besides the name) is shown in the Icons or Details 
 </para></listitem>
 
 </itemizedlist>
-
+  <!--FIXME for better extraction add <para> -->
 The view properties can be configured in the
 <menuchoice><guimenu>View</guimenu></menuchoice> menu, some (such as the view
 mode) can also be changed using toolbar buttons.
@@ -1443,7 +1442,9 @@ folder.</action></para>
 <guimenu>File</guimenu>
 <guimenuitem>Rename</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Renames the currently selected item(s) inline.</action></para></listitem>
+<listitem><para><action>Renames one currently selected item inline.
+Opens the <link linkend="batch-rename">batch rename dialog</link> if several 
+items are selected.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1884,7 +1885,7 @@ be reopened.</action></para></listitem>
 <guimenuitem>Compare Files</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Compare the currently selected files with
-&kompare;.</action></para></listitem>
+&kompare;. This action is only enabled if two files are selected.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
