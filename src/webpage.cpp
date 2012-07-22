@@ -405,6 +405,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         m_noJSOpenWindowCheck = (!isTypedUrl && type != QWebPage::NavigationTypeOther);
     }
 
+    // Honor the enabling/disabling of plugins per host.
+    settings()->setAttribute(QWebSettings::PluginsEnabled, WebKitSettings::self()->isPluginsEnabled(reqUrl.host()));
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 

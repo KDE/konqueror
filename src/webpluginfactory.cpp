@@ -27,14 +27,104 @@
 #include <KDE/KDebug>
 #include <KDE/KConfigGroup>
 #include <KDE/KSharedConfig>
+#include <KDE/KLocalizedString>
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 #include <kparts/scriptableextension.h>
 
-#include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebView>
+#include <QHBoxLayout>
+#include <QSpacerItem>
+#include <QPushButton>
+
+#include <QWebFrame>
+#include <QWebView>
+#include <QWebElement>
 
 #define QL1S(x)  QLatin1String(x)
+
+
+FakePluginWidget::FakePluginWidget (const QUrl& url, const QString& mimeType, QWidget* parent)
+                 :QWidget(parent)
+                 ,m_swapping(false)
+                 ,m_mimeType(mimeType)
+{
+    QHBoxLayout* horizontalLayout = new QHBoxLayout;
+
+    QSpacerItem* horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+    horizontalLayout->addSpacerItem(horizontalSpacer);
+
+    QPushButton* startPluginButton = new QPushButton(this);
+    startPluginButton->setText(i18n("Start Plugin"));
+    horizontalLayout->addWidget(startPluginButton);
+
+    horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+    horizontalLayout->addSpacerItem(horizontalSpacer);
+
+    setLayout(horizontalLayout);
+
+    setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
+    connect(startPluginButton, SIGNAL(clicked()), this, SLOT(load()));
+    setToolTip(url.toString());
+}
+
+void FakePluginWidget::loadAll()
+{
+    load (true);
+}
+
+void FakePluginWidget::load (bool loadAll)
+{
+    QWidget *parent = parentWidget();
+    QWebView *view = 0;
+    while (parent) {
+        view = qobject_cast<QWebView*>(parent);
+        if (view) {
+          break;
+        }
+        parent = parent->parentWidget();
+    }
+
+    if (!view) {
+        return;
+    }
+
+    const QString selector = QLatin1String("object[type=\"%1\"],embed[type=\"%1\"]");
+    kDebug() << selector.arg(m_mimeType);
+
+    hide();
+    m_swapping = true;
+
+    QList<QWebFrame*> frames;
+    frames.append(view->page()->mainFrame());
+
+    while (!frames.isEmpty()) {
+        QWebFrame *frame = frames.takeFirst();
+        QWebElement docElement = frame->documentElement();
+        QWebElementCollection elements = docElement.findAll(selector.arg(m_mimeType));
+
+        QWebElement element;
+        foreach (element, elements) {
+            if (loadAll || element.evaluateJavaScript(QLatin1String("this.swapping")).toBool()) {
+                QWebElement substitute = element.clone();
+                substitute.setAttribute(QLatin1String("type"), m_mimeType);
+                element.replace(substitute);
+                deleteLater(); // Delete the fake widget now it has been replaced.
+                if (!loadAll) {
+                    break;
+                }
+            }
+        }
+        frames += frame->childFrames();
+    }
+
+    m_swapping = false;
+}
+
+
+void FakePluginWidget::showContextMenu(const QPoint&)
+{
+}
 
 
 WebPluginFactory::WebPluginFactory (KWebKitPart* parent)
@@ -43,18 +133,40 @@ WebPluginFactory::WebPluginFactory (KWebKitPart* parent)
 {
 }
 
+static int pluginId(const QUrl& url, const QStringList& argNames, const QStringList& argValues)
+{
+    QString id = url.toString();
+    id += argNames.join(QL1S(","));
+    id += argValues.join(QL1S(","));
+
+    return qHash(id);
+}
+
 QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
+    kDebug() << _mimeType << url << argumentNames;
     QString mimeType (_mimeType.trimmed());
     if (mimeType.isEmpty()) {
         extractGuessedMimeType (url, &mimeType);
     }
 
-    KParts::ReadOnlyPart* part = 0;
-    QWebView* view = 0;
+    QWebView* view = mPart->view();
+    const bool noPluginHandling = WebKitSettings::self()->isInternalPluginHandlingDisabled();
 
-    if (WebKitSettings::self()->isInternalPluginHandlingDisabled() || !excludedMimeType(mimeType)) {
-        view = mPart->view();
+    if (!noPluginHandling && WebKitSettings::self()->isLoadPluginsOnDemandEnabled()) {
+        const QString id = QString::number(pluginId(url, argumentNames, argumentValues));
+        if (mLoadOnDemandPluginList.contains(id)) {
+            mLoadOnDemandPluginList.removeAll(id);
+        } else {
+            FakePluginWidget* widget = new FakePluginWidget(url, mimeType, view);
+            mLoadOnDemandPluginList.append(id);
+            return widget;
+        }
+    }
+
+    KParts::ReadOnlyPart* part = 0;
+
+    if (noPluginHandling || !excludedMimeType(mimeType)) {
         QWebFrame* frame = (view ? view->page()->currentFrame() : 0);
         part = createPartInstanceFrom(mimeType, argumentNames, argumentValues, view, frame);
     }
