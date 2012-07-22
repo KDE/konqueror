@@ -25,7 +25,7 @@
 #ifndef SEARCHBAR_P_H
 #define SEARCHBAR_P_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QEvent;
 

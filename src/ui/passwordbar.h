@@ -24,7 +24,7 @@
 
 #include <KDE/KMessageWidget>
 
-#include <QtCore/QUrl>
+#include <QUrl>
 
 namespace KDEPrivate {
 

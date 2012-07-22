@@ -28,9 +28,9 @@
 #include <KDE/KColorScheme>
 #include <KDE/KLocalizedString>
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QAction>
-#include <QtGui/QPalette>
+#include <QCoreApplication>
+#include <QAction>
+#include <QPalette>
 
 namespace KDEPrivate {
 

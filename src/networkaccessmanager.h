@@ -22,7 +22,7 @@
 
 #include <KDE/KIO/AccessManager>
 
-#include <QtCore/QMultiHash>
+#include <QMultiHash>
 
 class QWebFrame;
 

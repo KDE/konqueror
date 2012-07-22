@@ -54,6 +54,8 @@ class WebPluginFactory : public KWebPluginFactory
 public:
     WebPluginFactory (KWebKitPart* parent = 0);
     virtual QObject* create (const QString&, const QUrl&, const QStringList&, const QStringList&) const;
+    int loadOnDemandPluginCount() const;
+
 private:
     KWebKitPart* mPart;
     mutable QList<QString> mLoadOnDemandPluginList;

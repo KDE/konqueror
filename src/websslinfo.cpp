@@ -20,7 +20,7 @@
 
 #include "websslinfo.h"
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 
 class WebSslInfo::WebSslInfoPrivate

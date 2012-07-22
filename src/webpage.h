@@ -28,9 +28,9 @@
 #include <KDE/KWebPage>
 #include <KDE/KParts/BrowserExtension>
 
-#include <QtCore/QUrl>
-#include <QtCore/QDebug>
-#include <QtCore/QMultiHash>
+#include <QUrl>
+#include <QDebug>
+#include <QMultiHash>
 
 class KUrl;
 class WebSslInfo;
@@ -149,7 +149,7 @@ private:
 
     WebSslInfo m_sslInfo;
     QList<QUrl> m_requestQueue;
-    QWeakPointer<KWebKitPart> m_part;
+    QPointer<KWebKitPart> m_part;
 };
 
 

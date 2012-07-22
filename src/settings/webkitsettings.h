@@ -23,9 +23,9 @@
 class KConfig;
 class KConfigGroup;
 
-#include <QtGui/QColor>
-#include <QtCore/QStringList>
-#include <QtCore/QPair>
+#include <QColor>
+#include <QStringList>
+#include <QPair>
 
 #include <KParts/HtmlExtension>
 
@@ -56,17 +56,76 @@ public:
      */
     void init();
 
-    /** Read settings from @p config.
+    /**
+     * Destructor. Don't delete any instance by yourself.
+     */
+    virtual ~WebKitSettings();
+
+    void computeFontSizes(int logicalDpi);
+
+    // Automatic page reload/refresh...
+    bool autoPageRefresh() const;
+
+    bool isOpenMiddleClickEnabled();
+
+    // Java and JavaScript
+    bool isJavaEnabled( const QString& hostname = QString() ) const;
+    bool isJavaScriptEnabled( const QString& hostname = QString() ) const;
+    bool isJavaScriptDebugEnabled( const QString& hostname = QString() ) const;
+    bool isJavaScriptErrorReportingEnabled( const QString& hostname = QString() ) const;
+    bool isPluginsEnabled( const QString& hostname = QString() ) const;
+    bool isLoadPluginsOnDemandEnabled() const;
+    bool isInternalPluginHandlingDisabled() const;
+
+    // AdBlocK Filtering
+    bool isAdFiltered( const QString &url ) const;
+    bool isAdFilterEnabled() const;
+    bool isHideAdsEnabled() const;
+    void addAdFilter( const QString &url );
+    QString adFilteredBy( const QString &url, bool *isWhiteListed = 0 ) const;
+
+    // Access Keys
+    bool accessKeysEnabled() const;
+
+    // Favicons
+    bool favIconsEnabled() const;
+
+    KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
+    KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
+
+    QString settingsToCSS() const;
+    QString userStyleSheet() const;
+
+    // Form completion
+    bool isFormCompletionEnabled() const;
+    int maxFormCompletionItems() const;
+
+    // Meta refresh/redirect (http-equiv)
+    bool isAutoDelayedActionsEnabled () const;
+
+    // CookieJar...
+    bool isCookieJarEnabled() const;
+
+    // Password storage...
+    bool isNonPasswordStorableSite(const QString &host) const;
+    void addNonPasswordStorableSite(const QString &host);
+    void removeNonPasswordStorableSite(const QString &host);
+    bool askToSaveSitePassword() const;
+
+    // Global config object stuff.
+    static WebKitSettings* self();
+
+private:
+    /**
+     * Read settings from @p config.
      * @param config is a pointer to KConfig object.
      * @param reset if true, settings are always set; if false,
      *  settings are only set if the config file has a corresponding key.
      */
     void init( KConfig * config, bool reset = true );
-
-    /**
-     * Destructor. Don't delete any instance by yourself.
-     */
-    virtual ~WebKitSettings();
 
     // Behavior settings
     bool changeCursor() const;
@@ -93,8 +152,6 @@ public:
     int minFontSize() const;
     int mediumFontSize() const;
 
-    void computeFontSizes(int logicalDpi);
-
     bool jsErrorsEnabled() const;
     void setJSErrorsEnabled(bool enabled);
 
@@ -108,65 +165,22 @@ public:
     const QColor& linkColor() const;
     const QColor& vLinkColor() const;
 
-    // Automatic page reload/refresh...
-    bool autoPageRefresh() const;
-
     // Autoload images
     bool autoLoadImages() const;
     bool unfinishedImageFrame() const;
 
-    bool isOpenMiddleClickEnabled();
-    bool isBackRightClickEnabled();
-
-    // Java and JavaScript
-    bool isJavaEnabled( const QString& hostname = QString() ) const;
-    bool isJavaScriptEnabled( const QString& hostname = QString() ) const;
-    bool isJavaScriptDebugEnabled( const QString& hostname = QString() ) const;
-    bool isJavaScriptErrorReportingEnabled( const QString& hostname = QString() ) const;
-    bool isPluginsEnabled( const QString& hostname = QString() ) const;
-    bool isInternalPluginHandlingDisabled() const;
-
-    // AdBlocK Filtering
-    bool isAdFiltered( const QString &url ) const;
-    bool isAdFilterEnabled() const;
-    bool isHideAdsEnabled() const;
-    void addAdFilter( const QString &url );
-    QString adFilteredBy( const QString &url, bool *isWhiteListed = 0 ) const;
-
-    // Access Keys
-    bool accessKeysEnabled() const;
-
-    // Favicons
-    bool favIconsEnabled() const;
-
-    KParts::HtmlSettingsInterface::JSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowStatusPolicy windowStatusPolicy( const QString& hostname = QString() ) const;
-    KParts::HtmlSettingsInterface::JSWindowFocusPolicy windowFocusPolicy( const QString& hostname = QString() ) const;
-
-    /** reads from @p config's current group, forcing initialization
+     /**
+      * reads from @p config's current group, forcing initialization
       * if @p reset is true.
       * @param config is a pointer to KConfig object.
       * @param reset true if initialization is to be forced.
       * @param global true if the global domain is to be read.
       * @param pd_settings will be initialised with the computed (inherited)
-      *		settings.
+      *     settings.
       */
     void readDomainSettings(const KConfigGroup &config, bool reset,
                             bool global, KPerDomainSettings &pd_settings);
 
-    QString settingsToCSS() const;
-    static const QString &availableFamilies();
-
-    QString userStyleSheet() const;
-
-    // Form completion
-    bool isFormCompletionEnabled() const;
-    int maxFormCompletionItems() const;
-
-    // Meta refresh/redirect (http-equiv)
-    bool isAutoDelayedActionsEnabled () const;
 
     QList< QPair< QString, QChar > > fallbackAccessKeysAssignments() const;
 
@@ -174,30 +188,19 @@ public:
     void setJSPopupBlockerPassivePopup(bool enabled);
     bool jsPopupBlockerPassivePopup() const;
 
-    // CookieJar...
-    bool isCookieJarEnabled() const;
+ 
+    QString lookupFont(int i) const;
 
-    // Password storage...
-    bool isNonPasswordStorableSite(const QString &host) const;
-    void addNonPasswordStorableSite(const QString &host);
-    void removeNonPasswordStorableSite(const QString &host);
-    bool askToSaveSitePassword() const;
+    void initWebKitSettings();
+    void initCookieJarSettings();
+    void initNSPluginSettings();
 
-    // Global config object stuff.
-    static WebKitSettings* self();
-
-private:
     /**
      * @internal Constructor
      */
     WebKitSettings();
-  
-    QString lookupFont(int i) const;
-    void initWebKitSettings();
-    void initCookieJarSettings();
 
     WebKitSettingsPrivate* const d;
-    static QString *avFamilies;
 };
 
 #endif

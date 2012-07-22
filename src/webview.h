@@ -26,7 +26,7 @@
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KWebView>
 
-#include <QtWebKit/QWebHitTestResult>
+#include <QWebHitTestResult>
 
 class KUrl;
 class KWebKitPart;
@@ -99,7 +99,7 @@ private:
 
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;
-    QWeakPointer<KWebKitPart> m_part;
+    QPointer<KWebKitPart> m_part;
     QWebInspector* m_webInspector;
 
     qint32 m_autoScrollTimerId;

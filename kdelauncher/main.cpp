@@ -40,32 +40,32 @@
 #include <KDE/KInputDialog>
 #include <KDE/KLineEdit>
 
-#include <QtUiTools/QUiLoader>
-#include <QtWebKit/QWebPage>
-#include <QtWebKit/QWebView>
-#include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebSettings>
-#include <QtWebKit/QWebElement>
-#include <QtWebKit/QWebElementCollection>
+#include <QUiLoader>
+#include <QWebPage>
+#include <QWebView>
+#include <QWebFrame>
+#include <QWebSettings>
+#include <QWebElement>
+#include <QWebElementCollection>
 
 #if !defined(QT_NO_PRINTER)
-#include <QtGui/QPrintPreviewDialog>
+#include <QPrintPreviewDialog>
 #endif
 
-#include <QtGui/QAction>
-#include <QtGui/QCompleter>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QProgressBar>
-#include <QtGui/QStatusBar>
-#include <QtGui/QStringListModel>
-#include <QtGui/QToolBar>
-#include <QtGui/QToolTip>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QVector>
-#include <QtCore/QTextStream>
+#include <QAction>
+#include <QCompleter>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QProgressBar>
+#include <QStatusBar>
+#include <QStringListModel>
+#include <QToolBar>
+#include <QToolTip>
+#include <QDir>
+#include <QFile>
+#include <QVector>
+#include <QTextStream>
 
 
 class MainWindow : public QMainWindow

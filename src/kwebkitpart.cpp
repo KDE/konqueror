@@ -55,18 +55,18 @@
 #include <KDE/KProtocolInfo>
 #include <KParts/StatusBarExtension>
 
-#include <QtCore/QUrl>
-#include <QtCore/QRect>
-#include <QtCore/QFile>
-#include <QtCore/QTextCodec>
-#include <QtGui/QApplication>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLayout>
-#include <QtGui/QPrintPreviewDialog>
-#include <QtDBus/QDBusInterface>
-#include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebElement>
-#include <QtWebKit/QWebHistoryItem>
+#include <QUrl>
+#include <QRect>
+#include <QFile>
+#include <QTextCodec>
+#include <QApplication>
+#include <QVBoxLayout>
+#include <QLayout>
+#include <QPrintPreviewDialog>
+#include <QDBusInterface>
+#include <QWebFrame>
+#include <QWebElement>
+#include <QWebHistoryItem>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)

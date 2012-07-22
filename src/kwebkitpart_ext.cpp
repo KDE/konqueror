@@ -45,18 +45,18 @@
 #include <sonnet/backgroundchecker.h>
 #include <kdeversion.h>
 
-#include <QtCore/QBuffer>
-#include <QtCore/QMapIterator>
-#include <QtCore/QCryptographicHash>
-#include <QtGui/QClipboard>
-#include <QtGui/QApplication>
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QPrintPreviewDialog>
-#include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebHistory>
-#include <QtWebKit/QWebElement>
-#include <QtWebKit/QWebElementCollection>
+#include <QBuffer>
+#include <QMapIterator>
+#include <QCryptographicHash>
+#include <QClipboard>
+#include <QApplication>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPrintPreviewDialog>
+#include <QWebFrame>
+#include <QWebHistory>
+#include <QWebElement>
+#include <QWebElementCollection>
 
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)

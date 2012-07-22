@@ -26,11 +26,11 @@
 #include <KDE/KProtocolInfo>
 #include <KDE/KRun>
 
-#include <QtCore/QTimer>
-#include <QtGui/QWidget>
-#include <QtNetwork/QNetworkReply>
-#include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebElementCollection>
+#include <QTimer>
+#include <QWidget>
+#include <QNetworkReply>
+#include <QWebFrame>
+#include <QWebElementCollection>
 
 
 #define QL1S(x) QLatin1String(x)

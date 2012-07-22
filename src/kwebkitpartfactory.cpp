@@ -24,7 +24,7 @@
 
 #include <KDE/KDebug>
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 KWebKitFactory::~KWebKitFactory()
 {

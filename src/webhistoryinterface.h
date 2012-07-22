@@ -21,7 +21,7 @@
 #define WEBHISTORYINTERFACE_H
 
 
-#include <QtWebKit/QWebHistoryInterface>
+#include <QWebHistoryInterface>
 
 
 class WebHistoryInterface : public QWebHistoryInterface

@@ -32,9 +32,9 @@
 #include <KDE/KMessageBox>
 #include <KDE/KStandardDirs>
 
-#include <QtWebKit/QWebSettings>
-#include <QtGui/QFontDatabase>
-#include <QtCore/QFileInfo>
+#include <QWebSettings>
+#include <QFontDatabase>
+#include <QFileInfo>
 
 // browser window color defaults -- Bernd
 #define HTML_DEFAULT_LNK_COLOR Qt::blue
@@ -80,7 +80,6 @@ struct KPerDomainSettings {
 #endif
 };
 
-QString *WebKitSettings::avFamilies = 0;
 typedef QMap<QString,KPerDomainSettings> PolicyMap;
 
 class WebKitSettingsData
@@ -88,7 +87,6 @@ class WebKitSettingsData
 public:  
     bool m_bChangeCursor : 1;
     bool m_bOpenMiddleClick : 1;
-    bool m_bBackRightClick : 1;
     bool m_underlineLink : 1;
     bool m_hoverLink : 1;
     bool m_bEnableJavaScriptDebug : 1;
@@ -112,6 +110,7 @@ public:
     bool m_bEnableFavicon:1;
     bool m_disableInternalPluginHandling:1;
     bool m_offerToSaveWebSitePassword:1;
+    bool m_loadPluginsOnDemand:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -316,6 +315,7 @@ void WebKitSettings::init()
       init( local.data(), false );
   }
 
+  initNSPluginSettings();
   initCookieJarSettings();
   initWebKitSettings();
 }
@@ -327,9 +327,6 @@ void WebKitSettings::init( KConfig * config, bool reset )
   {
     if ( reset || cg.hasKey( "OpenMiddleClick" ) )
         d->m_bOpenMiddleClick = cg.readEntry( "OpenMiddleClick", true );
-
-    if ( reset || cg.hasKey( "BackRightClick" ) )
-        d->m_bBackRightClick = cg.readEntry( "BackRightClick", false );
   }
 
   KConfigGroup cgAccess(config,"Access Keys" );
@@ -733,7 +730,7 @@ void WebKitSettings::computeFontSizes( int logicalDpi )
   *
   * In case of doubt, the global domain is returned.
   */
-static const KPerDomainSettings &lookup_hostname_policy(const WebKitSettingsPrivate* const d,
+static const KPerDomainSettings& lookup_hostname_policy(const WebKitSettingsPrivate* const d,
                                                         const QString& hostname)
 {
 #ifdef DEBUG_SETTINGS
@@ -789,11 +786,6 @@ static const KPerDomainSettings &lookup_hostname_policy(const WebKitSettingsPriv
 bool WebKitSettings::isOpenMiddleClickEnabled()
 {
   return d->m_bOpenMiddleClick;
-}
-
-bool WebKitSettings::isBackRightClickEnabled()
-{
-  return d->m_bBackRightClick;
 }
 
 bool WebKitSettings::accessKeysEnabled() const
@@ -913,28 +905,23 @@ bool WebKitSettings::isPluginsEnabled( const QString& hostname ) const
   return lookup_hostname_policy(d,hostname.toLower()).m_bEnablePlugins;
 }
 
-KParts::HtmlSettingsInterface::JSWindowOpenPolicy WebKitSettings::windowOpenPolicy(
-				const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowOpenPolicy WebKitSettings::windowOpenPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowOpenPolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowMovePolicy WebKitSettings::windowMovePolicy(
-				const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowMovePolicy WebKitSettings::windowMovePolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowMovePolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowResizePolicy WebKitSettings::windowResizePolicy(
-				const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowResizePolicy WebKitSettings::windowResizePolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowResizePolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowStatusPolicy WebKitSettings::windowStatusPolicy(
-				const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowStatusPolicy WebKitSettings::windowStatusPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowStatusPolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowFocusPolicy WebKitSettings::windowFocusPolicy(
-				const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowFocusPolicy WebKitSettings::windowFocusPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowFocusPolicy;
 }
 
@@ -977,32 +964,6 @@ QString WebKitSettings::settingsToCSS() const
         str += "a:link:hover, a:visited:hover { text-decoration: underline; }\n";
 
     return str;
-}
-
-const QString &WebKitSettings::availableFamilies()
-{
-    if ( !avFamilies ) {
-        avFamilies = new QString;
-        QFontDatabase db;
-        QStringList families = db.families();
-        QStringList s;
-        QRegExp foundryExp(" \\[.+\\]");
-
-        //remove foundry info
-        QStringList::Iterator f = families.begin();
-        const QStringList::Iterator fEnd = families.end();
-
-        for ( ; f != fEnd; ++f ) {
-                (*f).remove(foundryExp);
-                if (!s.contains(*f))
-                        s << *f;
-        }
-        s.sort();
-
-        *avFamilies = ',' + s.join(",") + ',';
-    }
-
-  return *avFamilies;
 }
 
 QString WebKitSettings::lookupFont(int i) const
@@ -1235,6 +1196,11 @@ bool WebKitSettings::isInternalPluginHandlingDisabled() const
     return d->m_disableInternalPluginHandling;
 }
 
+bool WebKitSettings::isLoadPluginsOnDemandEnabled() const
+{
+    return d->m_loadPluginsOnDemand;
+}
+
 void WebKitSettings::initWebKitSettings()
 {
     KConfig cfg ("kwebkitpartrc", KConfig::NoGlobals);
@@ -1251,6 +1217,14 @@ void WebKitSettings::initCookieJarSettings()
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
     d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
 }
+
+void WebKitSettings::initNSPluginSettings()
+{
+    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcmnspluginrc", KConfig::NoGlobals);
+    KConfigGroup cookieCfg ( cookieCfgPtr, "Misc");
+    d->m_loadPluginsOnDemand = cookieCfg.readEntry("demandLoad", false);
+}
+
 
 WebKitSettings* WebKitSettings::self()
 {

@@ -22,11 +22,11 @@
 
 #include <kdemacros.h>
 
-#include <QtCore/QUrl>
-#include <QtCore/QList>
-#include <QtCore/QString>
-#include <QtNetwork/QHostAddress>
-#include <QtNetwork/QSslCertificate>
+#include <QUrl>
+#include <QList>
+#include <QString>
+#include <QHostAddress>
+#include <QSslCertificate>
 
 class WebSslInfo
 {

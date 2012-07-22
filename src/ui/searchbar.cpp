@@ -32,8 +32,8 @@
 #include <KDE/KIcon>
 #include <KDE/KLocalizedString>
 
-#include <QtGui/QResizeEvent>
-#include <QtGui/QShortcut>
+#include <QResizeEvent>
+#include <QShortcut>
 
 
 namespace KDEPrivate {

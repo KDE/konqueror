@@ -109,9 +109,9 @@ void FakePluginWidget::load (bool loadAll)
                 QWebElement substitute = element.clone();
                 substitute.setAttribute(QLatin1String("type"), m_mimeType);
                 element.replace(substitute);
-                deleteLater(); // Delete the fake widget now it has been replaced.
+                deleteLater();
                 if (!loadAll) {
-                    break;
+                    break;  // Found the one plugin we wanted to start so exit loop.
                 }
             }
         }
@@ -224,4 +224,7 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
     return 0;
 }
 
-
+int WebPluginFactory::loadOnDemandPluginCount() const
+{
+    return mLoadOnDemandPluginList.count();
+}
