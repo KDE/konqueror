@@ -43,10 +43,11 @@
 #define QL1S(x)  QLatin1String(x)
 
 
-FakePluginWidget::FakePluginWidget (const QUrl& url, const QString& mimeType, QWidget* parent)
+FakePluginWidget::FakePluginWidget (const QString& id, const QUrl& url, const QString& mimeType, QWidget* parent)
                  :QWidget(parent)
                  ,m_swapping(false)
                  ,m_mimeType(mimeType)
+                 ,m_id(id)
 {
     QHBoxLayout* horizontalLayout = new QHBoxLayout;
 
@@ -110,6 +111,7 @@ void FakePluginWidget::load (bool loadAll)
                 substitute.setAttribute(QLatin1String("type"), m_mimeType);
                 element.replace(substitute);
                 deleteLater();
+                emit pluginLoaded(m_id);
                 if (!loadAll) {
                     break;  // Found the one plugin we wanted to start so exit loop.
                 }
@@ -155,11 +157,9 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
 
     if (!noPluginHandling && WebKitSettings::self()->isLoadPluginsOnDemandEnabled()) {
         const QString id = QString::number(pluginId(url, argumentNames, argumentValues));
-        if (mLoadOnDemandPluginList.contains(id)) {
-            mLoadOnDemandPluginList.removeAll(id);
-        } else {
-            FakePluginWidget* widget = new FakePluginWidget(url, mimeType, view);
-            mLoadOnDemandPluginList.append(id);
+        if (!mPluginsLoadedOnDemand.contains(id)) {
+            FakePluginWidget* widget = new FakePluginWidget(id, url, mimeType, view);
+            connect(widget, SIGNAL(pluginLoaded(QString)), this, SLOT(loadedPlugin(QString)));
             return widget;
         }
     }
@@ -224,7 +224,7 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
     return 0;
 }
 
-int WebPluginFactory::loadOnDemandPluginCount() const
+void WebPluginFactory::loadedPlugin (const QString& id)
 {
-    return mLoadOnDemandPluginList.count();
+    mPluginsLoadedOnDemand << id;
 }

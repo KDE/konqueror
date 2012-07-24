@@ -35,8 +35,11 @@ class FakePluginWidget : public QWidget
     Q_PROPERTY(bool swapping READ swapping)
 
 public:
-    FakePluginWidget(const QUrl& url, const QString& mimeType, QWidget* parent = 0);
+    FakePluginWidget(const QString& id, const QUrl& url, const QString& mimeType, QWidget* parent = 0);
     bool swapping() const { return m_swapping; }
+
+Q_SIGNALS:
+    void pluginLoaded(const QString&);
 
 private Q_SLOTS:
     void loadAll();
@@ -46,19 +49,22 @@ private Q_SLOTS:
 private:
     bool m_swapping;
     QString m_mimeType;
+    QString m_id;
 };
 
 class WebPluginFactory : public KWebPluginFactory
 {
-
+    Q_OBJECT
 public:
     WebPluginFactory (KWebKitPart* parent = 0);
     virtual QObject* create (const QString&, const QUrl&, const QStringList&, const QStringList&) const;
-    int loadOnDemandPluginCount() const;
+
+private Q_SLOTS:
+    void loadedPlugin(const QString&);
 
 private:
     KWebKitPart* mPart;
-    mutable QList<QString> mLoadOnDemandPluginList;
+    mutable QList<QString> mPluginsLoadedOnDemand;
 };
 
 #endif
