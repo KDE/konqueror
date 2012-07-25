@@ -43,7 +43,7 @@
 #define QL1S(x)  QLatin1String(x)
 
 
-FakePluginWidget::FakePluginWidget (const QString& id, const QUrl& url, const QString& mimeType, QWidget* parent)
+FakePluginWidget::FakePluginWidget (uint id, const QUrl& url, const QString& mimeType, QWidget* parent)
                  :QWidget(parent)
                  ,m_swapping(false)
                  ,m_mimeType(mimeType)
@@ -135,7 +135,7 @@ WebPluginFactory::WebPluginFactory (KWebKitPart* parent)
 {
 }
 
-static int pluginId(const QUrl& url, const QStringList& argNames, const QStringList& argValues)
+static uint pluginId(const QUrl& url, const QStringList& argNames, const QStringList& argValues)
 {
     QString id = url.toString();
     id += argNames.join(QL1S(","));
@@ -156,10 +156,10 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
     const bool noPluginHandling = WebKitSettings::self()->isInternalPluginHandlingDisabled();
 
     if (!noPluginHandling && WebKitSettings::self()->isLoadPluginsOnDemandEnabled()) {
-        const QString id = QString::number(pluginId(url, argumentNames, argumentValues));
+        const uint id = pluginId(url, argumentNames, argumentValues);
         if (!mPluginsLoadedOnDemand.contains(id)) {
             FakePluginWidget* widget = new FakePluginWidget(id, url, mimeType, view);
-            connect(widget, SIGNAL(pluginLoaded(QString)), this, SLOT(loadedPlugin(QString)));
+            connect(widget, SIGNAL(pluginLoaded(uint)), this, SLOT(loadedPlugin(uint)));
             return widget;
         }
     }
@@ -224,7 +224,12 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
     return 0;
 }
 
-void WebPluginFactory::loadedPlugin (const QString& id)
+void WebPluginFactory::loadedPlugin (uint id)
 {
     mPluginsLoadedOnDemand << id;
+}
+
+void WebPluginFactory::resetPluginOnDemandList()
+{
+    mPluginsLoadedOnDemand.clear();
 }

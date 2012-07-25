@@ -189,8 +189,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
 KWebKitPart::~KWebKitPart()
 {
-    QWebSettings::clearMemoryCaches();
-    kDebug();
 }
 
 WebPage* KWebKitPart::page()

@@ -170,6 +170,23 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
     KWebPage::downloadRequest(request);
 }
 
+static QString warningIconData()
+{
+    QString data;
+    QFile f (KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge));
+
+    if (f.open(QIODevice::ReadOnly)) {
+        KMimeType::Ptr mime = KMimeType::mimeType(f.fileName(), KMimeType::ResolveAliases);
+        data += QL1S("data:");
+        data += mime ? mime->name() : KMimeType::defaultMimeType();
+        data += QL1S(";base64,");
+        data += f.readAll().toBase64();
+        f.close();
+    }
+
+    return data;
+}
+
 QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) const
 {
     QString errorName, techName, description;
@@ -190,7 +207,7 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
 
     html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
     html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-    html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
+    html.replace( QL1S( "ICON_PATH" ), warningIconData());
 
     QString doc (QL1S( "<h1>" ));
     doc += i18n( "The requested operation could not be completed" );
@@ -330,6 +347,14 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
+static void resetPluginsLoadedOnDemandFor(QWebPluginFactory* _factory)
+{
+    WebPluginFactory* factory = qobject_cast<WebPluginFactory*>(_factory);
+    if (factory) {
+        factory->resetPluginOnDemandList();
+    }
+}
+
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
     QUrl reqUrl (request.url());
@@ -361,7 +386,17 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         case QWebPage::NavigationTypeFormResubmitted:
             if (!checkFormData(request))
                 return false;
-            // TODO: Prompt user for form re-submission ???
+            if (KMessageBox::warningContinueCancel(view(),
+                            i18n("<qt><p>To display the requested web page again, "
+                                  "the browser needs to resend information you have "
+                                  "previously submitted.</p>"
+                                  "<p>If you were shopping online and made a purchase, "
+                                  "click the Cancel button to prevent a duplicate purchase."
+                                  "Otherwise, click the Continue button to display the web"
+                                  "page again.</p>"),
+                            i18n("Resubmit Information")) == KMessageBox::Cancel) {
+                return false;
+            }
             break;
         case QWebPage::NavigationTypeBackOrForward:
             // If history navigation is locked, ignore all such requests...
@@ -373,13 +408,18 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()
             //         << "of" << history()->count() << "):" << history()->currentItem().url();
             inPageRequest = false;
+            resetPluginsLoadedOnDemandFor(pluginFactory());
             break;
         case QWebPage::NavigationTypeReload:
             inPageRequest = false;
             setRequestMetaData(QL1S("cache"), QL1S("reload"));
+            resetPluginsLoadedOnDemandFor(pluginFactory());
             break;
         case QWebPage::NavigationTypeOther:
             inPageRequest = !isTypedUrl;
+            if (isTypedUrl) {
+              resetPluginsLoadedOnDemandFor(pluginFactory());
+            }
             break;
         default:
             break;
