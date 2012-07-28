@@ -170,6 +170,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     KParts::BrowserExtension::ActionGroupMap mapAction;
     QString mimeType (QL1S("text/html"));
+    bool forcesNewWindow = false;
 
     KUrl emitUrl;
     if (m_result.isContentEditable()) {
@@ -209,12 +210,16 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         else
             extractMimeTypeFor(emitUrl, mimeType);
         partActionPopupMenu(mapAction);
+
+        // Show the OpenInThisWindow context menu item
+        forcesNewWindow = (page()->currentFrame() != m_result.linkTargetFrame());
     }
 
     if (!mapAction.isEmpty()) {
         KParts::OpenUrlArguments args;
         KParts::BrowserArguments bargs;
         args.setMimeType(mimeType);
+        bargs.setForcesNewWindow(forcesNewWindow);
         e->accept();
         emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, -1, args, bargs, flags, mapAction);
         return;
