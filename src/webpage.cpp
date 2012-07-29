@@ -91,8 +91,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     setForwardUnsupportedContent(true);
 
-    // Add all KDE's local protocols + the error protocol to QWebSecurityOrigin
-    QWebSecurityOrigin::addLocalScheme(QL1S("error"));
+    // Add all KDE's local protocols to QWebSecurityOrigin
     Q_FOREACH (const QString& protocol, KProtocolInfo::protocols()) {
         // file is already a known local scheme and about must not be added
         // to this list since there is about:blank.
@@ -864,27 +863,25 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
             const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
             switch (policy) {
             case KParts::HtmlSettingsInterface::JSWindowOpenDeny:
-                // TODO: Implement a way for showing the blocked popup dialog.
+                // TODO: Implement support for dealing with blocked pop up windows.
                 this->deleteLater();
                 return false;
             case KParts::HtmlSettingsInterface::JSWindowOpenAsk: {
                 const QString message = (reqUrl.isEmpty() ?
-                                          i18n("This site is requesting to open up a popup window.\n"
+                                          i18n("This site is requesting to open a new popup window.\n"
                                                "Do you want to allow this?") :
                                           i18n("<qt>This site is requesting to open a popup window to"
                                                "<p>%1</p><br/>Do you want to allow this?</qt>",
-                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.prettyUrl()), 100))
-                                        );
+                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.prettyUrl()), 100)));
                 if (KMessageBox::questionYesNo(view(), message,
                                                i18n("Javascript Popup Confirmation"),
                                                KGuiItem(i18n("Allow")),
-                                               KGuiItem(i18n("Do Not Allow"))) == KMessageBox::Yes) {
-                    break;
-                } else {
-                    // TODO: Implement a way for showing the blocked popup dialog.
+                                               KGuiItem(i18n("Do Not Allow"))) == KMessageBox::No) {
+                    // TODO: Implement support for dealing with blocked pop up windows.
                     this->deleteLater();
                     return false;
                 }
+               break;
             }
             default:
                 break;

@@ -46,8 +46,7 @@
 #include <kdeversion.h>
 
 #include <QBuffer>
-#include <QMapIterator>
-#include <QCryptographicHash>
+#include <QVariant>
 #include <QClipboard>
 #include <QApplication>
 #include <QPrinter>

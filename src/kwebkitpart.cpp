@@ -56,13 +56,10 @@
 #include <KParts/StatusBarExtension>
 
 #include <QUrl>
-#include <QRect>
 #include <QFile>
 #include <QTextCodec>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QVBoxLayout>
-#include <QLayout>
-#include <QPrintPreviewDialog>
 #include <QDBusInterface>
 #include <QWebFrame>
 #include <QWebElement>
@@ -720,13 +717,12 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
             QWebFrame* frame = page() ? page()->currentFrame() : 0;
             if (frame) {
                 QWebHitTestResult result = frame->hitTestContent(page()->view()->mapFromGlobal(QCursor::pos()));
-                const QWebElement element (result.linkElement());
-                const QString target (element.attribute(QL1S("target")));
-                if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
-                    target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
-                    message += i18n(" (In new window)");
-                } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
+                QWebFrame* target = result.linkTargetFrame();
+                kDebug() << "target frame:"  << target << "parent frame:" << frame->parentFrame() << "current frame:" << frame;
+                if (frame->parentFrame() && target == frame->parentFrame()) {
                     message += i18n(" (In parent frame)");
+                } else if (!target || target != frame) {
+                    message += i18n(" (In new window)");
                 }
             }
             KFileItem item (linkUrl, QString(), KFileItem::Unknown);

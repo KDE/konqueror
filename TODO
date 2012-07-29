@@ -1,12 +1,8 @@
 * Proper support for KWebKitPart in the following Konqueror plugins:
-      - kget       Everything except the "download selected links only" feature
-                   works and even that functionality is missing due to
-                   deficiencies of QtWebKit. See http://webkit.org/b/48013.
-
       - adblock    This plugin's GUI needs to be changed to use the KPart plugin
                    extensions so that it is not khtml specific. Other than that
                    kwebkitpart supports the ad filtering functionalities supported
-                   by khtml for the most part.
+                   by khtml.
 
 * Add KPartStatusBarExtension support for the following plugins/features:
       - Popup blocker (non-plugin)
@@ -22,7 +18,6 @@
       - Change cursor over links (TODO, QtWebKit ???).
       - Smooth scrolling support (TODO, QtWebKit ???).
       - Underline links support (Partial, does not work as intended).
-      - Right click goes back in history (TODO).
       - Enable access key navigation with Ctrl key (TODO, QtWebKit ???).
       - Animations (TODO, QtWebKit ???).
       - Draw frames around not completely loaded images (TODO, QtWebKit ???).
