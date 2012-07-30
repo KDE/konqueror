@@ -746,6 +746,15 @@ private: // members
 
   QPointer<KonqHistoryDialog> m_historyDialog;
 
+  /* The two variables below are used to store information about special popup
+   * windows. These windows, mostly requested through javascript window.open API,
+   * are required to have no toolbars showing. Since hiding all toolbars can lead
+   * to a malicious site attempting to fool the user by mimicing native input dialogs,
+   * (aka spoofing), Konqueror will NOT hide its location toolbar by default.
+   */
+  bool m_isPopupWithProxyWindow;
+  QPointer<KonqMainWindow> m_popupProxyWindow;
+
     // TODO: move to a KonqPreloadHandler class
   static bool s_preloaded;
   static KonqMainWindow* s_preloadedWindow;
