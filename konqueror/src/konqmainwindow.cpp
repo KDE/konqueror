@@ -171,6 +171,18 @@ static int current_memory_usage( int* limit = NULL );
 static unsigned short int s_closedItemsListLength = 10;
 static unsigned long s_konqMainWindowInstancesCount = 0;
 
+static void raiseWindow(KonqMainWindow* window)
+{
+    if (!window)
+        return;
+
+    if (window->isMinimized()) {
+        KWindowSystem::unminimizeWindow(window->winId());
+    }
+    window->activateWindow();
+    window->raise();
+}
+
 KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 {
    m_pKonqMainWindow = w;
@@ -188,6 +200,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     , m_pBookmarkMenu(0)
     , m_configureDialog(0)
     , m_pURLCompletion(0)
+    , m_isPopupWithProxyWindow(false)
 {
   incInstancesCount();
   setPreloadedFlag( false );
@@ -1013,7 +1026,11 @@ void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlA
 
     if ( frameName.toLower() == _blank )
     {
-      slotCreateNewWindow( url, args, browserArgs );
+      KonqMainWindow *mainWindow = (m_popupProxyWindow ? m_popupProxyWindow.data() : this);
+      mainWindow->slotCreateNewWindow( url, args, browserArgs );
+      if (m_isPopupWithProxyWindow) {
+          raiseWindow(mainWindow);
+      }
       return;
     }
 
@@ -1177,6 +1194,13 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     kDebug() << "url=" << url << "args.mimeType()=" << args.mimeType()
                  << "browserArgs.frameName=" << browserArgs.frameName;
 
+    // If we are a popup window, forward the request the proxy window.
+    if (m_isPopupWithProxyWindow && m_popupProxyWindow) {
+        m_popupProxyWindow->slotCreateNewWindow(url, args, browserArgs, windowArgs, part);
+        raiseWindow(m_popupProxyWindow);
+        return;
+    }
+
     if ( part )
         *part = 0; // Make sure to be initialized in case of failure...
 
@@ -1206,7 +1230,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     }
     kDebug() << "createTab=" << createTab << "part=" << part;
 
-    if ( createTab ) {
+    if ( createTab && !m_isPopupWithProxyWindow ) {
 
         bool newtabsinfront = KonqSettings::newTabsInFront();
         if ( windowArgs.lowerWindow() || (QApplication::keyboardModifiers() & Qt::ShiftModifier))
@@ -1235,6 +1259,16 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
             *part = newView->part();
         }
+
+        // Raise the current window if the request to create the tab came from a popup
+        // window, e.g. clicking on links with target = "_blank" in popup windows.
+        KParts::BrowserExtension* be = qobject_cast<KParts::BrowserExtension*>(sender());
+        KonqView* view = (be ? childView (qobject_cast<KParts::ReadOnlyPart*>(be->parent())) : 0);
+        KonqMainWindow* window = view ? view->mainWindow() : 0;
+        if (window && window->m_isPopupWithProxyWindow && !m_isPopupWithProxyWindow) {
+            raiseWindow(this);
+        }
+
         return;
     }
 
@@ -1297,6 +1331,12 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     mainWindow->move ( xPos, yPos );
     mainWindow->resize( width, height );
 
+    // Make the window open properties configurable. This is equivalent to
+    // Firefox's "dom.disable_window_open_feature.*" properties. For now
+    // only LocationBar visiblity is configurable.
+    KSharedConfig::Ptr config = KGlobal::config();
+    KConfigGroup cfg (config, "DisableWindowOpenFeatures");
+
     if ( !windowArgs.isMenuBarVisible() )
     {
         mainWindow->menuBar()->hide();
@@ -1305,8 +1345,55 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
     if ( !windowArgs.toolBarsVisible() )
     {
-      foreach (KToolBar* bar, mainWindow->findChildren<KToolBar*>())
-        bar->hide();
+        // For security reasons the address bar is NOT hidden by default. The
+        // user can override the default setup by adding a config option
+        // "LocationBar=false" to the [DisableWindowOpenFeatures] section of
+        // konquerorrc.
+        const bool showLocationBar = cfg.readEntry("LocationBar", true);
+        KToolBar* locationToolBar = mainWindow->toolBar(QLatin1String("locationToolBar"));
+
+        Q_FOREACH (KToolBar* bar, mainWindow->findChildren<KToolBar*>()) {
+            if (bar != locationToolBar || !showLocationBar) {
+                bar->hide();
+            }
+        }
+
+        if (locationToolBar && showLocationBar && isPopupWindow(windowArgs)) {
+            // Hide all the actions of the popup window
+            KActionCollection* collection = mainWindow->actionCollection();
+            for (int i = 0, count = collection->count(); i < count; ++i) {
+                collection->action(i)->setVisible(false);
+            }
+
+            // Show only those actions that are allowed in a popup window
+            static const char* const s_allowedActions[] = {
+                "go_back", "go_forward", "go_up", "reload", "hard_reload",
+                "stop", "cut", "copy", "paste", "print", "fullscreen",
+                "add_bookmark", "new_window", 0 };
+            for (int i = 0; s_allowedActions[i]; ++i) {
+                if (QAction* action = collection->action(QLatin1String(s_allowedActions[i]))) {
+                    action->setVisible(true);
+                }
+            }
+
+            // Make only the address widget available in the location toolbar
+            locationToolBar->clear();
+            QAction* action = locationToolBar->addWidget(mainWindow->m_combo);
+            action->setVisible(true);
+
+            // Make the combo box non editable and clear it of previous history
+            QLineEdit* edit = (mainWindow->m_combo ? mainWindow->m_combo->lineEdit() : 0);
+            if (edit) {
+                mainWindow->m_combo->clear();
+                mainWindow->m_combo->setCompletionMode(KGlobalSettings::CompletionNone);
+                edit->setReadOnly(true);
+            }
+
+            // Store the originating window as the popup's proxy window so that
+            // new tab requests in the popup window are forwarded to it.
+            mainWindow->m_popupProxyWindow = this;
+            mainWindow->m_isPopupWithProxyWindow = true;
+        }
     }
 
     if ( view ) {
@@ -2261,7 +2348,8 @@ void KonqMainWindow::slotURLEntered(const QString &text, Qt::KeyboardModifiers m
 
     if ((modifiers & Qt::ControlModifier) || (modifiers & Qt::AltModifier)) {
         m_combo->setURL(m_currentView ? m_currentView->url().prettyUrl() : QString());
-        openFilteredUrl(text.trimmed(), true /*inNewTab*/);
+        const bool inNewTab = !m_isPopupWithProxyWindow; // do not open a new tab in popup window.
+        openFilteredUrl(text.trimmed(), inNewTab);
     } else {
         openFilteredUrl(text.trimmed());
     }
@@ -2388,6 +2476,10 @@ void KonqMainWindow::slotPopupThisWindow()
 
 void KonqMainWindow::slotPopupNewTab()
 {
+    if (m_isPopupWithProxyWindow && !m_popupProxyWindow) {
+        slotPopupNewWindow();
+        return;
+    }
     bool openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
     bool newTabsInFront = KonqSettings::newTabsInFront();
 
@@ -2407,13 +2499,20 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
   req.browserArgs = m_popupUrlBrowserArgs;
   req.browserArgs.setNewTab(true);
 
+  KonqMainWindow* mainWindow = (m_popupProxyWindow ? m_popupProxyWindow.data() : this);
+
   for ( int i = 0; i < m_popupItems.count(); ++i )
   {
     if ( infront && i == m_popupItems.count()-1 )
     {
       req.newTabInFront = true;
     }
-    openUrl( 0, m_popupItems[i].targetUrl(), QString(), req );
+    mainWindow->openUrl( 0, m_popupItems[i].targetUrl(), QString(), req );
+  }
+
+  // Raise this window if the request to create the tab came from a popup window.
+  if (m_isPopupWithProxyWindow) {
+      raiseWindow(mainWindow);
   }
 }
 
