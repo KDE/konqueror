@@ -91,7 +91,7 @@ void FakePluginWidget::load (bool loadAll)
     }
 
     const QString selector = QLatin1String("object[type=\"%1\"],embed[type=\"%1\"]");
-    kDebug() << selector.arg(m_mimeType);
+    //kDebug() << selector.arg(m_mimeType);
 
     hide();
     m_swapping = true;
@@ -147,7 +147,7 @@ static uint pluginId(const QUrl& url, const QStringList& argNames, const QString
 
 QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
-    kDebug() << _mimeType << url << argumentNames;
+    //kDebug() << _mimeType << url << argumentNames;
     QString mimeType (_mimeType.trimmed());
     if (mimeType.isEmpty()) {
         extractGuessedMimeType (url, &mimeType);

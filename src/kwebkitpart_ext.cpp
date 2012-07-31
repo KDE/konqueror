@@ -63,8 +63,7 @@
 
 WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
                        :KParts::BrowserExtension(parent),
-                        m_part(QWeakPointer<KWebKitPart>(parent)),
-                        m_currentHistoryItemIndex(-1)
+                        m_part(parent)
 {
     enableAction("cut", false);
     enableAction("copy", false);
@@ -79,10 +78,10 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
 WebView* WebKitBrowserExtension::view()
 {
     if (!m_view && m_part) {
-        m_view = QWeakPointer<WebView>(qobject_cast<WebView*>(m_part.data()->view()));
+        m_view = qobject_cast<WebView*>(m_part->view());
     }
 
-    return m_view.data();
+    return m_view;
 }
 
 int WebKitBrowserExtension::xOffset()
@@ -104,10 +103,16 @@ int WebKitBrowserExtension::yOffset()
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
-    stream << m_part.data()->url()
+    QWebHistory* history = (view() ? view()->history() : 0);
+    const int historyIndex = history ? history->currentItemIndex() : -1;
+    const KUrl historyUrl = history ? history->currentItem().url() : KUrl();
+
+    Q_ASSERT(historyUrl.isValid()); // should never happen ??
+
+    stream << historyUrl
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
-           << m_currentHistoryItemIndex
+           << historyIndex
            << m_historyData;
 }
 
@@ -144,7 +149,8 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
                         if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
                             history->clear();
                         }
-                        m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
+                        kDebug() << "Restoring URL:" << currentItem.url();
+                        m_part->setProperty("NoEmitOpenUrlNotification", true);
                         history->goToItem(currentItem);
                     }
                 }
@@ -160,7 +166,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
                         const QPoint scrollPos (xOfs, yOfs);
                         item.setUserData(scrollPos);
                     }
-                    m_part.data()->setProperty("NoEmitOpenUrlNotification", true);
+                    m_part->setProperty("NoEmitOpenUrlNotification", true);
                     history->goToItem(item);
                     success = true;
                 }
@@ -175,7 +181,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
     kDebug() << "Normal history navgation logic failed! Falling back to a workaround!";
-    m_part.data()->openUrl(u);
+    m_part->openUrl(u);
 }
 
 void WebKitBrowserExtension::restoreHistoryFromData (const QByteArray& data)
@@ -248,7 +254,7 @@ void WebKitBrowserExtension::updateEditActions()
 
 void WebKitBrowserExtension::updateActions()
 {
-    const QString protocol (m_part.data()->url().protocol());
+    const QString protocol (m_part->url().protocol());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
     enableAction("print", isValidDocument);
 }
@@ -779,28 +785,26 @@ void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
 
 void WebKitBrowserExtension::slotSaveHistory()
 {
-    QByteArray histData;
-    QBuffer buff (&histData);
-    if (!buff.open(QIODevice::WriteOnly)) {
-        kWarning() << "Failed to save history data!";
-        return;
-    }
+    QWebHistory* history = (view() ? view()->history() : 0);
 
-    QWebHistory* history = view() ? view()->history() : 0;
     if (history && history->count() > 0) {
-        QDataStream stream (&buff);
-        stream << *history;
-        m_historyData = qCompress(histData, 9);
-        m_currentHistoryItemIndex = history->currentItemIndex();
-        QWidget* mainWidget = m_part.data() ? m_part.data()->widget() : 0;
+        kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
+        QByteArray histData;
+        QBuffer buff (&histData);
+        m_historyData.clear();
+        if (buff.open(QIODevice::WriteOnly)) {
+            QDataStream stream (&buff);
+            stream << *history;
+            m_historyData = qCompress(histData, 9);
+        }
+        QWidget* mainWidget = m_part ? m_part->widget() : 0;
         QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : 0;
         if (frameWidget) {
             emit saveHistory(frameWidget, m_historyData);
             // kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         }
     } else {
-        m_historyData.clear();
-        m_currentHistoryItemIndex = -1;
+        Q_ASSERT(false); // should never happen!!!
     }
 }
 

@@ -113,11 +113,10 @@ public Q_SLOTS:
 
 private:
     WebView* view();
-    QWeakPointer<KWebKitPart> m_part;
-    QWeakPointer<WebView> m_view;
+    QPointer<KWebKitPart> m_part;
+    QPointer<WebView> m_view;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
-    quint32 m_currentHistoryItemIndex;
     QByteArray m_historyData;
 };
 

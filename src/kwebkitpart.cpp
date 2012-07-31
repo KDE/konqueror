@@ -476,7 +476,6 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         return;
 
     if (!m_emitOpenUrlNotify) {
-        m_browserExtension->slotSaveHistory(); // Cache contents of QWebHistory
         m_emitOpenUrlNotify = true; // Save history once page loading is done.
     }
 
@@ -606,22 +605,24 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
         return;
     }
 
-    if (!frame->parentFrame()) {
+    // Handle actions that apply only to the mainframe...
+    if (frame == view()->page()->mainFrame()) {
         slotWalletClosed();
-    }
 
-    // If "NoEmitOpenUrlNotification" property is set to true, do not
-    // emit the open url notification. Property is set by this part's
-    // extension to prevent openUrl notification being sent when
-    // handling history navigation requests.
-    const bool doNotEmitOpenUrl = property("NoEmitOpenUrlNotification").toBool();
-    if (doNotEmitOpenUrl) {
-        setProperty("NoEmitOpenUrlNotification", QVariant());
-    }
+        // If "NoEmitOpenUrlNotification" property is set to true, do not
+        // emit the open url notification. Property is set by this part's
+        // extension to prevent openUrl notification being sent when
+        // handling history navigation requests.
+        const bool doNotEmitOpenUrl = property("NoEmitOpenUrlNotification").toBool();
+        if (doNotEmitOpenUrl) {
+            setProperty("NoEmitOpenUrlNotification", QVariant());
+        }
 
-    if (m_emitOpenUrlNotify && !doNotEmitOpenUrl && !frame->parentFrame()) {
-        // kDebug() << "***** EMITTING openUrlNotify" << item->url();
-        emit m_browserExtension->openUrlNotify();
+        // Only emit open url notify for the main frame. Do not
+        if (m_emitOpenUrlNotify && !doNotEmitOpenUrl) {
+            // kDebug() << "***** EMITTING openUrlNotify" << item->url();
+            emit m_browserExtension->openUrlNotify();
+        }
     }
 
     // For some reason, QtWebKit does not restore scroll position when
