@@ -718,7 +718,6 @@ void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/
             if (frame) {
                 QWebHitTestResult result = frame->hitTestContent(page()->view()->mapFromGlobal(QCursor::pos()));
                 QWebFrame* target = result.linkTargetFrame();
-                kDebug() << "target frame:"  << target << "parent frame:" << frame->parentFrame() << "current frame:" << frame;
                 if (frame->parentFrame() && target == frame->parentFrame()) {
                     message += i18n(" (In parent frame)");
                 } else if (!target || target != frame) {

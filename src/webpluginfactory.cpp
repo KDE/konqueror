@@ -126,12 +126,13 @@ void FakePluginWidget::load (bool loadAll)
 
 void FakePluginWidget::showContextMenu(const QPoint&)
 {
+    // TODO: Implement context menu, e.g. load all and configure plugins.
 }
 
 
-WebPluginFactory::WebPluginFactory (KWebKitPart* parent)
+WebPluginFactory::WebPluginFactory (KWebKitPart* part, QObject* parent)
     : KWebPluginFactory (parent)
-    , mPart (parent)
+    , mPart (part)
 {
 }
 

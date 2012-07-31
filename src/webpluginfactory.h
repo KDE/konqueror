@@ -56,7 +56,7 @@ class WebPluginFactory : public KWebPluginFactory
 {
     Q_OBJECT
 public:
-    WebPluginFactory (KWebKitPart* parent = 0);
+    WebPluginFactory (KWebKitPart* part, QObject* parent = 0);
     virtual QObject* create (const QString&, const QUrl&, const QStringList&, const QStringList&) const;
     void resetPluginOnDemandList();
 

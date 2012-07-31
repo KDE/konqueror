@@ -61,7 +61,10 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-
+static bool isBlankUrl(const KUrl& url)
+{
+    return (url.isEmpty() || url.url() == QL1S("about:blank"));
+}
 
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
@@ -81,7 +84,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     }
     setNetworkAccessManager(manager);
 
-    setPluginFactory(new WebPluginFactory(part));
+    setPluginFactory(new WebPluginFactory(part, this));
 
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
 
@@ -407,16 +410,20 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()
             //         << "of" << history()->count() << "):" << history()->currentItem().url();
             inPageRequest = false;
-            resetPluginsLoadedOnDemandFor(pluginFactory());
+            if (!isBlankUrl(reqUrl)) {
+                resetPluginsLoadedOnDemandFor(pluginFactory());
+            }
             break;
         case QWebPage::NavigationTypeReload:
-            inPageRequest = false;
             setRequestMetaData(QL1S("cache"), QL1S("reload"));
-            resetPluginsLoadedOnDemandFor(pluginFactory());
+            inPageRequest = false;
+            if (!isBlankUrl(reqUrl)) {
+                resetPluginsLoadedOnDemandFor(pluginFactory());
+            }
             break;
         case QWebPage::NavigationTypeOther:
             inPageRequest = !isTypedUrl;
-            if (isTypedUrl) {
+            if (isTypedUrl && !isBlankUrl(reqUrl)) {
               resetPluginsLoadedOnDemandFor(pluginFactory());
             }
             break;
@@ -574,11 +581,6 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->browserExtension()->setPageSecurity(security);
     }
-}
-
-static bool isBlankUrl(const KUrl& url)
-{
-    return (url.isEmpty() || url.url() == QL1S("about:blank"));
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply* reply)
