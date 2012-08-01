@@ -616,41 +616,17 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
                                         QStyle::SC_ComboBoxEditField, this );
     re = QStyle::visualRect(layoutDirection(), rect(), re);
 
-    if ( m_pageSecurity!=KonqMainWindow::NotCrypted ) {
-        QColor color(245, 246, 190);
-	// From George: disabled for now.  We're going to match IE behavior in
-	// 4.0 which means:
-	// 1) No color, but padlock for SSL verified
-	// 2) No padlock for non-verified SSL
-	// 3) Green fill, padlock, and site info for high-assurance verified
-	// 4) If available, red fill for known phishing site
-        bool useColor = false; //hasSufficientContrast(color,edit->paletteForegroundColor());
-
+    if (m_pageSecurity!= KonqMainWindow::NotCrypted) {
         QPainter p( this );
         p.setClipRect( re );
 
-	QPixmap pix = KonqPixmapProvider::self()->pixmapFor( currentText() );
-	if ( useColor ) {
-            p.fillRect( re.x(), re.y(), pix.width() + 4, re.height(), QBrush( color ));
-            p.drawPixmap( re.x() + 2, re.y() + ( re.height() - pix.height() ) / 2, pix );
-	}
+        QPixmap pix = SmallIcon(QLatin1String(m_pageSecurity == KonqMainWindow::Encrypted ? "security-high" : "security-medium"));
 
         QRect r = edit->geometry();
-        r.setRight( re.right() - pix.width() - 4 );
+        r.setRight( re.right() - pix.width() - 2 );
         if ( r != edit->geometry() )
             edit->setGeometry( r );
 
-	if ( useColor){
-            QPalette palette;
-            palette.setColor(edit->backgroundRole(), color);
-            edit->setPalette(palette);
-        }
-
-        pix = SmallIcon( m_pageSecurity==KonqMainWindow::Encrypted ? "security-high" : "security-medium" );
-        if ( useColor ) {
-            p.fillRect( re.right() - pix.width() - 3 , re.y(), pix.width() + 4, re.height(),
-                        QBrush( color ));
-        }
         p.drawPixmap( re.right() - pix.width() -1 , re.y() + ( re.height() - pix.height() ) / 2, pix );
         p.setClipping( false );
     } else {
@@ -658,10 +634,6 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
         r.setRight( re.right() );
         if ( r != edit->geometry() )
             edit->setGeometry( r );
-        // ### disabled for now, see above note
-        //QPalette palette = edit->palette();
-        //palette.setColor(edit->backgroundRole(), palette.color(QPalette::Active, QPalette::Base));
-        //edit->setPalette(palette);
     }
 }
 
