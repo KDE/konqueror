@@ -63,7 +63,6 @@
 #include <kmimetypetrader.h>
 
 //#include <konq_iconviewwidget.h>
-#include <QtDBus/QtDBus>
 #include <QMenu>
 #include <QApplication>
 #include <QClipboard>
