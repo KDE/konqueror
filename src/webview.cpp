@@ -49,8 +49,13 @@
 #include <QWebElement>
 #include <QWebHitTestResult>
 #include <QWebInspector>
+#include <QToolTip>
+#include <QCoreApplication>
+#include <unistd.h>
 
 #define QL1S(x)   QLatin1String(x)
+#define QL1C(x)   QLatin1Char(x)
+
 #define ALTERNATE_DEFAULT_WEB_SHORTCUT    QL1S("google")
 #define ALTERNATE_WEB_SHORTCUTS           QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
 
@@ -61,7 +66,8 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
          m_webInspector(0),
          m_autoScrollTimerId(-1),
          m_verticalAutoScrollSpeed(0),
-         m_horizontalAutoScrollSpeed(0)
+         m_horizontalAutoScrollSpeed(0),
+         m_accessKeyActivated(NotActivated)
 {
     setAcceptDrops(true);
 
@@ -69,6 +75,8 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
     setPage(new WebPage(part, this));
 
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
+    connect(this, SIGNAL(loadStarted()), this, SLOT(hideAccessKeys()));
+    connect(page(), SIGNAL(scrollRequested(int,int,QRect)), this, SLOT(hideAccessKeys()));
 }
 
 WebView::~WebView()
@@ -253,6 +261,19 @@ void WebView::keyPressEvent(QKeyEvent* e)
 {
     if (e && hasFocus()) {
         const int key = e->key();
+        if (WebKitSettings::self()->accessKeysEnabled()) {
+            if (m_accessKeyActivated == Activated) {
+                if (checkForAccessKey(e)) {
+                    hideAccessKeys();
+                    e->accept();
+                    return;
+                }
+                hideAccessKeys();
+            } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier) {
+                m_accessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
+            }
+        }
+
         if (e->modifiers() & Qt::ShiftModifier) {
             switch (key) {
             case Qt::Key_Up:
@@ -304,6 +325,23 @@ void WebView::keyPressEvent(QKeyEvent* e)
     KWebView::keyPressEvent(e);
 }
 
+void WebView::keyReleaseEvent(QKeyEvent *e)
+{
+    if (WebKitSettings::self()->accessKeysEnabled() && m_accessKeyActivated == PreActivated) {
+        // Activate only when the CTRL key is pressed and released by itself.
+        if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
+            showAccessKeys();
+            emit statusBarMessage(i18n("Access keys activated"));
+            m_accessKeyActivated = Activated;
+            e->accept();
+            return;
+        } else {
+            m_accessKeyActivated = NotActivated;
+        }
+    }
+    KWebView::keyReleaseEvent(e);
+}
+
 void WebView::timerEvent(QTimerEvent* e)
 {
     if (e && e->timerId() == m_autoScrollTimerId) {
@@ -312,14 +350,14 @@ void WebView::timerEvent(QTimerEvent* e)
 
         // check if we reached the end
         const int y = page()->currentFrame()->scrollPosition().y();
-        if (y == page()->currentFrame()->scrollBarMinimum(Qt::Vertical)
-            || y == page()->currentFrame()->scrollBarMaximum(Qt::Vertical)) {
+        if (y == page()->currentFrame()->scrollBarMinimum(Qt::Vertical) ||
+            y == page()->currentFrame()->scrollBarMaximum(Qt::Vertical)) {
             m_verticalAutoScrollSpeed = 0;
         }
 
         const int x = page()->currentFrame()->scrollPosition().x();
-        if (x == page()->currentFrame()->scrollBarMinimum(Qt::Horizontal)
-            || x == page()->currentFrame()->scrollBarMaximum(Qt::Horizontal)) {
+        if (x == page()->currentFrame()->scrollBarMinimum(Qt::Horizontal) ||
+            x == page()->currentFrame()->scrollBarMaximum(Qt::Horizontal)) {
             m_horizontalAutoScrollSpeed = 0;
         }
 
@@ -772,4 +810,182 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
             selectActions.append(providerList);
         }
     }
+}
+
+bool WebView::checkForAccessKey(QKeyEvent *event)
+{
+    if (m_accessKeyLabels.isEmpty())
+        return false;
+
+    QString text = event->text();
+    if (text.isEmpty())
+        return false;
+    QChar key = text.at(0).toUpper();
+    bool handled = false;
+    if (m_accessKeyNodes.contains(key)) {
+        QWebElement element = m_accessKeyNodes[key];
+        QPoint p = element.geometry().center();
+        QWebFrame *frame = element.webFrame();
+        Q_ASSERT(frame);
+        do {
+            p -= frame->scrollPosition();
+            frame = frame->parentFrame();
+        } while (frame && frame != page()->mainFrame());
+        QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
+        QCoreApplication::sendEvent(this, &pevent);
+        QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
+        QCoreApplication::sendEvent(this, &revent);
+        handled = true;
+    }
+    return handled;
+}
+
+void WebView::hideAccessKeys()
+{
+    if (!m_accessKeyLabels.isEmpty()) {
+        for (int i = 0, count = m_accessKeyLabels.count(); i < count; ++i) {
+            QLabel *label = m_accessKeyLabels[i];
+            label->hide();
+            label->deleteLater();
+        }
+        m_accessKeyLabels.clear();
+        m_accessKeyNodes.clear();
+        m_duplicateLinkElements.clear();
+        m_accessKeyActivated = NotActivated;
+        emit statusBarMessage(QString());
+        update();
+    }
+}
+
+static QString linkElementKey(const QWebElement& element)
+{
+    QPoint p = element.geometry().center();
+    p -= element.webFrame()->scrollPosition(); // account for scrolling...
+    const QWebHitTestResult hit = element.webFrame()->hitTestContent(p);
+    const QWebElement linkElement = hit.linkElement();
+
+    if (linkElement == element && !hit.linkUrl().isEmpty()) {
+        QString linkKey (hit.linkUrl().toString());
+        if (linkElement.hasAttribute(QL1S("target"))) {
+            linkKey += QL1C('+');
+            linkKey += linkElement.attribute(QL1S("target"));
+        }
+        return linkKey; 
+    }
+
+    return QString();
+}
+
+static void handleDuplicateLinkElements(const QWebElement& element, QHash<QString, QChar>* dupLinkList, QChar* accessKey)
+{
+    if (element.tagName().compare(QL1S("A"), Qt::CaseInsensitive) == 0) {
+        const QString linkKey (linkElementKey(element));
+        // kDebug() << "LINK KEY:" << linkKey;
+        if (dupLinkList->contains(linkKey)) {
+            // kDebug() << "***** Found duplicate link element:" << linkKey << endl;
+            *accessKey = dupLinkList->value(linkKey);
+        } else if (!linkKey.isEmpty()) {
+            dupLinkList->insert(linkKey, *accessKey);
+        }
+    }
+}
+
+void WebView::showAccessKeys()
+{
+    QList<QChar> unusedKeys;
+    for (char c = 'A'; c <= 'Z'; ++c)
+        unusedKeys << QLatin1Char(c);
+    for (char c = '0'; c <= '9'; ++c)
+        unusedKeys << QLatin1Char(c);
+
+
+    QList<QWebElement> unLabeledElements;
+    QRect viewport = QRect(page()->mainFrame()->scrollPosition(), page()->viewportSize());
+    const QString selectorQuery (QLatin1String("a,"
+                                               "area,"
+                                               "label[for],"
+                                               "legend,"
+                                               "button:not([disabled]),"
+                                               "input:not([disabled]):not([hidden]),"
+                                               "textarea:not([disabled]),"
+                                               "select:not([disabled])"));
+    QList<QWebElement> result = page()->mainFrame()->findAllElements(selectorQuery).toList();
+
+    // Priority first goes to elements with accesskey attributes
+    Q_FOREACH (const QWebElement& element, result) {
+        const QRect geometry = element.geometry();
+        if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
+            unLabeledElements.append(element);
+            continue;
+        }
+        const QString accessKeyAttribute (element.attribute(QLatin1String("accesskey")).toUpper());
+        if (accessKeyAttribute.isEmpty()) {
+            unLabeledElements.append(element);
+            continue;
+        }
+        QChar accessKey;
+        for (int i = 0; i < accessKeyAttribute.count(); i+=2) {
+            const QChar &possibleAccessKey = accessKeyAttribute[i];
+            if (unusedKeys.contains(possibleAccessKey)) {
+                accessKey = possibleAccessKey;
+                break;
+            }
+        }
+        if (accessKey.isNull()) {
+            unLabeledElements.append(element);
+            continue;
+        }
+
+        handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
+        unusedKeys.removeOne(accessKey);
+        makeAccessKeyLabel(accessKey, element);
+    }
+
+
+    // Pick an access key first from the letters in the text and then from the
+    // list of unused access keys
+    Q_FOREACH (const QWebElement &element, unLabeledElements) {
+        const QRect geometry = element.geometry();
+        if (unusedKeys.isEmpty()
+            || geometry.size().isEmpty()
+            || !viewport.contains(geometry.topLeft()))
+            continue;
+        QChar accessKey;
+        QString text = element.toPlainText().toUpper();
+        for (int i = 0; i < text.count(); ++i) {
+            const QChar &c = text.at(i);
+            if (unusedKeys.contains(c)) {
+                accessKey = c;
+                break;
+            }
+        }
+        if (accessKey.isNull())
+            accessKey = unusedKeys.takeFirst();
+
+        handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
+        unusedKeys.removeOne(accessKey);
+        makeAccessKeyLabel(accessKey, element);
+    }
+
+    m_accessKeyActivated = (m_accessKeyLabels.isEmpty() ? Activated : NotActivated);
+}
+
+void WebView::makeAccessKeyLabel(const QChar &accessKey, const QWebElement &element)
+{
+    QLabel *label = new QLabel(this);
+    QFont font (label->font());
+    font.setBold(true);
+    label->setFont(font);
+    label->setText(accessKey);
+    label->setPalette(QToolTip::palette());
+    label->setAutoFillBackground(true);
+    label->setFrameStyle(QFrame::Box | QFrame::Plain);
+    QPoint point = element.geometry().center();
+    point -= page()->mainFrame()->scrollPosition();
+    label->move(point);
+    label->show();
+    point.setX(point.x() - label->width() / 2);
+    label->move(point);
+    m_accessKeyLabels.append(label);
+    m_accessKeyNodes.insertMulti(accessKey, element);
 }

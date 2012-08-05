@@ -32,6 +32,7 @@ class KUrl;
 class KWebKitPart;
 class QWebHitTestResult;
 class QWebInspector;
+class QLabel;
 
 class WebView : public KWebView
 {
@@ -81,6 +82,14 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
+     * @see QWidget::keyReleaseEvent
+     * @internal
+     */
+    virtual void keyReleaseEvent(QKeyEvent*);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
      * @see QObject::timerEvent
      * @internal
      */
@@ -88,6 +97,7 @@ protected:
 
 private Q_SLOTS:
     void slotStopAutoScroll();
+    void hideAccessKeys();
 
 private:
     void editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
@@ -97,6 +107,10 @@ private:
     void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void addSearchActions(QList<QAction*>& selectActions, QWebView*);
 
+    void showAccessKeys();
+    bool checkForAccessKey(QKeyEvent *event);
+    void makeAccessKeyLabel(const QChar &accessKey, const QWebElement &element);
+
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;
     QPointer<KWebKitPart> m_part;
@@ -105,6 +119,16 @@ private:
     qint32 m_autoScrollTimerId;
     qint32 m_verticalAutoScrollSpeed;
     qint32 m_horizontalAutoScrollSpeed;
+
+    enum AccessKeyState {
+        NotActivated,
+        PreActivated,
+        Activated
+    };
+    AccessKeyState m_accessKeyActivated;
+    QList<QLabel*> m_accessKeyLabels;
+    QHash<QChar, QWebElement> m_accessKeyNodes;
+    QHash<QString, QChar> m_duplicateLinkElements;
 };
 
 #endif // WEBVIEW_H
