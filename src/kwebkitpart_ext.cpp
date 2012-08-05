@@ -149,7 +149,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
                         if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
                             history->clear();
                         }
-                        kDebug() << "Restoring URL:" << currentItem.url();
+                        //kDebug() << "Restoring URL:" << currentItem.url();
                         m_part->setProperty("NoEmitOpenUrlNotification", true);
                         history->goToItem(currentItem);
                     }
@@ -157,10 +157,10 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
             }
             success = (history->count() > 0);
         } else {        // Handle navigation: back and forward button navigation.
-            kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
+            //kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
             if (history->count() > historyItemIndex && historyItemIndex > -1) {
                 QWebHistoryItem item (history->itemAt(historyItemIndex));
-                kDebug() << "URL:" << u << "Item URL:" << item.url();
+                //kDebug() << "URL:" << u << "Item URL:" << item.url();
                 if (u == item.url()) {
                     if (item.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
                         const QPoint scrollPos (xOfs, yOfs);
@@ -788,7 +788,7 @@ void WebKitBrowserExtension::slotSaveHistory()
     QWebHistory* history = (view() ? view()->history() : 0);
 
     if (history && history->count() > 0) {
-        kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
+        //kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
         QByteArray histData;
         QBuffer buff (&histData);
         m_historyData.clear();
@@ -951,8 +951,6 @@ static QString queryOne(const QString& query)
    jsQuery += QL1S("\"); if (selectedElement && selectedElement.length > 0) { element = new Object; "
                    "element.tagName = selectedElements[0].tagName; element.href = selectedElements[0].href; } "
                    "return element; }())");
-
-   kDebug() << jsQuery;
    return jsQuery;
 }
 
@@ -964,7 +962,6 @@ static QString queryAll(const QString& query)
                    "for (var i = 0; i < numSelectedElements; ++i) { var element = new Object; "
                    "element.tagName = selectedElements[i].tagName; element.href = selectedElements[i].href;"
                    "elements.push(element); } return elements; } ())");
-   kDebug() << jsQuery;
    return jsQuery;
 }
 
@@ -1165,7 +1162,7 @@ bool KWebKitScriptableExtension::setException (KParts::ScriptableExtension* call
 
 QVariant KWebKitScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
 {
-    kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
+    //kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
     return callerPrincipal->get (0, objId, propName);
 }
 
@@ -1185,7 +1182,7 @@ QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension
                                                      const QString& code,
                                                      KParts::ScriptableExtension::ScriptLanguage lang)
 {
-    kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
+    //kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
 
     if (lang != ECMAScript)
         return exception("unsupported language");
