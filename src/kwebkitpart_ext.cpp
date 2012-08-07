@@ -104,10 +104,8 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
     QWebHistory* history = (view() ? view()->history() : 0);
-    const int historyIndex = history ? history->currentItemIndex() : -1;
-    const KUrl historyUrl = history ? history->currentItem().url() : KUrl();
-
-    Q_ASSERT(historyUrl.isValid()); // should never happen ??
+    const int historyIndex = (history ? history->currentItemIndex() : -1);
+    const KUrl historyUrl = (history ? KUrl(history->currentItem().url()) : m_part->url());
 
     stream << historyUrl
            << static_cast<qint32>(xOffset())
@@ -180,7 +178,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
 
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
-    kDebug() << "Normal history navgation logic failed! Falling back to a workaround!";
+    kDebug() << "Normal history navgation logic failed! Falling back to opening url directly.";
     m_part->openUrl(u);
 }
 
