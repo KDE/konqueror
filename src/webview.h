@@ -90,6 +90,14 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
+     * @see QWidget::mouseReleaseEvent
+     * @internal
+     */
+    virtual void mouseReleaseEvent(QMouseEvent*);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
      * @see QObject::timerEvent
      * @internal
      */

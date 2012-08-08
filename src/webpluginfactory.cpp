@@ -41,6 +41,7 @@
 #include <QWebElement>
 
 #define QL1S(x)  QLatin1String(x)
+#define QL1C(x)  QLatin1Char(x)
 
 
 FakePluginWidget::FakePluginWidget (uint id, const QUrl& url, const QString& mimeType, QWidget* parent)
@@ -50,6 +51,7 @@ FakePluginWidget::FakePluginWidget (uint id, const QUrl& url, const QString& mim
                  ,m_id(id)
 {
     QHBoxLayout* horizontalLayout = new QHBoxLayout;
+    setLayout(horizontalLayout);
 
     QSpacerItem* horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     horizontalLayout->addSpacerItem(horizontalSpacer);
@@ -60,8 +62,6 @@ FakePluginWidget::FakePluginWidget (uint id, const QUrl& url, const QString& mim
 
     horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     horizontalLayout->addSpacerItem(horizontalSpacer);
-
-    setLayout(horizontalLayout);
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
@@ -100,22 +100,26 @@ void FakePluginWidget::load (bool loadAll)
     frames.append(view->page()->mainFrame());
 
     while (!frames.isEmpty()) {
+        bool loaded = false;
         QWebFrame *frame = frames.takeFirst();
         QWebElement docElement = frame->documentElement();
         QWebElementCollection elements = docElement.findAll(selector.arg(m_mimeType));
 
-        QWebElement element;
-        foreach (element, elements) {
+        Q_FOREACH (QWebElement element, elements) {
             if (loadAll || element.evaluateJavaScript(QLatin1String("this.swapping")).toBool()) {
                 QWebElement substitute = element.clone();
-                substitute.setAttribute(QLatin1String("type"), m_mimeType);
+                emit pluginLoaded(m_id);
                 element.replace(substitute);
                 deleteLater();
-                emit pluginLoaded(m_id);
                 if (!loadAll) {
+                    loaded = true;
                     break;  // Found the one plugin we wanted to start so exit loop.
                 }
             }
+        }
+        if (loaded && !loadAll) {
+            kDebug() << "Loaded item exiting loop!!!";
+            break;      // Loading only one item, exit the outer loop as well...
         }
         frames += frame->childFrames();
     }
@@ -136,13 +140,21 @@ WebPluginFactory::WebPluginFactory (KWebKitPart* part, QObject* parent)
 {
 }
 
-static uint pluginId(const QUrl& url, const QStringList& argNames, const QStringList& argValues)
+static uint pluginId(const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues)
 {
-    QString id = url.toString();
-    id += argNames.join(QL1S(","));
-    id += argValues.join(QL1S(","));
+    static const char* properties[] = {"src","data","width","height","type","id","name",0};
 
-    return qHash(id);
+    QString signature = url.toString();
+    for (int i = 0; properties[i]; ++i) {
+        const int index = argumentNames.indexOf(properties[i]);
+        if (index > -1) {
+            signature += argumentNames.at(index);
+            signature += QL1C('=');
+            signature += argumentValues.at(index);
+        }
+    }
+
+    return qHash(signature);
 }
 
 QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
@@ -153,19 +165,19 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
         extractGuessedMimeType (url, &mimeType);
     }
 
-    QWebView* view = mPart->view();
     const bool noPluginHandling = WebKitSettings::self()->isInternalPluginHandlingDisabled();
 
     if (!noPluginHandling && WebKitSettings::self()->isLoadPluginsOnDemandEnabled()) {
         const uint id = pluginId(url, argumentNames, argumentValues);
         if (!mPluginsLoadedOnDemand.contains(id)) {
-            FakePluginWidget* widget = new FakePluginWidget(id, url, mimeType, view);
+            FakePluginWidget* widget = new FakePluginWidget(id, url, mimeType);
             connect(widget, SIGNAL(pluginLoaded(uint)), this, SLOT(loadedPlugin(uint)));
             return widget;
         }
     }
 
     KParts::ReadOnlyPart* part = 0;
+    QWebView* view = mPart->view();
 
     if (noPluginHandling || !excludedMimeType(mimeType)) {
         QWebFrame* frame = (view ? view->page()->currentFrame() : 0);

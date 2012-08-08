@@ -333,13 +333,20 @@ void WebView::keyReleaseEvent(QKeyEvent *e)
             showAccessKeys();
             emit statusBarMessage(i18n("Access keys activated"));
             m_accessKeyActivated = Activated;
-            e->accept();
-            return;
         } else {
             m_accessKeyActivated = NotActivated;
         }
     }
     KWebView::keyReleaseEvent(e);
+}
+
+void WebView::mouseReleaseEvent(QMouseEvent* e)
+{
+    if (WebKitSettings::self()->accessKeysEnabled() && m_accessKeyActivated == PreActivated
+        && e->button() != Qt::NoButton && (e->modifiers() & Qt::ControlModifier)) {
+        m_accessKeyActivated = NotActivated;
+    }
+    KWebView::mouseReleaseEvent(e);
 }
 
 void WebView::timerEvent(QTimerEvent* e)
@@ -859,20 +866,15 @@ void WebView::hideAccessKeys()
 
 static QString linkElementKey(const QWebElement& element)
 {
-    QPoint p = element.geometry().center();
-    p -= element.webFrame()->scrollPosition(); // account for scrolling...
-    const QWebHitTestResult hit = element.webFrame()->hitTestContent(p);
-    const QWebElement linkElement = hit.linkElement();
-
-    if (linkElement == element && !hit.linkUrl().isEmpty()) {
-        QString linkKey (hit.linkUrl().toString());
-        if (linkElement.hasAttribute(QL1S("target"))) {
+    if (element.hasAttribute(QL1S("href"))) {
+        const QUrl url = element.webFrame()->baseUrl().resolved(element.attribute(QL1S("href")));
+        QString linkKey (url.toString());
+        if (element.hasAttribute(QL1S("target"))) {
             linkKey += QL1C('+');
-            linkKey += linkElement.attribute(QL1S("target"));
+            linkKey += element.attribute(QL1S("target"));
         }
         return linkKey; 
     }
-
     return QString();
 }
 
@@ -887,7 +889,34 @@ static void handleDuplicateLinkElements(const QWebElement& element, QHash<QStrin
         } else if (!linkKey.isEmpty()) {
             dupLinkList->insert(linkKey, *accessKey);
         }
+        if (linkKey.isEmpty())
+            *accessKey = QChar();
     }
+}
+
+static bool isHiddenElement(const QWebElement& element)
+{
+    // width property set to less than zero
+    if (element.hasAttribute(QL1S("width")) && element.attribute(QL1S("width")).toInt() < 1) {
+        return true;
+    }
+
+    // height property set to less than zero
+    if (element.hasAttribute(QL1S("height")) && element.attribute(QL1S("height")).toInt() < 1) {
+        return true;
+    }
+
+    // visiblity set to 'hidden' in the element itself or its parent elements.
+    if (element.styleProperty(QL1S("visibility"),QWebElement::ComputedStyle).compare(QL1S("hidden"), Qt::CaseInsensitive) == 0) {
+        return true;
+    }
+
+    // display set to 'none' in the element itself or its parent elements.
+    if (element.styleProperty(QL1S("display"),QWebElement::ComputedStyle).compare(QL1S("none"), Qt::CaseInsensitive) == 0) {
+        return true;
+    }
+
+    return false;
 }
 
 void WebView::showAccessKeys()
@@ -898,25 +927,26 @@ void WebView::showAccessKeys()
     for (char c = '0'; c <= '9'; ++c)
         unusedKeys << QLatin1Char(c);
 
-
     QList<QWebElement> unLabeledElements;
     QRect viewport = QRect(page()->mainFrame()->scrollPosition(), page()->viewportSize());
-    const QString selectorQuery (QLatin1String("a,"
+    const QString selectorQuery (QLatin1String("a[href],"
                                                "area,"
-                                               "label[for],"
-                                               "legend,"
                                                "button:not([disabled]),"
                                                "input:not([disabled]):not([hidden]),"
-                                               "textarea:not([disabled]),"
-                                               "select:not([disabled])"));
+                                               "label[for],"
+                                               "legend,"
+                                               "select:not([disabled]),"
+                                               "textarea:not([disabled])"));
     QList<QWebElement> result = page()->mainFrame()->findAllElements(selectorQuery).toList();
 
     // Priority first goes to elements with accesskey attributes
     Q_FOREACH (const QWebElement& element, result) {
         const QRect geometry = element.geometry();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
-            unLabeledElements.append(element);
             continue;
+        }
+        if (isHiddenElement(element)) {
+            continue;    // Do not show access key for hidden elements...
         }
         const QString accessKeyAttribute (element.attribute(QLatin1String("accesskey")).toUpper());
         if (accessKeyAttribute.isEmpty()) {
@@ -937,8 +967,10 @@ void WebView::showAccessKeys()
         }
 
         handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
-        unusedKeys.removeOne(accessKey);
-        makeAccessKeyLabel(accessKey, element);
+        if (!accessKey.isNull()) {
+            unusedKeys.removeOne(accessKey);
+            makeAccessKeyLabel(accessKey, element);
+        }
     }
 
 
@@ -963,8 +995,10 @@ void WebView::showAccessKeys()
             accessKey = unusedKeys.takeFirst();
 
         handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
-        unusedKeys.removeOne(accessKey);
-        makeAccessKeyLabel(accessKey, element);
+        if (!accessKey.isNull()) {
+            unusedKeys.removeOne(accessKey);
+            makeAccessKeyLabel(accessKey, element);
+        }
     }
 
     m_accessKeyActivated = (m_accessKeyLabels.isEmpty() ? Activated : NotActivated);
