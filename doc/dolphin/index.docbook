@@ -802,17 +802,17 @@ replaced by a different number for each file.
 </sect2>
 
 <sect2 id="compare-files">
-<title>Comparing A Selection Of Files</title>
+<title>Comparing A Selection Of Files oder Folders</title>
 
 <para>
 If the &kompare; application is installed, you can use it to see the differences
-between two files.
+between two files or folders.
 </para>
 
 <para>
-First select the two files to be compared. Then launch the &kompare; application
+First select the two files or folders to be compared. Then launch the &kompare; application
 via the Tools menu: <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.
-&kompare; will then open showing the differences between the files.
+&kompare; will then open showing the differences between the files or folders.
 </para>
 
 </sect2>
@@ -1884,8 +1884,8 @@ be reopened.</action></para></listitem>
 <guimenu>Tools</guimenu>
 <guimenuitem>Compare Files</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Compare the currently selected files with
-&kompare;. This action is only enabled if two files are selected.</action></para></listitem>
+<listitem><para><action>Compare the currently selected files or folders with
+&kompare;. This action is only enabled if two files or folders are selected.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
