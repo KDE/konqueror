@@ -90,20 +90,23 @@ void FakePluginWidget::load (bool loadAll)
         return;
     }
 
-    const QString selector = QLatin1String("object[type=\"%1\"],embed[type=\"%1\"]");
-    //kDebug() << selector.arg(m_mimeType);
-
     hide();
     m_swapping = true;
 
     QList<QWebFrame*> frames;
     frames.append(view->page()->mainFrame());
 
+    QString selector = QLatin1String("object:not([type]),embed:not([type]),object[type=\"");
+    selector += m_mimeType;
+    selector += QLatin1String("\"],embed[type=\"");
+    selector += m_mimeType;
+    selector += QLatin1String("\"]");
+
     while (!frames.isEmpty()) {
         bool loaded = false;
         QWebFrame *frame = frames.takeFirst();
         QWebElement docElement = frame->documentElement();
-        QWebElementCollection elements = docElement.findAll(selector.arg(m_mimeType));
+        QWebElementCollection elements = docElement.findAll(selector);
 
         Q_FOREACH (QWebElement element, elements) {
             if (loadAll || element.evaluateJavaScript(QLatin1String("this.swapping")).toBool()) {
@@ -118,7 +121,6 @@ void FakePluginWidget::load (bool loadAll)
             }
         }
         if (loaded && !loadAll) {
-            kDebug() << "Loaded item exiting loop!!!";
             break;      // Loading only one item, exit the outer loop as well...
         }
         frames += frame->childFrames();
