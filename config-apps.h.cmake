@@ -66,6 +66,9 @@
 /* Define to 1 if you have the `vsnprintf' function. */
 #cmakedefine HAVE_VSNPRINTF 1
 
+/* Define to 1 if you have the KActivities library. */
+#cmakedefine KActivities_FOUND 1
+
 /* Define to 1 if the QtDBus module is present. */
 #cmakedefine QT_QTDBUS_FOUND 1
 
