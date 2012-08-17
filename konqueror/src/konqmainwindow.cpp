@@ -3177,6 +3177,7 @@ void KonqMainWindow::slotMatch( const QString &match )
          m_combo->completionMode() == KGlobalSettings::CompletionPopupAuto ) {
       QStringList items = m_pURLCompletion->allMatches();
       items += historyPopupCompletionItems( m_combo->currentText() );
+      items.removeDuplicates();  // when items from completion are also in history
       // items.sort(); // should we?
       m_combo->setCompletedItems( items );
     }
