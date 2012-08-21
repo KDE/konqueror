@@ -103,6 +103,14 @@ protected:
      */
     virtual void timerEvent(QTimerEvent*);
 
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::wheelEvent
+     * @internal
+     */
+    virtual void wheelEvent(QWheelEvent*);
+
 private Q_SLOTS:
     void slotStopAutoScroll();
     void hideAccessKeys();

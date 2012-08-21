@@ -229,7 +229,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         args.setMimeType(mimeType);
         bargs.setForcesNewWindow(forcesNewWindow);
         e->accept();
-        emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, -1, args, bargs, flags, mapAction);
+        emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
         return;
     }
 
@@ -269,7 +269,7 @@ void WebView::keyPressEvent(QKeyEvent* e)
                     return;
                 }
                 hideAccessKeys();
-            } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier) {
+            } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(page())) {
                 m_accessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
             }
         }
@@ -348,6 +348,17 @@ void WebView::mouseReleaseEvent(QMouseEvent* e)
     }
     KWebView::mouseReleaseEvent(e);
 }
+
+void WebView::wheelEvent (QWheelEvent* e)
+{
+    if (WebKitSettings::self()->accessKeysEnabled() &&
+        m_accessKeyActivated == PreActivated &&
+        (e->modifiers() & Qt::ControlModifier)) {
+        m_accessKeyActivated = NotActivated;
+    }
+    KWebView::wheelEvent(e);
+}
+
 
 void WebView::timerEvent(QTimerEvent* e)
 {

@@ -43,10 +43,25 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
+static QWebView* webViewFrom(QWidget* widget)
+{
+    QWidget* parent = widget;
+    QWebView *view = 0;
+    while (parent) {
+        if (QWebView *aView = qobject_cast<QWebView*>(parent)) {
+            view = aView;
+            break;
+        }
+        parent = parent->parentWidget();
+    }
+
+    return view;
+}
 
 FakePluginWidget::FakePluginWidget (uint id, const QUrl& url, const QString& mimeType, QWidget* parent)
                  :QWidget(parent)
                  ,m_swapping(false)
+                 ,m_updateScrollPosition(false)
                  ,m_mimeType(mimeType)
                  ,m_id(id)
 {
@@ -76,19 +91,15 @@ void FakePluginWidget::loadAll()
 
 void FakePluginWidget::load (bool loadAll)
 {
-    QWidget *parent = parentWidget();
-    QWebView *view = 0;
-    while (parent) {
-        view = qobject_cast<QWebView*>(parent);
-        if (view) {
-          break;
-        }
-        parent = parent->parentWidget();
-    }
-
-    if (!view) {
+    QWebView *view = webViewFrom(parentWidget());
+    if (!view)
         return;
-    }
+
+    // WORKAROUND: For some reason, when we load on demand plugins the scroll
+    // position gets utterly screwed up and reset to the beginning of the
+    // document. This is an effort to workaround that issue.
+    connect(view->page(), SIGNAL(scrollRequested(int,int,QRect)),
+            this, SLOT(updateScrollPoisition(int,int,QRect)), Qt::QueuedConnection);
 
     hide();
     m_swapping = true;
@@ -112,6 +123,7 @@ void FakePluginWidget::load (bool loadAll)
             if (loadAll || element.evaluateJavaScript(QLatin1String("this.swapping")).toBool()) {
                 QWebElement substitute = element.clone();
                 emit pluginLoaded(m_id);
+                m_updateScrollPosition = true;
                 element.replace(substitute);
                 deleteLater();
                 if (!loadAll) {
@@ -133,6 +145,17 @@ void FakePluginWidget::load (bool loadAll)
 void FakePluginWidget::showContextMenu(const QPoint&)
 {
     // TODO: Implement context menu, e.g. load all and configure plugins.
+}
+
+void FakePluginWidget::updateScrollPoisition (int dx, int dy, const QRect& rect)
+{
+    if (m_updateScrollPosition) {
+        QWebView* view = webViewFrom(parentWidget());
+        if (view)
+            view->page()->mainFrame()->setScrollPosition(QPoint(dx, dy));
+    }
+
+    Q_UNUSED(rect);
 }
 
 
@@ -178,6 +201,7 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
         }
     }
 
+    Q_ASSERT(mPart); // should never happen!!
     KParts::ReadOnlyPart* part = 0;
     QWebView* view = mPart->view();
 
