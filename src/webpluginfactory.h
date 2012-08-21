@@ -21,10 +21,12 @@
 #ifndef WEBPLUGINFACTORY_H
 #define WEBPLUGINFACTORY_H
 
+#include <KDE/KWebPluginFactory>
+
 #include <QList>
 #include <QUrl>
 #include <QWidget>
-#include <KDE/KWebPluginFactory>
+#include <QPointer>
 
 class KWebKitPart;
 class QPoint;
@@ -45,9 +47,11 @@ private Q_SLOTS:
     void loadAll();
     void load(bool loadAll = false);
     void showContextMenu(const QPoint&);
+    void updateScrollPoisition(int, int, const QRect&);
 
 private:
     bool m_swapping;
+    bool m_updateScrollPosition;
     QString m_mimeType;
     uint m_id;
 };
@@ -64,7 +68,7 @@ private Q_SLOTS:
     void loadedPlugin(uint);
 
 private:
-    KWebKitPart* mPart;
+    QPointer<KWebKitPart> mPart;
     mutable QList<uint> mPluginsLoadedOnDemand;
 };
 
