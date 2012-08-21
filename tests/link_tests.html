@@ -2,6 +2,13 @@
 <head>
  <title>Link Tests</title>
 </head>
+<script type="text/javascript">
+  function openWin() {
+    var myWindow=window.open('','','width=200,height=100');
+    myWindow.document.write("<p>This is 'myWindow'</p>");
+    myWindow.focus();
+  }
+</script>
 <body>
 <h2>MAILTO Link Tests</h2>
   <a href="mailto:joe@xyz.com&amp;CC=bob@xyz.com&amp;BCC=bob@xyz.com&amp;attach=%2Fetc%2Fpasswd&amp;subject=hello&amp;body=hello">Email link #1</a>
@@ -18,6 +25,8 @@
   <a href="ftp://ftp.kde.org/pub/kde/README_UPLOAD">Text File Link</a>
   <br/>
   <a href="#fragments" target="_top">Anchor test</a>
+  <br/>
+  <a href="#fragments" target="_blank">Anchor test (new window)</a>
   <br/>
 <h2>HTTP Link Tests</h2>
   <a href="http://www.kde.org" target="_blank">Web site link (new window)</a>
@@ -51,7 +60,7 @@
   <br/>
   <a href="javascript:window.close">Close window</a>
   <br/>
-  <a href="" onmouseover="javascript:window.open('http://www.kde.org','statusbar=no,toolbar=no')">On mouse over open window to kde.org</a>
+  <a href="" onmouseover="openWin()">On mouse over open window test</a>
   <br/>
 <h2>KDE specific URL Tests</h2>
   <a href="applications:/Internet/">Text Document Link</a>
