@@ -126,8 +126,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     m_webView = new WebView (this, parentWidget);
 
     // Create the browser extension.
-    m_browserExtension = new WebKitBrowserExtension(this);
-    m_browserExtension->restoreHistoryFromData(cachedHistory);
+    m_browserExtension = new WebKitBrowserExtension(this, cachedHistory);
 
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
@@ -313,8 +312,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             m_browserExtension, SLOT(updateEditActions()));
     connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
             page, SLOT(downloadUrl(KUrl)));
-    connect(m_browserExtension, SIGNAL(openUrlNotify()),
-            m_browserExtension, SLOT(slotSaveHistory()));
 
     connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotMainFrameLoadFinished(bool)));

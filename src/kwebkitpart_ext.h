@@ -37,14 +37,14 @@ class WebKitBrowserExtension : public KParts::BrowserExtension
     Q_OBJECT
 
 public:
-    WebKitBrowserExtension(KWebKitPart *parent);
+    WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& cachedHistoryData);
     ~WebKitBrowserExtension();
 
     virtual int xOffset();
     virtual int yOffset();
     virtual void saveState(QDataStream &);
     virtual void restoreState(QDataStream &);
-    void restoreHistoryFromData(const QByteArray& data);
+    void saveHistory();
 
 Q_SIGNALS:
     void saveUrl(const KUrl &);
@@ -104,7 +104,6 @@ public Q_SLOTS:
     void slotSpellCheckDone(const QString&);
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
-    void slotSaveHistory();
     void slotPrintRequested(QWebFrame*);
     void slotPrintPreview();
 

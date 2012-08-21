@@ -176,7 +176,7 @@ public:
 protected:
     virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void slotGeometryChangeRequested(const QRect& rect);
     void slotMenuBarVisibilityChangeRequested(bool visible);
     void slotStatusBarVisibilityChangeRequested(bool visible);

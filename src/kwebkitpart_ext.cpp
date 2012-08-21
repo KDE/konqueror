@@ -61,7 +61,7 @@
 #define QL1C(x)     QLatin1Char(x)
 
 
-WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
+WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& cachedHistoryData)
                        :KParts::BrowserExtension(parent),
                         m_part(parent)
 {
@@ -69,6 +69,24 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
     enableAction("copy", false);
     enableAction("paste", false);
     enableAction("print", true);
+
+    if (cachedHistoryData.isEmpty()) {
+        return;
+    }
+
+    QBuffer buffer;
+    buffer.setData(cachedHistoryData);
+    if (!buffer.open(QIODevice::ReadOnly)) {
+        return;
+    }
+
+    // NOTE: When restoring history, webkit automatically navigates to
+    // the previous "currentItem". Since we do not want that to happen,
+    // we set a property on the WebPage object that is used to allow or
+    // disallow history navigation in WebPage::acceptNavigationRequest.
+    view()->page()->setProperty("HistoryNavigationLocked", true);
+    QDataStream s (&buffer);
+    s >> *(view()->history());
 }
 
 WebKitBrowserExtension::~WebKitBrowserExtension()
@@ -180,27 +198,6 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     // attempt to open the requested URL directly.
     kDebug() << "Normal history navgation logic failed! Falling back to opening url directly.";
     m_part->openUrl(u);
-}
-
-void WebKitBrowserExtension::restoreHistoryFromData (const QByteArray& data)
-{
-    if (data.isEmpty()) {
-        return;
-    }
-
-    QBuffer buffer;
-    buffer.setData(data);
-    if (!buffer.open(QIODevice::ReadOnly)) {
-        return;
-    }
-
-    // NOTE: When restoring history, webkit automatically navigates to
-    // the previous "currentItem". Since we do not want that to happen,
-    // we set a property on the WebPage object that is used to allow or
-    // disallow history navigation in WebPage::acceptNavigationRequest.
-    view()->page()->setProperty("HistoryNavigationLocked", true);
-    QDataStream s (&buffer);
-    s >> *(view()->history());
 }
 
 
@@ -781,7 +778,7 @@ void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
 }
 
 
-void WebKitBrowserExtension::slotSaveHistory()
+void WebKitBrowserExtension::saveHistory()
 {
     QWebHistory* history = (view() ? view()->history() : 0);
 
@@ -1180,6 +1177,7 @@ QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension
                                                      const QString& code,
                                                      KParts::ScriptableExtension::ScriptLanguage lang)
 {
+    Q_UNUSED(contextObjectId);
     //kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
 
     if (lang != ECMAScript)
