@@ -799,7 +799,7 @@ void KonqComboItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem
     const QRect urlRect   = QStyle::alignedRect( option.direction, Qt::AlignLeft, urlSize, textRect );
 
     if ( !url.isEmpty() ) {
-        QString squeezedText = option.fontMetrics.elidedText( url, Qt::ElideRight, urlRect.width() );
+        QString squeezedText = option.fontMetrics.elidedText( url, Qt::ElideMiddle, urlRect.width() );
         painter->drawText( urlRect, Qt::AlignLeft | Qt::AlignVCenter, squeezedText );
     }
 
