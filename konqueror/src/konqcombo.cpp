@@ -142,6 +142,9 @@ KonqCombo::KonqCombo( QWidget *parent )
     setLineEdit( edit );
     setItemDelegate( new KonqComboItemDelegate( this ) );
 
+    connect( edit, SIGNAL(textEdited(QString)),
+             this, SLOT(slotTextEdited(QString)) );
+
     completionBox()->setTabHandling(true); // #167135
     completionBox()->setItemDelegate( new KonqComboItemDelegate( this ) );
 
@@ -171,6 +174,18 @@ void KonqCombo::init( KCompletion *completion )
     setKeyBinding(KCompletionBase::SubstringCompletion, KShortcut(Qt::Key_F7));
 
     loadItems();
+}
+
+void KonqCombo::slotTextEdited( const QString &text )
+{
+  QString txt = text;
+  txt.remove( QChar('\n') );
+  txt.remove( QChar(QChar::LineSeparator) );
+  txt.remove( QChar(QChar::ParagraphSeparator) );
+
+  if ( txt != text ) {
+      lineEdit()->setText( txt );
+  }
 }
 
 void KonqCombo::setURL( const QString& url )
