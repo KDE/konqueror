@@ -513,10 +513,8 @@ void KonqViewManager::activateTab(int position)
 
 void KonqViewManager::showTab( KonqView *view )
 {
-  if (m_tabContainer->currentWidget() != view->frame())
-  {
+  if (m_tabContainer->currentWidget() != view->frame()) {
     m_tabContainer->setCurrentIndex( m_tabContainer->indexOf( view->frame() ) );
-    emitActivePartChanged();
   }
 }
 
@@ -524,7 +522,6 @@ void KonqViewManager::showTab(int tabIndex)
 {
     if (m_tabContainer->currentIndex() != tabIndex) {
         m_tabContainer->setCurrentIndex(tabIndex);
-        emitActivePartChanged();
     }
 }
 
