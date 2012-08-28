@@ -219,7 +219,11 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
 {
     //kDebug();
   KParts::ReadOnlyPart *oldPart = m_pPart;
-  m_pPart = m_pKonqFrame->attach( viewFactory ); // creates the part
+  KParts::ReadOnlyPart *part = m_pKonqFrame->attach( viewFactory ); // creates the part
+  if (!part) {
+      return;
+  }
+  m_pPart = part;
 
   // Set the statusbar in the BE asap to avoid a KMainWindow statusbar being created.
   KParts::StatusBarExtension* sbext = statusBarExtension();
