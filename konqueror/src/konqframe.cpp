@@ -130,7 +130,7 @@ void KonqFrame::copyHistory( KonqFrameBase *other )
         m_pView->copyHistory( static_cast<KonqFrame *>( other )->childView() );
 }
 
- KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
+KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
 {
    KonqViewFactory factory( viewFactory );
 
@@ -140,7 +140,16 @@ void KonqFrame::copyHistory( KonqFrameBase *other )
 
    m_pPart = factory.create( this, 0 );
 
-   Q_ASSERT( m_pPart->widget() );
+   if (!m_pPart) {
+      kWarning() << "No part was created!";
+      return 0;
+   }
+   if (!m_pPart->widget()) {
+       kWarning() << "The part" << m_pPart << "didn't create a widget!";
+       delete m_pPart;
+       m_pPart = 0;
+       return 0;
+   }
 
    attachWidget(m_pPart->widget());
 
