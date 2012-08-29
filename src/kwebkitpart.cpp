@@ -86,6 +86,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
              m_hasCachedFormData(false),
+             m_doLoadFinishedActions(false),
              m_statusBarWalletLabel(0),
              m_passwordBar(0)
 {
@@ -398,6 +399,7 @@ bool KWebKitPart::openUrl(const KUrl &_u)
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
+    m_doLoadFinishedActions = true;
     m_webView->loadUrl(u, args, bargs);
     return true;
 }
@@ -469,8 +471,10 @@ void KWebKitPart::slotFrameLoadFinished(bool ok)
 
 void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 {
-    if (!ok)
+    if (!ok || !m_doLoadFinishedActions)
         return;
+
+    m_doLoadFinishedActions = false;
 
     if (!m_emitOpenUrlNotify) {
         m_emitOpenUrlNotify = true; // Save history once page loading is done.
@@ -490,7 +494,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         slotUrlChanged(url);
     }
 
-   QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
+   QWebFrame* frame = page()->mainFrame();
 
     if (!frame || frame->url() == *globalBlankUrl)
         return;
@@ -522,23 +526,29 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 
 void KWebKitPart::slotLoadFinished(bool ok)
 {
-    updateActions();
-
     bool pending = false;
-    QWebFrame* frame = page() ? page()->currentFrame() : 0;
-    if (ok && !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
-        if (WebKitSettings::self()->autoPageRefresh()) {
-            pending = false;
-        } else {
-            frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
+
+    if (m_doLoadFinishedActions) {
+        updateActions();
+        QWebFrame* frame = (page() ? page()->currentFrame() : 0);
+        if (ok &&
+            frame == page()->mainFrame() &&
+            !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
+            if (WebKitSettings::self()->autoPageRefresh()) {
+                pending = true;
+            } else {
+                frame->page()->triggerAction(QWebPage::StopScheduledPageRefresh);
+            }
         }
     }
+
     emit completed ((ok && pending));
 }
 
 void KWebKitPart::slotLoadAborted(const KUrl & url)
 {
     closeUrl();
+    m_doLoadFinishedActions = false;
     if (url.isValid())
         emit m_browserExtension->openUrlRequest(url);
     else
@@ -561,6 +571,9 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     // Do not update the location bar with about:blank
     if (url == *globalBlankUrl)
         return;
+
+    if (this->url() != u)
+        m_doLoadFinishedActions = true;
 
     //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
     emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
@@ -892,7 +905,7 @@ void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url
                                 QCoreApplication::applicationName(),
                                 url.host()));
 
-    QVBoxLayout* lay = qobject_cast<QVBoxLayout*>(widget()->layout());
+    QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
     if (lay)
         lay->insertWidget(0, m_passwordBar);
 
@@ -904,7 +917,7 @@ void KWebKitPart::slotSaveFormDataDone()
     if (!m_passwordBar)
         return;
 
-    QVBoxLayout* lay = qobject_cast<QVBoxLayout*>(widget()->layout());
+    QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
     if (lay)
         lay->removeWidget(m_passwordBar);
 }

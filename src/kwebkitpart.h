@@ -149,6 +149,7 @@ private:
 
     bool m_emitOpenUrlNotify;
     bool m_hasCachedFormData;
+    bool m_doLoadFinishedActions;
     KUrlLabel* m_statusBarWalletLabel;
     KDEPrivate::SearchBar* m_searchBar;
     KDEPrivate::PasswordBar* m_passwordBar;

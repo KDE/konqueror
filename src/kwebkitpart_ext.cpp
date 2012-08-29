@@ -765,7 +765,7 @@ void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int po
 
 void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
 {
-    // Restore the text selection of one was present before we started the
+    // Restore the text selection if one was present before we started the
     // spell check.
     if (m_spellTextSelectionStart > 0 || m_spellTextSelectionEnd > 0) {
         QString script (QL1S("; this.setSelectionRange("));
@@ -1168,7 +1168,7 @@ bool KWebKitScriptableExtension::put (KParts::ScriptableExtension* callerPrincip
 
 static QVariant exception(const char* msg)
 {
-    kWarning(6031) << msg;
+    kWarning() << msg;
     return QVariant::fromValue(KParts::ScriptableExtension::Exception(QString::fromLatin1(msg)));
 }
 
