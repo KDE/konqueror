@@ -566,14 +566,15 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
         return;
 
     const KUrl u (url);
+
+    if (this->url() != u)
+      m_doLoadFinishedActions = true;
+
     setUrl(u);
 
     // Do not update the location bar with about:blank
     if (url == *globalBlankUrl)
         return;
-
-    if (this->url() != u)
-        m_doLoadFinishedActions = true;
 
     //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
     emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
