@@ -16,43 +16,52 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <unistd.h>
-#include <sys/types.h>
-
-#include <qtimer.h>
-#include <qapplication.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <khbox.h>
-#include <kicon.h>
-
-#include <kdebug.h>
-#include <klocale.h>
-#include <kcomponentdata.h>
-#include <kactionmenu.h>
-
-#include <kaction.h>
-#include <kmenu.h>
-#include <kmimetype.h>
-#include <kmessagebox.h>
-#include <kiconloader.h>
-#include <klineedit.h>
-#include <kdirsortfilterproxymodel.h>
-
-#include <kdirlister.h>
-#include <kpluginfactory.h>
-#include <kparts/browserextension.h>
-#include <kactioncollection.h>
 #include "dirfilterplugin.h"
-#include <kdirmodel.h>
+
+#include <kicon.h>
+#include <kdebug.h>
+#include <kmenu.h>
+#include <kaction.h>
+#include <klocale.h>
+#include <kfileitem.h>
+#include <kmimetype.h>
+#include <kactionmenu.h>
 #include <kconfiggroup.h>
+#include <kcomponentdata.h>
+#include <kpluginfactory.h>
+#include <kactioncollection.h>
+
+#include <kparts/browserextension.h>
+#include <kparts/fileinfoextension.h>
+
 
 K_GLOBAL_STATIC(SessionManager, globalSessionManager)
+
+static QString generateKey(const KUrl& url)
+{
+  QString key;
+
+  if (url.isValid()) {
+    key = url.protocol();
+    key += QLatin1Char(':');
+
+    if (url.hasHost()) {
+      key += url.host();
+      key += QLatin1Char(':');
+    }
+
+    if (url.hasPath()) {
+        key += url.path();
+    }
+  }
+
+  return key;
+}
 
 SessionManager::SessionManager()
 {
   m_bSettingsLoaded = false;
-  loadSettings ();
+  loadSettings();
 }
 
 SessionManager::~SessionManager()
@@ -60,39 +69,19 @@ SessionManager::~SessionManager()
   saveSettings();
 }
 
-QString SessionManager::generateKey (const KUrl& url)
+QStringList SessionManager::restore(const KUrl& url)
 {
-  QString key;
-
-  key = url.protocol ();
-  key += ':';
-
-  if (!url.host ().isEmpty ())
-  {
-    key += url.host ();
-    key += ':';
-  }
-
-  key += url.path ();
-  key += ':';
-  key += QString::number (m_pid);
-
-  return key;
-}
-
-QStringList SessionManager::restore (const KUrl& url)
-{
-  QString key = generateKey (url);
+  const QString key(generateKey(url));
 
   if (m_filters.contains(key))
     return m_filters[key];
-  else
-    return QStringList ();
+
+    return QStringList();
 }
 
-void SessionManager::save (const KUrl& url, const QStringList& filters)
+void SessionManager::save(const KUrl& url, const QStringList& filters)
 {
-  QString key = generateKey(url);
+  const QString key(generateKey(url));
   m_filters[key] = filters;
 }
 
@@ -116,46 +105,36 @@ void SessionManager::loadSettings()
 
   showCount = group.readEntry ("ShowCount", false);
   useMultipleFilters = group.readEntry ("UseMultipleFilters", true);
-  m_pid = getpid ();
   m_bSettingsLoaded = true;
 }
 
 
-
-DirFilterPlugin::DirFilterPlugin (QObject* parent,
-                                  const QVariantList &)
-                :KParts::Plugin (parent), m_pFilterMenu(0)
+DirFilterPlugin::DirFilterPlugin (QObject* parent, const QVariantList &)
+    :KParts::Plugin (parent)
 {
   m_part = qobject_cast<KParts::ReadOnlyPart*>(parent);
-
-  if ( !m_part )
-    return;
-
-  m_dirLister = qFindChild<KDirLister*>(m_part);
-  if (!m_dirLister && m_part->widget()) {
-    m_dirLister = qFindChild<KDirLister*>(m_part->widget());
-    if ( !m_dirLister )
-      return;
+  if (m_part) {
+      connect(m_part, SIGNAL(aboutToOpenURL()), this, SLOT(slotOpenURL()));
+      connect(m_part, SIGNAL(completed()), this, SLOT(slotOpenURLCompleted()));
+      connect(m_part, SIGNAL(completed(bool)), this, SLOT(slotOpenURLCompleted()));
   }
 
-  m_pFilterMenu = new KActionMenu (KIcon("view-filter"),i18n("View F&ilter"),
-                                   actionCollection());
-  actionCollection()->addAction("filterdir", m_pFilterMenu);
-  m_pFilterMenu->setDelayed (false);
-  m_pFilterMenu->setWhatsThis(i18n("Allow to filter the currently displayed items by filetype."));
+  KParts::ListingNotificationExtension* notifyExt = KParts::ListingNotificationExtension::childObject(m_part);
+  if (notifyExt && notifyExt->supportedNotificationEventTypes() != KParts::ListingNotificationExtension::None) {
+      m_listingExt = KParts::ListingFilterExtension::childObject(m_part);
+      connect(notifyExt, SIGNAL(listingEvent(KParts::ListingNotificationExtension::NotificationEventType,KFileItemList)),
+              this, SLOT(slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType,KFileItemList)));
 
-  connect (m_pFilterMenu->menu(), SIGNAL (aboutToShow()),
-           SLOT (slotShowPopup()));
-  connect(  m_pFilterMenu->menu(), SIGNAL(triggered(QAction*)),
-           SLOT(slotItemSelected(QAction*)) );
-
-  connect (m_dirLister, SIGNAL (deleteItem(KFileItem)),
-           SLOT(slotItemRemoved(KFileItem)));
-  connect (m_dirLister, SIGNAL (newItems(KFileItemList)),
-           SLOT (slotItemsAdded(KFileItemList)));
-  connect (m_dirLister, SIGNAL (itemsFilteredByMime(KFileItemList)),
-           SLOT (slotItemsAdded(KFileItemList)));
-  connect (m_part, SIGNAL(aboutToOpenURL()), SLOT(slotOpenURL()));
+      m_pFilterMenu = new KActionMenu (KIcon("view-filter"), i18n("View F&ilter"), actionCollection());
+      actionCollection()->addAction("filterdir", m_pFilterMenu);
+      m_pFilterMenu->setDelayed(false);
+      m_pFilterMenu->setDisabled(true);
+      m_pFilterMenu->setWhatsThis(i18n("Allow to filter the currently displayed items by filetype."));
+      connect(m_pFilterMenu->menu(), SIGNAL(aboutToShow()),
+              this, SLOT(slotShowPopup()));
+      connect(m_pFilterMenu->menu(), SIGNAL(triggered(QAction*)),
+              this, SLOT(slotItemSelected(QAction*)));
+  }
 }
 
 DirFilterPlugin::~DirFilterPlugin()
@@ -165,47 +144,58 @@ DirFilterPlugin::~DirFilterPlugin()
 
 void DirFilterPlugin::slotOpenURL ()
 {
-  const KUrl url (m_part->url());
-
-  //kDebug(90190) << "DirFilterPlugin: Current URL: " << m_pURL.url();
-
-  if (m_pURL != url)
-  {
-    m_pURL = url;
+  Q_ASSERT(m_part);
+  m_pFilterMenu->setDisabled(true); // will be enabled after directory filtering is done.
+  if (m_part && !m_part->arguments().reload()) {
     m_pMimeInfo.clear();
-    m_dirLister->setMimeFilter (globalSessionManager->restore(url));
+  }
+}
+
+void DirFilterPlugin::slotOpenURLCompleted()
+{
+  Q_ASSERT(m_part);
+  if (m_listingExt && m_part && !m_part->arguments().reload()) {
+    // Disable the mime-type filter if the name filter is set.
+    m_pFilterMenu->setEnabled(m_listingExt->filter(KParts::ListingFilterExtension::SubString).toString().isEmpty());
+    if (m_pFilterMenu->isEnabled()) {
+      const QStringList filters = globalSessionManager->restore(m_part->url());
+      m_listingExt->setFilter(KParts::ListingFilterExtension::MimeType, filters);
+      Q_FOREACH(const QString& mimeType, filters) {
+        if (m_pMimeInfo.contains(mimeType)) {
+          m_pMimeInfo[mimeType].useAsFilter = true;
+        }
+      }
+    }
   }
 }
 
 void DirFilterPlugin::slotShowPopup()
 {
-  if (!m_part)
-  {
-    m_pFilterMenu->setEnabled (false);
-    return;
+  // Not enabled return...
+  if (!m_pFilterMenu->isEnabled()) {
+      return;
   }
 
-  uint enableReset = 0;
-
-  QString label;
-  QStringList inodes;
+  quint64 enableReset = 0;
 
   m_pFilterMenu->menu()->clear();
   m_pFilterMenu->menu()->addTitle (i18n("Only Show Items of Type"));
 
-  const MimeInfoMap::const_iterator itEnd = m_pMimeInfo.constEnd();
-  for (MimeInfoMap::const_iterator it = m_pMimeInfo.constBegin(); it != itEnd ; ++it)
-  {
-    if (it.key().startsWith("inode"))
-    {
+  QString label;
+  QStringList inodes;
+  QMapIterator<QString, MimeInfo> it (m_pMimeInfo);
+
+  while (it.hasNext()) {
+    it.next();
+
+    if (it.key().startsWith("inode")) {
       inodes << it.key();
       continue;
     }
 
-    if (!globalSessionManager->showCount)
+    if (!globalSessionManager->showCount) {
       label = it.value().mimeComment;
-    else
-    {
+    } else {
       label = it.value().mimeComment;
       label += "  (";
       label += QString::number (it.value().filenames.size ());
@@ -215,8 +205,7 @@ void DirFilterPlugin::slotShowPopup()
     QAction *action = m_pFilterMenu->menu()->addAction (
                                KIcon(it.value().iconName), label);
     action->setCheckable( true );
-    if (it.value().useAsFilter)
-    {
+    if (it.value().useAsFilter) {
         action->setChecked( true );
         enableReset++;
     }
@@ -228,12 +217,10 @@ void DirFilterPlugin::slotShowPopup()
   {
     m_pFilterMenu->menu()->addSeparator ();
 
-    Q_FOREACH(const QString& inode, inodes)
-    {
+    Q_FOREACH(const QString& inode, inodes) {
       if (!globalSessionManager->showCount)
         label = m_pMimeInfo[inode].mimeComment;
-      else
-      {
+      else {
         label = m_pMimeInfo[inode].mimeComment;
         label += "  (";
         label += QString::number (m_pMimeInfo[inode].filenames.size ());
@@ -242,69 +229,61 @@ void DirFilterPlugin::slotShowPopup()
 
       QAction *action = m_pFilterMenu->menu()->addAction (
                               KIcon(m_pMimeInfo[inode].iconName), label);
-      action->setCheckable( true );
-      if (m_pMimeInfo[inode].useAsFilter)
-      {
-        action->setChecked( true );
+      action->setCheckable(true);
+      if (m_pMimeInfo[inode].useAsFilter) {
+        action->setChecked(true);
         enableReset ++;
       }
       m_pMimeInfo[inode].action = action;
     }
   }
   m_pFilterMenu->menu()->addSeparator ();
-  QAction *action = m_pFilterMenu->menu()->addAction (i18n("Use Multiple Filters"),
-                                               this, SLOT(slotMultipleFilters()));
-  action->setEnabled( enableReset <= 1);
-  action->setCheckable( true );
-  action->setChecked( globalSessionManager->useMultipleFilters);
+  QAction *action = m_pFilterMenu->menu()->addAction(i18n("Use Multiple Filters"),
+                                                     this, SLOT(slotMultipleFilters()));
+  action->setEnabled(enableReset <= 1);
+  action->setCheckable(true);
+  action->setChecked(globalSessionManager->useMultipleFilters);
 
-  action = m_pFilterMenu->menu()->addAction (i18n("Show Count"), this,
-                                               SLOT(slotShowCount()));
-  action->setCheckable( true );
-  action->setChecked( globalSessionManager->showCount);
+  action = m_pFilterMenu->menu()->addAction(i18n("Show Count"), this,
+                                            SLOT(slotShowCount()));
+  action->setCheckable(true);
+  action->setChecked(globalSessionManager->showCount);
 
-  action = m_pFilterMenu->menu()->addAction (i18n("Reset"), this,
-                                               SLOT(slotReset()));
-  action->setEnabled( enableReset);
+  action = m_pFilterMenu->menu()->addAction(i18n("Reset"), this,
+                                            SLOT(slotReset()));
+  action->setEnabled(enableReset);
 }
 
 void DirFilterPlugin::slotItemSelected (QAction *action)
 {
-  if (!m_part || !m_dirLister || !action)
+  if (!m_listingExt || !action || !m_part)
     return;
 
   MimeInfoMap::iterator it = m_pMimeInfo.begin();
-  const MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
+  MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
   while (it != itEnd && action != it.value().action)
     it++;
 
-  if (it != itEnd)
-  {
+  if (it != itEnd) {
     MimeInfo& mimeInfo = it.value();
     QStringList filters;
 
-    if (mimeInfo.useAsFilter)
-    {
+    if (mimeInfo.useAsFilter){
       mimeInfo.useAsFilter = false;
-      filters = m_dirLister->mimeFilters();
+      filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
       if (filters.removeAll(it.key()))
-        m_dirLister->setMimeFilter (filters);
-    }
-    else
-    {
+        m_listingExt->setFilter (KParts::ListingFilterExtension::MimeType, filters);
+    } else {
       m_pMimeInfo[it.key()].useAsFilter = true;
 
-      if (globalSessionManager->useMultipleFilters)
-      {
-        filters = m_dirLister->mimeFilters();
+      if (globalSessionManager->useMultipleFilters) {
+        filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
         filters << it.key();
-      }
-      else
-      {
+      } else {
         filters << it.key();
 
         MimeInfoMap::iterator item = m_pMimeInfo.begin();
-        const MimeInfoMap::iterator itemEnd = m_pMimeInfo.end();
+        MimeInfoMap::const_iterator itemEnd = m_pMimeInfo.end();
         while ( item != itemEnd )
         {
           if ( item != it )
@@ -312,110 +291,102 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
           item++;
         }
       }
-
-      m_dirLister->setMimeFilter (filters);
+      m_listingExt->setFilter(KParts::ListingFilterExtension::MimeType, filters);
     }
 
-    // We'd maybe benefit from an extra  Q_PROPERTY in the DolphinPart
-    // for setting the mime filter, here. For now, just refresh
-    // the model - refreshing the DolphinPart is more complex.
-    const KUrl url (m_part->url());
-    m_dirLister->openUrl (url);
-    globalSessionManager->save (url, filters);
+    globalSessionManager->save (m_part->url(), filters);
   }
 }
 
-void DirFilterPlugin::slotItemsAdded (const KFileItemList& list)
+void DirFilterPlugin::slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType type, const KFileItemList& items)
 {
- if (list.count() == 0 || !m_dirLister || !m_dirLister->nameFilter().isEmpty())
-  {
-    if (m_dirLister) m_pFilterMenu->setEnabled (m_dirLister->nameFilter().isEmpty());
+    switch (type) {
+      case KParts::ListingNotificationExtension::ItemsAdded:
+          itemsAdded(items);
+          break;
+      case KParts::ListingNotificationExtension::ItemsDeleted:
+          itemsRemoved(items);
+          break;
+      default:
+          break;
+    }
+
+}
+
+void DirFilterPlugin::itemsAdded (const KFileItemList& list)
+{
+  if (list.count() == 0 || !m_listingExt) {
+    if (m_listingExt) {
+        m_pFilterMenu->setEnabled(m_listingExt->filter(KParts::ListingFilterExtension::SubString).toString().isEmpty());
+    }
     return;
   }
-
-  KUrl url = m_part->url();
 
   // Make sure the filter menu is enabled once a named
   // filter is removed.
   if (!m_pFilterMenu->isEnabled())
     m_pFilterMenu->setEnabled (true);
 
-  const KFileItemList::const_iterator kend = list.end();
-  for (KFileItemList::const_iterator kit = list.begin(); kit != kend; ++kit )
-  {
-    QString name = (*kit).name();
-    KMimeType::Ptr mime = (*kit).mimeTypePtr(); // don't resolve mimetype if unknown
-    if (!mime)
-      continue;
-    QString mimeType = mime->name();
+  Q_FOREACH (const KFileItem& item, list) {
+    const QString mimeType (item.mimetype());
 
-    if (!m_pMimeInfo.contains (mimeType))
-    {
+    if (!m_pMimeInfo.contains (mimeType)) {
       MimeInfo& mimeInfo = m_pMimeInfo[mimeType];
-      QStringList filters = m_dirLister->mimeFilters();
+      const QStringList filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
       mimeInfo.useAsFilter = (!filters.isEmpty () &&
                               filters.contains (mimeType));
-      mimeInfo.mimeComment = (*kit).mimeComment();
-      mimeInfo.iconName = mime->iconName();
-      mimeInfo.filenames.insert(name);
-    }
-    else
-    {
-      m_pMimeInfo[mimeType].filenames.insert(name);
+      mimeInfo.mimeComment = item.mimeComment();
+      mimeInfo.iconName = item.iconName();
+      mimeInfo.filenames.insert(item.name());
+    } else {
+      m_pMimeInfo[mimeType].filenames.insert(item.name());
     }
   }
 }
 
-void DirFilterPlugin::slotItemRemoved (const KFileItem& item)
+void DirFilterPlugin::itemsRemoved (const KFileItemList& list)
 {
-  if (!m_dirLister)
+  if (!m_listingExt || !m_part)
     return;
 
-  QString mimeType = item.mimetype().trimmed();
-  MimeInfoMap::iterator it = m_pMimeInfo.find(mimeType);
+  Q_FOREACH(const KFileItem& item, list) {
+    const QString mimeType (item.mimetype());
+    MimeInfoMap::iterator it = m_pMimeInfo.find(mimeType);
+    if (it != m_pMimeInfo.end()) {
+      MimeInfo& info = it.value();
 
-  if (it != m_pMimeInfo.end())
-  {
-    MimeInfo& info = it.value();
-
-    if (info.filenames.size () > 1) {
-      info.filenames.remove(item.name ());
-    } else {
-      if (info.useAsFilter)
-      {
-        QStringList filters = m_dirLister->mimeFilters();
-        filters.removeAll(mimeType);
-        m_dirLister->setMimeFilter(filters);
-        globalSessionManager->save (m_part->url(), filters);
-        QTimer::singleShot( 0, this, SLOT(slotTimeout()) );
+      if (info.filenames.size () > 1) {
+        info.filenames.remove(item.name ());
+      } else {
+        if (info.useAsFilter) {
+            QStringList filters = m_listingExt->filter(KParts::ListingFilterExtension::MimeType).toStringList();
+            filters.removeAll(mimeType);
+            m_listingExt->setFilter(KParts::ListingFilterExtension::MimeType, filters);
+            globalSessionManager->save (m_part->url(), filters);
+        }
+        m_pMimeInfo.erase(it);
       }
-      m_pMimeInfo.erase(it);
     }
   }
 }
 
 void DirFilterPlugin::slotReset()
 {
-  if (!m_part || !m_dirLister)
+  if (!m_part || !m_listingExt)
     return;
 
-  const MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
+  MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
   for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd; ++it)
     it.value().useAsFilter = false;
 
   const QStringList filters;
-  const KUrl url (m_part->url());
-  m_dirLister->setMimeFilter (filters);
-  m_dirLister->openUrl (url);
-  globalSessionManager->save (url, filters);
+  m_listingExt->setFilter(KParts::ListingFilterExtension::MimeType, filters);
+  globalSessionManager->save (m_part->url(), filters);
 }
 
 void DirFilterPlugin::slotShowCount()
 {
-  if (globalSessionManager->showCount)
-    globalSessionManager->showCount = false;
-  else
-    globalSessionManager->showCount = true;
+  globalSessionManager->showCount = !globalSessionManager->showCount;
 }
 
 void DirFilterPlugin::slotMultipleFilters()
@@ -423,14 +394,7 @@ void DirFilterPlugin::slotMultipleFilters()
   globalSessionManager->useMultipleFilters = !globalSessionManager->useMultipleFilters;
 }
 
-void DirFilterPlugin::slotTimeout()
-{
-  if (m_dirLister)
-    m_dirLister->openUrl (m_part->url());
-}
-
 K_PLUGIN_FACTORY(DirFilterFactory, registerPlugin<DirFilterPlugin>();)
 K_EXPORT_PLUGIN(DirFilterFactory("dirfilterplugin"))
 
 #include "dirfilterplugin.moc"
-
