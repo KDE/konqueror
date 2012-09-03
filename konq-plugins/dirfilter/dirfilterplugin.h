@@ -19,15 +19,18 @@
 #ifndef DIR_FILTER_PLUGIN_H
 #define DIR_FILTER_PLUGIN_H
 
-#include <QtCore/QSet>
-#include <QtCore/QStringList>
+#include <QSet>
+#include <QPointer>
+#include <QStringList>
 
+#include <kurl.h>
 #include <kparts/plugin.h>
+#include <kparts/listingextension.h>
 
+class KUrl;
 class KDirLister;
 class KActionMenu;
-class KUrl;
-class KFileItem;
+class KFileItemList;
 
 namespace KParts
 {
@@ -46,12 +49,10 @@ public:
   bool useMultipleFilters;
 
 protected:
-  QString generateKey (const KUrl& url);
   void loadSettings ();
   void saveSettings ();
 
 private:
-  int m_pid;
   bool m_bSettingsLoaded;
   QMap<QString,QStringList> m_filters;
 };
@@ -66,7 +67,21 @@ public:
   DirFilterPlugin (QObject* parent, const QVariantList &);
   ~DirFilterPlugin ();
 
-protected:
+private Q_SLOTS:
+  void slotReset();
+  void slotOpenURL();
+  void slotOpenURLCompleted();
+  void slotShowPopup();
+  void slotShowCount();
+  void slotMultipleFilters();
+  void slotItemSelected(QAction*);
+  void slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType, const KFileItemList&);
+
+private:
+  void itemsRemoved(const KFileItemList&);
+  void itemsAdded(const KFileItemList&);
+
+private:
 
   struct MimeInfo
   {
@@ -75,32 +90,15 @@ protected:
     QAction *action;
     bool useAsFilter;
 
-    QString mimeType;
     QString iconName;
     QString mimeComment;
 
     QSet<QString> filenames;
   };
 
-  void loadSettings();
-  void saveSettings();
-
-private slots:
-  void slotReset();
-  void slotTimeout();
-  void slotOpenURL();
-  void slotShowPopup();
-  void slotShowCount();
-  void slotMultipleFilters();
-  void slotItemSelected(QAction*);
-  void slotItemRemoved(const KFileItem &);
-  void slotItemsAdded(const KFileItemList &);
-
-private:
-  KUrl m_pURL;
-  KParts::ReadOnlyPart* m_part;
+  QPointer<KParts::ReadOnlyPart> m_part;
+  QPointer<KParts::ListingFilterExtension> m_listingExt;
   KActionMenu* m_pFilterMenu;
-  KDirLister* m_dirLister;
 
   typedef QMap<QString,MimeInfo> MimeInfoMap;
   MimeInfoMap m_pMimeInfo;
