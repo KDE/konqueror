@@ -88,6 +88,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_hasCachedFormData(false),
              m_doLoadFinishedActions(false),
              m_statusBarWalletLabel(0),
+             m_searchBar(0),
              m_passwordBar(0)
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
@@ -141,14 +142,12 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     new KWebKitHtmlExtension(this);
     new KWebKitScriptableExtension(this);
 
-    // Create the search bar...
-    m_searchBar = new KDEPrivate::SearchBar(parentWidget);
 
     // Layout the GUI...
     QVBoxLayout* l = new QVBoxLayout(mainWidget);
     l->setContentsMargins(0, 0, 0, 0);
+    l->setSpacing(0);
     l->addWidget(m_webView);
-    l->addWidget(m_searchBar);
     mainWidget->setLayout(l);
 
     // Set the part's widget
@@ -156,11 +155,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
     // Set the web view as the the focus object
     mainWidget->setFocusProxy(m_webView);
-
-
-    // Connect the signals from the search bar
-    connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
-            this, SLOT(slotSearchForText(QString,bool)));
 
     // Connect the signals from the webview
     connect(m_webView, SIGNAL(titleChanged(QString)),
@@ -439,14 +433,15 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
-    // kDebug() << "main frame:" << page()->mainFrame() << "current frame:" << page()->currentFrame();
+    kDebug() << "main frame:" << page()->mainFrame() << "current frame:" << page()->currentFrame();
     emit started(0);
     updateActions();
 }
 
 void KWebKitPart::slotFrameLoadFinished(bool ok)
 {
-    QWebFrame* frame = qobject_cast<QWebFrame*>(sender());
+    QWebFrame* frame = (sender() ? qobject_cast<QWebFrame*>(sender()) : page()->mainFrame());
+    kDebug() << "finished ok?" << ok << "FRAME:" << frame << "SENDER:" << sender();
 
     if (ok) {
         const QUrl currentUrl (frame->baseUrl().resolved(frame->url()));
@@ -460,7 +455,7 @@ void KWebKitPart::slotFrameLoadFinished(bool ok)
             } else {
                 // Attempt to fill the web form...
                 KWebWallet *webWallet = page() ? page()->wallet() : 0;
-                // kDebug() << webWallet << frame;
+                kDebug() << "FOUND WALLET:" << webWallet;
                 if (webWallet) {
                     webWallet->fillFormData(frame, false);
                 }
@@ -567,17 +562,18 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
 
     const KUrl u (url);
 
-    if (this->url() != u)
-      m_doLoadFinishedActions = true;
+    // Ignore if url has not changed!
+    if (this->url() == u)
+      return;
 
+    m_doLoadFinishedActions = true;
     setUrl(u);
 
     // Do not update the location bar with about:blank
-    if (url == *globalBlankUrl)
-        return;
-
-    //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
-    emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
+    if (url != *globalBlankUrl) {
+        //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
+        emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
+    }
 }
 
 void KWebKitPart::slotShowSecurity()
@@ -759,6 +755,16 @@ void KWebKitPart::slotSearchForText(const QString &text, bool backward)
 
 void KWebKitPart::slotShowSearchBar()
 {
+    if (!m_searchBar) {
+        // Create the search bar...
+        m_searchBar = new KDEPrivate::SearchBar(widget());
+        connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
+                this, SLOT(slotSearchForText(QString,bool)));
+        QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
+        if (lay) {
+          lay->addWidget(m_searchBar);
+        }
+    }
     const QString text = m_webView->selectedText();
     m_searchBar->setSearchText(text.left(150));
 }
@@ -946,8 +952,7 @@ void KWebKitPart::slotFillFormRequestCompleted (bool ok)
 
 void KWebKitPart::slotFrameCreated (QWebFrame* frame)
 {
-    if (frame == page()->mainFrame())
-        return;
-
-    connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotFrameLoadFinished(bool)), Qt::UniqueConnection);
+    if (frame != page()->mainFrame()) {
+        connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotFrameLoadFinished(bool)), Qt::UniqueConnection);
+    }
 }
