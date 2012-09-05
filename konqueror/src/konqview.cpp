@@ -518,19 +518,20 @@ void KonqView::slotRequestFocus( KParts::ReadOnlyPart * )
 void KonqView::setLoading( bool loading, bool hasPending /*= false*/)
 {
     //kDebug() << "loading=" << loading << "hasPending=" << hasPending;
-    if (loading) {
-        // Make sure the focus is restored on the part's widget and not the combo
-        // box if it starts loading a request. See #304933.
-        QWidget* partWidget = (m_pPart ? m_pPart->widget() : 0);
-        if (partWidget && !partWidget->hasFocus()) {
-            //kDebug() << "SET FOCUS on the widget";
-            partWidget->setFocus();
-        }
-    }
     m_bLoading = loading;
     m_bPendingRedirection = hasPending;
-    if ( m_pMainWindow->currentView() == this )
+    if ( m_pMainWindow->currentView() == this ) {
         m_pMainWindow->updateToolBarActions( hasPending );
+        // Make sure the focus is restored on the part's widget and not the combo
+        // box if it starts loading a request. See #304933.
+        if (loading) {
+            QWidget* partWidget = (m_pPart ? m_pPart->widget() : 0);
+            if (partWidget && !partWidget->hasFocus()) {
+              //kDebug() << "SET FOCUS on the widget";
+              partWidget->setFocus();
+            }
+        }
+    }
 
     m_pMainWindow->viewManager()->setLoading( this, loading || hasPending );
 }
