@@ -547,7 +547,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
                 partActions.append(action);
             }
         }
-    } else if (m_result.frame()->parentFrame() && !m_result.isContentSelected() && m_result.linkUrl().isEmpty()) {
+    } else if (m_result.frame() && m_result.frame()->parentFrame() && !m_result.isContentSelected() && m_result.linkUrl().isEmpty()) {
         KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
 
         KAction* action = new KAction(KIcon("window-new"), i18n("Open in New &Window"), this);
