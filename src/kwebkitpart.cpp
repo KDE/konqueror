@@ -433,7 +433,6 @@ bool KWebKitPart::openFile()
 
 void KWebKitPart::slotLoadStarted()
 {
-    kDebug() << "main frame:" << page()->mainFrame() << "current frame:" << page()->currentFrame();
     emit started(0);
     updateActions();
 }
@@ -441,7 +440,6 @@ void KWebKitPart::slotLoadStarted()
 void KWebKitPart::slotFrameLoadFinished(bool ok)
 {
     QWebFrame* frame = (sender() ? qobject_cast<QWebFrame*>(sender()) : page()->mainFrame());
-    kDebug() << "finished ok?" << ok << "FRAME:" << frame << "SENDER:" << sender();
 
     if (ok) {
         const QUrl currentUrl (frame->baseUrl().resolved(frame->url()));
@@ -455,7 +453,6 @@ void KWebKitPart::slotFrameLoadFinished(bool ok)
             } else {
                 // Attempt to fill the web form...
                 KWebWallet *webWallet = page() ? page()->wallet() : 0;
-                kDebug() << "FOUND WALLET:" << webWallet;
                 if (webWallet) {
                     webWallet->fillFormData(frame, false);
                 }
