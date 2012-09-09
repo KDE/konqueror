@@ -1034,3 +1034,4 @@ void WebView::makeAccessKeyLabel(const QChar &accessKey, const QWebElement &elem
     m_accessKeyLabels.append(label);
     m_accessKeyNodes.insertMulti(accessKey, element);
 }
+#include "webview.moc"

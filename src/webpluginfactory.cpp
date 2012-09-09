@@ -272,3 +272,5 @@ void WebPluginFactory::resetPluginOnDemandList()
 {
     mPluginsLoadedOnDemand.clear();
 }
+
+#include "webpluginfactory.moc"
