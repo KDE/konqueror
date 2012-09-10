@@ -119,7 +119,7 @@ FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
     d->metaData.insert(QLatin1String("ssl_no_ui"), QLatin1String("true"));
     d->metaData.insert(QLatin1String("UseCache"), "false");
     d->metaData.insert(QLatin1String("cookies"), "none");
-    d->metaData.insert(QLatin1String("no-auth"), QLatin1String("true"));
+    d->metaData.insert(QLatin1String("no-www-auth"), QLatin1String("true"));
     d->metaData.insert(QLatin1String("errorPage"), QLatin1String("false"));
     d->config = new KConfig(KStandardDirs::locateLocal("data", QLatin1String("konqueror/faviconrc")));
 
