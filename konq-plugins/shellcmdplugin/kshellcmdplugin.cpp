@@ -29,6 +29,7 @@
 #include <kpluginfactory.h>
 #include <kauthorized.h>
 #include <kio/netaccess.h>
+#include <kparts/fileinfoextension.h>
 
 KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QVariantList & )
     : KParts::Plugin( parent )
@@ -45,50 +46,50 @@ KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QVariantList & )
 
 void KShellCmdPlugin::slotExecuteShellCommand()
 {
-    KParts::ReadOnlyPart * part = dynamic_cast<KParts::ReadOnlyPart *>(parent());
-    if ( !part )
-    {
+    KParts::ReadOnlyPart * part = qobject_cast<KParts::ReadOnlyPart *>(parent());
+    if (!part)  {
         KMessageBox::sorry(0L, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
         return;
     }
+
     KUrl url = KIO::NetAccess::mostLocalUrl(part->url(),NULL);
-    if ( !url.isLocalFile() )
-    {
+    if (!url.isLocalFile()) {
         KMessageBox::sorry(part->widget(),i18n("Executing shell commands works only on local directories."));
         return;
     }
-    QString path;
-#if 0 // to be ported if still needed
-    if ( part->currentItem() )
-    {
-        // Putting the complete path to the selected file isn't really necessary,
-        // since we'll cd to the directory first. But we do need to get the
-        // complete relative path.
-        path = KUrl::relativePath( url.path(),
-                                   part->currentItem()->url().path() );
-    }
-    else
-#endif
-    {
-        path = url.toLocalFile();
-    }
-   bool ok;
-   QString cmd = KInputDialog::getText( i18nc("@title:window", "Execute Shell Command"),
-      i18n( "Execute shell command in current directory:" ),
-      KShell::quoteArg( path ), &ok, part->widget() );
-   if ( ok )
-   {
-      QString chDir;
-      chDir="cd ";
-      chDir+=KShell::quoteArg(part->url().path());
-      chDir+="; ";
-      chDir+=cmd;
 
-      KShellCommandDialog *shellCmdDialog=new KShellCommandDialog(i18n("Output from command: \"%1\"", cmd),chDir,part->widget(),true);
-      shellCmdDialog->resize(500,300);
-      shellCmdDialog->executeCommand();
-      delete shellCmdDialog;
-   }
+    QString path;
+    KParts::FileInfoExtension* ext = KParts::FileInfoExtension::childObject(part);
+
+    if (ext && ext->hasSelection() && (ext->supportedQueryModes() & KParts::FileInfoExtension::SelectedItems)) {
+        KFileItemList list = ext->queryFor(KParts::FileInfoExtension::SelectedItems);
+        QStringList fileNames;
+        Q_FOREACH(const KFileItem& item, list) {
+            fileNames << item.name();
+        }
+        path = KShell::joinArgs(fileNames);
+    }
+
+    if (path.isEmpty()) {
+      path = KShell::quoteArg(url.toLocalFile());
+    }
+
+    bool ok;
+    QString cmd = KInputDialog::getText(i18nc("@title:window", "Execute Shell Command"),
+                                        i18n("Execute shell command in current directory:"),
+                                        path, &ok, part->widget());
+    if (ok) {
+        QString exeCmd;
+        exeCmd = QLatin1String("cd ");
+        exeCmd += KShell::quoteArg(part->url().path());
+        exeCmd += QLatin1String("; ");
+        exeCmd += cmd;
+
+        KShellCommandDialog* dlg = new KShellCommandDialog(i18n("Output from command: \"%1\"", cmd), exeCmd, part->widget(), true);
+        dlg->resize(500,300);
+        dlg->executeCommand();
+        delete dlg;
+    }
 }
 
 K_PLUGIN_FACTORY(KonqShellCmdPluginFactory, registerPlugin<KShellCmdPlugin>();)

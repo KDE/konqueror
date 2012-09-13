@@ -58,7 +58,7 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
    box->addWidget(m_shell,1);
 
    QHBoxLayout * hlayout = new QHBoxLayout();
-   box->addItem(hlayout);
+   box->addLayout(hlayout);
    hlayout->addWidget( cancelButton );
    hlayout->addWidget( closeButton );
 
