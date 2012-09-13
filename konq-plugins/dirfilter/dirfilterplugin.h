@@ -22,85 +22,124 @@
 #include <QSet>
 #include <QPointer>
 #include <QStringList>
+#include <QWidget>
 
 #include <kurl.h>
 #include <kparts/plugin.h>
 #include <kparts/listingextension.h>
 
+class QPushButton;
 class KUrl;
 class KDirLister;
-class KActionMenu;
 class KFileItemList;
-
-namespace KParts
-{
+class KLineEdit;
+namespace KParts  {
     class ReadOnlyPart;
 }
+
+class FilterBar : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit FilterBar(QWidget* parent = 0);
+    virtual ~FilterBar();
+    void selectAll();
+
+    QMenu* typeFilterMenu();
+    void setTypeFilterMenu(QMenu*);
+
+    bool typeFilterMenuEnabled() const;
+    void setEnableTypeFilterMenu(bool);
+
+    void setNameFilter(const QString&);
+
+public Q_SLOTS:
+    void clear();
+
+Q_SIGNALS:
+    void filterChanged(const QString& nameFilter);
+    void closeRequest();
+
+protected:
+    virtual void showEvent(QShowEvent* event);
+    virtual void keyReleaseEvent(QKeyEvent* event);
+
+private:
+    KLineEdit* m_filterInput;
+    QPushButton* m_typeFilterButton;
+};
 
 class SessionManager
 {
 public:
-  SessionManager ();
-  ~SessionManager ();
-  QStringList restore (const KUrl& url);
-  void save (const KUrl& url, const QStringList& filters);
+    struct Filters {
+        QStringList typeFilters;
+        QString nameFilter;
+    };
 
-  bool showCount;
-  bool useMultipleFilters;
+    SessionManager();
+    ~SessionManager();
+    Filters restore(const KUrl& url);
+    void save(const KUrl& url, const Filters& filters);
+
+    bool showCount;
+    bool useMultipleFilters;
 
 protected:
-  void loadSettings ();
-  void saveSettings ();
+    void loadSettings();
+    void saveSettings();
 
 private:
-  bool m_bSettingsLoaded;
-  QMap<QString,QStringList> m_filters;
+    bool m_bSettingsLoaded;
+    QMap<QString, Filters> m_filters;
 };
 
 
 class DirFilterPlugin : public KParts::Plugin
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
 
-  DirFilterPlugin (QObject* parent, const QVariantList &);
-  ~DirFilterPlugin ();
+    DirFilterPlugin(QObject* parent, const QVariantList&);
+    ~DirFilterPlugin();
 
 private Q_SLOTS:
-  void slotReset();
-  void slotOpenURL();
-  void slotOpenURLCompleted();
-  void slotShowPopup();
-  void slotShowCount();
-  void slotMultipleFilters();
-  void slotItemSelected(QAction*);
-  void slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType, const KFileItemList&);
+    void slotReset();
+    void slotOpenURL();
+    void slotOpenURLCompleted();
+    void slotShowPopup();
+    void slotShowCount();
+    void slotShowFilterBar();
+    void slotMultipleFilters();
+    void slotItemSelected(QAction*);
+    void slotNameFilterChanged(const QString&);
+    void slotCloseRequest();
+    void slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType, const KFileItemList&);
 
 private:
-  void itemsRemoved(const KFileItemList&);
-  void itemsAdded(const KFileItemList&);
+    void setFilterBar();
 
-private:
+    struct MimeInfo {
+        MimeInfo() : action(0), useAsFilter(false) {}
 
-  struct MimeInfo
-  {
-    MimeInfo() : action(0), useAsFilter(false) {}
+        QAction* action;
+        bool useAsFilter;
 
-    QAction *action;
-    bool useAsFilter;
+        QString iconName;
+        QString mimeComment;
 
-    QString iconName;
-    QString mimeComment;
+        QSet<QString> filenames;
+    };
+    typedef QMap<QString, MimeInfo> MimeInfoMap;
 
-    QSet<QString> filenames;
-  };
-
-  QPointer<KParts::ReadOnlyPart> m_part;
-  QPointer<KParts::ListingFilterExtension> m_listingExt;
-  KActionMenu* m_pFilterMenu;
-
-  typedef QMap<QString,MimeInfo> MimeInfoMap;
-  MimeInfoMap m_pMimeInfo;
+    FilterBar* m_filterBar;
+    QWidget* m_focusWidget;
+    QPointer<KParts::ReadOnlyPart> m_part;
+    QPointer<KParts::ListingFilterExtension> m_listingExt;
+    MimeInfoMap m_pMimeInfo;
 };
+
 #endif
+
