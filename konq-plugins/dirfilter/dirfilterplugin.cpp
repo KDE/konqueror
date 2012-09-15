@@ -260,7 +260,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
     return;
 
   MimeInfoMap::iterator it = m_pMimeInfo.begin();
-  MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
+  MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
   while (it != itEnd && action != it.value().action)
     it++;
 
@@ -283,7 +283,7 @@ void DirFilterPlugin::slotItemSelected (QAction *action)
         filters << it.key();
 
         MimeInfoMap::iterator item = m_pMimeInfo.begin();
-        MimeInfoMap::iterator itemEnd = m_pMimeInfo.end();
+        MimeInfoMap::const_iterator itemEnd = m_pMimeInfo.end();
         while ( item != itemEnd )
         {
           if ( item != it )
@@ -375,7 +375,7 @@ void DirFilterPlugin::slotReset()
   if (!m_part || !m_listingExt)
     return;
 
-  MimeInfoMap::iterator itEnd = m_pMimeInfo.end();
+  MimeInfoMap::const_iterator itEnd = m_pMimeInfo.end();
   for (MimeInfoMap::iterator it = m_pMimeInfo.begin(); it != itEnd; ++it)
     it.value().useAsFilter = false;
 
