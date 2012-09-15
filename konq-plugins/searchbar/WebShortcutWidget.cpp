@@ -68,7 +68,7 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     mainLayout->addLayout(buttonLayout);
     buttonLayout->addStretch();
-    QPushButton *okButton = new QPushButton(i18n("Ok"), this);
+    QPushButton *okButton = new QPushButton(i18n("OK"), this);
     okButton->setDefault(true);
     buttonLayout->addWidget(okButton);
     connect(okButton, SIGNAL(clicked()), this, SLOT(okClicked()));
