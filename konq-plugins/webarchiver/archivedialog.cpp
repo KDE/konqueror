@@ -390,7 +390,7 @@ KIO::Job *ArchiveDialog::startDownload( const KUrl &url, KHTMLPart *part ) {
 
 void ArchiveDialog::endProgressInfo(bool error) {
     QTreeWidget *tw = m_widget->progressView;
-    tw->topLevelItem(0)->setText(0, error ? i18n("Error") : i18n("Ok"));
+    tw->topLevelItem(0)->setText(0, error ? i18n("Error") : i18n("OK"));
     QProgressBar *pb = m_widget->progressBar;
     pb->setValue(pb->value() + 1);
 }
