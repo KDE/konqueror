@@ -27,10 +27,61 @@
 #include <QString>
 
 #include <kconfig.h>
+#include <kdialog.h>
 #include <konqprivate_export.h>
 
 class QDBusMessage;
 class KonqMainWindow;
+class QTreeWidgetItem;
+
+class SessionRestoreDialog : public KDialog
+{
+    Q_OBJECT
+public:
+    explicit SessionRestoreDialog(const QStringList& sessionFilePaths, QWidget* parent=0);
+    virtual ~SessionRestoreDialog();
+
+    /**
+     * Returns the list of session discarded/unselected by the user.
+     */
+    QStringList discardedSessionList() const;
+
+    /**
+     * Returns true if the don't show checkbox is checked.
+     */
+    bool isDontShowChecked() const;
+
+    /**
+     * Returns true if the corresponding session restore dialog should be shown.
+     *
+     * @param dontShowAgainName the name that identify the session restore dialog box.
+     * @param result if not null, it will be set to the result that was chosen the last
+     * time the dialog box was shown. This is only useful if the restore dialog box should
+     * be shown.
+     */
+    static bool shouldBeShown(const QString &dontShowAgainName, int* result);
+
+    /**
+     * Save the fact that the session restore dialog should not be shown again.
+     *
+     * @param dontShowAgainName the name that identify the session restore dialog. If
+     * empty, this method does nothing.
+     * @param result the value (Yes or No) that should be used as the result
+     * for the message box.
+     */
+    static void saveDontShow(const QString &dontShowAgainName, int result);
+
+private Q_SLOTS:
+    void slotClicked(bool);
+    void slotItemChanged(QTreeWidgetItem*, int);
+
+private:
+    QStringList m_discardedSessionList;
+    QHash<QTreeWidgetItem*, int> m_checkedSessionItems;
+    int m_sessionItemsCount;
+    bool m_dontShowChecked;
+};
+
 
 /**
  * This class is a singleton. It does some session related tasks:
