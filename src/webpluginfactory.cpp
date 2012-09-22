@@ -107,9 +107,11 @@ void FakePluginWidget::load (bool loadAll)
     QList<QWebFrame*> frames;
     frames.append(view->page()->mainFrame());
 
-    QString selector = QLatin1String("object:not([type]),embed:not([type]),object[type=\"");
+    QString selector (QLatin1String("applet:not([type]),embed:not([type]),object:not([type]),applet[type=\""));
     selector += m_mimeType;
     selector += QLatin1String("\"],embed[type=\"");
+    selector += m_mimeType;
+    selector += QLatin1String("\"],object[type=\"");
     selector += m_mimeType;
     selector += QLatin1String("\"]");
 
