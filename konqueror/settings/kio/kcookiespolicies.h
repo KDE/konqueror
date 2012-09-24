@@ -51,8 +51,6 @@ public:
     void addNewPolicy(const QString& domain);
 
 protected Q_SLOTS:
-    void autoAcceptSessionCookies ( bool );
-    void ignoreCookieExpirationDate ( bool );
     void cookiesEnabled( bool );
     void configChanged();
 
@@ -71,9 +69,9 @@ private:
                             KCookieAdvice::Value &advice);
 
 private:
-    int d_itemsSelected;
+    quint64 mSelectedItemsCount;
     Ui::KCookiePoliciesUI mUi;
-    QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
+    QMap<QTreeWidgetItem*, const char*> mDomainPolicyMap;
 };
 
 #endif // KCOOKIESPOLICIES_H
