@@ -102,18 +102,13 @@ KCookiesPolicies::KCookiesPolicies (const KComponentData& componentData, QWidget
              SLOT (configChanged()));
     connect (mUi.cbAutoAcceptSessionCookies, SIGNAL (toggled (bool)),
              SLOT (configChanged()));
-    connect (mUi.cbIgnoreCookieExpirationDate, SIGNAL (toggled (bool)),
-             SLOT (configChanged()));
-
-    connect (mUi.cbAutoAcceptSessionCookies, SIGNAL (toggled (bool)),
-             SLOT (autoAcceptSessionCookies (bool)));
-    connect (mUi.cbIgnoreCookieExpirationDate, SIGNAL (toggled (bool)),
-             SLOT (ignoreCookieExpirationDate (bool)));
 
     connect (mUi.rbPolicyAsk, SIGNAL (toggled (bool)),
              SLOT (configChanged()));
     connect (mUi.rbPolicyAccept, SIGNAL (toggled (bool)),
              SLOT (configChanged()));
+    connect (mUi.rbPolicyAcceptForSession, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
     connect (mUi.rbPolicyReject, SIGNAL (toggled (bool)),
              SLOT (configChanged()));
     // Connect signals from the domain specific policy listview.
@@ -144,29 +139,6 @@ void KCookiesPolicies::cookiesEnabled (bool enable)
     mUi.bgDefault->setEnabled (enable);
     mUi.bgPreferences->setEnabled (enable);
     mUi.gbDomainSpecific->setEnabled (enable);
-
-    if (enable) {
-        ignoreCookieExpirationDate (enable);
-        autoAcceptSessionCookies (enable);
-    }
-}
-
-void KCookiesPolicies::ignoreCookieExpirationDate (bool enable)
-{
-    bool isAutoAcceptChecked = mUi.cbAutoAcceptSessionCookies->isChecked();
-    enable = (enable && isAutoAcceptChecked);
-
-    mUi.bgDefault->setEnabled (!enable);
-    mUi.gbDomainSpecific->setEnabled (!enable);
-}
-
-void KCookiesPolicies::autoAcceptSessionCookies (bool enable)
-{
-    bool isIgnoreExpirationChecked = mUi.cbIgnoreCookieExpirationDate->isChecked();
-    enable = (enable && isIgnoreExpirationChecked);
-
-    mUi.bgDefault->setEnabled (!enable);
-    mUi.gbDomainSpecific->setEnabled (!enable);
 }
 
 void KCookiesPolicies::addNewPolicy (const QString& domain)
@@ -188,7 +160,7 @@ void KCookiesPolicies::addNewPolicy (const QString& domain)
             const char* strAdvice = KCookieAdvice::adviceToStr (advice);
             QTreeWidgetItem* item = new QTreeWidgetItem (mUi.lvDomainPolicy,
                     QStringList() << domain << i18n (strAdvice));
-            m_pDomainPolicy.insert (item, strAdvice);
+            mDomainPolicyMap.insert (item, strAdvice);
             configChanged();
         }
     }
@@ -202,25 +174,25 @@ void KCookiesPolicies::addPressed()
 
 void KCookiesPolicies::changePressed()
 {
-    QTreeWidgetItem* index = mUi.lvDomainPolicy->currentItem();
+    QTreeWidgetItem* item = mUi.lvDomainPolicy->currentItem();
 
-    if (!index)
+    if (!item)
         return;
 
-    QString oldDomain = index->text (0);
+    QString oldDomain = item->text (0);
 
     KCookiesPolicySelectionDlg pdlg (this);
     pdlg.setWindowTitle (i18nc ("@title:window", "Change Cookie Policy"));
-    pdlg.setPolicy (KCookieAdvice::strToAdvice (m_pDomainPolicy[index]));
+    pdlg.setPolicy (KCookieAdvice::strToAdvice (mDomainPolicyMap.value(item)));
     pdlg.setEnableHostEdit (true, oldDomain);
 
     if (pdlg.exec() && !pdlg.domain().isEmpty()) {
         QString newDomain = tolerantFromAce (pdlg.domain().toLatin1());
         int advice = pdlg.advice();
         if (newDomain == oldDomain || !handleDuplicate (newDomain, advice)) {
-            m_pDomainPolicy[index] = KCookieAdvice::adviceToStr (advice);
-            index->setText (0, newDomain);
-            index->setText (1, i18n (m_pDomainPolicy[index]));
+            mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
+            item->setText (0, newDomain);
+            item->setText (1, i18n (mDomainPolicyMap.value(item)));
             configChanged();
         }
     }
@@ -238,9 +210,9 @@ bool KCookiesPolicies::handleDuplicate (const QString& domain, int advice)
                       i18nc ("@title:window", "Duplicate Policy"),
                       KGuiItem (i18n ("Replace")));
             if (res == KMessageBox::Continue) {
-                m_pDomainPolicy[item] = KCookieAdvice::adviceToStr (advice);
+                mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
                 item->setText (0, domain);
-                item->setText (1, i18n (m_pDomainPolicy[item]));
+                item->setText (1, i18n (mDomainPolicyMap.value(item)));
                 configChanged();
                 return true;
             } else
@@ -260,7 +232,7 @@ void KCookiesPolicies::deletePressed()
         if (!nextItem)
             nextItem = mUi.lvDomainPolicy->itemAbove (item);
 
-        m_pDomainPolicy.remove (item);
+        mDomainPolicyMap.remove (item);
         delete item;
     }
 
@@ -273,7 +245,7 @@ void KCookiesPolicies::deletePressed()
 
 void KCookiesPolicies::deleteAllPressed()
 {
-    m_pDomainPolicy.clear();
+    mDomainPolicyMap.clear();
     mUi.lvDomainPolicy->clear();
     updateButtons();
     configChanged();
@@ -283,8 +255,8 @@ void KCookiesPolicies::updateButtons()
 {
     bool hasItems = mUi.lvDomainPolicy->topLevelItemCount() > 0;
 
-    mUi.pbChange->setEnabled ( (hasItems && d_itemsSelected == 1));
-    mUi.pbDelete->setEnabled ( (hasItems && d_itemsSelected > 0));
+    mUi.pbChange->setEnabled ( (hasItems && mSelectedItemsCount == 1));
+    mUi.pbDelete->setEnabled ( (hasItems && mSelectedItemsCount > 0));
     mUi.pbDeleteAll->setEnabled (hasItems);
 }
 
@@ -300,9 +272,10 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
         splitDomainAdvice (*it, domain, advice);
 
         if (!domain.isEmpty()) {
-            QTreeWidgetItem* index = new QTreeWidgetItem (mUi.lvDomainPolicy, QStringList() << tolerantFromAce (domain.toLatin1()) <<
-                    i18n (KCookieAdvice::adviceToStr (advice)));
-            m_pDomainPolicy[index] = KCookieAdvice::adviceToStr (advice);
+            QStringList items;
+            items << tolerantFromAce(domain.toLatin1()) << i18n(KCookieAdvice::adviceToStr(advice));
+            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.lvDomainPolicy, items);
+            mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
         }
     }    
 
@@ -311,14 +284,14 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
 
 void KCookiesPolicies::selectionChanged ()
 {
-    d_itemsSelected = mUi.lvDomainPolicy->selectedItems().count();
+    mSelectedItemsCount = mUi.lvDomainPolicy->selectedItems().count();
 
     updateButtons ();
 }
 
 void KCookiesPolicies::load()
 {
-    d_itemsSelected = 0;
+    mSelectedItemsCount = 0;
 
     KConfig cfg ("kcookiejarrc");
     KConfigGroup group = cfg.group ("Cookie Policy");
@@ -334,6 +307,9 @@ void KCookiesPolicies::load()
     case KCookieAdvice::Accept:
         mUi.rbPolicyAccept->setChecked (true);
         break;
+    case KCookieAdvice::AcceptForSession:
+        mUi.rbPolicyAcceptForSession->setChecked (true);
+        break;
     case KCookieAdvice::Reject:
         mUi.rbPolicyReject->setChecked (true);
         break;
@@ -348,13 +324,9 @@ void KCookiesPolicies::load()
 
     bool sessionCookies = group.readEntry ("AcceptSessionCookies", true);
     mUi.cbAutoAcceptSessionCookies->setChecked (sessionCookies);
-    bool cookieExpiration = group.readEntry ("IgnoreExpirationDate", false);
-    mUi.cbIgnoreCookieExpirationDate->setChecked (cookieExpiration);
     updateDomainList (group.readEntry ("CookieDomainAdvice", QStringList()));
 
     if (enableCookies) {
-        ignoreCookieExpirationDate (cookieExpiration);
-        autoAcceptSessionCookies (sessionCookies);
         updateButtons();
     }
 }
@@ -370,12 +342,12 @@ void KCookiesPolicies::save()
     group.writeEntry ("RejectCrossDomainCookies", state);
     state = mUi.cbAutoAcceptSessionCookies->isChecked();
     group.writeEntry ("AcceptSessionCookies", state);
-    state = mUi.cbIgnoreCookieExpirationDate->isChecked();
-    group.writeEntry ("IgnoreExpirationDate", state);
 
     QString advice;
     if (mUi.rbPolicyAccept->isChecked())
         advice = KCookieAdvice::adviceToStr (KCookieAdvice::Accept);
+    else if (mUi.rbPolicyAcceptForSession->isChecked())
+        advice = KCookieAdvice::adviceToStr (KCookieAdvice::AcceptForSession);
     else if (mUi.rbPolicyReject->isChecked())
         advice = KCookieAdvice::adviceToStr (KCookieAdvice::Reject);
     else
@@ -384,7 +356,7 @@ void KCookiesPolicies::save()
     group.writeEntry ("CookieGlobalAdvice", advice);
 
     QStringList domainConfig;
-    QMapIterator<QTreeWidgetItem*, const char*> it (m_pDomainPolicy);
+    QMapIterator<QTreeWidgetItem*, const char*> it (mDomainPolicyMap);
     while (it.hasNext()) {
         it.next();
         QTreeWidgetItem* item = it.key();
@@ -421,12 +393,12 @@ void KCookiesPolicies::defaults()
     mUi.cbEnableCookies->setChecked (true);
     mUi.rbPolicyAsk->setChecked (true);
     mUi.rbPolicyAccept->setChecked (false);
+    mUi.rbPolicyAcceptForSession->setChecked (false);
     mUi.rbPolicyReject->setChecked (false);
     mUi.cbRejectCrossDomainCookies->setChecked (true);
-    mUi.cbAutoAcceptSessionCookies->setChecked (true);
-    mUi.cbIgnoreCookieExpirationDate->setChecked (false);
+    mUi.cbAutoAcceptSessionCookies->setChecked (false);
     mUi.lvDomainPolicy->clear();
-    m_pDomainPolicy.clear();
+    mDomainPolicyMap.clear();
 
     cookiesEnabled (mUi.cbEnableCookies->isChecked());
     updateButtons();

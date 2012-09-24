@@ -27,12 +27,14 @@ class QWidget;
 class KCookieAdvice
 {
 public:
-    enum Value {Dunno = 0, Accept, Reject, Ask};
+    enum Value {Dunno = 0, Accept, AcceptForSession, Reject, Ask};
 
     static const char* adviceToStr (const int& advice) {
         switch (advice) {
         case KCookieAdvice::Accept:
             return I18N_NOOP ("Accept");
+        case KCookieAdvice::AcceptForSession:
+            return I18N_NOOP ("AcceptForSession");
         case KCookieAdvice::Reject:
             return I18N_NOOP ("Reject");
         case KCookieAdvice::Ask:
@@ -42,15 +44,19 @@ public:
         }
     }
 
-    static KCookieAdvice::Value strToAdvice (const QString& advice) {
-        if (advice.isEmpty())
+    static KCookieAdvice::Value strToAdvice (const QString& _str) {
+        if (_str.isEmpty())
             return KCookieAdvice::Dunno;
 
-        if (advice.indexOf (QLatin1String ("accept"), 0, Qt::CaseInsensitive) == 0)
+        QString advice = _str.toLower();
+
+        if (advice == QLatin1String ("accept"))
             return KCookieAdvice::Accept;
-        else if (advice.indexOf (QLatin1String ("reject"), 0, Qt::CaseInsensitive) == 0)
+        else if (advice == QLatin1String ("acceptforsession"))
+            return KCookieAdvice::AcceptForSession;
+        else if (advice == QLatin1String ("reject"))
             return KCookieAdvice::Reject;
-        else if (advice.indexOf (QLatin1String ("ask"), 0, Qt::CaseInsensitive) == 0)
+        else if (advice == QLatin1String ("ask"))
             return KCookieAdvice::Ask;
 
         return KCookieAdvice::Dunno;
