@@ -246,11 +246,6 @@ void KWebKitPart::initActions()
     action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
-
-    action = actionCollection()->addAction(KStandardAction::FindNext, "findnext",
-                                           m_searchBar, SLOT(findNext()));
-    action = actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
-                                           m_searchBar, SLOT(findPrevious()));
 }
 
 void KWebKitPart::updateActions()
@@ -757,6 +752,12 @@ void KWebKitPart::slotShowSearchBar()
         m_searchBar = new KDEPrivate::SearchBar(widget());
         connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
                 this, SLOT(slotSearchForText(QString,bool)));
+
+        actionCollection()->addAction(KStandardAction::FindNext, "findnext",
+                                      m_searchBar, SLOT(findNext()));
+        actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
+                                      m_searchBar, SLOT(findPrevious()));
+
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
         if (lay) {
           lay->addWidget(m_searchBar);
