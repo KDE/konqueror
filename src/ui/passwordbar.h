@@ -26,7 +26,6 @@
 
 #include <QUrl>
 
-namespace KDEPrivate {
 
 class PasswordBar : public KMessageWidget
 {
@@ -58,5 +57,4 @@ private:
     QString m_requestKey;
 };
 
-}
 #endif // PASSWORDBAR_H

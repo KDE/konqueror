@@ -152,7 +152,7 @@
    <sender>closeButton</sender>
    <signal>clicked()</signal>
    <receiver>SearchBar</receiver>
-   <slot>hide()</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>16</x>

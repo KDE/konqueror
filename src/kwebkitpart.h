@@ -29,16 +29,13 @@ namespace KParts {
   class StatusBarExtension;
 }
 
-namespace KDEPrivate {
-  class PasswordBar;
-  class SearchBar;
-}
-
 class QWebView;
 class QWebFrame;
 class QWebHistoryItem;
 class WebView;
 class WebPage;
+class SearchBar;
+class PasswordBar;
 class KUrlLabel;
 class WebKitBrowserExtension;
 
@@ -151,8 +148,8 @@ private:
     bool m_hasCachedFormData;
     bool m_doLoadFinishedActions;
     KUrlLabel* m_statusBarWalletLabel;
-    KDEPrivate::SearchBar* m_searchBar;
-    KDEPrivate::PasswordBar* m_passwordBar;
+    SearchBar* m_searchBar;
+    PasswordBar* m_passwordBar;
     WebKitBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebView* m_webView;
