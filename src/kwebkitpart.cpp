@@ -749,7 +749,7 @@ void KWebKitPart::slotShowSearchBar()
 {
     if (!m_searchBar) {
         // Create the search bar...
-        m_searchBar = new KDEPrivate::SearchBar(widget());
+        m_searchBar = new SearchBar(widget());
         connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
                 this, SLOT(slotSearchForText(QString,bool)));
 
@@ -887,7 +887,7 @@ void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url
         return;
 
     if (!m_passwordBar) {
-        m_passwordBar = new KDEPrivate::PasswordBar(widget());
+        m_passwordBar = new PasswordBar(widget());
         KWebWallet* wallet = page()->wallet();
         if (!wallet) {
             kWarning() << "No wallet instance found! This should never happen!";

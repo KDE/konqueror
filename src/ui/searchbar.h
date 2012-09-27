@@ -27,10 +27,10 @@
 
 #include <QWidget>
 
+#include "ui_searchbar.h"
+
 class QEvent;
 
-namespace KDEPrivate {
- 
 /**
  * This is the widget that shows up when the search is initiated.
  */
@@ -61,11 +61,8 @@ Q_SIGNALS:
     void searchTextChanged(const QString& text, bool backward = false);
 
 private:
-    class SearchBarPrivate;
-    SearchBarPrivate * const d;
-
+    Ui::SearchBar m_ui;
+    QPointer<QWidget> m_focusWidget;
 };
-
-}
 
 #endif // SEARCHBAR_P_H
