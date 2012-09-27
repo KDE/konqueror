@@ -4508,7 +4508,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
   req.openAfterCurrentPage = false;
   req.forceAutoEmbed = true;
 
-  m_pKonqMainWindow->openUrl( 0, bm.url(), QString(), req );
+  m_pKonqMainWindow->openFilteredUrl(bm.url().url(), req);
 }
 
 void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
@@ -4539,18 +4539,19 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   --end;
   for (; it != end; ++it )
   {
-    m_pKonqMainWindow->openUrl( 0, *it, QString(), req );
+    m_pKonqMainWindow->openFilteredUrl((*it).url(), req);
   }
   if ( newTabsInFront )
   {
     req.newTabInFront = true;
   }
-  m_pKonqMainWindow->openUrl( 0, *end, QString(), req );
+  m_pKonqMainWindow->openFilteredUrl((*end).url(), req);
 }
 
 void KonqExtendedBookmarkOwner::openInNewWindow(const KBookmark &bm)
 {
-    KonqMainWindow* mw = KonqMisc::createNewWindow(bm.url());
+    const KUrl finalURL (KonqMisc::konqFilteredURL(m_pKonqMainWindow, bm.url().url()));
+    KonqMainWindow* mw = KonqMisc::createNewWindow(finalURL);
     mw->show();
 }
 

@@ -426,6 +426,7 @@ void KCookiesPolicies::defaults()
     mUi.cbAutoAcceptSessionCookies->setChecked (true);
     mUi.cbIgnoreCookieExpirationDate->setChecked (false);
     mUi.lvDomainPolicy->clear();
+    m_pDomainPolicy.clear();
 
     cookiesEnabled (mUi.cbEnableCookies->isChecked());
     updateButtons();
