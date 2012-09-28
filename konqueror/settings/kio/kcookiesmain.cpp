@@ -72,6 +72,14 @@ void KCookiesMain::save()
         management->save();
 }
 
+void KCookiesMain::load()
+{
+    policies->load();
+    if (management)
+        management->load();
+}
+
+
 void KCookiesMain::defaults()
 {
     KCModule* module = static_cast<KCModule*> (tab->currentWidget());
