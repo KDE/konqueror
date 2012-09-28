@@ -528,40 +528,38 @@ void WebKitBrowserExtension::slotViewDocumentSource()
 {
     if (!view())
         return;
-#if 0
-    //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
-    //a means to obtain the original content of the frame. Actually it does, but the
-    //returned content is royally screwed up! *sigh*
-    KRun::runUrl(view()->page()->mainFrame()->url(), QL1S("text/plain"), view(), false);
-#else
-    KTemporaryFile tempFile;
-    tempFile.setSuffix(QL1S(".html"));
-    tempFile.setAutoRemove(false);
-    if (tempFile.open()) {
-        tempFile.write(view()->page()->mainFrame()->toHtml().toUtf8());
-        KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+
+    const KUrl pageUrl (view()->url());
+    if (pageUrl.isLocalFile()) {
+        KRun::runUrl(pageUrl, QL1S("text/plain"), view(), false);
+    } else {
+        KTemporaryFile tempFile;
+        tempFile.setSuffix(QL1S(".html"));
+        tempFile.setAutoRemove(false);
+        if (tempFile.open()) {
+            tempFile.write(view()->page()->mainFrame()->toHtml().toUtf8());
+            KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+        }
     }
-#endif
 }
 
 void WebKitBrowserExtension::slotViewFrameSource()
 {
     if (!view())
         return;
-#if 0
-    //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
-    //a means to obtain the original content of the frame. Actually it does, but the
-    //returned content is royally screwed up! *sigh*
-    KRun::runUrl(view()->page()->mainFrame()->url(), QL1S("text/plain"), view(), false);
-#else
-    KTemporaryFile tempFile;
-    tempFile.setSuffix(QL1S(".html"));
-    tempFile.setAutoRemove(false);
-    if (tempFile.open()) {
-        tempFile.write(view()->page()->currentFrame()->toHtml().toUtf8());
-        KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+
+    const KUrl frameUrl(view()->page()->currentFrame()->url());
+    if (frameUrl.isLocalFile()) {
+        KRun::runUrl(frameUrl, QL1S("text/plain"), view(), false);
+    } else {
+        KTemporaryFile tempFile;
+        tempFile.setSuffix(QL1S(".html"));
+        tempFile.setAutoRemove(false);
+        if (tempFile.open()) {
+            tempFile.write(view()->page()->currentFrame()->toHtml().toUtf8());
+            KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+        }
     }
-#endif
 }
 
 static bool isMultimediaElement(const QWebElement& element)
