@@ -48,7 +48,7 @@ public:
     virtual void defaults();
     virtual QString quickHelp() const;
 
-    void addNewPolicy(const QString& domain);
+    void setPolicy(const QString& domain);
 
 protected Q_SLOTS:
     void cookiesEnabled( bool );
@@ -61,6 +61,8 @@ protected Q_SLOTS:
     void deletePressed();
     void changePressed();
     void addPressed();
+    void changePressed(QTreeWidgetItem*, bool state = true);
+    void addPressed(const QString&, bool state = true);
 
 private:
     void updateDomainList(const QStringList& list);
