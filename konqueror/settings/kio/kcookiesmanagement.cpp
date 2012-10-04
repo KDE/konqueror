@@ -119,7 +119,7 @@ KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWid
   mUi.setupUi(this);
   mUi.searchLineEdit->setTreeWidget(mUi.cookiesTreeWidget);
   mUi.cookiesTreeWidget->setColumnWidth(0, 150);
-  connect(mUi.cookiesTreeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), SLOT(on_changePolicyButton_clicked()));
+  connect(mUi.cookiesTreeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), SLOT(on_configPolicyButton_clicked()));
 }
 
 KCookiesManagement::~KCookiesManagement()
@@ -213,7 +213,7 @@ void KCookiesManagement::reset(bool deleteAll)
   mUi.cookiesTreeWidget->clear();
   mUi.deleteButton->setEnabled(false);
   mUi.deleteAllButton->setEnabled(false);
-  mUi.changePolicyButton->setEnabled(false);
+  mUi.configPolicyButton->setEnabled(false);
 }
 
 void KCookiesManagement::clearCookieDetails()
@@ -345,10 +345,10 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 
 void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem* item)
 {
-  if (!item)
-    return;
+  Q_ASSERT(item);
+  CookieListViewItem* cookieItem = static_cast<CookieListViewItem*>(item);
+  CookieProp *cookie = (cookieItem ? cookieItem->cookie() : 0);
 
-  CookieProp *cookie = static_cast<CookieListViewItem*>(item)->cookie();
   if (cookie)
   {
     if (cookie->allLoaded || cookieDetails(cookie))
@@ -361,36 +361,25 @@ void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem
       mUi.secureLineEdit->setText(cookie->secure);
     }
 
-    mUi.changePolicyButton->setEnabled(false);
+    mUi.configPolicyButton->setEnabled(false);
   }
   else
   {
     clearCookieDetails();
-    mUi.changePolicyButton->setEnabled(true);
+    mUi.configPolicyButton->setEnabled(true);
   }
 
   mUi.deleteButton->setEnabled(true);
 }
 
-void KCookiesManagement::on_changePolicyButton_clicked()
+void KCookiesManagement::on_configPolicyButton_clicked()
 {
   // Get current item
   CookieListViewItem *item = static_cast<CookieListViewItem*>(mUi.cookiesTreeWidget->currentItem());
 
-  if (item && item->cookie())
+  if (item)
   {
-    CookieProp *cookie = item->cookie();
-
-    QString domain = cookie->domain;
-
-    if (domain.isEmpty())
-    {
-      CookieListViewItem *parent = static_cast<CookieListViewItem*>(item->parent());
-      if (parent)
-        domain = parent->domain ();
-    }
-
-    KCookiesMain* mainDlg = static_cast<KCookiesMain*>(mMainWidget);
+    KCookiesMain* mainDlg = qobject_cast<KCookiesMain*>(mMainWidget);
     // must be present or something is really wrong.
     Q_ASSERT(mainDlg);
 
@@ -398,7 +387,8 @@ void KCookiesManagement::on_changePolicyButton_clicked()
     // must be present unless someone rewrote the widget in which case
     // this needs to be re-written as well.
     Q_ASSERT(policyDlg);
-    policyDlg->setPolicy(domain);
+    
+    policyDlg->setPolicy(item->domain());
   }
 }
 
@@ -406,7 +396,7 @@ void KCookiesManagement::on_deleteButton_clicked()
 {
   QTreeWidgetItem* currentItem = mUi.cookiesTreeWidget->currentItem();
   CookieListViewItem *item = static_cast<CookieListViewItem*>( currentItem );
-  if (item->cookie())
+  if (item && item->cookie())
   {
     CookieListViewItem *parent = static_cast<CookieListViewItem*>(item->parent());
     CookiePropList list = mDeletedCookies.value(parent->domain());

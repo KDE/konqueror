@@ -73,7 +73,7 @@ private Q_SLOTS:
     void on_reloadButton_clicked();
     void on_cookiesTreeWidget_itemExpanded(QTreeWidgetItem*);
     void on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem*);
-    void on_changePolicyButton_clicked();
+    void on_configPolicyButton_clicked();
 
 private:
     void reset (bool deleteAll = false);

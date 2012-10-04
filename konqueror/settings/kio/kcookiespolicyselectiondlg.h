@@ -79,8 +79,10 @@ public:
 
 protected Q_SLOTS:
     void slotTextChanged (const QString&);
+    void slotPolicyChanged(const QString&);
 
 private:
+    int mOldPolicy;
     Ui::KCookiesPolicySelectionDlgUI mUi;
 };
 #endif
