@@ -56,7 +56,7 @@ QString tolerantFromAce (const QByteArray& _domain)
     const bool hasDot = domain.startsWith ('.');
     if (hasDot)
         domain.remove (0, 1);
-    QString ret = QUrl::fromAce (domain);
+    const QString ret = QUrl::fromAce(domain);
     if (hasDot) {
         ret.prepend ('.');
     }
@@ -173,20 +173,20 @@ void KCookiesPolicies::addPressed()
 void KCookiesPolicies::changePressed(QTreeWidgetItem* item, bool state)
 {
     Q_ASSERT(item);
-    QString oldDomain = item->text (0);
+    const QString oldDomain(item->text (0));
 
     KCookiesPolicySelectionDlg pdlg (this);
     pdlg.setWindowTitle (i18nc ("@title:window", "Change Cookie Policy"));
-    pdlg.setPolicy (KCookieAdvice::strToAdvice (mDomainPolicyMap.value(item)));
+    pdlg.setPolicy (KCookieAdvice::strToAdvice (mDomainPolicyMap.value(oldDomain)));
     pdlg.setEnableHostEdit (state, oldDomain);
 
     if (pdlg.exec() && !pdlg.domain().isEmpty()) {
-        QString newDomain = tolerantFromAce (pdlg.domain().toLatin1());
+        const QString newDomain = tolerantFromAce (pdlg.domain().toLatin1());
         int advice = pdlg.advice();
         if (newDomain == oldDomain || !handleDuplicate (newDomain, advice)) {
-            mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
-            item->setText (0, newDomain);
-            item->setText (1, i18n (mDomainPolicyMap.value(item)));
+            mDomainPolicyMap[newDomain] = KCookieAdvice::adviceToStr(advice);
+            item->setText(0, newDomain);
+            item->setText(1, i18n (mDomainPolicyMap.value(newDomain)));
             configChanged();
         }
     }
@@ -209,9 +209,8 @@ void KCookiesPolicies::addPressed(const QString& domain, bool state)
 
         if (!handleDuplicate (domain, advice)) {
             const char* strAdvice = KCookieAdvice::adviceToStr (advice);
-            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.policyTreeWidget,
-                    QStringList() << domain << i18n (strAdvice));
-            mDomainPolicyMap.insert (item, strAdvice);
+            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.policyTreeWidget, QStringList() << domain << i18n (strAdvice));
+            mDomainPolicyMap.insert (item->text(0), strAdvice);
             configChanged();
             updateButtons();
         }
@@ -223,16 +222,16 @@ bool KCookiesPolicies::handleDuplicate (const QString& domain, int advice)
     QTreeWidgetItem* item = mUi.policyTreeWidget->topLevelItem (0);
     while (item != 0) {
         if (item->text (0) == domain) {
-            QString msg = i18n ("<qt>A policy already exists for"
-                                "<center><b>%1</b></center>"
-                                "Do you want to replace it?</qt>", domain);
-            int res = KMessageBox::warningContinueCancel (this, msg,
-                      i18nc ("@title:window", "Duplicate Policy"),
-                      KGuiItem (i18n ("Replace")));
+            const int res = KMessageBox::warningContinueCancel (this,
+                            i18n ("<qt>A policy already exists for"
+                                  "<center><b>%1</b></center>"
+                                  "Do you want to replace it?</qt>", domain),
+                            i18nc ("@title:window", "Duplicate Policy"),
+                            KGuiItem (i18n ("Replace")));
             if (res == KMessageBox::Continue) {
-                mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
+                mDomainPolicyMap[domain] = KCookieAdvice::adviceToStr(advice);
                 item->setText (0, domain);
-                item->setText (1, i18n (mDomainPolicyMap.value(item)));
+                item->setText (1, i18n (mDomainPolicyMap.value(domain)));
                 configChanged();
                 return true;
             } else
@@ -252,7 +251,7 @@ void KCookiesPolicies::deletePressed()
         if (!nextItem)
             nextItem = mUi.policyTreeWidget->itemAbove (item);
 
-        mDomainPolicyMap.remove (item);
+        mDomainPolicyMap.remove (item->text(0));
         delete item;
     }
 
@@ -275,9 +274,9 @@ void KCookiesPolicies::updateButtons()
 {
     bool hasItems = mUi.policyTreeWidget->topLevelItemCount() > 0;
 
-    mUi.pbChange->setEnabled ( (hasItems && mSelectedItemsCount == 1));
-    mUi.pbDelete->setEnabled ( (hasItems && mSelectedItemsCount > 0));
-    mUi.pbDeleteAll->setEnabled (hasItems);
+    mUi.pbChange->setEnabled((hasItems && mSelectedItemsCount == 1));
+    mUi.pbDelete->setEnabled((hasItems && mSelectedItemsCount > 0));
+    mUi.pbDeleteAll->setEnabled(hasItems);
 }
 
 void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
@@ -288,14 +287,12 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
     for (; it != domainConfig.end(); ++it) {
         QString domain;
         KCookieAdvice::Value advice = KCookieAdvice::Dunno;
-
         splitDomainAdvice (*it, domain, advice);
-
         if (!domain.isEmpty()) {
             QStringList items;
             items << tolerantFromAce(domain.toLatin1()) << i18n(KCookieAdvice::adviceToStr(advice));
             QTreeWidgetItem* item = new QTreeWidgetItem (mUi.policyTreeWidget, items);
-            mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
+            mDomainPolicyMap[item->text(0)] = KCookieAdvice::adviceToStr(advice);
         }
     }    
 
@@ -305,7 +302,6 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
 void KCookiesPolicies::selectionChanged ()
 {
     mSelectedItemsCount = mUi.policyTreeWidget->selectedItems().count();
-
     updateButtons ();
 }
 
@@ -376,11 +372,10 @@ void KCookiesPolicies::save()
     group.writeEntry ("CookieGlobalAdvice", advice);
 
     QStringList domainConfig;
-    QMapIterator<QTreeWidgetItem*, const char*> it (mDomainPolicyMap);
+    QMapIterator<QString, const char*> it (mDomainPolicyMap);
     while (it.hasNext()) {
         it.next();
-        QTreeWidgetItem* item = it.key();
-        QString policy = tolerantToAce (item->text (0));
+        const QString policy = tolerantToAce(it.key());
         policy += QLatin1Char (':');
         policy += QLatin1String (it.value());
         domainConfig << policy;
