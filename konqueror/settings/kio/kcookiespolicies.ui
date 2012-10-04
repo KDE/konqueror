@@ -140,7 +140,7 @@ To add a new policy, simply click on the &lt;b&gt;Add...&lt;/b&gt; button and su
        </widget>
       </item>
       <item row="1" column="0" rowspan="5">
-       <widget class="QTreeWidget" name="lvDomainPolicy">
+       <widget class="QTreeWidget" name="policyTreeWidget">
         <property name="whatsThis">
          <string>&lt;qt&gt;
 List of sites for which you have set a specific cookie policy. Specific policies override the default policy setting for these sites.

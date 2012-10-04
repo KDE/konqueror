@@ -81,7 +81,7 @@ KCookiesPolicies::KCookiesPolicies (const KComponentData& componentData, QWidget
     : KCModule (componentData, parent)
 {
     mUi.setupUi (this);
-    mUi.kListViewSearchLine->setTreeWidget (mUi.lvDomainPolicy);
+    mUi.kListViewSearchLine->setTreeWidget (mUi.policyTreeWidget);
     QList<int> columns;
     columns.append (0);
     mUi.kListViewSearchLine->setSearchColumns (columns);
@@ -112,9 +112,9 @@ KCookiesPolicies::KCookiesPolicies (const KComponentData& componentData, QWidget
     connect (mUi.rbPolicyReject, SIGNAL (toggled (bool)),
              SLOT (configChanged()));
     // Connect signals from the domain specific policy listview.
-    connect (mUi.lvDomainPolicy, SIGNAL (itemSelectionChanged()),
+    connect (mUi.policyTreeWidget, SIGNAL (itemSelectionChanged()),
              SLOT (selectionChanged()));
-    connect (mUi.lvDomainPolicy, SIGNAL (itemDoubleClicked (QTreeWidgetItem*, int)),
+    connect (mUi.policyTreeWidget, SIGNAL (itemDoubleClicked (QTreeWidgetItem*, int)),
              SLOT (changePressed()));
 
     // Connect the buttons...
@@ -141,50 +141,44 @@ void KCookiesPolicies::cookiesEnabled (bool enable)
     mUi.gbDomainSpecific->setEnabled (enable);
 }
 
-void KCookiesPolicies::addNewPolicy (const QString& domain)
+void KCookiesPolicies::setPolicy (const QString& domain)
 {
-    KCookiesPolicySelectionDlg pdlg (this);
-    pdlg.setWindowTitle (i18nc ("@title:window", "New Cookie Policy"));
-    pdlg.setEnableHostEdit (true, domain);
-
-    if (mUi.rbPolicyAccept->isChecked())
-        pdlg.setPolicy (KCookieAdvice::Reject);
-    else
-        pdlg.setPolicy (KCookieAdvice::Accept);
-
-    if (pdlg.exec() && !pdlg.domain().isEmpty()) {
-        QString domain = tolerantFromAce (pdlg.domain().toLatin1());
-        int advice = pdlg.advice();
-
-        if (!handleDuplicate (domain, advice)) {
-            const char* strAdvice = KCookieAdvice::adviceToStr (advice);
-            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.lvDomainPolicy,
-                    QStringList() << domain << i18n (strAdvice));
-            mDomainPolicyMap.insert (item, strAdvice);
-            configChanged();
+    QTreeWidgetItemIterator it (mUi.policyTreeWidget);
+    bool hasExistingPolicy = false;
+    while (*it) {
+        if ((*it)->text(0) == domain) {
+            hasExistingPolicy = true;
+            break;
         }
+        ++it;
     }
-}
 
-
-void KCookiesPolicies::addPressed()
-{
-    addNewPolicy (QString());
+    if (hasExistingPolicy) {
+        changePressed((*it), false);
+    } else {
+        addPressed(domain);
+    }
 }
 
 void KCookiesPolicies::changePressed()
 {
-    QTreeWidgetItem* item = mUi.lvDomainPolicy->currentItem();
+    changePressed(mUi.policyTreeWidget->currentItem());
+}
 
-    if (!item)
-        return;
+void KCookiesPolicies::addPressed()
+{
+    addPressed(QString());
+}
 
+void KCookiesPolicies::changePressed(QTreeWidgetItem* item, bool state)
+{
+    Q_ASSERT(item);
     QString oldDomain = item->text (0);
 
     KCookiesPolicySelectionDlg pdlg (this);
     pdlg.setWindowTitle (i18nc ("@title:window", "Change Cookie Policy"));
     pdlg.setPolicy (KCookieAdvice::strToAdvice (mDomainPolicyMap.value(item)));
-    pdlg.setEnableHostEdit (true, oldDomain);
+    pdlg.setEnableHostEdit (state, oldDomain);
 
     if (pdlg.exec() && !pdlg.domain().isEmpty()) {
         QString newDomain = tolerantFromAce (pdlg.domain().toLatin1());
@@ -198,9 +192,35 @@ void KCookiesPolicies::changePressed()
     }
 }
 
+void KCookiesPolicies::addPressed(const QString& domain, bool state)
+{
+    KCookiesPolicySelectionDlg pdlg (this);
+    pdlg.setWindowTitle (i18nc ("@title:window", "New Cookie Policy"));
+    pdlg.setEnableHostEdit(state, domain);
+
+    if (mUi.rbPolicyAccept->isChecked())
+        pdlg.setPolicy (KCookieAdvice::Reject);
+    else
+        pdlg.setPolicy (KCookieAdvice::Accept);
+
+    if (pdlg.exec() && !pdlg.domain().isEmpty()) {
+        const QString domain = tolerantFromAce (pdlg.domain().toLatin1());
+        int advice = pdlg.advice();
+
+        if (!handleDuplicate (domain, advice)) {
+            const char* strAdvice = KCookieAdvice::adviceToStr (advice);
+            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.policyTreeWidget,
+                    QStringList() << domain << i18n (strAdvice));
+            mDomainPolicyMap.insert (item, strAdvice);
+            configChanged();
+            updateButtons();
+        }
+    }
+}
+
 bool KCookiesPolicies::handleDuplicate (const QString& domain, int advice)
 {
-    QTreeWidgetItem* item = mUi.lvDomainPolicy->topLevelItem (0);
+    QTreeWidgetItem* item = mUi.policyTreeWidget->topLevelItem (0);
     while (item != 0) {
         if (item->text (0) == domain) {
             QString msg = i18n ("<qt>A policy already exists for"
@@ -218,7 +238,7 @@ bool KCookiesPolicies::handleDuplicate (const QString& domain, int advice)
             } else
                 return true;  // User Cancelled!!
         }
-        item = mUi.lvDomainPolicy->itemBelow (item);
+        item = mUi.policyTreeWidget->itemBelow (item);
     }
     return false;
 }
@@ -227,10 +247,10 @@ void KCookiesPolicies::deletePressed()
 {
     QTreeWidgetItem* nextItem = 0L;
 
-    Q_FOREACH (QTreeWidgetItem * item, mUi.lvDomainPolicy->selectedItems()) {
-        nextItem = mUi.lvDomainPolicy->itemBelow (item);
+    Q_FOREACH (QTreeWidgetItem * item, mUi.policyTreeWidget->selectedItems()) {
+        nextItem = mUi.policyTreeWidget->itemBelow (item);
         if (!nextItem)
-            nextItem = mUi.lvDomainPolicy->itemAbove (item);
+            nextItem = mUi.policyTreeWidget->itemAbove (item);
 
         mDomainPolicyMap.remove (item);
         delete item;
@@ -246,14 +266,14 @@ void KCookiesPolicies::deletePressed()
 void KCookiesPolicies::deleteAllPressed()
 {
     mDomainPolicyMap.clear();
-    mUi.lvDomainPolicy->clear();
+    mUi.policyTreeWidget->clear();
     updateButtons();
     configChanged();
 }
 
 void KCookiesPolicies::updateButtons()
 {
-    bool hasItems = mUi.lvDomainPolicy->topLevelItemCount() > 0;
+    bool hasItems = mUi.policyTreeWidget->topLevelItemCount() > 0;
 
     mUi.pbChange->setEnabled ( (hasItems && mSelectedItemsCount == 1));
     mUi.pbDelete->setEnabled ( (hasItems && mSelectedItemsCount > 0));
@@ -262,7 +282,7 @@ void KCookiesPolicies::updateButtons()
 
 void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
 {
-    mUi.lvDomainPolicy->clear();
+    mUi.policyTreeWidget->clear();
 
     QStringList::ConstIterator it = domainConfig.begin();
     for (; it != domainConfig.end(); ++it) {
@@ -274,17 +294,17 @@ void KCookiesPolicies::updateDomainList (const QStringList& domainConfig)
         if (!domain.isEmpty()) {
             QStringList items;
             items << tolerantFromAce(domain.toLatin1()) << i18n(KCookieAdvice::adviceToStr(advice));
-            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.lvDomainPolicy, items);
+            QTreeWidgetItem* item = new QTreeWidgetItem (mUi.policyTreeWidget, items);
             mDomainPolicyMap[item] = KCookieAdvice::adviceToStr(advice);
         }
     }    
 
-    mUi.lvDomainPolicy->sortItems(0, Qt::AscendingOrder);
+    mUi.policyTreeWidget->sortItems(0, Qt::AscendingOrder);
 }
 
 void KCookiesPolicies::selectionChanged ()
 {
-    mSelectedItemsCount = mUi.lvDomainPolicy->selectedItems().count();
+    mSelectedItemsCount = mUi.policyTreeWidget->selectedItems().count();
 
     updateButtons ();
 }
@@ -397,7 +417,7 @@ void KCookiesPolicies::defaults()
     mUi.rbPolicyReject->setChecked (false);
     mUi.cbRejectCrossDomainCookies->setChecked (true);
     mUi.cbAutoAcceptSessionCookies->setChecked (false);
-    mUi.lvDomainPolicy->clear();
+    mUi.policyTreeWidget->clear();
     mDomainPolicyMap.clear();
 
     cookiesEnabled (mUi.cbEnableCookies->isChecked());
