@@ -398,7 +398,7 @@ void KCookiesManagement::on_changePolicyButton_clicked()
     // must be present unless someone rewrote the widget in which case
     // this needs to be re-written as well.
     Q_ASSERT(policyDlg);
-    policyDlg->addNewPolicy(domain);
+    policyDlg->setPolicy(domain);
   }
 }
 
