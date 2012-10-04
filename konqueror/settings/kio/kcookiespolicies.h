@@ -73,7 +73,7 @@ private:
 private:
     quint64 mSelectedItemsCount;
     Ui::KCookiePoliciesUI mUi;
-    QMap<QTreeWidgetItem*, const char*> mDomainPolicyMap;
+    QMap<QString, const char*> mDomainPolicyMap;
 };
 
 #endif // KCOOKIESPOLICIES_H
