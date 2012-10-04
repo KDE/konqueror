@@ -361,12 +361,12 @@ void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem
       mUi.secureLineEdit->setText(cookie->secure);
     }
 
-    mUi.changePolicyButton->setEnabled(true);
+    mUi.changePolicyButton->setEnabled(false);
   }
   else
   {
     clearCookieDetails();
-    mUi.changePolicyButton->setEnabled(false);
+    mUi.changePolicyButton->setEnabled(true);
   }
 
   mUi.deleteButton->setEnabled(true);
@@ -433,7 +433,6 @@ void KCookiesManagement::on_deleteButton_clicked()
 
   mUi.deleteButton->setEnabled(mUi.cookiesTreeWidget->currentItem());
   mUi.deleteAllButton->setEnabled(mUi.cookiesTreeWidget->topLevelItemCount() > 0);
-  mUi.changePolicyButton->setEnabled(mUi.cookiesTreeWidget->currentItem());
 
   emit changed( true );
 }
