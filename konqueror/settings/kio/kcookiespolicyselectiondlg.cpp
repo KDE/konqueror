@@ -61,6 +61,7 @@ public:
 
 KCookiesPolicySelectionDlg::KCookiesPolicySelectionDlg (QWidget* parent, Qt::WindowFlags flags)
     : KDialog (parent, flags)
+      , mOldPolicy(-1)
 {
     mUi.setupUi(mainWidget());
     mUi.leDomain->setValidator(new DomainNameValidator (mUi.leDomain));
@@ -70,15 +71,17 @@ KCookiesPolicySelectionDlg::KCookiesPolicySelectionDlg (QWidget* parent, Qt::Win
     connect(mUi.leDomain, SIGNAL(textEdited(QString)),
             SLOT(slotTextChanged(QString)));
     connect(mUi.cbPolicy, SIGNAL(currentIndexChanged(QString)),
-            SLOT(slotTextChanged(QString)));
+            SLOT(slotPolicyChanged(QString)));
 
     mUi.leDomain->setFocus();
 }
 
 void KCookiesPolicySelectionDlg::setEnableHostEdit (bool state, const QString& host)
 {
-    if (!host.isEmpty())
+    if (!host.isEmpty()) {
         mUi.leDomain->setText (host);
+        enableButtonOk(state);
+    }
 
     mUi.leDomain->setEnabled (state);
 }
@@ -89,6 +92,7 @@ void KCookiesPolicySelectionDlg::setPolicy (int policy)
         const bool blocked = mUi.cbPolicy->blockSignals(true);
         mUi.cbPolicy->setCurrentIndex (policy - 1);
         mUi.cbPolicy->blockSignals(blocked);
+        mOldPolicy = policy;
     }
 
     if (!mUi.leDomain->isEnabled())
@@ -108,6 +112,16 @@ QString KCookiesPolicySelectionDlg::domain () const
 void KCookiesPolicySelectionDlg::slotTextChanged (const QString& text)
 {
     enableButtonOk (text.length() > 1);
+}
+
+void KCookiesPolicySelectionDlg::slotPolicyChanged(const QString& policyText)
+{
+    const int policy = KCookieAdvice::strToAdvice(policyText);
+    if (!mUi.leDomain->isEnabled()) {
+        enableButtonOk(policy != mOldPolicy);
+    } else {
+        slotTextChanged(policyText);
+    }
 }
 
 #include "kcookiespolicyselectiondlg.moc"
