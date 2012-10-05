@@ -345,31 +345,28 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 
 void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem* item)
 {
-  Q_ASSERT(item);
-  CookieListViewItem* cookieItem = static_cast<CookieListViewItem*>(item);
-  CookieProp *cookie = (cookieItem ? cookieItem->cookie() : 0);
+  if (item) {
+    CookieListViewItem* cookieItem = static_cast<CookieListViewItem*>(item);
+    CookieProp *cookie = (cookieItem ? cookieItem->cookie() : 0);
 
-  if (cookie)
-  {
-    if (cookie->allLoaded || cookieDetails(cookie))
-    {
-      mUi.nameLineEdit->setText(cookie->name);
-      mUi.valueLineEdit->setText(cookie->value);
-      mUi.domainLineEdit->setText(cookie->domain);
-      mUi.pathLineEdit->setText(cookie->path);
-      mUi.expiresLineEdit->setText(cookie->expireDate);
-      mUi.secureLineEdit->setText(cookie->secure);
+    if (cookie) {
+      if (cookie->allLoaded || cookieDetails(cookie)) {
+        mUi.nameLineEdit->setText(cookie->name);
+        mUi.valueLineEdit->setText(cookie->value);
+        mUi.domainLineEdit->setText(cookie->domain);
+        mUi.pathLineEdit->setText(cookie->path);
+        mUi.expiresLineEdit->setText(cookie->expireDate);
+        mUi.secureLineEdit->setText(cookie->secure);
+      }
+
+      mUi.configPolicyButton->setEnabled(false);
+    } else {
+      clearCookieDetails();
+      mUi.configPolicyButton->setEnabled(true);
     }
 
-    mUi.configPolicyButton->setEnabled(false);
+    mUi.deleteButton->setEnabled(true);
   }
-  else
-  {
-    clearCookieDetails();
-    mUi.configPolicyButton->setEnabled(true);
-  }
-
-  mUi.deleteButton->setEnabled(true);
 }
 
 void KCookiesManagement::on_configPolicyButton_clicked()
