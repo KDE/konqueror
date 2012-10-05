@@ -56,7 +56,7 @@ QString tolerantFromAce (const QByteArray& _domain)
     const bool hasDot = domain.startsWith ('.');
     if (hasDot)
         domain.remove (0, 1);
-    const QString ret = QUrl::fromAce(domain);
+    QString ret = QUrl::fromAce(domain);
     if (hasDot) {
         ret.prepend ('.');
     }
@@ -375,7 +375,7 @@ void KCookiesPolicies::save()
     QMapIterator<QString, const char*> it (mDomainPolicyMap);
     while (it.hasNext()) {
         it.next();
-        const QString policy = tolerantToAce(it.key());
+        QString policy = tolerantToAce(it.key());
         policy += QLatin1Char (':');
         policy += QLatin1String (it.value());
         domainConfig << policy;
