@@ -710,6 +710,10 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
 #endif
 
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
+#endif
+
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);
 }
