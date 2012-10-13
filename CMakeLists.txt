@@ -15,10 +15,10 @@ find_package(ZLIB REQUIRED)
 include (KDE4Defaults)
 include (MacroLibrary)
 
-find_package(KActivities)
+find_package(KActivities 6.1.0)
 macro_log_feature(KActivities_FOUND
   "KActivities" "Interface library for the activity manager"
-  "http://projects.kde.org/kde/kdelibs/kactivities/" FALSE ""
+  "http://projects.kde.org/kde/kdelibs/kactivities/" FALSE "6.1.0"
   "STRONGLY_RECOMMENDED: Needed for Dolphin integration with activities"
   )
 
