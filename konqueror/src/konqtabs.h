@@ -100,6 +100,13 @@ public:
    */
   int tabIndexContaining(KonqFrameBase* frame) const;
 
+  /**
+   * Implemented to catch MMB click when KonqSettings::mouseMiddleClickClosesTab()
+   * returns true so that the tab can be properly closed without being activated
+   * first.
+   */
+  virtual bool eventFilter(QObject*, QEvent*);
+
 public Q_SLOTS:
   void slotCurrentChanged( int index );
   void setAlwaysTabbedMode( bool );

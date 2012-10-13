@@ -26,6 +26,7 @@
 #include <QMenu>
 #include <QDrag>
 #include <QToolButton>
+#include <QStyle>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>
@@ -43,9 +44,7 @@
 #include <kacceleratormanager.h>
 #include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
-#include <QTabBar>
-
-#include <QStyle>
+#include <ktabbar.h>
 
 
 //###################################################################
@@ -134,7 +133,10 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   connect( this, SIGNAL(initiateDrag(QWidget*)),
            SLOT(slotInitiateDrag(QWidget*)) );
 
-
+#ifdef QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#pragma message("KF5: revert the commit that introduced this line")
+#endif
+  tabBar()->installEventFilter(this);
   initPopupMenu();
 }
 
@@ -382,15 +384,11 @@ void KonqFrameTabs::slotMouseMiddleClick()
 
 void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
 {
-    if (KonqSettings::mouseMiddleClickClosesTab()) {
-        slotCloseRequest(w);
-    } else {
-        KUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
-        if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
-            KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
-            if (frame) {
-                m_pViewManager->mainWindow()->openUrl(frame->activeChildView(), filteredURL);
-            }
+    KUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
+    if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
+        KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
+        if (frame) {
+            m_pViewManager->mainWindow()->openUrl(frame->activeChildView(), filteredURL);
         }
     }
 }
@@ -599,6 +597,27 @@ KonqFrameBase* KonqFrameTabs::tabAt(int index) const
 KonqFrameBase* KonqFrameTabs::currentTab() const
 {
     return tabAt(currentIndex());
+}
+
+bool KonqFrameTabs::eventFilter(QObject* watched, QEvent* event)
+{
+    if (KonqSettings::mouseMiddleClickClosesTab()) {
+        KTabBar* bar = qobject_cast<KTabBar*>(tabBar());
+        if (watched == bar &&
+            (event->type() == QEvent::MouseButtonPress ||
+             event->type() == QEvent::MouseButtonRelease)) {
+            QMouseEvent* e = static_cast<QMouseEvent*>(event);
+            if (e->button() == Qt::MidButton) {
+                if (event->type() == QEvent::MouseButtonRelease) {
+                    const int index = bar->selectTab(e->pos());
+                    slotCloseRequest(widget(index));
+                }
+                e->accept();
+                return true;
+            }
+        }
+    }
+    return KTabWidget::eventFilter(watched, event);
 }
 
 #include "konqtabs.moc"
