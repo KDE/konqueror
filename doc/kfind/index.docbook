@@ -7,7 +7,7 @@
   <!ENTITY % English "INCLUDE"> 
 ]>
 
-<book lang="&language;">
+<book id="kfind" lang="&language;">
 
 <bookinfo>
 <title>The &kfind; Handbook</title>
@@ -70,7 +70,7 @@ If you want to use &kfind; as a standalone search tool, launch it by &krunner;.
 </sect1>
 </chapter>
 
-<chapter id="kfind">
+<chapter id="using-kfind">
 <title>Finding Files</title>
 
 <sect1 id="name-tab">
