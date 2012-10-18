@@ -53,6 +53,9 @@
 #include <QtCore/QFile>
 #include <QScrollArea>
 
+#ifdef KActivities_FOUND
+#include <KActivities/ResourceInstance>
+#endif
 
 //#define DEBUG_HISTORY
 
@@ -102,6 +105,10 @@ KonqView::KonqView( KonqViewFactory &viewFactory,
   m_bBuiltinView = false;
   m_bURLDropHandling = false;
   m_bErrorURL = false;
+
+#ifdef KActivities_FOUND
+  m_activityResourceInstance = new KActivities::ResourceInstance(mainWindow->winId(), this);
+#endif
 
   switchView( viewFactory );
 }
@@ -212,6 +219,14 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
 
 #ifdef DEBUG_HISTORY
   kDebug() << "Current position:" << historyIndex();
+#endif
+
+#ifdef KActivities_FOUND
+  m_activityResourceInstance->setUri( url );
+
+  if ( m_pPart->widget()->hasFocus() ) {
+      m_activityResourceInstance->notifyFocusedIn();
+  }
 #endif
 }
 
@@ -1190,6 +1205,13 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
     {
         setActiveComponent();
     }
+
+#ifdef KActivities_FOUND
+    if ( e->type() == QEvent::FocusOut ) {
+        m_activityResourceInstance->notifyFocusedOut();
+    }
+#endif
+
     return false;
 }
 
@@ -1199,6 +1221,10 @@ void KonqView::setActiveComponent()
       KGlobal::setActiveComponent( KGlobal::mainComponent() );
   else
       KGlobal::setActiveComponent( m_pPart->componentData() );
+
+#ifdef KActivities_FOUND
+  m_activityResourceInstance->notifyFocusedIn();
+#endif
 }
 
 bool KonqView::prepareReload( KParts::OpenUrlArguments& args, KParts::BrowserArguments& browserArgs, bool softReload )

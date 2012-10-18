@@ -34,6 +34,8 @@
 #include <QtCore/QPointer>
 #include <QtCore/QEvent>
 
+#include <config-apps.h>
+
 class KonqRun;
 class KonqFrame;
 class KonqBrowserInterface;
@@ -42,6 +44,10 @@ namespace KParts
   class BrowserExtension;
   class StatusBarExtension;
 }
+
+#ifdef KActivities_FOUND
+  namespace KActivities { class ResourceInstance; }
+#endif
 
 // TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
 // khtml-based browser in some apps. Back/forward support is all in here currently.
@@ -558,6 +564,10 @@ private:
   QString m_dbusObjectPath;
   KonqBrowserInterface *m_browserIface;
   int m_randID;
+
+#ifdef KActivities_FOUND
+  KActivities::ResourceInstance *m_activityResourceInstance;
+#endif
 };
 
 #endif

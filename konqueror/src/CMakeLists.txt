@@ -96,6 +96,9 @@ if (UNIX)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
 endif (UNIX)
 
+if (KActivities_FOUND)
+  target_link_libraries(kdeinit_konqueror ${KACTIVITIES_LIBRARY})
+endif (KActivities_FOUND)
 
 if (NOT WIN32)
     install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )
