@@ -14,6 +14,9 @@ configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqu
 
 # For crc32 in konqhistorymanager.cpp
 include_directories( ${ZLIB_INCLUDE_DIR} )
+if (KActivities_FOUND)
+  include_directories(${KACTIVITIES_INCLUDE_DIRS})
+endif (KActivities_FOUND)
 
 ########### libkonquerorprivate, shared with unit tests and sidebar modules ###############
 
