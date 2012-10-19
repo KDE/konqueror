@@ -7,7 +7,7 @@ include(CTest)
 include(CTestConfig.cmake)
 
 #search packages used by KDE
-set(KDE_MIN_VERSION "4.7.97")
+set(KDE_MIN_VERSION "4.9.80")
 set(SOPRANO_MIN_VERSION "2.7.56")
 find_package(KDE4 4.8.0 REQUIRED)
 find_package(Strigi REQUIRED)
