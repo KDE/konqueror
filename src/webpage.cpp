@@ -114,7 +114,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
-            this, SLOT(slotRequestFinished(QNetworkReply*)));    
+            this, SLOT(slotRequestFinished(QNetworkReply*)));
 }
 
 WebPage::~WebPage()
