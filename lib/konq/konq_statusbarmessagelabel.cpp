@@ -366,7 +366,7 @@ void KonqStatusBarMessageLabel::updateCloseButtonPosition()
 void KonqStatusBarMessageLabel::closeErrorMessage()
 {
     if (!showPendingMessage()) {
-        reset();
+        d->m_state = DefaultState;
         setMessage(d->m_defaultText, Default);
     }
 }
