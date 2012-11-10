@@ -73,7 +73,7 @@ private:
 private:
     int d_itemsSelected;
     Ui::KCookiePoliciesUI mUi;
-    QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
+    QMap<QString, const char*> m_pDomainPolicy;
 };
 
 #endif // KCOOKIESPOLICIES_H
