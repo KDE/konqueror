@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-12-01</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
+<date>2011-11-11</date>
+<releaseinfo>&kde; 4.10</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -83,11 +83,14 @@ Pressing the &Ctrl; key when viewing web pages activates Access Keys.
 Unchecking this box will disable this accessibility feature. &konqueror; 
 needs to be restarted for this change to take effect.</para>
 
-<!--para><guilabel>Send the DNT header to tell web sites you do not want
-to be tracked</guilabel>.
-http://en.wikipedia.org/wiki/X-Do-Not-Track
-</para-->
+<para><guilabel>Send the DNT header to tell web sites you do not want
+to be tracked</guilabel>. Check this box if you want to inform a web site 
+that you do not want to your web browsing habits tracked.
+</para>
 
+<para><guilabel>Offer to save website passwords</guilabel>.
+Uncheck this box from beeing prompted to save website passwords
+</para>
 </sect1>
 
 </article>
