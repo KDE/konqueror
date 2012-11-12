@@ -701,7 +701,10 @@ void WebKitBrowserExtension::slotCheckSpelling()
     m_spellTextSelectionStart = 0;
     m_spellTextSelectionEnd = 0;
 
-    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
+    Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
+    backgroundSpellCheck->setParent(spellDialog);
+    spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     spellDialog->showSpellCheckCompletionMessage(true);
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
@@ -721,7 +724,10 @@ void WebKitBrowserExtension::slotSpellCheckSelection()
     m_spellTextSelectionEnd = qMax(0, execJScript(view(), QL1S("this.selectionEnd")).toInt());
     // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
-    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(new Sonnet::BackgroundChecker(this), view());
+    Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
+    backgroundSpellCheck->setParent(spellDialog);
+    spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     spellDialog->showSpellCheckCompletionMessage(true);
     connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
     connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
