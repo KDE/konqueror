@@ -23,6 +23,11 @@
 
 #include "kwebkitpart.h"
 
+#include <QWebFrame>
+#include <QWebElement>
+#include <QWebHistoryItem>
+#include <QWebSettings>
+
 #include "kwebkitpart_ext.h"
 #include "sslinfodialog_p.h"
 #include "webview.h"
@@ -53,6 +58,7 @@
 #include <KDE/KFileItem>
 #include <KDE/KMessageWidget>
 #include <KDE/KProtocolInfo>
+#include <KDE/KToggleAction>
 #include <KParts/StatusBarExtension>
 
 #include <QUrl>
@@ -61,9 +67,6 @@
 #include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QDBusInterface>
-#include <QWebFrame>
-#include <QWebElement>
-#include <QWebHistoryItem>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
@@ -189,6 +192,13 @@ WebPage* KWebKitPart::page()
     return 0;
 }
 
+const WebPage* KWebKitPart::page() const
+{
+    if (m_webView)
+        return qobject_cast<const WebPage*>(m_webView->page());
+    return 0;
+}
+
 void KWebKitPart::initActions()
 {
     KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
@@ -243,6 +253,12 @@ void KWebKitPart::initActions()
     actionCollection()->addAction("security", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotShowSecurity()));
 
+    action = new KToggleAction(i18n("Toggle Caret Mode"), this);
+    actionCollection()->addAction("caretMode", action);
+    action->setShortcut( QKeySequence(Qt::Key_F7) );
+    action->setChecked(isCaretMode());
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotToggleCaretMode()));
+    
     action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
@@ -391,6 +407,22 @@ bool KWebKitPart::openUrl(const KUrl &_u)
     m_doLoadFinishedActions = true;
     m_webView->loadUrl(u, args, bargs);
     return true;
+}
+
+bool KWebKitPart::isCaretMode() const
+{
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
+    return page()->settings()->testAttribute(QWebSettings::CaretBrowsingEnabled);
+#else
+    return false;
+#endif
+}
+
+void KWebKitPart::slotToggleCaretMode()
+{
+#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
+    page()->settings()->setAttribute(QWebSettings::CaretBrowsingEnabled, !isCaretMode());
+#endif
 }
 
 bool KWebKitPart::closeUrl()

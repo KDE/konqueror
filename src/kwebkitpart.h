@@ -88,6 +88,11 @@ public:
     bool isModified() const;
 
     /**
+     * Returns if the page is currently in caret browsing mode.
+     */
+    bool isCaretMode() const;
+
+    /**
      * Connects the appropriate signals from the given page to the slots
      * in this class.
      */
@@ -137,9 +142,11 @@ private Q_SLOTS:
     void slotSaveFormDataDone();
     void slotFillFormRequestCompleted(bool);
     void slotFrameCreated(QWebFrame*);
+    void slotToggleCaretMode();
 
 private:
     WebPage* page();
+    const WebPage* page() const;
     void initActions();
     void updateActions();
     void addWalletStatusBarIcon();
