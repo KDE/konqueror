@@ -1037,7 +1037,13 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
 void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 {
-    doSetActivePart( static_cast<KParts::ReadOnlyPart*>(part) );
+    // Disregard calls from KParts::PartManager when the reason is set to
+    // OtherFocusReason because we do not want parts like okular to activate a
+    // tab that is supposed to be opened in the background. #306417
+    // kDebug() << "reason=" << reason();
+    if (reason() != Qt::OtherFocusReason) {
+        doSetActivePart( static_cast<KParts::ReadOnlyPart*>(part) );
+    }
 }
 
 void KonqViewManager::doSetActivePart( KParts::ReadOnlyPart *part )
