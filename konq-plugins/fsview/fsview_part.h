@@ -101,6 +101,7 @@ public slots:
   void slotShowDepthMenu();
   void slotShowColorMenu();
   void slotSettingsChanged(int);
+  void slotProperties();
 
 protected:
   /**
