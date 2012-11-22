@@ -40,6 +40,7 @@
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
+#include <kpropertiesdialog.h>
 #include <kio/jobuidelegate.h>
 // from kdebase/libkonq...
 #include <konq_operations.h>
@@ -195,7 +196,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 
     KAction *editMimeTypeAction = actionCollection()->addAction( "editMimeType" );
     editMimeTypeAction->setText( i18nc("@action:inmenu Edit", "&Edit File Type..." ) );
-    connect(editMimeTypeAction, SIGNAL(triggered()), SLOT(slotEditMimeType()));
+    connect(editMimeTypeAction, SIGNAL(triggered()), _ext, SLOT(editMimeType()));
 
     KAction *propertiesAction = actionCollection()->addAction( "properties" );
     propertiesAction->setText( i18nc("@action:inmenu File", "Properties") );
@@ -351,13 +352,13 @@ void FSViewPart::updateActions()
     if ( KProtocolManager::supportsMoving(  u ) )
 	canMove++;
   }
-  
+
   // Standard KBrowserExtension actions.
   emit _ext->enableAction("copy", canCopy > 0 );
   emit _ext->enableAction("cut", canMove > 0 );
   // Custom actions.
   //setNonStandardActionEnabled("rename", canMove > 0 ); // FIXME
-  setNonStandardActionEnabled("move_to_trash", canDel > 0);
+  setNonStandardActionEnabled("move_to_trash", (canDel > 0 && canMove > 0));
   setNonStandardActionEnabled("delete", canDel > 0);
   setNonStandardActionEnabled("editMimeType", _view->selection().count() == 1);
   setNonStandardActionEnabled("properties", _view->selection().count() == 1);
@@ -391,28 +392,61 @@ void FSViewPart::contextMenu(TreeMapItem* /*item*/,const QPoint& p)
 	canCopy++;
 	if ( KProtocolManager::supportsDeleting( u ) )
 	    canDel++;
-	if ( KProtocolManager::supportsMoving( u ) )
-	    canMove++;
+        if ( KProtocolManager::supportsMoving( u ) )
+            canMove++;
     }
 
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
     QList<QAction *> editActions;
-    if (canDel >0) {
-	editActions.append(actionCollection()->action("move_to_trash"));
-	editActions.append(actionCollection()->action("delete"));
+    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::ShowUrlOperations |
+                                                 KParts::BrowserExtension::ShowProperties;
+
+    bool addTrash = (canMove > 0);
+    bool addDel = false;
+    if (canDel == 0) {
+        flags |= KParts::BrowserExtension::NoDeletion;
+    } else {
+        if ( !url().isLocalFile() )
+            addDel = true;
+        else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
+            addTrash = false;
+            addDel = true;
+        } else {
+            KSharedConfig::Ptr globalConfig = KSharedConfig::openConfig("kdeglobals", KConfig::IncludeGlobals);
+            KConfigGroup configGroup(globalConfig, "KDE");
+            addDel = configGroup.readEntry("ShowDeleteCommand", false);
+        }
     }
-    if (canMove)
-	editActions.append(actionCollection()->action("rename"));
+
+    if (addTrash)
+        editActions.append(actionCollection()->action("move_to_trash"));
+    if (addDel)
+        editActions.append(actionCollection()->action("delete"));
+
+// FIXME: rename is currently unavailable. Requires popup renaming.
+//     if (canMove)
+//       editActions.append(actionCollection()->action("rename"));
     actionGroups.insert("editactions", editActions);
 
     if (items.count()>0)
       emit _ext->popupMenu(_view->mapToGlobal(p), items,
-		     KParts::OpenUrlArguments(),
-		     KParts::BrowserArguments(),
-		     KParts::BrowserExtension::ShowUrlOperations |
-		     KParts::BrowserExtension::ShowProperties,
-		     actionGroups);
+                           KParts::OpenUrlArguments(),
+                           KParts::BrowserArguments(),
+                           flags,
+                           actionGroups);
 }
+
+void FSViewPart::slotProperties()
+{
+    KUrl::List urlList;
+    if (view()) {
+        urlList = view()->selectedUrls();
+    }
+
+    if (!urlList.isEmpty()) {
+        KPropertiesDialog::showDialog(urlList.first(), view());
+    }
+ }
 
 
 // FSViewBrowserExtension
