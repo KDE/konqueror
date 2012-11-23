@@ -205,11 +205,13 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
 
     Q_ASSERT(mPart); // should never happen!!
     KParts::ReadOnlyPart* part = 0;
-    QWebView* view = mPart->view();
+    QWebView* view = (mPart ? mPart->view() : 0);
 
     if (noPluginHandling || !excludedMimeType(mimeType)) {
         QWebFrame* frame = (view ? view->page()->currentFrame() : 0);
-        part = createPartInstanceFrom(mimeType, argumentNames, argumentValues, view, frame);
+        if (frame) {
+            part = createPartInstanceFrom(mimeType, argumentNames, argumentValues, view, frame);
+        }
     }
 
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
