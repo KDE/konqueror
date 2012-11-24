@@ -902,7 +902,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
         uargs.setMimeType(QL1S("text/html"));
-        uargs.setActionRequestedByUser(false);
+        uargs.setActionRequestedByUser(m_disableJSOpenwindowCheck);
 
         // Window args...
         KParts::WindowArgs wargs (m_windowArgs);
@@ -995,7 +995,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     // OpenUrl args...
     KParts::OpenUrlArguments uargs;
     uargs.setMimeType(QL1S("text/html"));
-    uargs.setActionRequestedByUser(false);
+    uargs.setActionRequestedByUser(m_disableJSOpenwindowCheck);
 
     // Window args...
     KParts::WindowArgs wargs (m_windowArgs);
