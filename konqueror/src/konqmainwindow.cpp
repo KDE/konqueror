@@ -460,17 +460,16 @@ QString KonqMainWindow::detectNameFilter( KUrl & url )
     {
         if ( !url.query().isEmpty() && lastSlash == path.length()-1 ) {  //  In /tmp/?foo, foo isn't a query
             path += url.query(); // includes the '?'
-            url.setQuery( QString() );
         }
         QString fileName = path.mid( lastSlash + 1 );
-        QString testPath = path.left( lastSlash + 1 );
         if ( fileName.indexOf( '*' ) != -1 || fileName.indexOf( '[' ) != -1 || fileName.indexOf( '?' ) != -1 )
         {
             // Check that a file or dir with all the special chars in the filename doesn't exist
-            if ( url.isLocalFile() ? !QFile::exists( url.toLocalFile() ) : !KIO::NetAccess::exists( url, KIO::NetAccess::DestinationSide, this ) )
-            {
+            // (NetAccess::exists has a fast path for local files)
+            if (!KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, this)) {
                 nameFilter = fileName;
                 url.setFileName( QString() );
+                url.setQuery( QString() );
                 kDebug() << "Found wildcard. nameFilter=" << nameFilter << "  New url=" << url;
             }
         }
@@ -520,7 +519,7 @@ void KonqMainWindow::openFilteredUrl(const QString & _url,  const QString& _mime
     req.tempFile = tempFile;
     req.args.setMimeType(_mimeType);
 
-    openFilteredUrl( _url, req );    
+    openFilteredUrl( _url, req );
 }
 
 void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
