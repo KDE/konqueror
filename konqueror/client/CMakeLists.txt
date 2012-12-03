@@ -22,8 +22,3 @@ endif (WIN32)
 
 install(TARGETS kfmclient ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-########### install files ###############
-if( NOT WIN32)
-  install( FILES kfmclient_3_2.upd  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-  install( PROGRAMS kfmclient_3_2_update.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-endif( NOT WIN32)
