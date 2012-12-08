@@ -1827,39 +1827,47 @@ void KonqMainWindow::slotConfigure()
         if (KAuthorized::authorizeControlModule("filebehavior") )
         {
             KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
-            fileManagementGroup->setName(i18n("File Management"));
-            const char* const fmModules[]={
-                "kcmdolphinviewmodes",
-                "kcmdolphinnavigation",
-                "kcmdolphinservices",
-                "kcmdolphingeneral",
-                "filetypes",
-                "kcmtrash"};
-            for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
-                if (KAuthorized::authorizeControlModule(fmModules[i]))
-                    m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i])+".desktop"),fileManagementGroup);
+            if (fileManagementGroup) {
+                fileManagementGroup->setName(i18n("File Management"));
+                const char* const fmModules[]={
+                    "kcmdolphinviewmodes",
+                    "kcmdolphinnavigation",
+                    "kcmdolphinservices",
+                    "kcmdolphingeneral",
+                    "filetypes",
+                    "kcmtrash"};
+                for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
+                    if (KAuthorized::authorizeControlModule(fmModules[i]))
+                        m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i])+".desktop"),fileManagementGroup);
+            } else {
+                kWarning() << "Unable to load the \"File Management\" configuration module";
+            }
         }
 
         if (KAuthorized::authorizeControlModule("khtml_behavior"))
         {
             KPageWidgetItem * webGroup = m_configureDialog->addModule("khtml_behavior");
-            webGroup->setName(i18n("Web Browsing"));
+            if (webGroup) {
+                webGroup->setName(i18n("Web Browsing"));
 
-            const char* const webModules[]={
-                "khtml_appearance",
-                "khtml_filter",
-                "ebrowsing",
-                "cache",
-                "proxy",
-                "kcmhistory",
-                "cookies",
-                "crypto",
-                "useragent",
-                "khtml_java_js",
-                "khtml_plugins"};
-            for (uint i=0;i<sizeof(webModules)/sizeof(char*);++i)
-                if (KAuthorized::authorizeControlModule(webModules[i]))
-                    m_configureDialog->addModule(KCModuleInfo(QString(webModules[i])+".desktop"),webGroup);
+                const char* const webModules[]={
+                    "khtml_appearance",
+                    "khtml_filter",
+                    "ebrowsing",
+                    "cache",
+                    "proxy",
+                    "kcmhistory",
+                    "cookies",
+                    "crypto",
+                    "useragent",
+                    "khtml_java_js",
+                    "khtml_plugins"};
+                for (uint i=0;i<sizeof(webModules)/sizeof(char*);++i)
+                    if (KAuthorized::authorizeControlModule(webModules[i]))
+                        m_configureDialog->addModule(KCModuleInfo(QString(webModules[i])+".desktop"),webGroup);
+            } else {
+                kWarning() << "Unable to load the \"Web Browsing\" configuration module";
+            }
 
         }
         //END SYNC with initActions()
