@@ -229,6 +229,8 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
     if(!sessionName.isEmpty())
         d->m_pSessionName->setText(sessionName);
     
+    d->m_pSessionName->setFocus();
+
     connect(this, SIGNAL(okClicked()), SLOT(slotAddSession()));
     connect(d->m_pSessionName, SIGNAL(textChanged(QString)), this,
         SLOT(slotTextChanged(QString)));
