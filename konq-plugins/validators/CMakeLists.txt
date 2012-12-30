@@ -2,11 +2,16 @@
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 
 macro_optional_find_package(LibTidy)
+set_package_properties(LibTidy PROPERTIES DESCRIPTION "HTML Tidy"
+                       URL "http://tidy.sourceforge.net"
+                       TYPE OPTIONAL
+                       PURPOSE "Gives the Konqueror validators plugin the ability to validate HTML"
+                      )
+
 macro_bool_to_01(LIBTIDY_FOUND HAVE_TIDY)
 
 configure_file(config-konq-validator.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konq-validator.h)
 
-macro_log_feature(LIBTIDY_FOUND "libtidy" "HTML Tidy" "http://tidy.sourceforge.net" FALSE "" "Gives the Konqueror validators plugin the ability to validate HTML")
 
 if (LIBTIDY_FOUND)
   include_directories(${LIBTIDY_INCLUDE_DIR})

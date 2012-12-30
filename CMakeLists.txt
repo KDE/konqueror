@@ -7,20 +7,28 @@ include(CTest)
 include(CTestConfig.cmake)
 
 #search packages used by KDE
-set(KDE_MIN_VERSION "4.9.80")
-set(SOPRANO_MIN_VERSION "2.7.56")
-find_package(KDE4 4.8.0 REQUIRED)
-find_package(Strigi REQUIRED)
-find_package(ZLIB REQUIRED)
+find_package(KDE4 4.9.80 REQUIRED)
 include (KDE4Defaults)
-include (MacroLibrary)
+
+find_package(Strigi)
+set_package_properties(Strigi PROPERTIES DESCRIPTION "Desktop indexing and search support"
+                       URL "http://strigi.sourceforge.net"
+                       TYPE REQUIRED
+                      )
+
+find_package(ZLIB)
+set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"
+                       URL "http://www.zlib.net"
+                       TYPE REQUIRED
+                       PURPOSE "Required for building Konqueror"
+                      )
 
 find_package(KActivities 6.1.0)
-macro_log_feature(KActivities_FOUND
-  "KActivities" "Interface library for the activity manager"
-  "http://projects.kde.org/kde/kdelibs/kactivities/" FALSE "6.1.0"
-  "STRONGLY_RECOMMENDED: Needed for Dolphin integration with activities"
-  )
+set_package_properties(KActivities PROPERTIES DESCRIPTION "Interface library for the activity manager"
+                       URL "https://projects.kde.org/kactivities"
+                       TYPE RECOMMENDED
+                       PURPOSE "Needed for Dolphin integration with activities"
+                      )
 
 include(ConfigureChecks.cmake)
 configure_file (config-apps.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-apps.h )
@@ -53,6 +61,4 @@ if ( Q_WS_X11 )
 endif ( Q_WS_X11 )
 macro_optional_add_subdirectory( doc )
 
-if(CMAKE_SOURCE_DIR STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
-    macro_display_feature_log()
-endif(CMAKE_SOURCE_DIR STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

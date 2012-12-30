@@ -1,5 +1,10 @@
-macro_optional_find_package(GLIB2)
-macro_log_feature(GLIB2_FOUND "glib2" "Low-level core library for data structure handling, portability wrappers, etc." "http://www.gtk.org" FALSE "2.x" "Glib event loop integration from Qt is required for Netscape plugins support.")
+macro_optional_find_package(GLIB2 2.0)
+set_package_properties(GLIB2 PROPERTIES DESCRIPTION "Low-level core library for data structure handling, portability wrappers, etc."
+                       URL "http://www.gtk.org"
+                       TYPE OPTIONAL
+                       PURPOSE "Glib event loop integration from Qt is required for Netscape plugins support."
+                      )
+
 if(GLIB2_FOUND)
   set(HAVE_GLIB2 1)
 endif( GLIB2_FOUND)
