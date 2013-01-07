@@ -60,6 +60,10 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
   m_bLoadingProfile = false;
   m_tabContainer = 0;
 
+#if KDE_IS_VERSION(4,9,97)
+  setIgnoreExplictFocusRequests(true);
+#endif
+
   connect( this, SIGNAL(activePartChanged(KParts::Part*)),
            this, SLOT(slotActivePartChanged(KParts::Part*)) );
 }
@@ -1037,13 +1041,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
 void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 {
-    // Disregard calls from KParts::PartManager when the reason is set to
-    // OtherFocusReason because we do not want parts like okular to activate a
-    // tab that is supposed to be opened in the background. #306417
-    // kDebug() << "reason=" << reason();
-    if (reason() != Qt::OtherFocusReason) {
-        doSetActivePart( static_cast<KParts::ReadOnlyPart*>(part) );
-    }
+    doSetActivePart( static_cast<KParts::ReadOnlyPart*>(part) );
 }
 
 void KonqViewManager::doSetActivePart( KParts::ReadOnlyPart *part )
@@ -1065,7 +1063,6 @@ void KonqViewManager::doSetActivePart( KParts::ReadOnlyPart *part )
 
     KParts::PartManager::setActivePart( part );
 
-    // Giving focus to the part widget will trigger PartManager which will call KonqViewManager::setActivePart
     if (part && part->widget()) {
         part->widget()->setFocus();
 

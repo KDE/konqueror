@@ -4810,8 +4810,10 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         }
         // Special case: RMB + renaming in sidebar; setFocus would abort editing.
         QWidget* fw = focusWidget();
-        if ( !fw || !::qobject_cast<QLineEdit*>( fw ) )
-        m_oldView->part()->widget()->setFocus();
+        if ( !fw || !::qobject_cast<QLineEdit*>( fw ) ) {
+            m_oldView->part()->widget()->setFocus();
+            m_pViewManager->setActivePart(m_oldView->part());
+        }
     }
   }
 }
