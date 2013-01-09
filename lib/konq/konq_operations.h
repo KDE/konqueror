@@ -119,6 +119,16 @@ public:
     static void doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint() );
 
     /**
+     * Paste the clipboard contents
+     *
+     * @return The KonqOperations object
+     * @since 4.10
+     *
+     * @todo TODO KDE 5,0 - Merge doPaste and doPasteV2
+     */
+    static KonqOperations *doPasteV2(QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint());
+
+    /**
      * Returns the state of the paste action:
      * first is whether the action should be enabled
      * second is the text for the action
@@ -218,6 +228,7 @@ public:
 Q_SIGNALS:
     void statFinished( const KFileItem & item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
+    void aboutToCreate(const KUrl::List &urls);
 
 private:
     QWidget* parentWidget() const;
@@ -259,10 +270,13 @@ protected Q_SLOTS:
     void slotStatResult( KJob * job );
     void asyncDrop( const KFileItem & item );
     void doDropFileCopy();
+    void slotCopyingDone(KIO::Job *job, const KUrl &from, const KUrl &to);
+    void slotCopyingLinkDone(KIO::Job *job, const KUrl &from, const QString &target, const KUrl &to);
 
 private:
     Operation m_method;
     //KUrl::List m_srcUrls;
+    KUrl::List m_createdUrls;
     KUrl m_destUrl;
     // for doDrop
     DropInfo * m_info;

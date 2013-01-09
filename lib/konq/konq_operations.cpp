@@ -133,25 +133,37 @@ KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 
 void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos )
 {
-    QClipboard* clipboard = QApplication::clipboard();
+    (void) KonqOperations::doPasteV2( parent, destUrl, pos );
+}
+
+KonqOperations *KonqOperations::doPasteV2(QWidget *parent, const KUrl &destUrl, const QPoint &pos)
+{
+    QClipboard *clipboard = QApplication::clipboard();
     const QMimeData *data = clipboard->mimeData();
     const bool move = KonqMimeData::decodeIsCutSelection(data);
 
-    KIO::Job *job = KIO::pasteClipboard( destUrl, parent, move );
+    KIO::Job *job = KIO::pasteClipboard(destUrl, parent, move);
     if (job) {
-        KonqOperations * op = new KonqOperations( parent );
-        KIOPasteInfo * pi = new KIOPasteInfo;
+        KonqOperations *op = new KonqOperations(parent);
+        KIOPasteInfo *pi = new KIOPasteInfo;
         pi->mousePos = pos;
-        op->setPasteInfo( pi );
-        KIO::CopyJob * copyJob = qobject_cast<KIO::CopyJob *>(job);
+        op->setPasteInfo(pi);
+        KIO::CopyJob *copyJob = qobject_cast<KIO::CopyJob*>(job);
         if (copyJob) {
-            op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
-            KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
-        } else if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
+            op->setOperation(job, move ? MOVE : COPY, copyJob->destUrl());
+            KIO::FileUndoManager::self()->recordJob(move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job);
+            connect(copyJob, SIGNAL(copyingDone(KIO::Job*,KUrl,KUrl,time_t,bool,bool)),
+                    op, SLOT(slotCopyingDone(KIO::Job*,KUrl,KUrl)));
+            connect(copyJob, SIGNAL(copyingLinkDone(KIO::Job*,KUrl,QString,KUrl)),
+                    op, SLOT(slotCopyingLinkDone(KIO::Job*,KUrl,QString,KUrl)));
+        } else if (KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job)) {
             op->setOperation(job, PUT, simpleJob->url());
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), job);
         }
+        return op;
     }
+
+    return 0;
 }
 
 void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl )
@@ -176,6 +188,11 @@ void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List 
         job = KIO::move( selectedUrls, destUrl );
     else
         job = KIO::copy( selectedUrls, destUrl );
+
+    connect(job, SIGNAL(copyingDone(KIO::Job*,KUrl,KUrl,time_t,bool,bool)),
+            op, SLOT(slotCopyingDone(KIO::Job*,KUrl,KUrl)));
+    connect(job, SIGNAL(copyingLinkDone(KIO::Job*,KUrl,QString,KUrl)),
+            op, SLOT(slotCopyingLinkDone(KIO::Job*,KUrl,QString,KUrl)));
 
     op->setOperation( job, method, destUrl );
 
@@ -635,23 +652,40 @@ void KonqOperations::doDropFileCopy()
         KIO::FileUndoManager::self()->recordJob(
             m_method == TRASH ? KIO::FileUndoManager::Trash : KIO::FileUndoManager::Move,
             lst, m_destUrl, job );
-        return; // we still have stuff to do -> don't delete ourselves
+        break;
     case Qt::CopyAction :
         job = KIO::copy( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, COPY, m_destUrl );
         KIO::FileUndoManager::self()->recordCopyJob(job);
-        return;
+        break;
     case Qt::LinkAction :
         kDebug(1203) << "lst.count=" << lst.count();
         job = KIO::link( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, LINK, m_destUrl );
         KIO::FileUndoManager::self()->recordCopyJob(job);
-        return;
+        break;
     default : kError(1203) << "Unknown action " << (int)action << endl;
     }
+    if (job) {
+        connect(job, SIGNAL(copyingDone(KIO::Job*,KUrl,KUrl,time_t,bool,bool)),
+                this, SLOT(slotCopyingDone(KIO::Job*,KUrl,KUrl)));
+        connect(job, SIGNAL(copyingLinkDone(KIO::Job*,KUrl,QString,KUrl)),
+                this, SLOT(slotCopyingLinkDone(KIO::Job*,KUrl,QString,KUrl)));
+        return; // we still have stuff to do -> don't delete ourselves
+    }
     deleteLater();
+}
+
+void KonqOperations::slotCopyingDone( KIO::Job*, const KUrl&, const KUrl &to)
+{
+    m_createdUrls << to;
+}
+
+void KonqOperations::slotCopyingLinkDone(KIO::Job*, const KUrl&, const QString&, const KUrl &to)
+{
+    m_createdUrls << to;
 }
 
 void KonqOperations::_addPluginActions(QList<QAction*>& pluginActions,const KUrl& destination, const KFileItemListProperties& info)
@@ -803,16 +837,33 @@ void KonqOperations::slotStatResult( KJob * job )
         deleteLater();
 }
 
-void KonqOperations::slotResult( KJob * job )
+void KonqOperations::slotResult(KJob *job)
 {
-    if (job && job->error())
-    {
-        static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
+    if (job && job->error()) {
+        static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
+        job = 0; // The job failed, so set it to 0. All further job related codepaths become disabled
     }
-    if ( m_method == EMPTYTRASH ) {
+
+    switch (m_method) {
+    case PUT: {
+            KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job);
+            if (simpleJob) {
+                m_createdUrls << simpleJob->url();
+            }
+        }
+        break;
+    case EMPTYTRASH:
         // Update konq windows opened on trash:/
-        org::kde::KDirNotify::emitFilesAdded( "trash:/" ); // yeah, files were removed, but we don't know which ones...
+        org::kde::KDirNotify::emitFilesAdded("trash:/"); // yeah, files were removed, but we don't know which ones...
+        break;
     }
+
+    if (!m_createdUrls.isEmpty()) {
+        // Inform the application about all created urls
+        emit aboutToCreate(m_createdUrls);
+        m_createdUrls.clear();
+    }
+
     deleteLater();
 }
 
