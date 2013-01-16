@@ -3958,7 +3958,7 @@ void KonqMainWindow::initActions()
 
   m_paForceReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
           "This may, for example, be needed to refresh web pages that have been "
-          "modified since they were loaded, in order to make the changes visible.  Any images on the page are downloaded again, even if cached copies exist.</html>" ) );
+          "modified since they were loaded, in order to make the changes visible. Any images on the page are downloaded again, even if cached copies exist.</html>" ) );
 
   m_paForceReload->setStatusTip( i18n( "Force a reload of the currently displayed document and any contained images" ) );
 

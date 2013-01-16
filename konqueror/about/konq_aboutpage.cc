@@ -153,7 +153,7 @@ QString KonqAboutPageSingleton::intro()
 		      "location, press the back button <img width='16' height='16' src=\"%1\"></img> "
                       "in the toolbar. ",  back_icon_path ) )
           .arg( i18n( "To quickly go to your Home folder press the "
-                      " home button <img width='16' height='16' src=\"%1\"></img>." , gohome_icon_path) )
+                      "home button <img width='16' height='16' src=\"%1\"></img>." , gohome_icon_path) )
           .arg( i18n( "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>." ,
                       QString("exec:/khelpcenter help:/konqueror")) )
           .arg( i18n( "<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster,"
