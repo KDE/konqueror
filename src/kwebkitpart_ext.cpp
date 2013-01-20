@@ -948,7 +948,7 @@ static QString queryOne(const QString& query)
    QString jsQuery = QL1S("(function(query) { var element; var selectedElement = window.getSelection().getRangeAt(0).cloneContents().querySelector(\"");
    jsQuery += query;
    jsQuery += QL1S("\"); if (selectedElement && selectedElement.length > 0) { element = new Object; "
-                   "element.tagName = selectedElements[0].tagName; element.href = selectedElements[0].href; } "
+                   "element.tagName = String(selectedElements[0].tagName); element.href = String(selectedElements[0].href); } "
                    "return element; }())");
    return jsQuery;
 }
@@ -959,7 +959,7 @@ static QString queryAll(const QString& query)
    jsQuery += query;
    jsQuery += QL1S("\"); var numSelectedElements = (selectedElements ? selectedElements.length : 0);"
                    "for (var i = 0; i < numSelectedElements; ++i) { var element = new Object; "
-                   "element.tagName = selectedElements[i].tagName; element.href = selectedElements[i].href;"
+                   "element.tagName = String(selectedElements[i].tagName); element.href = String(selectedElements[i].href);"
                    "elements.push(element); } return elements; } ())");
    return jsQuery;
 }
