@@ -113,6 +113,8 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
             this, SLOT(downloadRequest(QNetworkRequest)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
+    connect(this, SIGNAL(featurePermissionRequested(QWebFrame*, QWebPage::Feature)),
+            this, SLOT(slotFeaturePermissionRequested(QWebFrame*, QWebPage::Feature)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotRequestFinished(QNetworkReply*)));
 }
@@ -619,6 +621,37 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         return;
     }
     reply->deleteLater();
+}
+
+void WebPage::slotFeaturePermissionRequested(QWebFrame* frame, QWebPage::Feature feature)
+{
+    if (frame == mainFrame()) {
+        part()->slotShowFeaturePermissionBar(feature);
+        return;
+    }
+    switch(feature) {
+    case QWebPage::Notifications:
+        // FIXME: We should have a setting to tell if this is enabled, but so far it is always enabled.
+        setFeaturePermission(frame, feature, QWebPage::PermissionGrantedByUser);
+        break;
+    case QWebPage::Geolocation:
+        if (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
+                                                       "access information about your "
+                                                       "physical location.\n"
+                                                       "Do you want to allow it access?"),
+                                            i18n("Network Transmission"),
+                                            KGuiItem(i18n("Allow access")),
+                                            KStandardGuiItem::cancel(),
+                                            "WarnGeolocation") == KMessageBox::Cancel) {
+            setFeaturePermission(frame, feature, QWebPage::PermissionDeniedByUser);
+        } else {
+            setFeaturePermission(frame, feature, QWebPage::PermissionGrantedByUser);
+        }
+        break;
+    default:
+        setFeaturePermission(frame, feature, QWebPage::PermissionUnknown);
+        break;
+    }
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect & rect)

@@ -15,6 +15,7 @@ set(kwebkit_LIB_SRCS
     settings/webkit_filter.cpp
     ui/searchbar.cpp
     ui/passwordbar.cpp
+    ui/featurepermissionbar.cpp
 )
 
 kde4_add_ui_files(kwebkit_LIB_SRCS

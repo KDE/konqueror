@@ -22,6 +22,8 @@
 #ifndef KWEBKITPART_H
 #define KWEBKITPART_H
 
+#include <QWebPage>
+
 #include <KDE/KParts/ReadOnlyPart>
 
 namespace KParts {
@@ -36,6 +38,7 @@ class WebView;
 class WebPage;
 class SearchBar;
 class PasswordBar;
+class FeaturePermissionBar;
 class KUrlLabel;
 class WebKitBrowserExtension;
 
@@ -98,6 +101,7 @@ public:
      */
     void connectWebPageSignals(WebPage* page);
 
+    void slotShowFeaturePermissionBar(QWebPage::Feature);
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -144,6 +148,9 @@ private Q_SLOTS:
     void slotFrameCreated(QWebFrame*);
     void slotToggleCaretMode();
 
+    void slotFeaturePermissionGranted(QWebPage::Feature);
+    void slotFeaturePermissionDenied(QWebPage::Feature);
+
 private:
     WebPage* page();
     const WebPage* page() const;
@@ -157,6 +164,7 @@ private:
     KUrlLabel* m_statusBarWalletLabel;
     SearchBar* m_searchBar;
     PasswordBar* m_passwordBar;
+    FeaturePermissionBar* m_featurePermissionBar;
     WebKitBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebView* m_webView;

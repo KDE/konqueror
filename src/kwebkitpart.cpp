@@ -5,6 +5,7 @@
  * Copyright (C) 2008 - 2010 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
+ * Copyright (C) 2013 Allan Sandfeld Jensen <sandfeld@kde.org>
  *
  * This library is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by the
@@ -37,6 +38,7 @@
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
+#include "ui/featurepermissionbar.h"
 #include "settings/webkitsettings.h"
 
 #include <kdeversion.h>
@@ -92,7 +94,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_doLoadFinishedActions(false),
              m_statusBarWalletLabel(0),
              m_searchBar(0),
-             m_passwordBar(0)
+             m_passwordBar(0),
+             m_featurePermissionBar(0)
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
@@ -905,6 +908,46 @@ void KWebKitPart::slotWindowCloseRequested()
         return;
 #endif
     this->deleteLater();
+}
+
+void KWebKitPart::slotShowFeaturePermissionBar(QWebPage::Feature feature)
+{
+    // FIXME: Allow multiple concurrent feature permission requests.
+    if (m_featurePermissionBar && m_featurePermissionBar->isVisible())
+        return;
+
+    if (!m_featurePermissionBar) {
+        m_featurePermissionBar = new FeaturePermissionBar(widget());
+
+        connect(m_featurePermissionBar, SIGNAL(permissionGranted(QWebPage::Feature)),
+                this, SLOT(slotFeaturePermissionGranted(QWebPage::Feature)));
+        connect(m_featurePermissionBar, SIGNAL(permissionDenied(QWebPage::Feature)),
+                this, SLOT(slotFeaturePermissionDenied(QWebPage::Feature)));
+//         connect(m_passwordBar, SIGNAL(done()),
+//                 this, SLOT(slotSaveFormDataDone()));
+        QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
+        if (lay)
+            lay->insertWidget(0, m_featurePermissionBar);
+    }
+    m_featurePermissionBar->setFeature(feature);
+//     m_featurePermissionBar->setText(i18n("<html>Do you want to grant the site <b>%1</b> "
+//                                     "access to information about your current physical location?",
+//                                     url.host()));
+    m_featurePermissionBar->setText(i18n("<html>Do you want to grant the site "
+                                    "access to information about your current physical location?"));
+    m_featurePermissionBar->animatedShow();
+}
+
+void KWebKitPart::slotFeaturePermissionGranted(QWebPage::Feature feature)
+{
+    Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
+    page()->setFeaturePermission(page()->mainFrame(), feature, QWebPage::PermissionGrantedByUser);
+}
+
+void KWebKitPart::slotFeaturePermissionDenied(QWebPage::Feature feature)
+{
+    Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
+    page()->setFeaturePermission(page()->mainFrame(), feature, QWebPage::PermissionDeniedByUser);
 }
 
 void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url)

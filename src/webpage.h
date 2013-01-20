@@ -133,6 +133,7 @@ protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
     void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
+    void slotFeaturePermissionRequested(QWebFrame* frame, QWebPage::Feature feature);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
