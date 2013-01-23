@@ -191,6 +191,7 @@ and folders in the current folder.
 The <link linkend="places-panel"><guilabel>Places</guilabel> panel</link>, which
 provides quick access to bookmarked locations and disks or other media.
 A &RMB; click opens the context menu to edit, add, hide or remove entries.
+  <!--FIXME Icon Size -->
 </para></listitem>
 
 <listitem><para>
@@ -209,8 +210,8 @@ from the <guimenu>Settings</guimenu> menu or the <guibutton>Control</guibutton> 
 </para></listitem>
 
 <listitem><para>
-The additional <guilabel>Information</guilabel>, <guilabel>Folders</guilabel>,
-<guilabel>Terminal</guilabel> and <guilabel>Search</guilabel> panels are hidden
+The additional <guilabel>Information</guilabel>, <guilabel>Folders</guilabel> 
+and <guilabel>Terminal</guilabel> panels are hidden
 by default, for more information see <link linkend="panels"><guilabel>Panels</guilabel>.</link>
 </para></listitem>
 
@@ -229,7 +230,7 @@ by default, for more information see <link linkend="panels"><guilabel>Panels</gu
 <para>
 The view displays all files and folders in the current folder. These items
 can be accessed or manipulated in different ways:
-<!--FIXME for better extraction add </para> -->
+</para>
 <itemizedlist>
 
 <listitem><para>
@@ -254,7 +255,7 @@ Items can even be dropped in another application to open them in this applicatio
 </para></listitem>
 
 </itemizedlist>
-<!--FIXME for better extraction add <para> -->
+<para>
 &dolphin; remembers the history of visited folders. To navigate backward or
 forward in the history, the corresponding buttons in the toolbar can be used:
 </para>
@@ -368,8 +369,8 @@ or <guiicon>v</guiicon> icon next to it.</para></listitem>
 <textobject>
 <phrase>Grouped View</phrase>
 </textobject>
-<caption><para>All view modes support grouping by the sort type selected in 
-<menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
+<caption><para>All view modes support grouping by the sort type selected 
+in <menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
 </mediaobject>
 </screenshot>
 <!-- end copy to konqueror filemanager.docbook -->
@@ -402,7 +403,9 @@ copying files.
 
 <sect2 id="selection">
 <title>Selecting Items in the View</title>
-
+<!--FIXME
+add search via keyboard from
+http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
 <para>
 There are several ways to select items in the view. Once a group of items
 is selected, all actions, such as
@@ -669,33 +672,6 @@ affect the &dolphin; view.
 </para>
 
 </sect2>
-<!--FIXME
-add search via keyboard from
-http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
-<sect2 id="search-panel">
-<title>Search</title>
-
-<para>
-The <guilabel>Search</guilabel> panel provides a very comfortable way for 
-the user to shrink the number of search results in combination with the 
-<guilabel>Find</guilabel> bar.</para>
-<para>But you can use it also stand-alone to find &eg; all pictures changed 
-the last week, with any rating and tagged with holidays.</para>
-<para>To start a search select one or more file types (<guilabel>Documents</guilabel>, 
-<guilabel>Audio</guilabel>, <guilabel>Video</guilabel>, <guilabel>Images</guilabel>),
-a time period, rating and tag, if you have defined any.</para>
-<!-- Documents, Audio, Video, Images 
-(how definded? via mimetyp? *.txt is apparently no Document, but xsl,doc,odt
-Time (last change date?)
-Rating
-Tags if defined
--->
-<note><para>This feature requires running Nepomuk and Strigi services, 
-you can check your system setup in the <guilabel>Desktop Search</guilabel> module 
-in the &systemsettings; category <guilabel>Workspace Appearance and Behavior</guilabel>.
-</para></note>
-
-</sect2>
 
 </sect1>
 
@@ -747,8 +723,32 @@ a KIOSlave is launched to provide the search results.</para>
 <para>The option from <guilabel>Everywhere</guilabel> with activated Nepomuk/Strigi 
 services searches in all indexed folders, without Nepomuk/Strigi this option  
 starts the search from the user's <replaceable>Home</replaceable> folder.</para>
-<para>Alternatively you can use the <link linkend="search-panel">search panel</link>
-to find files using Nepomuk or limit the search to selected files.</para>
+
+<screenshot>
+<screeninfo>Search with More Options</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="nepomuk-search-more-options.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Search with More Options</phrase>
+</textobject>
+<caption><para>&dolphin; searching with More Options.</para></caption>
+</mediaobject>
+</screenshot>
+
+<para>
+Use the <guilabel>More Options</guilabel> button to extend the <guilabel>Find</guilabel> 
+bar. This provides a very comfortable way for 
+the user to shrink the number of search results.</para>
+<para>To start a search select one or more file types (<guilabel>Documents</guilabel>, 
+<guilabel>Audio</guilabel>, <guilabel>Video</guilabel>, <guilabel>Images</guilabel>),
+a time period, rating and tag, if you have defined any.</para>
+
+<para>Alternatively you can use these options in the <guilabel>Places</guilabel> panel 
+together with the <guilabel>Filter</guilabel> bar to find files using Nepomuk or limit 
+the search to files matching the filter expression.</para>
+
 </sect2>
 
 <sect2 id="mounting-storage-media">
@@ -968,7 +968,7 @@ tab bar on top.
 
 <para>
 All three view modes have some common settings:
-  <!--FIXME for better extraction add </para> -->
+</para>
 <itemizedlist>
 
 <listitem><para>
@@ -986,7 +986,7 @@ custom font can be chosen.
 </para></listitem>
 
 </itemizedlist>
-  <!--FIXME for better extraction add <para> -->
+<para>
 The other settings in the <guilabel>Text</guilabel> section which apply to only 
 one of the view modes are discussed below.
 </para>
@@ -1232,6 +1232,11 @@ leads to the sort order
 </orderedlist>
 </para></listitem>
 
+<listitem><para>
+Enable <guilabel>Rename inline</guilabel> to use this mode if only one item is currently selected. 
+If this option is diabled or several items are selected, a dialog will be displayed for renaming.
+</para></listitem>
+
 </itemizedlist>
 
 </para>
@@ -1297,7 +1302,7 @@ commands of the context menu have to be enabled on the Services page.
 <para>
 The following settings control how the contents of a folder are displayed in the
 &kappname; view, and are stored on a per-folder basis by default:
-  <!--FIXME for better extraction add </para> -->
+</para>
 <itemizedlist>
 
 <listitem><para>
@@ -1333,7 +1338,7 @@ What additional information (besides the name) is shown in the Icons or Details 
 </para></listitem>
 
 </itemizedlist>
-  <!--FIXME for better extraction add <para> -->
+<para>
 The view properties can be configured in the
 <menuchoice><guimenu>View</guimenu></menuchoice> menu, some (such as the view
 mode) can also be changed using toolbar buttons.
@@ -1737,9 +1742,7 @@ folder.</action></para></listitem>
 <listitem><para><action>Enables and disables</action> the different <link linkend="panels">panels</link>:
 <guimenuitem>Places</guimenuitem> (<keycap>F9</keycap>), <guimenuitem>Information</guimenuitem>
 (<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>), 
-<guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>) and
-<guimenuitem>Search</guimenuitem> (<keycap>F12</keycap>).
-<!--FIXME Search F12 requires Nepomuk/Strigi -->
+<guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>).
 With <guimenuitem>Lock Panels</guimenuitem> the panel header with caption and two buttons is  
 hidden to save space and the panels are immutable, with <guimenuitem>Unlock Panels</guimenuitem>
 the header is visible and the panel can be moved to the right or left  or even
@@ -1751,7 +1754,7 @@ outside the main window.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
+<keycap>F6</keycap>
 </shortcut>
 <guimenu>View</guimenu>
 <guisubmenu>Location Bar</guisubmenu>
@@ -1766,7 +1769,7 @@ outside the main window.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycap>F6</keycap>
+<keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
 <guisubmenu>Location Bar</guisubmenu>
