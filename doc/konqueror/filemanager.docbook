@@ -60,7 +60,7 @@ are outlined below.
 
 <note><para>In File Manager mode, &konqueror; uses an embedded &dolphin;  
 component.</para></note>
-<!-- begin copy from dolphin docbook --> 
+<!-- begin copy from dolphin docbook synced for 4.10--> 
 <itemizedlist>
 
 <listitem><para>
@@ -142,7 +142,7 @@ the extra data would take too long set a file size limit at the bottom of the
 </sect2>
 </sect1>
 
-<!-- begin copy from dolphin docbook --> 
+<!-- begin copy from dolphin docbook synced for 4.10--> 
 <sect1 id="view-properties">
 <title>Folder View Properties</title>
 
@@ -549,8 +549,7 @@ If you have copied multiple items, <guibutton>Skip</guibutton> the current item.
 multiple items.</para>
 </sect2>
 </sect1>
-<!-- begin copy from dolphin docbook-->
-<!-- 4.5 -->
+<!-- begin copy from dolphin docbook synced for 4.10-->
 <sect1 id="selection">
 <title>Selecting Items in the View</title>
 
@@ -636,6 +635,12 @@ in the view.
 selection state of all items in the view.
 </para></listitem>
 
+<listitem><para>
+Select a file or folder by typing the first few letters of its name and the 
+the first matching item is selected. 
+To clear the selection and cancel the keyboard search press &Esc; or wait longer than
+the timeout of 1 second.
+</para></listitem>
 </itemizedlist>
 
 </sect2>
