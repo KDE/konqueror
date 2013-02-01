@@ -400,12 +400,10 @@ copying files.
 </sect3>
 
 </sect2>
-
+<!-- begin copy to konqueror filemanager.docbook -->
 <sect2 id="selection">
 <title>Selecting Items in the View</title>
-<!--FIXME
-add search via keyboard from
-http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
+
 <para>
 There are several ways to select items in the view. Once a group of items
 is selected, all actions, such as
@@ -494,8 +492,9 @@ the first matching item is selected.
 To clear the selection and cancel the keyboard search press &Esc; or wait longer than
 the timeout of 1 second.
 </para></listitem>
+<!-- from http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
 </itemizedlist>
-
+<!-- END copy to konqueror filemanager.docbook -->
 </sect3>
 
 </sect2>
