@@ -239,12 +239,10 @@ void FilterSet::addFilter(const QString& filterStr)
         first = 2;
 
     // Strip options, we ignore them for now.
+    // TODO: Add support for filters with options. See #310230.
     int dollar = filter.lastIndexOf(QLatin1Char('$'));
     if (dollar != -1) {
-        last = dollar - 1;
-        // If only "*" is left after ignoring the options, disregard the rule.
-        if (first == last && firstChar == QLatin1Char('*'))
-            return;
+        return;
     }
 
     // Perhaps nothing left?
