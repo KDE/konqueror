@@ -111,6 +111,10 @@ public:
     bool m_disableInternalPluginHandling:1;
     bool m_offerToSaveWebSitePassword:1;
     bool m_loadPluginsOnDemand:1;
+    bool m_enableLocalStorage:1;
+    bool m_enableOfflineStorageDb:1;
+    bool m_enableOfflineWebAppCache:1;
+    bool m_enableWebGL:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -629,8 +633,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
         KParts::HtmlSettingsInterface::JavaScriptAdvice javaAdvice;
         KParts::HtmlSettingsInterface::JavaScriptAdvice javaScriptAdvice;
         KParts::HtmlSettingsInterface::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
-        setup_per_domain_policy(d,domain).m_bEnableJavaScript =
-			javaScriptAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
+        setup_per_domain_policy(d,domain).m_bEnableJavaScript = javaScriptAdvice == KParts::HtmlSettingsInterface::JavaScriptAccept;
 #ifdef DEBUG_SETTINGS
 	setup_per_domain_policy(d,domain).dump("ECMADomainSettings 4 "+domain);
 #endif
@@ -699,15 +702,14 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
 
-  // TODO: Make all of these WebKit specific options configurable, i.e. create a webkit config
-  // module that gets embeded into Konqueror's kcm.
+  // TODO: Create a webkit config module that gets embeded into Konqueror's kcm.
 #if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
   // Turn on WebGL support
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, true);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, true);
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, true);
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, d->m_enableLocalStorage);
 #endif
 
 #if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
@@ -1210,6 +1212,10 @@ void WebKitSettings::initWebKitSettings()
     KConfig cfg ("kwebkitpartrc", KConfig::NoGlobals);
     KConfigGroup generalCfg (&cfg, "General");
     d->m_disableInternalPluginHandling = generalCfg.readEntry("DisableInternalPluginHandling", false);
+    d->m_enableLocalStorage = generalCfg.readEntry("EnableLocalStorage", true);
+    d->m_enableOfflineStorageDb = generalCfg.readEntry("EnableOfflineStorageDatabase", true);
+    d->m_enableOfflineWebAppCache = generalCfg.readEntry("EnableOfflineWebApplicationCache", true);
+    d->m_enableWebGL = generalCfg.readEntry("EnableWebGL", true);
 
     // Force the reloading of the non password storable sites settings.
     d->nonPasswordStorableSites.clear();

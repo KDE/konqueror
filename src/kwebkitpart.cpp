@@ -191,10 +191,10 @@ WebPage* KWebKitPart::page()
 
 void KWebKitPart::initActions()
 {
-    KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
-                                                    m_browserExtension, SLOT(slotSaveDocument()));
+    actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
+                                  m_browserExtension, SLOT(slotSaveDocument()));
 
-    action = new KAction(i18n("Save &Frame As..."), this);
+    KAction* action = new KAction(i18n("Save &Frame As..."), this);
     actionCollection()->addAction("saveFrame", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
 
@@ -633,9 +633,6 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 
 void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
 {
-    if (!frame)
-        return;
-
     QWebPage* page = (frame ? frame->page() : 0);
     QWebHistory* history = (page ? page->history() : 0);
 
@@ -849,10 +846,10 @@ void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
     if (!localSettings)
         return;
 
-    // kDebug() << codec->name();
+    kDebug() << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
 
     localSettings->setDefaultTextEncoding(codec->name());
-    openUrl(url());
+    page()->triggerAction(QWebPage::Reload);
 }
 
 void KWebKitPart::slotSetStatusBarText(const QString& text)
