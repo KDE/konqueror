@@ -856,6 +856,8 @@ void KonqOperations::slotResult(KJob *job)
         // Update konq windows opened on trash:/
         org::kde::KDirNotify::emitFilesAdded("trash:/"); // yeah, files were removed, but we don't know which ones...
         break;
+    default:
+        break;
     }
 
     if (!m_createdUrls.isEmpty()) {
