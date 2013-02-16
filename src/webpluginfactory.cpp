@@ -207,61 +207,63 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
     KParts::ReadOnlyPart* part = 0;
     QWebView* view = (mPart ? mPart->view() : 0);
 
-    if (noPluginHandling || !excludedMimeType(mimeType)) {
-        QWebFrame* frame = (view ? view->page()->currentFrame() : 0);
-        if (frame) {
-            part = createPartInstanceFrom(mimeType, argumentNames, argumentValues, view, frame);
-        }
-    }
-
-    kDebug() << "Asked for" << mimeType << "plugin, got" << part;
-
-    if (part) {
-        connect (part->browserExtension(), SIGNAL (openUrlNotify()),
-                 mPart->browserExtension(), SIGNAL (openUrlNotify()));
-
-        connect (part->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)),
-                 mPart->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)));
-
-        // Check if this part is scriptable
-        KParts::ScriptableExtension* scriptExt = KParts::ScriptableExtension::childObject(part);
-        if (!scriptExt) {
-            // Try to fall back to LiveConnectExtension compat
-            KParts::LiveConnectExtension* lc = KParts::LiveConnectExtension::childObject(part);
-            if (lc) {
-                scriptExt = KParts::ScriptableExtension::adapterFromLiveConnect(part, lc);
+    if (view) {
+        if (noPluginHandling || !excludedMimeType(mimeType)) {
+            QWebFrame* frame = view->page()->currentFrame();
+            if (frame) {
+                part = createPartInstanceFrom(mimeType, argumentNames, argumentValues, view, frame);
             }
         }
 
-        if (scriptExt) {
-            scriptExt->setHost(KParts::ScriptableExtension::childObject(mPart));
+        kDebug() << "Asked for" << mimeType << "plugin, got" << part;
+
+        if (part) {
+            connect (part->browserExtension(), SIGNAL (openUrlNotify()),
+                     mPart->browserExtension(), SIGNAL (openUrlNotify()));
+
+            connect (part->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)),
+                     mPart->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)));
+
+            // Check if this part is scriptable
+            KParts::ScriptableExtension* scriptExt = KParts::ScriptableExtension::childObject(part);
+            if (!scriptExt) {
+                // Try to fall back to LiveConnectExtension compat
+                KParts::LiveConnectExtension* lc = KParts::LiveConnectExtension::childObject(part);
+                if (lc) {
+                    scriptExt = KParts::ScriptableExtension::adapterFromLiveConnect(part, lc);
+                }
+            }
+
+            if (scriptExt) {
+                scriptExt->setHost(KParts::ScriptableExtension::childObject(mPart));
+            }
+
+            QMap<QString, QString> metaData = part->arguments().metaData();
+            QString urlStr = url.toString (QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment);
+            metaData.insert ("PropagateHttpHeader", "true");
+            metaData.insert ("referrer", urlStr);
+            metaData.insert ("cross-domain", urlStr);
+            metaData.insert ("main_frame_request", "TRUE");
+            metaData.insert ("ssl_activate_warnings", "TRUE");
+
+            KWebPage *page = qobject_cast<KWebPage*>(view->page());
+
+            if (page) {
+                const QString scheme = page->currentFrame()->url().scheme();
+                if (page && (QString::compare (scheme, QL1S ("https"), Qt::CaseInsensitive) == 0 ||
+                            QString::compare (scheme, QL1S ("webdavs"), Qt::CaseInsensitive) == 0))
+                    metaData.insert ("ssl_was_in_use", "TRUE");
+                else
+                    metaData.insert ("ssl_was_in_use", "FALSE");
+            }
+
+            KParts::OpenUrlArguments openUrlArgs = part->arguments();
+            openUrlArgs.metaData() = metaData;
+            openUrlArgs.setMimeType(mimeType);
+            part->setArguments(openUrlArgs);
+            QMetaObject::invokeMethod(part, "openUrl", Qt::QueuedConnection, Q_ARG(KUrl, KUrl(url)));
+            return part->widget();
         }
-
-        QMap<QString, QString> metaData = part->arguments().metaData();
-        QString urlStr = url.toString (QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment);
-        metaData.insert ("PropagateHttpHeader", "true");
-        metaData.insert ("referrer", urlStr);
-        metaData.insert ("cross-domain", urlStr);
-        metaData.insert ("main_frame_request", "TRUE");
-        metaData.insert ("ssl_activate_warnings", "TRUE");
-
-        KWebPage *page = (view ? qobject_cast<KWebPage*>(view->page()) : 0);
-
-        if (page) {
-            const QString scheme = page->currentFrame()->url().scheme();
-            if (page && (QString::compare (scheme, QL1S ("https"), Qt::CaseInsensitive) == 0 ||
-                         QString::compare (scheme, QL1S ("webdavs"), Qt::CaseInsensitive) == 0))
-                metaData.insert ("ssl_was_in_use", "TRUE");
-            else
-                metaData.insert ("ssl_was_in_use", "FALSE");
-        }
-
-        KParts::OpenUrlArguments openUrlArgs = part->arguments();
-        openUrlArgs.metaData() = metaData;
-        openUrlArgs.setMimeType(mimeType);
-        part->setArguments(openUrlArgs);
-        QMetaObject::invokeMethod(part, "openUrl", Qt::QueuedConnection, Q_ARG(KUrl, KUrl(url)));
-        return part->widget();
     }
 
     return 0;
