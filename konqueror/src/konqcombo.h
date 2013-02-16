@@ -90,6 +90,8 @@ private Q_SLOTS:
     void slotSetIcon( int index );
     void slotActivated( const QString& text );
     void slotTextEdited( const QString &text );
+    void slotReturnPressed();
+    void slotCompletionModeChanged(KGlobalSettings::Completion);
 
 private:
     void updateItem( const QPixmap& pix, const QString&, int index, const QString& title );
