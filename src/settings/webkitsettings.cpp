@@ -676,7 +676,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
   if (!d->m_encoding.isEmpty())
       QWebSettings::globalSettings()->setDefaultTextEncoding(d->m_encoding);
 
-  QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl::fromLocalFile(userStyleSheet()));
+  QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl::fromUserInput(userStyleSheet()));
 
   QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, autoLoadImages());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, isJavaScriptEnabled());
