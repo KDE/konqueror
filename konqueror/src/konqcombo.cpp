@@ -151,11 +151,15 @@ KonqCombo::KonqCombo( QWidget *parent )
     // Make the lineedit consume the Qt::Key_Enter event...
     setTrapReturnKey( true );
 
+    // Connect to the returnPressed signal when completionMode == CompletionNone. #314736
+    slotCompletionModeChanged(completionMode());
+
     connect( KonqHistoryManager::kself(), SIGNAL(cleared()), SLOT(slotCleared()) );
     connect( this, SIGNAL(cleared()), SLOT(slotCleared()) );
     connect( this, SIGNAL(highlighted(int)), SLOT(slotSetIcon(int)) );
-    connect( this, SIGNAL(activated(QString)),
-             SLOT(slotActivated(QString)) );
+    connect( this, SIGNAL(activated(QString)), SLOT(slotActivated(QString)) );
+    connect( this, SIGNAL(completionModeChanged(KGlobalSettings::Completion)),
+             this, SLOT(slotCompletionModeChanged(KGlobalSettings::Completion)));
 }
 
 KonqCombo::~KonqCombo()
@@ -687,6 +691,20 @@ bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
     }
     return hdist + (qAbs(s1-s2)*128)/(160+qMin(s1,s2)) + qAbs(v1-v2) > CONTRAST_DISTANCE;
 }
+
+void KonqCombo::slotReturnPressed()
+{
+    slotActivated(currentText());
+}
+
+void KonqCombo::slotCompletionModeChanged(KGlobalSettings::Completion mode)
+{
+    if (mode == KGlobalSettings::CompletionNone)
+        connect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
+    else
+        disconnect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
