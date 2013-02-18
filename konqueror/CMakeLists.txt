@@ -1,6 +1,7 @@
 
 add_definitions(-D_LARGEFILE64_SOURCE )
 
+find_package(X11 REQUIRED) # both subdirs require the X11 libs
 add_subdirectory( src )
 add_subdirectory( client )
 
