@@ -809,9 +809,9 @@ void KonqOperations::slotResult( KJob * job )
     {
         static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
     }
-    if ( m_method == EMPTYTRASH ) {
-        // Update konq windows opened on trash:/
-        org::kde::KDirNotify::emitFilesAdded( "trash:/" ); // yeah, files were removed, but we don't know which ones...
+    if ( m_method == EMPTYTRASH || m_method == RESTORE ) {
+        // Update views showing trash:/
+        org::kde::KDirNotify::emitFilesAdded( "trash:/" );
     }
     deleteLater();
 }
