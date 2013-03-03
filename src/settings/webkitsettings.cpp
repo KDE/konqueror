@@ -116,6 +116,8 @@ public:
     bool m_enableOfflineWebAppCache:1;
     bool m_enableWebGL:1;
     bool m_zoomToDPI:1;
+    bool m_allowActiveMixedContent:1;
+    bool m_allowMixedContentDisplay:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -1229,6 +1231,17 @@ bool WebKitSettings::isLoadPluginsOnDemandEnabled() const
     return d->m_loadPluginsOnDemand;
 }
 
+bool WebKitSettings::allowMixedContentDisplay() const
+{
+    return d->m_allowMixedContentDisplay;
+}
+
+bool WebKitSettings::alowActiveMixedContent() const
+{
+    return d->m_allowActiveMixedContent;
+}
+
+
 void WebKitSettings::initWebKitSettings()
 {
     KConfig cfg ("kwebkitpartrc", KConfig::NoGlobals);
@@ -1238,6 +1251,8 @@ void WebKitSettings::initWebKitSettings()
     d->m_enableOfflineStorageDb = generalCfg.readEntry("EnableOfflineStorageDatabase", true);
     d->m_enableOfflineWebAppCache = generalCfg.readEntry("EnableOfflineWebApplicationCache", true);
     d->m_enableWebGL = generalCfg.readEntry("EnableWebGL", true);
+    d->m_allowActiveMixedContent = generalCfg.readEntry("AllowActiveMixedContent", false);
+    d->m_allowMixedContentDisplay = generalCfg.readEntry("AllowMixedContentDisplay", true);
 
     // Force the reloading of the non password storable sites settings.
     d->nonPasswordStorableSites.clear();

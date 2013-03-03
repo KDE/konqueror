@@ -43,6 +43,7 @@ protected:
 
 private Q_SLOTS:
     void slotFinished(bool);
+    void slotMetaDataChanged();
 
 private:
     QMultiHash<QWebFrame*, QUrl> m_blockedRequests;

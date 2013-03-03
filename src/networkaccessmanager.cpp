@@ -21,15 +21,18 @@
 #include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
 
-#include <KDE/KDebug>
-#include <KDE/KLocalizedString>
-#include <KDE/KProtocolInfo>
-#include <KDE/KRun>
+#include <KDebug>
+#include <KLocalizedString>
+#include <KProtocolInfo>
+#include <KRun>
+#include <KMimeType>
 
 #include <QTimer>
 #include <QWidget>
 #include <QNetworkReply>
 #include <QWebFrame>
+#include <QWebPage>
+#include <QWebSettings>
 #include <QWebElementCollection>
 
 
@@ -66,6 +69,14 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
 {
 }
 
+static bool isMixedContent(const QUrl& baseUrl, const QUrl& reqUrl)
+{
+    const QString baseProtocol (baseUrl.scheme());
+    const bool hasSecureScheme = (baseProtocol.compare(QL1S("https")) == 0 ||
+                                  baseProtocol.compare(QL1S("webdavs")) == 0);
+    return (hasSecureScheme && baseProtocol != reqUrl.scheme());
+}
+
 static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
 {
    if (op != QNetworkAccessManager::GetOperation)
@@ -81,17 +92,23 @@ static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& reques
    return true;
 }
 
+
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
+    QWebFrame* frame = qobject_cast<QWebFrame*>(req.originatingObject());
+
     if (!blockRequest(op, req.url())) {
         if (KProtocolInfo::isHelperProtocol(req.url())) {
             (void) new KRun(req.url(), qobject_cast<QWidget*>(req.originatingObject()));
             return new NullNetworkReply(req, this);
         }
-        return KIO::AccessManager::createRequest(op, req, outgoingData);
+        QNetworkReply* reply = KIO::AccessManager::createRequest(op, req, outgoingData);
+        if (frame && isMixedContent(frame->baseUrl(), req.url())) {
+            connect(reply, SIGNAL(metaDataChanged()), this, SLOT(slotMetaDataChanged()));
+        }
+        return reply;
     }
 
-    QWebFrame* frame = qobject_cast<QWebFrame*>(req.originatingObject());
     if (frame) {
         if (!m_blockedRequests.contains(frame))
             connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotFinished(bool)));
@@ -145,6 +162,24 @@ void MyNetworkAccessManager::slotFinished(bool ok)
         hideBlockedElements(url, collection);
 }
 
+static bool isActiveContent(const QString& contentType)
+{
+    const KMimeType::Ptr mime = KMimeType::mimeType(contentType);
+    return mime && mime->is(QLatin1String("application/javascript"));
+}
+
+void MyNetworkAccessManager::slotMetaDataChanged()
+{
+    QNetworkReply* reply = qobject_cast<QNetworkReply*> (sender());
+    if (reply) {
+        const bool activeContent = isActiveContent(reply->header(QNetworkRequest::ContentTypeHeader).toString());
+        if ((activeContent && !WebKitSettings::self()->alowActiveMixedContent()) ||
+            (!activeContent && !WebKitSettings::self()->allowMixedContentDisplay())) {
+            reply->abort();
+            emit QMetaObject::invokeMethod(reply, "finished", Qt::AutoConnection);
+        }
+    }
+}
 }
 
 #include "networkaccessmanager.moc"

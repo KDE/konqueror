@@ -117,6 +117,10 @@ public:
     void removeNonPasswordStorableSite(const QString &host);
     bool askToSaveSitePassword() const;
 
+    // Mixed content
+    bool alowActiveMixedContent() const;
+    bool allowMixedContentDisplay() const;
+
     // Global config object stuff.
     static WebKitSettings* self();
 
