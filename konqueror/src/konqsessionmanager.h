@@ -154,6 +154,11 @@ public:
      * Save current session in a given path (absolute path to a file)
      */
     void saveCurrentSessionToFile(const QString& sessionConfig);
+    
+    /**
+     * Returns the autosave directory
+     */
+    QString autosaveDirectory() const;
 
 public Q_SLOTS:
     /**
