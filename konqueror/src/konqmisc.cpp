@@ -97,6 +97,7 @@ KonqMainWindow * KonqMisc::createNewWindow(const KUrl &url, const KonqOpenURLReq
 KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, const QString &_filename, const KUrl &url,
                                                           const KonqOpenURLRequest& req, bool openUrl)
 {
+    qDebug() << "1";
     QString path(_path);
     QString filename(_filename);
     if (path.isEmpty()) { // no path given, determine it from the filename
@@ -113,12 +114,15 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
             path = filename; // absolute path
         }
     }
+    qDebug() << "2";
 
   abortFullScreenMode();
   KonqMainWindow * mainWindow;
+  qDebug() << "3";
   // Ask the user to recover session if appliable
-  if(KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions())
+  if(!req.skipAskToRestoreSession /* Only set to true by unittests*/ && KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions())
   {
+      qDebug() << "4";
       QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
       if(mainWindowList && !mainWindowList->isEmpty())
           mainWindow = mainWindowList->first();
@@ -127,9 +131,11 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
 
       if(!url.isEmpty())
           mainWindow->openUrl( 0, url, QString(), req );
+      qDebug() << "5";
   }
   else if( KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL )
   {
+      qDebug() << "6";
       mainWindow = KonqMainWindow::preloadedWindow();
 #ifdef Q_WS_X11
       KStartupInfo::setWindowStartupId( mainWindow->winId(), kapp->startupId());
@@ -139,17 +145,22 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
       mainWindow->resetWindow();
       mainWindow->reparseConfiguration();
       mainWindow->viewManager()->loadViewProfileFromFile(path, filename, url, req, true, openUrl);
+      qDebug() << "7";
   }
   else
   {
+      qDebug() << "8";
       KSharedConfigPtr cfg = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
       const KConfigGroup profileGroup(cfg, "Profile");
       const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
 
       mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
       mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
+      qDebug() << "9";
   }
+  qDebug() << "10";
   mainWindow->setInitialFrameName( req.browserArgs.frameName );
+  qDebug() << "11";
   return mainWindow;
 }
 
