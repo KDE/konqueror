@@ -171,8 +171,7 @@ void ViewMgrTest::testCreateFirstView()
 
 void ViewMgrTest::testEmptyWindow()
 {
-//     KonqOpenURLRequest req; req.skipAskToRestoreSession = true;
-    KonqMainWindow* emptyWindow = KonqMisc::createNewWindow(KUrl()/*, req*/);
+    KonqMainWindow* emptyWindow = KonqMisc::createNewWindow(KUrl());
     QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
     QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
     delete emptyWindow;

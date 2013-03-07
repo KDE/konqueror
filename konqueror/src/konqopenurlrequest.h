@@ -31,12 +31,12 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
   KonqOpenURLRequest() :
       followMode(false), newTabInFront(false),
       openAfterCurrentPage(false), forceAutoEmbed(false),
-      tempFile(false), userRequestedReload(false), skipAskToRestoreSession(false) {}
+      tempFile(false), userRequestedReload(false) {}
 
   KonqOpenURLRequest( const QString & url ) :
     typedUrl(url), followMode(false), newTabInFront(false),
     openAfterCurrentPage(false), forceAutoEmbed(false),
-    tempFile(false), userRequestedReload(false), skipAskToRestoreSession(false) {}
+    tempFile(false), userRequestedReload(false) {}
 
   QString debug() const {
 #ifndef NDEBUG
@@ -78,7 +78,6 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
   bool forceAutoEmbed; // if true, override the user's FMSettings for embedding
   bool tempFile; // if true, the url should be deleted after use
   bool userRequestedReload; // args.reload because the user requested it, not a website
-  bool skipAskToRestoreSession;
   KParts::OpenUrlArguments args;
   KParts::BrowserArguments browserArgs;
   QStringList filesToSelect; // files to select in a konqdirpart
