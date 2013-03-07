@@ -167,14 +167,20 @@ void ViewMgrTest::testCreateFirstView()
 
     // Part widget should have focus, not location bar
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), partWidget->focusWidget()->metaObject()->className());
+    qDebug() << "FINISHING ViewMgrTest::testCreateFirstView";
 }
 
 void ViewMgrTest::testEmptyWindow()
 {
+    qDebug() << "STARTING ViewMgrTest::testEmptyWindow";
     KonqMainWindow* emptyWindow = KonqMisc::createNewWindow(KUrl());
+    qDebug() << "ViewMgrTest::testEmptyWindow A";
     QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
+    qDebug() << "ViewMgrTest::testEmptyWindow B";
     QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
+    qDebug() << "ViewMgrTest::testEmptyWindow C";
     delete emptyWindow;
+    qDebug() << "ViewMgrTest::testEmptyWindow D";
 }
 
 void ViewMgrTest::testRemoveFirstView()
