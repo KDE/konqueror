@@ -475,6 +475,11 @@ void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPa
     configGroup.writeEntry("Number of Windows", counter);
 }
 
+QString KonqSessionManager::autosaveDirectory() const
+{
+    return m_autosaveDir;
+}
+
 QStringList KonqSessionManager::takeSessionsOwnership()
 {
     // Tell to other konqueror instances that we are the one dealing with
