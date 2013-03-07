@@ -32,6 +32,7 @@
 #include <konqsessionmanager.h>
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
+#include <ktempdir.h>
 #include <kio/job.h>
 #include <QLayout>
 
@@ -116,6 +117,7 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
+    KTempDir::removeDir(KonqSessionManager::self()->autosaveDirectory());
     KonqSessionManager::self()->disableAutosave();
     QCOMPARE(KGlobal::mainComponent().componentName(), QString("konqueror"));
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
