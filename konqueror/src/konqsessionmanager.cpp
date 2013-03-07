@@ -479,11 +479,9 @@ QStringList KonqSessionManager::takeSessionsOwnership()
 {
     // Tell to other konqueror instances that we are the one dealing with
     // these sessions
-    qDebug() << "A" << dirForMyOwnedSessionFiles();
     QDir dir(dirForMyOwnedSessionFiles());
     QDir parentDir(m_autosaveDir);
 
-    qDebug() << "B" << dir.exists();
     if(!dir.exists())
         parentDir.mkdir("owned_by" + m_baseService);
 
@@ -493,7 +491,6 @@ QStringList KonqSessionManager::takeSessionsOwnership()
     QStringList sessionFilePaths;
     QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
 
-    qDebug() << "C" << m_autosaveDir;
     while (it.hasNext())
     {
         it.next();
@@ -501,7 +498,6 @@ QStringList KonqSessionManager::takeSessionsOwnership()
         // but crashed immediately. So we try to restore that session again
         if(it.fileInfo().isDir())
         {
-            qDebug() << "ISDIR" << it.fileName().remove(0, 8);
             // The remove() removes the "owned_by" part
             if(!idbus->isServiceRegistered(
                 KonqMisc::decodeFilename(it.fileName().remove(0, 8))))
@@ -509,7 +505,6 @@ QStringList KonqSessionManager::takeSessionsOwnership()
                 QDirIterator it2(it.filePath(), QDir::Writable|QDir::Files);
                 while (it2.hasNext())
                 {
-                    qDebug() << "ADDING3";
                     it2.next();
                     // take ownership of the abandoned file
                     const QString newFileName = dirForMyOwnedSessionFiles() +
@@ -521,10 +516,8 @@ QStringList KonqSessionManager::takeSessionsOwnership()
                 KTempDir::removeDir(it.filePath());
             }
         } else { // it's a file
-            qDebug() << "ISFILE" << it.fileName();
             if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
             {
-                qDebug() << "ADDING2";
                 // and it's abandoned: take its ownership
                 const QString newFileName = dirForMyOwnedSessionFiles() + '/' +
                                             it.fileName();
@@ -534,7 +527,6 @@ QStringList KonqSessionManager::takeSessionsOwnership()
         }
     }
 
-    qDebug() << "sessionFilePaths" << sessionFilePaths;
     return sessionFilePaths;
 }
 
