@@ -24,6 +24,8 @@
 
 #include <QtCore/QIODevice>
 
+#include <KDE/KLocalizedString>
+
 OpenSearchReader::OpenSearchReader()
     : QXmlStreamReader()
 {
@@ -60,7 +62,7 @@ OpenSearchEngine *OpenSearchReader::read()
 
     if (name() != QLatin1String("OpenSearchDescription")
         || namespaceUri() != QLatin1String("http://a9.com/-/spec/opensearch/1.1/")) {
-        raiseError(QObject::tr("The file is not an OpenSearch 1.1 file."));
+        raiseError(i18n("The file is not an OpenSearch 1.1 file."));
         return engine;
     }
 
