@@ -977,9 +977,23 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
     return WebPage::acceptNavigationRequest(frame, request, type);
 }
 
+/** TODO: Figure out if there is a way for QtWebKit to actually tell
+ * us whether we should create a popup window (dialog) or a regular
+ * new window. Right now that is simply broken because the parameter
+ * passed to QWebPage::createWindow is hard-coded in QtWebKit's code!
+ */
+#if (QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0))
+static bool shouldApplyQtWebKit23Workaround(const QRect &rect)
+{
+  return (rect.x() == 0 &&
+          rect.y() == 0 &&
+          rect.width() == 100 &&
+          rect.height() == 100);
+}
+#endif
+
 void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
 {
-    //kDebug() << rect;
     if (!rect.isValid())
         return;
 
@@ -987,6 +1001,12 @@ void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
         WebPage::slotGeometryChangeRequested(rect);
         return;
     }
+
+#if (QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0))
+    else if (shouldApplyQtWebKit23Workaround(rect)) {
+        return;
+    }
+#endif
 
     m_windowArgs.setX(rect.x());
     m_windowArgs.setY(rect.y());
