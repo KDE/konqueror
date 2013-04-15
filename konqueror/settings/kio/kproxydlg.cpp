@@ -272,6 +272,11 @@ KProxyDialog::KProxyDialog(QWidget* parent, const QVariantList& args)
     connect(mUi.manualProxySocksEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     connect(mUi.manualNoProxyEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
 
+    connect(mUi.manualProxyHttpSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
+    connect(mUi.manualProxyHttpsSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
+    connect(mUi.manualProxyFtpSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
+    connect(mUi.manualProxySocksSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
+
     connect(mUi.systemProxyHttpEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     connect(mUi.systemProxyHttpsEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     connect(mUi.systemProxyFtpEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
