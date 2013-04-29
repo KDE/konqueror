@@ -56,7 +56,7 @@ browser.</para></listitem>
 
 </itemizedlist>
 
-<note><para>Click on the black arrow right to the <guiicon>Home Page</guiicon> icon
+<note><para>Click on the black arrow to the right of the <guiicon>Home Page</guiicon> icon
 to switch to your <guiicon>Home Folder</guiicon> in the file manager mode and vice versa.
 </para></note>
 
@@ -132,7 +132,7 @@ drag and drop operations, or set it to contain two or more tabbed views.
 &konqueror;'s window
 and often shows general information about whatever the mouse pointer is
 hovering
-over. If you have split the main window into a number of views you will get an
+over. If you have split the main window into a number of views you will get a
 Status Bar for each view, and it will include a small green light at the left 
 hand end to show which is the <quote>active</quote>
 view. <mousebutton>Right</mousebutton> clicking on the Status Bar brings up the
@@ -147,10 +147,10 @@ screenshot; it is highly configurable. In particular:</para>
 linkend="menu-settings"><guimenu>Settings</guimenu></link> menu  to choose 
 whether to show or hide the Menubar, Main Toolbar, Location Toolbar and
 Bookmark Toolbar, or even to add an Extra Toolbar.</para></listitem>
-<listitem><para>If the toolbars are unlocked, you can also drag them by 
+<listitem><para>If the toolbars are unlocked, you can also drag them to a new position by
 <mousebutton>left</mousebutton> clicking on the handle at the left hand end
-of the bars and move them around by holding the &LMB; down while you
-drag these bars around. </para></listitem>
+of a bar and move it around by holding the &LMB; down while you
+drag it. </para></listitem>
 <listitem><para>This screenshot does not show the optional <link linkend="sidebar">
 Sidebar</link>.</para></listitem>
 </itemizedlist>
@@ -181,7 +181,7 @@ It changes the cursor to show a question mark alongside the arrow.</para>
 anything until you have clicked on a control (or the text alongside it) that
 supports <guimenuitem>What's This?</guimenuitem>, in which case it will
 display
-a reasonably comprehensive description of what the control is supposed to do.
+a reasonably comprehensive description of what the control does.
 Most of the dialog boxes that &konqueror; brings up support the
 <guimenuitem>What's This?</guimenuitem> feature.</para>
 
@@ -198,7 +198,7 @@ Mouse Button Actions</title>
 <itemizedlist>
 
 <listitem><para><mousebutton>Left</mousebutton> click on an icon in the Toolbar
-to do whatever that icon is supposed to do. </para></listitem>
+to perform the action that icon represents. </para></listitem>
 <listitem><para><mousebutton>Left</mousebutton> click on an item in the Menubar
 to make that menu drop down.</para></listitem>
 <listitem><para><mousebutton>Left</mousebutton> click on a menu item to do that
@@ -310,7 +310,7 @@ of a view then you will get a menu that contains, among other options, the
 <listitem><para>This is a most useful feature. <mousebutton>Right</mousebutton>
 clicking on the name or icon of any file or folder not only
 <quote>selects</quote> that item but also brings up a menu allowing you to
-<guiicon>Cut</guiicon>, Move, <guiicon>Copy</guiicon> or Remove the item in
+<guimenuitem>Cut</guimenuitem>, <guimenuitem>Move</guimenuitem>, <guimenuitem>Copy</guimenuitem> or <guimenuitem>Remove</guimenuitem> the item in
 various ways, open it with the program of
 your choice or preview it, rename it, or edit the file type or 
 properties.</para></listitem> </varlistentry>
