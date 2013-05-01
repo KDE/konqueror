@@ -31,7 +31,7 @@ is the subfolder <filename class="directory">pam</filename> of the subfolder
 represents the top level folder.</para>
 
 <para>Every folder accessible by your system &mdash; including those on
-other hard disk partitions, an USB device or &CD-ROM; &mdash; will appear
+other hard disk partitions, a USB device or &CD-ROM; &mdash; will appear
 in the tree descending from /, their exact paths will depend on how your system
 was set up (see also the section on <link linkend="removable-devices">Removable Devices</link>).
 </para>
@@ -93,12 +93,12 @@ the extension is replaced by "..."
 <!--, except for the Name column.FIXME regression? leave it out?-->
 </para>
 <para>
-The details view permits to view the current directory
-in a tree-like fashion if 
-<guilabel>Expandable folders</guilabel> are enabled: 
+The details view allows you to view a directory in a tree-like fashion if the
+<guilabel>Expandable folders</guilabel> option is enabled.
 Each subfolder of the current folder can be
-<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
-or <guiicon>v</guiicon> icon next to it.</para>
+<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the
+<guiicon>&gt;</guiicon> or <guiicon>v</guiicon> icon next to it.
+</para>
 </listitem>
 </itemizedlist>
 
@@ -299,7 +299,7 @@ items in the <guimenu>Go</guimenu> menu brings up a submenu of recently visited 
 <para>If you don't know or can't remember where a file or folder is within
 your system, then use the Toolbar <guiicon>Find File</guiicon> button or the
 Menubar <menuchoice><guimenu>Tools</guimenu><guimenuitem>Find 
-File...</guimenuitem></menuchoice> option.  This start the file finder 
+File...</guimenuitem></menuchoice> option.  This starts the file finder
 application &kfind;. See the <ulink url="help:/kfind/index.html">&kfind; Handbook</ulink> 
 for help in using &kfind;.
 </para>
