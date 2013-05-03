@@ -2,7 +2,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=fsview -caption "%c" %u
+Exec=fsview -caption %c %u
 MimeType=inode/directory;
 Icon=fsview
 DocPath=konq-plugins/fsview/index.html
