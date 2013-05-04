@@ -119,7 +119,7 @@ private Q_SLOTS:
         delete deleteCmd;
     }
 
-    void testCreateFolder()
+    void testCreateFolder() // and test moving stuff around
     {
         CreateCommand* folderCmd = new CreateCommand(m_model, "/0", "folder", "folder", true /*open*/);
         m_cmdHistory->addCommand(folderCmd); // calls redo
@@ -160,6 +160,22 @@ private Q_SLOTS:
         QVERIFY(ok);
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << first << kde);
         delete mimeData;
+
+        // Create new folder, then move both bookmarks into it (#287038)
+        m_cmdHistory->addCommand(new CreateCommand(m_model, "/1", "folder2", "folder2", true));
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0" << "/0/1" << "/1/");
+        QCOMPARE(m_model->rowCount(m_rootIndex), 2);
+
+        QModelIndex firstIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/0"));
+        kdeIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/1"));
+        mimeData = m_model->mimeData(QModelIndexList() << kdeIndex << firstIndex); // TODO: swap
+        QModelIndex folder2Index = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/1"));
+        ok = m_model->dropMimeData(mimeData, Qt::MoveAction, -1, 0, folder2Index);
+        QVERIFY(ok);
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/1/" << "/1/0" << "/1/1");
+        QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << kde << first);
+        delete mimeData;
+
         undoAll();
     }
 
