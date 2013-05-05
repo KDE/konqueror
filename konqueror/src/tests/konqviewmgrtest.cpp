@@ -21,6 +21,7 @@
 #include <konqmisc.h>
 #include "../konqsettingsxt.h"
 #include <QToolBar>
+#include <QLayout>
 #include <qtestmouse.h>
 
 #include <konqframe.h>
@@ -34,7 +35,7 @@
 #include <kconfiggroup.h>
 #include <ktempdir.h>
 #include <kio/job.h>
-#include <QLayout>
+#include <ksycoca.h>
 
 #include <khtml_part.h>
 #include <khtmlview.h>
@@ -122,6 +123,21 @@ void ViewMgrTest::initTestCase()
     QCOMPARE(KGlobal::mainComponent().componentName(), QString("konqueror"));
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
     QCOMPARE(KonqSettings::popupsWithinTabs(), false);
+
+    // Ensure the tests use KHTML, not kwebkitpart
+    // This code is inspired by settings/konqhtml/generalopts.cpp
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+    KConfigGroup addedServices(profile, "Added KDE Service Associations");
+    Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+        QStringList services = addedServices.readXdgListEntry(mimeType);
+        services.removeAll("khtml.desktop");
+        services.prepend("khtml.desktop"); // make it the preferred one
+        addedServices.writeXdgListEntry(mimeType, services);
+    }
+    profile->sync();
+
+    // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
+    QProcess::execute(KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME));
 }
 
 void ViewMgrTest::testCreateFirstView()
@@ -349,6 +365,7 @@ void ViewMgrTest::testLinkedViews()
     // "Click" on the link
     qDebug() << "ACTIVATING LINK";
     KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
+    QVERIFY(part);
     DOM::HTMLAnchorElement anchor = part->htmlDocument().getElementsByTagName(DOM::DOMString("a")).item(0);
     QVERIFY(!anchor.isNull());
     anchor.focus();
@@ -413,6 +430,7 @@ void ViewMgrTest::testCtrlClickOnLink()
     KonqView* view = mainWindow.currentView();
     KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
     qDebug() << "CLICKING NOW";
+    QVERIFY(part);
     QTest::mouseClick(part->view()->widget(), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
     QTest::qWait(100);
     // Expected behavior for Ctrl+click:
