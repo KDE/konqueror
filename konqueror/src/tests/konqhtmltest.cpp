@@ -22,6 +22,7 @@
 #include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <kdebug.h>
+#include <ksycoca.h>
 #include <QScrollArea>
 #include <qtest_kde.h>
 #include <qtest_gui.h>
@@ -41,6 +42,21 @@ private Q_SLOTS:
     {
         KonqSessionManager::self()->disableAutosave();
         //qRegisterMetaType<KonqView *>("KonqView*");
+
+        // Ensure the tests use KHTML, not kwebkitpart
+        // This code is inspired by settings/konqhtml/generalopts.cpp
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+        KConfigGroup addedServices(profile, "Added KDE Service Associations");
+        Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+            QStringList services = addedServices.readXdgListEntry(mimeType);
+            services.removeAll("khtml.desktop");
+            services.prepend("khtml.desktop"); // make it the preferred one
+            addedServices.writeXdgListEntry(mimeType, services);
+        }
+        profile->sync();
+
+        // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
+        QProcess::execute(KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME));
     }
     void cleanupTestCase()
     {
