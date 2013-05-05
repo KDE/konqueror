@@ -168,7 +168,7 @@ private Q_SLOTS:
 
         QModelIndex firstIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/0"));
         kdeIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/1"));
-        mimeData = m_model->mimeData(QModelIndexList() << kdeIndex << firstIndex); // TODO: swap
+        mimeData = m_model->mimeData(QModelIndexList() << firstIndex << kdeIndex);
         QModelIndex folder2Index = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/1"));
         ok = m_model->dropMimeData(mimeData, Qt::MoveAction, -1, 0, folder2Index);
         QVERIFY(ok);
