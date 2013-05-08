@@ -76,8 +76,8 @@ you type the &URL; a second time, or you could look through the
 the web's search engines, &konqueror;'s <link linkend="enhanced-browsing">
 Web Shortcuts</link> feature can make this easier.</para>
 
-<para><mousebutton>Left</mousebutton> click on a link in the page to
- go there.</para>
+<para><mousebutton>Left</mousebutton> click on a link in a page to
+open that link.</para>
 
 <para>To open a link in a new instance of &konqueror;, leaving the
 old page still visible, &RMB; click on the link and select the
@@ -158,7 +158,7 @@ tab.</para>
 
 <para>Using the <guilabel>Open new tabs in the background</guilabel> option in the 
 <guilabel>General</guilabel> page of the <guimenu>Settings</guimenu> 
-dialog clicking on a link downloads the page and shows a new tab for it, but the new 
+dialog, clicking on a link downloads the page and shows a new tab for it, but the new
 page will not be displayed until you <mousebutton>left</mousebutton> click 
 on the tab.</para>
 
@@ -231,7 +231,8 @@ feature lets you submit a query directly to a search engine or similar web site
 without having to visit the site first.</para> <para>For example, entering
 <userinput>gg:konqueror</userinput> into the Location Bar and pressing &Enter;
 will ask <trademark>Google</trademark> to search for items related to
-&konqueror;.</para> <para>To see what Web Shortcuts are available, and perhaps
+&konqueror;.</para>
+<para>To see what Web Shortcuts are available, and perhaps
 add your own, use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 Konqueror...</guimenuitem></menuchoice> and open the <guilabel>Web Shortcuts</guilabel>
 page.</para>
