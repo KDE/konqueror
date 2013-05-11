@@ -7,7 +7,7 @@ include(CTest)
 include(CTestConfig.cmake)
 
 #search packages used by KDE
-find_package(KDE4 4.9.80 REQUIRED)
+find_package(KDE4 4.10.2 REQUIRED)
 include (KDE4Defaults)
 
 find_package(Strigi)
