@@ -79,6 +79,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
             m_part = part;
             connect(m_part, SIGNAL(completed()), this, SLOT(addFeedIcon()));
             connect(m_part, SIGNAL(completed(bool)), this, SLOT(addFeedIcon()));
+            connect(m_part, SIGNAL(started(KIO::Job*)), this, SLOT(removeFeedIcon()));
         }
     }
 }
@@ -187,7 +188,7 @@ void KonqFeedIcon::addFeedIcon()
 void KonqFeedIcon::removeFeedIcon()
 {
     m_feedList.clear();
-    if(m_feedIcon)
+    if (m_feedIcon && m_statusBarEx)
     {
         m_statusBarEx->removeStatusBarItem(m_feedIcon);
         delete m_feedIcon;
