@@ -21,9 +21,9 @@
 <para>Selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>
 Configure Konqueror...</guimenuitem>
 </menuchoice> opens the configuration dialog. Select the 
-<guilabel>Plugins</guilabel> page, where you find two tabs;
+<guilabel>Plugins</guilabel> page, where you find two tabs:
 <guilabel>Global Settings</guilabel> to enable plugins and configure 
-how they are used in &konqueror; and the <guilabel>Plugins</guilabel>
+how they are used in &konqueror; and <guilabel>Plugins</guilabel>
 which shows you the &Netscape; plugins that &kde; has found
 and allows you to scan for plugins.</para>
 
@@ -221,14 +221,14 @@ settings without going through the <guimenu>Settings</guimenu> dialog.
 
 <varlistentry>
 <term><guimenuitem>Enable Cache</guimenuitem></term>
-<listitem><para>Allows you to enable or disable the use of cache in the &konqueror; browser.</para></listitem>
+<listitem><para>Allows you to enable or disable the use of a cache in the &konqueror; browser.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guimenuitem>Cache Policy</guimenuitem></term>
 <listitem>
-<para>The Cache Policy submenu provides you with a way to configure the how
-&konqueror; uses cache. The possible uses include:</para>
+<para>The Cache Policy submenu provides you with a way to configure how
+&konqueror; uses a cache. The possible uses include:</para>
 <itemizedlist>
 <listitem><para>Keep Cache in Sync</para></listitem>
 <listitem><para>Use Cache if Possible</para></listitem>
@@ -261,7 +261,7 @@ limit access to those using a particular web browser.</para>
 <varlistentry>
 <term>Browser submenu</term>
 <listitem><para>
-The following menu items show a lot of popular browsers like <guimenuitem>Firefox</guimenuitem>,
+The following menu items show a list of popular browsers such as <guimenuitem>Firefox</guimenuitem>,
 <guimenuitem>Internet Explorer</guimenuitem>, <guimenuitem>Netscape Navigator</guimenuitem>,
 <guimenuitem>Opera</guimenuitem>, <guimenuitem>Other</guimenuitem>, and <guimenuitem>Safari</guimenuitem>.
 </para></listitem>
@@ -347,17 +347,20 @@ way the gallery is created.</para>
 
 <varlistentry>
 <term><guimenuitem>Show image file name</guimenuitem></term>
-<listitem><para>The Show image file name check box allows you to turn on or off the use of the filenames below the gallery thumbnails.</para></listitem>
+<listitem><para>The Show image file name check box allows you to choose whether
+to display filenames below the gallery thumbnails.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guimenuitem>Show image file size</guimenuitem></term>
-<listitem><para>The Show image filesize check box allows you to turn on or off the use of the filesizes below the gallery thumbnails.</para></listitem>
+<listitem><para>The Show image filesize check box allows you to choose whether
+to display filesizes below the gallery thumbnails.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guimenuitem>Show image dimensions</guimenuitem></term>
-<listitem><para>The Show image dimensions check box allows you to turn on or off the use of the image dimensions in pixels below the gallery thumbnails.</para></listitem>
+<listitem><para>The Show image dimensions check box allows you to choose
+whether to display image dimensions in pixels below the gallery thumbnails.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -386,7 +389,7 @@ way the gallery is created.</para>
 <title>Folders</title>
 <varlistentry>
 <term>The Folders dialog is used for choosing where to save the gallery. 
-This dialog is also used to configure what folders are used.</term>
+This dialog is also used to configure which folders are used.</term>
 <listitem>
   
 <screenshot>
@@ -405,7 +408,8 @@ This dialog is also used to configure what folders are used.</term>
 
 <varlistentry>
 <term><guimenuitem>Save to HTML file</guimenuitem></term>
-<listitem><para>The Save to file selector decides where you want to save you image gallery html page.</para></listitem>
+<listitem><para>The Save to file selector allows you to decide where you want
+to save your image gallery html page.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -462,7 +466,8 @@ Description
 
 <varlistentry>
 <term><guimenuitem>Image format for the thumbnails</guimenuitem></term>
-<listitem><para>The image format combo box allows you to choose what format is used for the thumbnail images.</para></listitem>
+<listitem><para>The image format combo box allows you to choose which format is
+used for the thumbnail images.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -472,7 +477,7 @@ Description
 
 <varlistentry>
 <term><guimenuitem>Set different color depth</guimenuitem></term>
-<listitem><para>The set different color depth check box enables a combo box for selecting a different color depth for the thumbnails if you wish to use a color depth other than the depth used in the original image.</para></listitem>
+<listitem><para>The set different color depth check box enables a combo box for changing the color depth of the thumbnails if you wish to use a different color depth to that used in the original image.</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -493,7 +498,7 @@ Description
 <!--How to enable ???-->
 <varlistentry>
 <term>Search Bar</term>
-<listitem><para>Provides a text box for easy access to search engines like Google.
+<listitem><para>Provides a text box for easy access to search engines such as Google.
 Clicking on the icon on the left side of the search box opens a menu to select
 and enable different search engines and configure their <ulink 
 url="help:/kcontrol/ebrowsing/index.html">Web Shortcuts</ulink>.

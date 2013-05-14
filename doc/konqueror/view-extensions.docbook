@@ -46,7 +46,7 @@ nested structures: each object is represented by a rectangle whose
 area is proportional to its metric. The sum of the children's metrics must be
 equal to or smaller than the parent object's metric.</para>
 
-<para>For &fsview;, sizes of files and folders are chosen as
+<para>For &fsview;, sizes of files and folders are chosen as the
 metric, where the size of a folder is defined to be the sum of the
 sizes of its subitems. This way, big files even deep down in the
 folder hierarchy can be spotted easily be looking for large
@@ -54,12 +54,12 @@ rectangles. So &fsview; can be looked at as a graphical and interactive
 version of the &UNIX; <command>du</command> command.</para>
 
 <para>The integration of &fsview; as part of Konqueror allows it to
-use the standard features like context file menus, and mime type
-sensitive actions. But it was chosen not to implement automatical
-update of file system changes by watching: if you delete a file shown
+use the standard features such as context file menus, and mime type
+sensitive actions. But it was chosen not to implement automatic
+update by watching file system changes: if you delete a file shown
 in &fsview; outside of &konqueror;, you have to update manually by
-&eg; pressing <keycap>F5</keycap>. The reason for this decision is
-the potentially huge amount of files which would have to be watched
+&eg; pressing <keycap>F5</keycap> to see the change. The reason for this
+decision is the potentially huge number of files which would have to be watched
 for changes, and thus, could put an unreasonable pressure on system
 resources for a small feature.</para>
 
@@ -76,20 +76,20 @@ in detail.</para>
 
 <para>In &fsview;, an item of the tree map visualization is a rectangle
 representing a file or folder of your file system. For easier navigation,
-rectangles have a meaningful coloring and labeling options.</para>
+rectangles have meaningful coloring and labeling options.</para>
 
 <para>The color of a rectangle, switchable via menu item
 <menuchoice><guimenu>View</guimenu><guisubmenu>Color
-Mode</guisubmenu></menuchoice> can be either
-<guimenuitem>Depth</guimenuitem> for easy detection of the nesting, or
-a color mapping of different file attributes like name, owner, group,
+Mode</guisubmenu></menuchoice> can be either representative of
+<guimenuitem>Depth</guimenuitem>, for easy detection of nesting, or
+a color mapping of different file attributes such as name, owner, group,
 or mime type.</para>
 
 <para>A rectangle can be labeled with the various attributes
-of the corresponding file or folder. For an attribute, you can
-choose, whether it should be shown at all, only if space is available,
+of the corresponding file or folder. For each attribute, you can
+choose whether it should be shown at all, only if space is available,
 or if space should be taken from children (thus introducing
-errors to pure tree map drawing constrains). Additionally, you can choose
+errors to pure tree map drawing constraints). Additionally, you can choose
 the relative location of the label in the rectangle.</para>
 
 </sect3>
@@ -100,17 +100,17 @@ the relative location of the label in the rectangle.</para>
 <para>For drawing algorithms in tree maps, the rule that the area
 is proportional to the metric of an item should hold true.
 With the tree map in &fsview;, this goal isn't always met: we draw borders
-to show the nesting of items, and this border takes space for a item
-which is possible lost for the areas of child items. Note that
+to show the nesting of items, and this border takes space for an item
+which is possibly lost for the areas of child items. Note that
 less space is lost for the border if the rectangle is quadratic.</para>
 
-<para>Similar, it is good for a better overview to let all rectangles
-at least have its name as label, taking space, too. It is an option to
+<para>Similarly, it is better for a good overview to let each rectangle
+at least have its name as a label. It is an option to
 always force space for labels, or only to draw labels when empty space
 is available. In the latter case, the tool tips appearing when the
-mouse is kept over an item for some time, can help a lot. They show
+mouse is held over an item can help a lot. They show
 information for the item the mouse is currently over, together with
-its parent relations up to the root item of the tree map.</para>
+its parent folders up to the root item of the tree map.</para>
 
 <para>How the space of an item is split into subareas for children is
 left to the implementation. It is always better to try to split areas
@@ -123,7 +123,7 @@ regard are <guilabel>Rows</guilabel>, <guilabel>Columns</guilabel>, or
 menu item <menuchoice><guimenu>View</guimenu><guimenuitem>Stop at
 Area</guimenuitem></menuchoice>. Instead, a hash pattern will be drawn
 over the parents area to signal that this space is in fact occupied by
-a child.</para>
+a child or children.</para>
 
 </sect3>
 
@@ -141,14 +141,14 @@ combination with pressing the &Shift; key for range selection or the
 longer be selected. Selecting an item will also clear the selection of all its
 parent items before.</para>
 
-<para>There is keyboard navigation available in tree maps: use
+<para>Keyboard navigation is available in tree maps: use
 <keycap>Left Arrow</keycap> and <keycap>Right Arrow</keycap> keys to
 move the current item between siblings, and the <keycap>Up
 Arrow</keycap> and <keycap>Down Arrow</keycap> keys to go up and down
-the nesting hierarchy. <keycap>Space</keycap> selects the item, in
-conjunction with &Shift; does range selection, and with the &Ctrl; key
-hold down simultaneously, toggles selection of the current item. Press
-<keycap>Return</keycap> to run the open action onto the current item.</para>
+the nesting hierarchy. <keycap>Space</keycap> selects the item; in
+conjunction with &Shift; does range selection; and with the &Ctrl; key
+held down simultaneously, toggles selection of the current item. Press
+<keycap>Return</keycap> to run the open action on the current item.</para>
 
 </sect2>
 
