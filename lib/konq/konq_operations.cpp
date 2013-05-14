@@ -478,11 +478,13 @@ void KonqOperations::doDropFileCopy()
             allItemsAreFromTrash = false;
     }
 
-    bool linkOnly = false;
+    bool linkOnly = false; // if true, we'll show a popup menu, but with only "link" in it (for confirmation)
     if (isDesktopFile && !KAuthorized::authorizeKAction("run_desktop_files") &&
-        (m_destUrl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath()) )
-    {
-       linkOnly = true;
+        (m_destUrl.path(KUrl::AddTrailingSlash) == KGlobalSettings::desktopPath()) ) {
+        linkOnly = true;
+    } else if ( allItemsAreFromTrash && lst.first().path() == "/" ) {
+        // Dropping a link to the trash: don't move the full contents, just make a link (#319660)
+        linkOnly = true;
     }
 
     if ( !mlst.isEmpty() && m_destUrl.protocol() == "trash" )
@@ -501,8 +503,7 @@ void KonqOperations::doDropFileCopy()
             deleteLater();
             return;
         }
-    }
-    else if ( allItemsAreFromTrash || m_destUrl.protocol() == "trash" ) {
+    } else if (!linkOnly && (allItemsAreFromTrash || m_destUrl.protocol() == "trash")) {
         // No point in asking copy/move/link when using dnd from or to the trash.
         action = Qt::MoveAction;
     }
