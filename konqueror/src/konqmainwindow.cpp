@@ -1600,7 +1600,9 @@ void KonqMainWindow::slotViewModeTriggered(QAction* action)
     if (!m_currentView) return;
 
     // Gather data from the action, since the action will be deleted by changePart
-    const QString modeName = action->objectName();
+    QString modeName = action->objectName();
+    Q_ASSERT(modeName.endsWith("-viewmode"));
+    modeName.chop(9);
     const QString internalViewMode = action->data().toString();
 
     if ( m_currentView->service()->desktopEntryName() != modeName ) {
@@ -5044,7 +5046,6 @@ void KonqMainWindow::updateViewModeActions()
             // action, e.g. konsolepart added through ToggleViewGUIClient in the ctor will be
             // overwritten by the view mode konsolepart action added here.  #266517.
             actionCollection()->addAction(desktopEntryName + QLatin1String("-viewmode"), action);
-            action->setObjectName(desktopEntryName);
             action->setActionGroup(m_viewModesGroup);
             m_viewModeMenu->menu()->addAction(action);
 
@@ -5069,7 +5070,7 @@ void KonqMainWindow::slotInternalViewModeChanged()
         const QString actionName = view->service()->desktopEntryName();
         const QString actionData = view->internalViewMode();
         Q_FOREACH(QAction* action, m_viewModesGroup->actions()) {
-            if (action->objectName() == actionName &&
+            if (action->objectName() == actionName + QLatin1String("-viewmode") &&
                 action->data().toString() == actionData) {
                 action->setChecked(true);
                 break;
