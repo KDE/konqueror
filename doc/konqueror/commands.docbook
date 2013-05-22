@@ -60,7 +60,7 @@ the items for these two modes are described in this chapter.
 </para>
 
 <para>If <emphasis>&konqueror;</emphasis> is using embedded components (&kde; Parts) 
-like <application>Gwenview</application> for image viewing, &okular; for 
+such as <application>Gwenview</application> for image viewing, &okular; for
 <acronym>PDF</acronym> and &PostScript; documents &etc; the menu items from these
 applications are merged into &konqueror;'s menu. Help for these additional menu items
 you find in the handbook of the embedded application.</para>
@@ -287,7 +287,7 @@ clipboard.</para></listitem>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Paste Clipboard Contents...</guimenuitem></menuchoice> (File Manager mode)</term>
-<listitem><para>Pastes the currently copied/cut items to the current folder. If the 
+<listitem><para>Paste the currently copied/cut item(s) to the current folder. If the
 clipboard does not contain files or folders, the clipboard contents (such as text 
 or image data) will be pasted into a new file.</para></listitem>
 </varlistentry>
@@ -415,10 +415,9 @@ by <guimenuitem>Select...</guimenuitem>.</para></listitem>
 </shortcut><guimenu>Edit</guimenu>
 <guisubmenu>Selection</guisubmenu>
 <guimenuitem>Select All</guimenuitem></menuchoice> (File Manager mode)</term>
-<listitem><para>Selects all text in an &HTML; 
-page or in a text page being previewed, you can then 
-<guimenuitem>Copy</guimenuitem> it and <guimenuitem>Paste</guimenuitem> it into 
-a text editor.</para></listitem> 
+<listitem><para>Selects all items in a folder; you can then
+<guimenuitem>Copy</guimenuitem> or <guimenuitem>Cut</guimenuitem> them and
+<guimenuitem>Paste</guimenuitem> them into a different folder.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -720,7 +719,7 @@ http://websvn.kde.org/?view=revision&revision=269436
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Additional Information</guisubmenu></menuchoice> (File Manager mode)</term>
-<listitem><para><action>Displays additional information</action> like
+<listitem><para><action>Displays additional information</action> such as
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
 <guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
@@ -801,7 +800,7 @@ view.</para></listitem>
 </shortcut><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
 </menuchoice></term>
-<listitem><para>You can only go forward if you've just gone 
+<listitem><para>You can only go forward if you've previously gone
 back.</para></listitem>
 </varlistentry>
 
@@ -838,7 +837,7 @@ applications.</para></listitem>
 <guimenu>Go</guimenu>
 <guimenuitem>Network Folder</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Network folders show up in a special location of &konqueror; and 
-&dolphin; called a virtual folder. More information how to use this folder you find
+&dolphin; called a virtual folder. You can find more information on how to use this folder
 in the <ulink url="help:/knetattach/index.html">KNetAttach Handbook</ulink>.</para></listitem>
 </varlistentry>
 
@@ -1031,7 +1030,7 @@ and Profiles</link>.</para></note>
 <guimenu>Settings</guimenu>
 <guisubmenu>Toolbars Shown</guisubmenu>
 </menuchoice></term>
-<listitem><para>Opens a sub menu where you can choose to show or hide 
+<listitem><para>Opens a submenu where you can choose to show or hide
 the various Toolbars.</para></listitem>
 </varlistentry>
 
@@ -1133,8 +1132,8 @@ new one.</para></listitem>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Extensions...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Opens a dialog with all installed plugins &eg; from the KDE module extragear 
-and allows to select the ones you need. All plugins are accessible in the 
+<listitem><para>Opens a dialog with all installed plugins (&eg; from the KDE module extragear)
+and allows you to select the ones you need. All plugins are accessible in the
 <guimenu>Tools</guimenu> menu.</para></listitem>
 </varlistentry>
 
@@ -1151,9 +1150,9 @@ change settings associated with spell checking in &konqueror;.</para>
 <term><menuchoice> <guimenu>Settings</guimenu>
 <guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term> <listitem><para>Lets you
-see and change &konqueror;'s shortcut key bindings, i.e. the
+see and change &konqueror;'s shortcut key bindings, &ie; the
 associations between actions such as <guimenuitem>Copy</guimenuitem> and keys
-or combinations of keys such a <keycombo
+or combinations of keys such as <keycombo
 action="simul">&Ctrl;<keycap>V</keycap></keycombo>. If you do 
 this take care not to duplicate an existing shortcut.</para>
 </listitem></varlistentry>
