@@ -393,16 +393,18 @@ void WebKitBrowserExtension::slotReloadFrame()
         view()->page()->currentFrame()->load(view()->page()->currentFrame()->url());
 }
 
+static QString iframeUrl(QWebFrame* frame)
+{
+   return ((frame && frame->baseUrl().isValid()) ? frame->baseUrl() : frame->url()).toString();
+}
+
 void WebKitBrowserExtension::slotBlockIFrame()
 {
     if (!view())
         return;
 
     bool ok = false;
-
-    const QWebFrame* frame = view()->contextMenuResult().frame();
-    const QString urlStr = frame ? frame->url().toString() : QString();
-
+    const QString urlStr = iframeUrl(view()->contextMenuResult().frame());
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
                                               urlStr, &ok);
