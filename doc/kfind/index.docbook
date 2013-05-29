@@ -26,8 +26,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-05-25</date>
-<releaseinfo>&kde; 4.7</releaseinfo>
+<date>2013-05-29</date>
+<releaseinfo>&kde; 4.11</releaseinfo>
 
 <abstract>
 <para>
@@ -184,15 +184,17 @@ contain. Note: If you do this in a large folder or checked
 <para>This option will <emphasis>not</emphasis> work for all files listed 
 under <guilabel>File type</guilabel>. Only the following file types
 are supported:
-<!--has to be checked !!!-->
 <itemizedlist>
 <listitem><para>Text files, &eg; source code and <filename>README</filename> files</para></listitem>
 <listitem><para>&kword; &gt;= 1.2</para></listitem>
 <listitem><para>&kpresenter; &gt;= 1.2</para></listitem>
 <listitem><para>&kspread; &gt;= 1.2</para></listitem>
-<listitem><para>OpenOffice.org Writer</para></listitem>
-<listitem><para>OpenOffice.org Impress</para></listitem>
-<listitem><para>OpenOffice.org Calc</para></listitem>
+<listitem><para>OpenOffice.org Writer / LibreOffice Writer</para></listitem>
+<listitem><para>OpenOffice.org Impress / LibreOffice Impress</para></listitem>
+<listitem><para>OpenOffice.org Calc / LibreOffice Calc</para></listitem>
+<listitem><para>Calligra Words</para></listitem>
+<listitem><para>Calligra Sheets</para></listitem>
+<listitem><para>Calligra Stage</para></listitem>
 </itemizedlist>
 
 </para>
@@ -238,7 +240,7 @@ usually do not contain text (for example program files and images).</para>
 </listitem>
 </varlistentry>
 
-<!-- TODO: "Search metainfo sections" 
+<!-- FIXME: "Search metainfo sections" 
 Search within files' specific comments/metainfo<br />These are some "
 "examples:<br /><ul><li><b>Audio files (mp3...)</b> Search in id3 tag for a "
 "title, an album</li><li><b>Images (png...)</b> Search images with a special "
@@ -247,6 +249,7 @@ Search within files' specific comments/metainfo<br />These are some "
 "<qt>If specified, search only in this field<br /><ul><li><b>Audio files "
 "(mp3...)</b> This can be Title, Album...</li><li><b>Images (png...)</b> "
 "Search only in Resolution, Bitdepth...</li></ul></qt>"
+Broken in 4.11? kfile4 + kfilemetadatareader give no output
 -->
 </variablelist>
 
