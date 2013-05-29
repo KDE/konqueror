@@ -587,20 +587,25 @@ void KonqPopupMenuPrivate::addPlugins()
         const KConfigGroup showGroup = config.group("Show");
 
         foreach (const KSharedPtr<KService>& service, fileItemPlugins) {
-            if (!showGroup.readEntry(service->desktopEntryName(), true)) {
-                // The plugin has been disabled
-                continue;
-            }
-
             // Old API (kdelibs-4.6.0 only)
             KFileItemActionPlugin* plugin = service->createInstance<KFileItemActionPlugin>();
             if (plugin) {
+                if (!showGroup.readEntry(service->desktopEntryName(), true)) {
+                    // The plugin has been disabled
+                    continue;
+                }
+
                 plugin->setParent(q);
                 q->addActions(plugin->actions(m_popupItemProperties, m_parentWidget));
             }
             // New API (kdelibs >= 4.6.1)
             KAbstractFileItemActionPlugin* abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
             if (abstractPlugin) {
+                if (!showGroup.readEntry(service->desktopEntryName(), abstractPlugin->enabledByDefault())) {
+                    // The plugin has been disabled
+                    continue;
+                }
+
                 abstractPlugin->setParent(q);
                 q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
             }
