@@ -34,9 +34,6 @@ Browser Plugins</ulink> help page.</para>
 
 <!-- 
 missing from extragear base:
-imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
-(rotation disabled)
-
 minitools (Bookmarklets - Enables the use of bookmarklets)
 This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
 Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
@@ -48,9 +45,6 @@ This works on any readonly part (though currently it only plugs into
 khtmlpart). It lets you tell konqueror to refresh a page automatically
 after a specific period. This is useful for things like news pages,
 and should be very nice for people using kiosk mode
-
-searchbar
-Comment=Provides a text box for easier access to search engines like Google.
 
 rellinks
 Name=Document Relations
@@ -98,6 +92,8 @@ are listed in the dialog.</para>
 
 <variablelist>
 <title>Browser Mode</title>
+
+ <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265-->
 <varlistentry>
 <term>Web Page Translation</term>
 <listitem><para>This uses the machine translation service provided by <ulink
@@ -299,8 +295,8 @@ archive file name to view the saved page.
 <varlistentry>
 <term>Folder View Filter</term>
 <listitem><para>This is controlled by
-<menuchoice><guimenu>Tools</guimenu><guisubmenu>View
-Filter</guisubmenu></menuchoice> and allows you to choose which types of item
+<menuchoice><shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>I</keycap></keycombo></shortcut>
+<guimenu>Tools</guimenu><guisubmenu>Show Filter Bar</guisubmenu></menuchoice> and allows you to choose which types of item
 are displayed in a folder.</para></listitem>
 </varlistentry>
 
@@ -495,14 +491,14 @@ used for the thumbnail images.</para></listitem>
 </listitem>
 </varlistentry>
 
-<!--How to enable ???-->
 <varlistentry>
 <term>Search Bar</term>
 <listitem><para>Provides a text box for easy access to search engines such as Google.
 Clicking on the icon on the left side of the search box opens a menu to select
 and enable different search engines and configure their <ulink 
 url="help:/kcontrol/ebrowsing/index.html">Web Shortcuts</ulink>.
-</para></listitem>
+</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
@@ -512,13 +508,11 @@ and view the output in a separate window.
 </para></listitem>
 </varlistentry>
 
-<!--not build in 4.4
-<varlistentry>
-<term>Sidebar Media Player</term>
-<listitem><para>This is a simple media player, embedded as a tab page in the
-Sidebar. You can drag songs or videos onto this page to play them.
-</para></listitem>
-</varlistentry>
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
 -->
 </variablelist>
 

@@ -189,7 +189,7 @@ use with a web site that uses frames.</para></listitem>
 <listitem><para>Print selected frame of a Web
 page.</para></listitem>
 </varlistentry>
-<!--
+<!--FIXME
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
@@ -442,14 +442,20 @@ folders.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> 
 </shortcut><guimenu>Edit</guimenu>
-<guimenuitem>Find...</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>Find...</guimenuitem></menuchoice> 
+or <keycombo action="simul">&Shift;<keycap>/</keycap></keycombo> (Browser mode)</term>
 <listitem><para>Displays the search bar at the bottom of the current window.
 Start typing to find a text string in a text page you are previewing or in an &HTML;
 page.</para></listitem>
 </varlistentry>
-
+<!--FIXME no menu item in WebKit view mode 
+WebKit+KHTML mode find bar with 
+Next F3, Previous Shift F3 + Options 
+WebKit Match Case/Highlight All Matches/Search As You Type
+KHTML Case sensitive/Whole words only/From cursor/Selected Text/Regular expression/Find links only
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycap>F3</keycap></shortcut>
@@ -458,7 +464,7 @@ page.</para></listitem>
 <listitem><para>Find the next occurrence of the text string 
 in the text or &HTML; page.</para></listitem> 
 </varlistentry>
-
+<!--FIXME no menu item in WebKit view mode -->
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
@@ -501,7 +507,7 @@ DF: We still have to do something about "find text in links", ideally integratin
 DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
 
 -->
-<!-- not in kde4
+<!-- not in kde4 from editor view
 varlistentry>
 <term><menuchoice>
 <guimenu>Edit</guimenu>
@@ -593,7 +599,8 @@ with an icon view or detailed view, and possibly a terminal emulator window.</pa
 <listitem><para>Stop load (particularly useful when web
 browsing).</para></listitem>
 </varlistentry>
-
+<!--FIXME Browser mode WebKit
+  Zoom In, Zoom Out, Actual Size, Zoom Text Only-->
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
@@ -642,7 +649,7 @@ or Text View modes is case sensitive.</para></listitem>
 </keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>View Document Source</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>View Document Source</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem><para>View document source text.</para>
 <para>Only available if you are viewing a document or &HTML;
 page.</para>
@@ -665,7 +672,7 @@ page.</para>
 </keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>View Document Information</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>View Document Information</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem><para>View document information, such as title, &URL;, and &HTTP;
 headers used in retrieving the document.</para>
 <para>Only available if you are viewing an &HTML;
@@ -701,6 +708,7 @@ choice.</para></listitem>
 </varlistentry>
 http://websvn.kde.org/?view=revision&revision=269436
 -->
+  <!--FIXME sync with Dolphin -->
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
@@ -997,16 +1005,6 @@ folder.</para></listitem>
 <guisubmenu>Select Remote Charset</guisubmenu></menuchoice> (File Manager mode)</term>
 <listitem><para><action>Offers to choose the charset used by a remote
 connection manually.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo></shortcut>
-<guimenu>Tools</guimenu>
-<guimenuitem>Execute Shell Command...</guimenuitem></menuchoice> (File Manager mode)</term>
-<listitem><para>Run a program in the current folder by entering its name in a 
-simple dialog box. The output of the command is displayed in a window.</para></listitem>
 </varlistentry>
 
 </variablelist>
