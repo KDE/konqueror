@@ -73,8 +73,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2013-01-23</date>
-<releaseinfo>2.2 (&kde; 4.10)</releaseinfo>
+<date>2013-05-22</date>
+<releaseinfo>2.3 (&kde; 4.11)</releaseinfo>
 
 <abstract>
 <para>
@@ -191,7 +191,7 @@ and folders in the current folder.
 The <link linkend="places-panel"><guilabel>Places</guilabel> panel</link>, which
 provides quick access to bookmarked locations and disks or other media.
 A &RMB; click opens the context menu to edit, add, hide or remove entries.
-  <!--FIXME Icon Size -->
+  <!--FIXME change Icon Size via context menu -->
 </para></listitem>
 
 <listitem><para>
@@ -502,7 +502,7 @@ the timeout of 1 second.
 </sect1>
 
 <!--FIXME replace with links to KDE Fundamentals when location bar in file dialog
-has all features from in dolphin-->
+has all features from dolphin ?-->
 
 <sect1 id="location-bar">
 <title>Location Bar</title>
@@ -559,12 +559,15 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 <caption><para>Location bar in editable mode.</para></caption>
 </mediaobject>
 </screenshot>
-
+<!--FIXME add kio slave menu in empty editable location bar
+empty location bar in this mode has "file v" menu with ioslaves etc
+screenshot?
+-->
 </sect2>
 
 <sect2 id="location-place-context">
 <title>Places and Context</title>
-<!--FIXME is this already in file dialog in 4.9 ??-->
+<!--FIXME this is now in file dialog in 4.11-->
 <para>
 If the <guilabel>Places</guilabel> panel is hidden; in both modes an additional icon 
 in front of the path is displayed. This icon can be clicked with the &LMB; to open a 
@@ -618,7 +621,7 @@ to a different position, even outside the window.
 
 <sect2 id="places-panel">
 <title>Places</title>
-
+<!--FIXME context menu items of places panel is different in dolphin + kde filedialog-->
 <para>
 The <guilabel>Places</guilabel> panel is located at the left of the window by
 default. The <guilabel>Places</guilabel> panel shows any locations you have
@@ -630,6 +633,9 @@ The easiest way to add a folder to the <guilabel>Places</guilabel> panel is to
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice><guimenuitem>Add Entry...</guimenuitem></menuchoice>
 from the context menu.
+<!--FIXME more actions in context menu
+like Mount/Unmount of devices, Icon Size setting
+-->
 </para>
 
 </sect2>
@@ -742,7 +748,7 @@ bar. This provides a very comfortable way for
 the user to shrink the number of search results.</para>
 <para>To start a search select one or more file types (<guilabel>Documents</guilabel>, 
 <guilabel>Audio</guilabel>, <guilabel>Video</guilabel>, <guilabel>Images</guilabel>),
-a time period, rating and tag, if you have defined any.</para>
+  a time period and rating<!--FIXME readd when again implemented: and tag, if you have defined any.--></para>
 
 <para>Alternatively you can use these options in the <guilabel>Places</guilabel> panel 
 together with the <guilabel>Filter</guilabel> bar to find files using Nepomuk or limit 
@@ -1001,8 +1007,8 @@ one of the view modes are discussed below.
 the text of a file item.
 </para></listitem> <!--FIXME Small, Medium, Large, Hugh -->
 <listitem><para>
-  <guilabel>Maximum lines</guilabel> <!--(Unlimited...1-5) -->
-means maximum number of text lines <!--Fixme each for name + any selected items from 
+  <guilabel>Maximum lines</guilabel> <!--FIXME (Unlimited...1-5) -->
+means maximum number of text lines <!--FIXME each for name + any selected items from 
   View->Additional Information--> below the icon.
 </para></listitem>
 </itemizedlist>
@@ -1257,6 +1263,9 @@ be shown inside a folder's icon.
 
 <sect3 id="preferences-dialog-general-confirmations">
 <title>Confirmations Tab</title>
+<!--FIXME affects also other file management actions of other apps than dolphin? 
+In that case a big warning is missing here
+http://forum.kde.org/viewtopic.php?f=213&t=110440-->
 <para>
 In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
 are shown before potentially harmful actions can be enabled.
@@ -1550,7 +1559,9 @@ item(s).</action></para></listitem>
 </menuchoice></term>
 <listitem><para><action>Pastes the currently copied/cut items to the current
 folder. If the clipboard does not contain files or folders, the clipboard
-contents (such as text or image data) will be pasted into a new file.</action></para></listitem>
+contents (such as text or image data) will be pasted into a new file.
+  <!--FIXME user has to enter a filename-->
+</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1939,15 +1950,12 @@ allows to optimize the user interface for the task of file management.
 </question>
 <answer>
 <para>
-The easiest way to get involved with &dolphin; is to drop the developers an email.
-If you email Peter Penz (Lead Developer/Project Leader), what you can do, how
-much time you can devote &etc;, he will let you know what you can do in the
-project. If you wish to contribute to the documentation you can also email
-Peter Penz.
-</para>
-<para>
-The email address of Peter Penz can be found on the main page of the
-documentation, or in the <link linkend="credits">Credits section</link>.
+The easiest way to get involved with &dolphin; is to subscribe to the developer 
+mailinglist <ulink url="https://mail.kde.org/mailman/listinfo/kfm-devel">kfm-devel</ulink> 
+and drop an email to the developer mailing list. Email, what you can do, how much time 
+you can devote &etc;, the developers will let you know what you can do in the
+project. If you wish to contribute to the documentation please mail to the documentation team
+list kde-doc-english@kde.org.
 </para>
 </answer>
 </qandaentry>
@@ -1990,8 +1998,8 @@ tracking system. The &kde; bug tracker can be found at
 &dolphin;
 </para>
 <para>
-Program copyright 2006&ndash;2011 Peter Penz <email>peter.penz@gmx.at</email>
-</para>
+Program copyright 2006&ndash;2013 Peter Penz <email>peter.penz@gmx.at</email> and 
+Frank Reininghaus <email>frank78ac@googlemail.com</email></para>
 <para>
 Contributors:
 <itemizedlist>
