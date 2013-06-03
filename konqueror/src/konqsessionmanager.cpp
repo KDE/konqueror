@@ -79,7 +79,7 @@ static QString viewIdFor(const QString& sessionFile, const QString& viewId)
     return (sessionFile + viewId);
 }
 
-static const QList<KConfigGroup> windowConfigGroups(const KConfig& config)
+static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use writeEntry*/ KConfig& config)
 {
     QList<KConfigGroup> groups;
     KConfigGroup generalGroup(&config, "General");
@@ -154,7 +154,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
         Q_FOREACH(const QString& sessionFile, sessionFilePaths) {
             kDebug() << sessionFile;
             QTreeWidgetItem* windowItem = 0;
-            const KConfig config(sessionFile, KConfig::SimpleConfig);
+            KConfig config(sessionFile, KConfig::SimpleConfig);
             const QList<KConfigGroup> groups = windowConfigGroups(config);
             Q_FOREACH(const KConfigGroup& group, groups) {
                 // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
@@ -562,7 +562,7 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
     if (!QFile::exists(sessionFilePath))
         return;
 
-    const KConfig config(sessionFilePath, KConfig::SimpleConfig);
+    KConfig config(sessionFilePath, KConfig::SimpleConfig);
     const QList<KConfigGroup> groups = windowConfigGroups(config);
     Q_FOREACH(const KConfigGroup& configGroup, groups) {
         if(!openTabsInsideCurrentWindow)
@@ -579,7 +579,7 @@ static void removeDiscardedSessions(const QStringList& sessionFiles, const QStri
     }
 
     Q_FOREACH(const QString& sessionFile, sessionFiles) {
-        const KConfig config(sessionFile, KConfig::SimpleConfig);
+        KConfig config(sessionFile, KConfig::SimpleConfig);
         QList<KConfigGroup> groups = windowConfigGroups(config);
         for (int i = 0, count = groups.count(); i < count; ++i) {
             KConfigGroup& group = groups[i];
