@@ -261,7 +261,7 @@ void PluginBabelFish::translateURL(QAction* action)
     const KConfig cfg( "translaterc" );
     const KConfigGroup grp(&cfg, QString());
     const QString language = action->objectName();
-    const QString engine = grp.readEntry( language, QString("babelfish") );
+    const QString engine = grp.readEntry( language, QString("google") );
 
     KParts::BrowserExtension * ext = KParts::BrowserExtension::childObject(parent());
     if (!ext)
@@ -300,6 +300,7 @@ void PluginBabelFish::translateURL(QAction* action)
   // Create URL
   KUrl result;
   QString query;
+
   if( engine == "freetranslation" ) {
     query = "sequence=core&language=";
     if( language == QString( "en_es" ) )
@@ -406,36 +407,28 @@ void PluginBabelFish::translateURL(QAction* action)
               query += urlForQuery;
           }
       }
-  } else if( engine == "google" ) { // #174196
-    result = KUrl( "http://translate.google.com/translate" );
-    query = "ie=UTF-8";
+  } else {
 
     const QStringList parts = language.split('_');
-    if (parts.count() == 2) {
-      query += "&sl=" + parts[0] + "&tl=" + parts[1];
-    }
 
-    if (hasSelection)
-      query += "&text=" + textForQuery;
-    else
+    if (hasSelection) { //http://translate.google.com/#en|de|text_to_translate
+      query = "http://translate.google.com/#";
+      if (parts.count() == 2) {
+        query += parts[0] + "|" + parts[1];
+      }
+      query += "|" + textForQuery;
+      result = KUrl( query );
+    }
+    else { //http://translate.google.com/translate?hl=en&sl=en&tl=de&u=http%3A%2F%2Fkde.org%2F%2F
+      result = KUrl( "http://translate.google.com/translate" );
+      query = "ie=UTF-8";
+      if (parts.count() == 2) {
+        query += "&sl=" + parts[0] + "&tl=" + parts[1];
+      }
       query += "&u=" + urlForQuery;
-
-  } else {
-    // Using the babelfish engine
-    // http://babelfish.yahoo.com/translate_url?trurl=http%3A%2F%2Fwww.davidfaure.fr&lp=en_fr
-    result = KUrl( "http://babelfish.yahoo.com/translate_url" );
-    query = "lp=";
-    query += language;
-    if ( /*hasSelection*/ false ) {
-      // TODO this seems broken, and requires POST now
-      // The fields to fill in are  lp=<lang> ei=UTF-8 tt=urltext trtext=<the text to translate>
-      query += "&trtext=" + textForQuery;
+      result.setQuery( query );
     }
-    else
-      query += "&trurl=" + urlForQuery;
   }
-
-  result.setQuery( query );
 
   // Connect to the fish
   emit ext->openUrlRequest( result );
