@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY dolphin "<application>Dolphin</application>">
   <!ENTITY kappname "&dolphin;">
-  <!ENTITY package "kdebase">
+  <!ENTITY package "kde-baseapps">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
@@ -634,7 +634,11 @@ drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice><guimenuitem>Add Entry...</guimenuitem></menuchoice>
 from the context menu.
 <!--FIXME more actions in context menu
-like Mount/Unmount of devices, Icon Size setting
+like Mount/Unmount of devices, 
+open in new tab
+remove entries (not possible for system entries Home/Network/Root/Trash/)
+ Show only in dolphin or global -> in file dialog opened by other apps
+Icon Size setting
 -->
 </para>
 
@@ -1954,8 +1958,8 @@ The easiest way to get involved with &dolphin; is to subscribe to the developer
 mailinglist <ulink url="https://mail.kde.org/mailman/listinfo/kfm-devel">kfm-devel</ulink> 
 and drop an email to the developer mailing list. Email, what you can do, how much time 
 you can devote &etc;, the developers will let you know what you can do in the
-project. If you wish to contribute to the documentation please mail to the documentation team
-list kde-doc-english@kde.org.
+project. If you wish to contribute to the documentation please mail to the 
+<ulink url="mailto:kde-doc-english@kde.org">&kde; Documentation Team</ulink> list.
 </para>
 </answer>
 </qandaentry>
@@ -2032,7 +2036,7 @@ Documentation copyright 2009 Frank Reininghaus <email>frank78ac@googlemail.com</
 
 <appendix id="installation">
 <title>How to get &dolphin;</title>
-<para>&dolphin; is part of the kdebase package which is an essential part of
+<para>&dolphin; is part of the &package; package which is an essential part of
 &kde;.</para>
 
 <para>For instructions on acquiring &kde; please see <ulink
