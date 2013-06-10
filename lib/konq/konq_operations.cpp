@@ -751,15 +751,20 @@ static QString translatePath( QString path ) // krazy:exclude=passbyvalue
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
 {
+    renameV2(parent, oldurl, newurl);
+}
+
+KonqOperations *KonqOperations::renameV2( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
+{
     kDebug(1203) << "oldurl=" << oldurl << " newurl=" << newurl;
     if ( oldurl == newurl )
-        return;
+        return 0;
 
     KUrl::List lst;
     lst.append(oldurl);
     KIO::Job * job = KIO::moveAs( oldurl, newurl, oldurl.isLocalFile() ? KIO::HideProgressInfo : KIO::DefaultFlags );
     KonqOperations * op = new KonqOperations( parent );
-    op->setOperation( job, MOVE, newurl );
+    op->setOperation( job, RENAME, newurl );
     KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Rename, lst, newurl, job );
     // if moving the desktop then update config file and emit
     if ( oldurl.isLocalFile() && oldurl.toLocalFile( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
@@ -772,6 +777,8 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
         g.writeEntry( "XDG_DESKTOP_DIR", QString("\"" + translatePath( newurl.path() ) + "\"") );
         KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged, KGlobalSettings::SETTINGS_PATHS);
     }
+
+    return op;
 }
 
 void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl & dest )
@@ -840,15 +847,16 @@ void KonqOperations::slotStatResult( KJob * job )
 
 void KonqOperations::slotResult(KJob *job)
 {
+    bool jobFailed = false;
     if (job && job->error()) {
         static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
-        job = 0; // The job failed, so set it to 0. All further job related codepaths become disabled
+        jobFailed = true;
     }
 
     switch (m_method) {
     case PUT: {
             KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job);
-            if (simpleJob) {
+            if (simpleJob && !jobFailed) {
                 m_createdUrls << simpleJob->url();
             }
         }
@@ -857,6 +865,15 @@ void KonqOperations::slotResult(KJob *job)
     case RESTORE:
         // Update konq windows opened on trash:/
         org::kde::KDirNotify::emitFilesAdded("trash:/"); // yeah, files were removed, but we don't know which ones...
+        break;
+    case RENAME: {
+            KIO::CopyJob *renameJob = qobject_cast<KIO::CopyJob*>(job);
+            if (renameJob && jobFailed) {
+                const KUrl oldUrl = renameJob->srcUrls().first();
+                const KUrl newUrl = renameJob->destUrl();
+                emit renamingFailed(oldUrl, newUrl);
+            }
+        }
         break;
     default:
         break;
@@ -873,10 +890,15 @@ void KonqOperations::slotResult(KJob *job)
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QString & name )
 {
+    renameV2(parent, oldurl, name);
+}
+
+KonqOperations *KonqOperations::renameV2( QWidget * parent, const KUrl & oldurl, const QString & name )
+{
     KUrl newurl( oldurl );
     newurl.setPath( oldurl.directory( KUrl::AppendTrailingSlash ) + name );
     kDebug(1203) << "KonqOperations::rename("<<name<<") called. newurl=" << newurl;
-    rename( parent, oldurl, newurl );
+    return renameV2( parent, oldurl, newurl );
 }
 
 // Duplicated in libkfile's KDirOperator
