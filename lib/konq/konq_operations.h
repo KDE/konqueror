@@ -53,7 +53,7 @@ public:
      */
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
-    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT };
+    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT, RENAME };
     /**
      * Delete the @p selectedUrls if possible.
      *
@@ -192,11 +192,39 @@ public:
      * Do a renaming.
      * @param parent the parent widget, passed to KonqOperations ctor
      * @param oldurl the current url of the file to be renamed
+     * @param name the new name for the file. Shouldn't include '/'.
+     *
+     * @return The KonqOperations object
+     * @since 4.11
+     *
+     * @todo TODO KDE 5.0 - Merge rename and renameV2
+     */
+    static KonqOperations *renameV2( QWidget * parent, const KUrl & oldurl, const QString & name );
+
+    /**
+     * Do a renaming.
+     * @param parent the parent widget, passed to KonqOperations ctor
+     * @param oldurl the current url of the file to be renamed
      * @param newurl the new url for the file
      * Use this version if the other one wouldn't work :)  (e.g. because name could
      * be a relative path, including a '/').
      */
     static void rename( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
+
+    /**
+     * Do a renaming.
+     * @param parent the parent widget, passed to KonqOperations ctor
+     * @param oldurl the current url of the file to be renamed
+     * @param newurl the new url for the file
+     * Use this version if the other one wouldn't work :)  (e.g. because name could
+     * be a relative path, including a '/').
+     *
+     * @return The KonqOperations object
+     * @since 4.11
+     *
+     * @todo TODO KDE 5.0 - Merge rename and renameV2
+     */
+    static KonqOperations *renameV2( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
 
     enum ConfirmationType { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
     /**
@@ -229,6 +257,7 @@ Q_SIGNALS:
     void statFinished( const KFileItem & item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
     void aboutToCreate(const KUrl::List &urls);
+    void renamingFailed(const KUrl &oldUrl, const KUrl &newUrl);
 
 private:
     QWidget* parentWidget() const;
