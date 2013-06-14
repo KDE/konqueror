@@ -29,6 +29,8 @@
 #include <QPixmap>
 #include <QtCore/QStringList>
 #include <QDragEnterEvent>
+#include <QDBusInterface>
+#include <QDBusReply>
 
 #include <kpushbutton.h>
 #include <kguiitem.h>
@@ -50,6 +52,7 @@
 #include "chfnprocess.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
+
 
 K_PLUGIN_FACTORY(Factory,
         registerPlugin<KCMUserAccount>();
@@ -218,6 +221,25 @@ void KCMUserAccount::save()
 		{
 			KMessageBox::error( this, i18n("There was an error saving the image: %1" ,
 				KCFGUserAccount::faceFile()) );
+		}
+		// save icon file also with accountsservice
+		QDBusInterface ainterface("org.freedesktop.Accounts",
+			"/org/freedesktop/Accounts",
+			"org.freedesktop.Accounts",
+			QDBusConnection::systemBus());
+		QDBusReply<QDBusObjectPath> reply = ainterface.call("FindUserById", qlonglong(_ku->uid()));
+		if (reply.isValid()) {
+			QDBusInterface uinterface("org.freedesktop.Accounts",
+				reply.value().path(),
+				"org.freedesktop.Accounts.User",
+				QDBusConnection::systemBus(),
+				this);
+			QDBusReply<void> ureply = uinterface.call("SetIconFile", KCFGUserAccount::faceFile());
+			if (!ureply.isValid()) {
+				kDebug() << ureply.error().message();
+				KMessageBox::error( this, i18n("There was an error setting the image: %1" ,
+					KCFGUserAccount::faceFile()) );
+			}
 		}
 	}
 	else { // delete existing image
