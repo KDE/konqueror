@@ -198,12 +198,16 @@ private:
     QString dirForMyOwnedSessionFiles() const {
         return m_autosaveDir + "/owned_by" + m_baseService;
     }
+
+    void saveCurrentSessionToFile(KConfig*);
 private:
     QTimer m_autoSaveTimer;
     QString m_autosaveDir;
     QString m_baseService;
-    QString m_autoSavedSessionConfig; // full path
     bool m_autosaveEnabled;
+    bool m_createdOwnedByDir;
+    KConfig* m_sessionConfig;
+
 Q_SIGNALS: // DBUS signals
     /**
      * Save current session of all konqueror running instances in a given
