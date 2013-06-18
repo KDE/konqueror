@@ -359,6 +359,8 @@ bool SessionRestoreDialog::shouldBeShown(const QString& dontShowAgainName, int* 
 KonqSessionManager::KonqSessionManager()
     : m_autosaveDir(KStandardDirs::locateLocal("appdata", "autosave"))
       , m_autosaveEnabled(false) // so that enableAutosave works
+      , m_createdOwnedByDir(false)
+      , m_sessionConfig(0)
 {
     // Initialize dbus interfaces
     new KonqSessionManagerAdaptor ( this );
@@ -383,6 +385,7 @@ KonqSessionManager::KonqSessionManager()
 
 KonqSessionManager::~KonqSessionManager()
 {
+    delete m_sessionConfig;
 }
 
 void KonqSessionManager::disableAutosave()
@@ -392,7 +395,11 @@ void KonqSessionManager::disableAutosave()
 
     m_autosaveEnabled = false;
     m_autoSaveTimer.stop();
-    QFile::remove(m_autoSavedSessionConfig);
+    if (m_sessionConfig) {
+        QFile::remove(m_sessionConfig->name());
+        delete m_sessionConfig;
+        m_sessionConfig = 0;
+    }
 }
 
 void KonqSessionManager::enableAutosave()
@@ -401,9 +408,12 @@ void KonqSessionManager::enableAutosave()
         return;
 
     // Create the config file for autosaving current session
-    QString filename = "autosave/" + m_baseService;
-    m_autoSavedSessionConfig = KStandardDirs::locateLocal("appdata", filename);
-    QFile::remove(m_autoSavedSessionConfig);
+    QString filename = QLatin1String("autosave/") + m_baseService;
+    const QString filePath = KStandardDirs::locateLocal("appdata", filename);
+
+    delete m_sessionConfig;
+    m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig, "appdata");
+    //kDebug() << "config filename:" << m_sessionConfig->name();
 
     m_autosaveEnabled = true;
     m_autoSaveTimer.start();
@@ -412,7 +422,8 @@ void KonqSessionManager::enableAutosave()
 void KonqSessionManager::deleteOwnedSessions()
 {
     // Not dealing with the sessions about to remove anymore
-    KTempDir::removeDir(dirForMyOwnedSessionFiles());
+    if (m_createdOwnedByDir && KTempDir::removeDir(dirForMyOwnedSessionFiles()))
+        m_createdOwnedByDir = false;
 }
 
 KonqSessionManager* KonqSessionManager::self()
@@ -432,7 +443,7 @@ void KonqSessionManager::autoSaveSession()
     if(isActive)
         m_autoSaveTimer.stop();
 
-    saveCurrentSessionToFile(m_autoSavedSessionConfig);
+    saveCurrentSessionToFile(m_sessionConfig);
 
     // Now that we have saved current session it's safe to remove our owned_by
     // directory
@@ -456,8 +467,12 @@ void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPath)
 {
     QFile::remove(sessionConfigPath);
-    KConfig sessionConfig(sessionConfigPath, KConfig::SimpleConfig, "appdata");
+    KConfig config(sessionConfigPath, KConfig::SimpleConfig, "appdata");
+    saveCurrentSessionToFile(&config);
+}
 
+void KonqSessionManager::saveCurrentSessionToFile(KConfig* config)
+{
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
     unsigned int counter = 0;
 
@@ -466,12 +481,12 @@ void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPa
 
     foreach ( KonqMainWindow* window, *mainWindows )
     {
-        KConfigGroup configGroup(&sessionConfig, "Window" +
-            QString::number(counter));
+        KConfigGroup configGroup(config, "Window" + QString::number(counter));
         window->saveProperties(configGroup);
         counter++;
     }
-    KConfigGroup configGroup(&sessionConfig, "General");
+
+    KConfigGroup configGroup(config, "General");
     configGroup.writeEntry("Number of Windows", counter);
 }
 
@@ -488,7 +503,7 @@ QStringList KonqSessionManager::takeSessionsOwnership()
     QDir parentDir(m_autosaveDir);
 
     if(!dir.exists())
-        parentDir.mkdir("owned_by" + m_baseService);
+        m_createdOwnedByDir = parentDir.mkdir("owned_by" + m_baseService);
 
     QDirIterator it(m_autosaveDir, QDir::Writable|QDir::Files|QDir::Dirs|
         QDir::NoDotAndDotDot);
