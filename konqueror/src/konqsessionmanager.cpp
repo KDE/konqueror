@@ -385,6 +385,8 @@ KonqSessionManager::KonqSessionManager()
 
 KonqSessionManager::~KonqSessionManager()
 {
+    if (m_sessionConfig)
+        QFile::remove(m_sessionConfig->name());
     delete m_sessionConfig;
 }
 
@@ -444,6 +446,8 @@ void KonqSessionManager::autoSaveSession()
         m_autoSaveTimer.stop();
 
     saveCurrentSessionToFile(m_sessionConfig);
+    m_sessionConfig->sync();
+    m_sessionConfig->markAsClean();
 
     // Now that we have saved current session it's safe to remove our owned_by
     // directory
