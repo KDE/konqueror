@@ -23,8 +23,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-08-19</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
+<date>2013-06-25</date>
+<releaseinfo>&kde; 4.11</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -74,7 +74,7 @@ applications (mail programs and word processors for example) if they are filled.
 <varlistentry><term>User Icon</term>
 <listitem>
 <para>
-This icon is used when the user logs in using a login manager. Clicking on it will allow you to change the image, either by using a provided icon or by setting one of yours. Click <guibutton>Apply</guibutton> to validate your change.
+This icon is used when the user logs in using a login manager. Clicking on it will allow you to change the image, either by using a provided icon or by setting one of your own. Click <guibutton>Apply</guibutton> to validate your change.
 </para>
 </listitem>
 </varlistentry>
@@ -82,7 +82,7 @@ This icon is used when the user logs in using a login manager. Clicking on it wi
 <varlistentry><term><guibutton>Change password...</guibutton></term>
 <listitem>
 <para>
-Clicking this button will display a dialog to change your user password. Your user password is the one you log in your system with. You will be asked for your current password then twice for your new password.
+Clicking this button will display a dialog to change your user password. Your user password is the one you log in to your system with. You will be asked for your current password then twice for your new password.
 </para>
 </listitem>
 </varlistentry>
@@ -124,7 +124,7 @@ You can indicate here a local smtp server for sending mail within a network.
 <varlistentry><term><guilabel>User ID</guilabel></term>
 <listitem>
 <para>
-This is an information only, it gives you your User ID. This number is defined in <filename>/etc/passwd</filename> and was set when your user account was created.
+This is for information only, it gives you your User ID. This number is defined in <filename>/etc/passwd</filename> and was set when your user account was created.
 </para>
 </listitem>
 </varlistentry>
@@ -136,7 +136,7 @@ This is an information only, it gives you your User ID. This number is defined i
 <title>At Password Prompt</title>
 
 <para>
-This section allows you to choose how you want to input your password when you are asked for it. Default is to have one bullet for each letter you type. You can change that to have three bullets for each letter you type (making it more difficult to guess the number of letters if someone is looking). You can also choose to have nothing displayed while you type your password, making this operation even more secure.
+This section allows you to choose what you want displayed when you input your password when you are asked for it. The default is to have one bullet for each letter you type. You can change that to have three bullets for each letter you type (making it more difficult to guess the number of letters if someone else is looking). You can also choose to have nothing displayed while you type your password, making this operation even more secure.
 </para>
 
 </sect2>
