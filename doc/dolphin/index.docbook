@@ -73,7 +73,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2013-05-22</date>
+<date>2013-06-28</date>
 <releaseinfo>2.3 (&kde; 4.11)</releaseinfo>
 
 <abstract>
@@ -111,7 +111,7 @@ interface for the specific task of file management.
 Please report any problems or feature requests to the &dolphin; author via the
 bug report dialog. This is accessible either from the <guibutton>Control</guibutton> 
 button at the right of the toolbar in the default mode without
-menu bar; or from <menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
+menubar; or from <menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
 menu of the application, if the menubar is shown.
 </para>
 
@@ -190,8 +190,11 @@ and folders in the current folder.
 <listitem><para>
 The <link linkend="places-panel"><guilabel>Places</guilabel> panel</link>, which
 provides quick access to bookmarked locations and disks or other media.
-A &RMB; click opens the context menu to edit, add, hide or remove entries.
-  <!--FIXME change Icon Size via context menu -->
+</para>
+<para>If desktop search and file indexing are enabled in the <guilabel>Desktop Search</guilabel> 
+module in the &systemsettings; the panel provides <guilabel>Recently Accessed</guilabel> 
+items and allows to search for <guilabel>Documents</guilabel>, <guilabel>Images</guilabel>, 
+<guilabel>Audio Files</guilabel> and <guilabel>Video</guilabel>.
 </para></listitem>
 
 <listitem><para>
@@ -202,11 +205,14 @@ of the icons in the view.
 </para></listitem>
 
 <listitem><para>
-The menu bar (hidden by default), which provides access to all commands and configuration options.
+The menubar (hidden by default), which provides access to all commands and configuration options.
 See the <link linkend="commands-menubar">Command Reference</link> for a list of
-all menu commands. The menu bar can be toggled with 
+all menu commands. The menubar can be toggled with 
 <guimenuitem>Show Menubar</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>) 
 from the <guimenu>Settings</guimenu> menu or the <guibutton>Control</guibutton> button.
+</para>
+<para>If the menubar is hidden, all its actions are available from the 
+<guibutton>Control</guibutton> button.
 </para></listitem>
 
 <listitem><para>
@@ -324,14 +330,16 @@ view modes.
 <listitem><para>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
-shown for subfolders. The names of folders and files are displayed below the icons.
- <!--FIXME + any selected item from View->Additional Information-->
+shown for subfolders. The names of folders and files and the items enabled in
+<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice> 
+are displayed below the icons.
 </para></listitem>
 
 <listitem><para>
 The <guilabel>Compact</guilabel> view shows the folder contents as icons with 
-the name <!--FIXME + any selected item from View->Additional Information-->
-beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+the name beside it and the items enabled in
+<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice> 
+below the name. The items are grouped in columns similar to the <guilabel>Short View</guilabel> 
 in the &kde; file dialog.
 </para></listitem>
 
@@ -344,11 +352,10 @@ each item. Additional columns can be added by clicking a column header with the
 <para>In the context menu of the header line you can choose between custom or automatic 
 column width. Automatic width adjusts the width of all columns once to display the longest 
 item in the column completely, except for the <guilabel>Name</guilabel> column where 
-the extension is replaced by "..." 
-<!--FIXME change width manually = automatic is disabled-->
+the extension is replaced by <quote>...</quote> 
 </para>
-<para>The order of columns can be changed by drag and drop of column headers.
-<!--, except for the Name column.FIXME regression? leave it out?-->
+<para>The order of columns can be changed by drag and drop of column headers, except for
+the <guilabel>Name</guilabel> header, which is always the first column in this view.
 </para>
 <para>
 The details view permits to view the current directory
@@ -374,6 +381,38 @@ in <menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoi
 </mediaobject>
 </screenshot>
 <!-- end copy to konqueror filemanager.docbook -->
+
+</sect3>
+
+<sect3 id="dolphin-view-information">
+<title>Information in the View</title>
+<para>
+In all view modes &dolphin; shows at least an icon and a name for each item. 
+Using <guisubmenu>Additional Information</guisubmenu> in the <guimenu>View</guimenu> 
+menu or the context menu of the header in <guilabel>Details</guilabel> mode, you can select
+more information for each item to be shown:
+</para>
+
+<para>
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Type</guimenuitem>, <guimenuitem>Rating</guimenuitem>,
+<guimenuitem>Tags</guimenuitem> or <guimenuitem>Comment</guimenuitem>.
+</para>
+
+<para>Depending on the file type additionally sorting criteria can be selected:
+<simplelist>
+  <member><guimenuitem>Document</guimenuitem>: Number of words and lines</member>
+  <member><guimenuitem>Image</guimenuitem>: Size and orientation</member>
+  <member><guimenuitem>Audio</guimenuitem>: Artist, album, duration and track</member>
+</simplelist>
+</para>
+
+<para>The <guisubmenu>Other</guisubmenu> submenu allows to select 
+<guimenuitem>Path</guimenuitem>, <guimenuitem>Link Destination</guimenuitem>, 
+<guimenuitem>Copied From</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem> or 
+<guimenuitem>User Group</guimenuitem>.
+</para>
 
 </sect3>
 
@@ -559,10 +598,10 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 <caption><para>Location bar in editable mode.</para></caption>
 </mediaobject>
 </screenshot>
-<!--FIXME add kio slave menu in empty editable location bar
-empty location bar in this mode has "file v" menu with ioslaves etc
-screenshot?
--->
+<para>If the location bar is empty in editable mode, a drop down box appears in 
+front of the bar with all available kioslaves on your system. Using these ioslaves
+you can &eg; launch a &systemsettings; module or <application>KFontview</application> from &dolphin;. 
+</para>
 </sect2>
 
 <sect2 id="location-place-context">
@@ -621,27 +660,32 @@ to a different position, even outside the window.
 
 <sect2 id="places-panel">
 <title>Places</title>
-<!--FIXME context menu items of places panel is different in dolphin + kde filedialog-->
+<!--FIXME difference between places panel in dolphin + kde filedialog: 
+context menu Icon Size? No different entries ?-->
+<!--Four groups: Places = Folders, Devices, with Nepomuk Recently Accessed and Search For -->
 <para>
 The <guilabel>Places</guilabel> panel is located at the left of the window by
 default. The <guilabel>Places</guilabel> panel shows any locations you have
-bookmarked. It also shows any disk or media attached to the computer.
+bookmarked. It also shows any disk or media attached to the computer, recently accessed items
+and allows to search for certain type of files. The order of these entries can be changed by drag and drop.
 </para>
 
 <para>
 The easiest way to add a folder to the <guilabel>Places</guilabel> panel is to
 drag it and drop it in the panel. Moreover, you can click inside the panel with
 the &RMB; and choose <menuchoice><guimenuitem>Add Entry...</guimenuitem></menuchoice>
-from the context menu.
-<!--FIXME more actions in context menu
-like Mount/Unmount of devices, 
-open in new tab
-remove entries (not possible for system entries Home/Network/Root/Trash/)
- Show only in dolphin or global -> in file dialog opened by other apps
-Icon Size setting
--->
+from the context menu. The first procedure creates a system wide bookmark, the second
+procedure can be used to add the current path of the location bar or any desired folder or device.
+A dialog opens where label, location and icon can be edited and the usage of this entry 
+can be restricted to &dolphin;. 
 </para>
 
+<para>A &RMB; click opens the context menu to edit, add, hide or remove entries
+and change the icon size to one of the predefined values or lock/unlock the panels.
+</para>
+<para>The context menu has an action to open the entry in a new tab. 
+Devices can be unmounted from the context menu.
+</para>
 </sect2>
 
 <sect2 id="information-panel">
@@ -785,7 +829,6 @@ in the menu, &eg; <guimenuitem>Undo: Rename</guimenuitem>.
 
 <sect2 id="batch-rename">
 <title>Renaming A Batch Of Files</title>
-
 <para>
 &dolphin; is capable of renaming a number of files at the same time. Each file
 will have the file name specified, including a number, &eg;, Image1.jpg,
@@ -799,15 +842,20 @@ to be renamed before releasing it, or by holding &Ctrl; and clicking each file
 to be renamed (see <link linkend="selection">Selecting Items in the View</link>
 for more details on item selection). Then open the batch-rename dialog by pressing
 <keycap>F2</keycap> or via the File menu:
-<menuchoice> <guimenu>File</guimenu> <guimenuitem>Rename...</guimenuitem> </menuchoice>.
+<menuchoice> <guimenu>File</guimenu> <guimenuitem>Rename...</guimenuitem> </menuchoice>
 </para>
 
 <para>
 Then enter the name you wish to give the files. The # character must be present
-within the name. The files will then be renamed, where the # character is
-replaced by a different number for each file.
+within the name. The files will then be renamed, where the <userinput>#</userinput> 
+character is replaced by a different consecutive number for each file.
 </para>
 
+<para>If all file extensions in your selection are different, the name of all files 
+can be changed without using a <userinput>#</userinput> placeholder while preserving 
+the file extensions. This is &eg; useful to rename a video file and all associated 
+subtitle files, which use to have the same filename, but different extensions.
+</para>
 </sect2>
 
 <sect2 id="compare-files">
@@ -880,12 +928,15 @@ section of the settings</link>.
 
 <sect1 id="preferences-dialog">
 <title>The &dolphin; Preferences Dialog</title>
-
 <para>
 The Preferences Dialog is opened via <menuchoice><guimenu>Settings</guimenu>
 <guimenuitem>Configure &dolphin;...</guimenuitem></menuchoice> in the menu in
 &dolphin;'s main window. The settings are divided into several groups which can
 be accessed by clicking the corresponding icon on the left of the dialog.
+</para>
+
+<para>All settings except from the <guilabel>Startup</guilabel> page and the <guilabel>Status Bar</guilabel> 
+tab on the <guilabel>General</guilabel> page are shared with &konqueror; in filemanager mode.
 </para>
 
 <sect2 id="preferences-dialog-startup">
@@ -1009,11 +1060,9 @@ one of the view modes are discussed below.
 <listitem><para>
 <guilabel>Width</guilabel> controls the minimum width that is reserved for
 the text of a file item.
-</para></listitem> <!--FIXME Small, Medium, Large, Hugh -->
+</para></listitem>
 <listitem><para>
-  <guilabel>Maximum lines</guilabel> <!--FIXME (Unlimited...1-5) -->
-means maximum number of text lines <!--FIXME each for name + any selected items from 
-  View->Additional Information--> below the icon.
+  <guilabel>Maximum lines</guilabel> means maximum number of text lines below the icon.
 </para></listitem>
 </itemizedlist>
 </para>
@@ -1026,7 +1075,7 @@ means maximum number of text lines <!--FIXME each for name + any selected items 
 <listitem><para>
 <guilabel>Maximum width</guilabel> controls the maximum width that is reserved for
 the text of a file item.
-</para></listitem> <!-- FIXME Unlimited = all text ist shown?, Small, Medium, Large -->
+</para></listitem>
 </itemizedlist>
 </para>
 </sect3>
@@ -1267,13 +1316,15 @@ be shown inside a folder's icon.
 
 <sect3 id="preferences-dialog-general-confirmations">
 <title>Confirmations Tab</title>
-<!--FIXME affects also other file management actions of other apps than dolphin? 
-In that case a big warning is missing here
-http://forum.kde.org/viewtopic.php?f=213&t=110440-->
 <para>
 In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
 are shown before potentially harmful actions can be enabled.
 </para>
+<warning><para>The confirmation settings for <guilabel>Moving files or folders to trash</guilabel> and
+<guilabel>Deleting files or folders</guilabel> affect file operations in &dolphin;, &konqueror;, 
+<application>Gwenview</application> and all &kde; applications using the default &kde; file dialog, 
+whereas <guilabel>Close window 
+with multiple tabs</guilabel> is a &dolphin; specific setting.</para></warning>
 </sect3>
 
 <sect3 id="preferences-dialog-general-statusbar">
@@ -1564,7 +1615,7 @@ item(s).</action></para></listitem>
 <listitem><para><action>Pastes the currently copied/cut items to the current
 folder. If the clipboard does not contain files or folders, the clipboard
 contents (such as text or image data) will be pasted into a new file.
-  <!--FIXME user has to enter a filename-->
+The name of this file has to be entered in a dialog.
 </action></para></listitem>
 </varlistentry>
 
@@ -1650,24 +1701,12 @@ Selects all unselected items and deselects all selected items in the current fol
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu>
-<!--FIXME 
-Name Size Date 
-Type Rating Tags Comment 
-Document Word Count Line Count 
-Image Image Size Orientation
-Audio Artist Album Duration Track
-Other Path Link Destination Copied From Permissions Owner Group
-Same menu items in contextmenu of header + View -> Additional Information
--->
 </menuchoice></term>
-<listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
-<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
-<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
-<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem>.
-<guimenuitem>Descending</guimenuitem> reverses the sort order.
+<listitem><para><action>Changes whether items are sorted</action> by <guimenuitem>Name</guimenuitem>
+or other criteria described in <link linkend="dolphin-view-information">Information in the View</link>.</para>
+<para><guimenuitem>Descending</guimenuitem> reverses the sort order.
 <guimenuitem>Folders First</guimenuitem> sorts folders before files.
-</action></para></listitem>
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1675,15 +1714,9 @@ Same menu items in contextmenu of header + View -> Additional Information
 <guimenu>View</guimenu>
 <guisubmenu>Additional Information</guisubmenu>
 </menuchoice></term>
-<listitem><para><action>Displays additional information</action> like
-<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
-<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
-<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
-in the different views.</para></listitem>
-<!--FIXME changed to Document, Image, Audio, Other with checkable subitems 
-  What is Other->Copied From?
-Document, Image, Audio requires running Nepomuk and Strigi services -->
+<listitem><para><action>Displays additional information</action> 
+described in <link linkend="dolphin-view-information">Information in the View</link>.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
