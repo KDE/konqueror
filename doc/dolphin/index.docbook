@@ -531,7 +531,6 @@ first matching item is selected.
 To clear the selection and cancel the keyboard search press &Esc; or wait longer than
 the timeout of 1 second.
 </para></listitem>
-<!-- from http://freininghaus.wordpress.com/2012/04/04/dolphin-keyboard-search-improvement-in-kde-4-8-2/-->
 </itemizedlist>
 <!-- END copy to konqueror filemanager.docbook -->
 </sect3>
@@ -660,7 +659,7 @@ to a different position, even outside the window.
 
 <sect2 id="places-panel">
 <title>Places</title>
-<!--FIXME difference between places panel in dolphin + kde filedialog: 
+<!--FIXME difference between places panel in dolphin + kde filedialog + konqueror:
 context menu Icon Size? No different entries ?-->
 <!--Four groups: Places = Folders, Devices, with Nepomuk Recently Accessed and Search For -->
 <para>
@@ -1317,14 +1316,14 @@ be shown inside a folder's icon.
 <sect3 id="preferences-dialog-general-confirmations">
 <title>Confirmations Tab</title>
 <para>
-In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
+In the ask for confirmation section, warning dialogs which
 are shown before potentially harmful actions can be enabled.
 </para>
 <warning><para>The confirmation settings for <guilabel>Moving files or folders to trash</guilabel> and
 <guilabel>Deleting files or folders</guilabel> affect file operations in &dolphin;, &konqueror;, 
 <application>Gwenview</application> and all &kde; applications using the default &kde; file dialog, 
-whereas <guilabel>Close window 
-with multiple tabs</guilabel> is a &dolphin; specific setting.</para></warning>
+whereas <guilabel>Closing Dolphin windows 
+  with multiple tabs</guilabel> is a &dolphin; <!--and &konqueror;--> specific setting.</para></warning>
 </sect3>
 
 <sect3 id="preferences-dialog-general-statusbar">
