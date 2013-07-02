@@ -77,6 +77,9 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
     connect(this, SIGNAL(loadStarted()), this, SLOT(hideAccessKeys()));
     connect(page(), SIGNAL(scrollRequested(int,int,QRect)), this, SLOT(hideAccessKeys()));
+    
+    if (WebKitSettings::self()->zoomToDPI())
+        setZoomFactor(logicalDpiY() / 96.0f);
 }
 
 WebView::~WebView()

@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="kwebkitpart" version="7">
+<kpartgui name="kwebkitpart" version="8">
 <MenuBar>
  <Menu name="file">
   <Action name="saveDocument" />
@@ -17,6 +17,7 @@
   <Action name="zoomOut" />
   <Action name="zoomNormal" />
   <Action name="zoomTextOnly" />
+  <Action name="zoomToDPI" />
   <Separator />
   <Action name="setEncoding" />
   <Action name="viewDocumentSource" />

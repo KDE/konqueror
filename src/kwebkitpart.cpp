@@ -238,6 +238,13 @@ void KWebKitPart::initActions()
     actionCollection()->addAction("zoomTextOnly", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomTextOnly()));
 
+    action = new KAction(i18n("Zoom To DPI"), this);
+    action->setCheckable(true);
+    bool zoomToDPI = cgHtml.readEntry("ZoomToDPI", false);
+    action->setChecked(zoomToDPI);
+    actionCollection()->addAction("zoomToDPI", action);
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomToDPI()));
+
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            m_browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);

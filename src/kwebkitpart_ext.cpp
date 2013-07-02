@@ -313,8 +313,12 @@ void WebKitBrowserExtension::zoomOut()
 
 void WebKitBrowserExtension::zoomNormal()
 {
-    if (view())
-        view()->setZoomFactor(1);
+    if (view()) {
+        if (WebKitSettings::self()->zoomToDPI())
+            view()->setZoomFactor(view()->logicalDpiY() / 96.0f);
+        else
+            view()->setZoomFactor(1);
+    }
 }
 
 void WebKitBrowserExtension::toogleZoomTextOnly()
@@ -328,6 +332,23 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
     KGlobal::config()->reparseConfiguration();
 
     view()->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
+}
+
+void WebKitBrowserExtension::toogleZoomToDPI()
+{
+    if (!view())
+        return;
+
+    bool zoomToDPI = !WebKitSettings::self()->zoomToDPI();
+    WebKitSettings::self()->setZoomToDPI(zoomToDPI);
+    
+    if (zoomToDPI)
+        view()->setZoomFactor(view()->zoomFactor() * view()->logicalDpiY() / 96.0f);
+    else 
+        view()->setZoomFactor(view()->zoomFactor() * 96.0f / view()->logicalDpiY());
+    
+    // Recompute default font-sizes since they are only DPI dependent when zoomToDPI is false.
+    WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
 }
 
 void WebKitBrowserExtension::slotSelectAll()

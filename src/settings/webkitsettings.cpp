@@ -115,6 +115,7 @@ public:
     bool m_enableOfflineStorageDb:1;
     bool m_enableOfflineWebAppCache:1;
     bool m_enableWebGL:1;
+    bool m_zoomToDPI:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -486,6 +487,10 @@ void WebKitSettings::init( KConfig * config, bool reset )
         d->m_zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
     }
 
+    if ( reset || cgHtml.hasKey( "ZoomToDPI" ) ) {
+        d->m_zoomToDPI = cgHtml.readEntry( "ZoomToDPI", false );
+    }
+
     if (cgHtml.readEntry("UserStyleSheetEnabled", false)) {
         if (reset || cgHtml.hasKey("UserStyleSheet"))
             d->m_userSheet = cgHtml.readEntry("UserStyleSheet", QString());
@@ -723,6 +728,9 @@ void WebKitSettings::init( KConfig * config, bool reset )
 
 void WebKitSettings::computeFontSizes( int logicalDpi )
 {
+  if (zoomToDPI())
+      logicalDpi = 96;
+
   float toPix = logicalDpi/72.0;
 
   if (toPix < 96.0/72.0)
@@ -730,6 +738,20 @@ void WebKitSettings::computeFontSizes( int logicalDpi )
 
   QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, qRound(minFontSize() * toPix));
   QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
+}
+
+bool WebKitSettings::zoomToDPI() const
+{
+    return d->m_zoomToDPI;
+}
+
+void WebKitSettings::setZoomToDPI(bool enabled)
+{
+  d->m_zoomToDPI = enabled;
+  // save it
+  KConfigGroup cg( KGlobal::config(), "HTML Settings");
+  cg.writeEntry("ZoomToDPI", enabled);
+  cg.sync();
 }
 
 /** Local helper for retrieving per-domain settings.

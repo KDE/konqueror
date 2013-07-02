@@ -62,6 +62,8 @@ public:
     virtual ~WebKitSettings();
 
     void computeFontSizes(int logicalDpi);
+    bool zoomToDPI() const;
+    void setZoomToDPI(bool b);
 
     // Automatic page reload/refresh...
     bool autoPageRefresh() const;

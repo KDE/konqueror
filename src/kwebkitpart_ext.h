@@ -66,6 +66,7 @@ public Q_SLOTS:
     void zoomOut();
     void zoomNormal();
     void toogleZoomTextOnly();
+    void toogleZoomToDPI();
     void slotSelectAll();
 
     void slotFrameInWindow();
