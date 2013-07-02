@@ -32,8 +32,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2010-10-26</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
+<date>2013-07-02</date>
+<releaseinfo>&kde; 4.11</releaseinfo>
 
 <abstract><para>&konqueror; is &kde;'s advanced File Manager, Web Browser and
  Universal Viewing Application.</para>
@@ -50,15 +50,13 @@
 
 </bookinfo>
 
-<chapter id="introduction"> <!-- 4.4-->
+<chapter id="introduction"> <!-- 4.11-->
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-02-08</date>
-<releaseinfo>4.4</releaseinfo>
 </chapterinfo>
 
 <title>Overview</title>
@@ -108,7 +106,7 @@ saved for easy recall as needed.
 
 </chapter>
 
-<chapter id="basics"><!-- 4.4-->
+<chapter id="basics"><!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -116,8 +114,6 @@ saved for easy recall as needed.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-02-08</date>
-<releaseinfo>4.4.0</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; Basics</title>
@@ -213,7 +209,7 @@ the pointer over it.</para>
 have a small black arrow at the right. If you click with the &LMB;
 at this arrow a small dropdown menu will
 appear.</para> <para><mousebutton>Right</mousebutton> clicking on the
-<interface>Toolbar </interface> will bring up the <link
+<interface>Toolbar</interface> will bring up the <link
 linkend="rmb-menus"><guilabel>Toolbar Settings</guilabel> menu</link> which you can use
 to change the <interface>Toolbar</interface>'s appearance and position.</para>
 
@@ -431,6 +427,12 @@ properties.</para></listitem> </varlistentry>
 bottom of a window or view to add or remove a view within &konqueror;'s
 window.</para></listitem> 
 </varlistentry>
+<!--FIXME Split / Lock to Current Location / Close 
+#: src/konqmainwindow.cpp:4000
+msgid "A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder"
+#: src/konqmainwindow.cpp:4001
+msgid "Sets the view as 'linked'. A linked view follows folder changes made in other linked views."
+-->
 </variablelist>
 
 </sect1>
@@ -468,15 +470,13 @@ http://docs.kde.org</ulink>.</para></note>
 
 </chapter>
 
-<chapter id="filemanager"> <!-- 4.5-->
+<chapter id="filemanager"> <!-- 4.11-->
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2012-07-02</date>
-<releaseinfo>&kde; 4.9</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; the File Manager</title>
@@ -530,20 +530,22 @@ are outlined below.
 
 <note><para>In File Manager mode, &konqueror; uses an embedded &dolphin;  
 component.</para></note>
-<!-- begin copy from dolphin docbook synced for 4.10--> 
+<!-- begin copy from dolphin docbook synced for 4.11--> 
 <itemizedlist>
 
 <listitem><para>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
-shown for subfolders. The names of folders and files are displayed below the icons.
- <!--FIXME + any selected item from View->Additional Information-->
+shown for subfolders. The names of folders and files and the items enabled in
+<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice> 
+are displayed below the icons.
 </para></listitem>
 
 <listitem><para>
 The <guilabel>Compact</guilabel> view shows the folder contents as icons with 
-the name <!--FIXME + any selected item from View->Additional Information-->
-beside it grouped in columns similar to the <guilabel>Short View</guilabel> 
+the name beside it and the items enabled in
+<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice> 
+below the name. The items are grouped in columns similar to the <guilabel>Short View</guilabel> 
 in the &kde; file dialog.
 </para></listitem>
 
@@ -556,20 +558,17 @@ each item. Additional columns can be added by clicking a column header with the
 <para>In the context menu of the header line you can choose between custom or automatic 
 column width. Automatic width adjusts the width of all columns once to display the longest 
 item in the column completely, except for the <guilabel>Name</guilabel> column where 
-the extension is replaced by "..." 
-<!--FIXME change width manually = automatic is disabled-->
+the extension is replaced by <quote>...</quote> 
 </para>
-<para>The order of columns can be changed by drag and drop of column headers.
-<!--, except for the Name column.FIXME regression? leave it out?-->
+<para>The order of columns can be changed by drag and drop of column headers, except for
+the <guilabel>Name</guilabel> header, which is always the first column in this view.
 </para>
 <para>
-The details view allows you to view a directory in a tree-like fashion if the
-<guilabel>Expandable folders</guilabel> option is enabled.
+The details view permits to view the current directory in a tree-like fashion if 
+<guilabel>Expandable folders</guilabel> are enabled: 
 Each subfolder of the current folder can be
-<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the
-<guiicon>&gt;</guiicon> or <guiicon>v</guiicon> icon next to it.
-</para>
-</listitem>
+<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
+or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 
 <screenshot>
@@ -581,11 +580,11 @@ Each subfolder of the current folder can be
 <textobject>
 <phrase>Grouped View</phrase>
 </textobject>
-<caption><para>All view modes support grouping by the sort type selected in 
-<menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
+<caption><para>All view modes support grouping by the sort type selected 
+in <menuchoice><guimenu>View</guimenu><guisubmenu>Sort by</guisubmenu></menuchoice></para></caption>
 </mediaobject>
 </screenshot>
-<!-- end copy from dolphin docbook --> 
+<!-- end copy from dolphin docbook synced for 4.11 --> 
 
 <sect2 id="filetipinfo">
 <title>File Tip Info</title>
@@ -610,16 +609,50 @@ files from a remote system. To disable previews for remote files where reading
 the extra data would take too long set a file size limit at the bottom of the 
 <guilabel>Previews</guilabel> tab.</para>
 </sect2>
+
+<!-- begin copy from dolphin docbook synced for 4.11--> 
+<sect2 id="dolphin-view-information">
+<title>Information in the View</title>
+<para>
+In all view modes &dolphin; shows at least an icon and a name for each item. 
+Using <guisubmenu>Additional Information</guisubmenu> in the <guimenu>View</guimenu> 
+menu or the context menu of the header in <guilabel>Details</guilabel> mode, you can select
+more information for each item to be shown:
+</para>
+
+<para>
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Type</guimenuitem>, <guimenuitem>Rating</guimenuitem>,
+<guimenuitem>Tags</guimenuitem> or <guimenuitem>Comment</guimenuitem>.
+</para>
+
+<para>Depending on the file type additionally sorting criteria can be selected:
+<simplelist>
+  <member><guimenuitem>Document</guimenuitem>: Number of words and lines</member>
+  <member><guimenuitem>Image</guimenuitem>: Size and orientation</member>
+  <member><guimenuitem>Audio</guimenuitem>: Artist, album, duration and track</member>
+</simplelist>
+</para>
+
+<para>The <guisubmenu>Other</guisubmenu> submenu allows to select 
+<guimenuitem>Path</guimenuitem>, <guimenuitem>Link Destination</guimenuitem>, 
+<guimenuitem>Copied From</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem> or 
+<guimenuitem>User Group</guimenuitem>.
+</para>
+
+</sect2>
+<!-- end copy from dolphin docbook synced for 4.11 --> 
 </sect1>
 
-<!-- begin copy from dolphin docbook synced for 4.10--> 
+<!-- begin copy from dolphin docbook synced for 4.11--> 
 <sect1 id="view-properties">
 <title>Folder View Properties</title>
 
 <para>
 The following settings control how the contents of a folder are displayed in the
 &kappname; view, and are stored on a per-folder basis by default:
-
+</para>
 <itemizedlist>
 
 <listitem><para>
@@ -638,8 +671,7 @@ Sorting of folders and files &ndash; are folders shown first or not?
 
 <listitem><para>
 Previews &ndash; are they shown instead of icons (based on the settings made in
-<link linkend="previews"><guilabel>Previews</guilabel>
-tab of &kappname;'s General settings</link>) or not?
+<guilabel>Previews</guilabel> tab of &kappname;'s General settings) or not?
 </para></listitem>
 
 <listitem><para>
@@ -655,7 +687,7 @@ What additional information (besides the name) is shown in the Icons or Details 
 </para></listitem>
 
 </itemizedlist>
-
+<para>
 The view properties can be configured in the
 <menuchoice><guimenu>View</guimenu></menuchoice> menu, some (such as the view
 mode) can also be changed using toolbar buttons.
@@ -694,8 +726,7 @@ properties yet.
 </sect2>
 
 </sect1>
-<!-- end copy from dolphin docbook -->
-
+<!-- end copy from dolphin docbook  synced for 4.11-->
 <sect1 id="navigation">
 <title>Navigation</title>
 <para>To get to a file with &konqueror; you first need to navigate 
@@ -736,11 +767,11 @@ you have found the folder you are looking for, <mousebutton>left
 <para>The <link linkend="sidebar">Sidebar</link> can also help you 
 find your way around the file system.</para>
 
-<para>You can go directly to any folder by typing its path into the
-Location Toolbar window or into the dialog box invoked by the Menubar
-<menuchoice><guimenu>File</guimenu><guimenuitem>Open Location</guimenuitem>
-</menuchoice> item or by <keycombo action="simul">&Alt;<keycap>
-O</keycap></keycombo>. &konqueror;'s <link linkend="path-complete">
+<para>You can go directly to any folder by switching with 
+ <menuchoice><guimenu>File</guimenu><guimenuitem>Open Location</guimenuitem>
+</menuchoice> or <keycombo action="simul">&Alt;<keycap>O</keycap>
+</keycombo> to the Location Bar and typing its path.
+&konqueror;'s <link linkend="path-complete">
 Text Completion</link> feature may be useful when you do this. Don't forget
 that in &Linux; / &UNIX; file and folder names are case sensitive.</para>
 
@@ -762,12 +793,12 @@ action="simul">&Alt;<keysym>Up</keysym></keycombo>.</para>
 <guiicon>Back</guiicon> or <guiicon>Forward</guiicon> buttons or selecting these 
 items in the <guimenu>Go</guimenu> menu brings up a submenu of recently visited locations.</para>
 </tip>
-<!-- 4.5 -->
+<!-- 4.11 -->
 <sect2 id="file-find">
 <title>Finding Files and Folders</title>
 
 <para>If you don't know or can't remember where a file or folder is within
-your system, then use the Toolbar <guiicon>Find File</guiicon> button or the
+your system, then use the shortcut <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> or the
 Menubar <menuchoice><guimenu>Tools</guimenu><guimenuitem>Find 
 File...</guimenuitem></menuchoice> option.  This starts the file finder
 application &kfind;. See the <ulink url="help:/kfind/index.html">&kfind; Handbook</ulink> 
@@ -815,8 +846,8 @@ url="help:/plasma-desktop/index.html#device-notifier">Device Notifier</ulink>
 window will popup, when you insert a removable device and allows you to select 
 an appropriate application for this media or only mount the device.</para>
 </listitem>
-
-<listitem><para>You may have icons for removable devices on your desktop, 
+<listitem><para>If you use the <guilabel>Folder View</guilabel> layout for your desktop
+you may have icons for removable devices on your desktop, 
 in which case &LMB; click on the icon to mount it. 
 Doing this should also bring up a &konqueror; window showing the contents of 
 the device. To unmount, <mousebutton>right</mousebutton> 
@@ -834,7 +865,7 @@ console window:</para>
 <note><para>Rather than having to open a text console to type the
 <command>mount
 </command> or <command>umount</command> commands, you may prefer to use
-&konqueror;'s <menuchoice><guimenu> Tools</guimenu><guimenuitem>Execute Shell
+&konqueror;'s <menuchoice><guimenu>Tools</guimenu><guimenuitem>Execute Shell
 Command</guimenuitem></menuchoice>
 (<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo>)
  feature.
@@ -846,7 +877,7 @@ Command</guimenuitem></menuchoice>
 </sect2>
 
 </sect1>
-<!-- 4.5-->
+<!-- 4.11-->
 <sect1 id="deleting">
 <title>Deleting Files and Folders</title>
 
@@ -888,7 +919,7 @@ the necessary permissions<!--; see the section on <link linkend="super-user">Sup
   User Mode</link> for further details-->.</para></note>
 
 </sect1>
-<!-- 4.5-->
+<!-- 4.11-->
 <sect1 id="moving">
 <title>Moving and Copying</title>
 
@@ -939,7 +970,7 @@ commands</guilabel> on the <menuchoice><guimenu>File Management</guimenu>
 you don't have the necessary permissions. <!--See the section on <link
 linkend="super-user">Super User Mode</link> for further
   details.--></para></note>
-<!-- 4.5-->
+<!-- 4.11-->
 <sect2 id="dnd">
 <title>Using Drag 'n Drop</title>
 
@@ -997,7 +1028,7 @@ destination tab will pop to the front, allowing you to continue
 dragging and then to drop the file.</para>
 
 </sect2>
-<!-- 4.5-->
+<!-- 4.11-->
 <sect2 id="dups">
 <title>Duplicate File or Folder Names</title>
 <para>If you try to paste a file or folder into a folder that already 
@@ -1005,8 +1036,8 @@ contains an item with the same name, &konqueror; will pop up a dialog box warnin
 you that the item already exists. You can then choose to:
 </para>
 <itemizedlist>
-<listitem><para>Cancel the paste operation by pressing the <guibutton>Cancel
-</guibutton> button.</para></listitem>
+<listitem><para>Cancel the paste operation by pressing the 
+<guibutton>Cancel</guibutton> button.</para></listitem>
 <listitem><para>Give the item that is being copied a different name. You can 
 do this by typing a new name into the text entry box or get &konqueror; to 
 <guibutton>Suggest New Name</guibutton>. When you have done this press the 
@@ -1019,7 +1050,7 @@ If you have copied multiple items, <guibutton>Skip</guibutton> the current item.
 multiple items.</para>
 </sect2>
 </sect1>
-<!-- begin copy from dolphin docbook synced for 4.10-->
+<!-- begin copy from dolphin docbook synced for 4.11-->
 <sect1 id="selection">
 <title>Selecting Items in the View</title>
 
@@ -1112,11 +1143,11 @@ To clear the selection and cancel the keyboard search press &Esc; or wait longer
 the timeout of 1 second.
 </para></listitem>
 </itemizedlist>
-
-</sect2>
 <!-- end copy from dolphin docbook-->
 
-<!-- selection-menu applies to dolphin as well copy over?-->
+</sect2>
+
+<!-- selection via menu different in dolphin-->
 <sect2 id="selection-menu">
 <title>Selecting Items Using the Menu</title>
 
@@ -1164,7 +1195,7 @@ action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo> to do this.</para>
 
 </sect1>
 
-<!-- 4.5 -->
+<!-- 4.11 -->
 <sect1 id="making">
 <title>Create New</title>
 
@@ -1265,7 +1296,7 @@ However, in most cases you will want to create the icon on your desktop.
 </variablelist>
 
 </sect1>
-<!-- 4.5 -->
+<!-- 4.11 -->
 <sect1 id="newname">
 <title>Changing Names and Permissions</title>
 
@@ -1303,33 +1334,8 @@ Just type the new name into the dialog's text box and press the
 <guibutton>Suggest New Name</guibutton> button will generate a new name for you).</para>
 </sect2>
 
-<!--sect2 id="super-user"> this is obsolete!
-<title>Super User Mode</title>
-
-<para>If you are running as a normal user and try to access files outside of
-your own home folder you will often be prevented from doing so and get an
-error message such as <errorname>Access Denied</errorname>. </para>
-
-<para>To access these files you need to be logged in as the system
-administrator, often known as the Super User or <systemitem class="username">root</systemitem>. </para>
-
-<para>Rather than logging out then in again, you can launch &konqueror; from
-the
-<guimenu>K</guimenu> Menu in Super User mode by selecting
-<menuchoice><guisubmenu>System</guisubmenu><guimenuitem>File Manager - Super
- User Mode
-</guimenuitem></menuchoice>. You will be asked for the <systemitem class="username">root</systemitem>
-login password but as long as you can provide that &konqueror; will be started
-up with full access privileges to all files on your system.</para>
-
-<warning><para>Take care.  As Super User (<systemitem class="username">root</systemitem>), you have complete control of
-your system, and a wrong command can easily do irrevocable damage.</para>
-<para>Also, connecting to the internet as <systemitem class="username">root</systemitem> is an extremely bad idea, as it
-seriously increases your vulnerability to malicious hacking.</para></warning>
-
-</sect2-->
 </sect1>
-<!-- 4.5 -->
+<!-- 4.11 -->
 <sect1 id="file-associations">
 <title>Configuring File Associations</title>
 
@@ -1347,7 +1353,7 @@ and click on <guibutton>Help</guibutton>.</para>
 
 </sect1>
 
-<!-- 4.5 -->
+<!-- 4.11 -->
 <sect1 id="commandline">
 <title>At the Command Line</title>
 
@@ -1380,7 +1386,7 @@ Emulator</guimenuitem></menuchoice> option, which opens up a terminal window as
 a new view within &konqueror;. As long as the link icon is visible at the 
 bottom right corner of each view, the terminal will follow any folder changes 
 you make in the normal file manager view.</para>
-
+<!--FIXME link icon not visible ?-->
 <mediaobject>
 <imageobject><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
 <textobject>
@@ -1392,7 +1398,7 @@ you make in the normal file manager view.</para>
 
 </chapter>
 
-<chapter id="browser"> <!-- 4.5-->
+<chapter id="browser"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -1400,8 +1406,6 @@ you make in the normal file manager view.</para>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-10-25</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 
@@ -1413,7 +1417,7 @@ you make in the normal file manager view.</para>
 <phrase>Browsing www.konqueror.org</phrase>
 </textobject>
 </mediaobject>
-
+<!--FIXME rm this sect?-->
 <sect1 id="conn-inet">
 <title>Connecting to the Internet</title>
 
@@ -1530,7 +1534,7 @@ enabled you should see two new icons in the toolbar <guiicon><inlinemediaobject>
 page if you find it difficult to read. How well this works will
 depend on how the web page has been constructed.</para>
 </sect1>
-
+<!-- Tab works in filemanager mode as well-->
 <sect1 id="tabbrowse">
 <title>Tabbed Browsing</title>
 <para>By using this feature you can make &konqueror; load multiple web pages in
@@ -1616,7 +1620,7 @@ page from the current &konqueror; window and opens it in a new instance of
 </varlistentry>
 </variablelist>
 </sect1>
-
+<!--FIXME sync with or rm + link to kde-runtime/doc/kcontrol/ebrowsing/-->
 <sect1 id="enhanced-browsing">
 <title>Web Shortcuts</title> 
 
@@ -1715,7 +1719,7 @@ consequently this feature will be unusable on the given
 webpage.</para></note>
 
 </sect1>
-
+<!--FIXME sync with or rm + link to kde-runtime/doc/kcontrol/useragent/-->
 <sect1 id="useragent">
 <title>Browser Identification</title>
 <para>When &konqueror; connects to a web site it sends some brief browser 
@@ -1732,8 +1736,8 @@ selecting <menuchoice><guimenu>Web Browsing</guimenu><guimenuitem>
 Browser Identification</guimenuitem></menuchoice> page of the settings dialog.</para>
 <note><para>Problems with getting a web page to work properly may also be due 
 to its use of &Java; or JavaScript. If you suspect that this may be the case 
-check that they have been enabled in the <guilabel>Java &amp; JavaScript
-</guilabel> section of the settings dialog.</para></note>
+check that they have been enabled in the <guilabel>Java &amp; JavaScript</guilabel> 
+section of the settings dialog.</para></note>
 <note><para>Install the <guilabel>UserAgent Changer</guilabel> extension from the 
 &konqueror; Plugins and enable it in <menuchoice><guimenu>Settings</guimenu><guimenuitem>
 Configure Extensions</guimenuitem></menuchoice>. This extension adds a 
@@ -1891,7 +1895,7 @@ to <filename>$KDEDIR/share/config/kio_httprc
 
 </chapter>
 
-<chapter id="path-complete"> <!-- 4.5-->
+<chapter id="path-complete"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -1899,8 +1903,6 @@ to <filename>$KDEDIR/share/config/kio_httprc
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2010-10-26</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 
@@ -1977,15 +1979,13 @@ Text Completion function can be viewed and edited in the <guilabel>History
 
 </chapter>
 
-<chapter id="bookmarks"> <!-- 4.4-->
+<chapter id="bookmarks"> <!-- 4.11-->
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-09-24</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>Using Bookmarks</title>
@@ -2090,7 +2090,7 @@ the <guilabel>Bookmark Editor</guilabel>.
 
 </chapter>
 
-<chapter id="sidebar"> <!-- 4.4-->
+ <chapter id="sidebar"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -2098,8 +2098,6 @@ the <guilabel>Bookmark Editor</guilabel>.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-11-22</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
 </chapterinfo>
 
 <title>The Sidebar</title>
@@ -2200,24 +2198,11 @@ find your own <quote>Home</quote> folder again.</para>
 <term><guilabel>Services</guilabel></term>
 <listitem><para>This page provides quick access to the following services:
 </para>
-<para><guilabel>Applications</guilabel>, <guilabel>Audio CD Browser</guilabel> 
-and <guilabel>Fonts</guilabel>.</para>
-<!-- not in 4.4
-<para><guilabel>Devices</guilabel>. This shows your hard disc 
-partitions, floppy and &CD-ROM;. <mousebutton>Left</mousebutton> click on 
-a device or partition name to mount it and display its contents in the main 
-view.  A mounted device or partition can be unmounted by <mousebutton>right
-</mousebutton> clicking on the device name and selecting <guimenuitem>Unmount
-</guimenuitem> from the pop up menu.
-</para>
-<para>The <guilabel>LAN Browser</guilabel> allows you to browse other 
-machines connected to your Local Area Network.</para>
-<para>The <guilabel>Print System Browser</guilabel> tree gives you quick 
-access to &kde;'s print manager <application>Kprinter</application>.</para>
--->
+<para><guilabel>Applications</guilabel>, <guilabel>Audio CD Browser</guilabel>, 
+<guilabel>Fonts</guilabel> and <guilabel>Video DVD Browser</guilabel>.</para>
 </listitem>
 </varlistentry>
-<!-- begin copy from dolphin docbook-->
+<!-- Different in dolphin + filedialog-->
 <varlistentry>
 <term><guilabel>Places</guilabel></term>
 <listitem><para>
@@ -2233,7 +2218,6 @@ from the context menu.
 </para>
 </listitem>
 </varlistentry>
-<!-- end copy from dolphin docbook-->
 </variablelist>
 
 <para>The Sidebar configuration can be changed by <mousebutton>right
@@ -2313,7 +2297,7 @@ as described above.</para>
 
 </chapter>
 
-<chapter id="save-settings"> <!-- 4.4-->
+<chapter id="save-settings"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -2321,8 +2305,6 @@ as described above.</para>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-02-26</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
 </chapterinfo>
 
 <title>Saving Settings &amp; Profiles</title>
@@ -2330,8 +2312,8 @@ as described above.</para>
 <title>General Settings</title>
 <para>When you close down &konqueror; your current <guimenu>View</guimenu> 
 menu settings (such as the <guimenuitem>View Mode</guimenuitem>, 
-<guimenuitem>Use index.html</guimenuitem> and <guimenuitem>Show Hidden Files
-</guimenuitem> items) are not automatically saved as the default
+<guimenuitem>Use index.html</guimenuitem> and <guimenuitem>Show Hidden 
+Files</guimenuitem> items) are not automatically saved as the default
 options; however, you can have &konqueror; remember these settings by
 selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Save View
 Profile As...</guimenuitem></menuchoice> and the current
@@ -2393,7 +2375,7 @@ profile. Then change the name to something like <filename>MyNewProfile</filename
 </sect1>
 </chapter>
 
-<chapter id="plugins"> <!-- 4.5-->
+<chapter id="plugins"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -2401,8 +2383,6 @@ profile. Then change the name to something like <filename>MyNewProfile</filename
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-11-22</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
 </chapterinfo>
 
 
@@ -2488,34 +2468,28 @@ are listed in the dialog.</para>
 <variablelist>
 <title>Browser Mode</title>
 
- <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265
- But playground translatoid app works (using google?)
- and kmail using kdepim/pimcommon/translator/googletranslator.cpp ?
- -->
 <varlistentry>
 <term>Web Page Translation</term>
 <listitem><para>This uses the machine translation service provided by <ulink
-url="http://babelfish.yahoo.com/">Yahoo's BabelFish site</ulink> to translate the current
+url="http://translate.google.com/">Google Translate</ulink> to translate the current
 <acronym>HTML</acronym> page to whatever language you want (within reason). It
 can be launched with <menuchoice><guimenu>Tools</guimenu><guisubmenu>Translate
 Web Page</guisubmenu></menuchoice>.</para>
 <para>If you have a portion of the text on the page selected, that
 will be translated instead of the entire &URL;.</para>
 
-<para>Not all languages are available from the Babelfish service.</para>
-
 <important>
-<para>Machine translation is not a perfect science!  Babelfish will at
+<para>Machine translation is not a perfect science!  Google will at
 best give you a rough translation, and at worst will give you a very
 funny read.  Don't base important decisions on things you have read
-from a Babelfish translated page, without confirming that the
+from a Google translated page, without confirming that the
 translation is indeed accurate.</para>
 </important>
 
 <note> 
 <para>You may only translate web pages that are accessible on the
 world wide web.  To translate any other text, you should go directly
-to the Babelfish site itself, where you are able to paste in text for
+to the Google site itself, where you are able to paste in text for
 translation.</para>
 </note>
 </listitem>
@@ -2691,7 +2665,7 @@ archive file name to view the saved page.
 <title>File Manager Mode</title>
 
 <varlistentry>
-<term>Folder View Filter</term>
+<term>Directory Filter</term>
 <listitem><para>This is controlled by
 <menuchoice><shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>I</keycap></keycombo></shortcut>
 <guimenu>Tools</guimenu><guisubmenu>Show Filter Bar</guisubmenu></menuchoice> and allows you to choose which types of item
@@ -2918,7 +2892,7 @@ Additional Download Manager from KGet
 
 </chapter>
 
-<chapter id="view-extensions">
+<chapter id="view-extensions"> <!-- 4.11-->
 
 <title>View Mode Extensions</title>
 
@@ -2946,8 +2920,7 @@ from the application <application>Filelight</application> and the &konqueror; pl
 </author>
 
 </authorgroup>
-<date>2011-05-16</date>
-<releaseinfo>&kde; 4.7</releaseinfo>
+
 </sect1info>
 
 <title>&fsview; - the File System View</title>
@@ -3083,7 +3056,7 @@ usage tutorial for the TreeMap widget developed within
 </sect1>
 </chapter>
 
-<chapter id="config"> <!-- 4.4-->
+<chapter id="config"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -3091,8 +3064,6 @@ usage tutorial for the TreeMap widget developed within
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-02-07</date>
-<releaseinfo>4.4.0</releaseinfo>
 </chapterinfo>
 
 
@@ -3101,7 +3072,7 @@ usage tutorial for the TreeMap widget developed within
 <para>In common with the rest of &kde;, &konqueror; is highly configurable, so
 you can really get the look and feel that best fits your needs and
 wishes.</para>
-
+<!--FIXME replace with link to fundamentals-->
 <sect1 id="configure-bars">
 <title>Toolbars</title>
 
@@ -3134,7 +3105,7 @@ Browser or File Manager mode and whether you have &konqueror; plugins
 installed.</para>
 
 </sect1>
-
+<!--FIXME replace with link to fundamentals-->
 <sect1 id="configshort">
 <title>Shortcuts</title>
 <para>To change the shortcut key arrangements used by &konqueror; select 
@@ -3249,7 +3220,7 @@ use the <link linkend="bubble">What's This?</link> feature.</para>
 
 </chapter>
 
-<chapter id="commands"> <!-- 4.5-->
+<chapter id="commands"> <!-- 4.11-->
 
 <chapterinfo>
 <authorgroup>
@@ -3257,8 +3228,6 @@ use the <link linkend="bubble">What's This?</link> feature.</para>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-10-25</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>Command Reference</title>
@@ -3317,7 +3286,7 @@ applications are merged into &konqueror;'s menu. Help for these additional menu 
 you find in the handbook of the embedded application.</para>
 
 <sect2 id="menu-location">
-<title>The <guimenu>File</guimenu> Menu</title>
+<title>The File Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -3407,8 +3376,7 @@ image file to your own computer.</para>
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
-<guimenuitem>Save As...</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Save As...</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Only applies if you are viewing a document or web page, uses
 the <guilabel>Save As...</guilabel> dialog box to let you save a copy to your own
 computer.</para></listitem>
@@ -3476,7 +3444,7 @@ DF: The list of applications is entirely dynamic, it is the list of
 </sect2>
 
 <sect2 id="menu-edit">
-<title>The <guimenu>Edit</guimenu> Menu</title>
+<title>The Edit Menu</title>
 
 <!-- not in kde4
 note><para>Most items in the Menubar <guimenu>Edit</guimenu> menu can also be
@@ -3556,21 +3524,21 @@ a text editor.</para></listitem> </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Create New</guisubmenu></menuchoice> (File Manager mode)</term>
+<listitem><para>Creates a new object (such as a folder or a text file) in 
+the current folder. See the <link linkend="making">Create
+New...</link> section for more details.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <shortcut><keycap>F2</keycap>
 </shortcut><guimenu>Edit</guimenu>
 <guimenuitem>Rename</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Lets you rename a file or folder without 
 having to open the <guimenuitem>Properties...</guimenuitem> dialog box.
 </para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Edit</guimenu>
-<guisubmenu>Create New</guisubmenu></menuchoice> (File Manager mode)</term>
-<listitem><para>Creates a new object (such as a folder or a text file) in 
-the current folder. See the <link linkend="making">Create
-New...</link> section for more details.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -3774,7 +3742,7 @@ page you are previewing.</para></listitem>
 
 <sect2 id="menu-view">
 
-<title>The <guimenu>View</guimenu> Menu</title>
+<title>The View Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -3959,31 +3927,25 @@ choice.</para></listitem>
 </varlistentry>
 http://websvn.kde.org/?view=revision&revision=269436
 -->
-  <!--FIXME sync with Dolphin -->
+<!--FIXME synced with Dolphin 4.11-->
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode)</term>
-<listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
-<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
-<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
-<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem>.
-<guimenuitem>Descending</guimenuitem> reverses the sort order.
+<listitem><para><action>Changes whether items are sorted</action> by <guimenuitem>Name</guimenuitem>
+or other criteria described in <link linkend="dolphin-view-information">Information in the View</link>.</para>
+<para><guimenuitem>Descending</guimenuitem> reverses the sort order.
 <guimenuitem>Folders First</guimenuitem> sorts folders before files.
-</action></para></listitem>
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Additional Information</guisubmenu></menuchoice> (File Manager mode)</term>
-<listitem><para><action>Displays additional information</action> such as
-<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
-<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
-<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
-in the different views.</para></listitem>
+<listitem><para><action>Displays additional information</action> 
+described in <link linkend="dolphin-view-information">Information in the View</link>.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -4026,7 +3988,7 @@ Dialog</link>.</action></para></listitem>
 </sect2>
 
 <sect2 id="menu-go">
-<title>The <guimenu>Go</guimenu> Menu</title>
+<title>The Go Menu</title>
 
 <variablelist>
 
@@ -4176,7 +4138,7 @@ History</guimenuitem> to clear the submenu.</para>
 </sect2>
 
 <sect2 id="menu-bookmarks">
-<title>The <guimenu>Bookmarks</guimenu> Menu</title>
+<title>The Bookmarks Menu</title>
 
 <note><para>See the section <link linkend="bookmarks">Using Bookmarks</link>
 in this manual for a fuller description of these menu items.
@@ -4228,7 +4190,7 @@ folder.</para></listitem>
 </sect2>
 
 <sect2 id="menu-tools">
-<title>The <guimenu>Tools</guimenu> Menu</title>
+<title>The Tools Menu</title>
 
 <variablelist>
 
@@ -4267,7 +4229,7 @@ details.</para>
 </sect2>
 
 <sect2 id="menu-settings">
-<title>The <guimenu>Settings</guimenu> Menu</title>
+<title>The Settings Menu</title>
 
 <note><para>See also the section <link linkend="save-settings">Saving Settings
 and Profiles</link>.</para></note>
@@ -4427,7 +4389,7 @@ browser mode.
 </sect2>
 
 <sect2 id="menu-window">
-<title>The <guimenu>Window</guimenu> Menu</title>
+<title>The Window Menu</title>
 
 <variablelist>
 
@@ -4562,15 +4524,13 @@ to revisit the introductory pages that you got when
 
 </chapter>
 
-<chapter id="faq"> <!-- 4.5-->
+<chapter id="faq"> <!-- 4.11-->
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-10-24</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>Questions and Answers</title>
@@ -4627,12 +4587,12 @@ class="directory">~/.kde/share/config/</filename> the files
 settings.</para></listitem>
 
 <listitem><para>The folder
-<filename class="directory">~/.kde/share/cache-<replaceable>hostname</replaceable>/http/</filename> 
+<filename class="directory">~/.kde/cache-<replaceable>hostname</replaceable>/http/</filename> 
 contains the browser cache.</para></listitem>
 
 <listitem><para>The Sidebar uses the files and subfolders in
 <filename
-class="directory">~/.kde/share/apps/konqsidebartng</filename></para></listitem>
+class="directory">	</filename></para></listitem>
 </itemizedlist>
 
 <para>Any folder specific view settings are put into <literal
@@ -4730,8 +4690,6 @@ Konqueror's KDE Userbase page</ulink>.</para>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2013-05-14</date>
-<releaseinfo>&kde; 4.11</releaseinfo>
 </chapterinfo>
 
 
