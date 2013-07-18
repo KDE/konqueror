@@ -89,8 +89,6 @@ KFileItemModelRolesUpdater::KFileItemModelRolesUpdater(KFileItemModel* model, QO
     m_resolvableRoles(),
     m_enabledPlugins(),
     m_pendingSortRoleItems(),
-    m_hasUnknownIcons(false),
-    m_firstIndexWithoutIcon(0),
     m_pendingIndexes(),
     m_pendingPreviewItems(),
     m_previewJob(),
@@ -296,7 +294,7 @@ void KFileItemModelRolesUpdater::setRoles(const QSet<QByteArray>& roles)
 
                 m_nepomukResourceWatcher = new Nepomuk2::ResourceWatcher(this);
                 connect(m_nepomukResourceWatcher, SIGNAL(propertyChanged(Nepomuk2::Resource,Nepomuk2::Types::Property,QVariantList,QVariantList)),
-                        this, SLOT(applyChangedNepomukRoles(Nepomuk2::Resource)));
+                        this, SLOT(applyChangedNepomukRoles(Nepomuk2::Resource,Nepomuk2::Types::Property)));
             } else if (!hasNepomukRole && m_nepomukResourceWatcher) {
                 delete m_nepomukResourceWatcher;
                 m_nepomukResourceWatcher = 0;
@@ -333,10 +331,6 @@ void KFileItemModelRolesUpdater::slotItemsInserted(const KItemRangeList& itemRan
     QElapsedTimer timer;
     timer.start();
 
-    const int firstInsertedIndex = itemRanges.first().index;
-    m_firstIndexWithoutIcon = qMin(m_firstIndexWithoutIcon, firstInsertedIndex);
-    m_hasUnknownIcons = true;
-
     // Determine the sort role synchronously for as many items as possible.
     if (m_resolvableRoles.contains(m_model->sortRole())) {
         int insertedCount = 0;
@@ -372,11 +366,6 @@ void KFileItemModelRolesUpdater::slotItemsRemoved(const KItemRangeList& itemRang
     Q_UNUSED(itemRanges);
 
     const bool allItemsRemoved = (m_model->count() == 0);
-
-    if (m_hasUnknownIcons) {
-        const int firstRemovedIndex = itemRanges.first().index;
-        m_firstIndexWithoutIcon = qMin(m_firstIndexWithoutIcon, firstRemovedIndex);
-    }
 
     if (!m_watchedDirs.isEmpty()) {
         // Don't let KDirWatch watch for removed items
@@ -458,11 +447,6 @@ void KFileItemModelRolesUpdater::slotItemsMoved(const KItemRange& itemRange, QLi
 {
     Q_UNUSED(itemRange);
     Q_UNUSED(movedToIndexes);
-
-    if (m_hasUnknownIcons) {
-        const int firstMovedIndex = itemRange.index;
-        m_firstIndexWithoutIcon = qMin(m_firstIndexWithoutIcon, firstMovedIndex);
-    }
 
     // The visible items might have changed.
     startUpdating();
@@ -737,7 +721,7 @@ void KFileItemModelRolesUpdater::resolveRecentlyChangedItems()
     updateChangedItems();
 }
 
-void KFileItemModelRolesUpdater::applyChangedNepomukRoles(const Nepomuk2::Resource& resource)
+void KFileItemModelRolesUpdater::applyChangedNepomukRoles(const Nepomuk2::Resource& resource, const Nepomuk2::Types::Property& property)
 {
 #ifdef HAVE_NEPOMUK
     if (!Nepomuk2::ResourceManager::instance()->initialized()) {
@@ -756,6 +740,14 @@ void KFileItemModelRolesUpdater::applyChangedNepomukRoles(const Nepomuk2::Resour
     QHash<QByteArray, QVariant> data = rolesData(item);
 
     const KNepomukRolesProvider& rolesProvider = KNepomukRolesProvider::instance();
+    const QByteArray role = rolesProvider.roleForPropertyUri(property.uri());
+    if (!role.isEmpty() && m_roles.contains(role)) {
+        // Overwrite the changed role value with an empty QVariant, because the roles
+        // provider doesn't overwrite it when the property value list is empty.
+        // See bug 322348
+        data.insert(role, QVariant());
+    }
+
     QHashIterator<QByteArray, QVariant> it(rolesProvider.roleValues(resource, m_roles));
     while (it.hasNext()) {
         it.next();
@@ -829,13 +821,6 @@ void KFileItemModelRolesUpdater::startUpdating()
     // Determine the icons for the visible items synchronously.
     updateVisibleIcons();
 
-    // Try to do at least a fast icon loading (without determining the
-    // mime type) for all items, to reduce the risk that the user sees
-    // "unknown" icons when scrolling.
-    if (m_hasUnknownIcons) {
-        updateAllIconsFast(MaxBlockTimeout - timer.elapsed());
-    }
-
     // A detailed update of the items in and near the visible area
     // only makes sense if sorting is finished.
     if (m_state == ResolvingSortRole) {
@@ -887,58 +872,9 @@ void KFileItemModelRolesUpdater::updateVisibleIcons()
         applyResolvedRoles(item, ResolveFast);
     }
 
-    if (index > lastVisibleIndex) {
-        return;
-    }
-
-    // If this didn't work before MaxBlockTimeout was reached, at least
-    // prevent that the user sees 'unknown' icons.
-    disconnect(m_model, SIGNAL(itemsChanged(KItemRangeList,QSet<QByteArray>)),
-               this,    SLOT(slotItemsChanged(KItemRangeList,QSet<QByteArray>)));
-
-    while (index <= lastVisibleIndex) {
-        if (!m_model->data(index).contains("iconName")) {
-            const KFileItem item = m_model->fileItem(index);
-            QHash<QByteArray, QVariant> data;
-            data.insert("iconName", item.iconName());
-            m_model->setData(index, data);
-        }
-        ++index;
-    }
-
-    connect(m_model, SIGNAL(itemsChanged(KItemRangeList,QSet<QByteArray>)),
-            this,    SLOT(slotItemsChanged(KItemRangeList,QSet<QByteArray>)));
-}
-
-void KFileItemModelRolesUpdater::updateAllIconsFast(int timeout)
-{
-    if (timeout <= 0) {
-        return;
-    }
-
-    QElapsedTimer timer;
-    timer.start();
-
-    disconnect(m_model, SIGNAL(itemsChanged(KItemRangeList,QSet<QByteArray>)),
-               this,    SLOT(slotItemsChanged(KItemRangeList,QSet<QByteArray>)));
-
-    const int count = m_model->count();
-    while (m_firstIndexWithoutIcon < count && timer.elapsed() < timeout) {
-        if (!m_model->data(m_firstIndexWithoutIcon).contains("iconName")) {
-            const KFileItem item = m_model->fileItem(m_firstIndexWithoutIcon);
-            QHash<QByteArray, QVariant> data;
-            data.insert("iconName", item.iconName());
-            m_model->setData(m_firstIndexWithoutIcon, data);
-        }
-        ++m_firstIndexWithoutIcon;
-    }
-
-    if (m_firstIndexWithoutIcon == count) {
-        m_hasUnknownIcons = false;
-    }
-
-    connect(m_model, SIGNAL(itemsChanged(KItemRangeList,QSet<QByteArray>)),
-            this,    SLOT(slotItemsChanged(KItemRangeList,QSet<QByteArray>)));
+    // KFileItemListView::initializeItemListWidget(KItemListWidget*) will load
+    // preliminary icons (i.e., without mime type determination) for the
+    // remaining items.
 }
 
 void KFileItemModelRolesUpdater::startPreviewJob()

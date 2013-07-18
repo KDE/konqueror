@@ -43,6 +43,10 @@ class QTimer;
     {
         class ResourceWatcher;
         class Resource;
+        namespace Types
+        {
+            class Property;
+        }
     }
 #else
     // Required for the slot applyChangedNepomukRoles() that
@@ -208,7 +212,7 @@ private slots:
      */
     void resolveRecentlyChangedItems();
 
-    void applyChangedNepomukRoles(const Nepomuk2::Resource& resource);
+    void applyChangedNepomukRoles(const Nepomuk2::Resource& resource, const Nepomuk2::Types::Property& property);
 
     /**
      * Is invoked if a directory watched by KDirWatch got dirty. Updates
@@ -231,12 +235,6 @@ private:
      * (b) "unknown" icons could be shown in the view.
      */
     void updateVisibleIcons();
-
-    /**
-     * Tries to load at least preliminary icons (without determining the
-     * mime type) for all items for \a timeout milliseconds.
-     */
-    void updateAllIconsFast(int timeout);
 
     /**
      * Creates previews for the items starting from the first item in
@@ -325,11 +323,6 @@ private:
 
     // Items for which the sort role still has to be determined.
     QSet<KFileItem> m_pendingSortRoleItems;
-
-    // Determines if the next call of startUpdating() will try to do a fast
-    // icon loading (i.e., without determining the mime type) for all items.
-    bool m_hasUnknownIcons;
-    int m_firstIndexWithoutIcon;
 
     // Indexes of items which still have to be handled by
     // resolveNextPendingRoles().
