@@ -59,12 +59,12 @@ class ScanListener
 {
  public:
   virtual ~ScanListener(){}
-  virtual void scanStarted(ScanDir*) {};
-  virtual void sizeChanged(ScanDir*) {};
-  virtual void scanFinished(ScanDir*) {};
+  virtual void scanStarted(ScanDir*) {}
+  virtual void sizeChanged(ScanDir*) {}
+  virtual void scanFinished(ScanDir*) {}
   // destroyed events are not delivered to listeners of ScanManager
-  virtual void destroyed(ScanDir*) {};
-  virtual void destroyed(ScanFile*) {};
+  virtual void destroyed(ScanDir*) {}
+  virtual void destroyed(ScanFile*) {}
 };
 
 
@@ -206,6 +206,7 @@ class ScanDir
 
  private:
   void update();
+  bool isForbiddenDir(QString&);
 
   /* this propagates file count and size to upper dirs */
   void subScanFinished();
