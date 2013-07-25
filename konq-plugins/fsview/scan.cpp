@@ -18,6 +18,7 @@
 
 #include <qdir.h>
 #include <qstringlist.h>
+#include <qset.h>
 
 #include <kdebug.h>
 #include <kurl.h>
@@ -216,12 +217,33 @@ void ScanDir::update()
   }
 }
 
+bool ScanDir::isForbiddenDir(QString& d)
+{
+    static QSet<QString>* s = 0;
+
+    if (!s) {
+        s = new QSet<QString>;
+        // directories without real files on Linux
+        // TODO: should be OS specific
+        s->insert("/proc");
+        s->insert("/dev");
+        s->insert("/sys");
+    }
+    return (s->contains(d));
+}
+
 int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 {
   clear();
   _dirsFinished = 0;
   _fileSize = 0;
   _dirty = true;
+
+  if (isForbiddenDir(si->absPath)) {
+      if (_parent)
+          _parent->subScanFinished();
+      return 0;
+  }
 
   KUrl u;
   u.setPath(si->absPath);
@@ -257,10 +279,12 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
     _dirs.reserve(dirList.count());
 
     QStringList::ConstIterator it;
-    for (it = dirList.constBegin(); it != dirList.constEnd(); ++it ) {      
+    for (it = dirList.constBegin(); it != dirList.constEnd(); ++it ) {
       _dirs.append( ScanDir(*it, _manager, this, data) );
-      list.append( new ScanItem( si->absPath + '/' + (*it), 
-				 &(_dirs.last()) ));
+      QString newpath = si->absPath;
+      if (!newpath.endsWith(QChar('/'))) newpath.append("/");
+      newpath.append(*it);
+      list.append( new ScanItem( newpath, &(_dirs.last()) ));
     }
     _dirCount += _dirs.count();
   }
