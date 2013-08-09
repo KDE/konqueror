@@ -536,8 +536,8 @@ component.</para></note>
 <listitem><para>
 In the <guibutton>Icons</guibutton> view, which is the default, files will be
 represented by an icon that visualizes the file type, and a folder icon will be
-shown for subfolders. The names of folders and files and the items enabled in
-<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice> 
+shown for subfolders. The names of folders and files, and the items enabled in
+<menuchoice><guimenu>View</guimenu><guisubmenu>Additional Information</guisubmenu></menuchoice>,
 are displayed below the icons.
 </para></listitem>
 
@@ -564,10 +564,10 @@ the extension is replaced by <quote>...</quote>
 the <guilabel>Name</guilabel> header, which is always the first column in this view.
 </para>
 <para>
-The details view permits to view the current directory in a tree-like fashion if 
+The details view allows you to view the current directory in a tree-like fashion if
 <guilabel>Expandable folders</guilabel> are enabled: 
 Each subfolder of the current folder can be
-<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&lt;</guiicon> 
+<quote>expanded</quote> or <quote>collapsed</quote> by clicking on the <guiicon>&gt;</guiicon>
 or <guiicon>v</guiicon> icon next to it.</para></listitem>
 </itemizedlist>
 
@@ -626,7 +626,7 @@ more information for each item to be shown:
 <guimenuitem>Tags</guimenuitem> or <guimenuitem>Comment</guimenuitem>.
 </para>
 
-<para>Depending on the file type additionally sorting criteria can be selected:
+<para>Depending on the file type, additionally, sorting criteria can be selected:
 <simplelist>
   <member><guimenuitem>Document</guimenuitem>: Number of words and lines</member>
   <member><guimenuitem>Image</guimenuitem>: Size and orientation</member>
@@ -1092,7 +1092,7 @@ If <guilabel>Show selection marker</guilabel> is enabled in the
 <guilabel>Behavior</guilabel> tab of the <menuchoice><guimenu>File Management</guimenu>
 <guimenuitem>General</guimenuitem></menuchoice> section of the settings, a small
 <guiicon>+</guiicon> or <guiicon>-</guiicon> button appears in the top
-left corner of the item which is currently hovered with the mouse. Clicking
+left corner of the item which is currently hovered over with the mouse. Clicking
 this sign selects or deselects the item, respectively.
 </para></listitem>
 
