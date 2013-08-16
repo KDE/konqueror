@@ -185,11 +185,15 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
         if (!bm.isGroup())
         {
 	    if ( bm.isSeparator() )
-                m_toolBar->addSeparator();
+                if (m_toolBar) {
+                    m_toolBar->addSeparator();
+                }
             else
             {
                 KAction *action = new KBookmarkAction( bm, m_pOwner, 0 );
-                m_toolBar->addAction(action);
+                if (m_toolBar) {
+                    m_toolBar->addAction(action);
+                }
                 d->m_actions.append( action );
             }
         }
@@ -197,7 +201,9 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
         {
             KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, 0);
             action->setDelayed( false );
-            m_toolBar->addAction(action);
+            if (m_toolBar) {
+                m_toolBar->addAction(action);
+            }
             d->m_actions.append( action );
             KBookmarkMenu *menu = new KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
             m_lstSubMenus.append( menu );
