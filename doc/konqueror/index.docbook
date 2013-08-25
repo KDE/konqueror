@@ -2449,7 +2449,19 @@ kdebase apps
   shellcmdplugin (file manager mode)
   
 kdenetwork
-  kget (browser mode)
+  Download Manager kget (browser mode)
+
+kdepim
+  Konqueror Feed Icon akregator
+  
+extragear/network
+  Konqueror Choqok Plugin
+
+extragear/base
+  Nepomuk-Webminer Plugin
+
+playground/utils  
+  Userscript (Grease Monkey) Support khtml_userscript
 -->
 
 <sect1 id="konq-plugin">
@@ -2462,12 +2474,16 @@ kdenetwork
 Extensions...</guimenuitem></menuchoice> to open a dialog with all installed plugins and select
 the ones you need. All plugins are accessible in the <guimenu>Tools</guimenu> menu.</para>
 
-<para>Only plugins appropriate for the current mode (file manager or browser) 
+<para>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebKit view) 
 are listed in the dialog.</para>
 
 <variablelist>
 <title>Browser Mode</title>
-
+<!-- 
+FIXME 4.11
+KHTML:  Adblock, Auto Refresh, Bookmarklets, Document Relations, DOM Tree Viewer, KHTML Settings, Search Bar, Text-to-Speech, Translate, UserAgent Changer, Web Archiver, Website Validators
+WebKit: Auto Refresh, KHTML Settings, Search Bar, Text-to-Speech, Translate, UserAgent Changer, Website Validators
+-->
 <varlistentry>
 <term>Web Page Translation</term>
 <listitem><para>This uses the machine translation service provided by <ulink
@@ -2496,7 +2512,7 @@ translation.</para>
 </varlistentry>
 
 <varlistentry>
-<term>DOM Tree Viewer</term>
+<term>DOM Tree Viewer (KHTML view only)</term>
 <listitem>
 <para>The <acronym>DOM</acronym> Tree Viewer allows a developer to view 
 the styles, attributes and elements of a web document.</para>
@@ -2650,7 +2666,7 @@ The following menu items show a list of popular browsers such as <guimenuitem>Fi
 </varlistentry>
 
 <varlistentry>
-<term>Archive Web Page</term>
+<term>Archive Web Page (KHTML view only)</term>
 <listitem><para>Invoked with <menuchoice><guimenu>Tools</guimenu><guisubmenu>
 Archive Web Page</guisubmenu></menuchoice>, this tool creates an archive 
 (<literal role="extension">.war</literal> ) file containing the web page being 
@@ -3662,9 +3678,9 @@ folders.</para></listitem>
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> 
+  <!-- Alternate keycombo action="simul">&Shift;<keycap>/</keycap></keycombo--><!--FIXME not webkit-->
 </shortcut><guimenu>Edit</guimenu>
-<guimenuitem>Find...</guimenuitem></menuchoice> 
-or <keycombo action="simul">&Shift;<keycap>/</keycap></keycombo> (Browser mode)</term>
+<guimenuitem>Find...</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Displays the search bar at the bottom of the current window.
 Start typing to find a text string in a text page you are previewing or in an &HTML;
 page.</para></listitem>
@@ -4512,7 +4528,7 @@ current one.</para></listitem>
 </sect2>
 
 <sect2 id="menu-help">
-<title>The <guimenu>Help</guimenu> Menu</title>
+<title>The Help Menu</title>
 <para>Apart from standard &kde; <guimenu>Help</guimenu> menu items
 described in the section <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
 of the &kde; Fundamentals you will have the menu entry <guimenuitem>&konqueror; Introduction</guimenuitem>
