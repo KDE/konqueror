@@ -184,10 +184,12 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
 
         if (!bm.isGroup())
         {
-	    if ( bm.isSeparator() )
+            if ( bm.isSeparator() )
+            {
                 if (m_toolBar) {
                     m_toolBar->addSeparator();
                 }
+            }
             else
             {
                 KAction *action = new KBookmarkAction( bm, m_pOwner, 0 );
