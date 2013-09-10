@@ -33,7 +33,7 @@ AboutProtocol::~AboutProtocol()
 {
 }
 
-void AboutProtocol::get( const KUrl& )
+void AboutProtocol::get( const QUrl& )
 {
     QByteArray output;
     
@@ -48,17 +48,14 @@ void AboutProtocol::get( const KUrl& )
     finished();
 }
 
-void AboutProtocol::mimetype( const KUrl& )
+void AboutProtocol::mimetype( const QUrl& )
 {
     mimeType("text/html");
     finished();
 }
 
-extern "C"
+extern "C" Q_DECL_EXPORT int kdemain( int argc, char **argv )
 {
-    int KDE_EXPORT kdemain( int argc, char **argv ) {
-
-        KComponentData componentData("kio_about");
 
         if (argc != 4)
         {
@@ -71,5 +68,4 @@ extern "C"
 
         return 0;
     }
-}
 

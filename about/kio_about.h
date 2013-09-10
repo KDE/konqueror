@@ -20,6 +20,7 @@
 #ifndef __kio_about_h__
 #define __kio_about_h__
 
+#include <QUrl>
 #include <QByteArray>
 
 #include <kio/global.h>
@@ -32,8 +33,8 @@ public:
     AboutProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
     virtual ~AboutProtocol();
 
-    virtual void get(const KUrl& url);
-    virtual void mimetype(const KUrl& url);
+    virtual void get(const QUrl& url);
+    virtual void mimetype(const QUrl& url);
 };
 
 #endif
