@@ -20,8 +20,6 @@
 
 #include "kio_about.h"
 
-#include <kcomponentdata.h>
-
 using namespace KIO;
 
 AboutProtocol::AboutProtocol(const QByteArray &pool_socket, const QByteArray &app_socket)
