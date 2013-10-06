@@ -110,7 +110,7 @@ static bool autoDetectSystemProxy(QLineEdit* edit, const QString& envVarStr)
     Q_FOREACH (const QString & envVar, envVars) {
         const QByteArray envVarUtf8(envVar.toUtf8());
         if (!qgetenv(envVarUtf8.constData()).isEmpty()) {
-            edit->setText(envVarStr);
+            edit->setText(envVar);
             return true;
         }
     }
@@ -260,6 +260,7 @@ KProxyDialog::KProxyDialog(QWidget* parent, const QVariantList& args)
     connect(mUi.autoDiscoverProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(mUi.autoScriptProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(mUi.manualProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(mUi.systemProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(mUi.noProxyRadioButton, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(mUi.useReverseProxyCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(mUi.useSameProxyCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
@@ -277,11 +278,11 @@ KProxyDialog::KProxyDialog(QWidget* parent, const QVariantList& args)
     connect(mUi.manualProxyFtpSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
     connect(mUi.manualProxySocksSpinBox, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
 
-    connect(mUi.systemProxyHttpEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
-    connect(mUi.systemProxyHttpsEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
-    connect(mUi.systemProxyFtpEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
-    connect(mUi.systemProxySocksEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
-    connect(mUi.systemNoProxyEdit, SIGNAL(textChanged(QString)), SLOT(slotChanged()));    
+    connect(mUi.systemProxyHttpEdit, SIGNAL(textEdited(QString)), SLOT(slotChanged()));
+    connect(mUi.systemProxyHttpsEdit, SIGNAL(textEdited(QString)), SLOT(slotChanged()));
+    connect(mUi.systemProxyFtpEdit, SIGNAL(textEdited(QString)), SLOT(slotChanged()));
+    connect(mUi.systemProxySocksEdit, SIGNAL(textEdited(QString)), SLOT(slotChanged()));
+    connect(mUi.systemNoProxyEdit, SIGNAL(textEdited(QString)), SLOT(slotChanged()));
 }
 
 KProxyDialog::~KProxyDialog()
@@ -371,11 +372,20 @@ void KProxyDialog::save()
         displayUrlFlags = flags;
     } else if (mUi.systemProxyRadioButton->isChecked()) {
         proxyType = KProtocolManager::EnvVarProxy;
-        mProxyMap[QL1S("HttpProxy")] = mUi.systemProxyHttpEdit->text();
-        mProxyMap[QL1S("HttpsProxy")] = mUi.systemProxyHttpsEdit->text();
-        mProxyMap[QL1S("FtpProxy")] = mUi.systemProxyFtpEdit->text();
-        mProxyMap[QL1S("SocksProxy")] = mUi.systemProxySocksEdit->text();
-        mProxyMap[QL1S("NoProxy")] = mUi.systemNoProxyEdit->text();
+        if (!mUi.showEnvValueCheckBox->isChecked()) {
+            mProxyMap[QL1S("HttpProxy")] = mUi.systemProxyHttpEdit->text();
+            mProxyMap[QL1S("HttpsProxy")] = mUi.systemProxyHttpsEdit->text();
+            mProxyMap[QL1S("FtpProxy")] = mUi.systemProxyFtpEdit->text();
+            mProxyMap[QL1S("SocksProxy")] = mUi.systemProxySocksEdit->text();
+            mProxyMap[QL1S("NoProxy")] = mUi.systemNoProxyEdit->text();
+        }
+        else {
+            mProxyMap[QL1S("HttpProxy")] = mProxyMap.take(QL1S("EnvVarProxyHttp"));
+            mProxyMap[QL1S("HttpsProxy")] = mProxyMap.take(QL1S("EnvVarProxyHttps"));
+            mProxyMap[QL1S("FtpProxy")] = mProxyMap.take(QL1S("EnvVarProxyFtp"));
+            mProxyMap[QL1S("SocksProxy")] = mProxyMap.take(QL1S("EnvVarProxySocks"));
+            mProxyMap[QL1S("NoProxy")] = mProxyMap.take(QL1S("EnvVarNoProxy"));
+        }
     } else if (mUi.autoScriptProxyRadioButton->isChecked()) {
         proxyType = KProtocolManager::PACProxy;
         mProxyMap[QL1S("ProxyScript")] = mUi.proxyScriptUrlRequester->text();
