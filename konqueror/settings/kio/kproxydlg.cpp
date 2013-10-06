@@ -165,10 +165,6 @@ static void setProxyInformation(const QString& value,
                                 QSpinBox* spinBox ,
                                 KProxyDialog::DisplayUrlFlag flag)
 {
-    if (value.isEmpty()) {
-        return;
-    }
-
     kDebug() << value << "type=" << proxyType << manEdit << sysEdit << spinBox;
     const bool isSysProxy = (!value.contains(QL1C(' ')) &&
                              !value.contains(QL1C('.')) &&
