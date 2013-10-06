@@ -296,6 +296,9 @@ void KProxyDialog::load()
 
     const int proxyType = KProtocolManager::proxyType();
 
+    // Make sure showEnvValueCheckBox is unchecked before setting proxy env var names
+    mUi.showEnvValueCheckBox->setChecked(false);
+
     setProxyInformation(mProxyMap.value(QL1S("HttpProxy")), proxyType, mUi.manualProxyHttpEdit, mUi.systemProxyHttpEdit, mUi.manualProxyHttpSpinBox, HideHttpUrlScheme);
     setProxyInformation(mProxyMap.value(QL1S("HttpsProxy")), proxyType, mUi.manualProxyHttpsEdit, mUi.systemProxyHttpsEdit, mUi.manualProxyHttpsSpinBox, HideHttpsUrlScheme);
     setProxyInformation(mProxyMap.value(QL1S("FtpProxy")), proxyType, mUi.manualProxyFtpEdit, mUi.systemProxyFtpEdit, mUi.manualProxyFtpSpinBox, HideFtpUrlScheme);
