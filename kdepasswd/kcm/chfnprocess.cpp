@@ -86,7 +86,7 @@ int ChfnProcess::ConverseChfn(const char *pass)
       status=0;
       break;
     }
-    else if ( line.contains( "Password error" ) || line.contains("Incorrect password") )
+    else if ( line.contains( "Password error" ) || line.contains("Incorrect password") || line.contains("Authentication failure") )
     {
       status=PasswordError;
       break;
