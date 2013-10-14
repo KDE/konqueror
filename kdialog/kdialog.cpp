@@ -278,9 +278,15 @@ static int directCommand(KCmdLineArgs *args)
         option = "sorry";
         type = KMessageBox::Sorry;
     }
+    else if (args->isSet("detailedsorry")) {
+        option = "detailedsorry";
+    }
     else if (args->isSet("error")) {
         option = "error";
         type = KMessageBox::Error;
+    }
+    else if (args->isSet("detailederror")) {
+        option = "detailederror";
     }
     else if (args->isSet("msgbox")) {
         option = "msgbox";
@@ -305,13 +311,22 @@ static int directCommand(KCmdLineArgs *args)
           else
             qDebug( "Incorrect --dontagain!" );
         }
-        int ret;
+        int ret = 0;
 
         QString text = Widgets::parseString(args->getOption(option));
+
+        QString details;
+        if (args->count() == 1) {
+            details = Widgets::parseString(args->arg(0));
+        }
 
         if ( type == KMessageBox::WarningContinueCancel ) {
             ret = KMessageBox::messageBox( 0, type, text, title, continueButton,
                 noButton, cancelButton, dontagain );
+        } else if (option == "detailedsorry") {
+            KMessageBox::detailedSorry( 0, text, details, title );
+        } else if (option == "detailederror") {
+            KMessageBox::detailedError( 0, text, details, title );
         } else {
             ret = KMessageBox::messageBox( 0, type, text, title,
                 yesButton, noButton, cancelButton, dontagain );
@@ -852,7 +867,9 @@ int main(int argc, char *argv[])
   options.add("cancel-label <text>", ki18n("Use text as Cancel button label"));
   options.add("continue-label <text>", ki18n("Use text as Continue button label"));
   options.add("sorry <text>", ki18n("'Sorry' message box"));
+  options.add("detailedsorry <text> <details>", ki18n("'Sorry' message box with expandable Details field"));
   options.add("error <text>", ki18n("'Error' message box"));
+  options.add("detailederror <text> <details>", ki18n("'Error' message box with expandable Details field"));
   options.add("msgbox <text>", ki18n("Message Box dialog"));
   options.add("inputbox <text> <init>", ki18n("Input Box dialog"));
   options.add("password <text>", ki18n("Password dialog"));
