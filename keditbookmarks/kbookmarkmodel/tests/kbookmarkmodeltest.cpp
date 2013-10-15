@@ -166,15 +166,19 @@ private Q_SLOTS:
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0" << "/0/1" << "/1/");
         QCOMPARE(m_model->rowCount(m_rootIndex), 2);
 
-        QModelIndex firstIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/0"));
-        kdeIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/0/1"));
-        mimeData = m_model->mimeData(QModelIndexList() << firstIndex << kdeIndex);
-        QModelIndex folder2Index = m_model->indexForBookmark(m_bookmarkManager->findByAddress("/1"));
-        ok = m_model->dropMimeData(mimeData, Qt::MoveAction, -1, 0, folder2Index);
-        QVERIFY(ok);
+        moveTwoBookmarks("/0/0", "/0/1", "/1");
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/1/" << "/1/0" << "/1/1");
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << kde << first);
-        delete mimeData;
+
+        // Move bookmarks from /1 into subfolder /1/2 (which will become /1/0)
+        m_cmdHistory->addCommand(new CreateCommand(m_model, "/1/2", "subfolder", "subfolder", true));
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/1/" << "/1/0" << "/1/1" << "/1/2/");
+        moveTwoBookmarks("/1/0", "/1/1", "/1/2");
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/1/" << "/1/0/" << "/1/0/0" << "/1/0/1");
+
+        // Move them up again
+        moveTwoBookmarks("/1/0/0", "/1/0/1", "/1");
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/1/" << "/1/0" << "/1/1" << "/1/2/");
 
         undoAll();
     }
@@ -210,6 +214,16 @@ private Q_SLOTS:
     }
 
 private:
+    void moveTwoBookmarks(const QString &src1, const QString &src2, const QString &dest)
+    {
+        const QModelIndex firstIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress(src1));
+        const QModelIndex secondIndex = m_model->indexForBookmark(m_bookmarkManager->findByAddress(src2));
+        QMimeData *mimeData = m_model->mimeData(QModelIndexList() << firstIndex << secondIndex);
+        QModelIndex folder2Index = m_model->indexForBookmark(m_bookmarkManager->findByAddress(dest));
+        QVERIFY(m_model->dropMimeData(mimeData, Qt::MoveAction, -1, 0, folder2Index));
+        delete mimeData;
+    }
+
     void undoAll()
     {
         QAction* undoAction = m_collection.action(KStandardAction::name(KStandardAction::Undo));

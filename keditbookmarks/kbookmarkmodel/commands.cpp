@@ -516,37 +516,26 @@ KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark
         const QString &newAddress, bool copy) {
     KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18nc("(qtundo-format)", "Copy Items")
             : i18nc("(qtundo-format)", "Move Items"));
-
-    QList<KBookmark>::const_iterator it, end;
-    it = items.constBegin();
-    end = items.constEnd();
-
     QString bkInsertAddr = newAddress;
-    for (; it != end; ++it) {
-        if (copy) {
-            CreateCommand *cmd = new CreateCommand(model,
+    foreach (const KBookmark &bk, items) {
+        CreateCommand *cmd = new CreateCommand(model,
                     bkInsertAddr,
-                    KBookmark((*it).internalElement()
-                    .cloneNode(true).toElement()),
-                    (*it).text(), mcmd);
-
-            //cmd->redo();
-
-            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
-
-        } else /* if (move) */ {
-            const QString oldAddress = (*it).address();
-            if (bkInsertAddr.startsWith(oldAddress))
-                continue; // trying to insert a parent into one of its children, ignore :)
-
-            MoveCommand *cmd = new MoveCommand(model, oldAddress, bkInsertAddr,
-                                               (*it).text(), mcmd);
-            //cmd->redo();
-
-            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
-        }
-
+                    KBookmark(bk.internalElement().cloneNode(true).toElement()),
+                    bk.text(), mcmd);
         bkInsertAddr = KBookmark::nextAddress(bkInsertAddr);
+    }
+
+    mcmd->redo();
+    QStringList addresses;
+    foreach (const KBookmark &bk, items) {
+        addresses.append(bk.address());
+    }
+    mcmd->undo();
+
+    if (!copy) { // move
+        foreach (const QString &address, addresses) {
+            new DeleteCommand(model, address, false, mcmd);
+        }
     }
 
     return mcmd;
