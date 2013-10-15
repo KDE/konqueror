@@ -499,54 +499,40 @@ KEBMacroCommand* CmdGen::insertMimeSource(KBookmarkModel* model, const QString &
     QString currentAddress = addr;
     QDomDocument doc;
     const KBookmark::List bookmarks = KBookmark::List::fromMimeData(data, doc);
-    KBookmark::List::const_iterator it, end;
-    end = bookmarks.constEnd();
-
-    for (it = bookmarks.constBegin(); it != end; ++it)
-    {
-        new CreateCommand(model, currentAddress, (*it), QString(), mcmd);
+    foreach (const KBookmark &bk, bookmarks) {
+        new CreateCommand(model, currentAddress, bk, QString(), mcmd);
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
 }
 
 
-//FIXME copy=true needed? what is the difference with insertMimeSource
 KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items,
-        const QString &newAddress, bool copy) {
+        const QString &newAddress, bool copy)
+{
+    Q_ASSERT(!copy); // always called for a move, never for a copy (that's what insertMimeSource is about)
+    Q_UNUSED(copy); // TODO: remove
+
     KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18nc("(qtundo-format)", "Copy Items")
             : i18nc("(qtundo-format)", "Move Items"));
-
-    QList<KBookmark>::const_iterator it, end;
-    it = items.constBegin();
-    end = items.constEnd();
-
     QString bkInsertAddr = newAddress;
-    for (; it != end; ++it) {
-        if (copy) {
-            CreateCommand *cmd = new CreateCommand(model,
-                    bkInsertAddr,
-                    KBookmark((*it).internalElement()
-                    .cloneNode(true).toElement()),
-                    (*it).text(), mcmd);
-
-            //cmd->redo();
-
-            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
-
-        } else /* if (move) */ {
-            const QString oldAddress = (*it).address();
-            if (bkInsertAddr.startsWith(oldAddress))
-                continue; // trying to insert a parent into one of its children, ignore :)
-
-            MoveCommand *cmd = new MoveCommand(model, oldAddress, bkInsertAddr,
-                                               (*it).text(), mcmd);
-            //cmd->redo();
-
-            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
-        }
-
+    foreach (const KBookmark &bk, items) {
+        new CreateCommand(model, bkInsertAddr,
+                          KBookmark(bk.internalElement().cloneNode(true).toElement()),
+                          bk.text(), mcmd);
         bkInsertAddr = KBookmark::nextAddress(bkInsertAddr);
+    }
+
+    // Do the copying, and get the updated addresses of the bookmarks to remove.
+    mcmd->redo();
+    QStringList addresses;
+    foreach (const KBookmark &bk, items) {
+        addresses.append(bk.address());
+    }
+    mcmd->undo();
+
+    foreach (const QString &address, addresses) {
+        new DeleteCommand(model, address, false, mcmd);
     }
 
     return mcmd;
