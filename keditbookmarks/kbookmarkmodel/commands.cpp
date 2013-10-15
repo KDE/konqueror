@@ -499,12 +499,8 @@ KEBMacroCommand* CmdGen::insertMimeSource(KBookmarkModel* model, const QString &
     QString currentAddress = addr;
     QDomDocument doc;
     const KBookmark::List bookmarks = KBookmark::List::fromMimeData(data, doc);
-    KBookmark::List::const_iterator it, end;
-    end = bookmarks.constEnd();
-
-    for (it = bookmarks.constBegin(); it != end; ++it)
-    {
-        new CreateCommand(model, currentAddress, (*it), QString(), mcmd);
+    foreach (const KBookmark &bk, bookmarks) {
+        new CreateCommand(model, currentAddress, bk, QString(), mcmd);
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
