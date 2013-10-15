@@ -153,6 +153,7 @@ class KBOOKMARKMODEL_EXPORT CmdGen {
 public:
    static KEBMacroCommand* setAsToolbar(KBookmarkModel* model, const KBookmark &bk);
    static KEBMacroCommand* insertMimeSource(KBookmarkModel* model, const QString &cmdName, const QMimeData *data, const QString &addr);
+   // TODO remove "bool copy"
    static KEBMacroCommand* itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items, const QString &newAddress, bool copy);
 private:
    CmdGen() {}

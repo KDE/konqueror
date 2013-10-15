@@ -511,20 +511,23 @@ KEBMacroCommand* CmdGen::insertMimeSource(KBookmarkModel* model, const QString &
 }
 
 
-//FIXME copy=true needed? what is the difference with insertMimeSource
 KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items,
-        const QString &newAddress, bool copy) {
+        const QString &newAddress, bool copy)
+{
+    Q_ASSERT(!copy); // always called for a move, never for a copy (that's what insertMimeSource is about)
+    Q_UNUSED(copy); // TODO: remove
+
     KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18nc("(qtundo-format)", "Copy Items")
             : i18nc("(qtundo-format)", "Move Items"));
     QString bkInsertAddr = newAddress;
     foreach (const KBookmark &bk, items) {
-        CreateCommand *cmd = new CreateCommand(model,
-                    bkInsertAddr,
-                    KBookmark(bk.internalElement().cloneNode(true).toElement()),
-                    bk.text(), mcmd);
+        new CreateCommand(model, bkInsertAddr,
+                          KBookmark(bk.internalElement().cloneNode(true).toElement()),
+                          bk.text(), mcmd);
         bkInsertAddr = KBookmark::nextAddress(bkInsertAddr);
     }
 
+    // Do the copying, and get the updated addresses of the bookmarks to remove.
     mcmd->redo();
     QStringList addresses;
     foreach (const KBookmark &bk, items) {
@@ -532,10 +535,8 @@ KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark
     }
     mcmd->undo();
 
-    if (!copy) { // move
-        foreach (const QString &address, addresses) {
-            new DeleteCommand(model, address, false, mcmd);
-        }
+    foreach (const QString &address, addresses) {
+        new DeleteCommand(model, address, false, mcmd);
     }
 
     return mcmd;
