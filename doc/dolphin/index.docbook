@@ -747,6 +747,7 @@ current folder, &RMB; click in the work space and click
 
 <sect2 id="finding-searching-in-file">
 <title>Finding Files and Searching in Files</title>
+<!-- FIXME search in hidden files + folders View -> Show Hidden Files has to be enabled ? -->
 <para>
 &dolphin; is capable of searching for files and for content in files. If <keycombo action="simul">
 &Ctrl;<keycap>F</keycap></keycombo> is pressed or <menuchoice> <guimenu>Edit</guimenu> 
@@ -1121,7 +1122,13 @@ structure and in archives works.
 (<guilabel>Single-click to open files and folders</guilabel>) or a double mouse
 click (<guilabel>Double-click to open files and folders</guilabel>). In the
 latter case, a single mouse click will select the file or folder.
-</para></listitem>
+</para>
+<note>
+<para>This is a system wide setting and can be changed in the &systemsettings; in the
+<menuchoice><guimenu>Input Devices</guimenu> <guimenuitem>Mouse</guimenuitem></menuchoice> 
+module as well.</para>
+</note>
+</listitem>
 
 <listitem><para>
 Archives will be opened inside &dolphin;, and not in an external application, if
