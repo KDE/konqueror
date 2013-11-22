@@ -580,7 +580,7 @@ folder opens a menu which allows you to quickly open a subfolder of that folder.
 
 <para>
 When in bread crumb mode, clicking in the gray area to the right of the path
-with the &LMB; switches the location bar to the <quote>editable</quote> mode,
+with the &LMB; switches the location bar to <quote>editable</quote> mode,
 in which the path can be edited using the keyboard. To switch back to bread
 crumb mode, click the check mark at the right of the location bar with the &LMB;.
 </para>
@@ -597,10 +597,39 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 <caption><para>Location bar in editable mode.</para></caption>
 </mediaobject>
 </screenshot>
+
+<sect3 id="location-bar-editable-kioslaves">
+<title>Using Kioslaves</title>
+
 <para>If the location bar is empty in editable mode, a drop down box appears in 
-front of the bar with all available kioslaves on your system. Using these ioslaves
-you can &eg; launch a &systemsettings; module or <application>KFontview</application> from &dolphin;. 
+front of the bar listing all available kioslaves on your system. Kioslaves are 
+programs built into &kde; which add support for many different protocols to 
+&dolphin; and other &kde; applications.</para> 
+
+<para>For example using the <quote>fish</quote> kioslave &dolphin; can be 
+used to manage files and folders on a remote host that is accessible 
+via <acronym>SSH</acronym>. To do this you would type <userinput>fish://username@remotehost</userinput> 
+into the location bar. Similar remote file management can be done on 
+remote hosts accessible via the &FTP;, NFS, SFTP, SMB (CIFS) or webdav protocols.</para>
+
+<para>It is also possible to use the kioslaves drop down list to access 
+&systemsettings;, fonts, trash, other programs and devices attached to your computer. 
+See the drop down list for the full list of capabilities available from kioslaves on your system.
 </para>
+<screenshot>
+<screeninfo>Screenshot of the list of kioslaves</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="locationbar-kioslaves-menu.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Location bar showing list of available kioslaves.</phrase>
+</textobject>
+<caption><para>List of available kioslaves.</para></caption>
+</mediaobject>
+</screenshot>
+
+</sect3>
 </sect2>
 
 <sect2 id="location-place-context">
