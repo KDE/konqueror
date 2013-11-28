@@ -184,6 +184,12 @@ void KSaveIOConfig::setProxyType(KProtocolManager::ProxyType type)
   cfg.sync();
 }
 
+QString KSaveIOConfig::noProxyFor()
+{
+    KConfigGroup cfg(config(), "Proxy Settings");
+    return cfg.readEntry("NoProxyFor");
+}
+
 void KSaveIOConfig::setNoProxyFor( const QString& _noproxy )
 {
   KConfigGroup cfg (config(), "Proxy Settings");
