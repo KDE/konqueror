@@ -192,7 +192,7 @@ static void setProxyInformation(const QString& value,
                 portNum = -1;
             }
             urlStr = value.left(index).trimmed();
-        } else {            
+        } else {
             urlStr = value.trimmed();
         }
 
@@ -292,7 +292,7 @@ void KProxyDialog::load()
     mProxyMap[QL1S("FtpProxy")] = KProtocolManager::proxyFor(QL1S("ftp"));
     mProxyMap[QL1S("SocksProxy")] = KProtocolManager::proxyFor(QL1S("socks"));
     mProxyMap[QL1S("ProxyScript")] = KProtocolManager::proxyConfigScript();
-    mProxyMap[QL1S("NoProxy")] = KProtocolManager::noProxyFor();
+    mProxyMap[QL1S("NoProxy")] = KSaveIOConfig::noProxyFor();
 
     const int proxyType = KProtocolManager::proxyType();
 
@@ -446,8 +446,9 @@ void KProxyDialog::on_autoDetectButton_clicked()
     count += (autoDetectSystemProxy(mUi.systemProxySocksEdit, ENV_SOCKS_PROXY) ? 1 : 0);
     count += (autoDetectSystemProxy(mUi.systemNoProxyEdit, ENV_NO_PROXY) ? 1 : 0);
 
-    if (count)
-        emit changed (true);
+    if (count) {
+        emit changed(true);
+    }
 }
 
 void KProxyDialog::on_manualProxyHttpEdit_textChanged(const QString& text)
