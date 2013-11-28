@@ -61,6 +61,7 @@ void setProxyConfigScript (const QString&);
 
 void setProxyFor (const QString&, const QString&);
 
+QString noProxyFor();
 void setNoProxyFor (const QString&);
 
 
