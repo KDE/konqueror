@@ -60,6 +60,8 @@ private Q_SLOTS:
     void slotChanged();
 
 private:
+    bool autoDetectSystemProxy(QLineEdit* edit, const QString& envVarStr, bool showValue);
+
     Ui::ProxyDialogUI mUi;
     QStringList mNoProxyForList;
     QMap<QString, QString> mProxyMap;
