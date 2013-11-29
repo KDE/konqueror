@@ -104,19 +104,6 @@ static void showSystemProxyUrl(QLineEdit* edit, QString* value)
     edit->setText(QString::fromUtf8(qgetenv(envVar.constData())));
 }
 
-static bool autoDetectSystemProxy(QLineEdit* edit, const QString& envVarStr)
-{
-    const QStringList envVars = envVarStr.split(QL1S(","), QString::SkipEmptyParts);
-    Q_FOREACH (const QString & envVar, envVars) {
-        const QByteArray envVarUtf8(envVar.toUtf8());
-        if (!qgetenv(envVarUtf8.constData()).isEmpty()) {
-            edit->setText(envVar);
-            return true;
-        }
-    }
-    return false;
-}
-
 static QString proxyUrlFromInput(KProxyDialog::DisplayUrlFlags* flags,
                                  const QLineEdit* edit, const QSpinBox* spinBox,
                                  KProxyDialog::DisplayUrlFlag flag = KProxyDialog::HideNone)
@@ -379,11 +366,11 @@ void KProxyDialog::save()
             mProxyMap[QL1S("NoProxy")] = mUi.systemNoProxyEdit->text();
         }
         else {
-            mProxyMap[QL1S("HttpProxy")] = mProxyMap.take(QL1S("EnvVarProxyHttp"));
-            mProxyMap[QL1S("HttpsProxy")] = mProxyMap.take(QL1S("EnvVarProxyHttps"));
-            mProxyMap[QL1S("FtpProxy")] = mProxyMap.take(QL1S("EnvVarProxyFtp"));
-            mProxyMap[QL1S("SocksProxy")] = mProxyMap.take(QL1S("EnvVarProxySocks"));
-            mProxyMap[QL1S("NoProxy")] = mProxyMap.take(QL1S("EnvVarNoProxy"));
+            mProxyMap[QL1S("HttpProxy")] = mProxyMap.take(mUi.systemProxyHttpEdit->objectName());
+            mProxyMap[QL1S("HttpsProxy")] = mProxyMap.take(mUi.systemProxyHttpsEdit->objectName());
+            mProxyMap[QL1S("FtpProxy")] = mProxyMap.take(mUi.systemProxyFtpEdit->objectName());
+            mProxyMap[QL1S("SocksProxy")] = mProxyMap.take(mUi.systemProxySocksEdit->objectName());
+            mProxyMap[QL1S("NoProxy")] = mProxyMap.take(mUi.systemNoProxyEdit->objectName());
         }
     } else if (mUi.autoScriptProxyRadioButton->isChecked()) {
         proxyType = KProtocolManager::PACProxy;
@@ -437,18 +424,39 @@ void KProxyDialog::defaults()
     emit changed (true);
 }
 
+bool KProxyDialog::autoDetectSystemProxy(QLineEdit* edit, const QString& envVarStr, bool showValue)
+{
+    const QStringList envVars = envVarStr.split(QL1S(","), QString::SkipEmptyParts);
+    Q_FOREACH (const QString & envVar, envVars) {
+        const QByteArray envVarUtf8(envVar.toUtf8());
+        const QByteArray envVarValue = qgetenv(envVarUtf8.constData());
+        if (!envVarValue.isEmpty()) {
+            if (showValue) {
+                mProxyMap[edit->objectName()] = envVar;
+                edit->setText(envVarValue);
+            } else {
+                edit->setText(envVar);
+            }
+            edit->setEnabled(!showValue);
+            return true;
+        }
+    }
+    return false;
+}
+
 void KProxyDialog::on_autoDetectButton_clicked()
 {
-    quint8 count = 0;
-    count += (autoDetectSystemProxy(mUi.systemProxyHttpEdit, ENV_HTTP_PROXY) ? 1 : 0);
-    count += (autoDetectSystemProxy(mUi.systemProxyHttpsEdit, ENV_HTTPS_PROXY) ? 1 : 0);
-    count += (autoDetectSystemProxy(mUi.systemProxyFtpEdit, ENV_FTP_PROXY) ? 1 : 0);
-    count += (autoDetectSystemProxy(mUi.systemProxySocksEdit, ENV_SOCKS_PROXY) ? 1 : 0);
-    count += (autoDetectSystemProxy(mUi.systemNoProxyEdit, ENV_NO_PROXY) ? 1 : 0);
+    const bool showValue = mUi.showEnvValueCheckBox->isChecked();
+    bool wasChanged = false;
 
-    if (count) {
-        emit changed(true);
-    }
+    wasChanged |= autoDetectSystemProxy(mUi.systemProxyHttpEdit, ENV_HTTP_PROXY, showValue);
+    wasChanged |= autoDetectSystemProxy(mUi.systemProxyHttpsEdit, ENV_HTTPS_PROXY, showValue);
+    wasChanged |= autoDetectSystemProxy(mUi.systemProxyFtpEdit, ENV_FTP_PROXY, showValue);
+    wasChanged |= autoDetectSystemProxy(mUi.systemProxySocksEdit, ENV_SOCKS_PROXY, showValue);
+    wasChanged |= autoDetectSystemProxy(mUi.systemNoProxyEdit, ENV_NO_PROXY, showValue);
+
+    if (wasChanged)
+        emit changed (true);
 }
 
 void KProxyDialog::on_manualProxyHttpEdit_textChanged(const QString& text)
@@ -486,23 +494,23 @@ void KProxyDialog::on_manualProxyHttpSpinBox_valueChanged (int value)
 void KProxyDialog::on_showEnvValueCheckBox_toggled (bool on)
 {
     if (on) {
-        showSystemProxyUrl(mUi.systemProxyHttpEdit, &mProxyMap[QL1S("EnvVarProxyHttp")]);
-        showSystemProxyUrl(mUi.systemProxyHttpsEdit, &mProxyMap[QL1S("EnvVarProxyHttps")]);
-        showSystemProxyUrl(mUi.systemProxyFtpEdit, &mProxyMap[QL1S("EnvVarProxyFtp")]);
-        showSystemProxyUrl(mUi.systemProxySocksEdit, &mProxyMap[QL1S("EnvVarProxySocks")]);
-        showSystemProxyUrl(mUi.systemNoProxyEdit, &mProxyMap[QL1S("EnvVarNoProxy")]);
+        showSystemProxyUrl(mUi.systemProxyHttpEdit, &mProxyMap[mUi.systemProxyHttpEdit->objectName()]);
+        showSystemProxyUrl(mUi.systemProxyHttpsEdit, &mProxyMap[mUi.systemProxyHttpsEdit->objectName()]);
+        showSystemProxyUrl(mUi.systemProxyFtpEdit, &mProxyMap[mUi.systemProxyFtpEdit->objectName()]);
+        showSystemProxyUrl(mUi.systemProxySocksEdit, &mProxyMap[mUi.systemProxySocksEdit->objectName()]);
+        showSystemProxyUrl(mUi.systemNoProxyEdit, &mProxyMap[mUi.systemNoProxyEdit->objectName()]);
         return;
     }
 
-    mUi.systemProxyHttpEdit->setText(mProxyMap.take (QL1S("EnvVarProxyHttp")));
+    mUi.systemProxyHttpEdit->setText(mProxyMap.take(mUi.systemProxyHttpEdit->objectName()));
     mUi.systemProxyHttpEdit->setEnabled(true);
-    mUi.systemProxyHttpsEdit->setText(mProxyMap.take (QL1S("EnvVarProxyHttps")));
+    mUi.systemProxyHttpsEdit->setText(mProxyMap.take(mUi.systemProxyHttpsEdit->objectName()));
     mUi.systemProxyHttpsEdit->setEnabled(true);
-    mUi.systemProxyFtpEdit->setText(mProxyMap.take (QL1S("EnvVarProxyFtp")));
+    mUi.systemProxyFtpEdit->setText(mProxyMap.take(mUi.systemProxyFtpEdit->objectName()));
     mUi.systemProxyFtpEdit->setEnabled(true);
-    mUi.systemProxySocksEdit->setText(mProxyMap.take (QL1S("EnvVarProxySocks")));
+    mUi.systemProxySocksEdit->setText(mProxyMap.take(mUi.systemProxySocksEdit->objectName()));
     mUi.systemProxySocksEdit->setEnabled(true);
-    mUi.systemNoProxyEdit->setText(mProxyMap.take (QL1S("EnvVarNoProxy")));
+    mUi.systemNoProxyEdit->setText(mProxyMap.take(mUi.systemNoProxyEdit->objectName()));
     mUi.systemNoProxyEdit->setEnabled(true);
 }
 
