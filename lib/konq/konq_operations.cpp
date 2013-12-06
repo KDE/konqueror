@@ -74,6 +74,8 @@
 #include <unistd.h>
 #include <kconfiggroup.h>
 
+static const KCatalogLoader loader("libkonq");
+
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
       m_method( UNKNOWN ), m_info(0), m_pasteInfo(0)
