@@ -130,7 +130,7 @@ void KonqUndoManager::undo()
         KonqClosedItem* closedItem = m_closedItemList.first();
 
         // Check what to undo
-        if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->undoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
+        if (!m_supportsFileUndo || !fileUndoManager->undoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
             undoClosedItem(0);
             return;
         }
@@ -209,13 +209,13 @@ void KonqUndoManager::undoClosedItem(int index)
     if(closedTabItem)
         emit openClosedTab(*closedTabItem);
     else if(closedRemoteWindowItem) {
-        emit openClosedWindow(*closedRemoteWindowItem);
         KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedRemoteWindowItem);
+        emit openClosedWindow(*closedRemoteWindowItem);
     } else if(closedWindowItem) {
-        emit openClosedWindow(*closedWindowItem);
         KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem);
+        emit openClosedWindow(*closedWindowItem);
         closedWindowItem->configGroup().deleteGroup();
-        
+
         // Save config so that this window won't appear in new konqueror processes
         KonqClosedWindowsManager::self()->saveConfig();
     }
