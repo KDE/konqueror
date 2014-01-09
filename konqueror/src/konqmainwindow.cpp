@@ -5024,7 +5024,7 @@ void KonqMainWindow::updateViewModeActions()
                 // Create a KToggleAction for each view mode, and plug it into the menu
                 KToggleAction* action = new KToggleAction(KIcon(serviceAction.icon()), serviceAction.text(), this);
                 //actionCollection()->addAction(desktopEntryName /*not unique!*/, action);
-                action->setObjectName(desktopEntryName);
+                action->setObjectName(desktopEntryName + QLatin1String("-viewmode"));
                 action->setData(QVariant(serviceAction.name()));
                 action->setActionGroup(m_viewModesGroup);
                 m_viewModeMenu->menu()->addAction(action);
