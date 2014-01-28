@@ -10,12 +10,6 @@ include(CTestConfig.cmake)
 find_package(KDE4 4.10.60 REQUIRED)
 include (KDE4Defaults)
 
-find_package(Strigi)
-set_package_properties(Strigi PROPERTIES DESCRIPTION "Desktop indexing and search support"
-                       URL "http://strigi.sourceforge.net"
-                       TYPE REQUIRED
-                      )
-
 find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"
                        URL "http://www.zlib.net"
