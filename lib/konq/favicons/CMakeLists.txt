@@ -1,10 +1,10 @@
 set(kded_favicons_SRCS favicons.cpp )
 
-qt4_add_dbus_adaptor(kded_favicons_SRCS org.kde.FavIcon.xml favicons.h FavIconsModule favicons_adaptor FavIconsAdaptor)
+qt5_add_dbus_adaptor(kded_favicons_SRCS org.kde.FavIcon.xml favicons.h FavIconsModule favicons_adaptor FavIconsAdaptor)
 
-kde4_add_plugin(kded_favicons ${kded_favicons_SRCS})
+add_library(kded_favicons MODULE ${kded_favicons_SRCS})
 
-target_link_libraries( kded_favicons ${KDE4_KIO_LIBS} )
+target_link_libraries( kded_favicons KF5::KIOWidgets KF5::DBusAddons KF5::KDE4Support )
 
 
 install(TARGETS kded_favicons  DESTINATION ${PLUGIN_INSTALL_DIR} )

@@ -30,6 +30,7 @@
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
+#include <kglobal.h>
 
 #include <QBuffer>
 #include <QFile>
