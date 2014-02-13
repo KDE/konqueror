@@ -21,8 +21,8 @@
 #ifndef KONQ_HISTORYENTRY_H
 #define KONQ_HISTORYENTRY_H
 
-#include <QtCore/QDateTime>
-#include <QtCore/QMetaType>
+#include <QDateTime>
+#include <QMetaType>
 #include <kurl.h>
 #include "libkonq_export.h"
 

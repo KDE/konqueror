@@ -27,7 +27,7 @@
 #include <ksharedconfig.h>
 #include "konq_historyloader.h"
 #include <zlib.h> // for crc32
-#include <QtDBus/QtDBus>
+#include <QtDBus>
 
 class KonqHistoryProviderPrivate : public QObject, QDBusContext
 {

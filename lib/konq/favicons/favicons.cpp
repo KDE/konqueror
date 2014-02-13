@@ -31,10 +31,10 @@
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 
-#include <QtCore/QBuffer>
-#include <QtCore/QFile>
-#include <QtCore/QCache>
-#include <QtCore/QTimer>
+#include <QBuffer>
+#include <QFile>
+#include <QCache>
+#include <QTimer>
 #include <QImage>
 #include <QImageReader>
 

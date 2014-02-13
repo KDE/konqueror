@@ -26,7 +26,7 @@
 #include <kurl.h>
 #include <libkonq_export.h>
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <QDropEvent>
 
 class KJob;

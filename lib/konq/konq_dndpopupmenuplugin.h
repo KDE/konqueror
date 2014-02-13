@@ -19,7 +19,7 @@
 #define _KONQ_DNDPOPUPMENUPLUGIN_H_
 
 #include "libkonq_export.h"
-#include <QtCore/QObject>
+#include <QObject>
 
 class QMenu;
 class KActionCollection;

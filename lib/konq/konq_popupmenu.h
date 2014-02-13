@@ -23,7 +23,7 @@
 
 #include <sys/types.h>
 
-#include <QtCore/QMap>
+#include <QMap>
 #include <QMenu>
 
 #include <kaction.h>

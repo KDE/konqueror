@@ -18,7 +18,7 @@
 */
 
 #include "konqmimedata.h"
-#include <QtCore/QMimeData>
+#include <QMimeData>
 #include <kdebug.h>
 
 void KonqMimeData::populateMimeData( QMimeData* mimeData,

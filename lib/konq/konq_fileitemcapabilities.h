@@ -25,7 +25,7 @@
 
 #include <libkonq_export.h>
 
-#include <QtCore/QSharedDataPointer>
+#include <QSharedDataPointer>
 
 class KonqFileItemCapabilitiesPrivate;
 class KFileItemList;

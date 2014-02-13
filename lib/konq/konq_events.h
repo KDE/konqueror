@@ -22,7 +22,7 @@
 #define __konq_events_h__
 
 #include <kparts/event.h>
-#include <QtCore/QList>
+#include <QList>
 #include <libkonq_export.h>
 #include <kfileitem.h>
 #include <kconfigbase.h>
