@@ -94,7 +94,7 @@ public Q_SLOTS: // dbus methods, called by the adaptor
      */
     void forceDownloadHostIcon(const KUrl &url);
 
-signals: // D-Bus signals
+Q_SIGNALS: // D-Bus signals
     /**
      * Emitted once a new icon is available, for a host or url
      */

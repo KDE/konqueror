@@ -80,7 +80,7 @@ protected:
     /** @see QWidget::resizeEvent() */
     virtual void resizeEvent(QResizeEvent* event);
 
-private slots:
+private Q_SLOTS:
     void timerDone();
 
     /**

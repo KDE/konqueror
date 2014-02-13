@@ -145,7 +145,7 @@ public:
      */
     virtual QList<QAction*> contextMenuActions(const QString& directory) = 0;
 
-signals:
+Q_SIGNALS:
     /**
      * Should be emitted when the version state of files might have been changed
      * after the last retrieval (e. g. by executing a context menu action

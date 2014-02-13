@@ -32,7 +32,7 @@ class KonqPopupMenuTest : public QObject
  public:
     KonqPopupMenuTest();
 
-private slots:
+private Q_SLOTS:
     void initTestCase();
     void testFile();
     void testFileInReadOnlyDirectory();

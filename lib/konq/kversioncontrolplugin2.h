@@ -194,7 +194,7 @@ public:
     /** Empty implementation for deprecated interface of KVersionControlPlugin. */
     virtual QList<QAction*> contextMenuActions(const QString& directory);
 
-signals:
+Q_SIGNALS:
     /**
      * Should be emitted when the version state of items might have been changed
      * after the last retrieval (e. g. by executing a context menu action
