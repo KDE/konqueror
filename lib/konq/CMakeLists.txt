@@ -23,17 +23,16 @@ set(konq_LIB_SRCS
    kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
    kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
 
-   konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
+#    konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
    knewmenu.cpp # deprecated (functionality has moved to kdelibs)
    konq_popupmenuinformation.cpp # deprecated (functionality has moved to kdelibs)
    konq_menuactions.cpp     # deprecated (functionality has moved to kdelibs)
    konq_fileitemcapabilities.cpp # deprecated (functionality has moved to kdelibs)
 )
 
-kde4_add_library(konq SHARED ${konq_LIB_SRCS})
+add_library(konq SHARED ${konq_LIB_SRCS})
 
-target_link_libraries(konq ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} ${ZLIB_LIBRARY} ${X11_X11_LIB})
-target_link_libraries(konq LINK_INTERFACE_LIBRARIES ${KDE4_KPARTS_LIBS})
+target_link_libraries(konq KF5::Bookmarks KF5::KDE4Support KF5::Parts ${ZLIB_LIBRARY} ${X11_X11_LIB})
 
 set_target_properties(konq PROPERTIES
      VERSION ${KDE_NON_GENERIC_LIB_VERSION}
@@ -44,10 +43,11 @@ install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konq_sound ###############
 
-set(konq_sound_LIB_SRCS konq_sound.cc)
-kde4_add_plugin(konq_sound ${konq_sound_LIB_SRCS})
-target_link_libraries(konq_sound ${KDE4_KDECORE_LIBS} ${KDE4_PHONON_LIBS})
-install(TARGETS konq_sound  DESTINATION ${PLUGIN_INSTALL_DIR} )
+# TODO: bring back
+# set(konq_sound_LIB_SRCS konq_sound.cc)
+# add_library(konq_sound MODULE ${konq_sound_LIB_SRCS})
+# target_link_libraries(konq_sound  ${KDE4_PHONON_LIBS})
+# install(TARGETS konq_sound  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 ########### install files ###############
 

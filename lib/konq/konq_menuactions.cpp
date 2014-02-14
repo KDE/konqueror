@@ -54,7 +54,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
     d->addOpenWithActionsTo(topMenu, traderConstraint);
 }
 
-KAction* KonqMenuActions::preferredOpenWithAction(const QString& traderConstraint)
+QAction* KonqMenuActions::preferredOpenWithAction(const QString& traderConstraint)
 {
     return d->preferredOpenWithAction(traderConstraint);
 }

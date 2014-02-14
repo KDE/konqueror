@@ -23,6 +23,8 @@
 #include <klineedit.h>
 #include <kurlrequester.h>
 #include <kprotocolmanager.h>
+#include <kstandardguiitem.h>
+#include <khbox.h>
 #include <QLayout>
 #include <QLabel>
 

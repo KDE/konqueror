@@ -45,6 +45,7 @@
 #include <kio/copyjob.h>
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
+#include <KJobWidgets>
 #include <kdirnotify.h>
 #include <kuiserverjobtracker.h>
 #include <kstandarddirs.h>
@@ -69,6 +70,7 @@
 #include <QDropEvent>
 #include <QList>
 #include <QDir>
+#include <QTimer>
 
 #include <assert.h>
 #include <unistd.h>
@@ -127,9 +129,9 @@ void KonqOperations::restoreTrashedItems( const KUrl::List& urls, QWidget* paren
 KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
     KIO::SimpleJob * job = KIO::mkdir(url);
-    job->ui()->setWindow(parent);
+    KJobWidgets::setWindow(job, parent);
     job->ui()->setAutoErrorHandlingEnabled(true);
-    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, KUrl(), url, job );
+    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, QList<QUrl>(), url, job );
     return job;
 }
 
@@ -243,7 +245,7 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
             delete this; // this one is ok, _del is always called directly
             return;
         }
-        job->ui()->setWindow(parentWidget());
+        KJobWidgets::setWindow(job, parentWidget());
         connect( job, SIGNAL(result(KJob*)),
                  SLOT(slotResult(KJob*)) );
     } else {
@@ -255,7 +257,7 @@ void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
 {
     m_method = RESTORE;
     KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls );
-    job->ui()->setWindow(parentWidget());
+    KJobWidgets::setWindow(job, parentWidget());
     KIO::getJobTracker()->registerJob(job);
     connect( job, SIGNAL(result(KJob*)),
              SLOT(slotResult(KJob*)) );
@@ -320,7 +322,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
 
         Qt::DropAction action = ev->dropAction();
         // Check for the drop of a bookmark -> we want a Link action
-        if ( ev->provides("application/x-xbel") )
+        if ( ev->mimeData()->formats().contains("application/x-xbel") )
         {
             modifiers |= Qt::ControlModifier | Qt::ShiftModifier;
             action = Qt::LinkAction;
@@ -789,7 +791,7 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
     m_destUrl = dest;
     if ( job )
     {
-        job->ui()->setWindow(parentWidget());
+        KJobWidgets::setWindow(job, parentWidget());
         connect( job, SIGNAL(result(KJob*)),
                  SLOT(slotResult(KJob*)) );
 #if 0
@@ -825,7 +827,7 @@ void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const 
 {
     connect( this, SIGNAL(statFinished(KFileItem)), receiver, member );
     KIO::StatJob * job = KIO::stat( url /*, KIO::HideProgressInfo?*/ );
-    job->ui()->setWindow(parentWidget());
+    KJobWidgets::setWindow(job, parentWidget());
     connect( job, SIGNAL(result(KJob*)),
              SLOT(slotStatResult(KJob*)) );
 }
@@ -866,7 +868,7 @@ void KonqOperations::slotResult(KJob *job)
     case EMPTYTRASH:
     case RESTORE:
         // Update konq windows opened on trash:/
-        org::kde::KDirNotify::emitFilesAdded("trash:/"); // yeah, files were removed, but we don't know which ones...
+        org::kde::KDirNotify::emitFilesAdded(QUrl("trash:/")); // yeah, files were removed, but we don't know which ones...
         break;
     case RENAME: {
             KIO::CopyJob *renameJob = qobject_cast<KIO::CopyJob*>(job);
@@ -999,7 +1001,7 @@ void KonqMultiRestoreJob::slotStart()
     }
     else // done!
     {
-        org::kde::KDirNotify::emitFilesRemoved(m_urls.toStringList() );
+        org::kde::KDirNotify::emitFilesRemoved(m_urls );
         emitResult();
     }
 }
@@ -1031,7 +1033,7 @@ QPair<bool, QString> KonqOperations::pasteInfo(const KUrl& targetUrl)
     QClipboard* clipboard = QApplication::clipboard();
     const QMimeData* mimeData = clipboard->mimeData();
 
-    const bool canPasteData = KIO::canPasteMimeSource(mimeData);
+    const bool canPasteData = KIO::canPasteMimeData(mimeData);
     KUrl::List urls = KUrl::List::fromMimeData(mimeData);
     if (!urls.isEmpty() || canPasteData) {
         // disable the paste action if no writing is supported

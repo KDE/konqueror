@@ -256,7 +256,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         m_ownActions.append(actNewWindow);
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
-        QObject::connect(actNewWindow, SIGNAL(triggered()), q, SLOT(slotPopupNewView()));
+        QObject::connect(actNewWindow, &QAction::triggered, [this]() {
+            slotPopupNewView();
+        });
     }
 
     if ( isDirectory && sWriting && !isCurrentTrash ) // A dir, and we can create things into it
@@ -277,7 +279,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             m_ownActions.append(actNewDir);
             actNewDir->setIcon( KIcon("folder-new") );
             actNewDir->setText( i18n( "Create &Folder..." ) );
-            QObject::connect(actNewDir, SIGNAL(triggered()), q, SLOT(slotPopupNewDir()));
+            QObject::connect(actNewDir, &QAction::triggered, [this]() {
+                slotPopupNewDir();
+            });
             q->addAction( actNewDir );
             q->addSeparator();
         }
@@ -287,7 +291,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         m_ownActions.append(act);
         act->setText( i18n( "&Restore" ) );
         act->setHelpText(i18n("Restores this file or directory, back to the location where it was deleted from initially"));
-        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupRestoreTrashedItems()));
+        QObject::connect(act, &QAction::triggered, [this]() {
+            slotPopupRestoreTrashedItems();
+        });
         q->addAction(act);
     }
 
@@ -308,7 +314,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         m_ownActions.append(act);
         act->setText(isDirectory ? i18n("Show Original Directory") : i18n("Show Original File"));
         act->setHelpText(i18n("Opens a new file manager window showing the target of this link, in its parent directory."));
-        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotShowOriginalFile()));
+        QObject::connect(act, &QAction::triggered, [this]() {
+            slotShowOriginalFile();
+        });
         q->addAction(act);
     }
 
@@ -342,7 +350,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         act->setText( i18n( "&Empty Trash Bin" ) );
         KConfig trashConfig( "trashrc", KConfig::SimpleConfig);
         act->setEnabled( !trashConfig.group("Status").readEntry( "Empty", true ) );
-        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupEmptyTrashBin()));
+        QObject::connect(act, &QAction::triggered, [this]() {
+            slotPopupEmptyTrashBin();
+        });
         q->addAction(act);
     }
     if ( isCurrentTrash )
@@ -351,7 +361,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 	m_ownActions.append(act);
 	act->setIcon( KIcon("trash-empty") );
 	act->setText( i18n( "&Configure Trash Bin" ) );
-	QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotConfigTrashBin()));
+	QObject::connect(act, &QAction::triggered, [this]() {
+        slotConfigTrashBin();
+    });
 	q->addAction(act);
     }
 
@@ -390,7 +402,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         act->setObjectName( QLatin1String("bookmark_add" )); // for unittest
         act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
-        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupAddToBookmark()));
+        QObject::connect(act, &QAction::triggered, [this]() {
+            slotPopupAddToBookmark();
+        });
         if (lstItems.count() > 1)
             act->setEnabled(false);
         if (KAuthorized::authorizeKAction("bookmarks"))
@@ -447,7 +461,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         m_ownActions.append(act);
         act->setObjectName( QLatin1String("properties" )); // for unittest
         act->setText( i18n( "&Properties" ) );
-        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupProperties()));
+        QObject::connect(act, &QAction::triggered, [this]() {
+            slotPopupProperties();
+        });
         q->addAction(act);
     }
 
@@ -461,7 +477,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             act = new KAction(m_parentWidget);
             m_ownActions.append(act);
             act->setText( i18n("Share") );
-            QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotOpenShareFileDialog()));
+            QObject::connect(act, &QAction::triggered, [this]() {
+                slotOpenShareFileDialog();
+            });
             q->addAction(act);
         }
     }
@@ -530,13 +548,13 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
         const KUrl url = m_popupItemProperties.urlList().first();
         const QString title = m_urlTitle.isEmpty() ? url.prettyUrl() : m_urlTitle;
         KBookmarkDialog dlg(m_bookmarkManager, m_parentWidget);
-        dlg.addBookmark(title, url.url());
+        dlg.addBookmark(title, url, QString());
     }
     else
     {
         root = m_bookmarkManager->root();
         Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {
-            root.addBookmark(url.prettyUrl(), url);
+            root.addBookmark(url.prettyUrl(), url, QString());
         }
         m_bookmarkManager->emitChanged(root);
     }
@@ -586,7 +604,7 @@ void KonqPopupMenuPrivate::addPlugins()
         const KConfig config("kservicemenurc", KConfig::NoGlobals);
         const KConfigGroup showGroup = config.group("Show");
 
-        foreach (const KSharedPtr<KService>& service, fileItemPlugins) {
+        foreach (const auto& service, fileItemPlugins) {
             if (!showGroup.readEntry(service->desktopEntryName(), true)) {
                 // The plugin has been disabled
                 continue;

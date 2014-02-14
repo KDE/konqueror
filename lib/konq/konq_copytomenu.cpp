@@ -25,9 +25,11 @@
 #include <kaction.h>
 #include <kdebug.h>
 #include <kicon.h>
+#include <kglobal.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kmenu.h>
+#include <kmimetype.h>
 #include <kstringhandler.h>
 #include <QDir>
 
@@ -249,7 +251,7 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
         // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
         // correctly and not misinterpreted as an indicator for a keyboard shortcut
         subMenu->setTitle(menuTitle.replace('&', "&&"));
-        const QString iconName = dirMime->iconName(KUrl(subPath));
+        const QString iconName = dirMime->iconName();
         subMenu->setIcon(KIcon(iconName));
         if (QFileInfo(subPath).isSymLink()) { // I hope this isn't too slow...
             QFont font = subMenu->menuAction()->font();

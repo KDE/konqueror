@@ -26,7 +26,7 @@
 
 class KFileItemActions;
 class KFileItemListProperties;
-class KAction;
+class QAction;
 class KonqPopupMenuInformation;
 class QMenu;
 
@@ -110,7 +110,7 @@ public:
      * @return the action - or 0 if no application was found.
      * @since 4.3  -- TODO REMOVE AND PORT FOLDERVIEW
      */
-    KAction* preferredOpenWithAction(const QString& traderConstraint);
+    QAction* preferredOpenWithAction(const QString& traderConstraint);
 
 private:
     KFileItemActions* const d;

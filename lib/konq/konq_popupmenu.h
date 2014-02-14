@@ -39,6 +39,7 @@ class KFileItemActions;
 
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
+class KUrl;
 
 /**
  * This class implements the popup menu for URLs in konqueror and kdesktop
@@ -104,18 +105,6 @@ public:
    */
   void setURLTitle( const QString& urlTitle );
   KFileItemActions* fileItemActions() const;
-
-private:
-  Q_PRIVATE_SLOT(d, void slotPopupNewDir())
-  Q_PRIVATE_SLOT(d, void slotPopupNewView())
-  Q_PRIVATE_SLOT(d, void slotPopupEmptyTrashBin())
-  Q_PRIVATE_SLOT(d, void slotConfigTrashBin())
-  Q_PRIVATE_SLOT(d, void slotPopupRestoreTrashedItems())
-  Q_PRIVATE_SLOT(d, void slotPopupAddToBookmark())
-  Q_PRIVATE_SLOT(d, void slotPopupMimeType())
-  Q_PRIVATE_SLOT(d, void slotPopupProperties())
-  Q_PRIVATE_SLOT(d, void slotOpenShareFileDialog())
-  Q_PRIVATE_SLOT(d, void slotShowOriginalFile())
 
 private:
   KonqPopupMenuPrivate *d;
