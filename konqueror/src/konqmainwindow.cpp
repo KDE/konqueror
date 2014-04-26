@@ -5185,8 +5185,8 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
           QApplication::sendEvent( (*it)->part()->widget(), e );
   }
   KParts::MainWindow::closeEvent( e );
-  if( isPreloaded() && !kapp->sessionSaving())
-  { // queryExit() refused closing, hide instead
+  if (stayPreloaded() && !kapp->sessionSaving()) {
+      e->ignore();
       hide();
   }
 }
@@ -5211,13 +5211,6 @@ void KonqMainWindow::addClosedWindowToUndoList()
     m_pUndoManager->addClosedWindowItem( closedWindowItem );
 
     kDebug() << "done";
-}
-
-bool KonqMainWindow::queryExit()
-{
-    if( kapp && kapp->sessionSaving()) // *sigh*
-        return true;
-    return !stayPreloaded();
 }
 
 void KonqMainWindow::updateWindowIcon()
