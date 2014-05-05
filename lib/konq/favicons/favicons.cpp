@@ -230,11 +230,11 @@ void FavIconsModule::startDownload(const QString &hostOrURL, bool isHost, const 
     }
 
     //kDebug(dfavi()) << iconURL;
-    KIO::Job *job = KIO::get(iconURL, KIO::NoReload, KIO::HideProgressInfo);
+    KIO::TransferJob *job = KIO::get(iconURL, KIO::NoReload, KIO::HideProgressInfo);
     job->addMetaData(d->metaData);
-    connect(job, SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotData(KIO::Job*,QByteArray)));
-    connect(job, SIGNAL(result(KJob*)), SLOT(slotResult(KJob*)));
-    connect(job, SIGNAL(infoMessage(KJob*,QString,QString)), SLOT(slotInfoMessage(KJob*,QString)));
+    connect(job, &KIO::TransferJob::data, this, &FavIconsModule::slotData);
+    connect(job, &KIO::TransferJob::result, this, &FavIconsModule::slotResult);
+    connect(job, &KIO::TransferJob::infoMessage, this, &FavIconsModule::slotInfoMessage);
     FavIconsModulePrivate::DownloadInfo download;
     download.hostOrURL = hostOrURL;
     download.isHost = isHost;
