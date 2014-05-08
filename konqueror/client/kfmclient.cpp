@@ -571,7 +571,7 @@ bool ClientApp::doIt()
     if (argc == 3)
         kioclientArgs << args->arg(2);
 
-    int ret = KProcess::execute("kioclient5", kioclientArgs);
+    int ret = KProcess::execute("kioclient", kioclientArgs);
     return ret == 0;
   }
   else
