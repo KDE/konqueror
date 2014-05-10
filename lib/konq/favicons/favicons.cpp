@@ -40,6 +40,8 @@
 #include <QLoggingCategory>
 #include <QDebug>
 
+#include <qplatformdefs.h>
+
 #include <ctime>
 
 Q_DECLARE_LOGGING_CATEGORY(FAVICONS_LOG)
@@ -175,8 +177,8 @@ QString FavIconsModule::iconForUrl(const QUrl &url)
 
 bool FavIconsModule::isIconOld(const QString &icon)
 {
-    KDE_struct_stat st;
-    if (KDE::stat(QFile::encodeName(icon), &st) != 0) {
+    QT_STATBUF st;
+    if (QT_STAT(QFile::encodeName(icon), &st) != 0) {
         //qCDebug(FAVICONS_LOG) << "isIconOld" << icon << "yes, no such file";
         return true; // Trigger a new download on error
     }
