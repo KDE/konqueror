@@ -520,6 +520,16 @@ void WebKitBrowserExtension::slotCopyLinkText()
     }
 }
 
+void WebKitBrowserExtension::slotCopyEmailAddress()
+{
+    if (view()) {
+        QMimeData* data = new QMimeData;
+        const QUrl url (view()->contextMenuResult().linkUrl());
+        data->setText(url.path());
+        QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
+    }
+}
+
 void WebKitBrowserExtension::slotSaveLinkAs()
 {
     if (view())
