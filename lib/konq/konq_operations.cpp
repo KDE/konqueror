@@ -71,6 +71,7 @@
 #include <QList>
 #include <QDir>
 #include <QTimer>
+#include <QStandardPaths>
 
 #include <assert.h>
 #include <unistd.h>
@@ -559,7 +560,7 @@ void KonqOperations::doDropFileCopy()
         // https://www.intevation.de/roundup/kolab/issue2026
         //
         // Similarly, linking to a temp file is pointless.
-        if (url.isLocalFile() && url.toLocalFile().startsWith(KStandardDirs::locateLocal("tmp", QString()))) {
+        if (url.isLocalFile() && url.toLocalFile().startsWith(QStandardPaths::standardLocations(QStandardPaths::TempLocation).at(0))) {
             sMoving = false;
             sDeleting = false;
             enableLinking = false;
