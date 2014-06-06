@@ -57,39 +57,39 @@ SettingsPlugin::SettingsPlugin( QObject* parent,
 
     KToggleAction* action = actionCollection()->add<KToggleAction>(QLatin1String("javascript"));
     action->setText( i18n("Java&Script") );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleJavascript(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleJavascript(bool)) );
     menu->addAction( action );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("java"));
     action->setText(i18n("&Java")  );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleJava(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleJava(bool)) );
     menu->addAction( action );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("cookies"));
     action->setText(i18n("&Cookies")  );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleCookies(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleCookies(bool)) );
     menu->addAction( action );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("plugins"));
     action->setText(i18n("&Plugins")  );
-    connect( action, SIGNAL(toggled(bool)), SLOT(togglePlugins(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(togglePlugins(bool)) );
     menu->addAction( action );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("imageloading"));
     action->setText(i18n("Autoload &Images")  );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleImageLoading(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleImageLoading(bool)) );
     menu->addAction( action );
 
     //menu->addAction( new KSeparatorAction(actionCollection()) );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("useproxy"));
     action->setText(i18n("Enable Pro&xy") );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleProxy(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleProxy(bool)) );
     menu->addAction( action );
 
     action = actionCollection()->add<KToggleAction>(QLatin1String("usecache"));
     action->setText(i18n("Enable Cac&he") );
-    connect( action, SIGNAL(toggled(bool)), SLOT(toggleCache(bool)) );
+    connect( action, SIGNAL(triggered(bool)), SLOT(toggleCache(bool)) );
     menu->addAction( action );
 
 
