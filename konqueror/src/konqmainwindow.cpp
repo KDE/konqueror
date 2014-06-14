@@ -555,15 +555,16 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
         mimeType = "text/html";
     }
 
-  QString nameFilter = detectNameFilter( url );
-  if ( !nameFilter.isEmpty() )
-  {
-    req.nameFilter = nameFilter;
-    url.setFileName( QString() );
-  }
+    const QString nameFilter = detectNameFilter(url);
+    if (!nameFilter.isEmpty()) {
+      req.nameFilter = nameFilter;
+      url.setFileName( QString() );
+    }
 
-    if (m_combo)
-        m_combo->lineEdit()->setModified(false);
+    QLineEdit* edit = comboEdit();
+    if (edit) {
+      edit->setModified(false);
+    }
 
     KonqView *view = _view;
 
@@ -600,7 +601,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
         }
     }
 
-  const QString oldLocationBarURL = (m_combo ? m_combo->currentText() : QString());
+  const QString oldLocationBarURL = locationBarURL();
   if ( view )
   {
     if ( view == m_currentView )
@@ -1549,8 +1550,10 @@ void KonqMainWindow::slotSendFile()
 void KonqMainWindow::slotOpenLocation()
 {
     focusLocationBar();
-    if (m_combo)
-        m_combo->lineEdit()->selectAll();
+    QLineEdit* edit = comboEdit();
+    if (edit) {
+        edit->selectAll();
+    }
 }
 
 void KonqMainWindow::slotOpenFile()
@@ -3033,7 +3036,7 @@ void KonqMainWindow::checkDisableClearButton()
          break;
      }
   }
-  KLineEdit* lineEdit = (m_combo ? qobject_cast<KLineEdit*>(m_combo->lineEdit()) : 0);
+  KLineEdit* lineEdit = qobject_cast<KLineEdit*>(comboEdit());
   if (lineEdit)
       lineEdit->setClearButtonShown(enable);
 }
@@ -3333,8 +3336,9 @@ void KonqMainWindow::slotClipboardDataChanged()
 
 void KonqMainWindow::slotCheckComboSelection()
 {
-    if (m_combo) {
-        const bool hasSelection = m_combo->lineEdit()->hasSelectedText();
+    QLineEdit* edit = comboEdit();
+    if (edit) {
+        const bool hasSelection = edit->hasSelectedText();
         //kDebug() << "m_combo->lineEdit()->hasMarkedText():" << hasSelection;
         m_paCopy->setEnabled( hasSelection );
         m_paCut->setEnabled( hasSelection );
@@ -3459,7 +3463,8 @@ void KonqMainWindow::setLocationBarURL( const QString &url )
 {
     // Don't set the location bar URL if it hasn't changed
     // or if the user had time to edit the url since the last call to openUrl (#64868)
-    if (m_combo && url != m_combo->lineEdit()->text() && !m_combo->lineEdit()->isModified()) {
+    QLineEdit* edit = comboEdit();
+    if (edit && url != edit->text() && !edit->isModified()) {
         //kDebug() << "url=" << url;
         m_combo->setURL( url );
         updateWindowIcon();
@@ -5242,9 +5247,10 @@ void KonqMainWindow::slotIntro()
 
 void KonqMainWindow::goURL()
 {
-  QLineEdit *lineEdit = m_combo ? m_combo->lineEdit() : 0;
-  if ( !lineEdit )
+  QLineEdit *lineEdit = comboEdit();
+  if (!lineEdit) {
     return;
+  }
 
   QKeyEvent event( QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier, QChar('\n') );
   QApplication::sendEvent( lineEdit, &event );
@@ -5296,7 +5302,10 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
 void KonqMainWindow::slotLocationLabelActivated()
 {
   focusLocationBar();
-  m_combo->lineEdit()->selectAll();
+  QLineEdit* edit = comboEdit();
+  if (edit) {
+    edit->selectAll();
+  }
 }
 
 void KonqMainWindow::slotOpenURL( const KUrl& url )
@@ -5907,6 +5916,11 @@ void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup& profileGroup
     if (size.isValid())
         resize(size);
     restoreWindowSize(profileGroup); // example: "Width 1400=1120"
+}
+
+QLineEdit* KonqMainWindow::comboEdit()
+{
+  return m_combo ? m_combo->lineEdit() : 0;
 }
 
 #include "konqmainwindow.moc"

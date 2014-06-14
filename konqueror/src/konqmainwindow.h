@@ -74,6 +74,7 @@ class KUrlRequester;
 class KBookmarkManager;
 class KonqHistoryDialog;
 struct HistoryEntry;
+class QLineEdit;
 
 namespace KParts {
     class BrowserExtension;
@@ -613,6 +614,8 @@ private:
   void decInstancesCount();
 
   QObject* lastFrame( KonqView *view );
+
+  QLineEdit* comboEdit();
 
 private: // members
   KonqUndoManager* m_pUndoManager;
