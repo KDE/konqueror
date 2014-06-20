@@ -5,6 +5,10 @@ add_subdirectory( favicons )
 add_subdirectory( Templates )
 add_subdirectory( tests )
 
+ecm_setup_version(${KDE_BASEAPPS_VERSION} VARIABLE_PREFIX KONQ
+                    SOVERSION 5
+)
+
 ########### libkonq ###############
 
 # For crc32 in konq_historyloader.cpp
@@ -36,10 +40,7 @@ add_library(konq SHARED ${konq_LIB_SRCS})
 
 target_link_libraries(konq KF5::Bookmarks KF5::KDELibs4Support KF5::Parts ${ZLIB_LIBRARY} ${X11_X11_LIB})
 
-set_target_properties(konq PROPERTIES
-     VERSION ${KDE_NON_GENERIC_LIB_VERSION}
-     SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION}
-)
+set_target_properties(konq PROPERTIES VERSION ${KONQ_VERSION_STRING} SOVERSION ${KONQ_SOVERSION} )
 
 install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
 
