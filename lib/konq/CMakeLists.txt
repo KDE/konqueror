@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
+
 add_subdirectory( pics )
 add_subdirectory( favicons )
 add_subdirectory( Templates )
