@@ -5,8 +5,8 @@ add_subdirectory( favicons )
 add_subdirectory( Templates )
 add_subdirectory( tests )
 
-ecm_setup_version(${KDE_BASEAPPS_VERSION} VARIABLE_PREFIX KONQ
-                    SOVERSION 5
+ecm_setup_version(6.0.0 VARIABLE_PREFIX KONQ
+                    SOVERSION 6
 )
 
 ########### libkonq ###############
