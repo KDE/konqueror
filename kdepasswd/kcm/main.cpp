@@ -233,10 +233,12 @@ void KCMUserAccount::save()
 		}
 	}
 	else { // delete existing image
-		if ( !KIO::NetAccess::del(KCFGUserAccount::faceFile(), this) ) {
-			KMessageBox::error( this, i18n("There was an error deleting the image: %1" ,
-				KCFGUserAccount::faceFile()) );
-		}
+        if (QFile::exists(KCFGUserAccount::faceFile())) {
+            if ( !KIO::NetAccess::del(KCFGUserAccount::faceFile(), this) ) {
+                KMessageBox::error( this, i18n("There was an error deleting the image: %1" ,
+                    KCFGUserAccount::faceFile()) );
+            }
+        }
 	}
 
 	/* Save KDE's homebrewn settings */
