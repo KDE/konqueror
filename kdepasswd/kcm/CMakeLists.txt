@@ -1,7 +1,6 @@
 add_subdirectory(pics)
 
 set(kcm_useraccount_PART_SRCS
-    chfnprocess.cpp
     main.cpp
     chfacedlg.cpp)
 
