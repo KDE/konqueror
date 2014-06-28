@@ -24,7 +24,7 @@ ecm_add_tests(
 ########### favicontest ###############
 
 set(favicontest_SRCS favicontest.cpp)
-qt5_add_dbus_interface(favicontest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../favicons/org.kde.FavIcon.xml favicon_interface)
+qt5_add_dbus_interface(favicontest_SRCS ${LibKonq_SOURCE_DIR}/src/favicons/org.kde.FavIcon.xml favicon_interface)
 
 add_executable(favicontest ${favicontest_SRCS})
 
