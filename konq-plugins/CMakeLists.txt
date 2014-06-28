@@ -1,6 +1,6 @@
 project(konq-plugins)
 
-include_directories (${KDEBASE_APPS_SOURCE_DIR}/lib/konq)
+include_directories (${KDE_BASEAPPS_SOURCE_DIR}/lib/konq)
 
 add_subdirectory( khtmlsettingsplugin )
 add_subdirectory( kimgalleryplugin )
