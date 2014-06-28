@@ -440,5 +440,5 @@ void KonqHistoryProvider::finishAddingEntry(const KonqHistoryEntry& entry, bool 
     }
 }
 
-#include "moc_konq_historyprovider.cpp"
 #include "konq_historyprovider.moc"
+

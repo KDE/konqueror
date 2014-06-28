@@ -23,7 +23,5 @@
 KNewMenu::KNewMenu(KActionCollection* collection, QWidget* parentWidget, const QString& name)
     : KNewFileMenu(collection, name, parentWidget)
 {
-    
-}
 
-#include "knewmenu.moc"
+}

@@ -640,5 +640,3 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
     destUrl.setPath(destUrl.directory());
     KRun::runUrl(destUrl, "inode/directory", m_parentWidget);
 }
-
-#include "konq_popupmenu.moc"

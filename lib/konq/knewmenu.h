@@ -27,7 +27,7 @@
 /**
  * @deprecated since 4.5, use KNewFileMenu from kdelibs/kfile instead.
  */
-class LIBKONQ_EXPORT_DEPRECATED KNewMenu : public KNewFileMenu
+class LIBKONQ_DEPRECATED_EXPORT KNewMenu : public KNewFileMenu
 {
     Q_OBJECT
 public:

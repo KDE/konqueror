@@ -22,6 +22,7 @@
 #define KONQ_POPUPMENUINFORMATION_H
 
 #include "konq_fileitemcapabilities.h"
+#include <kdemacros.h>
 #include <kurl.h>
 
 class KFileItemListProperties;

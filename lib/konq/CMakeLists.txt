@@ -1,18 +1,40 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
+cmake_minimum_required(VERSION 2.8.12)
 
-add_subdirectory( pics )
-add_subdirectory( favicons )
-add_subdirectory( Templates )
-add_subdirectory( tests )
+project(LibKonq)
 
-ecm_setup_version(6.0.0 VARIABLE_PREFIX KONQ
-                    SOVERSION 6
+# ECM setup
+find_package(ECM 0.0.14 CONFIG REQUIRED)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+
+set(LIBKONQ_VERSION "4.97.0")
+
+include(ECMSetupVersion)
+include(GenerateExportHeader)
+include(FeatureSummary)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDEFrameworkCompilerSettings)
+
+ecm_setup_version(${LIBKONQ_VERSION} VARIABLE_PREFIX KONQ
+                  VERSION_HEADER "${LibKonq_BINARY_DIR}/konq_version.h"
+                  SOVERSION 6
 )
 
-########### libkonq ###############
+# Build dependencies
+find_package(Qt5 CONFIG REQUIRED COMPONENTS Core DBus Widgets)
+find_package(KF5 REQUIRED COMPONENTS Bookmarks KDELibs4Support Parts)
 
-# For crc32 in konq_historyloader.cpp
-include_directories( ${ZLIB_INCLUDE_DIR} )
+find_package(ZLIB)
+set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"
+                       URL "http://www.zlib.net"
+                       TYPE REQUIRED
+                       PURPOSE "Required for building Konqueror"
+                      )
+
+add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
+remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
+
+########### libkonq ###############
 
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
@@ -28,21 +50,43 @@ set(konq_LIB_SRCS
    konq_historyprovider.cpp
    kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
    kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
-
-#    konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
+#  konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
    knewmenu.cpp # deprecated (functionality has moved to kdelibs)
    konq_popupmenuinformation.cpp # deprecated (functionality has moved to kdelibs)
    konq_menuactions.cpp     # deprecated (functionality has moved to kdelibs)
    konq_fileitemcapabilities.cpp # deprecated (functionality has moved to kdelibs)
 )
 
-add_library(konq SHARED ${konq_LIB_SRCS})
+add_library(konq ${konq_LIB_SRCS})
 
-target_link_libraries(konq KF5::Bookmarks KF5::KDELibs4Support KF5::Parts ${ZLIB_LIBRARY} ${X11_X11_LIB})
+generate_export_header(konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
 
-set_target_properties(konq PROPERTIES VERSION ${KONQ_VERSION_STRING} SOVERSION ${KONQ_SOVERSION} )
+target_link_libraries(konq
+    PUBLIC
+    KF5::XmlGui
+    KF5::ConfigCore
+    KF5::KIOCore
+    KF5::KIOFileWidgets
+    KF5::CoreAddons
+    KF5::Service
+    KF5::Parts
+    KF5::KDELibs4Support
+    PRIVATE
+    KF5::Bookmarks
+    ${ZLIB_LIBRARY}
+)
 
-install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
+# For crc32 in konq_historyloader.cpp
+target_include_directories(konq INTERFACE "$<INSTALL_INTERFACE:${ZLIB_INCLUDE_DIR}>")
+
+
+set_target_properties(konq PROPERTIES
+    VERSION ${KONQ_VERSION_STRING}
+    SOVERSION ${KONQ_SOVERSION}
+    EXPORT_NAME konq
+)
+
+install(TARGETS konq ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konq_sound ###############
 
@@ -54,24 +98,42 @@ install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( FILES directory_bookmarkbar.desktop   DESTINATION  ${DATA_INSTALL_DIR}/kbookmark )
-install( FILES
- konq_popupmenu.h
- konq_popupmenuinformation.h
- konq_popupmenuplugin.h
- konq_dndpopupmenuplugin.h
- knewmenu.h
- konq_menuactions.h
- # konq_copytomenu.h - anyone needs it?
- konq_operations.h
- libkonq_export.h
- konq_events.h
- konqmimedata.h
- konq_fileitemcapabilities.h
- kversioncontrolplugin.h
- kversioncontrolplugin2.h
- konq_historyprovider.h
- konq_historyentry.h
-DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+install(FILES directory_bookmarkbar.desktop DESTINATION ${KF5_DATA_INSTALL_DIR}/kbookmark)
+install(FILES
+    # konq_copytomenu.h - anyone needs it?
+    knewmenu.h
+    konq_dndpopupmenuplugin.h
+    konq_events.h
+    konq_fileitemcapabilities.h
+    konq_historyentry.h
+    konq_historyprovider.h
+    konq_menuactions.h
+    konq_operations.h
+    konq_popupmenu.h
+    konq_popupmenuinformation.h
+    konq_popupmenuplugin.h
+    konqmimedata.h
+    kversioncontrolplugin.h
+    kversioncontrolplugin2.h
+    ${LibKonq_BINARY_DIR}/libkonq_export.h
+
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
+    COMPONENT Devel
 )
-install( FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
+
+install(FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop
+    DESTINATION ${SERVICETYPES_INSTALL_DIR}
+)
+
+add_subdirectory(pics)
+add_subdirectory(favicons)
+add_subdirectory(Templates)
+
+if(BUILD_TESTING)
+  add_subdirectory(tests)
+endif()
+
+# TODO Remove the if/endif lines if LibKonq is split.
+if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
+  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()

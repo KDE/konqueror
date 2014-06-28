@@ -402,5 +402,3 @@ QSize KonqStatusBarMessageLabel::minimumSizeHint() const
     }
     return sz;
 }
-
-#include "konq_statusbarmessagelabel.moc"

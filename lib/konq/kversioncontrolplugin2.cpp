@@ -47,5 +47,3 @@ QList<QAction*> KVersionControlPlugin2::contextMenuActions(const QString& direct
     Q_UNUSED(directory);
     return QList<QAction*>();
 }
-
-#include "kversioncontrolplugin2.moc"

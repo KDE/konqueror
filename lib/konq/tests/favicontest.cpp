@@ -25,8 +25,6 @@
 #include <QDateTime>
 #include <kmimetype.h>
 
-#include "favicontest.moc"
-
 QTEST_KDEMAIN( FavIconTest, NoGUI )
 
 static const char s_hostUrl[] = "http://www.google.com";

@@ -155,5 +155,3 @@ void KonqNameAndUrlInputDialog::setSuggestedUrl(const KUrl& url)
 {
     d->m_urlRequester->setUrl(url);
 }
-
-#include "konq_nameandurlinputdialog.moc"

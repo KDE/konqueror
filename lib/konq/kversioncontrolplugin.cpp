@@ -26,5 +26,3 @@ KVersionControlPlugin::KVersionControlPlugin(QObject* parent) :
 KVersionControlPlugin::~KVersionControlPlugin()
 {
 }
-
-#include "kversioncontrolplugin.moc"

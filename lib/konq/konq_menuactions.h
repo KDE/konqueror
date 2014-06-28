@@ -21,6 +21,7 @@
 #ifndef KONQ_MENUACTIONS_H
 #define KONQ_MENUACTIONS_H
 
+#include <kdemacros.h>
 #include <kfileitem.h>
 #include <libkonq_export.h>
 
