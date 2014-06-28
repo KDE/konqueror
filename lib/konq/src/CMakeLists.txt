@@ -24,11 +24,13 @@ set(konq_LIB_SRCS
    konq_fileitemcapabilities.cpp # deprecated (functionality has moved to kdelibs)
 )
 
-add_library(konq ${konq_LIB_SRCS})
+add_library(KF5Konq ${konq_LIB_SRCS})
 
-generate_export_header(konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
+generate_export_header(KF5Konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
 
-target_link_libraries(konq
+add_library(KF5::Konq ALIAS KF5Konq)
+
+target_link_libraries(KF5Konq
     PUBLIC
     KF5::XmlGui
     KF5::ConfigCore
@@ -44,16 +46,16 @@ target_link_libraries(konq
 )
 
 # For crc32 in konq_historyloader.cpp
-target_include_directories(konq INTERFACE "$<INSTALL_INTERFACE:${ZLIB_INCLUDE_DIR}>")
+target_include_directories(KF5Konq INTERFACE "$<INSTALL_INTERFACE:${ZLIB_INCLUDE_DIR}>")
 
 
-set_target_properties(konq PROPERTIES
+set_target_properties(KF5Konq PROPERTIES
     VERSION ${KONQ_VERSION_STRING}
     SOVERSION ${KONQ_SOVERSION}
-    EXPORT_NAME konq
+    EXPORT_NAME Konq
 )
 
-install(TARGETS konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konq_sound ###############
 

@@ -11,14 +11,14 @@ remove_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 ecm_add_tests(
    konqmimedatatest.cpp
-   LINK_LIBRARIES Qt5::Test konq
+   LINK_LIBRARIES KF5Konq Qt5::Test
 )
 
 ########### konqpopupmenutest ###############
 
 ecm_add_tests(
    konqpopupmenutest.cpp
-   LINK_LIBRARIES Qt5::Test konq
+   LINK_LIBRARIES KF5Konq Qt5::Test
 )
 
 ########### favicontest ###############
@@ -30,6 +30,6 @@ add_executable(favicontest ${favicontest_SRCS})
 
 ecm_mark_as_test(favicontest)
 
-target_link_libraries(favicontest konq Qt5::Test)
+target_link_libraries(favicontest KF5Konq Qt5::Test)
 
 ############################################
