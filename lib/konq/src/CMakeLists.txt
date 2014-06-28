@@ -82,7 +82,7 @@ install(FILES
     konqmimedata.h
     kversioncontrolplugin.h
     kversioncontrolplugin2.h
-    ${LibKonq_BINARY_DIR}/libkonq_export.h
+    ${LibKonq_BINARY_DIR}/src/libkonq_export.h
 
     DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
     COMPONENT Devel
