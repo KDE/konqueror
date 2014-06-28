@@ -53,7 +53,7 @@ set_target_properties(konq PROPERTIES
     EXPORT_NAME konq
 )
 
-install(TARGETS konq ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konq_sound ###############
 
