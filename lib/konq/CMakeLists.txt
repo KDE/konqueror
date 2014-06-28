@@ -130,7 +130,7 @@ add_subdirectory(favicons)
 add_subdirectory(Templates)
 
 if(BUILD_TESTING)
-  add_subdirectory(tests)
+  add_subdirectory(autotests)
 endif()
 
 # TODO Remove the if/endif lines if LibKonq is split.
