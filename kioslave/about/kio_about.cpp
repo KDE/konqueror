@@ -41,14 +41,14 @@ void AboutProtocol::get( const QUrl& )
     os << "<html><head><title>about:blank</title></head><body></body></html>";
     os.flush();
 
-    mimeType("text/html");
+    mimeType(QStringLiteral("text/html"));
     data( output );
     finished();
 }
 
 void AboutProtocol::mimetype( const QUrl& )
 {
-    mimeType("text/html");
+    mimeType(QStringLiteral("text/html"));
     finished();
 }
 
