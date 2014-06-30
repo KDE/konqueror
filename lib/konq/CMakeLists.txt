@@ -6,7 +6,7 @@ project(LibKonq)
 find_package(ECM 0.0.14 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
-set(LIBKONQ_VERSION "4.97.0")
+set(LIBKONQ_VERSION "5.97.0")
 
 include(ECMSetupVersion)
 include(GenerateExportHeader)
