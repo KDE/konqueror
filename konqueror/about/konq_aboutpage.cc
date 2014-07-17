@@ -161,7 +161,7 @@ QString KonqAboutPageSingleton::intro()
 			" by choosing the Help -> Konqueror Introduction menu option, and then pressing "
 			"Settings -> Save View Profile As... -> \"Web Browsing\".", QString("config:/disable_overview")) )
 	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
-	  .arg( i18n( "Next: Tips &amp; Tricks" ) )
+	  .arg( i18n( "Next: Tips & Tricks" ) )
 	;
 
 
@@ -292,7 +292,7 @@ QString KonqAboutPageSingleton::tips()
 	.arg( i18n( "Introduction" ) )
 	.arg( i18n( "Tips" ) )
 	.arg( i18n( "Specifications" ) )
-	.arg( i18n( "Tips &amp; Tricks" ) )
+	.arg( i18n( "Tips & Tricks" ) )
 	  .arg( i18n( "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
 		      "using Google, for the search phrase \"KDE\". There are a lot of "
 		      "Web-Shortcuts predefined to make searching for software or looking "
