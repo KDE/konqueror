@@ -477,8 +477,10 @@ void KFindTreeView::saveResults()
             "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
                             "<head>\n"
                             "<title>%2</title></head>\n"
+                            "<meta charset=\"%1\">\n"
                             "<body>\n<h1>%2</h1>\n"
                             "<dl>\n")
+            .arg(QString::fromLatin1(QTextCodec::codecForLocale()->name()))
             .arg(i18n("KFind Results File"));
 
             Q_FOREACH( const KFindItem & item, itemList )
