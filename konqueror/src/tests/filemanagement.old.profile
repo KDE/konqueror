@@ -27,7 +27,6 @@ Name[el]=Διαχείριση αρχείων
 Name[en_GB]=File Management
 Name[eo]=Dosieradministrilo
 Name[es]=Gestión de archivos
-Name[et]=Failihaldur
 Name[eu]=Fitxategi-kudeaketa
 Name[fa]=مدیریت پرونده‌
 Name[fi]=Tiedostonhallinta
