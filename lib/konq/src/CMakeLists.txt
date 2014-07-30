@@ -67,7 +67,6 @@ install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS
 
 install(FILES directory_bookmarkbar.desktop DESTINATION ${KF5_DATA_INSTALL_DIR}/kbookmark)
 install(FILES
-    knewmenu.h
     konq_copytomenu.h
     konq_dndpopupmenuplugin.h
     konq_events.h
