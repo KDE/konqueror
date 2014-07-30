@@ -25,8 +25,8 @@
 #include "qtest_kde.h"
 #include <QDir>
 #include <kparts/browserextension.h>
-#include <knewmenu.h>
 #include <kdebug.h>
+#include <knewfilemenu.h>
 #include <kfileitemlistproperties.h>
 
 QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
