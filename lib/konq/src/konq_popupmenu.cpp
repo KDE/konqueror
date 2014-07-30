@@ -27,7 +27,6 @@
 #include "kfileitemactionplugin.h"
 #include "kabstractfileitemactionplugin.h"
 #include "kpropertiesdialog.h"
-#include "knewmenu.h"
 #include "konq_operations.h"
 
 #include <klocale.h>
@@ -37,6 +36,7 @@
 #include <krun.h>
 #include <kprotocolmanager.h>
 #include <kicon.h>
+#include <knewfilemenu.h>
 #include <kiconloader.h>
 #include <kinputdialog.h>
 #include <kglobalsettings.h>
