@@ -17,7 +17,6 @@ set(konq_LIB_SRCS
    konq_historyprovider.cpp
    kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
    kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
-   konq_fileitemcapabilities.cpp # deprecated (functionality has moved to kdelibs)
 )
 
 add_library(KF5Konq ${konq_LIB_SRCS})
@@ -68,13 +67,10 @@ install(FILES
     konq_copytomenu.h
     konq_dndpopupmenuplugin.h
     konq_events.h
-    konq_fileitemcapabilities.h
     konq_historyentry.h
     konq_historyprovider.h
-    konq_menuactions.h
     konq_operations.h
     konq_popupmenu.h
-    konq_popupmenuinformation.h
     konq_popupmenuplugin.h
     konqmimedata.h
     kversioncontrolplugin.h
