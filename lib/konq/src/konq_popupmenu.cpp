@@ -21,7 +21,6 @@
 #include "konq_popupmenu.h"
 #include <kfileitemlistproperties.h>
 #include "konq_popupmenuplugin.h"
-#include "konq_popupmenuinformation.h"
 #include "konq_copytomenu.h"
 #include "kfileitemactions.h"
 #include "kfileitemactionplugin.h"
@@ -116,7 +115,6 @@ public:
     KNewFileMenu *m_pMenuNew;
     KUrl m_sViewURL;
     KFileItemListProperties m_popupItemProperties;
-    KonqPopupMenuInformation m_popupMenuInfo; // only used by plugins
     KFileItemActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
     KBookmarkManager* m_bookmarkManager;
@@ -585,8 +583,6 @@ void KonqPopupMenuPrivate::addPlugins()
     const KService::List konqPlugins = KMimeTypeTrader::self()->query(commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
 
     if (!konqPlugins.isEmpty()) {
-        m_popupMenuInfo.setItemListProperties(m_popupItemProperties);
-        m_popupMenuInfo.setParentWidget(m_parentWidget);
         KService::List::ConstIterator iterator = konqPlugins.begin();
         const KService::List::ConstIterator end = konqPlugins.end();
         for(; iterator != end; ++iterator) {
@@ -595,7 +591,7 @@ void KonqPopupMenuPrivate::addPlugins()
             if (!plugin)
                 continue;
             plugin->setParent(q);
-            plugin->setup(&m_ownActionCollection, m_popupMenuInfo, q);
+            plugin->setup(&m_ownActionCollection, m_popupItemProperties, q);
         }
     }
 
