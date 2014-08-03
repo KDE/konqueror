@@ -49,7 +49,6 @@
 
 #include "settings.h"
 #include "pass.h"
-#include "chfnprocess.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 
@@ -181,36 +180,27 @@ void KCMUserAccount::save()
 	/* Save realname to /etc/passwd */
 	if ( _mw->leRealname->isModified() )
 	{
-		KPasswordDialog dlg( _mw );
-		dlg.setPrompt(i18n("Please enter your password in order to save your settings:"));
-		if ( !dlg.exec() )
-		{
-			KMessageBox::sorry( this, i18n("You must enter "
-				"your password in order to change your information."));
-			return;
-		}
+        // save icon file also with accountsservice
+        QDBusInterface ainterface("org.freedesktop.Accounts",
+            "/org/freedesktop/Accounts",
+            "org.freedesktop.Accounts",
+            QDBusConnection::systemBus());
+        QDBusReply<QDBusObjectPath> reply = ainterface.call("FindUserById", qlonglong(_ku->uid()));
+        if (reply.isValid() && !reply.error().isValid()) {
+            QDBusInterface uinterface("org.freedesktop.Accounts",
+                reply.value().path(),
+                "org.freedesktop.Accounts.User",
+                QDBusConnection::systemBus(),
+                this);
 
-		ChfnProcess *proc = new ChfnProcess();
-		int ret = proc->exec(dlg.password().toLocal8Bit() , _mw->leRealname->text().toLocal8Bit() );
-		if ( ret )
-		{
-			if ( ret == ChfnProcess::PasswordError )
-				KMessageBox::sorry( this, i18n("You must enter a correct password."));
-
-			else
-			{
-				KMessageBox::sorry( this, i18n("An error occurred and your name has "
-							"probably not been changed. The error "
-							"message was:\n%1", QString::fromLocal8Bit(proc->error())));
-				kDebug() << "ChfnProcess->exec() failed. Error code: " << ret
-					<< "\nOutput:" << proc->error() << endl;
-			}
-
-			delete proc;
-			return;
-		}
-
-		delete proc;
+            QString name = _mw->leRealname->text();
+            QDBusReply<void> ureply = uinterface.call("SetRealName", name);
+            if (!ureply.isValid() || ureply.error().isValid()) {
+                kDebug() << ureply.error().message();
+                KMessageBox::error( this, i18n("There was an error setting the name: %1" ,
+                    name) );
+            }
+        }
 	}
 #endif
 
@@ -243,10 +233,12 @@ void KCMUserAccount::save()
 		}
 	}
 	else { // delete existing image
-		if ( !KIO::NetAccess::del(KCFGUserAccount::faceFile(), this) ) {
-			KMessageBox::error( this, i18n("There was an error deleting the image: %1" ,
-				KCFGUserAccount::faceFile()) );
-		}
+        if (QFile::exists(KCFGUserAccount::faceFile())) {
+            if ( !KIO::NetAccess::del(KCFGUserAccount::faceFile(), this) ) {
+                KMessageBox::error( this, i18n("There was an error deleting the image: %1" ,
+                    KCFGUserAccount::faceFile()) );
+            }
+        }
 	}
 
 	/* Save KDE's homebrewn settings */
