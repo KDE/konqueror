@@ -52,14 +52,6 @@ set_target_properties(KF5Konq PROPERTIES
 
 install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
-########### konq_sound ###############
-
-# TODO: bring back
-# set(konq_sound_LIB_SRCS konq_sound.cc)
-# add_library(konq_sound MODULE ${konq_sound_LIB_SRCS})
-# target_link_libraries(konq_sound  ${KDE4_PHONON_LIBS})
-# install(TARGETS konq_sound  DESTINATION ${PLUGIN_INSTALL_DIR} )
-
 ########### install files ###############
 
 install(FILES directory_bookmarkbar.desktop DESTINATION ${KF5_DATA_INSTALL_DIR}/kbookmark)
