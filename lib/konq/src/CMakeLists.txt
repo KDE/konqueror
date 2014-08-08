@@ -9,12 +9,11 @@ set(konq_LIB_SRCS
    konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
    konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
    konq_operations.cpp         # used by dolphin and konqueror
-   konq_statusbarmessagelabel.cpp  # used by dolphin and konqueror
    konq_events.cpp
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
    konq_historyentry.cpp
    konq_historyloader.cpp
-   konq_historyprovider.cpp
+   konq_historyprovider.cpp   # konqueror and konqueror/sidebar
    kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
    kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
 )
