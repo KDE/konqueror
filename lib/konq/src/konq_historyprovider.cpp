@@ -25,7 +25,7 @@
 #include <kdebug.h>
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
-#include "konq_historyloader.h"
+#include "konq_historyloader_p.h"
 #include <zlib.h> // for crc32
 #include <QtDBus>
 

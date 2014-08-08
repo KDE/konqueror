@@ -18,7 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_historyloader.h"
+#include "konq_historyloader_p.h"
 #include <kdebug.h>
 #include <QFile>
 #include <kstandarddirs.h>
