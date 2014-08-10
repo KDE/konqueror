@@ -19,7 +19,6 @@
 
 #include "konqmimedata.h"
 #include <QMimeData>
-#include <kdebug.h>
 
 void KonqMimeData::populateMimeData( QMimeData* mimeData,
                                      const KUrl::List& kdeURLs,
@@ -32,18 +31,6 @@ void KonqMimeData::populateMimeData( QMimeData* mimeData,
         kdeURLs.populateMimeData(mostLocalURLs, mimeData);
 
     addIsCutSelection(mimeData, cut);
-
-    // for compatibility reasons
-    QString application_x_qiconlist;
-    int items=qMax(kdeURLs.count(),mostLocalURLs.count());
-    for (int i=0;i<items;i++) {
-	int offset=i*16;
-	QString tmp("%1$@@$%2$@@$32$@@$32$@@$%3$@@$%4$@@$32$@@$16$@@$no data$@@$");
-	tmp=tmp.arg(offset).arg(offset).arg(offset).arg(offset+40);
-	application_x_qiconlist+=tmp;
-    }
-    mimeData->setData("application/x-qiconlist",application_x_qiconlist.toLatin1());
-    //kDebug(1203)<<"setting application/x-qiconlist to "<<application_x_qiconlist;
 }
 
 bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
@@ -53,7 +40,6 @@ bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
         return false;
     else
     {
-        kDebug(1203) << "KonqDrag::decodeIsCutSelection : a=" << a;
         return (a.at(0) == '1'); // true if 1
     }
 }
