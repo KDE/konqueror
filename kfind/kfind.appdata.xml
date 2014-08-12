@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<component type="desktop">
+  <id>kfind.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KFind</name>
+  <summary>Find Files/Folders</summary>
+  <description>
+    <p>
+      KFind can be used as a standalone search tool, launched by KRunner or from your menu. It is also integrated into Konqueror and Dolphin
+      as &quot;Find File&quot; in the &quot;Tools&quot; menu. It allows you to find files by name, type or content.
+    </p>
+  </description>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kfind</url>
+  <url type="help">http://docs.kde.org/stable/en/applications/kfind/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://kde.org/images/screenshots/kfind.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>kfind</binary>
+  </provides>
+</component>

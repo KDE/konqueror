@@ -16,5 +16,6 @@ install(TARGETS kfind ${INSTALL_TARGETS_DEFAULT_ARGS})
 ########### install files ###############
 
 install( PROGRAMS kfind.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES kfind.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  )
