@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<component type="desktop">
+  <id>konqueror.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Konqueror</name>
+  <summary>KDE File Manager &amp; Web Browser</summary>
+  <description>
+    <p>Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Webbrowsing using KHTML or KDEWebKit as rendering engines</li>
+      <li>File management using most of Dolphin's features (including version-control, service menus and the basic UI)</li>
+      <li>File management on ftp and sftp servers</li>
+      <li>Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)</li>
+      <li>Embedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)</li>
+      <li>Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)</li>
+    </ul>
+  </description>
+  <url type="homepage">http://www.konqueror.org</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=konqueror</url>
+  <url type="help">http://docs.kde.org/stable/en/applications/konqueror/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://kde.org/images/screenshots/konqueror.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>konqueror</binary>
+  </provides>
+</component>

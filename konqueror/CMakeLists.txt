@@ -19,6 +19,7 @@ install( PROGRAMS
    kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop kfmclient_war.desktop
    konqbrowser.desktop konquerorsu.desktop Home.desktop
    DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install(FILES konqueror.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata )
 
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
