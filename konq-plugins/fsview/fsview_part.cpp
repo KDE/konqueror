@@ -37,6 +37,7 @@
 #include <kprotocolmanager.h>
 #include <kio/job.h>
 #include <kio/deletejob.h>
+#include <kio/paste.h>
 #include <kmessagebox.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
@@ -44,7 +45,6 @@
 #include <kio/jobuidelegate.h>
 // from kdebase/libkonq...
 #include <konq_operations.h>
-#include <konqmimedata.h>
 #include <ktoolinvocation.h>
 #include <kconfiggroup.h>
 #include <KDebug>
@@ -497,7 +497,8 @@ void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modif
 void FSViewBrowserExtension::copySelection( bool move )
 {
   QMimeData* data = new QMimeData;
-  KonqMimeData::populateMimeData( data, KUrl::List(), _view->selectedUrls(), move );
+  data->setUrls(_view->selectedUrls());
+  KIO::setClipboardDataCut(data, move);
   QApplication::clipboard()->setMimeData( data );
 }
 

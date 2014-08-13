@@ -31,7 +31,6 @@
 #include <QClipboard>
 #include <QCursor>
 #include <QtCore/QMimeData>
-#include <konqmimedata.h>
 #include <kdesktopfile.h>
 
 void KonqSidebarTreeTopLevelItem::init()
@@ -90,10 +89,11 @@ void KonqSidebarTreeTopLevelItem::drop( QDropEvent * ev )
 
 bool KonqSidebarTreeTopLevelItem::populateMimeData( QMimeData* mimeData, bool move )
 {
-    KUrl::List lst;
-    lst.append( KUrl(path()) );
+    QList<QUrl> lst;
+    lst.append(QUrl::fromLocalFile(path()));
 
-    KonqMimeData::populateMimeData( mimeData, KUrl::List(), lst, move );
+    mimeData->setUrls(lst);
+    KIO::setClipboardDataCut(mimeData, move);
 
 #if 0
     const QPixmap * pix = pixmap(0);

@@ -10,7 +10,6 @@ set(konq_LIB_SRCS
    konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
    konq_operations.cpp         # used by dolphin and konqueror
    konq_events.cpp
-   konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
    konq_historyentry.cpp
    konq_historyloader.cpp
    konq_historyprovider.cpp   # konqueror and konqueror/sidebar
@@ -62,7 +61,6 @@ install(FILES
     konq_historyprovider.h
     konq_operations.h
     konq_popupmenuplugin.h
-    konqmimedata.h
     kversioncontrolplugin.h
     kversioncontrolplugin2.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h

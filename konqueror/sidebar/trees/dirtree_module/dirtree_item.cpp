@@ -31,7 +31,6 @@
 #include <kio/paste.h>
 #include <kconfiggroup.h>
 #include <kiconloader.h>
-#include <konqmimedata.h>
 #include <kde_file.h>
 
 #include <QtCore/QFile>
@@ -174,7 +173,8 @@ bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
     lst.append( m_fileItem.url() );
     kDebug() << lst;
 
-    KonqMimeData::populateMimeData( mimeData, lst, KUrl::List(), move );
+    mimeData->setUrls(lst);
+    KIO::setClipboardDataCut(mimeData, move);
     return true;
 }
 

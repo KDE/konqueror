@@ -7,13 +7,6 @@ include(ECMAddTests)
 # For konqpopupmenutest
 remove_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
-########### konqmimedatatest ###############
-
-ecm_add_tests(
-   konqmimedatatest.cpp
-   LINK_LIBRARIES KF5Konq Qt5::Test
-)
-
 ########### konqpopupmenutest ###############
 
 ecm_add_tests(
