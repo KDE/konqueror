@@ -1,19 +1,62 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
   <id>konqueror.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <name>Konqueror</name>
+  <name xml:lang="cs">Konqueror</name>
+  <name xml:lang="nl">Konqueror</name>
+  <name xml:lang="uk">Konqueror</name>
+  <name xml:lang="x-test">xxKonquerorxx</name>
+  <name xml:lang="zh-TW">瀏覽器_Konqueror</name>
   <summary>KDE File Manager &amp; Web Browser</summary>
+  <summary xml:lang="cs">Správce souborů &amp; prohlížeč Webu pro prostředí KDE</summary>
+  <summary xml:lang="nl">KDE's bestandsbeheerder &amp; webbrowser</summary>
+  <summary xml:lang="uk">Програма для керування файлами та перегляду сторінок інтернету у KDE</summary>
+  <summary xml:lang="x-test">xxKDE File Manager &amp; Web Browserxx</summary>
+  <summary xml:lang="zh-TW">KDE 檔案管理員與網頁瀏覽器</summary>
   <description>
     <p>Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.</p>
+    <p xml:lang="nl">Konqueror is de webbrowser van KDE en Zwitsers mes voor elk soort van bestandsbeheer en bekijken van bestanden.</p>
+    <p xml:lang="uk">Konqueror — програма для перегляду інтернету у KDE та універсальна програма для керування та попереднього перегляду файлів.</p>
+    <p xml:lang="x-test">xxKonqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.xx</p>
+    <p xml:lang="zh-TW">Konqueror 是 KDE 的網頁瀏覽器，以及檔案管理與預覽的好工具。</p>
     <p>Features:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
+    <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="x-test">xxFeatures:xx</p>
+    <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Webbrowsing using KHTML or KDEWebKit as rendering engines</li>
+      <li xml:lang="nl">Webbrowsing met KHTML of KDEWebKit als engines voor weergave</li>
+      <li xml:lang="uk">перегляд сторінок інтернету за допомогою рушіїв обробки і показу даних KHTML та KDEWebKit;</li>
+      <li xml:lang="x-test">xxWebbrowsing using KHTML or KDEWebKit as rendering enginesxx</li>
+      <li xml:lang="zh-TW">使用 KHTML 或 KDEWebKit 做成像引擎來瀏覽網頁</li>
       <li>File management using most of Dolphin's features (including version-control, service menus and the basic UI)</li>
+      <li xml:lang="nl">Bestandsbeheer met gebruik van de meeste functies van Dolphin (inclusief beheer van versies, service-menu's en de basis UI)</li>
+      <li xml:lang="uk">керування файлами за допомогою основних можливостей Dolphin (зокрема можливостей з використання систем керування версіями, службових меню та базового інтерфейсу користувача);</li>
+      <li xml:lang="x-test">xxFile management using most of Dolphin's features (including version-control, service menus and the basic UI)xx</li>
+      <li xml:lang="zh-TW">用大部份 Dolphin 的功能來做檔案管理（包括版本控制、服務選單與基本介面等）</li>
       <li>File management on ftp and sftp servers</li>
+      <li xml:lang="nl">Bestandsbeheer op ftp- en sftp-servers</li>
+      <li xml:lang="uk">керування файлами на серверах ftp та sftp;</li>
+      <li xml:lang="x-test">xxFile management on ftp and sftp serversxx</li>
+      <li xml:lang="zh-TW">在 ftp 與 sftp 伺服器的檔案管理</li>
       <li>Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)</li>
+      <li xml:lang="nl">FTP-client met alle functies (u kunt weergaven splitsen om lokale mappen en die op afstand te tonen en voorbeelden in hetzelfde venster)</li>
+      <li xml:lang="uk">повноцінний клієнт FTP (ви можете розділити вікно перегляду на панелі локальної копії та відповідної теки на сервері і переглядати дані з обох тек у одному вікні);</li>
+      <li xml:lang="x-test">xxFull featured FTP-client (you can split views to display local and remote folders and previews in the same window)xx</li>
+      <li xml:lang="zh-TW">完整功能的 FTP 客戶端程式（您可以分割檢視，在同一視窗中同時顯示本地端與遠端的資料夾）</li>
       <li>Embedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)</li>
+      <li xml:lang="nl">Ingebedde toepassingen om bestanden te bekijken en te bewerken (bijv. Okular en KOffice voor documenten, Gwenview voor afbeeldingen, KTextEditor voor tekstbestanden)</li>
+      <li xml:lang="uk">вбудовування програм для попереднього перегляду та редагування файлів (документи Okular та Calligra, зображення Gwenview, текстові файли KTextEditor)</li>
+      <li xml:lang="x-test">xxEmbedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)xx</li>
+      <li xml:lang="zh-TW">嵌入式的應用程式，預覽並編輯檔案（如 Okular 與 KOffice 預覽文件，Gwenview 預覽圖片，KTextEditor 編輯文字檔等）</li>
       <li>Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)</li>
+      <li xml:lang="nl">Verschillende soorten plug-ins: Service-menu's, KParts (ingebedde toepassing), KIO (toegang tot bestanden met speciale protocollen zoals http of ftp) en KPart-plug-ins (zoals AdBlocker...)</li>
+      <li xml:lang="uk">додатки різних типів: службові меню, модулі KPart (вбудовані програми), KIO (доступ до файлів на основі спеціалізованих протоколів, зокрема http та ftp) та додатки KPart (зокрема додатки блокування реклами).</li>
+      <li xml:lang="x-test">xxDifferent kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)xx</li>
+      <li xml:lang="zh-TW">各種外掛程式：服務選單，KParts 部件（嵌入應用程式），KIO（使用特殊協定如 http 或 ftp 來存取檔案）與 KPart 外掛程式（如 AdBlocker 等等）</li>
     </ul>
   </description>
   <url type="homepage">http://www.konqueror.org</url>
