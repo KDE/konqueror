@@ -1,15 +1,29 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
   <id>kfind.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KFind</name>
+  <name xml:lang="cs">KFind</name>
+  <name xml:lang="nl">KFind</name>
+  <name xml:lang="uk">KFind</name>
+  <name xml:lang="x-test">xxKFindxx</name>
+  <name xml:lang="zh-TW">KFind</name>
   <summary>Find Files/Folders</summary>
+  <summary xml:lang="cs">Najít soubory/složky</summary>
+  <summary xml:lang="nl">Bestanden/mappen zoeken</summary>
+  <summary xml:lang="uk">Програма для пошуку файлів і тек</summary>
+  <summary xml:lang="x-test">xxFind Files/Foldersxx</summary>
+  <summary xml:lang="zh-TW">尋找檔案/資料夾</summary>
   <description>
     <p>
       KFind can be used as a standalone search tool, launched by KRunner or from your menu. It is also integrated into Konqueror and Dolphin
-      as &quot;Find File&quot; in the &quot;Tools&quot; menu. It allows you to find files by name, type or content.
+      as "Find File" in the "Tools" menu. It allows you to find files by name, type or content.
     </p>
+    <p xml:lang="nl">KFind kan gebuikt worden als een alleenstaand hulpmiddel voor zoeken, gestart door KRunner of vanuit uw menu. Het is ook geïntegreerd in Konqueror en Dolphin als "Bestand zoeken" in het menu "Hulpmiddelen". Het stelt u in staat bestanden te zoeken op naam, type of inhoud.</p>
+    <p xml:lang="uk">KFind можна скористатися як окремою програмою для пошуку даних, запустивши її за допомогою KRunner або меню. Крім того, програму вбудовано до Konqueror. Нею можна скористатися за допомогою пункту «Знайти файл» у меню «Інструменти». Передбачено пошук файлів за назвою, типом і вмістом.</p>
+    <p xml:lang="x-test">xxKFind can be used as a standalone search tool, launched by KRunner or from your menu. It is also integrated into Konqueror and Dolphin as "Find File" in the "Tools" menu. It allows you to find files by name, type or content.xx</p>
+    <p xml:lang="zh-TW">KFind 可以做成獨立的搜尋工具，從 KRunner 或是您的選單中開啟。它也可以整合到 Konqueror 與 Dolphin 「工具」選單中的「尋找檔案」。它可以讓您依檔名、檔案型態或內容來搜尋。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kfind</url>
   <url type="help">http://docs.kde.org/stable/en/applications/kfind/index.html</url>
