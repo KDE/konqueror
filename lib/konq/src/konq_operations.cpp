@@ -120,12 +120,6 @@ void KonqOperations::emptyTrash( QWidget* parent )
     op->_del( EMPTYTRASH, KUrl("trash:/"), DEFAULT_CONFIRMATION );
 }
 
-void KonqOperations::restoreTrashedItems( const KUrl::List& urls, QWidget* parent )
-{
-    KonqOperations *op = new KonqOperations( parent );
-    op->_restoreTrashedItems( urls );
-}
-
 KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
     KIO::SimpleJob * job = KIO::mkdir(url);
@@ -251,16 +245,6 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
     } else {
         delete this; // this one is ok, _del is always called directly
     }
-}
-
-void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
-{
-    m_method = RESTORE;
-    KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls );
-    KJobWidgets::setWindow(job, parentWidget());
-    KIO::getJobTracker()->registerJob(job);
-    connect( job, &KonqMultiRestoreJob::result,
-             this, &KonqOperations::slotResult );
 }
 
 bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget )
@@ -849,7 +833,6 @@ void KonqOperations::slotResult(KJob *job)
         }
         break;
     case EMPTYTRASH:
-    case RESTORE:
         // Update konq windows opened on trash:/
         org::kde::KDirNotify::emitFilesAdded(QUrl("trash:/")); // yeah, files were removed, but we don't know which ones...
         break;
@@ -945,65 +928,6 @@ KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, N
 }
 
 ////
-
-KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls )
-    : KIO::Job(),
-      m_urls( urls ), m_urlsIterator( m_urls.begin() ),
-      m_progress( 0 )
-{
-    QTimer::singleShot(0, this, SLOT(slotStart()));
-    setUiDelegate(new KIO::JobUiDelegate);
-}
-
-void KonqMultiRestoreJob::slotStart()
-{
-    if ( m_urlsIterator == m_urls.begin() ) // first time: emit total
-        setTotalAmount( KJob::Files, m_urls.count() );
-
-    if ( m_urlsIterator != m_urls.end() )
-    {
-        const KUrl& url = *m_urlsIterator;
-
-        KUrl new_url = url;
-        if ( new_url.protocol()=="system"
-          && new_url.path().startsWith("/trash") )
-        {
-            QString path = new_url.path();
-	    path.remove(0, 6);
-	    new_url.setProtocol("trash");
-	    new_url.setPath(path);
-        }
-
-        Q_ASSERT( new_url.protocol() == "trash" );
-        QByteArray packedArgs;
-        QDataStream stream( &packedArgs, QIODevice::WriteOnly );
-        stream << (int)3 << new_url;
-        KIO::Job* job = KIO::special( new_url, packedArgs, KIO::HideProgressInfo );
-        addSubjob( job );
-        setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);
-    }
-    else // done!
-    {
-        org::kde::KDirNotify::emitFilesRemoved(m_urls );
-        emitResult();
-    }
-}
-
-void KonqMultiRestoreJob::slotResult( KJob *job )
-{
-    if ( job->error() )
-    {
-        KIO::Job::slotResult( job ); // will set the error and emit result(this)
-        return;
-    }
-    removeSubjob(job);
-    // Move on to next one
-    ++m_urlsIterator;
-    ++m_progress;
-    //emit processedSize( this, m_progress );
-    emitPercent( m_progress, m_urls.count() );
-    slotStart();
-}
 
 QWidget* KonqOperations::parentWidget() const
 {

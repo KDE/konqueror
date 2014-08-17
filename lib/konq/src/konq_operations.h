@@ -140,10 +140,6 @@ public:
      * Empty the trash
      */
     static void emptyTrash( QWidget* parent );
-    /**
-     * Restore trashed items
-     */
-    static void restoreTrashedItems( const KUrl::List& urls, QWidget* parent );
 
     /**
      * Create a directory. Same as KIO::mkdir but records job into KonqFileUndoManager for undo/redo purposes.
@@ -261,7 +257,6 @@ Q_SIGNALS:
 private:
     QWidget* parentWidget() const;
     void _del( Operation method, const KUrl::List & selectedUrls, ConfirmationType confirmation );
-    void _restoreTrashedItems( const KUrl::List& urls );
     void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
     void _addPluginActions(QList<QAction*>& pluginActions, const KUrl& destination, const KFileItemListProperties& info);
 
@@ -308,26 +303,6 @@ private:
     // for doDrop
     DropInfo * m_info;
     KIOPasteInfo * m_pasteInfo;
-};
-
-#include <kio/job.h>
-
-/// Restore multiple trashed files
-class KonqMultiRestoreJob : public KIO::Job
-{
-    Q_OBJECT
-
-public:
-    KonqMultiRestoreJob( const KUrl::List& urls );
-
-protected Q_SLOTS:
-    virtual void slotStart();
-    virtual void slotResult( KJob *job );
-
-private:
-    const KUrl::List m_urls;
-    KUrl::List::const_iterator m_urlsIterator;
-    int m_progress;
 };
 
 #endif

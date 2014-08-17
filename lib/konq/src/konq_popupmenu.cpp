@@ -47,6 +47,9 @@
 #include <kauthorized.h>
 #include <kglobal.h>
 #include <kacceleratormanager.h>
+#include <KIO/RestoreJob>
+#include <KJobWidgets>
+#include <KJobUiDelegate>
 
 #include <QFileInfo>
 
@@ -536,7 +539,9 @@ void KonqPopupMenuPrivate::slotConfigTrashBin()
 
 void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
 {
-  KonqOperations::restoreTrashedItems(m_popupItemProperties.urlList(), m_parentWidget);
+    KIO::RestoreJob *job = KIO::restoreFromTrash(m_popupItemProperties.urlList());
+    KJobWidgets::setWindow(job, m_parentWidget);
+    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 
 void KonqPopupMenuPrivate::slotPopupAddToBookmark()
