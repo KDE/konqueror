@@ -5,10 +5,16 @@
   <name>Konqueror</name>
   <name xml:lang="ca">Konqueror</name>
   <name xml:lang="cs">Konqueror</name>
+  <name xml:lang="en-GB">Konqueror</name>
   <name xml:lang="nds">Konqueror</name>
   <name xml:lang="nl">Konqueror</name>
   <name xml:lang="pl">Konqueror</name>
+  <name xml:lang="pt-BR">Konqueror</name>
   <name xml:lang="sk">Konqueror</name>
+  <name xml:lang="sr">К‑освајач</name>
+  <name xml:lang="sr-Latn">K‑osvajač</name>
+  <name xml:lang="sr-ijekavian">К‑освајач</name>
+  <name xml:lang="sr-ijekavianlatin">K‑osvajač</name>
   <name xml:lang="sv">Konqueror</name>
   <name xml:lang="uk">Konqueror</name>
   <name xml:lang="x-test">xxKonquerorxx</name>
@@ -16,10 +22,16 @@
   <summary>KDE File Manager &amp; Web Browser</summary>
   <summary xml:lang="ca">El gestor de fitxers i navegador web del KDE</summary>
   <summary xml:lang="cs">Správce souborů &amp; prohlížeč Webu pro prostředí KDE</summary>
+  <summary xml:lang="en-GB">KDE File Manager &amp; Web Browser</summary>
   <summary xml:lang="nds">KDE sien Dateipleger un Nettkieker</summary>
   <summary xml:lang="nl">KDE's bestandsbeheerder &amp; webbrowser</summary>
   <summary xml:lang="pl">Przeglądarka plików i sieci dla KDE</summary>
+  <summary xml:lang="pt-BR">Gerenciador de arquivos e navegador Web do KDE</summary>
   <summary xml:lang="sk">KDE správca súborov &amp; webový prehliadač</summary>
+  <summary xml:lang="sr">КДЕ‑ов менаџер фајлова и веб прегледач</summary>
+  <summary xml:lang="sr-Latn">KDE‑ov menadžer fajlova i veb pregledač</summary>
+  <summary xml:lang="sr-ijekavian">КДЕ‑ов менаџер фајлова и веб прегледач</summary>
+  <summary xml:lang="sr-ijekavianlatin">KDE‑ov menadžer fajlova i veb pregledač</summary>
   <summary xml:lang="sv">KDE:s filhanterare och webbläsare</summary>
   <summary xml:lang="uk">Програма для керування файлами та перегляду сторінок інтернету у KDE</summary>
   <summary xml:lang="x-test">xxKDE File Manager &amp; Web Browserxx</summary>
@@ -27,9 +39,16 @@
   <description>
     <p>Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.</p>
     <p xml:lang="ca">Konqueror és el navegador web del KDE i una autèntica navalla suïssa per a qualsevol tipus de gestió de fitxers i vista prèvia de fitxers.</p>
+    <p xml:lang="en-GB">Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.</p>
     <p xml:lang="nds">Konqueror is KDE sien Nettkieker un dat swiezer Offiziersmetz för all Problemen bi de Dateipleeg un för Vöransichten.</p>
     <p xml:lang="nl">Konqueror is de webbrowser van KDE en Zwitsers mes voor elk soort van bestandsbeheer en bekijken van bestanden.</p>
     <p xml:lang="pl">Konqueror jest przeglądarką sieciową KDE i szwajcarskim scyzorykiem we wszystkich działaniach związanych z zarządzaniem i podglądem plików.</p>
+    <p xml:lang="pt-BR">Konqueror é o navegador Web do KDE e um canivete-suíço para gerenciamento e visualização de arquivos.</p>
+    <p xml:lang="sk">Konqueror je webový prehliadač pre KDE a švajčiarsky nožík pre akúkoľvek správu súborov a náhľady pre súbory.</p>
+    <p xml:lang="sr">К‑освајач је КДЕ‑ов веб прегледач и швајцарски ножић за свакакво управљање и прегледање фајлова.</p>
+    <p xml:lang="sr-Latn">K‑osvajač je KDE‑ov veb pregledač i švajcarski nožić za svakakvo upravljanje i pregledanje fajlova.</p>
+    <p xml:lang="sr-ijekavian">К‑освајач је КДЕ‑ов веб прегледач и швајцарски ножић за свакакво управљање и прегледање фајлова.</p>
+    <p xml:lang="sr-ijekavianlatin">K‑osvajač je KDE‑ov veb pregledač i švajcarski nožić za svakakvo upravljanje i pregledanje fajlova.</p>
     <p xml:lang="sv">Konqueror är KDE:s webbläsare och Schweiziska armékniv för alla sorters hantering och förhandsgranskning av filer.</p>
     <p xml:lang="uk">Konqueror — програма для перегляду інтернету у KDE та універсальна програма для керування та попереднього перегляду файлів.</p>
     <p xml:lang="x-test">xxKonqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.xx</p>
@@ -37,10 +56,16 @@
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
+    <p xml:lang="en-GB">Features:</p>
     <p xml:lang="nds">Markmalen:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pl">Możliwości:</p>
+    <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sr">Могућности:</p>
+    <p xml:lang="sr-Latn">Mogućnosti:</p>
+    <p xml:lang="sr-ijekavian">Могућности:</p>
+    <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
@@ -48,56 +73,96 @@
     <ul>
       <li>Webbrowsing using KHTML or KDEWebKit as rendering engines</li>
       <li xml:lang="ca">Navegació web usant KHTML o KDEWebKit com a motors de renderització</li>
+      <li xml:lang="en-GB">Webbrowsing using KHTML or KDEWebKit as rendering engines</li>
       <li xml:lang="nds">Nettkieken mit KHTML oder KDEWebKit as Dorstellkarns</li>
       <li xml:lang="nl">Webbrowsing met KHTML of KDEWebKit als engines voor weergave</li>
       <li xml:lang="pl">Przeglądanie sieci przy użyciu KHTML lub KDEWebKit jako silniki wyświetlania</li>
+      <li xml:lang="pt-BR">Navegação Web usando KHTML ou KDEWebKit como mecanismo de renderização</li>
       <li xml:lang="sk">Prehliadanie webu pomocou renderovacích enginov KHTML alebo KDEWebKit</li>
+      <li xml:lang="sr">Веб прегледање, преко КХТМЛ‑а или К‑вебкита као рендерског мотора.</li>
+      <li xml:lang="sr-Latn">Veb pregledanje, preko KHTML‑a ili KWebKita kao renderskog motora.</li>
+      <li xml:lang="sr-ijekavian">Веб прегледање, преко КХТМЛ‑а или К‑вебкита као рендерског мотора.</li>
+      <li xml:lang="sr-ijekavianlatin">Veb pregledanje, preko KHTML‑a ili KWebKita kao renderskog motora.</li>
       <li xml:lang="sv">Webbläsning med KHTML eller KDEWebKit som återgivningsgränssnitt</li>
       <li xml:lang="uk">перегляд сторінок інтернету за допомогою рушіїв обробки і показу даних KHTML та KDEWebKit;</li>
       <li xml:lang="x-test">xxWebbrowsing using KHTML or KDEWebKit as rendering enginesxx</li>
       <li xml:lang="zh-TW">使用 KHTML 或 KDEWebKit 做成像引擎來瀏覽網頁</li>
       <li>File management using most of Dolphin's features (including version-control, service menus and the basic UI)</li>
       <li xml:lang="ca">Gestió de fitxers usant la major part de les característiques del Dolphin (incloent el control de versions, menús de servei i la interfície d'usuari bàsica)</li>
+      <li xml:lang="en-GB">File management using most of Dolphin's features (including version-control, service menus and the basic UI)</li>
       <li xml:lang="nds">Dateipleeg mit de mehrsten vun Dolphin sien Funkschonen (ok Verschoonkuntrull, Deenstmenüs un de Brukerböversiet)</li>
       <li xml:lang="nl">Bestandsbeheer met gebruik van de meeste functies van Dolphin (inclusief beheer van versies, service-menu's en de basis UI)</li>
       <li xml:lang="pl">Zarządzanie plikami przy wykorzystaniu większości z możliwości Dolphina (włączając w to sterowanie wersją, menu usług i podstawowy układ sterowania)</li>
+      <li xml:lang="pt-BR">Gerenciamento de arquivos usando muitas das funcionalidades do Dolphin (incluindo controle de versão, menus de serviço e interface básica)</li>
+      <li xml:lang="sk">Správa súborov pomocou väčšiny funkcií Dolphina (vrátane správy verzií, servisných ponúk a základného UI)</li>
+      <li xml:lang="sr">Управљање фајловима, користећи већину Делфинових могућности (укључујући управљање верзијама, сервисне меније, и основно сучеље).</li>
+      <li xml:lang="sr-Latn">Upravljanje fajlovima, koristeći većinu Dolphinovih mogućnosti (uključujući upravljanje verzijama, servisne menije, i osnovno sučelje).</li>
+      <li xml:lang="sr-ijekavian">Управљање фајловима, користећи већину Делфинових могућности (укључујући управљање верзијама, сервисне меније, и основно сучеље).</li>
+      <li xml:lang="sr-ijekavianlatin">Upravljanje fajlovima, koristeći većinu Dolphinovih mogućnosti (uključujući upravljanje verzijama, servisne menije, i osnovno sučelje).</li>
       <li xml:lang="sv">Filhantering med användning av de flesta funktioner i Dolphin (inklusive versionshantering, tjänstmenyer och det grundläggande användargränssnittet)</li>
       <li xml:lang="uk">керування файлами за допомогою основних можливостей Dolphin (зокрема можливостей з використання систем керування версіями, службових меню та базового інтерфейсу користувача);</li>
       <li xml:lang="x-test">xxFile management using most of Dolphin's features (including version-control, service menus and the basic UI)xx</li>
       <li xml:lang="zh-TW">用大部份 Dolphin 的功能來做檔案管理（包括版本控制、服務選單與基本介面等）</li>
       <li>File management on ftp and sftp servers</li>
       <li xml:lang="ca">Gestió de fitxers als servidors FTP i SFTP</li>
+      <li xml:lang="en-GB">File management on ftp and sftp servers</li>
       <li xml:lang="nds">Dateipleeg op FTP- un SFTP-Sersvers</li>
       <li xml:lang="nl">Bestandsbeheer op ftp- en sftp-servers</li>
       <li xml:lang="pl">Zarządzanie plikami na serwerach ftp i sftp</li>
+      <li xml:lang="pt-BR">Gerenciamento de arquivos em servidores ftp e sftp</li>
       <li xml:lang="sk">Správa súborov na ftp a sftp serveroch</li>
+      <li xml:lang="sr">Управљање фајловима на ФТП и СФТП серверима.</li>
+      <li xml:lang="sr-Latn">Upravljanje fajlovima na FTP i SFTP serverima.</li>
+      <li xml:lang="sr-ijekavian">Управљање фајловима на ФТП и СФТП серверима.</li>
+      <li xml:lang="sr-ijekavianlatin">Upravljanje fajlovima na FTP i SFTP serverima.</li>
       <li xml:lang="sv">Filhantering på FTP- och SFTP-servrar</li>
       <li xml:lang="uk">керування файлами на серверах ftp та sftp;</li>
       <li xml:lang="x-test">xxFile management on ftp and sftp serversxx</li>
       <li xml:lang="zh-TW">在 ftp 與 sftp 伺服器的檔案管理</li>
       <li>Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)</li>
       <li xml:lang="ca">Un complet client FTP (podeu dividir les vistes per a mostrar les carpetes locals i remotes, així com les vistes prèvies a la mateixa finestra)</li>
+      <li xml:lang="en-GB">Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)</li>
       <li xml:lang="nds">FTP-Client mit all nödig Funkschonen (deelt Ansicht för lokaal un feern Ornern un Vöransichten binnen dat sülve Finster)</li>
       <li xml:lang="nl">FTP-client met alle functies (u kunt weergaven splitsen om lokale mappen en die op afstand te tonen en voorbeelden in hetzelfde venster)</li>
       <li xml:lang="pl">W pełni funkcjonalny klient FTP (można dzielić widoki tak, aby wyświetlały lokalne i zdalne katalogi wraz z podglądami w tym samym oknie)</li>
+      <li xml:lang="pt-BR">Cliente FTP completo e repleto de recursos (você pode dividir a área de exibição para mostrar as pastas locais e remotas na mesma janela)</li>
+      <li xml:lang="sk">Plne funkčný FTP klient (môžete rozdeliť pohľady na zobrazenie miestnych a vzdialených priečinkov a náhľadov v rovnakom okne)</li>
+      <li xml:lang="sr">Свеобухватни ФТП клијент (можете поделити приказ тако да се у истом прозору виде и локална и удаљена фасцикла, као и прегледи).</li>
+      <li xml:lang="sr-Latn">Sveobuhvatni FTP klijent (možete podeliti prikaz tako da se u istom prozoru vide i lokalna i udaljena fascikla, kao i pregledi).</li>
+      <li xml:lang="sr-ijekavian">Свеобухватни ФТП клијент (можете поделити приказ тако да се у истом прозору виде и локална и удаљена фасцикла, као и прегледи).</li>
+      <li xml:lang="sr-ijekavianlatin">Sveobuhvatni FTP klijent (možete podeliti prikaz tako da se u istom prozoru vide i lokalna i udaljena fascikla, kao i pregledi).</li>
       <li xml:lang="sv">FTP-klient med fullständiga funktioner (det går att dela vyer för att visa lokala kataloger, fjärrkataloger och förhandsgranskningar i samma fönster)</li>
       <li xml:lang="uk">повноцінний клієнт FTP (ви можете розділити вікно перегляду на панелі локальної копії та відповідної теки на сервері і переглядати дані з обох тек у одному вікні);</li>
       <li xml:lang="x-test">xxFull featured FTP-client (you can split views to display local and remote folders and previews in the same window)xx</li>
       <li xml:lang="zh-TW">完整功能的 FTP 客戶端程式（您可以分割檢視，在同一視窗中同時顯示本地端與遠端的資料夾）</li>
       <li>Embedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)</li>
       <li xml:lang="ca">Aplicacions incrustades per a previsualitzar i editar fitxers (p. ex., Okular i KOffice pels documents, Gwenview per a les fotografies, KTextEditor pels fitxers de text)</li>
+      <li xml:lang="en-GB">Embedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)</li>
       <li xml:lang="nds">Inbett Programmen för Vöransichten un för't Bewerken vun Dateien (a.B. Okular un KOffice för Dokmenten, Gwenview för Biller un KTextEditor för Textdateien)</li>
       <li xml:lang="nl">Ingebedde toepassingen om bestanden te bekijken en te bewerken (bijv. Okular en KOffice voor documenten, Gwenview voor afbeeldingen, KTextEditor voor tekstbestanden)</li>
       <li xml:lang="pl">Osadzone aplikacje do podglądu i edytowania plików (np. Okular i KOffice dla dokumentów, Gwenview dla zdjęć, KTextEditor dla plików tekstowych)</li>
+      <li xml:lang="pt-BR">Visualização e edição de arquivos com aplicativos incorporados (p.ex., Okular e KOffice para documentos, Gwenview para imagens, KTextEditor para arquivos de texto)</li>
+      <li xml:lang="sk">Zabudované aplikácie na náhľad a úpravu súborov (napr. Okular a KOffice pre dokumenty, Gwenview pre obrázky, KTextEditor pre textové súbory)</li>
+      <li xml:lang="sr">Угнежђени програми за прегледање и уређивање фајлова (нпр. Окулар и Калигра за документе, Гвенвју за слике, К‑писање за текстуалне фајлове).</li>
+      <li xml:lang="sr-Latn">Ugnežđeni programi za pregledanje i uređivanje fajlova (npr. Okular i Calligra za dokumente, GwenView za slike, K‑pisanje za tekstualne fajlove).</li>
+      <li xml:lang="sr-ijekavian">Угнежђени програми за прегледање и уређивање фајлова (нпр. Окулар и Калигра за документе, Гвенвју за слике, К‑писање за текстуалне фајлове).</li>
+      <li xml:lang="sr-ijekavianlatin">Ugnežđeni programi za pregledanje i uređivanje fajlova (npr. Okular i Calligra za dokumente, GwenView za slike, K‑pisanje za tekstualne fajlove).</li>
       <li xml:lang="sv">Inbäddade program för att förhandsgranska och redigera filer (t.ex. Okular och Koffice för dokument, Gwenview för bilder, Ktexteditor för textfiler)</li>
       <li xml:lang="uk">вбудовування програм для попереднього перегляду та редагування файлів (документи Okular та Calligra, зображення Gwenview, текстові файли KTextEditor)</li>
       <li xml:lang="x-test">xxEmbedded applications to preview and edit files (e.g. Okular and KOffice for documents, Gwenview for pictures, KTextEditor for text-files)xx</li>
       <li xml:lang="zh-TW">嵌入式的應用程式，預覽並編輯檔案（如 Okular 與 KOffice 預覽文件，Gwenview 預覽圖片，KTextEditor 編輯文字檔等）</li>
       <li>Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)</li>
       <li xml:lang="ca">Diferents tipus de connectors: menús de servei, les KPart (aplicacions incrustades), KIO (accés a fitxers usant protocols especials com HTTP o FTP) i connectors amb KPart (com AdBlocker...)</li>
+      <li xml:lang="en-GB">Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)</li>
       <li xml:lang="nds">Verscheden Moduul-Oorden: Deenstmenüs, KParts (inbett Programmen), KIO-In-/Utgaavmodulen (Togriep op Dateien över besünner Protokollen as HTTP oder FTP) un KPart-Modulen (as AdBlocker ...)</li>
       <li xml:lang="nl">Verschillende soorten plug-ins: Service-menu's, KParts (ingebedde toepassing), KIO (toegang tot bestanden met speciale protocollen zoals http of ftp) en KPart-plug-ins (zoals AdBlocker...)</li>
       <li xml:lang="pl">Różne rodzaje wtyczek: Menu usług, KParts (osadzone aplikacje), KIO (dostęp do plików przy użyciu protokołów takich jak http czy ftp) oraz wtyczki KPart (takie jak AdBlocker...)</li>
+      <li xml:lang="pt-BR">Vários tipos de plugins: Menus de serviço, KParts (aplicativos incorporados), KIO (acesso a arquivos usando protocolos especiais, como o http ou ftp) e plugins KParts (como o AdBlocker...)</li>
+      <li xml:lang="sk">Rôzne typy pluginov: Servisné ponuky, KParts (zabudované aplikácie), KIO (prístup k súborom pomocou špeciálnych protokolov ako http alebo ftp) a KPart-pluginy (ako AdBlocker...)</li>
+      <li xml:lang="sr">Разне врсте прикључака: сервисни менији, К‑делови (угнежђени програми), К‑У/И (приступ фајловима преко специјалних протокола, попут ХТТП‑а и ФТП‑а) и прикључци над К‑деловима (нпр. Адблок).</li>
+      <li xml:lang="sr-Latn">Razne vrste priključaka: servisni meniji, K‑delovi (ugnežđeni programi), K‑U/I (pristup fajlovima preko specijalnih protokola, poput HTTP‑a i FTP‑a) i priključci nad K‑delovima (npr. AdBlock).</li>
+      <li xml:lang="sr-ijekavian">Разне врсте прикључака: сервисни менији, К‑дијелови (угнежђени програми), К‑У/И (приступ фајловима преко специјалних протокола, попут ХТТП‑а и ФТП‑а) и прикључци над К‑дијеловима (нпр. Адблок).</li>
+      <li xml:lang="sr-ijekavianlatin">Razne vrste priključaka: servisni meniji, K‑dijelovi (ugnežđeni programi), K‑U/I (pristup fajlovima preko specijalnih protokola, poput HTTP‑a i FTP‑a) i priključci nad K‑dijelovima (npr. AdBlock).</li>
       <li xml:lang="sv">Olika typer av insticksprogram: Tjänstmenyer, KParts (inbäddade program), KIO (åtkomst av filer med särskilda protokoll såsom http och ftp) och KPart-insticksprogram (som reklamblockering ...)</li>
       <li xml:lang="uk">додатки різних типів: службові меню, модулі KPart (вбудовані програми), KIO (доступ до файлів на основі спеціалізованих протоколів, зокрема http та ftp) та додатки KPart (зокрема додатки блокування реклами).</li>
       <li xml:lang="x-test">xxDifferent kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)xx</li>
