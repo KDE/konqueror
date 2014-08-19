@@ -502,22 +502,6 @@ void KonqOperations::doDropFileCopy()
     {
         // Neither control, shift or alt are pressed => show popup menu
 
-        // TODO move this code out somehow. Allow user of KonqOperations to add his own actions...
-#if 0
-        KonqIconViewWidget *iconView = dynamic_cast<KonqIconViewWidget*>(parent());
-        bool bSetWallpaper = false;
-        if ( iconView && iconView->maySetWallpaper() && lst.count() == 1 )
-	{
-            KUrl url = lst.first();
-            KMimeType::Ptr mime = KMimeType::findByUrl( url );
-            if ( mime && ( ( KImageIO::isSupported(mime->name(), KImageIO::Reading) ) ||
-                 mime->is( "image/svg+xml" ) ) )
-            {
-                bSetWallpaper = true;
-            }
-        }
-#endif
-
         // Check what the source can do
         // we'll assume it's the same for all URLs (hack)
         // TODO: if we had a KFileItemList instead of a KUrl::List,
@@ -562,8 +546,6 @@ void KonqOperations::doDropFileCopy()
         seq.chop(1);
         QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + '\t' + seq, this);
         popupLinkAction->setIcon(KIcon("edit-link"));
-        QAction* popupWallAction = new QAction( i18n( "Set as &Wallpaper" ), this );
-        popupWallAction->setIcon(KIcon("preferences-desktop-wallpaper"));
         QAction* popupCancelAction = new QAction(i18n( "C&ancel" ) + '\t' + QKeySequence( Qt::Key_Escape ).toString(), this);
         popupCancelAction->setIcon(KIcon("process-stop"));
 
@@ -589,11 +571,6 @@ void KonqOperations::doDropFileCopy()
 
         if ( enableLinking )
             popup.addAction(popupLinkAction);
-
-#if 0
-        if (bSetWallpaper)
-            popup.addAction(popupWallAction);
-#endif
 
         //now initialize the drop plugins
         KFileItemList fileItems;
