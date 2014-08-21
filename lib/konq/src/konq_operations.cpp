@@ -114,12 +114,6 @@ void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List &
     op->_del( method, selectedUrls, confirmation );
 }
 
-void KonqOperations::emptyTrash( QWidget* parent )
-{
-    KonqOperations *op = new KonqOperations( parent );
-    op->_del( EMPTYTRASH, KUrl("trash:/"), DEFAULT_CONFIRMATION );
-}
-
 KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
     KIO::SimpleJob * job = KIO::mkdir(url);
@@ -221,16 +215,6 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
             KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Trash, selectedUrls, KUrl("trash:/"), job );
             break;
         }
-        case EMPTYTRASH:
-        {
-            // Same as in ktrash --empty
-            QByteArray packedArgs;
-            QDataStream stream( &packedArgs, QIODevice::WriteOnly );
-            stream << (int)1;
-            job = KIO::special( KUrl("trash:/"), packedArgs );
-            KNotification::event("Trash: emptied", QString() , QPixmap() , 0l, KNotification::DefaultEvent );
-            break;
-        }
         case DEL:
             job = KIO::del( selectedUrls );
             break;
@@ -251,9 +235,6 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
 {
      KIO::JobUiDelegate::DeletionType deletionType;
      switch (method) {
-     case EMPTYTRASH:
-         deletionType = KIO::JobUiDelegate::EmptyTrash;
-         break;
      case DEL:
          deletionType = KIO::JobUiDelegate::Delete;
          break;
@@ -808,10 +789,6 @@ void KonqOperations::slotResult(KJob *job)
                 m_createdUrls << simpleJob->url();
             }
         }
-        break;
-    case EMPTYTRASH:
-        // Update konq windows opened on trash:/
-        org::kde::KDirNotify::emitFilesAdded(QUrl("trash:/")); // yeah, files were removed, but we don't know which ones...
         break;
     case RENAME: {
             KIO::CopyJob *renameJob = qobject_cast<KIO::CopyJob*>(job);

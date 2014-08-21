@@ -47,6 +47,8 @@
 #include <kauthorized.h>
 #include <kglobal.h>
 #include <kacceleratormanager.h>
+#include <KIO/EmptyTrashJob>
+#include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>
 #include <KJobWidgets>
 #include <KJobUiDelegate>
@@ -529,7 +531,13 @@ void KonqPopupMenuPrivate::slotPopupNewDir()
 
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
-  KonqOperations::emptyTrash(m_parentWidget);
+    KIO::JobUiDelegate uiDelegate;
+    uiDelegate.setWindow(m_parentWidget);
+    if (uiDelegate.askDeleteConfirmation(QList<QUrl>(), KIO::JobUiDelegate::EmptyTrash, KIO::JobUiDelegate::DefaultConfirmation)) {
+        KIO::Job* job = KIO::emptyTrash();
+        KJobWidgets::setWindow(job, m_parentWidget);
+        job->ui()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
+    }
 }
 
 void KonqPopupMenuPrivate::slotConfigTrashBin()
