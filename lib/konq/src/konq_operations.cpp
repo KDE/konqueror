@@ -100,20 +100,6 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
                       keditfiletype, keditfiletype /*unused*/, parent );
 }
 
-void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List & selectedUrls )
-{
-    kDebug(1203) << parent->metaObject()->className();
-    if ( selectedUrls.isEmpty() )
-    {
-        kWarning(1203) << "Empty URL list !" ;
-        return;
-    }
-
-    KonqOperations * op = new KonqOperations( parent );
-    ConfirmationType confirmation = DEFAULT_CONFIRMATION;
-    op->_del( method, selectedUrls, confirmation );
-}
-
 KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
     KIO::SimpleJob * job = KIO::mkdir(url);
@@ -189,64 +175,6 @@ void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List 
     op->setOperation( job, method, destUrl );
 
     KIO::FileUndoManager::self()->recordCopyJob(job);
-}
-
-void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, ConfirmationType confirmation )
-{
-    KUrl::List selectedUrls;
-    for (KUrl::List::ConstIterator it = _selectedUrls.begin(); it != _selectedUrls.end(); ++it)
-        if (KProtocolManager::supportsDeleting(*it))
-            selectedUrls.append(*it);
-    if (selectedUrls.isEmpty()) {
-        delete this; // this one is ok, _del is always called directly
-        return;
-    }
-
-    if ( confirmation == SKIP_CONFIRMATION || askDeleteConfirmation( selectedUrls, method, confirmation, parentWidget() ) )
-    {
-        //m_srcUrls = selectedUrls;
-        KIO::Job *job;
-        m_method = method;
-        switch( method )
-        {
-        case TRASH:
-        {
-            job = KIO::trash( selectedUrls );
-            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Trash, selectedUrls, KUrl("trash:/"), job );
-            break;
-        }
-        case DEL:
-            job = KIO::del( selectedUrls );
-            break;
-        default:
-            kWarning() << "Unknown operation: " << method ;
-            delete this; // this one is ok, _del is always called directly
-            return;
-        }
-        KJobWidgets::setWindow(job, parentWidget());
-        connect( job, &KIO::Job::result,
-                 this, &KonqOperations::slotResult );
-    } else {
-        delete this; // this one is ok, _del is always called directly
-    }
-}
-
-bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget )
-{
-     KIO::JobUiDelegate::DeletionType deletionType;
-     switch (method) {
-     case DEL:
-         deletionType = KIO::JobUiDelegate::Delete;
-         break;
-     default:
-         deletionType = KIO::JobUiDelegate::Trash;
-         break;
-     }
-
-    KIO::JobUiDelegate::ConfirmationType confirmationType = confirmation == FORCE_CONFIRMATION ? KIO::JobUiDelegate::ForceConfirmation : KIO::JobUiDelegate::DefaultConfirmation;
-    KIO::JobUiDelegate uiDelegate;
-    uiDelegate.setWindow(widget);
-    return uiDelegate.askDeleteConfirmation(selectedUrls, deletionType, confirmationType);
 }
 
 void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
@@ -465,10 +393,11 @@ void KonqOperations::doDropFileCopy()
         }
 
         m_method = TRASH;
-        if ( askDeleteConfirmation( mlst, TRASH, DEFAULT_CONFIRMATION, parentWidget() ) )
+        KIO::JobUiDelegate uiDelegate;
+        uiDelegate.setWindow(parentWidget());
+        if (uiDelegate.askDeleteConfirmation(mlst, KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
             action = Qt::MoveAction;
-        else
-        {
+        } else {
             deleteLater();
             return;
         }

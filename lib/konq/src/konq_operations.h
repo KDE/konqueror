@@ -54,14 +54,6 @@ public:
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
     enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT, RENAME };
-    /**
-     * Delete the @p selectedUrls if possible.
-     *
-     * @param parent parent widget (for error dialog box if any)
-     * @param method should be TRASH or DEL
-     * @param selectedUrls the URLs to be deleted
-     */
-    static void del( QWidget * parent, Operation method, const KUrl::List & selectedUrls );
 
     /**
      * Copy the @p selectedUrls to the destination @p destUrl.
@@ -217,17 +209,6 @@ public:
      */
     static KonqOperations *renameV2( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
 
-    enum ConfirmationType { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
-    /**
-     * Ask for confirmation before deleting/trashing @p selectedUrls.
-     * @param selectedUrls the urls about to be deleted
-     * @param method the type of deletion (DEL for real deletion, anything else for trash)
-     * @param confirmation default (based on config file), skip (no confirmation) or force (always confirm)
-     * @param widget parent widget for message boxes
-     * @return true if confirmed
-     */
-    static bool askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget );
-
     /**
      * Returns the list of dropped URL's.
      *
@@ -251,7 +232,6 @@ Q_SIGNALS:
 
 private:
     QWidget* parentWidget() const;
-    void _del( Operation method, const KUrl::List & selectedUrls, ConfirmationType confirmation );
     void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
     void _addPluginActions(QList<QAction*>& pluginActions, const KUrl& destination, const KFileItemListProperties& info);
 
