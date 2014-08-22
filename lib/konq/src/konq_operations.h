@@ -54,18 +54,6 @@ public:
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
     enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT, RENAME };
-
-    /**
-     * Copy the @p selectedUrls to the destination @p destUrl.
-     *
-     * @param parent parent widget (for error dialog box if any)
-     * @param method should be COPY, MOVE or LINK
-     * @param selectedUrls the URLs to copy
-     * @param destUrl destination of the copy
-     *
-     * @todo document restrictions on the kind of destination
-     */
-    static void copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl );
     /**
      * Drop
      * @param destItem destination KFileItem for the drop (background or item)

@@ -21,7 +21,6 @@
 
 #include "konq_copytomenu.h"
 #include "konq_copytomenu_p.h"
-#include "konq_operations.h"
 #include <kaction.h>
 #include <kdebug.h>
 #include <kicon.h>
@@ -31,6 +30,10 @@
 #include <kmenu.h>
 #include <kmimetype.h>
 #include <kstringhandler.h>
+#include <KJobWidgets>
+#include <KIO/FileUndoManager>
+#include <KIO/CopyJob>
+#include <KIO/JobUiDelegate>
 #include <QDir>
 
 #ifdef Q_OS_WIN
@@ -208,9 +211,10 @@ void KonqCopyToMainMenu::copyOrMoveTo(const KUrl& dest)
     dirDest.adjustPath(KUrl::AddTrailingSlash);
 
     // And now let's do the copy or move -- with undo/redo support.
-    KonqOperations::copy(d->m_parentWidget ? d->m_parentWidget : this,
-                         m_menuType == Copy ? KonqOperations::COPY : KonqOperations::MOVE,
-                         d->m_urls, dirDest);
+    KIO::CopyJob* job = m_menuType == Copy ? KIO::copy(d->m_urls, dirDest) : KIO::move(d->m_urls, dirDest);
+    KIO::FileUndoManager::self()->recordCopyJob(job);
+    KJobWidgets::setWindow(job, d->m_parentWidget ? d->m_parentWidget : this);
+    job->ui()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
 }
 
 ////

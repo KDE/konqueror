@@ -144,39 +144,6 @@ KonqOperations *KonqOperations::doPasteV2(QWidget *parent, const KUrl &destUrl, 
     return 0;
 }
 
-void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl )
-{
-    kDebug(1203) << parent->metaObject()->className() << selectedUrls << destUrl;
-    if ((method!=COPY) && (method!=MOVE) && (method!=LINK))
-    {
-        kWarning(1203) << "Illegal copy method !" ;
-        return;
-    }
-    if ( selectedUrls.isEmpty() )
-    {
-        kWarning(1203) << "Empty URL list !" ;
-        return;
-    }
-
-    KonqOperations * op = new KonqOperations( parent );
-    KIO::CopyJob* job;
-    if (method == LINK)
-        job = KIO::link( selectedUrls, destUrl );
-    else if (method == MOVE)
-        job = KIO::move( selectedUrls, destUrl );
-    else
-        job = KIO::copy( selectedUrls, destUrl );
-
-    connect(job, &KIO::CopyJob::copyingDone,
-            op, &KonqOperations::slotCopyingDone);
-    connect(job, &KIO::CopyJob::copyingLinkDone,
-            op, &KonqOperations::slotCopyingLinkDone);
-
-    op->setOperation( job, method, destUrl );
-
-    KIO::FileUndoManager::self()->recordCopyJob(job);
-}
-
 void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
 {
     (void) KonqOperations::doDrop( destItem, dest, ev, parent, QList<QAction*>() );
