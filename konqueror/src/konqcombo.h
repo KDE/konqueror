@@ -91,7 +91,7 @@ private Q_SLOTS:
     void slotActivated( const QString& text );
     void slotTextEdited( const QString &text );
     void slotReturnPressed();
-    void slotCompletionModeChanged(KGlobalSettings::Completion);
+    void slotCompletionModeChanged(KCompletion::CompletionMode);
 
 private:
     void updateItem( const QPixmap& pix, const QString&, int index, const QString& title );

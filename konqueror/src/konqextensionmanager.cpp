@@ -27,12 +27,12 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
-#include <kparts/componentfactory.h>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>
 #include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
+#include <kglobal.h>
 
 // Local
 #include "konqview.h"
@@ -73,7 +73,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 
     d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KGlobal::config());
     if ( activePart ) {
-        KComponentData componentData = activePart->componentData();
+        KAboutData componentData = activePart->componentData();
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools", componentData.config());
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar", componentData.config());
     }
@@ -157,4 +157,3 @@ void KonqExtensionManager::showEvent(QShowEvent *event)
     KDialog::showEvent(event);
 }
 
-#include "konqextensionmanager.moc"

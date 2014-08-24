@@ -32,8 +32,6 @@
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 
-#include <kparts/statusbarextension.h>
-#include <kparts/browserextension.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kdebug.h>
@@ -56,6 +54,17 @@
 #ifdef KActivities_FOUND
 #include <KActivities/ResourceInstance>
 #endif
+
+#include <KJobWidgets/KJobWidgets>
+#include <KParts/Part>
+#include <KParts/StatusBarExtension>
+#include <KParts/ReadOnlyPart>
+#include <KParts/BrowserArguments>
+#include <KParts/OpenUrlEvent>
+#include <KParts/BrowserHostExtension>
+#include <KParts/OpenUrlArguments>
+#include <KParts/BrowserExtension>
+#include <KParts/WindowArgs>
 
 //#define DEBUG_HISTORY
 
@@ -517,7 +526,7 @@ void KonqView::slotStarted( KIO::Job * job )
   {
       // Manage passwords properly...
       kDebug(7035) << "Window ID =" << m_pMainWindow->window()->winId();
-      job->ui()->setWindow (m_pMainWindow->window());
+      KJobWidgets::setWindow(job,m_pMainWindow->window());
 
       connect( job, SIGNAL(percent(KJob*,ulong)), this, SLOT(slotPercent(KJob*,ulong)) );
       connect( job, SIGNAL(speed(KJob*,ulong)), this, SLOT(slotSpeed(KJob*,ulong)) );
@@ -1182,7 +1191,7 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
         {
             KUrl::List lstDragURLs = KUrl::List::fromMimeData( ev->mimeData() );
 
-            QList<QWidget *> children = qFindChildren<QWidget *>( m_pPart->widget() );
+            QList<QObject *> children = qFindChildren<QObject *>( m_pPart->widget() ); // ### slow, better write a isChildOf with a loop...
 
             if ( !lstDragURLs.isEmpty()
                  && !lstDragURLs.first().url().startsWith( "javascript:", Qt::CaseInsensitive ) && // ### this looks like a hack to me
@@ -1217,10 +1226,13 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
 
 void KonqView::setActiveComponent()
 {
-  if ( m_bBuiltinView || !m_pPart->componentData().isValid() /*never!*/)
+#if 0 // Removed with the port to KF5. The concept no longer exists, the about dialog and bug report
+      // dialog just use the application information rather than the one of the current part.
+  if (m_bBuiltinView)
       KGlobal::setActiveComponent( KGlobal::mainComponent() );
   else
-      KGlobal::setActiveComponent( m_pPart->componentData() );
+      KGlobal::setActiveComponent(KComponentData(m_pPart->componentData()));
+#endif
 
 #ifdef KActivities_FOUND
   m_activityResourceInstance->notifyFocusedIn();
@@ -1450,4 +1462,3 @@ bool KonqView::isErrorUrl() const
     return m_bErrorURL;
 }
 
-#include "konqview.moc"

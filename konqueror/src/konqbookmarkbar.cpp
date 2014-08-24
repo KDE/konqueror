@@ -36,6 +36,7 @@
 #include <kmenu.h>
 #include <kdebug.h>
 #include <kconfiggroup.h>
+#include <kbookmarkmanager.h>
 
 #include "konqbookmarkmenu.h"
 #include "kbookmarkimporter.h"
@@ -66,7 +67,7 @@ public:
 
 
 KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
-                            KonqBookmarkOwner *_owner, KToolBar *_toolBar,
+                            KBookmarkOwner *_owner, KToolBar *_toolBar,
                             QObject *parent )
     : QObject( parent ), m_pOwner(_owner), m_toolBar(_toolBar),
       m_pManager( mgr ), d( new KBookmarkBarPrivate )
@@ -415,4 +416,3 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
     return false;
 }
 
-#include "konqbookmarkbar.moc"

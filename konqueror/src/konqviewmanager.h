@@ -32,10 +32,13 @@
 
 #include <kparts/partmanager.h>
 #include "konqopenurlrequest.h"
+#include <kurl.h>
+#include <ksharedconfig.h>
 
 class KMainWindow;
 class KonqFrameTabs;
 class QString;
+class KComponentData;
 class QTimer;
 class KConfig;
 class KConfigGroup;

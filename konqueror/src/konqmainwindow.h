@@ -39,7 +39,9 @@
 #include "konqcombo.h"
 #include "konqframe.h"
 #include "konqframecontainer.h"
+#include <kurl.h>
 
+class QActionGroup;
 class KUrlCompletion;
 class QLabel;
 class KLocalizedString;
@@ -489,7 +491,7 @@ private Q_SLOTS:
   void slotHomePopupActivated(QAction* action);
   void slotGoHistoryDelayed();
 
-  void slotCompletionModeChanged( KGlobalSettings::Completion );
+  void slotCompletionModeChanged( KCompletion::CompletionMode );
   void slotMakeCompletion( const QString& );
   void slotSubstringcompletion( const QString& );
   void slotRotation( KCompletionBase::KeyBindingType );
@@ -542,7 +544,6 @@ protected:
 private Q_SLOTS:
   void slotUndoTextChanged(const QString& newText);
 
-  void slotRequesterClicked( KUrlRequester * );
   void slotIntro();
   void slotItemsRemoved(const KFileItemList &);
   /**
@@ -621,7 +622,7 @@ private: // members
 
   KNewFileMenu * m_pMenuNew;
 
-  KAction *m_paPrint;
+  QAction *m_paPrint;
 
   KBookmarkActionMenu *m_pamBookmarks;
 
@@ -632,43 +633,43 @@ private: // members
   /// Action for the trash that contains closed tabs/windows
   KToolBarPopupAction *m_paClosedItems;
   KActionMenu *m_paSessions;
-  KAction *m_paHome;
+  QAction *m_paHome;
 
-  KAction *m_paSaveViewProfile;
+  QAction *m_paSaveViewProfile;
 
-  KAction *m_paSplitViewHor;
-  KAction *m_paSplitViewVer;
-  KAction *m_paAddTab;
-  KAction *m_paDuplicateTab;
-  KAction *m_paBreakOffTab;
-  KAction *m_paRemoveView;
-  KAction *m_paRemoveTab;
-  KAction *m_paRemoveOtherTabs;
-  KAction *m_paActivateNextTab;
-  KAction *m_paActivatePrevTab;
+  QAction *m_paSplitViewHor;
+  QAction *m_paSplitViewVer;
+  QAction *m_paAddTab;
+  QAction *m_paDuplicateTab;
+  QAction *m_paBreakOffTab;
+  QAction *m_paRemoveView;
+  QAction *m_paRemoveTab;
+  QAction *m_paRemoveOtherTabs;
+  QAction *m_paActivateNextTab;
+  QAction *m_paActivatePrevTab;
 
-  KAction *m_paSaveRemoveViewProfile;
+  QAction *m_paSaveRemoveViewProfile;
   KActionMenu *m_pamLoadViewProfile;
 
   KToggleAction *m_paLockView;
   KToggleAction *m_paLinkView;
-  KAction *m_paReload;
-  KAction *m_paForceReload;
-  KAction *m_paReloadAllTabs;
-  KAction *m_paUndo;
-  KAction *m_paCut;
-  KAction *m_paCopy;
-  KAction *m_paPaste;
-  KAction *m_paStop;
+  QAction *m_paReload;
+  QAction *m_paForceReload;
+  QAction *m_paReloadAllTabs;
+  QAction *m_paUndo;
+  QAction *m_paCut;
+  QAction *m_paCopy;
+  QAction *m_paPaste;
+  QAction *m_paStop;
 
-  KAction *m_paCopyFiles;
-  KAction *m_paMoveFiles;
+  QAction *m_paCopyFiles;
+  QAction *m_paMoveFiles;
 
-  KAction *m_paMoveTabLeft;
-  KAction *m_paMoveTabRight;
+  QAction *m_paMoveTabLeft;
+  QAction *m_paMoveTabRight;
 
-  KAction *m_paConfigureExtensions;
-  KAction *m_paConfigureSpellChecking;
+  QAction *m_paConfigureExtensions;
+  QAction *m_paConfigureSpellChecking;
 
   KonqAnimatedLogo *m_paAnimatedLogo;
 
@@ -744,7 +745,7 @@ private: // members
 
   static QList<KonqMainWindow*> *s_lstViews;
 
-  QString m_currentDir; // stores current dir for relative URLs whenever applicable
+  QUrl m_currentDir; // stores current dir for relative URLs whenever applicable
 
   QPointer<KonqHistoryDialog> m_historyDialog;
 

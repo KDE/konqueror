@@ -29,7 +29,7 @@
 
 class KToolBar;
 class KBookmarkMenu;
-class KonqBookmarkOwner;
+class KBookmarkOwner;
 class KActionCollection;
 class KAction;
 class KBookmarkBarPrivate;
@@ -48,7 +48,7 @@ public:
      * Fills a bookmark toolbar
      *
      * @param manager the bookmark manager
-     * @param owner implementation of the KonqBookmarkOwner interface (callbacks)
+     * @param owner implementation of the KBookmarkOwner interface (callbacks)
      * @param toolBar toolbar to fill
      *
      * The KActionCollection pointer argument is now obsolete.
@@ -56,7 +56,7 @@ public:
      * @param parent the parent widget for the bookmark toolbar
      */
     KBookmarkBar( KBookmarkManager* manager,
-                  KonqBookmarkOwner *owner, KToolBar *toolBar,
+                  KBookmarkOwner *owner, KToolBar *toolBar,
                   QObject *parent = 0);
 
     virtual ~KBookmarkBar();
@@ -79,7 +79,7 @@ private:
     void removeTempSep();
     bool handleToolbarDragMoveEvent(const QPoint& pos, const QList<KAction *>& actions, const QString &text);
 
-    KonqBookmarkOwner *m_pOwner;
+    KBookmarkOwner *m_pOwner;
     QPointer<KToolBar> m_toolBar;
     KActionCollection *m_actionCollection;
     KBookmarkManager *m_pManager;

@@ -30,6 +30,8 @@
 #include <ksqueezedtextlabel.h>
 #include <klocale.h>
 #include <kactioncollection.h>
+#include <kaction.h>
+#include <kicon.h>
 
 static QPixmap statusBarIcon(const char* name)
 {
@@ -299,4 +301,3 @@ void KonqFrameStatusBar::setMessage(const QString& msg, KonqStatusBarMessageLabe
     m_pStatusLabel->setMessage(msg, type);
 }
 
-#include "konqframestatusbar.moc"

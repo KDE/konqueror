@@ -44,6 +44,7 @@
 #include <kstandardshortcut.h>
 #include <konqmainwindow.h>
 #include <kstringhandler.h>
+#include <kshortcut.h>
 
 // Local
 #include "konqview.h"
@@ -158,8 +159,8 @@ KonqCombo::KonqCombo( QWidget *parent )
     connect( this, SIGNAL(cleared()), SLOT(slotCleared()) );
     connect( this, SIGNAL(highlighted(int)), SLOT(slotSetIcon(int)) );
     connect( this, SIGNAL(activated(QString)), SLOT(slotActivated(QString)) );
-    connect( this, SIGNAL(completionModeChanged(KGlobalSettings::Completion)),
-             this, SLOT(slotCompletionModeChanged(KGlobalSettings::Completion)));
+    connect( this, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
+             this, SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
 }
 
 KonqCombo::~KonqCombo()
@@ -697,9 +698,9 @@ void KonqCombo::slotReturnPressed()
     slotActivated(currentText());
 }
 
-void KonqCombo::slotCompletionModeChanged(KGlobalSettings::Completion mode)
+void KonqCombo::slotCompletionModeChanged(KCompletion::CompletionMode mode)
 {
-    if (mode == KGlobalSettings::CompletionNone)
+    if (mode == KCompletion::CompletionNone)
         connect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
     else
         disconnect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
@@ -979,4 +980,3 @@ void KonqComboCompletionBox::insertStringList( const QStringList & list, int ind
     foreach ( const QString &text, list )
         insertItem( index++, new KonqListWidgetItem( text ) );
 }
-#include "konqcombo.moc"

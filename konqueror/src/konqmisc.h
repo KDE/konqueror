@@ -23,14 +23,15 @@
 #include "konqprivate_export.h"
 
 #include <krun.h>
+#include <kurl.h>
 #include <kparts/browserextension.h>
 #include "konqopenurlrequest.h"
+#include <ksharedconfig.h>
+
 class KonqMainWindow;
 class KonqView;
 class KStandardDirs;
 class KSharedConfig;
-template <typename T> class KSharedPtr;
-typedef KSharedPtr<KSharedConfig> KSharedConfigPtr;
 
 namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWindowCreator, and KonqGlobal?
 {
@@ -84,9 +85,9 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
      *
      * @p parent is used in case of a message box.
      * @p url to be filtered.
-     * @p path the absolute path to use, in case the url is relative.
+     * @p currentDirectory the directory to use, in case the url is relative.
      */
-    KUrl konqFilteredURL(KonqMainWindow* parent, const QString& url, const QString& path = QString());
+    KUrl konqFilteredURL(KonqMainWindow* parent, const QString& url, const QUrl& currentDirectory = QUrl());
 
     /**
      * Name of the default profile

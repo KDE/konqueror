@@ -23,6 +23,7 @@
 #include "konqmainwindow.h"
 #include "KonquerorAdaptor.h"
 #include "konqviewmanager.h"
+#include <kglobal.h>
 
 KonquerorApplication::KonquerorApplication()
     : KApplication()
@@ -77,4 +78,3 @@ void KonquerorApplication::slotComboCleared( const QDBusMessage& msg )
     KonqMainWindow::comboAction( KonqMainWindow::ComboClear, QString(), msg.service() );
 }
 
-#include "konqapplication.moc"

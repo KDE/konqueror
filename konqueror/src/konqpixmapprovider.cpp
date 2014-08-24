@@ -25,6 +25,7 @@
 #include <kiconloader.h>
 #include <kmimetype.h>
 #include <kprotocolinfo.h>
+#include <kglobal.h>
 
 #include <kconfiggroup.h>
 
@@ -162,4 +163,3 @@ QPixmap KonqPixmapProvider::loadIcon( const QString& icon, int size )
     return KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
 }
 
-#include "konqpixmapprovider.moc"

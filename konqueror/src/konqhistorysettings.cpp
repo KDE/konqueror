@@ -115,4 +115,3 @@ void KonqHistorySettings::slotSettingsChanged()
     emit settingsChanged();
 }
 
-#include "konqhistorysettings.moc"

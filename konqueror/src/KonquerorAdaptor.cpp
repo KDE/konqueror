@@ -240,4 +240,3 @@ void KonquerorAdaptor::terminatePreloaded()
         kapp->exit();
 }
 
-#include "KonquerorAdaptor.moc"

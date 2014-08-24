@@ -115,7 +115,7 @@ void KonqRun::foundMimeType(const QString & _type)
             if (selectedService)
                 KRun::setPreferredService(selectedService->desktopEntryName());
             else {
-                KRun::displayOpenWithDialog(url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
+                KRun::displayOpenWithDialog(QList<QUrl>() << url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
                 setFinished(true);
             }
         }
@@ -221,4 +221,3 @@ KonqView * KonqRun::childView() const
     return m_pView;
 }
 
-#include "konqrun.moc"

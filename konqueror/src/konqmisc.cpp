@@ -178,15 +178,15 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   return mainwindow;
 }
 
-KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QString& _path)
+KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QUrl& currentDirectory)
 {
   Q_UNUSED(parent); // Useful if we want to change the error handling again
 
   if ( !_url.startsWith( QLatin1String("about:") ) ) { // Don't filter "about:" URLs
     KUriFilterData data(_url);
 
-    if( !_path.isEmpty() )
-      data.setAbsolutePath(_path);
+    if (currentDirectory.isLocalFile())
+      data.setAbsolutePath(currentDirectory.toLocalFile());
 
     // We do not want to the filter to check for executables
     // from the location bar.

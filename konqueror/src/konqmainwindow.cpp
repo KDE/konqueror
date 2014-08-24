@@ -103,6 +103,7 @@
 #include <klocalizedstring.h>
 #include <kmenubar.h>
 #include <kmessagebox.h>
+#include <kmessagebox_queued.h>
 #include <knewmenu.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
@@ -129,7 +130,12 @@
 #include <kprocess.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
+#include <KIO/JobUiDelegate>
+#include <KIO/Job>
 #include <kparts/browseropenorsavequestion.h>
+#include <KParts/OpenUrlEvent>
+#include <KParts/BrowserHostExtension>
+#include <KCompletionMatches>
 #include <kacceleratormanager.h>
 #include <kuser.h>
 #include <kxmlguifactory.h>
@@ -149,6 +155,9 @@
 #include <ktoolinvocation.h>
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
+#include <kshortcut.h>
+#include <kglobalsettings.h>
+#include <kurlauthorized.h>
 
 template class QList<QPixmap*>;
 template class QList<KToggleAction*>;
@@ -252,7 +261,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     // setup the completion object before createGUI(), so that the combo
     // picks up the correct mode from the HistoryManager (in slotComboPlugged)
     int mode = KonqSettings::settingsCompletionMode();
-    s_pCompletion->setCompletionMode( static_cast<KGlobalSettings::Completion>(mode) );
+    s_pCompletion->setCompletionMode( static_cast<KCompletion::CompletionMode>(mode) );
   }
   connect(KParts::HistoryProvider::self(), SIGNAL(cleared()), SLOT(slotClearComboHistory()));
 
@@ -482,7 +491,7 @@ void KonqMainWindow::openFilteredUrl(const QString & url, const KonqOpenURLReque
 {
     // Filter URL to build a correct one
     if (m_currentDir.isEmpty() && m_currentView)
-       m_currentDir = m_currentView->url().path( KUrl::AddTrailingSlash );
+       m_currentDir = m_currentView->url();
 
     KUrl filteredURL ( KonqMisc::konqFilteredURL( this, url, m_currentDir ) );
     kDebug() << "url" << url << "filtered into" << filteredURL;
@@ -766,7 +775,7 @@ static QString preferredService(KonqView* currentView, const QString& mimeType)
 bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *childView, const KonqOpenURLRequest& req )
 {
   // Second argument is referring URL
-  if ( !KAuthorized::authorizeUrlAction("open", childView ? childView->url() : KUrl(), _url) )
+  if ( !KUrlAuthorized::authorizeUrlAction("open", childView ? childView->url() : KUrl(), _url) )
   {
      QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, _url.prettyUrl());
      KMessageBox::queuedMessageBox( this, KMessageBox::Error, msg );
@@ -1385,7 +1394,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
             QLineEdit* edit = (mainWindow->m_combo ? mainWindow->m_combo->lineEdit() : 0);
             if (edit) {
                 mainWindow->m_combo->clear();
-                mainWindow->m_combo->setCompletionMode(KGlobalSettings::CompletionNone);
+                mainWindow->m_combo->setCompletionMode(KCompletion::CompletionNone);
                 edit->setReadOnly(true);
             }
 
@@ -1963,7 +1972,7 @@ void KonqMainWindow::slotRunFinished()
 
   if ( run->hasError() ) { // we had an error
       QDBusMessage message = QDBusMessage::createSignal( KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "removeFromCombo" );
-      message << run->url().prettyUrl();
+      message << run->url().toDisplayString();
       QDBusConnection::sessionBus().send( message );
   }
 
@@ -2010,7 +2019,7 @@ void KonqMainWindow::applyKonqMainWindowSettings()
   for ( ; togIt != togEnd ; ++togIt )
   {
     // Find the action by name
-  //    KAction * act = m_toggleViewGUIClient->actionCollection()->action( (*togIt).toLatin1() );
+  //    QAction * act = m_toggleViewGUIClient->actionCollection()->action( (*togIt).toLatin1() );
     QAction *act = m_toggleViewGUIClient->action( *togIt );
     if ( act )
       act->trigger();
@@ -2044,8 +2053,7 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
 
 void KonqMainWindow::slotPartActivated(KParts::Part *part)
 {
-    kDebug() << part
-               << (part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "");
+    kDebug() << part << (part ? part->componentData().componentName() : "");
 
   KonqView *newView = 0;
   KonqView *oldView = m_currentView;
@@ -2126,8 +2134,8 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   bool viewShowsDir = m_currentView->showsDirectory();
   bool buttonShowsFolder = m_paHomePopup->text() == i18n("Home Folder");
   if ( m_paHomePopup->text() == i18n("Home") || viewShowsDir != buttonShowsFolder ) {
-    KAction *actHomeFolder = new KAction( this );
-    KAction *actHomePage = new KAction ( this );
+    QAction *actHomeFolder = new QAction( this );
+    QAction *actHomePage = new QAction ( this );
 
     actHomeFolder->setIcon( KIcon("user-home") );
     actHomeFolder->setText( i18n("Home Folder") );
@@ -2693,7 +2701,7 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
    const KUrl initialUrl = (viewCount()==2) ? otherView(m_currentView)->url() : m_currentView->url();
    QString label = text.subs( m_currentView->url().pathOrUrl() ).toString();
    KUrlRequesterDialog dlg(initialUrl.pathOrUrl(), label, this);
-   dlg.setCaption(i18nc("@title:window", "Enter Target"));
+   dlg.setWindowTitle(i18nc("@title:window", "Enter Target"));
    dlg.urlRequester()->setMode( KFile::File | KFile::ExistingOnly | KFile::Directory );
    if (dlg.exec())
    {
@@ -2707,11 +2715,6 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
       }
    }
    return false;
-}
-
-void KonqMainWindow::slotRequesterClicked( KUrlRequester *req )
-{
-    req->fileDialog()->setMode(KFile::Directory|KFile::ExistingOnly);
 }
 
 void KonqMainWindow::slotCopyFiles()
@@ -2774,7 +2777,7 @@ void KonqMainWindow::slotUpAboutToShow()
     KUrl u(m_currentView->locationBarURL());
     u = u.upUrl();
     while (u.hasPath()) {
-        KAction* action = new KAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
+        QAction * action = new QAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
                                       u.pathOrUrl(),
                                       popup);
         action->setData(u);
@@ -3059,8 +3062,8 @@ void KonqMainWindow::initCombo()
   // We do want completion of user names, right?
   //m_pURLCompletion->setReplaceHome( false );  // Leave ~ alone! Will be taken care of by filters!!
 
-  connect( m_combo, SIGNAL(completionModeChanged(KGlobalSettings::Completion)),
-           SLOT(slotCompletionModeChanged(KGlobalSettings::Completion)));
+  connect( m_combo, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
+           SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
   connect( m_combo, SIGNAL(completion(QString)),
            SLOT(slotMakeCompletion(QString)));
   connect( m_combo, SIGNAL(substringCompletion(QString)),
@@ -3090,7 +3093,7 @@ void KonqMainWindow::bookmarksIntoCompletion()
 }
 
 // the user changed the completion mode in the combo
-void KonqMainWindow::slotCompletionModeChanged( KGlobalSettings::Completion m )
+void KonqMainWindow::slotCompletionModeChanged( KCompletion::CompletionMode m )
 {
   s_pCompletion->setCompletionMode( m );
 
@@ -3126,8 +3129,8 @@ void KonqMainWindow::slotMakeCompletion( const QString& text )
       completion = s_pCompletion->makeCompletion( text );
 
       // some special handling necessary for CompletionPopup
-      if ( m_combo->completionMode() == KGlobalSettings::CompletionPopup ||
-           m_combo->completionMode() == KGlobalSettings::CompletionPopupAuto )
+      if ( m_combo->completionMode() == KCompletion::CompletionPopup ||
+           m_combo->completionMode() == KCompletion::CompletionPopupAuto )
         m_combo->setCompletedItems( historyPopupCompletionItems( text ) );
 
       else if ( !completion.isNull() )
@@ -3193,8 +3196,8 @@ void KonqMainWindow::slotMatch( const QString &match )
     m_urlCompletionStarted = false;
 
     // some special handling necessary for CompletionPopup
-    if ( m_combo->completionMode() == KGlobalSettings::CompletionPopup ||
-         m_combo->completionMode() == KGlobalSettings::CompletionPopupAuto ) {
+    if ( m_combo->completionMode() == KCompletion::CompletionPopup ||
+         m_combo->completionMode() == KCompletion::CompletionPopupAuto ) {
       QStringList items = m_pURLCompletion->allMatches();
       items += historyPopupCompletionItems( m_combo->currentText() );
       items.removeDuplicates();  // when items from completion are also in history
@@ -3562,7 +3565,7 @@ void KonqMainWindow::initActions()
 
   // File menu
 
-  KAction* action = actionCollection()->addAction("new_window");
+  QAction * action = actionCollection()->addAction("new_window");
   action->setIcon(KIcon("window-new"));
   action->setText(i18n( "New &Window" ));
   connect(action, SIGNAL(triggered()), SLOT(slotNewWindow()));
@@ -3805,9 +3808,9 @@ void KonqMainWindow::initActions()
 
   m_ptaFullScreen = KStandardAction::fullScreen( 0, 0, this, this );
   actionCollection()->addAction( m_ptaFullScreen->objectName(), m_ptaFullScreen );
-  KShortcut fullScreenShortcut = m_ptaFullScreen->shortcut();
-  fullScreenShortcut.setAlternate( Qt::Key_F11 );
-  m_ptaFullScreen->setShortcut( fullScreenShortcut );
+  QList<QKeySequence> fullScreenShortcut = m_ptaFullScreen->shortcuts();
+  fullScreenShortcut.append(Qt::Key_F11);
+  m_ptaFullScreen->setShortcuts(fullScreenShortcut);
   connect( m_ptaFullScreen, SIGNAL(toggled(bool)), this, SLOT(slotUpdateFullScreen(bool)));
 
   KShortcut reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
@@ -3854,8 +3857,7 @@ void KonqMainWindow::initActions()
   m_paStop->setShortcut(Qt::Key_Escape);
 
   m_paAnimatedLogo = new KonqAnimatedLogo;
-  m_paAnimatedLogo->setIcons("process-working-kde");
-  KAction *logoAction = new KAction( this );
+  QWidgetAction *logoAction = new QWidgetAction( this );
   actionCollection()->addAction( "konq_logo", logoAction );
   logoAction->setDefaultWidget( m_paAnimatedLogo );
   // Set icon and text so that it's easier to figure out what the action is in the toolbar editor
@@ -3864,24 +3866,24 @@ void KonqMainWindow::initActions()
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );
-  KAction *locationAction = new KAction( this );
+  QWidgetAction *locationAction = new QWidgetAction( this );
   actionCollection()->addAction( "location_label", locationAction );
   locationAction->setText( i18n("L&ocation: ") );
   connect(locationAction, SIGNAL(triggered()), SLOT(slotLocationLabelActivated()));
   locationAction->setDefaultWidget(m_locationLabel);
   m_locationLabel->setBuddy( m_combo );
 
-  KAction *comboAction = new KAction( this );
+  QWidgetAction *comboAction = new QWidgetAction( this );
   actionCollection()->addAction( "toolbar_url_combo", comboAction );
   comboAction->setText( i18n( "Location Bar" ) );
   comboAction->setShortcut(Qt::Key_F6);
   connect(comboAction, SIGNAL(triggered()), SLOT(slotLocationLabelActivated()));
   comboAction->setDefaultWidget(m_combo);
-  comboAction->setShortcutConfigurable( false );
+  actionCollection()->setShortcutsConfigurable(comboAction, false);
 
   m_combo->setWhatsThis( i18n( "<html>Location Bar<br /><br />Enter a web address or search term.</html>" ) );
 
-  KAction *clearLocation = actionCollection()->addAction("clear_location");
+  QAction *clearLocation = actionCollection()->addAction("clear_location");
   clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr") );
   clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
@@ -4452,10 +4454,10 @@ void KonqMainWindow::showEvent(QShowEvent *event)
   KParts::MainWindow::showEvent(event);
 }
 
-QString KonqExtendedBookmarkOwner::currentUrl() const
+QUrl KonqExtendedBookmarkOwner::currentUrl() const
 {
    const KonqView* view = m_pKonqMainWindow->currentView();
-   return view ? view->url().url() : QString();
+   return view ? view->url() : QUrl();
 }
 
 QString KonqMainWindow::currentProfile() const
@@ -4488,19 +4490,19 @@ bool KonqExtendedBookmarkOwner::supportsTabs() const
   return true;
 }
 
-QList<QPair<QString, QString> > KonqExtendedBookmarkOwner::currentBookmarkList() const
+QList<KBookmarkOwner::FutureBookmark> KonqExtendedBookmarkOwner::currentBookmarkList() const
 {
-  QList<QPair<QString, QString> > list;
+  QList<KBookmarkOwner::FutureBookmark> list;
   KonqFrameTabs* tabContainer = m_pKonqMainWindow->viewManager()->tabContainer();
 
   foreach ( KonqFrameBase* frame, tabContainer->childFrameList() )
   {
     if ( !frame || !frame->activeChildView() )
       continue;
-    if( frame->activeChildView()->locationBarURL().isEmpty() )
+    KonqView *view = frame->activeChildView();
+    if( view->locationBarURL().isEmpty() )
       continue;
-    list << qMakePair( frame->activeChildView()->caption(),
-                       frame->activeChildView()->url().url() );
+    list << KBookmarkOwner::FutureBookmark(view->caption(), view->url(), QString() /* TODO view->icon() ? */);
   }
   return list;
 }
@@ -4536,7 +4538,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   req.openAfterCurrentPage = false;
   req.forceAutoEmbed = true;
 
-  const QList<KUrl> list = grp.groupUrlList();
+  const QList<QUrl> list = grp.groupUrlList();
   if (list.isEmpty())
     return;
 
@@ -4548,18 +4550,18 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
       return;
   }
 
-  QList<KUrl>::ConstIterator it = list.constBegin();
-  QList<KUrl>::ConstIterator end = list.constEnd();
+  QList<QUrl>::ConstIterator it = list.constBegin();
+  QList<QUrl>::ConstIterator end = list.constEnd();
   --end;
   for (; it != end; ++it )
   {
-    m_pKonqMainWindow->openFilteredUrl((*it).url(), req);
+    m_pKonqMainWindow->openFilteredUrl((*it).toString(), req);
   }
   if ( newTabsInFront )
   {
     req.newTabInFront = true;
   }
-  m_pKonqMainWindow->openFilteredUrl((*end).url(), req);
+  m_pKonqMainWindow->openFilteredUrl((*end).toString(), req);
 }
 
 void KonqExtendedBookmarkOwner::openInNewWindow(const KBookmark &bm)
@@ -4615,11 +4617,11 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
 
   // m_paBack is a submenu, for the toolbar & edit menu "back",
   // but in the RMB we want a simple one-click back instead.
-  KAction* simpleBack = KStandardAction::back( this, SLOT(slotBack()), &popupMenuCollection );
+  QAction * simpleBack = KStandardAction::back( this, SLOT(slotBack()), &popupMenuCollection );
   simpleBack->setEnabled( m_paBack->isEnabled() );
   popupMenuCollection.addAction( "go_back", simpleBack );
 
-  KAction* simpleForward = KStandardAction::forward( this, SLOT(slotForward()), &popupMenuCollection );
+  QAction * simpleForward = KStandardAction::forward( this, SLOT(slotForward()), &popupMenuCollection );
   simpleForward->setEnabled( m_paForward->isEnabled() );
   popupMenuCollection.addAction( "go_forward", simpleForward );
 
@@ -4637,7 +4639,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   popupMenuCollection.addAction( "paste", m_paPaste );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
-  KAction *actPaste = KStandardAction::paste( this, SLOT(slotPopupPasteTo()), this );
+  QAction *actPaste = KStandardAction::paste( this, SLOT(slotPopupPasteTo()), this );
   actPaste->setEnabled( m_paPaste->isEnabled() );
   popupMenuCollection.addAction( "pasteto", actPaste );
 
@@ -4717,21 +4719,21 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
             connect(act, SIGNAL(triggered()), SLOT(slotPopupThisWindow()));
             tabHandlingActions.append(act);
         }
-        KAction* actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
+        QAction * actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( i18n( "Open in New &Window" ) );
         actNewWindow->setStatusTip( i18n( "Open the document in a new window" ) );
         connect(actNewWindow, SIGNAL(triggered()), SLOT(slotPopupNewWindow()));
         tabHandlingActions.append(actNewWindow);
 
-        KAction* actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
+        QAction * actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
         actNewTab->setIcon( KIcon("tab-new") );
         actNewTab->setText( i18n( "Open in &New Tab" ) );
         connect(actNewTab, SIGNAL(triggered()), SLOT(slotPopupNewTab()));
         actNewTab->setStatusTip( i18n( "Open the document in a new tab" ) );
         tabHandlingActions.append(actNewTab);
 
-        KAction* separator = new KAction(konqyMenuClient->actionCollection());
+        QAction * separator = new QAction(konqyMenuClient->actionCollection());
         separator->setSeparator(true);
         tabHandlingActions.append(separator);
     }
@@ -4854,7 +4856,6 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
     }
 }
 
-Q_DECLARE_METATYPE(KService::Ptr)
 void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
 {
     if (!m_currentView) return;
@@ -4920,7 +4921,7 @@ void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 
     m_pViewManager->loadViewProfileFromGroup( configGroup, QString() /*no profile name*/ );
     // read window settings
-    applyMainWindowSettings( configGroup, true );
+    applyMainWindowSettings(configGroup);
 }
 
 void KonqMainWindow::setInitialFrameName( const QString &name )
@@ -4953,12 +4954,12 @@ void KonqMainWindow::updateOpenWithActions()
   int idxService = 0;
   for (; it != end; ++it, ++idxService)
   {
-    KAction *action;
+    QAction *action;
 
     if (idxService < baseOpenWithItems)
-       action = new KAction(i18n("Open with %1", (*it)->name()), this);
+       action = new QAction(i18n("Open with %1", (*it)->name()), this);
     else
-       action = new KAction((*it)->name(), this);
+       action = new QAction((*it)->name(), this);
     action->setIcon( KIcon( (*it)->icon() ) );
 
     connect( action, SIGNAL(triggered()),
@@ -4979,7 +4980,7 @@ void KonqMainWindow::updateOpenWithActions()
       {
           openWithActionsMenu.append(m_openWithMenu);
       }
-      KAction *sep = new KAction( this );
+      QAction *sep = new QAction( this );
       sep->setSeparator( true );
       openWithActionsMenu.append(sep);
       plugActionList("openwith", openWithActionsMenu);
@@ -5679,7 +5680,7 @@ void KonqMainWindow::setPreloadedWindow( KonqMainWindow* window )
     if( window == NULL )
         return;
     window->viewManager()->clear();
-    KIO::Scheduler::unregisterWindow( window );
+    KIO::JobUiDelegate::unregisterWindow( window );
 }
 
 // used by preloading - this KonqMainWindow will be reused, reset everything
@@ -5709,7 +5710,7 @@ void KonqMainWindow::resetWindow()
 #endif
 // Qt remembers the iconic state if the window was withdrawn while on another virtual desktop
     setWindowState( windowState() & ~Qt::WindowMinimized );
-    ignoreInitialGeometry();
+    // KF5: no longer available -- ignoreInitialGeometry();
 }
 
 bool KonqMainWindow::event( QEvent* e )
@@ -5916,4 +5917,3 @@ QLineEdit* KonqMainWindow::comboEdit()
   return m_combo ? m_combo->lineEdit() : 0;
 }
 
-#include "konqmainwindow.moc"

@@ -1,18 +1,20 @@
 
 add_definitions(-D_LARGEFILE64_SOURCE )
 
+find_package(KF5 CONFIG REQUIRED Parts KCMUtils)
+
 if(Q_WS_X11)
   find_package(X11 REQUIRED) # both subdirs require the X11 libs
 endif(Q_WS_X11)
 
 add_subdirectory( src )
-add_subdirectory( client )
+# TODO add_subdirectory( client )
 
 add_subdirectory( about )
 add_subdirectory( pics )
-add_subdirectory( sidebar )
-add_subdirectory( preloader )
-add_subdirectory( settings )
+# TODO add_subdirectory( sidebar )
+# TODO add_subdirectory( preloader )
+# TODO add_subdirectory( settings )
 
 ########### install files ###############
 install( PROGRAMS

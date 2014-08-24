@@ -24,6 +24,7 @@
 #include <QtCore/QPointer>
 #include <kservice.h>
 #include "konqopenurlrequest.h"
+#include <kurl.h>
 
 class KonqMainWindow;
 class KonqView;

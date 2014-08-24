@@ -118,4 +118,3 @@ void KonqMainWindowAdaptor::splitViewVertically()
     m_pMainWindow->slotSplitViewVertical();
 }
 
-#include "KonqMainWindowAdaptor.moc"

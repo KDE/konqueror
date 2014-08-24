@@ -38,6 +38,7 @@
 #include <kseparator.h>
 #include <klistwidget.h>
 #include <kpushbutton.h>
+#include <kglobal.h>
 
 class KonqProfileDlg::KonqProfileItem : public QListWidgetItem
 {
@@ -285,4 +286,3 @@ void KonqProfileDlg::slotTextChanged( const QString & text )
 #undef BTN_DELETE
 #undef BTN_SAVE
 
-#include "konqprofiledlg.moc"

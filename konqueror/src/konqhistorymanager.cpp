@@ -19,7 +19,6 @@
 */
 
 #include "konqhistorymanager.h"
-#include <konq_historyloader.h>
 #include <kbookmarkmanager.h>
 
 #include <QtDBus/QtDBus>
@@ -279,4 +278,3 @@ void KonqHistoryManager::slotEntryRemoved(const KonqHistoryEntry& entry)
     addToUpdateList(urlString);
 }
 
-#include "konqhistorymanager.moc"

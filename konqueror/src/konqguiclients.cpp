@@ -85,7 +85,7 @@ PopupMenuGUIClient::~PopupMenuGUIClient()
 
 QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, const KService::Ptr &service )
 {
-    KAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
+    QAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
     act->setText( name );
     act->setIcon( KIcon(service->icon()) );
     QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT(slotOpenEmbedded()));
@@ -303,4 +303,3 @@ void ToggleViewGUIClient::slotViewRemoved( KonqView *view )
   }
 }
 
-#include "konqguiclients.moc"

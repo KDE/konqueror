@@ -40,6 +40,7 @@
 #include <kicon.h>
 #include <kiconloader.h>
 #include <klocale.h>
+#include <kurl.h>
 #include <ksqueezedtextlabel.h>
 #include <konq_events.h>
 #include <kconfiggroup.h>
@@ -254,4 +255,3 @@ bool KonqFrame::accept( KonqFrameVisitor* visitor )
     return visitor->visit( this );
 }
 
-#include "konqframe.moc"

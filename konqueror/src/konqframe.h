@@ -20,7 +20,7 @@
 #define __konq_frame_h__
 
 #include "konqfactory.h"
-#include <kparts/part.h> // for the inline QPointer usage
+#include <KParts/ReadOnlyPart> // for the inline QPointer usage
 
 #include <QtCore/QPointer>
 #include <QColor>
@@ -39,6 +39,7 @@ class KonqFrameVisitor;
 class QPixmap;
 class QVBoxLayout;
 class QProgressBar;
+class KUrl;
 
 class KonqView;
 class KonqViewManager;

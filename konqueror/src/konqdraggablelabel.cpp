@@ -20,8 +20,10 @@
 #include "konqdraggablelabel.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
+#include <kiconloader.h>
 #include <QMouseEvent>
 #include <QApplication>
+#include <QMimeData>
 #include <QDrag>
 
 
@@ -91,4 +93,3 @@ void KonqDraggableLabel::delayedOpenURL()
 }
 
 
-#include "konqdraggablelabel.moc"

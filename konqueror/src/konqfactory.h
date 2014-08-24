@@ -26,7 +26,7 @@
 
 #include <kservice.h>
 
-class KAboutData;
+class K4AboutData;
 class KPluginFactory;
 namespace KParts { class ReadOnlyPart; }
 
@@ -81,7 +81,7 @@ public:
                            KService::List *partServiceOffers = 0,
                            KService::List *appServiceOffers = 0);
 
-    static const KAboutData* aboutData();
+    static const K4AboutData* aboutData();
 };
 
 #endif

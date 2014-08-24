@@ -45,6 +45,7 @@
 #include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
 #include <ktabbar.h>
+#include <kicon.h>
 
 
 //###################################################################
@@ -620,4 +621,3 @@ bool KonqFrameTabs::eventFilter(QObject* watched, QEvent* event)
     return KTabWidget::eventFilter(watched, event);
 }
 
-#include "konqtabs.moc"

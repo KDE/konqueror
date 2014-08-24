@@ -268,4 +268,3 @@ KonqNewSessionDlg::~KonqNewSessionDlg()
 {
 }
 
-#include "konqsessiondlg.moc"

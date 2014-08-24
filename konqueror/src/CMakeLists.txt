@@ -5,12 +5,16 @@ endif(KDE4_BUILD_TESTS)
 
 add_subdirectory( tests )
 
+include (CheckSymbolExists)
 check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
 check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)
 # TODO KDE_MALLINFO_FIELD_hblkhd
 # TODO KDE_MALLINFO_FIELD_uordblks
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
+
+# for config-apps.h
+include_directories( ${CMAKE_BINARY_DIR} )
 
 # For crc32 in konqhistorymanager.cpp
 include_directories( ${ZLIB_INCLUDE_DIR} )
@@ -31,10 +35,15 @@ set(konquerorprivate_SRCS
    konqhistoryview.cpp
    konqhistorysettings.cpp
 )
-qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
+qt5_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/src/favicons/org.kde.FavIcon.xml favicon_interface)
 
-kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
-target_link_libraries(konquerorprivate konq ${KDE4_KPARTS_LIBS} ${ZLIB_LIBRARY})
+add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
+target_link_libraries(konquerorprivate
+   KF5::Konq
+   KF5::Parts
+   ${ZLIB_LIBRARY}
+   KF5::KDELibs4Support
+)
 set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
@@ -80,22 +89,28 @@ set(konqueror_KDEINIT_SRCS
    konq_statusbarmessagelabel.cpp
 )
 
-kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
-kde4_add_ui_files(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
-kde4_add_ui_files(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
-kde4_add_ui_files(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
+kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
+qt5_wrap_ui(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
+qt5_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
+qt5_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
 
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded.xml kded_interface)
-qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager_interface)
-qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager.h KonqSessionManager konqsessionmanageradaptor KonqSessionManagerAdaptor)
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager_interface)
+qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
+qt5_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded5.xml kded_interface)
+qt5_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
+qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager_interface)
+qt5_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager.h KonqSessionManager konqsessionmanageradaptor KonqSessionManagerAdaptor)
+qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager_interface)
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
-# libkfile is only needed because of KNewFileMenu
-target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KCMUTILS_LIBS} ${KDE4_KFILE_LIBS})
+target_link_libraries(kdeinit_konqueror
+   konquerorprivate
+   KF5::Archive
+   KF5::KCMUtils
+   KF5::Konq
+   KF5::Parts
+   KF5::KDELibs4Support
+)
 if (UNIX)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
 endif (UNIX)

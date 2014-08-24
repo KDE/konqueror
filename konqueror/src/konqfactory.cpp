@@ -31,22 +31,22 @@
 #include <QtCore/QCoreApplication>
 
 // KDE
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
-#include <kparts/part.h>
 #include <kservicetypetrader.h>
 #include <kdeversion.h>
+#include <KParts/ReadOnlyPart>
 
 // Local
 #include "konqsettings.h"
 #include "konqmainwindow.h"
 
 
-static KAboutData *s_aboutData = 0;
-static void cleanupKAboutData()
+static K4AboutData *s_aboutData = 0;
+static void cleanupK4AboutData()
 {
     delete s_aboutData;
 }
@@ -222,14 +222,14 @@ void KonqFactory::getOffers( const QString & serviceType,
 }
 
 
-const KAboutData *KonqFactory::aboutData()
+const K4AboutData *KonqFactory::aboutData()
 {
   if (!s_aboutData)
   {
-    s_aboutData = new KAboutData( "konqueror", 0, ki18n("Konqueror"),
+    s_aboutData = new K4AboutData( "konqueror", 0, ki18n("Konqueror"),
                         KDE_VERSION_STRING,
                         ki18n("Web browser, file manager and document viewer."),
-                        KAboutData::License_GPL,
+                        K4AboutData::License_GPL,
                         ki18n("(C) 1999-2008, The Konqueror developers"),
                         KLocalizedString(),
                         I18N_NOOP("http://konqueror.kde.org") );
@@ -270,7 +270,7 @@ const KAboutData *KonqFactory::aboutData()
     s_aboutData->addAuthor( ki18n("Stephan Binner"), ki18n("Developer (misc stuff)"),"binner@kde.org");
     s_aboutData->addAuthor( ki18n("Ivor Hewitt"), ki18n("Developer (AdBlock filter)"),"ivor@ivor.org");
     s_aboutData->addAuthor( ki18n("Eduardo Robles Elvira"), ki18n("Developer (framework)"),"edulix@gmail.com");
-    qAddPostRoutine(cleanupKAboutData);
+    qAddPostRoutine(cleanupK4AboutData);
   }
   return s_aboutData;
 }

@@ -35,6 +35,8 @@
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 
+#include <KParts/PartActivateEvent>
+
 #include <kaccelgen.h>
 #include <kactionmenu.h>
 #include <kstandarddirs.h>
@@ -47,6 +49,7 @@
 #include <kmessagebox.h>
 #include <ktoolbarpopupaction.h>
 #include <kmenu.h>
+#include <kdeversion.h>
 
 //#define DEBUG_VIEWMGR
 
@@ -376,7 +379,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
     }
 
     mainWindow->viewManager()->loadRootItem( configGroup, mainWindow, KUrl(), true, KUrl() );
-    mainWindow->applyMainWindowSettings( configGroup, true );
+    mainWindow->applyMainWindowSettings(configGroup);
     mainWindow->activateChild();
 
 #ifdef DEBUG_VIEWMGR
@@ -918,13 +921,11 @@ void KonqViewManager::setCurrentProfile(const QString& profileFileName)
     m_currentProfile = profileFileName;
 
     // We'll use the profile for saving window settings - so ensure we can save to it
-    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") + profileFileName);
     kDebug() << profileFileName << "localPath=" << localPath;
     KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
     if (!QFile::exists(localPath)) {
-        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") + profileFileName);
         kDebug() << "globalFile=" << globalFile;
         if (!globalFile.isEmpty()) {
             KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
@@ -1456,7 +1457,7 @@ void KonqViewManager::slotProfileListAboutToShow()
   if ( !m_pamProfiles || !m_bProfileListDirty )
     return;
 
-  KMenu *popup = m_pamProfiles->menu();
+  QMenu *popup = m_pamProfiles->menu();
   popup->clear();
 
   // Fetch profiles
@@ -1470,7 +1471,7 @@ void KonqViewManager::slotProfileListAboutToShow()
   // Store menu items
   const QStringList profilePaths = m_mapProfileNames.values();
   for (int i = 0; i < accel_strings.count(); ++i) {
-      KAction* action = new KAction(accel_strings.at(i), popup);
+      QAction* action = new QAction(accel_strings.at(i), popup);
       action->setData(profilePaths.at(i));
       popup->addAction(action);
   }
@@ -1644,4 +1645,3 @@ QString KonqViewManager::normalizedXMLFileName(const QString& xmluiFile)
     return xmluiFile;
 }
 
-#include "konqviewmanager.moc"
