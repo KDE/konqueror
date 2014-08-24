@@ -39,7 +39,7 @@ target_link_libraries(KF5Konq
 )
 
 # For crc32 in konq_historyloader.cpp
-target_include_directories(KF5Konq INTERFACE "$<INSTALL_INTERFACE:${ZLIB_INCLUDE_DIR}>")
+target_include_directories(KF5Konq PRIVATE "$<INSTALL_INTERFACE:${ZLIB_INCLUDE_DIR}>")
 
 
 set_target_properties(KF5Konq PROPERTIES
