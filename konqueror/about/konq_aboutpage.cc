@@ -9,10 +9,12 @@
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <kiconloader.h>
+#include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kpluginfactory.h>
 #include <ksavefile.h>
+#include <kurl.h>
 #include <kstandarddirs.h>
 #include <ktoolinvocation.h>
 
@@ -374,7 +376,7 @@ KonqAboutPage::~KonqAboutPage()
 {
 }
 
-bool KonqAboutPage::openUrl(const KUrl &u)
+bool KonqAboutPage::openUrl(const QUrl &u)
 {
     emit started(0);
     if (u.url() == "about:plugins")
@@ -412,7 +414,7 @@ void KonqAboutPage::restoreState( QDataStream &stream )
 void KonqAboutPage::serve( const QString& html, const QString& what )
 {
     m_what = what;
-    begin( KUrl( QString("about:%1").arg(what) ) );
+    begin( QUrl( QString("about:%1").arg(what) ) );
     write( html );
     end();
     m_htmlDoc = html;
@@ -422,8 +424,8 @@ bool KonqAboutPage::urlSelected( const QString &url, int button, int state, cons
                                  const KParts::OpenUrlArguments& args,
                                  const KParts::BrowserArguments& browserArgs )
 {
-    KUrl u( url );
-    if ( u.protocol() == "exec" )
+    QUrl u( url );
+    if ( u.scheme() == "exec" )
     {
         QStringList execArgs = url.mid( 6 ).split(QChar( ' ' ), QString::SkipEmptyParts );
         QString executable = execArgs.first();

@@ -3,6 +3,8 @@
 
 #include <khtml_part.h>
 
+class QUrl;
+
 class KonqAboutPageSingleton
 {
 public:
@@ -28,17 +30,17 @@ public:
     KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList& args);
     ~KonqAboutPage();
 
-    virtual bool openUrl( const KUrl &url );
+    bool openUrl(const QUrl &url) Q_DECL_OVERRIDE;
 
-    virtual bool openFile();
+    bool openFile() Q_DECL_OVERRIDE;
 
-    virtual void saveState( QDataStream &stream );
-    virtual void restoreState( QDataStream &stream );
+    void saveState(QDataStream &stream) Q_DECL_OVERRIDE;
+    void restoreState(QDataStream &stream) Q_DECL_OVERRIDE;
 
 protected:
-    virtual bool urlSelected( const QString &url, int button, int state, const QString &target,
-                              const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                              const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
+    bool urlSelected(const QString &url, int button, int state, const QString &target,
+                     const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                     const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments()) Q_DECL_OVERRIDE;
 
 private:
     void serve( const QString&, const QString& );

@@ -1,8 +1,8 @@
-set(konq_aboutpage_PART_SRCS konq_aboutpage.cc)
+find_package(KF5 CONFIG REQUIRED KHtml)
 
-kde4_add_plugin(konq_aboutpage ${konq_aboutpage_PART_SRCS})
+add_library(konq_aboutpage MODULE konq_aboutpage.cc)
 
-target_link_libraries(konq_aboutpage ${KDE4_KHTML_LIBS} ${QT_QTGUI_LIBRARY})
+target_link_libraries(konq_aboutpage KF5::KHtml KF5::KDELibs4Support Qt5::Widgets)
 
 install(TARGETS konq_aboutpage DESTINATION ${PLUGIN_INSTALL_DIR})
 
