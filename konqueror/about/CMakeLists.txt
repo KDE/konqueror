@@ -1,4 +1,4 @@
-find_package(KF5 CONFIG REQUIRED KHtml)
+find_package(KF5 REQUIRED COMPONENTS KHtml)
 
 add_library(konq_aboutpage MODULE konq_aboutpage.cc)
 
