@@ -25,13 +25,11 @@
 #include <QtCore/QPointer>
 #include <QtCore/QList>
 #include <kbookmark.h>
-#include <kaction.h>
+#include <kactioncollection.h>
 
 class KToolBar;
 class KBookmarkMenu;
 class KBookmarkOwner;
-class KActionCollection;
-class KAction;
 class KBookmarkBarPrivate;
 
 /**
@@ -77,7 +75,7 @@ protected:
 private:
     KBookmarkGroup getToolbar();
     void removeTempSep();
-    bool handleToolbarDragMoveEvent(const QPoint& pos, const QList<KAction *>& actions, const QString &text);
+    bool handleToolbarDragMoveEvent(const QPoint& pos, const QList<QAction *>& actions, const QString &text);
 
     KBookmarkOwner *m_pOwner;
     QPointer<KToolBar> m_toolBar;

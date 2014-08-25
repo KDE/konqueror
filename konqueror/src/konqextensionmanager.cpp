@@ -74,8 +74,8 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KGlobal::config());
     if ( activePart ) {
         KAboutData componentData = activePart->componentData();
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools", componentData.config());
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar", componentData.config());
+        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools");
+        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar");
     }
 
     connect( this, SIGNAL(okClicked()), SLOT(slotOk()) );
@@ -109,7 +109,7 @@ void KonqExtensionManager::apply()
 
         if( d->mainWindow )
         {
-            KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, KGlobal::mainComponent());
+            KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, "konqueror");
             QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
 
             for (int i = 0; i < plugins.size(); ++i) {
@@ -119,7 +119,7 @@ void KonqExtensionManager::apply()
 
         if ( d->activePart )
         {
-            KParts::Plugin::loadPlugins( d->activePart, d->activePart, d->activePart->componentData() );
+            KParts::Plugin::loadPlugins(d->activePart, d->activePart, d->activePart->componentName());
             QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects( d->activePart );
 
             for (int i = 0; i < plugins.size(); ++i) {

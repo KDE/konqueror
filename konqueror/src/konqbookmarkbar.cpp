@@ -28,18 +28,20 @@
 #include <QEvent>
 #include <QFile>
 #include <QRegExp>
+#include <QMenu>
 
 #include <ktoolbar.h>
 #include <kactionmenu.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <kmenu.h>
 #include <kdebug.h>
 #include <kconfiggroup.h>
+#include <kio/global.h>
 #include <kbookmarkmanager.h>
 
 #include "konqbookmarkmenu.h"
 #include "kbookmarkimporter.h"
+#include "kbookmarkaction.h"
 #include "kbookmarkdombuilder.h"
 
 
@@ -47,7 +49,7 @@
 class KBookmarkBarPrivate
 {
 public:
-    QList<KAction *> m_actions;
+    QList<QAction *> m_actions;
     int m_sepIndex;
     QList<int> widgetPositions; //right edge, bottom edge
     QString tempLabel;
@@ -88,7 +90,7 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar( toolbar );
-    m_toolBarSeparator = new KAction(this);
+    m_toolBarSeparator = new QAction(this);
 }
 
 QString KBookmarkBar::parentAddress()
@@ -193,7 +195,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
             }
             else
             {
-                KAction *action = new KBookmarkAction( bm, m_pOwner, 0 );
+                QAction *action = new KBookmarkAction( bm, m_pOwner, 0 );
                 if (m_toolBar) {
                     m_toolBar->addAction(action);
                 }
@@ -229,7 +231,7 @@ void KBookmarkBar::removeTempSep()
  * @param actions the list of actions plugged into the bar
  *        returned action was dropped on
  */
-bool KBookmarkBar::handleToolbarDragMoveEvent(const QPoint& p, const QList<KAction *>& actions, const QString &text)
+bool KBookmarkBar::handleToolbarDragMoveEvent(const QPoint& p, const QList<QAction *>& actions, const QString &text)
 {
     if(d->m_filteredToolbar)
         return false;
@@ -321,7 +323,7 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
     }
     else
     {
-        KMenu * menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
+        QMenu * menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
         menu->setAttribute(Qt::WA_DeleteOnClose);
         menu->popup(m_toolBar->mapToGlobal(pos));
     }
@@ -356,7 +358,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 
         if(d->m_sepIndex == 0)
         {
-            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
+            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url(), KIO::iconNameForUrl(toInsert.url()) );
 
             parentBookmark.moveBookmark( newBookmark, KBookmark() );
             m_pManager->emitChanged( parentBookmark );
@@ -368,7 +370,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 
             for(int i=0; i < d->m_sepIndex - 1 ; ++i)
                 after = parentBookmark.next(after);
-            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
+            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url(), KIO::iconNameForUrl(toInsert.url()) );
 
             parentBookmark.moveBookmark( newBookmark, after );
             m_pManager->emitChanged( parentBookmark );
@@ -388,7 +390,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
             const QList<KBookmark> list = KBookmark::List::fromMimeData( dme->mimeData(), doc );
             if ( list.isEmpty() )
                 return false;
-            d->tempLabel  = list.first().url().pathOrUrl();
+            d->tempLabel  = list.first().url().toDisplayString(QUrl::PreferLocalFile);
 
             d->widgetPositions.clear();
 

@@ -35,6 +35,7 @@
 #include <klocale.h>
 #include <kdialog.h>
 #include <kurl.h>
+#include <kicon.h>
 #include <ktempdir.h>
 #include <ksqueezedtextlabel.h>
 
@@ -414,7 +415,7 @@ void KonqSessionManager::enableAutosave()
     const QString filePath = KStandardDirs::locateLocal("appdata", filename);
 
     delete m_sessionConfig;
-    m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig, "appdata");
+    m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig);
     //kDebug() << "config filename:" << m_sessionConfig->name();
 
     m_autosaveEnabled = true;
@@ -471,7 +472,7 @@ void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPath)
 {
     QFile::remove(sessionConfigPath);
-    KConfig config(sessionConfigPath, KConfig::SimpleConfig, "appdata");
+    KConfig config(sessionConfigPath, KConfig::SimpleConfig);
     saveCurrentSessionToFile(&config);
 }
 

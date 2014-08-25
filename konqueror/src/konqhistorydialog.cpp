@@ -35,6 +35,8 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kguiitem.h>
+#include <kglobal.h>
+#include <kicon.h>
 #include <klocale.h>
 #include <klineedit.h>
 #include <ktoggleaction.h>

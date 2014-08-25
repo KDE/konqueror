@@ -66,7 +66,7 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
 
     m_konqClosedItemsConfig = 0L;
     m_blockClosedItems = false;
-    m_konqClosedItemsStore = new KConfig(filename, KConfig::SimpleConfig, "tmp");
+    m_konqClosedItemsStore = new KConfig(file, KConfig::SimpleConfig);
 }
 
 KonqClosedWindowsManager::~KonqClosedWindowsManager()
@@ -183,10 +183,6 @@ bool isSenderOfSignal( const QString& service )
 void KonqClosedWindowsManager::emitNotifyClosedWindowItem(
     const KonqClosedWindowItem *closedWindowItem)
 {
-
-    QString filename = "closeditems/" + KonqMisc::encodeFilename(QDBusConnection::sessionBus().baseService());
-    QString file = KStandardDirs::locateLocal("tmp", filename);
-
     emit notifyClosedWindowItem( closedWindowItem->title(),
         closedWindowItem->numTabs(),
         m_konqClosedItemsStore->name(),
@@ -356,7 +352,7 @@ void KonqClosedWindowsManager::saveConfig()
     QString file = KStandardDirs::locateLocal("appdata", filename);
     QFile::remove(file);
 
-    KConfig *config = new KConfig(filename, KConfig::SimpleConfig, "appdata");
+    KConfig *config = new KConfig(file, KConfig::SimpleConfig);
 
     // Populate the config file
     KonqClosedWindowItem* closedWindowItem = 0L;

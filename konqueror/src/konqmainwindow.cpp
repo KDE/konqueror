@@ -122,6 +122,7 @@
 #include <kurlrequester.h>
 #include <kmimetypetrader.h>
 #include <kwindowsystem.h>
+#include <KJobWidgets>
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kicon.h>
@@ -131,7 +132,9 @@
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
 #include <KIO/JobUiDelegate>
+#include <KIO/CopyJob>
 #include <KIO/Job>
+#include <KIO/FileUndoManager>
 #include <kparts/browseropenorsavequestion.h>
 #include <KParts/OpenUrlEvent>
 #include <KParts/BrowserHostExtension>
@@ -2696,7 +2699,7 @@ void KonqMainWindow::slotDumpDebugInfo()
 #endif
 }
 
-bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
+bool KonqMainWindow::askForTarget(const KLocalizedString& text, QUrl& url)
 {
    const KUrl initialUrl = (viewCount()==2) ? otherView(m_currentView)->url() : m_currentView->url();
    QString label = text.subs( m_currentView->url().pathOrUrl() ).toString();
@@ -2719,20 +2722,26 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
 
 void KonqMainWindow::slotCopyFiles()
 {
-  KUrl dest;
+  QUrl dest;
   if (!askForTarget(ki18n("Copy selected files from %1 to:"), dest))
      return;
 
-  KonqOperations::copy(this, KonqOperations::COPY, currentURLs(), dest);
+  KIO::CopyJob* job = KIO::copy(currentURLs(), dest);
+  KIO::FileUndoManager::self()->recordCopyJob(job);
+  KJobWidgets::setWindow(job, this);
+  job->ui()->setAutoErrorHandlingEnabled(true);
 }
 
 void KonqMainWindow::slotMoveFiles()
 {
-  KUrl dest;
+  QUrl dest;
   if (!askForTarget(ki18n("Move selected files from %1 to:"), dest))
      return;
 
-  KonqOperations::copy(this, KonqOperations::MOVE, currentURLs(), dest);
+  KIO::CopyJob* job = KIO::move(currentURLs(), dest);
+  KIO::FileUndoManager::self()->recordCopyJob(job);
+  KJobWidgets::setWindow(job, this);
+  job->ui()->setAutoErrorHandlingEnabled(true);
 }
 
 KUrl::List KonqMainWindow::currentURLs() const
@@ -4502,7 +4511,7 @@ QList<KBookmarkOwner::FutureBookmark> KonqExtendedBookmarkOwner::currentBookmark
     KonqView *view = frame->activeChildView();
     if( view->locationBarURL().isEmpty() )
       continue;
-    list << KBookmarkOwner::FutureBookmark(view->caption(), view->url(), QString() /* TODO view->icon() ? */);
+    list << KBookmarkOwner::FutureBookmark(view->caption(), view->url(), KIO::iconNameForUrl(view->url()));
   }
   return list;
 }

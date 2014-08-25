@@ -539,7 +539,7 @@ protected:
 
   virtual void closeEvent( QCloseEvent * );
 
-  bool askForTarget(const KLocalizedString& text, KUrl& url);
+  bool askForTarget(const KLocalizedString& text, QUrl& url);
 
 private Q_SLOTS:
   void slotUndoTextChanged(const QString& newText);

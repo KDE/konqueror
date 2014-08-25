@@ -140,7 +140,7 @@ void KonqClosedRemoteWindowItem::readConfig() const
     if(m_remoteConfig || m_remoteConfigGroup)
         return;
 
-    m_remoteConfig = new KConfig( m_remoteConfigFileName, KConfig::SimpleConfig, "tmp");
+    m_remoteConfig = new KConfig( m_remoteConfigFileName, KConfig::SimpleConfig);
     m_remoteConfigGroup = new KConfigGroup(m_remoteConfig, m_remoteGroupName);
     kDebug();
 }

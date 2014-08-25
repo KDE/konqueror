@@ -1,7 +1,7 @@
 
 add_definitions(-D_LARGEFILE64_SOURCE )
 
-find_package(KF5 REQUIRED COMPONENTS Parts KCMUtils)
+find_package(KF5 REQUIRED COMPONENTS Parts KCMUtils KHtml)
 
 if(Q_WS_X11)
   find_package(X11 REQUIRED) # both subdirs require the X11 libs
