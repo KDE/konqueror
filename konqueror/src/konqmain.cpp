@@ -118,8 +118,6 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
     KonquerorApplication app;
     app.setQuitOnLastWindowClosed(false);
 
-    KGlobal::locale()->insertCatalog("libkonq"); // needed for apps using libkonq
-
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     if (app.isSessionRestored()) {

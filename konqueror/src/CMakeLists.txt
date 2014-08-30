@@ -5,6 +5,8 @@ endif(KDE4_BUILD_TESTS)
 
 add_subdirectory( tests )
 
+add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
+
 include (CheckSymbolExists)
 check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
 check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)

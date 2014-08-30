@@ -28,7 +28,6 @@
 #include <kautomount.h>
 #include <kmountpoint.h>
 #include <kinputdialog.h>
-#include <klocale.h>
 #include <kmessagebox.h>
 #include <knotification.h>
 #include <krun.h>
@@ -75,8 +74,6 @@
 #include <assert.h>
 #include <unistd.h>
 #include <kconfiggroup.h>
-
-static const KCatalogLoader loader("libkonq");
 
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
