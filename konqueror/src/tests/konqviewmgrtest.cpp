@@ -126,7 +126,7 @@ void ViewMgrTest::initTestCase()
 
     // Ensure the tests use KHTML, not kwebkitpart
     // This code is inspired by settings/konqhtml/generalopts.cpp
-    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
     KConfigGroup addedServices(profile, "Added KDE Service Associations");
     Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
         QStringList services = addedServices.readXdgListEntry(mimeType);
@@ -685,7 +685,8 @@ void ViewMgrTest::testLoadOldProfile()
 {
     KonqMainWindow mainWindow;
 
-    const QString profileSrc = KDESRCDIR "/filemanagement.old.profile";
+    const QString profileSrc = QFINDTESTDATA("filemanagement.old.profile");
+    QVERIFY(!profileSrc.isEmpty());
     const QString profile = profileSrc + ".copy";
     // KonqViewManager fixes up the old profile, so let's make a copy of it first.
     KIO::FileCopyJob* job = KIO::file_copy(profileSrc, profile, -1, KIO::Overwrite);

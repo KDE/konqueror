@@ -3,6 +3,9 @@ if (NOT WIN32)
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/..  )
 
+# for config-apps.h
+include_directories( ${CMAKE_BINARY_DIR} )
+
 ########### centralwidget ###############
 
 add_executable(centralwidget centralwidget.cpp)

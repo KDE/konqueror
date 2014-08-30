@@ -45,7 +45,7 @@ private Q_SLOTS:
 
         // Ensure the tests use KHTML, not kwebkitpart
         // This code is inspired by settings/konqhtml/generalopts.cpp
-        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
         Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
