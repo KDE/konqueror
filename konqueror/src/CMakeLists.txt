@@ -90,9 +90,9 @@ set(konqueror_KDEINIT_SRCS
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
-qt5_wrap_ui(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
-qt5_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
-qt5_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
+ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
+ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
+ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
 
 qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 qt5_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded5.xml kded_interface)
