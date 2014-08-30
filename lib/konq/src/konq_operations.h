@@ -117,11 +117,6 @@ public:
     static QPair<bool, QString> pasteInfo(const KUrl& targetUrl);
 
     /**
-     * Create a directory. Same as KIO::mkdir but records job into KonqFileUndoManager for undo/redo purposes.
-     */
-    static KIO::SimpleJob* mkdir( QWidget *parent, const KUrl & url );
-
-    /**
      * Ask for the name of a new directory and create it.
      * Calls KonqOperations::mkdir.
      *

@@ -97,15 +97,6 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
                       keditfiletype, keditfiletype /*unused*/, parent );
 }
 
-KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
-{
-    KIO::SimpleJob * job = KIO::mkdir(url);
-    KJobWidgets::setWindow(job, parent);
-    job->ui()->setAutoErrorHandlingEnabled(true);
-    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, QList<QUrl>(), url, job );
-    return job;
-}
-
 void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos )
 {
     (void) KonqOperations::doPasteV2( parent, destUrl, pos );
@@ -768,7 +759,11 @@ KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, N
                 url = baseUrl;
                 url.addPath( name );
             }
-            return KonqOperations::mkdir( parent, url );
+            KIO::SimpleJob * job = KIO::mkdir(url);
+            KJobWidgets::setWindow(job, parent);
+            job->ui()->setAutoErrorHandlingEnabled(true);
+            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, QList<QUrl>(), url, job );
+            return job;
         }
     } while (askAgain);
     return 0;
