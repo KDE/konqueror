@@ -579,37 +579,6 @@ static QString translatePath( QString path ) // krazy:exclude=passbyvalue
     return path;
 }
 
-void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
-{
-    renameV2(parent, oldurl, newurl);
-}
-
-KonqOperations *KonqOperations::renameV2( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
-{
-    kDebug(1203) << "oldurl=" << oldurl << " newurl=" << newurl;
-    if ( oldurl == newurl )
-        return 0;
-
-    KUrl::List lst;
-    lst.append(oldurl);
-    KIO::Job * job = KIO::moveAs( oldurl, newurl, oldurl.isLocalFile() ? KIO::HideProgressInfo : KIO::DefaultFlags );
-    KonqOperations * op = new KonqOperations( parent );
-    op->setOperation( job, RENAME, newurl );
-    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Rename, lst, newurl, job );
-    // if moving the desktop then update config file and emit
-    if ( oldurl.isLocalFile() && oldurl.toLocalFile( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
-    {
-        kDebug(1203) << "That rename was the Desktop path, updating config files";
-        //save in XDG path
-        const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
-        KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
-        KConfigGroup g( &xdgUserConf, "" );
-        g.writeEntry( "XDG_DESKTOP_DIR", QString("\"" + translatePath( newurl.path() ) + "\"") );
-        KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged, KGlobalSettings::SETTINGS_PATHS);
-    }
-
-    return op;
-}
 
 void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl & dest )
 {
@@ -674,15 +643,6 @@ void KonqOperations::slotResult(KJob *job)
             }
         }
         break;
-    case RENAME: {
-            KIO::CopyJob *renameJob = qobject_cast<KIO::CopyJob*>(job);
-            if (renameJob && jobFailed) {
-                const KUrl oldUrl = renameJob->srcUrls().first();
-                const KUrl newUrl = renameJob->destUrl();
-                emit renamingFailed(oldUrl, newUrl);
-            }
-        }
-        break;
     default:
         break;
     }
@@ -694,19 +654,6 @@ void KonqOperations::slotResult(KJob *job)
     }
 
     deleteLater();
-}
-
-void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QString & name )
-{
-    renameV2(parent, oldurl, name);
-}
-
-KonqOperations *KonqOperations::renameV2( QWidget * parent, const KUrl & oldurl, const QString & name )
-{
-    KUrl newurl( oldurl );
-    newurl.setPath( oldurl.directory( KUrl::AppendTrailingSlash ) + name );
-    kDebug(1203) << "KonqOperations::rename("<<name<<") called. newurl=" << newurl;
-    return renameV2( parent, oldurl, newurl );
 }
 
 // Duplicated in libkfile's KDirOperator

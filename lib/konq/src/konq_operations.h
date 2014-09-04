@@ -53,7 +53,7 @@ public:
      */
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
-    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT, RENAME };
+    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT };
     /**
      * Drop
      * @param destItem destination KFileItem for the drop (background or item)
@@ -147,52 +147,6 @@ public:
     static void statUrl( const KUrl & url, const QObject *receiver, const char *member, QWidget* parent );
 
     /**
-     * Do a renaming.
-     * @param parent the parent widget, passed to KonqOperations ctor
-     * @param oldurl the current url of the file to be renamed
-     * @param name the new name for the file. Shouldn't include '/'.
-     */
-    static void rename( QWidget * parent, const KUrl & oldurl, const QString & name );
-
-    /**
-     * Do a renaming.
-     * @param parent the parent widget, passed to KonqOperations ctor
-     * @param oldurl the current url of the file to be renamed
-     * @param name the new name for the file. Shouldn't include '/'.
-     *
-     * @return The KonqOperations object
-     * @since 4.11
-     *
-     * @todo TODO KDE 5.0 - Merge rename and renameV2
-     */
-    static KonqOperations *renameV2( QWidget * parent, const KUrl & oldurl, const QString & name );
-
-    /**
-     * Do a renaming.
-     * @param parent the parent widget, passed to KonqOperations ctor
-     * @param oldurl the current url of the file to be renamed
-     * @param newurl the new url for the file
-     * Use this version if the other one wouldn't work :)  (e.g. because name could
-     * be a relative path, including a '/').
-     */
-    static void rename( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
-
-    /**
-     * Do a renaming.
-     * @param parent the parent widget, passed to KonqOperations ctor
-     * @param oldurl the current url of the file to be renamed
-     * @param newurl the new url for the file
-     * Use this version if the other one wouldn't work :)  (e.g. because name could
-     * be a relative path, including a '/').
-     *
-     * @return The KonqOperations object
-     * @since 4.11
-     *
-     * @todo TODO KDE 5.0 - Merge rename and renameV2
-     */
-    static KonqOperations *renameV2( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
-
-    /**
      * Returns the list of dropped URL's.
      *
      * You can call this method on the object returned by KonqOperations::doDrop(),
@@ -211,7 +165,6 @@ public:
 Q_SIGNALS:
     void statFinished( const KFileItem & item );
     void aboutToCreate(const KUrl::List &urls);
-    void renamingFailed(const KUrl &oldUrl, const KUrl &newUrl);
 
 private:
     QWidget* parentWidget() const;
