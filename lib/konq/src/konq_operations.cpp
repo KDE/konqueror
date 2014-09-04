@@ -192,7 +192,10 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
         else
         {
             // we need to stat to get it.
-            op->_statUrl( dest, op, SLOT(asyncDrop(KFileItem)) );
+            KIO::StatJob *job = KIO::stat(dest);
+            KJobWidgets::setWindow(job, parent);
+            connect(job, &KIO::StatJob::result, op, &KonqOperations::slotStatResult);
+
         }
         // In both cases asyncDrop will delete op when done
 
@@ -594,37 +597,15 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
         slotResult( 0L );
 }
 
-void KonqOperations::statUrl( const KUrl & url, const QObject *receiver, const char *member, QWidget* parent )
+void KonqOperations::slotStatResult(KJob * job)
 {
-    KonqOperations * op = new KonqOperations( parent );
-    op->m_method = STAT;
-    op->_statUrl( url, receiver, member );
-}
-
-void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const char *member )
-{
-    connect( this, SIGNAL(statFinished(KFileItem)), receiver, member );
-    KIO::StatJob * job = KIO::stat( url /*, KIO::HideProgressInfo?*/ );
-    KJobWidgets::setWindow(job, parentWidget());
-    connect( job, &KIO::StatJob::result,
-             this, &KonqOperations::slotStatResult );
-}
-
-void KonqOperations::slotStatResult( KJob * job )
-{
-    if ( job->error())
-    {
-        static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
+    KIO::StatJob * statJob = static_cast<KIO::StatJob*>(job);
+    if (statJob->error()) {
+        statJob->ui()->showErrorMessage();
+    } else {
+        KFileItem item(statJob->statResult(), statJob->url());
+        asyncDrop(item);
     }
-    else
-    {
-        KIO::StatJob * statJob = static_cast<KIO::StatJob*>(job);
-        KFileItem item( statJob->statResult(), statJob->url() );
-        emit statFinished( item );
-    }
-    // If we're only here for a stat, we're done. But not if we used _statUrl internally
-    if ( m_method == STAT )
-        deleteLater();
 }
 
 void KonqOperations::slotResult(KJob *job)

@@ -139,14 +139,6 @@ public:
     static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl, NewDirFlags flags );
 
     /**
-     * Get info about a given URL, and when that's done (it's asynchronous!),
-     * call a given slot with a const KFileItem& as argument.
-     * The KFileItem will be deleted by statUrl after calling the slot. Make a copy
-     * if you need one !
-     */
-    static void statUrl( const KUrl & url, const QObject *receiver, const char *member, QWidget* parent );
-
-    /**
      * Returns the list of dropped URL's.
      *
      * You can call this method on the object returned by KonqOperations::doDrop(),
@@ -163,12 +155,10 @@ public:
     QPoint dropPosition() const;
 
 Q_SIGNALS:
-    void statFinished( const KFileItem & item );
     void aboutToCreate(const KUrl::List &urls);
 
 private:
     QWidget* parentWidget() const;
-    void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
     void _addPluginActions(QList<QAction*>& pluginActions, const KUrl& destination, const KFileItemListProperties& info);
 
     // internal, for COPY/MOVE/LINK/MKDIR
