@@ -49,7 +49,6 @@
 #include <kmenu.h>
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
-#include <konq_operations.h>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -833,22 +832,29 @@ void Sidebar_Widget::slotPopupMenu(KonqSidebarModule* module,
 void Sidebar_Widget::slotUrlsDropped(const KUrl::List& urls)
 {
     Q_FOREACH(const KUrl& url, urls) {
-        KonqOperations::statUrl(url, this, SLOT(slotAddItem(KFileItem)), this);
+        KIO::StatJob *job = KIO::stat(url);
+        KJobWidgets::setWindow(job, this);
+        connect(job, &KIO::StatJob::result, this, &Sidebar_Widget::slotStatResult);
     }
 }
 
-void Sidebar_Widget::slotAddItem(const KFileItem& item)
+void Sidebar_Widget::slotStatResult(KJob* job)
 {
-    kDebug() << item;
-    const KUrl url = item.url();
-    if (item.isDir())
-        createDirectModule("folder%1.desktop", url.fileName(), url, item.iconName(), "konqsidebar_tree", "Directory");
-    else if (item.mimeTypePtr()->is("text/html") || url.protocol().startsWith("http")) {
-        const QString name = i18n("Web module");
-        createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
+    KIO::StatJob * statJob = static_cast<KIO::StatJob*>(job);
+    if (statJob->error()) {
+        statJob->ui()->showErrorMessage();
     } else {
-        // What to do about other kinds of files?
-        kWarning() << "The dropped URL" << item.url() << "is" << item.mimetype() << ", which is not a directory nor an HTML page, what should we do with it?";
+        const QUrl url = statJob->url();
+        KFileItem item(statJob->statResult(), url);
+        if (item.isDir())
+            createDirectModule("folder%1.desktop", url.fileName(), url, item.iconName(), "konqsidebar_tree", "Directory");
+        else if (item.mimeTypePtr()->is("text/html") || url.scheme().startsWith("http")) {
+            const QString name = i18n("Web module");
+            createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
+        } else {
+            // What to do about other kinds of files?
+            kWarning() << "The dropped URL" << url << "is" << item.mimetype() << ", which is not a directory nor an HTML page, what should we do with it?";
+        }
     }
 }
 

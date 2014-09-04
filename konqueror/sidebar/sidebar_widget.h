@@ -165,7 +165,7 @@ private Q_SLOTS:
                        KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
                        const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
-    void slotAddItem(const KFileItem& item);
+    void slotStatResult(KJob* job);
 
 private:
     KParts::ReadOnlyPart *m_partParent;
