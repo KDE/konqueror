@@ -346,10 +346,10 @@ public Q_SLOTS:
      */
     void openClosedTab(const KonqClosedTabItem& closedTab);
 
+    void slotProfileDlg();
+
 private Q_SLOTS:
   void emitActivePartChanged();
-
-  void slotProfileDlg();
 
   void slotProfileActivated(QAction* action);
 

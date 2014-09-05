@@ -572,7 +572,7 @@ private:
   /**
    * Adds all children of @p group to the static completion object
    */
-  static void bookmarksIntoCompletion( const KBookmarkGroup& group );
+  static void addBookmarksIntoCompletion( const KBookmarkGroup& group );
 
   /**
    * Returns all matches of the url-history for @p s. If there are no direct
