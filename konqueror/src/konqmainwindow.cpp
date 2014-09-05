@@ -1911,9 +1911,12 @@ void KonqMainWindow::slotConfigureDone()
 
 void KonqMainWindow::slotConfigureSpellChecking()
 {
+#pragma message("TODO KF5: Port Sonnet::ConfigDialog usage somehow")
+#if 0 // KF5 TODO
     Sonnet::ConfigDialog dialog( KGlobal::config().data(), this);
     dialog.setWindowIcon( KIcon( "konqueror" ));
     dialog.exec();
+#endif
 }
 
 void KonqMainWindow::slotConfigureToolbars()
