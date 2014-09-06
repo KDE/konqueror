@@ -42,9 +42,9 @@ KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObje
     // and load the history
     loadHistory();
 
-    connect(m_updateTimer, SIGNAL(timeout()), SLOT(slotEmitUpdated()));
-    connect(this, SIGNAL(cleared()), SLOT(slotCleared()));
-    connect(this, SIGNAL(entryRemoved(KonqHistoryEntry)), SLOT(slotEntryRemoved(KonqHistoryEntry)));
+    connect(m_updateTimer, &QTimer::timeout, this, &KonqHistoryManager::slotEmitUpdated);
+    connect(this, &KonqHistoryManager::cleared, this, &KonqHistoryManager::slotCleared);
+    connect(this, &KonqHistoryManager::entryRemoved, this, &KonqHistoryManager::slotEntryRemoved);
 }
 
 

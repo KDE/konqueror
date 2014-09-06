@@ -88,7 +88,7 @@ QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, 
     QAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
     act->setText( name );
     act->setIcon( KIcon(service->icon()) );
-    QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT(slotOpenEmbedded()));
+    QObject::connect(act, &QAction::triggered, this, &PopupMenuGUIClient::slotOpenEmbedded);
     return act;
 }
 

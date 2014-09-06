@@ -95,8 +95,8 @@ KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
    // the frame statusbar
    m_pStatusBar = new KonqFrameStatusBar( this);
    m_pStatusBar->setSizePolicy(QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
-   connect(m_pStatusBar, SIGNAL(clicked()), this, SLOT(slotStatusBarClicked()));
-   connect( m_pStatusBar, SIGNAL(linkedViewClicked(bool)), this, SLOT(slotLinkedViewClicked(bool)) );
+   connect(m_pStatusBar, &KonqFrameStatusBar::clicked, this, &KonqFrame::slotStatusBarClicked);
+   connect(m_pStatusBar, &KonqFrameStatusBar::linkedViewClicked, this, &KonqFrame::slotLinkedViewClicked);
    m_separator = 0;
    m_pParentContainer = parentContainer;
 }

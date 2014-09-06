@@ -217,7 +217,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
     }
 
     QCheckBox* checkbox = new QCheckBox(i18n("Do not ask again"), mainWidget);
-    connect(checkbox, SIGNAL(clicked(bool)), this, SLOT(slotClicked(bool)));
+    connect(checkbox, &QCheckBox::clicked, this, &SessionRestoreDialog::slotClicked);
     mainLayout->addWidget(checkbox);
 
     setMainWidget(mainWidget);

@@ -135,9 +135,9 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   enableButton( BTN_RENAME, d->m_pListView->currentItem() != 0 );
   enableButton( BTN_DELETE, d->m_pListView->currentItem() != 0 );
 
-  connect( this,SIGNAL(user1Clicked()),SLOT(slotRenameProfile()));
-  connect( this,SIGNAL(user2Clicked()),SLOT(slotDeleteProfile()));
-  connect( this,SIGNAL(user3Clicked()),SLOT(slotSave()));
+  connect(this, &KonqProfileDlg::user1Clicked, this, &KonqProfileDlg::slotRenameProfile);
+  connect(this, &KonqProfileDlg::user2Clicked, this, &KonqProfileDlg::slotDeleteProfile);
+  connect(this, &KonqProfileDlg::user3Clicked, this, &KonqProfileDlg::slotSave);
 
   resize( sizeHint() );
 }

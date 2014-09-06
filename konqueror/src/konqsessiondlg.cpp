@@ -105,11 +105,11 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     d->m_pOpenTabsInsideCurrentWindow->setChecked(
 	KonqSettings::openTabsInsideCurrentWindow());
 
-    connect( this,SIGNAL(user1Clicked()),SLOT(slotOpen()));
-    connect( d->m_pNewButton, SIGNAL(clicked()),SLOT(slotNew()));
-    connect( d->m_pSaveCurrentButton, SIGNAL(clicked()),SLOT(slotSave()));
+    connect(this, &KonqSessionDlg::user1Clicked, this, &KonqSessionDlg::slotOpen);
+    connect(d->m_pNewButton, &KPushButton::clicked, this, &KonqSessionDlg::slotNew);
+    connect(d->m_pSaveCurrentButton, &KPushButton::clicked, this, &KonqSessionDlg::slotSave);
     connect( d->m_pRenameButton, SIGNAL(clicked()),SLOT(slotRename()));
-    connect( d->m_pDeleteButton, SIGNAL(clicked()),SLOT(slotDelete()));
+    connect(d->m_pDeleteButton, &KPushButton::clicked, this, &KonqSessionDlg::slotDelete);
     
     resize( sizeHint() );
 }
@@ -230,7 +230,7 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
     
     d->m_pSessionName->setFocus();
 
-    connect(this, SIGNAL(okClicked()), SLOT(slotAddSession()));
+    connect(this, &KonqNewSessionDlg::okClicked, this, &KonqNewSessionDlg::slotAddSession);
     connect(d->m_pSessionName, SIGNAL(textChanged(QString)), this,
         SLOT(slotTextChanged(QString)));
     

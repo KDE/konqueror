@@ -49,7 +49,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     m_treeView->setHeaderHidden(true);
 
     m_historyProxyModel = new KonqHistoryProxyModel(KonqHistorySettings::self(), m_treeView);
-    connect(m_treeView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotContextMenu(QPoint)));
+    connect(m_treeView, &QTreeView::customContextMenuRequested, this, &KonqHistoryView::slotContextMenu);
     m_historyModel = new KonqHistoryModel(m_historyProxyModel);
     m_treeView->setModel(m_historyProxyModel);
     m_historyProxyModel->setSourceModel(m_historyModel);
@@ -60,33 +60,33 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     QAction *action = m_collection->addAction("open_new");
     action->setIcon(KIcon("window-new"));
     action->setText(i18n("Open in New &Window"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotNewWindow()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewWindow);
 
     action = m_collection->addAction("open_tab");
     action->setIcon(KIcon("tab-new"));
     action->setText(i18n("Open in New Tab"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotNewTab()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewTab);
 
     action = m_collection->addAction("copylinklocation");
     action->setText(i18n("&Copy Link Address"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotCopyLinkLocation()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotCopyLinkLocation);
 
     action = m_collection->addAction("remove");
     action->setIcon(KIcon("edit-delete"));
     action->setText(i18n("&Remove Entry"));
     action->setShortcut(Qt::Key_Delete); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotRemoveEntry()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotRemoveEntry);
 
     action = m_collection->addAction("clear");
     action->setIcon(KIcon("edit-clear-history"));
     action->setText(i18n("C&lear History"));
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotClearHistory()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotClearHistory);
 
     action = m_collection->addAction("preferences");
     action->setIcon(KIcon("configure"));
     action->setText(i18n("&Preferences..."));
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotPreferences()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotPreferences);
 
     QActionGroup* sortGroup = new QActionGroup(this);
     sortGroup->setExclusive(true);
@@ -105,13 +105,13 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
 
     KonqHistorySettings* settings = KonqHistorySettings::self();
     sortGroup->actions().at(settings->m_sortsByName ? 0 : 1)->setChecked(true);
-    connect(sortGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotSortChange(QAction*)));
+    connect(sortGroup, &QActionGroup::triggered, this, &KonqHistoryView::slotSortChange);
 
     m_searchLineEdit = new KLineEdit(this);
     m_searchLineEdit->setClickMessage(i18n("Search in history"));
     m_searchLineEdit->setClearButtonShown(true);
 
-    connect(m_searchLineEdit, SIGNAL(textChanged(QString)), this, SLOT(slotFilterTextChanged(QString)));
+    connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
 
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
@@ -199,7 +199,7 @@ void KonqHistoryView::slotFilterTextChanged(const QString &text)
     if (!m_searchTimer) {
         m_searchTimer = new QTimer(this);
         m_searchTimer->setSingleShot(true);
-        connect(m_searchTimer, SIGNAL(timeout()), this, SLOT(slotTimerTimeout()));
+        connect(m_searchTimer, &QTimer::timeout, this, &KonqHistoryView::slotTimerTimeout);
     }
     m_searchTimer->start(600);
 }

@@ -156,9 +156,9 @@ KonqCombo::KonqCombo( QWidget *parent )
     slotCompletionModeChanged(completionMode());
 
     connect( KonqHistoryManager::kself(), SIGNAL(cleared()), SLOT(slotCleared()) );
-    connect( this, SIGNAL(cleared()), SLOT(slotCleared()) );
-    connect( this, SIGNAL(highlighted(int)), SLOT(slotSetIcon(int)) );
-    connect( this, SIGNAL(activated(QString)), SLOT(slotActivated(QString)) );
+    connect(this, &KonqCombo::cleared, this, &KonqCombo::slotCleared);
+    connect(this, static_cast<void (KonqCombo::*)(int)>(&KonqCombo::highlighted), this, &KonqCombo::slotSetIcon);
+    connect(this, &KonqCombo::activated, this, &KonqCombo::slotActivated);
     connect( this, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
              this, SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
 }
@@ -701,9 +701,9 @@ void KonqCombo::slotReturnPressed()
 void KonqCombo::slotCompletionModeChanged(KCompletion::CompletionMode mode)
 {
     if (mode == KCompletion::CompletionNone)
-        connect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
+        connect(this, static_cast<void (KonqCombo::*)()>(&KonqCombo::returnPressed), this, &KonqCombo::slotReturnPressed);
     else
-        disconnect(this, SIGNAL(returnPressed()), this, SLOT(slotReturnPressed()));
+        disconnect(this, static_cast<void (KonqCombo::*)()>(&KonqCombo::returnPressed), this, &KonqCombo::slotReturnPressed);
 }
 
 
