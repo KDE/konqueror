@@ -104,7 +104,7 @@
 #include <kmenubar.h>
 #include <kmessagebox.h>
 #include <kmessagebox_queued.h>
-#include <knewmenu.h>
+#include <knewfilemenu.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
 #include "konqanimatedlogo_p.h"
