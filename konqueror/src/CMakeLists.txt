@@ -1,9 +1,9 @@
 if(KDE4_BUILD_TESTS)
     # only with this definition will the KONQ_TESTS_EXPORT macro do something
     add_definitions(-DCOMPILING_TESTS)
+    add_subdirectory( tests )
 endif(KDE4_BUILD_TESTS)
 
-add_subdirectory( tests )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 
