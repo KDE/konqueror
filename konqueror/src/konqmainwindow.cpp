@@ -180,7 +180,7 @@ KonqOpenURLRequest KonqOpenURLRequest::null;
 
 static int current_memory_usage( int* limit = NULL );
 
-static unsigned short int s_closedItemsListLength = 10;
+static const unsigned short int s_closedItemsListLength = 10;
 static unsigned long s_konqMainWindowInstancesCount = 0;
 
 static void raiseWindow(KonqMainWindow* window)
