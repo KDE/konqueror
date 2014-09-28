@@ -21,17 +21,17 @@ set(kcm_konqhtml_PART_SRCS
    css/kcmcss.cpp
    )
 
-kde4_add_ui_files(kcm_konqhtml_PART_SRCS
+ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     nsconfigwidget.ui
     advancedTabOptions.ui
     css/csscustom.ui
     css/cssconfig.ui
     )
 
-kde4_add_plugin(kcm_konqhtml ${kcm_konqhtml_PART_SRCS})
+add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
 
-target_link_libraries(kcm_konqhtml ${KDE4_KPARTS_LIBS})
+target_link_libraries(kcm_konqhtml KF5::Parts)
 
 install(TARGETS kcm_konqhtml  DESTINATION ${PLUGIN_INSTALL_DIR})
 

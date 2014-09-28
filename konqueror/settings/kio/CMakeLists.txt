@@ -19,7 +19,7 @@ set(kcm_kio_PART_SRCS
     bookmarks.cpp
     ksaveioconfig.cpp)
 
-kde4_add_ui_files(kcm_kio_PART_SRCS
+ki18n_wrap_ui(kcm_kio_PART_SRCS
     bookmarks.ui
     cache.ui
     useragentselectordlg.ui
@@ -29,9 +29,9 @@ kde4_add_ui_files(kcm_kio_PART_SRCS
     kcookiesmanagement.ui
     kcookiespolicyselectiondlg.ui)
 
-kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})
+add_library(kcm_kio MODULE ${kcm_kio_PART_SRCS})
 
-target_link_libraries(kcm_kio ${KDE4_KCMUTILS_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kcm_kio KF5::KCMUtils KF5::KIOCore)
 
 install(TARGETS kcm_kio  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
