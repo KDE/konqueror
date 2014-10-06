@@ -100,7 +100,7 @@ private Q_SLOTS: // connected to DBUS signals
 public:
     KSharedConfig::Ptr konqConfig() {
         // We want to use konquerorrc even when this class isn't used in konqueror,
-        // this is why this doesn't say KGlobal::config().
+        // this is why this doesn't say KSharedConfig::openConfig().
         return KSharedConfig::openConfig("konquerorrc");
     }
 

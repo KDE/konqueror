@@ -21,7 +21,7 @@
 
 #include "konq_copytomenu.h"
 #include "konq_copytomenu_p.h"
-#include <kaction.h>
+#include <QAction>
 #include <kdebug.h>
 #include <kicon.h>
 #include <kglobal.h>
@@ -102,7 +102,7 @@ KonqCopyToMainMenu::KonqCopyToMainMenu(QMenu* parent, KonqCopyToMenuPrivate* _d,
     : KMenu(parent), m_menuType(menuType),
       m_actionGroup(static_cast<QWidget *>(0)),
       d(_d),
-      m_recentDirsGroup(KGlobal::config(), m_menuType == Copy ? "kuick-copy" : "kuick-move")
+      m_recentDirsGroup(KSharedConfig::openConfig(), m_menuType == Copy ? "kuick-copy" : "kuick-move")
 {
     connect(this, &KonqCopyToMainMenu::aboutToShow, this, &KonqCopyToMainMenu::slotAboutToShow);
     connect(&m_actionGroup, &QActionGroup::triggered, this, &KonqCopyToMainMenu::slotTriggered);
@@ -157,8 +157,8 @@ void KonqCopyToMainMenu::slotAboutToShow()
 #endif
 
     // Browse... action, shows a KFileDialog
-    KAction* browseAction = new KAction(i18nc("@title:menu in Copy To or Move To submenu", "Browse..."), this);
-    connect(browseAction, &KAction::triggered, this, &KonqCopyToMainMenu::slotBrowse);
+    QAction * browseAction = new QAction(i18nc("@title:menu in Copy To or Move To submenu", "Browse..."), this);
+    connect(browseAction, &QAction::triggered, this, &KonqCopyToMainMenu::slotBrowse);
     addAction(browseAction);
 
     addSeparator(); // looks like Qt4 handles removing it automatically if it's last in the menu, nice.
@@ -168,7 +168,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
     Q_FOREACH(const QString& recentDir, recentDirs) {
         const KUrl url(recentDir);
         const QString text = KStringHandler::csqueeze(url.pathOrUrl(), 60); // shorten very long paths (#61386)
-        KAction* act = new KAction(text, this);
+        QAction * act = new QAction(text, this);
         act->setData(url);
         m_actionGroup.addAction(act);
         addAction(act);
@@ -228,7 +228,7 @@ KonqCopyToDirectoryMenu::KonqCopyToDirectoryMenu(QMenu* parent, KonqCopyToMainMe
 void KonqCopyToDirectoryMenu::slotAboutToShow()
 {
     clear();
-    KAction* act = new KAction(m_mainMenu->menuType() == Copy
+    QAction * act = new QAction(m_mainMenu->menuType() == Copy
                                ? i18nc("@title:menu", "Copy Here")
                                : i18nc("@title:menu", "Move Here"), this);
     act->setData(KUrl(m_path));

@@ -118,10 +118,8 @@ KonqOperations *KonqOperations::doPasteV2(QWidget *parent, const KUrl &destUrl, 
         if (copyJob) {
             op->setOperation(job, move ? MOVE : COPY, copyJob->destUrl());
             KIO::FileUndoManager::self()->recordJob(move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job);
-            connect(copyJob, &KIO::CopyJob::copyingDone,
-                    op, &KonqOperations::slotCopyingDone);
-            connect(copyJob, &KIO::CopyJob::copyingLinkDone,
-                    op, &KonqOperations::slotCopyingLinkDone);
+            connect(copyJob, &KIO::CopyJob::copyingDone, op, &KonqOperations::slotCopyingDone);
+            connect(copyJob, &KIO::CopyJob::copyingLinkDone, op, &KonqOperations::slotCopyingLinkDone);
         } else if (KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job)) {
             op->setOperation(job, PUT, simpleJob->url());
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), job);
@@ -327,7 +325,7 @@ void KonqOperations::doDropFileCopy()
             mlst.append(*it);
         if ( local && KDesktopFile::isDesktopFile((*it).toLocalFile()))
             isDesktopFile = true;
-        if ( local && (*it).path().startsWith(KGlobalSettings::desktopPath()))
+        if ( local && (*it).path().startsWith(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)))
             itemIsOnDesktop = true;
         if ( local || (*it).protocol() != "trash" )
             allItemsAreFromTrash = false;
@@ -335,7 +333,7 @@ void KonqOperations::doDropFileCopy()
 
     bool linkOnly = false; // if true, we'll show a popup menu, but with only "link" in it (for confirmation)
     if (isDesktopFile && !KAuthorized::authorizeKAction("run_desktop_files") &&
-        (m_destUrl.path(KUrl::AddTrailingSlash) == KGlobalSettings::desktopPath()) ) {
+        (m_destUrl.path(KUrl::AddTrailingSlash) == QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)) ) {
         linkOnly = true;
     } else if ( allItemsAreFromTrash && lst.first().path() == "/" ) {
         // Dropping a link to the trash: don't move the full contents, just make a link (#319660)
@@ -503,10 +501,8 @@ void KonqOperations::doDropFileCopy()
     default : kError(1203) << "Unknown action " << (int)action << endl;
     }
     if (job) {
-        connect(job, &KIO::CopyJob::copyingDone,
-                this, &KonqOperations::slotCopyingDone);
-        connect(job, &KIO::CopyJob::copyingLinkDone,
-                this, &KonqOperations::slotCopyingLinkDone);
+        connect(job, &KIO::CopyJob::copyingDone, this, &KonqOperations::slotCopyingDone);
+        connect(job, &KIO::CopyJob::copyingLinkDone, this, &KonqOperations::slotCopyingLinkDone);
         return; // we still have stuff to do -> don't delete ourselves
     }
     deleteLater();
@@ -590,8 +586,7 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
     if ( job )
     {
         KJobWidgets::setWindow(job, parentWidget());
-        connect( job, &KIO::Job::result,
-                 this, &KonqOperations::slotResult );
+        connect( job, &KIO::Job::result, this, &KonqOperations::slotResult );
     }
     else // for link
         slotResult( 0L );
