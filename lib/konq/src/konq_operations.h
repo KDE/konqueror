@@ -53,7 +53,7 @@ public:
      */
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
-    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT };
+    enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN, PUT };
     /**
      * Drop
      * @param destItem destination KFileItem for the drop (background or item)
