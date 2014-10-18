@@ -124,7 +124,7 @@ public:
      * @param baseUrl the directory to create the new directory in
      * @return the job used to create the directory or 0 if the creation was cancelled by the user
      */
-    static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl );
+    static KIO::Job* newDir( QWidget * parent, const KUrl & baseUrl );
     enum NewDirFlag { ViewShowsHiddenFile = 1 };
     Q_DECLARE_FLAGS(NewDirFlags, NewDirFlag)
     /**
@@ -136,7 +136,7 @@ public:
      * @param flags see NewDirFlags
      * @return the job used to create the directory or 0 if the creation was cancelled by the user
      */
-    static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl, NewDirFlags flags );
+    static KIO::Job* newDir( QWidget * parent, const KUrl & baseUrl, NewDirFlags flags );
 
     /**
      * Returns the list of dropped URL's.

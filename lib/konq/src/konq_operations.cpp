@@ -41,6 +41,7 @@
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
 #include <kio/copyjob.h>
+#include <kio/mkpathjob.h>
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
 #include <KJobWidgets>
@@ -605,12 +606,12 @@ static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
         "confirm_create_hidden_dir") == KMessageBox::Continue;
 }
 
-KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl)
+KIO::Job* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl)
 {
     return newDir(parent, baseUrl, NewDirFlags());
 }
 
-KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, NewDirFlags flags)
+KIO::Job* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, NewDirFlags flags)
 {
     // Notice that kfile's KDirOperator::mkdir() is somewhat similar
     bool ok;
@@ -639,10 +640,10 @@ KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, N
                 url = baseUrl;
                 url.addPath( name );
             }
-            KIO::SimpleJob * job = KIO::mkdir(url);
+            KIO::Job *job = KIO::mkpath(url);
             KJobWidgets::setWindow(job, parent);
             job->ui()->setAutoErrorHandlingEnabled(true);
-            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, QList<QUrl>(), url, job );
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Mkpath, QList<QUrl>(), url, job);
             return job;
         }
     } while (askAgain);
