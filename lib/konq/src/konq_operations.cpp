@@ -27,7 +27,7 @@
 #include <ktoolinvocation.h>
 #include <kautomount.h>
 #include <kmountpoint.h>
-#include <kinputdialog.h>
+#include <QInputDialog>
 #include <kmessagebox.h>
 #include <knotification.h>
 #include <krun.h>
@@ -590,7 +590,7 @@ void KonqOperations::slotResult(KJob *job)
     deleteLater();
 }
 
-// Duplicated in libkfile's KDirOperator
+// Duplicated in KNewFileMenuPrivate::confirmCreatingHiddenDir (and this version isn't kdelibs4support free, so use the other one)
 static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
 {
     KGuiItem continueGuiItem(KStandardGuiItem::cont());
@@ -606,28 +606,23 @@ static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
         "confirm_create_hidden_dir") == KMessageBox::Continue;
 }
 
-KIO::Job* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl)
+KIO::Job *KonqOperations::newDir(QWidget * parent, const QUrl &baseUrl, NewDirFlags flags)
 {
-    return newDir(parent, baseUrl, NewDirFlags());
-}
-
-KIO::Job* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, NewDirFlags flags)
-{
-    // Notice that kfile's KDirOperator::mkdir() is somewhat similar
     bool ok;
     QString name = i18nc( "@label Default name when creating a folder", "New Folder" );
-    if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.toLocalFile( KUrl::AddTrailingSlash ) + name ).exists() )
-        name = KIO::RenameDialog::suggestName(baseUrl, name);
+    if ( baseUrl.isLocalFile() && QFileInfo(baseUrl.toLocalFile() + QLatin1Char('/') + name).exists() ) {
+        name = KIO::suggestName(baseUrl, name);
+    }
 
     bool askAgain;
     do {
         askAgain = false;
-        name = KInputDialog::getText ( i18nc( "@title:window", "New Folder" ),
-                                       i18nc( "@label:textbox", "Enter folder name:" ), name, &ok, parent );
+        name = QInputDialog::getText(parent, i18nc( "@title:window", "New Folder" ),
+                                     i18nc( "@label:textbox", "Enter folder name:" ), QLineEdit::Normal, name, &ok);
         if ( ok && !name.isEmpty() ) {
-            KUrl url;
-            if ((name[0] == '/') || (name[0] == '~')) {
-                url.setPath(KShell::tildeExpand(name));
+            QUrl url;
+            if (QDir::isAbsolutePath(name) || (name[0] == '~')) {
+                url = QUrl::fromLocalFile(KShell::tildeExpand(name));
             } else {
                 const bool viewShowsHiddenFiles = (flags & ViewShowsHiddenFile);
                 if (!viewShowsHiddenFiles && name.startsWith('.')) {
@@ -636,11 +631,10 @@ KIO::Job* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, NewDirF
                         continue;
                     }
                 }
-                name = KIO::encodeFileName( name );
                 url = baseUrl;
-                url.addPath( name );
+                url.setPath(baseUrl.path() + QLatin1Char('/') + name);
             }
-            KIO::Job *job = KIO::mkpath(url);
+            KIO::Job *job = KIO::mkpath(url, baseUrl);
             KJobWidgets::setWindow(job, parent);
             job->ui()->setAutoErrorHandlingEnabled(true);
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Mkpath, QList<QUrl>(), url, job);
