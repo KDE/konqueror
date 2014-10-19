@@ -590,62 +590,6 @@ void KonqOperations::slotResult(KJob *job)
     deleteLater();
 }
 
-// Duplicated in KNewFileMenuPrivate::confirmCreatingHiddenDir (and this version isn't kdelibs4support free, so use the other one)
-static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
-{
-    KGuiItem continueGuiItem(KStandardGuiItem::cont());
-    continueGuiItem.setText(i18nc("@action:button", "Create directory"));
-    KGuiItem cancelGuiItem(KStandardGuiItem::cancel());
-    cancelGuiItem.setText(i18nc("@action:button", "Enter a different name"));
-    return KMessageBox::warningContinueCancel(
-        parent,
-        i18n("The name \"%1\" starts with a dot, so the directory will be hidden by default.", name),
-        i18nc("@title:window", "Create hidden directory?"),
-        continueGuiItem,
-        cancelGuiItem,
-        "confirm_create_hidden_dir") == KMessageBox::Continue;
-}
-
-KIO::Job *KonqOperations::newDir(QWidget * parent, const QUrl &baseUrl, NewDirFlags flags)
-{
-    bool ok;
-    QString name = i18nc( "@label Default name when creating a folder", "New Folder" );
-    if ( baseUrl.isLocalFile() && QFileInfo(baseUrl.toLocalFile() + QLatin1Char('/') + name).exists() ) {
-        name = KIO::suggestName(baseUrl, name);
-    }
-
-    bool askAgain;
-    do {
-        askAgain = false;
-        name = QInputDialog::getText(parent, i18nc( "@title:window", "New Folder" ),
-                                     i18nc( "@label:textbox", "Enter folder name:" ), QLineEdit::Normal, name, &ok);
-        if ( ok && !name.isEmpty() ) {
-            QUrl url;
-            if (QDir::isAbsolutePath(name) || (name[0] == '~')) {
-                url = QUrl::fromLocalFile(KShell::tildeExpand(name));
-            } else {
-                const bool viewShowsHiddenFiles = (flags & ViewShowsHiddenFile);
-                if (!viewShowsHiddenFiles && name.startsWith('.')) {
-                    if (!confirmCreatingHiddenDir(name, parent)) {
-                        askAgain = true;
-                        continue;
-                    }
-                }
-                url = baseUrl;
-                url.setPath(baseUrl.path() + QLatin1Char('/') + name);
-            }
-            KIO::Job *job = KIO::mkpath(url, baseUrl);
-            KJobWidgets::setWindow(job, parent);
-            job->ui()->setAutoErrorHandlingEnabled(true);
-            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Mkpath, QList<QUrl>(), url, job);
-            return job;
-        }
-    } while (askAgain);
-    return 0;
-}
-
-////
-
 QWidget* KonqOperations::parentWidget() const
 {
     return static_cast<QWidget *>( parent() );

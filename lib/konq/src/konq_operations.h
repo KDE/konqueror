@@ -116,18 +116,6 @@ public:
      */
     static QPair<bool, QString> pasteInfo(const KUrl& targetUrl);
 
-    enum NewDirFlag { ViewShowsHiddenFile = 1 };
-    Q_DECLARE_FLAGS(NewDirFlags, NewDirFlag)
-    /**
-     * Ask for the name of a new directory and create it (using KIO::mkpath).
-     *
-     * @param parent the parent widget
-     * @param baseUrl the directory to create the new directory in
-     * @param flags see NewDirFlags
-     * @return the mkpath job used to create the directory or 0 if the creation was cancelled by the user
-     */
-    static KIO::Job* newDir(QWidget *parent, const QUrl &baseUrl, NewDirFlags flags = NewDirFlags());
-
     /**
      * Returns the list of dropped URL's.
      *
