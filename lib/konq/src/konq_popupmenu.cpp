@@ -523,10 +523,7 @@ void KonqPopupMenuPrivate::slotPopupNewView()
 
 void KonqPopupMenuPrivate::slotPopupNewDir()
 {
-  if (m_popupItemProperties.urlList().empty())
-    return;
-
-  KonqOperations::newDir(m_parentWidget, m_popupItemProperties.urlList().first());
+  m_pMenuNew->createDirectory();
 }
 
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
