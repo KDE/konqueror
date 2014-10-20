@@ -37,7 +37,7 @@
 #include <kmessagebox.h>
 #include <kurl.h>
 #include <kdatetime.h>
-
+#include <KLocale>
 // Local
 #include "kcookiesmain.h"
 #include "kcookiespolicies.h"
@@ -106,8 +106,8 @@ CookieProp* CookieListViewItem::leaveCookie()
     return ret;
 }
 
-KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)
-                   : KCModule(componentData, parent),
+KCookiesManagement::KCookiesManagement(/*const KComponentData &componentData,*/ QWidget *parent)
+                   : KCModule(/*componentData,*/ parent),
                      mDeleteAllFlag(false),
                      mMainWidget(parent)
 {

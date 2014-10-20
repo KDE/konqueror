@@ -26,6 +26,7 @@
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QLabel>
+#include <QVBoxLayout>
 
 // KDE
 #include <KLocalizedString>
@@ -37,7 +38,7 @@
 #include "konqkcmfactory.h"
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
-    : KCModule(KonqKcmFactory::componentData(), parent)
+    : KCModule(/*KonqKcmFactory::componentData(),*/ parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
     , groupname("FMSettings")
 {

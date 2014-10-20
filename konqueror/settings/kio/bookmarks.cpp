@@ -29,11 +29,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KLocalizedString>
 #include <knuminput.h>
 #include <kimagecache.h>
+#include <KConfigGroup>
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
 BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList &)
-                  :KCModule(KioConfigFactory::componentData(), parent)
+                  :KCModule(/*KioConfigFactory::componentData(),*/ parent)
 {
   ui.setupUi(this);
 }

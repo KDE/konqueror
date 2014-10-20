@@ -31,7 +31,7 @@ ki18n_wrap_ui(kcm_kio_PART_SRCS
 
 add_library(kcm_kio MODULE ${kcm_kio_PART_SRCS})
 
-target_link_libraries(kcm_kio KF5::KCMUtils KF5::KIOCore)
+target_link_libraries(kcm_kio KF5::KCMUtils KF5::KIOCore KF5::I18n KF5::KDELibs4Support)
 
 install(TARGETS kcm_kio  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

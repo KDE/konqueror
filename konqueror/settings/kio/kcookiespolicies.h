@@ -31,7 +31,7 @@
 
 #include "kcookiespolicyselectiondlg.h"
 #include "ui_kcookiespolicies.h"
-
+#include <KComponentData>
 
 class QTreeWidgetItem;
 
@@ -40,7 +40,7 @@ class KCookiesPolicies : public KCModule
     Q_OBJECT
 
 public:
-    KCookiesPolicies(const KComponentData &componentData, QWidget *parent);
+    KCookiesPolicies(/*const KComponentData &componentData,*/ QWidget *parent);
     ~KCookiesPolicies();
 
     virtual void load();

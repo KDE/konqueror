@@ -41,7 +41,7 @@
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
 CacheConfigModule::CacheConfigModule(QWidget *parent, const QVariantList &)
-                  :KCModule(KioConfigFactory::componentData(), parent)
+                  :KCModule(/*KioConfigFactory::componentData(),*/ parent)
 {
   ui.setupUi(this);
 }

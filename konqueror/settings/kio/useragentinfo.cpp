@@ -28,6 +28,7 @@
 #include <KLocalizedString>
 #include <kservicetypetrader.h>
 #include <kstandarddirs.h>
+#include <KLocale>
 
 #define UA_PTOS(x) (*it)->property(x).toString()
 #define QFL(x) QLatin1String(x)

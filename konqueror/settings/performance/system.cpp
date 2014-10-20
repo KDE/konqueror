@@ -22,6 +22,7 @@
 
 #include <QCheckBox>
 #include <KLocalizedString>
+#include <KConfigGroup>
 
 namespace KCMPerformance
 {

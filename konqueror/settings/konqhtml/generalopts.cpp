@@ -23,13 +23,15 @@
 // KDE
 #include <kcombobox.h>
 #include <kconfig.h>
-#include <kdebug.h>
+#include <qdebug.h>
 #include <kmimetype.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
-
+#include <KConfigGroup>
+#include <KGlobal>
+#include <KUrl>
 // Local
 #include "ui_advancedTabOptions.h"
 #include <KPluginFactory>
@@ -44,7 +46,7 @@ enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage, ShowBookmarksPage }
 //-----------------------------------------------------------------------------
 
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
-    : KCModule( KcmKonqHtmlFactory::componentData(), parent )
+    : KCModule( /*KcmKonqHtmlFactory::componentData(),*/ parent )
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -298,7 +300,7 @@ void KKonqGeneralOptions::save()
     QString engineEntryName = preferredWebEngine;
     if (engineEntryName.endsWith(".desktop")) // turn the storageId into a desktopEntryName: remove .desktop
         engineEntryName.truncate(engineEntryName.length() - 8);
-    kDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
+    //qDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
 
     updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice), engineEntryName);
 

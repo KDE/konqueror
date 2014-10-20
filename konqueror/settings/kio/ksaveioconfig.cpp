@@ -30,7 +30,7 @@
 #include <kmessagebox.h>
 #include <kconfiggroup.h>
 #include <kio/ioslave_defaults.h>
-
+#include <KGlobal>
 class KSaveIOConfigPrivate
 {
 public:

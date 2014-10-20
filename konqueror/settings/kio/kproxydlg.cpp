@@ -31,6 +31,7 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kurifilter.h>
+#include <KUrl>
 
 // Qt
 #include <QLineEdit>
@@ -209,7 +210,7 @@ static void setProxyInformation(const QString& value,
 }
 
 KProxyDialog::KProxyDialog(QWidget* parent, const QVariantList& args)
-    : KCModule(KioConfigFactory::componentData(), parent)
+    : KCModule(/*KioConfigFactory::componentData(),*/ parent)
 {
     Q_UNUSED(args);
     mUi.setupUi(this);

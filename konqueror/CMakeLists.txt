@@ -15,7 +15,7 @@ add_subdirectory( about )
 add_subdirectory( pics )
 # TODO add_subdirectory( sidebar )
 # TODO add_subdirectory( preloader )
-# TODO add_subdirectory( settings )
+add_subdirectory( settings )
 
 ########### install files ###############
 install( PROGRAMS

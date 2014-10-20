@@ -50,7 +50,7 @@ typedef QList<QTreeWidgetItem*> SiteList;
 typedef SiteList::iterator SiteListIterator;
 
 UserAgentDlg::UserAgentDlg (QWidget* parent, const QVariantList&)
-    : KCModule (KioConfigFactory::componentData(), parent),
+    : KCModule (/*ioConfigFactory::componentData(),*/ parent),
       m_userAgentInfo (0),
       m_config (0)
 {

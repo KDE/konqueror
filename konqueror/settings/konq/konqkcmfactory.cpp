@@ -30,3 +30,4 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         //registerPlugin<KonqFontOptionsDesktop>("dappearance");
         )
 K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))
+#include "moc_konqkcmfactory.cpp"

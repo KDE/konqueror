@@ -24,6 +24,7 @@
 // Qt
 #include <QtCore/QTextCodec>
 #include <QLabel>
+#include <QGridLayout>
 
 // KDE
 #include <kcharsets.h>
@@ -33,13 +34,12 @@
 #include <kpluginfactory.h>
 #include <kglobal.h>
 #include <KLocalizedString>
-
-#include <config-apps.h>
+//#include <config-apps.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KComponentData &componentData)
-  : KCModule(componentData.isValid() ? componentData : KioConfigFactory::componentData(), parent)
+SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &/*, const KComponentData &componentData*/)
+  : KCModule(/*componentData.isValid() ? componentData : KioConfigFactory::componentData(),*/ parent)
 {
    QGridLayout *layout = new QGridLayout(this );
    QLabel *label=new QLabel(i18n("These settings apply to network browsing only."),this);
