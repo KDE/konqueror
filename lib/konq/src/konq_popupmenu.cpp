@@ -52,6 +52,7 @@
 #include <KIO/RestoreJob>
 #include <KJobWidgets>
 #include <KJobUiDelegate>
+#include <KMimeTypeEditor>
 
 #include <QFileInfo>
 
@@ -567,7 +568,7 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 
 void KonqPopupMenuPrivate::slotPopupMimeType()
 {
-    KonqOperations::editMimeType(m_popupItemProperties.mimeType(), m_parentWidget);
+    KMimeTypeEditor::editMimeType(m_popupItemProperties.mimeType(), m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupProperties()

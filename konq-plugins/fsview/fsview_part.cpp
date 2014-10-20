@@ -42,6 +42,7 @@
 #include <kactionmenu.h>
 #include <kactioncollection.h>
 #include <kpropertiesdialog.h>
+#include <KMimeTypeEditor>
 #include <kio/jobuidelegate.h>
 // from kdebase/libkonq...
 #include <konq_operations.h>
@@ -506,7 +507,7 @@ void FSViewBrowserExtension::editMimeType()
 {
   Inode* i = (Inode*) _view->selection().first();
   if (i)
-    KonqOperations::editMimeType( i->mimeType()->name(),_view );
+    KMimeTypeEditor::editMimeType( i->mimeType()->name(),_view );
 }
 
 
