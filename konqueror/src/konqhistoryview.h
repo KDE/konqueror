@@ -23,7 +23,7 @@
 
 #include <konqprivate_export.h>
 #include <QWidget>
-class KUrl;
+class QUrl;
 class QModelIndex;
 class QTreeView;
 class QTimer;
@@ -49,11 +49,11 @@ public:
     KActionCollection *actionCollection() { return m_collection; }
     QTreeView* treeView() const;
     KLineEdit* lineEdit() const;
-    KUrl urlForIndex(const QModelIndex& index) const;
+    QUrl urlForIndex(const QModelIndex& index) const;
 
 Q_SIGNALS:
-    void openUrlInNewWindow(const KUrl& url);
-    void openUrlInNewTab(const KUrl& url);
+    void openUrlInNewWindow(const QUrl& url);
+    void openUrlInNewTab(const QUrl& url);
 
 private Q_SLOTS:
     void slotContextMenu(const QPoint &pos);

@@ -83,7 +83,7 @@ public:
 
 			if (QString(action).toLower() != "post") {
 				// GET
-				KUrl kurl = completeURL(url);
+                QUrl kurl = completeURL(url);
 				kurl.setQuery(formData.data());
 				u = kurl.url();
 			} else {
@@ -114,7 +114,7 @@ class KonqSideBarWebModule : public KonqSidebarModule
 	Q_OBJECT
 	public:
 		KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent,
-                                     const KConfigGroup& configGroup);
+                             const KConfigGroup& configGroup);
 		virtual ~KonqSideBarWebModule();
 
 		virtual QWidget *getWidget();
@@ -123,11 +123,11 @@ class KonqSideBarWebModule : public KonqSidebarModule
                 // TODO move to base class
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
 	protected:
-		virtual void handleURL(const KUrl &url);
+        virtual void handleURL(const QUrl &url);
 
 	private Q_SLOTS:
 		void urlClicked(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
-    void formClicked(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
+        void formClicked(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
 		void urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs, const KParts::WindowArgs& windowArgs = KParts::WindowArgs());
 		void pageLoaded();
 		void loadFavicon();
@@ -137,7 +137,7 @@ class KonqSideBarWebModule : public KonqSidebarModule
 
 	private:
 		KHTMLSideBar *_htmlPart;
-		KUrl _url;
+        QUrl _url;
 		int reloadTimeout;
 };
 

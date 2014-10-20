@@ -49,7 +49,7 @@ enum ModuleType { VIRT_Link = 0,  // a single .desktop file
 typedef KonqSidebarTreeModule*(*getModule)(KonqSidebarTree*, const bool);
 
 struct DirTreeConfigData { // TODO make base class with two subclasses?
-    KUrl dir; // only used for VIRT_Folder
+    QUrl dir; // only used for VIRT_Folder
     ModuleType type;
     QString relDir; // only used for VIRT_Folder
 };
@@ -72,7 +72,7 @@ public:
     KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path );
     virtual ~KonqSidebarTree();
 
-    void followURL( const KUrl &url );
+    void followURL( const QUrl &url );
 
     /**
      * @return the current (i.e. selected) item
@@ -100,7 +100,7 @@ public:
     void showToplevelContextMenu();
 
     // Add an URL
-    void addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl&url);
+    void addUrl(KonqSidebarTreeTopLevelItem* item, const QUrl&url);
 
 public slots:
     // Connected to KDirNotify dbus signals
@@ -215,9 +215,9 @@ signals:
 #undef signals
 #define signals protected
 #endif
-    void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+    void openUrlRequest( const QUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
-    void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+    void createNewWindow( const QUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
 };
 

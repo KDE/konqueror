@@ -354,17 +354,17 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
     const QString openSearchTitle = action->data().toString();
     if (!openSearchTitle.isEmpty()) {
         const QString openSearchHref = m_openSearchDescs.value(openSearchTitle);
-        KUrl url;
+        QUrl url;
         if (QUrl(openSearchHref).isRelative()) {
-            const KUrl docUrl = m_part ? m_part.data()->url() : KUrl();
+            const QUrl docUrl = m_part ? m_part.data()->url() : QUrl();
             QString host = docUrl.scheme() + QLatin1String("://") + docUrl.host();
             if (docUrl.port() != -1) {
                 host += QLatin1String(":") + QString::number(docUrl.port());
             }
-            url = KUrl(docUrl, openSearchHref);
+            url = QUrl(docUrl, openSearchHref);
         }
         else {
-            url = KUrl(openSearchHref);
+            url = QUrl(openSearchHref);
         }
         //kDebug() << "Adding open search Engine: " << openSearchTitle << " : " << openSearchHref;
         m_openSearchManager->addOpenSearchEngine(url, openSearchTitle);

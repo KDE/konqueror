@@ -23,7 +23,7 @@
 
 #include <QDateTime>
 #include <QMetaType>
-#include <kurl.h>
+#include <QUrl>
 #include "libkonq_export.h"
 
 class LIBKONQ_EXPORT KonqHistoryEntry
@@ -32,7 +32,7 @@ public:
     KonqHistoryEntry();
     ~KonqHistoryEntry();
 
-    KUrl url;
+    QUrl url;
     QString typedUrl;
     QString title;
     quint32 numberOfTimesVisited;
@@ -66,18 +66,18 @@ public:
      * Finds an entry by URL and return an iterator to it.
      * If no matching entry is found, end() is returned.
      */
-    iterator findEntry( const KUrl& url );
+    iterator findEntry( const QUrl& url );
 
     /**
      * Finds an entry by URL and return an iterator to it.
      * If no matching entry is found, end() is returned.
      */
-    const_iterator constFindEntry( const KUrl& url ) const;
+    const_iterator constFindEntry( const QUrl& url ) const;
 
     /**
      * Finds an entry by URL and removes it
      */
-    void removeEntry( const KUrl& url );
+    void removeEntry( const QUrl& url );
 };
 
 

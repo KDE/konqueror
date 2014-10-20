@@ -35,7 +35,7 @@ class KonqFrameStatusBar;
 class KonqFrameVisitor;
 class QPixmap;
 class QVBoxLayout;
-class KUrl;
+class QUrl;
 
 class KonqView;
 class KonqFrameBase;
@@ -78,7 +78,7 @@ class KONQ_TESTS_EXPORT KonqFrameBase
   void setParentContainer(KonqFrameContainerBase* parent) { m_pParentContainer = parent; }
 
   virtual void setTitle( const QString &title , QWidget* sender) = 0;
-  virtual void setTabIcon( const KUrl &url, QWidget* sender ) = 0;
+  virtual void setTabIcon( const QUrl &url, QWidget* sender ) = 0;
 
   virtual QWidget* asQWidget() = 0;
 
@@ -153,7 +153,7 @@ public:
   virtual void copyHistory( KonqFrameBase *other );
 
   virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon( const KUrl &url, QWidget* sender );
+  virtual void setTabIcon(const QUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
   virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::View; }

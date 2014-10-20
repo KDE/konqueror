@@ -173,7 +173,7 @@ static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
 {
     // we take either title, typedUrl or URL (in this order)
     const QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
-                                                  entry.url.prettyUrl() :
+                                                  entry.url.toDisplayString() :
                                                   entry.typedUrl) :
                          entry.title;
     QAction * action = new QAction(
@@ -200,7 +200,7 @@ void KonqMostOftenURLSAction::slotFillMenu()
 
 void KonqMostOftenURLSAction::slotActivated(QAction* action)
 {
-    emit activated(action->data().value<KUrl>());
+    emit activated(action->data().value<QUrl>());
 }
 
 ///////////////////////////////
@@ -236,6 +236,5 @@ void KonqHistoryAction::slotFillMenu()
 
 void KonqHistoryAction::slotActivated(QAction* action)
 {
-    emit activated(action->data().value<KUrl>());
+    emit activated(action->data().value<QUrl>());
 }
-

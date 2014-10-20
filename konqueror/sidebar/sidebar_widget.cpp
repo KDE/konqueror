@@ -144,8 +144,8 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_area->setMinimumWidth(0);
 
     m_buttonBar = new KonqMultiTabBar(this);
-    connect(m_buttonBar, SIGNAL(urlsDropped(KUrl::List)),
-            this, SLOT(slotUrlsDropped(KUrl::List)));
+    connect(m_buttonBar, SIGNAL(urlsDropped(QList<QUrl>)),
+            this, SLOT(slotUrlsDropped(QList<QUrl>)));
 
     m_menu = new QMenu(this);
     m_menu->setIcon(QIcon::fromTheme("configure"));
@@ -180,7 +180,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
 
 bool Sidebar_Widget::createDirectModule(const QString& templ,
                                         const QString& name,
-                                        const KUrl& url,
+                                        const QUrl &url,
                                         const QString& icon,
                                         const QString& module,
                                         const QString& treeModule)
@@ -207,7 +207,7 @@ bool Sidebar_Widget::createDirectModule(const QString& templ,
     return false;
 }
 
-void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name)
+void Sidebar_Widget::addWebSideBar(const QUrl& url, const QString& name)
 {
     //kDebug() << "Web sidebar entry to be added: " << url << name << endl;
 
@@ -218,8 +218,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name)
         KConfigGroup scf(&_scf, "Desktop Entry");
         if (scf.readPathEntry("URL", QString()) == url.url()) {
             // We already have this one!
-            KMessageBox::information(this,
-                                     i18n("This entry already exists."));
+            KMessageBox::information(this, i18n("This entry already exists."));
             return;
         }
     }
@@ -453,9 +452,9 @@ void Sidebar_Widget::createButtons()
     m_noUpdate = false;
 }
 
-bool Sidebar_Widget::openUrl(const KUrl &url)
+bool Sidebar_Widget::openUrl(const QUrl &url)
 {
-    if (url.protocol()=="sidebar")
+    if (url.scheme()=="sidebar")
     {
         for (int i=0;i<m_buttons.count();i++)
             if (m_buttons.at(i).file==url.path())
@@ -720,15 +719,15 @@ void Sidebar_Widget::submitFormRequest(const char *action,
     browserArguments.postData = formData;
     browserArguments.setDoPost(QByteArray(action).toLower() == "post");
     // boundary?
-    emit getExtension()->openUrlRequest(KUrl( url ), arguments, browserArguments);
+    emit getExtension()->openUrlRequest(QUrl( url ), arguments, browserArguments);
 }
 
-void Sidebar_Widget::openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
+void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
     getExtension()->openUrlRequest(url, args, browserArgs);
 }
 
-void Sidebar_Widget::createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
                                      const KParts::WindowArgs &windowArgs)
 {
     getExtension()->createNewWindow(url, args, browserArgs, windowArgs);
@@ -760,10 +759,10 @@ void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
     connect(mod, SIGNAL(popupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
             this, SLOT(slotPopupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
 
-    connect(mod, SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-            this, SLOT(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
-    connect(mod, SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
-            this, SLOT(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
+    connect(mod, SIGNAL(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+            this, SLOT(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
+    connect(mod, SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
+            this, SLOT(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
 
     // TODO define in base class
     if (mod->metaObject()->indexOfSignal("submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)") != -1) {
@@ -827,9 +826,9 @@ void Sidebar_Widget::slotPopupMenu(KonqSidebarModule* module,
     emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
-void Sidebar_Widget::slotUrlsDropped(const KUrl::List& urls)
+void Sidebar_Widget::slotUrlsDropped(const QList<QUrl>& urls)
 {
-    Q_FOREACH(const KUrl& url, urls) {
+    Q_FOREACH(const QUrl& url, urls) {
         KIO::StatJob *job = KIO::stat(url);
         KJobWidgets::setWindow(job, this);
         connect(job, &KIO::StatJob::result, this, &Sidebar_Widget::slotStatResult);

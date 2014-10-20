@@ -22,8 +22,9 @@
 
 #include "konqprivate_export.h"
 
+#include <QUrl>
+
 #include <krun.h>
-#include <kurl.h>
 #include <kparts/browserextension.h>
 #include "konqopenurlrequest.h"
 #include <ksharedconfig.h>
@@ -41,7 +42,7 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
     /**
      * Create a new window with a single view, showing @p url, using @p args
      */
-    KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
+    KonqMainWindow * createSimpleWindow( const QUrl &url, const KParts::OpenUrlArguments &args,
                                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                                          bool tempFile = false);
 
@@ -51,7 +52,7 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
      * @param openUrl If it is false, no url is opened in the new window (and the aboutpage is not shown).
      * The url is used to guess the profile.
      */
-    KONQ_TESTS_EXPORT KonqMainWindow * createNewWindow(const KUrl &url,
+    KONQ_TESTS_EXPORT KonqMainWindow * createNewWindow(const QUrl &url,
                                                        const KonqOpenURLRequest& req = KonqOpenURLRequest(),
                                                        bool openUrl = true);
 
@@ -67,7 +68,7 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
      */
     KonqMainWindow * createBrowserWindowFromProfile(const QString& profilePath,
                                                     const QString& profileFilename,
-                                                    const KUrl &url = KUrl(),
+                                                    const QUrl &url = QUrl(),
                                                     const KonqOpenURLRequest& req = KonqOpenURLRequest(),
                                                     bool openUrl = true);
 
@@ -79,13 +80,13 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
     KonqMainWindow * newWindowFromHistory( KonqView* view, int steps );
 
     /**
-     * Applies the URI filters to @p url, and convert it to a KUrl.
+     * Applies the URI filters to @p url, and convert it to a QUrl.
      *
      * @p parent is used in case of a message box.
      * @p url to be filtered.
      * @p currentDirectory the directory to use, in case the url is relative.
      */
-    KUrl konqFilteredURL(KonqMainWindow* parent, const QString& url, const QUrl& currentDirectory = QUrl());
+    QUrl konqFilteredURL(KonqMainWindow* parent, const QString& url, const QUrl& currentDirectory = QUrl());
 
     /**
      * Name of the default profile

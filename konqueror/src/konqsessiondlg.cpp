@@ -29,7 +29,6 @@
 #include <QtCore/QDirIterator>
 
 #include <kdebug.h>
-#include <kurl.h>
 #include <kio/copyjob.h>
 #include <ktempdir.h>
 #include <kio/renamedialog.h>
@@ -160,15 +159,15 @@ void KonqSessionDlg::slotDelete()
     }
 }
 
-void KonqSessionDlg::slotRename(KUrl dirpathTo)
+void KonqSessionDlg::slotRename(QUrl dirpathTo)
 {
     if ( !d->m_pListView->currentIndex().isValid() )
         return;
     
-    KUrl dirpathFrom = d->m_pModel->itemForIndex(
+    QUrl dirpathFrom = d->m_pModel->itemForIndex(
         d->m_pListView->currentIndex()).url();
     
-    dirpathTo = (dirpathTo == KUrl()) ? dirpathFrom : dirpathTo;
+    dirpathTo = (dirpathTo == QUrl()) ? dirpathFrom : dirpathTo;
     
     KIO::RenameDialog dlg(this, i18nc("@title:window", "Rename Session"), dirpathFrom,
         dirpathTo, KIO::RenameDialog_Mode(0));

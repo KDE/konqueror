@@ -25,14 +25,14 @@
 #include "konqfactory.h"
 #include "konqframe.h"
 
-#include <QtCore/QMap>
-#include <QtCore/QPointer>
+#include <QMap>
+#include <QPointer>
+#include <QUrl>
 
 #include <KService>
 
 #include <kparts/partmanager.h>
 #include "konqopenurlrequest.h"
-#include <kurl.h>
 #include <ksharedconfig.h>
 
 class KonqFrameTabs;
@@ -217,14 +217,14 @@ public:
    * settings, they will be reset to the defaults
    */
   void loadViewProfileFromFile( const QString & path, const QString & filename,
-                                const KUrl & forcedUrl = KUrl(),
+                                const QUrl & forcedUrl = QUrl(),
                                 const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                 bool resetWindow = false, bool openUrl = true );
     // Overload for KonqMisc::createBrowserWindowFromProfile
-  void loadViewProfileFromConfig( const KSharedConfigPtr& config,
+  void loadViewProfileFromConfig(const KSharedConfigPtr& config,
                                   const QString& path,
                                   const QString & filename,
-                                  const KUrl & forcedUrl = KUrl(),
+                                  const QUrl &forcedUrl = QUrl(),
                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                   bool resetWindow = false, bool openUrl = true );
   /**
@@ -237,8 +237,8 @@ public:
    * @param resetWindow if the profile doesn't have attributes like size or toolbar
    * settings, they will be reset to the defaults
    */
-  void loadViewProfileFromGroup( const KConfigGroup& cfg, const QString & filename,
-                                 const KUrl & forcedUrl = KUrl(),
+  void loadViewProfileFromGroup(const KConfigGroup& cfg, const QString & filename,
+                                 const QUrl &forcedUrl = QUrl(),
                                  const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                  bool openUrl = true );
   /**
@@ -370,13 +370,13 @@ private:
    * @param forcedService use this service (part) instead of the one from the profile
    */
   void loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                 const QString &name, const KUrl & defaultURL, bool openUrl,
-                 const KUrl& forcedUrl, const QString& forcedService,
+                 const QString &name, const QUrl & defaultURL, bool openUrl,
+                 const QUrl& forcedUrl, const QString& forcedService,
                  bool openAfterCurrentPage = false, int pos = -1 );
 
-    void loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                       const KUrl & defaultURL, bool openUrl,
-                       const KUrl& forcedUrl, const QString& forcedService = QString(),
+    void loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                       const QUrl &defaultURL, bool openUrl,
+                       const QUrl &forcedUrl, const QString& forcedService = QString(),
                        bool openAfterCurrentPage = false,
                        int pos = -1 );
 

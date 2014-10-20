@@ -52,7 +52,7 @@ void KonqPlacesCustomPlacesView::mousePressEvent(QMouseEvent *event)
     KFilePlacesView::mousePressEvent(event);
 }
 
-void KonqPlacesCustomPlacesView::emitUrlChanged(const KUrl &url)
+void KonqPlacesCustomPlacesView::emitUrlChanged(const QUrl &url)
 {
     emit urlChanged(url, m_mouseButtons, m_keyModifiers);
 }
@@ -81,7 +81,7 @@ QWidget *KonqSideBarPlacesModule::getWidget()
     return m_placesView;
 }
 
-void KonqSideBarPlacesModule::slotPlaceUrlChanged(const KUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
+void KonqSideBarPlacesModule::slotPlaceUrlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
     if ((buttons & Qt::MidButton) != 0 || (modifiers & Qt::ControlModifier) != 0) {
         emit createNewWindow(url);

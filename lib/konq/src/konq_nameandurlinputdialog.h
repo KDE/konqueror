@@ -46,7 +46,7 @@ public:
      * @param startDir start directory for the URL requester (optional)
      * @param parent parent widget
      */
-    KonqNameAndUrlInputDialog(const QString& nameLabel, const QString& urlLabel, const KUrl& startDir, QWidget *parent);
+    KonqNameAndUrlInputDialog(const QString& nameLabel, const QString& urlLabel, const QUrl& startDir, QWidget *parent);
 
     /**
      * Destructor.
@@ -60,7 +60,7 @@ public:
     /**
      * Pre-fill the URL requester.
      */
-    void setSuggestedUrl(const KUrl& url);
+    void setSuggestedUrl(const QUrl& url);
 
     /**
      * @return the name the user entered

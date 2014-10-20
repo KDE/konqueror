@@ -41,7 +41,7 @@ public:
     virtual void del();
 
     // The URL to open when this link is clicked
-    virtual KUrl externalURL() const;
+    virtual QUrl externalURL() const;
 
     // overwrite this if you want a tooltip shown on your item
     virtual QString toolTipText() const;

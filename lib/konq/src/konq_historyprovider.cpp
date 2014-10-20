@@ -169,7 +169,7 @@ bool KonqHistoryProvider::loadHistory()
         KParts::HistoryProvider::insert(urlString);
         // DF: also insert the "pretty" version if different
         // This helps getting 'visited' links on websites which don't use fully-escaped urls.
-        const QString prettyUrlString = entry.url.prettyUrl();
+        const QString prettyUrlString = entry.url.toDisplayString();
         if (urlString != prettyUrlString)
             KParts::HistoryProvider::insert(prettyUrlString);
     }
@@ -213,14 +213,17 @@ void KonqHistoryProvider::emitAddToHistory(const KonqHistoryEntry& entry)
     emit d->notifyHistoryEntry(data);
 }
 
-void KonqHistoryProvider::emitRemoveFromHistory(const KUrl& url)
+void KonqHistoryProvider::emitRemoveFromHistory(const QUrl& url)
 {
     emit d->notifyRemove(url.url());
 }
 
-void KonqHistoryProvider::emitRemoveListFromHistory(const KUrl::List& urls)
+void KonqHistoryProvider::emitRemoveListFromHistory(const QList<QUrl> &urls)
 {
-    emit d->notifyRemoveList(urls.toStringList());
+    QStringList result;
+    foreach (const QUrl& url, urls)
+        result << url.url();
+    emit d->notifyRemoveList(result);
 }
 
 void KonqHistoryProvider::emitClear()
@@ -335,7 +338,7 @@ void KonqHistoryProviderPrivate::slotNotifyClear()
 
 void KonqHistoryProviderPrivate::slotNotifyRemove(const QString& urlStr)
 {
-    KUrl url(urlStr);
+    QUrl url(urlStr);
 
     KonqHistoryList::iterator existingEntry = q->findEntry(url);
     if (existingEntry != m_history.end()) {
@@ -351,7 +354,7 @@ void KonqHistoryProviderPrivate::slotNotifyRemoveList(const QStringList& urls)
     bool doSave = false;
     QStringList::const_iterator it = urls.begin();
     for (; it != urls.end(); ++it) {
-        KUrl url(*it);
+        QUrl url(*it);
         KonqHistoryList::iterator existingEntry = m_history.findEntry(url);
         if (existingEntry != m_history.end()) {
             q->removeEntry(existingEntry);
@@ -415,7 +418,7 @@ bool KonqHistoryProviderPrivate::saveHistory()
     return true;
 }
 
-KonqHistoryList::iterator KonqHistoryProvider::findEntry(const KUrl& url)
+KonqHistoryList::iterator KonqHistoryProvider::findEntry(const QUrl &url)
 {
     // small optimization (dict lookup) for items _not_ in our history
     if (!KParts::HistoryProvider::contains(url.url()))
@@ -423,7 +426,7 @@ KonqHistoryList::iterator KonqHistoryProvider::findEntry(const KUrl& url)
     return d->m_history.findEntry(url);
 }
 
-KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const KUrl& url) const
+KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const QUrl& url) const
 {
     // small optimization (dict lookup) for items _not_ in our history
     if (!KParts::HistoryProvider::contains(url.url()))

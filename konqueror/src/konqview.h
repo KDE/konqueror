@@ -56,7 +56,7 @@ struct HistoryEntry
   void loadItem( const KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
   void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
 
-  KUrl url;
+  QUrl url;
   QString locationBarURL; // can be different from url when showing a index.html
   QString title;
   QByteArray buffer;
@@ -110,7 +110,7 @@ public:
    * @param nameFilter e.g. *.cpp
    * @param tempFile whether to delete the file after use
    */
-  void openUrl( const KUrl &url,
+  void openUrl( const QUrl &url,
                 const QString & locationBarURL,
                 const QString &nameFilter = QString(),
                 bool tempFile = false );
@@ -208,9 +208,9 @@ public:
   /**
    * Retrieve view's URL
    */
-  KUrl url() const;
+  QUrl url() const;
 
-  KUrl upUrl() const;
+  QUrl upUrl() const;
 
   /**
    * Get view's location bar URL, i.e. the one that the view signals
@@ -356,7 +356,7 @@ public:
   // return true if the method was found, false if the execution failed
   bool callExtensionMethod( const char *methodName );
   bool callExtensionBoolMethod( const char *methodName, bool value );
-  bool callExtensionURLMethod( const char *methodName, const KUrl& value );
+  bool callExtensionURLMethod( const char *methodName, const QUrl& value );
 
   void setViewName( const QString &name );
   QString viewName() const;
@@ -386,7 +386,7 @@ public:
   bool prepareReload( KParts::OpenUrlArguments& args, KParts::BrowserArguments& browserArgs, bool softReload );
 
   // overload for the QString version
-  void setLocationBarURL( const KUrl& locationBarURL );
+  void setLocationBarURL( const QUrl& locationBarURL );
 
     /**
      * Gives focus to the part's widget, after we just opened a URL in this part.
@@ -432,9 +432,9 @@ public Q_SLOTS:
   /**
    * get an icon for the URL from the BrowserExtension
    */
-  void setIconURL( const KUrl &iconURL );
+  void setIconURL(const QUrl &iconURL );
 
-  void setTabIcon( const KUrl &url );
+  void setTabIcon(const QUrl &url );
 
   void setCaption( const QString & caption );
 
@@ -494,7 +494,7 @@ private:
    */
   void updateHistoryEntry(bool saveLocationBarURL);
 
-  void aboutToOpenURL( const KUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments() );
+  void aboutToOpenURL( const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments() );
 
   void setPartMimeType();
 

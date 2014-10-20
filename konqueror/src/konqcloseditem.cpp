@@ -55,8 +55,8 @@ KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint
 
 KonqClosedItem::~KonqClosedItem()
 {
+    kDebug() << "deleting group" << m_configGroup.name();
     m_configGroup.deleteGroup();
-    kDebug() << "deleted group" << m_configGroup.name();
 }
 
 KonqClosedTabItem::KonqClosedTabItem(const QString& url, const QString& title, int pos, quint64 serialNumber)

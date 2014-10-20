@@ -56,9 +56,9 @@ void KonqSidebarBookmarkItem::del()
     //maybe todo
 }
 
-KUrl KonqSidebarBookmarkItem::externalURL() const
+QUrl KonqSidebarBookmarkItem::externalURL() const
 {
-    return m_bk.isGroup() ? KUrl() : m_bk.url();
+    return m_bk.isGroup() ? QUrl() : m_bk.url();
 }
 
 QString KonqSidebarBookmarkItem::toolTipText() const

@@ -34,7 +34,7 @@
 
 
 KonqRun::KonqRun(KonqMainWindow* mainWindow, KonqView *_childView,
-                  const KUrl & _url, const KonqOpenURLRequest & req, bool trustedSource)
+                 const QUrl &_url, const KonqOpenURLRequest & req, bool trustedSource)
     : KParts::BrowserRun(_url, req.args, req.browserArgs, _childView ? _childView->part() : 0L, mainWindow,
                           //remove referrer if request was typed in manually.
                           // ### TODO: turn this off optionally.
@@ -188,8 +188,8 @@ void KonqRun::scanFile()
     // BrowserRun changes
     KIO::TransferJob *job = dynamic_cast<KIO::TransferJob*>(KRun::job());
     if (job && !job->error()) {
-        connect(job, SIGNAL(redirection(KIO::Job*,KUrl)),
-                SLOT(slotRedirection(KIO::Job*,KUrl)));
+        connect(job, SIGNAL(redirection(KIO::Job*,QUrl)),
+                SLOT(slotRedirection(KIO::Job*,QUrl)));
         if (m_pView && m_pView->service()->desktopEntryName() != "konq_sidebartng") {
             connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
                     m_pView, SLOT(slotInfoMessage(KJob*,QString)));
@@ -197,13 +197,13 @@ void KonqRun::scanFile()
     }
 }
 
-void KonqRun::slotRedirection(KIO::Job *job, const KUrl& redirectedToURL)
+void KonqRun::slotRedirection(KIO::Job *job, const QUrl& redirectedToURL)
 {
-    KUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
+    QUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
     kDebug() << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending(redirectFromURL);
 
-    if (redirectedToURL.protocol() == "mailto") {
+    if (redirectedToURL.scheme() == "mailto") {
        m_mailto = redirectedToURL;
        return; // Error will follow
     }

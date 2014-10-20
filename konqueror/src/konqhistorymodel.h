@@ -59,7 +59,7 @@ private Q_SLOTS:
 private:
     enum SignalEmission { EmitSignals, DontEmitSignals };
     KHM::Entry* entryFromIndex(const QModelIndex &index, bool returnRootIfNull = false) const;
-    KHM::GroupEntry* getGroupItem(const KUrl &url, SignalEmission se);
+    KHM::GroupEntry* getGroupItem(const QUrl &url, SignalEmission se);
     QModelIndex indexFor(KHM::HistoryEntry *entry) const;
     QModelIndex indexFor(KHM::GroupEntry *entry) const;
 

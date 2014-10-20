@@ -26,6 +26,7 @@
 #include <QMenu>
 #include <QDrag>
 #include <QToolButton>
+#include <QIcon>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>
@@ -33,6 +34,7 @@
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <kstringhandler.h>
+#include <KUrlMimeData>
 
 #include "konqview.h"
 #include "konqviewmanager.h"
@@ -44,7 +46,6 @@
 #include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
 #include <ktabbar.h>
-#include <QIcon>
 
 
 //###################################################################
@@ -196,7 +197,7 @@ void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
   setTabText( indexOf( sender ), tabText.replace('&', "&&") );
 }
 
-void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
+void KonqFrameTabs::setTabIcon( const QUrl &url, QWidget* sender )
 {
   //kDebug() << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
   QIcon iconSet = QIcon::fromTheme( KonqPixmapProvider::self()->iconNameFor( url ) );
@@ -340,9 +341,9 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
         if ( frame && frame->activeChildView() )
         {
             QString title = frame->title().trimmed();
-            const KUrl url = frame->activeChildView()->url();
+            const QUrl url = frame->activeChildView()->url();
             if ( title.isEmpty() )
-                title = url.pathOrUrl();
+                title = url.toDisplayString();
             title = KStringHandler::csqueeze( title, 50 );
             QAction *action = m_pSubPopupMenuTab->addAction( QIcon::fromTheme( KonqPixmapProvider::self()->iconNameFor(url) ), title );
             action->setData( i );
@@ -372,8 +373,8 @@ void KonqFrameTabs::slotSubPopupMenuTabActivated( QAction *action )
 void KonqFrameTabs::slotMouseMiddleClick()
 {
   KonqMainWindow* mainWindow = m_pViewManager->mainWindow();
-  KUrl filteredURL ( KonqMisc::konqFilteredURL( mainWindow, QApplication::clipboard()->text(QClipboard::Selection) ) );
-  if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
+  QUrl filteredURL ( KonqMisc::konqFilteredURL( mainWindow, QApplication::clipboard()->text(QClipboard::Selection) ) );
+  if (filteredURL.isValid() && filteredURL.scheme() != QLatin1String("error")) {
     KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
     mainWindow->openUrl( newView, filteredURL, QString() );
@@ -384,8 +385,8 @@ void KonqFrameTabs::slotMouseMiddleClick()
 
 void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
 {
-    KUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
-    if (filteredURL.isValid() && filteredURL.protocol() != QLatin1String("error")) {
+    QUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
+    if (filteredURL.isValid() && filteredURL.scheme() != QLatin1String("error")) {
         KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
         if (frame) {
             m_pViewManager->mainWindow()->openUrl(frame->activeChildView(), filteredURL);
@@ -395,12 +396,12 @@ void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
 
 void KonqFrameTabs::slotTestCanDecode(const QDragMoveEvent *e, bool &accept /* result */)
 {
-  accept = KUrl::List::canDecode( e->mimeData() );
+    accept = e->mimeData()->hasUrls();
 }
 
 void KonqFrameTabs::slotReceivedDropEvent( QDropEvent *e )
 {
-  const KUrl::List lstDragURLs = KUrl::List::fromMimeData( e->mimeData() );
+  QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(e->mimeData());
   if ( !lstDragURLs.isEmpty() ) {
     KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
@@ -412,14 +413,14 @@ void KonqFrameTabs::slotReceivedDropEvent( QDropEvent *e )
 
 void KonqFrameTabs::slotReceivedDropEvent( QWidget *w, QDropEvent *e )
 {
-  KUrl::List lstDragURLs = KUrl::List::fromMimeData( e->mimeData() );
-  KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
-  if ( lstDragURLs.count() && frame ) {
-    const KUrl dragUrl = lstDragURLs.first();
-    if ( dragUrl != frame->activeChildView()->url() ) {
-        emit openUrl(frame->activeChildView(), dragUrl);
+    QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(e->mimeData());
+    KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
+    if ( lstDragURLs.count() && frame ) {
+        const QUrl dragUrl = lstDragURLs.first();
+        if ( dragUrl != frame->activeChildView()->url() ) {
+            emit openUrl(frame->activeChildView(), dragUrl);
+        }
     }
-  }
 }
 
 void KonqFrameTabs::slotInitiateDrag( QWidget *w )
@@ -427,8 +428,8 @@ void KonqFrameTabs::slotInitiateDrag( QWidget *w )
   KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>( w );
   if (frame) {
     QDrag *d = new QDrag( this );
-    QMimeData* md = new QMimeData();
-    frame->activeChildView()->url().populateMimeData(md);
+    QMimeData* md = new QMimeData;
+    md->setUrls(QList<QUrl>() << frame->activeChildView()->url());
     d->setMimeData( md );
     QString iconName = KMimeType::iconNameForUrl(frame->activeChildView()->url());
     d->setPixmap(KIconLoader::global()->loadIcon(iconName, KIconLoader::Small, 0));

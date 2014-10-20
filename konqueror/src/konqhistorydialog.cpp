@@ -92,21 +92,21 @@ QSize KonqHistoryDialog::sizeHint() const
     return QSize(500, 400);
 }
 
-void KonqHistoryDialog::slotOpenWindow(const KUrl& url)
+void KonqHistoryDialog::slotOpenWindow(const QUrl& url)
 {
     KonqMainWindow* mw = KonqMisc::createNewWindow(url);
     mw->show();
 }
 
-void KonqHistoryDialog::slotOpenTab(const KUrl& url)
+void KonqHistoryDialog::slotOpenTab(const QUrl &url)
 {
-    m_mainWindow->openMultiURL(KUrl::List() << url);
+    m_mainWindow->openMultiURL(QList<QUrl>() << url);
 }
 
 // Called when double-clicking on a row
 void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex& index)
 {
-    const KUrl url = m_historyView->urlForIndex(index);
+    const QUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {
         slotOpenWindow(url); // should we call slotOpenTab instead?
     }

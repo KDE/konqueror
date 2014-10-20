@@ -21,10 +21,10 @@
 #define __konq_sessiondlg_h__
 
 #include <kdialog.h>
-#include <kurl.h>
 
-#include <QtCore/QMap>
+#include <QMap>
 #include <QString>
+#include <QUrl>
 
 class KonqViewManager;
 
@@ -41,7 +41,7 @@ public:
 
 protected Q_SLOTS:
     void slotOpen();
-    void slotRename(KUrl dirpathTo = KUrl());
+    void slotRename(QUrl dirpathTo = QUrl());
     void slotNew();
     void slotDelete();
     void slotSave();

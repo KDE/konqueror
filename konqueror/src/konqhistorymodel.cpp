@@ -23,15 +23,14 @@
 #include "konq_historyprovider.h"
 
 #include <kglobal.h>
-#include <QIcon>
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <kmimetype.h>
 #include <kprotocolinfo.h>
 
-#include <QtCore/QHash>
-#include <QTextDocument> // Qt::escape
-#include <QtCore/QList>
+#include <QHash>
+#include <QList>
+#include <QIcon>
 
 namespace KHM
 {
@@ -72,7 +71,7 @@ struct HistoryEntry : public Entry
 
 struct GroupEntry : public Entry
 {
-    GroupEntry(const KUrl &_url, const QString &_key);
+    GroupEntry(const QUrl &_url, const QString &_key);
 
     ~GroupEntry()
     {
@@ -81,10 +80,10 @@ struct GroupEntry : public Entry
 
     virtual QVariant data(int role, int column) const;
     HistoryEntry* findChild(const KonqHistoryEntry &entry, int *index = 0) const;
-    KUrl::List urls() const;
+    QList<QUrl> urls() const;
 
     QList<HistoryEntry *> entries;
-    KUrl url;
+    QUrl url;
     QString key;
     QIcon icon;
     bool hasFavIcon : 1;
@@ -136,7 +135,7 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
-                    entry.url.pathOrUrl().toHtmlEscaped(),
+                    entry.url.toDisplayString().toHtmlEscaped(),
                     KLocale::global()->formatDateTime(entry.lastVisited),
                     KLocale::global()->formatDateTime(entry.firstVisited),
                     entry.numberOfTimesVisited);
@@ -156,12 +155,12 @@ void HistoryEntry::update(const KonqHistoryEntry &_entry)
     if (parent->hasFavIcon && (path.isNull() || path == QLatin1String("/"))) {
         icon = parent->icon;
     } else {
-        icon = QIcon(SmallIcon(KProtocolInfo::icon(entry.url.protocol())));
+        icon = QIcon(SmallIcon(KProtocolInfo::icon(entry.url.scheme())));
     }
 }
 
 
-GroupEntry::GroupEntry(const KUrl &_url, const QString &_key)
+GroupEntry::GroupEntry(const QUrl &_url, const QString &_key)
     : Entry(Group), url(_url), key(_key), hasFavIcon(false)
 {
     const QString iconPath = KMimeType::favIconForUrl(url);
@@ -215,9 +214,9 @@ HistoryEntry* GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) c
     return item;
 }
 
-KUrl::List GroupEntry::urls() const
+QList<QUrl> GroupEntry::urls() const
 {
-    KUrl::List list;
+    QList<QUrl> list;
     Q_FOREACH (HistoryEntry *e, entries) {
         list.append(e->entry.url);
     }
@@ -227,7 +226,7 @@ KUrl::List GroupEntry::urls() const
 }
 
 
-static QString groupForUrl(const KUrl &url)
+static QString groupForUrl(const QUrl &url)
 {
    if (url.isLocalFile()) {
        static const QString &local = KGlobal::staticQString(i18n("Local"));
@@ -439,7 +438,7 @@ KHM::Entry* KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool retu
     return returnRootIfNull ? m_root : 0;
 }
 
-KHM::GroupEntry* KonqHistoryModel::getGroupItem(const KUrl &url, SignalEmission se)
+KHM::GroupEntry* KonqHistoryModel::getGroupItem(const QUrl &url, SignalEmission se)
 {
     const QString &groupKey = groupForUrl(url);
     KHM::GroupEntry *group = m_root->groupsByName.value(groupKey);

@@ -78,7 +78,7 @@ public:
     }
 
 Q_SIGNALS:
-    void activated(const KUrl&);
+    void activated(const QUrl&);
 
 private Q_SLOTS:
     void slotHistoryCleared();
@@ -106,7 +106,7 @@ public:
     virtual ~KonqHistoryAction();
 
 Q_SIGNALS:
-    void activated(const KUrl&);
+    void activated(const QUrl&);
 
 private Q_SLOTS:
     void slotFillMenu();

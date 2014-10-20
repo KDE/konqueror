@@ -46,24 +46,22 @@
 // Terminates fullscreen-mode for any full-screen window on the current desktop
 void KonqMisc::abortFullScreenMode()
 {
-#ifdef Q_WS_X11
-  QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-  if ( mainWindows )
-  {
-    foreach ( KonqMainWindow* window, *mainWindows )
+    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
+    if ( mainWindows )
     {
-      if ( window->fullScreenMode() )
-      {
-	KWindowInfo info = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
-	if ( info.valid() && info.isOnCurrentDesktop() )
-          window->setWindowState( window->windowState() & ~Qt::WindowFullScreen );
-      }
+        foreach ( KonqMainWindow* window, *mainWindows )
+        {
+            if ( window->fullScreenMode() )
+            {
+                KWindowInfo info = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
+                if ( info.valid() && info.isOnCurrentDesktop() )
+                    window->setWindowState( window->windowState() & ~Qt::WindowFullScreen );
+            }
+        }
     }
-  }
-#endif
 }
 
-KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::OpenUrlArguments &args,
+KonqMainWindow * KonqMisc::createSimpleWindow(const QUrl &url, const KParts::OpenUrlArguments &args,
                                                const KParts::BrowserArguments& browserArgs,
                                                bool tempFile )
 {
@@ -80,7 +78,7 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::O
   return win;
 }
 
-KonqMainWindow * KonqMisc::createNewWindow(const KUrl &url, const KonqOpenURLRequest& req, bool openUrl)
+KonqMainWindow * KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequest& req, bool openUrl)
 {
     //kDebug() << "url=" << url;
     // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
@@ -94,7 +92,7 @@ KonqMainWindow * KonqMisc::createNewWindow(const KUrl &url, const KonqOpenURLReq
                                         url, req, openUrl);
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, const QString &_filename, const KUrl &url,
+KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, const QString &_filename, const QUrl &url,
                                                           const KonqOpenURLRequest& req, bool openUrl)
 {
     QString path(_path);
@@ -146,7 +144,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
       const KConfigGroup profileGroup(cfg, "Profile");
       const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
 
-      mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
+      mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
       mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
   }
   mainWindow->setInitialFrameName( req.browserArgs.frameName );
@@ -178,7 +176,7 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   return mainwindow;
 }
 
-KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QUrl& currentDirectory)
+QUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QUrl& currentDirectory)
 {
   Q_UNUSED(parent); // Useful if we want to change the error handling again
 
@@ -213,7 +211,7 @@ KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, cons
                              || _url == QLatin1String("about:plugins")
                              || _url.startsWith(QLatin1String("about:konqueror")));
 
-  return isKnownAbout ? KUrl(_url) : KUrl("about:");
+  return isKnownAbout ? QUrl(_url) : QUrl("about:");
 }
 
 QString KonqMisc::defaultProfileName()

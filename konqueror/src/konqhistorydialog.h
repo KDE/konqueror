@@ -21,11 +21,11 @@
 #define KONQ_HISTORYDIALOG_H
 
 #include <kdialog.h>
-#include <kurl.h>
 
 class KonqMainWindow;
 class KonqHistoryView;
 class QModelIndex;
+class QUrl;
 
 class KonqHistoryDialog : public KDialog
 {
@@ -38,8 +38,8 @@ public:
     QSize sizeHint() const;
 
 private Q_SLOTS:
-    void slotOpenWindow(const KUrl& url);
-    void slotOpenTab(const KUrl& url);
+    void slotOpenWindow(const QUrl &url);
+    void slotOpenTab(const QUrl& url);
     void slotOpenWindowForIndex(const QModelIndex& index);
 
 private:

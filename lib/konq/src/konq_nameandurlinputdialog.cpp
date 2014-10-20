@@ -52,7 +52,7 @@ public:
     KonqNameAndUrlInputDialog* q;
 };
 
-KonqNameAndUrlInputDialog::KonqNameAndUrlInputDialog(const QString& nameLabel, const QString& urlLabel, const KUrl& startDir, QWidget *parent)
+KonqNameAndUrlInputDialog::KonqNameAndUrlInputDialog(const QString& nameLabel, const QString& urlLabel, const QUrl& startDir, QWidget *parent)
     : KDialog( parent ), d(new KonqNameAndUrlInputDialogPrivate(this))
 {
     setButtons( Ok | Cancel | User1 );
@@ -151,7 +151,7 @@ void KonqNameAndUrlInputDialog::setSuggestedName(const QString& name)
     d->m_urlRequester->setFocus();
 }
 
-void KonqNameAndUrlInputDialog::setSuggestedUrl(const KUrl& url)
+void KonqNameAndUrlInputDialog::setSuggestedUrl(const QUrl &url)
 {
     d->m_urlRequester->setUrl(url);
 }

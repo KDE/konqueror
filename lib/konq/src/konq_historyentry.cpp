@@ -45,7 +45,7 @@ void KonqHistoryEntry::load(QDataStream& s, Flags flags)
     if (flags & MarshalUrlAsStrings) {
         QString urlStr;
         s >> urlStr;
-        url = urlStr;
+        url = QUrl(urlStr);
     } else {
         s >> url;
     }
@@ -83,7 +83,7 @@ KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& e)
 
 ////
 
-KonqHistoryList::iterator KonqHistoryList::findEntry( const KUrl& url )
+KonqHistoryList::iterator KonqHistoryList::findEntry( const QUrl& url )
 {
     // we search backwards, probably faster to find an entry
     KonqHistoryList::iterator it = end();
@@ -95,7 +95,7 @@ KonqHistoryList::iterator KonqHistoryList::findEntry( const KUrl& url )
     return end();
 }
 
-KonqHistoryList::const_iterator KonqHistoryList::constFindEntry( const KUrl& url ) const
+KonqHistoryList::const_iterator KonqHistoryList::constFindEntry(const QUrl &url ) const
 {
     // we search backwards, probably faster to find an entry
     KonqHistoryList::const_iterator it = constEnd();
@@ -107,7 +107,7 @@ KonqHistoryList::const_iterator KonqHistoryList::constFindEntry( const KUrl& url
     return constEnd();
 }
 
-void KonqHistoryList::removeEntry( const KUrl& url )
+void KonqHistoryList::removeEntry( const QUrl& url )
 {
     iterator it = findEntry( url );
     if ( it != end() )

@@ -71,7 +71,7 @@ void KonqCopyToMenu::setItems(const KFileItemList& items)
         d->m_urls.append(item.url());
 }
 
-void KonqCopyToMenu::setUrls(const KUrl::List& urls)
+void KonqCopyToMenu::setUrls(const QList<QUrl> &urls)
 {
     d->m_urls = urls;
 }
@@ -166,8 +166,8 @@ void KonqCopyToMainMenu::slotAboutToShow()
     // Recent Destinations
     const QStringList recentDirs = m_recentDirsGroup.readPathEntry("Paths", QStringList());
     Q_FOREACH(const QString& recentDir, recentDirs) {
-        const KUrl url(recentDir);
-        const QString text = KStringHandler::csqueeze(url.pathOrUrl(), 60); // shorten very long paths (#61386)
+        const QUrl url(recentDir);
+        const QString text = KStringHandler::csqueeze(url.toDisplayString(), 60); // shorten very long paths (#61386)
         QAction * act = new QAction(text, this);
         act->setData(url);
         m_actionGroup.addAction(act);
@@ -177,8 +177,8 @@ void KonqCopyToMainMenu::slotAboutToShow()
 
 void KonqCopyToMainMenu::slotBrowse()
 {
-    const KUrl dest = KFileDialog::getExistingDirectoryUrl(KUrl("kfiledialog:///copyto"),
-                                             d->m_parentWidget ? d->m_parentWidget : this);
+    const QUrl dest = KFileDialog::getExistingDirectoryUrl(QUrl("kfiledialog:///copyto"), // FIXME
+                                                           d->m_parentWidget ? d->m_parentWidget : this);
     if (!dest.isEmpty()) {
         copyOrMoveTo(dest);
     }
@@ -186,16 +186,16 @@ void KonqCopyToMainMenu::slotBrowse()
 
 void KonqCopyToMainMenu::slotTriggered(QAction* action)
 {
-    const KUrl url = action->data().value<KUrl>();
+    const QUrl url = action->data().value<QUrl>();
     Q_ASSERT(!url.isEmpty());
     copyOrMoveTo(url);
 }
 
-void KonqCopyToMainMenu::copyOrMoveTo(const KUrl& dest)
+void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
 {
     // Insert into the recent destinations list
     QStringList recentDirs = m_recentDirsGroup.readPathEntry("Paths", QStringList());
-    const QString niceDest = dest.pathOrUrl();
+    const QString niceDest = dest.toDisplayString();
     if (!recentDirs.contains(niceDest)) { // don't change position if already there, moving stuff is bad usability
         recentDirs.prepend(niceDest);
         while (recentDirs.size() > 10) { // hardcoded max size
@@ -207,8 +207,9 @@ void KonqCopyToMainMenu::copyOrMoveTo(const KUrl& dest)
     // #199549: add a trailing slash to avoid unexpected results when the
     // dest doesn't exist anymore: it was creating a file with the name of
     // the now non-existing dest.
-    KUrl dirDest = dest;
-    dirDest.adjustPath(KUrl::AddTrailingSlash);
+    QUrl dirDest = dest;
+    if (!dirDest.path().endsWith('/'))
+        dirDest.setPath(dirDest.path() + '/');
 
     // And now let's do the copy or move -- with undo/redo support.
     KIO::CopyJob* job = m_menuType == Copy ? KIO::copy(d->m_urls, dirDest) : KIO::move(d->m_urls, dirDest);
@@ -231,7 +232,7 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
     QAction * act = new QAction(m_mainMenu->menuType() == Copy
                                ? i18nc("@title:menu", "Copy Here")
                                : i18nc("@title:menu", "Move Here"), this);
-    act->setData(KUrl(m_path));
+    act->setData(QUrl::fromLocalFile(m_path));
     act->setEnabled(QFileInfo(m_path).isWritable());
     m_mainMenu->actionGroup().addAction(act);
     addAction(act);

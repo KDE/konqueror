@@ -339,7 +339,7 @@ void ClientApp::sendASNChange()
 
 static bool krun_has_error = false;
 
-bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, const QString & mimetype)
+bool ClientApp::createNewWindow(const QUrl & url, bool newTab, bool tempFile, const QString & mimetype)
 {
     kDebug() << url << "mimetype=" << mimetype;
     needInstance();

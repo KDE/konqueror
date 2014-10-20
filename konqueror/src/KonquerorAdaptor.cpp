@@ -62,7 +62,7 @@ QDBusObjectPath KonquerorAdaptor::openBrowserWindow( const QString& url, const Q
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url), KParts::OpenUrlArguments() );
+    KonqMainWindow *res = KonqMisc::createSimpleWindow( QUrl::fromUserInput(url), KParts::OpenUrlArguments() );
     if ( !res )
         return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
@@ -77,7 +77,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QSt
     KParts::OpenUrlArguments args;
     args.setMimeType( mimetype );
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
-    KUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
+    QUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
     KonqOpenURLRequest req;
     req.args = args;
     req.tempFile = tempFile;
@@ -96,7 +96,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& u
 #endif
     KonqOpenURLRequest req;
     req.filesToSelect = filesToSelect;
-    KonqMainWindow *res = KonqMisc::createNewWindow(KUrl(url), req);
+    KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url), req);
     if ( !res )
         return QDBusObjectPath("/");
     res->show();
@@ -123,7 +123,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QS
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url) );
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, QUrl::fromUserInput(url) );
     if ( !res )
         return QDBusObjectPath("/");
     res->show();
@@ -140,7 +140,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( 
     args.setMimeType( mimetype );
     KonqOpenURLRequest req;
     req.args = args;
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, KUrl(url), req);
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url), req);
     if ( !res )
         return QDBusObjectPath("/");
     res->show();
@@ -226,7 +226,7 @@ bool KonquerorAdaptor::processCanBeReused( int screen )
         const KonqMainWindow::MapViews& views = window->viewMap();
         foreach ( KonqView* view, views )
         {
-            kDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url().prettyUrl();
+            kDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url();
             if( !allowed_parts.contains( view->service()->entryPath()))
                 return false;
         }

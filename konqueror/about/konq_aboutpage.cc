@@ -14,7 +14,6 @@
 #include <kmessagebox.h>
 #include <kpluginfactory.h>
 #include <ksavefile.h>
-#include <kurl.h>
 #include <kstandarddirs.h>
 #include <ktoolinvocation.h>
 
@@ -40,7 +39,7 @@ QString KonqAboutPageSingleton::loadFile( const QString& file )
     QFile f( file );
 
     if ( !f.open( QIODevice::ReadOnly ) )
-	return res;
+        return res;
 
     QTextStream t( &f );
 
@@ -61,7 +60,7 @@ QString KonqAboutPageSingleton::launch()
 
   QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/launch.html" ));
   if ( res.isEmpty() )
-    return res;
+      return res;
 
   KIconLoader *iconloader = KIconLoader::global();
   int iconSize = iconloader->currentSize(KIconLoader::Desktop);
@@ -72,9 +71,9 @@ QString KonqAboutPageSingleton::launch()
   QString home_folder = QDir::homePath();
   QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
-  res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
+  res = res.arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage.css" ) );
   if ( qApp->layoutDirection() == Qt::RightToLeft )
-    res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
+    res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage_rtl.css" ) );
   else
     res = res.arg( "" );
 
@@ -128,9 +127,9 @@ QString KonqAboutPageSingleton::intro()
     QString gohome_icon_path = iconloader->iconPath("go-home", KIconLoader::Small );
     QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
-    res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
+    res = res.arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage.css" ) );
     if ( qApp->layoutDirection() == Qt::RightToLeft )
-	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
+    res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage_rtl.css" ) );
     else
 	res = res.arg( "" );
 
@@ -180,13 +179,13 @@ QString KonqAboutPageSingleton::specs()
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/specs.html" ));
     QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
     if ( res.isEmpty() )
-	return res;
+        return res;
 
-    res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
+    res = res.arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage.css" ) );
     if ( qApp->layoutDirection() == Qt::RightToLeft )
-	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
+        res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage_rtl.css" ) );
     else
-	res = res.arg( "" );
+        res = res.arg( "" );
 
     res = res.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n( "Konqueror" ) )
@@ -214,12 +213,12 @@ QString KonqAboutPageSingleton::specs()
           .arg( i18n("built-in") )
           .arg( i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)", 
 		     QString("http://www.ecma-international.org/publications/standards/ECMA-262.HTM")) )
-          .arg( i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) )
-          .arg( i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // leave the double backslashes here, they are necessary for javascript !
+          .arg( i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")) )
+          .arg( i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")) ) // leave the double backslashes here, they are necessary for javascript !
           .arg( i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QString("http://www.oracle.com/technetwork/java/index.html")) )
           .arg( i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF=\"%2\">Sun/Oracle</A>)",
                        QString("http://www.ibm.com"), QString("http://www.oracle.com/technetwork/java/index.html")) )
-          .arg( i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // TODO Maybe test if Java is enabled ?
+          .arg( i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")) ) // TODO Maybe test if Java is enabled ?
           .arg( i18n("Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, etc.)",
                        QString("http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"),
                        QString("http://www.real.com"), QString("http://www.real.com"),
@@ -280,9 +279,9 @@ QString KonqAboutPageSingleton::tips()
 	    iconloader->iconPath("view-split-left-right", KIconLoader::Small );
     QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
-    res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
+    res = res.arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage.css" ) );
     if ( qApp->layoutDirection() == Qt::RightToLeft )
-	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
+    res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kf5/infopage/kde_infopage_rtl.css" ) );
     else
 	res = res.arg( "" );
 
@@ -299,7 +298,7 @@ QString KonqAboutPageSingleton::tips()
 		      "using Google, for the search phrase \"KDE\". There are a lot of "
 		      "Web-Shortcuts predefined to make searching for software or looking "
 		      "up certain words in an encyclopedia a breeze. You can even "
-                      "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell4 ebrowsing")) )
+                      "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell5 webshortcuts")) )
 	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the HTML"
 		      " toolbar to increase the font size on your web page.", viewmag_icon_path) )
 	  .arg( i18n( "When you want to paste a new address into the Location toolbar you might want to "
@@ -319,11 +318,11 @@ QString KonqAboutPageSingleton::tips()
 		      ", or create your own ones." , view_left_right_icon_path))
 	  .arg( i18n( "Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                       "asks you to use a different browser "
-		      "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell4 useragent")) )
+              "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell5 useragent")) )
 	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar ensures "
 		      "that you can keep track of the pages you have visited recently.", history_icon_path) )
 	  .arg( i18n( "Use a caching <a href=\"%1\">proxy</a> to speed up your"
-		      " Internet connection.", QString("exec:/kcmshell4 proxy")) )
+              " Internet connection.", QString("exec:/kcmshell5 proxy")) )
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
 		      "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))

@@ -19,7 +19,7 @@
 #ifndef KONQDRAGGABLELABEL_H
 #define KONQDRAGGABLELABEL_H
 
-#include <kurl.h>
+#include <QUrl>
 #include <QLabel>
 class KonqMainWindow;
 
@@ -43,7 +43,6 @@ private:
     QPoint startDragPos;
     bool validDrag;
     KonqMainWindow * m_mw;
-    KUrl::List _savedLst;
+    QList<QUrl> _savedLst;
 };
 #endif
-

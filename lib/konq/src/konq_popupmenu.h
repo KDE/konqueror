@@ -39,7 +39,7 @@ class KFileItemActions;
 
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
-class KUrl;
+class QUrl;
 
 /**
  * This class implements the popup menu for URLs in konqueror and kdesktop
@@ -84,7 +84,7 @@ public:
    * @todo that list is probably not be up-to-date
    */
   KonqPopupMenu( const KFileItemList &items,
-                 const KUrl& viewURL,
+                 const QUrl& viewURL,
                  KActionCollection & actions,
                  KNewFileMenu * newMenu,
                  Flags appFlags,

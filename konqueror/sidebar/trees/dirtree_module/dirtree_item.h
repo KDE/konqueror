@@ -56,7 +56,7 @@ public:
     void rename( const QString & name ); // do the actual renaming
 
     // The URL to open when this link is clicked
-    virtual KUrl externalURL() const;
+    virtual QUrl externalURL() const;
     virtual QString externalMimeType() const;
     virtual QString toolTipText() const;
 

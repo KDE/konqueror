@@ -21,7 +21,8 @@
 #ifndef KONQ_COPYTOMENU_H
 #define KONQ_COPYTOMENU_H
 
-#include <kurl.h>
+#include <QUrl>
+
 #include <kfileitem.h>
 #include <libkonq_export.h>
 
@@ -68,7 +69,7 @@ public:
      * Sets the URLs which the actions apply to.
      * Either call this or setItems.
      */
-    void setUrls(const KUrl::List& urls);
+    void setUrls(const QList<QUrl>& urls);
 
     /**
      * If setReadOnly(true) is called, the "Move To" submenu will not appear.

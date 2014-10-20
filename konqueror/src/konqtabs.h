@@ -58,7 +58,7 @@ public:
   const QList<KonqFrameBase*>& childFrameList() const { return m_childFrameList; }
 
   virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon( const KUrl &url, QWidget* sender );
+  virtual void setTabIcon(const QUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
   virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Tabs; }
@@ -113,7 +113,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
   void removeTabPopup();
-    void openUrl(KonqView* view, const KUrl& url);
+  void openUrl(KonqView* view, const QUrl& url);
 
 private:
   void refreshSubPopupMenuTab();

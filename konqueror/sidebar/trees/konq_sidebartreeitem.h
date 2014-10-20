@@ -23,7 +23,7 @@
 #include <QtCore/QStringList>
 #include <Qt3Support/Q3ListView>
 #include <Qt3Support/Q3UriDrag>
-#include <kurl.h>
+#include <QUrl>
 
 class KonqSidebarTree;
 class KonqSidebarTreeItem;
@@ -65,7 +65,7 @@ public:
     virtual void rename( const QString& ) {}
 
     // The URL to open when this link is clicked
-    virtual KUrl externalURL() const = 0;
+    virtual QUrl externalURL() const = 0;
 
     // The mimetype to use when this link is clicked
     // If unknown, return QString(), konq will determine the mimetype itself

@@ -21,7 +21,7 @@
 #ifndef KONQMULTITABBAR_H
 #define KONQMULTITABBAR_H
 
-#include <kurl.h>
+#include <QUrl>
 #include <kmultitabbar.h>
 
 class KonqMultiTabBar : public KMultiTabBar
@@ -32,7 +32,7 @@ public:
     explicit KonqMultiTabBar(QWidget* parent);
 
 Q_SIGNALS:
-    void urlsDropped(const KUrl::List& urls);
+    void urlsDropped(const QList<QUrl>& urls);
 
 protected:
     virtual void dragEnterEvent(QDragEnterEvent* event);

@@ -73,14 +73,14 @@ void KonqSidebarHistoryModule::slotPressed(const QModelIndex& index)
 void KonqSidebarHistoryModule::slotClicked(const QModelIndex& index)
 {
     if (m_lastPressedButtons & Qt::MidButton) {
-        const KUrl url = m_historyView->urlForIndex(index);
+        const QUrl url = m_historyView->urlForIndex(index);
         if (url.isValid()) {
             createNewWindow(url);
         }
     }
 }
 
-void KonqSidebarHistoryModule::slotOpenWindow(const KUrl& url)
+void KonqSidebarHistoryModule::slotOpenWindow(const QUrl& url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
@@ -89,7 +89,7 @@ void KonqSidebarHistoryModule::slotOpenWindow(const KUrl& url)
     createNewWindow(url, args, browserArgs);
 }
 
-void KonqSidebarHistoryModule::slotOpenTab(const KUrl& url)
+void KonqSidebarHistoryModule::slotOpenTab(const QUrl& url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);

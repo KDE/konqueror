@@ -161,7 +161,7 @@ QString FavIconsModule::iconForUrl(const QUrl &url)
     QString icon = (iconURL ? *iconURL : d->config->group(QString()).readEntry(simplifiedURL, QString()));
 
     if (!icon.isEmpty())
-        icon = iconNameFromURL(KUrl(icon));
+        icon = iconNameFromURL(icon);
     else
         icon = url.host();
 

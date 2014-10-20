@@ -24,7 +24,7 @@
 #include <QtCore/QPointer>
 #include <kservice.h>
 #include "konqopenurlrequest.h"
-#include <kurl.h>
+#include <QUrl>
 
 class KonqMainWindow;
 class KonqView;
@@ -38,7 +38,7 @@ public:
    * optional child view.
    */
   KonqRun( KonqMainWindow* mainWindow, KonqView *childView,
-           const KUrl &url, const KonqOpenURLRequest & req = KonqOpenURLRequest(),
+           const QUrl &url, const KonqOpenURLRequest & req = KonqOpenURLRequest(),
            bool trustedSource = false );
 
   virtual ~KonqRun();
@@ -52,7 +52,7 @@ public:
 
   const QString & typedUrl() const { return m_req.typedUrl; }
 
-  KUrl mailtoURL() const { return m_mailto; }
+  QUrl mailtoURL() const { return m_mailto; }
 
 protected:
   virtual void foundMimeType( const QString & _type );
@@ -61,7 +61,7 @@ protected:
   virtual void scanFile();
 
 protected Q_SLOTS:
-  void slotRedirection( KIO::Job *, const KUrl& );
+  void slotRedirection(KIO::Job *, const QUrl & );
 
 private:
     bool tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror);
@@ -69,7 +69,7 @@ private:
   QPointer<KonqView> m_pView;
   bool m_bFoundMimeType;
   KonqOpenURLRequest m_req;
-  KUrl m_mailto;
+  QUrl m_mailto;
 };
 
 #endif // KONQRUN_H

@@ -136,7 +136,7 @@ void KonqFrameContainer::setTitle( const QString &title , QWidget* sender)
       m_pParentContainer->setTitle( title , this);
 }
 
-void KonqFrameContainer::setTabIcon( const KUrl &url, QWidget* sender )
+void KonqFrameContainer::setTabIcon( const QUrl &url, QWidget* sender )
 {
     //kDebug() << url << sender;
   if (m_pParentContainer && activeChild() && (sender == activeChild()->asQWidget()))

@@ -161,23 +161,24 @@ void KonqSideBarWebModule::setAutoReload()
 	}
 }
 
-void KonqSideBarWebModule::handleURL(const KUrl &) {
+void KonqSideBarWebModule::handleURL(const QUrl &)
+{
 }
 
 
 void KonqSideBarWebModule::urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs, const KParts::WindowArgs& windowArgs)
 {
-    emit createNewWindow(KUrl(url), args, browserArgs, windowArgs);
+    emit createNewWindow(QUrl(url), args, browserArgs, windowArgs);
 }
 
 
 void KonqSideBarWebModule::urlClicked(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
-    emit openUrlRequest(KUrl(url), args, browserArgs);
+    emit openUrlRequest(QUrl(url), args, browserArgs);
 }
 
 
-void KonqSideBarWebModule::formClicked(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
+void KonqSideBarWebModule::formClicked(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
     _htmlPart->setArguments( args );
     _htmlPart->browserExtension()->setBrowserArguments(browserArgs);
@@ -297,7 +298,7 @@ public:
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
 
-        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
+        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), QUrl(), parentWidget);
         dlg.setCaption(i18nc("@title:window", "Add web sidebar module"));
         if (!dlg.exec())
             return false;

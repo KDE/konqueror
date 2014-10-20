@@ -86,7 +86,7 @@ protected:
      * Called by the sidebar's openUrl. Reimplement this in order to
      * follow the navigation happening in konqueror's current view.
      */
-    virtual void handleURL(const KUrl &url) { Q_UNUSED(url); }
+    virtual void handleURL(const QUrl &url) { Q_UNUSED(url); }
     virtual void handlePreview(const KFileItemList & items);
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
 
@@ -106,12 +106,12 @@ Q_SIGNALS:
     /**
      * Ask konqueror to open @p url.
      */
-    void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                         const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments());
     /**
      * Ask konqueror to create a new window (or tab, see BrowserArguments) for @p url.
      */
-    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                          const KParts::WindowArgs& = KParts::WindowArgs());
 

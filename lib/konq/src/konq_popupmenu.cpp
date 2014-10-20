@@ -118,7 +118,7 @@ public:
     QString m_urlTitle;
     KParts::BrowserExtension::PopupFlags m_itemFlags;
     KNewFileMenu *m_pMenuNew;
-    KUrl m_sViewURL;
+    QUrl m_sViewURL;
     KFileItemListProperties m_popupItemProperties;
     KFileItemActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
@@ -132,7 +132,7 @@ public:
 //////////////////
 
 KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
-                             const KUrl& viewURL,
+                             const QUrl &viewURL,
                              KActionCollection & actions,
                              KNewFileMenu * newMenu,
                              Flags kpf,
@@ -175,9 +175,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     const KFileItemList::const_iterator kend = lstItems.constEnd();
     for ( ; it != kend; ++it )
     {
-        const KUrl url = (*it).url();
-        if ( !bTrashIncluded && (
-             ( url.protocol() == "trash" && url.path().length() <= 1 ) ) ) {
+        const QUrl url = (*it).url();
+        if ( !bTrashIncluded && (( url.scheme() == "trash" && url.path().length() <= 1 ) ) ) {
             bTrashIncluded = true;
         }
     }
@@ -190,8 +189,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     const bool sMoving = sDeleting && m_popupItemProperties.supportsMoving();
     const bool isLocal = m_popupItemProperties.isLocal();
 
-    KUrl url = m_sViewURL;
-    url.cleanPath();
+    QUrl url = m_sViewURL.adjusted(QUrl::NormalizePathSegments);
 
     bool isTrashLink     = false;
     bool isCurrentTrash = false;
@@ -207,11 +205,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             isSymLink = true;
             isSymLinkInSameDir = !firstPopupItem.linkDest().contains('/');
         }
-        KUrl firstPopupURL( firstPopupItem.url() );
-        firstPopupURL.cleanPath();
+        QUrl firstPopupURL( firstPopupItem.url().adjusted(QUrl::NormalizePathSegments) );
         //kDebug(1203) << "View path is " << url.url();
         //kDebug(1203) << "First popup path is " << firstPopupURL.url();
-        currentDir = firstPopupURL.equals( url, KUrl::CompareWithoutTrailingSlash );
+        currentDir = (firstPopupURL.matches(url, QUrl::StripTrailingSlash));
         if ( firstPopupItem.isDesktopFile() ) {
             KDesktopFile desktopFile( firstPopupItem.localPath() );
             const KConfigGroup cfg = desktopFile.desktopGroup();
@@ -223,11 +220,11 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         }
 
         // isCurrentTrash: popup on trash:/ itself, or on the trash.desktop link
-        isCurrentTrash = (firstPopupURL.protocol() == "trash" && firstPopupURL.path().length() <= 1)
+        isCurrentTrash = (firstPopupURL.scheme() == "trash" && firstPopupURL.path().length() <= 1)
                          || isTrashLink;
     }
 
-    const bool isIntoTrash = (url.protocol() == "trash") && !isCurrentTrash; // trashed file, not trash:/ itself
+    const bool isIntoTrash = (url.scheme() == "trash") && !isCurrentTrash; // trashed file, not trash:/ itself
 
     const bool bIsLink  = (m_itemFlags & KParts::BrowserExtension::IsLink);
 
@@ -387,7 +384,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         QString caption;
         if (currentDir)
         {
-           const bool httpPage = m_sViewURL.protocol().startsWith("http", Qt::CaseInsensitive);
+           const bool httpPage = m_sViewURL.scheme().startsWith("http", Qt::CaseInsensitive);
            if (httpPage)
               caption = i18n("&Bookmark This Page");
            else
@@ -516,7 +513,7 @@ KFileItemActions* KonqPopupMenu::fileItemActions() const
 
 void KonqPopupMenuPrivate::slotPopupNewView()
 {
-    Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {
+    Q_FOREACH(const QUrl& url, m_popupItemProperties.urlList()) {
         (void) new KRun(url, m_parentWidget);
     }
 }
@@ -539,7 +536,7 @@ void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 
 void KonqPopupMenuPrivate::slotConfigTrashBin()
 {
-  KRun::run("kcmshell4 kcmtrash", KUrl::List(), m_parentWidget);
+  KRun::run("kcmshell5 kcmtrash", QList<QUrl>(), m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
@@ -553,16 +550,16 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 {
     KBookmarkGroup root;
     if (m_popupItemProperties.urlList().count() == 1) {
-        const KUrl url = m_popupItemProperties.urlList().first();
-        const QString title = m_urlTitle.isEmpty() ? url.prettyUrl() : m_urlTitle;
+        const QUrl url = m_popupItemProperties.urlList().first();
+        const QString title = m_urlTitle.isEmpty() ? url.toDisplayString() : m_urlTitle;
         KBookmarkDialog dlg(m_bookmarkManager, m_parentWidget);
         dlg.addBookmark(title, url, QString());
     }
     else
     {
         root = m_bookmarkManager->root();
-        Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {
-            root.addBookmark(url.prettyUrl(), url, QString());
+        Q_FOREACH(const QUrl& url, m_popupItemProperties.urlList()) {
+            root.addBookmark(url.toDisplayString(), url, QString());
         }
         m_bookmarkManager->emitChanged(root);
     }
@@ -636,13 +633,13 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
 {
     const KFileItem item = m_popupItemProperties.items().first();
     const QString dest = item.linkDest();
-    KUrl destUrl = m_sViewURL;
+    QUrl destUrl = m_sViewURL;
     if (dest.startsWith('/')) {
         destUrl.setPath(dest);
     } else {
-        destUrl.addPath(dest);
+        destUrl.setPath(destUrl.path() + '/' + dest);
     }
     // Now destUrl points to the target file, let's go up to parent dir
-    destUrl.setPath(destUrl.directory());
+    destUrl = destUrl.adjusted(QUrl::RemoveFilename);
     KRun::runUrl(destUrl, "inode/directory", m_parentWidget);
 }

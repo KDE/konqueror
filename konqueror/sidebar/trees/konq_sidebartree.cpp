@@ -412,7 +412,7 @@ static QString findUniqueFilename(const QString &path, const QString &filename)
     return path+tempFilename+".desktop";
 }
 
-void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl & url)
+void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem* item, const QUrl &url)
 {
     QString path;
     if (item)
@@ -1023,11 +1023,11 @@ void KonqSidebarTree::slotOpenTab()
                          browserArgs);
 }
 
-static QMimeData* mimeDataFor(const KUrl& url)
+static QMimeData* mimeDataFor(const QUrl& url)
 {
   QMimeData* data = new QMimeData();
   QList<QUrl> urlList;
-  urlList.append(QUrl(url));
+  urlList.append(url);
   data->setUrls(urlList);
   return data;
 }

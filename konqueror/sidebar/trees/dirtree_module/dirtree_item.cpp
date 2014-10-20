@@ -125,7 +125,7 @@ void KonqSidebarDirTreeItem::paintCell( QPainter *_painter, const QColorGroup & 
     Q3ListViewItem::paintCell( _painter, _cg, _column, _width, _alignment );
 }
 
-KUrl KonqSidebarDirTreeItem::externalURL() const
+QUrl KonqSidebarDirTreeItem::externalURL() const
 {
     return m_fileItem.url();
 }
@@ -169,7 +169,7 @@ void KonqSidebarDirTreeItem::drop( QDropEvent * ev )
 
 bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
 {
-    KUrl::List lst;
+    QList<QUrl> lst;
     lst.append( m_fileItem.url() );
     kDebug() << lst;
 
@@ -182,6 +182,7 @@ void KonqSidebarDirTreeItem::itemSelected()
 {
     const QMimeData *mimeData = QApplication::clipboard()->mimeData();
     const KUrl::List urls = KUrl::List::fromMimeData(mimeData);
+    const QList<QUrl> urls =
     const bool paste = !urls.isEmpty();
     tree()->enableActions(true, true, paste);
 }

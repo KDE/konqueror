@@ -23,7 +23,7 @@ public Q_SLOTS:
 protected:
     QWidget *widget;
     KonqSidebarTree *tree;
-    virtual void handleURL(const KUrl &url);
+    virtual void handleURL(const QUrl &url);
 };
 
 #endif // KONQSIDEBAR_TREEMODULE_H

@@ -21,9 +21,9 @@
 #include <kconfiggroup.h>
 #include <QtCore/QTimer>
 
-#include <QtCore/QPointer>
+#include <QPointer>
+#include <QUrl>
 
-#include <kurl.h>
 #include <kparts/part.h>
 
 #include "konqsidebarplugin.h"
@@ -78,14 +78,14 @@ public:
     Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
                    const QString &currentProfile);
     ~Sidebar_Widget();
-    bool openUrl(const KUrl &url);
+    bool openUrl(const QUrl &url);
     void stdAction(const char *handlestd);
 
     KParts::BrowserExtension *getExtension();
     virtual QSize sizeHint() const;
 
 public Q_SLOTS:
-    void addWebSideBar(const KUrl& url, const QString& name);
+    void addWebSideBar(const QUrl &url, const QString& name);
 
 protected:
     void customEvent(QEvent* ev);
@@ -110,7 +110,7 @@ protected Q_SLOTS:
     void slotSetIcon();
     void slotRemove();
 
-    void slotUrlsDropped(const KUrl::List& urls);
+    void slotUrlsDropped(const QList<QUrl>& urls);
 
 Q_SIGNALS:
     void started(KIO::Job *);
@@ -120,12 +120,12 @@ Q_SIGNALS:
 
     /* The following public slots are wrappers for browserextension signals */
 public Q_SLOTS:
-    void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
+    void openUrlRequest( const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
     /* @internal
      * ### KDE4 remove me
      */
     void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
                          const KParts::WindowArgs &windowArgs);
 
     void slotEnableAction(KonqSidebarModule* module, const char * name, bool enabled);
@@ -149,7 +149,7 @@ private:
      */
     bool createDirectModule(const QString& templ,
                             const QString& name,
-                            const KUrl& url,
+                            const QUrl& url,
                             const QString& icon,
                             const QString& module,
                             const QString& treeModule = QString());
@@ -186,7 +186,7 @@ private:
     KConfigGroup *m_config;
     QTimer m_configTimer;
 
-    KUrl m_storedUrl;
+    QUrl m_storedUrl;
     int m_savedWidth;
     int m_latestViewed;
 

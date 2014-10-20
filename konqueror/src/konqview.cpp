@@ -41,6 +41,8 @@
 #include <krandom.h>
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>
+#include <KUrlMimeData>
+#include <KComponentData>
 
 #include <QApplication>
 #include <QtCore/QArgument>
@@ -144,7 +146,7 @@ KonqView::~KonqView()
   //kDebug() << this << "done";
 }
 
-void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
+void KonqView::openUrl(const QUrl &url, const QString & locationBarURL,
                         const QString & nameFilter, bool tempFile )
 {
     kDebug() << "url=" << url << "locationBarURL=" << locationBarURL;
@@ -190,7 +192,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
 
   // Set location-bar URL, except for error urls, where we know the browser component
   // will set back the url with the error anyway.
-  if (url.protocol() != "error")
+  if (url.scheme() != "error")
       setLocationBarURL(locationBarURL);
 
   setPageSecurity(KonqMainWindow::NotCrypted);
@@ -401,8 +403,8 @@ void KonqView::connectPart()
   {
       ext->setBrowserInterface( m_browserIface );
 
-      connect( ext, SIGNAL(openUrlRequestDelayed(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-               m_pMainWindow, SLOT(slotOpenURLRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
+      connect( ext, SIGNAL(openUrlRequestDelayed(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+               m_pMainWindow, SLOT(slotOpenURLRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
 
       if ( m_bPopupMenuEnabled )
       {
@@ -413,14 +415,14 @@ void KonqView::connectPart()
       connect( ext, SIGNAL(setLocationBarUrl(QString)),
                this, SLOT(setLocationBarURL(QString)) );
 
-      connect( ext, SIGNAL(setIconUrl(KUrl)),
-               this, SLOT(setIconURL(KUrl)) );
+      connect( ext, SIGNAL(setIconUrl(QUrl)),
+               this, SLOT(setIconURL(QUrl)) );
 
       connect( ext, SIGNAL(setPageSecurity(int)),
                this, SLOT(setPageSecurity(int)) );
 
-      connect( ext, SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)),
-               m_pMainWindow, SLOT(slotCreateNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)) );
+      connect( ext, SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)),
+               m_pMainWindow, SLOT(slotCreateNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)) );
 
       connect( ext, SIGNAL(loadingProgress(int)),
                m_pKonqFrame->statusbar(), SLOT(slotLoadingProgress(int)) );
@@ -457,9 +459,9 @@ void KonqView::connectPart()
                m_pKonqFrame->statusbar(), SLOT(message(QString)) );
 
           connect( ext,
-                   SIGNAL(addWebSideBar(KUrl,QString)),
+                   SIGNAL(addWebSideBar(QUrl,QString)),
                    m_pMainWindow,
-                   SLOT(slotAddWebSideBar(KUrl,QString)) );
+                   SLOT(slotAddWebSideBar(QUrl,QString)) );
       }
   }
 
@@ -603,7 +605,7 @@ void KonqView::slotCompleted( bool hasPending )
     if ( KonqSettings::enableFavicon() == true )
     {
       // Try to get /favicon.ico
-      if ( supportsMimeType( "text/html" ) && url().protocol().startsWith( "http" ) )
+      if ( supportsMimeType( "text/html" ) && url().scheme().startsWith( "http" ) )
           KonqPixmapProvider::self()->downloadHostIcon( url().url() );
     }
   }
@@ -633,9 +635,9 @@ void KonqView::slotMouseOverInfo( const KFileItem& item )
   QApplication::sendEvent( m_pMainWindow, &ev );
 }
 
-void KonqView::setLocationBarURL( const KUrl& locationBarURL )
+void KonqView::setLocationBarURL(const QUrl &locationBarURL )
 {
-  setLocationBarURL( locationBarURL.pathOrUrl() );
+  setLocationBarURL( locationBarURL.url(QUrl::PreferLocalFile) );
 }
 
 void KonqView::setLocationBarURL( const QString & locationBarURL )
@@ -648,10 +650,10 @@ void KonqView::setLocationBarURL( const QString & locationBarURL )
         m_pMainWindow->setPageSecurity( m_pageSecurity );
     }
     if (!m_bPassiveMode)
-        setTabIcon( KUrl( m_sLocationBarURL ) );
+        setTabIcon( QUrl::fromUserInput(m_sLocationBarURL) );
 }
 
-void KonqView::setIconURL( const KUrl & iconURL )
+void KonqView::setIconURL( const QUrl & iconURL )
 // This function sets the favIcon in konqui's window if enabled,
 // thus it is responsible for the icon in the taskbar.
 // It does not set the tab's favIcon.
@@ -671,7 +673,7 @@ void KonqView::setPageSecurity( int pageSecurity )
     m_pMainWindow->setPageSecurity( m_pageSecurity );
 }
 
-void KonqView::setTabIcon( const KUrl &url )
+void KonqView::setTabIcon( const QUrl &url )
 {
   if (!m_bPassiveMode && url.isValid()) frame()->setTabIcon( url, 0L );
 }
@@ -685,7 +687,7 @@ void KonqView::setCaption( const QString & caption )
   if (url().isLocalFile())
   {
      // Is the caption a URL?  If so, is it local?  If so, only display the filename!
-     KUrl url(caption);
+     QUrl url(QUrl::fromUserInput(caption));
      if (url.isValid() && url.isLocalFile() && url.fileName() == this->url().fileName())
        {
          adjustedCaption = url.fileName();
@@ -889,20 +891,20 @@ void KonqView::copyHistory( KonqView *other )
     setHistoryIndex(other->historyIndex());
 }
 
-KUrl KonqView::url() const
+QUrl KonqView::url() const
 {
-  Q_ASSERT( m_pPart );
-  return m_pPart->url();
+    Q_ASSERT( m_pPart );
+    return m_pPart->url();
 }
 
-KUrl KonqView::upUrl() const
+QUrl KonqView::upUrl() const
 {
-    KUrl currentURL;
+    QUrl currentURL;
     if ( m_pRun )
-	currentURL = m_pRun->url();
+        currentURL = m_pRun->url();
     else
-	currentURL = m_sLocationBarURL;
-    return currentURL.upUrl();
+        currentURL = QUrl::fromUserInput(m_sLocationBarURL);
+    return KIO::upUrl(currentURL);
 }
 
 void KonqView::setRun( KonqRun * run )
@@ -1004,9 +1006,9 @@ void KonqView::setLockedLocation( bool b )
   m_bLockedLocation = b;
 }
 
-void KonqView::aboutToOpenURL( const KUrl &url, const KParts::OpenUrlArguments &args )
+void KonqView::aboutToOpenURL(const QUrl &url, const KParts::OpenUrlArguments &args )
 {
-    m_bErrorURL = url.protocol() == "error";
+    m_bErrorURL = url.scheme() == "error";
 
   KParts::OpenUrlEvent ev( m_pPart, url, args );
   QApplication::sendEvent( m_pMainWindow, &ev );
@@ -1087,13 +1089,13 @@ bool KonqView::callExtensionBoolMethod( const char *methodName, bool value )
   return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(bool,value));
 }
 
-bool KonqView::callExtensionURLMethod( const char *methodName, const KUrl& value )
+bool KonqView::callExtensionURLMethod(const char *methodName, const QUrl &value )
 {
   QObject *obj = KParts::BrowserExtension::childObject( m_pPart );
   if ( !obj ) // not all views have a browser extension !
     return false;
 
-  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(KUrl, value));
+  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(QUrl, value));
 }
 
 void KonqView::setViewName( const QString &name )
@@ -1127,8 +1129,8 @@ void KonqView::enablePopupMenu( bool b )
     connect( ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
              m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
 
-    connect( ext, SIGNAL(popupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
+    connect( ext, SIGNAL(popupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
   }
   else // disable context popup
   {
@@ -1137,8 +1139,8 @@ void KonqView::enablePopupMenu( bool b )
     disconnect( ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
              m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
 
-    disconnect( ext, SIGNAL(popupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
+    disconnect( ext, SIGNAL(popupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,QUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
   }
 }
 
@@ -1184,10 +1186,10 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
     if ( e->type() == QEvent::DragEnter && m_bURLDropHandling && obj == m_pPart->widget() )
     {
         QDragEnterEvent *ev = static_cast<QDragEnterEvent *>( e );
-
-        if ( KUrl::List::canDecode( ev->mimeData() ) )
+        const QMimeData * mimeData = ev->mimeData();
+        if (mimeData->hasUrls())
         {
-            KUrl::List lstDragURLs = KUrl::List::fromMimeData( ev->mimeData() );
+            QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
 
             QList<QObject *> children = qFindChildren<QObject *>( m_pPart->widget() ); // ### slow, better write a isChildOf with a loop...
 
@@ -1201,8 +1203,9 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
     else if ( e->type() == QEvent::Drop && m_bURLDropHandling && obj == m_pPart->widget() )
     {
         QDropEvent *ev = static_cast<QDropEvent *>( e );
+        const QMimeData * mimeData = ev->mimeData();
 
-        KUrl::List lstDragURLs = KUrl::List::fromMimeData( ev->mimeData() );
+        QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
         KParts::BrowserExtension *ext = browserExtension();
         if ( !lstDragURLs.isEmpty() && ext && lstDragURLs.first().isValid() )
             emit ext->openUrlRequest( lstDragURLs.first() ); // this will call m_pMainWindow::slotOpenURLRequest delayed
@@ -1317,16 +1320,15 @@ void HistoryEntry::saveConfig( KConfigGroup& config, const QString &prefix, cons
 
 void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-
     if (options & KonqFrameBase::saveURLs) {
-        url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
+        url = QUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
         locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
         title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
         strServiceType = config.readEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), "" );
         strServiceName = config.readEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), "" );
         reload = true;
     } else if(options & KonqFrameBase::saveHistoryItems) {
-        url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
+        url = QUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
         locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
         title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
         buffer = config.readEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), QByteArray() );

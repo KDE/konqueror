@@ -36,14 +36,14 @@ public:
     virtual ~KonqPlacesCustomPlacesView();
 
 signals:
-    void urlChanged(const KUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers);
+    void urlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers);
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
     virtual void mousePressEvent(QMouseEvent *event);
 
 private slots:
-    void emitUrlChanged(const KUrl &url);
+    void emitUrlChanged(const QUrl &url);
 
 private:
     Qt::MouseButtons m_mouseButtons;
@@ -63,7 +63,7 @@ public:
     virtual QWidget *getWidget();
 
 private slots:
-    void slotPlaceUrlChanged(const KUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
+    void slotPlaceUrlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
 
 private:
     KFilePlacesView *m_placesView;

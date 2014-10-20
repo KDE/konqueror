@@ -99,7 +99,7 @@ public:
   void swapChildren();
 
   virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon( const KUrl &url, QWidget* sender );
+  virtual void setTabIcon(const QUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
   virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Container; }

@@ -44,11 +44,11 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
 		tree = new KonqSidebarTree(this, widget, virt, path);
 	}
 
-	connect(tree, SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-		this,SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
+    connect(tree, SIGNAL(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+        this,SIGNAL(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
-	connect(tree,SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-		this,SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
+    connect(tree,SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+        this,SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
         connect(tree, SIGNAL(copy()),
                 this, SLOT(copy()));
@@ -63,7 +63,7 @@ KonqSidebarOldTreeModule::~KonqSidebarOldTreeModule(){}
 
 QWidget *KonqSidebarOldTreeModule::getWidget() { return widget; }
 
-void KonqSidebarOldTreeModule::handleURL(const KUrl &url)
+void KonqSidebarOldTreeModule::handleURL(const QUrl &url)
     {
 	emit started( 0 );
         tree->followURL( url );

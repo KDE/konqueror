@@ -20,7 +20,6 @@
 #define _FAVICONS_H_
 
 #include <kdedmodule.h>
-#include <kurl.h>
 
 class KJob;
 namespace KIO { class Job; }

@@ -55,9 +55,9 @@ KonqPixmapProvider::~KonqPixmapProvider()
 // if not available, tries to find the pixmap for the mimetype of url
 // if that fails, gets the icon for the protocol
 // finally, inserts the url/icon pair into the cache
-QString KonqPixmapProvider::iconNameFor( const KUrl& url )
+QString KonqPixmapProvider::iconNameFor( const QUrl& url )
 {
-    QMap<KUrl,QString>::iterator it = iconMap.find( url );
+    QMap<QUrl,QString>::iterator it = iconMap.find( url );
     QString icon;
     if ( it != iconMap.end() ) {
         icon = it.value();
@@ -87,7 +87,7 @@ QString KonqPixmapProvider::iconNameFor( const KUrl& url )
 
 QPixmap KonqPixmapProvider::pixmapFor( const QString& url, int size )
 {
-    return loadIcon( iconNameFor( KUrl( url ) ), size );
+    return loadIcon( iconNameFor( QUrl( url ) ), size );
 }
 
 void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
@@ -101,7 +101,7 @@ void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
         if ( (++it) == itEnd )
             break;
         const QString icon (*it);
-        iconMap.insert( KUrl( url ), icon );
+        iconMap.insert( QUrl( url ), icon );
         ++it;
     }
 }
@@ -114,7 +114,7 @@ void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
     QStringList list;
     QStringList::const_iterator itEnd = items.end();
     for (QStringList::const_iterator it = items.begin(); it != itEnd; ++it) {
-        QMap<KUrl,QString>::const_iterator mit = iconMap.constFind( KUrl(*it) );
+        QMap<QUrl,QString>::const_iterator mit = iconMap.constFind( QUrl(*it) );
         if ( mit != iconMap.constEnd() ) {
             list.append( mit.key().url() );
             list.append( mit.value() );
@@ -126,14 +126,14 @@ void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
 void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
     const QString& iconName )
 {
-    KUrl u;
+    QUrl u;
     if ( !isHost )
         u = hostOrURL;
 
-    QMap<KUrl,QString>::iterator itEnd = iconMap.end();
-    for ( QMap<KUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
+    QMap<QUrl,QString>::iterator itEnd = iconMap.end();
+    for ( QMap<QUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
     {
-        KUrl url( it.key() );
+        QUrl url( it.key() );
         if ( ( isHost && url.host() == hostOrURL ) ||
              ( !isHost && url.host() == u.host() && url.path() == u.path() ) )
         {

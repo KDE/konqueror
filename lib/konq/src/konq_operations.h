@@ -23,11 +23,11 @@
 #ifndef __konq_operations_h__
 #define __konq_operations_h__
 
-#include <kurl.h>
 #include <libkonq_export.h>
 
 #include <QObject>
 #include <QDropEvent>
+#include <QUrl>
 
 class KJob;
 namespace KIO { class Job; class SimpleJob; }
@@ -63,7 +63,7 @@ public:
      *
      * If destItem is 0L, doDrop will stat the URL to determine it.
      */
-    static void doDrop( const KFileItem & destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent );
+    static void doDrop( const KFileItem & destItem, const QUrl & destUrl, QDropEvent * ev, QWidget * parent );
 
     /**
      * Drop
@@ -90,13 +90,13 @@ public:
      * @return The KonqOperations object
      * @since 4.3
      */
-    static KonqOperations *doDrop( const KFileItem & destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent,
+    static KonqOperations *doDrop(const KFileItem & destItem, const QUrl &destUrl, QDropEvent * ev, QWidget * parent,
                                    const QList<QAction*> &userActions );
 
     /**
      * Paste the clipboard contents
      */
-    static void doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint() );
+    static void doPaste( QWidget * parent, const QUrl & destUrl, const QPoint &pos = QPoint() );
 
     /**
      * Paste the clipboard contents
@@ -106,7 +106,7 @@ public:
      *
      * @todo TODO KDE 5,0 - Merge doPaste and doPasteV2
      */
-    static KonqOperations *doPasteV2(QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint());
+    static KonqOperations *doPasteV2(QWidget * parent, const QUrl & destUrl, const QPoint &pos = QPoint());
 
     /**
      * Returns the state of the paste action:
@@ -114,7 +114,7 @@ public:
      * second is the text for the action
      * @since 4.3
      */
-    static QPair<bool, QString> pasteInfo(const KUrl& targetUrl);
+    static QPair<bool, QString> pasteInfo(const QUrl &targetUrl);
 
     /**
      * Returns the list of dropped URL's.
@@ -124,7 +124,7 @@ public:
      *
      * @since 4.3
      */
-    KUrl::List droppedUrls() const;
+    QList<QUrl> droppedUrls() const;
 
     /**
      * Returns the position where the drop occurred.
@@ -133,23 +133,23 @@ public:
     QPoint dropPosition() const;
 
 Q_SIGNALS:
-    void aboutToCreate(const KUrl::List &urls);
+    void aboutToCreate(const QList<QUrl> &urls);
 
 private:
     QWidget* parentWidget() const;
-    void _addPluginActions(QList<QAction*>& pluginActions, const KUrl& destination, const KFileItemListProperties& info);
+    void _addPluginActions(QList<QAction*>& pluginActions, const QUrl& destination, const KFileItemListProperties& info);
 
     // internal, for COPY/MOVE/LINK/MKDIR
-    void setOperation( KIO::Job * job, Operation method, const KUrl & dest );
+    void setOperation( KIO::Job * job, Operation method, const QUrl & dest );
 
     struct DropInfo
     {
-        DropInfo( Qt::KeyboardModifiers k, const KUrl::List & u, const QMap<QString,QString> &m,
+        DropInfo( Qt::KeyboardModifiers k, const QList<QUrl> & u, const QMap<QString,QString> &m,
                   const QPoint& pos, Qt::DropAction a, const QList<QAction *> &actions) :
             keyboardModifiers(k), urls(u), metaData(m), mousePos(pos), action(a), userActions(actions)
         {}
         Qt::KeyboardModifiers keyboardModifiers;
-        KUrl::List urls;
+        QList<QUrl> urls;
         QMap<QString,QString> metaData;
         QPoint mousePos;
         Qt::DropAction action;
@@ -171,14 +171,13 @@ protected Q_SLOTS:
     void slotStatResult( KJob * job );
     void asyncDrop( const KFileItem & item );
     void doDropFileCopy();
-    void slotCopyingDone(KIO::Job *job, const KUrl &from, const KUrl &to);
-    void slotCopyingLinkDone(KIO::Job *job, const KUrl &from, const QString &target, const KUrl &to);
+    void slotCopyingDone(KIO::Job *job, const QUrl &from, const QUrl &to);
+    void slotCopyingLinkDone(KIO::Job *job, const QUrl &from, const QString &target, const QUrl &to);
 
 private:
     Operation m_method;
-    //KUrl::List m_srcUrls;
-    KUrl::List m_createdUrls;
-    KUrl m_destUrl;
+    QList<QUrl> m_createdUrls;
+    QUrl m_destUrl;
     // for doDrop
     DropInfo * m_info;
     KIOPasteInfo * m_pasteInfo;

@@ -31,13 +31,13 @@
 #include <QApplication>
 #include <QtCore/QEvent>
 #include <QVBoxLayout>
+#include <QUrl>
 
 // KDE
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <kurl.h>
 #include <ksqueezedtextlabel.h>
 #include <konq_events.h>
 #include <kconfiggroup.h>
@@ -200,7 +200,7 @@ void KonqFrame::setTitle( const QString &title , QWidget* /*sender*/)
   if (m_pParentContainer) m_pParentContainer->setTitle( title , this);
 }
 
-void KonqFrame::setTabIcon( const KUrl &url, QWidget* /*sender*/ )
+void KonqFrame::setTabIcon( const QUrl &url, QWidget* /*sender*/ )
 {
   //kDebug() << "KonqFrame::setTabIcon( " << url << " )";
   if (m_pParentContainer) m_pParentContainer->setTabIcon( url, this );
@@ -230,7 +230,7 @@ void KonqFrame::activateChild()
     if (m_pView && !m_pView->isPassiveMode() ) {
         m_pView->mainWindow()->viewManager()->setActivePart( part() );
 
-        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == "about:blank")) {
+        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl("about:blank"))) {
             //kDebug() << "SET FOCUS on the location bar";
             m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
         }

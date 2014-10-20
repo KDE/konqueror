@@ -23,7 +23,7 @@
 #define KONQ_HISTORYPROVIDER_H
 
 #include <kparts/historyprovider.h>
-#include <kurl.h>
+#include <QUrl>
 #include "libkonq_export.h"
 #include "konq_historyentry.h"
 
@@ -97,7 +97,7 @@ public:
      *
      * The history is saved after receiving the D-Bus call.
      */
-    void emitRemoveFromHistory(const KUrl& url);
+    void emitRemoveFromHistory(const QUrl &url);
 
     /**
      * Removes the history entries for the given list of @p urls. Tells all
@@ -105,7 +105,7 @@ public:
      *
      * The history is saved after receiving the D-Bus call.
      */
-    void emitRemoveListFromHistory(const KUrl::List& urls);
+    void emitRemoveListFromHistory(const QList<QUrl>& urls);
 
     /**
      * Clears the history and tells all other Konqueror instances via D-Bus
@@ -143,8 +143,8 @@ protected: // only to be used by konqueror's KonqHistoryManager
      * Can't be used everywhere, because it always returns end() for "pending"
      * entries, as those are not added to the dict, currently.
      */
-    KonqHistoryList::iterator findEntry(const KUrl& url);
-    KonqHistoryList::const_iterator constFindEntry(const KUrl& url) const;
+    KonqHistoryList::iterator findEntry(const QUrl& url);
+    KonqHistoryList::const_iterator constFindEntry(const QUrl& url) const;
 
     /**
      * Notifies all running instances about a new HistoryEntry via D-Bus.

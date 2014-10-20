@@ -65,55 +65,55 @@ bool KonqHistoryManager::loadHistory()
     QListIterator<KonqHistoryEntry> it(entries());
     while (it.hasNext()) {
         const KonqHistoryEntry& entry = it.next();
-        const QString prettyUrlString = entry.url.prettyUrl();
+        const QString prettyUrlString = entry.url.toDisplayString();
         addToCompletion(prettyUrlString, entry.typedUrl, entry.numberOfTimesVisited);
     }
 
     return true;
 }
 
-void KonqHistoryManager::addPending( const KUrl& url, const QString& typedUrl,
-				     const QString& title )
+void KonqHistoryManager::addPending(const QUrl &url, const QString& typedUrl,
+                     const QString& title )
 {
     addToHistory( true, url, typedUrl, title );
 }
 
-void KonqHistoryManager::confirmPending( const KUrl& url,
-					 const QString& typedUrl,
-					 const QString& title )
+void KonqHistoryManager::confirmPending(const QUrl &url,
+                     const QString& typedUrl,
+                     const QString& title )
 {
     addToHistory( false, url, typedUrl, title );
 }
 
 
-void KonqHistoryManager::addToHistory( bool pending, const KUrl& _url,
+void KonqHistoryManager::addToHistory( bool pending, const QUrl& _url,
 				       const QString& typedUrl,
 				       const QString& title )
 {
     //kDebug() << _url << "Typed URL:" << typedUrl << ", Title:" << title;
 
     if ( filterOut( _url ) ) // we only want remote URLs
-	return;
+        return;
 
     // http URLs without a path will get redirected immediately to url + '/'
-    if ( _url.path().isEmpty() && _url.protocol().startsWith("http") )
-	return;
+    if ( _url.path().isEmpty() && _url.scheme().startsWith("http") )
+        return;
 
-    KUrl url( _url );
-    bool hasPass = url.hasPass();
-    url.setPass( QString() ); // No password in the history, especially not in the completion!
+    QUrl url( _url );
+    bool hasPass = !url.password().isEmpty();
+    url.setPassword(QString()); // No password in the history, especially not in the completion!
     url.setHost( url.host().toLower() ); // All host parts lower case
     KonqHistoryEntry entry;
-    QString u = url.prettyUrl();
+    QString u = url.toDisplayString();
     entry.url = url;
     if ( (u != typedUrl) && !hasPass )
-	entry.typedUrl = typedUrl;
+        entry.typedUrl = typedUrl;
 
     // we only keep the title if we are confirming an entry. Otherwise,
     // we might get bogus titles from the previous url (actually it's just
     // konqueror's window caption).
     if ( !pending && u != title )
-	entry.title = title;
+        entry.title = title;
     entry.firstVisited = QDateTime::currentDateTime();
     entry.lastVisited = entry.firstVisited;
 
@@ -126,21 +126,19 @@ void KonqHistoryManager::addToHistory( bool pending, const KUrl& _url,
     }
 
     if ( !pending ) {
-	if ( it != m_pending.end() ) {
-	    // we make a pending entry official, so we just have to update
-	    // and not increment the counter. No need to care about
-	    // firstVisited, as this is not taken into account on update.
-	    entry.numberOfTimesVisited = 0;
-	}
-    }
-
-    else {
-	// We add a copy of the current history entry of the url to the
-	// pending list, so that we can restore it if the user canceled.
-	// If there is no entry for the url yet, we just store the url.
+        if ( it != m_pending.end() ) {
+            // we make a pending entry official, so we just have to update
+            // and not increment the counter. No need to care about
+            // firstVisited, as this is not taken into account on update.
+            entry.numberOfTimesVisited = 0;
+        }
+    } else {
+        // We add a copy of the current history entry of the url to the
+        // pending list, so that we can restore it if the user canceled.
+        // If there is no entry for the url yet, we just store the url.
         KonqHistoryList::const_iterator oldEntry = constFindEntry( url );
-	m_pending.insert( u, (oldEntry != entries().constEnd()) ?
-                          new KonqHistoryEntry( *oldEntry ) : 0 );
+        m_pending.insert( u, (oldEntry != entries().constEnd()) ?
+                              new KonqHistoryEntry( *oldEntry ) : 0 );
     }
 
     // notify all konqueror instances about the entry
@@ -154,9 +152,9 @@ void KonqHistoryManager::addToHistory( bool pending, const KUrl& _url,
 // Moreover, we  don't get any pending/confirming entries, just one insert()
 void KonqHistoryManager::insert( const QString& url )
 {
-    KUrl u ( url );
-    if ( !filterOut( u ) || u.protocol() == "about" ) { // remote URL
-	return;
+    QUrl u ( url );
+    if ( !filterOut( u ) || u.scheme() == "about" ) { // remote URL
+        return;
     }
     // Local URL -> add to history
     KonqHistoryEntry entry;
@@ -166,23 +164,23 @@ void KonqHistoryManager::insert( const QString& url )
     emitAddToHistory( entry );
 }
 
-void KonqHistoryManager::removePending( const KUrl& url )
+void KonqHistoryManager::removePending(const QUrl &url )
 {
     // kDebug() << "Removing pending..." << url;
 
     if ( url.isLocalFile() )
-	return;
+        return;
 
-    QMap<QString,KonqHistoryEntry*>::iterator it = m_pending.find( url.prettyUrl() );
+    QMap<QString,KonqHistoryEntry*>::iterator it = m_pending.find( url.toDisplayString() );
     if ( it != m_pending.end() ) {
-	KonqHistoryEntry *oldEntry = it.value(); // the old entry, may be 0
-	emitRemoveFromHistory( url ); // remove the current pending entry
+        KonqHistoryEntry *oldEntry = it.value(); // the old entry, may be 0
+        emitRemoveFromHistory( url ); // remove the current pending entry
 
-	if ( oldEntry ) // we had an entry before, now use that instead
-	    emitAddToHistory( *oldEntry );
+        if ( oldEntry ) // we had an entry before, now use that instead
+            emitAddToHistory( *oldEntry );
 
-	delete oldEntry;
-	m_pending.erase( it );
+        delete oldEntry;
+        m_pending.erase( it );
     }
 }
 
@@ -200,7 +198,7 @@ void KonqHistoryManager::clearPending()
 ///////////////////////////////////////////////////////////////////
 // DBUS called methods
 
-bool KonqHistoryManager::filterOut(const KUrl& url)
+bool KonqHistoryManager::filterOut(const QUrl &url)
 {
     return (url.isLocalFile() || url.host().isEmpty());
 }
@@ -254,7 +252,7 @@ void KonqHistoryManager::slotCleared()
 void KonqHistoryManager::finishAddingEntry(const KonqHistoryEntry& entry, bool isSender)
 {
     const QString urlString = entry.url.url();
-    addToCompletion(entry.url.prettyUrl(), entry.typedUrl);
+    addToCompletion(entry.url.toDisplayString(), entry.typedUrl);
     addToUpdateList(urlString);
     KonqHistoryProvider::finishAddingEntry(entry, isSender);
 
@@ -265,16 +263,15 @@ void KonqHistoryManager::finishAddingEntry(const KonqHistoryEntry& entry, bool i
     const bool updated = m_bookmarkManager ? m_bookmarkManager->updateAccessMetadata(urlString) : false;
 
     if (isSender) {
-	// note, bk save does not notify, and we don't want to!
-	if (updated)
-	    m_bookmarkManager->save();
+        // note, bk save does not notify, and we don't want to!
+        if (updated)
+            m_bookmarkManager->save();
     }
 }
 
 void KonqHistoryManager::slotEntryRemoved(const KonqHistoryEntry& entry)
 {
     const QString urlString = entry.url.url();
-    removeFromCompletion(entry.url.prettyUrl(), entry.typedUrl);
+    removeFromCompletion(entry.url.toDisplayString(), entry.typedUrl);
     addToUpdateList(urlString);
 }
-

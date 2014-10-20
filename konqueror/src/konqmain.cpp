@@ -165,14 +165,14 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             }
         } else {
             // Now is a good time to parse each argument as a URL.
-            KUrl::List urlList;
+            QList<QUrl> urlList;
             for (int i = 0; i < args->count(); i++) {
                 // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below
-                const KUrl url = args->url(i);
+                const QUrl url = args->url(i);
                 if (url.isLocalFile() && QFile::exists(url.toLocalFile())) // "konqueror index.html"
                     urlList += url;
                 else
-                    urlList += KUrl(KonqMisc::konqFilteredURL(0L, args->arg(i))); // "konqueror slashdot.org"
+                    urlList += KonqMisc::konqFilteredURL(0L, args->arg(i)); // "konqueror slashdot.org"
             }
 
             QStringList filesToSelect;
@@ -180,18 +180,21 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             if (args->isSet("select")) {
                 // Get all distinct directories from 'files' and open a tab
                 // for each directory.
-                QList<KUrl> dirs;
-                Q_FOREACH(const KUrl& url, urlList) {
-                    const KUrl dir(url.directory());
+                QList<QUrl> dirs;
+                Q_FOREACH(const QUrl& url, urlList) {
+                    const QUrl dir(url.adjusted(QUrl::RemoveFilename).path());
                     if (!dirs.contains(dir)) {
                         dirs.append(dir);
                     }
                 }
-                filesToSelect = urlList.toStringList();
+                foreach (const QUrl & url, urlList) {
+                    filesToSelect << url.url();
+                }
+
                 urlList = dirs;
             }
 
-            KUrl firstUrl = urlList.takeFirst();
+            QUrl firstUrl = urlList.takeFirst();
 
             KParts::OpenUrlArguments urlargs;
             if (args->isSet("mimetype"))

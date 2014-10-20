@@ -178,7 +178,7 @@ void KonqHistoryView::slotClearHistory()
 void KonqHistoryView::slotPreferences()
 {
     // Run the history sidebar settings.
-    KRun::run("kcmshell4 kcmhistory", KUrl::List(), this);
+    KRun::run("kcmshell5 kcmhistory", QList<QUrl>(), this);
 }
 
 void KonqHistoryView::slotSortChange(QAction *action)
@@ -221,40 +221,35 @@ KLineEdit* KonqHistoryView::lineEdit() const
 
 void KonqHistoryView::slotNewWindow()
 {
-    const KUrl url = urlForIndex(m_treeView->currentIndex());
+    const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid())
         emit openUrlInNewWindow(url);
 }
 
 void KonqHistoryView::slotNewTab()
 {
-    const KUrl url = urlForIndex(m_treeView->currentIndex());
+    const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid())
         emit openUrlInNewTab(url);
 }
 
-KUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const
+QUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const
 {
     if (!index.isValid() || (index.data(KonqHistory::TypeRole).toInt() != KonqHistory::HistoryType)) {
-        return KUrl();
+        return QUrl();
     }
 
-    return index.data(KonqHistory::UrlRole).value<KUrl>();
+    return index.data(KonqHistory::UrlRole).value<QUrl>();
 }
 
 // Code taken from KHTMLPopupGUIClient::slotCopyLinkLocation
 void KonqHistoryView::slotCopyLinkLocation()
 {
-    KUrl safeURL = urlForIndex(m_treeView->currentIndex());
-    safeURL.setPass(QString());
+    QUrl safeURL = urlForIndex(m_treeView->currentIndex()).adjusted(QUrl::RemovePassword);
 
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-    safeURL.populateMimeData( mimeData );
+    mimeData->setUrls(QList<QUrl>() << safeURL);
     QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
-
-    mimeData = new QMimeData;
-    safeURL.populateMimeData( mimeData );
     QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
 }
-

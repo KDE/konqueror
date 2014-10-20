@@ -26,6 +26,7 @@
 #include <QMimeData>
 #include <QDrag>
 
+#include <KUrlMimeData>
 
 KonqDraggableLabel::KonqDraggableLabel( KonqMainWindow* mw, const QString& text )
   : QLabel( text )
@@ -52,13 +53,13 @@ void KonqDraggableLabel::mouseMoveEvent( QMouseEvent * ev )
     validDrag = false;
     if ( m_mw->currentView() )
     {
-      KUrl::List lst;
+      QList<QUrl> lst;
       lst.append( m_mw->currentView()->url() );
       QDrag* drag = new QDrag( m_mw );
-      QMimeData* md = new QMimeData();
-      lst.populateMimeData( md );
+      QMimeData* md = new QMimeData;
+      md->setUrls(lst);
       drag->setMimeData( md );
-      QString iconName = KMimeType::iconNameForUrl( lst.first() );
+      QString iconName = KIO::iconNameForUrl( lst.first() );
 
       drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
 
@@ -74,14 +75,14 @@ void KonqDraggableLabel::mouseReleaseEvent( QMouseEvent * )
 
 void KonqDraggableLabel::dragEnterEvent( QDragEnterEvent *ev )
 {
-  if ( KUrl::List::canDecode( ev->mimeData() ) )
+  if ( ev->mimeData()->hasUrls() )
     ev->accept();
 }
 
 void KonqDraggableLabel::dropEvent( QDropEvent* ev )
 {
     _savedLst.clear();
-    _savedLst = KUrl::List::fromMimeData( ev->mimeData() );
+    _savedLst = KUrlMimeData::urlsFromMimeData(ev->mimeData());
     if ( !_savedLst.isEmpty() ) {
         QMetaObject::invokeMethod(this, "delayedOpenURL", Qt::QueuedConnection);
     }
@@ -91,5 +92,3 @@ void KonqDraggableLabel::delayedOpenURL()
 {
     m_mw->openUrl( 0L, _savedLst.first() );
 }
-
-

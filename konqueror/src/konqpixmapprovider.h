@@ -22,12 +22,12 @@
 
 #include "konqprivate_export.h"
 
-#include <kurl.h>
 #include <kpixmapprovider.h>
 #include "favicon_interface.h"
 
-#include <QtCore/QMap>
+#include <QMap>
 #include <QPixmap>
+#include <QUrl>
 
 class KConfigGroup;
 class KConfig;
@@ -66,7 +66,7 @@ public:
     /**
      * Looks up an iconname for @p url. Uses a cache for the iconname of url.
      */
-    QString iconNameFor( const KUrl& url );
+    QString iconNameFor(const QUrl &url );
 
 Q_SIGNALS:
     void changed();
@@ -83,7 +83,7 @@ private:
     KonqPixmapProvider();
     friend class KonqPixmapProviderSingleton;
 
-    QMap<KUrl,QString> iconMap;
+    QMap<QUrl,QString> iconMap;
 };
 
 

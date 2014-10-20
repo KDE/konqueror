@@ -30,6 +30,7 @@
 #include <QItemDelegate>
 #include <QListWidgetItem>
 #include <QtCore/QEvent>
+#include <QMimeData>
 
 // KDE
 #include <kapplication.h>
@@ -58,11 +59,12 @@ const int KonqCombo::temporary = 0;
 
 static QString titleOfURL( const QString& urlStr )
 {
-    KUrl url( urlStr );
+    QUrl url( QUrl::fromUserInput(urlStr) );
     KonqHistoryList historylist = KonqHistoryManager::kself()->entries();
     KonqHistoryList::iterator historyentry = historylist.findEntry( url );
     if ( historyentry == historylist.end() && !url.url().endsWith('/') ) {
-        url.adjustPath(KUrl::AddTrailingSlash);
+        if (!url.path().endsWith('/'))
+            url.setPath(url.path() + '/');
         historyentry = historylist.findEntry( url );
     }
     return ( historyentry != historylist.end() ? (*historyentry).title : QString() );
@@ -159,7 +161,11 @@ KonqCombo::KonqCombo( QWidget *parent )
     connect( KonqHistoryManager::kself(), SIGNAL(cleared()), SLOT(slotCleared()) );
     connect(this, &KonqCombo::cleared, this, &KonqCombo::slotCleared);
     connect(this, static_cast<void (KonqCombo::*)(int)>(&KonqCombo::highlighted), this, &KonqCombo::slotSetIcon);
-    connect(this, &KonqCombo::activated, this, &KonqCombo::slotActivated);
+
+    // WARNING! has to be the old style connect below, otherwise location bar doesn't work!
+    //connect(this, &KonqCombo::activated, this, &KonqCombo::slotActivated);
+    connect(this, SIGNAL(activated(QString)), this, SLOT(slotActivated(QString)));
+
     connect( this, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
              this, SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
 }
@@ -378,7 +384,7 @@ void KonqCombo::slotSetIcon( int index )
     if( itemIcon( index ).isNull())
         // on-demand icon loading
         setItemIcon( index, KonqPixmapProvider::self()->pixmapFor( itemText( index ),
-                     KIconLoader::SizeSmall ) );
+                                                                   KIconLoader::SizeSmall ) );
     update();
 }
 
@@ -440,19 +446,17 @@ bool KonqCombo::eventFilter( QObject *o, QEvent *ev )
         if (type == QEvent::KeyPress) {
             QKeyEvent *e = static_cast<QKeyEvent *>( ev );
 
-            KShortcut key( e->key() | e->modifiers() );
+            QKeySequence key( e->key() | e->modifiers() );
 
-            if ( key == KStandardShortcut::deleteWordBack() ||
-                 key == KStandardShortcut::deleteWordForward() ||
+            if ( KStandardShortcut::deleteWordBack().contains(key) ||
+                 KStandardShortcut::deleteWordForward().contains(key) ||
                  ((e->modifiers() & Qt::ControlModifier) &&
                    (e->key() == Qt::Key_Left || e->key() == Qt::Key_Right) ) ) {
                 selectWord(e);
                 e->accept();
                 return true;
             }
-        }
-
-        else if ( type == QEvent::MouseButtonDblClick ) {
+        } else if ( type == QEvent::MouseButtonDblClick ) {
             edit->selectAll();
             return true;
         }
@@ -597,12 +601,12 @@ void KonqCombo::mouseMoveEvent( QMouseEvent *e )
          (e->pos() - m_dragStart).manhattanLength() >
          QApplication::startDragDistance() )
     {
-        KUrl url( currentText() );
+        QUrl url( QUrl::fromUserInput(currentText() ));
         if ( url.isValid() )
         {
             QDrag* drag = new QDrag(this);
-            QMimeData* mime = new QMimeData();
-            url.populateMimeData(mime);
+            QMimeData* mime = new QMimeData;
+            mime->setUrls(QList<QUrl>() << url);
             drag->setMimeData(mime);
             QPixmap pix = KonqPixmapProvider::self()->pixmapFor( currentText(),
                                                                  KIconLoader::SizeMedium );

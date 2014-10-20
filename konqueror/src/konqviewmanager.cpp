@@ -47,7 +47,6 @@
 #include <ktemporaryfile.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
-#include <ktoolbarpopupaction.h>
 #include <kmenu.h>
 #include <kdeversion.h>
 #include <QApplication>
@@ -65,9 +64,7 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
   m_bLoadingProfile = false;
   m_tabContainer = 0;
 
-#if KDE_IS_VERSION(4,9,97)
   setIgnoreExplictFocusRequests(true);
-#endif
 
   connect( this, SIGNAL(activePartChanged(KParts::Part*)),
            this, SLOT(slotActivePartChanged(KParts::Part*)) );
@@ -302,7 +299,7 @@ void KonqViewManager::duplicateTab(int tabIndex, bool openAfterCurrentPage)
   KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
   tab->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
-  loadRootItem( profileGroup, tabContainer(), KUrl(), true, KUrl(), QString(), openAfterCurrentPage );
+  loadRootItem( profileGroup, tabContainer(), QUrl(), true, QUrl(), QString(), openAfterCurrentPage );
 
   if (openAfterCurrentPage)
     m_tabContainer->setCurrentIndex( m_tabContainer->currentIndex () + 1 );
@@ -335,10 +332,10 @@ KonqMainWindow* KonqViewManager::breakOffTab(int tab, const QSize& windowSize)
   KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
   tabFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
-  KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
+  KonqMainWindow *mainWindow = new KonqMainWindow(QUrl(), m_pMainWindow->xmlFile());
 
   KonqFrameTabs* newTabContainer = mainWindow->viewManager()->tabContainer();
-  mainWindow->viewManager()->loadRootItem( profileGroup, newTabContainer, KUrl(), true, KUrl() );
+  mainWindow->viewManager()->loadRootItem( profileGroup, newTabContainer, QUrl(), true, QUrl() );
   mainWindow->viewManager()->setCurrentProfile( currentProfile() );
 
   removeTab( tabFrame, false );
@@ -367,7 +364,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
         configGroup.readEntry("XMLUIFile","konqueror.rc");
 
     // TODO factorize to avoid code duplication with loadViewProfileFromGroup
-    KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
+    KonqMainWindow *mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
 
     if (configGroup.readEntry( "FullScreen", false ))
     {
@@ -380,7 +377,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
         // Window size comes from the applyMainWindowSettings call below
     }
 
-    mainWindow->viewManager()->loadRootItem( configGroup, mainWindow, KUrl(), true, KUrl() );
+    mainWindow->viewManager()->loadRootItem( configGroup, mainWindow, QUrl(), true, QUrl() );
     mainWindow->applyMainWindowSettings(configGroup);
     mainWindow->activateChild();
 
@@ -397,7 +394,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
     {
         return KonqViewManager::openSavedWindow(configGroup);
     } else {
-        loadRootItem( configGroup, tabContainer(), KUrl(), true, KUrl() );
+        loadRootItem( configGroup, tabContainer(), QUrl(), true, QUrl() );
 #ifndef NDEBUG
         printFullHierarchy();
 #endif
@@ -538,13 +535,13 @@ void KonqViewManager::updatePixmaps()
 {
     const QList<KonqView*> viewList = KonqViewCollector::collect(tabContainer());
     foreach ( KonqView* view, viewList )
-        view->setTabIcon( KUrl( view->locationBarURL() ) );
+        view->setTabIcon( QUrl::fromUserInput(view->locationBarURL()) );
 }
 
 void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
 {
     kDebug();
-    loadRootItem( closedTab.configGroup(), m_tabContainer, KUrl(), true, KUrl(), QString(), false, closedTab.pos() );
+    loadRootItem( closedTab.configGroup(), m_tabContainer, QUrl(), true, QUrl(), QString(), false, closedTab.pos() );
 
     int pos = ( closedTab.pos() < m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
     kDebug() << "pos, m_tabContainer->count():" << pos << m_tabContainer->count()-1;
@@ -911,7 +908,7 @@ void KonqViewManager::saveViewProfileToGroup(KConfigGroup & profileGroup, KonqFr
 }
 
 void KonqViewManager::loadViewProfileFromFile( const QString & path, const QString & filename,
-                                               const KUrl & forcedUrl, const KonqOpenURLRequest &req,
+                                               const QUrl & forcedUrl, const KonqOpenURLRequest &req,
                                                bool resetWindow, bool openUrl )
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
@@ -946,7 +943,7 @@ void KonqViewManager::setCurrentProfile(const QString& profileFileName)
 void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
                                                 const QString& path,
                                                 const QString & filename,
-                                                const KUrl & forcedUrl,
+                                                const QUrl & forcedUrl,
                                                 const KonqOpenURLRequest &req,
                                                 bool resetWindow, bool openUrl)
 {
@@ -977,12 +974,12 @@ void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
 }
 
 void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup, const QString & filename,
-                                                const KUrl & forcedUrl, const KonqOpenURLRequest &req,
+                                                const QUrl & forcedUrl, const KonqOpenURLRequest &req,
                                                 bool openUrl )
 {
     Q_UNUSED(filename); // could be useful in case of error messages
 
-    KUrl defaultURL;
+    QUrl defaultURL;
     if (m_pMainWindow->currentView())
         defaultURL = m_pMainWindow->currentView()->url();
 
@@ -1145,8 +1142,8 @@ QSize KonqViewManager::readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
 }
 
 void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                                    const KUrl & defaultURL, bool openUrl,
-                                    const KUrl& forcedUrl, const QString& forcedService,
+                                    const QUrl & defaultURL, bool openUrl,
+                                    const QUrl& forcedUrl, const QString& forcedService,
                                     bool openAfterCurrentPage,
                                     int pos )
 {
@@ -1169,9 +1166,9 @@ void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerB
 
 }
 
-void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                                const QString &name, const KUrl & defaultURL, bool openUrl,
-                                const KUrl& forcedUrl,
+void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                                const QString &name, const QUrl &defaultURL, bool openUrl,
+                                const QUrl &forcedUrl,
                                 const QString& forcedService,
                                 bool openAfterCurrentPage, int pos )
 {
@@ -1198,7 +1195,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
             serviceType = cfg.readEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), QString("inode/directory"));
             serviceName = cfg.readEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), QString() );
             if (serviceName == "konq_aboutpage") {
-                if ( (!forcedUrl.isEmpty() && forcedUrl.protocol() != "about") ||
+                if ( (!forcedUrl.isEmpty() && forcedUrl.scheme() != "about") ||
                      (forcedUrl.isEmpty() && openUrl == false)) // e.g. window.open
                 {
                     // No point in loading the about page if we're going to replace it with a KHTML part right away
@@ -1252,7 +1249,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
             } else {
                 // determine URL
                 const QString urlKey = QString::fromLatin1("URL").prepend(prefix);
-                KUrl url;
+                QUrl url;
                 if (cfg.hasKey(urlKey)) {
                     url = cfg.readPathEntry(urlKey, QString::fromLatin1("about:blank"));
                 } else if (urlKey == "empty_URL") { // old stuff, not in use anymore
@@ -1266,8 +1263,8 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                     //childView->openUrl( url, url.prettyUrl() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
-                    if (url.protocol() != "about")
-                        req.typedUrl = url.prettyUrl();
+                    if (url.scheme() != "about")
+                        req.typedUrl = url.toDisplayString();
                     m_pMainWindow->openView( serviceType, url, childView, req );
                 }
                 //else kDebug() << "url is empty";
@@ -1434,7 +1431,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
     showTab(originalTabIndex);
 
     const QString profilePath = action->data().toString();
-    const QString fileName = KUrl(profilePath).fileName();
+    const QString fileName = QUrl::fromLocalFile(profilePath).fileName();
     KConfig cfg(profilePath);
     KConfigGroup profileGroup( &cfg, "Profile" );
     const QString xmluiFile = normalizedXMLFileName(profileGroup.readEntry("XMLUIFile","konqueror.rc"));
@@ -1610,7 +1607,7 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
 #endif
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
     // Delay the opening of the URL for #106641
-    bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*,KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*,KUrl)), Qt::QueuedConnection);
+    bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*,QUrl)), m_pMainWindow, SLOT(openUrl(KonqView*,QUrl)), Qt::QueuedConnection);
     Q_ASSERT(ok);
     Q_UNUSED(ok);
     applyConfiguration();
