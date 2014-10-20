@@ -17,7 +17,7 @@
 */
 
 #include "web_module.h"
-#include <kaction.h>
+#include <QAction>
 #include "favicon_interface.h"
 
 #include <QtCore/QFileInfo>
@@ -54,23 +54,23 @@ KHTMLSideBar::KHTMLSideBar()
 
     _linkMenu = new KMenu(widget());
 
-    KAction* openLinkAction = new KAction(i18n("&Open Link"), this);
+    QAction * openLinkAction = new QAction(i18n("&Open Link"), this);
     _linkMenu->addAction(openLinkAction);
     connect(openLinkAction, SIGNAL(triggered()), this, SLOT(loadPage()));
 
-    KAction* openWindowAction = new KAction(i18n("Open in New &Window"), this);
+    QAction * openWindowAction = new QAction(i18n("Open in New &Window"), this);
     _linkMenu->addAction(openWindowAction);
     connect(openWindowAction, SIGNAL(triggered()), this, SLOT(loadNewWindow()));
 
 
     _menu = new KMenu(widget());
 
-    KAction* reloadAction = new KAction(i18n("&Reload"), this);
+    QAction * reloadAction = new QAction(i18n("&Reload"), this);
     reloadAction->setIcon(QIcon::fromTheme("view-refresh"));
     _menu->addAction(reloadAction);
     connect(reloadAction, SIGNAL(triggered()), this, SIGNAL(reload()));
 
-    KAction* autoReloadAction = new KAction(i18n("Set &Automatic Reload"), this);
+    QAction * autoReloadAction = new QAction(i18n("Set &Automatic Reload"), this);
     autoReloadAction->setIcon(QIcon::fromTheme("view-refresh"));
     _menu->addAction(autoReloadAction);
     connect(autoReloadAction, SIGNAL(triggered()), this, SIGNAL(setAutoReload()));

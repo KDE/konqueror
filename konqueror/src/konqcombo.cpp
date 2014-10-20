@@ -175,7 +175,7 @@ void KonqCombo::init( KCompletion *completion )
     setCompletionMode( completion->completionMode() );
 
     // We use Ctrl+T for new tab, so we need something else for substring completion
-    // TODO: how to make that shortcut configurable? If we add a KAction we need to
+    // TODO: how to make that shortcut configurable? If we add a QAction we need to
     // call the KLineEdit code, which we can't do. Well, we could send a keyevent...
     setKeyBinding(KCompletionBase::SubstringCompletion, KShortcut(Qt::Key_F7));
 

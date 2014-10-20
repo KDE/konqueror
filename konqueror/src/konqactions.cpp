@@ -27,7 +27,7 @@
 #include <QIcon>
 #include <kmenu.h>
 #include <kglobal.h>
-#include <kaction.h>
+#include <QAction>
 
 #include <algorithm>
 
@@ -59,7 +59,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
         text.replace( '&', "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
-        KAction* action = new KAction(QIcon::fromTheme(iconName), text, popup);
+        QAction * action = new QAction(QIcon::fromTheme(iconName), text, popup);
         action->setData(index - historyIndex);
         //kDebug() << text << index - historyIndex;
         popup->addAction(action);
@@ -176,7 +176,7 @@ static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
                                                   entry.url.prettyUrl() :
                                                   entry.typedUrl) :
                          entry.title;
-    KAction* action = new KAction(
+    QAction * action = new QAction(
         QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(entry.url)),
         text, menu);
     action->setData(entry.url);

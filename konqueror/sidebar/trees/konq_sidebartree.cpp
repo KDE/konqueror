@@ -34,7 +34,7 @@
 #include <QtCore/QEvent>
 #include <QFrame>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <kdirnotify.h>
@@ -200,40 +200,40 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(this);
     m_collection->setObjectName( QLatin1String("bookmark actions" ));
-    QAction *action = new KAction(QIcon::fromTheme("folder-new"), i18n("&Create New Folder..."), this);
+    QAction *action = new QAction(QIcon::fromTheme("folder-new"), i18n("&Create New Folder..."), this);
     m_collection->addAction("create_folder", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCreateFolder()));
 
-    action = new KAction(QIcon::fromTheme("edit-delete"), i18n("Delete Folder"), this);
+    action = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete Folder"), this);
     m_collection->addAction("delete", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
 
-    action = new KAction(QIcon::fromTheme("user-trash"), i18n("Move to Trash"), this);
+    action = new QAction(QIcon::fromTheme("user-trash"), i18n("Move to Trash"), this);
     m_collection->addAction("trash", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotTrash()));
 
-    action = new KAction(i18n("Rename"), this);
+    action = new QAction(i18n("Rename"), this);
     action->setIcon(QIcon::fromTheme("edit-rename"));
     m_collection->addAction("rename", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotRename()));
 
-    action = new KAction(QIcon::fromTheme("edit-delete"), i18n("Delete Link"), this);
+    action = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete Link"), this);
     m_collection->addAction("delete_link", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
 
-    action = new KAction(QIcon::fromTheme("document-properties"), i18n("Properties"), this);
+    action = new QAction(QIcon::fromTheme("document-properties"), i18n("Properties"), this);
     m_collection->addAction("item_properties", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotProperties()));
 
-    action = new KAction(QIcon::fromTheme("window-new"), i18n("Open in New Window"), this);
+    action = new QAction(QIcon::fromTheme("window-new"), i18n("Open in New Window"), this);
     m_collection->addAction("open_window", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenNewWindow()));
 
-    action = new KAction(QIcon::fromTheme("tab-new"), i18n("Open in New Tab"), this);
+    action = new QAction(QIcon::fromTheme("tab-new"), i18n("Open in New Tab"), this);
     m_collection->addAction("open_tab", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenTab()));
 
-    action = new KAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link Address"), this);
+    action = new QAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link Address"), this);
     m_collection->addAction("copy_location", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCopyLocation()));
 }
@@ -1088,8 +1088,8 @@ bool KonqSidebarTree::overrideShortcut(const QKeyEvent* e)
     return false;
 }
 
-// For F2 and other shortcuts to work we can't use a KAction; it would conflict with the
-// KAction from the active dolphinpart. So we have to use ShortcutOverride.
+// For F2 and other shortcuts to work we can't use a QAction; it would conflict with the
+// QAction from the active dolphinpart. So we have to use ShortcutOverride.
 // Many users requested keyboard shortcuts to work in the sidebar, so it's worth the ugliness (#80584)
 bool KonqSidebarTree::eventFilter(QObject* obj, QEvent* ev)
 {

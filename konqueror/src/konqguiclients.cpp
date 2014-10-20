@@ -47,14 +47,14 @@ PopupMenuGUIClient::PopupMenuGUIClient( const KService::List &embeddingServices,
     QList<QAction *> topActions;
     if (showMenuBar) {
         topActions.append(showMenuBar);
-        KAction* separator = new KAction(&m_actionCollection);
+        QAction * separator = new QAction(&m_actionCollection);
         separator->setSeparator(true);
         topActions.append(separator);
     }
 
     if (stopFullScreen) {
         topActions.append(stopFullScreen);
-        KAction* separator = new KAction(&m_actionCollection);
+        QAction * separator = new QAction(&m_actionCollection);
         separator->setSeparator(true);
         topActions.append(separator);
     }

@@ -32,7 +32,7 @@
 #include <QModelIndex>
 #include <QTreeView>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kguiitem.h>
 #include <kglobal.h>

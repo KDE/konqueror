@@ -30,7 +30,7 @@
 #include <ksqueezedtextlabel.h>
 #include <klocale.h>
 #include <kactioncollection.h>
-#include <kaction.h>
+#include <QAction>
 #include <QIcon>
 
 static QPixmap statusBarIcon(const char* name)
@@ -162,9 +162,9 @@ void KonqFrameStatusBar::splitFrameMenu()
 
    // We have to ship the remove view action ourselves,
    // since this may not be the active view (passive view)
-   KAction actRemoveView(QIcon::fromTheme("view-close"), i18n("Close View"), 0);
+   QAction actRemoveView(QIcon::fromTheme("view-close"), i18n("Close View"), 0);
    actRemoveView.setObjectName( QLatin1String("removethisview" ));
-   connect(&actRemoveView, &KAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
+   connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
    actRemoveView.setEnabled( mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode() );
 
    // For the rest, we borrow them from the main window

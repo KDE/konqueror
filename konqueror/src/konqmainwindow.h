@@ -48,7 +48,7 @@ class KLocalizedString;
 class KToggleFullScreenAction;
 class KonqUndoManager;
 class QAction;
-class KAction;
+class QAction;
 class KActionCollection;
 class KActionMenu;
 class KBookmarkGroup;

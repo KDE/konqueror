@@ -32,7 +32,7 @@
 #include <QVBoxLayout>
 
 #include <kactioncollection.h>
-#include <kaction.h>
+#include <QAction>
 #include <kdebug.h>
 #include <QIcon>
 #include <klineedit.h>

@@ -31,7 +31,7 @@
 
 // KDE
 #include <k3bookmarkdrag.h>
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kbookmark.h>
