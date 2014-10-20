@@ -42,7 +42,7 @@ KonquerorApplication::KonquerorApplication()
 
 void KonquerorApplication::slotReparseConfiguration()
 {
-    KGlobal::config()->reparseConfiguration();
+    KSharedConfig::openConfig()->reparseConfiguration();
     KonqFMSettings::reparseConfiguration();
 
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();

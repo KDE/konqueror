@@ -46,7 +46,7 @@ public:
     /**
      * Reparse the configuration to update the already-created instances
      *
-     * Warning : you need to call KGlobal::config()->reparseConfiguration()
+     * Warning : you need to call KSharedConfig::openConfig()->reparseConfiguration()
      * first (This is not done here so that the caller can avoid too much
      * reparsing if having several classes from the same config file)
      */

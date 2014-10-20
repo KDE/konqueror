@@ -65,6 +65,7 @@
 #include <KParts/OpenUrlArguments>
 #include <KParts/BrowserExtension>
 #include <KParts/WindowArgs>
+#include <KComponentData>
 
 //#define DEBUG_HISTORY
 
@@ -1229,9 +1230,9 @@ void KonqView::setActiveComponent()
 #if 0 // Removed with the port to KF5. The concept no longer exists, the about dialog and bug report
       // dialog just use the application information rather than the one of the current part.
   if (m_bBuiltinView)
-      KGlobal::setActiveComponent( KGlobal::mainComponent() );
+      KComponentData::setActiveComponent( KGlobal::mainComponent() );
   else
-      KGlobal::setActiveComponent(KComponentData(m_pPart->componentData()));
+      KComponentData::setActiveComponent(KComponentData(m_pPart->componentData()));
 #endif
 
 #ifdef KActivities_FOUND

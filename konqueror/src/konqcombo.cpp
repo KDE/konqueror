@@ -45,6 +45,7 @@
 #include <konqmainwindow.h>
 #include <kstringhandler.h>
 #include <kshortcut.h>
+#include <QApplication>
 
 // Local
 #include "konqview.h"
@@ -594,7 +595,7 @@ void KonqCombo::mouseMoveEvent( QMouseEvent *e )
 
     if ( e->buttons() & Qt::LeftButton &&
          (e->pos() - m_dragStart).manhattanLength() >
-         KGlobalSettings::dndEventDelay() )
+         QApplication::startDragDistance() )
     {
         KUrl url( currentText() );
         if ( url.isValid() )

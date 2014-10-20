@@ -55,6 +55,8 @@
 #include <QTreeWidget>
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QApplication>
+#include <QDesktopWidget>
 
 
 class KonqSessionManagerPrivate
@@ -149,7 +151,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
         styleOption.initFrom(treeWidget);
         QFontMetrics fm(styleOption.font);
         int w = treeWidget->width();
-        const QRect desktop = KGlobalSettings::desktopGeometry(this);
+        const QRect desktop = QApplication::desktop()->screenGeometry(this);
 
         // Collect info from the sessions to restore
         Q_FOREACH(const QString& sessionFile, sessionFilePaths) {
@@ -326,7 +328,7 @@ void SessionRestoreDialog::saveDontShow(const QString& dontShowAgainName, int re
         flags |= KConfigGroup::Global;
     }
 
-    KConfigGroup cg(KGlobal::config().data(), "Notification Messages");
+    KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
     cg.writeEntry( dontShowAgainName, result==Yes, flags );
     cg.sync();
 }
@@ -337,7 +339,7 @@ bool SessionRestoreDialog::shouldBeShown(const QString& dontShowAgainName, int* 
         return true;
     }
 
-    KConfigGroup cg(KGlobal::config().data(), "Notification Messages");
+    KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
     const QString dontAsk = cg.readEntry(dontShowAgainName, QString()).toLower();
 
     if (dontAsk == "yes" || dontAsk == "true") {

@@ -70,7 +70,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    layout->addWidget(m_showHiddenShares,4,0, 1, 2 );
 
    m_encodingList = new KComboBox( false, this );
-   QStringList _strList = KGlobal::charsets()->availableEncodingNames();
+   QStringList _strList = KCharsets::charsets()->availableEncodingNames();
    m_encodingList->addItems( _strList );
 
    label = new QLabel( i18n( "MS Windows encoding:" ), this );
@@ -105,7 +105,7 @@ void SMBRoOptions::load()
 //   m_workgroupLe->setText(group.readEntry("Workgroup"));
 //   m_showHiddenShares->setChecked(group.readEntry("ShowHiddenShares", QVariant(false)).toBool());
 
-   //QStringList _strList = KGlobal::charsets()->availableEncodingNames();
+   //QStringList _strList = KCharsets::charsets()->availableEncodingNames();
    //QString m_encoding = QTextCodec::codecForLocale()->name();
    //m_encodingList->setCurrentIndex( _strList.indexOf( group.readEntry( "Encoding", m_encoding.toLower() ) ) );
 

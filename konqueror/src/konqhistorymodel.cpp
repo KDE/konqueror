@@ -136,9 +136,9 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
-                    Qt::escape(entry.url.pathOrUrl()),
-                    KGlobal::locale()->formatDateTime(entry.lastVisited),
-                    KGlobal::locale()->formatDateTime(entry.firstVisited),
+                    entry.url.pathOrUrl().toHtmlEscaped(),
+                    KLocale::global()->formatDateTime(entry.lastVisited),
+                    KLocale::global()->formatDateTime(entry.firstVisited),
                     entry.numberOfTimesVisited);
     case KonqHistory::LastVisitedRole:
         return entry.lastVisited;

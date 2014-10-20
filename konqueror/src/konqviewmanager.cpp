@@ -50,6 +50,8 @@
 #include <ktoolbarpopupaction.h>
 #include <kmenu.h>
 #include <kdeversion.h>
+#include <QApplication>
+#include <QDesktopWidget>
 
 //#define DEBUG_VIEWMGR
 
@@ -1112,7 +1114,7 @@ QSize KonqViewManager::readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
     QString heightStr = cfg.readEntry("Height");
     int width = -1;
     int height = -1;
-    const QRect geom = KGlobalSettings::desktopGeometry(widget);
+    const QRect geom = QApplication::desktop()->screenGeometry(widget);
 
     bool ok;
     if (widthStr.endsWith('%')) {

@@ -62,7 +62,7 @@ void KonqHistorySettings::readSettings(bool reparse)
     KSharedConfigPtr config;
 
     if (KGlobal::mainComponent().componentName() == QLatin1String("konqueror"))
-      config = KGlobal::config();
+      config = KSharedConfig::openConfig();
     else
       config = KSharedConfig::openConfig("konquerorrc");
 

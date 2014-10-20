@@ -34,6 +34,7 @@
 #include <kcolorscheme.h>
 #include <kstandarddirs.h>
 #include <unistd.h>
+#include <QFontDatabase>
 
 class KonqIcon {
 public:
@@ -91,7 +92,7 @@ QPixmap KonqClosedWindowItem::icon() const
     int oldWidth = overlayImg.width();
     QString countStr = QString::number( m_numTabs );
 
-    QFont f = KGlobalSettings::generalFont();
+    QFont f = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     f.setBold(true);
 
     float pointSize = f.pointSizeF();

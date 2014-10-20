@@ -56,7 +56,8 @@ K_EXPORT_PLUGIN(KCMHistoryFactory("kcmhistory"))
 HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList & )
     : KCModule (KCMHistoryFactory::componentData(), parent, QVariantList())
 {
-    KGlobal::locale()->insertCatalog("konqueror");
+    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
+//KLocale::global()->insertCatalog("konqueror");
 
     m_settings = KonqHistorySettings::self();
 

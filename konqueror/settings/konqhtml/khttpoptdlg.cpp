@@ -51,7 +51,7 @@ void KHTTPOptions::load()
 {
   QString tmp;
   KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
-  tmp = cg.readEntry( "AcceptLanguages",KGlobal::locale()->languageList().join(","));
+  tmp = cg.readEntry( "AcceptLanguages",KLocale::global()->languageList().join(","));
   le_languages->setText( tmp );
   tmp = cg.readEntry( "AcceptCharsets",defaultCharsets);
   le_charsets->setText( tmp );
@@ -67,7 +67,7 @@ void KHTTPOptions::save()
 
 void KHTTPOptions::defaults()
 {
-  le_languages->setText( KGlobal::locale()->languageList().join(",") );
+  le_languages->setText( KLocale::global()->languageList().join(",") );
   le_charsets->setText( defaultCharsets );
 }
 

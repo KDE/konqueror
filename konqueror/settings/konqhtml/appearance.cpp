@@ -25,6 +25,7 @@
 
 #if defined Q_WS_X11 && !defined K_WS_QTONLY
 #include <X11/Xlib.h>
+#include <QFontDatabase>
 #endif
 
 #include "appearance.moc"
@@ -236,7 +237,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
 
   m_pEncoding = new QComboBox( this );
   m_pEncoding->setEditable( false );
-  encodings = KGlobal::charsets()->availableEncodingNames();
+  encodings = KCharsets::charsets()->availableEncodingNames();
   encodings.prepend(i18n("Use Language Encoding"));
   m_pEncoding->addItems( encodings );
   fl->addRow(i18n( "Default encoding:"), m_pEncoding);
@@ -349,8 +350,8 @@ void KAppearanceOptions::load()
       fSize = fMinSize;
 
     defaultFonts = QStringList();
-    defaultFonts.append( READ_ENTRY( "StandardFont", KGlobalSettings::generalFont().family() ) );
-    defaultFonts.append( READ_ENTRY( "FixedFont", KGlobalSettings::fixedFont().family() ) );
+    defaultFonts.append( READ_ENTRY( "StandardFont", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family() ) );
+    defaultFonts.append( READ_ENTRY( "FixedFont", QFontDatabase::systemFont(QFontDatabase::FixedFont).family() ) );
     defaultFonts.append( READ_ENTRY( "SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT ) );
     defaultFonts.append( READ_ENTRY( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
     defaultFonts.append( READ_ENTRY( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );

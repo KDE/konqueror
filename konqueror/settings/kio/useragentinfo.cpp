@@ -97,7 +97,7 @@ void UserAgentInfo::parseDescription()
       tmp.replace( QFL("appSysRelease"), QString(utsn.release) );
       tmp.replace( QFL("appMachineType"), QString(utsn.machine) );
 
-      QStringList languageList = KGlobal::locale()->languageList();
+      QStringList languageList = KLocale::global()->languageList();
       if ( languageList.count() )
       {
         int ind = languageList.indexOf( QLatin1String("C") );

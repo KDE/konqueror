@@ -61,7 +61,7 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
     QString file = KStandardDirs::locateLocal("tmp", filename);
     QFile::remove(file);
 
-    KConfigGroup configGroup(KGlobal::config(), "Undo");
+    KConfigGroup configGroup(KSharedConfig::openConfig(), "Undo");
     m_numUndoClosedItems = configGroup.readEntry("Number of Closed Windows", 0);
 
     m_konqClosedItemsConfig = 0L;
@@ -367,7 +367,7 @@ void KonqClosedWindowsManager::saveConfig()
         closedWindowItem->configGroup().copyTo(&configGroup);
     }
 
-    KConfigGroup configGroup(KGlobal::config(), "Undo");
+    KConfigGroup configGroup(KSharedConfig::openConfig(), "Undo");
     configGroup.writeEntry("Number of Closed Windows", m_closedWindowItemList.size());
     configGroup.sync();
 
@@ -404,7 +404,7 @@ void KonqClosedWindowsManager ::readConfig()
         if(!configGroup.exists())
         {
             m_numUndoClosedItems = i;
-            KConfigGroup configGroup(KGlobal::config(), "Undo");
+            KConfigGroup configGroup(KSharedConfig::openConfig(), "Undo");
             configGroup.writeEntry("Number of Closed Windows",
                 m_closedWindowItemList.size());
             configGroup.sync();

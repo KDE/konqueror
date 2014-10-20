@@ -161,6 +161,7 @@
 #include <kshortcut.h>
 #include <kglobalsettings.h>
 #include <kurlauthorized.h>
+#include <QFontDatabase>
 
 template class QList<QPixmap*>;
 template class QList<KToggleAction*>;
@@ -295,7 +296,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   createGUI( 0 );
 
   m_combo->setParent( toolBar("locationToolBar") );
-  m_combo->setFont( KGlobalSettings::generalFont() );
+  m_combo->setFont( QFontDatabase::systemFont(QFontDatabase::GeneralFont) );
   m_combo->show();
 
   checkDisableClearButton();
@@ -1346,7 +1347,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     // Make the window open properties configurable. This is equivalent to
     // Firefox's "dom.disable_window_open_feature.*" properties. For now
     // only LocationBar visiblity is configurable.
-    KSharedConfig::Ptr config = KGlobal::config();
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup cfg (config, "DisableWindowOpenFeatures");
 
     if ( !windowArgs.isMenuBarVisible() )
@@ -1574,7 +1575,7 @@ void KonqMainWindow::slotOpenFile()
     if (m_currentView && m_currentView->url().isLocalFile())
         currentUrl = m_currentView->url();
     else
-        currentUrl = KUrl::fromPath(QDir::homePath());
+        currentUrl = QUrl::fromLocalFile(QDir::homePath());
 
     KUrl url = KFileDialog::getOpenUrl(currentUrl, QString(), this);
     if (!url.isEmpty())
@@ -1652,7 +1653,7 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
   // Save this setting
   // This has to be done before calling openView since it relies on it
     KonqSettings::setHtmlAllowed( b );
-    KonqSettings::self()->writeConfig();
+    KonqSettings::self()->save();
     if ( _activateView )
         m_bHTMLAllowed = b;
 
@@ -1913,7 +1914,7 @@ void KonqMainWindow::slotConfigureSpellChecking()
 {
 #pragma message("TODO KF5: Port Sonnet::ConfigDialog usage somehow")
 #if 0 // KF5 TODO
-    Sonnet::ConfigDialog dialog( KGlobal::config().data(), this);
+    Sonnet::ConfigDialog dialog( KSharedConfig::openConfig().data(), this);
     dialog.setWindowIcon( KIcon( "konqueror" ));
     dialog.exec();
 #endif
@@ -1938,7 +1939,7 @@ void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply i
 
     plugViewModeActions();
 
-    KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
+    KConfigGroup cg = KSharedConfig::openConfig()->group( "KonqMainWindow" );
     applyMainWindowSettings( cg );
 }
 
@@ -3110,7 +3111,7 @@ void KonqMainWindow::slotCompletionModeChanged( KCompletion::CompletionMode m )
   s_pCompletion->setCompletionMode( m );
 
   KonqSettings::setSettingsCompletionMode( int(m_combo->completionMode()) );
-  KonqSettings::self()->writeConfig();
+  KonqSettings::self()->save();
 
   // tell the other windows too (only this instance currently)
   foreach ( KonqMainWindow* window, *s_lstViews ) {
@@ -4896,14 +4897,14 @@ void KonqMainWindow::reparseConfiguration()
 {
   kDebug();
 
-  KonqSettings::self()->readConfig();
+  KonqSettings::self()->load();
   m_pViewManager->applyConfiguration();
   KonqRmbEventFilter::self()->reparseConfiguration();
 
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
   if (m_combo)
-      m_combo->setFont( KGlobalSettings::generalFont() );
+      m_combo->setFont( QFontDatabase::systemFont(QFontDatabase::GeneralFont) );
 
   MapViews::ConstIterator it = m_mapViews.constBegin();
   MapViews::ConstIterator end = m_mapViews.constEnd();
@@ -5132,7 +5133,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
       KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
       if ( tabContainer->count() > 1 )
       {
-        KSharedConfig::Ptr config = KGlobal::config();
+        KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup cs( config, QLatin1String("Notification Messages") );
 
         if ( !cs.hasKey( "MultipleTabConfirm" ) )

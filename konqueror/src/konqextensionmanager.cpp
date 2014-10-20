@@ -71,7 +71,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->mainWindow = mainWindow;
     d->activePart = activePart;
 
-    d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KGlobal::config());
+    d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KSharedConfig::openConfig());
     if ( activePart ) {
         KAboutData componentData = activePart->componentData();
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools");

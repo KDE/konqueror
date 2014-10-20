@@ -75,7 +75,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_historyView);
 
-    restoreDialogSize(KGlobal::config()->group("History Dialog"));
+    restoreDialogSize(KSharedConfig::openConfig()->group("History Dialog"));
 
     // give focus to the search line edit when opening the dialog (#240513)
     m_historyView->lineEdit()->setFocus();
@@ -83,7 +83,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
 
 KonqHistoryDialog::~KonqHistoryDialog()
 {
-    KConfigGroup group(KGlobal::config(), "History Dialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "History Dialog");
     saveDialogSize(group);
 }
 
