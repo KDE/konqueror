@@ -822,7 +822,7 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     emit ext->openUrlRequest(KUrl("data:text/html, <p>Second tab test</p>"), urlArgs, browserArgs);
     QTest::qWait(5000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
-    QCOMPARE(view->url(), KUrl("data:text/html, <p>Hello World</p>"));
+    QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));
 
     // compare the url of the new view... how to?
 //    QCOMPARE(view->url(), KUrl("data:text/html, <p>Second tab test</p>"));
