@@ -47,12 +47,6 @@ protected:
     virtual ~KonqOperations();
 
 public:
-    /**
-     * Pop up properties dialog for mimetype @p mimeType.
-     * @param parent parent widget (for dialogs)
-     */
-    static void editMimeType( const QString & mimeType, QWidget* parent );
-
     enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN, PUT };
     /**
      * Drop
@@ -95,18 +89,10 @@ public:
 
     /**
      * Paste the clipboard contents
-     */
-    static void doPaste( QWidget * parent, const QUrl & destUrl, const QPoint &pos = QPoint() );
-
-    /**
-     * Paste the clipboard contents
      *
      * @return The KonqOperations object
-     * @since 4.10
-     *
-     * @todo TODO KDE 5,0 - Merge doPaste and doPasteV2
      */
-    static KonqOperations *doPasteV2(QWidget * parent, const QUrl & destUrl, const QPoint &pos = QPoint());
+    static KonqOperations *doPaste(QWidget * parent, const QUrl & destUrl);
 
     /**
      * Returns the state of the paste action:

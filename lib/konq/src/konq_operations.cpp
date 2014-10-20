@@ -90,21 +90,7 @@ KonqOperations::~KonqOperations()
     delete m_pasteInfo;
 }
 
-void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
-{
-    QString keditfiletype = QLatin1String("keditfiletype5");
-    KRun::runCommand( keditfiletype
-                      + " --parent " + QString::number( (qptrdiff)parent->winId())
-                      + ' ' + KShell::quoteArg(mimeType),
-                      keditfiletype, keditfiletype /*unused*/, parent );
-}
-
-void KonqOperations::doPaste( QWidget * parent, const QUrl & destUrl, const QPoint &pos )
-{
-    (void) KonqOperations::doPasteV2( parent, destUrl, pos );
-}
-
-KonqOperations *KonqOperations::doPasteV2(QWidget *parent, const QUrl &destUrl, const QPoint &pos)
+KonqOperations *KonqOperations::doPaste(QWidget *parent, const QUrl &destUrl)
 {
     QClipboard *clipboard = QApplication::clipboard();
     const QMimeData *data = clipboard->mimeData();
@@ -114,7 +100,6 @@ KonqOperations *KonqOperations::doPasteV2(QWidget *parent, const QUrl &destUrl, 
     if (job) {
         KonqOperations *op = new KonqOperations(parent);
         KIOPasteInfo *pi = new KIOPasteInfo;
-        pi->mousePos = pos;
         op->setPasteInfo(pi);
         KIO::CopyJob *copyJob = qobject_cast<KIO::CopyJob*>(job);
         if (copyJob) {
