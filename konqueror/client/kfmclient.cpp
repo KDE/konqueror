@@ -23,7 +23,7 @@
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kcmdlineargs.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>

@@ -32,7 +32,7 @@
 #include <kurlrequester.h>
 #include <kdebug.h>
 #include <klineedit.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <knuminput.h>
 #include <khbox.h>
 #include <kparts/htmlextension.h>

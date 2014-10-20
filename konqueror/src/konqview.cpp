@@ -37,7 +37,7 @@
 #include <kdebug.h>
 #include <kcursor.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <krandom.h>
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>

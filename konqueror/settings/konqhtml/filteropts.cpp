@@ -34,7 +34,7 @@
 #include <kfiledialog.h>
 #include <kglobal.h>
 #include <khbox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KListWidget>

@@ -44,7 +44,7 @@
 #include <kiconloader.h>
 #include <kinputdialog.h>
 #include <kio/netaccess.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmimetype.h>
 #include <kshell.h>
 #include <kpropertiesdialog.h>

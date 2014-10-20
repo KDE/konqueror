@@ -34,7 +34,7 @@
 #include <kglobal.h>
 #include <khbox.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kopenwithdialog.h>
 #include <kservice.h>
 #include <kstandarddirs.h>

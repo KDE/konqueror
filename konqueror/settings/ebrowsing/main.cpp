@@ -24,7 +24,7 @@
 
 // KDE
 #include <kurifilter.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kservice.h>
 #include <kservicetypetrader.h>
 #include <KPluginFactory>

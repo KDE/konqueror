@@ -23,7 +23,7 @@
 #include <QTabWidget>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <KDebug>
 // Local

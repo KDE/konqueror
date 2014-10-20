@@ -1,6 +1,6 @@
 #include "kcustommenueditor.h"
 #include <kapplication.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kcmdlineargs.h>
 

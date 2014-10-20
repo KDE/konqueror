@@ -29,7 +29,7 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kurlrequester.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kparts/htmlextension.h>
 
 // Local

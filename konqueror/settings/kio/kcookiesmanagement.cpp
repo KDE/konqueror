@@ -30,7 +30,7 @@
 
 // KDE
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <kiconloader.h>
 #include <klineedit.h>

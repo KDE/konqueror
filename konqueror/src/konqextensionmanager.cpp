@@ -24,7 +24,7 @@
 #include <kxmlguifactory.h>
 #include <kconfig.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kcomponentdata.h>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>

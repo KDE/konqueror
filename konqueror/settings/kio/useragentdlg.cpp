@@ -38,7 +38,7 @@
 // KDE
 #include <kdebug.h>
 #include <kconfig.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kio/http_slave_defaults.h>
 #include <kpluginfactory.h>

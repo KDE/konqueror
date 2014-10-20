@@ -36,7 +36,7 @@
 #include <kdebug.h>
 #include <QIcon>
 #include <klineedit.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <krun.h>
 

@@ -38,7 +38,7 @@
 // KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kurl.h>
 #include <kdebug.h>

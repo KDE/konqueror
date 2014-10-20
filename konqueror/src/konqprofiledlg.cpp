@@ -31,7 +31,7 @@
 #include <kstandardguiitem.h>
 #include <kio/global.h>
 #include <kstandarddirs.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kseparator.h>
 #include <klistwidget.h>

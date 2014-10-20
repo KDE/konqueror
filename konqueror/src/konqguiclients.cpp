@@ -25,7 +25,7 @@
 #include <kdebug.h>
 #include <QIcon>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmenubar.h>
 #include <kactioncollection.h>
 #include <kservicetypetrader.h>

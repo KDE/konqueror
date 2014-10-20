@@ -31,7 +31,7 @@
 #include <kcolorscheme.h>
 #include <kdebug.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstringhandler.h>
 
 #include "konqview.h"

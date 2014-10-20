@@ -27,7 +27,7 @@
 #include <kdebug.h>
 #include <kdialog.h>
 #include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpluginfactory.h>
 #include <kparts/browserextension.h>
 #include <konq_nameandurlinputdialog.h>

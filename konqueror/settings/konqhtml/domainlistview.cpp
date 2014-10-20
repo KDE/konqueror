@@ -30,7 +30,7 @@
 
 // KDE
 #include <kconfig.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 
 // Local

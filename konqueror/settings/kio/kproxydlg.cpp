@@ -28,7 +28,7 @@
 // KDE
 #include <kpluginfactory.h>
 #include <klineedit.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kurifilter.h>
 

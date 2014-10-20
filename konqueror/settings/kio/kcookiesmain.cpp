@@ -19,7 +19,7 @@
 #include <QtDBus/QtDBus>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <kdebug.h>

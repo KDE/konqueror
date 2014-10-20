@@ -123,7 +123,7 @@
 #include <kwindowsystem.h>
 #include <KJobWidgets>
 #include <kfiledialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <QIcon>
 #include <kiconloader.h>
 #include <kmenu.h>

@@ -23,7 +23,7 @@
 // KDE
 #include <kdebug.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kio/job.h>
 
 // Local

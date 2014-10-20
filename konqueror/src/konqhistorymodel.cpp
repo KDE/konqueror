@@ -25,7 +25,7 @@
 #include <kglobal.h>
 #include <QIcon>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmimetype.h>
 #include <kprotocolinfo.h>
 

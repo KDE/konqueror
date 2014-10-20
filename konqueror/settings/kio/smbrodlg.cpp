@@ -32,7 +32,7 @@
 #include <kdialog.h>
 #include <kpluginfactory.h>
 #include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <config-apps.h>
 

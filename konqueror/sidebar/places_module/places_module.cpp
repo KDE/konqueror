@@ -22,7 +22,7 @@
 
 #include <kfileplacesmodel.h>
 #include <QIcon>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpluginfactory.h>
 
 #include <QAction>

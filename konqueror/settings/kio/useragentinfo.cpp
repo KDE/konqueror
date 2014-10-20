@@ -25,7 +25,7 @@
 
 // KDE
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kservicetypetrader.h>
 #include <kstandarddirs.h>
 

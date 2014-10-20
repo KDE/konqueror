@@ -28,7 +28,7 @@
 #include <QMenu>
 #include <QProgressBar>
 #include <ksqueezedtextlabel.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kactioncollection.h>
 #include <QAction>
 #include <QIcon>

@@ -27,7 +27,7 @@
 #include <QTreeView>
 
 #include <QIcon>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpluginfactory.h>
 
 KonqSidebarHistoryModule::KonqSidebarHistoryModule(const KComponentData &componentData, QWidget *parent,

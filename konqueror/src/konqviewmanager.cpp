@@ -45,7 +45,7 @@
 #include <kapplication.h>
 #include <kglobalsettings.h>
 #include <ktemporaryfile.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <ktoolbarpopupaction.h>
 #include <kmenu.h>

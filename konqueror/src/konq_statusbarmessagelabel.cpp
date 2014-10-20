@@ -25,7 +25,7 @@
 #include <kcolorscheme.h>
 #include <kiconloader.h>
 #include <QIcon>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdebug.h>
 
 #include <QFontMetrics>

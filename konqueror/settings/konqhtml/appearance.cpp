@@ -12,7 +12,7 @@
 #include <kdialog.h>
 #include <kglobal.h>
 #include <khtmldefaults.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <knuminput.h>
 #include <kglobalsettings.h>
 #include <KPluginFactory>

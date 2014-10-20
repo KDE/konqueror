@@ -25,7 +25,7 @@
 #include <QAction>
 #include <kio/fileundomanager.h>
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 
 KonqUndoManager::KonqUndoManager(QWidget* parent)

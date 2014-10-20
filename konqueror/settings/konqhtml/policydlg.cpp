@@ -14,7 +14,7 @@
 #include <QPushButton>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 
 // Local

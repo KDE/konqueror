@@ -31,7 +31,7 @@
 #include <QMenu>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>

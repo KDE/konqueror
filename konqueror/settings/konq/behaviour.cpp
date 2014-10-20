@@ -28,7 +28,7 @@
 #include <QLabel>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 #include <kconfiggroup.h>

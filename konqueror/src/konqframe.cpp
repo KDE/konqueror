@@ -36,7 +36,7 @@
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kurl.h>
 #include <ksqueezedtextlabel.h>
 #include <konq_events.h>

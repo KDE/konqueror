@@ -4,7 +4,7 @@
 #include <kvbox.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kinputdialog.h>

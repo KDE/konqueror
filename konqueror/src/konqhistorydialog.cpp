@@ -37,7 +37,7 @@
 #include <kguiitem.h>
 #include <kglobal.h>
 #include <QIcon>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <klineedit.h>
 #include <ktoggleaction.h>
 

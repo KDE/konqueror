@@ -29,7 +29,7 @@
 #include <QMetaType>
 #include <QtDBus/QtDBus>
 #include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <unistd.h> // getpid

@@ -20,7 +20,7 @@
 
 // KDE
 #include <kglobalsettings.h> // get default for DEFAULT_CHANGECURSOR
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <knuminput.h>
 #include <kseparator.h>

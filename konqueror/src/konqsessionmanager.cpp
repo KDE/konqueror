@@ -32,7 +32,7 @@
 #include <kstandarddirs.h>
 #include <kvbox.h>
 #include <khbox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <kurl.h>
 #include <QIcon>

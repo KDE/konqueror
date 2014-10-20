@@ -34,7 +34,7 @@
 #include <kfontdialog.h>
 #include <kglobal.h>
 #include <QIcon>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <knuminput.h>
 #include <KPluginFactory>

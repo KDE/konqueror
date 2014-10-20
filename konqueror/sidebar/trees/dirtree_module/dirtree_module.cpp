@@ -28,7 +28,7 @@
 #include <kmessagebox.h>
 #include <kiconloader.h>
 #include <kdirlister.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 
 KonqSidebarDirTreeModule::KonqSidebarDirTreeModule( KonqSidebarTree * parentTree , bool showHidden)

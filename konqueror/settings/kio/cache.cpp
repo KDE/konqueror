@@ -31,7 +31,7 @@
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kio/http_slave_defaults.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <knuminput.h>
 #include <kstandarddirs.h>
 

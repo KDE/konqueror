@@ -10,7 +10,7 @@
 // KDE
 #include <kio/ioslave_defaults.h>
 #include <knuminput.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kdialog.h>
 #include <kconfig.h>
 #include <kpluginfactory.h>

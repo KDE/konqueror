@@ -28,7 +28,7 @@
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kurifilter.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kwindowsystem.h>
 #include <kprotocolmanager.h>

@@ -26,7 +26,7 @@
 #include "konqsettingsxt.h"
 
 #include <ktemporaryfile.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
