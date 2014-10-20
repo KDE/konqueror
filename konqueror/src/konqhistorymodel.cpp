@@ -23,7 +23,7 @@
 #include "konq_historyprovider.h"
 
 #include <kglobal.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmimetype.h>
@@ -166,7 +166,7 @@ GroupEntry::GroupEntry(const KUrl &_url, const QString &_key)
 {
     const QString iconPath = KMimeType::favIconForUrl(url);
     if (iconPath.isEmpty()) {
-        icon = KIcon("folder");
+        icon = QIcon::fromTheme("folder");
     } else {
         icon = QIcon(SmallIcon(iconPath));
         hasFavIcon = true;

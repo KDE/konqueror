@@ -28,7 +28,7 @@
 #include <kdebug.h>
 #include <kglobal.h>
 #include <kglobalsettings.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconeffect.h>
 #include <konqpixmapprovider.h>
 #include <kcolorscheme.h>
@@ -39,7 +39,7 @@
 class KonqIcon {
 public:
     KonqIcon()
-        : image(KIcon("konqueror").pixmap(16).toImage())
+        : image(QIcon::fromTheme("konqueror").pixmap(16).toImage())
     {
         KIconEffect::deSaturate(image, 0.60f);
     }

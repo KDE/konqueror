@@ -23,7 +23,7 @@
 // KDE
 #include <ktoggleaction.h>
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmenubar.h>
@@ -87,7 +87,7 @@ QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, 
 {
     QAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
     act->setText( name );
-    act->setIcon( KIcon(service->icon()) );
+    act->setIcon( QIcon::fromTheme(service->icon()) );
     QObject::connect(act, &QAction::triggered, this, &PopupMenuGUIClient::slotOpenEmbedded);
     return act;
 }
@@ -140,7 +140,7 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
 
     // HACK
     if ( (*cIt)->icon() != "unknown" )
-      action->setIcon( KIcon((*cIt)->icon()) );
+      action->setIcon( QIcon::fromTheme((*cIt)->icon()) );
 
     connect( action, SIGNAL(toggled(bool)),
              this, SLOT(slotToggleView(bool)) );

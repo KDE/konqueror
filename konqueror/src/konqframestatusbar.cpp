@@ -31,7 +31,7 @@
 #include <klocale.h>
 #include <kactioncollection.h>
 #include <kaction.h>
-#include <kicon.h>
+#include <QIcon>
 
 static QPixmap statusBarIcon(const char* name)
 {
@@ -162,7 +162,7 @@ void KonqFrameStatusBar::splitFrameMenu()
 
    // We have to ship the remove view action ourselves,
    // since this may not be the active view (passive view)
-   KAction actRemoveView(KIcon("view-close"), i18n("Close View"), 0);
+   KAction actRemoveView(QIcon::fromTheme("view-close"), i18n("Close View"), 0);
    actRemoveView.setObjectName( QLatin1String("removethisview" ));
    connect(&actRemoveView, &KAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
    actRemoveView.setEnabled( mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode() );

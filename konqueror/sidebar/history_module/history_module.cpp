@@ -27,7 +27,7 @@
 #include <QDebug>
 #include <QTreeView>
 
-#include <kicon.h>
+#include <QIcon>
 #include <klocale.h>
 #include <kpluginfactory.h>
 
@@ -124,7 +124,7 @@ public:
         Q_UNUSED(existingModules);
         QAction* action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "History Sidebar Module"));
-        action->setIcon(KIcon("view-history"));
+        action->setIcon(QIcon::fromTheme("view-history"));
         return QList<QAction *>() << action;
     }
 

@@ -36,7 +36,7 @@
 #include <kdialog.h>
 #include <kfontdialog.h>
 #include <kglobal.h>
-#include <kicon.h>
+#include <QIcon>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knuminput.h>
@@ -250,7 +250,7 @@ void HistorySidebarConfig::slotGetFontOlder()
 void HistorySidebarConfig::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon( KIcon("edit-clear-history"));
+    guiitem.setIcon( QIcon::fromTheme("edit-clear-history"));
     if ( KMessageBox::warningContinueCancel( this,
 				     i18n("Do you really want to clear "
 					  "the entire history?"),

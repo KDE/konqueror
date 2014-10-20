@@ -125,7 +125,7 @@
 #include <KJobWidgets>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <kmenu.h>
 #include <kprocess.h>
@@ -1915,7 +1915,7 @@ void KonqMainWindow::slotConfigureSpellChecking()
 #pragma message("TODO KF5: Port Sonnet::ConfigDialog usage somehow")
 #if 0 // KF5 TODO
     Sonnet::ConfigDialog dialog( KSharedConfig::openConfig().data(), this);
-    dialog.setWindowIcon( KIcon( "konqueror" ));
+    dialog.setWindowIcon( QIcon::fromTheme( "konqueror" ));
     dialog.exec();
 #endif
 }
@@ -2144,12 +2144,12 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     QAction *actHomeFolder = new QAction( this );
     QAction *actHomePage = new QAction ( this );
 
-    actHomeFolder->setIcon( KIcon("user-home") );
+    actHomeFolder->setIcon( QIcon::fromTheme("user-home") );
     actHomeFolder->setText( i18n("Home Folder") );
     actHomeFolder->setStatusTip( i18n("Navigate to your 'Home Folder'") );
     actHomeFolder->setWhatsThis( i18n("Navigate to your local 'Home Folder'") );
     actHomeFolder->setData(QDir::homePath());
-    actHomePage->setIcon( KIcon("go-home") );
+    actHomePage->setIcon( QIcon::fromTheme("go-home") );
     actHomePage->setText( i18n("Home Page") );
 
     actHomePage->setStatusTip( i18n("Navigate to your 'Home Page'") );
@@ -2790,7 +2790,7 @@ void KonqMainWindow::slotUpAboutToShow()
     KUrl u(m_currentView->locationBarURL());
     u = u.upUrl();
     while (u.hasPath()) {
-        QAction * action = new QAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
+        QAction * action = new QAction(QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(u)),
                                       u.pathOrUrl(),
                                       popup);
         action->setData(u);
@@ -2954,9 +2954,9 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     QMenu* popup = m_paSessions->menu();
     // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
-    QAction* saveSessionAction = popup->addAction( KIcon("document-save"), i18n("Save As...") );
+    QAction* saveSessionAction = popup->addAction( QIcon::fromTheme("document-save"), i18n("Save As...") );
     connect(saveSessionAction, &QAction::triggered, this, &KonqMainWindow::saveCurrentSession);
-    QAction* manageSessionsAction = popup->addAction( KIcon("view-choose"), i18n("Manage...") );
+    QAction* manageSessionsAction = popup->addAction( QIcon::fromTheme("view-choose"), i18n("Manage...") );
     connect(manageSessionsAction, &QAction::triggered, this, &KonqMainWindow::manageSessions);
     popup->insertSeparator(static_cast<QAction*>(0));
 
@@ -3579,37 +3579,37 @@ void KonqMainWindow::initActions()
   // File menu
 
   QAction * action = actionCollection()->addAction("new_window");
-  action->setIcon(KIcon("window-new"));
+  action->setIcon(QIcon::fromTheme("window-new"));
   action->setText(i18n( "New &Window" ));
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotNewWindow);
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::New));
   action = actionCollection()->addAction("duplicate_window");
-  action->setIcon(KIcon("window-duplicate"));
+  action->setIcon(QIcon::fromTheme("window-duplicate"));
   action->setText(i18n( "&Duplicate Window" ));
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotDuplicateWindow);
   action->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
   action = actionCollection()->addAction("sendURL");
-  action->setIcon(KIcon("mail-message-new"));
+  action->setIcon(QIcon::fromTheme("mail-message-new"));
   action->setText(i18n( "Send &Link Address..." ));
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotSendURL);
   action = actionCollection()->addAction("sendPage");
-  action->setIcon(KIcon("mail-message-new"));
+  action->setIcon(QIcon::fromTheme("mail-message-new"));
   action->setText(i18n( "S&end File..." ));
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotSendFile);
   action = actionCollection()->addAction("open_location");
-  action->setIcon(KIcon("document-open-remote"));
+  action->setIcon(QIcon::fromTheme("document-open-remote"));
   action->setText(i18n( "&Open Location" ));
   action->setShortcut(Qt::ALT+Qt::Key_O);
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotOpenLocation);
 
   action = actionCollection()->addAction("open_file");
-  action->setIcon(KIcon("document-open"));
+  action->setIcon(QIcon::fromTheme("document-open"));
   action->setText(i18n( "&Open File..." ));
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotOpenFile);
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
 #if 0
-  m_paFindFiles = new KToggleAction(KIcon("edit-find"), i18n( "&Find File..." ), this);
+  m_paFindFiles = new KToggleAction(QIcon::fromTheme("edit-find"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, &KToggleAction::triggered, this, &KonqMainWindow::slotToolFind);
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
@@ -3629,7 +3629,7 @@ void KonqMainWindow::initActions()
   connect(m_paLinkView, &KToggleAction::triggered, this, &KonqMainWindow::slotLinkView);
 
   // Go menu
-  m_paUp = new KToolBarPopupAction( KIcon("go-up"), i18n( "&Up" ), this );
+  m_paUp = new KToolBarPopupAction( QIcon::fromTheme("go-up"), i18n( "&Up" ), this );
   actionCollection()->addAction( "go_up", m_paUp );
   m_paUp->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Up) );
   connect( m_paUp, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this,
@@ -3641,7 +3641,7 @@ void KonqMainWindow::initActions()
 
 
   // Trash bin of closed tabs
-  m_paClosedItems = new KToolBarPopupAction( KIcon("edit-undo-closed-tabs"),  i18n( "Closed Items" ), this );
+  m_paClosedItems = new KToolBarPopupAction( QIcon::fromTheme("edit-undo-closed-tabs"),  i18n( "Closed Items" ), this );
   actionCollection()->addAction( "closeditems", m_paClosedItems );
   m_closedItemsGroup = new QActionGroup(m_paClosedItems->menu());
 
@@ -3661,7 +3661,7 @@ void KonqMainWindow::initActions()
   connect( m_paSessions->menu(), SIGNAL(aboutToShow()), this, SLOT(slotSessionsListAboutToShow()) );
   connect(m_sessionsGroup, &QActionGroup::triggered, this, &KonqMainWindow::slotSessionActivated);
 
-  m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), this );
+  m_paBack = new KToolBarPopupAction( QIcon::fromTheme(backForward.first.iconName()), backForward.first.text(), this );
   actionCollection()->addAction( "go_back", m_paBack );
   m_paBack->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Back) );
   connect( m_paBack, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this,
@@ -3669,7 +3669,7 @@ void KonqMainWindow::initActions()
   connect( m_paBack->menu(), SIGNAL(aboutToShow()), this, SLOT(slotBackAboutToShow()) );
   connect( m_paBack->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotBackActivated(QAction*)) );
 
-  m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), this );
+  m_paForward = new KToolBarPopupAction( QIcon::fromTheme(backForward.second.iconName()), backForward.second.text(), this );
   actionCollection()->addAction( "go_forward", m_paForward );
   m_paForward->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Forward) );
   connect( m_paForward, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this,
@@ -3680,7 +3680,7 @@ void KonqMainWindow::initActions()
   m_paHome = actionCollection()->addAction( KStandardAction::Home );
   connect( m_paHome, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this,
 	   SLOT(slotHome(Qt::MouseButtons,Qt::KeyboardModifiers)) );
-  m_paHomePopup = new KToolBarPopupAction ( KIcon("go-home"), i18n("Home"), this );
+  m_paHomePopup = new KToolBarPopupAction ( QIcon::fromTheme("go-home"), i18n("Home"), this );
   actionCollection()->addAction( "go_home_popup", m_paHomePopup );
   connect( m_paHomePopup, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)), this,
            SLOT(slotHome(Qt::MouseButtons,Qt::KeyboardModifiers)) );
@@ -3695,7 +3695,7 @@ void KonqMainWindow::initActions()
   connect(historyAction, &KonqHistoryAction::activated, this, &KonqMainWindow::slotOpenURL);
 
   action = actionCollection()->addAction("go_history");
-  action->setIcon(KIcon("view-history"));
+  action->setIcon(QIcon::fromTheme("view-history"));
   // Ctrl+Shift+H, shortcut from firefox
   // TODO: and Ctrl+H should open the sidebar history module
   action->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_H);
@@ -3729,50 +3729,50 @@ void KonqMainWindow::initActions()
   m_paConfigureExtensions->setText( i18n("Configure Extensions...") );
   connect(m_paConfigureExtensions, &QAction::triggered, this, &KonqMainWindow::slotConfigureExtensions);
   m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
-  m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
+  m_paConfigureSpellChecking->setIcon(QIcon::fromTheme("tools-check-spelling"));
   m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
   connect(m_paConfigureSpellChecking, &QAction::triggered, this, &KonqMainWindow::slotConfigureSpellChecking);
 
   // Window menu
   m_paSplitViewHor = actionCollection()->addAction("splitviewh");
-  m_paSplitViewHor->setIcon( KIcon("view-split-left-right") );
+  m_paSplitViewHor->setIcon( QIcon::fromTheme("view-split-left-right") );
   m_paSplitViewHor->setText( i18n( "Split View &Left/Right" ) );
   connect(m_paSplitViewHor, &QAction::triggered, this, &KonqMainWindow::slotSplitViewHorizontal);
   m_paSplitViewHor->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_L);
   m_paSplitViewVer = actionCollection()->addAction("splitviewv");
-  m_paSplitViewVer->setIcon( KIcon("view-split-top-bottom") );
+  m_paSplitViewVer->setIcon( QIcon::fromTheme("view-split-top-bottom") );
   m_paSplitViewVer->setText( i18n( "Split View &Top/Bottom" ) );
   connect(m_paSplitViewVer, &QAction::triggered, this, &KonqMainWindow::slotSplitViewVertical);
   m_paSplitViewVer->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_T);
   m_paAddTab = actionCollection()->addAction("newtab");
-  m_paAddTab->setIcon( KIcon("tab-new") );
+  m_paAddTab->setIcon( QIcon::fromTheme("tab-new") );
   m_paAddTab->setText( i18n( "&New Tab" ) );
   connect(m_paAddTab, &QAction::triggered, this, &KonqMainWindow::slotAddTab);
   m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::Key_T, Qt::CTRL+Qt::SHIFT+Qt::Key_N));
 
   m_paDuplicateTab = actionCollection()->addAction("duplicatecurrenttab");
-  m_paDuplicateTab->setIcon( KIcon("tab-duplicate") );
+  m_paDuplicateTab->setIcon( QIcon::fromTheme("tab-duplicate") );
   m_paDuplicateTab->setText( i18n( "&Duplicate Current Tab" ) );
   connect(m_paDuplicateTab, &QAction::triggered, this, &KonqMainWindow::slotDuplicateTab);
   m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::Key_D);
   m_paBreakOffTab = actionCollection()->addAction("breakoffcurrenttab");
-  m_paBreakOffTab->setIcon( KIcon("tab-detach") );
+  m_paBreakOffTab->setIcon( QIcon::fromTheme("tab-detach") );
   m_paBreakOffTab->setText( i18n( "Detach Current Tab" ) );
   connect(m_paBreakOffTab, &QAction::triggered, this, &KonqMainWindow::slotBreakOffTab);
   m_paBreakOffTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_B);
   m_paRemoveView = actionCollection()->addAction("removeview");
-  m_paRemoveView->setIcon( KIcon("view-close") );
+  m_paRemoveView->setIcon( QIcon::fromTheme("view-close") );
   m_paRemoveView->setText( i18n( "&Close Active View" ) );
   connect(m_paRemoveView, &QAction::triggered, this, &KonqMainWindow::slotRemoveView);
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_W);
   m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
-  m_paRemoveTab->setIcon( KIcon("tab-close") );
+  m_paRemoveTab->setIcon( QIcon::fromTheme("tab-close") );
   m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
   connect(m_paRemoveTab, &QAction::triggered, this, &KonqMainWindow::slotRemoveTab, Qt::QueuedConnection /* exit Ctrl+W handler before deleting */);
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
   m_paRemoveTab->setAutoRepeat(false);
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
-  m_paRemoveOtherTabs->setIcon( KIcon("tab-close-other") );
+  m_paRemoveOtherTabs->setIcon( QIcon::fromTheme("tab-close-other") );
   m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
   connect(m_paRemoveOtherTabs, &QAction::triggered, this, &KonqMainWindow::slotRemoveOtherTabs);
 
@@ -3795,18 +3795,18 @@ void KonqMainWindow::initActions()
 
   m_paMoveTabLeft = actionCollection()->addAction("tab_move_left");
   m_paMoveTabLeft->setText( i18n("Move Tab Left") );
-  m_paMoveTabLeft->setIcon( KIcon("arrow-left") );
+  m_paMoveTabLeft->setIcon( QIcon::fromTheme("arrow-left") );
   connect(m_paMoveTabLeft, &QAction::triggered, this, &KonqMainWindow::slotMoveTabLeft);
   m_paMoveTabLeft->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Left);
   m_paMoveTabRight = actionCollection()->addAction("tab_move_right");
   m_paMoveTabRight->setText( i18n("Move Tab Right") );
-  m_paMoveTabRight->setIcon( KIcon("arrow-right") );
+  m_paMoveTabRight->setIcon( QIcon::fromTheme("arrow-right") );
   connect(m_paMoveTabRight, &QAction::triggered, this, &KonqMainWindow::slotMoveTabRight);
   m_paMoveTabRight->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Right);
 
 #ifndef NDEBUG
   action = actionCollection()->addAction("dumpdebuginfo");
-  action->setIcon( KIcon("view-dump-debug-info") );
+  action->setIcon( QIcon::fromTheme("view-dump-debug-info") );
   action->setText( i18n( "Dump Debug Info" ) );
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotDumpDebugInfo);
 #endif
@@ -3829,12 +3829,12 @@ void KonqMainWindow::initActions()
   KShortcut reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
   reloadShortcut.setAlternate(Qt::CTRL + Qt::Key_R);
   m_paReload = actionCollection()->addAction("reload");
-  m_paReload->setIcon( KIcon("view-refresh") );
+  m_paReload->setIcon( QIcon::fromTheme("view-refresh") );
   m_paReload->setText( i18n( "&Reload" ) );
   connect(m_paReload, SIGNAL(triggered()), SLOT(slotReload()));
   m_paReload->setShortcuts(reloadShortcut);
   m_paReloadAllTabs = actionCollection()->addAction("reload_all_tabs");
-  m_paReloadAllTabs->setIcon( KIcon("view-refresh-all") );
+  m_paReloadAllTabs->setIcon( QIcon::fromTheme("view-refresh-all") );
   m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, &QAction::triggered, this, &KonqMainWindow::slotReloadAllTabs);
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
@@ -3842,7 +3842,7 @@ void KonqMainWindow::initActions()
   // version already exists.
   m_paForceReload = actionCollection()->addAction("hard_reload");
   // TODO - request new icon? (view-refresh will do for the time being)
-  m_paForceReload->setIcon( KIcon("view-refresh") );
+  m_paForceReload->setIcon( QIcon::fromTheme("view-refresh") );
   m_paForceReload->setText( i18n( "&Force Reload" ) );
   connect(m_paForceReload, &QAction::triggered, this, &KonqMainWindow::slotForceReload);
   m_paForceReload->setShortcuts(KShortcut(Qt::CTRL+Qt::Key_F5, Qt::CTRL+Qt::SHIFT+Qt::Key_R));
@@ -3864,7 +3864,7 @@ void KonqMainWindow::initActions()
   m_paPaste = KStandardAction::paste( 0, 0, this );
   actionCollection()->addAction( "paste", m_paPaste );
   m_paStop = actionCollection()->addAction("stop");
-  m_paStop->setIcon( KIcon("process-stop") );
+  m_paStop->setIcon( QIcon::fromTheme("process-stop") );
   m_paStop->setText( i18n( "&Stop" ) );
   connect(m_paStop, &QAction::triggered, this, &KonqMainWindow::slotStop);
   m_paStop->setShortcut(Qt::Key_Escape);
@@ -3875,7 +3875,7 @@ void KonqMainWindow::initActions()
   logoAction->setDefaultWidget( m_paAnimatedLogo );
   // Set icon and text so that it's easier to figure out what the action is in the toolbar editor
   logoAction->setText( i18n("Throbber") );
-  logoAction->setIcon( KIcon("kde") );
+  logoAction->setIcon( QIcon::fromTheme("kde") );
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );
@@ -3897,7 +3897,7 @@ void KonqMainWindow::initActions()
   m_combo->setWhatsThis( i18n( "<html>Location Bar<br /><br />Enter a web address or search term.</html>" ) );
 
   QAction *clearLocation = actionCollection()->addAction("clear_location");
-  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr") );
+  clearLocation->setIcon( QIcon::fromTheme(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr") );
   clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
   connect( clearLocation, SIGNAL(triggered()),
@@ -3939,7 +3939,7 @@ void KonqMainWindow::initActions()
   connect(action, &QAction::triggered, this, &KonqMainWindow::slotIntro);
 
   QAction *goUrl = actionCollection()->addAction("go_url");
-  goUrl->setIcon( KIcon("go-jump-locationbar") );
+  goUrl->setIcon( QIcon::fromTheme("go-jump-locationbar") );
   goUrl->setText( i18n( "Go" ) );
   connect(goUrl, &QAction::triggered, this, &KonqMainWindow::goURL);
   goUrl->setWhatsThis( i18n( "<html>Go<br /><br />"
@@ -4733,14 +4733,14 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
             tabHandlingActions.append(act);
         }
         QAction * actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
-        actNewWindow->setIcon( KIcon("window-new") );
+        actNewWindow->setIcon( QIcon::fromTheme("window-new") );
         actNewWindow->setText( i18n( "Open in New &Window" ) );
         actNewWindow->setStatusTip( i18n( "Open the document in a new window" ) );
         connect(actNewWindow, &QAction::triggered, this, &KonqMainWindow::slotPopupNewWindow);
         tabHandlingActions.append(actNewWindow);
 
         QAction * actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
-        actNewTab->setIcon( KIcon("tab-new") );
+        actNewTab->setIcon( QIcon::fromTheme("tab-new") );
         actNewTab->setText( i18n( "Open in &New Tab" ) );
         connect(actNewTab, &QAction::triggered, this, &KonqMainWindow::slotPopupNewTab);
         actNewTab->setStatusTip( i18n( "Open the document in a new tab" ) );
@@ -4973,7 +4973,7 @@ void KonqMainWindow::updateOpenWithActions()
        action = new QAction(i18n("Open with %1", (*it)->name()), this);
     else
        action = new QAction((*it)->name(), this);
-    action->setIcon( KIcon( (*it)->icon() ) );
+    action->setIcon( QIcon::fromTheme( (*it)->icon() ) );
 
     connect( action, SIGNAL(triggered()),
              this, SLOT(slotOpenWith()) );
@@ -5041,7 +5041,7 @@ void KonqMainWindow::updateViewModeActions()
             // -> create one action per view mode
             Q_FOREACH(const KServiceAction& serviceAction, actions) {
                 // Create a KToggleAction for each view mode, and plug it into the menu
-                KToggleAction* action = new KToggleAction(KIcon(serviceAction.icon()), serviceAction.text(), this);
+                KToggleAction* action = new KToggleAction(QIcon::fromTheme(serviceAction.icon()), serviceAction.text(), this);
                 //actionCollection()->addAction(desktopEntryName /*not unique!*/, action);
                 action->setObjectName(desktopEntryName + QLatin1String("-viewmode"));
                 action->setData(QVariant(serviceAction.name()));
@@ -5060,7 +5060,7 @@ void KonqMainWindow::updateViewModeActions()
                 serviceText = service->name();
 
             // Create a KToggleAction for this view mode, and plug it into the menu
-            KToggleAction* action = new KToggleAction(KIcon(service->icon()), serviceText, this);
+            KToggleAction* action = new KToggleAction(QIcon::fromTheme(service->icon()), serviceText, this);
             // NOTE: "-viewmode" is appended to desktopEntryName to avoid overwritting existing
             // action, e.g. konsolepart added through ToggleViewGUIClient in the ctor will be
             // overwritten by the view mode konsolepart action added here.  #266517.

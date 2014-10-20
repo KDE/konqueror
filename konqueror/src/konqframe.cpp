@@ -37,7 +37,7 @@
 // KDE
 #include <kactioncollection.h>
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kurl.h>

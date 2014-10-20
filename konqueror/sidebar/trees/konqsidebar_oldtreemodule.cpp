@@ -149,7 +149,7 @@ public:
                 //action->setText(i18nc("@action:inmenu Add folder sidebar module", "Folder"));
                 action->setText(name);
                 action->setData(desktopFile);
-                action->setIcon(KIcon(df.readIcon()));
+                action->setIcon(QIcon::fromTheme(df.readIcon()));
                 actions.append(action);
             }
         }

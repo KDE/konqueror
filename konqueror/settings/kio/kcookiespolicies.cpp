@@ -86,10 +86,10 @@ KCookiesPolicies::KCookiesPolicies (const KComponentData& componentData, QWidget
     columns.append (0);
     mUi.kListViewSearchLine->setSearchColumns (columns);
 
-    mUi.pbNew->setIcon (KIcon ("list-add"));
-    mUi.pbChange->setIcon (KIcon ("edit-rename"));
-    mUi.pbDelete->setIcon (KIcon ("list-remove"));
-    mUi.pbDeleteAll->setIcon (KIcon ("edit-delete"));
+    mUi.pbNew->setIcon (QIcon::fromTheme("list-add"));
+    mUi.pbChange->setIcon (QIcon::fromTheme("edit-rename"));
+    mUi.pbDelete->setIcon (QIcon::fromTheme("list-remove"));
+    mUi.pbDeleteAll->setIcon (QIcon::fromTheme("edit-delete"));
 
     // Connect the main swicth :) Enable/disable cookie support
     connect (mUi.cbEnableCookies, SIGNAL (toggled (bool)),

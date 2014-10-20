@@ -24,7 +24,7 @@
 
 #include <kcolorscheme.h>
 #include <kiconloader.h>
-#include <kicon.h>
+#include <QIcon>
 #include <klocale.h>
 #include <kdebug.h>
 
@@ -76,7 +76,7 @@ KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget* parent) :
 
     d->m_closeButton = new QToolButton(this);
     d->m_closeButton->setAutoRaise(true);
-    d->m_closeButton->setIcon(KIcon("dialog-close"));
+    d->m_closeButton->setIcon(QIcon::fromTheme("dialog-close"));
     d->m_closeButton->setToolTip(i18nc("@info", "Close"));
     d->m_closeButton->setAccessibleName(i18n("Close"));
     d->m_closeButton->hide();

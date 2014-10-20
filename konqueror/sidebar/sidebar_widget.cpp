@@ -40,7 +40,7 @@
 #include <kdesktopfile.h>
 #include <kiconloader.h>
 #include <kicondialog.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kmessagebox.h>
 #include <kinputdialog.h>
 #include <konq_events.h>
@@ -150,7 +150,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
             this, SLOT(slotUrlsDropped(KUrl::List)));
 
     m_menu = new QMenu(this);
-    m_menu->setIcon(KIcon("configure"));
+    m_menu->setIcon(QIcon::fromTheme("configure"));
     m_menu->setTitle(i18n("Configure Sidebar"));
 
     m_addMenu = m_menu->addMenu(i18n("Add New"));
@@ -163,7 +163,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
     m_showConfigButton->setCheckable(true);
     m_menu->addSeparator();
-    m_menu->addAction(KIcon("window-close"), i18n("Close Sidebar"),
+    m_menu->addAction(QIcon::fromTheme("window-close"), i18n("Close Sidebar"),
                       par, SLOT(deleteLater()));
 
     connect(m_menu, SIGNAL(aboutToShow()),
@@ -546,11 +546,11 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
             {
                 KMenu *buttonPopup=new KMenu(this);
                 buttonPopup->addTitle(SmallIcon(currentButtonInfo().iconName), currentButtonInfo().displayName);
-                buttonPopup->addAction(KIcon("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
-                buttonPopup->addAction(KIcon("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
-                buttonPopup->addAction(KIcon("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
+                buttonPopup->addAction(QIcon::fromTheme("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
+                buttonPopup->addAction(QIcon::fromTheme("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
+                buttonPopup->addAction(QIcon::fromTheme("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
                 buttonPopup->addSeparator();
-                buttonPopup->addAction(KIcon("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
+                buttonPopup->addAction(QIcon::fromTheme("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
                 buttonPopup->addSeparator();
                 buttonPopup->addMenu(m_menu);
                 buttonPopup->exec(QCursor::pos());

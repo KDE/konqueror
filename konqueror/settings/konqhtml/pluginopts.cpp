@@ -29,7 +29,7 @@
 // KDE
 #include <kprocess.h>
 #include <kapplication.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kdebug.h>
 #include <kfiledialog.h>
 #include <kiconloader.h>
@@ -561,7 +561,7 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
     QTreeWidgetItem *root = new QTreeWidgetItem( m_widget.pluginList, QStringList() << i18n("Netscape Plugins") );
     root->setFlags( Qt::ItemIsEnabled );
     root->setExpanded( true );
-    root->setIcon(0, KIcon("netscape"));
+    root->setIcon(0, QIcon::fromTheme("netscape"));
 
     // read in cache
     QString line, plugin;

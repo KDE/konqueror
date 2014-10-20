@@ -35,7 +35,7 @@
 #include <klocale.h>
 #include <kdialog.h>
 #include <kurl.h>
-#include <kicon.h>
+#include <QIcon>
 #include <ktempdir.h>
 #include <ksqueezedtextlabel.h>
 
@@ -118,7 +118,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
     hLayout->setSpacing(-1); // use default spacing
     mainLayout->addLayout(hLayout,5);
 
-    KIcon icon (QLatin1String("dialog-warning"));
+    QIcon icon (QLatin1String("dialog-warning"));
     if (!icon.isNull()) {
         QLabel *iconLabel = new QLabel(mainWidget);
         QStyleOption option;

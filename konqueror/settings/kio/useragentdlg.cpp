@@ -58,10 +58,10 @@ UserAgentDlg::UserAgentDlg (QWidget* parent, const QVariantList&)
       m_config (0)
 {
     ui.setupUi (this);
-    ui.newButton->setIcon (KIcon ("list-add"));
-    ui.changeButton->setIcon (KIcon ("edit-rename"));
-    ui.deleteButton->setIcon (KIcon ("list-remove"));
-    ui.deleteAllButton->setIcon (KIcon ("edit-delete"));
+    ui.newButton->setIcon (QIcon::fromTheme("list-add"));
+    ui.changeButton->setIcon (QIcon::fromTheme("edit-rename"));
+    ui.deleteButton->setIcon (QIcon::fromTheme("list-remove"));
+    ui.deleteAllButton->setIcon (QIcon::fromTheme("edit-delete"));
 }
 
 UserAgentDlg::~UserAgentDlg()

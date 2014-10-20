@@ -34,7 +34,7 @@
 #include <kactioncollection.h>
 #include <kaction.h>
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -58,12 +58,12 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(m_treeView); // make shortcuts work
     QAction *action = m_collection->addAction("open_new");
-    action->setIcon(KIcon("window-new"));
+    action->setIcon(QIcon::fromTheme("window-new"));
     action->setText(i18n("Open in New &Window"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewWindow);
 
     action = m_collection->addAction("open_tab");
-    action->setIcon(KIcon("tab-new"));
+    action->setIcon(QIcon::fromTheme("tab-new"));
     action->setText(i18n("Open in New Tab"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewTab);
 
@@ -72,19 +72,19 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotCopyLinkLocation);
 
     action = m_collection->addAction("remove");
-    action->setIcon(KIcon("edit-delete"));
+    action->setIcon(QIcon::fromTheme("edit-delete"));
     action->setText(i18n("&Remove Entry"));
     action->setShortcut(Qt::Key_Delete); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotRemoveEntry);
 
     action = m_collection->addAction("clear");
-    action->setIcon(KIcon("edit-clear-history"));
+    action->setIcon(QIcon::fromTheme("edit-clear-history"));
     action->setText(i18n("C&lear History"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotClearHistory);
 
     action = m_collection->addAction("preferences");
-    action->setIcon(KIcon("configure"));
+    action->setIcon(QIcon::fromTheme("configure"));
     action->setText(i18n("&Preferences..."));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotPreferences);
 
@@ -165,7 +165,7 @@ void KonqHistoryView::slotRemoveEntry()
 void KonqHistoryView::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon(KIcon("edit-clear-history"));
+    guiitem.setIcon(QIcon::fromTheme("edit-clear-history"));
 
     if (KMessageBox::warningContinueCancel(this,
             i18n("Do you really want to clear the entire history?"),

@@ -36,7 +36,7 @@
 #include <ktempdir.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kdirlister.h>
 #include <kdirmodel.h>
 #include <kstandardguiitem.h>
@@ -80,10 +80,10 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     setDefaultButton( Close );
     
     setButtonGuiItem( BTN_OPEN, KGuiItem( i18n( "&Open" ), "document-open" ) );
-    d->m_pSaveCurrentButton->setIcon(KIcon("document-save"));
-    d->m_pRenameButton->setIcon(KIcon("edit-rename"));
-    d->m_pDeleteButton->setIcon(KIcon("edit-delete"));
-    d->m_pNewButton->setIcon(KIcon("document-new"));
+    d->m_pSaveCurrentButton->setIcon(QIcon::fromTheme("document-save"));
+    d->m_pRenameButton->setIcon(QIcon::fromTheme("edit-rename"));
+    d->m_pDeleteButton->setIcon(QIcon::fromTheme("edit-delete"));
+    d->m_pNewButton->setIcon(QIcon::fromTheme("document-new"));
     
     QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
     

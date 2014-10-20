@@ -41,7 +41,7 @@
 #include <kdesktopfile.h>
 #include <kglobalsettings.h>
 #include <klibrary.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <kinputdialog.h>
 #include <kio/netaccess.h>
@@ -200,40 +200,40 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(this);
     m_collection->setObjectName( QLatin1String("bookmark actions" ));
-    QAction *action = new KAction(KIcon("folder-new"), i18n("&Create New Folder..."), this);
+    QAction *action = new KAction(QIcon::fromTheme("folder-new"), i18n("&Create New Folder..."), this);
     m_collection->addAction("create_folder", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCreateFolder()));
 
-    action = new KAction(KIcon("edit-delete"), i18n("Delete Folder"), this);
+    action = new KAction(QIcon::fromTheme("edit-delete"), i18n("Delete Folder"), this);
     m_collection->addAction("delete", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
 
-    action = new KAction(KIcon("user-trash"), i18n("Move to Trash"), this);
+    action = new KAction(QIcon::fromTheme("user-trash"), i18n("Move to Trash"), this);
     m_collection->addAction("trash", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotTrash()));
 
     action = new KAction(i18n("Rename"), this);
-    action->setIcon(KIcon("edit-rename"));
+    action->setIcon(QIcon::fromTheme("edit-rename"));
     m_collection->addAction("rename", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotRename()));
 
-    action = new KAction(KIcon("edit-delete"), i18n("Delete Link"), this);
+    action = new KAction(QIcon::fromTheme("edit-delete"), i18n("Delete Link"), this);
     m_collection->addAction("delete_link", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
 
-    action = new KAction(KIcon("document-properties"), i18n("Properties"), this);
+    action = new KAction(QIcon::fromTheme("document-properties"), i18n("Properties"), this);
     m_collection->addAction("item_properties", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotProperties()));
 
-    action = new KAction(KIcon("window-new"), i18n("Open in New Window"), this);
+    action = new KAction(QIcon::fromTheme("window-new"), i18n("Open in New Window"), this);
     m_collection->addAction("open_window", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenNewWindow()));
 
-    action = new KAction(KIcon("tab-new"), i18n("Open in New Tab"), this);
+    action = new KAction(QIcon::fromTheme("tab-new"), i18n("Open in New Tab"), this);
     m_collection->addAction("open_tab", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenTab()));
 
-    action = new KAction(KIcon("edit-copy"), i18n("Copy Link Address"), this);
+    action = new KAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link Address"), this);
     m_collection->addAction("copy_location", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCopyLocation()));
 }

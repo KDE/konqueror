@@ -21,7 +21,7 @@
 #include "places_module.h"
 
 #include <kfileplacesmodel.h>
-#include <kicon.h>
+#include <QIcon>
 #include <klocale.h>
 #include <kpluginfactory.h>
 
@@ -117,7 +117,7 @@ public:
         Q_UNUSED(unused);
         QAction* action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "Places Sidebar Module"));
-        action->setIcon(KIcon("folder-favorites"));
+        action->setIcon(QIcon::fromTheme("folder-favorites"));
         return QList<QAction *>() << action;
     }
 

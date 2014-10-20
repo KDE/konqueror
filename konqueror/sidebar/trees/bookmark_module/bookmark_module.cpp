@@ -37,7 +37,7 @@
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconloader.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
@@ -71,35 +71,35 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
 
     m_collection = new KActionCollection( this );
     QAction *action = m_collection->addAction("create_folder");
-    action->setIcon( KIcon("folder-new") );
+    action->setIcon( QIcon::fromTheme("folder-new") );
     action->setText( i18n("&Create New Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCreateFolder()));
     action = m_collection->addAction("delete_folder");
-    action->setIcon( KIcon("edit-delete") );
+    action->setIcon( QIcon::fromTheme("edit-delete") );
     action->setText( i18n("Delete Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
     action = m_collection->addAction("delete_bookmark");
-    action->setIcon( KIcon("edit-delete") );
+    action->setIcon( QIcon::fromTheme("edit-delete") );
     action->setText( i18n("Delete Bookmark") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
     action = m_collection->addAction("item_properties");
-    action->setIcon( KIcon("document-properties") );
+    action->setIcon( QIcon::fromTheme("document-properties") );
     action->setText( i18n("Properties") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotProperties()));
     action = m_collection->addAction("open_window");
-    action->setIcon( KIcon("window-new") );
+    action->setIcon( QIcon::fromTheme("window-new") );
     action->setText( i18n("Open in New Window") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenNewWindow()));
     action = m_collection->addAction("open_tab");
-    action->setIcon( KIcon("tab-new") );
+    action->setIcon( QIcon::fromTheme("tab-new") );
     action->setText( i18n("Open in New Tab") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenTab()));
     action = m_collection->addAction("folder_open_tabs");
-    action->setIcon( KIcon("tab-new") );
+    action->setIcon( QIcon::fromTheme("tab-new") );
     action->setText( i18n("Open Folder in Tabs") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenTab()));
     action = m_collection->addAction("copy_location");
-    action->setIcon( KIcon("edit-copy") );
+    action->setIcon( QIcon::fromTheme("edit-copy") );
     action->setText( i18n("Copy Link Address") );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCopyLocation()));
 

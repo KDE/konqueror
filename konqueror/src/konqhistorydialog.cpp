@@ -36,7 +36,7 @@
 #include <kactioncollection.h>
 #include <kguiitem.h>
 #include <kglobal.h>
-#include <kicon.h>
+#include <QIcon>
 #include <klocale.h>
 #include <klineedit.h>
 #include <ktoggleaction.h>
@@ -61,7 +61,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QToolButton *sortButton = new QToolButton(toolBar);
     sortButton->setText(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
-    sortButton->setIcon(KIcon("view-sort-ascending"));
+    sortButton->setIcon(QIcon::fromTheme("view-sort-ascending"));
     sortButton->setPopupMode(QToolButton::InstantPopup);
     sortButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QMenu *sortMenu = new QMenu(sortButton);

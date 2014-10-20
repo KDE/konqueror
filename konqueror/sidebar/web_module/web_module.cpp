@@ -66,12 +66,12 @@ KHTMLSideBar::KHTMLSideBar()
     _menu = new KMenu(widget());
 
     KAction* reloadAction = new KAction(i18n("&Reload"), this);
-    reloadAction->setIcon(KIcon("view-refresh"));
+    reloadAction->setIcon(QIcon::fromTheme("view-refresh"));
     _menu->addAction(reloadAction);
     connect(reloadAction, SIGNAL(triggered()), this, SIGNAL(reload()));
 
     KAction* autoReloadAction = new KAction(i18n("Set &Automatic Reload"), this);
-    autoReloadAction->setIcon(KIcon("view-refresh"));
+    autoReloadAction->setIcon(QIcon::fromTheme("view-refresh"));
     _menu->addAction(autoReloadAction);
     connect(autoReloadAction, SIGNAL(triggered()), this, SIGNAL(setAutoReload()));
 
@@ -278,7 +278,7 @@ public:
         Q_UNUSED(existingModules);
         QAction* action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "Web Sidebar Module"));
-        action->setIcon(KIcon("internet-web-browser"));
+        action->setIcon(QIcon::fromTheme("internet-web-browser"));
         return QList<QAction *>() << action;
     }
 

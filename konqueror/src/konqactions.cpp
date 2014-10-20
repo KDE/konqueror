@@ -24,7 +24,7 @@
 #include "konqpixmapprovider.h"
 
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kmenu.h>
 #include <kglobal.h>
 #include <kaction.h>
@@ -59,7 +59,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
         text.replace( '&', "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
-        KAction* action = new KAction(KIcon(iconName), text, popup);
+        KAction* action = new KAction(QIcon::fromTheme(iconName), text, popup);
         action->setData(index - historyIndex);
         //kDebug() << text << index - historyIndex;
         popup->addAction(action);
@@ -76,7 +76,7 @@ static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 						  QObject* parent )
-    : KActionMenu( KIcon("go-jump"), text, parent ),
+    : KActionMenu( QIcon::fromTheme("go-jump"), text, parent ),
       m_parsingDone(false)
 {
     setDelayed( false );
@@ -177,7 +177,7 @@ static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
                                                   entry.typedUrl) :
                          entry.title;
     KAction* action = new KAction(
-        KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
+        QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(entry.url)),
         text, menu);
     action->setData(entry.url);
     menu->addAction(action);
@@ -206,7 +206,7 @@ void KonqMostOftenURLSAction::slotActivated(QAction* action)
 ///////////////////////////////
 
 KonqHistoryAction::KonqHistoryAction(const QString& text, QObject* parent)
-    : KActionMenu(KIcon("go-jump"), text, parent)
+    : KActionMenu(QIcon::fromTheme("go-jump"), text, parent)
 {
     setDelayed(false);
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
