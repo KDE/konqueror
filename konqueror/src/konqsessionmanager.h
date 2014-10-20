@@ -30,7 +30,6 @@
 #include <kdialog.h>
 #include <konqprivate_export.h>
 
-class QDBusMessage;
 class KonqMainWindow;
 class QTreeWidgetItem;
 

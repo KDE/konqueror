@@ -27,7 +27,6 @@
 
 class KDialog;
 class CSSConfigWidget;
-class KHTMLPart;
 
 class CSSCustomDialog: public QWidget, public Ui::CSSCustomDialog
 {

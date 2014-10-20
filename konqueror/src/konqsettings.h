@@ -25,7 +25,6 @@
 #include <QString>
 #include <kconfig.h>
 
-class KConfigGroup;
 
 // TODO rename this file to konqfmsettings.h, or rename the class to KonqEmbedSettings in a konqembedsettings.h header
 

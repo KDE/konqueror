@@ -35,11 +35,9 @@
 #include <kurl.h>
 #include <ksharedconfig.h>
 
-class KMainWindow;
 class KonqFrameTabs;
 class QString;
 class KComponentData;
-class QTimer;
 class KConfig;
 class KConfigGroup;
 class KonqMainWindow;

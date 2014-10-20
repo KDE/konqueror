@@ -32,11 +32,9 @@
 class KonqMultiTabBar;
 class KonqSidebarPlugin;
 class QMenu;
-class KMultiTabBar;
 class QHBoxLayout;
 class QSplitter;
 class QStringList;
-class KMenu;
 
 class ButtonInfo
 {

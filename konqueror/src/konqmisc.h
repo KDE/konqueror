@@ -30,8 +30,6 @@
 
 class KonqMainWindow;
 class KonqView;
-class KStandardDirs;
-class KSharedConfig;
 
 namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWindowCreator, and KonqGlobal?
 {

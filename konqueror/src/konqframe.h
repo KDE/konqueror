@@ -38,18 +38,15 @@ class KonqFrameStatusBar;
 class KonqFrameVisitor;
 class QPixmap;
 class QVBoxLayout;
-class QProgressBar;
 class KUrl;
 
 class KonqView;
-class KonqViewManager;
 class KonqFrameBase;
 class KonqFrame;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KConfig;
 class KSeparator;
-class KSqueezedTextLabel;
 
 namespace KParts
 {

@@ -27,7 +27,6 @@
 #include <QString>
 
 class KonqViewManager;
-class QListWidgetItem;
 
 /**
  * This is the konqueror sesions administration dialog, which allows the user

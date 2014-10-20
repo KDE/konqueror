@@ -39,6 +39,7 @@
 #include <klistwidget.h>
 #include <kpushbutton.h>
 #include <kglobal.h>
+#include <QListWidgetItem>
 
 class KonqProfileDlg::KonqProfileItem : public QListWidgetItem
 {

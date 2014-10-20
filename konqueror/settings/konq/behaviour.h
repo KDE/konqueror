@@ -27,7 +27,6 @@
 class QCheckBox;
 class QLabel;
 
-class KUrlRequester;
 
 class KBehaviourOptions : public KCModule
 {

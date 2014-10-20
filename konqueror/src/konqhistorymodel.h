@@ -24,7 +24,6 @@
 
 #include "konq_historyentry.h"
 
-class KonqHistoryManager;
 namespace KHM
 {
 struct Entry;

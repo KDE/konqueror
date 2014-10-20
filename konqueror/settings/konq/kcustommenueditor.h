@@ -22,7 +22,6 @@
 #include <kdialog.h>
 
 class K3ListView;
-class KConfigBase;
 
  /*
   * Dialog for editing custom menus.
