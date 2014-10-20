@@ -19,10 +19,10 @@
 #include <KPluginLoader>
 #include <KFontComboBox>
 #include <KTabWidget>
+#include <QFontDatabase>
 
 #if defined Q_WS_X11 && !defined K_WS_QTONLY
 #include <X11/Xlib.h>
-#include <QFontDatabase>
 #endif
 
 #include "appearance.moc"
