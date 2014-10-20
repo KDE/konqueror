@@ -21,7 +21,6 @@
 #include <qtest_kde.h>
 #include <konqhistorymanager.h>
 #include <kio/netaccess.h>
-#include <QDateTime>
 
 #include "historymanagertest.moc"
 

@@ -25,7 +25,7 @@
 #include "konqsettingsxt.h"
 #include <kglobal.h>
 #include <QApplication>
-
+#include <QMouseEvent>
 class KonqRmbEventFilterSingleton
 {
 public:

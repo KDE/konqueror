@@ -25,8 +25,6 @@
 #include "ui_konqnewsessiondlg_base.h"
 
 #include <QtCore/QDir>
-#include <QFileSystemModel>
-#include <QListWidgetItem>
 #include <QtCore/QFileInfo>
 #include <QtCore/QDirIterator>
 

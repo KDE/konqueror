@@ -23,7 +23,6 @@
 #include "jsopts.h"
 
 // Qt
-#include <QLayout>
 #include <QTreeWidget>
 
 // KDE

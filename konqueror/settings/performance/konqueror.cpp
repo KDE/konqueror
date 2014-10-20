@@ -20,8 +20,6 @@
 
 #include <kconfig.h>
 #include <QtDBus/QtDBus>
-#include <QRadioButton>
-#include <QLabel>
 #include <QCheckBox>
 #include <klocale.h>
 

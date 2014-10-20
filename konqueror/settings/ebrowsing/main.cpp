@@ -21,7 +21,6 @@
 
 // Qt
 #include <QTabWidget>
-#include <QBoxLayout>
 
 // KDE
 #include <kurifilter.h>

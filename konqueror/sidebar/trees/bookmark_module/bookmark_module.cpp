@@ -25,7 +25,6 @@
 #include <QClipboard>
 #include <QCursor>
 #include <QGridLayout>
-#include <QKeyEvent>
 #include <QLabel>
 #include <QMenu>
 

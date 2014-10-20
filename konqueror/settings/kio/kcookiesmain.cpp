@@ -15,7 +15,6 @@
 #include "kcookiesmanagement.h"
 
 // Qt
-#include <QLayout>
 #include <QTabWidget>
 #include <QtDBus/QtDBus>
 

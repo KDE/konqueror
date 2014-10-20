@@ -20,12 +20,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "bookmarks.h"
 
 // Qt
-#include <QBoxLayout>
 #include <QCheckBox>
-#include <QLabel>
-#include <QLayout>
 #include <QPushButton>
-#include <QRadioButton>
 
 // KDE
 #include <kconfig.h>

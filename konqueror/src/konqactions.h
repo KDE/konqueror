@@ -23,7 +23,6 @@
 #include <ktoolbarpopupaction.h>
 #include <konqhistorymanager.h>
 #include <kactionmenu.h>
-#include <QWidget>
 #include <QtCore/QList>
 
 struct HistoryEntry;

@@ -25,10 +25,7 @@
 
 // Qt
 #include <QCheckBox>
-#include <QComboBox>
-#include <QLayout>
 #include <QPushButton>
-#include <QRadioButton>
 
 // KDE
 #include <kapplication.h>

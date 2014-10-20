@@ -23,10 +23,6 @@
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanager.h"
 #include <QAction>
-#include <QByteArray>
-#include <QFile>
-#include <QTimer>
-#include <QVariant>
 #include <kio/fileundomanager.h>
 #include <kdebug.h>
 #include <klocale.h>

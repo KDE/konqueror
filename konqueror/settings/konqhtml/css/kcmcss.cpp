@@ -4,11 +4,6 @@
 
 // Qt
 #include <QCheckBox>
-#include <QComboBox>
-#include <QLayout>
-#include <QRadioButton>
-#include <QTextBrowser>
-#include <QBoxLayout>
 
 // KDE
 #include <kapplication.h>

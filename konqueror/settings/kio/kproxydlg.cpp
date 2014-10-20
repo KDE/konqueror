@@ -33,8 +33,6 @@
 #include <kurifilter.h>
 
 // Qt
-#include <QLabel>
-#include <QRadioButton>
 #include <QLineEdit>
 #include <QSpinBox>
 

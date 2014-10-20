@@ -25,8 +25,6 @@
 #include <QCheckBox>
 #include <QtCore/QDir>
 #include <kvbox.h>
-#include <QLabel>
-#include <QLineEdit>
 #include <QListWidgetItem>
 
 #include <kdebug.h>

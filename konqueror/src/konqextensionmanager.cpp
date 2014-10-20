@@ -18,7 +18,6 @@
 #include "konqextensionmanager.h"
 
 // Qt
-#include <QLayout>
 #include <QtCore/QTimer>
 
 // KDE

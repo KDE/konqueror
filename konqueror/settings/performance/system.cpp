@@ -21,7 +21,6 @@
 #include <kconfig.h>
 
 #include <QCheckBox>
-#include <QLabel>
 #include <klocale.h>
 
 namespace KCMPerformance

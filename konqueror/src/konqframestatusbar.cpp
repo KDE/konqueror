@@ -32,6 +32,7 @@
 #include <kactioncollection.h>
 #include <QAction>
 #include <QIcon>
+#include <QMouseEvent>
 
 static QPixmap statusBarIcon(const char* name)
 {

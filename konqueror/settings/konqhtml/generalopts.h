@@ -10,7 +10,6 @@
 #define GENERALOPTS_H
 
 #include <QCheckBox>
-#include <QComboBox>
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>

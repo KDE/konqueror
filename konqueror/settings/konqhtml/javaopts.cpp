@@ -25,7 +25,6 @@
 // Qt
 #include <QFormLayout>
 #include <QGroupBox>
-#include <QLabel>
 #include <QTreeWidget>
 
 // KDE

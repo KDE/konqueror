@@ -23,11 +23,8 @@
 #include "konqbookmarkbar.h"
 
 #include <QApplication>
-#include <QDebug>
 #include <QDropEvent>
 #include <QEvent>
-#include <QFile>
-#include <QRegExp>
 #include <QMenu>
 
 #include <ktoolbar.h>

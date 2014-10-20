@@ -25,7 +25,6 @@
 // Qt
 #include <QButtonGroup>
 #include <QLabel>
-#include <QLayout>
 #include <QRadioButton>
 #include <QGridLayout>
 

@@ -24,7 +24,6 @@
 // Qt
 #include <QtCore/QTextCodec>
 #include <QLabel>
-#include <QLayout>
 
 // KDE
 #include <kcharsets.h>

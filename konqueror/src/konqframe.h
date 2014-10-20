@@ -23,12 +23,9 @@
 #include <KParts/ReadOnlyPart> // for the inline QPointer usage
 
 #include <QtCore/QPointer>
-#include <QColor>
 #include <QWidget>
 #include <QCheckBox>
-#include <QLabel>
 #include <QPixmap>
-#include <QKeyEvent>
 #include <QtCore/QEvent>
 #include <QtCore/QList>
 

@@ -1,9 +1,6 @@
 #include "kcmcss.h"
 
-#include <QLabel>
-#include <QLayout>
 #include <QFormLayout>
-#include <QLineEdit>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 #include <QGroupBox>

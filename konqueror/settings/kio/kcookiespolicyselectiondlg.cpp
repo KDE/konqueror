@@ -22,8 +22,6 @@
 // Qt
 #include <QPushButton>
 #include <QWhatsThis>
-#include <QLayout>
-#include <QLabel>
 #include <QValidator>
 
 // KDE

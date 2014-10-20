@@ -24,13 +24,8 @@
 
 // Qt
 #include <QtCore/QTimer>
-#include <QToolButton>
-#include <QBoxLayout>
 #include <QtCore/QList>
-#include <QApplication>
-#include <QLayout>
 #include <QPushButton>
-#include <QLabel>
 #include <QtDBus/QtDBus>
 
 // KDE

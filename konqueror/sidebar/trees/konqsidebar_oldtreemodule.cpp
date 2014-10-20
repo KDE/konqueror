@@ -14,7 +14,6 @@
 
 #include <QAction>
 #include <QClipboard>
-#include <QToolButton>
 #include <QApplication>
 
 KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,

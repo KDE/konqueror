@@ -32,7 +32,6 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QtCore/QEvent>
-#include <QFrame>
 
 #include <QAction>
 #include <kactioncollection.h>

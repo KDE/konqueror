@@ -31,12 +31,8 @@
 #include "ksaveioconfig.h"
 
 // Qt
-#include <QLayout>
 #include <QCheckBox>
 #include <QPushButton>
-#include <QRadioButton>
-#include <QToolButton>
-#include <QBoxLayout>
 #include <QtDBus/QtDBus>
 
 // KDE

@@ -14,7 +14,6 @@
 #include <QGroupBox>
 #include <QFormLayout>
 #include <QVBoxLayout>
-#include <QLabel>
 #include <QPushButton>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>

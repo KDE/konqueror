@@ -22,9 +22,6 @@
 
 // Qt
 #include <QtCore/QFile>
-#include <QLabel>
-#include <QLayout>
-#include <QTabWidget>
 
 // KDE
 #include <kcmoduleloader.h>

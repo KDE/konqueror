@@ -9,7 +9,6 @@
 #include "policydlg.h"
 
 // Qt
-#include <QLayout>
 #include <QLabel>
 #include <QComboBox>
 #include <QPushButton>

@@ -25,7 +25,6 @@
 #include <QtDBus/QtDBus>
 #include <QCheckBox>
 #include <QGroupBox>
-#include <QLayout>
 #include <QLabel>
 
 // KDE

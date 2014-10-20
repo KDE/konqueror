@@ -9,8 +9,6 @@
 #define HTMLOPTS_H
 
 #include <QCheckBox>
-#include <QLineEdit>
-#include <QComboBox>
 
 //-----------------------------------------------------------------------------
 // The "Misc Options" Tab for the HTML view contains :

@@ -22,7 +22,6 @@
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
 #include <QLabel>
-#include <QLayout>
 #include <QSlider>
 #include <QTreeWidget>
 

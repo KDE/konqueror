@@ -26,7 +26,6 @@
 #include <QMenu>
 #include <QDrag>
 #include <QToolButton>
-#include <QStyle>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>

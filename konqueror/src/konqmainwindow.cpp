@@ -80,7 +80,6 @@
 #include <QtCore/QFile>
 #include <QClipboard>
 #include <QtCore/QArgument>
-#include <QLayout>
 #include <QStackedWidget>
 #include <QtCore/QFileInfo>
 #ifdef Q_WS_X11

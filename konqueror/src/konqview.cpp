@@ -47,12 +47,9 @@
 #include <QtCore/QObject>
 #include <QtCore/QByteRef>
 #include <QtCore/QEvent>
-#include <QKeyEvent>
 #include <QtCore/QFile>
-#include <QScrollArea>
-
+#include <QDropEvent>
 #ifdef KActivities_FOUND
-#include <KActivities/ResourceInstance>
 #endif
 
 #include <KJobWidgets/KJobWidgets>

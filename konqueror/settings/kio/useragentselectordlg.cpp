@@ -23,10 +23,6 @@
 #include "useragentinfo.h"
 
 // Qt
-#include <QBoxLayout>
-#include <QKeyEvent>
-#include <QLabel>
-#include <QLayout>
 #include <QPushButton>
 #include <QValidator>
 #include <QWidget>

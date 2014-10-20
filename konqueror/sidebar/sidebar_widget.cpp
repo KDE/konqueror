@@ -24,10 +24,8 @@
 #include <limits.h>
 
 // Qt
-#include <QDebug>
 #include <QtCore/QDir>
 #include <QPushButton>
-#include <QLayout>
 #include <QSplitter>
 #include <QtCore/QStringList>
 #include <QMenu>

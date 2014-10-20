@@ -3,10 +3,8 @@
 #include "netpref.h"
 
 // Qt
-#include <QLayout>
 #include <QCheckBox>
 #include <QGroupBox>
-#include <QBoxLayout>
 #include <QFormLayout>
 
 // KDE

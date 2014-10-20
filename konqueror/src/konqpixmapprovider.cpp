@@ -19,8 +19,6 @@
 
 #include "konqpixmapprovider.h"
 
-#include <QBitmap>
-#include <QPainter>
 
 #include <kiconloader.h>
 #include <kmimetype.h>

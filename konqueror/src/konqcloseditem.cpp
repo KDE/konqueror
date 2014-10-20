@@ -20,7 +20,6 @@
 
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanager.h"
-#include <QFile>
 #include <QFont>
 #include <QFontMetrics>
 #include <QPainter>

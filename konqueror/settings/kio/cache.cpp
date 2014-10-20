@@ -23,12 +23,8 @@
 #include "cache.h"
 
 // Qt
-#include <QBoxLayout>
 #include <QCheckBox>
-#include <QLabel>
-#include <QLayout>
 #include <QPushButton>
-#include <QRadioButton>
 
 // KDE
 #include <kprocess.h>

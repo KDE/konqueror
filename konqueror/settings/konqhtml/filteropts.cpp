@@ -25,7 +25,6 @@
 #include <QtDBus/QtDBus>
 #include <QCheckBox>
 #include <QLabel>
-#include <QLayout>
 #include <QTreeView>
 #include <QWhatsThis>
 

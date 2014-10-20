@@ -21,7 +21,6 @@
 #include <konqmisc.h>
 #include "../konqsettingsxt.h"
 #include <QToolBar>
-#include <QLayout>
 #include <qtestmouse.h>
 
 #include <konqframe.h>

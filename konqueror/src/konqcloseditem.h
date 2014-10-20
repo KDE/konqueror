@@ -25,7 +25,6 @@
 #include <kconfiggroup.h>
 #include <QtDBus/QtDBus>
 #include <QString>
-#include <QImage>
 
 class KConfig;
 

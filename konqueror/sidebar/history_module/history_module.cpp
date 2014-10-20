@@ -24,7 +24,6 @@
 
 #include <QAction>
 #include <QApplication>
-#include <QDebug>
 #include <QTreeView>
 
 #include <QIcon>

@@ -20,7 +20,6 @@
 #include <QApplication>
 #include <QLabel>
 #include <QtCore/QTimer>
-#include <QSplitter>
 
 SCWMainWindow::SCWMainWindow( QWidget* parent )
     : QMainWindow( parent )

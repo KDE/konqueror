@@ -31,8 +31,6 @@
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <QtCore/QFile>
-#include <QApplication>
-#include <QWidget>
 
 #ifdef Q_WS_X11
 #include <QX11Info>

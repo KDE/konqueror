@@ -30,7 +30,6 @@
 
 // Qt
 #include <QTabWidget>
-#include <QLayout>
 #include <QtDBus/QtDBus>
 
 // KDE
