@@ -30,7 +30,7 @@
 #include <KLocalizedString>
 #include <kpluginfactory.h>
 #include <kparts/browserextension.h>
-#include <konq_nameandurlinputdialog.h>
+#include <knameandurlinputdialog.h>
 #include <kstandarddirs.h>
 #include <khbox.h>
 #include <knuminput.h>
@@ -298,7 +298,7 @@ public:
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
 
-        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), QUrl(), parentWidget);
+        KNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), QUrl(), parentWidget);
         dlg.setCaption(i18nc("@title:window", "Add web sidebar module"));
         if (!dlg.exec())
             return false;
