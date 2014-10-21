@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 project(LibKonq)
+add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
 # ECM setup
 find_package(ECM 0.0.14 CONFIG REQUIRED)
