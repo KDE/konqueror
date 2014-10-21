@@ -136,13 +136,6 @@ private:
     // internal, for doDrop
     void setDropInfo( DropInfo * info ) { m_info = info; }
 
-    struct KIOPasteInfo // KDE4: remove and use DropInfo instead or a QPoint member
-    {
-        // Used to position the files at the position where RMB/Paste was used [mostly on the desktop]
-        QPoint mousePos;
-    };
-    void setPasteInfo( KIOPasteInfo * info ) { m_pasteInfo = info; }
-
 protected Q_SLOTS:
 
     void slotResult( KJob * job );
@@ -158,7 +151,6 @@ private:
     QUrl m_destUrl;
     // for doDrop
     DropInfo * m_info;
-    KIOPasteInfo * m_pasteInfo;
 };
 
 #endif
