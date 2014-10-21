@@ -95,14 +95,6 @@ public:
     static KonqOperations *doPaste(QWidget * parent, const QUrl & destUrl);
 
     /**
-     * Returns the state of the paste action:
-     * first is whether the action should be enabled
-     * second is the text for the action
-     * @since 4.3
-     */
-    static QPair<bool, QString> pasteInfo(const QUrl &targetUrl);
-
-    /**
      * Returns the list of dropped URL's.
      *
      * You can call this method on the object returned by KonqOperations::doDrop(),
