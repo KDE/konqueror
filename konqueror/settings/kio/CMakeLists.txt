@@ -1,4 +1,6 @@
 
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmkio\")
+
 add_subdirectory( uasproviders )
 
 ########### next target ###############

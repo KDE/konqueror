@@ -1,3 +1,6 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmkurifilt\")
+
+
 set(kcm_kurifilt_PART_SRCS main.cpp )
 
 add_library(kcm_kurifilt MODULE ${kcm_kurifilt_PART_SRCS})

@@ -1,3 +1,4 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmkonq\")
 set(kcm_konq_PART_SRCS
    behaviour.cpp
    konqkcmfactory.cpp

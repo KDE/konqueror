@@ -1,4 +1,4 @@
-
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmperformance\")
 
 
 ########### next target ###############
