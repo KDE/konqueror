@@ -36,15 +36,6 @@ class LIBKONQ_EXPORT KonqCopyToMenu
 {
 public:
     /**
-     * Creates a KonqCopyToMenu instance.
-     * Note that this instance must stay alive for at least as long as the popupmenu;
-     * it has the slots for the actions created by addActionsTo.
-     * @deprecated
-     * KDE5: remove, so that passing a parent widget is mandatory
-     */
-    KonqCopyToMenu();
-
-    /**
      * Creates a KonqCopyToMenu instance, with a parent widget for the file dialog
      * and message boxes.
      * Note that this instance (and the widget) must stay alive for at least as

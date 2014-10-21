@@ -47,11 +47,6 @@ KonqCopyToMenuPrivate::KonqCopyToMenuPrivate(QWidget* parentWidget)
 
 ////
 
-KonqCopyToMenu::KonqCopyToMenu()
-    : d(new KonqCopyToMenuPrivate())
-{
-}
-
 KonqCopyToMenu::KonqCopyToMenu(QWidget* parentWidget)
     : d(new KonqCopyToMenuPrivate(parentWidget))
 {

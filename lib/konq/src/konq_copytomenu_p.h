@@ -28,7 +28,7 @@
 class KonqCopyToMenuPrivate
 {
 public:
-    KonqCopyToMenuPrivate(QWidget* parentWidget = 0);
+    KonqCopyToMenuPrivate(QWidget* parentWidget);
 
     QList<QUrl> m_urls;
     bool m_readOnly;
