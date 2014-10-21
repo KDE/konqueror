@@ -40,7 +40,7 @@
 #include <KListWidget>
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
-#include <kpushbutton.h>
+#include <QPushButton>
 #include <knuminput.h>
 #include <KTabWidget>
 
@@ -125,16 +125,16 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     connect( &mAutomaticFilterModel, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)) );
     connect( mRefreshFreqSpinBox, SIGNAL(valueChanged(int)), this, SLOT(spinBoxChanged(int)) );
 
-    mInsertButton = new KPushButton( QIcon::fromTheme("list-add"), i18n("Insert"), buttonBox );
+    mInsertButton = new QPushButton( QIcon::fromTheme("list-add"), i18n("Insert"), buttonBox );
     connect( mInsertButton, SIGNAL(clicked()), SLOT(insertFilter()) );
-    mUpdateButton = new KPushButton( QIcon::fromTheme("document-edit"), i18n("Update"), buttonBox );
+    mUpdateButton = new QPushButton( QIcon::fromTheme("document-edit"), i18n("Update"), buttonBox );
     connect( mUpdateButton, SIGNAL(clicked()), SLOT(updateFilter()) );
-    mRemoveButton = new KPushButton( QIcon::fromTheme("list-remove"), i18n("Remove"), buttonBox );
+    mRemoveButton = new QPushButton( QIcon::fromTheme("list-remove"), i18n("Remove"), buttonBox );
     connect( mRemoveButton, SIGNAL(clicked()), SLOT(removeFilter()) );
 
-    mImportButton = new KPushButton( QIcon::fromTheme("document-import"), i18n("Import..."),buttonBox);
+    mImportButton = new QPushButton( QIcon::fromTheme("document-import"), i18n("Import..."),buttonBox);
     connect( mImportButton, SIGNAL(clicked()), SLOT(importFilters()) );
-    mExportButton = new KPushButton( QIcon::fromTheme("document-export"), i18n("Export..."),buttonBox);
+    mExportButton = new QPushButton( QIcon::fromTheme("document-export"), i18n("Export..."),buttonBox);
     connect( mExportButton, SIGNAL(clicked()), SLOT(exportFilters()) );
 
     KHBox *impexpBox = new KHBox;

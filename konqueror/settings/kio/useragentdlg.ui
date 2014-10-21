@@ -174,7 +174,7 @@ By default, only minimal identification information is sent to remote sites. The
          <number>0</number>
         </property>
         <item>
-         <widget class="KPushButton" name="newButton">
+         <widget class="QPushButton" name="newButton">
           <property name="whatsThis">
            <string>Add new identification text for a site.</string>
           </property>
@@ -184,7 +184,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="changeButton">
+         <widget class="QPushButton" name="changeButton">
           <property name="whatsThis">
            <string>Change the selected identifier text.</string>
           </property>
@@ -194,7 +194,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="deleteButton">
+         <widget class="QPushButton" name="deleteButton">
           <property name="whatsThis">
            <string>Delete the selected identifier text.</string>
           </property>
@@ -204,7 +204,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="deleteAllButton">
+         <widget class="QPushButton" name="deleteAllButton">
           <property name="whatsThis">
            <string>Delete all identifiers.</string>
           </property>
@@ -241,11 +241,6 @@ By default, only minimal identification information is sent to remote sites. The
    <class>KSqueezedTextLabel</class>
    <extends>QLabel</extends>
    <header>ksqueezedtextlabel.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
  <includes>

@@ -257,12 +257,10 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
     const QString profileFileName = "webbrowsing";
 
     // Create local copy of the profile if needed -- copied from KonqViewManager::setCurrentProfile
-    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") + profileFileName, KGlobal::mainComponent());
     KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
     if (!QFile::exists(localPath)) {
-        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") + profileFileName, KGlobal::mainComponent());
         if (!globalFile.isEmpty()) {
             KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
             globalCfg->copyTo(localPath, cfg.data());

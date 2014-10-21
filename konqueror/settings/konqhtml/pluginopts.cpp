@@ -39,6 +39,8 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KProgressDialog>
+#include <KGuiItem>
+#include <KStandardGuiItem>
 
 // Local
 #include "htmlopts.h"
@@ -641,7 +643,8 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
   hl->setMargin(0);
   hl->addStretch(10);
 
-  QPushButton *closePB = new KPushButton(KStandardGuiItem::close(),this);
+  QPushButton *closePB = new QPushButton;,this
+  KGuiItem::assign(closePB,KStandardGuiItem::close());,this
   connect(closePB,SIGNAL(clicked()),SLOT(slotClose()));
   hl->addWidget(closePB);
   thisLayout->addLayout(hl);

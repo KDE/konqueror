@@ -24,7 +24,7 @@
 #include <ksharedconfig.h>
 
 class KListWidget;
-class KPushButton;
+class QPushButton;
 class QLineEdit;
 class QCheckBox;
 class KTabWidget;
@@ -103,11 +103,11 @@ private:
     QLineEdit *mString;
     QCheckBox *mEnableCheck;
     QCheckBox *mKillCheck;
-    KPushButton *mInsertButton;
-    KPushButton *mUpdateButton;
-    KPushButton *mRemoveButton;
-    KPushButton *mImportButton;
-    KPushButton *mExportButton;
+    QPushButton *mInsertButton;
+    QPushButton *mUpdateButton;
+    QPushButton *mRemoveButton;
+    QPushButton *mImportButton;
+    QPushButton *mExportButton;
     KTabWidget *mFilterWidget;
     QTreeView *mAutomaticFilterList;
     KIntSpinBox *mRefreshFreqSpinBox;

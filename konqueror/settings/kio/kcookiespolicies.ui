@@ -171,28 +171,28 @@ List of sites for which you have set a specific cookie policy. Specific policies
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="KPushButton" name="pbNew">
+       <widget class="QPushButton" name="pbNew">
         <property name="text">
          <string>&amp;New...</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="KPushButton" name="pbChange">
+       <widget class="QPushButton" name="pbChange">
         <property name="text">
          <string>Chan&amp;ge...</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="KPushButton" name="pbDelete">
+       <widget class="QPushButton" name="pbDelete">
         <property name="text">
          <string>D&amp;elete</string>
         </property>
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="KPushButton" name="pbDeleteAll">
+       <widget class="QPushButton" name="pbDeleteAll">
         <property name="text">
          <string>Delete A&amp;ll</string>
         </property>
@@ -224,11 +224,6 @@ List of sites for which you have set a specific cookie policy. Specific policies
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
    <class>KTreeWidgetSearchLine</class>
