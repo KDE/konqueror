@@ -79,7 +79,7 @@
 
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
-      m_method( UNKNOWN ), m_info(0), m_pasteInfo(0)
+      m_method( UNKNOWN ), m_info(0)
 {
     setObjectName( QLatin1String( "KonqOperations" ) );
 }
@@ -87,7 +87,6 @@ KonqOperations::KonqOperations( QWidget *parent )
 KonqOperations::~KonqOperations()
 {
     delete m_info;
-    delete m_pasteInfo;
 }
 
 KonqOperations *KonqOperations::doPaste(QWidget *parent, const QUrl &destUrl)
@@ -99,8 +98,6 @@ KonqOperations *KonqOperations::doPaste(QWidget *parent, const QUrl &destUrl)
     KIO::Job *job = KIO::pasteClipboard(destUrl, parent, move);
     if (job) {
         KonqOperations *op = new KonqOperations(parent);
-        KIOPasteInfo *pi = new KIOPasteInfo;
-        op->setPasteInfo(pi);
         KIO::CopyJob *copyJob = qobject_cast<KIO::CopyJob*>(job);
         if (copyJob) {
             op->setOperation(job, move ? MOVE : COPY, copyJob->destUrl());
