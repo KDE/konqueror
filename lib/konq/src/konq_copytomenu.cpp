@@ -23,7 +23,7 @@
 #include "konq_copytomenu_p.h"
 #include <QAction>
 #include <kdebug.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kglobal.h>
 #include <kfiledialog.h>
 #include <klocale.h>
@@ -115,14 +115,14 @@ void KonqCopyToMainMenu::slotAboutToShow()
     // Home Folder
     subMenu = new KonqCopyToDirectoryMenu(this, this, QDir::homePath());
     subMenu->setTitle(i18nc("@title:menu", "Home Folder"));
-    subMenu->setIcon(KIcon("go-home"));
+    subMenu->setIcon(QIcon::fromTheme("go-home"));
     addMenu(subMenu);
 
     // Root Folder
 #ifndef Q_OS_WIN
     subMenu = new KonqCopyToDirectoryMenu(this, this, QDir::rootPath());
     subMenu->setTitle(i18nc("@title:menu", "Root Folder"));
-    subMenu->setIcon(KIcon("folder-red"));
+    subMenu->setIcon(QIcon::fromTheme("folder-red"));
     addMenu(subMenu);
 #else
     foreach ( const QFileInfo& info, QDir::drives() ) {
@@ -151,7 +151,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
         }
         subMenu = new KonqCopyToDirectoryMenu(this, this, info.absoluteFilePath());
         subMenu->setTitle(info.absoluteFilePath());
-        subMenu->setIcon(KIcon(driveIcon));
+        subMenu->setIcon(QIcon::fromTheme(driveIcon));
         addMenu(subMenu);
     }
 #endif
@@ -257,7 +257,7 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
         // correctly and not misinterpreted as an indicator for a keyboard shortcut
         subMenu->setTitle(menuTitle.replace('&', "&&"));
         const QString iconName = dirMime->iconName();
-        subMenu->setIcon(KIcon(iconName));
+        subMenu->setIcon(QIcon::fromTheme(iconName));
         if (QFileInfo(subPath).isSymLink()) { // I hope this isn't too slow...
             QFont font = subMenu->menuAction()->font();
             font.setItalic(true);

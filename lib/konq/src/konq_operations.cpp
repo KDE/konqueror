@@ -49,7 +49,7 @@
 #include <kuiserverjobtracker.h>
 #include <kstandarddirs.h>
 // For doDrop
-#include <kicon.h>
+#include <QIcon>
 #include <kauthorized.h>
 #include <kglobal.h>
 #include <kglobalsettings.h>
@@ -396,17 +396,17 @@ void KonqOperations::doDropFileCopy()
         QString seq = QKeySequence( Qt::ShiftModifier ).toString();
         seq.chop(1); // chop superfluous '+'
         QAction* popupMoveAction = new QAction(i18n( "&Move Here" ) + '\t' + seq, this);
-        popupMoveAction->setIcon(KIcon("go-jump"));
+        popupMoveAction->setIcon(QIcon::fromTheme("go-jump"));
         seq = QKeySequence( Qt::ControlModifier ).toString();
         seq.chop(1);
         QAction* popupCopyAction = new QAction(i18n( "&Copy Here" ) + '\t' + seq, this);
-        popupCopyAction->setIcon(KIcon("edit-copy"));
+        popupCopyAction->setIcon(QIcon::fromTheme("edit-copy"));
         seq = QKeySequence( Qt::ControlModifier + Qt::ShiftModifier ).toString();
         seq.chop(1);
         QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + '\t' + seq, this);
-        popupLinkAction->setIcon(KIcon("edit-link"));
+        popupLinkAction->setIcon(QIcon::fromTheme("edit-link"));
         QAction* popupCancelAction = new QAction(i18n( "C&ancel" ) + '\t' + QKeySequence( Qt::Key_Escape ).toString(), this);
-        popupCancelAction->setIcon(KIcon("process-stop"));
+        popupCancelAction->setIcon(QIcon::fromTheme("process-stop"));
 
         if (!mlst.isEmpty() && (sMoving || (sReading && sDeleting)) && !linkOnly )
         {

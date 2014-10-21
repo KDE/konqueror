@@ -26,7 +26,7 @@
 #include <QMap>
 #include <QMenu>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kfileitem.h>
 #include <kparts/browserextension.h>

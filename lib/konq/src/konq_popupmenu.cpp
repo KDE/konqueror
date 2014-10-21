@@ -34,7 +34,7 @@
 #include <kdebug.h>
 #include <krun.h>
 #include <kprotocolmanager.h>
-#include <kicon.h>
+#include <QIcon>
 #include <knewfilemenu.h>
 #include <kiconloader.h>
 #include <kinputdialog.h>
@@ -126,7 +126,7 @@ public:
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
     KActionCollection m_ownActionCollection; // only used by plugins; KDE5: pass m_ownActions instead
-    QList<KAction*> m_ownActions;
+    QList<QAction *> m_ownActions;
     KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
 
@@ -235,9 +235,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     addGroup( "topactions" ); // used e.g. for ShowMenuBar. includes a separator at the end
 
-    KAction * act;
+    QAction * act;
 
-    KAction *actNewWindow = 0;
+    QAction *actNewWindow = 0;
 
 #if 0 // TODO in the desktop code itself.
     if (( flags & KParts::BrowserExtension::ShowProperties ) && isOnDesktop &&
@@ -253,9 +253,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( ((kpf & KonqPopupMenu::ShowNewWindow) != 0) && sReading )
     {
         const QString openStr = i18n("&Open");
-        actNewWindow = new KAction(m_parentWidget /*for status tips*/);
+        actNewWindow = new QAction(m_parentWidget /*for status tips*/);
         m_ownActions.append(actNewWindow);
-        actNewWindow->setIcon( KIcon("window-new") );
+        actNewWindow->setIcon( QIcon::fromTheme("window-new") );
         actNewWindow->setText( openStr );
         QObject::connect(actNewWindow, &QAction::triggered, [this]() {
             slotPopupNewView();
@@ -276,9 +276,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         }
         else if (mkdirRequested)
         {
-            KAction *actNewDir = new KAction(m_parentWidget);
+            QAction *actNewDir = new QAction(m_parentWidget);
             m_ownActions.append(actNewDir);
-            actNewDir->setIcon( KIcon("folder-new") );
+            actNewDir->setIcon( QIcon::fromTheme("folder-new") );
             actNewDir->setText( i18n( "Create &Folder..." ) );
             QObject::connect(actNewDir, &QAction::triggered, [this]() {
                 slotPopupNewDir();
@@ -288,10 +288,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         }
     } else if ( isIntoTrash ) {
         // Trashed item, offer restoring
-        act = new KAction(m_parentWidget /*for status tips*/);
+        act = new QAction(m_parentWidget /*for status tips*/);
         m_ownActions.append(act);
         act->setText( i18n( "&Restore" ) );
-        act->setHelpText(i18n("Restores this file or directory, back to the location where it was deleted from initially"));
+        //PORT QT5 act->setHelpText(i18n("Restores this file or directory, back to the location where it was deleted from initially"));
         QObject::connect(act, &QAction::triggered, [this]() {
             slotPopupRestoreTrashedItems();
         });
@@ -311,10 +311,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     if (!currentDir && isSymLink && !isSymLinkInSameDir) {
         // #65151: offer to open the target's parent dir
-        act = new KAction(m_parentWidget);
+        act = new QAction(m_parentWidget);
         m_ownActions.append(act);
         act->setText(isDirectory ? i18n("Show Original Directory") : i18n("Show Original File"));
-        act->setHelpText(i18n("Opens a new file manager window showing the target of this link, in its parent directory."));
+        //PORT TO QT5 act->setHelpText(i18n("Opens a new file manager window showing the target of this link, in its parent directory."));
         QObject::connect(act, &QAction::triggered, [this]() {
             slotShowOriginalFile();
         });
@@ -345,9 +345,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     }
     if ( isCurrentTrash )
     {
-        act = new KAction(m_parentWidget);
+        act = new QAction(m_parentWidget);
         m_ownActions.append(act);
-        act->setIcon( KIcon("trash-empty") );
+        act->setIcon( QIcon::fromTheme("trash-empty") );
         act->setText( i18n( "&Empty Trash Bin" ) );
         KConfig trashConfig( "trashrc", KConfig::SimpleConfig);
         act->setEnabled( !trashConfig.group("Status").readEntry( "Empty", true ) );
@@ -358,9 +358,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     }
     if ( isCurrentTrash )
     {
-	act = new KAction(m_parentWidget);
+	act = new QAction(m_parentWidget);
 	m_ownActions.append(act);
-	act->setIcon( KIcon("trash-empty") );
+	act->setIcon( QIcon::fromTheme("trash-empty") );
 	act->setText( i18n( "&Configure Trash Bin" ) );
 	QObject::connect(act, &QAction::triggered, [this]() {
         slotConfigTrashBin();
@@ -398,10 +398,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         else
            caption = i18n("&Bookmark This File");
 
-        act = new KAction(m_parentWidget);
+        act = new QAction(m_parentWidget);
         m_ownActions.append(act);
         act->setObjectName( QLatin1String("bookmark_add" )); // for unittest
-        act->setIcon( KIcon("bookmark-new") );
+        act->setIcon( QIcon::fromTheme("bookmark-new") );
         act->setText( caption );
         QObject::connect(act, &QAction::triggered, [this]() {
             slotPopupAddToBookmark();
@@ -458,7 +458,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     }
 
     if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( lstItems ) ) {
-        act = new KAction(m_parentWidget);
+        act = new QAction(m_parentWidget);
         m_ownActions.append(act);
         act->setObjectName( QLatin1String("properties" )); // for unittest
         act->setText( i18n( "&Properties" ) );
@@ -475,7 +475,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( isDirectory && isLocal ) {
         if ( KFileShare::authorization() == KFileShare::Authorized ) {
             q->addSeparator();
-            act = new KAction(m_parentWidget);
+            act = new QAction(m_parentWidget);
             m_ownActions.append(act);
             act->setText( i18n("Share") );
             QObject::connect(act, &QAction::triggered, [this]() {
