@@ -426,4 +426,3 @@ void KCookiesManagement::on_deleteAllButton_clicked()
   emit changed(true);
 }
 
-#include "kcookiesmanagement.moc"

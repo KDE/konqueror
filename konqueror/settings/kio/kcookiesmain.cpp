@@ -107,4 +107,4 @@ QString KCookiesMain::quickHelp() const
                  " every time KDE receives a cookie.</p>");
 }
 
-#include "kcookiesmain.moc"
+

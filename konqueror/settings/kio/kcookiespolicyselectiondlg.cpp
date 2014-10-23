@@ -122,4 +122,4 @@ void KCookiesPolicySelectionDlg::slotPolicyChanged(const QString& policyText)
     }
 }
 
-#include "kcookiespolicyselectiondlg.moc"
+

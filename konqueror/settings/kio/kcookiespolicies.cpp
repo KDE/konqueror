@@ -455,4 +455,3 @@ QString KCookiesPolicies::quickHelp() const
                 );
 }
 
-#include "kcookiespolicies.moc"

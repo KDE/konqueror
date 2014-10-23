@@ -193,4 +193,4 @@ QString SMBRoOptions::quickHelp() const
         "do that, as entries with passwords are clearly indicated as such.</p>");
 }
 
-#include "smbrodlg.moc"
+

@@ -48,4 +48,4 @@ K_PLUGIN_FACTORY(KioConfigFactory,
         registerPlugin<BookmarksConfigModule>("bookmarks");
 	)
 K_EXPORT_PLUGIN(KioConfigFactory("kcmkio"))
-
+#include "main.moc"
