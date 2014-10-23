@@ -15,9 +15,9 @@ add_subdirectory( test )
 
 set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
-kde4_add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
+add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
 
-target_link_libraries(konqsidebarplugin ${KDE4_KPARTS_LIBS} )
+target_link_libraries(konqsidebarplugin KF5::Parts KF5::KDELibs4Support)
 
 set_target_properties(konqsidebarplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konqsidebarplugin ${INSTALL_TARGETS_DEFAULT_ARGS} )
@@ -31,9 +31,9 @@ set(konq_sidebar_PART_SRCS
  konqmultitabbar.cpp
 )
 
-kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
+add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS})
 
-target_link_libraries(konq_sidebar ${KDE4_KPARTS_LIBS} konq konqsidebarplugin ${KDE4_KCMUTILS_LIBS} )
+target_link_libraries(konq_sidebar KF5::Parts konq konqsidebarplugin KF5::KCMUtils KF5::KDELibs4Support )
 
 install(TARGETS konq_sidebar DESTINATION ${PLUGIN_INSTALL_DIR} )
 

@@ -23,6 +23,7 @@
 #include <kconfiggroup.h>
 #include <QWidget>
 #include <kurl.h>
+#include "konqsidebarplugin.h"
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
