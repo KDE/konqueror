@@ -24,7 +24,8 @@
 
 // Qt
 #include <QTreeWidget>
-
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 // KDE
 #include <kconfig.h>
 #include <kdebug.h>
@@ -44,7 +45,7 @@
 // == class KJavaScriptOptions =====
 #include <KDebug>
 KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent) :
-  KCModule(componentData, parent),
+  KCModule(/*componentData,*/ parent),
   _removeJavaScriptDomainAdvice(false),
    m_pConfig( config ), m_groupname( group ),
   js_global_policies(config,group,true,QString()),

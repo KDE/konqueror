@@ -15,7 +15,7 @@
 
 #include "domainlistview.h"
 #include "policies.h"
-
+#include <KComponentData>
 class KUrlRequester;
 class KIntNumInput;
 

@@ -397,4 +397,3 @@ void JSPoliciesFrame::setWindowStatusPolicy(int id) {
   emit changed();
 }
 
-#include "jspolicies.moc"

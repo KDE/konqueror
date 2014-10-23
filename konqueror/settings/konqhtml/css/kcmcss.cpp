@@ -359,6 +359,5 @@ void CSSCustomDialog::slotPreview()
   part->openUrl(toDataUri(data, "text/html"));
 }
 
-#include "kcmcss.moc"
 
 // kate: space-indent on; indent-width 2; replace-tabs on;

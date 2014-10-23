@@ -33,7 +33,7 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
 add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
 
-target_link_libraries(kcm_konqhtml KF5::Parts KF5::KDELibs4Support)
+target_link_libraries(kcm_konqhtml KF5::Parts KF5::KDELibs4Support KF5::KHtml)
 
 install(TARGETS kcm_konqhtml  DESTINATION ${PLUGIN_INSTALL_DIR})
 

@@ -28,7 +28,7 @@
 #include <QTreeWidget>
 
 // KDE
-#include <config-apps.h>
+//#include <config-apps.h>
 #include <kurlrequester.h>
 #include <kdebug.h>
 #include <klineedit.h>
@@ -36,6 +36,7 @@
 #include <knuminput.h>
 #include <khbox.h>
 #include <kparts/htmlextension.h>
+#include <kparts/htmlsettingsinterface.h>
 
 // Local
 #include "htmlopts.h"
@@ -61,7 +62,7 @@ JavaPolicies::~JavaPolicies() {
 
 KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
                             const KComponentData &componentData, QWidget *parent )
-    : KCModule( componentData, parent ),
+    : KCModule( /*componentData,*/ parent ),
       _removeJavaScriptDomainAdvice(false),
       m_pConfig( config ),
       m_groupname( group ),
@@ -338,4 +339,3 @@ JavaPolicies *JavaDomainListView::copyPolicies(Policies *pol) {
   return new JavaPolicies(*static_cast<JavaPolicies *>(pol));
 }
 
-#include "javaopts.moc"

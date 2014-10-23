@@ -12,7 +12,7 @@
 #include <QLabel>
 #include <QComboBox>
 #include <QPushButton>
-
+#include <QVBoxLayout>
 // KDE
 #include <KLocalizedString>
 #include <kmessagebox.h>

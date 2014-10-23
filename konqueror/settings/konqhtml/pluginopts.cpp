@@ -41,7 +41,8 @@
 #include <KProgressDialog>
 #include <KGuiItem>
 #include <KStandardGuiItem>
-
+#include <KGlobal>
+#include <KUrl>
 // Local
 #include "htmlopts.h"
 #include "ui_nsconfigwidget.h"
@@ -62,7 +63,7 @@ PluginPolicies::~PluginPolicies() {
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
-    : KCModule( KcmKonqHtmlFactory::componentData(), parent ),
+    : KCModule( /*KcmKonqHtmlFactory::componentData(),*/ parent ),
       m_pConfig( KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals) ),
       m_groupname( "Java/JavaScript Settings" ),
       global_policies(m_pConfig,m_groupname,true)
@@ -643,8 +644,8 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
   hl->setMargin(0);
   hl->addStretch(10);
 
-  QPushButton *closePB = new QPushButton;,this
-  KGuiItem::assign(closePB,KStandardGuiItem::close());,this
+  QPushButton *closePB = new QPushButton;
+  KGuiItem::assign(closePB,KStandardGuiItem::close());
   connect(closePB,SIGNAL(clicked()),SLOT(slotClose()));
   hl->addWidget(closePB);
   thisLayout->addLayout(hl);

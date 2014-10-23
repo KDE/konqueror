@@ -25,7 +25,7 @@
 #include <QGroupBox>
 
 #include <kparts/htmlextension.h>
-
+#include <kparts/htmlsettingsinterface.h>
 #include "policies.h"
 
 class QButtonGroup;
