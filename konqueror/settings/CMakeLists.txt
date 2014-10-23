@@ -1,4 +1,3 @@
-add_subdirectory( ebrowsing )
 add_subdirectory( konq )
 # REACTIVATE it
 #add_subdirectory( konqhtml )
