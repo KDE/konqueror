@@ -37,7 +37,7 @@ K_PLUGIN_FACTORY(KURIFactory,
 K_EXPORT_PLUGIN(KURIFactory("kcmkurifilt"))
 
 KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
-    : KCModule(/*KURIFactory::componentData(),*/ parent),
+    : KCModule( parent),
     m_widget(0)
 {
 

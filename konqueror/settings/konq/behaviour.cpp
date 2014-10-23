@@ -38,7 +38,7 @@
 #include "konqkcmfactory.h"
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
-    : KCModule(/*KonqKcmFactory::componentData(),*/ parent)
+    : KCModule( parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
     , groupname("FMSettings")
 {
@@ -140,4 +140,3 @@ void KBehaviourOptions::updateWinPixmap(bool b)
                                         "kcontrol/pics/onlyone.png")));
 }
 
-#include "behaviour.moc"

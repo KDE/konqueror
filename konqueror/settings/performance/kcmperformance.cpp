@@ -24,8 +24,6 @@
 
 // KDE
 #include <KLocalizedString>
-#include <kdialog.h>
-#include <KDebug>
 // Local
 #include "konqueror.h"
 #include "system.h"
@@ -41,7 +39,7 @@ namespace KCMPerformance
 {
 
 Config::Config( QWidget* parent_P, const QVariantList & )
-    : KCModule( /*KCMPerformanceConfigFactory::componentData(),*/ parent_P )
+    : KCModule( parent_P )
     {
     setQuickHelp( i18n( "<h1>KDE Performance</h1>"
         " You can configure settings that improve KDE performance here." ));
@@ -76,7 +74,7 @@ void Config::defaults()
     }
 
 KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QVariantList & )
-    : KCModule( /*KCMPerformanceConfigFactory::componentData(),*/ parent_P )
+    : KCModule( parent_P )
     {
     setQuickHelp( i18n( "<h1>Konqueror Performance</h1>"
         " You can configure several settings that improve Konqueror performance here."
