@@ -30,9 +30,10 @@
 
 // KDE
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+
 #include <kurlrequester.h>
 #include <kconfiggroup.h>
+#include <QStandardPaths>
 
 // Local
 #include "konqkcmfactory.h"
@@ -52,7 +53,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     winPixmap = new QLabel(this);
     winPixmap->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data", "kcontrol/pics/onlyone.png")));
+    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
     winPixmap->setFixedSize(winPixmap->sizeHint());
 
     cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
@@ -133,10 +134,8 @@ void KBehaviourOptions::save()
 void KBehaviourOptions::updateWinPixmap(bool b)
 {
   if (b)
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data",
-                                        "kcontrol/pics/overlapping.png")));
+    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/overlapping.png")));
   else
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data",
-                                        "kcontrol/pics/onlyone.png")));
+    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
 }
 

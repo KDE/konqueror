@@ -5,10 +5,10 @@ set(kcm_konq_PART_SRCS
 #    kcustommenueditor.cpp
 )
 
-kde4_add_plugin(kcm_konq ${kcm_konq_PART_SRCS})
+add_library(kcm_konq MODULE ${kcm_konq_PART_SRCS})
 
 
-target_link_libraries(kcm_konq ${KDE4_KCMUTILS_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kcm_konq KF5::KCMUtils KF5::KIOCore KF5::I18n KF5::KIOWidgets Qt5::DBus)
 
 install(TARGETS kcm_konq  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
