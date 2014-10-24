@@ -60,6 +60,7 @@ install(FILES
     konq_historyentry.h
     konq_historyprovider.h
     konq_operations.h
+    konq_popupmenu.h
     konq_popupmenuplugin.h
     kversioncontrolplugin.h
     kversioncontrolplugin2.h
