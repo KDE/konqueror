@@ -25,7 +25,6 @@
 
 // KDE
 #include <kcmoduleloader.h>
-#include <KLocalizedString>
 #include <kcomponentdata.h>
 #include <kpluginfactory.h>
 

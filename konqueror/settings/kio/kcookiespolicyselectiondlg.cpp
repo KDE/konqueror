@@ -27,7 +27,6 @@
 // KDE
 #include <klineedit.h>
 #include <kcombobox.h>
-#include <KLocalizedString>
 
 class DomainNameValidator : public QValidator
 {
