@@ -72,4 +72,3 @@ void SystemWidget::defaults()
 
 } // namespace
 
-#include "system.moc"

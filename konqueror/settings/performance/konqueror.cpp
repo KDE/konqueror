@@ -147,4 +147,3 @@ void Konqueror::defaults()
 
 } // namespace
 
-#include "konqueror.moc"
