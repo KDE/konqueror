@@ -34,7 +34,7 @@
 #include <QtCore/QPointer>
 #include <QtCore/QEvent>
 
-#include <config-apps.h>
+#include <config-konqueror.h>
 
 class KonqRun;
 class KonqFrame;

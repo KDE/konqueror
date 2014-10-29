@@ -46,7 +46,7 @@ target_link_libraries(konquerorprivate
    ${ZLIB_LIBRARY}
    KF5::KDELibs4Support
 )
-set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 ########### konqueror ###############
