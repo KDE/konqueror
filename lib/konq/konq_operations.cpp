@@ -470,8 +470,18 @@ void KonqOperations::doDropFileCopy()
     for (KUrl::List::ConstIterator it = lst.begin(); it != lst.end(); ++it)
     {
         bool local = (*it).isLocalFile();
-        if ( KProtocolManager::supportsDeleting( *it ) && (!local || QFileInfo((*it).directory()).isWritable() ))
-            mlst.append(*it);
+        if ( KProtocolManager::supportsDeleting( *it ) ) {
+            if (!local) {
+                mlst.append(*it);
+            } else {
+                QFileInfo itemInfo((*it).toLocalFile());
+                QFileInfo dirInfo(itemInfo.absolutePath());
+                // Posix does not permit the movement of a read-only folder, regardless of the permissions of its parent
+                if (dirInfo.isWritable() && (!itemInfo.isDir() || itemInfo.isWritable())) {
+                    mlst.append(*it);
+                }
+            }
+        }
         if ( local && KDesktopFile::isDesktopFile((*it).toLocalFile()))
             isDesktopFile = true;
         if ( local && (*it).path().startsWith(KGlobalSettings::desktopPath()))
