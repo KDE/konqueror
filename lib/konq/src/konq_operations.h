@@ -79,7 +79,7 @@ public:
                                    const QList<QAction*> &userActions = QList<QAction *>() );
 
 Q_SIGNALS:
-    void aboutToCreate(const QList<QUrl> &urls);
+    void itemCreated(const QUrl &url);
 
 protected Q_SLOTS:
     void slotResult( KJob * job );
@@ -94,7 +94,7 @@ private:
     void _addPluginActions(QList<QAction*>& pluginActions, const QUrl& destination, const KFileItemListProperties& info);
 
     // internal, for COPY/MOVE/LINK/MKDIR
-    enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN, PUT };
+    enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN };
     void setOperation( KIO::Job * job, Operation method, const QUrl & dest );
 
     struct DropInfo
@@ -115,7 +115,6 @@ private:
 
 private:
     Operation m_method;
-    QList<QUrl> m_createdUrls;
     QUrl m_destUrl;
     DropInfo * m_info;
 };

@@ -36,9 +36,7 @@
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
 #include <kio/copyjob.h>
-#include <kio/mkpathjob.h>
-#include <kio/paste.h>
-#include <kio/renamedialog.h>
+#include <KIO/PasteJob>
 #include <KJobWidgets>
 #include <KLocalizedString>
 
@@ -148,14 +146,10 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl &
     else
     {
         //qDebug() << "Pasting to " << dest.url();
-        KonqOperations * op = new KonqOperations(parent);
-        KIO::Job* job = KIO::pasteMimeData(ev->mimeData(), dest,
-                                           i18n( "File name for dropped contents:" ),
-                                           parent);
-        if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
-            op->setOperation(job, PUT, simpleJob->url());
-            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, QList<QUrl>(), simpleJob->url(), simpleJob);
-        }
+        KonqOperations *op = new KonqOperations(parent);
+        KIO::PasteJob *job = KIO::paste(ev->mimeData(), dest);
+        KJobWidgets::setWindow(job, parent);
+        connect(job, &KIO::PasteJob::itemCreated, op, &KonqOperations::itemCreated);
         ev->acceptProposedAction();
         return op;
     }
@@ -451,12 +445,12 @@ void KonqOperations::doDropFileCopy()
 
 void KonqOperations::slotCopyingDone(KIO::Job*, const QUrl &, const QUrl &to)
 {
-    m_createdUrls << to;
+    emit itemCreated(to);
 }
 
 void KonqOperations::slotCopyingLinkDone(KIO::Job*, const QUrl&, const QString&, const QUrl &to)
 {
-    m_createdUrls << to;
+    emit itemCreated(to);
 }
 
 void KonqOperations::_addPluginActions(QList<QAction*>& pluginActions, const QUrl &destination, const KFileItemListProperties& info)
@@ -500,32 +494,8 @@ void KonqOperations::slotStatResult(KJob * job)
     }
 }
 
-void KonqOperations::slotResult(KJob *job)
+void KonqOperations::slotResult(KJob *)
 {
-    bool jobFailed = false;
-    if (job && job->error()) {
-        static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
-        jobFailed = true;
-    }
-
-    switch (m_method) {
-    case PUT: {
-            KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job);
-            if (simpleJob && !jobFailed) {
-                m_createdUrls << simpleJob->url();
-            }
-        }
-        break;
-    default:
-        break;
-    }
-
-    if (!m_createdUrls.isEmpty()) {
-        // Inform the application about all created urls
-        emit aboutToCreate(m_createdUrls);
-        m_createdUrls.clear();
-    }
-
     deleteLater();
 }
 
