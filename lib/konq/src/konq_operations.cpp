@@ -64,9 +64,6 @@
 #include <QList>
 #include <QStandardPaths>
 
-#include <assert.h>
-#include <unistd.h>
-
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
       m_method( UNKNOWN ), m_info(0)
@@ -136,16 +133,15 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl &
             KIO::StatJob *job = KIO::stat(dest);
             KJobWidgets::setWindow(job, parent);
             connect(job, &KIO::StatJob::result, op, &KonqOperations::slotStatResult);
-
         }
         // In both cases asyncDrop will delete op when done
 
         ev->acceptProposedAction();
         return op;
     }
-    else
+    else // pasting non-URL data
     {
-        //qDebug() << "Pasting to " << dest.url();
+        //qDebug() << "Pasting to" << dest.url();
         KonqOperations *op = new KonqOperations(parent);
         KIO::PasteJob *job = KIO::paste(ev->mimeData(), dest);
         KJobWidgets::setWindow(job, parent);
@@ -157,11 +153,11 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl &
 
 void KonqOperations::asyncDrop( const KFileItem & destItem )
 {
-    assert(m_info); // setDropInfo should have been called before asyncDrop
+    Q_ASSERT(m_info); // setDropInfo should have been called before asyncDrop
     bool m_destIsLocal = false;
     m_destUrl = destItem.mostLocalUrl(m_destIsLocal); // #168154
 
-    //qDebug() << "destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
+    //qDebug() << "destItem->mode=" << destItem->mode() << "url=" << m_destUrl;
     // Check what the destination is
     if ( destItem.isDir() )
     {
@@ -236,7 +232,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         QList<QUrl>::ConstIterator it = lst.constBegin();
         for ( ; it != lst.constEnd() ; it++ )
             args << (*it).path(); // assume local files
-        qDebug() << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments";
+        qDebug() << "starting" << m_destUrl.path() << "with" << lst.count() << "arguments";
         KProcess::startDetached( m_destUrl.path(), args );
     }
     deleteLater();
@@ -244,7 +240,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
 
 void KonqOperations::doDropFileCopy()
 {
-    assert(m_info); // setDropInfo - and asyncDrop - should have been called before asyncDrop
+    Q_ASSERT(m_info); // setDropInfo - and asyncDrop - should have been called before asyncDrop
     const QList<QUrl> lst = m_info->urls;
     Qt::DropAction action = m_info->action;
     bool isDesktopFile = false;
@@ -376,10 +372,7 @@ void KonqOperations::doDropFileCopy()
         //now initialize the drop plugins
         KFileItemList fileItems;
         foreach(const QUrl& url, lst) {
-            fileItems.append(KFileItem(
-                        KFileItem::Unknown,
-                        KFileItem::Unknown,
-                        url));
+            fileItems.append(KFileItem(url)); // ### TODO: we should have a KFileItemList as input instead...
 
         }
 
@@ -396,7 +389,7 @@ void KonqOperations::doDropFileCopy()
         popup.addSeparator();
         popup.addAction(popupCancelAction);
 
-        QAction* result = popup.exec( m_info->mousePos );
+        QAction* result = popup.exec( m_info->mousePos ); // ### TODO: make this non-modal!
 
         if(result == popupCopyAction)
             action = Qt::CopyAction;
