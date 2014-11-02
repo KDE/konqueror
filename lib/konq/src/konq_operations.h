@@ -88,13 +88,6 @@ public:
                                    const QList<QAction*> &userActions );
 
     /**
-     * Paste the clipboard contents
-     *
-     * @return The KonqOperations object
-     */
-    static KonqOperations *doPaste(QWidget * parent, const QUrl & destUrl);
-
-    /**
      * Returns the list of dropped URL's.
      *
      * You can call this method on the object returned by KonqOperations::doDrop(),

@@ -89,31 +89,6 @@ KonqOperations::~KonqOperations()
     delete m_info;
 }
 
-KonqOperations *KonqOperations::doPaste(QWidget *parent, const QUrl &destUrl)
-{
-    QClipboard *clipboard = QApplication::clipboard();
-    const QMimeData *data = clipboard->mimeData();
-    const bool move = KIO::isClipboardDataCut(data);
-
-    KIO::Job *job = KIO::pasteClipboard(destUrl, parent, move);
-    if (job) {
-        KonqOperations *op = new KonqOperations(parent);
-        KIO::CopyJob *copyJob = qobject_cast<KIO::CopyJob*>(job);
-        if (copyJob) {
-            op->setOperation(job, move ? MOVE : COPY, copyJob->destUrl());
-            KIO::FileUndoManager::self()->recordJob(move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, QList<QUrl>(), destUrl, job);
-            connect(copyJob, &KIO::CopyJob::copyingDone, op, &KonqOperations::slotCopyingDone);
-            connect(copyJob, &KIO::CopyJob::copyingLinkDone, op, &KonqOperations::slotCopyingLinkDone);
-        } else if (KIO::SimpleJob *simpleJob = qobject_cast<KIO::SimpleJob*>(job)) {
-            op->setOperation(job, PUT, simpleJob->url());
-            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, QList<QUrl>(), simpleJob->url(), job);
-        }
-        return op;
-    }
-
-    return 0;
-}
-
 void KonqOperations::doDrop(const KFileItem & destItem, const QUrl &dest, QDropEvent * ev, QWidget * parent )
 {
     (void) KonqOperations::doDrop( destItem, dest, ev, parent, QList<QAction*>() );
@@ -250,7 +225,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
                 if ( mp ) {
                     doDropFileCopy();
                 }
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
                 else
                 {
                     const bool ro = desktopGroup.readEntry( "ReadOnly", false );
