@@ -27,13 +27,8 @@
 #include <ktoolinvocation.h>
 #include <kautomount.h>
 #include <kmountpoint.h>
-#include <QInputDialog>
 #include <kmessagebox.h>
-#include <knotification.h>
-#include <krun.h>
-#include <kshell.h>
 #include <kprocess.h>
-#include <kshortcut.h>
 #include <kprotocolmanager.h>
 #include <kio/deletejob.h>
 #include <kio/fileundomanager.h>
@@ -45,17 +40,13 @@
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
 #include <KJobWidgets>
-#include <kdirnotify.h>
-#include <kuiserverjobtracker.h>
-#include <kstandarddirs.h>
+#include <KLocalizedString>
+
 // For doDrop
-#include <QIcon>
 #include <kauthorized.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <kdebug.h>
 #include <kfileitem.h>
 #include <kdesktopfile.h>
+#include <kconfiggroup.h>
 #include <KUrlMimeData>
 
 //for _addPluginActions
@@ -63,19 +54,20 @@
 #include <kservice.h>
 #include <kmimetypetrader.h>
 
-//#include <konq_iconviewwidget.h>
-#include <QMenu>
+#include <QAction>
 #include <QApplication>
-#include <QClipboard>
+#include <QDebug>
+#include <QFileInfo>
+#include <QMenu>
+#include <QMimeData>
 #include <QDropEvent>
+#include <QIcon>
+#include <QInputDialog>
 #include <QList>
-#include <QDir>
-#include <QTimer>
 #include <QStandardPaths>
 
 #include <assert.h>
 #include <unistd.h>
-#include <kconfiggroup.h>
 
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
@@ -89,34 +81,28 @@ KonqOperations::~KonqOperations()
     delete m_info;
 }
 
-void KonqOperations::doDrop(const KFileItem & destItem, const QUrl &dest, QDropEvent * ev, QWidget * parent )
-{
-    (void) KonqOperations::doDrop( destItem, dest, ev, parent, QList<QAction*>() );
-}
-
 KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl & dest, QDropEvent * ev, QWidget * parent,
-                                        const QList<QAction*> & userActions  )
+                                        const QList<QAction*> & userActions )
 {
-    kDebug(1203) << "dest:" << dest;
     QMap<QString, QString> metaData;
     // Prefer local urls if possible, to avoid problems with desktop:/ urls from other users (#184403)
     const QList<QUrl> lst = KUrlMimeData::urlsFromMimeData(ev->mimeData(), KUrlMimeData::PreferLocalUrls, &metaData);
     if (!lst.isEmpty()) { // Are they urls ?
-        //kDebug(1203) << "metaData:" << metaData.count() << "entries.";
+        //qDebug() << "metaData:" << metaData.count() << "entries.";
         //QMap<QString,QString>::ConstIterator mit;
         //for( mit = metaData.begin(); mit != metaData.end(); ++mit ) {
-        //    kDebug(1203) << "metaData: key=" << mit.key() << "value=" << mit.value();
+        //    qDebug() << "metaData: key=" << mit.key() << "value=" << mit.value();
         //}
         // Check if we dropped something on itself
         QList<QUrl>::ConstIterator it = lst.constBegin();
         for (; it != lst.constEnd() ; it++) {
-            kDebug(1203) << "URL:" << (*it);
+            qDebug() << "URL:" << (*it);
             if (dest.matches(*it, QUrl::StripTrailingSlash)) {
                 // The event source may be the view or an item (icon)
                 // Note: ev->source() can be 0L! (in case of kdesktop) (Simon)
                 if ( !ev->source() || ( ev->source() != parent && ev->source()->parent() != parent ) )
                     KMessageBox::sorry( parent, i18n("You cannot drop a folder on to itself") );
-                kDebug(1203) << "Dropped on itself";
+                qDebug() << "Dropped on itself";
                 ev->setAccepted( false );
                 return 0; // do nothing instead of displaying kfm's annoying error box
             }
@@ -131,7 +117,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl &
         {
             modifiers |= Qt::ControlModifier | Qt::ShiftModifier;
             action = Qt::LinkAction;
-            kDebug(1203) << "Bookmark -> emulating Link";
+            qDebug() << "Bookmark -> emulating Link";
         }
 
         KonqOperations * op = new KonqOperations(parent);
@@ -161,7 +147,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const QUrl &
     }
     else
     {
-        //kDebug(1203) << "Pasting to " << dest.url();
+        //qDebug() << "Pasting to " << dest.url();
         KonqOperations * op = new KonqOperations(parent);
         KIO::Job* job = KIO::pasteMimeData(ev->mimeData(), dest,
                                            i18n( "File name for dropped contents:" ),
@@ -181,7 +167,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
     bool m_destIsLocal = false;
     m_destUrl = destItem.mostLocalUrl(m_destIsLocal); // #168154
 
-    //kDebug(1203) << "destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
+    //qDebug() << "destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
     // Check what the destination is
     if ( destItem.isDir() )
     {
@@ -193,7 +179,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         // We dropped onto a remote URL that is not a directory!
         // (e.g. an HTTP link in the sidebar).
         // Can't do that, but we can't prevent it before stating the dest....
-        kWarning(1203) << "Cannot drop onto " << m_destUrl ;
+        qWarning() << "Cannot drop onto" << m_destUrl ;
         deleteLater();
         return;
     }
@@ -248,7 +234,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
     {
         // Should be a local executable
         // (If this fails, there is a bug in KFileItem::acceptsDrops / KDirModel::flags)
-        kDebug(1203) << m_destUrl.path() << "should be an executable";
+        qDebug() << m_destUrl.path() << "should be an executable";
         Q_ASSERT ( access( QFile::encodeName(m_destUrl.path()), X_OK ) == 0 );
         // Launch executable for each of the files
         QStringList args;
@@ -256,20 +242,10 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         QList<QUrl>::ConstIterator it = lst.constBegin();
         for ( ; it != lst.constEnd() ; it++ )
             args << (*it).path(); // assume local files
-        kDebug(1203) << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments";
+        qDebug() << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments";
         KProcess::startDetached( m_destUrl.path(), args );
     }
     deleteLater();
-}
-
-QList<QUrl> KonqOperations::droppedUrls() const
-{
-    return m_info->urls;
-}
-
-QPoint KonqOperations::dropPosition() const
-{
-   return m_info->mousePos;
 }
 
 void KonqOperations::doDropFileCopy()
@@ -457,13 +433,13 @@ void KonqOperations::doDropFileCopy()
         KIO::FileUndoManager::self()->recordCopyJob(job);
         break;
     case Qt::LinkAction :
-        kDebug(1203) << "lst.count=" << lst.count();
+        qDebug() << "lst.count=" << lst.count();
         job = KIO::link( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, LINK, m_destUrl );
         KIO::FileUndoManager::self()->recordCopyJob(job);
         break;
-    default : kError(1203) << "Unknown action " << (int)action << endl;
+    default : qWarning() << "Unknown action " << (int)action << endl;
     }
     if (job) {
         connect(job, &KIO::CopyJob::copyingDone, this, &KonqOperations::slotCopyingDone);
@@ -485,15 +461,14 @@ void KonqOperations::slotCopyingLinkDone(KIO::Job*, const QUrl&, const QString&,
 
 void KonqOperations::_addPluginActions(QList<QAction*>& pluginActions, const QUrl &destination, const KFileItemListProperties& info)
 {
-    kDebug(1203);
     const QString commonMimeType = info.mimeType();
-    kDebug() << commonMimeType;
+    qDebug() << commonMimeType;
     const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqDndPopupMenu/Plugin", "exist Library");
 
     KService::List::ConstIterator iterator = plugin_offers.begin();
     const KService::List::ConstIterator end = plugin_offers.end();
     for(; iterator != end; ++iterator) {
-        //kDebug() << (*iterator)->name() << (*iterator)->library();
+        //qDebug() << (*iterator)->name() << (*iterator)->library();
         KonqDndPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqDndPopupMenuPlugin>(this);
         if (!plugin)
             continue;

@@ -26,10 +26,13 @@
 #include <libkonq_export.h>
 
 #include <QObject>
-#include <QDropEvent>
+#include <QMap>
+#include <QPoint>
 #include <QUrl>
 
+class QAction;
 class KJob;
+class QDropEvent;
 namespace KIO { class Job; class SimpleJob; }
 class QWidget;
 class KFileItem;
@@ -47,18 +50,6 @@ protected:
     virtual ~KonqOperations();
 
 public:
-    enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN, PUT };
-    /**
-     * Drop
-     * @param destItem destination KFileItem for the drop (background or item)
-     * @param destUrl destination URL for the drop.
-     * @param ev the drop event
-     * @param parent parent widget (for error dialog box if any)
-     *
-     * If destItem is 0L, doDrop will stat the URL to determine it.
-     */
-    static void doDrop( const KFileItem & destItem, const QUrl & destUrl, QDropEvent * ev, QWidget * parent );
-
     /**
      * Drop
      * @param destItem destination KFileItem for the drop (background or item)
@@ -85,32 +76,25 @@ public:
      * @since 4.3
      */
     static KonqOperations *doDrop(const KFileItem & destItem, const QUrl &destUrl, QDropEvent * ev, QWidget * parent,
-                                   const QList<QAction*> &userActions );
-
-    /**
-     * Returns the list of dropped URL's.
-     *
-     * You can call this method on the object returned by KonqOperations::doDrop(),
-     * to obtain the list of URL's this object handles.
-     *
-     * @since 4.3
-     */
-    QList<QUrl> droppedUrls() const;
-
-    /**
-     * Returns the position where the drop occurred.
-     * @since 4.3
-     */
-    QPoint dropPosition() const;
+                                   const QList<QAction*> &userActions = QList<QAction *>() );
 
 Q_SIGNALS:
     void aboutToCreate(const QList<QUrl> &urls);
+
+protected Q_SLOTS:
+    void slotResult( KJob * job );
+    void slotStatResult( KJob * job );
+    void asyncDrop( const KFileItem & item );
+    void doDropFileCopy();
+    void slotCopyingDone(KIO::Job *job, const QUrl &from, const QUrl &to);
+    void slotCopyingLinkDone(KIO::Job *job, const QUrl &from, const QString &target, const QUrl &to);
 
 private:
     QWidget* parentWidget() const;
     void _addPluginActions(QList<QAction*>& pluginActions, const QUrl& destination, const KFileItemListProperties& info);
 
     // internal, for COPY/MOVE/LINK/MKDIR
+    enum Operation { TRASH, COPY, MOVE, LINK, UNKNOWN, PUT };
     void setOperation( KIO::Job * job, Operation method, const QUrl & dest );
 
     struct DropInfo
@@ -129,20 +113,10 @@ private:
     // internal, for doDrop
     void setDropInfo( DropInfo * info ) { m_info = info; }
 
-protected Q_SLOTS:
-
-    void slotResult( KJob * job );
-    void slotStatResult( KJob * job );
-    void asyncDrop( const KFileItem & item );
-    void doDropFileCopy();
-    void slotCopyingDone(KIO::Job *job, const QUrl &from, const QUrl &to);
-    void slotCopyingLinkDone(KIO::Job *job, const QUrl &from, const QString &target, const QUrl &to);
-
 private:
     Operation m_method;
     QList<QUrl> m_createdUrls;
     QUrl m_destUrl;
-    // for doDrop
     DropInfo * m_info;
 };
 
