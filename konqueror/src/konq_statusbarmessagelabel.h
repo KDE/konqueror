@@ -21,7 +21,6 @@
 #ifndef KONQ_STATUSBARMESSAGELABEL_H
 #define KONQ_STATUSBARMESSAGELABEL_H
 
-#include "libkonq_export.h"
 #include <QWidget>
 
 class QPaintEvent;
@@ -35,7 +34,7 @@ class QResizeEvent;
  * KonqStatusBarMessageLabel::Error a dynamic color blending is done to get the
  * attention from the user.
  */
-class LIBKONQ_EXPORT KonqStatusBarMessageLabel : public QWidget
+class KonqStatusBarMessageLabel : public QWidget
 {
     Q_OBJECT
 

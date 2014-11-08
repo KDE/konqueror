@@ -65,7 +65,7 @@ K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_instance, ("kfmclient"))
 
 static void needInstance();
 
-extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
+extern "C" Q_DECL_EXPORT int kdemain( int argc, char **argv )
 {
   KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description));
 
