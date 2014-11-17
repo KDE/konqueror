@@ -5190,7 +5190,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
           QApplication::sendEvent( (*it)->part()->widget(), e );
   }
   KParts::MainWindow::closeEvent( e );
-  if (!kapp->sessionSaving() && stayPreloaded()) {
+  if (kapp && !kapp->sessionSaving() && stayPreloaded()) {
       e->ignore();
       hide();
   }
