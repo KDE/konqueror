@@ -25,7 +25,7 @@
 /* Classes from the Konqueror application, which are exported only for unit tests */
 #ifdef COMPILING_TESTS
 # ifndef KONQ_TESTS_EXPORT
-#  define KONQ_TEST_EXPORT KONQUERORPRIVATE_EXPORT
+#  define KONQ_TESTS_EXPORT KONQUERORPRIVATE_EXPORT
 # endif
 #else /* not compiling tests */
 # define KONQ_TESTS_EXPORT
