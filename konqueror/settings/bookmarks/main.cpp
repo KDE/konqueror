@@ -29,22 +29,10 @@
 #include <kpluginfactory.h>
 
 // Local
-#include "kcookiesmain.h"
-#include "netpref.h"
-#include "smbrodlg.h"
-#include "useragentdlg.h"
-#include "kproxydlg.h"
-#include "cache.h"
 #include "bookmarks.h"
 
 K_PLUGIN_FACTORY(KioConfigFactory,
-        registerPlugin<UserAgentDlg>("useragent");
-        registerPlugin<SMBRoOptions>("smb");
-        registerPlugin<KIOPreferences>("netpref");
-        registerPlugin<KProxyDialog>("proxy");
-        registerPlugin<KCookiesMain>("cookie");
-        registerPlugin<CacheConfigModule>("cache");
         registerPlugin<BookmarksConfigModule>("bookmarks");
 	)
-K_EXPORT_PLUGIN(KioConfigFactory("kcmkio"))
+K_EXPORT_PLUGIN(KioConfigFactory("kcmbookmarks"))
 #include "main.moc"
