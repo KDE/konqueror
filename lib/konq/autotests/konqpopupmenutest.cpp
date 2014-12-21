@@ -21,15 +21,16 @@
 #include <kconfiggroup.h>
 #include <kstandarddirs.h>
 #include <kbookmarkmanager.h>
-#include <assert.h>
-#include "qtest_kde.h"
+#include <QTest>
 #include <QDir>
+#include <KSharedConfig>
 #include <kparts/browserextension.h>
 #include <kdebug.h>
+#include <KUrl>
 #include <knewfilemenu.h>
 #include <kfileitemlistproperties.h>
 
-QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
+QTEST_MAIN(KonqPopupMenuTest)
 
 KonqPopupMenuTest::KonqPopupMenuTest()
     : m_actionCollection(this)
