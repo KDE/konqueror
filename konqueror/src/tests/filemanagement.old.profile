@@ -94,6 +94,7 @@ Name[uz@cyrillic]=Файл бошқаруви
 Name[vi]=Quản lý Tập tin
 Name[wa]=Manaedjî les fitchîs
 Name[xh]=Uphatho Lwefayile
+Name[x-test]=xxFile Managementxx
 Name[zh_CN]=文件管理
 Name[zh_TW]=檔案管理
 RootItem=Container0
