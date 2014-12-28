@@ -26,7 +26,6 @@
 #include <qmap.h>
 #include <qfileinfo.h>
 #include <qstring.h>
-#include <kmenu.h>
 
 #include <kurl.h>
 #include <kmimetype.h>
@@ -36,6 +35,7 @@
 #include "inode.h"
 #include "scan.h"
 
+class QMenu;
 class KConfig;
 
 /* Cached Metric info config */
@@ -93,7 +93,7 @@ public:
   void saveFSOptions();
 
   // for color mode
-  void addColorItems(KMenu*, int);
+  void addColorItems(QMenu*, int);
 
   KUrl::List selectedUrls();
 

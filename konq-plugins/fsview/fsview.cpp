@@ -23,19 +23,18 @@
 
 #include <qdir.h>
 #include <qtimer.h>
+#include <QApplication>
 
-#include <kapplication.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kdebug.h>
-#include <kglobal.h>
-#include <klocale.h>
 #include <kmessagebox.h>
-#include <kmimetype.h>
 #include <kurl.h>
 
-#include <kio/global.h>
+#include <kio/job.h>
 #include <kauthorized.h>
 #include <kconfiggroup.h>
+#include <kurlauthorized.h>
 
 #include "fsview.h"
 
@@ -139,10 +138,10 @@ void FSView::setPath(const QString &p)
 
   KUrl u;
   u.setPath(_path);
-  if (!KAuthorized::authorizeUrlAction("list", KUrl(), u))
+  if (!KUrlAuthorized::authorizeUrlAction("list", KUrl(), u))
   {
      QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.prettyUrl());
-     KMessageBox::queuedMessageBox(this, KMessageBox::Sorry, msg);
+     KMessageBox::sorry(this, msg);
   }
 
   ScanDir* d = _sm.setTop(_path);
@@ -268,12 +267,12 @@ void FSView::selected(TreeMapItem* i)
 
 void FSView::contextMenu(TreeMapItem* i, const QPoint& p)
 {
-  KMenu popup;
+  QMenu popup;
 
-  KMenu* spopup = new KMenu(i18n("Go To"));
-  KMenu* dpopup = new KMenu(i18n("Stop at Depth"));
-  KMenu* apopup = new KMenu(i18n("Stop at Area"));
-  KMenu* fpopup = new KMenu(i18n("Stop at Name"));
+  QMenu* spopup = new QMenu(i18n("Go To"));
+  QMenu* dpopup = new QMenu(i18n("Stop at Depth"));
+  QMenu* apopup = new QMenu(i18n("Stop at Area"));
+  QMenu* fpopup = new QMenu(i18n("Stop at Name"));
 
   // choosing from the selection menu will give a selectionChanged() signal
   addSelectionItems(spopup, 901, i);
@@ -298,10 +297,10 @@ void FSView::contextMenu(TreeMapItem* i, const QPoint& p)
 
   popup.addSeparator();
 
-  KMenu* cpopup = new KMenu(i18n("Color Mode"));
+  QMenu* cpopup = new QMenu(i18n("Color Mode"));
   addColorItems(cpopup, 1401);
   popup.addMenu(cpopup);
-  KMenu* vpopup = new KMenu(i18n("Visualization"));
+  QMenu* vpopup = new QMenu(i18n("Visualization"));
   addVisualizationItems(vpopup, 1301);
   popup.addMenu(vpopup);
 
@@ -376,7 +375,7 @@ QString FSView::colorModeString() const
   return mode;
 }
 
-void FSView::addColorItems(KMenu* popup, int id)
+void FSView::addColorItems(QMenu* popup, int id)
 {
   _colorID = id;
 
@@ -432,7 +431,7 @@ void FSView::saveFSOptions()
 void FSView::quit()
 {
   saveFSOptions();
-  KApplication::kApplication()->quit();
+  qApp->quit();
 }
 
 void FSView::doRedraw()

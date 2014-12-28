@@ -616,12 +616,12 @@ public:
    *
    * The int is the menu id where to start for the items (100 IDs reserved).
    */
-  void addSplitDirectionItems(KMenu*, int);
-  void addSelectionItems(KMenu*, int, TreeMapItem*);
-  void addFieldStopItems(KMenu*, int, TreeMapItem*);
-  void addAreaStopItems(KMenu*, int, TreeMapItem*);
-  void addDepthStopItems(KMenu*, int, TreeMapItem*);
-  void addVisualizationItems(KMenu*, int);
+  void addSplitDirectionItems(QMenu*, int);
+  void addSelectionItems(QMenu*, int, TreeMapItem*);
+  void addFieldStopItems(QMenu*, int, TreeMapItem*);
+  void addAreaStopItems(QMenu*, int, TreeMapItem*);
+  void addDepthStopItems(QMenu*, int, TreeMapItem*);
+  void addVisualizationItems(QMenu*, int);
 
   TreeMapWidget* widget() { return this; }
   TreeMapItem* current() const { return _current; }
@@ -691,7 +691,7 @@ protected:
   // For "Esc deselects all" functionality implemented in FSView.  
   TreeMapItem *_pressed;
   // add a checkable popup item
-  void addPopupItem(KMenu* popup, const QString &text,
+  void addPopupItem(QMenu* popup, const QString &text,
                     bool bChecked, int id, bool bEnabled = true);
 private:
   TreeMapItemList diff(TreeMapItemList&, TreeMapItemList&);

@@ -28,7 +28,7 @@
 #include <qstring.h>
 #include <QPixmap>
 
-#include <kmimetype.h>
+#include <QMimeType>
 
 #include "treemap.h"
 #include "scan.h"
@@ -63,7 +63,7 @@ public:
   QString text(int i) const;
   QPixmap pixmap(int i) const;
   QColor backColor() const;
-  KMimeType::Ptr mimeType() const;
+  QMimeType mimeType() const;
 
   const QFileInfo& fileInfo() const { return _info; }
   ScanDir* dirPeer() { return _dirPeer; }
@@ -90,7 +90,7 @@ private:
   // Cached values, calculated lazy.
   // This means a change even in const methods, thus has to be "mutable"
   mutable bool _mimeSet, _mimePixmapSet;
-  mutable KMimeType::Ptr _mimeType;
+  mutable QMimeType _mimeType;
   mutable QPixmap _mimePixmap;
 };
 

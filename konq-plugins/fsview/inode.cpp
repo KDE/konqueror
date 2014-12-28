@@ -22,11 +22,13 @@
 
 
 #include <kurl.h>
-#include <kmimetype.h>
+
 #include <kdebug.h>
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
+#include <QMimeDatabase>
+#include <QMimeType>
 #include "inode.h"
 #include "scan.h"
 #include "fsview.h"
@@ -296,12 +298,11 @@ QColor Inode::backColor() const
   return QColor::fromHsv(h, 64+s, 192);
 }
 
-KMimeType::Ptr Inode::mimeType() const
+QMimeType Inode::mimeType() const
 {
   if (!_mimeSet) {
-    KUrl u;
-    u.setPath(path());
-    _mimeType = KMimeType::findByUrl( u, 0, true, false );
+    QMimeDatabase db;
+    _mimeType = db.mimeTypeForUrl( QUrl::fromLocalFile(path() ) );
 
     _mimeSet = true;
   }
@@ -366,7 +367,7 @@ QString Inode::text(int i) const
   if (i==4) return _info.lastModified().toString();
   if (i==5) return _info.owner();
   if (i==6) return _info.group();
-  if (i==7) return mimeType()->comment();
+  if (i==7) return mimeType().comment();
   return QString();
 }
 
@@ -376,7 +377,7 @@ QPixmap Inode::pixmap(int i) const
 
   if (!_mimePixmapSet) {
     KUrl u(path());
-    _mimePixmap = KIconLoader::global()->loadMimeTypeIcon(mimeType()->iconName(u), KIconLoader::Small);
+    _mimePixmap = KIconLoader::global()->loadMimeTypeIcon(KIO::iconNameForUrl(u), KIconLoader::Small);
     _mimePixmapSet = true;
   }
   return _mimePixmap;

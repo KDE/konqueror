@@ -25,17 +25,13 @@
 #include <qclipboard.h>
 #include <qtimer.h>
 
-#include <kcomponentdata.h>
-#include <kfiledialog.h>
 #include <kfileitem.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
-#include <klocale.h>
 #include <kaction.h>
-#include <kmenu.h>
 #include <kglobalsettings.h>
 #include <kprotocolmanager.h>
-#include <kio/job.h>
+#include <kio/copyjob.h>
 #include <kio/deletejob.h>
 #include <kio/paste.h>
 #include <kmessagebox.h>
@@ -44,14 +40,16 @@
 #include <kpropertiesdialog.h>
 #include <KMimeTypeEditor>
 #include <kio/jobuidelegate.h>
-// from kdebase/libkonq...
-#include <konq_operations.h>
+#include <KIO/FileUndoManager>
+#include <KJobWidgets>
 #include <ktoolinvocation.h>
 #include <kconfiggroup.h>
 #include <KDebug>
 #include <KIcon>
+#include <KLocalizedString>
 
 #include <QApplication>
+#include <QMimeData>
 
 #include "fsview_part.h"
 
@@ -104,8 +102,11 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
                        const QList<QVariant>& /* args */)
     : KParts::ReadOnlyPart(parent)
 {
-    // we need an instance
-    setComponentData( FSViewPartFactory::componentData() );
+    KAboutData aboutData("fsview", i18n("FSView"), "0.1",
+            i18n("Filesystem Viewer"),
+            KAboutLicense::GPL,
+            i18n("(c) 2002, Josef Weidendorfer"));
+    setComponentData( aboutData );
 
     _view = new FSView(new Inode(), parentWidget);
     _view->setWhatsThis( i18n("<p>This is the FSView plugin, a graphical "
@@ -178,28 +179,28 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     // Much of this is taken from Dolphin.
     // FIXME: Renaming didn't even seem to work in KDE3! Implement (non-inline) renaming
     // functionality.
-    //KAction* renameAction = m_actionCollection->addAction("rename");
+    //QAction* renameAction = m_actionCollection->addAction("rename");
     //rename->setText(i18nc("@action:inmenu Edit", "Rename..."));
     //rename->setShortcut(Qt::Key_F2);
 
-    KAction* moveToTrashAction = actionCollection()->addAction("move_to_trash");
+    QAction* moveToTrashAction = actionCollection()->addAction("move_to_trash");
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(KIcon("user-trash"));
     moveToTrashAction->setShortcut(QKeySequence::Delete);
     connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
             _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
 
-    KAction* deleteAction = actionCollection()->addAction("delete");
+    QAction* deleteAction = actionCollection()->addAction("delete");
     deleteAction->setIcon(KIcon("edit-delete"));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
     deleteAction->setShortcut(Qt::SHIFT | Qt::Key_Delete);
     connect(deleteAction, SIGNAL(triggered()), _ext, SLOT(del()));
 
-    KAction *editMimeTypeAction = actionCollection()->addAction( "editMimeType" );
+    QAction *editMimeTypeAction = actionCollection()->addAction( "editMimeType" );
     editMimeTypeAction->setText( i18nc("@action:inmenu Edit", "&Edit File Type..." ) );
     connect(editMimeTypeAction, SIGNAL(triggered()), _ext, SLOT(editMimeType()));
 
-    KAction *propertiesAction = actionCollection()->addAction( "properties" );
+    QAction *propertiesAction = actionCollection()->addAction( "properties" );
     propertiesAction->setText( i18nc("@action:inmenu File", "Properties") );
     propertiesAction->setIcon(KIcon("document-properties"));
     propertiesAction->setShortcut(Qt::ALT | Qt::Key_Return);
@@ -316,7 +317,7 @@ bool FSViewPart::openUrl(const KUrl &url)
   if (!url.isLocalFile()) return false;
 
   setUrl(url);
-  emit setWindowCaption( this->url().prettyUrl() );
+  emit setWindowCaption( this->url().toDisplayString(QUrl::PreferLocalFile) );
 
   _view->setPath(this->url().path());
 
@@ -382,7 +383,7 @@ void FSViewPart::contextMenu(TreeMapItem* /*item*/,const QPoint& p)
     foreach(TreeMapItem* i, _view->selection()) {
 	KUrl u;
 	u.setPath( ((Inode*)i)->path() );
-	QString mimetype = ((Inode*)i)->mimeType()->name();
+	QString mimetype = ((Inode*)i)->mimeType().name();
 	const QFileInfo& info = ((Inode*)i)->fileInfo();
 	mode_t mode =
 	    info.isFile() ? S_IFREG :
@@ -465,14 +466,14 @@ FSViewBrowserExtension::~FSViewBrowserExtension()
 
 void FSViewBrowserExtension::del()
 {
-  const KUrl::List list = _view->selectedUrls();
-  const bool del = KonqOperations::askDeleteConfirmation(list,
-      KonqOperations::DEL,
-      KonqOperations::DEFAULT_CONFIRMATION,
-      _view);
-
-  if (del) {
-    KIO::Job* job = KIO::del(list);
+  const KUrl::List urls = _view->selectedUrls();
+  KIO::JobUiDelegate uiDelegate;
+  uiDelegate.setWindow(_view);
+  if (uiDelegate.askDeleteConfirmation(urls,
+          KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
+    KIO::Job* job = KIO::del(urls);
+    KJobWidgets::setWindow(job, _view);
+    job->ui()->setAutoErrorHandlingEnabled(true);
     connect(job, SIGNAL(result(KJob*)),
             this, SLOT(refresh()));
   }
@@ -481,17 +482,21 @@ void FSViewBrowserExtension::del()
 void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers)
 {
   bool deleteNotTrash = ((modifiers & Qt::ShiftModifier) != 0);
-  if (deleteNotTrash) 
-  {
+  if (deleteNotTrash) {
     del();
-    return;
-  }
-  else
-  {
-    KonqOperations::del(_view, KonqOperations::TRASH, _view->selectedUrls());
-    KonqOperations* o = _view->findChild<KonqOperations*>("KonqOperations");
-    if (o) connect(o, SIGNAL(destroyed()), SLOT(refresh()));
-    return;
+  } else {
+    KIO::JobUiDelegate uiDelegate;
+    uiDelegate.setWindow(_view);
+    const QList<QUrl> urls = _view->selectedUrls();
+    if (uiDelegate.askDeleteConfirmation(urls,
+          KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
+      KIO::Job* job = KIO::trash(urls);
+      KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Trash, urls, KUrl("trash:/"), job );
+      KJobWidgets::setWindow(job, _view);
+      job->ui()->setAutoErrorHandlingEnabled(true);
+      connect(job, SIGNAL(result(KJob*)),
+              this, SLOT(refresh()));
+    }
   }
 }
 
@@ -507,7 +512,7 @@ void FSViewBrowserExtension::editMimeType()
 {
   Inode* i = (Inode*) _view->selection().first();
   if (i)
-    KMimeTypeEditor::editMimeType( i->mimeType()->name(),_view );
+    KMimeTypeEditor::editMimeType( i->mimeType().name(),_view );
 }
 
 

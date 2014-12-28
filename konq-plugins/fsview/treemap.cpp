@@ -2847,7 +2847,7 @@ void TreeMapWidget::splitActivated(QAction *a)
 }
 
 
-void TreeMapWidget::addSplitDirectionItems(KMenu* popup, int id)
+void TreeMapWidget::addSplitDirectionItems(QMenu* popup, int id)
 {
   _splitID = id;
 
@@ -2898,18 +2898,18 @@ void TreeMapWidget::visualizationActivated(QAction *a)
   else if ((id%10) == 8) setFieldPosition(f, DrawParams::BottomRight);
 }
 
-void TreeMapWidget::addVisualizationItems(KMenu* popup, int id)
+void TreeMapWidget::addVisualizationItems(QMenu* popup, int id)
 {
   _visID = id;
 
   connect(popup, SIGNAL(triggered(QAction*)),
           this, SLOT(visualizationActivated(QAction*)));
 
-  KMenu* spopup = new KMenu(i18n("Nesting"));
+  QMenu* spopup = new QMenu(i18n("Nesting"));
   addSplitDirectionItems(spopup, id+100);
   popup->addMenu(spopup);
 
-  KMenu* bpopup = new KMenu(i18n("Border"));
+  QMenu* bpopup = new QMenu(i18n("Border"));
   popup->addMenu(bpopup);
 
   addPopupItem(bpopup, i18n("Correct Borders Only"), skipIncorrectBorder(), id+2);
@@ -2925,7 +2925,7 @@ void TreeMapWidget::addVisualizationItems(KMenu* popup, int id)
   popup->addSeparator();
   id += 20;
   for (int f=0;f<_attr.size();f++, id+=10) {
-    KMenu *tpopup = new KMenu(_attr[f].type);
+    QMenu *tpopup = new QMenu(_attr[f].type);
     popup->addMenu(tpopup);
     addPopupItem(tpopup, i18n("Visible"), _attr[f].visible, id+1);
     addPopupItem(tpopup, i18n("Take Space From Children"),
@@ -2966,7 +2966,7 @@ void TreeMapWidget::selectionActivated(QAction *a)
     setSelected(i, true);
 }
 
-void TreeMapWidget::addSelectionItems(KMenu* popup,
+void TreeMapWidget::addSelectionItems(QMenu* popup,
 				      int id, TreeMapItem* i)
 {
   if (!i) return;
@@ -3001,7 +3001,7 @@ void TreeMapWidget::fieldStopActivated(QAction *a)
   }
 }
 
-void TreeMapWidget::addFieldStopItems(KMenu* popup,
+void TreeMapWidget::addFieldStopItems(QMenu* popup,
 				      int id, TreeMapItem* i)
 {
   _fieldStopID = id;
@@ -3050,7 +3050,7 @@ void TreeMapWidget::areaStopActivated(QAction *a)
   else if (id == _areaStopID+6) setMinimalArea(minimalArea()/2);
 }
 
-void TreeMapWidget::addAreaStopItems(KMenu* popup,
+void TreeMapWidget::addAreaStopItems(QMenu* popup,
 				     int id, TreeMapItem* i)
 {
   _areaStopID = id;
@@ -3119,7 +3119,7 @@ void TreeMapWidget::depthStopActivated(QAction *a)
   else if (id == _depthStopID+6) setMaxDrawingDepth(6);
 }
 
-void TreeMapWidget::addDepthStopItems(KMenu* popup,
+void TreeMapWidget::addDepthStopItems(QMenu* popup,
 				      int id, TreeMapItem* i)
 {
   _depthStopID = id;
@@ -3257,7 +3257,7 @@ void TreeMapWidget::restoreOptions(KConfigGroup* config, const QString &prefix)
   }
 }
 
-void TreeMapWidget::addPopupItem(KMenu* popup, const QString &text,
+void TreeMapWidget::addPopupItem(QMenu* popup, const QString &text,
                                  bool bChecked, int id, bool bEnabled)
 {
   QAction *a;

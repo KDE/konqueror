@@ -23,6 +23,7 @@
 #include <kdebug.h>
 #include <kurl.h>
 #include <kauthorized.h>
+#include <kurlauthorized.h>
 
 #include "scan.h"
 #include "inode.h"
@@ -247,7 +248,7 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 
   KUrl u;
   u.setPath(si->absPath);
-  if (!KAuthorized::authorizeUrlAction("list", KUrl(), u)) {
+  if (!KUrlAuthorized::authorizeUrlAction("list", KUrl(), u)) {
     if (_parent)
       _parent->subScanFinished();
 
