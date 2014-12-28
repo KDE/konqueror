@@ -44,6 +44,7 @@
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kactioncollection.h>
+#include <QStandardPaths>
 #include "plugin_webarchiver.h"
 #include "archivedialog.h"
 
@@ -88,7 +89,7 @@ void PluginWebArchiver::slotSaveToArchive()
   archiveName = archiveName.replace( QRegExp("\\s+"), "_");
 
   QString lastCWD = configGroup.readPathEntry( "savedialogcwd",
-                                               KGlobalSettings::documentPath() );
+                                               QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) );
   archiveName = lastCWD + "/" + archiveName + ".war";
 
   KUrl url = KFileDialog::getSaveUrl(archiveName, i18n("*.war *.tgz|Web Archives"), part->widget(),

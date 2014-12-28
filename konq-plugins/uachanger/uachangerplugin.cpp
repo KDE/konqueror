@@ -104,7 +104,7 @@ void UAChangerPlugin::parseDescFiles()
   struct utsname utsn;
   uname( &utsn );
 
-  QStringList languageList = KGlobal::locale()->languageList();
+  QStringList languageList = KLocale::global()->languageList();
   if ( !languageList.isEmpty() )
   {
      const int index = languageList.indexOf(QFL1("C"));

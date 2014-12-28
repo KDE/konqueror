@@ -111,7 +111,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 
 SearchBarPlugin::~SearchBarPlugin()
 {
-    KConfigGroup config(KGlobal::config(), "SearchBar");
+    KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
     config.writeEntry("Mode", (int) m_searchMode);
     config.writeEntry("CurrentEngine", m_currentEngine);
     config.writeEntry("SuggestionEnabled", m_suggestionEnabled);
@@ -399,7 +399,7 @@ void SearchBarPlugin::configurationChanged()
     }
 
     //kDebug() << "Found search engines:" << m_searchEngines;
-    KConfigGroup config = KConfigGroup(KGlobal::config(), "SearchBar");
+    KConfigGroup config = KConfigGroup(KSharedConfig::openConfig(), "SearchBar");
     m_searchMode = (SearchModes) config.readEntry("Mode", static_cast<int>(UseSearchProvider));
     const QString defaultSearchEngine ((m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first()));
     m_currentEngine = config.readEntry("CurrentEngine", defaultSearchEngine);
@@ -564,7 +564,7 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
 
     Q_ASSERT(useCompletion());
 
-    KConfigGroup config(KGlobal::config(), "SearchBar");
+    KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
     const int defaultMode = KGlobalSettings::completionMode();
     setCompletionMode (static_cast<KGlobalSettings::Completion>(config.readEntry("CompletionMode", defaultMode)));
     const QStringList list = config.readEntry( "History list", QStringList() );
@@ -585,7 +585,7 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
 
 SearchBarCombo::~SearchBarCombo()
 {
-    KConfigGroup config(KGlobal::config(), "SearchBar");
+    KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
     config.writeEntry( "History list", historyItems() );
     const int mode = completionMode();
     config.writeEntry( "CompletionMode", mode);

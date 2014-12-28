@@ -30,6 +30,7 @@
 #include <kglobalsettings.h>
 #include <kdesu/process.h>
 #include <klocale.h>
+#include <QFontDatabase>
 
 using namespace KDESu;
 
@@ -41,7 +42,7 @@ KShellCommandExecutor::KShellCommandExecutor(const QString& command, QWidget* pa
 ,m_writeNotifier(0)
 {
     setAcceptRichText( false );
-   setFont( KGlobalSettings::fixedFont() );
+   setFont( QFontDatabase::systemFont(QFontDatabase::FixedFont) );
    setReadOnly( true );
 }
 

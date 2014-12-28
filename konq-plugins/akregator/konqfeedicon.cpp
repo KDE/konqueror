@@ -66,7 +66,8 @@ static KUrl baseUrl(KParts::ReadOnlyPart *part)
 KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent), PluginBase(), m_part(0), m_feedIcon(0), m_statusBarEx(0), m_menu(0)
 {
-    KGlobal::locale()->insertCatalog("akregator_konqplugin");
+    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
+//KLocale::global()->insertCatalog("akregator_konqplugin");
 
     // make our icon foundable by the KIconLoader
     KIconLoader::global()->addAppDir("akregator");
@@ -86,7 +87,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
 
 KonqFeedIcon::~KonqFeedIcon()
 {
-    KGlobal::locale()->removeCatalog("akregator_konqplugin");
+    KLocale::global()->removeCatalog("akregator_konqplugin");
     m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
     if (m_statusBarEx)
     {
@@ -122,7 +123,7 @@ bool KonqFeedIcon::feedFound()
             doc += "<link ";
             Q_FOREACH(const QString& attrName, element.attributeNames()) {
                 doc += attrName + "=\"";
-                doc += Qt::escape( element.attribute(attrName) ).replace("\"", "&quot;");
+                doc += element.attribute(attrName).toHtmlEscaped().replace("\"", "&quot;");
                 doc += "\" ";
             }
             doc += "/>";

@@ -44,6 +44,7 @@ Boston, MA 02110-1301, USA.
 #include <kglobalsettings.h>
 #include <kconfig.h>
 #include <kicon.h>
+#include <QFontDatabase>
 #include "imgallerydialog.h"
 #include "imgallerydialog.moc"
 
@@ -74,7 +75,7 @@ void KIGPDialog::slotDefault()
     m_imageName->setChecked(true);
     m_imageSize->setChecked(false);
     m_imageProperty->setChecked(false);
-    m_fontName->setItemText(m_fontName->currentIndex(), KGlobalSettings::generalFont().family() );
+    m_fontName->setItemText(m_fontName->currentIndex(), QFontDatabase::systemFont(QFontDatabase::GeneralFont).family() );
     m_fontSize->setValue(14);
     m_foregroundColor->setColor( QColor( "#d0ffd0") );
     m_backgroundColor->setColor( QColor("#333333") );
@@ -144,7 +145,7 @@ void KIGPDialog::setupLookPage(const QString& path) {
     QStringList standardFonts;
     KFontChooser::getFontList(standardFonts, 0);
     m_fontName->addItems( standardFonts );
-    m_fontName->setItemText( m_fontName->currentIndex(), look.readEntry("FontName", KGlobalSettings::generalFont().family() ) );
+    m_fontName->setItemText( m_fontName->currentIndex(), look.readEntry("FontName", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family() ) );
 
     label = new QLabel( i18n("Fon&t name:"), page );
     label->setBuddy( m_fontName );

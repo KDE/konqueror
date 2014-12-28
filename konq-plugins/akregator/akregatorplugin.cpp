@@ -71,7 +71,8 @@ AkregatorMenu::AkregatorMenu( KonqPopupMenu * popupmenu, const QStringList& /* l
     if (view)
         m_part = view->part();
      
-    KGlobal::locale()->insertCatalog("akregator_konqplugin");
+    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
+//KLocale::global()->insertCatalog("akregator_konqplugin");
     m_feedMimeTypes << "application/rss+xml" << "text/rdf" << "application/xml";
     // Get the list of URLs clicked on from Konqi.
     //KFileItemList m_list = popupmenu->fileItemList();
@@ -97,7 +98,7 @@ AkregatorMenu::AkregatorMenu( KonqPopupMenu * popupmenu, const QStringList& /* l
 
 AkregatorMenu::~AkregatorMenu()
 {
-    KGlobal::locale()->removeCatalog("akregator_konqplugin");
+    KLocale::global()->removeCatalog("akregator_konqplugin");
     //delete m_conf;
 }
 

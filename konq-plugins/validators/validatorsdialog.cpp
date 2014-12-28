@@ -120,7 +120,7 @@ void ValidatorsDialog::save()
   ValidatorsSettings::setRunAfterLoading(m_internalUi.runAfterLoading->isChecked());
 #endif
 
-  ValidatorsSettings::self()->writeConfig();
+  ValidatorsSettings::self()->save();
 
   emit configChanged();
 }

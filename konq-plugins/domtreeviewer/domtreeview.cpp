@@ -56,6 +56,7 @@
 #include <kpushbutton.h>
 #include <kstandardguiitem.h>
 #include <ktextedit.h>
+#include <QFontDatabase>
 
 using namespace domtreeviewer;
 
@@ -126,7 +127,7 @@ DOMTreeView::DOMTreeView(QWidget *parent, bool /*allowSaving*/)
 
   part = 0;
 
-  const QFont font(KGlobalSettings::generalFont());
+  const QFont font(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
   m_listView->setFont( font );
 
   connect(m_listView, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this,
@@ -346,7 +347,7 @@ DOMListViewItem* DOMTreeView::addElement( const DOM::Node &node,  DOMListViewIte
     QTextStream ts( &text, QIODevice::ReadOnly );
     while (!ts.atEnd()) {
       const QString txt(ts.readLine());
-      const QFont font(KGlobalSettings::fixedFont());
+      const QFont font(QFontDatabase::systemFont(QFontDatabase::FixedFont));
       cur_item->setFont( font );
       cur_item->setText(0, '`' + txt  + '\'');
 

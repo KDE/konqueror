@@ -398,7 +398,7 @@ void PluginValidators::slotTidyValidation()
         results.append(i18nc("%1 is the HTML frame name, %2 is the error count string, "
                              "%3 the warning count string, %4 the accessibility warning string",
                              "Frame '%1': %2, %3, %4",
-                             Qt::escape(res->frameName),
+                             res->frameName.toHtmlEscaped(),
                              i18np("1 error", "%1 errors", (*vIt)->errors.count()),
                              i18np("1 warning", "%1 warnings", (*vIt)->warnings.count()),
                              i18np("1 accessibility warning", "%1 accessibility warnings", (*vIt)->accesswarns.count())));
@@ -406,7 +406,7 @@ void PluginValidators::slotTidyValidation()
         results.append(i18nc("%1 is the HTML frame name, %2 is the error count string, "
                              "%3 the warning count string",
                              "Frame '%1': %2, %3",
-                             Qt::escape(res->frameName),
+                             res->frameName.toHtmlEscaped(),
                              i18np("1 error", "%1 errors", (*vIt)->errors.count()),
                              i18np("1 warning", "%1 warnings", (*vIt)->warnings.count())));
     }

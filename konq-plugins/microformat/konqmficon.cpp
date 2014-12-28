@@ -44,7 +44,8 @@ K_EXPORT_PLUGIN(KonqMFIconFactory("mfkonqmficon"))
 
 KonqMFIcon::KonqMFIcon(QObject *parent, const QVariantList &)
 : KParts::Plugin(parent), PluginBase(), m_part(0), m_mfIcon(0), m_statusBarEx(0), m_menu(0) {
-	KGlobal::locale()->insertCatalog("mf_konqplugin");
+	//KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
+//KLocale::global()->insertCatalog("mf_konqplugin");
 
 	m_part = qobject_cast<KHTMLPart*>(parent);
 	if (!m_part) {
@@ -63,7 +64,7 @@ void KonqMFIcon::waitPartToLoad() {
 
 
 KonqMFIcon::~KonqMFIcon() {
-	KGlobal::locale()->removeCatalog("mf_konqplugin");
+	KLocale::global()->removeCatalog("mf_konqplugin");
 	delete m_menu;
 	m_menu = 0L;
 }

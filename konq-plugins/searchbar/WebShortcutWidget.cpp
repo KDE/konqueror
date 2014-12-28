@@ -29,6 +29,7 @@
 #include <KGlobalSettings>
 #include <KIcon>
 #include <KLocale>
+#include <QFontDatabase>
 
 WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     : QDialog(parent)
@@ -41,7 +42,7 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     iconLabel->setPixmap(wsIcon.pixmap(22, 22));
     titleLayout->addWidget(iconLabel);
     m_searchTitleLabel = new QLabel(i18n("Set Uri Shortcuts"), this);
-    QFont boldFont = KGlobalSettings::generalFont();
+    QFont boldFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     boldFont.setBold(true);
     m_searchTitleLabel->setFont(boldFont);
     titleLayout->addWidget(m_searchTitleLabel);

@@ -337,7 +337,7 @@ void ArchiveDialog::slotStyleSheetFinished( KJob *_job ) {
         DOM::DOMString ds( uss_it.key().charset() );
         QString cssCharSet( ds.string() );
         bool ok;
-        QTextCodec *codec = KGlobal::charsets()->codecForName(cssCharSet, ok);
+        QTextCodec *codec = KCharsets::charsets()->codecForName(cssCharSet, ok);
         kDebug(90110) << "translating URLs in CSS" << url.prettyUrl() << "charset=" << cssCharSet << " found=" << ok;
         assert( codec );
         QString css_text = codec->toUnicode( data );
@@ -1106,7 +1106,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             } else {
                 if (pNode.nodeType() == DOM::Node::COMMENT_NODE) {
                     text = "<!--";
-                    text += Qt::escape(nodeValue);  // No need to escape " as well
+                    text += nodeValue.toHtmlEscaped();  // No need to escape " as well
                     text += "-->";
                 } else {
                     text = escapeHTML(nodeValue);
@@ -1346,7 +1346,7 @@ bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL) {
 
 
 QString ArchiveDialog::escapeHTML(QString in) {
-    return Qt::escape(in).replace('"', "&quot;");
+    return in.toHtmlEscaped().replace('"', "&quot;");
 }
 
 QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mimetype) {

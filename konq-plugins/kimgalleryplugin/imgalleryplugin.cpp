@@ -133,7 +133,7 @@ void KImGalleryPlugin::createHead(QTextStream& stream)
     stream << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" << endl;
     stream << "<html xmlns=\"http://www.w3.org/1999/xhtml\">" << endl;
     stream << "<head>" << endl;
-    stream << "<title>" <<Qt::escape(m_configDlg->getTitle()) << "</title>" << endl;
+    stream << "<title>" <<m_configDlg->getTitle().toHtmlEscaped() << "</title>" << endl;
     stream << "<meta http-equiv=\"content-type\" content=\"text/html; charset=" << chsetName << "\"/>" << endl;
     stream << "<meta name=\"GENERATOR\" content=\"KDE Konqueror KImgallery plugin version " KDE_VERSION_STRING "\"/>" << endl;
     createCSSSection(stream);
@@ -172,9 +172,9 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
 {
     int numOfImages = imageDir.count();
     const QString imgGalleryDir = url.directory();
-    const QString today(KGlobal::locale()->formatDate(QDate::currentDate()));
+    const QString today(KLocale::global()->formatDate(QDate::currentDate()));
 
-    stream << "<body>\n<h1>" << Qt::escape(m_configDlg->getTitle()) << "</h1><p>" << endl;
+    stream << "<body>\n<h1>" << m_configDlg->getTitle().toHtmlEscaped() << "</h1><p>" << endl;
     stream << i18n("<i>Number of images</i>: %1", numOfImages) << "<br/>" << endl;
     stream << i18n("<i>Created on</i>: %1", today) << "</p>" << endl;
 
@@ -240,7 +240,7 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
 
             if (m_useCommentFile) {
                 QString imgComment = (*m_commentMap)[imgName];
-                stream << "<div>" << Qt::escape(imgComment) << "</div>" << endl;
+                stream << "<div>" << imgComment.toHtmlEscaped() << "</div>" << endl;
             }
             stream << "</td>" << endl;
 

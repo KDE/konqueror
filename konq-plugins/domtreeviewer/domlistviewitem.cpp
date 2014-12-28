@@ -23,6 +23,7 @@
 #include <qapplication.h>
 
 #include <kglobalsettings.h>
+#include <QFontDatabase>
 
 DOMListViewItem::DOMListViewItem( const DOM::Node &node, QTreeWidget *parent )
   : QTreeWidgetItem( parent ), m_node(node)
@@ -56,7 +57,7 @@ DOMListViewItem::~DOMListViewItem()
 void DOMListViewItem::init()
 {
   setColor(QApplication::palette().color(QPalette::Active, QPalette::Text));
-  m_font = KGlobalSettings::generalFont();
+  m_font = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
   QTreeWidgetItem::setFont(0, m_font);
   clos = false;
 }
