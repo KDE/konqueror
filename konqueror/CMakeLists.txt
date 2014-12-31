@@ -19,7 +19,7 @@ include(ECMSetupVersion)
 set(KONQUEROR_LIB_VERSION "5.0.97")
 
 find_package(Qt5 REQUIRED COMPONENTS Core)
-find_package(KF5 REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive)
+find_package(KF5 REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
 
 find_package(KF5 COMPONENTS Activities)
 

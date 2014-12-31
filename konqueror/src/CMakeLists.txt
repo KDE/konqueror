@@ -111,6 +111,7 @@ target_link_libraries(kdeinit_konqueror
    KF5::Konq
    KF5::Parts
    KF5::KDELibs4Support
+   KF5::Crash
 )
 
 # For khtmldefaults.h. We don't need to link to khtml, just to include that header...
