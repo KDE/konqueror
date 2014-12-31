@@ -87,7 +87,7 @@ QString KonqPixmapProvider::iconNameFor( const QUrl& url )
 
 QPixmap KonqPixmapProvider::pixmapFor( const QString& url, int size )
 {
-    return loadIcon( iconNameFor( QUrl( url ) ), size );
+    return loadIcon( iconNameFor( QUrl::fromUserInput( url ) ), size );
 }
 
 void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
@@ -101,7 +101,7 @@ void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
         if ( (++it) == itEnd )
             break;
         const QString icon (*it);
-        iconMap.insert( QUrl( url ), icon );
+        iconMap.insert( QUrl::fromUserInput( url ), icon );
         ++it;
     }
 }
@@ -114,7 +114,7 @@ void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
     QStringList list;
     QStringList::const_iterator itEnd = items.end();
     for (QStringList::const_iterator it = items.begin(); it != itEnd; ++it) {
-        QMap<QUrl,QString>::const_iterator mit = iconMap.constFind( QUrl(*it) );
+        QMap<QUrl,QString>::const_iterator mit = iconMap.constFind( QUrl::fromUserInput(*it) );
         if ( mit != iconMap.constEnd() ) {
             list.append( mit.key().url() );
             list.append( mit.value() );
