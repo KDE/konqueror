@@ -94,7 +94,8 @@ void KonqCheckBox::paintEvent( QPaintEvent * )
 
 KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
   : KStatusBar( _parent ),
-    m_pParentKonqFrame( _parent )
+    m_pParentKonqFrame( _parent ),
+    m_pStatusLabel(Q_NULLPTR)
 {
     setSizeGripEnabled( false );
 
