@@ -22,19 +22,20 @@
 #include "konq_copytomenu.h"
 #include "konq_copytomenu_p.h"
 #include <QAction>
-#include <kdebug.h>
+#include <QDebug>
+#include <QDir>
 #include <QIcon>
-#include <kglobal.h>
-#include <kfiledialog.h>
-#include <klocale.h>
-#include <kmenu.h>
-#include <kmimetype.h>
-#include <kstringhandler.h>
-#include <KJobWidgets>
+#include <QFileDialog>
+#include <QMimeDatabase>
+#include <QMimeType>
+
 #include <KIO/FileUndoManager>
 #include <KIO/CopyJob>
 #include <KIO/JobUiDelegate>
-#include <QDir>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KStringHandler>
+#include <KJobWidgets>
 
 #ifdef Q_OS_WIN
 #include "Windows.h"
@@ -78,13 +79,13 @@ void KonqCopyToMenu::setReadOnly(bool ro)
 
 void KonqCopyToMenu::addActionsTo(QMenu* menu)
 {
-    KMenu* mainCopyMenu = new KonqCopyToMainMenu(menu, d, Copy);
+    QMenu* mainCopyMenu = new KonqCopyToMainMenu(menu, d, Copy);
     mainCopyMenu->setTitle(i18nc("@title:menu", "Copy To"));
     mainCopyMenu->menuAction()->setObjectName( QLatin1String("copyTo_submenu" )); // for the unittest
     menu->addMenu(mainCopyMenu);
 
     if (!d->m_readOnly) {
-        KMenu* mainMoveMenu = new KonqCopyToMainMenu(menu, d, Move);
+        QMenu* mainMoveMenu = new KonqCopyToMainMenu(menu, d, Move);
         mainMoveMenu->setTitle(i18nc("@title:menu", "Move To"));
         mainMoveMenu->menuAction()->setObjectName( QLatin1String("moveTo_submenu" )); // for the unittest
         menu->addMenu(mainMoveMenu);
@@ -94,7 +95,7 @@ void KonqCopyToMenu::addActionsTo(QMenu* menu)
 ////
 
 KonqCopyToMainMenu::KonqCopyToMainMenu(QMenu* parent, KonqCopyToMenuPrivate* _d, MenuType menuType)
-    : KMenu(parent), m_menuType(menuType),
+    : QMenu(parent), m_menuType(menuType),
       m_actionGroup(static_cast<QWidget *>(0)),
       d(_d),
       m_recentDirsGroup(KSharedConfig::openConfig(), m_menuType == Copy ? "kuick-copy" : "kuick-move")
@@ -151,7 +152,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
     }
 #endif
 
-    // Browse... action, shows a KFileDialog
+    // Browse... action, shows a file dialog
     QAction * browseAction = new QAction(i18nc("@title:menu in Copy To or Move To submenu", "Browse..."), this);
     connect(browseAction, &QAction::triggered, this, &KonqCopyToMainMenu::slotBrowse);
     addAction(browseAction);
@@ -172,8 +173,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
 
 void KonqCopyToMainMenu::slotBrowse()
 {
-    const QUrl dest = KFileDialog::getExistingDirectoryUrl(QUrl("kfiledialog:///copyto"), // FIXME
-                                                           d->m_parentWidget ? d->m_parentWidget : this);
+    const QUrl dest = QFileDialog::getExistingDirectoryUrl(d->m_parentWidget ? d->m_parentWidget : this);
     if (!dest.isEmpty()) {
         copyOrMoveTo(dest);
     }
@@ -216,7 +216,7 @@ void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
 ////
 
 KonqCopyToDirectoryMenu::KonqCopyToDirectoryMenu(QMenu* parent, KonqCopyToMainMenu* mainMenu, const QString& path)
-    : KMenu(parent), m_mainMenu(mainMenu), m_path(path)
+    : QMenu(parent), m_mainMenu(mainMenu), m_path(path)
 {
     connect(this, &KonqCopyToDirectoryMenu::aboutToShow, this, &KonqCopyToDirectoryMenu::slotAboutToShow);
 }
@@ -240,7 +240,8 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
     // and we only care about local directories so we use QDir directly.
     QDir dir(m_path);
     const QStringList entries = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::LocaleAware);
-    KMimeType::Ptr dirMime = KMimeType::mimeType("inode/directory");
+    const QMimeDatabase db;
+    const QMimeType dirMime = db.mimeTypeForName("inode/directory");
     Q_FOREACH(const QString& subDir, entries) {
         QString subPath = m_path;
         if (!subPath.endsWith('/'))
@@ -251,7 +252,7 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
         // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
         // correctly and not misinterpreted as an indicator for a keyboard shortcut
         subMenu->setTitle(menuTitle.replace('&', "&&"));
-        const QString iconName = dirMime->iconName();
+        const QString iconName = dirMime.iconName();
         subMenu->setIcon(QIcon::fromTheme(iconName));
         if (QFileInfo(subPath).isSymLink()) { // I hope this isn't too slow...
             QFont font = subMenu->menuAction()->font();

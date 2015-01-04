@@ -20,7 +20,7 @@
 */
 
 #include <kconfiggroup.h>
-#include <kmenu.h>
+#include <QMenu>
 #include <QActionGroup>
 #include <QObject>
 #include <QUrl>
@@ -39,7 +39,7 @@ enum MenuType { Copy, Move };
 
 // The main menu, shown when opening "Copy To" or "Move To"
 // It contains Home Folder, Root Folder, Browse, and recent destinations
-class KonqCopyToMainMenu : public KMenu
+class KonqCopyToMainMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -64,7 +64,7 @@ private:
 };
 
 // The menu that lists a directory
-class KonqCopyToDirectoryMenu : public KMenu
+class KonqCopyToDirectoryMenu : public QMenu
 {
     Q_OBJECT
 public:
