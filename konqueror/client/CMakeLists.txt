@@ -1,4 +1,6 @@
 ########### kfmclient ###############
+include(ECMMarkNonGuiExecutable)
+find_package(KF5 REQUIRED Init)
 
 set(kfmclient_SRCS kfmclient.cpp )
 
@@ -15,8 +17,8 @@ if (WIN32)
     add_executable(kfmclient ${kfmclient_SRCS})
     target_link_libraries(kfmclient  KF5::KIOCore )
 else (WIN32)
-    kde4_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
-    target_link_libraries(kdeinit_kfmclient  KF5::KIOCore ${X11_LIBRARIES})
+    kf5_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
+    target_link_libraries(kdeinit_kfmclient  KF5::KIOCore ${X11_LIBRARIES} KF5::KDELibs4Support)
     install(TARGETS kdeinit_kfmclient  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (WIN32)
 

@@ -35,6 +35,12 @@
 #include <kcomponentdata.h>
 #include <KStartupInfoId>
 #include <kurifilter.h>
+#include <KConfigGroup>
+#include <KJobWidgets>
+
+//KDELibs4Support
+#include <KUrl>
+#include <kdeversion.h>
 
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
@@ -344,7 +350,7 @@ bool ClientApp::createNewWindow(const QUrl & url, bool newTab, bool tempFile, co
     kDebug() << url << "mimetype=" << mimetype;
     needInstance();
 
-    if (url.protocol().startsWith(QLatin1String("http")))
+    if (url.scheme().startsWith(QLatin1String("http")))
     {
         KConfig config(QLatin1String("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
@@ -362,7 +368,7 @@ bool ClientApp::createNewWindow(const QUrl & url, bool newTab, bool tempFile, co
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
             KGlobal::setAllowQuit( true );
-            KRun * run = new KRun( url, 0L, 0, false, false /* no progress window */ );
+            KRun * run = new KRun( url, 0, false /* no progress window */ );
             QObject::connect( run, SIGNAL(finished()), qApp, SLOT(delayedQuit()));
             QObject::connect( run, SIGNAL(error()), qApp, SLOT(delayedQuit()));
             qApp->exec();
@@ -530,9 +536,9 @@ bool ClientApp::doIt()
 #endif
 
   kDebug() << "Creating ClientApp";
-  int fake_argc = 0;
-  char** fake_argv = 0;
-  ClientApp app( fake_argc, fake_argv );
+  int fake_argc = 1;
+  char *(fake_argv[]) = {"kfmclient"};
+  ClientApp app( fake_argc, fake_argv);
 
   if ( command == "openURL" || command == "newTab" )
   {
@@ -586,7 +592,7 @@ void ClientApp::slotResult( KJob * job )
 {
   if (job->error() && s_interactive)
   {
-    static_cast<KIO::Job*>(job)->ui()->setWindow(0);
+    KJobWidgets::setWindow(job, 0);
     static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
   }
   m_ok = !job->error();
