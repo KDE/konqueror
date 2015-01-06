@@ -53,7 +53,6 @@
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
-#include <konq_operations.h>
 #include <kbookmarkmanager.h>
 #include <kinputdialog.h>
 #include <klineedit.h>
