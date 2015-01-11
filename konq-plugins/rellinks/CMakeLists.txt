@@ -7,11 +7,11 @@ add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 
 set(rellinksplugin_PART_SRCS plugin_rellinks.cpp )
 
-kde4_add_plugin(rellinksplugin  ${rellinksplugin_PART_SRCS})
+add_library(rellinksplugin MODULE ${rellinksplugin_PART_SRCS})
 
 
 
-target_link_libraries(rellinksplugin  ${KDE4_KHTML_LIBS} )
+target_link_libraries(rellinksplugin  KF5::KHtml )
 
 install(TARGETS rellinksplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

@@ -33,19 +33,19 @@ if (LIBTIDY_FOUND)
   )
 endif (LIBTIDY_FOUND)
 
-kde4_add_ui_files(validatorsplugin_PART_SRCS
+ki18n_wrap_ui(validatorsplugin_PART_SRCS
   internalvalidator.ui
   remotevalidators.ui
   reportwidget.ui
 )
 
-kde4_add_kcfg_files(validatorsplugin_PART_SRCS settings.kcfgc)
+kconfig_add_kcfg_files(validatorsplugin_PART_SRCS settings.kcfgc)
 
-kde4_add_plugin(validatorsplugin ${validatorsplugin_PART_SRCS})
+add_library(validatorsplugin MODULE ${validatorsplugin_PART_SRCS})
 
 
 
-target_link_libraries(validatorsplugin ${KDE4_KPARTS_LIBS} ${KDE4_KHTML_LIBRARY})
+target_link_libraries(validatorsplugin KF5::Parts ${KDE4_KHTML_LIBRARY})
 if (LIBTIDY_FOUND)
   target_link_libraries(validatorsplugin ${LIBTIDY_LIBRARIES})
 endif (LIBTIDY_FOUND)

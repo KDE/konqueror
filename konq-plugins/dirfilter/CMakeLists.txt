@@ -4,9 +4,9 @@ if (${KDE_VERSION} VERSION_GREATER "4.9.1")
 
 set(dirfilterplugin_PART_SRCS dirfilterplugin.cpp )
 
-kde4_add_plugin(dirfilterplugin  ${dirfilterplugin_PART_SRCS})
+add_library(dirfilterplugin MODULE ${dirfilterplugin_PART_SRCS})
 
-target_link_libraries(dirfilterplugin ${KDE4_KPARTS_LIBS})
+target_link_libraries(dirfilterplugin KF5::Parts)
 
 install(TARGETS dirfilterplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

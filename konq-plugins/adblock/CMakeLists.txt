@@ -4,11 +4,11 @@
 
 set(adblock_PART_SRCS adblock.cpp  adblockdialog.cpp )
 
-kde4_add_plugin(adblock ${adblock_PART_SRCS})
+add_library(adblock MODULE ${adblock_PART_SRCS})
 
 
 
-target_link_libraries(adblock  ${KDE4_KPARTS_LIBS} ${KDE4_KHTML_LIBS} ${KDE4_KCMUTILS_LIBS})
+target_link_libraries(adblock  KF5::Parts KF5::KHtml KF5::KCMUtils)
 
 install(TARGETS adblock  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

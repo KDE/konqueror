@@ -6,11 +6,11 @@
 
 set(autorefresh_PART_SRCS autorefresh.cpp )
 
-kde4_add_plugin(autorefresh ${autorefresh_PART_SRCS})
+add_library(autorefresh MODULE ${autorefresh_PART_SRCS})
 
 
 
-target_link_libraries(autorefresh  ${KDE4_KPARTS_LIBS} )
+target_link_libraries(autorefresh  KF5::Parts )
 
 install(TARGETS autorefresh  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

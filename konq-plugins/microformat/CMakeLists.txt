@@ -6,11 +6,11 @@
 
 set(mfkonqmficon_PART_SRCS konqmficon.cpp pluginbase.cpp )
 
-kde4_add_plugin(mfkonqmficon ${mfkonqmficon_PART_SRCS})
+add_library(mfkonqmficon MODULE ${mfkonqmficon_PART_SRCS})
 
 
 
-target_link_libraries(mfkonqmficon ${KDE4_KHTML_LIBS})
+target_link_libraries(mfkonqmficon KF5::KHtml)
 
 install(TARGETS mfkonqmficon  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

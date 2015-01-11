@@ -6,14 +6,14 @@ add_definitions(-DKONQPRIVATE_EXPORT=)
 
 set(kded_konqy_preloader_PART_SRCS preloader.cc )
 
-kde4_add_kcfg_files(kded_konqy_preloader_PART_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/konqsettingsxt.kcfgc)
+kconfig_add_kcfg_files(kded_konqy_preloader_PART_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/konqsettingsxt.kcfgc)
 
-qt4_add_dbus_adaptor(kded_konqy_preloader_PART_SRCS org.kde.konqueror.Preloader.xml preloader.h KonqyPreloader)
+qt5_add_dbus_adaptor(kded_konqy_preloader_PART_SRCS org.kde.konqueror.Preloader.xml preloader.h KonqyPreloader)
 
 
-kde4_add_plugin(kded_konqy_preloader ${kded_konqy_preloader_PART_SRCS})
+add_library(kded_konqy_preloader MODULE ${kded_konqy_preloader_PART_SRCS})
 
-target_link_libraries(kded_konqy_preloader ${KDE4_KDEUI_LIBS})
+target_link_libraries(kded_konqy_preloader )
 
 install(TARGETS kded_konqy_preloader DESTINATION ${PLUGIN_INSTALL_DIR})
 

@@ -15,8 +15,9 @@ set(libfsview_SRCS
 
 set(scantest_SRCS scantest.cpp ${libfsview_SRCS})
 
-kde4_add_executable(scantest TEST ${scantest_SRCS})
+add_executable(scantest ${scantest_SRCS})
+ecm_mark_as_test(scantest)
 
-target_link_libraries(scantest  ${KDE4_KIO_LIBS})
+target_link_libraries(scantest  KF5::KIOCore)
 
 

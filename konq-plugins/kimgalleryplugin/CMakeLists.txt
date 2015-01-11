@@ -2,11 +2,11 @@
 
 set(kimgallery_PART_SRCS imgalleryplugin.cpp imgallerydialog.cpp )
 
-kde4_add_plugin(kimgallery  ${kimgallery_PART_SRCS})
+add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
 
 
-target_link_libraries(kimgallery  ${KDE4_KPARTS_LIBS} )
+target_link_libraries(kimgallery  KF5::Parts )
 
 install(TARGETS kimgallery  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -15,6 +15,6 @@ install(TARGETS kimgallery  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 install( FILES kimgalleryplugin.rc kimgalleryplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ${ICON_INSTALL_DIR}   )
 
 

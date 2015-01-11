@@ -3,13 +3,13 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABLE_EXCEPTIONS}")
 
 set(webarchiverplugin_PART_SRCS plugin_webarchiver.cpp archivedialog.cpp )
 
-kde4_add_ui_files(webarchiverplugin_PART_SRCS archiveviewbase.ui )
+ki18n_wrap_ui(webarchiverplugin_PART_SRCS archiveviewbase.ui )
 
-kde4_add_plugin(webarchiverplugin  ${webarchiverplugin_PART_SRCS})
+add_library(webarchiverplugin MODULE ${webarchiverplugin_PART_SRCS})
 
 
 
-target_link_libraries(webarchiverplugin ${KDE4_KHTML_LIBS})
+target_link_libraries(webarchiverplugin KF5::KHtml)
 
 install(TARGETS webarchiverplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -18,11 +18,11 @@ install(TARGETS webarchiverplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 set(webarchivethumbnail_PART_SRCS webarchivecreator.cpp )
 
-kde4_add_plugin(webarchivethumbnail ${webarchivethumbnail_PART_SRCS})
+add_library(webarchivethumbnail MODULE ${webarchivethumbnail_PART_SRCS})
 
 
 
-target_link_libraries(webarchivethumbnail  ${KDE4_KHTML_LIBS} )
+target_link_libraries(webarchivethumbnail  KF5::KHtml )
 
 install(TARGETS webarchivethumbnail  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -32,5 +32,5 @@ install(TARGETS webarchivethumbnail  DESTINATION ${PLUGIN_INSTALL_DIR} )
 install( FILES plugin_webarchiver.rc plugin_webarchiver.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
 install( FILES webarchivethumbnail.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ${ICON_INSTALL_DIR}   )
 

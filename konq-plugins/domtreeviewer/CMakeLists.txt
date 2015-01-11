@@ -10,13 +10,13 @@ set(domtreeviewerplugin_PART_SRCS
    domtreecommands.cpp
    signalreceiver.cpp )
 
-kde4_add_ui_files(domtreeviewerplugin_PART_SRCS domtreeviewbase.ui texteditwidget.ui elementeditwidget.ui attributeeditwidget.ui messagedialog.ui)
+ki18n_wrap_ui(domtreeviewerplugin_PART_SRCS domtreeviewbase.ui texteditwidget.ui elementeditwidget.ui attributeeditwidget.ui messagedialog.ui)
 
-kde4_add_plugin(domtreeviewerplugin  ${domtreeviewerplugin_PART_SRCS})
+add_library(domtreeviewerplugin MODULE ${domtreeviewerplugin_PART_SRCS})
 
 
 
-target_link_libraries(domtreeviewerplugin ${KDE4_KHTML_LIBS} )
+target_link_libraries(domtreeviewerplugin KF5::KHtml )
 
 install(TARGETS domtreeviewerplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

@@ -6,11 +6,11 @@
 
 set(minitoolsplugin_PART_SRCS minitoolsplugin.cpp )
 
-kde4_add_plugin(minitoolsplugin ${minitoolsplugin_PART_SRCS})
+add_library(minitoolsplugin MODULE ${minitoolsplugin_PART_SRCS})
 
 
 
-target_link_libraries(minitoolsplugin  ${KDE4_KHTML_LIBS} )
+target_link_libraries(minitoolsplugin  KF5::KHtml )
 
 install(TARGETS minitoolsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

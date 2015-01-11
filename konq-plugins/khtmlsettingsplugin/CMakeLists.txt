@@ -6,11 +6,11 @@
 
 set(khtmlsettingsplugin_PART_SRCS settingsplugin.cpp )
 
-kde4_add_plugin(khtmlsettingsplugin  ${khtmlsettingsplugin_PART_SRCS})
+add_library(khtmlsettingsplugin MODULE ${khtmlsettingsplugin_PART_SRCS})
 
 
 
-target_link_libraries(khtmlsettingsplugin  ${KDE4_KPARTS_LIBS} )
+target_link_libraries(khtmlsettingsplugin  KF5::Parts )
 
 install(TARGETS khtmlsettingsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

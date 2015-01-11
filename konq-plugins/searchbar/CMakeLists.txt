@@ -14,9 +14,9 @@ set(searchbarplugin_PART_SRCS
     opensearch/OpenSearchReader.cpp
     opensearch/OpenSearchWriter.cpp)
 
-kde4_add_plugin(searchbarplugin ${searchbarplugin_PART_SRCS})
+add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
-target_link_libraries(searchbarplugin ${KDE4_KPARTS_LIBS} ${QT_QTSCRIPT_LIBRARY} )
+target_link_libraries(searchbarplugin KF5::Parts Qt5::Script )
 
 install(TARGETS searchbarplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
