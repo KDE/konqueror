@@ -8,7 +8,6 @@ set(konq_LIB_SRCS
    konq_popupmenuplugin.cpp # for KonqPopupMenu and its plugins
    konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
    konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
-   konq_operations.cpp         # used by dolphin and konqueror
    konq_events.cpp
    konq_historyentry.cpp
    konq_historyloader.cpp
@@ -59,7 +58,6 @@ install(FILES
     konq_events.h
     konq_historyentry.h
     konq_historyprovider.h
-    konq_operations.h
     konq_popupmenu.h
     konq_popupmenuplugin.h
     kversioncontrolplugin.h
