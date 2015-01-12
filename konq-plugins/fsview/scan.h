@@ -25,8 +25,6 @@
 
 #include <qfile.h>
 #include <QVector>
-/* Use KDE_lstat and KIO::fileoffset_t for 64-bit sizes */
-#include <kde_file.h>
 #include <kio/global.h>
 
 class ScanDir;

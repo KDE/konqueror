@@ -19,6 +19,7 @@
 #include <qdir.h>
 #include <qstringlist.h>
 #include <qset.h>
+#include <qplatformdefs.h>
 
 #include <kdebug.h>
 #include <kurl.h>
@@ -260,13 +261,14 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 				      QDir::Hidden | QDir::NoSymLinks );
 
   if (fileList.count()>0) {
-    KDE_struct_stat buff;
+    QT_STATBUF buff;
 
     _files.reserve(fileList.count());
 
     QStringList::ConstIterator it;
     for (it = fileList.constBegin(); it != fileList.constEnd(); ++it ) {
-      if (KDE::lstat( si->absPath + QLatin1Char('/') + (*it), &buff ) != 0)
+	  QString tmp( si->absPath + QLatin1Char('/') + (*it) );
+      if (QT_LSTAT( tmp.toStdString().c_str(), &buff ) != 0)
         continue;
       _files.append( ScanFile(*it, buff.st_size) );
       _fileSize += buff.st_size;
