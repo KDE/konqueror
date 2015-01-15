@@ -80,4 +80,3 @@ void ClickIconLabel::mouseReleaseEvent(QMouseEvent* event)
   }
 }
 
-#include "clickiconlabel.moc"

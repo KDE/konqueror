@@ -439,4 +439,3 @@ void DOMTreeWindow::slotClosePart()
   view()->connectToPart();
 }
 
-#include "domtreewindow.moc"

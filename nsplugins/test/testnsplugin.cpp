@@ -139,4 +139,3 @@ int main(int argc, char *argv[])
    app.exec();
 }
 
-#include "testnsplugin.moc"

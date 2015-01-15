@@ -137,4 +137,3 @@ void ValidatorsDialog::slotCancel()
    hide();
 }
 
-#include "validatorsdialog.moc"

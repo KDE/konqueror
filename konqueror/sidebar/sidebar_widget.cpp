@@ -855,4 +855,3 @@ void Sidebar_Widget::slotStatResult(KJob* job)
     }
 }
 
-#include "sidebar_widget.moc"

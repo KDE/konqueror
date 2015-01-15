@@ -105,5 +105,4 @@ void WebShortcutWidget::cancelClicked()
     hide();
 }
 
-#include "WebShortcutWidget.moc"
 

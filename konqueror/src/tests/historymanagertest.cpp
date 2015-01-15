@@ -22,7 +22,6 @@
 #include <konqhistorymanager.h>
 #include <kio/netaccess.h>
 
-#include "historymanagertest.moc"
 
 QTEST_KDEMAIN( HistoryManagerTest, NoGUI )
 

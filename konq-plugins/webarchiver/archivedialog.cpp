@@ -1386,4 +1386,3 @@ QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mim
     return filename;
 }
 
-#include "archivedialog.moc"

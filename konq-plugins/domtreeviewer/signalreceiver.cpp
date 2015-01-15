@@ -34,4 +34,3 @@ void SignalReceiver::slot()
   rcvd = true;
 }
 
-#include "signalreceiver.moc"

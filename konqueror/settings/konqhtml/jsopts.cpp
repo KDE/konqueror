@@ -237,5 +237,4 @@ JSPolicies *JSDomainListView::copyPolicies(Policies *pol) {
   return new JSPolicies(*static_cast<JSPolicies *>(pol));
 }
 
-#include "jsopts.moc"
 

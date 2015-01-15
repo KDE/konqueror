@@ -614,4 +614,3 @@ extern "C"
 	}
 }
 
-#include "bookmark_module.moc"

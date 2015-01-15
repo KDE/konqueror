@@ -69,4 +69,3 @@ void XtEvents::idleProcess()
         }
     }
 
-#include "xtevents.moc"

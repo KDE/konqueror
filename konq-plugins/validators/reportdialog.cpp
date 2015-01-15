@@ -110,4 +110,3 @@ QSize ReportDialog::sizeHint() const
   return QSize(500, 400);
 }
 
-#include "reportdialog.moc"

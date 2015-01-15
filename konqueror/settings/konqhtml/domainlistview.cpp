@@ -226,4 +226,3 @@ void DomainListView::setupPolicyDlg(PushButton /*trigger*/,
   // do nothing
 }
 
-#include "domainlistview.moc"

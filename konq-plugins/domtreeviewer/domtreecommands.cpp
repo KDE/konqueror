@@ -565,6 +565,5 @@ QString MoveNodeCommand::name() const
   return i18n("Move node");
 }
 
-#include "domtreecommands.moc"
 
 #undef MCSE

@@ -97,4 +97,3 @@ int KShellCommandDialog::executeCommand()
    return exec();
 }
 
-#include "kshellcmddialog.moc"

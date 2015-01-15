@@ -46,7 +46,6 @@ Boston, MA 02110-1301, USA.
 #include <kicon.h>
 #include <QFontDatabase>
 #include "imgallerydialog.h"
-#include "imgallerydialog.moc"
 
 KIGPDialog::KIGPDialog(QWidget *parent, const QString& path )
     : KPageDialog( parent)

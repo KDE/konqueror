@@ -30,7 +30,6 @@
 #include <kapplication.h>
 #include <khtml_part.h>
 
-#include "webarchivecreator.moc"
 
 extern "C"
 {

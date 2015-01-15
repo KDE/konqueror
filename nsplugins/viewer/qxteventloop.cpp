@@ -466,6 +466,5 @@ bool QXtEventLoop::processEvents( ProcessEventsFlags flags )
     return ( (flags & WaitForMore) || ( pendingmask != 0 ) || nevents > 0 );
 }
 
-#include "qxteventloop.moc"
 
 

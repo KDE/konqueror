@@ -1102,4 +1102,3 @@ bool KonqSidebarTree::eventFilter(QObject* obj, QEvent* ev)
     return K3ListView::eventFilter(obj, ev);
 }
 
-#include "konq_sidebartree.moc"

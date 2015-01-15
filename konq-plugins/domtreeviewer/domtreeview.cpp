@@ -1375,4 +1375,3 @@ void DOMTreeView::deleteAttributes()
   mainWindow()->executeAndAddCommand(cmd);
 }
 
-#include "domtreeview.moc"

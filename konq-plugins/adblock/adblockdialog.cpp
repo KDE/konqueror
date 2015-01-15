@@ -329,4 +329,3 @@ void AdBlockDlg::showElement()
 }
 
 
-#include "adblockdialog.moc"

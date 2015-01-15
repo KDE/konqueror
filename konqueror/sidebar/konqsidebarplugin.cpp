@@ -18,7 +18,6 @@
 */
 
 #include "konqsidebarplugin.h"
-#include "konqsidebarplugin.moc"
 #include <kdebug.h>
 
 class KonqSidebarModulePrivate

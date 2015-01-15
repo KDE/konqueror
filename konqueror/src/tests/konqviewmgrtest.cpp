@@ -909,4 +909,3 @@ void ViewMgrTest::moveTabLeft()
     QCOMPARE(mainWindow.focusWidget(), view2->part()->widget()->focusWidget());
 }
 
-#include "konqviewmgrtest.moc"

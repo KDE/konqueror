@@ -649,4 +649,3 @@ extern "C"
 
 
 
-#include "dirtree_module.moc"
