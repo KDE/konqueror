@@ -22,6 +22,7 @@
 #define _ARCHIVEDIALOG_H_
 
 #include <kdialog.h>
+#include <kio/job_base.h>
 
 #include <qlinkedlist.h>
 
@@ -262,7 +263,7 @@ private:
 
     int              m_uniqId;
     KTar *           m_tarBall;
-    time_t           m_archiveTime;
+    QDateTime           m_archiveTime;
     QString          m_filename;
 
     ArchiveViewBase *   m_widget;

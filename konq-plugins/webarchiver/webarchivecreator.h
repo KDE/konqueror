@@ -26,6 +26,9 @@
 //Added by qt3to4:
 #include <QTimerEvent>
 
+#include <QObject>
+#include <QString>
+
 class KHTMLPart;
 
 class WebArchiveCreator : public QObject, public ThumbCreator

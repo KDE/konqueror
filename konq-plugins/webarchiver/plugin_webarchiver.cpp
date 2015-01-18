@@ -29,8 +29,8 @@
 
 //#define DEBUG_WAR
 
-#include <qdir.h>
-#include <qfile.h>
+#include <QDir>
+#include <QFile>
 
 #include <kaction.h>
 #include <kcomponentdata.h>
@@ -47,6 +47,10 @@
 #include <QStandardPaths>
 #include "plugin_webarchiver.h"
 #include "archivedialog.h"
+
+//KDELibs4Support
+#include <kicon.h>
+#include <kurl.h>
 
 K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
 K_EXPORT_PLUGIN( PluginWebArchiverFactory( "webarchiver" ) )

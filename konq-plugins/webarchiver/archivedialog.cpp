@@ -55,15 +55,14 @@
 #include <qtextcodec.h>
 #include <qtextdocument.h>
 
-#include <kdebug.h>
 #include <ktar.h>
-#include <kglobal.h>
 #include <kauthorized.h>
 #include <kcharsets.h>
 #include <kmimetype.h>
 #include <kmessagebox.h>
 #include <kstringhandler.h>
 #include <kstandardguiitem.h>
+#include <KUrlAuthorized>
 
 #include <khtml_part.h>
 
@@ -74,6 +73,11 @@
 #include <dom/css_value.h>
 
 #include "archivedialog.h"
+
+//KDELibs4Support
+#include <kurl.h>
+#include <kdebug.h>
+#include <kglobal.h>
 
 // Set to true if you have a patched http-io-slave that has
 // improved offline-browsing functionality.
@@ -185,7 +189,7 @@ ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart
     //   m_document = part->document().ownerDocument();
 
     m_tarBall = new KTar(filename, "application/x-gzip");
-    m_archiveTime = QDateTime::currentDateTime().toTime_t();
+    m_archiveTime = QDateTime::currentDateTime();
 }
 
 ArchiveDialog::~ArchiveDialog() {
@@ -210,6 +214,7 @@ void ArchiveDialog::archive() {
         m_objects.clear();
         assert(static_cast<ssize_t>(m_url2tar.size()) - static_cast<ssize_t>(m_cssURLs.size()) >= 0);
 //         m_objects.reserve(m_url2tar.size() - m_cssURLs.size());
+
         FOR_ITER(UrlTarMap, m_url2tar, u2t_it) {
             const KUrl &url = u2t_it.key();
             DownloadInfo &info = u2t_it.value();
@@ -280,8 +285,8 @@ void ArchiveDialog::slotObjectFinished( KJob *_job ) {
         const QString &tarName = info.tarName;
 
 //         kDebug(90110) << "downloaded " << url.prettyUrl() << "size=" << data.size() << "mimetype" << mimetype;
-        error = ! m_tarBall->writeFile(tarName, QString::null, QString::null, data.data(), data.size(),
-                                       archivePerms, m_archiveTime, m_archiveTime, m_archiveTime);
+        error = ! m_tarBall->writeFile(tarName, data, archivePerms, QString::null, QString::null,
+                                       m_archiveTime, m_archiveTime, m_archiveTime);
         if (error) {
             kDebug(90110) << "Error writing to archive file";
             finishedArchiving(true);
@@ -289,7 +294,7 @@ void ArchiveDialog::slotObjectFinished( KJob *_job ) {
         }
     } else {
         info.tarName.clear();
-        kDebug(90110) << "download error for url='" << url.prettyUrl();
+        kDebug(90110) << "download error for url='" << url;
     }
 
     endProgressInfo(error);
@@ -338,7 +343,7 @@ void ArchiveDialog::slotStyleSheetFinished( KJob *_job ) {
         QString cssCharSet( ds.string() );
         bool ok;
         QTextCodec *codec = KCharsets::charsets()->codecForName(cssCharSet, ok);
-        kDebug(90110) << "translating URLs in CSS" << url.prettyUrl() << "charset=" << cssCharSet << " found=" << ok;
+        kDebug(90110) << "translating URLs in CSS" << url << "charset=" << cssCharSet << " found=" << ok;
         assert( codec );
         QString css_text = codec->toUnicode( data );
         data.clear();
@@ -348,8 +353,8 @@ void ArchiveDialog::slotStyleSheetFinished( KJob *_job ) {
         data = codec->fromUnicode( css_text );
         css_text.clear();
 
-        error = ! m_tarBall->writeFile(tarName, QString::null, QString::null, data.data(), data.size(),
-                                       archivePerms, m_archiveTime, m_archiveTime, m_archiveTime);
+        error = ! m_tarBall->writeFile(tarName, data, archivePerms, QString::null, QString::null,
+                                       m_archiveTime, m_archiveTime, m_archiveTime);
         if (error) {
             kDebug(90110) << "Error writing to archive file";
             finishedArchiving(true);
@@ -357,7 +362,7 @@ void ArchiveDialog::slotStyleSheetFinished( KJob *_job ) {
         }
     } else {
         info.tarName.clear();
-        kDebug(90110) << "download error for css url='" << url.prettyUrl();
+        kDebug(90110) << "download error for css url='" << url;
     }
 
     endProgressInfo(error);
@@ -731,7 +736,7 @@ bool ArchiveDialog::insertTranslateURL( const KUrl &fullURL, RecurseData &data )
         m_url2tar.insert( fullURL, DownloadInfo( QString::null, data.part ) );
         return true;
     } else {
-        kDebug(90110) << "URL check failed on '" << fullURL.prettyUrl() << "' -- skipping";
+        kDebug(90110) << "URL check failed on '" << fullURL << "' -- skipping";
         return false;
     }
 }
@@ -824,10 +829,10 @@ bool ArchiveDialog::saveFrame(KHTMLPart *part, int level) {
     assert( p2tn_it != m_part2tarName.end() );
     const QString &tarName = p2tn_it.value();
 
-    kDebug(90110) << "writing part='" << part->url().prettyUrl() << "' to tarfile='" << tarName
+    kDebug(90110) << "writing part='" << part->url() << "' to tarfile='" << tarName
                   << "' size=" << rawtext.size();
-    bool error = ! m_tarBall->writeFile(tarName, QString::null, QString::null, rawtext.data(), rawtext.size(),
-                                        archivePerms, m_archiveTime, m_archiveTime, m_archiveTime);
+    bool error = ! m_tarBall->writeFile(tarName, rawtext, archivePerms, QString::null, QString::null,
+                                        m_archiveTime, m_archiveTime, m_archiveTime);
     if (error) {
         return true;
     }
@@ -871,7 +876,7 @@ void ArchiveDialog::saveHTMLPart(RecurseData &data)
         }
     }
 
-    textStream << "<!-- saved from: " << data.part->url().prettyUrl() << " -->\n";
+    textStream << "<!-- saved from: " << data.part->url().toDisplayString() << " -->\n";
 
     try {
         saveHTMLPartLower(data.document.documentElement(), 1, data);
@@ -924,7 +929,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 KUrl newurl = KUrl(baseurl, parseURL((*eurls.absURL).value));
                 if (urlCheckFailed(data.part, newurl)) {
                     (*eurls.absURL).value = "";
-                    kDebug(90110) << "removing invalid/insecure href='" << newurl.prettyUrl() << "'";
+                    kDebug(90110) << "removing invalid/insecure href='" << newurl << "'";
                 } else {
                     //
                     // KUrl::htmlRef() calls internally fragment()->toPercent()->toLatin1()->fromLatin1()->fromPercent()
@@ -950,7 +955,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 if (it == m_url2tar.end()) {
 
                     (*eurls.transURL).value = "";
-                    kDebug(90110) << "removing invalid/insecure link='" << fullURL.prettyUrl() << "'";
+                    kDebug(90110) << "removing invalid/insecure link='" << fullURL << "'";
 
                 } else {
 //                     assert( !it.value().tarName.isNull() );
@@ -966,7 +971,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
                 if ( it == m_url2tar.end() ) {
 
-                    kDebug(90110) << "removing invalid/insecure CSS link='" << fullURL.prettyUrl() << "'";
+                    kDebug(90110) << "removing invalid/insecure CSS link='" << fullURL << "'";
                     (*eurls.cssURL).value = "";
 
                 } else {
@@ -1024,7 +1029,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     Q_ASSERT( p2tn_it != m_part2tarName.end() );
                     (*eurls.frameURL).value = p2tn_it.value();
 
-                    kDebug(90110) << "setting frame='" << fullURL.prettyUrl() << "' to src='"
+                    kDebug(90110) << "setting frame='" << fullURL << "' to src='"
                                   <<  (*eurls.frameURL).value;
                 }
             }
@@ -1335,8 +1340,8 @@ bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL) {
     if (!protFile && !protHttp)
         return true;
 
-    if (! KAuthorized::authorizeUrlAction("redirect", part->url(), fullURL) ||
-        ! KAuthorized::authorizeUrlAction("open", part->url(), fullURL))
+    if (! KUrlAuthorized::authorizeUrlAction("redirect", part->url(), fullURL) ||
+        ! KUrlAuthorized::authorizeUrlAction("open", part->url(), fullURL))
     {
         return true;
     }

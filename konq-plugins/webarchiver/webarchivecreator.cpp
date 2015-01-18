@@ -19,21 +19,27 @@
 
 // $Id$
 
+#include "webarchivecreator.h"
+
 #include <time.h>
 
-#include <qpixmap.h>
-#include <qimage.h>
-#include <qpainter.h>
+#include <QPixmap>
+#include <QImage>
+#include <QPainter>
 //Added by qt3to4:
 #include <QTimerEvent>
 #include <QAbstractEventDispatcher>
-#include <kapplication.h>
 #include <khtml_part.h>
 
+// KDELibs4Support
+#include  <kurl.h>
+#include <kapplication.h>
+
+#include "webarchivecreator.moc"
 
 extern "C"
 {
-	KDE_EXPORT ThumbCreator *new_creator()
+	 Q_DECL_EXPORT ThumbCreator *new_creator()
 	{
 		return new WebArchiveCreator;
 	}

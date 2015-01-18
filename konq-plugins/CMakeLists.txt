@@ -1,6 +1,21 @@
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 project(konq-plugins)
 
+find_package(ECM 1.3.0 CONFIG REQUIRED)
+
+include(FeatureSummary)
+
 include_directories (${KDE_BASEAPPS_SOURCE_DIR}/lib/konq)
+
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
+
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(ECMInstallIcons)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
+find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
 
 # TODO add_subdirectory( khtmlsettingsplugin )
 # TODO add_subdirectory( kimgalleryplugin )
@@ -9,7 +24,7 @@ include_directories (${KDE_BASEAPPS_SOURCE_DIR}/lib/konq)
 # TODO add_subdirectory( babelfish )
 # TODO add_subdirectory( validators )
 # TODO add_subdirectory( domtreeviewer )
-# TODO add_subdirectory( webarchiver )
+add_subdirectory( webarchiver )
 
 #add_subdirectory( quickprint )
 # TODO add_subdirectory( kttsplugin )
