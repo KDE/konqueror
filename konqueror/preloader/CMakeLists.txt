@@ -13,7 +13,7 @@ qt5_add_dbus_adaptor(kded_konqy_preloader_PART_SRCS org.kde.konqueror.Preloader.
 
 add_library(kded_konqy_preloader MODULE ${kded_konqy_preloader_PART_SRCS})
 
-target_link_libraries(kded_konqy_preloader )
+target_link_libraries(kded_konqy_preloader KF5::KHtml KF5::ConfigCore KF5::KDELibs4Support KF5::DBusAddons)
 
 install(TARGETS kded_konqy_preloader DESTINATION ${PLUGIN_INSTALL_DIR})
 

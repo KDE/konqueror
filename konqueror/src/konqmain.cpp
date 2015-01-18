@@ -32,7 +32,8 @@
 #include <kcmdlineargs.h>
 #include <QtCore/QFile>
 
-#ifdef Q_WS_X11
+#include <config-konqueror.h>
+#ifdef KONQ_HAVE_X11
 #include <QX11Info>
 #endif
 
@@ -63,11 +64,10 @@ static void listSessions()
 
 static bool tryPreload()
 {
-#ifdef Q_WS_X11
-    if(KonqSettings::maxPreloadCount() > 0) {
+#ifdef KONQ_HAVE_X11
+    if(QX11Info::isPlatformX11() && KonqSettings::maxPreloadCount() > 0) {
         QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-        QX11Info info;
-        QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), info.screen());
+        QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
         if(!retVal)
             return false; // too many preloaded or failed
         KonqMainWindow* win = new KonqMainWindow; // prepare an empty window too
@@ -87,7 +87,6 @@ static bool tryPreload()
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     KCmdLineArgs::init(argc, argv, KonqFactory::aboutData());
-
 
     KCmdLineOptions options;
 

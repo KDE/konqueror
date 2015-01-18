@@ -46,6 +46,12 @@ target_link_libraries(konquerorprivate
    ${ZLIB_LIBRARY}
    KF5::KDELibs4Support
 )
+
+if(X11_FOUND)
+  target_link_libraries(konquerorprivate Qt5::X11Extras)
+endif(X11_FOUND)
+
+
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 

@@ -36,15 +36,16 @@ set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed 
                        PURPOSE "Required for building Konqueror"
                       )
 
-if(Q_WS_X11)
-  find_package(X11 REQUIRED) # both subdirs require the X11 libs
-endif(Q_WS_X11)
+find_package(X11)
+set(KONQ_HAVE_X11 ${X11_FOUND})
+
+if (X11_FOUND)
+  find_package(Qt5 REQUIRED X11Extras)
+endif(X11_FOUND)
 
 add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
-
-
 
 add_subdirectory( src )
 add_subdirectory( client )
@@ -52,7 +53,7 @@ add_subdirectory( client )
 add_subdirectory( about )
 add_subdirectory( pics )
 # TODO add_subdirectory( sidebar )
-# TODO add_subdirectory( preloader )
+add_subdirectory( preloader )
 add_subdirectory( settings )
 
 ########### install files ###############

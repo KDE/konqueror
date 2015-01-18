@@ -13,3 +13,5 @@
 /* mallinfo() is available in <stdlib.h> */
 #cmakedefine KDE_MALLINFO_STDLIB 1
 
+/* compiling for X11 */
+#cmakedefine KONQ_HAVE_X11
