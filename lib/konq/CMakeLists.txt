@@ -37,6 +37,7 @@ set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed 
 # Targets
 add_subdirectory(src)
 if(BUILD_TESTING)
+  find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
   add_subdirectory(autotests)
 endif()
 
