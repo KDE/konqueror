@@ -25,14 +25,14 @@
 #include <kicon.h>
 #include <klocale.h>
 
+#include <QPushButton>
+
 ValidatorsDialog::ValidatorsDialog(QWidget *parent )
   : KPageDialog( parent)
 {
-  setButtons(Ok|Cancel);
-  setDefaultButton(Ok);
+  setStandardButtons(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
   setModal(false);
-  showButtonSeparator(true);
-  setCaption(i18nc("@title:window", "Configure Validator Plugin"));
+  setWindowTitle(i18nc("@title:window", "Configure Validator Plugin"));
   setMinimumWidth(400);
 
 #ifdef HAVE_TIDY

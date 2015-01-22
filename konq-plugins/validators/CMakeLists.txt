@@ -1,7 +1,8 @@
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 
-macro_optional_find_package(LibTidy)
+find_package(LibTidy)
+find_package(KF5 REQUIRED KHtml WidgetsAddons IconThemes)
 set_package_properties(LibTidy PROPERTIES DESCRIPTION "HTML Tidy"
                        URL "http://tidy.sourceforge.net"
                        TYPE OPTIONAL
@@ -45,7 +46,7 @@ add_library(validatorsplugin MODULE ${validatorsplugin_PART_SRCS})
 
 
 
-target_link_libraries(validatorsplugin KF5::Parts ${KDE4_KHTML_LIBRARY})
+target_link_libraries(validatorsplugin KF5::Parts KF5::KHtml KF5::WidgetsAddons KF5::KDELibs4Support KF5::IconThemes)
 if (LIBTIDY_FOUND)
   target_link_libraries(validatorsplugin ${LIBTIDY_LIBRARIES})
 endif (LIBTIDY_FOUND)

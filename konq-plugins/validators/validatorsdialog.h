@@ -21,7 +21,7 @@
 #ifndef __validatorsdialog_h
 #define __validatorsdialog_h
 
-#include <kpagedialog.h>
+#include <KPageDialog>
 
 #include "ui_remotevalidators.h"
 

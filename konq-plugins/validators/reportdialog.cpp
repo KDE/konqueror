@@ -25,6 +25,9 @@
 
 #include <klocale.h>
 
+//KDELibs4Support
+#include <kicon.h>
+
 static const int FrameNumberRole = Qt::UserRole + 1;
 
 static bool compare_report_items(QTreeWidgetItem* a, QTreeWidgetItem* b)

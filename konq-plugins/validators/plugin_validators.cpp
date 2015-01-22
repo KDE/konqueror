@@ -48,6 +48,7 @@
 #include <kstatusbar.h>
 #include <kparts/browserextension.h>
 #include <kparts/statusbarextension.h>
+#include <KIconLoader>
 
 #include <config-konq-validator.h>
 
@@ -57,7 +58,6 @@
 #endif
 
 K_PLUGIN_FACTORY(PluginValidatorsFactory, registerPlugin<PluginValidators>();)
-K_EXPORT_PLUGIN(PluginValidatorsFactory(KAboutData("validatorsplugin", 0, ki18n("Validate Web Page") , "1.0" )))
 
 const char PluginValidators::s_boundary[] = "KonquerorValidatorPlugin";
 const char PluginValidators::s_CRLF[] = "\r\n";
@@ -126,7 +126,6 @@ PluginValidators::PluginValidators( QObject* parent,
   , m_localValidation(0), m_localValidationReport(0)
   , m_icon(0), m_statusBarExt(0)
 {
-  setComponentData(PluginValidatorsFactory::componentData());
 
   m_menu = new KActionMenu ( KIcon("validators"),i18n( "&Validate Web Page" ),
 			     actionCollection());
@@ -489,7 +488,7 @@ void PluginValidators::validateByUpload(const KUrl &validatorUrl, const QList<QP
 
 bool PluginValidators::canValidateByUri() const
 {
-  return m_part->url().protocol().toLower() == "http";
+  return m_part->url().scheme() == "http";
 }
 
 bool PluginValidators::canValidateByUpload() const
@@ -508,7 +507,7 @@ bool PluginValidators::canValidateLocally() const
     "bookmarks",
     0 // keep it as last!
   };
-  const QByteArray proto = m_part->url().protocol().toAscii();
+  const QByteArray proto = m_part->url().scheme().toAscii();
   for (const char** protoIt = exclude_protocols; *protoIt; ++protoIt)
   {
     if (proto == *protoIt)

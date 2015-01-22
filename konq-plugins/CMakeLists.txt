@@ -22,7 +22,7 @@ find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
 # TODO add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
 # TODO add_subdirectory( babelfish )
-# TODO add_subdirectory( validators )
+add_subdirectory( validators )
 # TODO add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
