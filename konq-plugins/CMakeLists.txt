@@ -43,5 +43,5 @@ add_subdirectory( fsview )
 
 # TODO add_subdirectory( adblock )
 
-# TODO add_subdirectory( akregator )
+add_subdirectory( akregator )
 

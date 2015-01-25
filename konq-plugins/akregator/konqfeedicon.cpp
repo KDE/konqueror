@@ -32,12 +32,13 @@
 #include <kiconloader.h>
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>
+#include <KParts/ReadOnlyPart>
 #include <KParts/HtmlExtension>
+#include <KParts/SelectorInterface>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 #include <kstatusbar.h>
 #include <kurllabel.h>
-#include <kurl.h>
 #include <kicon.h>
 #include <kprotocolinfo.h>
 
@@ -46,12 +47,15 @@
 #include <qpixmap.h>
 #include <qstringlist.h>
 #include <QTextDocument>
+#include <KLocalizedString>
+
+//KDELibs4Support
+#include <kurl.h>
 
 using namespace Akregator;
 
 
 K_PLUGIN_FACTORY(KonqFeedIconFactory, registerPlugin<KonqFeedIcon>();)
-K_EXPORT_PLUGIN(KonqFeedIconFactory("akregatorkonqfeedicon"))
 
 static KUrl baseUrl(KParts::ReadOnlyPart *part)
 {
@@ -87,7 +91,6 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
 
 KonqFeedIcon::~KonqFeedIcon()
 {
-    KLocale::global()->removeCatalog("akregator_konqplugin");
     m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
     if (m_statusBarEx)
     {
@@ -105,7 +108,7 @@ bool KonqFeedIcon::feedFound()
 {
     // Since attempting to determine feed info for about:blank crashes khtml,
     // lets prevent such look up for local urls (about, file, man, etc...)
-    if (KProtocolInfo::protocolClass(m_part->url().protocol()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0)
+    if (KProtocolInfo::protocolClass(m_part->url().scheme()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0)
         return false;
 
     KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(m_part);

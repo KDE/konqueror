@@ -18,7 +18,9 @@ set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginbase
 
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS})
 
-target_link_libraries(akregatorkonqfeedicon KF5::Parts )
+target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
+
+target_link_libraries(akregatorkonqfeedicon KF5::Parts KF5::KDELibs4Support)
 
 install(TARGETS akregatorkonqfeedicon DESTINATION ${PLUGIN_INSTALL_DIR} )
 
