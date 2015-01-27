@@ -1,5 +1,6 @@
 
 ########### next target ###############
+find_package(KF5 REQUIRED Su)
 
 set(konq_shellcmdplugin_PART_SRCS kshellcmdexecutor.cpp kshellcmddialog.cpp kshellcmdplugin.cpp )
 
@@ -7,7 +8,7 @@ set(konq_shellcmdplugin_PART_SRCS kshellcmdexecutor.cpp kshellcmddialog.cpp kshe
 add_library(konq_shellcmdplugin MODULE ${konq_shellcmdplugin_PART_SRCS})
 
 
-target_link_libraries(konq_shellcmdplugin KF5::Parts ${KDE4_KDESU_LIBS})
+target_link_libraries(konq_shellcmdplugin KF5::Parts KF5::Su KF5::KDELibs4Support)
 
 install(TARGETS konq_shellcmdplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

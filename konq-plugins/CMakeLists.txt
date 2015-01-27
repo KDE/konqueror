@@ -30,7 +30,7 @@ add_subdirectory( webarchiver )
 # TODO add_subdirectory( kttsplugin )
 
 if(UNIX)
-   # TODO add_subdirectory( shellcmdplugin )
+   add_subdirectory( shellcmdplugin )
 endif(UNIX)
 
 # TODO add_subdirectory( imagerotation )
