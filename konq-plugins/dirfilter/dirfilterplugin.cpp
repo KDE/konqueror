@@ -24,6 +24,7 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QBoxLayout>
+#include <QShowEvent>
 
 #include <kicon.h>
 #include <kmenu.h>
@@ -39,6 +40,9 @@
 #include <kactioncollection.h>
 
 #include <kparts/browserextension.h>
+
+//KDELibs4Support
+#include <kglobal.h>
 
 
 K_GLOBAL_STATIC(SessionManager, globalSessionManager)
@@ -238,7 +242,7 @@ DirFilterPlugin::DirFilterPlugin(QObject* parent, const QVariantList&)
         connect(notifyExt, SIGNAL(listingEvent(KParts::ListingNotificationExtension::NotificationEventType, KFileItemList)),
                 this, SLOT(slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType, KFileItemList)));
 
-        KAction* action = actionCollection()->addAction(QLatin1String("filterdir"), this, SLOT(slotShowFilterBar()));
+        QAction* action = actionCollection()->addAction(QLatin1String("filterdir"), this, SLOT(slotShowFilterBar()));
         action->setText(i18nc("@action:inmenu Tools", "Show Filter Bar"));
         action->setIcon(KIcon("view-filter"));
         action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_I);
@@ -327,7 +331,7 @@ void DirFilterPlugin::slotShowPopup()
                 action->setChecked(true);
                 enableReset ++;
             }
-            action->setData(it.key());
+            action->setData(inode);
             m_pMimeInfo[inode].action = action;
         }
     }
@@ -537,6 +541,5 @@ void DirFilterPlugin::setFilterBar()
 }
 
 K_PLUGIN_FACTORY(DirFilterFactory, registerPlugin<DirFilterPlugin>();)
-K_EXPORT_PLUGIN(DirFilterFactory("dirfilterplugin"))
 
 #include "dirfilterplugin.moc"

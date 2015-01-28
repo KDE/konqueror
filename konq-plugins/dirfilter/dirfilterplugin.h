@@ -23,6 +23,7 @@
 #include <QPointer>
 #include <QStringList>
 #include <QWidget>
+#include <QMenu>
 
 #include <kurl.h>
 #include <kparts/plugin.h>

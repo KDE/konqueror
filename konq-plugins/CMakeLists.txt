@@ -19,7 +19,7 @@ find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
 
 # TODO add_subdirectory( khtmlsettingsplugin )
 # TODO add_subdirectory( kimgalleryplugin )
-# TODO add_subdirectory( dirfilter )
+add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( validators )
