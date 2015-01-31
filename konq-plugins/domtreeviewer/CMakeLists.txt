@@ -1,3 +1,4 @@
+find_package(KF5 REQUIRED KHtml)
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABLE_EXCEPTIONS}")
 ########### next target ###############
@@ -16,7 +17,7 @@ add_library(domtreeviewerplugin MODULE ${domtreeviewerplugin_PART_SRCS})
 
 
 
-target_link_libraries(domtreeviewerplugin KF5::KHtml )
+target_link_libraries(domtreeviewerplugin KF5::KHtml KF5::KDELibs4Support)
 
 install(TARGETS domtreeviewerplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

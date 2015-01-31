@@ -23,7 +23,7 @@ add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( validators )
-# TODO add_subdirectory( domtreeviewer )
+add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
 #add_subdirectory( quickprint )

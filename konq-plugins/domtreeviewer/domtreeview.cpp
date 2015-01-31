@@ -170,7 +170,7 @@ void DOMTreeView::setHtmlPart(KHTMLPart *_part)
     // nothing here yet
   }
 
-  parentWidget()->setWindowTitle( part ? i18nc( "@title:window", "DOM Tree for %1" , part->url().prettyUrl()) : i18nc("@title:window", "DOM Tree") );
+  parentWidget()->setWindowTitle( part ? i18nc( "@title:window", "DOM Tree for %1" , part->url().toDisplayString()) : i18nc("@title:window", "DOM Tree") );
 
   QTimer::singleShot(0, this, SLOT(slotSetHtmlPartDelayed()));
 }
@@ -476,16 +476,12 @@ void DOMTreeView::slotFindClicked()
 {
   if (m_findDialog == 0) {
     m_findDialog = new KFindDialog(this);
-    m_findDialog->setButtons( KDialog::User1|KDialog::Close );
-    m_findDialog->setButtonGuiItem( KDialog::User1, KStandardGuiItem::find() );
-    m_findDialog->setDefaultButton(KDialog::User1);
-
     m_findDialog->setSupportsWholeWordsFind(false);
     m_findDialog->setHasCursor(false);
     m_findDialog->setHasSelection(false);
     m_findDialog->setSupportsRegularExpressionFind(false);
 
-    connect(m_findDialog, SIGNAL(user1Clicked()), this, SLOT(slotSearch()));
+    connect(m_findDialog, SIGNAL(okClicked()), this, SLOT(slotSearch()));
   }
   m_findDialog->show();
 }

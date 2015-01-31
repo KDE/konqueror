@@ -11,9 +11,10 @@
 #include <kactioncollection.h>
 #include <khtml_part.h>
 
-K_PLUGIN_FACTORY(DomtreeviewerFactory, registerPlugin<PluginDomtreeviewer>();)
-K_EXPORT_PLUGIN(DomtreeviewerFactory( "domtreeviewer" ))
+//KDELibs4Support
+#include <kicon.h>
 
+K_PLUGIN_FACTORY(DomtreeviewerFactory, registerPlugin<PluginDomtreeviewer>();)
 
 PluginDomtreeviewer::PluginDomtreeviewer( QObject* parent, 
 	                                  const QVariantList & )

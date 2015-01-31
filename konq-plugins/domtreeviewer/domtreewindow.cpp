@@ -50,6 +50,10 @@
 #include <QMenu>
 #include <QDropEvent>
 
+//KDELibs4Support
+#include <kdialog.h>
+#include <kdebug.h>
+#include <kicon.h>
 
 class MessageDialog : public KDialog, public Ui::MessageDialog
 {
@@ -104,8 +108,7 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
     setupActions();
 
     // Add typical actions and save size/toolbars/statusbar
-    setupGUI(ToolBar | Keys | StatusBar | Save | Create,
-             KStandardDirs::locate( "data", "domtreeviewer/domtreeviewerui.rc", componentData()));
+    setupGUI(ToolBar | Keys | StatusBar | Save | Create, KStandardDirs::locate("data", "domtreeviewer/domtreeviewerui.rc"));
 
     // allow the view to change the statusbar and caption
 #if 0
@@ -352,7 +355,8 @@ void DOMTreeWindow::showMessageLog()
 void DOMTreeWindow::optionsConfigureToolbars()
 {
     // use the standard toolbar editor
-    saveMainWindowSettings( config()->group( autoSaveGroup() ) );
+    KConfigGroup autoSaveGrp = config()->group(autoSaveGroup());
+    saveMainWindowSettings(autoSaveGrp);
     KEditToolBar dlg(actionCollection());
     connect(&dlg, SIGNAL(newToolbarConfig()), this, SLOT(newToolbarConfig()));
     dlg.exec();
@@ -362,7 +366,7 @@ void DOMTreeWindow::newToolbarConfig()
 {
     // this slot is called when user clicks "Ok" or "Apply" in the toolbar editor.
     // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
-    createGUI(KStandardDirs::locate( "data", "domtreeviewer/domtreeviewerui.rc", componentData()));
+    createGUI(KStandardDirs::locate( "data", "domtreeviewer/domtreeviewerui.rc"));
     applyMainWindowSettings( config()->group( autoSaveGroup() ) );
 }
 
