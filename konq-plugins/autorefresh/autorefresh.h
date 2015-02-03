@@ -21,7 +21,8 @@
 
 #ifndef __plugin_autorefresh_h
 #define __plugin_autorefresh_h
- 
+
+#include <QVariant>
 #include <kparts/plugin.h>
  
 class QTimer;

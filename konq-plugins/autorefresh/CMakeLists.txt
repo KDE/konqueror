@@ -10,7 +10,7 @@ add_library(autorefresh MODULE ${autorefresh_PART_SRCS})
 
 
 
-target_link_libraries(autorefresh  KF5::Parts )
+target_link_libraries(autorefresh  KF5::Parts KF5::KDELibs4Support )
 
 install(TARGETS autorefresh  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

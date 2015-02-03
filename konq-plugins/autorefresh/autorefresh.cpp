@@ -31,8 +31,11 @@
 #include <kselectaction.h>
 #include <kactioncollection.h>
 #include <kpluginfactory.h>
+#include <KParts/ReadOnlyPart>
 
+//KDELibs4Support
 #include <KIcon>
+#include <kurl.h>
 
 AutoRefresh::AutoRefresh( QObject* parent, const QVariantList & /*args*/ )
     : Plugin( parent )
@@ -126,7 +129,6 @@ void AutoRefresh::slotRefresh()
 }
 
 K_PLUGIN_FACTORY( AutoRefreshFactory, registerPlugin< AutoRefresh >(); )
-K_EXPORT_PLUGIN( AutoRefreshFactory( "autorefresh" ) )
 
 #include "autorefresh.moc"
 
