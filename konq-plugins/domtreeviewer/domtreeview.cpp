@@ -560,10 +560,14 @@ void DOMTreeView::searchRecursive(DOMListViewItem* cur_item, const QString& sear
     cur_item->setItalic(true);
     m_listView->setCurrentItem(cur_item);
     m_listView->scrollToItem(cur_item);
+    QTreeWidgetItem *parent = cur_item->parent();
+    while(parent && !parent->isExpanded()){
+        m_listView->setItemExpanded(parent, true);
+        parent = parent->parent();
+    }
   } else {
     m_listView->setItemExpanded(cur_item, false);
   }
-
   for (int cp = 0; cp < cur_item->childCount(); ++cp)
     searchRecursive(static_cast<DOMListViewItem*>(cur_item->child(cp)), searchText, caseSensitivity);
 }
