@@ -22,6 +22,8 @@ Boston, MA 02110-1301, USA.
 #define kimgalleryplugin_h
 
 #include <kparts/plugin.h>
+#include <kparts/readonlypart.h>
+#include <QDir>
 
 class QProgressDialog;
 class KUrl;

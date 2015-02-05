@@ -50,21 +50,19 @@ Boston, MA 02110-1301, USA.
 KIGPDialog::KIGPDialog(QWidget *parent, const QString& path )
     : KPageDialog( parent)
 {
-    setCaption(i18nc("@title:window", "Configure"));
-    setButtons(Default|Ok|Cancel);
-    setDefaultButton(Ok);
+    setStandardButtons(QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    buttonBox()->button(QDialogButtonBox::Ok)->setDefault(true);
     setModal(true);
-    showButtonSeparator(true);
     setFaceType(List);
 
     m_path = path;
-    setCaption(i18nc("@title:window", "Create Image Gallery"));
-    setButtonGuiItem( KDialog::Ok, KGuiItem(i18n("Create"),"imagegallery") );
+    setWindowTitle(i18nc("@title:window", "Create Image Gallery"));
+    KGuiItem::assign(buttonBox()->button(QDialogButtonBox::Ok), KGuiItem(i18n("Create"),"imagegallery"));
     m_config = new KConfig("kimgallerypluginrc", KConfig::NoGlobals);
     setupLookPage(path);
     setupDirectoryPage(path);
     setupThumbnailPage(path);
-    connect(this,SIGNAL(defaultClicked()),this,SLOT(slotDefault()));
+    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults),SIGNAL(clicked()),this,SLOT(slotDefault()));
 }
 
 void KIGPDialog::slotDefault()
@@ -391,7 +389,7 @@ KIGPDialog::~KIGPDialog()
 
 void KIGPDialog::imageUrlChanged(const QString &url )
 {
-    enableButtonOk( !url.isEmpty());
+    buttonBox()->button(QDialogButtonBox::Ok)->setEnabled( !url.isEmpty());
 }
 
 bool  KIGPDialog::printImageName()  const

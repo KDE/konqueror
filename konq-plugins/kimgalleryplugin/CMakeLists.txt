@@ -6,7 +6,7 @@ add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
 
 
-target_link_libraries(kimgallery  KF5::Parts )
+target_link_libraries(kimgallery  KF5::Parts KF5::KDELibs4Support)
 
 install(TARGETS kimgallery  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -15,6 +15,8 @@ install(TARGETS kimgallery  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 install( FILES kimgalleryplugin.rc kimgalleryplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins )
 
-ecm_install_icons( ${ICON_INSTALL_DIR}   )
+set(kimagegallery_ICONS hi16-actions-imagegallery.png hi22-actions-imagegallery.png)
+
+ecm_install_icons(ICONS ${kimagegallery_ICONS} DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)
 
 

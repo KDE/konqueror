@@ -48,18 +48,20 @@ Boston, MA 02110-1301, USA.
 #include "imgallerydialog.h"
 #include "imgalleryplugin.h"
 
+//KDELibs4Support
+#include <kdeversion.h>
+
 
 K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
-K_EXPORT_PLUGIN(KImGalleryPluginFactory( "imgalleryplugin" ))
 
 
     KImGalleryPlugin::KImGalleryPlugin( QObject* parent, const QVariantList & )
         : KParts::Plugin( parent ), m_commentMap(0)
 {
-    KAction *a = actionCollection()->addAction("create_img_gallery");
+    QAction *a = actionCollection()->addAction("create_img_gallery");
     a->setText(i18n("&Create Image Gallery..."));
     a->setIcon(KIcon("imagegallery"));
-    a->setShortcut(KShortcut(Qt::CTRL+Qt::Key_I));
+    a->setShortcut(QKeySequence(Qt::CTRL+Qt::Key_I));
     connect(a, SIGNAL(triggered()), this, SLOT(slotExecute()));
 }
 
@@ -78,7 +80,8 @@ void KImGalleryPlugin::slotExecute()
         return;
     }
 
-    m_configDlg = new KIGPDialog(m_part->widget(), m_part->url().path(KUrl::AddTrailingSlash));
+    QString path = m_part->url().adjusted(QUrl::StripTrailingSlash).toLocalFile()+'/';
+    m_configDlg = new KIGPDialog(m_part->widget(), path);
 
     if ( m_configDlg->exec() == QDialog::Accepted ) {
         kDebug(90170) << "dialog is ok";
@@ -91,7 +94,7 @@ void KImGalleryPlugin::slotExecute()
         KUrl url(m_configDlg->getImageUrl());
         if ( !url.isEmpty() && url.isValid()) {
             m_progressDlg = new QProgressDialog(m_part->widget());
-            QObject::connect(m_progressDlg, SIGNAL(cancelled()), this, SLOT(slotCancelled()) );
+            QObject::connect(m_progressDlg, SIGNAL(canceled()), this, SLOT(slotCancelled()) );
 
             m_progressDlg->setLabelText( i18n("Creating thumbnails") );
             m_progressDlg->setCancelButton(new KPushButton(KStandardGuiItem::cancel(),m_progressDlg));
