@@ -37,20 +37,18 @@
 #include <kicon.h>
 #include <kparts/part.h>
 #include <kparts/htmlextension.h>
+#include <kparts/htmlsettingsinterface.h>
+#include <KConfigGroup>
 
 #include <QtDBus>
 
-static const KAboutData aboutdata("khtmlsettingsplugin", 0, ki18n("HTML Settings") , "1.0" );
 K_PLUGIN_FACTORY( SettingsPluginFactory, registerPlugin<SettingsPlugin>(); )
-K_EXPORT_PLUGIN( SettingsPluginFactory( aboutdata ) )
 
 SettingsPlugin::SettingsPlugin( QObject* parent,
                                 const QVariantList & )
     : KParts::Plugin( parent ), mConfig(0)
 {
-
-    setComponentData(SettingsPluginFactory::componentData());
-
+    setComponentData(KAboutData("khtmlsettingsplugin", i18n("HTML Settings") , "1.0" ));
     KActionMenu *menu = new KActionMenu(KIcon("configure"), i18n("HTML Settings"), actionCollection() );
     actionCollection()->addAction( "action menu", menu );
     menu->setDelayed( false );

@@ -17,7 +17,7 @@ include(ECMInstallIcons)
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
 
-# TODO add_subdirectory( khtmlsettingsplugin )
+add_subdirectory( khtmlsettingsplugin )
 # TODO add_subdirectory( kimgalleryplugin )
 add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
