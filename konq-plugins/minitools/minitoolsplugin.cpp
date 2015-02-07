@@ -40,7 +40,6 @@
 #include "minitoolsplugin.h"
 
 K_PLUGIN_FACTORY(MinitoolsPluginFactory, registerPlugin<MinitoolsPlugin>();)
-K_EXPORT_PLUGIN(MinitoolsPluginFactory("minitoolsplugin"))
 
 
 MinitoolsPlugin::MinitoolsPlugin(QObject* parent, const QVariantList &)

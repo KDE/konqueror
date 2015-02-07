@@ -34,7 +34,7 @@ if(UNIX)
 endif(UNIX)
 
 # TODO add_subdirectory( imagerotation )
-# TODO add_subdirectory( minitools )
+add_subdirectory( minitools )
 #add_subdirectory( microformat )
 add_subdirectory( autorefresh )
 add_subdirectory( fsview )
