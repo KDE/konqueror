@@ -13,6 +13,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(ECMInstallIcons)
+include(ECMMarkAsTest)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
