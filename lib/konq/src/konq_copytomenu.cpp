@@ -124,8 +124,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
     foreach ( const QFileInfo& info, QDir::drives() ) {
         uint type = DRIVE_UNKNOWN;
         QString driveIcon = "drive-harddisk";
-        QT_WA({ type = GetDriveTypeW((wchar_t *)info.absoluteFilePath().utf16()); },
-              { type = GetDriveTypeA(info.absoluteFilePath().toLocal8Bit()); });
+        type = GetDriveTypeW((wchar_t *)info.absoluteFilePath().utf16());
         switch (type) {
             case DRIVE_REMOVABLE:
                 driveIcon = "drive-removable-media";
