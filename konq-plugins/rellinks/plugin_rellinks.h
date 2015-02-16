@@ -35,11 +35,10 @@
 
 // KDE includes
 #include <kparts/plugin.h>
-#include <dom/dom_string.h>
+#include <dom/dom_element.h>
+#include <kactionmenu.h>
 
 // type definitions
-typedef QMap<int,DOM::Element> DOMElementMap;
-typedef QMap<QString, QAction*> KActionMap;
 typedef QMap<QString, KActionMenu*> KActionMenuMap;
 
 // forward declarations
@@ -83,30 +82,20 @@ private slots:
      */
     void updateToolbar();
 
-
-    void goHome();
-    void goUp();
-    void goFirst();
-    void goPrevious();
-    void goNext();
-    void goLast();
-    void goContents();
-    void goIndex();
-    void goGlossary();
-    void goHelp();
-    void goSearch();
-    void goCopyright();
-    void goAuthor();
-
-    void goBookmark(int id);
-    void goChapter(int id);
-    void goSection(int id);
-    void goSubsection(int id);
-    void goAppendix(int id);
-    void goAlternate(int id);
-    void goAllElements(int id);
+    /**
+     * Slot called when the user triggers an action
+     *
+     * @param action the triggered action
+     */
+    void actionTriggered(QAction *action);
 
 private:
+
+    /**
+     * Go to the link
+     * @param e the element containing the link to go to
+     */
+    void goToLink(DOM::Element e);
 
     /**
      * Try to guess some relations from the url, if the document doesn't contains relations
@@ -114,7 +103,7 @@ private:
 	 * the "next" relation will be set to page5.html
 	 */
 	void guessRelations();
-	
+
     /**
      * Function used to get link type of a relation.
      * For example "prev" is of type "previous" and "toc" is of type "contents"
@@ -138,13 +127,6 @@ private:
      */
     void disableAll();
 
-    /**
-     * Go to the link
-     * @param rel Relation name
-     * @param id Identifier of the menu item
-     */
-    void goToLink(const QString & rel, int id=0);
-
 private:
     KHTMLPart* m_part;
     KHTMLView* m_view;
@@ -154,13 +136,11 @@ private:
     KActionMenu *m_more;
     KActionMenu *m_links;
 
-    /** Map of KAction */
-    KActionMap kaction_map;
     /** Map of KActionMenu */
     KActionMenuMap kactionmenu_map;
 
-    /** Map of all the link element which can be managed by rellinks */
-    QMap<QString,DOMElementMap> element_map;
+	/** Whether the at least one link element has been found in the current page*/
+    bool m_linksFound;
 
     QTimer* m_pollTimer;
 };
