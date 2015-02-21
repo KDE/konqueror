@@ -20,6 +20,7 @@
 #include "OpenSearchManager.h"
 
 #include <QtCore/QFile>
+#include <QStandardPaths>
 
 #include <KDebug>
 #include <KGlobal>
@@ -48,7 +49,7 @@ void OpenSearchManager::setSearchProvider(const QString &searchProvider)
     m_activeEngine = 0;
 
     if (!m_enginesMap.contains(searchProvider)) {
-        const QString fileName = KGlobal::dirs()->findResource("data", "konqueror/opensearch/" + searchProvider + ".xml");
+        const QString fileName = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/opensearch/" + searchProvider + ".xml");
         if (fileName.isEmpty()) {
             return;
         }
@@ -138,7 +139,7 @@ void OpenSearchManager::jobFinished(KJob *job)
         OpenSearchEngine *engine = reader.read(m_jobData);
         if (engine) {
             m_enginesMap.insert(engine->name(), engine);
-            QString path = KGlobal::dirs()->findResource("data", "konqueror/opensearch/");
+            QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "/konqueror/opensearch/", QStandardPaths::LocateDirectory) + "/";
             QString fileName = trimmedEngineName(engine->name());
             QFile file(path + fileName + ".xml");
             OpenSearchWriter writer;

@@ -29,6 +29,9 @@
 #include <QItemDelegate>
 #include <QPixmap>
 
+//KDELibs4Support
+#include <kaction.h>
+
 namespace KParts {
     class Part;
     class ReadOnlyPart;
@@ -40,6 +43,7 @@ class WebShortcutWidget;
 class QAction;
 class QMenu;
 class QTimer;
+class QWidgetAction;
 
 /**
  * Combo box which catches mouse clicks on the pixmap.
@@ -201,7 +205,7 @@ private:
 
     QWeakPointer<KParts::ReadOnlyPart> m_part;
     SearchBarCombo* m_searchCombo;
-    KAction* m_searchComboAction;
+    QWidgetAction* m_searchComboAction;
     QList<KAction *> m_addSearchActions;
     QMenu* m_popupMenu;
     WebShortcutWidget* m_addWSWidget;
@@ -219,6 +223,7 @@ private:
     bool m_suggestionEnabled;
     QMap<QString, QString> m_openSearchDescs;
     bool m_reloadConfiguration;
+    QString m_searchProvidersDir;
 };
 
 /**

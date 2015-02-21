@@ -42,6 +42,8 @@
 #include <KParts/BrowserExtension>
 #include <KParts/TextExtension>
 #include <KParts/HtmlExtension>
+#include <KParts/SelectorInterface>
+#include <KParts/PartActivateEvent>
 
 
 //#include <kparts/mainwindow.h>
@@ -55,6 +57,13 @@
 #include <QPainter>
 #include <QMouseEvent>
 #include <QtDBus/QtDBus>
+#include <QWidgetAction>
+#include <QStandardPaths>
+
+//KDELibs4Support
+#include <kicon.h>
+#include <kcomponentdata.h>
+
 
 
 K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
@@ -79,16 +88,18 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));
     connect(m_searchCombo, SIGNAL(suggestionEnabled(bool)), this, SLOT(enableSuggestion(bool)));
 
-    m_searchComboAction = actionCollection()->addAction("toolbar_search_bar");
+    m_searchComboAction = new QWidgetAction(actionCollection());
+    actionCollection()->addAction("toolbar_search_bar", m_searchComboAction);
     m_searchComboAction->setText(i18n("Search Bar"));
     m_searchComboAction->setDefaultWidget(m_searchCombo);
-    m_searchComboAction->setShortcutConfigurable(false);
+    actionCollection()->setShortcutsConfigurable(m_searchComboAction, false);
 
-    KAction *a = actionCollection()->addAction("focus_search_bar");
+    QAction *a = actionCollection()->addAction("focus_search_bar");
     a->setText(i18n("Focus Searchbar"));
     a->setShortcut(QKeySequence(Qt::CTRL+Qt::ALT+Qt::Key_S));
     connect(a, SIGNAL(triggered()), this, SLOT(focusSearchbar()));
-
+	m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
+	QDir().mkpath(m_searchProvidersDir);
     configurationChanged();
 
     m_timer = new QTimer(this);
@@ -355,13 +366,14 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
     if (!openSearchTitle.isEmpty()) {
         const QString openSearchHref = m_openSearchDescs.value(openSearchTitle);
         QUrl url;
-        if (QUrl(openSearchHref).isRelative()) {
+		QUrl openSearchUrl = QUrl(openSearchHref);
+        if (openSearchUrl.isRelative()) {
             const QUrl docUrl = m_part ? m_part.data()->url() : QUrl();
             QString host = docUrl.scheme() + QLatin1String("://") + docUrl.host();
             if (docUrl.port() != -1) {
                 host += QLatin1String(":") + QString::number(docUrl.port());
             }
-            url = QUrl(docUrl, openSearchHref);
+            url = docUrl.resolved(QUrl(openSearchHref));
         }
         else {
             url = QUrl(openSearchHref);
@@ -373,7 +385,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KRun::runCommand("kcmshell4 ebrowsing", (m_part ? m_part.data()->widget() : 0));
+    KRun::runCommand("kcmshell5 webshortcuts", (m_part ? m_part.data()->widget() : 0));
 }
 
 void SearchBarPlugin::configurationChanged()
@@ -497,9 +509,8 @@ void SearchBarPlugin::HTMLDocLoaded()
 void SearchBarPlugin::openSearchEngineAdded(const QString &name, const QString &searchUrl, const QString &fileName)
 {
     //kDebug() << "New Open Search Engine Added: " << name << ", searchUrl " << searchUrl;
-    QString path = KGlobal::mainComponent().dirs()->saveLocation("services", "searchproviders/");
 
-    KConfig _service(path + fileName + ".desktop", KConfig::SimpleConfig);
+    KConfig _service(m_searchProvidersDir + fileName + ".desktop", KConfig::SimpleConfig);
     KConfigGroup service(&_service, "Desktop Entry");
     service.writeEntry("Type", "Service");
     service.writeEntry("ServiceTypes", "SearchProvider");
@@ -529,8 +540,7 @@ void SearchBarPlugin::openSearchEngineAdded(const QString &name, const QString &
 void SearchBarPlugin::webShortcutSet(const QString &name, const QString &webShortcut, const QString &fileName)
 {
     Q_UNUSED(name);
-    QString path = KGlobal::mainComponent().dirs()->saveLocation("services", "searchproviders/");
-    KConfig _service(path + fileName + ".desktop", KConfig::SimpleConfig);
+    KConfig _service(m_searchProvidersDir + fileName + ".desktop", KConfig::SimpleConfig);
     KConfigGroup service(&_service, "Desktop Entry");
     service.writeEntry("Keys", webShortcut);
     _service.sync();
@@ -565,8 +575,7 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
     Q_ASSERT(useCompletion());
 
     KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
-    const int defaultMode = KGlobalSettings::completionMode();
-    setCompletionMode (static_cast<KGlobalSettings::Completion>(config.readEntry("CompletionMode", defaultMode)));
+    setCompletionMode (static_cast<KCompletion::CompletionMode>(config.readEntry("CompletionMode", static_cast<int>(KCompletion::CompletionPopup))));
     const QStringList list = config.readEntry( "History list", QStringList() );
     setHistoryItems(list, true);
     Q_ASSERT(currentText().isEmpty()); // KHistoryComboBox calls clearEditText

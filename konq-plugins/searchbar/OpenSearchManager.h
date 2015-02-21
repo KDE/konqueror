@@ -23,6 +23,9 @@
 #include <QtCore/QObject>
 #include <kio/jobclasses.h>
 
+//KDELibs4Support
+#include <kurl.h>
+
 class SuggestionEngine;
 
 class OpenSearchEngine;

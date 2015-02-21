@@ -1,5 +1,7 @@
 project (searchbar)
 
+find_package(Qt5 REQUIRED Script)
+
 add_subdirectory( icons )
 add_subdirectory( opensearch )
 
@@ -16,7 +18,7 @@ set(searchbarplugin_PART_SRCS
 
 add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
-target_link_libraries(searchbarplugin KF5::Parts Qt5::Script )
+target_link_libraries(searchbarplugin KF5::Parts Qt5::Script KF5::KDELibs4Support)
 
 install(TARGETS searchbarplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

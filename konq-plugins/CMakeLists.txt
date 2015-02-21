@@ -39,7 +39,7 @@ add_subdirectory( minitools )
 #add_subdirectory( microformat )
 add_subdirectory( autorefresh )
 add_subdirectory( fsview )
-# TODO add_subdirectory( searchbar )
+add_subdirectory( searchbar )
 add_subdirectory( rellinks )
 
 # TODO add_subdirectory( adblock )
