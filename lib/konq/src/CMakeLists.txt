@@ -12,8 +12,6 @@ set(konq_LIB_SRCS
    konq_historyentry.cpp
    konq_historyloader.cpp
    konq_historyprovider.cpp   # konqueror and konqueror/sidebar
-   kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
-   kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
 )
 
 add_library(KF5Konq ${konq_LIB_SRCS})
@@ -60,8 +58,6 @@ install(FILES
     konq_historyprovider.h
     konq_popupmenu.h
     konq_popupmenuplugin.h
-    kversioncontrolplugin.h
-    kversioncontrolplugin2.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
 
     DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
