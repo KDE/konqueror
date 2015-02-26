@@ -68,9 +68,6 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
     setWindowTitle("nsp.host"); // for debugging..
     _instanceInterface = new org::kde::nsplugins::Instance( viewerDBusId, id, QDBusConnection::sessionBus() );
 
-    QGridLayout *_layout = new QGridLayout(this);
-    _layout->setMargin(1);
-    _layout->setSpacing(1);
     KConfig _cfg( "kcmnspluginrc" );
     KConfigGroup cfg(&_cfg, "Misc");
     if (cfg.readEntry("demandLoad", false)) {
@@ -82,6 +79,9 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
                 return;
             }
         }
+        QGridLayout *_layout = new QGridLayout(this);
+        _layout->setMargin(1);
+        _layout->setSpacing(1);
         _frame = new QFrame(this);
         _frame->setFrameShape(QFrame::Box);
         _frame->setFrameShadow(QFrame::Plain);
@@ -89,6 +89,7 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
         _layout->addWidget(_frame, 0, 0);
         QVBoxLayout *vlay = new QVBoxLayout(_frame);
         QPushButton *startPluginButton = new QPushButton(i18n("Start Plugin"), _frame);
+        startPluginButton->setPalette(QApplication::palette());
         vlay->addWidget(startPluginButton);
         connect(startPluginButton, SIGNAL(clicked()), this, SLOT(loadPlugin()));
         show();
