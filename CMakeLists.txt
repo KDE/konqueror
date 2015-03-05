@@ -37,7 +37,6 @@ if ( KActivities_FOUND )
 endif ( KActivities_FOUND )
 
 add_subdirectory( lib )
-add_subdirectory( dolphin )
 add_subdirectory( kdialog )
 add_subdirectory( keditbookmarks )
 add_subdirectory( konqueror )
