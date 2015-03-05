@@ -20,8 +20,6 @@ set(konq_LIB_SRCS
    konq_historyentry.cpp
    konq_historyloader.cpp
    konq_historyprovider.cpp
-   kversioncontrolplugin.cpp  # used by dolphin and its version control plugins (deprecated)
-   kversioncontrolplugin2.cpp # used by dolphin and its version control plugins
 
    konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
    knewmenu.cpp # deprecated (functionality has moved to kdelibs)
@@ -65,8 +63,6 @@ install( FILES
  konq_events.h
  konqmimedata.h
  konq_fileitemcapabilities.h
- kversioncontrolplugin.h
- kversioncontrolplugin2.h
  konq_historyprovider.h
  konq_historyentry.h
 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
