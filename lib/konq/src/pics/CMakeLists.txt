@@ -3,6 +3,6 @@ install(FILES
     arrow_bottomright.png
     arrow_topleft.png
     arrow_topright.png
-    DESTINATION  ${KF5_DATA_INSTALL_DIR}/konqueror/pics
+    DESTINATION  ${KDE_INSTALL_DATADIR_KF5}/konqueror/pics
 )
 

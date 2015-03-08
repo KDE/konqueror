@@ -7,8 +7,8 @@ include_directories(
 
 add_library(konqsidebar_history MODULE history_module.cpp)
 target_link_libraries(konqsidebar_history konqsidebarplugin konquerorprivate konq  KF5::Parts)
-install(TARGETS konqsidebar_history DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES konqsidebar_history.desktop DESTINATION ${DATA_INSTALL_DIR}/konqsidebartng/plugins)
+install(TARGETS konqsidebar_history DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(FILES konqsidebar_history.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqsidebartng/plugins)
 
 ########### the KCM for the history ###############
 
@@ -19,6 +19,6 @@ add_library(kcm_history MODULE ${kcm_history_SRCS})
 # konquerorprivate is only needed for konqhistorysettings...
 target_link_libraries(kcm_history konquerorprivate KF5::Konq KF5::Parts  )
 
-install(TARGETS kcm_history DESTINATION ${PLUGIN_INSTALL_DIR} )
-install(FILES kcmhistory.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS kcm_history DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+install(FILES kcmhistory.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 

@@ -13,11 +13,11 @@ add_library(rellinksplugin MODULE ${rellinksplugin_PART_SRCS})
 
 target_link_libraries(rellinksplugin  KF5::KHtml KF5::KDELibs4Support)
 
-install(TARGETS rellinksplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS rellinksplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_rellinks.rc plugin_rellinks.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
+install( FILES plugin_rellinks.rc plugin_rellinks.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 
 

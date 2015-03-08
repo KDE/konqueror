@@ -16,7 +16,7 @@ install(FILES
     linkNFS.desktop
     linkCDWRITER.desktop
     linkMO.desktop
-    DESTINATION ${TEMPLATES_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_TEMPLATEDIR}
 )
 
 
@@ -34,5 +34,5 @@ install(FILES
     TextFile.txt
     URL.desktop
     ZIP-Device.desktop
-    DESTINATION ${TEMPLATES_INSTALL_DIR}/.source
+    DESTINATION ${KDE_INSTALL_TEMPLATEDIR}/.source
 )

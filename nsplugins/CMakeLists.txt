@@ -41,7 +41,7 @@ if (X11_Xt_LIB)
 
   target_link_libraries(libnsplugin KF5::Parts Qt5::Gui)
 
-  install(TARGETS libnsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS libnsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
   ########### next target ###############
@@ -53,7 +53,7 @@ if (X11_Xt_LIB)
 
   target_link_libraries(kcminit_nsplugins KF5::KDELibs4Support )
 
-  install(TARGETS kcminit_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS kcminit_nsplugins  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
   ########### nspluginscan ###############
@@ -64,13 +64,13 @@ if (X11_Xt_LIB)
 
   target_link_libraries(nspluginscan  KF5::KIOCore ${X11_Xt_LIB})
 
-  install(TARGETS nspluginscan ${INSTALL_TARGETS_DEFAULT_ARGS})
+  install(TARGETS nspluginscan ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
   ########### install files ###############
 
-  install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-  install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/nsplugin )
-  install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+  install( FILES khtml_plugins.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+  install( FILES nspluginpart.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/nsplugin )
+  install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )
 
   add_subdirectory( test )
 

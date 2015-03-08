@@ -14,10 +14,10 @@ add_library(minitoolsplugin MODULE ${minitoolsplugin_PART_SRCS})
 
 target_link_libraries(minitoolsplugin  KF5::KHtml KF5::KDELibs4Support)
 
-install(TARGETS minitoolsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS minitoolsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES minitoolsplugin.rc minitoolsplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
+install( FILES minitoolsplugin.rc minitoolsplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 

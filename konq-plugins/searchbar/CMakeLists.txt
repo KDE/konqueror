@@ -18,9 +18,9 @@ add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
 target_link_libraries(searchbarplugin KF5::Parts Qt5::Script )
 
-install(TARGETS searchbarplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS searchbarplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES searchbar.rc searchbar.desktop  DESTINATION  ${DATA_INSTALL_DIR}/konqueror/kpartplugins )
+install( FILES searchbar.rc searchbar.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqueror/kpartplugins )
 

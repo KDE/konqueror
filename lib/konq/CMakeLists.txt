@@ -4,7 +4,7 @@ project(LibKonq)
 add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
 # ECM setup
-find_package(ECM 1.2.0 CONFIG REQUIRED)
+find_package(ECM 1.7.0 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 set(LIBKONQ_VERSION "5.97.0")
@@ -42,7 +42,7 @@ if(BUILD_TESTING)
 endif()
 
 # CMake files
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5Konq")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Konq")
 
 ecm_configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5KonqConfig.cmake.in"
@@ -65,7 +65,7 @@ install(EXPORT KF5KonqTargets
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/konq_version.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
     COMPONENT Devel
 )
 

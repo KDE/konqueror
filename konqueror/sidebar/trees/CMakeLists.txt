@@ -19,9 +19,9 @@ add_library(konqsidebar_tree MODULE ${konqsidebar_tree_PART_SRCS})
 
 target_link_libraries(konqsidebar_tree ${KDE4_KDE3SUPPORT_LIBS} KF5::Parts  konq konqsidebarplugin )
 
-install(TARGETS konqsidebar_tree DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konqsidebar_tree DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install desktop files ###############
 
-install( FILES konqsidebar_tree.desktop DESTINATION ${DATA_INSTALL_DIR}/konqsidebartng/plugins )
+install( FILES konqsidebar_tree.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqsidebartng/plugins )
 

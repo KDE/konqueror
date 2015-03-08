@@ -49,7 +49,7 @@ install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS
 
 ########### install files ###############
 
-install(FILES directory_bookmarkbar.desktop DESTINATION ${KF5_DATA_INSTALL_DIR}/kbookmark)
+install(FILES directory_bookmarkbar.desktop DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kbookmark)
 install(FILES
     konq_copytomenu.h
     konq_dndpopupmenuplugin.h
@@ -60,12 +60,12 @@ install(FILES
     konq_popupmenuplugin.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
 
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
     COMPONENT Devel
 )
 
 install(FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop
-    DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
 )
 
 add_subdirectory(pics)

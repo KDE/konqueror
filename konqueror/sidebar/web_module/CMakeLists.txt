@@ -8,8 +8,8 @@ add_library(konqsidebar_web MODULE ${konqsidebar_web_PART_SRCS})
 
 target_link_libraries(konqsidebar_web  KF5::KHtml konqsidebarplugin konq )
 
-install(TARGETS konqsidebar_web  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konqsidebar_web  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES konqsidebar_web.desktop  DESTINATION  ${DATA_INSTALL_DIR}/konqsidebartng/plugins )
+install( FILES konqsidebar_web.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqsidebartng/plugins )

@@ -51,13 +51,13 @@ if (LIBTIDY_FOUND)
   target_link_libraries(validatorsplugin ${LIBTIDY_LIBRARIES})
 endif (LIBTIDY_FOUND)
 
-install(TARGETS validatorsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS validatorsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
+install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 
-install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
-install(FILES validators.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES validators.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

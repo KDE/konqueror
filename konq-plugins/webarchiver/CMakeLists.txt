@@ -10,7 +10,7 @@ ki18n_wrap_ui(webarchiverplugin_PART_SRCS archiveviewbase.ui )
 add_library(webarchiverplugin MODULE ${webarchiverplugin_PART_SRCS})
 
 target_link_libraries(webarchiverplugin KF5::KHtml KF5::KDELibs4Support KF5::KIOCore KF5::Archive)
-install(TARGETS webarchiverplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS webarchiverplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### next target ###############
@@ -21,13 +21,13 @@ add_library(webarchivethumbnail MODULE ${webarchivethumbnail_PART_SRCS})
 
 target_link_libraries(webarchivethumbnail KF5::KHtml KF5::KDELibs4Support KF5::KIOCore)
 
-install(TARGETS webarchivethumbnail  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS webarchivethumbnail  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_webarchiver.rc plugin_webarchiver.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES webarchivethumbnail.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES plugin_webarchiver.rc plugin_webarchiver.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES webarchivethumbnail.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 
-ecm_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ${KDE_INSTALL_ICONDIR}   )
 

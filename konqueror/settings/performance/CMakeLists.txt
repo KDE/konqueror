@@ -13,10 +13,10 @@ add_library(kcm_performance MODULE ${kcm_performance_PART_SRCS})
 
 target_link_libraries(kcm_performance  KF5::ConfigWidgets KF5::KIOWidgets KF5::I18n Qt5::DBus )
 
-install(TARGETS kcm_performance  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS kcm_performance  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES kcmkonqyperformance.desktop kcmperformance.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES kcmkonqyperformance.desktop kcmperformance.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 

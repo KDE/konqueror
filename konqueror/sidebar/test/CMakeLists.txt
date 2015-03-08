@@ -4,8 +4,8 @@
 set(konq_sidebartest_PART_SRCS konqsidebartest.cpp )
 add_library(konq_sidebartest MODULE ${konq_sidebartest_PART_SRCS})
 target_link_libraries(konq_sidebartest KF5::Parts konqsidebarplugin )
-#install(TARGETS konq_sidebartest  DESTINATION ${PLUGIN_INSTALL_DIR} )
-#install( FILES test.desktop  DESTINATION  ${DATA_INSTALL_DIR}/konqsidebartng/entries )
+#install(TARGETS konq_sidebartest  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+#install( FILES test.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqsidebartng/entries )
 
 ########### Unit tests ###############
 

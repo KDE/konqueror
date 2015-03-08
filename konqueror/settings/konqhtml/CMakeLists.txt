@@ -35,9 +35,9 @@ add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
 target_link_libraries(kcm_konqhtml KF5::Parts KF5::KDELibs4Support KF5::KHtml)
 
-install(TARGETS kcm_konqhtml  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kcm_konqhtml  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 ########### install files ###############
 
-install( FILES khtml_general.desktop khtml_behavior.desktop khtml_java_js.desktop khtml_appearance.desktop khtml_filter.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES css/template.css  DESTINATION  ${DATA_INSTALL_DIR}/kcmcss )
+install( FILES khtml_general.desktop khtml_behavior.desktop khtml_java_js.desktop khtml_appearance.desktop khtml_filter.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES css/template.css  DESTINATION  ${KDE_INSTALL_DATADIR}/kcmcss )

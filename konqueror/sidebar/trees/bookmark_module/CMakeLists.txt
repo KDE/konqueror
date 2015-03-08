@@ -10,5 +10,5 @@ add_library(konq_sidebartree_bookmarks MODULE ${konq_sidebartree_bookmarks_SRCS}
 
 target_link_libraries(konq_sidebartree_bookmarks   KF5::Parts konqsidebarplugin konq ${KDE4_KDE3SUPPORT_LIBS})
 
-install(TARGETS konq_sidebartree_bookmarks  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konq_sidebartree_bookmarks  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

@@ -4,7 +4,7 @@ project(Konqueror)
 
 set(QT_MIN_VERSION "5.2.0")
 
-find_package(ECM 1.3.0 CONFIG REQUIRED)
+find_package(ECM 1.7.0 CONFIG REQUIRED)
 
 include(FeatureSummary)
 
@@ -60,20 +60,20 @@ add_subdirectory( settings )
 install( PROGRAMS
    kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop kfmclient_war.desktop
    konqbrowser.desktop konquerorsu.desktop Home.desktop
-   DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install(FILES konqueror.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata )
+   DESTINATION  ${KDE_INSTALL_APPDIR} )
+install(FILES konqueror.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata )
 
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
-install( FILES konqueror.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 
-install(FILES profile_webbrowsing.desktop    DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME webbrowsing)
-install(FILES profile_filemanagement.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME filemanagement)
-install(FILES profile_tabbedbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME tabbedbrowsing)
-install(FILES profile_kde_devel.desktop      DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME kde_devel)
+install(FILES profile_webbrowsing.desktop    DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME webbrowsing)
+install(FILES profile_filemanagement.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME filemanagement)
+install(FILES profile_tabbedbrowsing.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME tabbedbrowsing)
+install(FILES profile_kde_devel.desktop      DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME kde_devel)
 
 if(NOT WIN32)
-   install(FILES profile_midnightcommander.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME midnightcommander)
+   install(FILES profile_midnightcommander.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME midnightcommander)
 endif(NOT WIN32)
 
 ###

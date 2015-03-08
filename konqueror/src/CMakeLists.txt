@@ -54,7 +54,7 @@ endif(X11_FOUND)
 
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
-install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
+install(TARGETS konquerorprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_NAME konquerorprivate_export.h)
 
@@ -134,11 +134,11 @@ if (KActivities_FOUND)
 endif (KActivities_FOUND)
 
 if (NOT WIN32)
-    install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+    install(TARGETS kdeinit_konqueror  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (NOT WIN32)
-install(TARGETS konqueror ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS konqueror ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
-install( FILES konqueror.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES konqueror.rc DESTINATION  ${CMAKE_INSTALL_KXMLGUI5DIR}/konqueror )
-install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES konqueror.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
+install( FILES konqueror.rc DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/konqueror )
+install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )

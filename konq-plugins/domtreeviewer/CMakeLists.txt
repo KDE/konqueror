@@ -19,13 +19,13 @@ add_library(domtreeviewerplugin MODULE ${domtreeviewerplugin_PART_SRCS})
 
 target_link_libraries(domtreeviewerplugin KF5::KHtml KF5::KDELibs4Support)
 
-install(TARGETS domtreeviewerplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS domtreeviewerplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_domtreeviewer.rc plugin_domtreeviewer.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES domtreeviewerui.rc  DESTINATION  ${DATA_INSTALL_DIR}/domtreeviewer )
+install( FILES plugin_domtreeviewer.rc plugin_domtreeviewer.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES domtreeviewerui.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/domtreeviewer )
 
 
 

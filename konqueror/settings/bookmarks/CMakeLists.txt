@@ -14,9 +14,9 @@ add_library(kcm_bookmarks MODULE ${kcm_bookmarks_PART_SRCS})
 
 target_link_libraries(kcm_bookmarks KF5::KCMUtils KF5::KIOCore KF5::I18n KF5::KDELibs4Support)
 
-install(TARGETS kcm_bookmarks  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS kcm_bookmarks  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES bookmarks.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES bookmarks.desktop DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 

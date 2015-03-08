@@ -16,5 +16,5 @@ set(validators_ox_ICONS
   oxsc-actions-htmlvalidator.svgz
   oxsc-actions-validators.svgz
 )
-ecm_install_icons(ICONS ${validators_hi_ICONS} DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)
-ecm_install_icons(ICONS ${validators_ox_ICONS} DESTINATION ${ICON_INSTALL_DIR} THEME oxygen)
+ecm_install_icons(ICONS ${validators_hi_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
+ecm_install_icons(ICONS ${validators_ox_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME oxygen)

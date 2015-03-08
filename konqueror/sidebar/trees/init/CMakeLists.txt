@@ -3,5 +3,5 @@ add_subdirectory( services )
 
 ########### install files ###############
 
-install( FILES dirtree_module.desktop bookmarks_module.desktop DESTINATION ${DATA_INSTALL_DIR}/konqsidebartng/dirtree )
+install( FILES dirtree_module.desktop bookmarks_module.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqsidebartng/dirtree )
 

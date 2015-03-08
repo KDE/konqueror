@@ -4,5 +4,5 @@ install(FILES
 #  printsystem.desktop
 #  settings.desktop
   applications.desktop
-  DESTINATION ${DATA_INSTALL_DIR}/konqsidebartng/virtual_folders/services)
+  DESTINATION ${KDE_INSTALL_DATADIR}/konqsidebartng/virtual_folders/services)
 

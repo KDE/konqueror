@@ -19,8 +19,8 @@ if (WIN32)
 else (WIN32)
     kf5_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
     target_link_libraries(kdeinit_kfmclient  KF5::KIOCore ${X11_LIBRARIES} KF5::KDELibs4Support)
-    install(TARGETS kdeinit_kfmclient  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+    install(TARGETS kdeinit_kfmclient  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (WIN32)
 
-install(TARGETS kfmclient ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kfmclient ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

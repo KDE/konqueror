@@ -12,10 +12,10 @@ add_library(autorefresh MODULE ${autorefresh_PART_SRCS})
 
 target_link_libraries(autorefresh  KF5::Parts KF5::KDELibs4Support )
 
-install(TARGETS autorefresh  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS autorefresh  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )

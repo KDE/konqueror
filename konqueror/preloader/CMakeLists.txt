@@ -15,12 +15,12 @@ add_library(kded_konqy_preloader MODULE ${kded_konqy_preloader_PART_SRCS})
 
 target_link_libraries(kded_konqy_preloader KF5::KHtml KF5::ConfigCore KF5::KDELibs4Support KF5::DBusAddons)
 
-install(TARGETS kded_konqy_preloader DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kded_konqy_preloader DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 
 ########### install files ###############
 
-install(FILES konqy_preload.desktop DESTINATION ${AUTOSTART_INSTALL_DIR})
-install(FILES konqy_preloader.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
-install(FILES org.kde.konqueror.Preloader.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install(FILES konqy_preload.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
+install(FILES konqy_preloader.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/kded)
+install(FILES org.kde.konqueror.Preloader.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )
 

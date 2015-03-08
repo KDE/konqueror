@@ -19,7 +19,7 @@ add_executable(fsview ${fsview_SRCS})
 
 target_link_libraries(fsview KF5::KIOWidgets KF5::KDELibs4Support)
 
-install(TARGETS fsview ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### next target ###############
@@ -30,13 +30,13 @@ add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
 
 target_link_libraries(fsviewpart KF5::Parts KF5::KDELibs4Support)
 
-install(TARGETS fsviewpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS fsviewpart  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES fsview_part.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES fsview_part.rc  DESTINATION  ${DATA_INSTALL_DIR}/fsview )
+install( FILES fsview_part.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/fsview )
 
-ecm_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ${KDE_INSTALL_ICONDIR}   )
 

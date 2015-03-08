@@ -12,6 +12,6 @@ add_library(konq_sidebartree_dirtree MODULE ${konq_sidebartree_dirtree_SRCS})
 
 target_link_libraries(konq_sidebartree_dirtree  ${KDE4_KDE3SUPPORT_LIBS} KF5::Parts konq konqsidebarplugin  )
 
-install(TARGETS konq_sidebartree_dirtree  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konq_sidebartree_dirtree  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 

@@ -10,11 +10,11 @@ add_library(khtmlkttsdplugin MODULE ${khtmlkttsdplugin_PART_SRCS})
 
 target_link_libraries(khtmlkttsdplugin  KF5::Parts )
 
-install(TARGETS khtmlkttsdplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS khtmlkttsdplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 

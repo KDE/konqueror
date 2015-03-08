@@ -25,5 +25,5 @@ if (GLIB2_FOUND)
 endif (GLIB2_FOUND)
 
 
-install(TARGETS nspluginviewer ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.nsplugins.class.xml org.kde.nsplugins.instance.xml org.kde.nsplugins.viewer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install(TARGETS nspluginviewer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES org.kde.nsplugins.class.xml org.kde.nsplugins.instance.xml org.kde.nsplugins.viewer.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )

@@ -8,15 +8,15 @@ add_library(babelfishplugin MODULE ${babelfishplugin_PART_SRCS})
 
 target_link_libraries(babelfishplugin KF5::Parts KF5::KDELibs4Support)
 
-install(TARGETS babelfishplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS babelfishplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES translaterc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES translaterc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
+install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
 set(babelfish_ICONS hi16-actions-babelfish.png hi22-actions-babelfish.png)
 
-ecm_install_icons(ICONS ${babelfish_ICONS} DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)
+ecm_install_icons(ICONS ${babelfish_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
