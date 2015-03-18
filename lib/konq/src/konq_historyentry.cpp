@@ -20,7 +20,7 @@
 
 #include "konq_historyentry.h"
 #include <kdebug.h>
-
+#include <QDataStream>
 KonqHistoryEntry::KonqHistoryEntry()
     : numberOfTimesVisited(1), d(0)
 {

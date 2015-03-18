@@ -24,7 +24,7 @@
 #include <kstandarddirs.h>
 #include "konq_historyentry.h"
 #include <zlib.h> // for crc32
-
+#include <QDataStream>
 class KonqHistoryLoaderPrivate
 {
 public:
