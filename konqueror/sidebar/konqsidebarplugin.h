@@ -47,7 +47,7 @@ class KonqSidebarModulePrivate;
  * This class is exported, make sure you keep BINARY COMPATIBILITY!
  * (Alternatively, add a Version key to the plugins desktop file...)
  *
- * A plugin can instanciate multiple modules, for various configurations.
+ * A plugin can instantiate multiple modules, for various configurations.
  * Example: the dirtree plugin can create a module for "/", a module for $HOME, etc.
  */
 class KONQSIDEBARPLUGIN_EXPORT KonqSidebarModule : public QObject

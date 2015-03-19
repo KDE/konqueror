@@ -35,7 +35,7 @@ void HistoryManagerTest::testGetSetMaxCount()
     mgr.emitSetMaxCount( 4242 );
     QTest::qWait( 100 ); // ### fragile. We have no signal to wait for, so we must just wait a little bit...
     // Yes this is just a set+get test, but given that it goes via DBUS before changing the member variable
-    // we do test quite a lot with it. We can't really instanciate two KonqHistoryManagers (same dbus path),
+    // we do test quite a lot with it. We can't really instantiate two KonqHistoryManagers (same dbus path),
     // so we'd need two processes to test the dbus signal 'for real', if the setter changed the member var...
     QCOMPARE( mgr.maxCount(), 4242 );
     mgr.emitSetMaxCount( oldMaxCount );

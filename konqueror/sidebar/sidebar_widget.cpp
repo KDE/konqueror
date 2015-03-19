@@ -62,7 +62,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
         existingGroups.append(m_buttons[i].configFile->group("Desktop Entry"));
     }
 
-    // We need to instanciate all available plugins
+    // We need to instantiate all available plugins
     // And since the web module isn't in the default entries at all, we can't just collect
     // the plugins there.
     const KService::List list = m_moduleManager.availablePlugins();
