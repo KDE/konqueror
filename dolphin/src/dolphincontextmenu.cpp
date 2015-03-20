@@ -293,6 +293,7 @@ void DolphinContextMenu::openItemContextMenu()
                 const QString text = selectedUrl.fileName();
                 PlacesItem* item = model.createPlacesItem(text, selectedUrl);
                 model.appendItemToGroup(item);
+                model.saveBookmarks();
             }
         } else if (activatedAction == openParentInNewWindowAction) {
             m_command = OpenParentFolderInNewWindow;
@@ -356,6 +357,7 @@ void DolphinContextMenu::openViewportContextMenu()
             PlacesItem* item = model.createPlacesItem(container->placesText(),
                                                       container->url());
             model.appendItemToGroup(item);
+            model.saveBookmarks();
         }
     }
 }
