@@ -17,6 +17,6 @@ install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE
 install( FILES translaterc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
-set(babelfish_ICONS hi16-actions-babelfish.png hi22-actions-babelfish.png)
+set(babelfish_ICONS 16-actions-babelfish.png 22-actions-babelfish.png)
 
 ecm_install_icons(ICONS ${babelfish_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)

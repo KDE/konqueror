@@ -15,7 +15,7 @@ install(TARGETS kimgallery  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES kimgalleryplugin.rc kimgalleryplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/dolphinpart/kpartplugins )
 
-set(kimagegallery_ICONS hi16-actions-imagegallery.png hi22-actions-imagegallery.png)
+set(kimagegallery_ICONS 16-actions-imagegallery.png 22-actions-imagegallery.png)
 
 ecm_install_icons(ICONS ${kimagegallery_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
 
