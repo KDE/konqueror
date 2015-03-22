@@ -38,5 +38,5 @@ install(TARGETS fsviewpart  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 install( FILES fsview_part.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/fsview )
 
-ecm_install_icons( ${KDE_INSTALL_ICONDIR}   )
+ecm_install_icons( ICONS 22-apps-fsview.png  32-apps-fsview.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor   )
 
