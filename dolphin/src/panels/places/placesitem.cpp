@@ -180,7 +180,7 @@ PlacesItem::GroupType PlacesItem::groupType() const
             return SearchForType;
         }
 
-        if (protocol == QLatin1String("bluetooth")) {
+        if (protocol == QLatin1String("bluetooth") || protocol == QLatin1String("kdeconnect")) {
             return DevicesType;
         }
 
