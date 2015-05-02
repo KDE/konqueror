@@ -1,13 +1,6 @@
 project(kdelauncher)
 
-include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR})
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-kde4_add_executable(kdelauncher main.cpp )
-target_link_libraries(kdelauncher
-    ${QT_QTWEBKIT_LIBRARY}
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
-    ${KDE4_KIO_LIBRARY}
-    ${KDE4_KDEWEBKIT_LIBS}
-)
+add_executable(kdelauncher main.cpp )
+target_link_libraries(kdelauncher Qt5::Core Qt5::Gui Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::UiTools KF5::KIOCore KF5::KIOWidgets KF5::WebKit KF5::I18n KF5::KDELibs4Support)

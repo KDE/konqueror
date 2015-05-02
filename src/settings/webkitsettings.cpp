@@ -376,7 +376,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
               bool filterEnabled = cgFilter.readEntry(QString("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
 
               /** get url for HTMLFilterList */
-              KUrl url(cgFilter.readEntry(QString("HTMLFilterListURL-").append(QString::number(id))));
+              QUrl url(cgFilter.readEntry(QString("HTMLFilterListURL-").append(QString::number(id))));
 
               if (filterEnabled && url.isValid()) {
                   /** determine where to cache HTMLFilterList file */
@@ -1255,7 +1255,7 @@ void WebKitSettings::initWebKitSettings()
     d->m_allowMixedContentDisplay = generalCfg.readEntry("AllowMixedContentDisplay", true);
 
     // Force the reloading of the non password storable sites settings.
-    d->nonPasswordStorableSites.clear();
+    d->nonPasswordStorableSites.reset();
 }
 
 void WebKitSettings::initCookieJarSettings()

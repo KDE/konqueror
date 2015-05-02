@@ -28,6 +28,7 @@ class KConfigGroup;
 #include <QPair>
 
 #include <KParts/HtmlExtension>
+#include <KParts/HtmlSettingsInterface>
 
 struct KPerDomainSettings;
 class WebKitSettingsPrivate;

@@ -31,8 +31,9 @@
 #include <QUrl>
 #include <QDebug>
 #include <QMultiHash>
+#include <QPointer>
 
-class KUrl;
+class QUrl;
 class WebSslInfo;
 class KWebKitPart;
 class QWebFrame;
@@ -75,7 +76,7 @@ public:
      *
      * @return html error page.
      */
-    QString errorPage(int code, const QString& text, const KUrl& url) const;
+    QString errorPage(int code, const QString& text, const QUrl& url) const;
 
     /**
      * Re-implemented to handle ErrorPageExtension.
@@ -96,7 +97,7 @@ Q_SIGNALS:
      * This signal is emitted whenever a user cancels/aborts a load resource
      * request.
      */
-    void loadAborted(const KUrl &url);
+    void loadAborted(const QUrl &url);
 
 protected:
     /**

@@ -44,6 +44,8 @@
 #include <kdeversion.h>
 #include <kcodecaction.h>
 #include <kio/global.h>
+#include <kglobal.h>
+#include <kiconloader.h>
 
 #include <KDE/KActionCollection>
 #include <KDE/KAboutData>
@@ -62,6 +64,10 @@
 #include <KDE/KProtocolInfo>
 #include <KDE/KToggleAction>
 #include <KParts/StatusBarExtension>
+#include <KDE/KAction>
+#include <KDE/KIcon>
+#include <KDE/KShortcut>
+#include <KParts/GUIActivateEvent>
 
 #include <QUrl>
 #include <QFile>
@@ -97,23 +103,23 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_passwordBar(0),
              m_featurePermissionBar(0)
 {
-    KAboutData about = KAboutData("kwebkitpart", 0,
-                                  ki18nc("Program Name", "KWebKitPart"),
+    KAboutData about = KAboutData("kwebkitpart",
+                                  i18nc("Program Name", "KWebKitPart"),
                                   /*version*/ "1.3.0",
-                                  ki18nc("Short Description", "QtWebKit Browser Engine Component"),
-                                  KAboutData::License_LGPL,
-                                  ki18n("(C) 2009-2010 Dawit Alemayehu\n"
+                                  i18nc("Short Description", "QtWebKit Browser Engine Component"),
+                                  KAboutLicense::LGPL,
+                                  i18n("(C) 2009-2010 Dawit Alemayehu\n"
                                         "(C) 2008-2010 Urs Wolfer\n"
                                         "(C) 2007 Trolltech ASA"));
 
-    about.addAuthor(ki18n("Dawit Alemayehu"), ki18n("Maintainer, Developer"), "adawit@kde.org");
-    about.addAuthor(ki18n("Urs Wolfer"), ki18n("Maintainer, Developer"), "uwolfer@kde.org");
-    about.addAuthor(ki18n("Michael Howell"), ki18n("Developer"), "mhowell123@gmail.com");
-    about.addAuthor(ki18n("Laurent Montel"), ki18n("Developer"), "montel@kde.org");
-    about.addAuthor(ki18n("Dirk Mueller"), ki18n("Developer"), "mueller@kde.org");
+    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Maintainer, Developer"), "adawit@kde.org");
+    about.addAuthor(i18n("Urs Wolfer"), i18n("Maintainer, Developer"), "uwolfer@kde.org");
+    about.addAuthor(i18n("Michael Howell"), i18n("Developer"), "mhowell123@gmail.com");
+    about.addAuthor(i18n("Laurent Montel"), i18n("Developer"), "montel@kde.org");
+    about.addAuthor(i18n("Dirk Mueller"), i18n("Developer"), "mueller@kde.org");
     about.setProductName("kwebkitpart/general");
-    KComponentData componentData(&about);
-    setComponentData(componentData, false /*don't load plugins yet*/);
+//    KComponentData componentData(&about);
+    setComponentData(about, false /*don't load plugins yet*/);
 
     // NOTE: If the application does not set its version number, we automatically
     // set it to KDE's version number so that the default user-agent string contains
@@ -167,10 +173,10 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             this, SIGNAL(setWindowCaption(QString)));
     connect(m_webView, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotUrlChanged(QUrl)));
-    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(KUrl)),
-            this, SLOT(slotLinkMiddleOrCtrlClicked(KUrl)));
-    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(KUrl,QString)),
-            this, SLOT(slotSelectionClipboardUrlPasted(KUrl,QString)));
+    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(QUrl)),
+            this, SLOT(slotLinkMiddleOrCtrlClicked(QUrl)));
+    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(QUrl,QString)),
+            this, SLOT(slotSelectionClipboardUrlPasted(QUrl,QString)));
     connect(m_webView, SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
 
@@ -207,30 +213,30 @@ void KWebKitPart::initActions()
     actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
                                   m_browserExtension, SLOT(slotSaveDocument()));
 
-    KAction* action = new KAction(i18n("Save &Frame As..."), this);
+    QAction* action = new QAction(i18n("Save &Frame As..."), this);
     actionCollection()->addAction("saveFrame", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
 
-    action = new KAction(KIcon("document-print-preview"), i18n("Print Preview"), this);
+    action = new QAction(KIcon("document-print-preview"), i18n("Print Preview"), this);
     actionCollection()->addAction("printPreview", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotPrintPreview()));
 
-    action = new KAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
+    action = new QAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
-    action->setShortcut(KShortcut("CTRL++; CTRL+="));
+    action->setShortcut(QKeySequence("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
-    action = new KAction(KIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
+    action = new QAction(KIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
     actionCollection()->addAction("zoomOut", action);
-    action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
+    action->setShortcut(QKeySequence("CTRL+-; CTRL+_"));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
-    action = new KAction(KIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
+    action = new QAction(KIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction("zoomNormal", action);
-    action->setShortcut(KShortcut("CTRL+0"));
+    action->setShortcut(QKeySequence("CTRL+0"));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomNormal()));
 
-    action = new KAction(i18n("Zoom Text Only"), this);
+    action = new QAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
     KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
@@ -238,7 +244,7 @@ void KWebKitPart::initActions()
     actionCollection()->addAction("zoomTextOnly", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomTextOnly()));
 
-    action = new KAction(i18n("Zoom To DPI"), this);
+    action = new QAction(i18n("Zoom To DPI"), this);
     action->setCheckable(true);
     bool zoomToDPI = cgHtml.readEntry("ZoomToDPI", false);
     action->setChecked(zoomToDPI);
@@ -254,12 +260,12 @@ void KWebKitPart::initActions()
     actionCollection()->addAction( "setEncoding", codecAction );
     connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
 
-    action = new KAction(i18n("View Do&cument Source"), this);
+    action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction("viewDocumentSource", action);
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotViewDocumentSource()));
 
-    action = new KAction(i18nc("Secure Sockets Layer", "SSL"), this);
+    action = new QAction(i18nc("Secure Sockets Layer", "SSL"), this);
     actionCollection()->addAction("security", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotShowSecurity()));
 
@@ -280,7 +286,7 @@ void KWebKitPart::updateActions()
 
     QAction* action = actionCollection()->action(QL1S("saveDocument"));
     if (action) {
-        const QString protocol (url().protocol());
+        const QString protocol (url().scheme());
         action->setEnabled(protocol != QL1S("about") && protocol != QL1S("error"));
     }
 
@@ -302,8 +308,8 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     connect(page, SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
-    connect(page, SIGNAL(loadAborted(KUrl)),
-            this, SLOT(slotLoadAborted(KUrl)));
+    connect(page, SIGNAL(loadAborted(QUrl)),
+            this, SLOT(slotLoadAborted(QUrl)));
     connect(page, SIGNAL(linkHovered(QString,QString,QString)),
             this, SLOT(slotLinkHovered(QString,QString,QString)));
     connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
@@ -319,15 +325,15 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(frameCreated(QWebFrame*)),
             this, SLOT(slotFrameCreated(QWebFrame*)));
 
-    connect(m_webView, SIGNAL(linkShiftClicked(KUrl)),
-            page, SLOT(downloadUrl(KUrl)));
+    connect(m_webView, SIGNAL(linkShiftClicked(QUrl)),
+            page, SLOT(downloadUrl(QUrl)));
 
     connect(page, SIGNAL(loadProgress(int)),
             m_browserExtension, SIGNAL(loadingProgress(int)));
     connect(page, SIGNAL(selectionChanged()),
             m_browserExtension, SLOT(updateEditActions()));
-    connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
-            page, SLOT(downloadUrl(KUrl)));
+    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
+            page, SLOT(downloadUrl(QUrl)));
 
     connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotMainFrameLoadFinished(bool)));
@@ -343,9 +349,9 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     }
 }
 
-bool KWebKitPart::openUrl(const KUrl &_u)
+bool KWebKitPart::openUrl(const QUrl &_u)
 {
-    KUrl u (_u);
+    QUrl u (_u);
 
     kDebug() << u;
 
@@ -357,7 +363,7 @@ bool KWebKitPart::openUrl(const KUrl &_u)
     // a path component, we set the path to "/" here so that the security context
     // will properly allow access to local resources.
     if (u.host().isEmpty() && u.path().isEmpty()
-        && KProtocolInfo::protocolClass(u.protocol()) == QL1S(":local")) {
+        && KProtocolInfo::protocolClass(u.scheme()) == QL1S(":local")) {
         u.setPath(QL1S("/"));
     }
 
@@ -369,35 +375,36 @@ bool KWebKitPart::openUrl(const KUrl &_u)
     WebPage* p = page();
     Q_ASSERT(p);
 
-    // Handle error conditions...
-    if (u.protocol().compare(QL1S("error"), Qt::CaseInsensitive) == 0 && u.hasSubUrl()) {
-        /**
-         * The format of the error url is that two variables are passed in the query:
-         * error = int kio error code, errText = QString error text from kio
-         * and the URL where the error happened is passed as a sub URL.
-         */
-        KUrl::List urls = KUrl::split(u);
+//TODO: Porting
+//    // Handle error conditions...
+//    if (u.protocol().compare(QL1S("error"), Qt::CaseInsensitive) == 0 && u.hasSubUrl()) {
+//        /**
+//         * The format of the error url is that two variables are passed in the query:
+//         * error = int kio error code, errText = QString error text from kio
+//         * and the URL where the error happened is passed as a sub URL.
+//         */
+//        KUrl::List urls = KUrl::split(u);
 
-        if ( urls.count() > 1 ) {
-            KUrl mainURL = urls.first();
-            int error = convertStr2Int(mainURL.queryItem("error"));
+//        if ( urls.count() > 1 ) {
+//            KUrl mainURL = urls.first();
+//            int error = convertStr2Int(mainURL.queryItem("error"));
 
-            // error=0 isn't a valid error code, so 0 means it's missing from the URL
-            if ( error == 0 )
-                error = KIO::ERR_UNKNOWN;
+//            // error=0 isn't a valid error code, so 0 means it's missing from the URL
+//            if ( error == 0 )
+//                error = KIO::ERR_UNKNOWN;
 
-            const QString errorText = mainURL.queryItem( "errText" );
-            urls.pop_front();
-            KUrl reqUrl = KUrl::join( urls );
-            emit m_browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-            if (p) {
-                m_webView->setHtml(p->errorPage(error, errorText, reqUrl));
-                return true;
-            }
-        }
+//            const QString errorText = mainURL.queryItem( "errText" );
+//            urls.pop_front();
+//            KUrl reqUrl = KUrl::join( urls );
+//            emit m_browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
+//            if (p) {
+//                m_webView->setHtml(p->errorPage(error, errorText, reqUrl));
+//                return true;
+//            }
+//        }
 
-        return false;
-    }
+//        return false;
+//    }
 
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
@@ -533,7 +540,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         && !frame->page()->settings()->testAttribute(QWebSettings::PrivateBrowsingEnabled)) {
         const QWebElement element = frame->findFirstElement(QL1S("head>link[rel=icon], "
                                                                  "head>link[rel=\"shortcut icon\"]"));
-        KUrl shortcutIconUrl;
+        QUrl shortcutIconUrl;
         if (element.isNull()) {
             shortcutIconUrl = frame->baseUrl();
             QString urlPath = shortcutIconUrl.path();
@@ -543,7 +550,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
             urlPath += QL1S("/favicon.ico");
             shortcutIconUrl.setPath(urlPath);
         } else {
-            shortcutIconUrl = KUrl (frame->baseUrl(), element.attribute("href"));
+            shortcutIconUrl = frame->baseUrl().resolved( QUrl(element.attribute("href")));
         }
 
         //kDebug() << "setting favicon to" << shortcutIconUrl;
@@ -574,7 +581,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
     emit completed ((ok && pending));
 }
 
-void KWebKitPart::slotLoadAborted(const KUrl & url)
+void KWebKitPart::slotLoadAborted(const QUrl & url)
 {
     closeUrl();
     m_doLoadFinishedActions = false;
@@ -594,7 +601,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     if (url.scheme().compare(QL1S("error"), Qt::CaseInsensitive) == 0)
         return;
 
-    const KUrl u (url);
+    const QUrl u (url);
 
     // Ignore if url has not changed!
     if (this->url() == u)
@@ -606,7 +613,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     // Do not update the location bar with about:blank
     if (url != *globalBlankUrl) {
         //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
-        emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
+        emit m_browserExtension->setLocationBarUrl(u.toDisplayString());
     }
 }
 
@@ -806,12 +813,12 @@ void KWebKitPart::slotShowSearchBar()
     m_searchBar->setSearchText(text.left(150));
 }
 
-void KWebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
+void KWebKitPart::slotLinkMiddleOrCtrlClicked(const QUrl& linkUrl)
 {
     emit m_browserExtension->createNewWindow(linkUrl);
 }
 
-void KWebKitPart::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl, const QString& searchText)
+void KWebKitPart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, const QString& searchText)
 {
     if (!WebKitSettings::self()->isOpenMiddleClickEnabled())
         return;

@@ -25,6 +25,7 @@
 #include <QWebPage>
 
 #include <KDE/KParts/ReadOnlyPart>
+#include <QUrl>
 
 namespace KParts {
   class BrowserExtension;
@@ -67,7 +68,7 @@ public:
      *
      * @see KParts::ReadOnlyPart::openUrl
      */
-    virtual bool openUrl(const KUrl &);
+    virtual bool openUrl(const QUrl &);
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -121,7 +122,7 @@ private Q_SLOTS:
     void slotShowSecurity();
     void slotShowSearchBar();
     void slotLoadStarted();
-    void slotLoadAborted(const KUrl &);
+    void slotLoadAborted(const QUrl &);
     void slotLoadFinished(bool);
     void slotFrameLoadFinished(bool);
     void slotMainFrameLoadFinished(bool);
@@ -130,8 +131,8 @@ private Q_SLOTS:
     void slotLinkHovered(const QString &, const QString&, const QString &);
     void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
     void slotRestoreFrameState(QWebFrame *frame);
-    void slotLinkMiddleOrCtrlClicked(const KUrl&);
-    void slotSelectionClipboardUrlPasted(const KUrl&, const QString&);
+    void slotLinkMiddleOrCtrlClicked(const QUrl&);
+    void slotSelectionClipboardUrlPasted(const QUrl&, const QString&);
 
     void slotUrlChanged(const QUrl &);
     void slotWalletClosed();

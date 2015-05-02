@@ -43,6 +43,9 @@
 #include <KDE/KFileDialog>
 #include <KDE/KProtocolInfo>
 #include <KDE/KStringHandler>
+#include <KDE/KIconLoader>
+#include <KDE/KMimeType>
+#include <KDE/KUrlAuthorized>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
@@ -61,7 +64,7 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-static bool isBlankUrl(const KUrl& url)
+static bool isBlankUrl(const QUrl& url)
 {
     return (url.isEmpty() || url.url() == QL1S("about:blank"));
 }
@@ -158,7 +161,7 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
 
 void WebPage::downloadRequest(const QNetworkRequest &request)
 {
-    const KUrl url(request.url());
+    const QUrl url(request.url());
 
     // Integration with a download manager...
     if (!url.isLocalFile()) {
@@ -191,7 +194,7 @@ static QString warningIconData()
     return data;
 }
 
-QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) const
+QString WebPage::errorPage(int code, const QString& text, const QUrl& reqUrl) const
 {
     QString errorName, techName, description;
     QStringList causes, solutions;
@@ -229,10 +232,10 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
     doc += i18n( "Details of the Request:" );
     doc += QL1S( "</h3><ul><li>" );
     // escape URL twice: once for i18n, and once for HTML.
-    doc += i18n( "URL: %1", Qt::escape( Qt::escape( reqUrl.prettyUrl() ) ) );
+    doc += i18n( "URL: %1", Qt::escape( Qt::escape( reqUrl.toDisplayString() ) ) );
     doc += QL1S( "</li><li>" );
 
-    const QString protocol (reqUrl.protocol());
+    const QString protocol (reqUrl.scheme());
     if ( !protocol.isNull() ) {
         // escape protocol twice: once for i18n, and once for HTML.
         doc += i18n( "Protocol: %1", Qt::escape( Qt::escape( protocol ) ) );
@@ -291,10 +294,10 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
         QWebPage::ChooseMultipleFilesExtensionReturn *extOutput = static_cast<QWebPage::ChooseMultipleFilesExtensionReturn*>(output);
         if (extOutput && extOption && currentFrame() == extOption->parentFrame) {
             if (extOption->suggestedFileNames.isEmpty())
-                extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(), QString(), view(),
+                extOutput->fileNames = KFileDialog::getOpenFileNames(QUrl(), QString(), view(),
                                                                      i18n("Choose files to upload"));
             else
-                extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(extOption->suggestedFileNames.first()),
+                extOutput->fileNames = KFileDialog::getOpenFileNames(QUrl(extOption->suggestedFileNames.first()),
                                                                      QString(), view(), i18n("Choose files to upload"));
             return true;
         }
@@ -711,13 +714,13 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
 bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
 {
     // Check whether the request is authorized or not...
-    if (!KAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
+    if (!KUrlAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
 
         //kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
 
         int response = KMessageBox::Cancel;
-        KUrl linkUrl (req.url());
+        QUrl linkUrl (req.url());
 
         if (type == QWebPage::NavigationTypeLinkClicked) {
             message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
@@ -727,7 +730,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
         } else {
             title = i18n("Security Alert");
             message = i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
-                           Qt::escape(linkUrl.prettyUrl()));
+                           Qt::escape(linkUrl.toDisplayString()));
         }
 
         if (buttonText.isEmpty()) {
@@ -897,7 +900,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
 {
     // kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
     if (m_createNewWindow) {
-        const KUrl reqUrl (request.url());
+        const QUrl reqUrl (request.url());
 
         if (!m_disableJSOpenwindowCheck) {
             const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
@@ -912,7 +915,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
                                                "Do you want to allow this?") :
                                           i18n("<qt>This site is requesting to open a popup window to"
                                                "<p>%1</p><br/>Do you want to allow this?</qt>",
-                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.prettyUrl()), 100)));
+                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.toDisplayString()), 100)));
                 if (KMessageBox::questionYesNo(view(), message,
                                                i18n("Javascript Popup Confirmation"),
                                                KGuiItem(i18n("Allow")),
@@ -946,7 +949,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         KParts::WindowArgs wargs (m_windowArgs);
 
         KParts::ReadOnlyPart* newWindowPart =0;
-        part()->browserExtension()->createNewWindow(KUrl(), uargs, bargs, wargs, &newWindowPart);
+        part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
         kDebug() << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
@@ -1038,7 +1041,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     KParts::WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart =0;
-    part()->browserExtension()->createNewWindow(KUrl(), uargs, bargs, wargs, &newWindowPart);
+    part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
     kDebug() << "Created new window" << newWindowPart;
 

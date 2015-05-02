@@ -30,6 +30,8 @@ class QWidget;
 class KWebKitFactory : public KPluginFactory
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.KPluginFactory" FILE "")
+    Q_INTERFACES(KPluginFactory)
 public:
     virtual ~KWebKitFactory();
     virtual QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword);

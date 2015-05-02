@@ -221,8 +221,8 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
             connect (part->browserExtension(), SIGNAL (openUrlNotify()),
                      mPart->browserExtension(), SIGNAL (openUrlNotify()));
 
-            connect (part->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)),
-                     mPart->browserExtension(), SIGNAL (openUrlRequest (KUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)));
+            connect (part->browserExtension(), SIGNAL (openUrlRequest (QUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)),
+                     mPart->browserExtension(), SIGNAL (openUrlRequest (QUrl, KParts::OpenUrlArguments, KParts::BrowserArguments)));
 
             // Check if this part is scriptable
             KParts::ScriptableExtension* scriptExt = KParts::ScriptableExtension::childObject(part);
@@ -261,7 +261,7 @@ QObject* WebPluginFactory::create (const QString& _mimeType, const QUrl& url, co
             openUrlArgs.metaData() = metaData;
             openUrlArgs.setMimeType(mimeType);
             part->setArguments(openUrlArgs);
-            QMetaObject::invokeMethod(part, "openUrl", Qt::QueuedConnection, Q_ARG(KUrl, KUrl(url)));
+            QMetaObject::invokeMethod(part, "openUrl", Qt::QueuedConnection, Q_ARG(QUrl, QUrl(url)));
             return part->widget();
         }
     }

@@ -66,6 +66,10 @@
 #include <QFile>
 #include <QVector>
 #include <QTextStream>
+#include <QApplication>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCommandLineParser>
 
 
 class MainWindow : public QMainWindow
@@ -379,10 +383,17 @@ private:
 
 int main(int argc, char **argv)
 {
-    KAboutData about("KDELauncher", 0, ki18n("KDELauncher"), "0.0000013");
-    KCmdLineArgs::init(argc, argv, &about);
+    KAboutData about("KDELauncher", i18n("KDELauncher"), "0.0000013");
+    QApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(about);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    //PORTING SCRIPT: adapt aboutdata variable if necessary
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
 
-    KApplication app;
     QString url = QString("%1/%2").arg(QDir::homePath()).arg(QLatin1String("index.html"));
 
     QWebSettings::setMaximumPagesInCache(4);

@@ -1,5 +1,4 @@
-include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(kwebkit_LIB_SRCS
     kwebkitpart.cpp
@@ -18,14 +17,10 @@ set(kwebkit_LIB_SRCS
     ui/featurepermissionbar.cpp
 )
 
-kde4_add_ui_files(kwebkit_LIB_SRCS
-                  ui/searchbar.ui
-)
-
 ########################### kwebkitpart #############################
-kde4_add_plugin(kwebkitpart ${kwebkit_LIB_SRCS})
+add_library(kwebkitpart ${kwebkit_LIB_SRCS})
 
-target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
+target_link_libraries(kwebkitpart Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets KF5::WebKit KF5::Parts KF5::KDELibs4Support KF5::SonnetCore)
 ########################### kwebkitpart #############################
 
 install(TARGETS kwebkitpart DESTINATION ${PLUGIN_INSTALL_DIR})

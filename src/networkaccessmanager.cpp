@@ -22,7 +22,7 @@
 #include "settings/webkitsettings.h"
 
 #include <KDebug>
-#include <KLocalizedString>
+#include <KDE/KLocalizedString>
 #include <KProtocolInfo>
 #include <KRun>
 #include <KMimeType>

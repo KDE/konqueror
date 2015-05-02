@@ -21,12 +21,14 @@
 #ifndef WEBKITPART_EXT_H
 #define WEBKITPART_EXT_H
 
+#include <QPointer>
+
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KParts/TextExtension>
 #include <KDE/KParts/HtmlExtension>
 #include <kparts/scriptableextension.h>
 
-class KUrl;
+class QUrl;
 class KWebKitPart;
 class WebView;
 class KSaveFile;
@@ -47,7 +49,7 @@ public:
     void saveHistory();
 
 Q_SIGNALS:
-    void saveUrl(const KUrl &);
+    void saveUrl(const QUrl &);
     void saveHistory(QObject*, const QByteArray&);
 
 public Q_SLOTS:
@@ -155,7 +157,7 @@ public:
     KWebKitHtmlExtension(KWebKitPart* part);
 
     // HtmlExtension
-    virtual KUrl baseUrl() const;
+    virtual QUrl baseUrl() const;
     virtual bool hasSelection() const;
 
     // SelectorInterface

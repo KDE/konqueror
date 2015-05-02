@@ -23,12 +23,13 @@
 #ifndef WEBVIEW_H
 #define WEBVIEW_H
 
+#include <QPointer>
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KWebView>
 
 #include <QWebHitTestResult>
 
-class KUrl;
+class QUrl;
 class KWebKitPart;
 class QWebHitTestResult;
 class QWebInspector;
@@ -50,7 +51,7 @@ public:
      * @param args    reference to a OpenUrlArguments object.
      * @param bargs   reference to a BrowserArguments object.
      */
-    void loadUrl(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
+    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
 
     QWebHitTestResult contextMenuResult() const;
 

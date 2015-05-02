@@ -123,7 +123,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
     // TODO: Save information such as form data from the current page.
     QWebHistory* history = (view() ? view()->history() : 0);
     const int historyIndex = (history ? history->currentItemIndex() : -1);
-    const KUrl historyUrl = (history ? KUrl(history->currentItem().url()) : m_part->url());
+    const QUrl historyUrl = (history ? QUrl(history->currentItem().url()) : m_part->url());
 
     stream << historyUrl
            << static_cast<qint32>(xOffset())
@@ -134,7 +134,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
 {
-    KUrl u;
+    QUrl u;
     QByteArray historyData;
     qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
     stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyData;
@@ -249,7 +249,7 @@ void WebKitBrowserExtension::updateEditActions()
 
 void WebKitBrowserExtension::updateActions()
 {
-    const QString protocol (m_part->url().protocol());
+    const QString protocol (m_part->url().scheme());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
     enableAction("print", isValidDocument);
 }
@@ -259,11 +259,11 @@ void WebKitBrowserExtension::searchProvider()
     if (!view())
         return;
 
-    KAction *action = qobject_cast<KAction*>(sender());
+    QAction *action = qobject_cast<QAction*>(sender());
     if (!action)
         return;
 
-    KUrl url = action->data().toUrl();
+    QUrl url = action->data().toUrl();
 
     if (url.host().isEmpty()) {
         KUriFilterData data;
@@ -371,7 +371,7 @@ void WebKitBrowserExtension::slotFrameInWindow()
     QUrl url (view()->page()->currentFrame()->baseUrl());
     url.resolved(view()->page()->currentFrame()->url());
 
-    emit createNewWindow(KUrl(url), uargs, bargs);
+    emit createNewWindow(QUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotFrameInTab()
@@ -388,7 +388,7 @@ void WebKitBrowserExtension::slotFrameInTab()
     QUrl url (view()->page()->currentFrame()->baseUrl());
     url.resolved(view()->page()->currentFrame()->url());
 
-    emit createNewWindow(KUrl(url), uargs, bargs);
+    emit createNewWindow(QUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
@@ -405,7 +405,7 @@ void WebKitBrowserExtension::slotFrameInTop()
     QUrl url (view()->page()->currentFrame()->baseUrl());
     url.resolved(view()->page()->currentFrame()->url());
 
-    emit openUrlRequest(KUrl(url), uargs, bargs);
+    emit openUrlRequest(QUrl(url), uargs, bargs);
 }
 
 void WebKitBrowserExtension::slotReloadFrame()
@@ -460,15 +460,18 @@ void WebKitBrowserExtension::slotCopyImageURL()
     if (!view())
         return;
 
-    KUrl safeURL(view()->contextMenuResult().imageUrl());
-    safeURL.setPass(QString());
+    QUrl safeURL(view()->contextMenuResult().imageUrl());
+    safeURL.setPassword(QString());
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
+//TODO: Porting: test
+    QList<QUrl> safeURLList;
+    safeURLList.append(safeURL);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
@@ -478,18 +481,21 @@ void WebKitBrowserExtension::slotCopyImage()
     if (!view())
         return;
 
-    KUrl safeURL(view()->contextMenuResult().imageUrl());
-    safeURL.setPass(QString());
+    QUrl safeURL(view()->contextMenuResult().imageUrl());
+    safeURL.setPassword(QString());
 
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
     mimeData->setImageData(view()->contextMenuResult().pixmap());
-    safeURL.populateMimeData(mimeData);
+//TODO: Porting: test
+    QList<QUrl> safeURLList;
+    safeURLList.append(safeURL);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
     mimeData->setImageData(view()->contextMenuResult().pixmap());
-    safeURL.populateMimeData(mimeData);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
@@ -562,7 +568,7 @@ void WebKitBrowserExtension::slotViewDocumentSource()
     if (!view())
         return;
 
-    const KUrl pageUrl (view()->url());
+    const QUrl pageUrl (view()->url());
     if (pageUrl.isLocalFile()) {
         KRun::runUrl(pageUrl, QL1S("text/plain"), view(), false);
     } else {
@@ -581,7 +587,7 @@ void WebKitBrowserExtension::slotViewFrameSource()
     if (!view())
         return;
 
-    const KUrl frameUrl(view()->page()->currentFrame()->url());
+    const QUrl frameUrl(view()->page()->currentFrame()->url());
     if (frameUrl.isLocalFile()) {
         KRun::runUrl(frameUrl, QL1S("text/plain"), view(), false);
     } else {
@@ -654,7 +660,7 @@ void WebKitBrowserExtension::slotShowMediaControls()
     element.evaluateJavaScript(QL1S("this.controls = !this.controls;"));
 }
 
-static KUrl mediaUrlFrom(QWebElement& element)
+static QUrl mediaUrlFrom(QWebElement& element)
 {
     QWebFrame* frame = element.webFrame();
     QString src = frame ? element.attribute(QL1S("src")) : QString();
@@ -662,9 +668,9 @@ static KUrl mediaUrlFrom(QWebElement& element)
         src = frame ? element.evaluateJavaScript(QL1S("this.src")).toString() : QString();
 
     if (src.isEmpty())
-        return KUrl();
+        return QUrl();
 
-    return KUrl(frame->baseUrl().resolved(QUrl::fromEncoded(QUrl::toPercentEncoding(src), QUrl::StrictMode)));
+    return QUrl(frame->baseUrl().resolved(QUrl::fromEncoded(QUrl::toPercentEncoding(src), QUrl::StrictMode)));
 }
 
 void WebKitBrowserExtension::slotSaveMedia()
@@ -688,24 +694,27 @@ void WebKitBrowserExtension::slotCopyMedia()
     if (!isMultimediaElement(element))
         return;
 
-    KUrl safeURL(mediaUrlFrom(element));
+    QUrl safeURL(mediaUrlFrom(element));
     if (!safeURL.isValid())
         return;
 
-    safeURL.setPass(QString());
+    safeURL.setPassword(QString());
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
+//TODO: Porting: test
+    QList<QUrl> safeURLList;
+    safeURLList.append(safeURL);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
+    mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
 void WebKitBrowserExtension::slotTextDirectionChanged()
 {
-    KAction* action = qobject_cast<KAction*>(sender());
+    QAction* action = qobject_cast<QAction*>(sender());
     if (action) {
         bool ok = false;
         const int value = action->data().toInt(&ok);
@@ -865,11 +874,11 @@ void WebKitBrowserExtension::slotPrintPreview()
 
 void WebKitBrowserExtension::slotOpenSelection()
 {
-    QAction *action = qobject_cast<KAction*>(sender());
+    QAction *action = qobject_cast<QAction*>(sender());
     if (action) {
         KParts::BrowserArguments browserArgs;
         browserArgs.frameName = "_blank";
-        emit openUrlRequest(KUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+        emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
@@ -884,7 +893,7 @@ void WebKitBrowserExtension::slotLinkInTop()
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
-    const KUrl url (view()->contextMenuResult().linkUrl());
+    const QUrl url (view()->contextMenuResult().linkUrl());
 
     emit openUrlRequest(url, uargs, bargs);
 }
@@ -945,7 +954,7 @@ KWebKitHtmlExtension::KWebKitHtmlExtension(KWebKitPart* part)
 }
 
 
-KUrl KWebKitHtmlExtension::baseUrl() const
+QUrl KWebKitHtmlExtension::baseUrl() const
 {
     return part()->view()->page()->mainFrame()->baseUrl();
 }
