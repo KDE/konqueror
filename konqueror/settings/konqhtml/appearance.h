@@ -21,9 +21,10 @@
 #include <QtCore/QMap>
 
 #include <kcmodule.h>
-#include <kconfig.h>
+#include <KSharedConfig>
 
 class KIntSpinBox;
+class QSpinBox;
 class KFontComboBox;
 class QComboBox;
 class QCheckBox;
@@ -70,9 +71,9 @@ private:
   KSharedConfig::Ptr m_pConfig;
   QString m_groupname;
 
-  KIntNumInput* m_minSize;
-  KIntNumInput* m_MedSize;
-  KIntNumInput* m_pageDPI;
+  QSpinBox* m_minSize;
+  QSpinBox* m_MedSize;
+  QSpinBox* m_pageDPI;
   KFontComboBox* m_pFonts[6];
   QComboBox* m_pEncoding;
   KIntSpinBox *m_pFontSizeAdjust;

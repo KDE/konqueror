@@ -55,26 +55,25 @@ K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
         registerPlugin<KCMFilter>("khtml_filter");
         registerPlugin<KAppearanceOptions>("khtml_appearance");
         )
-K_EXPORT_PLUGIN(KcmKonqHtmlFactory("kcmkonqhtml"))
 
 KJSParts::KJSParts(QWidget *parent, const QVariantList&)
-	: KCModule(KcmKonqHtmlFactory::componentData(), parent)
+	: KCModule(parent)
 {
   mConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   KAboutData *about =
-  new KAboutData(I18N_NOOP("kcmkonqhtml"), 0, ki18n("Konqueror Browsing Control Module"),
-                0, KLocalizedString(), KAboutData::License_GPL,
-                ki18n("(c) 1999 - 2001 The Konqueror Developers"));
+  new KAboutData("kcmkonqhtml", i18n("Konqueror Browsing Control Module"),
+                "", "", KAboutLicense::GPL,
+                i18n("(c) 1999 - 2001 The Konqueror Developers"));
 
-  about->addAuthor(ki18n("Waldo Bastian"),KLocalizedString(),"bastian@kde.org");
-  about->addAuthor(ki18n("David Faure"),KLocalizedString(),"faure@kde.org");
-  about->addAuthor(ki18n("Matthias Kalle Dalheimer"),KLocalizedString(),"kalle@kde.org");
-  about->addAuthor(ki18n("Lars Knoll"),KLocalizedString(),"knoll@kde.org");
-  about->addAuthor(ki18n("Dirk Mueller"),KLocalizedString(),"mueller@kde.org");
-  about->addAuthor(ki18n("Daniel Molkentin"),KLocalizedString(),"molkentin@kde.org");
-  about->addAuthor(ki18n("Wynn Wilkes"),KLocalizedString(),"wynnw@caldera.com");
+  about->addAuthor(i18n("Waldo Bastian"),"","bastian@kde.org");
+  about->addAuthor(i18n("David Faure"),"","faure@kde.org");
+  about->addAuthor(i18n("Matthias Kalle Dalheimer"),"","kalle@kde.org");
+  about->addAuthor(i18n("Lars Knoll"),"","knoll@kde.org");
+  about->addAuthor(i18n("Dirk Mueller"),"","mueller@kde.org");
+  about->addAuthor(i18n("Daniel Molkentin"),"","molkentin@kde.org");
+  about->addAuthor(i18n("Wynn Wilkes"),"","wynnw@caldera.com");
 
-  about->addCredit(ki18n("Leo Savernik"),ki18n("JavaScript access controls\n"
+  about->addCredit(i18n("Leo Savernik"),i18n("JavaScript access controls\n"
     			"Per-domain policies extensions"),
 			"l.savernik@aon.at");
 
@@ -85,11 +84,11 @@ KJSParts::KJSParts(QWidget *parent, const QVariantList&)
   layout->addWidget(tab);
 
   // ### the groupname is duplicated in KJSParts::save
-  java = new KJavaOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
+  java = new KJavaOptions( mConfig, "Java/JavaScript Settings", this );
   tab->addTab( java, i18n( "&Java" ) );
   connect( java, SIGNAL(changed(bool)), SIGNAL(changed(bool)) );
 
-  javascript = new KJavaScriptOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
+  javascript = new KJavaScriptOptions( mConfig, "Java/JavaScript Settings", this );
   tab->addTab( javascript, i18n( "Java&Script" ) );
   connect( javascript, SIGNAL(changed(bool)), SIGNAL(changed(bool)) );
 }

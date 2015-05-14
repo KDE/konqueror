@@ -27,6 +27,7 @@
 #include <QLabel>
 #include <QTreeView>
 #include <QWhatsThis>
+#include <QVBoxLayout>
 
 // KDE
 #include <kaboutdata.h>
@@ -43,11 +44,12 @@
 #include <QPushButton>
 #include <knuminput.h>
 #include <KTabWidget>
+#include <KConfigGroup>
 
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
+#include <kurl.h>
 
 KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
-    : KCModule( KcmKonqHtmlFactory::componentData(), parent ),
+    : KCModule( parent ),
       mGroupname( "Filter Settings" ),
       mSelCount(0),
       mOriginalString(QString())

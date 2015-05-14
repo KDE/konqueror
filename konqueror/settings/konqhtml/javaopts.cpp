@@ -61,8 +61,8 @@ JavaPolicies::~JavaPolicies() {
 // == class KJavaOptions =====
 
 KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
-                            const KComponentData &componentData, QWidget *parent )
-    : KCModule( /*componentData,*/ parent ),
+                            QWidget *parent )
+    : KCModule( parent ),
       _removeJavaScriptDomainAdvice(false),
       m_pConfig( config ),
       m_groupname( group ),

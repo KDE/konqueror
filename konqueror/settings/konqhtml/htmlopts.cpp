@@ -31,12 +31,10 @@
 #include <KPluginLoader>
 
 
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
-
 //-----------------------------------------------------------------------------
 
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
-    : KCModule( /*KcmKonqHtmlFactory::componentData(),*/ parent ), m_groupname("HTML Settings")
+    : KCModule( parent ), m_groupname("HTML Settings")
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);

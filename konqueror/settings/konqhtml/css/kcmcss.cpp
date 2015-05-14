@@ -19,6 +19,9 @@
 #include <kmimetypetrader.h>
 #include <kdebug.h>
 #include <kparts/part.h>
+#include <kparts/openurlarguments.h>
+
+#include <kurl.h>
 
 // Local
 #include "template.h"
@@ -160,10 +163,11 @@ void CSSConfig::save()
 
   // generate CSS template
   QString dest;
-  const QString templ(KStandardDirs::locate("data", "kcmcss/template.css"));
+  const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcmcss/template.css"));
   if (!templ.isEmpty()) {
     CSSTemplate css(templ);
-    dest = KGlobal::mainComponent().dirs()->saveLocation("data", "kcmcss");
+    dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kcmcss/";
+    QDir().mkpath(dest);
     dest += "override.css";
     css.expandToFile(dest, customDialog->cssDict());
   }

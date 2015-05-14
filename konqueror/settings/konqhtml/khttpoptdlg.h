@@ -16,6 +16,8 @@
 #include <kconfig.h>
 #include <ksharedconfig.h>
 
+class KAboutData;
+
 /**
 *  Dialog for configuring HTTP Options like charset and language negotiation
 *  and assuming that file got from HTTP is HTML if no Content-Type is given
@@ -24,7 +26,7 @@ class KHTTPOptions : public KCModule
 {
 Q_OBJECT
   public:
-    KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent);
+    KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent);
 
     virtual void load();
     virtual void save();

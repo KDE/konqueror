@@ -37,8 +37,6 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
-
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_HOMEPAGE[] = "http://www.kde.org";
 enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage, ShowBookmarksPage };
@@ -359,4 +357,3 @@ void KKonqGeneralOptions::slotChanged()
 }
 
 #include "generalopts.moc"
-

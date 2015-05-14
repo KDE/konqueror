@@ -20,14 +20,9 @@
 #include <KFontComboBox>
 #include <KTabWidget>
 #include <QFontDatabase>
+#include <QSpinBox>
 
-#if defined Q_WS_X11 && !defined K_WS_QTONLY
-#include <X11/Xlib.h>
-#endif
-
-#include "appearance.moc"
-
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
+#include "appearance.h"
 
 static const char* const animationValues[]={"Enabled","Disabled","LoopOnce"};
 enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=2 };
@@ -38,7 +33,7 @@ enum SmoothScrollingType { SmoothScrollingAlways=0, SmoothScrollingNever=1, Smoo
 enum UnderlineLinkType { UnderlineAlways=0, UnderlineNever=1, UnderlineHover=2 };
 
 KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
-    : KCModule( KcmKonqHtmlFactory::componentData(), parent ), m_groupname("HTML Settings"),
+    : KCModule( parent ), m_groupname("HTML Settings"),
       fSize( 10 ), fMinSize( HTML_DEFAULT_MIN_FONT_SIZE )
 
 {
@@ -154,7 +149,8 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   fl=new QFormLayout(gb);
   gb->setWhatsThis( i18n("This is the relative font size Konqueror uses to display web sites.") );
 
-  m_minSize = new KIntNumInput( fMinSize);
+  m_minSize = new QSpinBox;
+  m_minSize->setValue( fMinSize);
   fl->addRow(i18n( "M&inimum font size:" ),m_minSize);  
   m_minSize->setRange( 2, 30 );
   connect( m_minSize, SIGNAL(valueChanged(int)), this, SLOT(slotMinimumFontSize(int)) );
@@ -162,7 +158,8 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_minSize->setWhatsThis( "<qt>" + i18n( "Konqueror will never display text smaller than "
                                     "this size,<br />overriding any other settings." ) + "</qt>" );
 
-  m_MedSize = new KIntNumInput( fSize,m_minSize );
+  m_MedSize = new QSpinBox(m_minSize);
+  m_MedSize->setValue(fSize);
   fl->addRow(i18n( "&Medium font size:"  ),m_MedSize);
   m_MedSize->setRange( 2, 30 );
   connect( m_MedSize, SIGNAL(valueChanged(int)), this, SLOT(slotFontSize(int)) );
@@ -461,3 +458,6 @@ void KAppearanceOptions::save()
   emit changed(false);
 }
 
+
+
+#include "appearance.moc"

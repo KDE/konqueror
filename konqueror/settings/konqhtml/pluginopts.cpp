@@ -60,10 +60,8 @@ PluginPolicies::~PluginPolicies() {
 
 // == class KPluginOptions =====
 
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
-
 KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
-    : KCModule( /*KcmKonqHtmlFactory::componentData(),*/ parent ),
+    : KCModule( parent ),
       m_pConfig( KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals) ),
       m_groupname( "Java/JavaScript Settings" ),
       global_policies(m_pConfig,m_groupname,true)
