@@ -460,4 +460,3 @@ void KAppearanceOptions::save()
 
 
 
-#include "appearance.moc"
