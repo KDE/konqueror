@@ -17,6 +17,10 @@ set(kwebkit_LIB_SRCS
     ui/featurepermissionbar.cpp
 )
 
+qt5_wrap_ui(kwebkit_LIB_SRCS
+                  ui/searchbar.ui
+)
+
 ########################### kwebkitpart #############################
 add_library(kwebkitpart ${kwebkit_LIB_SRCS})
 
