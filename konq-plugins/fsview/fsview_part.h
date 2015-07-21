@@ -108,7 +108,7 @@ protected:
    * This must be implemented by each part
    */
   virtual bool openFile();
-  virtual bool openUrl(const KUrl &url);
+  virtual bool openUrl(const QUrl &url);
   virtual bool closeUrl();
 
 private:

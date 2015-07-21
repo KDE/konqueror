@@ -309,7 +309,7 @@ bool FSViewPart::openFile() // never called since openUrl is reimplemented
   return true;
 }
 
-bool FSViewPart::openUrl(const KUrl &url)
+bool FSViewPart::openUrl(const QUrl &url)
 {
   kDebug(90100) << "FSViewPart::openUrl " << url.path();
 
