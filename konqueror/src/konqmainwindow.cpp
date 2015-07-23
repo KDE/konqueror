@@ -1749,7 +1749,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
       // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
       QString serviceType = reloadView->url().isLocalFile() ? reloadView->serviceType() : QString();
       // By using locationBarURL instead of url, we preserve name filters (#54687)
-      QUrl reloadUrl = reloadView->locationBarURL();
+      QUrl reloadUrl = QUrl::fromUserInput(reloadView->locationBarURL(), QString(), QUrl::AssumeLocalFile);
       if (reloadUrl.isEmpty()) // e.g. initial screen
           reloadUrl = reloadView->url();
       openUrl(reloadView, reloadUrl, serviceType, req);
