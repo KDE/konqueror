@@ -23,7 +23,6 @@
 #include <kglobal.h>
 #include <QApplication>
 class KJob;
-class KUrl;
 
 class ClientApp : public QApplication
 {

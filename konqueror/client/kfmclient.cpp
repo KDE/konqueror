@@ -46,7 +46,9 @@
 #include <konq_main_interface.h>
 
 #include <QtCore/QDir>
+#include <QtCore/QMimeDatabase>
 #include <QtCore/QRegExp>
+#include <QtCore/QUrl>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -223,7 +225,7 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	mimetype.clear();
     }
     if (mimetype.isEmpty())
-	mimetype = KMimeType::findByUrl(KUrl(url))->name();
+	mimetype = QMimeDatabase().mimeTypeForUrl(QUrl(url)).name();
     if (mimetype == "application/octet-stream")
         return true;
     KService::List offers = KMimeTypeTrader::self()->query( mimetype, QLatin1String( "KParts/ReadOnlyPart" ) );
@@ -546,9 +548,7 @@ bool ClientApp::doIt()
     bool tempFile = KCmdLineArgs::isTempFileSet();
     if ( argc == 1 )
     {
-      KUrl url;
-      url.setPath(QDir::homePath());
-      return createNewWindow( url, command == "newTab", tempFile );
+      return createNewWindow( QUrl::fromLocalFile(QDir::homePath()), command == "newTab", tempFile );
     }
     if ( argc == 2 )
     {
