@@ -151,28 +151,6 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
     mimeType = pmt->name();
 }
 
-void WebView::dropEvent(QDropEvent* ev)
-{
-#if (QTWEBKIT_VERSION < QTWEBKIT_VERSION_CHECK(2, 2, 0))
-    // TODO: Workaround that should be removed one the bug in QtWebKit is fixed.
-    // See https://bugs.webkit.org/show_bug.cgi?id=53320.
-    if (ev) {
-        QWebHitTestResult hitResult = page()->currentFrame()->hitTestContent(ev->pos());
-        if (hitResult.isNull() || hitResult.element().tagName() != QL1S("input")) {
-            const QMimeData* mimeData = ev ? ev->mimeData() : 0;
-            if (mimeData && mimeData->hasUrls()) {
-                QUrl url (mimeData->urls().first());
-                emit m_part->browserExtension()->openUrlRequest(url);
-                ev->accept();
-                return;
-            }
-        }
-    }
-#else
-    QWebView::dropEvent(ev);
-#endif
-}
-
 void WebView::contextMenuEvent(QContextMenuEvent* e)
 {
     m_result = page()->mainFrame()->hitTestContent(e->pos());

@@ -710,18 +710,14 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
 
   // TODO: Create a webkit config module that gets embeded into Konqueror's kcm.
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
   // Turn on WebGL support
   QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...
   QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
   QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
   QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, d->m_enableLocalStorage);
-#endif
 
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
   QWebSettings::globalSettings()->setAttribute(QWebSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
-#endif
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);

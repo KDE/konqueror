@@ -428,18 +428,12 @@ bool KWebKitPart::openUrl(const QUrl &_u)
 
 bool KWebKitPart::isCaretMode() const
 {
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
     return page()->settings()->testAttribute(QWebSettings::CaretBrowsingEnabled);
-#else
-    return false;
-#endif
 }
 
 void KWebKitPart::slotToggleCaretMode()
 {
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 3, 0)
     page()->settings()->setAttribute(QWebSettings::CaretBrowsingEnabled, !isCaretMode());
-#endif
 }
 
 bool KWebKitPart::closeUrl()

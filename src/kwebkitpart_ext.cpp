@@ -913,11 +913,7 @@ KWebKitPart* KWebKitTextExtension::part() const
 
 bool KWebKitTextExtension::hasSelection() const
 {
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
     return part()->view()->hasSelection();
-#else
-    return !part()->view()->selectedText().isEmpty();
-#endif
 }
 
 QString KWebKitTextExtension::selectedText(Format format) const
@@ -926,11 +922,7 @@ QString KWebKitTextExtension::selectedText(Format format) const
     case PlainText:
         return part()->view()->selectedText();
     case HTML:
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
         return part()->view()->selectedHtml();
-#else
-        return part()->view()->page()->currentFrame()->toHtml();
-#endif
     }
     return QString();
 }
@@ -961,11 +953,7 @@ QUrl KWebKitHtmlExtension::baseUrl() const
 
 bool KWebKitHtmlExtension::hasSelection() const
 {
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
     return part()->view()->hasSelection();
-#else
-    return !part()->view()->selectedText().isEmpty();
-#endif
 }
 
 KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMethods() const
