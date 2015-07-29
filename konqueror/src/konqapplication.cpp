@@ -27,9 +27,6 @@
 KonquerorApplication::KonquerorApplication()
     : KApplication()
 {
-    // enable high dpi support
-    setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
     new KonquerorAdaptor; // not really an adaptor
     const QString dbusInterface = "org.kde.Konqueror.Main";
     QDBusConnection dbus = QDBusConnection::sessionBus();
