@@ -31,7 +31,7 @@
 extern "C"
 KDE_EXPORT int kdemain(int argc, char **argv)
 {
-    KAboutData about("dolphin", 0,
+    KAboutData about("dolphin", "dolphin4",
                      ki18nc("@title", "Dolphin"),
                      "14.12.3",
                      ki18nc("@title", "File Manager"),

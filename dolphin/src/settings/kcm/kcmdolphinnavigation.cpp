@@ -38,7 +38,7 @@ DolphinNavigationConfigModule::DolphinNavigationConfigModule(QWidget* parent, co
 {
     Q_UNUSED(args);
 
-    KGlobal::locale()->insertCatalog("dolphin");
+    KGlobal::locale()->insertCatalog("dolphin4");
 
     setButtons(KCModule::Default | KCModule::Help);
 
