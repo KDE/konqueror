@@ -1,7 +1,7 @@
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BUILD_DIR}/.. ${KDE4_INCLUDES} )
 
-# needed on windows to correctly use the files from dolphinprivate
+# needed on windows to correctly use the files from dolphinprivate4
 add_definitions(-DLIBDOLPHINPRIVATE_EXPORT=)
 
 # KItemSetTest
@@ -10,14 +10,14 @@ set(kitemsettest_SRCS
     ../kitemviews/kitemset.cpp
 )
 kde4_add_unit_test(kitemsettest TEST ${kitemsettest_SRCS})
-target_link_libraries(kitemsettest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kitemsettest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KItemRangeTest
 set(kitemrangetest_SRCS
     kitemrangetest.cpp
 )
 kde4_add_unit_test(kitemrangetest TEST ${kitemrangetest_SRCS})
-target_link_libraries(kitemrangetest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kitemrangetest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KItemListSelectionManagerTest
 set(kitemlistselectionmanagertest_SRCS
@@ -27,7 +27,7 @@ set(kitemlistselectionmanagertest_SRCS
     ../kitemviews/kitemset.cpp
 )
 kde4_add_unit_test(kitemlistselectionmanagertest TEST ${kitemlistselectionmanagertest_SRCS})
-target_link_libraries(kitemlistselectionmanagertest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kitemlistselectionmanagertest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KItemListControllerTest
 set(kitemlistcontrollertest_SRCS
@@ -46,7 +46,7 @@ set(kitemlistcontrollertest_SRCS
     ../kitemviews/kstandarditemlistwidget.cpp
 )
 kde4_add_unit_test(kitemlistcontrollertest TEST ${kitemlistcontrollertest_SRCS})
-target_link_libraries(kitemlistcontrollertest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kitemlistcontrollertest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KFileItemListViewTest
 set(kfileitemlistviewtest_SRCS
@@ -64,7 +64,7 @@ set(kfileitemlistviewtest_SRCS
     ../kitemviews/kstandarditemlistwidget.cpp
 )
 kde4_add_unit_test(kfileitemlistviewtest TEST ${kfileitemlistviewtest_SRCS})
-target_link_libraries(kfileitemlistviewtest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kfileitemlistviewtest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KFileItemModelTest
 set(kfileitemmodeltest_SRCS
@@ -75,7 +75,7 @@ set(kfileitemmodeltest_SRCS
     ../kitemviews/kitemset.cpp
 )
 kde4_add_unit_test(kfileitemmodeltest TEST ${kfileitemmodeltest_SRCS})
-target_link_libraries(kfileitemmodeltest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kfileitemmodeltest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KFileItemModelBenchmark
 set(kfileitemmodelbenchmark_SRCS
@@ -85,7 +85,7 @@ set(kfileitemmodelbenchmark_SRCS
     ../kitemviews/kitemmodelbase.cpp
 )
 kde4_add_executable(kfileitemmodelbenchmark TEST ${kfileitemmodelbenchmark_SRCS})
-target_link_libraries(kfileitemmodelbenchmark dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kfileitemmodelbenchmark dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # KItemListKeyboardSearchManagerTest
 set(kitemlistkeyboardsearchmanagertest_SRCS
@@ -117,7 +117,7 @@ set(kstandarditemmodeltest_SRCS
     ../kitemviews/kitemmodelbase.cpp
 )
 kde4_add_unit_test(kstandarditemmodeltest TEST ${kstandarditemmodeltest_SRCS})
-target_link_libraries(kstandarditemmodeltest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(kstandarditemmodeltest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
 
 # ViewPropertiesTest
 set(viewpropertiestest_SRCS
@@ -130,4 +130,4 @@ kde4_add_kcfg_files(viewpropertiestest_SRCS
   ../settings/dolphin_directoryviewpropertysettings.kcfgc
 )
 kde4_add_unit_test(viewpropertiestest TEST ${viewpropertiestest_SRCS})
-target_link_libraries(viewpropertiestest dolphinprivate ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
+target_link_libraries(viewpropertiestest dolphinprivate4 ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
