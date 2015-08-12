@@ -113,10 +113,10 @@ kde4_add_kcfg_files(dolphinprivate_LIB_SRCS
     settings/dolphin_versioncontrolsettings.kcfgc
 )
 
-kde4_add_library(dolphinprivate SHARED ${dolphinprivate_LIB_SRCS})
+kde4_add_library(dolphinprivate4 SHARED ${dolphinprivate_LIB_SRCS})
 
 target_link_libraries(
-    dolphinprivate
+    dolphinprivate4
     ${KDE4_KFILE_LIBS}
     konq
     ${KDE4_KNEWSTUFF3_LIBS}
@@ -124,7 +124,7 @@ target_link_libraries(
 
 if(HAVE_BALOO)
     target_link_libraries(
-        dolphinprivate
+        dolphinprivate4
         ${BALOO_LIBRARIES}
         ${BALOO_WIDGETS_LIBRARY}
         ${KFILEMETADATA_LIBRARY}
@@ -132,13 +132,13 @@ if(HAVE_BALOO)
 endif()
 
 if(X11_Xrender_FOUND)
-    target_link_libraries(dolphinprivate ${X11_Xrender_LIB})
+    target_link_libraries(dolphinprivate4 ${X11_Xrender_LIB})
 endif(X11_Xrender_FOUND)
 
-target_link_libraries(dolphinprivate ${KDE4_PLASMA_LIBS})
+target_link_libraries(dolphinprivate4 ${KDE4_PLASMA_LIBS})
 
-set_target_properties(dolphinprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
-install(TARGETS dolphinprivate  ${INSTALL_TARGETS_DEFAULT_ARGS})
+set_target_properties(dolphinprivate4 PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+install(TARGETS dolphinprivate4  ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ##########################################
 
@@ -155,7 +155,7 @@ endif (${KDE_VERSION} VERSION_GREATER "4.9.1")
 
 kde4_add_plugin(dolphinpart ${dolphinpart_SRCS})
 
-target_link_libraries(dolphinpart dolphinprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS})
+target_link_libraries(dolphinpart dolphinprivate4 konq ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS})
 
 install(TARGETS dolphinpart DESTINATION ${PLUGIN_INSTALL_DIR})
 
@@ -240,22 +240,22 @@ endif(NOT WIN32)
 
 kde4_add_app_icon(dolphin_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/system-file-manager.png")
 
-kde4_add_kdeinit_executable(dolphin ${dolphin_SRCS})
+kde4_add_kdeinit_executable(dolphin4 ${dolphin_SRCS})
 
-target_link_libraries(kdeinit_dolphin
+target_link_libraries(kdeinit_dolphin4
     ${KDE4_KDEPRINT_LIBS}
     ${KDE4_KFILE_LIBS}
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KCMUTILS_LIBRARY}
     konq
-    dolphinprivate
+    dolphinprivate4
     knewstuff3
     ${KDE4_SOLID_LIBS}
     ${KDE4_PHONON_LIBS}
 )
 
 if(HAVE_BALOO)
-    target_link_libraries(kdeinit_dolphin
+    target_link_libraries(kdeinit_dolphin4
         ${BALOO_LIBRARIES}
         ${BALOO_WIDGETS_LIBRARY}
     )
@@ -263,13 +263,13 @@ endif()
 
 if (KActivities_FOUND)
     target_link_libraries(
-        kdeinit_dolphin
+        kdeinit_dolphin4
         ${KACTIVITIES_LIBRARY}
     )
 endif (KActivities_FOUND)
 
-install(TARGETS kdeinit_dolphin ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(TARGETS dolphin ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kdeinit_dolphin4 ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS dolphin4 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ##########################################
 
@@ -326,10 +326,10 @@ kde4_add_plugin(kcm_dolphinnavigation ${kcm_dolphinnavigation_PART_SRCS})
 kde4_add_plugin(kcm_dolphinservices ${kcm_dolphinservices_PART_SRCS})
 kde4_add_plugin(kcm_dolphingeneral ${kcm_dolphingeneral_PART_SRCS})
 
-target_link_libraries(kcm_dolphinviewmodes  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} dolphinprivate)
-target_link_libraries(kcm_dolphinnavigation  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} dolphinprivate)
-target_link_libraries(kcm_dolphinservices  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF3_LIBRARY} dolphinprivate)
-target_link_libraries(kcm_dolphingeneral ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} dolphinprivate)
+target_link_libraries(kcm_dolphinviewmodes  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} dolphinprivate4)
+target_link_libraries(kcm_dolphinnavigation  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} dolphinprivate4)
+target_link_libraries(kcm_dolphinservices  ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KNEWSTUFF3_LIBRARY} dolphinprivate4)
+target_link_libraries(kcm_dolphingeneral ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} dolphinprivate4)
 
 install(TARGETS kcm_dolphinviewmodes DESTINATION ${PLUGIN_INSTALL_DIR} )
 install(TARGETS kcm_dolphinnavigation DESTINATION ${PLUGIN_INSTALL_DIR} )
@@ -346,16 +346,18 @@ install(TARGETS kio_filenamesearch DESTINATION ${PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install( PROGRAMS dolphin.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
-install( FILES settings/dolphin_directoryviewpropertysettings.kcfg
-               settings/dolphin_generalsettings.kcfg
-               settings/dolphin_compactmodesettings.kcfg
-               settings/dolphin_iconsmodesettings.kcfg
-               settings/dolphin_detailsmodesettings.kcfg
-               settings/dolphin_versioncontrolsettings.kcfg
-         DESTINATION ${KCFG_INSTALL_DIR} )
+# Disabled since Applications/15.08 contains kf5-based dolphin from dolphin.git
+#install( PROGRAMS dolphin.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+
+#install( FILES settings/dolphin_directoryviewpropertysettings.kcfg
+#settings/dolphin_generalsettings.kcfg
+#settings/dolphin_compactmodesettings.kcfg
+#settings/dolphin_iconsmodesettings.kcfg
+#settings/dolphin_detailsmodesettings.kcfg
+#settings/dolphin_versioncontrolsettings.kcfg
+#DESTINATION ${KCFG_INSTALL_DIR} )
 install( FILES dolphinui.rc DESTINATION ${DATA_INSTALL_DIR}/dolphin )
-install( FILES dolphin.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata )
+#install( FILES dolphin.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata )
 install( FILES search/filenamesearch.protocol DESTINATION ${SERVICES_INSTALL_DIR} )
 install( FILES settings/kcm/kcmdolphinviewmodes.desktop DESTINATION
 ${SERVICES_INSTALL_DIR} )
@@ -363,6 +365,6 @@ install( FILES settings/kcm/kcmdolphinnavigation.desktop DESTINATION ${SERVICES_
 install( FILES settings/kcm/kcmdolphinservices.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
 install( FILES settings/kcm/kcmdolphingeneral.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
 install( FILES settings/services/servicemenu.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
-install( PROGRAMS settings/services/servicemenuinstallation DESTINATION ${BIN_INSTALL_DIR} )
-install( PROGRAMS settings/services/servicemenudeinstallation DESTINATION ${BIN_INSTALL_DIR} )
+#install( PROGRAMS settings/services/servicemenuinstallation DESTINATION ${BIN_INSTALL_DIR} )
+#install( PROGRAMS settings/services/servicemenudeinstallation DESTINATION ${BIN_INSTALL_DIR} )
 
