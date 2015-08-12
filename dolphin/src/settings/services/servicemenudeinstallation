@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+archive = ARGV[0]
+if archive[(archive.length - 8)..(archive.length)] == ".desktop"
+    FileUtils.rm(`kde4-config --localprefix`.strip! + "share/kde4/services/ServiceMenus/" + File.basename(archive))
+    exit(0)
+end
+dir = archive + "-dir"
+# try: deinstall.sh
+# try: deinstall
+# try: installKDE4.sh
+# try: installKDE4
+# try: install.sh
+# try: install
+while true
+    dd = Dir.new(dir)
+    break if dd.count != 3
+    odir = dir
+    for entry in dd
+        dir += "/" + entry if entry != "." && entry != ".."
+    end
+    if !File.directory? dir
+        dir = odir
+        break
+    end
+end
+Dir.chdir(dir)
+def fail()
+    system("kdialog --passivepopup \"Deinstallation failed\" 15")
+    exit(-1)
+end
+if !((File.exist?(file = "./deinstall.sh") || File.exist?(file = "./deinstall")) && system(file))
+    fail() if !File.exist?(file = "./installKDE4.sh") && !File.exist?(file = "./installKDE4") && !File.exist?(file = "./install.sh") && !File.exist?(file = "./install")
+File.new(file).chmod(0700)
+    fail() if !system(file + " --remove") && !system(file + " --delete") && !system(file + " --uninstall") && !system(file + " --deinstall")
+end
+FileUtils.rm_r(dir)
