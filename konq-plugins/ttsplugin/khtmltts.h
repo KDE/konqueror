@@ -1,6 +1,7 @@
 /***************************************************************************
   Copyright (C) 2002 by George Russell <george.russell@clara.net>
   Copyright (C) 2003-2004 by Olaf Schmidt <ojschmidt@kde.org>
+  Copyright (C) 2015 by Jeremy Whiting <jpwhiting@kde.org>
  ***************************************************************************/
 
 /***************************************************************************
@@ -13,8 +14,8 @@
  ***************************************************************************/
 
 
-#ifndef KHTMLKTTSD_H
-#define KHTMLKTTSD_H
+#ifndef KHTMLTTS_H
+#define KHTMLTTS_H
 
 #include <kparts/plugin.h>
 
@@ -22,7 +23,7 @@
 /**
  * KHTML KParts Plugin
  */
-class KHTMLPluginKTTSD : public KParts::Plugin
+class KHTMLPluginTTS : public KParts::Plugin
 {
     Q_OBJECT
 public:
@@ -30,12 +31,12 @@ public:
     /**
      * Construct a new KParts plugin.
      */
-    KHTMLPluginKTTSD( QObject* parent, const QVariantList& );
+    KHTMLPluginTTS( QObject* parent, const QVariantList& );
 
     /**
      * Destructor.
      */
-    virtual ~KHTMLPluginKTTSD();
+    virtual ~KHTMLPluginTTS();
 public Q_SLOTS:
     void slotReadOut();
 };

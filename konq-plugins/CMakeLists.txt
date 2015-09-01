@@ -16,6 +16,9 @@ include(ECMInstallIcons)
 include(ECMMarkAsTest)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} QUIET)
+set_package_properties(Qt5TextToSpeech PROPERTIES
+      PURPOSE "Gives Konqueror a plugin to speak portions or all of a website")
 find_package(KF5 REQUIRED COMPONENTS KDELibs4Support Crash)
 
 add_subdirectory( khtmlsettingsplugin )
@@ -28,7 +31,9 @@ add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
 #add_subdirectory( quickprint )
-# TODO add_subdirectory( kttsplugin )
+if (Qt5TextToSpeech_FOUND)
+   add_subdirectory(ttsplugin)
+endif()
 
 if(UNIX)
    add_subdirectory( shellcmdplugin )
