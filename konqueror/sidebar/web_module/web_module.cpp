@@ -82,8 +82,8 @@ KHTMLSideBar::KHTMLSideBar()
 
 ////
 
-KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent, const KConfigGroup& configGroup)
-	: KonqSidebarModule(componentData, parent, configGroup)
+KonqSideBarWebModule::KonqSideBarWebModule(QWidget *parent, const KConfigGroup& configGroup)
+	: KonqSidebarModule(parent, configGroup)
 {
 	_htmlPart = new KHTMLSideBar();
         _htmlPart->setAutoDeletePart(false);
@@ -98,9 +98,9 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SLOT(urlClicked(QString,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 	connect(_htmlPart->browserExtension(),
-		SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+		SIGNAL(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
 		this,
-		SLOT(formClicked(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
+		SLOT(formClicked(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
 	connect(_htmlPart,
 		SIGNAL(setAutoReload()), this, SLOT(setAutoReload()));
 	connect(_htmlPart,
@@ -186,11 +186,11 @@ void KonqSideBarWebModule::formClicked(const QUrl& url, const KParts::OpenUrlArg
 }
 
 void KonqSideBarWebModule::loadFavicon() {
-    QString icon = KMimeType::favIconForUrl(_url);
+    QString icon = KIO::favIconForUrl(_url);
     if (icon.isEmpty()) {
         org::kde::FavIcon favicon("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus());
         favicon.downloadHostIcon(_url.url());
-        icon = KMimeType::favIconForUrl(_url);
+        icon = KIO::favIconForUrl(_url);
     }
 
 	if (!icon.isEmpty()) {
@@ -261,14 +261,14 @@ public:
         : KonqSidebarPlugin(parent, args) {}
     virtual ~KonqSidebarWebPlugin() {}
 
-    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+    virtual KonqSidebarModule* createModule(QWidget *parent,
                                             const KConfigGroup& configGroup,
                                             const QString &desktopname,
                                             const QVariant& unused)
     {
         Q_UNUSED(unused);
         Q_UNUSED(desktopname);
-        return new KonqSideBarWebModule(componentData, parent, configGroup);
+        return new KonqSideBarWebModule(parent, configGroup);
     }
 
     virtual QList<QAction*> addNewActions(QObject* parent,
@@ -299,7 +299,7 @@ public:
         Q_UNUSED(unused);
 
         KNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), QUrl(), parentWidget);
-        dlg.setCaption(i18nc("@title:window", "Add web sidebar module"));
+        dlg.setWindowTitle(i18nc("@title:window", "Add web sidebar module"));
         if (!dlg.exec())
             return false;
 

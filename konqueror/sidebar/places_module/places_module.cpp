@@ -26,14 +26,15 @@
 #include <kpluginfactory.h>
 
 #include <QAction>
+#include <QKeyEvent>
 
 KonqPlacesCustomPlacesView::KonqPlacesCustomPlacesView(QWidget *parent)
     : KFilePlacesView(parent)
     , m_mouseButtons(Qt::NoButton)
     , m_keyModifiers(Qt::NoModifier)
 {
-    connect(this, SIGNAL(urlChanged(KUrl)),
-            this, SLOT(emitUrlChanged(KUrl)));
+    connect(this, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(emitUrlChanged(QUrl)));
 }
 
 KonqPlacesCustomPlacesView::~KonqPlacesCustomPlacesView()
@@ -58,18 +59,17 @@ void KonqPlacesCustomPlacesView::emitUrlChanged(const QUrl &url)
 }
 
 
-KonqSideBarPlacesModule::KonqSideBarPlacesModule(const KComponentData &componentData,
-                                                 QWidget *parent,
+KonqSideBarPlacesModule::KonqSideBarPlacesModule(QWidget *parent,
                                                  const KConfigGroup &configGroup)
-    : KonqSidebarModule(componentData, parent, configGroup)
+    : KonqSidebarModule(parent, configGroup)
 {
     m_placesView = new KonqPlacesCustomPlacesView(parent);
     m_placesView->setModel(new KFilePlacesModel(m_placesView));
     m_placesView->setShowAll(true);
     m_placesView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    connect(m_placesView, SIGNAL(urlChanged(KUrl,Qt::MouseButtons,Qt::KeyboardModifiers)),
-            this, SLOT(slotPlaceUrlChanged(KUrl,Qt::MouseButtons,Qt::KeyboardModifiers)));
+    connect(m_placesView, SIGNAL(urlChanged(QUrl,Qt::MouseButtons,Qt::KeyboardModifiers)),
+            this, SLOT(slotPlaceUrlChanged(QUrl,Qt::MouseButtons,Qt::KeyboardModifiers)));
 }
 
 KonqSideBarPlacesModule::~KonqSideBarPlacesModule()
@@ -98,15 +98,14 @@ public:
         : KonqSidebarPlugin(parent, args) {}
     virtual ~KonqSidebarPlacesPlugin() {}
 
-    virtual KonqSidebarModule* createModule(const KComponentData &componentData,
-                                            QWidget *parent,
+    virtual KonqSidebarModule* createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,
                                             const QString &desktopname,
                                             const QVariant &unused)
     {
         Q_UNUSED(desktopname);
         Q_UNUSED(unused);
-        return new KonqSideBarPlacesModule(componentData, parent, configGroup);
+        return new KonqSideBarPlacesModule(parent, configGroup);
     }
 
     virtual QList<QAction*> addNewActions(QObject *parent,
@@ -146,6 +145,6 @@ public:
 };
 
 K_PLUGIN_FACTORY(KonqSidebarPlacesPluginFactory, registerPlugin<KonqSidebarPlacesPlugin>(); )
-K_EXPORT_PLUGIN(KonqSidebarPlacesPluginFactory())
+// K_EXPORT_PLUGIN(KonqSidebarPlacesPluginFactory())
 
 #include "places_module.moc"

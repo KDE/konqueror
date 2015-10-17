@@ -24,7 +24,6 @@
 #include <QStringList>
 #include <kservice.h>
 class KConfigGroup;
-class KUrl;
 
 /**
  * The module manager is responsible for discovering the modules (i.e. tabs,
@@ -57,7 +56,7 @@ public:
     void rollbackToDefault();
 
     void setModuleName(const QString& fileName, const QString& moduleName);
-    void setModuleUrl(const QString& fileName, const KUrl& url);
+    void setModuleUrl(const QString& fileName, const QUrl& url);
     void setModuleIcon(const QString& fileName, const QString& icon);
 
     /// Find a unique filename for a new module, based on a template name

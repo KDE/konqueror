@@ -40,7 +40,7 @@ protected Q_SLOTS:
     void copy() { if (widget) widget->stdAction("copy"); }
     void cut() { if (widget) widget->stdAction("cut"); }
     void paste() { if (widget) widget->stdAction("paste"); }
-    void pasteTo(const KUrl&) { if (widget) widget->stdAction("pasteToSelection"); }
+    void pasteTo(const QUrl&) { if (widget) widget->stdAction("pasteToSelection"); }
 };
 
 /**
@@ -65,7 +65,7 @@ public:
      */
     virtual ~KonqSidebarPart();
 
-    virtual bool openUrl(const KUrl &url);
+    virtual bool openUrl(const QUrl &url);
 
 protected:
     /**

@@ -30,8 +30,7 @@ class KonqSidebarHistoryModule : public KonqSidebarModule
 {
     Q_OBJECT
 public:
-    KonqSidebarHistoryModule(const KComponentData &componentData, QWidget *parent,
-                             const KConfigGroup& configGroup);
+    KonqSidebarHistoryModule(QWidget *parent, const KConfigGroup& configGroup);
     virtual ~KonqSidebarHistoryModule();
     virtual QWidget *getWidget();
 

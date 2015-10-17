@@ -30,11 +30,9 @@ public:
     bool m_paste;
 };
 
-KonqSidebarModule::KonqSidebarModule(const KComponentData &componentData,
-                                     QObject *parent,
+KonqSidebarModule::KonqSidebarModule( QObject *parent,
                                      const KConfigGroup& configGroup_)
     : QObject(parent),
-      m_parentComponentData(componentData),
       m_configGroup(configGroup_),
       d(new KonqSidebarModulePrivate)
 {
@@ -45,9 +43,7 @@ KonqSidebarModule::~KonqSidebarModule()
     delete d;
 }
 
-const KComponentData &KonqSidebarModule::parentComponentData() const { return m_parentComponentData; }
-
-void KonqSidebarModule::openUrl(const KUrl& url)
+void KonqSidebarModule::openUrl(const QUrl& url)
 {
     handleURL(url);
 }

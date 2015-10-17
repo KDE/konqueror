@@ -113,8 +113,7 @@ class KonqSideBarWebModule : public KonqSidebarModule
 {
 	Q_OBJECT
 	public:
-		KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent,
-                             const KConfigGroup& configGroup);
+		KonqSideBarWebModule(QWidget *parent, const KConfigGroup& configGroup);
 		virtual ~KonqSideBarWebModule();
 
 		virtual QWidget *getWidget();

@@ -6,7 +6,7 @@ include_directories(
 ########### the sidebar module ###############
 
 add_library(konqsidebar_history MODULE history_module.cpp)
-target_link_libraries(konqsidebar_history konqsidebarplugin konquerorprivate konq  KF5::Parts)
+target_link_libraries(konqsidebar_history konqsidebarplugin konquerorprivate KF5::Konq KF5::Parts)
 install(TARGETS konqsidebar_history DESTINATION ${KDE_INSTALL_PLUGINDIR})
 install(FILES konqsidebar_history.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqsidebartng/plugins)
 

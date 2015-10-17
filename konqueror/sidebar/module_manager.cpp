@@ -27,6 +27,7 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <QDir>
+#include <QUrl>
 
 // Input data:
 // Global dir: list of desktop files.
@@ -112,7 +113,7 @@ void ModuleManager::rollbackToDefault()
     Q_FOREACH(const QString& subdir, dirEntries) {
         if (subdir != "add") {
             kDebug() << "Deleting" << (loc+subdir);
-            KIO::Job* job = KIO::del(KUrl(loc+subdir), KIO::HideProgressInfo);
+            KIO::Job* job = KIO::del(QUrl::fromLocalFile(loc+subdir), KIO::HideProgressInfo);
             job->exec();
         }
     }
@@ -130,11 +131,11 @@ void ModuleManager::setModuleName(const QString& fileName, const QString& module
     ksc.sync();
 }
 
-void ModuleManager::setModuleUrl(const QString& fileName, const KUrl& url)
+void ModuleManager::setModuleUrl(const QString& fileName, const QUrl& url)
 {
     KConfig desktopFile(m_localPath + fileName, KConfig::SimpleConfig);
     KConfigGroup ksc(&desktopFile, "Desktop Entry");
-    ksc.writePathEntry("URL", url.prettyUrl());
+    ksc.writePathEntry("URL", url.toDisplayString());
     ksc.sync();
 }
 
@@ -214,7 +215,7 @@ void ModuleManager::sortGlobalEntries(QStringList& fileNames) const
         } else {
             KSharedConfig::Ptr config = KSharedConfig::openConfig(path,
                                                                   KConfig::NoGlobals,
-                                                                  "data");
+                                                                  QStandardPaths::GenericDataLocation);
             KConfigGroup configGroup(config, "Desktop Entry");
             const int weight = configGroup.readEntry("X-KDE-Weight", 0);
             sorter.insert(weight, fileName);

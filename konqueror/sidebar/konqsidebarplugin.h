@@ -22,7 +22,6 @@
 
 #include <kconfiggroup.h>
 #include <QWidget>
-#include <kurl.h>
 #include "konqsidebarplugin.h"
 
 #include <kparts/part.h>
@@ -34,10 +33,10 @@
 #ifndef KONQSIDEBARPLUGIN_EXPORT
 # if defined(MAKE_KONQSIDEBARPLUGIN_LIB)
     /* We are building this library */
-#  define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
+#  define KONQSIDEBARPLUGIN_EXPORT Q_DECL_EXPORT
 # else
    /* We are using this library */
-#  define KONQSIDEBARPLUGIN_EXPORT KDE_IMPORT
+#  define KONQSIDEBARPLUGIN_EXPORT Q_DECL_IMPORT
 # endif
 #endif
 
@@ -55,14 +54,11 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarModule : public QObject
 {
     Q_OBJECT
 public:
-    KonqSidebarModule(const KComponentData &componentData,
-                      QObject *parent,
+    KonqSidebarModule( QObject *parent,
                       const KConfigGroup& configGroup);
     ~KonqSidebarModule();
 
     virtual QWidget *getWidget() = 0;
-
-    const KComponentData &parentComponentData() const;
     KConfigGroup configGroup();
 
     /**
@@ -92,7 +88,7 @@ protected:
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
 
 public Q_SLOTS:
-    void openUrl(const KUrl& url);
+    void openUrl(const QUrl& url);
 
     void openPreview(const KFileItemList& items);
 
@@ -132,7 +128,6 @@ Q_SIGNALS:
     void enableAction(KonqSidebarModule* module, const char* name, bool enabled);
 
 private:
-    KComponentData m_parentComponentData;
     KConfigGroup m_configGroup;
     KonqSidebarModulePrivate* const d;
 
@@ -154,13 +149,12 @@ public:
 
     /**
      * Create new module for the sidebar.
-     * @param componentData
      * @param parent parent widget, for the plugin's widget
      * @param configGroup desktop group from the plugin's desktop file
      * @param desktopName filename of the plugin's desktop file - for compatibility only
      * @param unused for future extensions
      */
-    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+    virtual KonqSidebarModule* createModule( QWidget *parent,
                                             const KConfigGroup& configGroup,
                                             const QString &desktopname,
                                             const QVariant& unused) = 0;

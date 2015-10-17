@@ -52,7 +52,7 @@ add_subdirectory( client )
 
 add_subdirectory( about )
 add_subdirectory( pics )
-# TODO add_subdirectory( sidebar )
+add_subdirectory( sidebar )
 add_subdirectory( preloader )
 add_subdirectory( settings )
 

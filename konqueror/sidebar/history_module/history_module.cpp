@@ -30,16 +30,16 @@
 #include <KLocalizedString>
 #include <kpluginfactory.h>
 
-KonqSidebarHistoryModule::KonqSidebarHistoryModule(const KComponentData &componentData, QWidget *parent,
+KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
                                                    const KConfigGroup& configGroup)
-    : KonqSidebarModule(componentData, parent, configGroup)
+    : KonqSidebarModule(parent, configGroup)
 {
     m_historyView = new KonqHistoryView(parent);
     connect(m_historyView->treeView(), SIGNAL(activated(QModelIndex)), this, SLOT(slotActivated(QModelIndex)));
     connect(m_historyView->treeView(), SIGNAL(pressed(QModelIndex)), this, SLOT(slotPressed(QModelIndex)));
     connect(m_historyView->treeView(), SIGNAL(clicked(QModelIndex)), this, SLOT(slotClicked(QModelIndex)));
-    connect(m_historyView, SIGNAL(openUrlInNewWindow(KUrl)), this, SLOT(slotOpenWindow(KUrl)));
-    connect(m_historyView, SIGNAL(openUrlInNewTab(KUrl)), this, SLOT(slotOpenTab(KUrl)));
+    connect(m_historyView, SIGNAL(openUrlInNewWindow(QUrl)), this, SLOT(slotOpenWindow(QUrl)));
+    connect(m_historyView, SIGNAL(openUrlInNewTab(QUrl)), this, SLOT(slotOpenTab(QUrl)));
 }
 
 KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
@@ -56,7 +56,7 @@ void KonqSidebarHistoryModule::slotActivated(const QModelIndex& index)
 {
     if (m_lastPressedButtons == Qt::MidButton) // already handled by slotClicked
         return;
-    const KUrl url = m_historyView->urlForIndex(index);
+    const QUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {
         emit openUrlRequest(url);
     }
@@ -105,14 +105,14 @@ public:
         : KonqSidebarPlugin(parent, args) {}
     virtual ~KonqSidebarHistoryPlugin() {}
 
-    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+    virtual KonqSidebarModule* createModule(QWidget *parent,
                                             const KConfigGroup& configGroup,
                                             const QString &desktopname,
                                             const QVariant& unused)
     {
         Q_UNUSED(unused);
         Q_UNUSED(desktopname);
-        return new KonqSidebarHistoryModule(componentData, parent, configGroup);
+        return new KonqSidebarHistoryModule(parent, configGroup);
     }
 
     virtual QList<QAction*> addNewActions(QObject* parent,
@@ -152,6 +152,6 @@ public:
 };
 
 K_PLUGIN_FACTORY(KonqSidebarHistoryPluginFactory, registerPlugin<KonqSidebarHistoryPlugin>(); )
-K_EXPORT_PLUGIN(KonqSidebarHistoryPluginFactory())
+// K_EXPORT_PLUGIN(KonqSidebarHistoryPluginFactory())
 
 #include "history_module.moc"

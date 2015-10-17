@@ -15,11 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 #include <kcomponentdata.h>
+#include "konqsidebartest.h"
 
 extern "C"
 {
-    KDE_EXPORT void* create_konq_sidebartest(const KComponentData &componentData, QWidget *parent, const QString &desktopname, const KConfigGroup& configGroup)
+    Q_DECL_EXPORT void* create_konq_sidebartest(QWidget *parent, const QString &desktopname, const KConfigGroup& configGroup)
     {
-        return new SidebarTest(componentData, parent, desktopname, configGroup);
+        return new SidebarTest(parent, desktopname, configGroup);
     }
 }

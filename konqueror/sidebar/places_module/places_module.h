@@ -56,7 +56,7 @@ class KonqSideBarPlacesModule : public KonqSidebarModule
     Q_OBJECT
 
 public:
-    KonqSideBarPlacesModule(const KComponentData &componentData, QWidget *parent,
+    KonqSideBarPlacesModule(QWidget *parent,
                             const KConfigGroup &configGroup);
     virtual ~KonqSideBarPlacesModule();
 

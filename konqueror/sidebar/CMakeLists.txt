@@ -1,4 +1,5 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
+find_package(KF5 REQUIRED COMPONENTS JobWidgets)
 
 # TODO: rewrite to KDirModel
 if (${QT_QT3SUPPORT_FOUND})
@@ -17,9 +18,8 @@ set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
 add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
 
-target_link_libraries(konqsidebarplugin KF5::Parts KF5::KDELibs4Support)
-
-set_target_properties(konqsidebarplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+target_link_libraries(konqsidebarplugin KF5::Parts KF5::KDELibs4Support KF5::KIOFileWidgets)
+set_target_properties(konqsidebarplugin PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### konq_sidebar plugin: contains the KParts used by konqueror ###############
@@ -33,7 +33,7 @@ set(konq_sidebar_PART_SRCS
 
 add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS})
 
-target_link_libraries(konq_sidebar KF5::Parts konq konqsidebarplugin KF5::KCMUtils KF5::KDELibs4Support )
+target_link_libraries(konq_sidebar KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::KDELibs4Support )
 
 install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

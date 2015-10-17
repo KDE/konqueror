@@ -29,6 +29,7 @@
 #include <QSplitter>
 #include <QtCore/QStringList>
 #include <QMenu>
+#include <QMouseEvent>
 
 // KDE
 #include <KLocalizedString>
@@ -47,6 +48,9 @@
 #include <kmenu.h>
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
+#include <KUrlRequester>
+#include <KJobUiDelegate>
+#include <KJobWidgets>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -67,7 +71,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
         if (!service->isValid()) {
             continue;
         }
-        KPluginLoader loader(*service, m_partParent->componentData());
+        KPluginLoader loader(*service);
         KPluginFactory* factory = loader.factory();
         if (!factory) {
             kWarning() << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
@@ -299,7 +303,7 @@ void Sidebar_Widget::slotSetName()
 void Sidebar_Widget::slotSetURL()
 {
     KUrlRequesterDialog dlg( currentButtonInfo().URL, i18n("Enter a URL:"), this );
-    dlg.fileDialog()->setMode( KFile::Directory );
+    dlg.urlRequester()->setMode( KFile::Directory );
     if (dlg.exec())
     {
         m_moduleManager.setModuleUrl(currentButtonInfo().file, dlg.selectedUrl());
@@ -498,7 +502,7 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(moduleDataPath,
                                                           KConfig::NoGlobals,
-                                                          "data");
+                                                          QStandardPaths::GenericDataLocation);
     KConfigGroup configGroup(config, "Desktop Entry");
     const QString icon = configGroup.readEntry("Icon", QString());
     const QString name = configGroup.readEntry("Name", QString());
@@ -576,8 +580,7 @@ KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &de
     if (!plugin)
         return 0;
 
-    return plugin->createModule(m_partParent->componentData(),
-                                parent, configGroup, desktopName, QVariant());
+    return plugin->createModule(parent, configGroup, desktopName, QVariant());
 }
 
 KParts::BrowserExtension *Sidebar_Widget::getExtension()
@@ -845,7 +848,7 @@ void Sidebar_Widget::slotStatResult(KJob* job)
         KFileItem item(statJob->statResult(), url);
         if (item.isDir())
             createDirectModule("folder%1.desktop", url.fileName(), url, item.iconName(), "konqsidebar_tree", "Directory");
-        else if (item.mimeTypePtr()->is("text/html") || url.scheme().startsWith("http")) {
+        else if (item.currentMimeType().inherits("text/html") || url.scheme().startsWith("http")) {
             const QString name = i18n("Web module");
             createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
         } else {
