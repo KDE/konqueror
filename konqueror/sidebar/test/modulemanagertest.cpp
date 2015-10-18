@@ -111,7 +111,7 @@ void ModuleManagerTest::testListModules()
     QCOMPARE(modules.count(), m_realModules + 1);
     QVERIFY(modules.contains("testModule.desktop"));
     QVERIFY(m_moduleManager->moduleDataPath("testModule.desktop").endsWith("/testModule.desktop"));
-    const KDesktopFile df("data", m_moduleManager->moduleDataPath("testModule.desktop"));
+    const KDesktopFile df(QStandardPaths::GenericDataLocation, m_moduleManager->moduleDataPath("testModule.desktop"));
     QCOMPARE(df.readName(), QString::fromLatin1("SideBar Test Plugin"));
 
     const QStringList modules2 = m_moduleManager2->modules();
@@ -167,7 +167,7 @@ void ModuleManagerTest::testRenameGlobalModule()
     QVERIFY(QFile(localCopy).exists());
     // We didn't lose the icon (e.g. due to lack of merging)
     // Well, this code does the merging ;)
-    const QString icon = KDesktopFile("data", "konqsidebartng/entries/testModule.desktop").readIcon();
+    const QString icon = KDesktopFile(QStandardPaths::GenericDataLocation, "konqsidebartng/entries/testModule.desktop").readIcon();
     QVERIFY(!icon.isEmpty());
 }
 
