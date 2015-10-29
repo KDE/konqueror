@@ -16,6 +16,6 @@ target_link_libraries(kded_favicons
 )
 
 
-install(TARGETS kded_favicons DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
+install(TARGETS kded_favicons DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
 
-install(FILES org.kde.FavIcon.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})

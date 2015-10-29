@@ -47,10 +47,10 @@
 Q_DECLARE_LOGGING_CATEGORY(FAVICONS_LOG)
 Q_LOGGING_CATEGORY(FAVICONS_LOG, "kde.kded.favicons")
 
-K_PLUGIN_FACTORY(FavIconsFactory,
-                 registerPlugin<FavIconsModule>();
-    )
-K_EXPORT_PLUGIN(FavIconsFactory("favicons"))
+
+K_PLUGIN_FACTORY_WITH_JSON(FavIconsFactory,
+                           "favicons.json",
+                           registerPlugin<FavIconsModule>();)
 
 static QString portForUrl(const QUrl& url)
 {
