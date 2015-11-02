@@ -5,17 +5,12 @@ remove_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 qt5_add_dbus_adaptor(kded_favicons_SRCS org.kde.FavIcon.xml favicons.h FavIconsModule favicons_adaptor FavIconsAdaptor)
 
-add_library(kded_favicons MODULE ${kded_favicons_SRCS})
-
-kcoreaddons_desktop_to_json(kded_favicons favicons.desktop)
+kcoreaddons_add_plugin(kded_favicons INSTALL_NAMESPACE "kf5/kded" JSON favicons.json SOURCES ${kded_favicons_SRCS})
 
 target_link_libraries(kded_favicons
     KF5::KIOWidgets
     KF5::DBusAddons
     KF5::KDELibs4Support
 )
-
-
-install(TARGETS kded_favicons DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
 
 install(FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
