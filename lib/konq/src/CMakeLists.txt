@@ -64,9 +64,16 @@ install(FILES
     COMPONENT Devel
 )
 
-install(FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop
+install(FILES konqdndpopupmenuplugin.desktop
     DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
 )
+
+# TODO: Remove this block and the corresponding file if we depend on a KIO version >= 5.16
+if ("${KF5_VERSION}" VERSION_LESS "5.16")
+    install(FILES konqpopupmenuplugin.desktop
+        DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
+    )
+endif()
 
 add_subdirectory(pics)
 add_subdirectory(favicons)
