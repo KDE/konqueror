@@ -611,16 +611,15 @@ void KonqPopupMenuPrivate::addPlugins()
 void KonqPopupMenuPrivate::slotShowOriginalFile()
 {
     const KFileItem item = m_popupItemProperties.items().first();
-    const QString dest = item.linkDest();
-    KUrl destUrl = m_sViewURL;
-    if (dest.startsWith('/')) {
-        destUrl.setPath(dest);
-    } else {
-        destUrl.addPath(dest);
+    QUrl destUrl = QUrl::fromLocalFile(item.linkDest());
+
+    if (!destUrl.isValid()) {
+        return;
     }
+
     // Now destUrl points to the target file, let's go up to parent dir
-    destUrl.setPath(destUrl.directory());
-    KRun::runUrl(destUrl, "inode/directory", m_parentWidget);
+    destUrl = destUrl.adjusted(QUrl::RemoveFilename);
+    KRun::runUrl(destUrl, QStringLiteral("inode/directory"), m_parentWidget);
 }
 
 #include "konq_popupmenu.moc"
