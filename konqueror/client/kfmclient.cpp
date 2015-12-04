@@ -480,7 +480,7 @@ bool ClientApp::openProfile( const QString & profileName, const QString & url, c
   QString profile = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
   if ( profile.isEmpty() )
   {
-      fprintf( stderr, "%s", i18n("Profile %1 not found\n", profileName).toLocal8Bit().data() );
+      fprintf( stderr, "%s: %s", programName, i18n("Profile '%1' not found\n", profileName).toLocal8Bit().data() );
       ::exit( 0 );
   }
   needDBus();
@@ -511,12 +511,12 @@ static void checkArgumentCount(int count, int min, int max)
 {
    if (count < min)
    {
-      fputs( i18n("Syntax Error: Not enough arguments\n").toLocal8Bit(), stderr );
+      fprintf( stderr, "%s: %s",  programName, i18n("Syntax error, not enough arguments\n").toLocal8Bit().data() );
       ::exit(1);
    }
    if (max && (count > max))
    {
-      fputs( i18n("Syntax Error: Too many arguments\n").toLocal8Bit(), stderr );
+      fprintf( stderr, "%s: %s", programName, i18n("Syntax error, too many arguments\n").toLocal8Bit().data() );
       ::exit(1);
    }
 }
@@ -582,7 +582,7 @@ bool ClientApp::doIt()
   }
   else
   {
-    fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", command).toLocal8Bit().data() );
+    fprintf( stderr, "%s: %s", programName, i18n("Syntax error, unknown command '%1'\n", command).toLocal8Bit().data() );
     return false;
   }
   return true;
