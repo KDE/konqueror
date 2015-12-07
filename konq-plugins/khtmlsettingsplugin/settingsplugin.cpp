@@ -183,16 +183,16 @@ void SettingsPlugin::toggleCookies( bool checked )
         // but not until 4.3 is released, since 4.2 had "void setDomainAdvice"
         // while 4.3 has "bool setDomainAdvice".
 
-        QDBusInterface kded(QLatin1String("org.kde.kded"),
+        QDBusInterface kded(QLatin1String("org.kde.kded5"),
                             QLatin1String("/modules/kcookiejar"),
                             QLatin1String("org.kde.KCookieServer"));
         QDBusReply<void> reply = kded.call("setDomainAdvice", part->url().url(), advice);
 
         if ( !reply.isValid() )
             KMessageBox::sorry( part->widget(),
-                                i18n("Cookies could not be enabled, because the "
-                                     "cookie daemon could not be started."),
-                                i18nc("@title:window", "Cookies Disabled"));
+                                i18n("The cookie setting could not be changed, because the "
+                                     "cookie daemon could not be contacted."),
+                                i18nc("@title:window", "Cookie Settings Unavailable"));
     }
 }
 
@@ -214,7 +214,7 @@ void SettingsPlugin::toggleImageLoading( bool checked )
 
 bool SettingsPlugin::cookiesEnabled( const QString& url )
 {
-    QDBusInterface kded(QLatin1String("org.kde.kded"),
+    QDBusInterface kded(QLatin1String("org.kde.kded5"),
                         QLatin1String("/modules/kcookiejar"),
                         QLatin1String("org.kde.KCookieServer"));
     QDBusReply<QString> reply = kded.call( "getDomainAdvice", url);
