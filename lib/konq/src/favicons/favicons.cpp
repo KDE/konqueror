@@ -20,14 +20,12 @@
 #include "favicons.h"
 #include "favicons_adaptor.h"
 
-#include <kicontheme.h>
+#include <klocalizedstring.h>
 #include <kconfig.h>
-#include <kstandarddirs.h>
 #include <kio/job.h>
 #include <kconfiggroup.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
-#include <kglobal.h>
 
 #include <QBuffer>
 #include <QFile>
@@ -117,15 +115,14 @@ FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
 {
     // create our favicons folder so that KIconLoader knows about it
     d = new FavIconsModulePrivate;
-    d->faviconsDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QStringLiteral("/favicons/");
-    d->faviconsDir.truncate(d->faviconsDir.length()-9); // Strip off "favicons/"
+    d->faviconsDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1Char('/');
     d->metaData.insert(QLatin1String("ssl_no_client_cert"), QLatin1String("true"));
     d->metaData.insert(QLatin1String("ssl_no_ui"), QLatin1String("true"));
     d->metaData.insert(QLatin1String("UseCache"), "false");
     d->metaData.insert(QLatin1String("cookies"), "none");
     d->metaData.insert(QLatin1String("no-www-auth"), QLatin1String("true"));
     d->metaData.insert(QLatin1String("errorPage"), QLatin1String("false"));
-    d->config = new KConfig(KStandardDirs::locateLocal("data", QLatin1String("konqueror/faviconrc")));
+    d->config = new KConfig(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/konqueror/faviconrc"));
 
     new FavIconsAdaptor( this );
 }

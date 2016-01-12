@@ -12,9 +12,10 @@ set_target_properties(kded_favicons PROPERTIES
 
 
 target_link_libraries(kded_favicons
-    KF5::KIOWidgets
+    Qt5::Gui
+    KF5::KIOCore
+    KF5::I18n
     KF5::DBusAddons
-    KF5::KDELibs4Support
 )
 
 install(FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
