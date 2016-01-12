@@ -22,8 +22,6 @@
 
 #include <kicontheme.h>
 #include <kconfig.h>
-#include <klocale.h>
-#include <kde_file.h>
 #include <kstandarddirs.h>
 #include <kio/job.h>
 #include <kconfiggroup.h>
