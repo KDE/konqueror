@@ -43,12 +43,11 @@
 Q_DECLARE_LOGGING_CATEGORY(FAVICONS_LOG)
 Q_LOGGING_CATEGORY(FAVICONS_LOG, "kde.kded.favicons")
 
-
 K_PLUGIN_FACTORY_WITH_JSON(FavIconsFactory,
                            "favicons.json",
                            registerPlugin<FavIconsModule>();)
 
-static QString portForUrl(const QUrl& url)
+static QString portForUrl(const QUrl &url)
 {
     if (url.port() > 0) {
         return (QString(QLatin1Char('_')) + QString::number(url.port()));
@@ -61,42 +60,47 @@ static QString simplifyURL(const QUrl &url)
     // splat any = in the URL so it can be safely used as a config key
     QString result = url.host() + portForUrl(url) + url.path();
     for (int i = 0; i < result.length(); ++i)
-        if (result[i] == '=')
+        if (result[i] == '=') {
             result[i] = '_';
+        }
     return result;
 }
 
 static QString iconNameFromURL(const QUrl &iconURL)
 {
-    if (iconURL.path() == QLatin1String("/favicon.ico"))
-       return iconURL.host() + portForUrl(iconURL);
+    if (iconURL.path() == QLatin1String("/favicon.ico")) {
+        return iconURL.host() + portForUrl(iconURL);
+    }
 
     QString result = simplifyURL(iconURL);
     // splat / so it can be safely used as a file name
     for (int i = 0; i < result.length(); ++i)
-        if (result[i] == '/')
+        if (result[i] == '/') {
             result[i] = '_';
+        }
 
     QString ext = result.right(4);
-    if (ext == QLatin1String(".ico") || ext == QLatin1String(".png") || ext == QLatin1String(".xpm"))
+    if (ext == QLatin1String(".ico") || ext == QLatin1String(".png") || ext == QLatin1String(".xpm")) {
         result.remove(result.length() - 4, 4);
+    }
 
     return result;
 }
 
-struct FavIconsModulePrivate
-{
-    virtual ~FavIconsModulePrivate() { delete config; }
-
-    struct DownloadInfo
+struct FavIconsModulePrivate {
+    virtual ~FavIconsModulePrivate()
     {
+        delete config;
+    }
+
+    struct DownloadInfo {
         QString hostOrURL;
         bool isHost;
         QByteArray iconData;
     };
-    QString makeIconName(const DownloadInfo& download, const QUrl& iconURL)
+    QString makeIconName(const DownloadInfo &download, const QUrl &iconURL)
     {
-        QString iconName (QLatin1String("favicons/"));
+        QString iconName(QLatin1String("favicons/"));
         iconName += (download.isHost ? download.hostOrURL : iconNameFromURL(iconURL));
         return iconName;
     }
@@ -104,13 +108,13 @@ struct FavIconsModulePrivate
     QMap<KJob *, DownloadInfo> downloads;
     QList<QUrl> failedDownloads;
     KConfig *config;
-    QList<KIO::Job*> killJobs;
+    QList<KIO::Job *> killJobs;
     KIO::MetaData metaData;
     QString faviconsDir;
-    QCache<QString,QString> faviconsCache;
+    QCache<QString, QString> faviconsCache;
 };
 
-FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
+FavIconsModule::FavIconsModule(QObject *parent, const QList<QVariant> &)
     : KDEDModule(parent)
 {
     // create our favicons folder so that KIconLoader knows about it
@@ -124,7 +128,7 @@ FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
     d->metaData.insert(QLatin1String("errorPage"), QLatin1String("false"));
     d->config = new KConfig(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/konqueror/faviconrc"));
 
-    new FavIconsAdaptor( this );
+    new FavIconsAdaptor(this);
 }
 
 FavIconsModule::~FavIconsModule()
@@ -146,8 +150,9 @@ static QString removeSlash(QString result)
 
 QString FavIconsModule::iconForUrl(const QUrl &url)
 {
-    if (url.host().isEmpty())
+    if (url.host().isEmpty()) {
         return QString();
+    }
 
     //qCDebug(FAVICONS_LOG) << url;
 
@@ -155,17 +160,19 @@ QString FavIconsModule::iconForUrl(const QUrl &url)
     QString *iconURL = d->faviconsCache[simplifiedURL];
     QString icon = (iconURL ? *iconURL : d->config->group(QString()).readEntry(simplifiedURL, QString()));
 
-    if (!icon.isEmpty())
+    if (!icon.isEmpty()) {
         icon = iconNameFromURL(icon);
-    else
+    } else {
         icon = url.host();
+    }
 
     icon = QLatin1String("favicons/") + icon;
 
     //qCDebug(FAVICONS_LOG) << "URL:" << url << "ICON:" << icon;
 
-    if (QFile::exists(d->faviconsDir+icon+QLatin1String(".png")))
+    if (QFile::exists(d->faviconsDir + icon + QLatin1String(".png"))) {
         return icon;
+    }
 
     return QString();
 }
@@ -187,7 +194,7 @@ void FavIconsModule::setIconForUrl(const QUrl &url, const QUrl &iconURL)
     //qCDebug(FAVICONS_LOG) << url << iconURL;
     const QString simplifiedURL = simplifyURL(url);
 
-    d->faviconsCache.insert(removeSlash(simplifiedURL), new QString(iconURL.url()) );
+    d->faviconsCache.insert(removeSlash(simplifiedURL), new QString(iconURL.url()));
 
     const QString iconName = QLatin1String("favicons/") + iconNameFromURL(iconURL);
     const QString iconFile = d->faviconsDir + iconName + QLatin1String(".png");
@@ -242,7 +249,7 @@ void FavIconsModule::startDownload(const QString &hostOrURL, bool isHost, const 
 
 void FavIconsModule::slotData(KIO::Job *job, const QByteArray &data)
 {
-    KIO::TransferJob* tjob = static_cast<KIO::TransferJob*>(job);
+    KIO::TransferJob *tjob = static_cast<KIO::TransferJob *>(job);
     FavIconsModulePrivate::DownloadInfo &download = d->downloads[job];
     unsigned int oldSize = download.iconData.size();
     // Size limit. Stop downloading if the file is huge.
@@ -260,36 +267,36 @@ void FavIconsModule::slotData(KIO::Job *job, const QByteArray &data)
 
 void FavIconsModule::slotResult(KJob *job)
 {
-    KIO::TransferJob* tjob = static_cast<KIO::TransferJob*>(job);
+    KIO::TransferJob *tjob = static_cast<KIO::TransferJob *>(job);
     FavIconsModulePrivate::DownloadInfo download = d->downloads[job];
     d->killJobs.removeAll(tjob);
     d->downloads.remove(job);
     const QUrl iconURL = tjob->url();
     QString iconName;
     QString errorMessage;
-    if (!job->error())
-    {
+    if (!job->error()) {
         QBuffer buffer(&download.iconData);
         buffer.open(QIODevice::ReadOnly);
-        QImageReader ir( &buffer );
-        QSize desired( 16,16 );
-        if( ir.canRead() ) {
-            while( ir.imageCount() > 1
-              && ir.currentImageRect() != QRect(0, 0, desired.width(), desired.height())) {
+        QImageReader ir(&buffer);
+        QSize desired(16, 16);
+        if (ir.canRead()) {
+            while (ir.imageCount() > 1
+                    && ir.currentImageRect() != QRect(0, 0, desired.width(), desired.height())) {
                 if (!ir.jumpToNextImage()) {
                     break;
                 }
             }
-            ir.setScaledSize( desired );
+            ir.setScaledSize(desired);
             const QImage img = ir.read();
-            if( !img.isNull() ) {
+            if (!img.isNull()) {
                 iconName = d->makeIconName(download, iconURL);
                 const QString localPath = d->faviconsDir + iconName + QLatin1String(".png");
-                if( !img.save(localPath, "PNG") ) {
+                if (!img.save(localPath, "PNG")) {
                     iconName.clear();
                     errorMessage = i18n("Error saving image to %1", localPath);
-                } else if (!download.isHost)
+                } else if (!download.isHost) {
                     d->config->group(QString()).writeEntry(removeSlash(download.hostOrURL), iconURL.url());
+                }
             }
         }
     } else {
@@ -307,13 +314,13 @@ void FavIconsModule::slotResult(KJob *job)
 
 void FavIconsModule::slotInfoMessage(KJob *job, const QString &msg)
 {
-    emit infoMessage(static_cast<KIO::TransferJob *>( job )->url().url(), msg);
+    emit infoMessage(static_cast<KIO::TransferJob *>(job)->url().url(), msg);
 }
 
 void FavIconsModule::slotKill()
 {
     //qCDebug(FAVICONS_LOG);
-    Q_FOREACH(KIO::Job* job, d->killJobs) {
+    Q_FOREACH (KIO::Job *job, d->killJobs) {
         job->kill();
     }
     d->killJobs.clear();

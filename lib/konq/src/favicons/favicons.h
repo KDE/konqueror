@@ -22,7 +22,10 @@
 #include <kdedmodule.h>
 
 class KJob;
-namespace KIO { class Job; }
+namespace KIO
+{
+class Job;
+}
 
 /**
  * KDED Module to handle shortcut icons ("favicons")
@@ -48,7 +51,7 @@ class FavIconsModule : public KDEDModule
     Q_CLASSINFO("D-Bus Interface", "org.kde.FavIcon")
 
 public:
-    FavIconsModule(QObject* parent, const QList<QVariant>&);
+    FavIconsModule(QObject *parent, const QList<QVariant> &);
     virtual ~FavIconsModule();
 
 public Q_SLOTS: // dbus methods, called by the adaptor
@@ -126,4 +129,3 @@ private:
 
 #endif
 
-// vim: ts=4 sw=4 et
