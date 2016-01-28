@@ -15,7 +15,7 @@ include(ECMPackageConfigHelpers)
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
 ecm_setup_version(${LIBKONQ_VERSION} VARIABLE_PREFIX KONQ
                   VERSION_HEADER "${LibKonq_BINARY_DIR}/konq_version.h"
