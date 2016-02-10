@@ -653,7 +653,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
 
     const QUrl url(m_result.linkUrl());
 
-    QList<QAction*> linQActions;
+    QList<QAction*> linkActions;
 
     QAction* action;
 
@@ -661,34 +661,34 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
         action->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
-        linQActions.append(action);
+        linkActions.append(action);
     }
 
     if (url.scheme() == "mailto") {
         action = new QAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction(QL1S("copylinklocation"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyEmailAddress()));
-        linQActions.append(action);
+        linkActions.append(action);
     } else {
         if (!m_result.isContentSelected()) {
             action = new QAction(KIcon("edit-copy"), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
-            linQActions.append(action);
+            linkActions.append(action);
         }
 
         action = new QAction(i18n("Copy Link &URL"), this);
         m_actionCollection->addAction(QL1S("copylinkurl"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkURL()));
-        linQActions.append(action);
+        linkActions.append(action);
 
         action = new QAction(i18n("&Save Link As..."), this);
         m_actionCollection->addAction(QL1S("savelinkas"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveLinkAs()));
-        linQActions.append(action);
+        linkActions.append(action);
     }
 
-    linkGroupMap.insert("linQActions", linQActions);
+    linkGroupMap.insert("linkactions", linkActions);
 }
 
 void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
