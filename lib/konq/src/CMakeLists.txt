@@ -76,5 +76,4 @@ if ("${KF5_VERSION}" VERSION_LESS "5.16")
 endif()
 
 add_subdirectory(pics)
-add_subdirectory(favicons)
 add_subdirectory(Templates)

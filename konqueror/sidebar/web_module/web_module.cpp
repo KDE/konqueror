@@ -18,7 +18,7 @@
 
 #include "web_module.h"
 #include <QAction>
-#include "favicon_interface.h"
+#include <KIO/FavIconRequestJob>
 
 #include <QtCore/QFileInfo>
 #include <QtCore/QTimer>
@@ -188,9 +188,10 @@ void KonqSideBarWebModule::formClicked(const QUrl& url, const KParts::OpenUrlArg
 void KonqSideBarWebModule::loadFavicon() {
     QString icon = KIO::favIconForUrl(_url);
     if (icon.isEmpty()) {
-        org::kde::FavIcon favicon("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus());
-        favicon.downloadHostIcon(_url.url());
-        icon = KIO::favIconForUrl(_url);
+        // TODO: use FavIconRequestJob here. But it needs to be cancelled when _url changes.
+        KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(_url);
+        connect(job, &KIO::FavIconRequestJob::result, this, &KonqSideBarWebModule::loadFavicon);
+        return;
     }
 
 	if (!icon.isEmpty()) {
