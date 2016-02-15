@@ -23,7 +23,6 @@
 #include "konqprivate_export.h"
 
 #include <kpixmapprovider.h>
-#include "favicon_interface.h"
 
 #include <QMap>
 #include <QPixmap>
@@ -32,16 +31,22 @@
 class KConfigGroup;
 class KConfig;
 
-// Ideally OrgKdeFavIconInterface should be exported with KONQUERORPRIVATE_EXPORT, but the cmake macro
-// doesn't allow that. Doesn't seem to be a problem though, at least on linux, since the methods are all inline.
-
-class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public org::kde::FavIcon, virtual public KPixmapProvider
+class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject, public KPixmapProvider
 {
     Q_OBJECT
 public:
     static KonqPixmapProvider * self();
 
     virtual ~KonqPixmapProvider();
+
+    /**
+     * Trigger a download of a default favicon
+     */
+    void downloadHostIcon(const QUrl &hostUrl);
+    /**
+     * Trigger a download of a custom favicon (from the HTML page)
+     */
+    void setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl);
 
     /**
      * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
@@ -70,12 +75,6 @@ public:
 
 Q_SIGNALS:
     void changed();
-
-private Q_SLOTS:
-    /**
-     * Connected to the iconChanged signal emitted by the kded module
-     */
-    void notifyChange( bool isHost, const QString& hostOrURL, const QString& iconName );
 
 private:
     QPixmap loadIcon( const QString& icon, int size );

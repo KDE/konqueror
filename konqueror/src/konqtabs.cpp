@@ -27,6 +27,7 @@
 #include <QDrag>
 #include <QToolButton>
 #include <QIcon>
+#include <QMimeData>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>

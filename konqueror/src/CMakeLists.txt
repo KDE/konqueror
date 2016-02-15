@@ -38,12 +38,12 @@ set(konquerorprivate_SRCS
    konqhistoryview.cpp
    konqhistorysettings.cpp
 )
-qt5_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/src/favicons/org.kde.FavIcon.xml favicon_interface)
 
 add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate
    KF5::Konq
    KF5::Parts
+   KF5::KIOGui
    ${ZLIB_LIBRARY}
    KF5::KDELibs4Support
 )

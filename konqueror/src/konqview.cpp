@@ -606,7 +606,7 @@ void KonqView::slotCompleted( bool hasPending )
     {
       // Try to get /favicon.ico
       if ( supportsMimeType( "text/html" ) && url().scheme().startsWith( "http" ) )
-          KonqPixmapProvider::self()->downloadHostIcon( url().url() );
+          KonqPixmapProvider::self()->downloadHostIcon(url());
     }
   }
 }
