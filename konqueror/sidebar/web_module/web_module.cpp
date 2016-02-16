@@ -186,21 +186,22 @@ void KonqSideBarWebModule::formClicked(const QUrl& url, const KParts::OpenUrlArg
 }
 
 void KonqSideBarWebModule::loadFavicon() {
-    QString icon = KIO::favIconForUrl(_url);
+    const QString icon = KIO::favIconForUrl(_url);
     if (icon.isEmpty()) {
-        // TODO: use FavIconRequestJob here. But it needs to be cancelled when _url changes.
         KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(_url);
-        connect(job, &KIO::FavIconRequestJob::result, this, &KonqSideBarWebModule::loadFavicon);
+        connect(job, &KIO::FavIconRequestJob::result, this, [this, job](KJob*) {
+            if (!job->error()) {
+                loadFavicon();
+            }
+        });
         return;
     }
 
-	if (!icon.isEmpty()) {
-		emit setIcon(icon);
+    emit setIcon(icon);
 
-		if (icon != configGroup().readEntry("Icon", QString())) {
-			configGroup().writeEntry("Icon", icon);
-		}
-	}
+    if (icon != configGroup().readEntry("Icon", QString())) {
+        configGroup().writeEntry("Icon", icon);
+    }
 }
 
 
