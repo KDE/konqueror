@@ -5,7 +5,6 @@ remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
-   konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
    konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
    konq_events.cpp
    konq_historyentry.cpp
@@ -51,7 +50,6 @@ install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS
 install(FILES directory_bookmarkbar.desktop DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kbookmark)
 install(FILES
     konq_copytomenu.h
-    konq_dndpopupmenuplugin.h
     konq_events.h
     konq_historyentry.h
     konq_historyprovider.h
@@ -60,10 +58,6 @@ install(FILES
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
     COMPONENT Devel
-)
-
-install(FILES konqdndpopupmenuplugin.desktop
-    DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
 )
 
 add_subdirectory(pics)
