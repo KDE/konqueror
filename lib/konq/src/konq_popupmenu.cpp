@@ -20,10 +20,8 @@
 
 #include "konq_popupmenu.h"
 #include <kfileitemlistproperties.h>
-#include "konq_popupmenuplugin.h"
 #include "konq_copytomenu.h"
 #include "kfileitemactions.h"
-#include "kfileitemactionplugin.h"
 #include "kabstractfileitemactionplugin.h"
 #include "kpropertiesdialog.h"
 
@@ -587,20 +585,6 @@ void KonqPopupMenuPrivate::addPlugins()
     if (commonMimeType.isEmpty()) {
         commonMimeType = QLatin1String("application/octet-stream");
     }
-    const KService::List konqPlugins = KMimeTypeTrader::self()->query(commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
-
-    if (!konqPlugins.isEmpty()) {
-        KService::List::ConstIterator iterator = konqPlugins.begin();
-        const KService::List::ConstIterator end = konqPlugins.end();
-        for(; iterator != end; ++iterator) {
-            //kDebug() << (*iterator)->name() << (*iterator)->library();
-            KonqPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqPopupMenuPlugin>(q);
-            if (!plugin)
-                continue;
-            plugin->setParent(q);
-            plugin->setup(&m_ownActionCollection, m_popupItemProperties, q);
-        }
-    }
 
     const KService::List fileItemPlugins = KMimeTypeTrader::self()->query(commonMimeType, "KFileItemAction/Plugin", "exist Library");
     if (!fileItemPlugins.isEmpty()) {
@@ -613,13 +597,6 @@ void KonqPopupMenuPrivate::addPlugins()
                 continue;
             }
 
-            // Old API (kdelibs-4.6.0 only)
-            KFileItemActionPlugin* plugin = service->createInstance<KFileItemActionPlugin>();
-            if (plugin) {
-                plugin->setParent(q);
-                q->addActions(plugin->actions(m_popupItemProperties, m_parentWidget));
-            }
-            // New API (kdelibs >= 4.6.1)
             KAbstractFileItemActionPlugin* abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
             if (abstractPlugin) {
                 abstractPlugin->setParent(q);

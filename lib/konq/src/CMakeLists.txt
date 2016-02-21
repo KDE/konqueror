@@ -5,7 +5,6 @@ remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
-   konq_popupmenuplugin.cpp # for KonqPopupMenu and its plugins
    konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
    konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
    konq_events.cpp
@@ -57,7 +56,6 @@ install(FILES
     konq_historyentry.h
     konq_historyprovider.h
     konq_popupmenu.h
-    konq_popupmenuplugin.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
@@ -67,13 +65,6 @@ install(FILES
 install(FILES konqdndpopupmenuplugin.desktop
     DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
 )
-
-# TODO: Remove this block and the corresponding file if we depend on a KIO version >= 5.16
-if ("${KF5_VERSION}" VERSION_LESS "5.16")
-    install(FILES konqpopupmenuplugin.desktop
-        DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR}
-    )
-endif()
 
 add_subdirectory(pics)
 add_subdirectory(Templates)
