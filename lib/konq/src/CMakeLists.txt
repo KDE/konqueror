@@ -61,4 +61,3 @@ install(FILES
 )
 
 add_subdirectory(pics)
-add_subdirectory(Templates)
