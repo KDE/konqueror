@@ -60,4 +60,3 @@ install(FILES
     COMPONENT Devel
 )
 
-add_subdirectory(pics)
