@@ -87,7 +87,7 @@ void KonqPopupMenuTest::initTestCase()
     KSharedConfig::Ptr dolphin = KSharedConfig::openConfig("dolphinrc");
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
-    m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
+    m_thisDirectoryItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath()), "inode/directory", S_IFDIR + 0777);
     m_fileItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/Makefile"), "text/x-makefile", S_IFREG + 0660);
     m_linkItem = KFileItem(QUrl::fromLocalFile("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
     m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
@@ -330,7 +330,7 @@ void KonqPopupMenuTest::testViewDirectory()
 
 void KonqPopupMenuTest::testViewReadOnlyDirectory()
 {
-    KFileItem rootItem(QDir::rootPath(), "inode/directory", KFileItem::Unknown);
+    KFileItem rootItem(QUrl::fromLocalFile(QDir::rootPath()), "inode/directory", KFileItem::Unknown);
     KFileItemList itemList;
     itemList << rootItem;
     QUrl viewUrl = rootItem.url();
