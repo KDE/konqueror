@@ -30,6 +30,23 @@ KonqHistoryEntry::~KonqHistoryEntry()
 {
 }
 
+KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& other)
+{
+    operator=(other);
+}
+
+KonqHistoryEntry &KonqHistoryEntry::operator=(const KonqHistoryEntry &other)
+{
+    url = other.url;
+    typedUrl = other.typedUrl;
+    title = other.title;
+    numberOfTimesVisited = other.numberOfTimesVisited;
+    firstVisited = other.firstVisited;
+    lastVisited = other.lastVisited;
+    d = 0;
+    return *this;
+}
+
 bool KonqHistoryEntry::operator==(const KonqHistoryEntry& entry) const
 {
     return url == entry.url &&
@@ -68,17 +85,6 @@ void KonqHistoryEntry::save(QDataStream& s, Flags flags) const
     s << numberOfTimesVisited;
     s << firstVisited;
     s << lastVisited;
-}
-
-KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& e)
-{
-    url = e.url;
-    typedUrl = e.typedUrl;
-    title = e.title;
-    numberOfTimesVisited = e.numberOfTimesVisited;
-    firstVisited = e.firstVisited;
-    lastVisited = e.lastVisited;
-    d = 0;
 }
 
 ////

@@ -30,7 +30,10 @@ class LIBKONQ_EXPORT KonqHistoryEntry
 {
 public:
     KonqHistoryEntry();
+    KonqHistoryEntry(const KonqHistoryEntry& other);
     ~KonqHistoryEntry();
+
+    KonqHistoryEntry &operator=(const KonqHistoryEntry &entry);
 
     QUrl url;
     QString typedUrl;
@@ -38,8 +41,6 @@ public:
     quint32 numberOfTimesVisited;
     QDateTime firstVisited;
     QDateTime lastVisited;
-
-    KonqHistoryEntry(const KonqHistoryEntry& e);
 
     // Necessary for QList (on Windows)
     bool operator==(const KonqHistoryEntry& entry) const;
