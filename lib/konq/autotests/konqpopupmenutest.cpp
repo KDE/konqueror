@@ -84,11 +84,15 @@ static QStringList extractActionNames(const QMenu& menu)
 
 void KonqPopupMenuTest::initTestCase()
 {
+    QStandardPaths::setTestModeEnabled(true);
+
     KSharedConfig::Ptr dolphin = KSharedConfig::openConfig("dolphinrc");
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
     m_thisDirectoryItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath()), "inode/directory", S_IFDIR + 0777);
-    m_fileItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/Makefile"), "text/x-makefile", S_IFREG + 0660);
+    const QString makefile = QDir::currentPath() + "/Makefile";
+    QVERIFY2(QFile::exists(makefile), qPrintable(makefile));
+    m_fileItem = KFileItem(QUrl::fromLocalFile(makefile), "text/x-makefile", S_IFREG + 0660);
     m_linkItem = KFileItem(QUrl::fromLocalFile("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
     m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
     m_cut = KStandardAction::cut(0, 0, this);
@@ -178,14 +182,13 @@ void KonqPopupMenuTest::testFile()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
+    actions.removeAll("services_submenu");
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview1";
-    if (!QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kde5/services/") + "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
-        expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     // (came from arkplugin) << "compress"
@@ -250,14 +253,13 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
+    actions.removeAll("services_submenu");
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview_submenu";
-    if (!QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kde5/services/") + "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
-        expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -348,8 +350,8 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    qDebug() << actions;
     actions.removeAll("services_submenu");
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "go_up" << "go_back" << "go_forward" << "separator"
                     // << "paste" // no paste since readonly
