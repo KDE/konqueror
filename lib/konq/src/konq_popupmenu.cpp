@@ -37,10 +37,8 @@
 #include <kinputdialog.h>
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
-#include <kstandarddirs.h>
 #include <kconfiggroup.h>
 #include <kdesktopfile.h>
-#include <kfileshare.h>
 #include <kauthorized.h>
 #include <kglobal.h>
 #include <kacceleratormanager.h>
@@ -108,7 +106,6 @@ public:
     void slotPopupAddToBookmark();
     void slotPopupMimeType();
     void slotPopupProperties();
-    void slotOpenShareFileDialog();
     void slotShowOriginalFile();
 
     KonqPopupMenu* q;
@@ -185,7 +182,6 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
                      && m_popupItemProperties.supportsDeleting();
     const bool sWriting = m_popupItemProperties.supportsWriting();
     const bool sMoving = sDeleting && m_popupItemProperties.supportsMoving();
-    const bool isLocal = m_popupItemProperties.isLocal();
 
     QUrl url = m_sViewURL.adjusted(QUrl::NormalizePathSegments);
 
@@ -469,28 +465,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             q->actions().last()->isSeparator() )
         delete q->actions().last();
 
-    if ( isDirectory && isLocal ) {
-        if ( KFileShare::authorization() == KFileShare::Authorized ) {
-            q->addSeparator();
-            act = new QAction(m_parentWidget);
-            m_ownActions.append(act);
-            act->setText( i18n("Share") );
-            QObject::connect(act, &QAction::triggered, [this]() {
-                slotOpenShareFileDialog();
-            });
-            q->addAction(act);
-        }
-    }
-
     // Anything else that is provided by the part
     addGroup( "partactions" );
-}
-
-void KonqPopupMenuPrivate::slotOpenShareFileDialog()
-{
-    KPropertiesDialog* dlg = new KPropertiesDialog( m_popupItemProperties.items(), m_parentWidget );
-    dlg->showFileSharingPage();
-    dlg->exec();
 }
 
 KonqPopupMenu::~KonqPopupMenu()
