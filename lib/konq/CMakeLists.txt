@@ -25,7 +25,7 @@ ecm_setup_version(${LIBKONQ_VERSION} VARIABLE_PREFIX KONQ
 
 # Build dependencies
 find_package(Qt5 CONFIG REQUIRED COMPONENTS Core DBus Widgets)
-find_package(KF5 REQUIRED COMPONENTS Bookmarks KDELibs4Support Parts)
+find_package(KF5 REQUIRED COMPONENTS Bookmarks Parts)
 
 find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"

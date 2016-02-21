@@ -104,7 +104,7 @@ public:
     KSharedConfig::Ptr konqConfig() {
         // We want to use konquerorrc even when this class isn't used in konqueror,
         // this is why this doesn't say KSharedConfig::openConfig().
-        return KSharedConfig::openConfig("konquerorrc");
+        return KSharedConfig::openConfig(QStringLiteral("konquerorrc"));
     }
 
     KonqHistoryList m_history;
@@ -122,17 +122,17 @@ KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider* qq)
     m_maxCount = qMax(1, m_maxCount);
     m_maxAgeDays = cs.readEntry("Maximum age of History entries", 90);
 
-    const QString dbusPath = "/KonqHistoryManager";
-    const QString dbusInterface = "org.kde.Konqueror.HistoryManager";
+    const QString dbusPath = QStringLiteral("/KonqHistoryManager");
+    const QString dbusInterface = QStringLiteral("org.kde.Konqueror.HistoryManager");
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject(dbusPath, this, QDBusConnection::ExportAllSignals);
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyClear", this, SLOT(slotNotifyClear()));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyHistoryEntry", this, SLOT(slotNotifyHistoryEntry(QByteArray)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyMaxAge", this, SLOT(slotNotifyMaxAge(int)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyMaxCount", this, SLOT(slotNotifyMaxCount(int)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyRemove", this, SLOT(slotNotifyRemove(QString)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyRemoveList", this, SLOT(slotNotifyRemoveList(QStringList)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyClear"), this, SLOT(slotNotifyClear()));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyHistoryEntry"), this, SLOT(slotNotifyHistoryEntry(QByteArray)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyMaxAge"), this, SLOT(slotNotifyMaxAge(int)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyMaxCount"), this, SLOT(slotNotifyMaxCount(int)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyRemove"), this, SLOT(slotNotifyRemove(QString)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyRemoveList"), this, SLOT(slotNotifyRemoveList(QStringList)));
 }
 
 ////

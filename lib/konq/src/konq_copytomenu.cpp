@@ -111,14 +111,14 @@ void KonqCopyToMainMenu::slotAboutToShow()
     // Home Folder
     subMenu = new KonqCopyToDirectoryMenu(this, this, QDir::homePath());
     subMenu->setTitle(i18nc("@title:menu", "Home Folder"));
-    subMenu->setIcon(QIcon::fromTheme("go-home"));
+    subMenu->setIcon(QIcon::fromTheme(QStringLiteral("go-home")));
     addMenu(subMenu);
 
     // Root Folder
 #ifndef Q_OS_WIN
     subMenu = new KonqCopyToDirectoryMenu(this, this, QDir::rootPath());
     subMenu->setTitle(i18nc("@title:menu", "Root Folder"));
-    subMenu->setIcon(QIcon::fromTheme("folder-red"));
+    subMenu->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
     addMenu(subMenu);
 #else
     foreach ( const QFileInfo& info, QDir::drives() ) {
@@ -202,8 +202,8 @@ void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
     // dest doesn't exist anymore: it was creating a file with the name of
     // the now non-existing dest.
     QUrl dirDest = dest;
-    if (!dirDest.path().endsWith('/'))
-        dirDest.setPath(dirDest.path() + '/');
+    if (!dirDest.path().endsWith(QLatin1Char('/')))
+        dirDest.setPath(dirDest.path() + QLatin1Char('/'));
 
     // And now let's do the copy or move -- with undo/redo support.
     KIO::CopyJob* job = m_menuType == Copy ? KIO::copy(d->m_urls, dirDest) : KIO::move(d->m_urls, dirDest);
@@ -240,17 +240,17 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
     QDir dir(m_path);
     const QStringList entries = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::LocaleAware);
     const QMimeDatabase db;
-    const QMimeType dirMime = db.mimeTypeForName("inode/directory");
+    const QMimeType dirMime = db.mimeTypeForName(QStringLiteral("inode/directory"));
     Q_FOREACH(const QString& subDir, entries) {
         QString subPath = m_path;
-        if (!subPath.endsWith('/'))
-            subPath.append('/');
+        if (!subPath.endsWith(QLatin1Char('/')))
+            subPath.append(QLatin1Char('/'));
         subPath += subDir;
         KonqCopyToDirectoryMenu* subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
         QString menuTitle(subDir);
         // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
         // correctly and not misinterpreted as an indicator for a keyboard shortcut
-        subMenu->setTitle(menuTitle.replace('&', "&&"));
+        subMenu->setTitle(menuTitle.replace(QLatin1Char('&'), QStringLiteral("&&")));
         const QString iconName = dirMime.iconName();
         subMenu->setIcon(QIcon::fromTheme(iconName));
         if (QFileInfo(subPath).isSymLink()) { // I hope this isn't too slow...
