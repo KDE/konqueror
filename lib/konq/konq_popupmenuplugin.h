@@ -38,7 +38,7 @@ class KonqPopupMenuInformation;
  * two files are selected", or "show a submenu with a variable number of actions",
  * then you have to implement a KonqPopupMenuPlugin subclass.
  *
- * @deprecated Use KFileItemActionPlugin instead.
+ * @deprecated Use KAbstractFileItemActionPlugin instead.
  */
 class LIBKONQ_EXPORT KonqPopupMenuPlugin : public QObject
 {
