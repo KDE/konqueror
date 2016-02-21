@@ -1231,11 +1231,6 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             childView->frame()->statusbar()->hide();
         }
 
-#if 0 // currently unused
-        KonqConfigEvent ev( cfg.config(), prefix+'_', false/*load*/);
-        QApplication::sendEvent( childView->part(), &ev );
-#endif
-
         if (parent == m_tabContainer && m_tabContainer->count() == 1) {
             // First tab, make it the active one
             parent->setActiveChild(childView->frame());

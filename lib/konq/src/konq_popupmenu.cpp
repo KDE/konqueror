@@ -25,22 +25,17 @@
 #include "kabstractfileitemactionplugin.h"
 #include "kpropertiesdialog.h"
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kbookmarkmanager.h>
 #include <kbookmarkdialog.h>
-#include <kdebug.h>
 #include <krun.h>
 #include <kprotocolmanager.h>
-#include <QIcon>
 #include <knewfilemenu.h>
-#include <kiconloader.h>
-#include <kinputdialog.h>
-#include <kglobalsettings.h>
 #include <kmimetypetrader.h>
 #include <kconfiggroup.h>
+#include <KSharedConfig>
 #include <kdesktopfile.h>
 #include <kauthorized.h>
-#include <kglobal.h>
 #include <kacceleratormanager.h>
 #include <KIO/EmptyTrashJob>
 #include <KIO/JobUiDelegate>
@@ -49,6 +44,7 @@
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
 
+#include <QIcon>
 #include <QFileInfo>
 
 /*
@@ -159,7 +155,6 @@ void KonqPopupMenuPrivate::addNamedAction(const QString& name)
 void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtension::PopupFlags flags)
 {
     m_itemFlags = flags;
-    q->setFont(KGlobalSettings::menuFont());
 
     Q_ASSERT(m_popupItemProperties.items().count() >= 1);
 

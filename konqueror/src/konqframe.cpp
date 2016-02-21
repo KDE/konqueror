@@ -114,11 +114,6 @@ void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const K
   if (m_pView) m_pView->saveConfig(config, prefix, options);
   //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
   if (this == docContainer) config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
-
-#if 0 // currently unused
-  KonqConfigEvent ev( config.config(), prefix+'_', true/*save*/);
-  QApplication::sendEvent( childView()->part(), &ev );
-#endif
 }
 
 void KonqFrame::copyHistory( KonqFrameBase *other )

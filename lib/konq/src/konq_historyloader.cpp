@@ -19,12 +19,15 @@
 */
 
 #include "konq_historyloader_p.h"
-#include <kdebug.h>
-#include <QFile>
-#include <kstandarddirs.h>
 #include "konq_historyentry.h"
-#include <zlib.h> // for crc32
+
+#include <QDebug>
 #include <QDataStream>
+#include <QFile>
+#include <QStandardPaths>
+
+#include <zlib.h> // for crc32
+
 class KonqHistoryLoaderPrivate
 {
 public:
@@ -54,12 +57,13 @@ bool KonqHistoryLoader::loadHistory()
 {
     d->m_history.clear();
 
-    const QString filename = KStandardDirs::locateLocal("data", QLatin1String("konqueror/konq_history"));
+    const QString filename = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/konq_history");
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly)) {
-	if (file.exists())
-	    kWarning() << "Can't open" << filename;
-	return false;
+        if (file.exists()) {
+            qWarning() << "Can't open" << filename;
+        }
+        return false;
     }
 
     QDataStream fileStream(&file);
@@ -69,7 +73,7 @@ bool KonqHistoryLoader::loadHistory()
     KonqHistoryEntry::Flags flags = KonqHistoryEntry::NoFlags;
 
     if (!fileStream.atEnd()) {
-	quint32 version;
+        quint32 version;
         fileStream >> version;
 
         QDataStream *stream = &fileStream;
@@ -111,8 +115,8 @@ bool KonqHistoryLoader::loadHistory()
 	}
 #endif
 
-        if (historyVersion() != (int)version || (crcChecked && !crcOk)) {
-	    kWarning() << "The history version doesn't match, aborting loading" ;
+        if (historyVersion() != int(version) || (crcChecked && !crcOk)) {
+        qWarning() << "The history version doesn't match, aborting loading";
 	    file.close();
 	    return false;
 	}

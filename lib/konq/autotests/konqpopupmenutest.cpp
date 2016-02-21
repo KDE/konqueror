@@ -18,17 +18,19 @@
 */
 
 #include "konqpopupmenutest.h"
+
 #include <kconfiggroup.h>
-#include <kstandarddirs.h>
 #include <kbookmarkmanager.h>
-#include <QTest>
-#include <QDir>
 #include <KSharedConfig>
 #include <kparts/browserextension.h>
-#include <kdebug.h>
-#include <KUrl>
 #include <knewfilemenu.h>
 #include <kfileitemlistproperties.h>
+
+#include <QTest>
+#include <QDebug>
+#include <QDir>
+#include <QUrl>
+#include <QStandardPaths>
 
 QTEST_MAIN(KonqPopupMenuTest)
 
@@ -84,9 +86,9 @@ void KonqPopupMenuTest::initTestCase()
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
     m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
-    m_fileItem = KFileItem(KUrl(QDir::currentPath() + "/Makefile"), "text/x-makefile", S_IFREG + 0660);
-    m_linkItem = KFileItem(KUrl("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
-    m_subDirItem = KFileItem(KUrl(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
+    m_fileItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/Makefile"), "text/x-makefile", S_IFREG + 0660);
+    m_linkItem = KFileItem(QUrl::fromLocalFile("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
+    m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
     m_cut = KStandardAction::cut(0, 0, this);
     m_actionCollection.addAction("cut", m_cut);
     m_copy = KStandardAction::copy(0, 0, this);
@@ -153,7 +155,7 @@ void KonqPopupMenuTest::initTestCase()
     popup.addMenu(subMenu);
     subMenu->addAction(m_up);
     QStringList actions = extractActionNames(popup);
-    kDebug() << actions;
+    qDebug() << actions;
     QCOMPARE(actions, QStringList() << "go_back" << "submenu");
 }
 
@@ -161,7 +163,7 @@ void KonqPopupMenuTest::testFile()
 {
     KFileItemList itemList;
     itemList << m_fileItem;
-    KUrl viewUrl = QDir::currentPath();
+    QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -174,32 +176,32 @@ void KonqPopupMenuTest::testFile()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview1";
-    if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
+    if (!QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kde5/services/") + "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
         expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     // (came from arkplugin) << "compress"
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testFileInReadOnlyDirectory()
 {
-    const KFileItem item(KFileItem::Unknown, KFileItem::Unknown, KUrl("/etc/passwd"));
+    const KFileItem item(QUrl::fromLocalFile("/etc/passwd"));
     KFileItemList itemList;
     itemList << item;
 
     KFileItemListProperties capabilities(itemList);
     QVERIFY(!capabilities.supportsMoving());
 
-    KUrl viewUrl("/etc");
+    QUrl viewUrl = QUrl::fromLocalFile("/etc");
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -215,7 +217,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "copy" << "separator"
@@ -224,7 +226,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "separator";
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -233,7 +235,7 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     // Same as testFile, but this time the "preview" action group has more than one action
     KFileItemList itemList;
     itemList << m_fileItem;
-    KUrl viewUrl = QDir::currentPath();
+    QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -246,18 +248,18 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview_submenu";
-    if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
+    if (!QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kde5/services/") + "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
         expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -265,7 +267,7 @@ void KonqPopupMenuTest::testSubDirectory()
 {
     KFileItemList itemList;
     itemList << m_subDirItem;
-    KUrl viewUrl = QDir::currentPath();
+    QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
@@ -277,7 +279,7 @@ void KonqPopupMenuTest::testSubDirectory()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "pasteto" << "rename" << "trash" << "separator"
@@ -286,7 +288,7 @@ void KonqPopupMenuTest::testSubDirectory()
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -294,7 +296,7 @@ void KonqPopupMenuTest::testViewDirectory()
 {
     KFileItemList itemList;
     itemList << m_thisDirectoryItem;
-    KUrl viewUrl = m_thisDirectoryItem.url();
+    QUrl viewUrl = m_thisDirectoryItem.url();
     KParts::BrowserExtension::PopupFlags beflags =
         KParts::BrowserExtension::ShowNavigationItems |
         KParts::BrowserExtension::ShowUp |
@@ -320,7 +322,7 @@ void KonqPopupMenuTest::testViewDirectory()
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -329,7 +331,7 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     KFileItem rootItem(QDir::rootPath(), "inode/directory", KFileItem::Unknown);
     KFileItemList itemList;
     itemList << rootItem;
-    KUrl viewUrl = rootItem.url();
+    QUrl viewUrl = rootItem.url();
     KParts::BrowserExtension::PopupFlags beflags =
         KParts::BrowserExtension::ShowNavigationItems |
         KParts::BrowserExtension::ShowUp |
@@ -354,7 +356,7 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "separator"; // no moveTo_submenu, since readonly
     expectedActions << "properties";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -362,8 +364,7 @@ void KonqPopupMenuTest::testHtmlLink()
 {
     KFileItemList itemList;
     itemList << m_linkItem;
-    //KUrl viewUrl = m_fileItem.url();
-    KUrl viewUrl("http://www.kde.org");
+    QUrl viewUrl("http://www.kde.org");
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::IsLink;
@@ -378,7 +379,7 @@ void KonqPopupMenuTest::testHtmlLink()
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "bookmark_add" << "savelinkas" << "copylinklocation"
@@ -387,7 +388,7 @@ void KonqPopupMenuTest::testHtmlLink()
                     << "preview_submenu"
                     << "separator"
                     << "viewDocumentSource";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
@@ -395,7 +396,7 @@ void KonqPopupMenuTest::testHtmlPage()
 {
     KFileItemList itemList;
     itemList << m_linkItem;
-    KUrl viewUrl = m_linkItem.url();
+    QUrl viewUrl = m_linkItem.url();
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowNavigationItems;
@@ -416,7 +417,7 @@ void KonqPopupMenuTest::testHtmlPage()
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    kDebug() << actions;
+    qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "go_back" << "go_forward" << "reload" << "separator"
                     << "bookmark_add"
@@ -426,7 +427,7 @@ void KonqPopupMenuTest::testHtmlPage()
                     << "separator"
                     // << TODO "stopanimations"
                     << "viewDocumentSource" << "security" << "setEncoding";
-    kDebug() << "Expected:" << expectedActions;
+    qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 

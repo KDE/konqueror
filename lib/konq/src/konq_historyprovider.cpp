@@ -20,14 +20,17 @@
 */
 
 #include "konq_historyprovider.h"
-#include <ksavefile.h>
-#include <kstandarddirs.h>
-#include <kdebug.h>
+
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include "konq_historyloader_p.h"
-#include <zlib.h> // for crc32
+#include <KSharedConfig>
+
 #include <QtDBus>
+#include <QSaveFile>
+#include <QStandardPaths>
+
+#include <zlib.h> // for crc32
 
 class KonqHistoryProviderPrivate : public QObject, QDBusContext
 {
@@ -185,7 +188,7 @@ void KonqHistoryProviderPrivate::adjustSize()
     KonqHistoryEntry entry = m_history.first();
     const QDateTime expirationDate(QDate::currentDate().addDays(-m_maxAgeDays));
 
-    while (m_history.count() > (qint32)m_maxCount ||
+    while (m_history.count() > qint32(m_maxCount) ||
            (m_maxAgeDays > 0 && entry.lastVisited.isValid() && entry.lastVisited < expirationDate)) // i.e. entry is expired
     {
         q->removeEntry(m_history.begin());
@@ -390,10 +393,10 @@ int KonqHistoryProvider::maxAge() const
 
 bool KonqHistoryProviderPrivate::saveHistory()
 {
-    const QString filename = KStandardDirs::locateLocal("data", QLatin1String("konqueror/konq_history"));
-    KSaveFile file(filename);
-    if (!file.open()) {
-        kWarning() << "Can't open " << file.fileName() ;
+    const QString filename = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/konq_history");
+    QSaveFile file(filename);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qWarning() << "Can't open" << file.fileName() << "for saving history";
         return false;
     }
 
@@ -413,9 +416,7 @@ bool KonqHistoryProviderPrivate::saveHistory()
     quint32 crc = crc32(0, reinterpret_cast<unsigned char *>(data.data()), data.size());
     fileStream << crc << data;
 
-    file.finalize(); //check for error here?
-
-    return true;
+    return file.commit();
 }
 
 KonqHistoryList::iterator KonqHistoryProvider::findEntry(const QUrl &url)

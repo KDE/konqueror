@@ -229,10 +229,10 @@ QList<QUrl> GroupEntry::urls() const
 static QString groupForUrl(const QUrl &url)
 {
    if (url.isLocalFile()) {
-       static const QString &local = KGlobal::staticQString(i18n("Local"));
+       static const QString &local = i18n("Local");
        return local;
    }
-   static const QString &misc = KGlobal::staticQString(i18n("Miscellaneous"));
+   static const QString &misc = i18n("Miscellaneous");
    return url.host().isEmpty() ? misc : url.host();
 }
 

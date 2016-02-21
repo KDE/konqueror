@@ -29,7 +29,7 @@ class KNewFileMenu;
 class KonqPopupMenuTest : public QObject
 {
     Q_OBJECT
- public:
+public:
     KonqPopupMenuTest();
 
 private Q_SLOTS:

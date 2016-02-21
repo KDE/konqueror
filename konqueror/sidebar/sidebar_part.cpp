@@ -69,8 +69,7 @@ bool KonqSidebarPart::openUrl(const QUrl &url)
 void KonqSidebarPart::customEvent(QEvent* ev)
 {
     if (KonqFileSelectionEvent::test(ev) ||
-        KonqFileMouseOverEvent::test(ev) ||
-        KonqConfigEvent::test(ev))
+        KonqFileMouseOverEvent::test(ev))
     {
         // Forward the event to the widget
         QApplication::sendEvent( widget(), ev );
