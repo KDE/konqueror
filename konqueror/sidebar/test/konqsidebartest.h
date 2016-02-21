@@ -24,14 +24,17 @@ class SidebarTest : public KonqSidebarModule
 {
     Q_OBJECT
 public:
-    SidebarTest(QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
+    SidebarTest(QWidget *parent, const QString &desktopName, const KConfigGroup &configGroup)
         : KonqSidebarModule(parent, configGroup)
     {
         Q_UNUSED(desktopName);
         widget = new QLabel("Init Value", parent);
     }
-    ~SidebarTest(){}
-    virtual QWidget *getWidget(){return widget;}
+    ~SidebarTest() {}
+    virtual QWidget *getWidget()
+    {
+        return widget;
+    }
 protected:
     QLabel *widget;
     virtual void handleURL(const QUrl &url)

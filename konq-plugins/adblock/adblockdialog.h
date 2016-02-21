@@ -1,4 +1,3 @@
-// -*- mode: c++; c-basic-offset: 4 -*-
 /*
   Copyright (c) 2008 Laurent Montel <montel@kde.org>
   Copyright (C) 2006 Daniele Galdi <daniele.galdi@gmail.com>
@@ -32,7 +31,7 @@ class AdBlockDlg : public KDialog
 {
     Q_OBJECT
 public:
-    AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart*part);
+    AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart *part);
     ~AdBlockDlg();
 
 private slots:
@@ -40,7 +39,7 @@ private slots:
     void slotConfigureFilters();
 
     void updateFilter(QTreeWidgetItem *item);
-    void showContextMenu(const QPoint&);
+    void showContextMenu(const QPoint &);
     void filterItem();
     void filterPath();
     void filterHost();

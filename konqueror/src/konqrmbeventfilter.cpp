@@ -34,7 +34,7 @@ public:
 
 K_GLOBAL_STATIC(KonqRmbEventFilterSingleton, globalRmbEventFilter)
 
-KonqRmbEventFilter* KonqRmbEventFilter::self()
+KonqRmbEventFilter *KonqRmbEventFilter::self()
 {
     return &globalRmbEventFilter->self;
 }
@@ -48,9 +48,9 @@ KonqRmbEventFilter::KonqRmbEventFilter()
     }
 }
 
-static KonqFrame* parentFrame(QWidget* w)
+static KonqFrame *parentFrame(QWidget *w)
 {
-    KonqFrame* frame = 0;
+    KonqFrame *frame = 0;
     while (w && !frame) {
         w = w->parentWidget(); // yes this fails if the initial widget itself is a KonqFrame, but this can't happen
         frame = qobject_cast<KonqFrame *>(w);
@@ -61,7 +61,7 @@ static KonqFrame* parentFrame(QWidget* w)
 bool KonqRmbEventFilter::eventFilter(QObject *obj, QEvent *e)
 {
     const int type = e->type();
-    switch(type) {
+    switch (type) {
     case QEvent::MouseButtonPress:
         if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
             return true;
@@ -69,28 +69,26 @@ bool KonqRmbEventFilter::eventFilter(QObject *obj, QEvent *e)
         break;
     case QEvent::MouseButtonRelease:
         if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
-            QWidget* w = static_cast<QWidget *>(obj);
-            if (KonqFrame* frame = parentFrame(w)) {
+            QWidget *w = static_cast<QWidget *>(obj);
+            if (KonqFrame *frame = parentFrame(w)) {
                 frame->childView()->mainWindow()->slotBack();
                 return true;
             }
         }
         break;
-    case QEvent::MouseMove:
-    {
-        QMouseEvent* ev = static_cast<QMouseEvent *>(e);
+    case QEvent::MouseMove: {
+        QMouseEvent *ev = static_cast<QMouseEvent *>(e);
         if (ev->buttons() & Qt::RightButton) {
-            qApp->removeEventFilter( this );
-            QMouseEvent me( QEvent::MouseButtonPress, ev->pos(), Qt::RightButton, Qt::RightButton, Qt::NoModifier );
-            QApplication::sendEvent( obj, &me );
-            QContextMenuEvent ce( QContextMenuEvent::Mouse, ev->pos(), ev->globalPos() );
-            QApplication::sendEvent( obj, &ce );
-            qApp->installEventFilter( this );
+            qApp->removeEventFilter(this);
+            QMouseEvent me(QEvent::MouseButtonPress, ev->pos(), Qt::RightButton, Qt::RightButton, Qt::NoModifier);
+            QApplication::sendEvent(obj, &me);
+            QContextMenuEvent ce(QContextMenuEvent::Mouse, ev->pos(), ev->globalPos());
+            QApplication::sendEvent(obj, &ce);
+            qApp->installEventFilter(this);
         }
         break;
     }
-    case QEvent::ContextMenu:
-    {
+    case QEvent::ContextMenu: {
         QContextMenuEvent *ev = static_cast<QContextMenuEvent *>(e);
         if (ev->reason() == QContextMenuEvent::Mouse) {
             return true;

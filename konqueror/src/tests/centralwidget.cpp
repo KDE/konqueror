@@ -21,25 +21,26 @@
 #include <QLabel>
 #include <QtCore/QTimer>
 
-SCWMainWindow::SCWMainWindow( QWidget* parent )
-    : QMainWindow( parent )
+SCWMainWindow::SCWMainWindow(QWidget *parent)
+    : QMainWindow(parent)
 {
-    QLabel* widget1 = new QLabel( "widget1" );
-    setCentralWidget( widget1 );
-    QTimer::singleShot( 10, this, SLOT(slotSwitchCentralWidget()) );
+    QLabel *widget1 = new QLabel("widget1");
+    setCentralWidget(widget1);
+    QTimer::singleShot(10, this, SLOT(slotSwitchCentralWidget()));
 }
 
 void SCWMainWindow::slotSwitchCentralWidget()
 {
-    QLabel* widget2 = new QLabel( "widget2" );
+    QLabel *widget2 = new QLabel("widget2");
     delete centralWidget(); // ## workaround for the crash
-    setCentralWidget( widget2 );
+    setCentralWidget(widget2);
 }
 
-int main( int argc, char** argv ) {
-    QApplication app( argc, argv );
+int main(int argc, char **argv)
+{
+    QApplication app(argc, argv);
 
-    SCWMainWindow* mw = new SCWMainWindow;
+    SCWMainWindow *mw = new SCWMainWindow;
     mw->show();
 
     return app.exec();

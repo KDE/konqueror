@@ -27,18 +27,18 @@ class QDBusMessage;
 
 class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KonquerorApplication();
+    KonquerorApplication();
 
 public slots:
-  void slotReparseConfiguration();
-  void slotUpdateProfileList();
+    void slotReparseConfiguration();
+    void slotUpdateProfileList();
 
 private slots:
-  void slotAddToCombo( const QString& url, const QDBusMessage& msg );
-  void slotRemoveFromCombo( const QString& url, const QDBusMessage& msg );
-  void slotComboCleared( const QDBusMessage& msg );
+    void slotAddToCombo(const QString &url, const QDBusMessage &msg);
+    void slotRemoveFromCombo(const QString &url, const QDBusMessage &msg);
+    void slotComboCleared(const QDBusMessage &msg);
 };
 
 #endif

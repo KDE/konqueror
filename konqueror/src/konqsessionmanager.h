@@ -37,7 +37,7 @@ class SessionRestoreDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit SessionRestoreDialog(const QStringList& sessionFilePaths, QWidget* parent=0);
+    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = 0);
     virtual ~SessionRestoreDialog();
 
     /**
@@ -58,7 +58,7 @@ public:
      * time the dialog box was shown. This is only useful if the restore dialog box should
      * be shown.
      */
-    static bool shouldBeShown(const QString &dontShowAgainName, int* result);
+    static bool shouldBeShown(const QString &dontShowAgainName, int *result);
 
     /**
      * Save the fact that the session restore dialog should not be shown again.
@@ -72,15 +72,14 @@ public:
 
 private Q_SLOTS:
     void slotClicked(bool);
-    void slotItemChanged(QTreeWidgetItem*, int);
+    void slotItemChanged(QTreeWidgetItem *, int);
 
 private:
     QStringList m_discardedSessionList;
-    QHash<QTreeWidgetItem*, int> m_checkedSessionItems;
+    QHash<QTreeWidgetItem *, int> m_checkedSessionItems;
     int m_sessionItemsCount;
     bool m_dontShowChecked;
 };
-
 
 /**
  * This class is a singleton. It does some session related tasks:
@@ -88,7 +87,8 @@ private:
  *  - Restore a saved session if konqueror crashed
  *  - Restore a given session manually
  */
-class KONQ_TESTS_EXPORT KonqSessionManager : public QObject {
+class KONQ_TESTS_EXPORT KonqSessionManager : public QObject
+{
     Q_OBJECT
 public:
     friend class KonqSessionManagerPrivate;
@@ -105,7 +105,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QStringList &sessionFilePathsList, bool
-        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
 
     /**
      * Restore saved session(s).
@@ -118,7 +118,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QString &sessionsDir, bool
-        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
 
     /**
      * Restore saved session.
@@ -129,7 +129,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSession(const QString &sessionFilePath, bool
-        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
 
     /**
      * Disable the autosave feature. It's called when a konqueror instance is
@@ -152,8 +152,8 @@ public:
     /**
      * Save current session in a given path (absolute path to a file)
      */
-    void saveCurrentSessionToFile(const QString& sessionConfig);
-    
+    void saveCurrentSessionToFile(const QString &sessionConfig);
+
     /**
      * Returns the autosave directory
      */
@@ -181,7 +181,7 @@ public Q_SLOTS:
      * Save current sessions of all konqueror instances (propagated via a
      * dbus signal).
      */
-    void saveCurrentSessions(const QString & path);
+    void saveCurrentSessions(const QString &path);
 private:
     KonqSessionManager();
 
@@ -194,27 +194,28 @@ private:
      */
     QStringList takeSessionsOwnership();
 
-    QString dirForMyOwnedSessionFiles() const {
+    QString dirForMyOwnedSessionFiles() const
+    {
         return m_autosaveDir + "/owned_by" + m_baseService;
     }
 
-    void saveCurrentSessionToFile(KConfig*);
+    void saveCurrentSessionToFile(KConfig *);
 private:
     QTimer m_autoSaveTimer;
     QString m_autosaveDir;
     QString m_baseService;
     bool m_autosaveEnabled;
     bool m_createdOwnedByDir;
-    KConfig* m_sessionConfig;
+    KConfig *m_sessionConfig;
 
 Q_SIGNALS: // DBUS signals
     /**
      * Save current session of all konqueror running instances in a given
      * directory
      */
-    void saveCurrentSession( const QString& path );
+    void saveCurrentSession(const QString &path);
 private Q_SLOTS:// connected to DBUS signals
-    void slotSaveCurrentSession( const QString& path );
+    void slotSaveCurrentSession(const QString &path);
 };
 
 #endif /* KONQSESSIONMANAGER_H */

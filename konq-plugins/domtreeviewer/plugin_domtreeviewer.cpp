@@ -16,43 +16,41 @@
 
 K_PLUGIN_FACTORY(DomtreeviewerFactory, registerPlugin<PluginDomtreeviewer>();)
 
-PluginDomtreeviewer::PluginDomtreeviewer( QObject* parent, 
-	                                  const QVariantList & )
-  : Plugin( parent ), m_dialog( 0 )
+PluginDomtreeviewer::PluginDomtreeviewer(QObject *parent,
+        const QVariantList &)
+    : Plugin(parent), m_dialog(0)
 {
-  QAction *a = actionCollection()->addAction("viewdomtree");
+    QAction *a = actionCollection()->addAction("viewdomtree");
 
-  a->setText(i18n("Show &DOM Tree"));
-  a->setIcon(KIcon("view-web-browser-dom-tree"));
-  connect(a, SIGNAL(triggered()), this, SLOT(slotShowDOMTree()));
+    a->setText(i18n("Show &DOM Tree"));
+    a->setIcon(KIcon("view-web-browser-dom-tree"));
+    connect(a, SIGNAL(triggered()), this, SLOT(slotShowDOMTree()));
 }
 
 PluginDomtreeviewer::~PluginDomtreeviewer()
 {
-  kDebug(90180) ;
-  delete m_dialog;
+    kDebug(90180);
+    delete m_dialog;
 }
 
 void PluginDomtreeviewer::slotShowDOMTree()
 {
-  if ( m_dialog )
-  {
-    delete m_dialog;
-    Q_ASSERT((DOMTreeWindow *)m_dialog == (DOMTreeWindow *)0);
-  }
-  if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent()))
-  {
-    m_dialog = new DOMTreeWindow(this);
-    connect( m_dialog, SIGNAL(destroyed()), this, SLOT(slotDestroyed()) );
-    m_dialog->view()->setHtmlPart(part);
-    m_dialog->show();
-  }
+    if (m_dialog) {
+        delete m_dialog;
+        Q_ASSERT((DOMTreeWindow *)m_dialog == (DOMTreeWindow *)0);
+    }
+    if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
+        m_dialog = new DOMTreeWindow(this);
+        connect(m_dialog, SIGNAL(destroyed()), this, SLOT(slotDestroyed()));
+        m_dialog->view()->setHtmlPart(part);
+        m_dialog->show();
+    }
 }
 
 void PluginDomtreeviewer::slotDestroyed()
 {
-  kDebug(90180) ;
-  m_dialog = 0;
+    kDebug(90180);
+    m_dialog = 0;
 }
 
 #include <plugin_domtreeviewer.moc>

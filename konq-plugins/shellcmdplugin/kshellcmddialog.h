@@ -25,22 +25,22 @@
 class KShellCommandExecutor;
 class KPushButton;
 
-class KShellCommandDialog:public KDialog
+class KShellCommandDialog: public KDialog
 {
-   Q_OBJECT
-   public:
-      KShellCommandDialog(const QString& title, const QString& command, QWidget* parent=0, bool modal=false);
-      virtual ~KShellCommandDialog();
-      //blocking
-      int executeCommand();
-   protected:
+    Q_OBJECT
+public:
+    KShellCommandDialog(const QString &title, const QString &command, QWidget *parent = 0, bool modal = false);
+    virtual ~KShellCommandDialog();
+    //blocking
+    int executeCommand();
+protected:
 
-      KShellCommandExecutor *m_shell;
-      KPushButton *cancelButton;
-      KPushButton *closeButton;
-   protected Q_SLOTS:
-      void disableStopButton();
-      void slotClose();
+    KShellCommandExecutor *m_shell;
+    KPushButton *cancelButton;
+    KPushButton *closeButton;
+protected Q_SLOTS:
+    void disableStopButton();
+    void slotClose();
 };
 
 #endif // KSHELLCMDDIALOG_H

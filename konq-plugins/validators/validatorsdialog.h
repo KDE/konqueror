@@ -33,26 +33,26 @@
 
 class ValidatorsDialog : public KPageDialog
 {
- Q_OBJECT
+    Q_OBJECT
 
- public:
-  explicit ValidatorsDialog(QWidget *parent=0 );
-  ~ValidatorsDialog();
+public:
+    explicit ValidatorsDialog(QWidget *parent = 0);
+    ~ValidatorsDialog();
 
- signals:
-  void configChanged();
+signals:
+    void configChanged();
 
- protected slots:
-  void slotOk();
-  void slotCancel();
+protected slots:
+    void slotOk();
+    void slotCancel();
 
- private:
-  void load();
-  void save();
+private:
+    void load();
+    void save();
 
-  Ui::RemoteValidators m_remoteUi;
+    Ui::RemoteValidators m_remoteUi;
 #ifdef HAVE_TIDY
-  Ui::InternalValidator m_internalUi;
+    Ui::InternalValidator m_internalUi;
 #endif
 };
 

@@ -55,7 +55,6 @@
 #include <QApplication>
 #include <QDesktopWidget>
 
-
 class KonqSessionManagerPrivate
 {
 public:
@@ -74,33 +73,33 @@ public:
 
 K_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
-static QString viewIdFor(const QString& sessionFile, const QString& viewId)
+static QString viewIdFor(const QString &sessionFile, const QString &viewId)
 {
     return (sessionFile + viewId);
 }
 
-static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use writeEntry*/ KConfig& config)
+static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use writeEntry*/ KConfig &config)
 {
     QList<KConfigGroup> groups;
     KConfigGroup generalGroup(&config, "General");
     const int size = generalGroup.readEntry("Number of Windows", 0);
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         groups << KConfigGroup(&config, "Window" + QString::number(i));
     }
     return groups;
 }
 
-SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, QWidget* parent)
-        : KDialog(parent, 0)
-         ,m_sessionItemsCount(0)
-         ,m_dontShowChecked(false)
+SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent)
+    : KDialog(parent, 0)
+    , m_sessionItemsCount(0)
+    , m_dontShowChecked(false)
 {
     setCaption(i18nc("@title:window", "Restore Session?"));
     setButtons(KDialog::Yes | KDialog::No | KDialog::Cancel);
     setObjectName(QLatin1String("restoresession"));
     setButtonGuiItem(KDialog::Yes, KGuiItem(i18nc("@action:button yes", "Restore Session"), "window-new"));
-    setButtonGuiItem(KDialog::No, KGuiItem(i18nc("@action:button no","Do Not Restore"), "dialog-close"));
-    setButtonGuiItem(KDialog::Cancel, KGuiItem(i18nc("@action:button ask later","Ask Me Later"), "chronometer"));
+    setButtonGuiItem(KDialog::No, KGuiItem(i18nc("@action:button no", "Do Not Restore"), "dialog-close"));
+    setButtonGuiItem(KDialog::Cancel, KGuiItem(i18nc("@action:button ask later", "Ask Me Later"), "chronometer"));
     setDefaultButton(KDialog::Yes);
     setButtonFocus(KDialog::Yes);
     setModal(true);
@@ -113,9 +112,9 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
     QHBoxLayout *hLayout = new QHBoxLayout();
     hLayout->setMargin(0);
     hLayout->setSpacing(-1); // use default spacing
-    mainLayout->addLayout(hLayout,5);
+    mainLayout->addLayout(hLayout, 5);
 
-    QIcon icon (QLatin1String("dialog-warning"));
+    QIcon icon(QLatin1String("dialog-warning"));
     if (!icon.isNull()) {
         QLabel *iconLabel = new QLabel(mainWidget);
         QStyleOption option;
@@ -125,19 +124,19 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
         iconLayout->addStretch(1);
         iconLayout->addWidget(iconLabel);
         iconLayout->addStretch(5);
-        hLayout->addLayout(iconLayout,0);
+        hLayout->addLayout(iconLayout, 0);
     }
 
-    const QString text (i18n("Konqueror did not close correctly. Would you like to restore these previous sessions?"));
+    const QString text(i18n("Konqueror did not close correctly. Would you like to restore these previous sessions?"));
     QLabel *messageLabel = new QLabel(text, mainWidget);
     Qt::TextInteractionFlags flags = (Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     messageLabel->setTextInteractionFlags(flags);
     messageLabel->setWordWrap(true);
 
     hLayout->addSpacing(KDialog::spacingHint());
-    hLayout->addWidget(messageLabel,5);
+    hLayout->addWidget(messageLabel, 5);
 
-    QTreeWidget* treeWidget = 0;
+    QTreeWidget *treeWidget = 0;
     if (!sessionFilePaths.isEmpty()) {
         treeWidget = new QTreeWidget(mainWidget);
         treeWidget->setHeader(0);
@@ -151,35 +150,36 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
         const QRect desktop = QApplication::desktop()->screenGeometry(this);
 
         // Collect info from the sessions to restore
-        Q_FOREACH(const QString& sessionFile, sessionFilePaths) {
+        Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
             kDebug() << sessionFile;
-            QTreeWidgetItem* windowItem = 0;
+            QTreeWidgetItem *windowItem = 0;
             KConfig config(sessionFile, KConfig::SimpleConfig);
             const QList<KConfigGroup> groups = windowConfigGroups(config);
-            Q_FOREACH(const KConfigGroup& group, groups) {
+            Q_FOREACH (const KConfigGroup &group, groups) {
                 // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
-                Q_FOREACH(const QString& key, group.keyList()) {
+                Q_FOREACH (const QString &key, group.keyList()) {
                     if (key.endsWith(QLatin1String("_CurrentHistoryItem"))) {
                         const QString viewId = key.left(key.length() - qstrlen("_CurrentHistoryItem"));
                         const QString historyIndex = group.readEntry(key, QString());
                         const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
                         // Ignore the sidebar views
-                        if (group.readEntry(prefix + "StrServiceName", QString()).startsWith("konq_sidebar"))
+                        if (group.readEntry(prefix + "StrServiceName", QString()).startsWith("konq_sidebar")) {
                             continue;
+                        }
                         const QString url = group.readEntry(prefix + "Url", QString());
                         const QString title = group.readEntry(prefix + "Title", QString());
                         kDebug() << viewId << url << title;
                         const QString displayText = (title.trimmed().isEmpty() ? url : title);
                         if (!displayText.isEmpty()) {
                             if (!windowItem) {
-                                 windowItem = new QTreeWidgetItem(treeWidget);
-                                 const int index = sessionFilePaths.indexOf(sessionFile) + 1;
-                                 windowItem->setText(0, i18nc("@item:treewidget", "Window %1", index));
-                                 windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-                                 windowItem->setCheckState(0, Qt::Checked);
-                                 windowItem->setExpanded(true);
+                                windowItem = new QTreeWidgetItem(treeWidget);
+                                const int index = sessionFilePaths.indexOf(sessionFile) + 1;
+                                windowItem->setText(0, i18nc("@item:treewidget", "Window %1", index));
+                                windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+                                windowItem->setCheckState(0, Qt::Checked);
+                                windowItem->setExpanded(true);
                             }
-                            QTreeWidgetItem* item = new QTreeWidgetItem (windowItem);
+                            QTreeWidgetItem *item = new QTreeWidgetItem(windowItem);
                             item->setText(0, displayText);
                             item->setData(0, Qt::UserRole, viewIdFor(sessionFile, viewId));
                             item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
@@ -215,7 +215,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList& sessionFilePaths, 
                 this, SLOT(slotItemChanged(QTreeWidgetItem*,int)));
     }
 
-    QCheckBox* checkbox = new QCheckBox(i18n("Do not ask again"), mainWidget);
+    QCheckBox *checkbox = new QCheckBox(i18n("Do not ask again"), mainWidget);
     connect(checkbox, &QCheckBox::clicked, this, &SessionRestoreDialog::slotClicked);
     mainLayout->addWidget(checkbox);
 
@@ -238,28 +238,28 @@ bool SessionRestoreDialog::isDontShowChecked() const
 
 void SessionRestoreDialog::slotClicked(bool checked)
 {
-     m_dontShowChecked = checked;
+    m_dontShowChecked = checked;
 }
 
-static void setCheckState(QTreeWidgetItem* item, int column, Qt::CheckState state)
+static void setCheckState(QTreeWidgetItem *item, int column, Qt::CheckState state)
 {
     const bool blocked = item->treeWidget()->blockSignals(true);
     item->setCheckState(column, state);
     item->treeWidget()->blockSignals(blocked);
 }
 
-void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem* item, int column)
+void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
 {
     Q_ASSERT(item);
 
     const int itemChildCount = item->childCount();
-    QTreeWidgetItem* parentItem = 0;
+    QTreeWidgetItem *parentItem = 0;
 
     const bool blocked = item->treeWidget()->blockSignals(true);
     if (itemChildCount > 0) {
         parentItem = item;
         for (int i = 0; i < itemChildCount; ++i) {
-            QTreeWidgetItem* childItem = item->child(i);
+            QTreeWidgetItem *childItem = item->child(i);
             if (childItem) {
                 childItem->setCheckState(column, item->checkState(column));
                 switch (childItem->checkState(column)) {
@@ -298,23 +298,23 @@ void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem* item, int column)
 
     const int numCheckSessions = m_checkedSessionItems.value(parentItem);
     switch (parentItem->checkState(column)) {
-      case Qt::Checked:
-          if (numCheckSessions == 0) {
-              parentItem->setCheckState(column, Qt::Unchecked);
-          }
-      case Qt::Unchecked:
-          if (numCheckSessions > 0) {
-              parentItem->setCheckState(column, Qt::Checked);
-          }
-      default:
-          break;
+    case Qt::Checked:
+        if (numCheckSessions == 0) {
+            parentItem->setCheckState(column, Qt::Unchecked);
+        }
+    case Qt::Unchecked:
+        if (numCheckSessions > 0) {
+            parentItem->setCheckState(column, Qt::Checked);
+        }
+    default:
+        break;
     }
 
     enableButton(KDialog::Yes, m_sessionItemsCount > 0);
     item->treeWidget()->blockSignals(blocked);
 }
 
-void SessionRestoreDialog::saveDontShow(const QString& dontShowAgainName, int result)
+void SessionRestoreDialog::saveDontShow(const QString &dontShowAgainName, int result)
 {
     if (dontShowAgainName.isEmpty()) {
         return;
@@ -326,11 +326,11 @@ void SessionRestoreDialog::saveDontShow(const QString& dontShowAgainName, int re
     }
 
     KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
-    cg.writeEntry( dontShowAgainName, result==Yes, flags );
+    cg.writeEntry(dontShowAgainName, result == Yes, flags);
     cg.sync();
 }
 
-bool SessionRestoreDialog::shouldBeShown(const QString& dontShowAgainName, int* result)
+bool SessionRestoreDialog::shouldBeShown(const QString &dontShowAgainName, int *result)
 {
     if (dontShowAgainName.isEmpty()) {
         return true;
@@ -358,42 +358,44 @@ bool SessionRestoreDialog::shouldBeShown(const QString& dontShowAgainName, int* 
 
 KonqSessionManager::KonqSessionManager()
     : m_autosaveDir(KStandardDirs::locateLocal("appdata", "autosave"))
-      , m_autosaveEnabled(false) // so that enableAutosave works
-      , m_createdOwnedByDir(false)
-      , m_sessionConfig(0)
+    , m_autosaveEnabled(false) // so that enableAutosave works
+    , m_createdOwnedByDir(false)
+    , m_sessionConfig(0)
 {
     // Initialize dbus interfaces
-    new KonqSessionManagerAdaptor ( this );
+    new KonqSessionManagerAdaptor(this);
 
     const QString dbusPath = "/KonqSessionManager";
     const QString dbusInterface = "org.kde.Konqueror.SessionManager";
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    dbus.registerObject( dbusPath, this );
+    dbus.registerObject(dbusPath, this);
     m_baseService = KonqMisc::encodeFilename(dbus.baseService());
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
     const int interval = KonqSettings::autoSaveInterval();
     if (interval > 0) {
-        m_autoSaveTimer.setInterval(interval*1000);
-        connect( &m_autoSaveTimer, SIGNAL(timeout()), this,
-            SLOT(autoSaveSession()) );
+        m_autoSaveTimer.setInterval(interval * 1000);
+        connect(&m_autoSaveTimer, SIGNAL(timeout()), this,
+                SLOT(autoSaveSession()));
     }
     enableAutosave();
 }
 
 KonqSessionManager::~KonqSessionManager()
 {
-    if (m_sessionConfig)
+    if (m_sessionConfig) {
         QFile::remove(m_sessionConfig->name());
+    }
     delete m_sessionConfig;
 }
 
 void KonqSessionManager::disableAutosave()
 {
-    if(!m_autosaveEnabled)
+    if (!m_autosaveEnabled) {
         return;
+    }
 
     m_autosaveEnabled = false;
     m_autoSaveTimer.stop();
@@ -406,8 +408,9 @@ void KonqSessionManager::disableAutosave()
 
 void KonqSessionManager::enableAutosave()
 {
-    if(m_autosaveEnabled)
+    if (m_autosaveEnabled) {
         return;
+    }
 
     // Create the config file for autosaving current session
     QString filename = QLatin1String("autosave/") + m_baseService;
@@ -424,26 +427,30 @@ void KonqSessionManager::enableAutosave()
 void KonqSessionManager::deleteOwnedSessions()
 {
     // Not dealing with the sessions about to remove anymore
-    if (m_createdOwnedByDir && KTempDir::removeDir(dirForMyOwnedSessionFiles()))
+    if (m_createdOwnedByDir && KTempDir::removeDir(dirForMyOwnedSessionFiles())) {
         m_createdOwnedByDir = false;
+    }
 }
 
-KonqSessionManager* KonqSessionManager::self()
+KonqSessionManager *KonqSessionManager::self()
 {
-    if(!myKonqSessionManagerPrivate->instance)
+    if (!myKonqSessionManagerPrivate->instance) {
         myKonqSessionManagerPrivate->instance = new KonqSessionManager();
+    }
 
     return myKonqSessionManagerPrivate->instance;
 }
 
 void KonqSessionManager::autoSaveSession()
 {
-    if(!m_autosaveEnabled)
+    if (!m_autosaveEnabled) {
         return;
+    }
 
     const bool isActive = m_autoSaveTimer.isActive();
-    if(isActive)
+    if (isActive) {
         m_autoSaveTimer.stop();
+    }
 
     saveCurrentSessionToFile(m_sessionConfig);
     m_sessionConfig->sync();
@@ -453,38 +460,39 @@ void KonqSessionManager::autoSaveSession()
     // directory
     deleteOwnedSessions();
 
-    if(isActive)
+    if (isActive) {
         m_autoSaveTimer.start();
+    }
 }
 
-void KonqSessionManager::saveCurrentSessions(const QString & path)
+void KonqSessionManager::saveCurrentSessions(const QString &path)
 {
     emit saveCurrentSession(path);
 }
 
-void KonqSessionManager::slotSaveCurrentSession(const QString & path)
+void KonqSessionManager::slotSaveCurrentSession(const QString &path)
 {
     const QString filename = path + '/' + m_baseService;
     saveCurrentSessionToFile(filename);
 }
 
-void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPath)
+void KonqSessionManager::saveCurrentSessionToFile(const QString &sessionConfigPath)
 {
     QFile::remove(sessionConfigPath);
     KConfig config(sessionConfigPath, KConfig::SimpleConfig);
     saveCurrentSessionToFile(&config);
 }
 
-void KonqSessionManager::saveCurrentSessionToFile(KConfig* config)
+void KonqSessionManager::saveCurrentSessionToFile(KConfig *config)
 {
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     unsigned int counter = 0;
 
-    if(!mainWindows || mainWindows->isEmpty())
+    if (!mainWindows || mainWindows->isEmpty()) {
         return;
+    }
 
-    foreach ( KonqMainWindow* window, *mainWindows )
-    {
+    foreach (KonqMainWindow *window, *mainWindows) {
         KConfigGroup configGroup(config, "Window" + QString::number(counter));
         window->saveProperties(configGroup);
         counter++;
@@ -506,29 +514,26 @@ QStringList KonqSessionManager::takeSessionsOwnership()
     QDir dir(dirForMyOwnedSessionFiles());
     QDir parentDir(m_autosaveDir);
 
-    if(!dir.exists())
+    if (!dir.exists()) {
         m_createdOwnedByDir = parentDir.mkdir("owned_by" + m_baseService);
+    }
 
-    QDirIterator it(m_autosaveDir, QDir::Writable|QDir::Files|QDir::Dirs|
-        QDir::NoDotAndDotDot);
+    QDirIterator it(m_autosaveDir, QDir::Writable | QDir::Files | QDir::Dirs |
+                    QDir::NoDotAndDotDot);
 
     QStringList sessionFilePaths;
     QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
 
-    while (it.hasNext())
-    {
+    while (it.hasNext()) {
         it.next();
         // this is the case where another konq started to restore that session,
         // but crashed immediately. So we try to restore that session again
-        if(it.fileInfo().isDir())
-        {
+        if (it.fileInfo().isDir()) {
             // The remove() removes the "owned_by" part
-            if(!idbus->isServiceRegistered(
-                KonqMisc::decodeFilename(it.fileName().remove(0, 8))))
-            {
-                QDirIterator it2(it.filePath(), QDir::Writable|QDir::Files);
-                while (it2.hasNext())
-                {
+            if (!idbus->isServiceRegistered(
+                        KonqMisc::decodeFilename(it.fileName().remove(0, 8)))) {
+                QDirIterator it2(it.filePath(), QDir::Writable | QDir::Files);
+                while (it2.hasNext()) {
                     it2.next();
                     // take ownership of the abandoned file
                     const QString newFileName = dirForMyOwnedSessionFiles() +
@@ -540,8 +545,7 @@ QStringList KonqSessionManager::takeSessionsOwnership()
                 KTempDir::removeDir(it.filePath());
             }
         } else { // it's a file
-            if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
-            {
+            if (!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName()))) {
                 // and it's abandoned: take its ownership
                 const QString newFileName = dirForMyOwnedSessionFiles() + '/' +
                                             it.fileName();
@@ -555,57 +559,57 @@ QStringList KonqSessionManager::takeSessionsOwnership()
 }
 
 void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList,
-    bool openTabsInsideCurrentWindow, KonqMainWindow *parent)
+        bool openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
-    foreach ( const QString& sessionFilePath, sessionFilePathsList )
-    {
+    foreach (const QString &sessionFilePath, sessionFilePathsList) {
         restoreSession(sessionFilePath, openTabsInsideCurrentWindow, parent);
     }
 }
 
 void KonqSessionManager::restoreSessions(const QString &sessionsDir, bool
-    openTabsInsideCurrentWindow, KonqMainWindow *parent)
+        openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
-    QDirIterator it(sessionsDir, QDir::Readable|QDir::Files);
+    QDirIterator it(sessionsDir, QDir::Readable | QDir::Files);
 
-    while (it.hasNext())
-    {
+    while (it.hasNext()) {
         QFileInfo fi(it.next());
         restoreSession(fi.filePath(), openTabsInsideCurrentWindow, parent);
     }
 }
 
 void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
-    openTabsInsideCurrentWindow, KonqMainWindow *parent)
+                                        openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
-    if (!QFile::exists(sessionFilePath))
+    if (!QFile::exists(sessionFilePath)) {
         return;
+    }
 
     KConfig config(sessionFilePath, KConfig::SimpleConfig);
     const QList<KConfigGroup> groups = windowConfigGroups(config);
-    Q_FOREACH(const KConfigGroup& configGroup, groups) {
-        if(!openTabsInsideCurrentWindow)
+    Q_FOREACH (const KConfigGroup &configGroup, groups) {
+        if (!openTabsInsideCurrentWindow) {
             KonqViewManager::openSavedWindow(configGroup)->show();
-        else
+        } else {
             parent->viewManager()->openSavedWindow(configGroup, true);
+        }
     }
 }
 
-static void removeDiscardedSessions(const QStringList& sessionFiles, const QStringList& discardedSessions)
+static void removeDiscardedSessions(const QStringList &sessionFiles, const QStringList &discardedSessions)
 {
     if (discardedSessions.isEmpty()) {
         return;
     }
 
-    Q_FOREACH(const QString& sessionFile, sessionFiles) {
+    Q_FOREACH (const QString &sessionFile, sessionFiles) {
         KConfig config(sessionFile, KConfig::SimpleConfig);
         QList<KConfigGroup> groups = windowConfigGroups(config);
         for (int i = 0, count = groups.count(); i < count; ++i) {
-            KConfigGroup& group = groups[i];
+            KConfigGroup &group = groups[i];
             const QString rootItem = group.readEntry("RootItem", "empty");
-            const QString viewsKey (rootItem + QLatin1String("_Children"));
+            const QString viewsKey(rootItem + QLatin1String("_Children"));
             QStringList views = group.readEntry(viewsKey, QStringList());
-            QMutableStringListIterator it (views);
+            QMutableStringListIterator it(views);
             while (it.hasNext()) {
                 if (discardedSessions.contains(viewIdFor(sessionFile, it.next()))) {
                     it.remove();
@@ -619,17 +623,18 @@ static void removeDiscardedSessions(const QStringList& sessionFiles, const QStri
 bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
 {
     const QStringList sessionFilePaths = takeSessionsOwnership();
-    if(sessionFilePaths.isEmpty())
+    if (sessionFilePaths.isEmpty()) {
         return false;
+    }
 
     disableAutosave();
 
     int result;
     QStringList discardedSessionList;
-    const QLatin1String dontAskAgainName ("Restore session when konqueror didn't close correctly");
+    const QLatin1String dontAskAgainName("Restore session when konqueror didn't close correctly");
 
     if (SessionRestoreDialog::shouldBeShown(dontAskAgainName, &result)) {
-        SessionRestoreDialog* restoreDlg = new SessionRestoreDialog(sessionFilePaths);
+        SessionRestoreDialog *restoreDlg = new SessionRestoreDialog(sessionFilePaths);
         result = restoreDlg->exec();
         discardedSessionList = restoreDlg->discardedSessionList();
         if (restoreDlg->isDontShowChecked()) {
@@ -639,30 +644,30 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     }
 
     switch (result) {
-        case KDialog::Yes:
-            // Remove the discarded session list files.
-            removeDiscardedSessions(sessionFilePaths, discardedSessionList);
-            restoreSessions(sessionFilePaths);
-            enableAutosave();
-            return true;
-        case KDialog::No:
-            deleteOwnedSessions();
-            enableAutosave();
-            return false;
-        default:
-            // Remove the ownership of the currently owned files
-            QDirIterator it(dirForMyOwnedSessionFiles(),
-                QDir::Writable|QDir::Files);
+    case KDialog::Yes:
+        // Remove the discarded session list files.
+        removeDiscardedSessions(sessionFilePaths, discardedSessionList);
+        restoreSessions(sessionFilePaths);
+        enableAutosave();
+        return true;
+    case KDialog::No:
+        deleteOwnedSessions();
+        enableAutosave();
+        return false;
+    default:
+        // Remove the ownership of the currently owned files
+        QDirIterator it(dirForMyOwnedSessionFiles(),
+                        QDir::Writable | QDir::Files);
 
-            while (it.hasNext()) {
-                it.next();
-                // remove ownership of the abandoned file
-                QFile::rename(it.filePath(), m_autosaveDir + '/' + it.fileName());
-            }
-            // Remove the owned_by directory
-            KTempDir::removeDir(dirForMyOwnedSessionFiles());
-            enableAutosave();
-            return false;
+        while (it.hasNext()) {
+            it.next();
+            // remove ownership of the abandoned file
+            QFile::rename(it.filePath(), m_autosaveDir + '/' + it.fileName());
+        }
+        // Remove the owned_by directory
+        KTempDir::removeDir(dirForMyOwnedSessionFiles());
+        enableAutosave();
+        return false;
     }
 }
 

@@ -27,30 +27,30 @@ namespace KCMPerformance
 class Konqueror_ui : public QWidget, public Ui::Konqueror_ui
 {
 public:
-  Konqueror_ui( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-    layout()->setMargin( 0 );
-  }
+    Konqueror_ui(QWidget *parent) : QWidget(parent)
+    {
+        setupUi(this);
+        layout()->setMargin(0);
+    }
 };
-
 
 class Konqueror
     : public Konqueror_ui
-    {
+{
     Q_OBJECT
-    public:
-        Konqueror( QWidget* parent_P = NULL );
-        void load();
-        void save();
-        void defaults();
-    Q_SIGNALS:
-        void changed();
-    private Q_SLOTS:
-	void preload_count_changed( int );
-    private:
-        QString allowed_parts;
-    };
+public:
+    Konqueror(QWidget *parent_P = NULL);
+    void load();
+    void save();
+    void defaults();
+Q_SIGNALS:
+    void changed();
+private Q_SLOTS:
+    void preload_count_changed(int);
+private:
+    QString allowed_parts;
+};
 
-}  // namespace 
+}  // namespace
 
 #endif

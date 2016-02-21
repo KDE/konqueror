@@ -29,17 +29,16 @@ class KonqMultiTabBar : public KMultiTabBar
     Q_OBJECT
 
 public:
-    explicit KonqMultiTabBar(QWidget* parent);
+    explicit KonqMultiTabBar(QWidget *parent);
 
 Q_SIGNALS:
-    void urlsDropped(const QList<QUrl>& urls);
+    void urlsDropped(const QList<QUrl> &urls);
 
 protected:
-    virtual void dragEnterEvent(QDragEnterEvent* event);
-    virtual void dragMoveEvent(QDragMoveEvent* event);
-    virtual void dropEvent(QDropEvent* event);
+    virtual void dragEnterEvent(QDragEnterEvent *event);
+    virtual void dragMoveEvent(QDragMoveEvent *event);
+    virtual void dropEvent(QDropEvent *event);
 };
-
 
 #endif /* KONQMULTITABBAR_H */
 

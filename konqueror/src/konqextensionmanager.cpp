@@ -37,23 +37,22 @@
 #include "konqview.h"
 #include "konqmainwindow.h"
 
-
 class KonqExtensionManagerPrivate
 {
 public:
     KPluginSelector *pluginSelector;
     KonqMainWindow *mainWindow;
-    KParts::ReadOnlyPart* activePart;
+    KParts::ReadOnlyPart *activePart;
     bool isChanged;
 };
 
-KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart* activePart)
-    : KDialog( parent )
+KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart *activePart)
+    : KDialog(parent)
 {
-    setCaption( i18nc("@title:window", "Configure") );
-    setButtons( Default | Cancel | Apply | Ok | User1 );
-    setButtonGuiItem( User1, KStandardGuiItem::reset() );
-    setObjectName( QLatin1String( "extensionmanager" ) );
+    setCaption(i18nc("@title:window", "Configure"));
+    setButtons(Default | Cancel | Apply | Ok | User1);
+    setButtonGuiItem(User1, KStandardGuiItem::reset());
+    setObjectName(QLatin1String("extensionmanager"));
 
     d = new KonqExtensionManagerPrivate;
     showButton(User1, false);
@@ -71,16 +70,16 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->activePart = activePart;
 
     d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KSharedConfig::openConfig());
-    if ( activePart ) {
+    if (activePart) {
         KAboutData componentData = activePart->componentData();
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools");
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar");
     }
 
-    connect( this, SIGNAL(okClicked()), SLOT(slotOk()) );
-    connect( this, SIGNAL(applyClicked()), SLOT(slotApply()) );
-    connect( this, SIGNAL(defaultClicked()), SLOT(slotDefault()) );
-    connect( this, SIGNAL(user1Clicked()), SLOT(slotUser1()) );
+    connect(this, SIGNAL(okClicked()), SLOT(slotOk()));
+    connect(this, SIGNAL(applyClicked()), SLOT(slotApply()));
+    connect(this, SIGNAL(defaultClicked()), SLOT(slotDefault()));
+    connect(this, SIGNAL(user1Clicked()), SLOT(slotUser1()));
 }
 
 KonqExtensionManager::~KonqExtensionManager()
@@ -101,25 +100,22 @@ void KonqExtensionManager::setChanged(bool c)
 
 void KonqExtensionManager::apply()
 {
-    if(d->isChanged)
-    {
+    if (d->isChanged) {
         d->pluginSelector->save();
         setChanged(false);
 
-        if( d->mainWindow )
-        {
+        if (d->mainWindow) {
             KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, "konqueror");
-            QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
+            QList<KParts::Plugin *> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
 
             for (int i = 0; i < plugins.size(); ++i) {
                 d->mainWindow->factory()->addClient(plugins.at(i));
             }
         }
 
-        if ( d->activePart )
-        {
+        if (d->activePart) {
             KParts::Plugin::loadPlugins(d->activePart, d->activePart, d->activePart->componentName());
-            QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects( d->activePart );
+            QList<KParts::Plugin *> plugins = KParts::Plugin::pluginObjects(d->activePart);
 
             for (int i = 0; i < plugins.size(); ++i) {
                 d->activePart->factory()->addClient(plugins.at(i));

@@ -33,7 +33,7 @@ private Q_SLOTS:
         // we specify the mimetype so that we don't have to wait for a KonqRun
         KonqOpenURLRequest req; req.forceAutoEmbed = true;
         mainWindow.openUrl(0, KUrl("data:text/plain, Hello World"), "text/plain", req);
-        KonqView* view = mainWindow.currentView();
+        KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
         QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000));
@@ -54,7 +54,7 @@ private Q_SLOTS:
         // Related to the previous test; ensure we keep the same viewmode when switching between folders
         KonqMainWindow mainWindow;
         mainWindow.openUrl(0, KUrl(QDir::homePath()));
-        KonqView* view = mainWindow.currentView();
+        KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QPointer<KParts::ReadOnlyPart> part = view->part();
         QVERIFY(view->part());
@@ -71,6 +71,6 @@ private Q_SLOTS:
 
 };
 
-QTEST_KDEMAIN_WITH_COMPONENTNAME( KonqViewTest, GUI, "konqueror" )
+QTEST_KDEMAIN_WITH_COMPONENTNAME(KonqViewTest, GUI, "konqueror")
 
 #include "konqviewtest.moc"

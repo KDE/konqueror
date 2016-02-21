@@ -33,7 +33,7 @@ class KConfigGroup;
 class ModuleManager
 {
 public:
-    ModuleManager(KConfigGroup* config);
+    ModuleManager(KConfigGroup *config);
 
     /// Returns the filenames of the modules that should be shown in the GUI
     /// Example: "home.desktop" (default module), "dirtree1.desktop" (added by user)...
@@ -44,34 +44,37 @@ public:
     KService::List availablePlugins() const;
 
     /// Returns the paths of all modules that match a given filter, like websidebarplugin*.desktop
-    QStringList localModulePaths(const QString& filter) const;
+    QStringList localModulePaths(const QString &filter) const;
 
     /// Returns the relative path in the "data" resource, for a given module
-    QString moduleDataPath(const QString& fileName) const;
+    QString moduleDataPath(const QString &fileName) const;
     /// Returns the relative path of the entries directory in the "data" resource
-    QString relativeDataPath() const { return "konqsidebartng/entries/"; }
+    QString relativeDataPath() const
+    {
+        return "konqsidebartng/entries/";
+    }
     /// Returns the full path for a given module. TEMP HACK, TO BE REMOVED
-    QString moduleFullPath(const QString& fileName) const;
+    QString moduleFullPath(const QString &fileName) const;
 
     void rollbackToDefault();
 
-    void setModuleName(const QString& fileName, const QString& moduleName);
-    void setModuleUrl(const QString& fileName, const QUrl& url);
-    void setModuleIcon(const QString& fileName, const QString& icon);
+    void setModuleName(const QString &fileName, const QString &moduleName);
+    void setModuleUrl(const QString &fileName, const QUrl &url);
+    void setModuleIcon(const QString &fileName, const QString &icon);
 
     /// Find a unique filename for a new module, based on a template name
     /// like "dirtree%1.desktop".
     /// @return the full path. templ is modified to contain the filename only.
-    QString addModuleFromTemplate(QString& templ);
+    QString addModuleFromTemplate(QString &templ);
 
     /// Called when a module was added
-    void moduleAdded(const QString& fileName);
+    void moduleAdded(const QString &fileName);
 
     /// Remove a module (deletes the local .desktop file)
-    void removeModule(const QString& fileName);
+    void removeModule(const QString &fileName);
 
 private:
-    void sortGlobalEntries(QStringList& fileNames) const;
+    void sortGlobalEntries(QStringList &fileNames) const;
 
     KConfigGroup *m_config; // owned by SidebarWidget
     QString m_localPath; // local path

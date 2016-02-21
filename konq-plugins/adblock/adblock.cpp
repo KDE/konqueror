@@ -1,4 +1,3 @@
-// -*- mode: c++; c-basic-offset: 4 -*-
 /*
   Copyright (c) 2008 Laurent Montel <montel@kde.org>
   Copyright (C) 2006 Daniele Galdi <daniele.galdi@gmail.com>
@@ -54,45 +53,43 @@ using namespace DOM;
 #include <qcursor.h>
 #include <qregexp.h>
 
-
-K_PLUGIN_FACTORY( AdBlockFactory, registerPlugin< AdBlock >(); )
-K_EXPORT_PLUGIN( AdBlockFactory( "adblock" ) )
+K_PLUGIN_FACTORY(AdBlockFactory, registerPlugin< AdBlock >();)
+K_EXPORT_PLUGIN(AdBlockFactory("adblock"))
 
 AdBlock::AdBlock(QObject *parent, const QVariantList & /*args*/) :
     Plugin(parent),
     m_menu(0), m_elements(0)
 {
     m_part = dynamic_cast<KHTMLPart *>(parent);
-    if(!m_part)
-    {
+    if (!m_part) {
         kDebug() << "couldn't get KHTMLPart";
         return;
     }
-    m_menu = new KActionMenu(KIcon( "preferences-web-browser-adblock" ), i18n("Adblock"),
-                           actionCollection() );
-    actionCollection()->addAction( "action adblock", m_menu );
-    m_menu->setDelayed( false );
+    m_menu = new KActionMenu(KIcon("preferences-web-browser-adblock"), i18n("Adblock"),
+                             actionCollection());
+    actionCollection()->addAction("action adblock", m_menu);
+    m_menu->setDelayed(false);
 
-    QAction *a = actionCollection()->addAction(  "show_elements");
+    QAction *a = actionCollection()->addAction("show_elements");
     a->setText(i18n("Show Blockable Elements..."));
     connect(a, SIGNAL(triggered()), this, SLOT(slotConfigure()));
     m_menu->addAction(a);
 
-    a = actionCollection()->addAction(  "configure");
+    a = actionCollection()->addAction("configure");
     a->setText(i18n("Configure Filters..."));
     connect(a, SIGNAL(triggered()), this, SLOT(showKCModule()));
     m_menu->addAction(a);
 
-    a = actionCollection()->addAction( "separator" );
-    a->setSeparator( true );
+    a = actionCollection()->addAction("separator");
+    a->setSeparator(true);
     m_menu->addAction(a);
 
-    a = actionCollection()->addAction(  "disable_for_this_page");
+    a = actionCollection()->addAction("disable_for_this_page");
     a->setText(i18n("No blocking for this page"));
     connect(a, SIGNAL(triggered()), this, SLOT(slotDisableForThisPage()));
     m_menu->addAction(a);
 
-    a = actionCollection()->addAction(  "disable_for_this_site");
+    a = actionCollection()->addAction("disable_for_this_site");
     a->setText(i18n("No blocking for this site"));
     connect(a, SIGNAL(triggered()), this, SLOT(slotDisableForThisSite()));
     m_menu->addAction(a);
@@ -104,8 +101,9 @@ AdBlock::~AdBlock()
 {
     KParts::StatusBarExtension *statusBarEx = KParts::StatusBarExtension::childObject(m_part);
 
-    if (statusBarEx && m_label)
+    if (statusBarEx && m_label) {
         statusBarEx->removeStatusBarItem(m_label.data());
+    }
     delete m_label.data();
     m_label.clear();
     delete m_menu;
@@ -116,7 +114,9 @@ AdBlock::~AdBlock()
 
 void AdBlock::initLabel()
 {
-    if (m_label) return;
+    if (m_label) {
+        return;
+    }
 
     KParts::StatusBarExtension *statusBarEx = KParts::StatusBarExtension::childObject(m_part);
 
@@ -125,7 +125,7 @@ void AdBlock::initLabel()
         return;
     }
 
-    KUrlLabel* label = new KUrlLabel(statusBarEx->statusBar());
+    KUrlLabel *label = new KUrlLabel(statusBarEx->statusBar());
 
     KIconLoader *loader = KIconLoader::global();
 
@@ -137,10 +137,9 @@ void AdBlock::initLabel()
     statusBarEx->addStatusBarItem(label, 0, false);
     connect(label, SIGNAL(leftClickedUrl()), this, SLOT(slotConfigure()));
     connect(label, SIGNAL(rightClickedUrl()), this, SLOT(contextMenu()));
-    
+
     m_label = label;
 }
-
 
 void AdBlock::disableForUrl(KUrl url)
 {
@@ -148,7 +147,7 @@ void AdBlock::disableForUrl(KUrl url)
     url.setRef(QString());
 
     KHTMLSettings *settings = const_cast<KHTMLSettings *>(m_part->settings());
-    settings->addAdFilter("@@"+url.url());
+    settings->addAdFilter("@@" + url.url());
 }
 
 void AdBlock::slotDisableForThisPage()
@@ -163,16 +162,14 @@ void AdBlock::slotDisableForThisSite()
     disableForUrl(u);
 }
 
-
 void AdBlock::slotConfigure()
 {
-    if (!m_part->settings()->isAdFilterEnabled())
-    {
-	KMessageBox::error(0,
+    if (!m_part->settings()->isAdFilterEnabled()) {
+        KMessageBox::error(0,
                            i18n("Please enable Konqueror's Adblock"),
                            i18nc("@title:window", "Adblock disabled"));
 
-	return;
+        return;
     }
 
     m_elements = new AdElementList;
@@ -187,7 +184,7 @@ void AdBlock::slotConfigure()
 
 void AdBlock::showKCModule()
 {
-    KCMultiDialog* dialogue = new KCMultiDialog(m_part->widget());
+    KCMultiDialog *dialogue = new KCMultiDialog(m_part->widget());
     dialogue->addModule("khtml_filter");
     connect(dialogue, SIGNAL(cancelClicked()), dialogue, SLOT(delayedDestruct()));
     connect(dialogue, SIGNAL(closeClicked()), dialogue, SLOT(delayedDestruct()));
@@ -199,15 +196,13 @@ void AdBlock::contextMenu()
     m_menu->menu()->exec(QCursor::pos());
 }
 
-
-
 void AdBlock::fillBlockableElements()
 {
-    fillWithHtmlTag("script", "src", i18n( "script" ));
-    fillWithHtmlTag("embed" , "src", i18n( "object" ));
-    fillWithHtmlTag("object", "src", i18n( "object" ));
+    fillWithHtmlTag("script", "src", i18n("script"));
+    fillWithHtmlTag("embed", "src", i18n("object"));
+    fillWithHtmlTag("object", "src", i18n("object"));
     // TODO: iframe's are not blocked by KHTML yet
-    fillWithHtmlTag("iframe", "src", i18n( "frame" ));
+    fillWithHtmlTag("iframe", "src", i18n("frame"));
     fillWithImages();
 
     updateFilters();
@@ -219,45 +214,45 @@ void AdBlock::fillWithImages()
 
     HTMLCollection images = htmlDoc.images();
 
-    for (unsigned int i = 0; i < images.length(); i++)
-    {
-	HTMLImageElement image = static_cast<HTMLImageElement>( images.item(i) );
+    for (unsigned int i = 0; i < images.length(); i++) {
+        HTMLImageElement image = static_cast<HTMLImageElement>(images.item(i));
 
-	DOMString src = image.src();
+        DOMString src = image.src();
 
-	QString url = htmlDoc.completeURL(src).string();
-	if (!url.isEmpty() && url != m_part->baseURL().url())
-	{
-	    AdElement element(url, i18n( "image" ), "IMG", false, image);
-	    if (!m_elements->contains( element ))
-		m_elements->append( element);
-	}
+        QString url = htmlDoc.completeURL(src).string();
+        if (!url.isEmpty() && url != m_part->baseURL().url()) {
+            AdElement element(url, i18n("image"), "IMG", false, image);
+            if (!m_elements->contains(element)) {
+                m_elements->append(element);
+            }
+        }
     }
 }
 
 void AdBlock::fillWithHtmlTag(const DOMString &tagName,
-			      const DOMString &attrName,
-			      const QString &category)
+                              const DOMString &attrName,
+                              const QString &category)
 {
     Document doc = m_part->document();
 
     NodeList nodes = doc.getElementsByTagName(tagName);
 
-    for (unsigned int i = 0; i < nodes.length(); i++)
-    {
-	Node node = nodes.item(i);
-	Node attr = node.attributes().getNamedItem(attrName);
+    for (unsigned int i = 0; i < nodes.length(); i++) {
+        Node node = nodes.item(i);
+        Node attr = node.attributes().getNamedItem(attrName);
 
-	DOMString src = attr.nodeValue();
-	if (src.isNull()) continue;
+        DOMString src = attr.nodeValue();
+        if (src.isNull()) {
+            continue;
+        }
 
-	QString url = doc.completeURL(src).string();
-	if (!url.isEmpty() && url != m_part->baseURL().url())
-	{
-	    AdElement element(url, category, tagName.string().toUpper(), false, attr);
-	    if (!m_elements->contains( element ))
-		m_elements->append( element);
-	}
+        QString url = doc.completeURL(src).string();
+        if (!url.isEmpty() && url != m_part->baseURL().url()) {
+            AdElement element(url, category, tagName.string().toUpper(), false, attr);
+            if (!m_elements->contains(element)) {
+                m_elements->append(element);
+            }
+        }
     }
 }
 
@@ -269,53 +264,46 @@ void AdBlock::addAdFilter(const QString &url)
     updateFilters();
 }
 
-
-
 void AdBlock::updateFilters()
 {
     const KHTMLSettings *settings = m_part->settings();
 
     AdElementList::iterator it;
-    for ( it = m_elements->begin(); it != m_elements->end(); ++it )
-    {
-	AdElement &element = (*it);
+    for (it = m_elements->begin(); it != m_elements->end(); ++it) {
+        AdElement &element = (*it);
 
         bool isWhitelist;
         QString filter = settings->adFilteredBy(element.url(), &isWhitelist);
-        if (!filter.isEmpty())
-        {
-            if (!isWhitelist)
-            {
+        if (!filter.isEmpty()) {
+            if (!isWhitelist) {
                 element.setBlocked(true);
-                element.setBlockedBy(i18n("Blocked by %1",filter));
+                element.setBlockedBy(i18n("Blocked by %1", filter));
+            } else {
+                element.setBlockedBy(i18n("Allowed by %1", filter));
             }
-            else
-                element.setBlockedBy(i18n("Allowed by %1",filter));
         }
     }
 }
 
-
-
 // ----------------------------------------------------------------------------
 
 AdElement::AdElement() :
-  m_blocked(false) {}
+    m_blocked(false) {}
 
 AdElement::AdElement(const QString &url, const QString &category,
-		     const QString &type, bool blocked, const DOM::Node&node) :
-  m_url(url), m_category(category), m_type(type), m_blocked(blocked),m_node( node ) {}
+                     const QString &type, bool blocked, const DOM::Node &node) :
+    m_url(url), m_category(category), m_type(type), m_blocked(blocked), m_node(node) {}
 
 AdElement &AdElement::operator=(const AdElement &obj)
 {
-  m_blocked = obj.m_blocked;
-  m_blockedBy = obj.m_blockedBy;
-  m_url = obj.m_url;
-  m_category = obj.m_category;
-  m_type = obj.m_type;
-  m_node = obj.m_node;
+    m_blocked = obj.m_blocked;
+    m_blockedBy = obj.m_blockedBy;
+    m_url = obj.m_url;
+    m_category = obj.m_category;
+    m_type = obj.m_type;
+    m_node = obj.m_node;
 
-  return *this;
+    return *this;
 }
 
 bool AdElement::operator==(const AdElement &obj)
@@ -325,28 +313,18 @@ bool AdElement::operator==(const AdElement &obj)
 
 bool AdElement::isBlocked() const
 {
-  return m_blocked;
+    return m_blocked;
 }
-
-
-
-
 
 QString AdElement::blockedBy() const
 {
     return m_blockedBy;
 }
 
-
 void AdElement::setBlockedBy(const QString &by)
 {
     m_blockedBy = by;
 }
-
-
-
-
-
 
 void AdElement::setBlocked(bool blocked)
 {
@@ -355,17 +333,17 @@ void AdElement::setBlocked(bool blocked)
 
 QString AdElement::url() const
 {
-  return m_url;
+    return m_url;
 }
 
 QString AdElement::category() const
 {
-  return m_category;
+    return m_category;
 }
 
 QString AdElement::type() const
 {
-  return m_type;
+    return m_type;
 }
 
 DOM::Node AdElement::node() const

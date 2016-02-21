@@ -11,7 +11,6 @@
 #include <QLineEdit>
 #include <QCheckBox>
 
-
 #include <kcmodule.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
@@ -24,26 +23,26 @@ class KAboutData;
 */
 class KHTTPOptions : public KCModule
 {
-Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent);
 
     virtual void load();
     virtual void save();
     virtual void defaults();
 
-  private:
+private:
 
     KSharedConfig::Ptr m_pConfig;
     QString m_groupname;
 
     // Acceptable languages "LANG" - locale selected languages
-    QLabel *lb_languages;	
-    QLineEdit *le_languages;	
+    QLabel *lb_languages;
+    QLineEdit *le_languages;
 
     // Acceptable charsets "CHARSET" - locale selected charset
-    QLabel *lb_charsets;	
-    QLineEdit *le_charsets;	
+    QLabel *lb_charsets;
+    QLineEdit *le_charsets;
 
     QString defaultCharsets;
 

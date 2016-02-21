@@ -28,7 +28,7 @@ class KonqRmbEventFilter : public QObject
     Q_OBJECT
 
 public:
-    static KonqRmbEventFilter* self();
+    static KonqRmbEventFilter *self();
 
     void reparseConfiguration();
 

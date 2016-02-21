@@ -44,8 +44,7 @@
 // (module not present globally and not "added" are either modified copies of
 // not-installed-anymore modules, or modules that were only added for another profile).
 
-
-ModuleManager::ModuleManager(KConfigGroup* config)
+ModuleManager::ModuleManager(KConfigGroup *config)
     : m_config(config)
 {
     m_localPath = KGlobal::dirs()->saveLocation("data", relativeDataPath(), true);
@@ -66,7 +65,7 @@ QStringList ModuleManager::modules() const
     QDir globalDir(entries_dirs.last());
     //kDebug() << "Listing" << entries_dirs.last();
     const QStringList globalDirEntries = globalDir.entryList(QDir::Files | QDir::NoDotAndDotDot);
-    Q_FOREACH(const QString& globalEntry, globalDirEntries) {
+    Q_FOREACH (const QString &globalEntry, globalDirEntries) {
         //kDebug() << " found" << globalEntry;
         if (!deletedModules.contains(globalEntry)) {
             fileNames.append(globalEntry);
@@ -74,9 +73,10 @@ QStringList ModuleManager::modules() const
     }
     sortGlobalEntries(fileNames);
     //kDebug() << "Adding local modules:" << addedModules;
-    Q_FOREACH(const QString& module, addedModules) {
-        if (!fileNames.contains(module))
+    Q_FOREACH (const QString &module, addedModules) {
+        if (!fileNames.contains(module)) {
             fileNames.append(module);
+        }
     }
 
     return fileNames;
@@ -88,19 +88,19 @@ KService::List ModuleManager::availablePlugins() const
     // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
     const QStringList files = KGlobal::dirs()->findAllResources("data", "konqsidebartng/plugins/*.desktop");
     KService::List services;
-    Q_FOREACH(const QString& path, files) {
+    Q_FOREACH (const QString &path, files) {
         KDesktopFile df(path); // no merging. KService warns, and we don't need it.
         services.append(KService::Ptr(new KService(&df)));
     }
     return services;
 }
 
-QString ModuleManager::moduleDataPath(const QString& fileName) const
+QString ModuleManager::moduleDataPath(const QString &fileName) const
 {
     return relativeDataPath() + fileName;
 }
 
-QString ModuleManager::moduleFullPath(const QString& fileName) const
+QString ModuleManager::moduleFullPath(const QString &fileName) const
 {
     return KGlobal::dirs()->locate("data", moduleDataPath(fileName));
 }
@@ -110,10 +110,10 @@ void ModuleManager::rollbackToDefault()
     const QString loc = KGlobal::dirs()->saveLocation("data", "konqsidebartng/");
     QDir dir(loc);
     const QStringList dirEntries = dir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-    Q_FOREACH(const QString& subdir, dirEntries) {
+    Q_FOREACH (const QString &subdir, dirEntries) {
         if (subdir != "add") {
-            kDebug() << "Deleting" << (loc+subdir);
-            KIO::Job* job = KIO::del(QUrl::fromLocalFile(loc+subdir), KIO::HideProgressInfo);
+            kDebug() << "Deleting" << (loc + subdir);
+            KIO::Job *job = KIO::del(QUrl::fromLocalFile(loc + subdir), KIO::HideProgressInfo);
             job->exec();
         }
     }
@@ -121,17 +121,17 @@ void ModuleManager::rollbackToDefault()
     m_config->writeEntry("AddedModules", QStringList());
 }
 
-void ModuleManager::setModuleName(const QString& fileName, const QString& moduleName)
+void ModuleManager::setModuleName(const QString &fileName, const QString &moduleName)
 {
     // Write the name in the .desktop file of this button.
     KConfig desktopFile(m_localPath + fileName, KConfig::SimpleConfig);
     KConfigGroup ksc(&desktopFile, "Desktop Entry");
     ksc.writeEntry("Name", moduleName);
-    ksc.writeEntry("Name", moduleName, KConfigBase::Persistent|KConfigBase::Localized);
+    ksc.writeEntry("Name", moduleName, KConfigBase::Persistent | KConfigBase::Localized);
     ksc.sync();
 }
 
-void ModuleManager::setModuleUrl(const QString& fileName, const QUrl& url)
+void ModuleManager::setModuleUrl(const QString &fileName, const QUrl &url)
 {
     KConfig desktopFile(m_localPath + fileName, KConfig::SimpleConfig);
     KConfigGroup ksc(&desktopFile, "Desktop Entry");
@@ -139,7 +139,7 @@ void ModuleManager::setModuleUrl(const QString& fileName, const QUrl& url)
     ksc.sync();
 }
 
-void ModuleManager::setModuleIcon(const QString& fileName, const QString& icon)
+void ModuleManager::setModuleIcon(const QString &fileName, const QString &icon)
 {
     KConfig desktopFile(m_localPath + fileName, KConfig::SimpleConfig);
     KConfigGroup ksc(&desktopFile, "Desktop Entry");
@@ -147,7 +147,7 @@ void ModuleManager::setModuleIcon(const QString& fileName, const QString& icon)
     ksc.sync();
 }
 
-void ModuleManager::removeModule(const QString& fileName)
+void ModuleManager::removeModule(const QString &fileName)
 {
     // Remove the local file (if it exists)
     QFile f(m_localPath + fileName);
@@ -156,29 +156,32 @@ void ModuleManager::removeModule(const QString& fileName)
     // Mark module as deleted (so that we skip global file, if there's one)
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
-    if (!deletedModules.contains(fileName))
+    if (!deletedModules.contains(fileName)) {
         deletedModules.append(fileName);
+    }
     addedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
 }
 
-void ModuleManager::moduleAdded(const QString& fileName)
+void ModuleManager::moduleAdded(const QString &fileName)
 {
     kDebug() << fileName;
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
-    if (!addedModules.contains(fileName))
+    if (!addedModules.contains(fileName)) {
         addedModules.append(fileName);
+    }
     deletedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
 }
 
-QString ModuleManager::addModuleFromTemplate(QString& templ)
+QString ModuleManager::addModuleFromTemplate(QString &templ)
 {
-    if (!templ.contains("%1"))
+    if (!templ.contains("%1")) {
         kWarning() << "Template filename should contain %1";
+    }
 
     QString filename = templ.arg(QString());
     QString myFile = KStandardDirs::locateLocal("data", moduleDataPath(filename));
@@ -199,23 +202,23 @@ QString ModuleManager::addModuleFromTemplate(QString& templ)
     return myFile;
 }
 
-QStringList ModuleManager::localModulePaths(const QString& filter) const
+QStringList ModuleManager::localModulePaths(const QString &filter) const
 {
     return QDir(m_localPath).entryList(QStringList() << filter);
 }
 
-void ModuleManager::sortGlobalEntries(QStringList& fileNames) const
+void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
 {
     QMap<int, QString> sorter;
-    Q_FOREACH(const QString& fileName, fileNames) {
+    Q_FOREACH (const QString &fileName, fileNames) {
         const QString path = moduleDataPath(fileName);
         if (KStandardDirs::locate("data", path).isEmpty()) {
             // doesn't exist anymore, skip it
             kDebug() << "Skipping" << path;
         } else {
             KSharedConfig::Ptr config = KSharedConfig::openConfig(path,
-                                                                  KConfig::NoGlobals,
-                                                                  QStandardPaths::GenericDataLocation);
+                                        KConfig::NoGlobals,
+                                        QStandardPaths::GenericDataLocation);
             KConfigGroup configGroup(config, "Desktop Entry");
             const int weight = configGroup.readEntry("X-KDE-Weight", 0);
             sorter.insert(weight, fileName);

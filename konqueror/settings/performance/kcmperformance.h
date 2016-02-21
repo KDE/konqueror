@@ -29,30 +29,30 @@ class SystemWidget;
 
 class Config
     : public KCModule
-    {
+{
     Q_OBJECT
-    public:
-        Config( QWidget* parent_P, const QVariantList &args );
-        virtual void load();
-        virtual void save();
-        virtual void defaults();
-    private:
-        Konqueror* konqueror_widget;
-        SystemWidget* system_widget;
-    };
+public:
+    Config(QWidget *parent_P, const QVariantList &args);
+    virtual void load();
+    virtual void save();
+    virtual void defaults();
+private:
+    Konqueror *konqueror_widget;
+    SystemWidget *system_widget;
+};
 
 class KonquerorConfig
     : public KCModule
-    {
+{
     Q_OBJECT
-    public:
-        KonquerorConfig( QWidget* parent_P, const QVariantList &args );
-        virtual void load();
-        virtual void save();
-        virtual void defaults();
-    private:
-        Konqueror* widget;
-    };
+public:
+    KonquerorConfig(QWidget *parent_P, const QVariantList &args);
+    virtual void load();
+    virtual void save();
+    virtual void defaults();
+private:
+    Konqueror *widget;
+};
 
 } // namespace
 

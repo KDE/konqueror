@@ -82,7 +82,7 @@ private:
 
     // QString substitutueSearchText(const QString &searchText, const QString &requestURL) const;
     QByteArray m_jobData;
-    QMap<QString, OpenSearchEngine*> m_enginesMap;
+    QMap<QString, OpenSearchEngine *> m_enginesMap;
     OpenSearchEngine *m_activeEngine;
     STATE m_state;
 };

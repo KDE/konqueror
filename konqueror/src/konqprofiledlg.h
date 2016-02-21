@@ -31,32 +31,32 @@ typedef QMap<QString, QString> KonqProfileMap;
 
 class KonqProfileDlg : public KDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KonqProfileDlg( KonqViewManager *manager, const QString &preselectProfile, QWidget *parent = 0L );
-  ~KonqProfileDlg();
+    KonqProfileDlg(KonqViewManager *manager, const QString &preselectProfile, QWidget *parent = 0L);
+    ~KonqProfileDlg();
 
-  /**
-   * Find, read and return all available profiles
-   * @return a map with < name, full path >
-   */
-  static KonqProfileMap readAllProfiles();
+    /**
+     * Find, read and return all available profiles
+     * @return a map with < name, full path >
+     */
+    static KonqProfileMap readAllProfiles();
 
-  class KonqProfileItem;
+    class KonqProfileItem;
 
 protected Q_SLOTS:
-  void slotRenameProfile();
-  void slotDeleteProfile();
-  void slotSave();
-  void slotTextChanged( const QString & );
-  void slotSelectionChanged();
+    void slotRenameProfile();
+    void slotDeleteProfile();
+    void slotSave();
+    void slotTextChanged(const QString &);
+    void slotSelectionChanged();
 
-  void slotItemRenamed( QListWidgetItem * );
+    void slotItemRenamed(QListWidgetItem *);
 
 private:
-  class KonqProfileDlgPrivate;
-  KonqProfileDlgPrivate * const d;
-  void loadAllProfiles(const QString & = QString());
+    class KonqProfileDlgPrivate;
+    KonqProfileDlgPrivate *const d;
+    void loadAllProfiles(const QString & = QString());
 };
 
 #endif

@@ -16,24 +16,24 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA  02110-1301  USA
  */
- 
+
 #ifndef OPENSEARCHREADER_H
 #define OPENSEARCHREADER_H
- 
+
 #include <QtCore/QXmlStreamReader>
- 
+
 class OpenSearchEngine;
- 
+
 class OpenSearchReader : public QXmlStreamReader
 {
 public:
     OpenSearchReader();
- 
+
     OpenSearchEngine *read(const QByteArray &data);
     OpenSearchEngine *read(QIODevice *device);
- 
+
 private:
     OpenSearchEngine *read();
 };
- 
+
 #endif // OPENSEARCHREADER_H

@@ -37,7 +37,7 @@ class KonqHistoryProviderPrivate : public QObject, QDBusContext
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.Konqueror.HistoryManager")
 public:
-    KonqHistoryProviderPrivate(KonqHistoryProvider* qq);
+    KonqHistoryProviderPrivate(KonqHistoryProvider *qq);
 
     /**
      * Resizes the history list to contain less or equal than m_maxCount
@@ -61,7 +61,7 @@ Q_SIGNALS: // DBUS methods/signals,  they have to match org.kde.Konqueror.Histor
      * @param saveId is the dbus service of the sender so that
      * only the sender saves the new history.
      */
-    void notifyHistoryEntry(const QByteArray & historyEntry);
+    void notifyHistoryEntry(const QByteArray &historyEntry);
 
     /**
      * Called when the configuration of the maximum count changed.
@@ -84,24 +84,25 @@ Q_SIGNALS: // DBUS methods/signals,  they have to match org.kde.Konqueror.Histor
      * Notifes about a url that has to be removed from the history.
      * The sender instance has to save the history.
      */
-    void notifyRemove(const QString& url);
+    void notifyRemove(const QString &url);
 
     /**
      * Notifes about a list of urls that has to be removed from the history.
      * The sender instance has to save the history.
      */
-    void notifyRemoveList(const QStringList& urls);
+    void notifyRemoveList(const QStringList &urls);
 
 private Q_SLOTS: // connected to DBUS signals
-    void slotNotifyHistoryEntry(const QByteArray& historyEntry);
+    void slotNotifyHistoryEntry(const QByteArray &historyEntry);
     void slotNotifyMaxCount(int count);
     void slotNotifyMaxAge(int days);
     void slotNotifyClear();
-    void slotNotifyRemove(const QString& url);
-    void slotNotifyRemoveList(const QStringList& urls);
+    void slotNotifyRemove(const QString &url);
+    void slotNotifyRemoveList(const QStringList &urls);
 
 public:
-    KSharedConfig::Ptr konqConfig() {
+    KSharedConfig::Ptr konqConfig()
+    {
         // We want to use konquerorrc even when this class isn't used in konqueror,
         // this is why this doesn't say KSharedConfig::openConfig().
         return KSharedConfig::openConfig(QStringLiteral("konquerorrc"));
@@ -110,10 +111,10 @@ public:
     KonqHistoryList m_history;
     int m_maxCount;   // maximum of history entries
     int m_maxAgeDays; // maximum age of a history entry
-    KonqHistoryProvider* q;
+    KonqHistoryProvider *q;
 };
 
-KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider* qq)
+KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider *qq)
     : QObject(), QDBusContext(), q(qq)
 {
     // defaults
@@ -137,7 +138,7 @@ KonqHistoryProviderPrivate::KonqHistoryProviderPrivate(KonqHistoryProvider* qq)
 
 ////
 
-KonqHistoryProvider::KonqHistoryProvider(QObject* parent)
+KonqHistoryProvider::KonqHistoryProvider(QObject *parent)
     : KParts::HistoryProvider(parent), d(new KonqHistoryProviderPrivate(this))
 {
 }
@@ -147,7 +148,7 @@ KonqHistoryProvider::~KonqHistoryProvider()
     delete d;
 }
 
-const KonqHistoryList& KonqHistoryProvider::entries() const
+const KonqHistoryList &KonqHistoryProvider::entries() const
 {
     return d->m_history;
 }
@@ -165,7 +166,7 @@ bool KonqHistoryProvider::loadHistory()
 
     QListIterator<KonqHistoryEntry> it(d->m_history);
     while (it.hasNext()) {
-        const KonqHistoryEntry& entry = it.next();
+        const KonqHistoryEntry &entry = it.next();
 
         // Fill the entries into KParts::HistoryProvider.
         const QString urlString = entry.url.url();
@@ -173,8 +174,9 @@ bool KonqHistoryProvider::loadHistory()
         // DF: also insert the "pretty" version if different
         // This helps getting 'visited' links on websites which don't use fully-escaped urls.
         const QString prettyUrlString = entry.url.toDisplayString();
-        if (urlString != prettyUrlString)
+        if (urlString != prettyUrlString) {
             KParts::HistoryProvider::insert(prettyUrlString);
+        }
     }
 
     return true;
@@ -182,20 +184,21 @@ bool KonqHistoryProvider::loadHistory()
 
 void KonqHistoryProviderPrivate::adjustSize()
 {
-    if (m_history.isEmpty())
+    if (m_history.isEmpty()) {
         return;
+    }
 
     KonqHistoryEntry entry = m_history.first();
     const QDateTime expirationDate(QDate::currentDate().addDays(-m_maxAgeDays));
 
     while (m_history.count() > qint32(m_maxCount) ||
-           (m_maxAgeDays > 0 && entry.lastVisited.isValid() && entry.lastVisited < expirationDate)) // i.e. entry is expired
-    {
+            (m_maxAgeDays > 0 && entry.lastVisited.isValid() && entry.lastVisited < expirationDate)) { // i.e. entry is expired
         q->removeEntry(m_history.begin());
 
-        if (m_history.isEmpty())
+        if (m_history.isEmpty()) {
             break;
-	entry = m_history.first();
+        }
+        entry = m_history.first();
     }
 }
 
@@ -204,19 +207,20 @@ static QString dbusService()
     return QDBusConnection::sessionBus().baseService();
 }
 
-void KonqHistoryProvider::emitAddToHistory(const KonqHistoryEntry& entry)
+void KonqHistoryProvider::emitAddToHistory(const KonqHistoryEntry &entry)
 {
     QByteArray data;
     QDataStream stream(&data, QIODevice::WriteOnly);
     entry.save(stream, KonqHistoryEntry::MarshalUrlAsStrings);
     stream << dbusService();
     // Protection against very long urls (like data:)
-    if (data.size() > 4096)
+    if (data.size() > 4096) {
         return;
+    }
     emit d->notifyHistoryEntry(data);
 }
 
-void KonqHistoryProvider::emitRemoveFromHistory(const QUrl& url)
+void KonqHistoryProvider::emitRemoveFromHistory(const QUrl &url)
 {
     emit d->notifyRemove(url.url());
 }
@@ -224,8 +228,9 @@ void KonqHistoryProvider::emitRemoveFromHistory(const QUrl& url)
 void KonqHistoryProvider::emitRemoveListFromHistory(const QList<QUrl> &urls)
 {
     QStringList result;
-    foreach (const QUrl& url, urls)
+    foreach (const QUrl &url, urls) {
         result << url.url();
+    }
     emit d->notifyRemoveList(result);
 }
 
@@ -247,12 +252,12 @@ void KonqHistoryProvider::emitSetMaxAge(int days)
 /**
  * Returns whether the D-Bus call we are handling was a call from us self
  */
-static bool isSenderOfSignal(const QDBusMessage& msg)
+static bool isSenderOfSignal(const QDBusMessage &msg)
 {
     return dbusService() == msg.service();
 }
 
-void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray& data)
+void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray &data)
 {
     KonqHistoryEntry e;
     QDataStream stream(const_cast<QByteArray *>(&data), QIODevice::ReadOnly);
@@ -273,22 +278,24 @@ void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray& data)
     if (!newEntry) {
         entry = *existingEntry;
     } else { // create a new history entry
-	entry.url = e.url;
-	entry.firstVisited = e.firstVisited;
-	entry.numberOfTimesVisited = 0; // will get set to 1 below
-	q->KParts::HistoryProvider::insert(urlString);
+        entry.url = e.url;
+        entry.firstVisited = e.firstVisited;
+        entry.numberOfTimesVisited = 0; // will get set to 1 below
+        q->KParts::HistoryProvider::insert(urlString);
     }
 
-    if (!e.typedUrl.isEmpty())
-	entry.typedUrl = e.typedUrl;
-    if (!e.title.isEmpty())
-	entry.title = e.title;
+    if (!e.typedUrl.isEmpty()) {
+        entry.typedUrl = e.typedUrl;
+    }
+    if (!e.title.isEmpty()) {
+        entry.title = e.title;
+    }
     entry.numberOfTimesVisited += e.numberOfTimesVisited;
     entry.lastVisited = e.lastVisited;
 
-    if (newEntry)
+    if (newEntry) {
         m_history.append(entry);
-    else {
+    } else {
         *existingEntry = entry;
     }
 
@@ -309,8 +316,8 @@ void KonqHistoryProviderPrivate::slotNotifyMaxCount(int count)
     cs.writeEntry("Maximum of History entries", m_maxCount);
 
     if (isSenderOfSignal(message())) {
-	saveHistory();
-	cs.sync();
+        saveHistory();
+        cs.sync();
     }
 }
 
@@ -324,8 +331,8 @@ void KonqHistoryProviderPrivate::slotNotifyMaxAge(int days)
     cs.writeEntry("Maximum age of History entries", m_maxAgeDays);
 
     if (isSenderOfSignal(message())) {
-	saveHistory();
-	cs.sync();
+        saveHistory();
+        cs.sync();
     }
 }
 
@@ -333,26 +340,27 @@ void KonqHistoryProviderPrivate::slotNotifyClear()
 {
     m_history.clear();
 
-    if (isSenderOfSignal(message()))
-	saveHistory();
+    if (isSenderOfSignal(message())) {
+        saveHistory();
+    }
 
     q->KParts::HistoryProvider::clear(); // also emits the cleared() signal
 }
 
-void KonqHistoryProviderPrivate::slotNotifyRemove(const QString& urlStr)
+void KonqHistoryProviderPrivate::slotNotifyRemove(const QString &urlStr)
 {
     QUrl url(urlStr);
 
     KonqHistoryList::iterator existingEntry = q->findEntry(url);
     if (existingEntry != m_history.end()) {
         q->removeEntry(existingEntry);
-	if (isSenderOfSignal(message())) {
-	    saveHistory();
+        if (isSenderOfSignal(message())) {
+            saveHistory();
         }
     }
 }
 
-void KonqHistoryProviderPrivate::slotNotifyRemoveList(const QStringList& urls)
+void KonqHistoryProviderPrivate::slotNotifyRemoveList(const QStringList &urls)
 {
     bool doSave = false;
     QStringList::const_iterator it = urls.begin();
@@ -362,7 +370,7 @@ void KonqHistoryProviderPrivate::slotNotifyRemoveList(const QStringList& urls)
         if (existingEntry != m_history.end()) {
             q->removeEntry(existingEntry);
             doSave = true;
-	}
+        }
     }
 
     if (doSave && isSenderOfSignal(message())) {
@@ -383,12 +391,12 @@ void KonqHistoryProvider::removeEntry(KonqHistoryList::iterator existingEntry)
 
 int KonqHistoryProvider::maxCount() const
 {
-     return d->m_maxCount;
+    return d->m_maxCount;
 }
 
 int KonqHistoryProvider::maxAge() const
 {
-     return d->m_maxAgeDays;
+    return d->m_maxAgeDays;
 }
 
 bool KonqHistoryProviderPrivate::saveHistory()
@@ -400,7 +408,7 @@ bool KonqHistoryProviderPrivate::saveHistory()
         return false;
     }
 
-    QDataStream fileStream (&file);
+    QDataStream fileStream(&file);
     fileStream << KonqHistoryLoader::historyVersion();
 
     QByteArray data;
@@ -422,25 +430,27 @@ bool KonqHistoryProviderPrivate::saveHistory()
 KonqHistoryList::iterator KonqHistoryProvider::findEntry(const QUrl &url)
 {
     // small optimization (dict lookup) for items _not_ in our history
-    if (!KParts::HistoryProvider::contains(url.url()))
+    if (!KParts::HistoryProvider::contains(url.url())) {
         return d->m_history.end();
+    }
     return d->m_history.findEntry(url);
 }
 
-KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const QUrl& url) const
+KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const QUrl &url) const
 {
     // small optimization (dict lookup) for items _not_ in our history
-    if (!KParts::HistoryProvider::contains(url.url()))
+    if (!KParts::HistoryProvider::contains(url.url())) {
         return d->m_history.constEnd();
+    }
     return d->m_history.constFindEntry(url);
 }
 
-void KonqHistoryProvider::finishAddingEntry(const KonqHistoryEntry& entry, bool isSender)
+void KonqHistoryProvider::finishAddingEntry(const KonqHistoryEntry &entry, bool isSender)
 {
     Q_UNUSED(entry); // this arg is used by konq's reimplementation
     if (isSender) {
-	// we are the sender of the broadcast, so we save
-	d->saveHistory();
+        // we are the sender of the broadcast, so we save
+        d->saveHistory();
     }
 }
 

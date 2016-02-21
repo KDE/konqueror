@@ -39,12 +39,12 @@ public:
 
 private Q_SLOTS:
     void slotOpenWindow(const QUrl &url);
-    void slotOpenTab(const QUrl& url);
-    void slotOpenWindowForIndex(const QModelIndex& index);
+    void slotOpenTab(const QUrl &url);
+    void slotOpenWindowForIndex(const QModelIndex &index);
 
 private:
-    KonqHistoryView* m_historyView;
-    KonqMainWindow* m_mainWindow;
+    KonqHistoryView *m_historyView;
+    KonqMainWindow *m_mainWindow;
 };
 
 #endif // KONQ_HISTORYDIALOG_H

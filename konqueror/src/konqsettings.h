@@ -25,7 +25,6 @@
 #include <QString>
 #include <kconfig.h>
 
-
 // TODO rename this file to konqfmsettings.h, or rename the class to KonqEmbedSettings in a konqembedsettings.h header
 
 /**
@@ -40,7 +39,7 @@ public:
     /**
      * The static instance of KonqFMSettings
      */
-    static KonqFMSettings * settings();
+    static KonqFMSettings *settings();
 
     /**
      * Reparse the configuration to update the already-created instances
@@ -56,7 +55,7 @@ public:
     // Use settings (and mimetype definition files)
     // to find whether to embed a certain service type or not
     // Only makes sense in konqueror.
-    bool shouldEmbed( const QString & serviceType ) const;
+    bool shouldEmbed(const QString &serviceType) const;
 
 private:
     /** Destructor. Don't delete any instance by yourself. */
@@ -73,7 +72,7 @@ private:
     // There is no default constructor. Use the provided ones.
     KonqFMSettings();
     // No copy constructor either. What for ?
-    KonqFMSettings( const KonqFMSettings &);
+    KonqFMSettings(const KonqFMSettings &);
 
     friend class KonqEmbedSettingsSingleton;
 };

@@ -29,7 +29,7 @@
 
 namespace KParts
 {
-  class ReadOnlyPart;
+class ReadOnlyPart;
 }
 
 class KConfig;
@@ -37,39 +37,57 @@ class KConfig;
 class LIBKONQ_EXPORT KonqFileSelectionEvent : public KParts::Event
 {
 public:
-  KonqFileSelectionEvent( const KFileItemList&selection, KParts::ReadOnlyPart *part );
-  ~KonqFileSelectionEvent();
+    KonqFileSelectionEvent(const KFileItemList &selection, KParts::ReadOnlyPart *part);
+    ~KonqFileSelectionEvent();
 
-  KFileItemList selection() const { return m_selection; }
-  KParts::ReadOnlyPart *part() const { return m_part; }
+    KFileItemList selection() const
+    {
+        return m_selection;
+    }
+    KParts::ReadOnlyPart *part() const
+    {
+        return m_part;
+    }
 
-  static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemSelectionEventName ); }
+    static bool test(const QEvent *event)
+    {
+        return KParts::Event::test(event, s_fileItemSelectionEventName);
+    }
 
 private:
-  Q_DISABLE_COPY(KonqFileSelectionEvent)
-  static const char * const s_fileItemSelectionEventName;
+    Q_DISABLE_COPY(KonqFileSelectionEvent)
+    static const char *const s_fileItemSelectionEventName;
 
-  KFileItemList m_selection;
-  KParts::ReadOnlyPart *m_part;
+    KFileItemList m_selection;
+    KParts::ReadOnlyPart *m_part;
 };
 
 class LIBKONQ_EXPORT KonqFileMouseOverEvent : public KParts::Event
 {
 public:
-  KonqFileMouseOverEvent( const KFileItem& item, KParts::ReadOnlyPart *part );
-  ~KonqFileMouseOverEvent();
+    KonqFileMouseOverEvent(const KFileItem &item, KParts::ReadOnlyPart *part);
+    ~KonqFileMouseOverEvent();
 
-  const KFileItem& item() const { return m_item; }
-  KParts::ReadOnlyPart *part() const { return m_part; }
+    const KFileItem &item() const
+    {
+        return m_item;
+    }
+    KParts::ReadOnlyPart *part() const
+    {
+        return m_part;
+    }
 
-  static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemMouseOverEventName ); }
+    static bool test(const QEvent *event)
+    {
+        return KParts::Event::test(event, s_fileItemMouseOverEventName);
+    }
 
 private:
-  Q_DISABLE_COPY(KonqFileMouseOverEvent)
-  static const char * const s_fileItemMouseOverEventName;
+    Q_DISABLE_COPY(KonqFileMouseOverEvent)
+    static const char *const s_fileItemMouseOverEventName;
 
-  KFileItem m_item;
-  KParts::ReadOnlyPart *m_part;
+    KFileItem m_item;
+    KParts::ReadOnlyPart *m_part;
 };
 
 #endif

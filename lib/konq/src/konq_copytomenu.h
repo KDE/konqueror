@@ -43,7 +43,7 @@ public:
      * @param widget note that this is not the parent of KonqCopyToMenu itself.
      * @since 4.2
      */
-    KonqCopyToMenu(QWidget* parentWidget);
+    KonqCopyToMenu(QWidget *parentWidget);
 
     /**
      * Destructor
@@ -54,13 +54,13 @@ public:
      * Sets the list of fileitems which the actions apply to.
      * Either call this or setUrls.
      */
-    void setItems(const KFileItemList& items);
+    void setItems(const KFileItemList &items);
 
     /**
      * Sets the URLs which the actions apply to.
      * Either call this or setItems.
      */
-    void setUrls(const QList<QUrl>& urls);
+    void setUrls(const QList<QUrl> &urls);
 
     /**
      * If setReadOnly(true) is called, the "Move To" submenu will not appear.
@@ -71,10 +71,10 @@ public:
      * Generate the actions and submenus, and adds them to the @p menu.
      * All actions are created as children of the menu.
      */
-    void addActionsTo(QMenu* menu);
+    void addActionsTo(QMenu *menu);
 
 private:
-    KonqCopyToMenuPrivate* const d;
+    KonqCopyToMenuPrivate *const d;
 };
 
 #endif /* KONQ_COPYTOMENU_H */

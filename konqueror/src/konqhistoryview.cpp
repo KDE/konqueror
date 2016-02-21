@@ -40,7 +40,7 @@
 #include <kmessagebox.h>
 #include <krun.h>
 
-KonqHistoryView::KonqHistoryView(QWidget* parent)
+KonqHistoryView::KonqHistoryView(QWidget *parent)
     : QWidget(parent)
     , m_searchTimer(0)
 {
@@ -88,7 +88,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     action->setText(i18n("&Preferences..."));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotPreferences);
 
-    QActionGroup* sortGroup = new QActionGroup(this);
+    QActionGroup *sortGroup = new QActionGroup(this);
     sortGroup->setExclusive(true);
 
     action = m_collection->addAction("byName");
@@ -103,7 +103,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     action->setData(qVariantFromValue(1));
     sortGroup->addAction(action);
 
-    KonqHistorySettings* settings = KonqHistorySettings::self();
+    KonqHistorySettings *settings = KonqHistorySettings::self();
     sortGroup->actions().at(settings->m_sortsByName ? 0 : 1)->setChecked(true);
     connect(sortGroup, &QActionGroup::triggered, this, &KonqHistoryView::slotSortChange);
 
@@ -113,7 +113,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
 
     connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
     mainLayout->addWidget(m_searchLineEdit);
     mainLayout->addWidget(m_treeView);
@@ -168,9 +168,9 @@ void KonqHistoryView::slotClearHistory()
     guiitem.setIcon(QIcon::fromTheme("edit-clear-history"));
 
     if (KMessageBox::warningContinueCancel(this,
-            i18n("Do you really want to clear the entire history?"),
-            i18nc("@title:window", "Clear History?"), guiitem)
-        == KMessageBox::Continue) {
+                                           i18n("Do you really want to clear the entire history?"),
+                                           i18nc("@title:window", "Clear History?"), guiitem)
+            == KMessageBox::Continue) {
         KonqHistoryProvider::self()->emitClear();
     }
 }
@@ -188,7 +188,7 @@ void KonqHistoryView::slotSortChange(QAction *action)
     }
 
     const int which = action->data().toInt();
-    KonqHistorySettings* settings = KonqHistorySettings::self();
+    KonqHistorySettings *settings = KonqHistorySettings::self();
     settings->m_sortsByName = (which == 0);
     settings->applySettings();
 }
@@ -209,12 +209,12 @@ void KonqHistoryView::slotTimerTimeout()
     m_historyProxyModel->setFilterFixedString(m_searchLineEdit->text());
 }
 
-QTreeView* KonqHistoryView::treeView() const
+QTreeView *KonqHistoryView::treeView() const
 {
     return m_treeView;
 }
 
-KLineEdit* KonqHistoryView::lineEdit() const
+KLineEdit *KonqHistoryView::lineEdit() const
 {
     return m_searchLineEdit;
 }
@@ -222,18 +222,20 @@ KLineEdit* KonqHistoryView::lineEdit() const
 void KonqHistoryView::slotNewWindow()
 {
     const QUrl url = urlForIndex(m_treeView->currentIndex());
-    if (url.isValid())
+    if (url.isValid()) {
         emit openUrlInNewWindow(url);
+    }
 }
 
 void KonqHistoryView::slotNewTab()
 {
     const QUrl url = urlForIndex(m_treeView->currentIndex());
-    if (url.isValid())
+    if (url.isValid()) {
         emit openUrlInNewTab(url);
+    }
 }
 
-QUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const
+QUrl KonqHistoryView::urlForIndex(const QModelIndex &index) const
 {
     if (!index.isValid() || (index.data(KonqHistory::TypeRole).toInt() != KonqHistory::HistoryType)) {
         return QUrl();
@@ -248,8 +250,8 @@ void KonqHistoryView::slotCopyLinkLocation()
     QUrl safeURL = urlForIndex(m_treeView->currentIndex()).adjusted(QUrl::RemovePassword);
 
     // Set it in both the mouse selection and in the clipboard
-    QMimeData* mimeData = new QMimeData;
+    QMimeData *mimeData = new QMimeData;
     mimeData->setUrls(QList<QUrl>() << safeURL);
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }

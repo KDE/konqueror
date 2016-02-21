@@ -46,39 +46,37 @@
 // Terminates fullscreen-mode for any full-screen window on the current desktop
 void KonqMisc::abortFullScreenMode()
 {
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( mainWindows )
-    {
-        foreach ( KonqMainWindow* window, *mainWindows )
-        {
-            if ( window->fullScreenMode() )
-            {
-                KWindowInfo info = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
-                if ( info.valid() && info.isOnCurrentDesktop() )
-                    window->setWindowState( window->windowState() & ~Qt::WindowFullScreen );
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (mainWindows) {
+        foreach (KonqMainWindow *window, *mainWindows) {
+            if (window->fullScreenMode()) {
+                KWindowInfo info = KWindowSystem::windowInfo(window->winId(), NET::WMDesktop);
+                if (info.valid() && info.isOnCurrentDesktop()) {
+                    window->setWindowState(window->windowState() & ~Qt::WindowFullScreen);
+                }
             }
         }
     }
 }
 
-KonqMainWindow * KonqMisc::createSimpleWindow(const QUrl &url, const KParts::OpenUrlArguments &args,
-                                               const KParts::BrowserArguments& browserArgs,
-                                               bool tempFile )
+KonqMainWindow *KonqMisc::createSimpleWindow(const QUrl &url, const KParts::OpenUrlArguments &args,
+        const KParts::BrowserArguments &browserArgs,
+        bool tempFile)
 {
-  abortFullScreenMode();
+    abortFullScreenMode();
 
-  KonqOpenURLRequest req;
-  req.args = args;
-  req.browserArgs = browserArgs;
-  req.tempFile = tempFile;
-  KonqMainWindow *win = new KonqMainWindow;
-  win->openUrl( 0L, url, QString(), req );
-  win->show();
+    KonqOpenURLRequest req;
+    req.args = args;
+    req.browserArgs = browserArgs;
+    req.tempFile = tempFile;
+    KonqMainWindow *win = new KonqMainWindow;
+    win->openUrl(0L, url, QString(), req);
+    win->show();
 
-  return win;
+    return win;
 }
 
-KonqMainWindow * KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequest& req, bool openUrl)
+KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequest &req, bool openUrl)
 {
     //kDebug() << "url=" << url;
     // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
@@ -87,13 +85,13 @@ KonqMainWindow * KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLReq
                                  KMimeType::findByUrl(url)->name() == "text/html")
                                 ? "webbrowsing" : "filemanagement";
 
-  const QString profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
-  return createBrowserWindowFromProfile(profilePath, profileName,
-                                        url, req, openUrl);
+    const QString profilePath = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + profileName);
+    return createBrowserWindowFromProfile(profilePath, profileName,
+                                          url, req, openUrl);
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, const QString &_filename, const QUrl &url,
-                                                          const KonqOpenURLRequest& req, bool openUrl)
+KonqMainWindow *KonqMisc::createBrowserWindowFromProfile(const QString &_path, const QString &_filename, const QUrl &url,
+        const KonqOpenURLRequest &req, bool openUrl)
 {
     QString path(_path);
     QString filename(_filename);
@@ -102,7 +100,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
             filename = defaultProfileName();
         }
         if (QDir::isRelativePath(filename)) {
-            path = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+filename);
+            path = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + filename);
             if (path.isEmpty()) { // not found
                 filename = defaultProfileName();
                 path = defaultProfilePath();
@@ -112,106 +110,107 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, 
         }
     }
 
-  abortFullScreenMode();
-  KonqMainWindow * mainWindow;
-  // Ask the user to recover session if appliable
-  if(KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions())
-  {
-      QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
-      if(mainWindowList && !mainWindowList->isEmpty())
-          mainWindow = mainWindowList->first();
-      else // This should never happen but just to be sure
-          mainWindow = new KonqMainWindow;
-
-      if(!url.isEmpty())
-          mainWindow->openUrl( 0, url, QString(), req );
-  }
-  else if( KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL )
-  {
-      mainWindow = KonqMainWindow::preloadedWindow();
-#ifdef Q_WS_X11
-      KStartupInfo::setWindowStartupId( mainWindow->winId(), kapp->startupId());
-#endif
-      KonqMainWindow::setPreloadedWindow( NULL );
-      KonqMainWindow::setPreloadedFlag( false );
-      mainWindow->resetWindow();
-      mainWindow->reparseConfiguration();
-      mainWindow->viewManager()->loadViewProfileFromFile(path, filename, url, req, true, openUrl);
-  }
-  else
-  {
-      KSharedConfigPtr cfg = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
-      const KConfigGroup profileGroup(cfg, "Profile");
-      const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
-
-      mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
-      mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
-  }
-  mainWindow->setInitialFrameName( req.browserArgs.frameName );
-  return mainWindow;
-}
-
-KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
-{
-  int oldPos = view->historyIndex();
-  int newPos = oldPos + steps;
-
-  const HistoryEntry * he = view->historyAt(newPos);
-  if(!he)
-      return 0L;
-
-  KonqMainWindow* mainwindow = createNewWindow(he->url, KonqOpenURLRequest(),
-                                               /*openUrl*/false);
-  if(!mainwindow)
-      return 0L;
-  KonqView* newView = mainwindow->currentView();
-
-  if(!newView)
-      return 0L;
-
-  newView->copyHistory(view);
-  newView->setHistoryIndex(newPos);
-  newView->restoreHistory();
-  mainwindow->show();
-  return mainwindow;
-}
-
-QUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QUrl& currentDirectory)
-{
-  Q_UNUSED(parent); // Useful if we want to change the error handling again
-
-  if ( !_url.startsWith( QLatin1String("about:") ) ) { // Don't filter "about:" URLs
-    KUriFilterData data(_url);
-
-    if (currentDirectory.isLocalFile())
-      data.setAbsolutePath(currentDirectory.toLocalFile());
-
-    // We do not want to the filter to check for executables
-    // from the location bar.
-    data.setCheckForExecutables (false);
-
-    if( KUriFilter::self()->filterUri( data ) ) {
-      if( data.uriType() == KUriFilterData::Error ) {
-        if (data.errorMsg().isEmpty()) {
-          return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
-        } else {
-          return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+    abortFullScreenMode();
+    KonqMainWindow *mainWindow;
+    // Ask the user to recover session if appliable
+    if (KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions()) {
+        QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
+        if (mainWindowList && !mainWindowList->isEmpty()) {
+            mainWindow = mainWindowList->first();
+        } else { // This should never happen but just to be sure
+            mainWindow = new KonqMainWindow;
         }
-      } else {
-        return data.uri();
-      }
+
+        if (!url.isEmpty()) {
+            mainWindow->openUrl(0, url, QString(), req);
+        }
+    } else if (KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL) {
+        mainWindow = KonqMainWindow::preloadedWindow();
+#ifdef Q_WS_X11
+        KStartupInfo::setWindowStartupId(mainWindow->winId(), kapp->startupId());
+#endif
+        KonqMainWindow::setPreloadedWindow(NULL);
+        KonqMainWindow::setPreloadedFlag(false);
+        mainWindow->resetWindow();
+        mainWindow->reparseConfiguration();
+        mainWindow->viewManager()->loadViewProfileFromFile(path, filename, url, req, true, openUrl);
+    } else {
+        KSharedConfigPtr cfg = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
+        const KConfigGroup profileGroup(cfg, "Profile");
+        const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile", "konqueror.rc");
+
+        mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
+        mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
+    }
+    mainWindow->setInitialFrameName(req.browserArgs.frameName);
+    return mainWindow;
+}
+
+KonqMainWindow *KonqMisc::newWindowFromHistory(KonqView *view, int steps)
+{
+    int oldPos = view->historyIndex();
+    int newPos = oldPos + steps;
+
+    const HistoryEntry *he = view->historyAt(newPos);
+    if (!he) {
+        return 0L;
     }
 
-    // NOTE: a valid URL like http://kde.org always passes the filtering test.
-    // As such, this point could only be reached when _url is NOT a valid URL.
-    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
-  }
+    KonqMainWindow *mainwindow = createNewWindow(he->url, KonqOpenURLRequest(),
+                                 /*openUrl*/false);
+    if (!mainwindow) {
+        return 0L;
+    }
+    KonqView *newView = mainwindow->currentView();
 
-  const bool isKnownAbout = (_url == QLatin1String("about:blank")
-                             || _url == QLatin1String("about:plugins")
-                             || _url.startsWith(QLatin1String("about:konqueror")));
+    if (!newView) {
+        return 0L;
+    }
 
-  return isKnownAbout ? QUrl(_url) : QUrl("about:");
+    newView->copyHistory(view);
+    newView->setHistoryIndex(newPos);
+    newView->restoreHistory();
+    mainwindow->show();
+    return mainwindow;
+}
+
+QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, const QUrl &currentDirectory)
+{
+    Q_UNUSED(parent); // Useful if we want to change the error handling again
+
+    if (!_url.startsWith(QLatin1String("about:"))) {     // Don't filter "about:" URLs
+        KUriFilterData data(_url);
+
+        if (currentDirectory.isLocalFile()) {
+            data.setAbsolutePath(currentDirectory.toLocalFile());
+        }
+
+        // We do not want to the filter to check for executables
+        // from the location bar.
+        data.setCheckForExecutables(false);
+
+        if (KUriFilter::self()->filterUri(data)) {
+            if (data.uriType() == KUriFilterData::Error) {
+                if (data.errorMsg().isEmpty()) {
+                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+                } else {
+                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+                }
+            } else {
+                return data.uri();
+            }
+        }
+
+        // NOTE: a valid URL like http://kde.org always passes the filtering test.
+        // As such, this point could only be reached when _url is NOT a valid URL.
+        return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+    }
+
+    const bool isKnownAbout = (_url == QLatin1String("about:blank")
+                               || _url == QLatin1String("about:plugins")
+                               || _url.startsWith(QLatin1String("about:konqueror")));
+
+    return isKnownAbout ? QUrl(_url) : QUrl("about:");
 }
 
 QString KonqMisc::defaultProfileName()
@@ -222,7 +221,7 @@ QString KonqMisc::defaultProfileName()
 
 QString KonqMisc::defaultProfilePath()
 {
-    return KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+ defaultProfileName());
+    return KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + defaultProfileName());
 }
 
 QString KonqMisc::encodeFilename(QString filename)

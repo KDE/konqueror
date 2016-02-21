@@ -67,25 +67,25 @@ void Sidebar_Widget::aboutToShowAddMenu()
     // And since the web module isn't in the default entries at all, we can't just collect
     // the plugins there.
     const KService::List list = m_moduleManager.availablePlugins();
-    Q_FOREACH(const KService::Ptr& service, list) {
+    Q_FOREACH (const KService::Ptr &service, list) {
         if (!service->isValid()) {
             continue;
         }
         KPluginLoader loader(*service);
-        KPluginFactory* factory = loader.factory();
+        KPluginFactory *factory = loader.factory();
         if (!factory) {
             kWarning() << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
         } else {
-            KonqSidebarPlugin* plugin = factory->create<KonqSidebarPlugin>(this);
+            KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(this);
             if (!plugin) {
                 kWarning() << "Error creating KonqSidebarPlugin from" << service->desktopEntryName();
             } else {
-                const QList<QAction*> actions = plugin->addNewActions(&m_addMenuActionGroup,
-                                                                      existingGroups,
-                                                                      QVariant());
+                const QList<QAction *> actions = plugin->addNewActions(&m_addMenuActionGroup,
+                                                 existingGroups,
+                                                 QVariant());
                 // Remember which plugin the action came from.
                 // We can't use QAction::setData for that, because we let plugins use that already.
-                Q_FOREACH(QAction* action, actions) {
+                Q_FOREACH (QAction *action, actions) {
                     m_pluginForAction.insert(action, plugin);
                 }
                 m_addMenu->addActions(actions);
@@ -96,18 +96,20 @@ void Sidebar_Widget::aboutToShowAddMenu()
     m_addMenu->addAction(i18n("Rollback to System Default"), this, SLOT(slotRollback()));
 }
 
-void Sidebar_Widget::triggeredAddMenu(QAction* action)
+void Sidebar_Widget::triggeredAddMenu(QAction *action)
 {
-    KonqSidebarPlugin* plugin = m_pluginForAction.value(action);
+    KonqSidebarPlugin *plugin = m_pluginForAction.value(action);
     m_pluginForAction.clear(); // save memory
 
     QString templ = plugin->templateNameForNewModule(action->data(), QVariant());
     Q_ASSERT(!templ.contains('/'));
-    if (templ.isEmpty())
+    if (templ.isEmpty()) {
         return;
+    }
     const QString myFile = m_moduleManager.addModuleFromTemplate(templ);
-    if (myFile.isEmpty())
+    if (myFile.isEmpty()) {
         return;
+    }
 
     kDebug() << myFile << "filename=" << templ;
     KDesktopFile df(myFile);
@@ -122,7 +124,6 @@ void Sidebar_Widget::triggeredAddMenu(QAction* action)
         QFile::remove(myFile);
     }
 }
-
 
 Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const QString &currentProfile)
     : QWidget(parent),
@@ -175,19 +176,19 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     connect(&m_configTimer, SIGNAL(timeout()),
             this, SLOT(saveConfig()));
     readConfig();
-    m_openViews = m_config->readEntry("OpenViews",QStringList());
-    m_savedWidth = m_config->readEntry("SavedWidth",200);
+    m_openViews = m_config->readEntry("OpenViews", QStringList());
+    m_savedWidth = m_config->readEntry("SavedWidth", 200);
     m_somethingVisible = !m_openViews.isEmpty();
     doLayout();
-    QTimer::singleShot(0,this,SLOT(createButtons()));
+    QTimer::singleShot(0, this, SLOT(createButtons()));
 }
 
-bool Sidebar_Widget::createDirectModule(const QString& templ,
-                                        const QString& name,
+bool Sidebar_Widget::createDirectModule(const QString &templ,
+                                        const QString &name,
                                         const QUrl &url,
-                                        const QString& icon,
-                                        const QString& module,
-                                        const QString& treeModule)
+                                        const QString &icon,
+                                        const QString &module,
+                                        const QString &treeModule)
 {
     QString filename = templ;
     const QString myFile = m_moduleManager.addModuleFromTemplate(filename);
@@ -211,13 +212,13 @@ bool Sidebar_Widget::createDirectModule(const QString& templ,
     return false;
 }
 
-void Sidebar_Widget::addWebSideBar(const QUrl& url, const QString& name)
+void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
 {
     //kDebug() << "Web sidebar entry to be added: " << url << name << endl;
 
     // Look for existing ones with this URL
     const QStringList files = m_moduleManager.localModulePaths("websidebarplugin*.desktop");
-    Q_FOREACH(const QString& file, files) {
+    Q_FOREACH (const QString &file, files) {
         KConfig _scf(file, KConfig::SimpleConfig);
         KConfigGroup scf(&_scf, "Desktop Entry");
         if (scf.readPathEntry("URL", QString()) == url.url()) {
@@ -230,24 +231,21 @@ void Sidebar_Widget::addWebSideBar(const QUrl& url, const QString& name)
     createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
 }
 
-
 void Sidebar_Widget::slotRollback()
 {
-    if (KMessageBox::warningContinueCancel(this, i18n("<qt>This removes all your entries from the sidebar and adds the system default ones.<br /><b>This procedure is irreversible</b><br />Do you want to proceed?</qt>"))==KMessageBox::Continue)
-    {
+    if (KMessageBox::warningContinueCancel(this, i18n("<qt>This removes all your entries from the sidebar and adds the system default ones.<br /><b>This procedure is irreversible</b><br />Do you want to proceed?</qt>")) == KMessageBox::Continue) {
         m_moduleManager.rollbackToDefault();
         QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
 
-
 void Sidebar_Widget::saveConfig()
 {
-    m_config->writeEntry("SingleWidgetMode",m_singleWidgetMode);
-    m_config->writeEntry("ShowExtraButtons",m_showExtraButtons);
+    m_config->writeEntry("SingleWidgetMode", m_singleWidgetMode);
+    m_config->writeEntry("ShowExtraButtons", m_showExtraButtons);
     m_config->writeEntry("ShowTabsLeft", m_showTabsLeft);
     m_config->writeEntry("HideTabs", m_hideTabs);
-    m_config->writeEntry("SavedWidth",m_savedWidth);
+    m_config->writeEntry("SavedWidth", m_savedWidth);
     m_config->sync();
 }
 
@@ -255,9 +253,9 @@ void Sidebar_Widget::doLayout()
 {
     delete m_layout;
     m_layout = new QHBoxLayout(this);
-    m_layout->setMargin( 0 );
-    m_layout->setSpacing( 0 );
-    if  (m_showTabsLeft) {
+    m_layout->setMargin(0);
+    m_layout->setSpacing(0);
+    if (m_showTabsLeft) {
         m_layout->addWidget(m_buttonBar);
         m_layout->addWidget(m_area);
         m_buttonBar->setPosition(KMultiTabBar::Left);
@@ -267,10 +265,12 @@ void Sidebar_Widget::doLayout()
         m_buttonBar->setPosition(KMultiTabBar::Right);
     }
     m_layout->activate();
-    if (m_hideTabs) m_buttonBar->hide();
-    else m_buttonBar->show();
+    if (m_hideTabs) {
+        m_buttonBar->hide();
+    } else {
+        m_buttonBar->show();
+    }
 }
-
 
 void Sidebar_Widget::aboutToShowConfigMenu()
 {
@@ -286,9 +286,9 @@ void Sidebar_Widget::slotSetName()
 
     // Pop up the dialog asking the user for name.
     const QString name = KInputDialog::getText(i18nc("@title:window", "Set Name"), i18n("Enter the name:"),
-                                               currentButtonInfo().displayName, &ok, this);
+                         currentButtonInfo().displayName, &ok, this);
 
-    if(ok) {
+    if (ok) {
         m_moduleManager.setModuleName(currentButtonInfo().file, name);
 
         // Update the buttons with a QTimer (why?)
@@ -302,48 +302,46 @@ void Sidebar_Widget::slotSetName()
 // So this should move to the modules that need it.
 void Sidebar_Widget::slotSetURL()
 {
-    KUrlRequesterDialog dlg( currentButtonInfo().URL, i18n("Enter a URL:"), this );
-    dlg.urlRequester()->setMode( KFile::Directory );
-    if (dlg.exec())
-    {
+    KUrlRequesterDialog dlg(currentButtonInfo().URL, i18n("Enter a URL:"), this);
+    dlg.urlRequester()->setMode(KFile::Directory);
+    if (dlg.exec()) {
         m_moduleManager.setModuleUrl(currentButtonInfo().file, dlg.selectedUrl());
         // TODO: update THAT button only.
-        QTimer::singleShot(0,this,SLOT(updateButtons()));
+        QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
 
 void Sidebar_Widget::slotSetIcon()
 {
-//	kicd.setStrictIconSize(true);
+//  kicd.setStrictIconSize(true);
     const QString iconname = KIconDialog::getIcon(KIconLoader::Small);
     if (!iconname.isEmpty()) {
         m_moduleManager.setModuleIcon(currentButtonInfo().file, iconname);
         // TODO: update THAT button only.
-        QTimer::singleShot(0,this,SLOT(updateButtons()));
+        QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
 
 void Sidebar_Widget::slotRemove()
 {
-    if (KMessageBox::warningContinueCancel(this,i18n("<qt>Do you really want to remove the <b>%1</b> tab?</qt>", currentButtonInfo().displayName),
-                                           QString(),KStandardGuiItem::del())==KMessageBox::Continue)
-    {
+    if (KMessageBox::warningContinueCancel(this, i18n("<qt>Do you really want to remove the <b>%1</b> tab?</qt>", currentButtonInfo().displayName),
+                                           QString(), KStandardGuiItem::del()) == KMessageBox::Continue) {
         m_moduleManager.removeModule(currentButtonInfo().file);
-        QTimer::singleShot(0,this,SLOT(updateButtons()));
+        QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
 
 void Sidebar_Widget::slotMultipleViews()
 {
     m_singleWidgetMode = !m_singleWidgetMode;
-    if ((m_singleWidgetMode) && (m_visibleViews.count()>1))
-    {
+    if ((m_singleWidgetMode) && (m_visibleViews.count() > 1)) {
         int tmpViewID = m_latestViewed;
-        for (int i=0; i < m_buttons.count(); i++) {
+        for (int i = 0; i < m_buttons.count(); i++) {
             if (i != tmpViewID) {
                 const ButtonInfo &button = m_buttons.at(i);
-                if (button.dock && button.dock->isVisibleTo(this))
+                if (button.dock && button.dock->isVisibleTo(this)) {
                     showHidePage(i);
+                }
             }
         }
         m_latestViewed = tmpViewID;
@@ -351,22 +349,19 @@ void Sidebar_Widget::slotMultipleViews()
     m_configTimer.start(400);
 }
 
-void Sidebar_Widget::slotShowTabsLeft( )
+void Sidebar_Widget::slotShowTabsLeft()
 {
     m_showTabsLeft = ! m_showTabsLeft;
     doLayout();
     m_configTimer.start(400);
 }
 
-void Sidebar_Widget::slotShowConfigurationButton( )
+void Sidebar_Widget::slotShowConfigurationButton()
 {
     m_showExtraButtons = ! m_showExtraButtons;
-    if(m_showExtraButtons)
-    {
+    if (m_showExtraButtons) {
         m_buttonBar->button(-1)->show();
-    }
-    else
-    {
+    } else {
         m_buttonBar->button(-1)->hide();
 
         KMessageBox::information(this,
@@ -389,10 +384,10 @@ void Sidebar_Widget::stdAction(const char *handlestd)
     // ### problem: what about multi mode? We could have multiple modules shown,
     // and if we use Edit/Copy, which one should be used? Need to care about focus...
     kDebug() << handlestd << "m_activeModule=" << m_activeModule;
-    if (m_activeModule)
+    if (m_activeModule) {
         QMetaObject::invokeMethod(m_activeModule, handlestd);
+    }
 }
-
 
 void Sidebar_Widget::updateButtons()
 {
@@ -400,9 +395,8 @@ void Sidebar_Widget::updateButtons()
     m_openViews = m_visibleViews;
 
     for (int i = 0; i < m_buttons.count(); ++i) {
-        const ButtonInfo& button = m_buttons.at(i);
-        if (button.dock)
-        {
+        const ButtonInfo &button = m_buttons.at(i);
+        if (button.dock) {
             m_noUpdate = true;
             if (button.dock->isVisibleTo(this)) {
                 showHidePage(i);
@@ -423,7 +417,7 @@ void Sidebar_Widget::updateButtons()
 void Sidebar_Widget::createButtons()
 {
     const QStringList modules = m_moduleManager.modules();
-    Q_FOREACH(const QString& fileName, modules) {
+    Q_FOREACH (const QString &fileName, modules) {
         addButton(fileName);
     }
 
@@ -438,12 +432,10 @@ void Sidebar_Widget::createButtons()
         m_buttonBar->button(-1)->hide();
     }
 
-    for (int i = 0; i < m_buttons.count(); i++)
-    {
-        const ButtonInfo& button = m_buttons.at(i);
-        if (m_openViews.contains(button.file))
-        {
-            m_buttonBar->setTab(i,true);
+    for (int i = 0; i < m_buttons.count(); i++) {
+        const ButtonInfo &button = m_buttons.at(i);
+        if (m_openViews.contains(button.file)) {
+            m_buttonBar->setTab(i, true);
             m_noUpdate = true;
             showHidePage(i);
             if (m_singleWidgetMode) {
@@ -458,29 +450,25 @@ void Sidebar_Widget::createButtons()
 
 bool Sidebar_Widget::openUrl(const QUrl &url)
 {
-    if (url.scheme()=="sidebar")
-    {
-        for (int i=0;i<m_buttons.count();i++)
-            if (m_buttons.at(i).file==url.path())
-            {
+    if (url.scheme() == "sidebar") {
+        for (int i = 0; i < m_buttons.count(); i++)
+            if (m_buttons.at(i).file == url.path()) {
                 KMultiTabBarTab *tab = m_buttonBar->tab(i);
-                if (!tab->isChecked())
+                if (!tab->isChecked()) {
                     tab->animateClick();
+                }
                 return true;
             }
         return false;
     }
 
-    m_storedUrl=url;
-    m_hasStoredUrl=true;
+    m_storedUrl = url;
+    m_hasStoredUrl = true;
     bool ret = false;
-    for (int i=0;i<m_buttons.count();i++)
-    {
-        const ButtonInfo& button = m_buttons.at(i);
-        if (button.dock)
-        {
-            if ((button.dock->isVisibleTo(this)) && (button.module))
-            {
+    for (int i = 0; i < m_buttons.count(); i++) {
+        const ButtonInfo &button = m_buttons.at(i);
+        if (button.dock) {
+            if ((button.dock->isVisibleTo(this)) && (button.module)) {
                 ret = true;
                 button.module->openUrl(url);
             }
@@ -497,21 +485,21 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 
     const QString moduleDataPath = m_moduleManager.moduleDataPath(desktopFileName);
     // Check the desktop file still exists
-    if (KStandardDirs::locate("data", moduleDataPath).isEmpty())
+    if (KStandardDirs::locate("data", moduleDataPath).isEmpty()) {
         return false;
+    }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(moduleDataPath,
-                                                          KConfig::NoGlobals,
-                                                          QStandardPaths::GenericDataLocation);
+                                KConfig::NoGlobals,
+                                QStandardPaths::GenericDataLocation);
     KConfigGroup configGroup(config, "Desktop Entry");
     const QString icon = configGroup.readEntry("Icon", QString());
     const QString name = configGroup.readEntry("Name", QString());
     const QString comment = configGroup.readEntry("Comment", QString());
-    const QString url = configGroup.readPathEntry("URL",QString());
+    const QString url = configGroup.readPathEntry("URL", QString());
     const QString lib = configGroup.readEntry("X-KDE-KonqSidebarModule");
 
-    if (pos == -1) // TODO handle insertion
-    {
+    if (pos == -1) { // TODO handle insertion
         m_buttonBar->appendTab(SmallIcon(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, url, lib, name, icon);
         m_buttons.insert(lastbtn, buttonInfo);
@@ -529,23 +517,20 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 
 bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 {
-    if (ev->type()==QEvent::MouseButtonPress && ((QMouseEvent *)ev)->button()==Qt::RightButton)
-    {
-        KMultiTabBarTab *bt=dynamic_cast<KMultiTabBarTab*>(obj);
-        if (bt)
-        {
-            kDebug()<<"Request for popup";
+    if (ev->type() == QEvent::MouseButtonPress && ((QMouseEvent *)ev)->button() == Qt::RightButton) {
+        KMultiTabBarTab *bt = dynamic_cast<KMultiTabBarTab *>(obj);
+        if (bt) {
+            kDebug() << "Request for popup";
             m_currentButtonIndex = -1;
-            for (int i=0;i<m_buttons.count();i++) {
+            for (int i = 0; i < m_buttons.count(); i++) {
                 if (bt == m_buttonBar->tab(i)) {
                     m_currentButtonIndex = i;
                     break;
                 }
             }
 
-            if (m_currentButtonIndex > -1)
-            {
-                KMenu *buttonPopup=new KMenu(this);
+            if (m_currentButtonIndex > -1) {
+                KMenu *buttonPopup = new KMenu(this);
                 buttonPopup->addTitle(SmallIcon(currentButtonInfo().iconName), currentButtonInfo().displayName);
                 buttonPopup->addAction(QIcon::fromTheme("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
                 buttonPopup->addAction(QIcon::fromTheme("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
@@ -573,12 +558,13 @@ void Sidebar_Widget::mousePressEvent(QMouseEvent *ev)
 }
 
 KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &desktopName,
-                                              ButtonInfo& buttonInfo, const KSharedConfig::Ptr& config)
+        ButtonInfo &buttonInfo, const KSharedConfig::Ptr &config)
 {
     const KConfigGroup configGroup = config->group("Desktop Entry");
-    KonqSidebarPlugin* plugin = buttonInfo.plugin(this);
-    if (!plugin)
+    KonqSidebarPlugin *plugin = buttonInfo.plugin(this);
+    if (!plugin) {
         return 0;
+    }
 
     return plugin->createModule(parent, configGroup, desktopName, QVariant());
 }
@@ -588,7 +574,7 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
     return KParts::BrowserExtension::childObject(m_partParent);
 }
 
-bool Sidebar_Widget::createView(ButtonInfo& buttonInfo)
+bool Sidebar_Widget::createView(ButtonInfo &buttonInfo)
 {
     buttonInfo.dock = 0;
     buttonInfo.module = loadModule(m_area, buttonInfo.file, buttonInfo, buttonInfo.configFile);
@@ -611,28 +597,23 @@ void Sidebar_Widget::showHidePage(int page)
 {
     Q_ASSERT(page >= 0);
     Q_ASSERT(page < m_buttons.count());
-    ButtonInfo& buttonInfo = m_buttons[page];
-    if (!buttonInfo.dock)
-    {
-        if (m_buttonBar->isTabRaised(page))
-        {
+    ButtonInfo &buttonInfo = m_buttons[page];
+    if (!buttonInfo.dock) {
+        if (m_buttonBar->isTabRaised(page)) {
             //SingleWidgetMode
-            if (m_singleWidgetMode)
-            {
-                if (m_latestViewed != -1)
-                {
+            if (m_singleWidgetMode) {
+                if (m_latestViewed != -1) {
                     m_noUpdate = true;
                     showHidePage(m_latestViewed);
                 }
             }
 
-            if (!createView(buttonInfo))
-            {
-                m_buttonBar->setTab(page,false);
+            if (!createView(buttonInfo)) {
+                m_buttonBar->setTab(page, false);
                 return;
             }
 
-            m_buttonBar->setTab(page,true);
+            m_buttonBar->setTab(page, true);
 
             connect(buttonInfo.module,
                     SIGNAL(setIcon(QString)),
@@ -647,10 +628,11 @@ void Sidebar_Widget::showHidePage(int page)
             m_area->addWidget(buttonInfo.dock);
             buttonInfo.dock->show();
             m_area->show();
-            if (m_hasStoredUrl)
+            if (m_hasStoredUrl) {
                 buttonInfo.module->openUrl(m_storedUrl);
-            m_visibleViews<<buttonInfo.file;
-            m_latestViewed=page;
+            }
+            m_visibleViews << buttonInfo.file;
+            m_latestViewed = page;
         }
     } else {
         if ((!buttonInfo.dock->isVisibleTo(this)) && (m_buttonBar->isTabRaised(page))) {
@@ -665,31 +647,35 @@ void Sidebar_Widget::showHidePage(int page)
             buttonInfo.dock->show();
             m_area->show();
             m_latestViewed = page;
-            if (m_hasStoredUrl)
+            if (m_hasStoredUrl) {
                 buttonInfo.module->openUrl(m_storedUrl);
+            }
             m_visibleViews << buttonInfo.file;
-            m_buttonBar->setTab(page,true);
+            m_buttonBar->setTab(page, true);
         } else {
-            m_buttonBar->setTab(page,false);
+            m_buttonBar->setTab(page, false);
             buttonInfo.dock->hide();
             m_latestViewed = -1;
             m_visibleViews.removeAll(buttonInfo.file);
-            if (m_visibleViews.empty()) m_area->hide();
+            if (m_visibleViews.empty()) {
+                m_area->hide();
+            }
         }
     }
 
-    if (!m_noUpdate)
+    if (!m_noUpdate) {
         collapseExpandSidebar();
+    }
     m_noUpdate = false;
 }
 
 void Sidebar_Widget::collapseExpandSidebar()
 {
-    if (!parentWidget())
-        return; // Can happen during destruction
+    if (!parentWidget()) {
+        return;    // Can happen during destruction
+    }
 
-    if (m_visibleViews.count()==0)
-    {
+    if (m_visibleViews.count() == 0) {
         m_somethingVisible = false;
         parentWidget()->setMaximumWidth(minimumSizeHint().width());
         updateGeometry();
@@ -704,17 +690,18 @@ void Sidebar_Widget::collapseExpandSidebar()
 
 QSize Sidebar_Widget::sizeHint() const
 {
-    if (m_somethingVisible)
-        return QSize(m_savedWidth,200);
+    if (m_somethingVisible) {
+        return QSize(m_savedWidth, 200);
+    }
     return minimumSizeHint();
 }
 
 void Sidebar_Widget::submitFormRequest(const char *action,
-                                       const QString& url,
-                                       const QByteArray& formData,
-                                       const QString& /*target*/,
-                                       const QString& contentType,
-                                       const QString& /*boundary*/ )
+                                       const QString &url,
+                                       const QByteArray &formData,
+                                       const QString & /*target*/,
+                                       const QString &contentType,
+                                       const QString & /*boundary*/)
 {
     KParts::OpenUrlArguments arguments;
     KParts::BrowserArguments browserArguments;
@@ -722,42 +709,40 @@ void Sidebar_Widget::submitFormRequest(const char *action,
     browserArguments.postData = formData;
     browserArguments.setDoPost(QByteArray(action).toLower() == "post");
     // boundary?
-    emit getExtension()->openUrlRequest(QUrl( url ), arguments, browserArguments);
+    emit getExtension()->openUrlRequest(QUrl(url), arguments, browserArguments);
 }
 
-void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
+void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
 {
     getExtension()->openUrlRequest(url, args, browserArgs);
 }
 
-void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
                                      const KParts::WindowArgs &windowArgs)
 {
     getExtension()->createNewWindow(url, args, browserArgs, windowArgs);
 }
 
-void Sidebar_Widget::slotEnableAction(KonqSidebarModule* module, const char * name, bool enabled)
+void Sidebar_Widget::slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled)
 {
     if (module->getWidget()->isVisible()) {
         emit getExtension()->enableAction(name, enabled);
     }
 }
 
-
 void Sidebar_Widget::doEnableActions()
 {
     if (m_activeModule) {
-        getExtension()->enableAction( "copy", m_activeModule->isCopyEnabled() );
-        getExtension()->enableAction( "cut", m_activeModule->isCutEnabled() );
-        getExtension()->enableAction( "paste", m_activeModule->isPasteEnabled() );
+        getExtension()->enableAction("copy", m_activeModule->isCopyEnabled());
+        getExtension()->enableAction("cut", m_activeModule->isCutEnabled());
+        getExtension()->enableAction("paste", m_activeModule->isPasteEnabled());
     }
 }
 
-
 void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
 {
-    connect(mod,SIGNAL(started(KIO::Job*)),this, SIGNAL(started(KIO::Job*)));
-    connect(mod,SIGNAL(completed()),this,SIGNAL(completed()));
+    connect(mod, SIGNAL(started(KIO::Job*)), this, SIGNAL(started(KIO::Job*)));
+    connect(mod, SIGNAL(completed()), this, SIGNAL(completed()));
 
     connect(mod, SIGNAL(popupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
             this, SLOT(slotPopupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
@@ -782,32 +767,33 @@ void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
 Sidebar_Widget::~Sidebar_Widget()
 {
     m_config->writeEntry("OpenViews", m_visibleViews);
-    if (m_configTimer.isActive())
+    if (m_configTimer.isActive()) {
         saveConfig();
+    }
     delete m_config;
     m_buttons.clear();
     m_noUpdate = true;
 }
 
-void Sidebar_Widget::customEvent(QEvent* ev)
+void Sidebar_Widget::customEvent(QEvent *ev)
 {
     if (KonqFileSelectionEvent::test(ev)) {
-        emit fileSelection(static_cast<KonqFileSelectionEvent*>(ev)->selection());
+        emit fileSelection(static_cast<KonqFileSelectionEvent *>(ev)->selection());
     } else if (KonqFileMouseOverEvent::test(ev)) {
-        emit fileMouseOver(static_cast<KonqFileMouseOverEvent*>(ev)->item());
+        emit fileMouseOver(static_cast<KonqFileMouseOverEvent *>(ev)->item());
     }
 }
 
-KonqSidebarPlugin* ButtonInfo::plugin(QObject* parent)
+KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
 {
     if (!m_plugin) {
         KPluginLoader loader(libName);
-        KPluginFactory* factory = loader.factory();
+        KPluginFactory *factory = loader.factory();
         if (!factory) {
             kWarning() << "error loading" << libName << loader.errorString();
             return 0;
         }
-        KonqSidebarPlugin* plugin = factory->create<KonqSidebarPlugin>(parent);
+        KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(parent);
         if (!plugin) {
             kWarning() << "error creating object from" << libName;
             return 0;
@@ -817,38 +803,38 @@ KonqSidebarPlugin* ButtonInfo::plugin(QObject* parent)
     return m_plugin;
 }
 
-void Sidebar_Widget::slotPopupMenu(KonqSidebarModule* module,
+void Sidebar_Widget::slotPopupMenu(KonqSidebarModule *module,
                                    const QPoint &global, const KFileItemList &items,
                                    const KParts::OpenUrlArguments &args,
                                    const KParts::BrowserArguments &browserArgs,
                                    KParts::BrowserExtension::PopupFlags flags,
-                                   const KParts::BrowserExtension::ActionGroupMap& actionGroups)
+                                   const KParts::BrowserExtension::ActionGroupMap &actionGroups)
 {
     m_activeModule = module;
     doEnableActions();
     emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
-void Sidebar_Widget::slotUrlsDropped(const QList<QUrl>& urls)
+void Sidebar_Widget::slotUrlsDropped(const QList<QUrl> &urls)
 {
-    Q_FOREACH(const QUrl& url, urls) {
+    Q_FOREACH (const QUrl &url, urls) {
         KIO::StatJob *job = KIO::stat(url);
         KJobWidgets::setWindow(job, this);
         connect(job, &KIO::StatJob::result, this, &Sidebar_Widget::slotStatResult);
     }
 }
 
-void Sidebar_Widget::slotStatResult(KJob* job)
+void Sidebar_Widget::slotStatResult(KJob *job)
 {
-    KIO::StatJob * statJob = static_cast<KIO::StatJob*>(job);
+    KIO::StatJob *statJob = static_cast<KIO::StatJob *>(job);
     if (statJob->error()) {
         statJob->ui()->showErrorMessage();
     } else {
         const QUrl url = statJob->url();
         KFileItem item(statJob->statResult(), url);
-        if (item.isDir())
+        if (item.isDir()) {
             createDirectModule("folder%1.desktop", url.fileName(), url, item.iconName(), "konqsidebar_tree", "Directory");
-        else if (item.currentMimeType().inherits("text/html") || url.scheme().startsWith("http")) {
+        } else if (item.currentMimeType().inherits("text/html") || url.scheme().startsWith("http")) {
             const QString name = i18n("Web module");
             createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
         } else {

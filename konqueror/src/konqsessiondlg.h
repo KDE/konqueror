@@ -36,7 +36,7 @@ class KonqSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    explicit KonqSessionDlg( KonqViewManager *manager, QWidget *parent = 0L );
+    explicit KonqSessionDlg(KonqViewManager *manager, QWidget *parent = 0L);
     ~KonqSessionDlg();
 
 protected Q_SLOTS:
@@ -49,7 +49,7 @@ protected Q_SLOTS:
 
 private:
     class KonqSessionDlgPrivate;
-    KonqSessionDlgPrivate * const d;
+    KonqSessionDlgPrivate *const d;
     void loadAllSessions(const QString & = QString());
 };
 
@@ -57,15 +57,15 @@ class KonqNewSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    explicit KonqNewSessionDlg( QWidget *parent = 0L, QString sessionName = QString() );
+    explicit KonqNewSessionDlg(QWidget *parent = 0L, QString sessionName = QString());
     ~KonqNewSessionDlg();
 
 protected Q_SLOTS:
     void slotAddSession();
-    void slotTextChanged(const QString& text);
+    void slotTextChanged(const QString &text);
 private:
     class KonqNewSessionDlgPrivate;
-    KonqNewSessionDlgPrivate * const d;
+    KonqNewSessionDlgPrivate *const d;
 };
 
 #endif

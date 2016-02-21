@@ -30,7 +30,7 @@ public:
     DelayedInitializer(int eventType, QObject *parent);
 
 protected:
-    virtual bool eventFilter( QObject *receiver, QEvent *event );
+    virtual bool eventFilter(QObject *receiver, QEvent *event);
 
 Q_SIGNALS:
     void initialize();

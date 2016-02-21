@@ -28,14 +28,14 @@ struct ValidationResult;
 
 class ReportDialog : public KDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  ReportDialog(const QList<ValidationResult *> &results, QWidget* parent);
+    ReportDialog(const QList<ValidationResult *> &results, QWidget *parent);
 
-  virtual QSize sizeHint() const;
+    virtual QSize sizeHint() const;
 
 private:
-  Ui::ReportWidget m_ui;
+    Ui::ReportWidget m_ui;
 };
 
 #endif

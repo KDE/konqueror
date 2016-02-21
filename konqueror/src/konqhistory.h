@@ -25,16 +25,14 @@
 namespace KonqHistory
 {
 
-enum ExtraData
-{
+enum ExtraData {
     TypeRole = Qt::UserRole + 0xaaff00,
     DetailedToolTipRole,
     UrlRole,
     LastVisitedRole
 };
 
-enum EntryType
-{
+enum EntryType {
     HistoryType = 1,
     GroupType = 2
 };

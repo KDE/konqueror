@@ -13,12 +13,10 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #ifndef KHTMLTTS_H
 #define KHTMLTTS_H
 
 #include <kparts/plugin.h>
-
 
 /**
  * KHTML KParts Plugin
@@ -31,7 +29,7 @@ public:
     /**
      * Construct a new KParts plugin.
      */
-    KHTMLPluginTTS( QObject* parent, const QVariantList& );
+    KHTMLPluginTTS(QObject *parent, const QVariantList &);
 
     /**
      * Destructor.

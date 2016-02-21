@@ -50,7 +50,6 @@ private:
     Qt::KeyboardModifiers m_keyModifiers;
 };
 
-
 class KonqSideBarPlacesModule : public KonqSidebarModule
 {
     Q_OBJECT

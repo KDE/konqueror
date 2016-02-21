@@ -23,11 +23,11 @@
 
 class K3ListView;
 
- /*
-  * Dialog for editing custom menus.
-  *
-  * @author Waldo Bastian (bastian@kde.org)
-  */
+/*
+ * Dialog for editing custom menus.
+ *
+ * @author Waldo Bastian (bastian@kde.org)
+ */
 class KCustomMenuEditor : public KDialog
 {
     Q_OBJECT
@@ -59,7 +59,7 @@ protected:
     K3ListView *m_listView;
 
     class KCustomMenuEditorPrivate;
-    KCustomMenuEditorPrivate* const d;
+    KCustomMenuEditorPrivate *const d;
 };
 
 #endif

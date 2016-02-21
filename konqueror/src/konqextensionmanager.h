@@ -22,7 +22,10 @@
 
 class KonqExtensionManagerPrivate;
 class KonqMainWindow;
-namespace KParts { class ReadOnlyPart; }
+namespace KParts
+{
+class ReadOnlyPart;
+}
 
 /**
  * Extension Manager for Konqueror. See KPluginSelector in kdelibs for
@@ -36,25 +39,25 @@ class KonqExtensionManager
 {
     Q_OBJECT
 
-    public:
-        KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart* activePart);
-        ~KonqExtensionManager();
+public:
+    KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart *activePart);
+    ~KonqExtensionManager();
 
-        void apply();
+    void apply();
 
-    public Q_SLOTS:
-        void setChanged(bool c);
-        void reparseConfiguration(const QByteArray &);
-        void slotOk();
-        void slotApply();
-        void slotDefault();
-        void slotUser1();
+public Q_SLOTS:
+    void setChanged(bool c);
+    void reparseConfiguration(const QByteArray &);
+    void slotOk();
+    void slotApply();
+    void slotDefault();
+    void slotUser1();
 
-    protected:
-        virtual void showEvent(QShowEvent *event);
+protected:
+    virtual void showEvent(QShowEvent *event);
 
-    private:
-        KonqExtensionManagerPrivate *d;
+private:
+    KonqExtensionManagerPrivate *d;
 };
 
 #endif // KONQEXTENSIONMANAGER_H

@@ -28,7 +28,10 @@
 
 class K4AboutData;
 class KPluginFactory;
-namespace KParts { class ReadOnlyPart; }
+namespace KParts
+{
+class ReadOnlyPart;
+}
 
 class KonqViewFactory // TODO rename to KonqPartLoader?
 {
@@ -38,7 +41,7 @@ public:
      */
     KonqViewFactory() : m_factory(0), m_args() {}
 
-    KonqViewFactory(const QString& libName, KPluginFactory* factory);
+    KonqViewFactory(const QString &libName, KPluginFactory *factory);
 
     // The default copy ctor and operator= can be used, this is a value class.
 
@@ -46,7 +49,10 @@ public:
 
     KParts::ReadOnlyPart *create(QWidget *parentWidget, QObject *parent);
 
-    bool isNull() const { return m_factory ? false : true; }
+    bool isNull() const
+    {
+        return m_factory ? false : true;
+    }
 
 private:
     QString m_libName;
@@ -70,18 +76,18 @@ public:
      * Not a static method so that we can define an abstract base class
      * with another implementation, for unit tests, if wanted.
      */
-    KonqViewFactory createView( const QString &serviceType,
-                                const QString &serviceName = QString(),
-                                KService::Ptr *serviceImpl = 0,
-                                KService::List *partServiceOffers = 0,
-                                KService::List *appServiceOffers = 0,
-                                bool forceAutoEmbed = false );
+    KonqViewFactory createView(const QString &serviceType,
+                               const QString &serviceName = QString(),
+                               KService::Ptr *serviceImpl = 0,
+                               KService::List *partServiceOffers = 0,
+                               KService::List *appServiceOffers = 0,
+                               bool forceAutoEmbed = false);
 
-    static void getOffers( const QString & serviceType,
-                           KService::List *partServiceOffers = 0,
-                           KService::List *appServiceOffers = 0);
+    static void getOffers(const QString &serviceType,
+                          KService::List *partServiceOffers = 0,
+                          KService::List *appServiceOffers = 0);
 
-    static const K4AboutData* aboutData();
+    static const K4AboutData *aboutData();
 };
 
 #endif

@@ -41,14 +41,22 @@ class KConfig;
 /* Cached Metric info config */
 class MetricEntry
 {
- public:
-  MetricEntry()
-    { size = 0.0; fileCount = 0; dirCount = 0; }
-  MetricEntry(double s, unsigned int f, unsigned int d)
-    { size = s; fileCount = f; dirCount = d; }
+public:
+    MetricEntry()
+    {
+        size = 0.0;
+        fileCount = 0;
+        dirCount = 0;
+    }
+    MetricEntry(double s, unsigned int f, unsigned int d)
+    {
+        size = s;
+        fileCount = f;
+        dirCount = d;
+    }
 
-  double size;
-  unsigned int fileCount, dirCount;
+    double size;
+    unsigned int fileCount, dirCount;
 };
 
 /**
@@ -59,82 +67,94 @@ class MetricEntry
  */
 class FSView : public TreeMapWidget, public ScanListener
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  enum ColorMode { None = 0, Depth, Name, Owner, Group, Mime };
+    enum ColorMode { None = 0, Depth, Name, Owner, Group, Mime };
 
-  explicit FSView(Inode*, QWidget* parent=0);
-  ~FSView();
+    explicit FSView(Inode *, QWidget *parent = 0);
+    ~FSView();
 
-  KConfig* config() { return _config; }
+    KConfig *config()
+    {
+        return _config;
+    }
 
-  void setPath(const QString&);
-  QString path() { return _path; }
-  int pathDepth() { return _pathDepth; }
+    void setPath(const QString &);
+    QString path()
+    {
+        return _path;
+    }
+    int pathDepth()
+    {
+        return _pathDepth;
+    }
 
-  void setColorMode(FSView::ColorMode cm);
-  FSView::ColorMode colorMode() const { return _colorMode; }
-  // returns true if string was recognized
-  bool setColorMode(const QString&);
-  QString colorModeString() const;
+    void setColorMode(FSView::ColorMode cm);
+    FSView::ColorMode colorMode() const
+    {
+        return _colorMode;
+    }
+    // returns true if string was recognized
+    bool setColorMode(const QString &);
+    QString colorModeString() const;
 
-  void requestUpdate(Inode*);
+    void requestUpdate(Inode *);
 
-  /* Implementation of listener interface of ScanManager.
-   * Used to calculate progress info */
-  void scanFinished(ScanDir*);
+    /* Implementation of listener interface of ScanManager.
+     * Used to calculate progress info */
+    void scanFinished(ScanDir *);
 
-  void stop();
+    void stop();
 
-  static bool getDirMetric(const QString&, double&, unsigned int&, unsigned int&);
-  static void setDirMetric(const QString&, double, unsigned int, unsigned int);
-  void saveMetric(KConfigGroup*);
-  void saveFSOptions();
+    static bool getDirMetric(const QString &, double &, unsigned int &, unsigned int &);
+    static void setDirMetric(const QString &, double, unsigned int, unsigned int);
+    void saveMetric(KConfigGroup *);
+    void saveFSOptions();
 
-  // for color mode
-  void addColorItems(QMenu*, int);
+    // for color mode
+    void addColorItems(QMenu *, int);
 
-  KUrl::List selectedUrls();
+    KUrl::List selectedUrls();
 
 public slots:
-  void selected(TreeMapItem*);
-  void contextMenu(TreeMapItem*, const QPoint &);
-  void quit();
-  void doUpdate();
-  void doRedraw();
-  void colorActivated(QAction*);
+    void selected(TreeMapItem *);
+    void contextMenu(TreeMapItem *, const QPoint &);
+    void quit();
+    void doUpdate();
+    void doRedraw();
+    void colorActivated(QAction *);
 
- signals:
-  void started();
-  void progress(int percent, int dirs, const QString& lastDir);
-  void completed(int dirs);
+signals:
+    void started();
+    void progress(int percent, int dirs, const QString &lastDir);
+    void completed(int dirs);
 
 protected:
-  virtual void keyPressEvent( QKeyEvent* );
+    virtual void keyPressEvent(QKeyEvent *);
 
- private:
-  KConfig* _config;
-  ScanManager _sm;
+private:
+    KConfig *_config;
+    ScanManager _sm;
 
-  // when a contextMenu is shown, we don't allow async. refreshing
-  bool _allowRefresh;
-  // a cache for directory sizes with long lasting updates
-  static QMap<QString, MetricEntry> _dirMetric;
+    // when a contextMenu is shown, we don't allow async. refreshing
+    bool _allowRefresh;
+    // a cache for directory sizes with long lasting updates
+    static QMap<QString, MetricEntry> _dirMetric;
 
-  // current root path
-  int _pathDepth;
-  QString _path;
+    // current root path
+    int _pathDepth;
+    QString _path;
 
-  // for progress info
-  int _progressPhase;
-  int _chunkData1, _chunkData2, _chunkData3;
-  int _chunkSize1, _chunkSize2, _chunkSize3;
-  int _progress, _progressSize, _dirsFinished;
-  ScanDir* _lastDir;
+    // for progress info
+    int _progressPhase;
+    int _chunkData1, _chunkData2, _chunkData3;
+    int _chunkSize1, _chunkSize2, _chunkSize3;
+    int _progress, _progressSize, _dirsFinished;
+    ScanDir *_lastDir;
 
-  ColorMode _colorMode;
-  int _colorID;
+    ColorMode _colorMode;
+    int _colorID;
 };
 
 #endif // FSVIEW_H

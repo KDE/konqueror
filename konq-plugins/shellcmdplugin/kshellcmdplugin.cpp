@@ -36,47 +36,48 @@
 #include <kurl.h>
 #include <kicon.h>
 
-KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QVariantList & )
-    : KParts::Plugin( parent )
+KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
+    : KParts::Plugin(parent)
 {
-    if (!KAuthorized::authorizeKAction("shell_access"))
-       return;
+    if (!KAuthorized::authorizeKAction("shell_access")) {
+        return;
+    }
 
     QAction *action = actionCollection()->addAction("executeshellcommand");
     action->setIcon(KIcon("system-run"));
-    action->setText(i18n( "&Execute Shell Command..." ));
+    action->setText(i18n("&Execute Shell Command..."));
     connect(action, SIGNAL(triggered(bool)), SLOT(slotExecuteShellCommand()));
-    action->setShortcut(Qt::CTRL+Qt::Key_E);
+    action->setShortcut(Qt::CTRL + Qt::Key_E);
 }
 
 void KShellCmdPlugin::slotExecuteShellCommand()
 {
-    KParts::ReadOnlyPart * part = qobject_cast<KParts::ReadOnlyPart *>(parent());
+    KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
     if (!part)  {
         KMessageBox::sorry(0L, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
         return;
     }
 
-    KUrl url = KIO::NetAccess::mostLocalUrl(part->url(),NULL);
+    KUrl url = KIO::NetAccess::mostLocalUrl(part->url(), NULL);
     if (!url.isLocalFile()) {
-        KMessageBox::sorry(part->widget(),i18n("Executing shell commands works only on local directories."));
+        KMessageBox::sorry(part->widget(), i18n("Executing shell commands works only on local directories."));
         return;
     }
 
     QString path;
-    KParts::FileInfoExtension* ext = KParts::FileInfoExtension::childObject(part);
+    KParts::FileInfoExtension *ext = KParts::FileInfoExtension::childObject(part);
 
     if (ext && ext->hasSelection() && (ext->supportedQueryModes() & KParts::FileInfoExtension::SelectedItems)) {
         KFileItemList list = ext->queryFor(KParts::FileInfoExtension::SelectedItems);
         QStringList fileNames;
-        Q_FOREACH(const KFileItem& item, list) {
+        Q_FOREACH (const KFileItem &item, list) {
             fileNames << item.name();
         }
         path = KShell::joinArgs(fileNames);
     }
 
     if (path.isEmpty()) {
-      path = KShell::quoteArg(url.toLocalFile());
+        path = KShell::quoteArg(url.toLocalFile());
     }
 
     bool ok;
@@ -90,8 +91,8 @@ void KShellCmdPlugin::slotExecuteShellCommand()
         exeCmd += QLatin1String("; ");
         exeCmd += cmd;
 
-        KShellCommandDialog* dlg = new KShellCommandDialog(i18n("Output from command: \"%1\"", cmd), exeCmd, part->widget(), true);
-        dlg->resize(500,300);
+        KShellCommandDialog *dlg = new KShellCommandDialog(i18n("Output from command: \"%1\"", cmd), exeCmd, part->widget(), true);
+        dlg->resize(500, 300);
         dlg->executeCommand();
         delete dlg;
     }

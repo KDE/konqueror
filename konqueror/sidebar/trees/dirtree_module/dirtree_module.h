@@ -33,30 +33,30 @@ class KonqSidebarDirTreeModule : public QObject, public KonqSidebarTreeModule
 {
     Q_OBJECT
 public:
-    KonqSidebarDirTreeModule( KonqSidebarTree * parentTree, bool );
+    KonqSidebarDirTreeModule(KonqSidebarTree *parentTree, bool);
     virtual ~KonqSidebarDirTreeModule();
 
-    virtual void addTopLevelItem( KonqSidebarTreeTopLevelItem * item );
+    virtual void addTopLevelItem(KonqSidebarTreeTopLevelItem *item);
 
-    virtual void openTopLevelItem( KonqSidebarTreeTopLevelItem * item );
+    virtual void openTopLevelItem(KonqSidebarTreeTopLevelItem *item);
 
-    virtual void followURL( const KUrl & url );
+    virtual void followURL(const KUrl &url);
 
     // Called by KonqSidebarDirTreeItem
-    void openSubFolder( KonqSidebarTreeItem *item );
-    void addSubDir( KonqSidebarTreeItem *item );
-    void removeSubDir( KonqSidebarTreeItem *item, bool childrenonly = false );
+    void openSubFolder(KonqSidebarTreeItem *item);
+    void addSubDir(KonqSidebarTreeItem *item);
+    void removeSubDir(KonqSidebarTreeItem *item, bool childrenonly = false);
 
 private Q_SLOTS:
-    void slotNewItems( const KFileItemList & );
-    void slotRefreshItems( const QList<QPair<KFileItem, KFileItem> >& );
-    void slotDeleteItem( const KFileItem &item );
-    void slotRedirection( const KUrl & oldUrl, const KUrl & newUrl );
-    void slotListingStopped( const KUrl & url );
+    void slotNewItems(const KFileItemList &);
+    void slotRefreshItems(const QList<QPair<KFileItem, KFileItem> > &);
+    void slotDeleteItem(const KFileItem &item);
+    void slotRedirection(const KUrl &oldUrl, const KUrl &newUrl);
+    void slotListingStopped(const KUrl &url);
 
 private:
     //KonqSidebarTreeItem * findDir( const KUrl &_url );
-    void listDirectory( KonqSidebarTreeItem *item );
+    void listDirectory(KonqSidebarTreeItem *item);
     KUrl::List selectedUrls();
 
     // URL -> item
@@ -65,16 +65,15 @@ private:
     Q3Dict<KonqSidebarTreeItem> m_dictSubDirs;
 
     // KFileItem -> item
-    QHash<KFileItem, KonqSidebarTreeItem*> m_ptrdictSubDirs;
+    QHash<KFileItem, KonqSidebarTreeItem *> m_ptrdictSubDirs;
 
-    KDirLister * m_dirLister;
+    KDirLister *m_dirLister;
 
     KUrl m_selectAfterOpening;
 
-    KonqSidebarTreeTopLevelItem * m_topLevelItem;
+    KonqSidebarTreeTopLevelItem *m_topLevelItem;
 
     bool m_showArchivesAsFolders;
 };
-
 
 #endif

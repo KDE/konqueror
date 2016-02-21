@@ -44,16 +44,19 @@ class KONQUERORPRIVATE_EXPORT KonqHistoryView : public QWidget
     Q_OBJECT
 
 public:
-    explicit KonqHistoryView(QWidget* parent);
+    explicit KonqHistoryView(QWidget *parent);
 
-    KActionCollection *actionCollection() { return m_collection; }
-    QTreeView* treeView() const;
-    KLineEdit* lineEdit() const;
-    QUrl urlForIndex(const QModelIndex& index) const;
+    KActionCollection *actionCollection()
+    {
+        return m_collection;
+    }
+    QTreeView *treeView() const;
+    KLineEdit *lineEdit() const;
+    QUrl urlForIndex(const QModelIndex &index) const;
 
 Q_SIGNALS:
-    void openUrlInNewWindow(const QUrl& url);
-    void openUrlInNewTab(const QUrl& url);
+    void openUrlInNewWindow(const QUrl &url);
+    void openUrlInNewTab(const QUrl &url);
 
 private Q_SLOTS:
     void slotContextMenu(const QPoint &pos);
@@ -68,14 +71,13 @@ private Q_SLOTS:
     void slotCopyLinkLocation();
 
 private:
-    QTreeView* m_treeView;
+    QTreeView *m_treeView;
     KActionCollection *m_collection;
     KonqHistoryModel *m_historyModel;
     KonqHistoryProxyModel *m_historyProxyModel;
     KLineEdit *m_searchLineEdit;
     QTimer *m_searchTimer;
 };
-
 
 #endif /* KONQHISTORYVIEW_H */
 

@@ -28,11 +28,11 @@
 class KonqCopyToMenuPrivate
 {
 public:
-    KonqCopyToMenuPrivate(QWidget* parentWidget);
+    KonqCopyToMenuPrivate(QWidget *parentWidget);
 
     QList<QUrl> m_urls;
     bool m_readOnly;
-    QWidget* m_parentWidget;
+    QWidget *m_parentWidget;
 };
 
 enum MenuType { Copy, Move };
@@ -43,15 +43,21 @@ class KonqCopyToMainMenu : public QMenu
 {
     Q_OBJECT
 public:
-    KonqCopyToMainMenu(QMenu* parent, KonqCopyToMenuPrivate* d, MenuType menuType);
+    KonqCopyToMainMenu(QMenu *parent, KonqCopyToMenuPrivate *d, MenuType menuType);
 
-    QActionGroup& actionGroup() { return m_actionGroup; } // used by submenus
-    MenuType menuType() const { return m_menuType; } // used by submenus
+    QActionGroup &actionGroup()
+    {
+        return m_actionGroup;    // used by submenus
+    }
+    MenuType menuType() const
+    {
+        return m_menuType;    // used by submenus
+    }
 
 private Q_SLOTS:
     void slotAboutToShow();
     void slotBrowse();
-    void slotTriggered(QAction* action);
+    void slotTriggered(QAction *action);
 
 private:
     void copyOrMoveTo(const QUrl &dest);
@@ -59,7 +65,7 @@ private:
 private:
     MenuType m_menuType;
     QActionGroup m_actionGroup;
-    KonqCopyToMenuPrivate* d; // this isn't our own d pointer, it's the one for the public class
+    KonqCopyToMenuPrivate *d; // this isn't our own d pointer, it's the one for the public class
     KConfigGroup m_recentDirsGroup;
 };
 
@@ -68,12 +74,12 @@ class KonqCopyToDirectoryMenu : public QMenu
 {
     Q_OBJECT
 public:
-    KonqCopyToDirectoryMenu(QMenu* parent, KonqCopyToMainMenu* mainMenu, const QString& path);
+    KonqCopyToDirectoryMenu(QMenu *parent, KonqCopyToMainMenu *mainMenu, const QString &path);
 
 private Q_SLOTS:
     void slotAboutToShow();
 
 private:
-    KonqCopyToMainMenu* m_mainMenu;
+    KonqCopyToMainMenu *m_mainMenu;
     QString m_path;
 };

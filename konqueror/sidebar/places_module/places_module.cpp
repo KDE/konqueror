@@ -58,9 +58,8 @@ void KonqPlacesCustomPlacesView::emitUrlChanged(const QUrl &url)
     emit urlChanged(url, m_mouseButtons, m_keyModifiers);
 }
 
-
 KonqSideBarPlacesModule::KonqSideBarPlacesModule(QWidget *parent,
-                                                 const KConfigGroup &configGroup)
+        const KConfigGroup &configGroup)
     : KonqSidebarModule(parent, configGroup)
 {
     m_placesView = new KonqPlacesCustomPlacesView(parent);
@@ -90,7 +89,6 @@ void KonqSideBarPlacesModule::slotPlaceUrlChanged(const QUrl &url, Qt::MouseButt
     }
 }
 
-
 class KonqSidebarPlacesPlugin : public KonqSidebarPlugin
 {
 public:
@@ -98,7 +96,7 @@ public:
         : KonqSidebarPlugin(parent, args) {}
     virtual ~KonqSidebarPlacesPlugin() {}
 
-    virtual KonqSidebarModule* createModule(QWidget *parent,
+    virtual KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,
                                             const QString &desktopname,
                                             const QVariant &unused)
@@ -108,20 +106,20 @@ public:
         return new KonqSideBarPlacesModule(parent, configGroup);
     }
 
-    virtual QList<QAction*> addNewActions(QObject *parent,
-                                          const QList<KConfigGroup> &existingModules,
-                                          const QVariant& unused)
+    virtual QList<QAction *> addNewActions(QObject *parent,
+                                           const QList<KConfigGroup> &existingModules,
+                                           const QVariant &unused)
     {
         Q_UNUSED(existingModules);
         Q_UNUSED(unused);
-        QAction* action = new QAction(parent);
+        QAction *action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "Places Sidebar Module"));
         action->setIcon(QIcon::fromTheme("folder-favorites"));
         return QList<QAction *>() << action;
     }
 
     virtual QString templateNameForNewModule(const QVariant &actionData,
-                                             const QVariant &unused) const
+            const QVariant &unused) const
     {
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
@@ -144,7 +142,7 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarPlacesPluginFactory, registerPlugin<KonqSidebarPlacesPlugin>(); )
+K_PLUGIN_FACTORY(KonqSidebarPlacesPluginFactory, registerPlugin<KonqSidebarPlacesPlugin>();)
 // K_EXPORT_PLUGIN(KonqSidebarPlacesPluginFactory())
 
 #include "places_module.moc"

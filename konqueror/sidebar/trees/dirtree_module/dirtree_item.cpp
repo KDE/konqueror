@@ -42,19 +42,21 @@
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())
 
-KonqSidebarDirTreeItem::KonqSidebarDirTreeItem( KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem )
-    : KonqSidebarTreeItem( parentItem, topLevelItem ), m_fileItem( fileItem )
+KonqSidebarDirTreeItem::KonqSidebarDirTreeItem(KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem)
+    : KonqSidebarTreeItem(parentItem, topLevelItem), m_fileItem(fileItem)
 {
-    if ( m_topLevelItem )
-        MYMODULE->addSubDir( this );
+    if (m_topLevelItem) {
+        MYMODULE->addSubDir(this);
+    }
     reset();
 }
 
-KonqSidebarDirTreeItem::KonqSidebarDirTreeItem( KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem )
-    : KonqSidebarTreeItem( parent, topLevelItem ), m_fileItem( fileItem )
+KonqSidebarDirTreeItem::KonqSidebarDirTreeItem(KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem)
+    : KonqSidebarTreeItem(parent, topLevelItem), m_fileItem(fileItem)
 {
-    if ( m_topLevelItem )
-        MYMODULE->addSubDir( this );
+    if (m_topLevelItem) {
+        MYMODULE->addSubDir(this);
+    }
     reset();
 }
 
@@ -66,14 +68,11 @@ void KonqSidebarDirTreeItem::reset()
 {
     bool expandable = true;
     // For local dirs, find out if they have no children, to remove the "+"
-    if ( m_fileItem.isDir() )
-    {
+    if (m_fileItem.isDir()) {
         KUrl url = m_fileItem.url();
-        if ( url.isLocalFile() )
-        {
+        if (url.isLocalFile()) {
             struct stat buff;
-            if ( KDE::stat( url.toLocalFile(), &buff ) != -1 )
-            {
+            if (KDE::stat(url.toLocalFile(), &buff) != -1) {
                 //kDebug() << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink;
                 // The link count for a directory is generally subdir_count + 2.
                 // One exception is if there are hard links to the directory, in this case
@@ -82,47 +81,47 @@ void KonqSidebarDirTreeItem::reset()
                 // of which the link count is always 1. Therefore, we only set the item
                 // as non-expandable if it's exactly 2 (one link from the parent dir,
                 // plus one from the '.' entry).
-                if ( buff.st_nlink == 2 )
+                if (buff.st_nlink == 2) {
                     expandable = false;
+                }
             }
         }
     }
-    setExpandable( expandable );
-    id = m_fileItem.url().url( KUrl::RemoveTrailingSlash );
+    setExpandable(expandable);
+    id = m_fileItem.url().url(KUrl::RemoveTrailingSlash);
 }
 
-void KonqSidebarDirTreeItem::setOpen( bool open )
+void KonqSidebarDirTreeItem::setOpen(bool open)
 {
     kDebug(1201) << "KonqSidebarDirTreeItem::setOpen " << open;
-    if ( open && !childCount() && m_bListable )
-        MYMODULE->openSubFolder( this );
-    else if ( hasStandardIcon() )
-    {
-        int size = KIconLoader::global()->currentSize( KIconLoader::Small );
-        if ( open )
-            setPixmap( 0, DesktopIcon( "folder-open", size ) );
-        else
-            setPixmap( 0, m_fileItem.pixmap( size ) );
+    if (open && !childCount() && m_bListable) {
+        MYMODULE->openSubFolder(this);
+    } else if (hasStandardIcon()) {
+        int size = KIconLoader::global()->currentSize(KIconLoader::Small);
+        if (open) {
+            setPixmap(0, DesktopIcon("folder-open", size));
+        } else {
+            setPixmap(0, m_fileItem.pixmap(size));
+        }
     }
-    KonqSidebarTreeItem::setOpen( open );
+    KonqSidebarTreeItem::setOpen(open);
 }
 
 bool KonqSidebarDirTreeItem::hasStandardIcon()
 {
     // The reason why we can't use KFileItem::iconName() is that it doesn't
     // take custom icons in .directory files into account
-    return m_fileItem.determineMimeType()->iconName( m_fileItem.url()/*, m_fileItem->isLocalFile()*/ ) == "folder";
+    return m_fileItem.determineMimeType()->iconName(m_fileItem.url()/*, m_fileItem->isLocalFile()*/) == "folder";
 }
 
-void KonqSidebarDirTreeItem::paintCell( QPainter *_painter, const QColorGroup & _cg, int _column, int _width, int _alignment )
+void KonqSidebarDirTreeItem::paintCell(QPainter *_painter, const QColorGroup &_cg, int _column, int _width, int _alignment)
 {
-    if (m_fileItem.isLink())
-    {
-        QFont f( _painter->font() );
-        f.setItalic( true );
-        _painter->setFont( f );
+    if (m_fileItem.isLink()) {
+        QFont f(_painter->font());
+        f.setItalic(true);
+        _painter->setFont(f);
     }
-    Q3ListViewItem::paintCell( _painter, _cg, _column, _width, _alignment );
+    Q3ListViewItem::paintCell(_painter, _cg, _column, _width, _alignment);
 }
 
 QUrl KonqSidebarDirTreeItem::externalURL() const
@@ -132,45 +131,49 @@ QUrl KonqSidebarDirTreeItem::externalURL() const
 
 QString KonqSidebarDirTreeItem::externalMimeType() const
 {
-    if (m_fileItem.isMimeTypeKnown())
+    if (m_fileItem.isMimeTypeKnown()) {
         return m_fileItem.mimetype();
-    else
+    } else {
         return QString();
+    }
 }
 
-bool KonqSidebarDirTreeItem::acceptsDrops( const Q3StrList & formats )
+bool KonqSidebarDirTreeItem::acceptsDrops(const Q3StrList &formats)
 {
-    if ( formats.contains("text/uri-list") ) {
+    if (formats.contains("text/uri-list")) {
         // A directory ?
-        if ( S_ISDIR( m_fileItem.mode() ) ) {
+        if (S_ISDIR(m_fileItem.mode())) {
             return m_fileItem.isWritable();
         }
 
         // But only local .desktop files and executables
-        if ( !m_fileItem.isLocalFile() )
+        if (!m_fileItem.isLocalFile()) {
             return false;
+        }
 
-        if ( m_fileItem.mimetype() == "application/x-desktop")
+        if (m_fileItem.mimetype() == "application/x-desktop") {
             return true;
+        }
 
         // Executable, shell script ... ?
-        if ( QFileInfo(m_fileItem.url().toLocalFile()).isExecutable() )
+        if (QFileInfo(m_fileItem.url().toLocalFile()).isExecutable()) {
             return true;
+        }
 
         return false;
     }
     return false;
 }
 
-void KonqSidebarDirTreeItem::drop( QDropEvent * ev )
+void KonqSidebarDirTreeItem::drop(QDropEvent *ev)
 {
-    KonqOperations::doDrop( m_fileItem, externalURL(), ev, tree() );
+    KonqOperations::doDrop(m_fileItem, externalURL(), ev, tree());
 }
 
-bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
+bool KonqSidebarDirTreeItem::populateMimeData(QMimeData *mimeData, bool move)
 {
     QList<QUrl> lst;
-    lst.append( m_fileItem.url() );
+    lst.append(m_fileItem.url());
     kDebug() << lst;
 
     mimeData->setUrls(lst);
@@ -183,7 +186,7 @@ void KonqSidebarDirTreeItem::itemSelected()
     const QMimeData *mimeData = QApplication::clipboard()->mimeData();
     const KUrl::List urls = KUrl::List::fromMimeData(mimeData);
     const QList<QUrl> urls =
-    const bool paste = !urls.isEmpty();
+        const bool paste = !urls.isEmpty();
     tree()->enableActions(true, true, paste);
 }
 
@@ -192,26 +195,27 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
     // Optimization to avoid KRun to call kfmclient that then tells us
     // to open a window :-)
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(m_fileItem.mimetype(), "Application");
-    if (offer) kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
-    if ( offer && offer->desktopEntryName().startsWith("kfmclient") )
-    {
-        kDebug(1201)<<"Emitting createNewWindow";
-        KParts::OpenUrlArguments args;
-        args.setMimeType( m_fileItem.mimetype() );
-        emit tree()->createNewWindow( m_fileItem.url(), args );
+    if (offer) {
+        kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
     }
-    else
+    if (offer && offer->desktopEntryName().startsWith("kfmclient")) {
+        kDebug(1201) << "Emitting createNewWindow";
+        KParts::OpenUrlArguments args;
+        args.setMimeType(m_fileItem.mimetype());
+        emit tree()->createNewWindow(m_fileItem.url(), args);
+    } else {
         m_fileItem.run();
+    }
 }
 
 void KonqSidebarDirTreeItem::rightButtonPressed()
 {
     KParts::BrowserExtension::PopupFlags popupFlags = KParts::BrowserExtension::DefaultPopupItems
-                                                      | KParts::BrowserExtension::ShowProperties
-                                                      | KParts::BrowserExtension::ShowUrlOperations;
+            | KParts::BrowserExtension::ShowProperties
+            | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     QList<QAction *> editActions;
-    KActionCollection* actionCollection = tree()->actionCollection();
+    KActionCollection *actionCollection = tree()->actionCollection();
 
     KFileItemList items;
     items.append(m_fileItem);
@@ -237,23 +241,24 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
     bool addDel = false;
 
     if (supportsDeleting) {
-        if (!m_fileItem.isLocalFile())
+        if (!m_fileItem.isLocalFile()) {
             addDel = true;
-        else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
+        } else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
             addTrash = false;
             addDel = true;
-        }
-        else {
+        } else {
             KSharedConfig::Ptr globalConfig = KSharedConfig::openConfig("kdeglobals", KConfig::IncludeGlobals);
             KConfigGroup configGroup(globalConfig, "KDE");
             addDel = configGroup.readEntry("ShowDeleteCommand", false);
         }
     }
 
-    if (addTrash)
+    if (addTrash) {
         editActions.append(actionCollection->action("trash"));
-    if (addDel)
+    }
+    if (addDel) {
         editActions.append(actionCollection->action("delete"));
+    }
     // Normally KonqPopupMenu only shows the "Create new" submenu in the current view
     // since otherwise the created file would not be visible.
     // But in treeview mode we should allow it.
@@ -262,8 +267,8 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
     actionGroups.insert("editactions", editActions);
 
     emit tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
-                           KParts::OpenUrlArguments(), KParts::BrowserArguments(),
-                           popupFlags, actionGroups);
+            KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+            popupFlags, actionGroups);
 }
 
 void KonqSidebarDirTreeItem::paste()
@@ -271,25 +276,25 @@ void KonqSidebarDirTreeItem::paste()
     // move or not move ?
     bool move = false;
     const QMimeData *data = QApplication::clipboard()->mimeData();
-    if ( data->hasFormat( "application/x-kde-cutselection" ) ) {
-        move = KonqMimeData::decodeIsCutSelection( data );
+    if (data->hasFormat("application/x-kde-cutselection")) {
+        move = KonqMimeData::decodeIsCutSelection(data);
         kDebug(1201) << "move (from clipboard data) = " << move;
     }
 
-    KIO::pasteClipboard( m_fileItem.url(), listView(), move );
+    KIO::pasteClipboard(m_fileItem.url(), listView(), move);
 }
 
 void KonqSidebarDirTreeItem::trash()
 {
-    delOperation( KonqOperations::TRASH );
+    delOperation(KonqOperations::TRASH);
 }
 
 void KonqSidebarDirTreeItem::del()
 {
-    delOperation( KonqOperations::DEL );
+    delOperation(KonqOperations::DEL);
 }
 
-void KonqSidebarDirTreeItem::delOperation( KonqOperations::Operation method )
+void KonqSidebarDirTreeItem::delOperation(KonqOperations::Operation method)
 {
     KUrl::List lst;
     lst.append(m_fileItem.url());
@@ -304,13 +309,13 @@ QString KonqSidebarDirTreeItem::toolTipText() const
 
 void KonqSidebarDirTreeItem::rename()
 {
-    tree()->rename( this, 0 );
+    tree()->rename(this, 0);
 }
 
-void KonqSidebarDirTreeItem::rename( const QString & name )
+void KonqSidebarDirTreeItem::rename(const QString &name)
 {
-    KUrl url (m_fileItem.url());
-    KonqOperations::rename( tree(), url, name );
-    url.setPath( url.directory( KUrl::AppendTrailingSlash ) + name );
+    KUrl url(m_fileItem.url());
+    KonqOperations::rename(tree(), url, name);
+    url.setPath(url.directory(KUrl::AppendTrailingSlash) + name);
     m_fileItem.setUrl(url);
 }

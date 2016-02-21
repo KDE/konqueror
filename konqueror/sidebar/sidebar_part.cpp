@@ -26,9 +26,9 @@
 
 K_PLUGIN_FACTORY(KonqSidebarFactory,
                  registerPlugin<KonqSidebarPart>();
-    )
+                )
 
-KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&)
+KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList &)
     : KParts::ReadOnlyPart(parent)
 {
     KAboutData aboutData("konqsidebartng", i18n("Extended Sidebar"), "0.2");
@@ -66,13 +66,12 @@ bool KonqSidebarPart::openUrl(const QUrl &url)
     return m_widget->openUrl(url);
 }
 
-void KonqSidebarPart::customEvent(QEvent* ev)
+void KonqSidebarPart::customEvent(QEvent *ev)
 {
     if (KonqFileSelectionEvent::test(ev) ||
-        KonqFileMouseOverEvent::test(ev))
-    {
+            KonqFileMouseOverEvent::test(ev)) {
         // Forward the event to the widget
-        QApplication::sendEvent( widget(), ev );
+        QApplication::sendEvent(widget(), ev);
     }
 }
 

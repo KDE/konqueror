@@ -30,51 +30,51 @@ class KUrl;
 class KIGPDialog;
 class QTextStream;
 
-typedef QMap<QString,QString> CommentMap;
+typedef QMap<QString, QString> CommentMap;
 
 class KImGalleryPlugin : public KParts::Plugin
 {
-  Q_OBJECT
-    public:
-  KImGalleryPlugin( QObject* parent,
-	            const QVariantList & );
-  ~KImGalleryPlugin() {}
+    Q_OBJECT
+public:
+    KImGalleryPlugin(QObject *parent,
+                     const QVariantList &);
+    ~KImGalleryPlugin() {}
 
-  public slots:
+public slots:
     void slotExecute();
-  void slotCancelled();
+    void slotCancelled();
 
- private:
-  bool m_cancelled;
-  bool m_recurseSubDirectories;
-  bool m_copyFiles;
-  bool m_useCommentFile;
+private:
+    bool m_cancelled;
+    bool m_recurseSubDirectories;
+    bool m_copyFiles;
+    bool m_useCommentFile;
 
-  int m_imgWidth;
-  int m_imgHeight;
-  int m_imagesPerRow;
+    int m_imgWidth;
+    int m_imgHeight;
+    int m_imagesPerRow;
 
-  QProgressDialog *m_progressDlg;
+    QProgressDialog *m_progressDlg;
 
-  KParts::ReadOnlyPart* m_part;
+    KParts::ReadOnlyPart *m_part;
 
-  KIGPDialog *m_configDlg;
+    KIGPDialog *m_configDlg;
 
-  CommentMap* m_commentMap;
+    CommentMap *m_commentMap;
 
-  bool createDirectory(const QDir &thumb_dir, const QString &imgGalleryDir, const QString &dirName);
+    bool createDirectory(const QDir &thumb_dir, const QString &imgGalleryDir, const QString &dirName);
 
-  void createHead(QTextStream& stream);
-  void createCSSSection(QTextStream& stream);
-  void createBody(QTextStream& stream, const QString& sourceDirName, const QStringList& subDirList, const QDir& imageDir, const KUrl& url, const QString& imageFormat);
+    void createHead(QTextStream &stream);
+    void createCSSSection(QTextStream &stream);
+    void createBody(QTextStream &stream, const QString &sourceDirName, const QStringList &subDirList, const QDir &imageDir, const KUrl &url, const QString &imageFormat);
 
-  bool createThumb( const QString& imgName, const QString& sourceDirName, const QString& imgGalleryDir, const QString& imageFormat);
+    bool createThumb(const QString &imgName, const QString &sourceDirName, const QString &imgGalleryDir, const QString &imageFormat);
 
-  bool createHtml( const KUrl& url, const QString& sourceDirName, int recursionLevel, const QString& imageFormat);
-  void deleteCancelledGallery( const KUrl& url, const QString& sourceDirName, int recursionLevel, const QString& imageFormat);
-  void loadCommentFile();
+    bool createHtml(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
+    void deleteCancelledGallery(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
+    void loadCommentFile();
 
-  static QString extension(const QString& imageFormat);
+    static QString extension(const QString &imageFormat);
 };
 
 #endif

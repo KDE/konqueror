@@ -1,4 +1,3 @@
-// -*- c-basic-offset: 2 -*-
 /*
  * Copyright (c) Martin R. Jones 1996
  * Copyright (c) Bernd Wuebben 1998
@@ -30,60 +29,57 @@ class QComboBox;
 class QCheckBox;
 class CSSConfig;
 
-
 class KAppearanceOptions : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KAppearanceOptions(QWidget *parent, const QVariantList&);
-  ~KAppearanceOptions();
+    KAppearanceOptions(QWidget *parent, const QVariantList &);
+    ~KAppearanceOptions();
 
-  virtual void load();
-  virtual void save();
-  virtual void defaults();
+    virtual void load();
+    virtual void save();
+    virtual void defaults();
 
 public Q_SLOTS:
-  void slotFontSize( int );
-  void slotMinimumFontSize( int );
-  void slotStandardFont(const QFont& n);
-  void slotFixedFont(const QFont& n);
-  void slotSerifFont( const QFont& n );
-  void slotSansSerifFont( const QFont& n );
-  void slotCursiveFont( const QFont& n );
-  void slotFantasyFont( const QFont& n );
-  void slotEncoding( const QString& n);
-  void slotFontSizeAdjust( int value );
+    void slotFontSize(int);
+    void slotMinimumFontSize(int);
+    void slotStandardFont(const QFont &n);
+    void slotFixedFont(const QFont &n);
+    void slotSerifFont(const QFont &n);
+    void slotSansSerifFont(const QFont &n);
+    void slotCursiveFont(const QFont &n);
+    void slotFantasyFont(const QFont &n);
+    void slotEncoding(const QString &n);
+    void slotFontSizeAdjust(int value);
 
 private:
-  void updateGUI();
+    void updateGUI();
 
 private:
-  CSSConfig* cssConfig;
-  
-  QCheckBox* m_pAutoLoadImagesCheckBox;
-  QCheckBox* m_pUnfinishedImageFrameCheckBox;
-  QComboBox* m_pAnimationsCombo;
-  QComboBox* m_pUnderlineCombo;
-  QComboBox* m_pSmoothScrollingCombo;
+    CSSConfig *cssConfig;
 
+    QCheckBox *m_pAutoLoadImagesCheckBox;
+    QCheckBox *m_pUnfinishedImageFrameCheckBox;
+    QComboBox *m_pAnimationsCombo;
+    QComboBox *m_pUnderlineCombo;
+    QComboBox *m_pSmoothScrollingCombo;
 
+    KSharedConfig::Ptr m_pConfig;
+    QString m_groupname;
 
-  KSharedConfig::Ptr m_pConfig;
-  QString m_groupname;
+    QSpinBox *m_minSize;
+    QSpinBox *m_MedSize;
+    QSpinBox *m_pageDPI;
+    KFontComboBox *m_pFonts[6];
+    QComboBox *m_pEncoding;
+    KIntSpinBox *m_pFontSizeAdjust;
 
-  QSpinBox* m_minSize;
-  QSpinBox* m_MedSize;
-  QSpinBox* m_pageDPI;
-  KFontComboBox* m_pFonts[6];
-  QComboBox* m_pEncoding;
-  KIntSpinBox *m_pFontSizeAdjust;
-
-  int fSize;
-  int fMinSize;
-  QStringList encodings;
-  QStringList fonts;
-  QStringList defaultFonts;
-  QString encodingName;
+    int fSize;
+    int fMinSize;
+    QStringList encodings;
+    QStringList fonts;
+    QStringList defaultFonts;
+    QString encodingName;
 };
 
 #endif // APPEARANCE_H

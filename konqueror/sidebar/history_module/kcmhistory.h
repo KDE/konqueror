@@ -30,45 +30,45 @@ class KonqHistorySettings;
 class KonqSidebarHistoryDlg : public QWidget, public Ui::KonqSidebarHistoryDlg
 {
 public:
-  KonqSidebarHistoryDlg( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-    layout()->setMargin( 0 );
-  }
+    KonqSidebarHistoryDlg(QWidget *parent) : QWidget(parent)
+    {
+        setupUi(this);
+        layout()->setMargin(0);
+    }
 };
-
 
 class HistorySidebarConfig : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit HistorySidebarConfig( QWidget *parent=0, const QVariantList &list=QVariantList() );
+    explicit HistorySidebarConfig(QWidget *parent = 0, const QVariantList &list = QVariantList());
 
-  void load();
-  void save();
-  void defaults();
+    void load();
+    void save();
+    void defaults();
 
-  QString quickHelp() const;
+    QString quickHelp() const;
 
 private Q_SLOTS:
-  void configChanged();
+    void configChanged();
 
-  void slotGetFontNewer();
-  void slotGetFontOlder();
+    void slotGetFontNewer();
+    void slotGetFontOlder();
 
-  void slotExpireChanged();
-  void slotNewerChanged( int );
-  void slotOlderChanged( int );
+    void slotExpireChanged();
+    void slotNewerChanged(int);
+    void slotOlderChanged(int);
 
-  void slotClearHistory();
+    void slotClearHistory();
 
 private:
-  QFont m_fontNewer;
-  QFont m_fontOlder;
+    QFont m_fontNewer;
+    QFont m_fontOlder;
 
-  KonqSidebarHistoryDlg* dialog;
-  KonqHistorySettings *m_settings;
-  KonqHistoryManager *mgr;
+    KonqSidebarHistoryDlg *dialog;
+    KonqHistorySettings *m_settings;
+    KonqHistoryManager *mgr;
 };
 
 #endif

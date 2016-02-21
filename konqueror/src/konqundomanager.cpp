@@ -27,37 +27,36 @@
 #include <kdebug.h>
 #include <KLocalizedString>
 
-
-KonqUndoManager::KonqUndoManager(QWidget* parent)
+KonqUndoManager::KonqUndoManager(QWidget *parent)
     : QObject(parent)
 {
-    connect( KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
-             this, SLOT(slotFileUndoAvailable(bool)) );
-    connect( KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
-             this, SLOT(slotFileUndoTextChanged(QString)) );
+    connect(KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
+            this, SLOT(slotFileUndoAvailable(bool)));
+    connect(KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
+            this, SLOT(slotFileUndoTextChanged(QString)));
 
     connect(KonqClosedWindowsManager::self(),
-        SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
-        SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
+            SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
+            SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
     connect(KonqClosedWindowsManager::self(),
-        SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
-        SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
+            SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
+            SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
     m_populated = false;
 }
 
 KonqUndoManager::~KonqUndoManager()
 {
-    disconnect( KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
-             this, SLOT(slotFileUndoAvailable(bool)) );
-    disconnect( KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
-             this, SLOT(slotFileUndoTextChanged(QString)) );
+    disconnect(KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
+               this, SLOT(slotFileUndoAvailable(bool)));
+    disconnect(KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
+               this, SLOT(slotFileUndoTextChanged(QString)));
 
     disconnect(KonqClosedWindowsManager::self(),
-        SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
-        SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
+               SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
+               SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
     disconnect(KonqClosedWindowsManager::self(),
-        SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
-        SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
+               SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
+               SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
 
     // Clear the closed item lists but only remove closed windows items
     // in this window
@@ -66,8 +65,9 @@ KonqUndoManager::~KonqUndoManager()
 
 void KonqUndoManager::populate()
 {
-    if(m_populated)
+    if (m_populated) {
         return;
+    }
     m_populated = true;
 
     const QList<KonqClosedWindowItem *> closedWindowItemList =
@@ -78,8 +78,9 @@ void KonqUndoManager::populate()
     // This loop is done backwards because slotAddClosedWindowItem prepends the
     // elements to the list, so if we do it forwards the we would get an inverse
     // order of closed windows
-    for(i.toBack(); i.hasPrevious(); )
+    for (i.toBack(); i.hasPrevious();) {
         slotAddClosedWindowItem(0L, i.previous());
+    }
 }
 
 void KonqUndoManager::slotFileUndoAvailable(bool)
@@ -89,41 +90,46 @@ void KonqUndoManager::slotFileUndoAvailable(bool)
 
 bool KonqUndoManager::undoAvailable() const
 {
-    if (!m_closedItemList.isEmpty() || KonqClosedWindowsManager::self()->undoAvailable())
+    if (!m_closedItemList.isEmpty() || KonqClosedWindowsManager::self()->undoAvailable()) {
         return true;
-    else
+    } else {
         return (m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable());
+    }
 }
 
 QString KonqUndoManager::undoText() const
 {
     if (!m_closedItemList.isEmpty()) {
-        const KonqClosedItem* closedItem = m_closedItemList.first();
+        const KonqClosedItem *closedItem = m_closedItemList.first();
         if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->undoAvailable() || closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
-            const KonqClosedTabItem* closedTabItem =
+            const KonqClosedTabItem *closedTabItem =
                 dynamic_cast<const KonqClosedTabItem *>(closedItem);
-            if(closedTabItem)
+            if (closedTabItem) {
                 return i18n("Und&o: Closed Tab");
-            else
+            } else {
                 return i18n("Und&o: Closed Window");
-        } else
-          return KIO::FileUndoManager::self()->undoText();
-          
-    } else if(m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable())
+            }
+        } else {
+            return KIO::FileUndoManager::self()->undoText();
+        }
+
+    } else if (m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable()) {
         return KIO::FileUndoManager::self()->undoText();
-        
-    else if(KonqClosedWindowsManager::self()->undoAvailable())
+    }
+
+    else if (KonqClosedWindowsManager::self()->undoAvailable()) {
         return i18n("Und&o: Closed Window");
-    else
+    } else {
         return i18n("Und&o");
+    }
 }
 
 void KonqUndoManager::undo()
 {
     populate();
-    KIO::FileUndoManager* fileUndoManager = KIO::FileUndoManager::self();
+    KIO::FileUndoManager *fileUndoManager = KIO::FileUndoManager::self();
     if (!m_closedItemList.isEmpty()) {
-        KonqClosedItem* closedItem = m_closedItemList.first();
+        KonqClosedItem *closedItem = m_closedItemList.first();
 
         // Check what to undo
         if (!m_supportsFileUndo || !fileUndoManager->undoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
@@ -131,27 +137,28 @@ void KonqUndoManager::undo()
             return;
         }
     }
-    fileUndoManager->uiInterface()->setParentWidget(qobject_cast<QWidget*>(parent()));
+    fileUndoManager->uiInterface()->setParentWidget(qobject_cast<QWidget *>(parent()));
     fileUndoManager->undo();
 }
 
 void KonqUndoManager::slotAddClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem)
 {
-    if(real_sender == this)
+    if (real_sender == this) {
         return;
+    }
 
     populate();
 
-    if(m_closedItemList.size() >= KonqSettings::maxNumClosedItems())
-    {
-        const KonqClosedItem* last = m_closedItemList.last();
-        const KonqClosedTabItem* lastTab =
+    if (m_closedItemList.size() >= KonqSettings::maxNumClosedItems()) {
+        const KonqClosedItem *last = m_closedItemList.last();
+        const KonqClosedTabItem *lastTab =
             dynamic_cast<const KonqClosedTabItem *>(last);
         m_closedItemList.removeLast();
 
         // Delete only if it's a tab
-        if(lastTab)
+        if (lastTab) {
             delete lastTab;
+        }
     }
 
     m_closedItemList.prepend(closedWindowItem);
@@ -168,22 +175,23 @@ void KonqUndoManager::addClosedWindowItem(KonqClosedWindowItem *closedWindowItem
 
 void KonqUndoManager::slotRemoveClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem *closedWindowItem)
 {
-    if(real_sender == this)
+    if (real_sender == this) {
         return;
+    }
 
     populate();
 
     QList<KonqClosedItem *>::iterator it = qFind(m_closedItemList.begin(), m_closedItemList.end(), closedWindowItem);
 
     // If the item was found, remove it from the list
-    if(it != m_closedItemList.end()) {
+    if (it != m_closedItemList.end()) {
         m_closedItemList.erase(it);
         emit undoAvailable(this->undoAvailable());
         emit closedItemsListChanged();
     }
 }
 
-const QList<KonqClosedItem *>& KonqUndoManager::closedItemsList()
+const QList<KonqClosedItem *> &KonqUndoManager::closedItemsList()
 {
     populate();
     return m_closedItemList;
@@ -193,21 +201,21 @@ void KonqUndoManager::undoClosedItem(int index)
 {
     populate();
     Q_ASSERT(!m_closedItemList.isEmpty());
-    KonqClosedItem* closedItem = m_closedItemList.at( index );
+    KonqClosedItem *closedItem = m_closedItemList.at(index);
     m_closedItemList.removeAt(index);
 
-    const KonqClosedTabItem* closedTabItem =
+    const KonqClosedTabItem *closedTabItem =
         dynamic_cast<const KonqClosedTabItem *>(closedItem);
-    KonqClosedRemoteWindowItem* closedRemoteWindowItem =
+    KonqClosedRemoteWindowItem *closedRemoteWindowItem =
         dynamic_cast<KonqClosedRemoteWindowItem *>(closedItem);
-    KonqClosedWindowItem* closedWindowItem =
+    KonqClosedWindowItem *closedWindowItem =
         dynamic_cast<KonqClosedWindowItem *>(closedItem);
-    if(closedTabItem)
+    if (closedTabItem) {
         emit openClosedTab(*closedTabItem);
-    else if(closedRemoteWindowItem) {
+    } else if (closedRemoteWindowItem) {
         KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedRemoteWindowItem);
         emit openClosedWindow(*closedRemoteWindowItem);
-    } else if(closedWindowItem) {
+    } else if (closedWindowItem) {
         KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem);
         emit openClosedWindow(*closedWindowItem);
         closedWindowItem->configGroup().deleteGroup();
@@ -221,14 +229,14 @@ void KonqUndoManager::undoClosedItem(int index)
     emit closedItemsListChanged();
 }
 
-void KonqUndoManager::slotClosedItemsActivated(QAction* action)
+void KonqUndoManager::slotClosedItemsActivated(QAction *action)
 {
     // Open a closed tab
     const int index = action->data().toInt();
     undoClosedItem(index);
 }
 
-void KonqUndoManager::slotFileUndoTextChanged(const QString& /*text*/)
+void KonqUndoManager::slotFileUndoTextChanged(const QString & /*text*/)
 {
     // We will forward this call but changing the text, because if for example
     // there' no more files to undo, the text will be "Und&o" but maybe
@@ -242,20 +250,20 @@ quint64 KonqUndoManager::newCommandSerialNumber()
     return KIO::FileUndoManager::self()->newCommandSerialNumber();
 }
 
-void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
+void KonqUndoManager::addClosedTabItem(KonqClosedTabItem *closedTabItem)
 {
     populate();
 
-    if(m_closedItemList.size() >= KonqSettings::maxNumClosedItems())
-    {
-        const KonqClosedItem* last = m_closedItemList.last();
-        const KonqClosedTabItem* lastTab =
+    if (m_closedItemList.size() >= KonqSettings::maxNumClosedItems()) {
+        const KonqClosedItem *last = m_closedItemList.last();
+        const KonqClosedTabItem *lastTab =
             dynamic_cast<const KonqClosedTabItem *>(last);
         m_closedItemList.removeLast();
 
         // Delete only if it's a tab
-        if(lastTab)
+        if (lastTab) {
             delete lastTab;
+        }
     }
 
     m_closedItemList.prepend(closedTabItem);
@@ -273,26 +281,25 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
 {
     populate();
     QList<KonqClosedItem *>::iterator it = m_closedItemList.begin();
-    for (; it != m_closedItemList.end(); ++it)
-    {
+    for (; it != m_closedItemList.end(); ++it) {
         KonqClosedItem *closedItem = *it;
-        const KonqClosedTabItem* closedTabItem =
+        const KonqClosedTabItem *closedTabItem =
             dynamic_cast<const KonqClosedTabItem *>(closedItem);
-        const KonqClosedWindowItem* closedWindowItem =
+        const KonqClosedWindowItem *closedWindowItem =
             dynamic_cast<const KonqClosedWindowItem *>(closedItem);
 
         m_closedItemList.erase(it);
-        if(closedTabItem)
+        if (closedTabItem) {
             delete closedTabItem;
-        else if (closedWindowItem && !onlyInthisWindow) {
+        } else if (closedWindowItem && !onlyInthisWindow) {
             KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem, true);
             delete closedWindowItem;
         }
     }
-    
+
     emit closedItemsListChanged();
     emit undoAvailable(this->undoAvailable());
-    
+
     // Save config so that this window won't appear in new konqueror processes
     KonqClosedWindowsManager::self()->saveConfig();
 }

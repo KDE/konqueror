@@ -27,7 +27,7 @@
 
 SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
     : QObject(parent),
-    m_engineName(engineName)
+      m_engineName(engineName)
 {
     // First get the suggestion request URL for this engine
     KService::Ptr service = KService::serviceByDesktopPath(QString("searchproviders/%1.desktop").arg(m_engineName));
@@ -36,8 +36,7 @@ SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
         const QString suggestionURL = service->property("Suggest").toString();
         if (!suggestionURL.isNull() && !suggestionURL.isEmpty()) {
             m_requestURL = suggestionURL;
-        }
-        else {
+        } else {
             kWarning(1202) << "Missing property [Suggest] for suggestion engine: " + m_engineName;
         }
     }
@@ -52,5 +51,4 @@ QString SuggestionEngine::engineName() const
 {
     return m_engineName;
 }
-
 

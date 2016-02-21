@@ -36,17 +36,19 @@
 void KonqSidebarTreeTopLevelItem::init()
 {
     QString desktopFile = m_path;
-    if ( isTopLevelGroup() )
+    if (isTopLevelGroup()) {
         desktopFile += "/.directory";
-    KDesktopFile cfg(  desktopFile );
-    m_comment = cfg.desktopGroup().readEntry( "Comment" );
+    }
+    KDesktopFile cfg(desktopFile);
+    m_comment = cfg.desktopGroup().readEntry("Comment");
 }
 
-void KonqSidebarTreeTopLevelItem::setOpen( bool open )
+void KonqSidebarTreeTopLevelItem::setOpen(bool open)
 {
-    if (open && module())
-        module()->openTopLevelItem( this );
-    KonqSidebarTreeItem::setOpen( open );
+    if (open && module()) {
+        module()->openTopLevelItem(this);
+    }
+    KonqSidebarTreeItem::setOpen(open);
 }
 
 void KonqSidebarTreeTopLevelItem::itemSelected()
@@ -57,37 +59,34 @@ void KonqSidebarTreeTopLevelItem::itemSelected()
     tree()->enableActions(true, true, paste);
 }
 
-bool KonqSidebarTreeTopLevelItem::acceptsDrops( const Q3StrList & formats )
+bool KonqSidebarTreeTopLevelItem::acceptsDrops(const Q3StrList &formats)
 {
     return formats.contains("text/uri-list") &&
-        ( m_bTopLevelGroup || !externalURL().isEmpty() );
+           (m_bTopLevelGroup || !externalURL().isEmpty());
 }
 
-void KonqSidebarTreeTopLevelItem::drop( QDropEvent * ev )
+void KonqSidebarTreeTopLevelItem::drop(QDropEvent *ev)
 {
-    if ( m_bTopLevelGroup )
-    {
+    if (m_bTopLevelGroup) {
         // When dropping something to "Network" or its subdirs, we want to create
         // a desktop link, not to move/copy/link - except for .desktop files :-}
         KUrl::List lst;
-        if ( K3URLDrag::decode( ev, lst ) && !lst.isEmpty() ) // Are they urls ?
-        {
+        if (K3URLDrag::decode(ev, lst) && !lst.isEmpty()) {   // Are they urls ?
             KUrl::List::Iterator it = lst.begin();
-            for ( ; it != lst.end() ; it++ )
-            {
+            for (; it != lst.end(); it++) {
                 tree()->addUrl(this, *it);
             }
-        } else
+        } else {
             kError() << "No URL !?  " << endl;
-    }
-    else // Top level item, not group
-    {
-        if ( !externalURL().isEmpty() )
-            KonqOperations::doDrop( KFileItem(), externalURL(), ev, tree() );
+        }
+    } else { // Top level item, not group
+        if (!externalURL().isEmpty()) {
+            KonqOperations::doDrop(KFileItem(), externalURL(), ev, tree());
+        }
     }
 }
 
-bool KonqSidebarTreeTopLevelItem::populateMimeData( QMimeData* mimeData, bool move )
+bool KonqSidebarTreeTopLevelItem::populateMimeData(QMimeData *mimeData, bool move)
 {
     QList<QUrl> lst;
     lst.append(QUrl::fromLocalFile(path()));
@@ -96,11 +95,10 @@ bool KonqSidebarTreeTopLevelItem::populateMimeData( QMimeData* mimeData, bool mo
     KIO::setClipboardDataCut(mimeData, move);
 
 #if 0
-    const QPixmap * pix = pixmap(0);
-    if (pix)
-    {
-        QPoint hotspot( pix->width() / 2, pix->height() / 2 );
-        drag->setPixmap( *pix, hotspot );
+    const QPixmap *pix = pixmap(0);
+    if (pix) {
+        QPoint hotspot(pix->width() / 2, pix->height() / 2);
+        drag->setPixmap(*pix, hotspot);
     }
 #endif
 
@@ -109,39 +107,38 @@ bool KonqSidebarTreeTopLevelItem::populateMimeData( QMimeData* mimeData, bool mo
 
 void KonqSidebarTreeTopLevelItem::middleButtonClicked()
 {
-    if ( !m_bTopLevelGroup )
-        emit tree()->createNewWindow( m_externalURL );
+    if (!m_bTopLevelGroup) {
+        emit tree()->createNewWindow(m_externalURL);
+    }
     // Do nothing for toplevel groups
 }
 
 void KonqSidebarTreeTopLevelItem::rightButtonPressed()
 {
     KUrl url;
-    url.setPath( m_path );
+    url.setPath(m_path);
     // We don't show "edit file type" (useless here) and "properties" (shows the wrong name,
     // i.e. the filename instead of the Name field). There's the Rename item for that.
     // Only missing thing is changing the URL of a link. Hmm...
 
-    if ( !module() || !module()->handleTopLevelContextMenu( this, QCursor::pos() ) )
-    {
+    if (!module() || !module()->handleTopLevelContextMenu(this, QCursor::pos())) {
         tree()->showToplevelContextMenu();
     }
 }
 
-
 void KonqSidebarTreeTopLevelItem::trash()
 {
-    delOperation( KonqOperations::TRASH );
+    delOperation(KonqOperations::TRASH);
 }
 
 void KonqSidebarTreeTopLevelItem::del()
 {
-    delOperation( KonqOperations::DEL );
+    delOperation(KonqOperations::DEL);
 }
 
-void KonqSidebarTreeTopLevelItem::delOperation( KonqOperations::Operation method )
+void KonqSidebarTreeTopLevelItem::delOperation(KonqOperations::Operation method)
 {
-    KUrl url( m_path );
+    KUrl url(m_path);
     KUrl::List lst;
     lst.append(url);
 
@@ -153,41 +150,43 @@ void KonqSidebarTreeTopLevelItem::paste()
     // move or not move ?
     bool move = false;
     const QMimeData *data = QApplication::clipboard()->mimeData();
-    if ( data->hasFormat( "application/x-kde-cutselection" ) ) {
-        move = KonqMimeData::decodeIsCutSelection( data );
+    if (data->hasFormat("application/x-kde-cutselection")) {
+        move = KonqMimeData::decodeIsCutSelection(data);
         kDebug(1201) << "move (from clipboard data) = " << move;
     }
 
     KUrl destURL;
-    if ( m_bTopLevelGroup )
-        destURL.setPath( m_path );
-    else
+    if (m_bTopLevelGroup) {
+        destURL.setPath(m_path);
+    } else {
         destURL = m_externalURL;
+    }
 
-    KIO::pasteClipboard( destURL, 0L,move );
+    KIO::pasteClipboard(destURL, 0L, move);
 }
 
 void KonqSidebarTreeTopLevelItem::rename()
 {
-    tree()->rename( this, 0 );
+    tree()->rename(this, 0);
 }
 
-void KonqSidebarTreeTopLevelItem::rename( const QString & name )
+void KonqSidebarTreeTopLevelItem::rename(const QString &name)
 {
     KUrl url(m_path);
 
     // Adjust the Name field of the .directory or desktop file
     QString desktopFile = m_path;
-    if ( isTopLevelGroup() )
+    if (isTopLevelGroup()) {
         desktopFile += "/.directory";
-    KDesktopFile cfg( desktopFile );
-    cfg.desktopGroup().writeEntry( "Name", name );
+    }
+    KDesktopFile cfg(desktopFile);
+    cfg.desktopGroup().writeEntry("Name", name);
     cfg.sync();
 
     // Notify about the change
     KUrl::List lst;
     lst.append(url);
-    OrgKdeKDirNotifyInterface::emitFilesChanged( lst.toStringList() );
+    OrgKdeKDirNotifyInterface::emitFilesChanged(lst.toStringList());
 }
 
 QString KonqSidebarTreeTopLevelItem::toolTipText() const

@@ -51,63 +51,64 @@ class QUrl;
  */
 class LIBKONQ_EXPORT KonqPopupMenu : public QMenu // KDE5 TODO: inherit KMenu to benefit from KAcceleratorManager automatically
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
 
-  /**
-   * Flags set by the calling application (e.g. konqueror), unlike
-   * KParts::BrowserExtension::PopupFlags, which are set by the calling part
-   */
-  typedef uint Flags;
-  enum { NoFlags = 0,
-         ShowNewWindow = 1,
-         NoPlugins = 2 /*for the unittest*/ };
-         // WARNING: bitfield. Next item is 4
+    /**
+     * Flags set by the calling application (e.g. konqueror), unlike
+     * KParts::BrowserExtension::PopupFlags, which are set by the calling part
+     */
+    typedef uint Flags;
+    enum { NoFlags = 0,
+           ShowNewWindow = 1,
+           NoPlugins = 2 /*for the unittest*/
+         };
+    // WARNING: bitfield. Next item is 4
 
-  /**
-   * Constructor
-   * @param manager the bookmark manager for the "add to bookmark" action
-   * Only used if KParts::BrowserExtension::ShowBookmark is set
-   * @param items the list of file items the popupmenu should be shown for
-   * @param viewURL the URL shown in the view, to test for RMB click on view background
-   * @param actions list of actions the caller wants to see in the menu
-   * @param newMenu "New" menu, shared with the File menu, in konqueror
-   * @param parentWidget the widget we're showing this popup for. Helps destroying
-   * the popup if the widget is destroyed before the popup.
-   * @param appFlags flags from the KonqPopupMenu::Flags enum, set by the calling application
-   * @param partFlags flags from the BrowserExtension enum, set by the calling part
-   *
-   * The actions to pass in include :
-   * showmenubar, go_back, go_forward, go_up, cut, copy, paste, pasteto
-   * The others items are automatically inserted.
-   *
-   * @todo that list is probably not be up-to-date
-   */
-  KonqPopupMenu( const KFileItemList &items,
-                 const QUrl& viewURL,
-                 KActionCollection & actions,
-                 KNewFileMenu * newMenu,
-                 Flags appFlags,
-                 KParts::BrowserExtension::PopupFlags partFlags /*= KParts::BrowserExtension::DefaultPopupItems*/,
-                 QWidget * parentWidget,
-                 KBookmarkManager *manager = 0,
-                 const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap()
-      );
+    /**
+     * Constructor
+     * @param manager the bookmark manager for the "add to bookmark" action
+     * Only used if KParts::BrowserExtension::ShowBookmark is set
+     * @param items the list of file items the popupmenu should be shown for
+     * @param viewURL the URL shown in the view, to test for RMB click on view background
+     * @param actions list of actions the caller wants to see in the menu
+     * @param newMenu "New" menu, shared with the File menu, in konqueror
+     * @param parentWidget the widget we're showing this popup for. Helps destroying
+     * the popup if the widget is destroyed before the popup.
+     * @param appFlags flags from the KonqPopupMenu::Flags enum, set by the calling application
+     * @param partFlags flags from the BrowserExtension enum, set by the calling part
+     *
+     * The actions to pass in include :
+     * showmenubar, go_back, go_forward, go_up, cut, copy, paste, pasteto
+     * The others items are automatically inserted.
+     *
+     * @todo that list is probably not be up-to-date
+     */
+    KonqPopupMenu(const KFileItemList &items,
+                  const QUrl &viewURL,
+                  KActionCollection &actions,
+                  KNewFileMenu *newMenu,
+                  Flags appFlags,
+                  KParts::BrowserExtension::PopupFlags partFlags /*= KParts::BrowserExtension::DefaultPopupItems*/,
+                  QWidget *parentWidget,
+                  KBookmarkManager *manager = 0,
+                  const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap()
+                 );
 
-  /**
-   * Don't forget to destroy the object
-   */
-  ~KonqPopupMenu();
+    /**
+     * Don't forget to destroy the object
+     */
+    ~KonqPopupMenu();
 
-  /**
-   * Set the title of the URL, when the popupmenu is opened for a single URL.
-   * This is used if the user chooses to add a bookmark for this URL.
-   */
-  void setURLTitle( const QString& urlTitle );
-  KFileItemActions* fileItemActions() const;
+    /**
+     * Set the title of the URL, when the popupmenu is opened for a single URL.
+     * This is used if the user chooses to add a bookmark for this URL.
+     */
+    void setURLTitle(const QString &urlTitle);
+    KFileItemActions *fileItemActions() const;
 
 private:
-  KonqPopupMenuPrivate *d;
+    KonqPopupMenuPrivate *d;
 };
 
 #endif

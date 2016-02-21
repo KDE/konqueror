@@ -36,37 +36,39 @@
 */
 class KUrlLabel;
 
-namespace KParts {
-    class StatusBarExtension;
+namespace KParts
+{
+class StatusBarExtension;
 }
 
-class KonqMFIcon : public KParts::Plugin, PluginBase {
-	Q_OBJECT
-	public:
-		KonqMFIcon(QObject *parent, const QVariantList &);
+class KonqMFIcon : public KParts::Plugin, PluginBase
+{
+    Q_OBJECT
+public:
+    KonqMFIcon(QObject *parent, const QVariantList &);
 
-		~KonqMFIcon();
+    ~KonqMFIcon();
 
-	private:
-		bool mfFound();
-		bool hasMicroFormat(const DOM::NodeList &nodes);
-		void extractCard(const DOM::Node &node);
-		void extractEvent(const DOM::Node &node);
-		void addMF(int id);
+private:
+    bool mfFound();
+    bool hasMicroFormat(const DOM::NodeList &nodes);
+    void extractCard(const DOM::Node &node);
+    void extractEvent(const DOM::Node &node);
+    void addMF(int id);
 
-		QPointer<KHTMLPart> m_part;
-		KUrlLabel *m_mfIcon;
-		KParts::StatusBarExtension *m_statusBarEx;
-		QPointer<KMenu> m_menu;
-		QList<QPair<QString, QString> > _events, _cards;
+    QPointer<KHTMLPart> m_part;
+    KUrlLabel *m_mfIcon;
+    KParts::StatusBarExtension *m_statusBarEx;
+    QPointer<KMenu> m_menu;
+    QList<QPair<QString, QString> > _events, _cards;
 
-	private slots:
-		void waitPartToLoad();
-		void contextMenu();
-		void addMFIcon();
-		void removeMFIcon();
-		void addMFs();
-		void addMF();
+private slots:
+    void waitPartToLoad();
+    void contextMenu();
+    void addMFIcon();
+    void removeMFIcon();
+    void addMFs();
+    void addMF();
 };
 
 #endif // KONQ_PLUGIN_KONQMFICON_H

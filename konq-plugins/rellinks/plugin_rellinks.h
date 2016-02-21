@@ -20,7 +20,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.             *
  ***************************************************************************/
 
-
 #ifndef _PLUGIN_RELLINKS_H_
 #define _PLUGIN_RELLINKS_H_
 
@@ -39,7 +38,7 @@
 #include <kactionmenu.h>
 
 // type definitions
-typedef QMap<QString, KActionMenu*> KActionMenuMap;
+typedef QMap<QString, KActionMenu *> KActionMenuMap;
 
 // forward declarations
 class KActionMenu;
@@ -52,15 +51,16 @@ class QTimer;
  * @author Franck Quélain
  * @author Anders Lund
  */
-class RelLinksPlugin : public KParts::Plugin {
+class RelLinksPlugin : public KParts::Plugin
+{
     Q_OBJECT
 public:
     /** Constructor */
-    RelLinksPlugin( QObject *parent, const QVariantList & );
+    RelLinksPlugin(QObject *parent, const QVariantList &);
     /** Destructor */
     virtual ~RelLinksPlugin();
 
-    bool eventFilter(QObject *watched, QEvent* event);
+    bool eventFilter(QObject *watched, QEvent *event);
 
 private slots:
     void delayedSetup();
@@ -99,10 +99,10 @@ private:
 
     /**
      * Try to guess some relations from the url, if the document doesn't contains relations
-	 * example:   http://example.com/page4.html
-	 * the "next" relation will be set to page5.html
-	 */
-	void guessRelations();
+     * example:   http://example.com/page4.html
+     * the "next" relation will be set to page5.html
+     */
+    void guessRelations();
 
     /**
      * Function used to get link type of a relation.
@@ -120,7 +120,7 @@ private:
      * @param rev Inverse relation name
      * @return Equivalent relation name
      */
-    QString transformRevToRel(const QString &rev) ;
+    QString transformRevToRel(const QString &rev);
 
     /**
      * Function used to disable all the item of the toolbar
@@ -128,9 +128,9 @@ private:
     void disableAll();
 
 private:
-    KHTMLPart* m_part;
-    KHTMLView* m_view;
-	bool m_viewVisible;
+    KHTMLPart *m_part;
+    KHTMLView *m_view;
+    bool m_viewVisible;
 
     KActionMenu *m_document;
     KActionMenu *m_more;
@@ -139,10 +139,10 @@ private:
     /** Map of KActionMenu */
     KActionMenuMap kactionmenu_map;
 
-	/** Whether the at least one link element has been found in the current page*/
+    /** Whether the at least one link element has been found in the current page*/
     bool m_linksFound;
 
-    QTimer* m_pollTimer;
+    QTimer *m_pollTimer;
 };
 
 #endif // _PLUGIN_RELLINKS_H_

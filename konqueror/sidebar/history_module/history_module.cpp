@@ -31,7 +31,7 @@
 #include <kpluginfactory.h>
 
 KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
-                                                   const KConfigGroup& configGroup)
+        const KConfigGroup &configGroup)
     : KonqSidebarModule(parent, configGroup)
 {
     m_historyView = new KonqHistoryView(parent);
@@ -46,16 +46,17 @@ KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
 {
 }
 
-QWidget * KonqSidebarHistoryModule::getWidget()
+QWidget *KonqSidebarHistoryModule::getWidget()
 {
     return m_historyView;
 }
 
 // LMB activation (single or double click) handling
-void KonqSidebarHistoryModule::slotActivated(const QModelIndex& index)
+void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
 {
-    if (m_lastPressedButtons == Qt::MidButton) // already handled by slotClicked
+    if (m_lastPressedButtons == Qt::MidButton) { // already handled by slotClicked
         return;
+    }
     const QUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {
         emit openUrlRequest(url);
@@ -63,14 +64,14 @@ void KonqSidebarHistoryModule::slotActivated(const QModelIndex& index)
 }
 
 // Needed for MMB handling; no convenient API in QAbstractItemView
-void KonqSidebarHistoryModule::slotPressed(const QModelIndex& index)
+void KonqSidebarHistoryModule::slotPressed(const QModelIndex &index)
 {
     Q_UNUSED(index);
     m_lastPressedButtons = qApp->mouseButtons();
 }
 
 // MMB handling
-void KonqSidebarHistoryModule::slotClicked(const QModelIndex& index)
+void KonqSidebarHistoryModule::slotClicked(const QModelIndex &index)
 {
     if (m_lastPressedButtons & Qt::MidButton) {
         const QUrl url = m_historyView->urlForIndex(index);
@@ -80,7 +81,7 @@ void KonqSidebarHistoryModule::slotClicked(const QModelIndex& index)
     }
 }
 
-void KonqSidebarHistoryModule::slotOpenWindow(const QUrl& url)
+void KonqSidebarHistoryModule::slotOpenWindow(const QUrl &url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
@@ -89,7 +90,7 @@ void KonqSidebarHistoryModule::slotOpenWindow(const QUrl& url)
     createNewWindow(url, args, browserArgs);
 }
 
-void KonqSidebarHistoryModule::slotOpenTab(const QUrl& url)
+void KonqSidebarHistoryModule::slotOpenTab(const QUrl &url)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
@@ -101,43 +102,43 @@ void KonqSidebarHistoryModule::slotOpenTab(const QUrl& url)
 class KonqSidebarHistoryPlugin : public KonqSidebarPlugin
 {
 public:
-    KonqSidebarHistoryPlugin(QObject* parent, const QVariantList& args)
+    KonqSidebarHistoryPlugin(QObject *parent, const QVariantList &args)
         : KonqSidebarPlugin(parent, args) {}
     virtual ~KonqSidebarHistoryPlugin() {}
 
-    virtual KonqSidebarModule* createModule(QWidget *parent,
-                                            const KConfigGroup& configGroup,
+    virtual KonqSidebarModule *createModule(QWidget *parent,
+                                            const KConfigGroup &configGroup,
                                             const QString &desktopname,
-                                            const QVariant& unused)
+                                            const QVariant &unused)
     {
         Q_UNUSED(unused);
         Q_UNUSED(desktopname);
         return new KonqSidebarHistoryModule(parent, configGroup);
     }
 
-    virtual QList<QAction*> addNewActions(QObject* parent,
-                                          const QList<KConfigGroup>& existingModules,
-                                          const QVariant& unused)
+    virtual QList<QAction *> addNewActions(QObject *parent,
+                                           const QList<KConfigGroup> &existingModules,
+                                           const QVariant &unused)
     {
         Q_UNUSED(unused);
         Q_UNUSED(existingModules);
-        QAction* action = new QAction(parent);
+        QAction *action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "History Sidebar Module"));
         action->setIcon(QIcon::fromTheme("view-history"));
         return QList<QAction *>() << action;
     }
 
-    virtual QString templateNameForNewModule(const QVariant& actionData,
-                                             const QVariant& unused) const
+    virtual QString templateNameForNewModule(const QVariant &actionData,
+            const QVariant &unused) const
     {
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
         return QString::fromLatin1("historyplugin%1.desktop");
     }
 
-    virtual bool createNewModule(const QVariant& actionData, KConfigGroup& configGroup,
-                                 QWidget* parentWidget,
-                                 const QVariant& unused)
+    virtual bool createNewModule(const QVariant &actionData, KConfigGroup &configGroup,
+                                 QWidget *parentWidget,
+                                 const QVariant &unused)
     {
         Q_UNUSED(parentWidget);
         Q_UNUSED(actionData);
@@ -151,7 +152,7 @@ public:
     }
 };
 
-K_PLUGIN_FACTORY(KonqSidebarHistoryPluginFactory, registerPlugin<KonqSidebarHistoryPlugin>(); )
+K_PLUGIN_FACTORY(KonqSidebarHistoryPluginFactory, registerPlugin<KonqSidebarHistoryPlugin>();)
 // K_EXPORT_PLUGIN(KonqSidebarHistoryPluginFactory())
 
 #include "history_module.moc"

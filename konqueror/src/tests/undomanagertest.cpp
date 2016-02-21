@@ -32,15 +32,14 @@ private Q_SLOTS:
     void testUndoLastClosedTab();
 };
 
-
-QTEST_KDEMAIN( UndoManagerTest, GUI )
+QTEST_KDEMAIN(UndoManagerTest, GUI)
 
 void UndoManagerTest::initTestCase()
 {
     // Make sure we start clean
     KonqSessionManager::self()->disableAutosave();
     KonqUndoManager manager(0);
-    QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)) );
+    QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)));
     QVERIFY(spyUndoAvailable.isValid());
     manager.clearClosedItemsList();
     QCOMPARE(spyUndoAvailable.count(), 1);
@@ -52,29 +51,29 @@ void UndoManagerTest::testAddClosedTabItem()
 {
     KonqUndoManager manager(0);
     QVERIFY(!manager.undoAvailable());
-    KonqClosedTabItem* item = new KonqClosedTabItem("url", "title", 0, manager.newCommandSerialNumber());
+    KonqClosedTabItem *item = new KonqClosedTabItem("url", "title", 0, manager.newCommandSerialNumber());
     QCOMPARE(item->url(), QString("url"));
     QCOMPARE(item->serialNumber(), (quint64)1001);
     QCOMPARE(item->pos(), 0);
     KConfigGroup configGroup = item->configGroup();
     QVERIFY(!configGroup.exists());
 
-    QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)) );
+    QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)));
     QVERIFY(spyUndoAvailable.isValid());
-    QSignalSpy spyTextChanged(&manager, SIGNAL(undoTextChanged(QString)) );
-    QVERIFY( spyTextChanged.isValid() );
+    QSignalSpy spyTextChanged(&manager, SIGNAL(undoTextChanged(QString)));
+    QVERIFY(spyTextChanged.isValid());
     manager.addClosedTabItem(item);
 
     QVERIFY(manager.undoAvailable());
     QCOMPARE(spyUndoAvailable.count(), 1);
     QCOMPARE(spyTextChanged.count(), 1);
     QCOMPARE(manager.closedItemsList().count(), 1);
-    configGroup.writeEntry( "RootItem", "test" );
+    configGroup.writeEntry("RootItem", "test");
     QVERIFY(!configGroup.keyList().isEmpty());
 
     // This requires a default constructor...
     //qRegisterMetaType<KonqClosedTabItem>("KonqClosedTabItem");
-    QSignalSpy spyOpenClosedTab(&manager, SIGNAL(openClosedTab(KonqClosedTabItem)) );
+    QSignalSpy spyOpenClosedTab(&manager, SIGNAL(openClosedTab(KonqClosedTabItem)));
     manager.undo();
     QCOMPARE(spyUndoAvailable.count(), 2);
     QVERIFY(!manager.undoAvailable());

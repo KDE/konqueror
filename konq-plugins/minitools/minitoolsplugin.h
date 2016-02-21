@@ -32,35 +32,36 @@
 class KHTMLPart;
 class KActionMenu;
 
-class MinitoolsPlugin : public KParts::Plugin {
-   Q_OBJECT
+class MinitoolsPlugin : public KParts::Plugin
+{
+    Q_OBJECT
 
 public:
-   MinitoolsPlugin( QObject* parent, const QVariantList & );
-   ~MinitoolsPlugin();
+    MinitoolsPlugin(QObject *parent, const QVariantList &);
+    ~MinitoolsPlugin();
 
 protected slots:
-   void slotAboutToShow();
-   void slotEditBookmarks();
-   void slotItemSelected();
-   void newBookmarkCallback( const QString &, const QString &, const QString & );
-   void endFolderCallback( );
+    void slotAboutToShow();
+    void slotEditBookmarks();
+    void slotItemSelected();
+    void newBookmarkCallback(const QString &, const QString &, const QString &);
+    void endFolderCallback();
 
 signals:
-   void executeScript( const QString &script );
+    void executeScript(const QString &script);
 
 private:
-   QString minitoolsFilename(bool local);
+    QString minitoolsFilename(bool local);
 
-   int m_selectedItem;
-  
-   KHTMLPart* m_part;
-   KActionMenu* m_pMinitoolsMenu;
-  
-   typedef QPair<QString,QString> Minitool;
-   typedef QList<Minitool> MinitoolsList;
-  
-   MinitoolsList m_minitoolsList;
+    int m_selectedItem;
+
+    KHTMLPart *m_part;
+    KActionMenu *m_pMinitoolsMenu;
+
+    typedef QPair<QString, QString> Minitool;
+    typedef QList<Minitool> MinitoolsList;
+
+    MinitoolsList m_minitoolsList;
 };
 
 #endif

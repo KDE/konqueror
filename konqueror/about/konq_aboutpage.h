@@ -18,7 +18,7 @@ public:
     QString plugins();
 
 private:
-    static QString loadFile( const QString& file );
+    static QString loadFile(const QString &file);
 
     QString m_launch_html, m_intro_html, m_specs_html, m_tips_html, m_plugins_html;
 };
@@ -27,7 +27,7 @@ class KonqAboutPage : public KHTMLPart
 {
     Q_OBJECT
 public:
-    KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList& args);
+    KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList &args);
     ~KonqAboutPage();
 
     bool openUrl(const QUrl &url) Q_DECL_OVERRIDE;
@@ -39,11 +39,11 @@ public:
 
 protected:
     bool urlSelected(const QString &url, int button, int state, const QString &target,
-                     const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                     const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments()) Q_DECL_OVERRIDE;
+                     const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                     const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments()) Q_DECL_OVERRIDE;
 
 private:
-    void serve( const QString&, const QString& );
+    void serve(const QString &, const QString &);
 
     KHTMLPart *m_doc;
     QString m_htmlDoc;

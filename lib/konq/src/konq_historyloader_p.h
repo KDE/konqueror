@@ -37,7 +37,7 @@ class KonqHistoryLoader : public QObject
     Q_OBJECT
 
 public:
-    explicit KonqHistoryLoader(QObject* parent = 0);
+    explicit KonqHistoryLoader(QObject *parent = 0);
     virtual ~KonqHistoryLoader();
 
     /**
@@ -49,12 +49,12 @@ public:
      * @returns the list of all history entries, sorted by date
      * (oldest entries first)
      */
-    const KonqHistoryList& entries() const;
+    const KonqHistoryList &entries() const;
 
     static int historyVersion();
 
 private:
-    KonqHistoryLoaderPrivate* const d;
+    KonqHistoryLoaderPrivate *const d;
 };
 
 #endif /* KONQ_HISTORYLOADER_H */

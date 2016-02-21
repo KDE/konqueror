@@ -30,10 +30,9 @@
 #include "feeddetector.h"
 #include <kdebug.h>
 
-
 using namespace Akregator;
 
-FeedDetectorEntryList FeedDetector::extractFromLinkTags(const QString& s)
+FeedDetectorEntryList FeedDetector::extractFromLinkTags(const QString &s)
 {
     //reduce all sequences of spaces, newlines etc. to one space:
     QString str = s.simplified();
@@ -54,59 +53,60 @@ FeedDetectorEntryList FeedDetector::extractFromLinkTags(const QString& s)
     // get all <link> tags
     QStringList linkTags;
     //int strlength = str.length();
-    while ( matchpos != -1 )
-    {
+    while (matchpos != -1) {
         matchpos = reLinkTag.indexIn(str, pos);
-        if (matchpos != -1)
-        {
-            linkTags.append( str.mid(matchpos, reLinkTag.matchedLength()) );
+        if (matchpos != -1) {
+            linkTags.append(str.mid(matchpos, reLinkTag.matchedLength()));
             pos = matchpos + reLinkTag.matchedLength();
         }
     }
 
     FeedDetectorEntryList list;
 
-    for ( QStringList::Iterator it = linkTags.begin(); it != linkTags.end(); ++it )
-    {
+    for (QStringList::Iterator it = linkTags.begin(); it != linkTags.end(); ++it) {
         QString type;
         int pos = reType.indexIn(*it, 0);
-        if (pos != -1)
+        if (pos != -1) {
             type = reType.cap(1).toLower();
+        }
 
         // we accept only type attributes indicating a feed
-        if ( type != "application/rss+xml" && type != "application/rdf+xml"
-	      && type != "application/atom+xml" && type != "application/xml" )
+        if (type != "application/rss+xml" && type != "application/rdf+xml"
+                && type != "application/atom+xml" && type != "application/xml") {
             continue;
+        }
 
         QString title;
         pos = reTitle.indexIn(*it, 0);
-        if (pos != -1)
-        title = reTitle.cap(1);
+        if (pos != -1) {
+            title = reTitle.cap(1);
+        }
 
         title = KCharsets::resolveEntities(title);
 
         QString url;
         pos = reHref.indexIn(*it, 0);
-        if (pos != -1)
+        if (pos != -1) {
             url = reHref.cap(1);
+        }
 
         url = KCharsets::resolveEntities(url);
 
         // if feed has no title, use the url as preliminary title (until feed is parsed)
-        if ( title.isEmpty() )
+        if (title.isEmpty()) {
             title = url;
+        }
 
-        if ( !url.isEmpty() ) {
+        if (!url.isEmpty()) {
             kDebug() << "found feed:" << url << title;
-            list.append(FeedDetectorEntry(url, title) );
+            list.append(FeedDetectorEntry(url, title));
         }
     }
-
 
     return list;
 }
 
-QStringList FeedDetector::extractBruteForce(const QString& s)
+QStringList FeedDetector::extractBruteForce(const QString &s)
 {
     QString str = s.simplified();
 
@@ -123,21 +123,19 @@ QStringList FeedDetector::extractBruteForce(const QString& s)
     // get all <a href> tags and capture url
     QStringList list;
     //int strlength = str.length();
-    while ( matchpos != -1 )
-    {
+    while (matchpos != -1) {
         matchpos = reAhrefTag.indexIn(str, pos);
-        if ( matchpos != -1 )
-        {
+        if (matchpos != -1) {
             QString ahref = str.mid(matchpos, reAhrefTag.matchedLength());
             int hrefpos = reHref.indexIn(ahref, 0);
-            if ( hrefpos != -1 )
-            {
+            if (hrefpos != -1) {
                 QString url = reHref.cap(1);
 
                 url = KCharsets::resolveEntities(url);
 
-                if ( rssrdfxml.exactMatch(url) )
+                if (rssrdfxml.exactMatch(url)) {
                     list.append(url);
+                }
             }
 
             pos = matchpos + reAhrefTag.matchedLength();

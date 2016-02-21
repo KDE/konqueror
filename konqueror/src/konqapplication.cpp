@@ -48,36 +48,38 @@ void KonquerorApplication::slotReparseConfiguration()
     KSharedConfig::openConfig()->reparseConfiguration();
     KonqFMSettings::reparseConfiguration();
 
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( mainWindows )
-    {
-        foreach ( KonqMainWindow* window, *mainWindows )
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (mainWindows) {
+        foreach (KonqMainWindow *window, *mainWindows) {
             window->reparseConfiguration();
+        }
     }
 }
 
 void KonquerorApplication::slotUpdateProfileList()
 {
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( !mainWindows )
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (!mainWindows) {
         return;
+    }
 
-    foreach ( KonqMainWindow* window, *mainWindows )
-        window->viewManager()->profileListDirty( false );
+    foreach (KonqMainWindow *window, *mainWindows) {
+        window->viewManager()->profileListDirty(false);
+    }
 }
 
-void KonquerorApplication::slotAddToCombo( const QString& url, const QDBusMessage& msg )
+void KonquerorApplication::slotAddToCombo(const QString &url, const QDBusMessage &msg)
 {
-    KonqMainWindow::comboAction( KonqMainWindow::ComboAdd, url, msg.service() );
+    KonqMainWindow::comboAction(KonqMainWindow::ComboAdd, url, msg.service());
 }
 
-void KonquerorApplication::slotRemoveFromCombo( const QString& url, const QDBusMessage& msg )
+void KonquerorApplication::slotRemoveFromCombo(const QString &url, const QDBusMessage &msg)
 {
-    KonqMainWindow::comboAction( KonqMainWindow::ComboRemove, url, msg.service() );
+    KonqMainWindow::comboAction(KonqMainWindow::ComboRemove, url, msg.service());
 }
 
-void KonquerorApplication::slotComboCleared( const QDBusMessage& msg )
+void KonquerorApplication::slotComboCleared(const QDBusMessage &msg)
 {
-    KonqMainWindow::comboAction( KonqMainWindow::ComboClear, QString(), msg.service() );
+    KonqMainWindow::comboAction(KonqMainWindow::ComboClear, QString(), msg.service());
 }
 

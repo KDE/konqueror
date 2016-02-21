@@ -7,7 +7,7 @@
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
-   published by the Free Software Foundation; either version 2 of 
+   published by the Free Software Foundation; either version 2 of
    the License, or (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -46,51 +46,52 @@ using namespace Akregator;
 typedef KGenericFactory<AkregatorMenu, KonqPopupMenu> AkregatorMenuFactory;
 K_EXPORT_PLUGIN(AkregatorMenuFactory("akregatorkonqplugin"))
 
-AkregatorMenu::AkregatorMenu( KonqPopupMenu * popupmenu, const QStringList& /* list */ )
-    : KonqPopupMenuPlugin( popupmenu), PluginBase(), /*m_conf(0),*/ m_part(0)
+AkregatorMenu::AkregatorMenu(KonqPopupMenu *popupmenu, const QStringList & /* list */)
+    : KonqPopupMenuPlugin(popupmenu), PluginBase(), /*m_conf(0),*/ m_part(0)
 {
     kDebug() << "AkregatorMenu::AkregatorMenu()";
 #if 0
-    if ( QByteArray( kapp->name() ) == "kdesktop" && !KAuthorized::authorizeKAction("editable_desktop_icons" ) )
+    if (QByteArray(kapp->name()) == "kdesktop" && !KAuthorized::authorizeKAction("editable_desktop_icons")) {
         return;
+    }
 #endif
     // Do nothing if user has turned us off.
     // TODO: Not yet implemented in aKregator settings.
-    
+
     /*
     m_conf = new KConfig( "akregatorrc" );
     m_conf->setGroup( "AkregatorKonqPlugin" );
     if ( !m_conf->readEntry( "Enable", true ) )
         return;
     */
-    KHTMLView* view = 0L;
-     
-    if (popupmenu && popupmenu->parent() && popupmenu->parent()->inherits("KHTMLView"))
-        view = static_cast<KHTMLView*>(popupmenu->parent());
-    
-    if (view)
+    KHTMLView *view = 0L;
+
+    if (popupmenu && popupmenu->parent() && popupmenu->parent()->inherits("KHTMLView")) {
+        view = static_cast<KHTMLView *>(popupmenu->parent());
+    }
+
+    if (view) {
         m_part = view->part();
-     
+    }
+
     //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
 //KLocale::global()->insertCatalog("akregator_konqplugin");
     m_feedMimeTypes << "application/rss+xml" << "text/rdf" << "application/xml";
     // Get the list of URLs clicked on from Konqi.
     //KFileItemList m_list = popupmenu->fileItemList();
     // See if any are RSS feeds.
-    
+
     KFileItemList list = popupmenu->fileItemList();
-    foreach ( const KFileItem &it, list )
-    {
-	if (isFeedUrl(it))
-        {
-	    kDebug() << "AkregatorMenu: found feed URL " << it.url().prettyUrl();
-            QAction *action = actionCollection()->addAction( "akregatorkonqplugin_mnu");
+    foreach (const KFileItem &it, list) {
+        if (isFeedUrl(it)) {
+            kDebug() << "AkregatorMenu: found feed URL " << it.url().prettyUrl();
+            QAction *action = actionCollection()->addAction("akregatorkonqplugin_mnu");
             action->setText(i18n("Add Feed to Akregator"));
             action->setIcon(KIcon("akregator"));
             connect(action, SIGNAL(triggered()), this, SLOT(slotAddFeed()));
             //addAction( action );
             addSeparator();
-	    m_feedURL = it.url().url();
+            m_feedURL = it.url().url();
             break;
         }
     }
@@ -104,19 +105,26 @@ AkregatorMenu::~AkregatorMenu()
 
 bool AkregatorMenu::isFeedUrl(const QString &url)
 {
-    if (url.contains(".htm", false) != 0) return false;
-    if (url.contains("rss", false) != 0) return true;
-    if (url.contains("rdf", false) != 0) return true;
-    if (url.contains("xml", false) != 0) return true;
+    if (url.contains(".htm", false) != 0) {
+        return false;
+    }
+    if (url.contains("rss", false) != 0) {
+        return true;
+    }
+    if (url.contains("rdf", false) != 0) {
+        return true;
+    }
+    if (url.contains("xml", false) != 0) {
+        return true;
+    }
     return false;
 }
 
-bool AkregatorMenu::isFeedUrl(const KFileItem & item)
+bool AkregatorMenu::isFeedUrl(const KFileItem &item)
 {
-    if ( m_feedMimeTypes.contains( item.mimetype() ) )
+    if (m_feedMimeTypes.contains(item.mimetype())) {
         return true;
-    else
-    {
+    } else {
         QString url = item.url().url();
         // If URL ends in .htm or .html, it is not a feed url.
         return isFeedUrl(url);
@@ -127,10 +135,11 @@ bool AkregatorMenu::isFeedUrl(const KFileItem & item)
 void AkregatorMenu::slotAddFeed()
 {
     QString url = m_part ? fixRelativeURL(m_feedURL, m_part->baseURL()) : m_feedURL;
-     
-    if(akregatorRunning())
-      addFeedsViaDBUS(QStringList(url));
-    else
+
+    if (akregatorRunning()) {
+        addFeedsViaDBUS(QStringList(url));
+    } else {
         addFeedViaCmdLine(url);
+    }
 }
 

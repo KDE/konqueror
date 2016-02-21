@@ -29,131 +29,126 @@
 
 K_PLUGIN_FACTORY(KonqyPreloaderFactory,
                  registerPlugin<KonqyPreloader>();
-    )
+                )
 K_EXPORT_PLUGIN(KonqyPreloaderFactory("konqypreloader"))
 
-KonqyPreloader::KonqyPreloader(QObject* parent, const QList<QVariant>&)
+KonqyPreloader::KonqyPreloader(QObject *parent, const QList<QVariant> &)
     : KDEDModule(parent)
-    {
+{
     reconfigure();
 
     (void)new PreloaderAdaptor(this);
 
-    connect( QDBusConnection::sessionBus().interface(),
-            SIGNAL( serviceOwnerChanged( const QString&, const QString&, const QString& )),
-            SLOT  ( appChanged( const QString&, const QString&, const QString& )));
-    check_always_preloaded_timer.setSingleShot( true );
-    connect( &check_always_preloaded_timer, SIGNAL( timeout()),
-	SLOT( checkAlwaysPreloaded()));
-    }
+    connect(QDBusConnection::sessionBus().interface(),
+            SIGNAL(serviceOwnerChanged(const QString &, const QString &, const QString &)),
+            SLOT(appChanged(const QString &, const QString &, const QString &)));
+    check_always_preloaded_timer.setSingleShot(true);
+    connect(&check_always_preloaded_timer, SIGNAL(timeout()),
+            SLOT(checkAlwaysPreloaded()));
+}
 
 KonqyPreloader::~KonqyPreloader()
-    {
+{
     updateCount();
-    }
+}
 
-bool KonqyPreloader::registerPreloadedKonqy( const QString &id, int screen )
-    {
-    if( instances.count() >= KonqSettings::maxPreloadCount() )
+bool KonqyPreloader::registerPreloadedKonqy(const QString &id, int screen)
+{
+    if (instances.count() >= KonqSettings::maxPreloadCount()) {
         return false;
-    instances.append( KonqyData( id, screen ));
+    }
+    instances.append(KonqyData(id, screen));
     return true;
-    }
+}
 
-QString KonqyPreloader::getPreloadedKonqy( int screen )
-    {
-    if( instances.count() == 0 )
+QString KonqyPreloader::getPreloadedKonqy(int screen)
+{
+    if (instances.count() == 0) {
         return "";
-    for( InstancesList::Iterator it = instances.begin();
-         it != instances.end();
-         ++it )
-        {
-        if( (*it).screen == screen )
-            {
-           QString ret = (*it).id;
-            instances.erase( it );
-            check_always_preloaded_timer.start( 5000 );
+    }
+    for (InstancesList::Iterator it = instances.begin();
+            it != instances.end();
+            ++it) {
+        if ((*it).screen == screen) {
+            QString ret = (*it).id;
+            instances.erase(it);
+            check_always_preloaded_timer.start(5000);
             return ret;
-            }
         }
+    }
     return "";
-    }
+}
 
-void KonqyPreloader::unregisterPreloadedKonqy( const QString &id_P )
-    {
-    for( InstancesList::Iterator it = instances.begin();
-         it != instances.end();
-         ++it )
-        if( (*it).id == id_P )
-            {
-            instances.erase( it );
+void KonqyPreloader::unregisterPreloadedKonqy(const QString &id_P)
+{
+    for (InstancesList::Iterator it = instances.begin();
+            it != instances.end();
+            ++it)
+        if ((*it).id == id_P) {
+            instances.erase(it);
             return;
-            }
-    }
+        }
+}
 
-void KonqyPreloader::appChanged( const QString & /*id*/,  const QString &oldOwner, const QString &newOwner )
-    {
-    if ( oldOwner.isEmpty() || !newOwner.isEmpty() )
+void KonqyPreloader::appChanged(const QString & /*id*/,  const QString &oldOwner, const QString &newOwner)
+{
+    if (oldOwner.isEmpty() || !newOwner.isEmpty()) {
         return;
-
-    unregisterPreloadedKonqy( oldOwner );
     }
+
+    unregisterPreloadedKonqy(oldOwner);
+}
 
 void KonqyPreloader::reconfigure()
-    {
+{
     KonqSettings::self()->readConfig();
     updateCount();
     // Ignore "PreloadOnStartup" here, it's used by the .desktop file
     // in the autostart folder, which will do 'konqueror --preload' in autostart
     // phase 2. This will also cause activation of this kded module.
-    }
+}
 
 void KonqyPreloader::updateCount()
-    {
-    while( instances.count() > KonqSettings::maxPreloadCount() )
-        {
+{
+    while (instances.count() > KonqSettings::maxPreloadCount()) {
         KonqyData konqy = instances.first();
         instances.pop_front();
-        QDBusInterface ref( konqy.id, "/", "org.kde.Konqueror.Main" );
-        ref.call( "terminatePreloaded" );
-        }
-    if( KonqSettings::alwaysHavePreloaded() &&
-        KonqSettings::maxPreloadCount() > 0 &&
-        instances.count() == 0 )
-	{
-	if( !check_always_preloaded_timer.isActive())
-	    {
-	    if( KToolInvocation::kdeinitExec( QLatin1String( "konqueror" ),
-		QStringList() << QLatin1String( "--preload" ), NULL, NULL, "0" ) == 0 )
-		{
-		kDebug() << "Preloading Konqueror instance";
-	        check_always_preloaded_timer.start( 5000 );
-		}
-	    // else do nothing, the launching failed
-	    }
-	}
+        QDBusInterface ref(konqy.id, "/", "org.kde.Konqueror.Main");
+        ref.call("terminatePreloaded");
     }
+    if (KonqSettings::alwaysHavePreloaded() &&
+            KonqSettings::maxPreloadCount() > 0 &&
+            instances.count() == 0) {
+        if (!check_always_preloaded_timer.isActive()) {
+            if (KToolInvocation::kdeinitExec(QLatin1String("konqueror"),
+                                             QStringList() << QLatin1String("--preload"), NULL, NULL, "0") == 0) {
+                kDebug() << "Preloading Konqueror instance";
+                check_always_preloaded_timer.start(5000);
+            }
+            // else do nothing, the launching failed
+        }
+    }
+}
 
 // have 5s interval between attempts to preload a new konqy
 // in order not to start many of them at the same time
 void KonqyPreloader::checkAlwaysPreloaded()
-    {
+{
     // TODO here should be detection whether the system is too busy,
     // and delaying preloading another konqy in such case
     // but I have no idea how to do it
     updateCount();
-    }
+}
 
 void KonqyPreloader::unloadAllPreloaded()
-    {
-    while( instances.count() > 0 )
-        {
+{
+    while (instances.count() > 0) {
         KonqyData konqy = instances.first();
         instances.pop_front();
-        QDBusInterface ref( konqy.id, "/", "org.kde.Konqueror.Main" );
-        ref.call( "terminatePreloaded" );
-        }
-    // ignore 'always_have_preloaded' here
+        QDBusInterface ref(konqy.id, "/", "org.kde.Konqueror.Main");
+        ref.call("terminatePreloaded");
     }
+    // ignore 'always_have_preloaded' here
+}
 
 #include "preloader.moc"

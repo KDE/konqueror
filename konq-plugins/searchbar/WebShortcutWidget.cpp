@@ -105,4 +105,3 @@ void WebShortcutWidget::cancelClicked()
     hide();
 }
 
-

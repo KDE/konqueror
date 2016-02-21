@@ -30,7 +30,7 @@ KonqHistoryEntry::~KonqHistoryEntry()
 {
 }
 
-KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& other)
+KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry &other)
 {
     operator=(other);
 }
@@ -47,17 +47,17 @@ KonqHistoryEntry &KonqHistoryEntry::operator=(const KonqHistoryEntry &other)
     return *this;
 }
 
-bool KonqHistoryEntry::operator==(const KonqHistoryEntry& entry) const
+bool KonqHistoryEntry::operator==(const KonqHistoryEntry &entry) const
 {
     return url == entry.url &&
-        typedUrl == entry.typedUrl &&
-        title == entry.title &&
-        numberOfTimesVisited == entry.numberOfTimesVisited &&
-        firstVisited == entry.firstVisited &&
-        lastVisited == entry.lastVisited;
+           typedUrl == entry.typedUrl &&
+           title == entry.title &&
+           numberOfTimesVisited == entry.numberOfTimesVisited &&
+           firstVisited == entry.firstVisited &&
+           lastVisited == entry.lastVisited;
 }
 
-void KonqHistoryEntry::load(QDataStream& s, Flags flags)
+void KonqHistoryEntry::load(QDataStream &s, Flags flags)
 {
     if (flags & MarshalUrlAsStrings) {
         QString urlStr;
@@ -73,7 +73,7 @@ void KonqHistoryEntry::load(QDataStream& s, Flags flags)
     s >> lastVisited;
 }
 
-void KonqHistoryEntry::save(QDataStream& s, Flags flags) const
+void KonqHistoryEntry::save(QDataStream &s, Flags flags) const
 {
     if (flags & MarshalUrlAsStrings) {
         s << url.url();
@@ -89,34 +89,37 @@ void KonqHistoryEntry::save(QDataStream& s, Flags flags) const
 
 ////
 
-KonqHistoryList::iterator KonqHistoryList::findEntry( const QUrl& url )
+KonqHistoryList::iterator KonqHistoryList::findEntry(const QUrl &url)
 {
     // we search backwards, probably faster to find an entry
     KonqHistoryList::iterator it = end();
-    while ( it != begin() ) {
+    while (it != begin()) {
         --it;
-	if ( (*it).url == url )
-	    return it;
+        if ((*it).url == url) {
+            return it;
+        }
     }
     return end();
 }
 
-KonqHistoryList::const_iterator KonqHistoryList::constFindEntry(const QUrl &url ) const
+KonqHistoryList::const_iterator KonqHistoryList::constFindEntry(const QUrl &url) const
 {
     // we search backwards, probably faster to find an entry
     KonqHistoryList::const_iterator it = constEnd();
-    while ( it != constBegin() ) {
+    while (it != constBegin()) {
         --it;
-	if ( (*it).url == url )
-	    return it;
+        if ((*it).url == url) {
+            return it;
+        }
     }
     return constEnd();
 }
 
-void KonqHistoryList::removeEntry( const QUrl& url )
+void KonqHistoryList::removeEntry(const QUrl &url)
 {
-    iterator it = findEntry( url );
-    if ( it != end() )
-        erase( it );
+    iterator it = findEntry(url);
+    if (it != end()) {
+        erase(it);
+    }
 }
 

@@ -1,9 +1,9 @@
 /*
  * Copyright (C) Jacek Konieczny <jajcus@zeus.posl.gliwice.pl>
- * 
+ *
  * Copyright (C) David Faure <faure@kde.org>
  *     Port to KControl
- * 
+ *
  */
 
 // Own
@@ -18,65 +18,60 @@
 #include <kconfiggroup.h>
 #include <KAboutData>
 
-
-
 KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent)
-  : KCModule( aboutData, parent ), m_pConfig(config), m_groupname(group)
+    : KCModule(aboutData, parent), m_pConfig(config), m_groupname(group)
 {
-  QVBoxLayout *lay = new QVBoxLayout(this);
+    QVBoxLayout *lay = new QVBoxLayout(this);
 
-  lay->addWidget( new QLabel(i18n("Accept languages:"), this) );
+    lay->addWidget(new QLabel(i18n("Accept languages:"), this));
 
-  le_languages = new QLineEdit(this);
-  lay->addWidget( le_languages );
-  connect(le_languages, SIGNAL(textChanged(QString)),
-	  this, SLOT(slotChanged()));
+    le_languages = new QLineEdit(this);
+    lay->addWidget(le_languages);
+    connect(le_languages, SIGNAL(textChanged(QString)),
+            this, SLOT(slotChanged()));
 
-  lay->addSpacing(10);
-  lay->addWidget( new QLabel(i18n("Accept character sets:"), this) );
+    lay->addSpacing(10);
+    lay->addWidget(new QLabel(i18n("Accept character sets:"), this));
 
-  le_charsets = new QLineEdit(this);
-  lay->addWidget( le_charsets );
-  connect(le_charsets, SIGNAL(textChanged(QString)),
-	  this, SLOT(slotChanged()));
+    le_charsets = new QLineEdit(this);
+    lay->addWidget(le_charsets);
+    connect(le_charsets, SIGNAL(textChanged(QString)),
+            this, SLOT(slotChanged()));
 
-  lay->addStretch(10);
+    lay->addStretch(10);
 
-  // defaultCharsets = QString("utf-8 ")+klocale->charset()+" iso-8859-1";
-  defaultCharsets = QString("utf-8 ")+" iso-8859-1"; // TODO
-  // if lang=ru or uk then +cp1251+koi8u - these are most used encodings (though locale may/should be utf8) --nick shaforostoff
+    // defaultCharsets = QString("utf-8 ")+klocale->charset()+" iso-8859-1";
+    defaultCharsets = QString("utf-8 ") + " iso-8859-1"; // TODO
+    // if lang=ru or uk then +cp1251+koi8u - these are most used encodings (though locale may/should be utf8) --nick shaforostoff
 
 }
 
-
 void KHTTPOptions::load()
 {
-  QString tmp;
-  KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
-  tmp = cg.readEntry( "AcceptLanguages",KLocale::global()->languageList().join(","));
-  le_languages->setText( tmp );
-  tmp = cg.readEntry( "AcceptCharsets",defaultCharsets);
-  le_charsets->setText( tmp );
+    QString tmp;
+    KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
+    tmp = cg.readEntry("AcceptLanguages", KLocale::global()->languageList().join(","));
+    le_languages->setText(tmp);
+    tmp = cg.readEntry("AcceptCharsets", defaultCharsets);
+    le_charsets->setText(tmp);
 }
 
 void KHTTPOptions::save()
 {
-  KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
-  cg.writeEntry( "AcceptLanguages", le_languages->text());
-  cg.writeEntry( "AcceptCharsets", le_charsets->text());
-  cg.sync();
+    KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
+    cg.writeEntry("AcceptLanguages", le_languages->text());
+    cg.writeEntry("AcceptCharsets", le_charsets->text());
+    cg.sync();
 }
 
 void KHTTPOptions::defaults()
 {
-  le_languages->setText( KLocale::global()->languageList().join(",") );
-  le_charsets->setText( defaultCharsets );
+    le_languages->setText(KLocale::global()->languageList().join(","));
+    le_charsets->setText(defaultCharsets);
 }
-
 
 void KHTTPOptions::slotChanged()
 {
-  emit changed(true);
+    emit changed(true);
 }
-
 

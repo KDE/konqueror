@@ -25,7 +25,7 @@ class KShellCmdPlugin : public KParts::Plugin
 {
     Q_OBJECT
 public:
-    KShellCmdPlugin( QObject* parent, const QVariantList & );
+    KShellCmdPlugin(QObject *parent, const QVariantList &);
     ~KShellCmdPlugin() {}
 
 public Q_SLOTS:

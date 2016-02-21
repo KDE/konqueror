@@ -51,93 +51,95 @@ class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
 {
 public:
-    KonqSessionDlgPrivate( KonqViewManager *manager, QWidget *parent = 0 )
-        : QWidget( parent ) , m_pViewManager( manager ), m_pParent( parent )
+    KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = 0)
+        : QWidget(parent), m_pViewManager(manager), m_pParent(parent)
     {
-        setupUi( this );
+        setupUi(this);
     }
-    KonqViewManager * const m_pViewManager;
-    KDirModel * m_pModel;
+    KonqViewManager *const m_pViewManager;
+    KDirModel *m_pModel;
     QWidget *m_pParent;
 };
 
 #define BTN_OPEN KDialog::User1
 
-KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
-    : KDialog( parent )
-    , d( new KonqSessionDlgPrivate( manager, this ) )
+KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
+    : KDialog(parent)
+    , d(new KonqSessionDlgPrivate(manager, this))
 {
-    d->layout()->setMargin( 0 );
-    setMainWidget( d );
-    
-    setObjectName( QLatin1String( "konq_session_dialog" ) );
-    setModal( true );
-    setCaption( i18nc( "@title:window", "Manage Sessions" ) );
-    setButtons( BTN_OPEN | Close );
-    setDefaultButton( Close );
-    
-    setButtonGuiItem( BTN_OPEN, KGuiItem( i18n( "&Open" ), "document-open" ) );
+    d->layout()->setMargin(0);
+    setMainWidget(d);
+
+    setObjectName(QLatin1String("konq_session_dialog"));
+    setModal(true);
+    setCaption(i18nc("@title:window", "Manage Sessions"));
+    setButtons(BTN_OPEN | Close);
+    setDefaultButton(Close);
+
+    setButtonGuiItem(BTN_OPEN, KGuiItem(i18n("&Open"), "document-open"));
     d->m_pSaveCurrentButton->setIcon(QIcon::fromTheme("document-save"));
     d->m_pRenameButton->setIcon(QIcon::fromTheme("edit-rename"));
     d->m_pDeleteButton->setIcon(QIcon::fromTheme("edit-delete"));
     d->m_pNewButton->setIcon(QIcon::fromTheme("document-new"));
-    
+
     QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
-    
+
     d->m_pModel = new KDirModel(d->m_pListView);
     d->m_pModel->sort(QDir::Name);
     d->m_pModel->dirLister()->setDirOnlyMode(true);
     d->m_pModel->dirLister()->openUrl(dir);
     d->m_pListView->setModel(d->m_pModel);
-    
-    d->m_pListView->setMinimumSize( d->m_pListView->sizeHint() );
-    
-    connect( d->m_pListView->selectionModel(), SIGNAL( selectionChanged(
-        const QItemSelection  &, const QItemSelection &) ), this, SLOT(
-        slotSelectionChanged() ) );
-    
-    enableButton( BTN_OPEN, d->m_pListView->currentIndex().isValid() );
+
+    d->m_pListView->setMinimumSize(d->m_pListView->sizeHint());
+
+    connect(d->m_pListView->selectionModel(), SIGNAL(selectionChanged(
+                const QItemSelection &, const QItemSelection &)), this, SLOT(
+                slotSelectionChanged()));
+
+    enableButton(BTN_OPEN, d->m_pListView->currentIndex().isValid());
     slotSelectionChanged();
 
     d->m_pOpenTabsInsideCurrentWindow->setChecked(
-	KonqSettings::openTabsInsideCurrentWindow());
+        KonqSettings::openTabsInsideCurrentWindow());
 
     connect(this, &KonqSessionDlg::user1Clicked, this, &KonqSessionDlg::slotOpen);
     connect(d->m_pNewButton, &KPushButton::clicked, this, &KonqSessionDlg::slotNew);
     connect(d->m_pSaveCurrentButton, &KPushButton::clicked, this, &KonqSessionDlg::slotSave);
-    connect( d->m_pRenameButton, SIGNAL(clicked()),SLOT(slotRename()));
+    connect(d->m_pRenameButton, SIGNAL(clicked()), SLOT(slotRename()));
     connect(d->m_pDeleteButton, &KPushButton::clicked, this, &KonqSessionDlg::slotDelete);
-    
-    resize( sizeHint() );
+
+    resize(sizeHint());
 }
 
 KonqSessionDlg::~KonqSessionDlg()
 {
     KonqSettings::setOpenTabsInsideCurrentWindow(
-	d->m_pOpenTabsInsideCurrentWindow->isChecked());
+        d->m_pOpenTabsInsideCurrentWindow->isChecked());
 }
 
 void KonqSessionDlg::slotOpen()
 {
-    if(!d->m_pListView->currentIndex().isValid())
+    if (!d->m_pListView->currentIndex().isValid()) {
         return;
-    
+    }
+
     KonqSessionManager::self()->restoreSessions(d->m_pModel->itemForIndex(
-        d->m_pListView->currentIndex()).url().path(),
-	d->m_pOpenTabsInsideCurrentWindow->isChecked(), 
-	reinterpret_cast<KonqMainWindow*>(parent()));
+                d->m_pListView->currentIndex()).url().path(),
+            d->m_pOpenTabsInsideCurrentWindow->isChecked(),
+            reinterpret_cast<KonqMainWindow *>(parent()));
     close();
 }
 
 void KonqSessionDlg::slotSave()
 {
-    if(!d->m_pListView->currentIndex().isValid())
+    if (!d->m_pListView->currentIndex().isValid()) {
         return;
-    
+    }
+
     QFileInfo fileInfo(
         d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
     QString dirpath = "sessions/" + KIO::encodeFileName(fileInfo.fileName());
-    
+
     slotDelete();
     KonqSessionManager::self()->saveCurrentSessions(dirpath);
 }
@@ -150,8 +152,9 @@ void KonqSessionDlg::slotNew()
 
 void KonqSessionDlg::slotDelete()
 {
-    if(!d->m_pListView->currentIndex().isValid())
+    if (!d->m_pListView->currentIndex().isValid()) {
         return;
+    }
 
     const QString dir = d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().toLocalFile();
     if (!KTempDir::removeDir(dir)) {
@@ -161,37 +164,37 @@ void KonqSessionDlg::slotDelete()
 
 void KonqSessionDlg::slotRename(QUrl dirpathTo)
 {
-    if ( !d->m_pListView->currentIndex().isValid() )
+    if (!d->m_pListView->currentIndex().isValid()) {
         return;
-    
+    }
+
     QUrl dirpathFrom = d->m_pModel->itemForIndex(
-        d->m_pListView->currentIndex()).url();
-    
+                           d->m_pListView->currentIndex()).url();
+
     dirpathTo = (dirpathTo == QUrl()) ? dirpathFrom : dirpathTo;
-    
+
     KIO::RenameDialog dlg(this, i18nc("@title:window", "Rename Session"), dirpathFrom,
-        dirpathTo, KIO::RenameDialog_Mode(0));
-        
-    if(dlg.exec() == KIO::R_RENAME)
-    {
+                          dirpathTo, KIO::RenameDialog_Mode(0));
+
+    if (dlg.exec() == KIO::R_RENAME) {
         dirpathTo = dlg.newDestUrl();
         QDir dir(dirpathTo.path());
-        if(dir.exists())
+        if (dir.exists()) {
             slotRename(dirpathTo);
-        else {
+        } else {
             QDir dir(KStandardDirs::locateLocal("appdata", "sessions/"));
             dir.rename(dirpathFrom.fileName(), dlg.newDestUrl().fileName());
         }
-    } 
+    }
 }
 
 void KonqSessionDlg::slotSelectionChanged()
 {
     bool enable = !d->m_pListView->selectionModel()->selectedIndexes().isEmpty();
-    d->m_pSaveCurrentButton->setEnabled( enable );
-    d->m_pRenameButton->setEnabled( enable );
-    d->m_pDeleteButton->setEnabled( enable );
-    enableButton( BTN_OPEN, enable );
+    d->m_pSaveCurrentButton->setEnabled(enable);
+    d->m_pRenameButton->setEnabled(enable);
+    d->m_pDeleteButton->setEnabled(enable);
+    enableButton(BTN_OPEN, enable);
 }
 
 #undef BTN_OPEN
@@ -200,65 +203,64 @@ class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
 {
 public:
-    KonqNewSessionDlgPrivate( QWidget *parent = 0 )
-        : QWidget( parent ), m_pParent( parent )
+    KonqNewSessionDlgPrivate(QWidget *parent = 0)
+        : QWidget(parent), m_pParent(parent)
     {
-        setupUi( this );
+        setupUi(this);
     }
     QWidget *m_pParent;
 };
 
-KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
-    : KDialog( parent )
-    , d( new KonqNewSessionDlgPrivate( this ) )
+KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, QString sessionName)
+    : KDialog(parent)
+    , d(new KonqNewSessionDlgPrivate(this))
 {
-    d->layout()->setMargin( 0 );
-    setMainWidget( d );
-    
-    setObjectName( QLatin1String( "konq_new_session_dialog" ) );
-    setModal( true );
-    setCaption( i18nc( "@title:window", "Save Session" ) );
-    setButtons( Ok | Cancel );
-    setDefaultButton( Ok );
-    enableButton( Ok, false );
-    
-    if(!sessionName.isEmpty())
+    d->layout()->setMargin(0);
+    setMainWidget(d);
+
+    setObjectName(QLatin1String("konq_new_session_dialog"));
+    setModal(true);
+    setCaption(i18nc("@title:window", "Save Session"));
+    setButtons(Ok | Cancel);
+    setDefaultButton(Ok);
+    enableButton(Ok, false);
+
+    if (!sessionName.isEmpty()) {
         d->m_pSessionName->setText(sessionName);
-    
+    }
+
     d->m_pSessionName->setFocus();
 
     connect(this, &KonqNewSessionDlg::okClicked, this, &KonqNewSessionDlg::slotAddSession);
     connect(d->m_pSessionName, SIGNAL(textChanged(QString)), this,
-        SLOT(slotTextChanged(QString)));
-    
-    resize( sizeHint() );
+            SLOT(slotTextChanged(QString)));
+
+    resize(sizeHint());
 }
 
 void KonqNewSessionDlg::slotAddSession()
 {
-    QString dirpath = KStandardDirs::locateLocal("appdata", "sessions/" + 
-        KIO::encodeFileName(d->m_pSessionName->text()));
-    
+    QString dirpath = KStandardDirs::locateLocal("appdata", "sessions/" +
+                      KIO::encodeFileName(d->m_pSessionName->text()));
+
     QDir dir(dirpath);
-    if(dir.exists())
-    {
-        if(KMessageBox::questionYesNo(this,
-            i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
-            i18nc("@title:window", "Session exists. Overwrite?")) == KMessageBox::Yes)
-        {
+    if (dir.exists()) {
+        if (KMessageBox::questionYesNo(this,
+                                       i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
+                                       i18nc("@title:window", "Session exists. Overwrite?")) == KMessageBox::Yes) {
             KTempDir::removeDir(dirpath);
         } else {
             KonqNewSessionDlg newDialog(d->m_pParent,
-                d->m_pSessionName->text());
+                                        d->m_pSessionName->text());
             newDialog.exec();
         }
     }
     KonqSessionManager::self()->saveCurrentSessions(dirpath);
 }
 
-void KonqNewSessionDlg::slotTextChanged(const QString& text)
+void KonqNewSessionDlg::slotTextChanged(const QString &text)
 {
-    enableButton( Ok, !text.isEmpty() );
+    enableButton(Ok, !text.isEmpty());
 }
 
 KonqNewSessionDlg::~KonqNewSessionDlg()

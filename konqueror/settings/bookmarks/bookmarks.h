@@ -27,23 +27,23 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class BookmarksConfigModule : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  BookmarksConfigModule(QWidget *parent, const QVariantList &args);
-  ~BookmarksConfigModule();
+    BookmarksConfigModule(QWidget *parent, const QVariantList &args);
+    ~BookmarksConfigModule();
 
-  void load();
-  void save();
-  void defaults();
-  QString quickHelp() const;
+    void load();
+    void save();
+    void defaults();
+    QString quickHelp() const;
 
 private Q_SLOTS:
-  void clearCache();
-  void configChanged();
+    void clearCache();
+    void configChanged();
 
 private:
-  Ui::BookmarksConfigUI ui;
+    Ui::BookmarksConfigUI ui;
 };
 
 #endif // KCM_BOOKMARKS_H

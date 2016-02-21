@@ -22,7 +22,6 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
@@ -36,25 +35,24 @@ class QTabWidget;
 
 class KJSParts : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
 
-  KJSParts(QWidget *parent, const QVariantList&);
+    KJSParts(QWidget *parent, const QVariantList &);
 
-  void load();
-  void save();
-  void defaults();
-  QString quickHelp() const;
-
+    void load();
+    void save();
+    void defaults();
+    QString quickHelp() const;
 
 private:
-  QTabWidget   *tab;
+    QTabWidget   *tab;
 
-  KJavaScriptOptions *javascript;
-  KJavaOptions       *java;
+    KJavaScriptOptions *javascript;
+    KJavaOptions       *java;
 
-  KSharedConfig::Ptr mConfig;
+    KSharedConfig::Ptr mConfig;
 };
 
 #endif

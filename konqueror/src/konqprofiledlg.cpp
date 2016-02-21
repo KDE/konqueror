@@ -42,40 +42,38 @@
 class KonqProfileDlg::KonqProfileItem : public QListWidgetItem
 {
 public:
-  KonqProfileItem( KListWidget *, const QString & );
-  ~KonqProfileItem() {}
+    KonqProfileItem(KListWidget *, const QString &);
+    ~KonqProfileItem() {}
 
-  QString m_profileName;
+    QString m_profileName;
 };
-
 
 KonqProfileMap KonqProfileDlg::readAllProfiles()
 {
-  KonqProfileMap mapProfiles;
+    KonqProfileMap mapProfiles;
 
-  const QStringList profiles = KGlobal::dirs()->findAllResources( "data", "konqueror/profiles/*", KStandardDirs::NoDuplicates );
-  QStringList::ConstIterator pIt = profiles.constBegin();
-  QStringList::ConstIterator pEnd = profiles.constEnd();
-  for (; pIt != pEnd; ++pIt )
-  {
-    QFileInfo info( *pIt );
-    QString profileName = KIO::decodeFileName( info.baseName() );
-    KConfig cfg( *pIt, KConfig::SimpleConfig);
-    if ( cfg.hasGroup( "Profile" ) )
-    {
-      KConfigGroup profileGroup( &cfg, "Profile" );
-      if ( profileGroup.hasKey( "Name" ) )
-        profileName = profileGroup.readEntry( "Name" );
+    const QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", KStandardDirs::NoDuplicates);
+    QStringList::ConstIterator pIt = profiles.constBegin();
+    QStringList::ConstIterator pEnd = profiles.constEnd();
+    for (; pIt != pEnd; ++pIt) {
+        QFileInfo info(*pIt);
+        QString profileName = KIO::decodeFileName(info.baseName());
+        KConfig cfg(*pIt, KConfig::SimpleConfig);
+        if (cfg.hasGroup("Profile")) {
+            KConfigGroup profileGroup(&cfg, "Profile");
+            if (profileGroup.hasKey("Name")) {
+                profileName = profileGroup.readEntry("Name");
+            }
 
-      mapProfiles.insert( profileName, *pIt );
+            mapProfiles.insert(profileName, *pIt);
+        }
     }
-  }
 
-  return mapProfiles;
+    return mapProfiles;
 }
 
-KonqProfileDlg::KonqProfileItem::KonqProfileItem( KListWidget *parent, const QString & text )
-    : QListWidgetItem( text, parent ), m_profileName( text )
+KonqProfileDlg::KonqProfileItem::KonqProfileItem(KListWidget *parent, const QString &text)
+    : QListWidgetItem(text, parent), m_profileName(text)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 }
@@ -83,70 +81,70 @@ KonqProfileDlg::KonqProfileItem::KonqProfileItem( KListWidget *parent, const QSt
 class KonqProfileDlg::KonqProfileDlgPrivate : public QWidget, public Ui::KonqProfileDlgBase
 {
 public:
-  KonqProfileDlgPrivate( KonqViewManager *manager, QWidget *parent = 0 )
-    : QWidget( parent )
-    , m_pViewManager( manager )
-  {
-    setupUi( this );
-  }
+    KonqProfileDlgPrivate(KonqViewManager *manager, QWidget *parent = 0)
+        : QWidget(parent)
+        , m_pViewManager(manager)
+    {
+        setupUi(this);
+    }
 
-  KonqViewManager * const m_pViewManager;
+    KonqViewManager *const m_pViewManager;
 
-  KonqProfileMap m_mapEntries;
+    KonqProfileMap m_mapEntries;
 };
 
 #define BTN_RENAME KDialog::User1
 #define BTN_DELETE KDialog::User2
 #define BTN_SAVE   KDialog::User3
 
-KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & preselectProfile, QWidget *parent )
-: KDialog( parent )
-, d( new KonqProfileDlgPrivate( manager, this ) )
+KonqProfileDlg::KonqProfileDlg(KonqViewManager *manager, const QString &preselectProfile, QWidget *parent)
+    : KDialog(parent)
+    , d(new KonqProfileDlgPrivate(manager, this))
 {
-  d->layout()->setMargin( 0 );
-  setMainWidget( d );
+    d->layout()->setMargin(0);
+    setMainWidget(d);
 
-  setObjectName( QLatin1String( "konq_profile_dialog" ) );
-  setModal( true );
-  setCaption( i18nc( "@title:window", "Profile Management" ) );
-  setButtons( Close | BTN_RENAME | BTN_DELETE | BTN_SAVE );
-  setDefaultButton( BTN_SAVE );
-  setButtonGuiItem( BTN_RENAME, KGuiItem( i18n( "&Rename Profile" ) ) );
-  setButtonGuiItem( BTN_DELETE, KGuiItem( i18n( "&Delete Profile" ), "edit-delete" ) );
-  setButtonGuiItem( BTN_SAVE, KStandardGuiItem::save() );
+    setObjectName(QLatin1String("konq_profile_dialog"));
+    setModal(true);
+    setCaption(i18nc("@title:window", "Profile Management"));
+    setButtons(Close | BTN_RENAME | BTN_DELETE | BTN_SAVE);
+    setDefaultButton(BTN_SAVE);
+    setButtonGuiItem(BTN_RENAME, KGuiItem(i18n("&Rename Profile")));
+    setButtonGuiItem(BTN_DELETE, KGuiItem(i18n("&Delete Profile"), "edit-delete"));
+    setButtonGuiItem(BTN_SAVE, KStandardGuiItem::save());
 
-  d->m_pProfileNameLineEdit->setFocus();
+    d->m_pProfileNameLineEdit->setFocus();
 
-  connect( d->m_pListView, SIGNAL(itemChanged(QListWidgetItem*)),
-            SLOT(slotItemRenamed(QListWidgetItem*)) );
+    connect(d->m_pListView, SIGNAL(itemChanged(QListWidgetItem*)),
+            SLOT(slotItemRenamed(QListWidgetItem*)));
 
-  loadAllProfiles( preselectProfile );
-  d->m_pListView->setMinimumSize( d->m_pListView->sizeHint() );
+    loadAllProfiles(preselectProfile);
+    d->m_pListView->setMinimumSize(d->m_pListView->sizeHint());
 
-  d->m_cbSaveURLs->setChecked( KonqSettings::saveURLInProfile() );
+    d->m_cbSaveURLs->setChecked(KonqSettings::saveURLInProfile());
 
-  connect( d->m_pListView, SIGNAL(itemSelectionChanged()),
-           this, SLOT(slotSelectionChanged()) );
+    connect(d->m_pListView, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotSelectionChanged()));
 
-  connect( d->m_pProfileNameLineEdit, SIGNAL(textChanged(QString)),
-           this, SLOT(slotTextChanged(QString)) );
+    connect(d->m_pProfileNameLineEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotTextChanged(QString)));
 
-  enableButton( BTN_RENAME, d->m_pListView->currentItem() != 0 );
-  enableButton( BTN_DELETE, d->m_pListView->currentItem() != 0 );
+    enableButton(BTN_RENAME, d->m_pListView->currentItem() != 0);
+    enableButton(BTN_DELETE, d->m_pListView->currentItem() != 0);
 
-  connect(this, &KonqProfileDlg::user1Clicked, this, &KonqProfileDlg::slotRenameProfile);
-  connect(this, &KonqProfileDlg::user2Clicked, this, &KonqProfileDlg::slotDeleteProfile);
-  connect(this, &KonqProfileDlg::user3Clicked, this, &KonqProfileDlg::slotSave);
+    connect(this, &KonqProfileDlg::user1Clicked, this, &KonqProfileDlg::slotRenameProfile);
+    connect(this, &KonqProfileDlg::user2Clicked, this, &KonqProfileDlg::slotDeleteProfile);
+    connect(this, &KonqProfileDlg::user3Clicked, this, &KonqProfileDlg::slotSave);
 
-  resize( sizeHint() );
+    resize(sizeHint());
 }
 
 KonqProfileDlg::~KonqProfileDlg()
 {
-  KonqSettings::setSaveURLInProfile( d->m_cbSaveURLs->isChecked() );
+    KonqSettings::setSaveURLInProfile(d->m_cbSaveURLs->isChecked());
 }
 
-void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
+void KonqProfileDlg::loadAllProfiles(const QString &preselectProfile)
 {
     bool profileFound = false;
     d->m_mapEntries.clear();
@@ -154,131 +152,131 @@ void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
     d->m_mapEntries = readAllProfiles();
     KonqProfileMap::ConstIterator eIt = d->m_mapEntries.constBegin();
     KonqProfileMap::ConstIterator eEnd = d->m_mapEntries.constEnd();
-    for (; eIt != eEnd; ++eIt )
-    {
-        QListWidgetItem *item = new KonqProfileItem( d->m_pListView, eIt.key() );
-        QString filename = eIt.value().mid( eIt.value().lastIndexOf( '/' ) + 1 );
+    for (; eIt != eEnd; ++eIt) {
+        QListWidgetItem *item = new KonqProfileItem(d->m_pListView, eIt.key());
+        QString filename = eIt.value().mid(eIt.value().lastIndexOf('/') + 1);
         kDebug() << filename;
-        if ( filename == preselectProfile )
-        {
+        if (filename == preselectProfile) {
             profileFound = true;
-            d->m_pProfileNameLineEdit->setText( eIt.key() );
-            d->m_pListView->setCurrentItem( item );
+            d->m_pProfileNameLineEdit->setText(eIt.key());
+            d->m_pListView->setCurrentItem(item);
         }
     }
-    if (!profileFound)
-        d->m_pProfileNameLineEdit->setText( preselectProfile);
+    if (!profileFound) {
+        d->m_pProfileNameLineEdit->setText(preselectProfile);
+    }
 
-    slotTextChanged( d->m_pProfileNameLineEdit->text() );  // really disable save button if text empty
+    slotTextChanged(d->m_pProfileNameLineEdit->text());    // really disable save button if text empty
 }
 
 void KonqProfileDlg::slotSave()
 {
-  QString name = KIO::encodeFileName( d->m_pProfileNameLineEdit->text() ); // in case of '/'
+    QString name = KIO::encodeFileName(d->m_pProfileNameLineEdit->text());   // in case of '/'
 
-  // Reuse filename of existing item, if any
-  if ( d->m_pListView->currentItem() )
-  {
-    KonqProfileMap::Iterator it = d->m_mapEntries.find( d->m_pListView->currentItem()->text() );
-    if ( it != d->m_mapEntries.end() )
-    {
-      QFileInfo info( it.value() );
-      name = info.baseName();
+    // Reuse filename of existing item, if any
+    if (d->m_pListView->currentItem()) {
+        KonqProfileMap::Iterator it = d->m_mapEntries.find(d->m_pListView->currentItem()->text());
+        if (it != d->m_mapEntries.end()) {
+            QFileInfo info(it.value());
+            name = info.baseName();
+        }
     }
-  }
 
-  kDebug() << "Saving as " << name;
-  d->m_pViewManager->saveViewProfileToFile( name, d->m_pProfileNameLineEdit->text(),
-                                            d->m_cbSaveURLs->isChecked() ? KonqFrameBase::saveURLs : KonqFrameBase::None);
+    kDebug() << "Saving as " << name;
+    d->m_pViewManager->saveViewProfileToFile(name, d->m_pProfileNameLineEdit->text(),
+            d->m_cbSaveURLs->isChecked() ? KonqFrameBase::saveURLs : KonqFrameBase::None);
 
-  accept();
+    accept();
 }
 
 void KonqProfileDlg::slotDeleteProfile()
 {
-    if(!d->m_pListView->currentItem())
+    if (!d->m_pListView->currentItem()) {
         return;
-  KonqProfileMap::Iterator it = d->m_mapEntries.find( d->m_pListView->currentItem()->text() );
+    }
+    KonqProfileMap::Iterator it = d->m_mapEntries.find(d->m_pListView->currentItem()->text());
 
-  if ( it != d->m_mapEntries.end() && QFile::remove( it.value() ) )
-      loadAllProfiles();
+    if (it != d->m_mapEntries.end() && QFile::remove(it.value())) {
+        loadAllProfiles();
+    }
 
-  enableButton( BTN_RENAME, d->m_pListView->currentItem() != 0 );
-  enableButton( BTN_DELETE, d->m_pListView->currentItem() != 0 );
+    enableButton(BTN_RENAME, d->m_pListView->currentItem() != 0);
+    enableButton(BTN_DELETE, d->m_pListView->currentItem() != 0);
 }
 
 void KonqProfileDlg::slotRenameProfile()
 {
-  QListWidgetItem *item = d->m_pListView->currentItem();
+    QListWidgetItem *item = d->m_pListView->currentItem();
 
-  if ( item )
-    d->m_pListView->editItem( item );
+    if (item) {
+        d->m_pListView->editItem(item);
+    }
 }
 
-void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
+void KonqProfileDlg::slotItemRenamed(QListWidgetItem *item)
 {
     if (!item) {
         return;
     }
 
-  KonqProfileItem * profileItem = static_cast<KonqProfileItem *>( item );
+    KonqProfileItem *profileItem = static_cast<KonqProfileItem *>(item);
 
-  QString newName = profileItem->text();
-  QString oldName = profileItem->m_profileName;
+    QString newName = profileItem->text();
+    QString oldName = profileItem->m_profileName;
 
-  if ( newName == oldName )
-    return;
-
-  if (!newName.isEmpty())
-  {
-    KonqProfileMap::ConstIterator it = d->m_mapEntries.constFind( oldName );
-
-    if ( it != d->m_mapEntries.constEnd() )
-    {
-      QString fileName = it.value();
-      KConfig _cfg( fileName, KConfig::SimpleConfig );
-      KConfigGroup cfg(&_cfg, "Profile" );
-      cfg.writeEntry( "Name", newName );
-      cfg.sync();
-      // Didn't find how to change a key...
-      d->m_mapEntries.remove( oldName );
-      d->m_mapEntries.insert( newName, fileName );
-      d->m_pProfileNameLineEdit->setText( newName );
-      profileItem->m_profileName = newName;
+    if (newName == oldName) {
+        return;
     }
-  }
+
+    if (!newName.isEmpty()) {
+        KonqProfileMap::ConstIterator it = d->m_mapEntries.constFind(oldName);
+
+        if (it != d->m_mapEntries.constEnd()) {
+            QString fileName = it.value();
+            KConfig _cfg(fileName, KConfig::SimpleConfig);
+            KConfigGroup cfg(&_cfg, "Profile");
+            cfg.writeEntry("Name", newName);
+            cfg.sync();
+            // Didn't find how to change a key...
+            d->m_mapEntries.remove(oldName);
+            d->m_mapEntries.insert(newName, fileName);
+            d->m_pProfileNameLineEdit->setText(newName);
+            profileItem->m_profileName = newName;
+        }
+    }
 }
 
 void KonqProfileDlg::slotSelectionChanged()
 {
-  if ( d->m_pListView->currentItem() )
-    d->m_pProfileNameLineEdit->setText( d->m_pListView->currentItem()->text() );
+    if (d->m_pListView->currentItem()) {
+        d->m_pProfileNameLineEdit->setText(d->m_pListView->currentItem()->text());
+    }
 }
 
-void KonqProfileDlg::slotTextChanged( const QString & text )
+void KonqProfileDlg::slotTextChanged(const QString &text)
 {
-  enableButton( BTN_SAVE, !text.isEmpty() );
+    enableButton(BTN_SAVE, !text.isEmpty());
 
-  // If we type the name of a profile, select it in the list
+    // If we type the name of a profile, select it in the list
 
-  QList<QListWidgetItem*> items = d->m_pListView->findItems(text, Qt::MatchCaseSensitive);
-  QListWidgetItem * item = !items.isEmpty() ? items.first() : 0;
-  d->m_pListView->setCurrentItem(item);
+    QList<QListWidgetItem *> items = d->m_pListView->findItems(text, Qt::MatchCaseSensitive);
+    QListWidgetItem *item = !items.isEmpty() ? items.first() : 0;
+    d->m_pListView->setCurrentItem(item);
 
-  bool itemSelected = item;
-  if ( itemSelected )
-  {
-    KConfig config( d->m_mapEntries[text], KConfig::SimpleConfig );
-    KConfigGroup profile( &config, "Profile" );
+    bool itemSelected = item;
+    if (itemSelected) {
+        KConfig config(d->m_mapEntries[text], KConfig::SimpleConfig);
+        KConfigGroup profile(&config, "Profile");
 
-    QFileInfo fi( d->m_mapEntries[ item->text() ] );
-    itemSelected = itemSelected && fi.isWritable();
-    if ( itemSelected )
-      item->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable );
-  }
+        QFileInfo fi(d->m_mapEntries[ item->text() ]);
+        itemSelected = itemSelected && fi.isWritable();
+        if (itemSelected) {
+            item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable);
+        }
+    }
 
-  enableButton( BTN_RENAME, itemSelected );
-  enableButton( BTN_DELETE, itemSelected );
+    enableButton(BTN_RENAME, itemSelected);
+    enableButton(BTN_DELETE, itemSelected);
 }
 
 #undef BTN_RENAME

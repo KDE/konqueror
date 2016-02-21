@@ -28,14 +28,14 @@
 #include <kparts/textextension.h>
 #include <kpluginfactory.h>
 
-KHTMLPluginTTS::KHTMLPluginTTS( QObject* parent, const QVariantList& )
-    : Plugin( parent )
+KHTMLPluginTTS::KHTMLPluginTTS(QObject *parent, const QVariantList &)
+    : Plugin(parent)
 {
-    KParts::TextExtension* textExt = KParts::TextExtension::childObject(parent);
+    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent);
     if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {
-        QAction *action = actionCollection()->addAction( "tools_tts" );
-        action->setIcon( QIcon::fromTheme("text-speak") );
-        action->setText( i18n("&Speak Text") );
+        QAction *action = actionCollection()->addAction("tools_tts");
+        action->setIcon(QIcon::fromTheme("text-speak"));
+        action->setText(i18n("&Speak Text"));
         connect(action, SIGNAL(triggered(bool)), SLOT(slotReadOut()));
     }
 }
@@ -46,7 +46,7 @@ KHTMLPluginTTS::~KHTMLPluginTTS()
 
 void KHTMLPluginTTS::slotReadOut()
 {
-    KParts::TextExtension* textExt = KParts::TextExtension::childObject(parent());
+    KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent());
     QString query;
     const KParts::TextExtension::Format format = KParts::TextExtension::PlainText;
     if (textExt->hasSelection()) {
@@ -60,6 +60,6 @@ void KHTMLPluginTTS::slotReadOut()
 }
 
 K_PLUGIN_FACTORY(KHTMLPluginTTSFactory, registerPlugin<KHTMLPluginTTS>();)
-K_EXPORT_PLUGIN( KHTMLPluginTTSFactory( "khtmltts" ) )
+K_EXPORT_PLUGIN(KHTMLPluginTTSFactory("khtmltts"))
 
 #include "khtmltts.moc"

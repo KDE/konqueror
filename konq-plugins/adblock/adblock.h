@@ -1,4 +1,3 @@
-// -*- mode: c++; c-basic-offset: 4 -*-
 /*
   Copyright (c) 2008 Laurent Montel <montel@kde.org>
   Copyright (C) 2006 Daniele Galdi <daniele.galdi@gmail.com>
@@ -39,7 +38,7 @@ namespace KParts
 
 namespace DOM
 {
-    class DOMString;
+class DOMString;
 }
 
 typedef QList<AdElement> AdElementList;
@@ -49,7 +48,7 @@ class AdBlock : public KParts::Plugin
     Q_OBJECT
 
 public:
-    AdBlock(QObject* parent = 0, const QVariantList &args = QVariantList());
+    AdBlock(QObject *parent = 0, const QVariantList &args = QVariantList());
     ~AdBlock();
 
 private:
@@ -60,8 +59,8 @@ private:
     void fillBlockableElements();
     void fillWithImages();
     void fillWithHtmlTag(const DOM::DOMString &tagName,
-			 const DOM::DOMString &attrName,
-			 const QString &category);
+                         const DOM::DOMString &attrName,
+                         const QString &category);
 
 private slots:
     void initLabel();
@@ -86,7 +85,7 @@ class AdElement
 public:
     AdElement();
     AdElement(const QString &url, const QString &category,
-	      const QString &type, bool blocked, const DOM::Node& node);
+              const QString &type, bool blocked, const DOM::Node &node);
 
     AdElement &operator=(const AdElement &);
     bool operator==(const AdElement &e1);

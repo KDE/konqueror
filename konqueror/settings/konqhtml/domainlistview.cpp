@@ -37,71 +37,73 @@
 #include "policies.h"
 #include "policydlg.h"
 
-DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
-		QWidget *parent) :
-	QGroupBox(title, parent), config(config) {
-  QHBoxLayout* thisLayout = new QHBoxLayout(this);
+DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &title,
+                               QWidget *parent) :
+    QGroupBox(title, parent), config(config)
+{
+    QHBoxLayout *thisLayout = new QHBoxLayout(this);
 
-  domainSpecificLV = new QTreeWidget(this);
-  domainSpecificLV->setRootIsDecorated(false);
-  domainSpecificLV->setSortingEnabled(true);
-  domainSpecificLV->setHeaderLabels(QStringList() << i18n("Host/Domain") << i18n("Policy"));
-  domainSpecificLV->setColumnWidth(0, 100);
-  connect(domainSpecificLV,SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), SLOT(changePressed()));
-  connect(domainSpecificLV, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), SLOT(updateButton()));
-  thisLayout->addWidget(domainSpecificLV);
+    domainSpecificLV = new QTreeWidget(this);
+    domainSpecificLV->setRootIsDecorated(false);
+    domainSpecificLV->setSortingEnabled(true);
+    domainSpecificLV->setHeaderLabels(QStringList() << i18n("Host/Domain") << i18n("Policy"));
+    domainSpecificLV->setColumnWidth(0, 100);
+    connect(domainSpecificLV, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), SLOT(changePressed()));
+    connect(domainSpecificLV, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), SLOT(updateButton()));
+    thisLayout->addWidget(domainSpecificLV);
 
-  QVBoxLayout* btnsLayout = new QVBoxLayout;
-  thisLayout->addLayout(btnsLayout);
-  addDomainPB = new QPushButton(i18n("&New..."), this);
-  btnsLayout->addWidget(addDomainPB);
-  connect(addDomainPB, SIGNAL(clicked()), SLOT(addPressed()));
+    QVBoxLayout *btnsLayout = new QVBoxLayout;
+    thisLayout->addLayout(btnsLayout);
+    addDomainPB = new QPushButton(i18n("&New..."), this);
+    btnsLayout->addWidget(addDomainPB);
+    connect(addDomainPB, SIGNAL(clicked()), SLOT(addPressed()));
 
-  changeDomainPB = new QPushButton( i18n("Chan&ge..."), this);
-  btnsLayout->addWidget(changeDomainPB);
-  connect(changeDomainPB, SIGNAL(clicked()), this, SLOT(changePressed()));
+    changeDomainPB = new QPushButton(i18n("Chan&ge..."), this);
+    btnsLayout->addWidget(changeDomainPB);
+    connect(changeDomainPB, SIGNAL(clicked()), this, SLOT(changePressed()));
 
-  deleteDomainPB = new QPushButton(i18n("De&lete"), this);
-  btnsLayout->addWidget(deleteDomainPB);
-  connect(deleteDomainPB, SIGNAL(clicked()), this, SLOT(deletePressed()));
+    deleteDomainPB = new QPushButton(i18n("De&lete"), this);
+    btnsLayout->addWidget(deleteDomainPB);
+    connect(deleteDomainPB, SIGNAL(clicked()), this, SLOT(deletePressed()));
 
-  importDomainPB = new QPushButton(i18n("&Import..."), this);
-  btnsLayout->addWidget(importDomainPB);
-  connect(importDomainPB, SIGNAL(clicked()), this, SLOT(importPressed()));
-  importDomainPB->setEnabled(false);
-  importDomainPB->hide();
+    importDomainPB = new QPushButton(i18n("&Import..."), this);
+    btnsLayout->addWidget(importDomainPB);
+    connect(importDomainPB, SIGNAL(clicked()), this, SLOT(importPressed()));
+    importDomainPB->setEnabled(false);
+    importDomainPB->hide();
 
-  exportDomainPB = new QPushButton(i18n("&Export..."), this);
-  btnsLayout->addWidget(exportDomainPB);
-  connect(exportDomainPB, SIGNAL(clicked()), this, SLOT(exportPressed()));
-  exportDomainPB->setEnabled(false);
-  exportDomainPB->hide();
+    exportDomainPB = new QPushButton(i18n("&Export..."), this);
+    btnsLayout->addWidget(exportDomainPB);
+    connect(exportDomainPB, SIGNAL(clicked()), this, SLOT(exportPressed()));
+    exportDomainPB->setEnabled(false);
+    exportDomainPB->hide();
 
-  btnsLayout->addStretch();
+    btnsLayout->addStretch();
 
-  addDomainPB->setWhatsThis( i18n("Click on this button to manually add a host or domain "
-                                       "specific policy.") );
-  changeDomainPB->setWhatsThis( i18n("Click on this button to change the policy for the "
-                                          "host or domain selected in the list box.") );
-  deleteDomainPB->setWhatsThis( i18n("Click on this button to delete the policy for the "
-                                          "host or domain selected in the list box.") );
-  updateButton();
+    addDomainPB->setWhatsThis(i18n("Click on this button to manually add a host or domain "
+                                   "specific policy."));
+    changeDomainPB->setWhatsThis(i18n("Click on this button to change the policy for the "
+                                      "host or domain selected in the list box."));
+    deleteDomainPB->setWhatsThis(i18n("Click on this button to delete the policy for the "
+                                      "host or domain selected in the list box."));
+    updateButton();
 }
 
-DomainListView::~DomainListView() {
-  // free all policies
-  DomainPolicyMap::Iterator it = domainPolicies.begin();
-  for (; it != domainPolicies.end(); ++it) {
-    delete it.value();
-  }/*next it*/
+DomainListView::~DomainListView()
+{
+    // free all policies
+    DomainPolicyMap::Iterator it = domainPolicies.begin();
+    for (; it != domainPolicies.end(); ++it) {
+        delete it.value();
+    }/*next it*/
 }
 
 void DomainListView::updateButton()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    bool enable = ( index != 0 );
-    changeDomainPB->setEnabled( enable );
-    deleteDomainPB->setEnabled( enable );
+    bool enable = (index != 0);
+    changeDomainPB->setEnabled(enable);
+    deleteDomainPB->setEnabled(enable);
 
 }
 
@@ -111,13 +113,13 @@ void DomainListView::addPressed()
     Policies *pol = createPolicies();
     pol->defaults();
     PolicyDialog pDlg(pol, this);
-    setupPolicyDlg(AddButton,pDlg,pol);
-    if( pDlg.exec() ) {
-        QTreeWidgetItem* index = new QTreeWidgetItem( domainSpecificLV, QStringList() << pDlg.domain() <<
-                                                  pDlg.featureEnabledPolicyText() );
+    setupPolicyDlg(AddButton, pDlg, pol);
+    if (pDlg.exec()) {
+        QTreeWidgetItem *index = new QTreeWidgetItem(domainSpecificLV, QStringList() << pDlg.domain() <<
+                pDlg.featureEnabledPolicyText());
         pol->setDomain(pDlg.domain());
         domainPolicies.insert(index, pol);
-        domainSpecificLV->setCurrentItem( index );
+        domainSpecificLV->setCurrentItem(index);
         emit changed(true);
     } else {
         delete pol;
@@ -128,9 +130,8 @@ void DomainListView::addPressed()
 void DomainListView::changePressed()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    if ( index == 0 )
-    {
-        KMessageBox::information( 0, i18n("You must first select a policy to be changed." ) );
+    if (index == 0) {
+        KMessageBox::information(0, i18n("You must first select a policy to be changed."));
         return;
     }
 
@@ -139,15 +140,14 @@ void DomainListView::changePressed()
     // the data even if the changes are rejected in the end.
     Policies *pol_copy = copyPolicies(pol);
 
-    PolicyDialog pDlg( pol_copy, this );
-    pDlg.setDisableEdit( true, index->text(0) );
-    setupPolicyDlg(ChangeButton,pDlg,pol_copy);
-    if( pDlg.exec() )
-    {
+    PolicyDialog pDlg(pol_copy, this);
+    pDlg.setDisableEdit(true, index->text(0));
+    setupPolicyDlg(ChangeButton, pDlg, pol_copy);
+    if (pDlg.exec()) {
         pol_copy->setDomain(pDlg.domain());
         domainPolicies[index] = pol_copy;
         pol_copy = pol;
-        index->setText(0, pDlg.domain() );
+        index->setText(0, pDlg.domain());
         index->setText(1, pDlg.featureEnabledPolicyText());
         emit changed(true);
     }
@@ -157,30 +157,29 @@ void DomainListView::changePressed()
 void DomainListView::deletePressed()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    if ( index == 0 )
-    {
-        KMessageBox::information( 0, i18n("You must first select a policy to delete." ) );
+    if (index == 0) {
+        KMessageBox::information(0, i18n("You must first select a policy to delete."));
         return;
     }
 
     DomainPolicyMap::Iterator it = domainPolicies.find(index);
     if (it != domainPolicies.end()) {
-      delete it.value();
-      domainPolicies.erase(it);
-      delete index;
-      emit changed(true);
+        delete it.value();
+        domainPolicies.erase(it);
+        delete index;
+        emit changed(true);
     }
     updateButton();
 }
 
 void DomainListView::importPressed()
 {
-  // PENDING(kalle) Implement this.
+    // PENDING(kalle) Implement this.
 }
 
 void DomainListView::exportPressed()
 {
-  // PENDING(kalle) Implement this.
+    // PENDING(kalle) Implement this.
 }
 
 void DomainListView::initialize(const QStringList &domainList)
@@ -189,40 +188,43 @@ void DomainListView::initialize(const QStringList &domainList)
     domainPolicies.clear();
 //    JavaPolicies pol(m_pConfig,m_groupname,false);
     for (QStringList::ConstIterator it = domainList.begin();
-         it != domainList.end(); ++it) {
-      QString domain = *it;
-      Policies *pol = createPolicies();
-      pol->setDomain(domain);
-      pol->load();
+            it != domainList.end(); ++it) {
+        QString domain = *it;
+        Policies *pol = createPolicies();
+        pol->setDomain(domain);
+        pol->load();
 
-      QString policy;
-      if (pol->isFeatureEnabledPolicyInherited())
-        policy = i18n("Use Global");
-      else if (pol->isFeatureEnabled())
-        policy = i18n("Accept");
-      else
-        policy = i18n("Reject");
-      QTreeWidgetItem *index =
-        new QTreeWidgetItem( domainSpecificLV, QStringList() << domain << policy );
+        QString policy;
+        if (pol->isFeatureEnabledPolicyInherited()) {
+            policy = i18n("Use Global");
+        } else if (pol->isFeatureEnabled()) {
+            policy = i18n("Accept");
+        } else {
+            policy = i18n("Reject");
+        }
+        QTreeWidgetItem *index =
+            new QTreeWidgetItem(domainSpecificLV, QStringList() << domain << policy);
 
-      domainPolicies[index] = pol;
+        domainPolicies[index] = pol;
     }
 }
 
-void DomainListView::save(const QString &group, const QString &domainListKey) {
+void DomainListView::save(const QString &group, const QString &domainListKey)
+{
     QStringList domainList;
     DomainPolicyMap::Iterator it = domainPolicies.begin();
     for (; it != domainPolicies.end(); ++it) {
-    	QTreeWidgetItem *current = it.key();
-	Policies *pol = it.value();
-	pol->save();
-	domainList.append(current->text(0));
+        QTreeWidgetItem *current = it.key();
+        Policies *pol = it.value();
+        pol->save();
+        domainList.append(current->text(0));
     }
     config->group(group).writeEntry(domainListKey, domainList);
 }
 
 void DomainListView::setupPolicyDlg(PushButton /*trigger*/,
-		PolicyDialog &/*pDlg*/,Policies * /*copy*/) {
-  // do nothing
+                                    PolicyDialog &/*pDlg*/, Policies * /*copy*/)
+{
+    // do nothing
 }
 

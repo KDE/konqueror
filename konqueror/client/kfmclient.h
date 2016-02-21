@@ -26,29 +26,32 @@ class KJob;
 
 class ClientApp : public QApplication
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  ClientApp(int &argc, char **argv ) : QApplication( argc, argv ) {}
+    ClientApp(int &argc, char **argv) : QApplication(argc, argv) {}
 
-  /** Parse command-line arguments and "do it" */
-  static bool doIt();
+    /** Parse command-line arguments and "do it" */
+    static bool doIt();
 
-  /** Make konqueror open a window for @p url */
-  static bool createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString & mimetype = QString());
+    /** Make konqueror open a window for @p url */
+    static bool createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype = QString());
 
-  /** Make konqueror open a window for @p profile, @p url and @p mimetype */
-  static bool openProfile(const QString & profile, const QString & url, const QString & mimetype = QString());
+    /** Make konqueror open a window for @p profile, @p url and @p mimetype */
+    static bool openProfile(const QString &profile, const QString &url, const QString &mimetype = QString());
 
 protected Q_SLOTS:
-  void slotResult( KJob * );
-  void delayedQuit();
-  void slotDialogCanceled();
-  void deref() { KGlobal::deref(); }
+    void slotResult(KJob *);
+    void delayedQuit();
+    void slotDialogCanceled();
+    void deref()
+    {
+        KGlobal::deref();
+    }
 
 private:
-  static void sendASNChange();
-  static bool m_ok;
-  static QByteArray startup_id_str;
+    static void sendASNChange();
+    static bool m_ok;
+    static QByteArray startup_id_str;
 
 };
 

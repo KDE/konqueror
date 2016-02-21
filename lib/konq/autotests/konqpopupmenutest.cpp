@@ -42,29 +42,30 @@ KonqPopupMenuTest::KonqPopupMenuTest()
     m_appFlags = KonqPopupMenu::NoPlugins;
 }
 
-static QStringList extractActionNames(const QMenu& menu)
+static QStringList extractActionNames(const QMenu &menu)
 {
     QString lastObjectName;
     QStringList ret;
     bool lastIsSeparator = false;
-    foreach (const QAction* action, menu.actions()) {
+    foreach (const QAction *action, menu.actions()) {
         if (action->isSeparator()) {
-            if (!lastIsSeparator) // Qt gets rid of duplicate separators, so we should too
+            if (!lastIsSeparator) { // Qt gets rid of duplicate separators, so we should too
                 ret.append("separator");
+            }
             lastIsSeparator = true;
         } else {
             lastIsSeparator = false;
             //qDebug() << action->objectName() << action->metaObject()->className() << action->text();
             const QString objectName = action->objectName();
             if (objectName.isEmpty()) {
-                if (action->menu()) // if this fails, then we have an unnamed action somewhere...
+                if (action->menu()) { // if this fails, then we have an unnamed action somewhere...
                     ret.append("submenu");
-                else {
+                } else {
                     ret.append("UNNAMED " + action->text());
                 }
             } else {
                 if (objectName == "menuaction" // a single service-menu action, or a service-menu submenu: skip; too variable.
-                    || objectName == "actions_submenu") {
+                        || objectName == "actions_submenu") {
                 } else if (objectName == "openWith_submenu") {
                     ret.append("openwith");
                 } else if (objectName == "openwith_browse" && lastObjectName == "openwith") {
@@ -119,7 +120,7 @@ void KonqPopupMenuTest::initTestCase()
     m_actionCollection.addAction("openInNewWindow", m_newWindow);
     m_newTab = new QAction(m_tabHandlingActions);
     m_actionCollection.addAction("openInNewTab", m_newTab);
-    QAction* separator = new QAction(m_tabHandlingActions);
+    QAction *separator = new QAction(m_tabHandlingActions);
     separator->setSeparator(true);
     QCOMPARE(m_tabHandlingActions->actions().count(), 3);
 
@@ -139,9 +140,9 @@ void KonqPopupMenuTest::initTestCase()
     // TODO use m_htmlEditActions like in khtml (see khtml_popupmenu.rc)
 
     m_linkActions = new QActionGroup(this);
-    QAction* saveLinkAs = new QAction(m_linkActions);
+    QAction *saveLinkAs = new QAction(m_linkActions);
     m_actionCollection.addAction("savelinkas", saveLinkAs);
-    QAction* copyLinkLocation = new QAction(m_linkActions);
+    QAction *copyLinkLocation = new QAction(m_linkActions);
     m_actionCollection.addAction("copylinklocation", copyLinkLocation);
     // TODO there's a whole bunch of things for frames, and for images, see khtml_popupmenu.rc
 
@@ -149,7 +150,7 @@ void KonqPopupMenuTest::initTestCase()
     separator = new QAction(m_partActions);
     separator->setSeparator(true);
     m_partActions->addAction(separator); // we better start with a separator
-    QAction* viewDocumentSource = new QAction(m_partActions);
+    QAction *viewDocumentSource = new QAction(m_partActions);
     m_actionCollection.addAction("viewDocumentSource", viewDocumentSource);
 
     m_newMenu = new KNewFileMenu(&m_actionCollection, "newmenu", 0);
@@ -157,7 +158,7 @@ void KonqPopupMenuTest::initTestCase()
     // Check if extractActionNames works
     QMenu popup;
     popup.addAction(m_back);
-    QMenu* subMenu = new QMenu(&popup);
+    QMenu *subMenu = new QMenu(&popup);
     popup.addMenu(subMenu);
     subMenu->addAction(m_up);
     QStringList actions = extractActionNames(popup);
@@ -171,8 +172,8 @@ void KonqPopupMenuTest::testFile()
     itemList << m_fileItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-                                                   | KParts::BrowserExtension::ShowReload
-                                                   | KParts::BrowserExtension::ShowUrlOperations;
+            | KParts::BrowserExtension::ShowReload
+            | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("editactions", m_fileEditActions->actions());
@@ -208,8 +209,8 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
 
     QUrl viewUrl = QUrl::fromLocalFile("/etc");
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-                                                   | KParts::BrowserExtension::ShowReload
-                                                   | KParts::BrowserExtension::ShowUrlOperations;
+            | KParts::BrowserExtension::ShowReload
+            | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     // DolphinPart doesn't add rename/trash when supportsMoving is false
@@ -242,8 +243,8 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     itemList << m_fileItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-                                                   | KParts::BrowserExtension::ShowReload
-                                                   | KParts::BrowserExtension::ShowUrlOperations;
+            | KParts::BrowserExtension::ShowReload
+            | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("editactions", m_fileEditActions->actions());
@@ -273,7 +274,7 @@ void KonqPopupMenuTest::testSubDirectory()
     itemList << m_subDirItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-                                                   | KParts::BrowserExtension::ShowUrlOperations;
+            | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("editactions", m_fileEditActions->actions());
@@ -370,8 +371,8 @@ void KonqPopupMenuTest::testHtmlLink()
     itemList << m_linkItem;
     QUrl viewUrl("http://www.kde.org");
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
-                                                   | KParts::BrowserExtension::ShowReload
-                                                   | KParts::BrowserExtension::IsLink;
+            | KParts::BrowserExtension::ShowReload
+            | KParts::BrowserExtension::IsLink;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
@@ -402,8 +403,8 @@ void KonqPopupMenuTest::testHtmlPage()
     itemList << m_linkItem;
     QUrl viewUrl = m_linkItem.url();
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
-                                                   | KParts::BrowserExtension::ShowReload
-                                                   | KParts::BrowserExtension::ShowNavigationItems;
+            | KParts::BrowserExtension::ShowReload
+            | KParts::BrowserExtension::ShowNavigationItems;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
     // TODO we could just move that logic to KonqPopupMenu...
@@ -411,9 +412,9 @@ void KonqPopupMenuTest::testHtmlPage()
     actionGroups.insert("preview", m_previewActions->actions());
     actionGroups.insert("editactions", m_htmlEditActions->actions());
     //actionGroups.insert("linkactions", m_linkActions->actions());
-    QAction* security = new QAction(m_partActions);
+    QAction *security = new QAction(m_partActions);
     m_actionCollection.addAction("security", security);
-    QAction* setEncoding = new QAction(m_partActions);
+    QAction *setEncoding = new QAction(m_partActions);
     m_actionCollection.addAction("setEncoding", setEncoding);
     actionGroups.insert("partactions", m_partActions->actions());
 
@@ -434,7 +435,6 @@ void KonqPopupMenuTest::testHtmlPage()
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
-
 
 // TODO test ShowReload (khtml passes it, but not the file views. Maybe show it if "not a directory" or "not local")
 

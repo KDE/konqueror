@@ -17,7 +17,7 @@
 
 #ifndef DOMLISTVIEWITEMS_H
 #define DOMLISTVIEWITEMS_H
- 
+
 #include <dom/dom_node.h>
 
 #include <qtreewidget.h>
@@ -27,32 +27,59 @@
 class DOMListViewItem : public QTreeWidgetItem
 {
 
- public:
-   DOMListViewItem( const DOM::Node &, QTreeWidget *parent );
-   DOMListViewItem( const DOM::Node &, QTreeWidget *parent,
-                    QTreeWidgetItem *preceding ); 
-   DOMListViewItem( const DOM::Node &, QTreeWidgetItem *parent );
-   DOMListViewItem( const DOM::Node &, QTreeWidgetItem *parent,
-                    QTreeWidgetItem *preceding );
-   virtual ~DOMListViewItem();
- 
-  void setColor(const QColor &color) { setForeground(0, color); }
+public:
+    DOMListViewItem(const DOM::Node &, QTreeWidget *parent);
+    DOMListViewItem(const DOM::Node &, QTreeWidget *parent,
+                    QTreeWidgetItem *preceding);
+    DOMListViewItem(const DOM::Node &, QTreeWidgetItem *parent);
+    DOMListViewItem(const DOM::Node &, QTreeWidgetItem *parent,
+                    QTreeWidgetItem *preceding);
+    virtual ~DOMListViewItem();
 
-  void setFont(const QFont &font) { m_font = font;
-                                    QTreeWidgetItem::setFont(0, font); }
-  void setItalic(bool b) {m_font.setItalic(b); setFont(m_font);}
-  void setBold(bool b) {m_font.setBold(b); setFont(m_font); }
-  void setUnderline(bool b) {m_font.setUnderline(b); setFont(m_font); }
-  
-  bool isClosing() const { return clos; }
-  void setClosing(bool s) { clos = s; }
+    void setColor(const QColor &color)
+    {
+        setForeground(0, color);
+    }
 
-  DOM::Node node() const { return m_node; }
+    void setFont(const QFont &font)
+    {
+        m_font = font;
+        QTreeWidgetItem::setFont(0, font);
+    }
+    void setItalic(bool b)
+    {
+        m_font.setItalic(b);
+        setFont(m_font);
+    }
+    void setBold(bool b)
+    {
+        m_font.setBold(b);
+        setFont(m_font);
+    }
+    void setUnderline(bool b)
+    {
+        m_font.setUnderline(b);
+        setFont(m_font);
+    }
 
- private:
-  void init();
-  QFont m_font;
-  DOM::Node m_node;
-  bool clos;
+    bool isClosing() const
+    {
+        return clos;
+    }
+    void setClosing(bool s)
+    {
+        clos = s;
+    }
+
+    DOM::Node node() const
+    {
+        return m_node;
+    }
+
+private:
+    void init();
+    QFont m_font;
+    DOM::Node m_node;
+    bool clos;
 };
 #endif

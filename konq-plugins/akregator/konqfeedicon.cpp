@@ -54,17 +54,16 @@
 
 using namespace Akregator;
 
-
 K_PLUGIN_FACTORY(KonqFeedIconFactory, registerPlugin<KonqFeedIcon>();)
 
 static KUrl baseUrl(KParts::ReadOnlyPart *part)
 {
-   KUrl url;
-   KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(part);
-   if (ext) {
-      url = ext->baseUrl();
-   }
-   return url;
+    KUrl url;
+    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(part);
+    if (ext) {
+        url = ext->baseUrl();
+    }
+    return url;
 }
 
 KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
@@ -76,10 +75,10 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
     // make our icon foundable by the KIconLoader
     KIconLoader::global()->addAppDir("akregator");
 
-    KParts::ReadOnlyPart* part = qobject_cast<KParts::ReadOnlyPart*>(parent);
+    KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
-        KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(part);
-        KParts::SelectorInterface* selectorInterface = qobject_cast<KParts::SelectorInterface*>(ext);
+        KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(part);
+        KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
         if (selectorInterface) {
             m_part = part;
             connect(m_part, SIGNAL(completed()), this, SLOT(addFeedIcon()));
@@ -92,8 +91,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
 KonqFeedIcon::~KonqFeedIcon()
 {
     m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
-    if (m_statusBarEx)
-    {
+    if (m_statusBarEx) {
         m_statusBarEx->removeStatusBarItem(m_feedIcon);
         // if the statusbar extension is deleted, the icon is deleted as well (being the child of the status bar)
         delete m_feedIcon;
@@ -108,14 +106,14 @@ bool KonqFeedIcon::feedFound()
 {
     // Since attempting to determine feed info for about:blank crashes khtml,
     // lets prevent such look up for local urls (about, file, man, etc...)
-    if (KProtocolInfo::protocolClass(m_part->url().scheme()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0)
+    if (KProtocolInfo::protocolClass(m_part->url().scheme()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0) {
         return false;
+    }
 
-    KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(m_part);
-    KParts::SelectorInterface* selectorInterface = qobject_cast<KParts::SelectorInterface*>(ext);
+    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part);
+    KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
     QString doc;
-    if (selectorInterface)
-    {
+    if (selectorInterface) {
         QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll("head > link[rel=\"alternate\"]", KParts::SelectorInterface::EntireContent);
         //kDebug() << linkNodes.length() << "links";
         for (int i = 0; i < linkNodes.count(); i++) {
@@ -124,7 +122,7 @@ bool KonqFeedIcon::feedFound()
             // TODO parse the attributes directly here, rather than re-assembling
             // and then re-parsing in extractFromLinkTags!
             doc += "<link ";
-            Q_FOREACH(const QString& attrName, element.attributeNames()) {
+            Q_FOREACH (const QString &attrName, element.attributeNames()) {
                 doc += attrName + "=\"";
                 doc += element.attribute(attrName).toHtmlEscaped().replace("\"", "&quot;");
                 doc += "\" ";
@@ -142,17 +140,13 @@ void KonqFeedIcon::contextMenu()
 {
     delete m_menu;
     m_menu = new KMenu(m_part->widget());
-    if(m_feedList.count() == 1)
-    {
+    if (m_feedList.count() == 1) {
         m_menu->addTitle(m_feedList.first().title());
-        m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addFeeds()) );
-    }
-    else
-    {
+        m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addFeeds()));
+    } else {
         m_menu->addTitle(i18n("Add Feeds to Akregator"));
         int id = 0;
-        for(FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it)
-        {
+        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
             QAction *action = m_menu->addAction(KIcon("bookmark-new"), (*it).title(), this, SLOT(addFeed()));
             action->setData(qVariantFromValue(id));
             id++;
@@ -166,12 +160,14 @@ void KonqFeedIcon::contextMenu()
 
 void KonqFeedIcon::addFeedIcon()
 {
-    if(!feedFound() || m_feedIcon)
+    if (!feedFound() || m_feedIcon) {
         return;
+    }
 
     m_statusBarEx = KParts::StatusBarExtension::childObject(m_part);
-    if(!m_statusBarEx)
-      return;
+    if (!m_statusBarEx) {
+        return;
+    }
 
     m_feedIcon = new KUrlLabel(m_statusBarEx->statusBar());
 
@@ -182,7 +178,7 @@ void KonqFeedIcon::addFeedIcon()
 
     m_feedIcon->setPixmap(KIconLoader::global()->loadIcon("feed", KIconLoader::User));
 
-    m_feedIcon->setToolTip( i18n("Subscribe to site updates (using news feed)"));
+    m_feedIcon->setToolTip(i18n("Subscribe to site updates (using news feed)"));
 
     m_statusBarEx->addStatusBarItem(m_feedIcon, 0, true);
 
@@ -192,8 +188,7 @@ void KonqFeedIcon::addFeedIcon()
 void KonqFeedIcon::removeFeedIcon()
 {
     m_feedList.clear();
-    if (m_feedIcon && m_statusBarEx)
-    {
+    if (m_feedIcon && m_statusBarEx) {
         m_statusBarEx->removeStatusBarItem(m_feedIcon);
         delete m_feedIcon;
         m_feedIcon = 0;
@@ -207,30 +202,32 @@ void KonqFeedIcon::removeFeedIcon()
 void KonqFeedIcon::addFeed()
 {
     bool ok = false;
-    const int id = sender() ? qobject_cast<QAction*>(sender())->data().toInt(&ok) : -1;
-    if(!ok || id == -1) return;
-    if(akregatorRunning())
+    const int id = sender() ? qobject_cast<QAction *>(sender())->data().toInt(&ok) : -1;
+    if (!ok || id == -1) {
+        return;
+    }
+    if (akregatorRunning()) {
         addFeedsViaDBUS(QStringList(fixRelativeURL(m_feedList[id].url(), baseUrl(m_part))));
-    else
+    } else {
         addFeedViaCmdLine(fixRelativeURL(m_feedList[id].url(), baseUrl(m_part)));
+    }
 }
 
 // from akregatorplugin.cpp
 void KonqFeedIcon::addFeeds()
 {
-    if(akregatorRunning())
-    {
-      	QStringList list;
-        for ( FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it )
+    if (akregatorRunning()) {
+        QStringList list;
+        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
             list.append(fixRelativeURL((*it).url(), baseUrl(m_part)));
+        }
         addFeedsViaDBUS(list);
-    }
-    else {
+    } else {
         kDebug() << "KonqFeedIcon::addFeeds(): use command line";
         KProcess proc;
         proc << "akregator" << "-g" << i18n("Imported Feeds");
 
-        for ( FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it ) {
+        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
             proc << "-a" << fixRelativeURL((*it).url(), baseUrl(m_part));
         }
 
@@ -240,4 +237,3 @@ void KonqFeedIcon::addFeeds()
 }
 
 #include "konqfeedicon.moc"
-// vim: ts=4 sw=4 et

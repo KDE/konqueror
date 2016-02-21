@@ -53,71 +53,68 @@
 
 #include "fsview_part.h"
 
-
-K_PLUGIN_FACTORY( FSViewPartFactory, registerPlugin<FSViewPart>(); )
-K_EXPORT_PLUGIN( FSViewPartFactory(KAboutData(
-               "fsview",
-               0,
-               ki18n("FSView"),
-               "0.1.1",
-               ki18n("Filesystem Utilization Viewer"),
-               KAboutData::License_GPL,
-               ki18n("(c) 2003-2005, Josef Weidendorfer"))) )
-
+K_PLUGIN_FACTORY(FSViewPartFactory, registerPlugin<FSViewPart>();)
+K_EXPORT_PLUGIN(FSViewPartFactory(KAboutData(
+                                      "fsview",
+                                      0,
+                                      ki18n("FSView"),
+                                      "0.1.1",
+                                      ki18n("Filesystem Utilization Viewer"),
+                                      KAboutData::License_GPL,
+                                      ki18n("(c) 2003-2005, Josef Weidendorfer"))))
 
 // FSJob, for progress
 
-FSJob::FSJob(FSView* v)
-  : KIO::Job()
+FSJob::FSJob(FSView *v)
+    : KIO::Job()
 {
-  _view = v;
-  QObject::connect(v, SIGNAL(progress(int,int,QString)),
-                   this, SLOT(progressSlot(int,int,QString)));
+    _view = v;
+    QObject::connect(v, SIGNAL(progress(int,int,QString)),
+                     this, SLOT(progressSlot(int,int,QString)));
 }
 
 void FSJob::kill(bool /*quietly*/)
 {
-  _view->stop();
+    _view->stop();
 
-  Job::kill();
+    Job::kill();
 }
 
-void FSJob::progressSlot(int percent, int dirs, const QString& cDir)
+void FSJob::progressSlot(int percent, int dirs, const QString &cDir)
 {
-  if (percent<100) {
-    emitPercent(percent, 100);
-    slotInfoMessage(this, i18np("Read 1 folder, in %2",
-                               "Read %1 folders, in %2",
-                               dirs , cDir),QString());
-  }
-  else
-    slotInfoMessage(this, i18np("1 folder", "%1 folders", dirs),QString());
+    if (percent < 100) {
+        emitPercent(percent, 100);
+        slotInfoMessage(this, i18np("Read 1 folder, in %2",
+                                    "Read %1 folders, in %2",
+                                    dirs, cDir), QString());
+    } else {
+        slotInfoMessage(this, i18np("1 folder", "%1 folders", dirs), QString());
+    }
 }
-
 
 // FSViewPart
 
 FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
-                       const QList<QVariant>& /* args */)
+                       const QList<QVariant> & /* args */)
     : KParts::ReadOnlyPart(parent)
 {
     KAboutData aboutData("fsview", i18n("FSView"), "0.1",
-            i18n("Filesystem Viewer"),
-            KAboutLicense::GPL,
-            i18n("(c) 2002, Josef Weidendorfer"));
-    setComponentData( aboutData );
+                         i18n("Filesystem Viewer"),
+                         KAboutLicense::GPL,
+                         i18n("(c) 2002, Josef Weidendorfer"));
+    setComponentData(aboutData);
 
     _view = new FSView(new Inode(), parentWidget);
-    _view->setWhatsThis( i18n("<p>This is the FSView plugin, a graphical "
-				"browsing mode showing filesystem utilization "
-				"by using a tree map visualization.</p>"
-				"<p>Note that in this mode, automatic updating "
-				"when filesystem changes are made "
-				"is intentionally <b>not</b> done.</p>"
-				"<p>For details on usage and options available, "
-				"see the online help under "
-				"menu 'Help/FSView Manual'.</p>"));
+    _view->setWhatsThis(i18n("<p>This is the FSView plugin, a graphical "
+                             "browsing mode showing filesystem utilization "
+                             "by using a tree map visualization.</p>"
+                             "<p>Note that in this mode, automatic updating "
+                             "when filesystem changes are made "
+                             "is intentionally <b>not</b> done.</p>"
+                             "<p>For details on usage and options available, "
+                             "see the online help under "
+                             "menu 'Help/FSView Manual'.</p>"));
 
     _view->show();
     setWidget(_view);
@@ -125,54 +122,54 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     _ext = new FSViewBrowserExtension(this);
     _job = 0;
 
-    _areaMenu = new KActionMenu (i18n("Stop at Area"),
-				 actionCollection());
-    actionCollection()->addAction( "treemap_areadir", _areaMenu );
-    _depthMenu = new KActionMenu (i18n("Stop at Depth"),
-				 actionCollection());
-    actionCollection()->addAction( "treemap_depthdir", _depthMenu );
-    _visMenu = new KActionMenu (i18n("Visualization"),
-				 actionCollection());
-    actionCollection()->addAction( "treemap_visdir", _visMenu );
+    _areaMenu = new KActionMenu(i18n("Stop at Area"),
+                                actionCollection());
+    actionCollection()->addAction("treemap_areadir", _areaMenu);
+    _depthMenu = new KActionMenu(i18n("Stop at Depth"),
+                                 actionCollection());
+    actionCollection()->addAction("treemap_depthdir", _depthMenu);
+    _visMenu = new KActionMenu(i18n("Visualization"),
+                               actionCollection());
+    actionCollection()->addAction("treemap_visdir", _visMenu);
 
-    _colorMenu = new KActionMenu (i18n("Color Mode"),
-				  actionCollection());
-    actionCollection()->addAction( "treemap_colordir", _colorMenu );
+    _colorMenu = new KActionMenu(i18n("Color Mode"),
+                                 actionCollection());
+    actionCollection()->addAction("treemap_colordir", _colorMenu);
 
-    QAction* action;
-    action = actionCollection()->addAction(  "help_fsview");
+    QAction *action;
+    action = actionCollection()->addAction("help_fsview");
     action->setText(i18n("&FSView Manual"));
     action->setIcon(KIcon("fsview"));
     action->setToolTip(i18n("Show FSView manual"));
     action->setWhatsThis(i18n("Opens the help browser with the "
-			      "FSView documentation"));
+                              "FSView documentation"));
     connect(action, SIGNAL(triggered()), this, SLOT(showHelp()));
 
-    QObject::connect (_visMenu->menu(), SIGNAL (aboutToShow()),
-		      SLOT (slotShowVisMenu()));
-    QObject::connect (_areaMenu->menu(), SIGNAL (aboutToShow()),
-		      SLOT (slotShowAreaMenu()));
-    QObject::connect (_depthMenu->menu(), SIGNAL (aboutToShow()),
-		      SLOT (slotShowDepthMenu()));
-    QObject::connect (_colorMenu->menu(), SIGNAL (aboutToShow()),
-		      SLOT (slotShowColorMenu()));
+    QObject::connect(_visMenu->menu(), SIGNAL(aboutToShow()),
+                     SLOT(slotShowVisMenu()));
+    QObject::connect(_areaMenu->menu(), SIGNAL(aboutToShow()),
+                     SLOT(slotShowAreaMenu()));
+    QObject::connect(_depthMenu->menu(), SIGNAL(aboutToShow()),
+                     SLOT(slotShowDepthMenu()));
+    QObject::connect(_colorMenu->menu(), SIGNAL(aboutToShow()),
+                     SLOT(slotShowColorMenu()));
 
     slotSettingsChanged(KGlobalSettings::SETTINGS_MOUSE);
-    connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)),
-             SLOT(slotSettingsChanged(int)) );
+    connect(KGlobalSettings::self(), SIGNAL(settingsChanged(int)),
+            SLOT(slotSettingsChanged(int)));
 
-    QObject::connect(_view,SIGNAL(returnPressed(TreeMapItem*)),
-                     _ext,SLOT(selected(TreeMapItem*)));
-    QObject::connect(_view,SIGNAL(selectionChanged()),
-		     this,SLOT(updateActions()));
+    QObject::connect(_view, SIGNAL(returnPressed(TreeMapItem*)),
+                     _ext, SLOT(selected(TreeMapItem*)));
+    QObject::connect(_view, SIGNAL(selectionChanged()),
+                     this, SLOT(updateActions()));
     QObject::connect(_view,
                      SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
-		     this,
+                     this,
                      SLOT(contextMenu(TreeMapItem*,QPoint)));
 
     QObject::connect(_view, SIGNAL(started()), this, SLOT(startedSlot()));
     QObject::connect(_view, SIGNAL(completed(int)),
-		     this, SLOT(completedSlot(int)));
+                     this, SLOT(completedSlot(int)));
 
     // Create common file management actions - this is necessary in KDE4
     // as these common actions are no longer automatically part of KParts.
@@ -183,25 +180,25 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     //rename->setText(i18nc("@action:inmenu Edit", "Rename..."));
     //rename->setShortcut(Qt::Key_F2);
 
-    QAction* moveToTrashAction = actionCollection()->addAction("move_to_trash");
+    QAction *moveToTrashAction = actionCollection()->addAction("move_to_trash");
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(KIcon("user-trash"));
     moveToTrashAction->setShortcut(QKeySequence::Delete);
     connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
             _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
 
-    QAction* deleteAction = actionCollection()->addAction("delete");
+    QAction *deleteAction = actionCollection()->addAction("delete");
     deleteAction->setIcon(KIcon("edit-delete"));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
     deleteAction->setShortcut(Qt::SHIFT | Qt::Key_Delete);
     connect(deleteAction, SIGNAL(triggered()), _ext, SLOT(del()));
 
-    QAction *editMimeTypeAction = actionCollection()->addAction( "editMimeType" );
-    editMimeTypeAction->setText( i18nc("@action:inmenu Edit", "&Edit File Type..." ) );
+    QAction *editMimeTypeAction = actionCollection()->addAction("editMimeType");
+    editMimeTypeAction->setText(i18nc("@action:inmenu Edit", "&Edit File Type..."));
     connect(editMimeTypeAction, SIGNAL(triggered()), _ext, SLOT(editMimeType()));
 
-    QAction *propertiesAction = actionCollection()->addAction( "properties" );
-    propertiesAction->setText( i18nc("@action:inmenu File", "Properties") );
+    QAction *propertiesAction = actionCollection()->addAction("properties");
+    propertiesAction->setText(i18nc("@action:inmenu File", "Properties"));
     propertiesAction->setIcon(KIcon("document-properties"));
     propertiesAction->setShortcut(Qt::ALT | Qt::Key_Return);
     connect(propertiesAction, SIGNAL(triggered()), SLOT(slotProperties()));
@@ -210,207 +207,217 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 
     updateActions();
 
-    setXMLFile( "fsview_part.rc" );
+    setXMLFile("fsview_part.rc");
 }
-
 
 FSViewPart::~FSViewPart()
 {
-  kDebug(90100) << "FSViewPart Destructor";
+    kDebug(90100) << "FSViewPart Destructor";
 
-  delete _job;
-  _view->saveFSOptions();
+    delete _job;
+    _view->saveFSOptions();
 }
 
 void FSViewPart::slotSettingsChanged(int category)
 {
-  if (category != KGlobalSettings::SETTINGS_MOUSE) return;
+    if (category != KGlobalSettings::SETTINGS_MOUSE) {
+        return;
+    }
 
-  QObject::disconnect(_view,SIGNAL(clicked(TreeMapItem*)),
-		      _ext,SLOT(selected(TreeMapItem*)));
-  QObject::disconnect(_view,SIGNAL(doubleClicked(TreeMapItem*)),
-		      _ext,SLOT(selected(TreeMapItem*)));
+    QObject::disconnect(_view, SIGNAL(clicked(TreeMapItem*)),
+                        _ext, SLOT(selected(TreeMapItem*)));
+    QObject::disconnect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
+                        _ext, SLOT(selected(TreeMapItem*)));
 
-  if (KGlobalSettings::singleClick())
-    QObject::connect(_view,SIGNAL(clicked(TreeMapItem*)),
-		     _ext,SLOT(selected(TreeMapItem*)));
-  else
-    QObject::connect(_view,SIGNAL(doubleClicked(TreeMapItem*)),
-		     _ext,SLOT(selected(TreeMapItem*)));
+    if (KGlobalSettings::singleClick())
+        QObject::connect(_view, SIGNAL(clicked(TreeMapItem*)),
+                         _ext, SLOT(selected(TreeMapItem*)));
+    else
+        QObject::connect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
+                         _ext, SLOT(selected(TreeMapItem*)));
 }
 
 void FSViewPart::showInfo()
 {
     QString info;
     info = i18n("FSView intentionally does not support automatic updates "
-		"when changes are made to files or directories, "
-		"currently visible in FSView, from the outside.\n"
-		"For details, see the 'Help/FSView Manual'.");
+                "when changes are made to files or directories, "
+                "currently visible in FSView, from the outside.\n"
+                "For details, see the 'Help/FSView Manual'.");
 
-    KMessageBox::information( _view, info, QString(), "ShowFSViewInfo");
+    KMessageBox::information(_view, info, QString(), "ShowFSViewInfo");
 }
 
 void FSViewPart::showHelp()
 {
     KToolInvocation::startServiceByDesktopName("khelpcenter",
-					    QString("help:/konqueror/index.html#fsview"));
+            QString("help:/konqueror/index.html#fsview"));
 }
 
 void FSViewPart::startedSlot()
 {
-  _job = new FSJob(_view);
-  _job->setUiDelegate(new KIO::JobUiDelegate());
-  emit started(_job);
+    _job = new FSJob(_view);
+    _job->setUiDelegate(new KIO::JobUiDelegate());
+    emit started(_job);
 }
 
 void FSViewPart::completedSlot(int dirs)
 {
-  if (_job) {
-    _job->progressSlot(100, dirs, QString());
-    delete _job;
-    _job = 0;
-  }
+    if (_job) {
+        _job->progressSlot(100, dirs, QString());
+        delete _job;
+        _job = 0;
+    }
 
-  KConfigGroup cconfig(_view->config(), "MetricCache");
-  _view->saveMetric(&cconfig);
+    KConfigGroup cconfig(_view->config(), "MetricCache");
+    _view->saveMetric(&cconfig);
 
-  emit completed();
+    emit completed();
 }
 
 void FSViewPart::slotShowVisMenu()
 {
-  _visMenu->menu()->clear();
-  _view->addVisualizationItems(_visMenu->menu(), 1301);
+    _visMenu->menu()->clear();
+    _view->addVisualizationItems(_visMenu->menu(), 1301);
 }
 
 void FSViewPart::slotShowAreaMenu()
 {
-  _areaMenu->menu()->clear();
-  _view->addAreaStopItems(_areaMenu->menu(), 1001, 0);
+    _areaMenu->menu()->clear();
+    _view->addAreaStopItems(_areaMenu->menu(), 1001, 0);
 }
 
 void FSViewPart::slotShowDepthMenu()
 {
-  _depthMenu->menu()->clear();
-  _view->addDepthStopItems(_depthMenu->menu(), 1501, 0);
+    _depthMenu->menu()->clear();
+    _view->addDepthStopItems(_depthMenu->menu(), 1501, 0);
 }
 
 void FSViewPart::slotShowColorMenu()
 {
-  _colorMenu->menu()->clear();
-  _view->addColorItems(_colorMenu->menu(), 1401);
+    _colorMenu->menu()->clear();
+    _view->addColorItems(_colorMenu->menu(), 1401);
 }
 
 bool FSViewPart::openFile() // never called since openUrl is reimplemented
 {
-  kDebug(90100) << "FSViewPart::openFile " << localFilePath();
-  _view->setPath(localFilePath());
+    kDebug(90100) << "FSViewPart::openFile " << localFilePath();
+    _view->setPath(localFilePath());
 
-  return true;
+    return true;
 }
 
 bool FSViewPart::openUrl(const QUrl &url)
 {
-  kDebug(90100) << "FSViewPart::openUrl " << url.path();
+    kDebug(90100) << "FSViewPart::openUrl " << url.path();
 
-  if (!url.isValid()) return false;
-  if (!url.isLocalFile()) return false;
+    if (!url.isValid()) {
+        return false;
+    }
+    if (!url.isLocalFile()) {
+        return false;
+    }
 
-  setUrl(url);
-  emit setWindowCaption( this->url().toDisplayString(QUrl::PreferLocalFile) );
+    setUrl(url);
+    emit setWindowCaption(this->url().toDisplayString(QUrl::PreferLocalFile));
 
-  _view->setPath(this->url().path());
+    _view->setPath(this->url().path());
 
-  return true;
+    return true;
 }
 
 bool FSViewPart::closeUrl()
 {
-  kDebug(90100) << "FSViewPart::closeUrl ";
+    kDebug(90100) << "FSViewPart::closeUrl ";
 
-  _view->stop();
+    _view->stop();
 
-  return true;
+    return true;
 }
 
-void FSViewPart::setNonStandardActionEnabled(const char* actionName, bool enabled)
+void FSViewPart::setNonStandardActionEnabled(const char *actionName, bool enabled)
 {
-  QAction *action = actionCollection()->action(actionName);
-  action->setEnabled(enabled);
+    QAction *action = actionCollection()->action(actionName);
+    action->setEnabled(enabled);
 }
 
 void FSViewPart::updateActions()
 {
-  int canDel = 0, canCopy = 0, canMove = 0;
-  KUrl::List urls;
+    int canDel = 0, canCopy = 0, canMove = 0;
+    KUrl::List urls;
 
-  foreach(TreeMapItem* i, _view->selection()) {
-    KUrl u;
-    u.setPath( ((Inode*)i)->path() );
-    urls.append(u);
-    canCopy++;
-    if ( KProtocolManager::supportsDeleting(  u ) )
-	canDel++;
-    if ( KProtocolManager::supportsMoving(  u ) )
-	canMove++;
-  }
+    foreach (TreeMapItem *i, _view->selection()) {
+        KUrl u;
+        u.setPath(((Inode *)i)->path());
+        urls.append(u);
+        canCopy++;
+        if (KProtocolManager::supportsDeleting(u)) {
+            canDel++;
+        }
+        if (KProtocolManager::supportsMoving(u)) {
+            canMove++;
+        }
+    }
 
-  // Standard KBrowserExtension actions.
-  emit _ext->enableAction("copy", canCopy > 0 );
-  emit _ext->enableAction("cut", canMove > 0 );
-  // Custom actions.
-  //setNonStandardActionEnabled("rename", canMove > 0 ); // FIXME
-  setNonStandardActionEnabled("move_to_trash", (canDel > 0 && canMove > 0));
-  setNonStandardActionEnabled("delete", canDel > 0);
-  setNonStandardActionEnabled("editMimeType", _view->selection().count() == 1);
-  setNonStandardActionEnabled("properties", _view->selection().count() == 1);
+    // Standard KBrowserExtension actions.
+    emit _ext->enableAction("copy", canCopy > 0);
+    emit _ext->enableAction("cut", canMove > 0);
+    // Custom actions.
+    //setNonStandardActionEnabled("rename", canMove > 0 ); // FIXME
+    setNonStandardActionEnabled("move_to_trash", (canDel > 0 && canMove > 0));
+    setNonStandardActionEnabled("delete", canDel > 0);
+    setNonStandardActionEnabled("editMimeType", _view->selection().count() == 1);
+    setNonStandardActionEnabled("properties", _view->selection().count() == 1);
 
-  emit _ext->selectionInfo(urls);
+    emit _ext->selectionInfo(urls);
 
-  if (canCopy>0)
-      stateChanged("has_selection");
-  else
-      stateChanged("has_no_selection");
+    if (canCopy > 0) {
+        stateChanged("has_selection");
+    } else {
+        stateChanged("has_no_selection");
+    }
 
-  kDebug(90100) << "FSViewPart::updateActions, deletable " << canDel;
+    kDebug(90100) << "FSViewPart::updateActions, deletable " << canDel;
 }
 
-void FSViewPart::contextMenu(TreeMapItem* /*item*/,const QPoint& p)
+void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
 {
     int canDel = 0, canCopy = 0, canMove = 0;
     KFileItemList items;
 
-    foreach(TreeMapItem* i, _view->selection()) {
-	KUrl u;
-	u.setPath( ((Inode*)i)->path() );
-	QString mimetype = ((Inode*)i)->mimeType().name();
-	const QFileInfo& info = ((Inode*)i)->fileInfo();
-	mode_t mode =
-	    info.isFile() ? S_IFREG :
-	    info.isDir() ? S_IFDIR :
-	    info.isSymLink() ? S_IFLNK : (mode_t)-1;
-	items.append(KFileItem(u, mimetype, mode));
+    foreach (TreeMapItem *i, _view->selection()) {
+        KUrl u;
+        u.setPath(((Inode *)i)->path());
+        QString mimetype = ((Inode *)i)->mimeType().name();
+        const QFileInfo &info = ((Inode *)i)->fileInfo();
+        mode_t mode =
+            info.isFile() ? S_IFREG :
+            info.isDir() ? S_IFDIR :
+            info.isSymLink() ? S_IFLNK : (mode_t) - 1;
+        items.append(KFileItem(u, mimetype, mode));
 
-	canCopy++;
-	if ( KProtocolManager::supportsDeleting( u ) )
-	    canDel++;
-        if ( KProtocolManager::supportsMoving( u ) )
+        canCopy++;
+        if (KProtocolManager::supportsDeleting(u)) {
+            canDel++;
+        }
+        if (KProtocolManager::supportsMoving(u)) {
             canMove++;
+        }
     }
 
     QList<QAction *> editActions;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::ShowUrlOperations |
-                                                 KParts::BrowserExtension::ShowProperties;
+            KParts::BrowserExtension::ShowProperties;
 
     bool addTrash = (canMove > 0);
     bool addDel = false;
     if (canDel == 0) {
         flags |= KParts::BrowserExtension::NoDeletion;
     } else {
-        if ( !url().isLocalFile() )
+        if (!url().isLocalFile()) {
             addDel = true;
-        else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
+        } else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
             addTrash = false;
             addDel = true;
         } else {
@@ -420,22 +427,24 @@ void FSViewPart::contextMenu(TreeMapItem* /*item*/,const QPoint& p)
         }
     }
 
-    if (addTrash)
+    if (addTrash) {
         editActions.append(actionCollection()->action("move_to_trash"));
-    if (addDel)
+    }
+    if (addDel) {
         editActions.append(actionCollection()->action("delete"));
+    }
 
 // FIXME: rename is currently unavailable. Requires popup renaming.
 //     if (canMove)
 //       editActions.append(actionCollection()->action("rename"));
     actionGroups.insert("editactions", editActions);
 
-    if (items.count()>0)
-      emit _ext->popupMenu(_view->mapToGlobal(p), items,
-                           KParts::OpenUrlArguments(),
-                           KParts::BrowserArguments(),
-                           flags,
-                           actionGroups);
+    if (items.count() > 0)
+        emit _ext->popupMenu(_view->mapToGlobal(p), items,
+                             KParts::OpenUrlArguments(),
+                             KParts::BrowserArguments(),
+                             flags,
+                             actionGroups);
 }
 
 void FSViewPart::slotProperties()
@@ -448,102 +457,103 @@ void FSViewPart::slotProperties()
     if (!urlList.isEmpty()) {
         KPropertiesDialog::showDialog(urlList.first(), view());
     }
- }
-
+}
 
 // FSViewBrowserExtension
 
-FSViewBrowserExtension::FSViewBrowserExtension(FSViewPart* viewPart)
-  :KParts::BrowserExtension(viewPart)
+FSViewBrowserExtension::FSViewBrowserExtension(FSViewPart *viewPart)
+    : KParts::BrowserExtension(viewPart)
 {
-  _view = viewPart->view();
+    _view = viewPart->view();
 }
 
 FSViewBrowserExtension::~FSViewBrowserExtension()
 {}
 
-
-
 void FSViewBrowserExtension::del()
 {
-  const KUrl::List urls = _view->selectedUrls();
-  KIO::JobUiDelegate uiDelegate;
-  uiDelegate.setWindow(_view);
-  if (uiDelegate.askDeleteConfirmation(urls,
-          KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
-    KIO::Job* job = KIO::del(urls);
-    KJobWidgets::setWindow(job, _view);
-    job->ui()->setAutoErrorHandlingEnabled(true);
-    connect(job, SIGNAL(result(KJob*)),
-            this, SLOT(refresh()));
-  }
+    const KUrl::List urls = _view->selectedUrls();
+    KIO::JobUiDelegate uiDelegate;
+    uiDelegate.setWindow(_view);
+    if (uiDelegate.askDeleteConfirmation(urls,
+                                         KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
+        KIO::Job *job = KIO::del(urls);
+        KJobWidgets::setWindow(job, _view);
+        job->ui()->setAutoErrorHandlingEnabled(true);
+        connect(job, SIGNAL(result(KJob*)),
+                this, SLOT(refresh()));
+    }
 }
 
 void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers)
 {
-  bool deleteNotTrash = ((modifiers & Qt::ShiftModifier) != 0);
-  if (deleteNotTrash) {
-    del();
-  } else {
-    KIO::JobUiDelegate uiDelegate;
-    uiDelegate.setWindow(_view);
-    const QList<QUrl> urls = _view->selectedUrls();
-    if (uiDelegate.askDeleteConfirmation(urls,
-          KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
-      KIO::Job* job = KIO::trash(urls);
-      KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Trash, urls, KUrl("trash:/"), job );
-      KJobWidgets::setWindow(job, _view);
-      job->ui()->setAutoErrorHandlingEnabled(true);
-      connect(job, SIGNAL(result(KJob*)),
-              this, SLOT(refresh()));
+    bool deleteNotTrash = ((modifiers & Qt::ShiftModifier) != 0);
+    if (deleteNotTrash) {
+        del();
+    } else {
+        KIO::JobUiDelegate uiDelegate;
+        uiDelegate.setWindow(_view);
+        const QList<QUrl> urls = _view->selectedUrls();
+        if (uiDelegate.askDeleteConfirmation(urls,
+                                             KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
+            KIO::Job *job = KIO::trash(urls);
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, KUrl("trash:/"), job);
+            KJobWidgets::setWindow(job, _view);
+            job->ui()->setAutoErrorHandlingEnabled(true);
+            connect(job, SIGNAL(result(KJob*)),
+                    this, SLOT(refresh()));
+        }
     }
-  }
 }
 
-void FSViewBrowserExtension::copySelection( bool move )
+void FSViewBrowserExtension::copySelection(bool move)
 {
-  QMimeData* data = new QMimeData;
-  data->setUrls(_view->selectedUrls());
-  KIO::setClipboardDataCut(data, move);
-  QApplication::clipboard()->setMimeData( data );
+    QMimeData *data = new QMimeData;
+    data->setUrls(_view->selectedUrls());
+    KIO::setClipboardDataCut(data, move);
+    QApplication::clipboard()->setMimeData(data);
 }
 
 void FSViewBrowserExtension::editMimeType()
 {
-  Inode* i = (Inode*) _view->selection().first();
-  if (i)
-    KMimeTypeEditor::editMimeType( i->mimeType().name(),_view );
+    Inode *i = (Inode *) _view->selection().first();
+    if (i) {
+        KMimeTypeEditor::editMimeType(i->mimeType().name(), _view);
+    }
 }
-
 
 // refresh treemap at end of KIO jobs
 void FSViewBrowserExtension::refresh()
 {
-  // only need to refresh common ancestor for all selected items
-  TreeMapItem* commonParent = _view->selection().commonParent();
-  if (!commonParent) return;
+    // only need to refresh common ancestor for all selected items
+    TreeMapItem *commonParent = _view->selection().commonParent();
+    if (!commonParent) {
+        return;
+    }
 
-  /* if commonParent is a file, update parent directory */
-  if ( !((Inode*)commonParent)->isDir() ) {
-    commonParent = commonParent->parent();
-    if (!commonParent) return;
-  }
+    /* if commonParent is a file, update parent directory */
+    if (!((Inode *)commonParent)->isDir()) {
+        commonParent = commonParent->parent();
+        if (!commonParent) {
+            return;
+        }
+    }
 
-  kDebug(90100) << "FSViewPart::refreshing "
-	    << ((Inode*)commonParent)->path() << endl;
+    kDebug(90100) << "FSViewPart::refreshing "
+                  << ((Inode *)commonParent)->path() << endl;
 
-  _view->requestUpdate( (Inode*)commonParent );
+    _view->requestUpdate((Inode *)commonParent);
 }
 
-void FSViewBrowserExtension::selected(TreeMapItem* i)
+void FSViewBrowserExtension::selected(TreeMapItem *i)
 {
-  if (!i) return;
+    if (!i) {
+        return;
+    }
 
-  KUrl url;
-  url.setPath( ((Inode*)i)->path() );
-  emit openUrlRequest(url);
+    KUrl url;
+    url.setPath(((Inode *)i)->path());
+    emit openUrlRequest(url);
 }
-
-
 
 #include "fsview_part.moc"

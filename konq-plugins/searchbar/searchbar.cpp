@@ -45,7 +45,6 @@
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
 
-
 //#include <kparts/mainwindow.h>
 
 #include <QLineEdit>
@@ -63,8 +62,6 @@
 //KDELibs4Support
 #include <kicon.h>
 #include <kcomponentdata.h>
-
-
 
 K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
 K_EXPORT_PLUGIN(SearchBarPluginFactory("searchbarplugin"))
@@ -96,10 +93,10 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 
     QAction *a = actionCollection()->addAction("focus_search_bar");
     a->setText(i18n("Focus Searchbar"));
-    a->setShortcut(QKeySequence(Qt::CTRL+Qt::ALT+Qt::Key_S));
+    a->setShortcut(QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_S));
     connect(a, SIGNAL(triggered()), this, SLOT(focusSearchbar()));
-	m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
-	QDir().mkpath(m_searchProvidersDir);
+    m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
+    QDir().mkpath(m_searchProvidersDir);
     configurationChanged();
 
     m_timer = new QTimer(this);
@@ -115,7 +112,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
             SLOT(addSearchSuggestion(QStringList)));
     connect(m_openSearchManager, SIGNAL(openSearchEngineAdded(QString,QString,QString)),
             SLOT(openSearchEngineAdded(QString,QString,QString)));
-    
+
     QDBusConnection::sessionBus().connect(QString(), QString(), "org.kde.KUriFilterPlugin",
                                           "configure", this, SLOT(reloadConfiguration()));
 }
@@ -133,8 +130,8 @@ SearchBarPlugin::~SearchBarPlugin()
 
 bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
 {
-    if (qobject_cast<KMainWindow*>(o) && KParts::PartActivateEvent::test(e)) {
-        KParts::PartActivateEvent* partEvent = static_cast<KParts::PartActivateEvent *>(e);
+    if (qobject_cast<KMainWindow *>(o) && KParts::PartActivateEvent::test(e)) {
+        KParts::PartActivateEvent *partEvent = static_cast<KParts::PartActivateEvent *>(e);
         KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(partEvent->part());
         //kDebug() << "Embedded part changed to " << part;
         if (part && (!m_part || part != m_part.data())) {
@@ -144,31 +141,31 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
             // appropriate entries the next time it is shown...
             // ######## TODO: This loses the opensearch entries for the old part!!!
             if (m_popupMenu) {
-              delete m_popupMenu;
-              m_popupMenu = 0;
-              m_addSearchActions.clear(); // the actions had the menu as parent, so they're deleted now
+                delete m_popupMenu;
+                m_popupMenu = 0;
+                m_addSearchActions.clear(); // the actions had the menu as parent, so they're deleted now
             }
 
             // Change the search mode if it is set to FindInThisPage since
             // that feature is currently KHTML specific. It is also completely
             // redundant and unnecessary.
-            if (m_searchMode == FindInThisPage && enableFindInPage())
-              nextSearchEntry();
+            if (m_searchMode == FindInThisPage && enableFindInPage()) {
+                nextSearchEntry();
+            }
 
             connect(part, SIGNAL(completed()), this, SLOT(HTMLDocLoaded()));
             connect(part, SIGNAL(started(KIO::Job*)), this, SLOT(HTMLLoadingStarted()));
         }
         // Delay since when destroying tabs part 0 gets activated for a bit, before the proper part
         QTimer::singleShot(0, this, SLOT(updateComboVisibility()));
-    }
-    else if (o == m_searchCombo->lineEdit() && e->type() == QEvent::KeyPress) {
+    } else if (o == m_searchCombo->lineEdit() && e->type() == QEvent::KeyPress) {
         QKeyEvent *k = (QKeyEvent *)e;
         if (k->modifiers() & Qt::ControlModifier) {
-            if (k->key()==Qt::Key_Down) {
+            if (k->key() == Qt::Key_Down) {
                 nextSearchEntry();
                 return true;
             }
-            if (k->key()==Qt::Key_Up) {
+            if (k->key() == Qt::Key_Up) {
                 previousSearchEntry();
                 return true;
             }
@@ -181,16 +178,18 @@ void SearchBarPlugin::nextSearchEntry()
 {
     if (m_searchMode == FindInThisPage) {
         m_searchMode = UseSearchProvider;
-        if (m_searchEngines.isEmpty())
+        if (m_searchEngines.isEmpty()) {
             m_currentEngine = QLatin1String("google");
-        else
+        } else {
             m_currentEngine = m_searchEngines.first();
+        }
     } else {
         const int index = m_searchEngines.indexOf(m_currentEngine) + 1;
-        if (index >= m_searchEngines.count())
+        if (index >= m_searchEngines.count()) {
             m_searchMode = FindInThisPage;
-        else
+        } else {
             m_currentEngine = m_searchEngines.at(index);
+        }
     }
     setIcon();
 }
@@ -199,16 +198,18 @@ void SearchBarPlugin::previousSearchEntry()
 {
     if (m_searchMode == FindInThisPage) {
         m_searchMode = UseSearchProvider;
-        if (m_searchEngines.isEmpty())
+        if (m_searchEngines.isEmpty()) {
             m_currentEngine = QLatin1String("google");
-        else
+        } else {
             m_currentEngine =  m_searchEngines.last();
+        }
     } else {
         const int index = m_searchEngines.indexOf(m_currentEngine) - 1;
-        if (index <= 0)
+        if (index <= 0) {
             m_searchMode = FindInThisPage;
-        else
+        } else {
             m_currentEngine = m_searchEngines.at(index);
+        }
     }
     setIcon();
 }
@@ -223,32 +224,35 @@ void SearchBarPlugin::startSearch(const QString &search)
     m_lastSearch = search;
 
     if (m_searchMode == FindInThisPage) {
-        KParts::TextExtension* textExt = KParts::TextExtension::childObject(m_part.data());
-        if (textExt)
+        KParts::TextExtension *textExt = KParts::TextExtension::childObject(m_part.data());
+        if (textExt) {
             textExt->findText(search, 0);
+        }
     } else if (m_searchMode == UseSearchProvider) {
         m_urlEnterLock = true;
-        const KUriFilterSearchProvider& provider = m_searchProviders.value(m_currentEngine);
+        const KUriFilterSearchProvider &provider = m_searchProviders.value(m_currentEngine);
         KUriFilterData data;
         data.setData(provider.defaultKey() + m_delimiter + search);
         //kDebug() << "Query:" << (provider.defaultKey() + m_delimiter + search);
-        if (!KUriFilter::self()->filterSearchUri(data, KUriFilter::WebShortcutFilter)) {          
+        if (!KUriFilter::self()->filterSearchUri(data, KUriFilter::WebShortcutFilter)) {
             kWarning() << "Failed to filter using web shortcut:" << provider.defaultKey();
             return;
         }
-        
-        KParts::BrowserExtension * ext = KParts::BrowserExtension::childObject(m_part.data());
+
+        KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part.data());
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
             KParts::OpenUrlArguments arguments;
             KParts::BrowserArguments browserArguments;
             browserArguments.setNewTab(true);
-            if (ext)
+            if (ext) {
                 emit ext->createNewWindow(data.uri(), arguments, browserArguments);
+            }
         } else {
             if (ext) {
                 emit ext->openUrlRequest(data.uri());
-                if (m_part)
-                    m_part.data()->widget()->setFocus(); // #152923
+                if (m_part) {
+                    m_part.data()->widget()->setFocus();    // #152923
+                }
             }
         }
     }
@@ -267,20 +271,21 @@ void SearchBarPlugin::setIcon()
         const QString engine = (m_currentEngine.isEmpty() ? m_searchEngines.first() : m_currentEngine);
         //kDebug() << "Icon Name:" << m_searchProviders.value(engine).iconName();
         const QString iconName = m_searchProviders.value(engine).iconName();
-        if (iconName.startsWith(QLatin1Char('/')))
+        if (iconName.startsWith(QLatin1Char('/'))) {
             m_searchIcon = QPixmap(iconName);
-        else
+        } else {
             m_searchIcon = SmallIcon(iconName);
+        }
     }
 
     // Create a bit wider icon with arrow
-    QPixmap arrowmap = QPixmap(m_searchIcon.width()+5,m_searchIcon.height()+5);
+    QPixmap arrowmap = QPixmap(m_searchIcon.width() + 5, m_searchIcon.height() + 5);
     arrowmap.fill(m_searchCombo->lineEdit()->palette().color(m_searchCombo->lineEdit()->backgroundRole()));
     QPainter p(&arrowmap);
     p.drawPixmap(0, 2, m_searchIcon);
     QStyleOption opt;
     opt.state = QStyle::State_None;
-    opt.rect = QRect(arrowmap.width()-6, arrowmap.height()-5, 6, 5);
+    opt.rect = QRect(arrowmap.width() - 6, arrowmap.height() - 5, 6, 5);
     m_searchCombo->style()->drawPrimitive(QStyle::PE_IndicatorArrowDown, &opt, &p, m_searchCombo);
     p.end();
     m_searchIcon = arrowmap;
@@ -295,9 +300,10 @@ void SearchBarPlugin::setIcon()
 void SearchBarPlugin::showSelectionMenu()
 {
     // Update the configuration, if needed, before showing the menu items...
-    if (m_reloadConfiguration)
+    if (m_reloadConfiguration) {
         configurationChanged();
-    
+    }
+
     if (!m_popupMenu) {
         m_popupMenu = new QMenu(m_searchCombo);
         m_popupMenu->setObjectName("search selection menu");
@@ -307,9 +313,9 @@ void SearchBarPlugin::showSelectionMenu()
             m_popupMenu->addSeparator();
         }
 
-        for (int i=0, count=m_searchEngines.count(); i != count; ++i) {
-            const KUriFilterSearchProvider& provider = m_searchProviders.value(m_searchEngines.at(i));
-            QAction* action = m_popupMenu->addAction(KIcon(provider.iconName()), provider.name());
+        for (int i = 0, count = m_searchEngines.count(); i != count; ++i) {
+            const KUriFilterSearchProvider &provider = m_searchProviders.value(m_searchEngines.at(i));
+            QAction *action = m_popupMenu->addAction(KIcon(provider.iconName()), provider.name());
             action->setData(qVariantFromValue(i));
         }
 
@@ -366,7 +372,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
     if (!openSearchTitle.isEmpty()) {
         const QString openSearchHref = m_openSearchDescs.value(openSearchTitle);
         QUrl url;
-		QUrl openSearchUrl = QUrl(openSearchHref);
+        QUrl openSearchUrl = QUrl(openSearchHref);
         if (openSearchUrl.isRelative()) {
             const QUrl docUrl = m_part ? m_part.data()->url() : QUrl();
             QString host = docUrl.scheme() + QLatin1String("://") + docUrl.host();
@@ -374,8 +380,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
                 host += QLatin1String(":") + QString::number(docUrl.port());
             }
             url = docUrl.resolved(QUrl(openSearchHref));
-        }
-        else {
+        } else {
             url = QUrl(openSearchHref);
         }
         //kDebug() << "Adding open search Engine: " << openSearchTitle << " : " << openSearchHref;
@@ -402,9 +407,9 @@ void SearchBarPlugin::configurationChanged()
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         m_delimiter = data.searchTermSeparator();
-        Q_FOREACH(const QString& engine, data.preferredSearchProviders()) {
+        Q_FOREACH (const QString &engine, data.preferredSearchProviders()) {
             //kDebug() << "Found search provider:" << engine;
-            const KUriFilterSearchProvider& provider = data.queryForSearchProvider(engine);
+            const KUriFilterSearchProvider &provider = data.queryForSearchProvider(engine);
             m_searchProviders.insert(provider.desktopEntryName(), provider);
             m_searchEngines << provider.desktopEntryName();
         }
@@ -413,7 +418,7 @@ void SearchBarPlugin::configurationChanged()
     //kDebug() << "Found search engines:" << m_searchEngines;
     KConfigGroup config = KConfigGroup(KSharedConfig::openConfig(), "SearchBar");
     m_searchMode = (SearchModes) config.readEntry("Mode", static_cast<int>(UseSearchProvider));
-    const QString defaultSearchEngine ((m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first()));
+    const QString defaultSearchEngine((m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first()));
     m_currentEngine = config.readEntry("CurrentEngine", defaultSearchEngine);
     m_suggestionEnabled = config.readEntry("SuggestionEnabled", true);
 
@@ -434,8 +439,9 @@ void SearchBarPlugin::reloadConfiguration()
 
 void SearchBarPlugin::updateComboVisibility()
 {
-    if (!m_part)
+    if (!m_part) {
         return;
+    }
     // NOTE: We hide the search combobox if the embedded kpart is ReadWrite
     // because web browsers by their very nature are ReadOnly kparts...
     m_searchComboAction->setVisible((!m_part.data()->inherits("ReadWritePart") &&
@@ -465,12 +471,13 @@ void SearchBarPlugin::searchTextChanged(const QString &text)
     m_timer->start(400);
 }
 
-void SearchBarPlugin::requestSuggestion() {
+void SearchBarPlugin::requestSuggestion()
+{
     m_searchCombo->clearSuggestions();
 
     if (m_suggestionEnabled && m_searchMode != FindInThisPage &&
-        m_openSearchManager->isSuggestionAvailable() &&
-        !m_searchCombo->lineEdit()->text().isEmpty()) {
+            m_openSearchManager->isSuggestionAvailable() &&
+            !m_searchCombo->lineEdit()->text().isEmpty()) {
         m_openSearchManager->requestSuggestion(m_searchCombo->lineEdit()->text());
     }
 }
@@ -482,21 +489,22 @@ void SearchBarPlugin::enableSuggestion(bool enable)
 
 void SearchBarPlugin::HTMLDocLoaded()
 {
-    if (!m_part || m_part.data()->url().host().isEmpty())
+    if (!m_part || m_part.data()->url().host().isEmpty()) {
         return;
-    
+    }
+
     // Testcase for this code: http://search.iwsearch.net
-    KParts::HtmlExtension* ext = KParts::HtmlExtension::childObject(m_part.data());
-    KParts::SelectorInterface* selectorInterface = qobject_cast<KParts::SelectorInterface*>(ext);
+    KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(m_part.data());
+    KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
 
     if (selectorInterface) {
         //if (headElelement.getAttribute("profile") != "http://a9.com/-/spec/opensearch/1.1/") {
         //    kWarning() << "Warning: there is no profile attribute or wrong profile attribute in <head>, as specified by open search specification 1.1";
         //}
-        const QString query (QLatin1String("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
+        const QString query(QLatin1String("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
         const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
         //kDebug() << "Found" << linkNodes.length() << "links in" << m_part->url();
-        Q_FOREACH(const KParts::SelectorInterface::Element& link, linkNodes) {
+        Q_FOREACH (const KParts::SelectorInterface::Element &link, linkNodes) {
             const QString title = link.attribute("title");
             const QString href = link.attribute("href");
             //kDebug() << "Found opensearch" << title << href;
@@ -532,7 +540,7 @@ void SearchBarPlugin::openSearchEngineAdded(const QString &name, const QString &
                 this, SLOT(webShortcutSet(QString,QString,QString)));
     }
 
-    QPoint pos = m_searchCombo->mapToGlobal(QPoint(m_searchCombo->width()-m_addWSWidget->width(), m_searchCombo->height() + 1));
+    QPoint pos = m_searchCombo->mapToGlobal(QPoint(m_searchCombo->width() - m_addWSWidget->width(), m_searchCombo->height() + 1));
     m_addWSWidget->setGeometry(QRect(pos, m_addWSWidget->size()));
     m_addWSWidget->show(name, fileName);
 }
@@ -544,7 +552,7 @@ void SearchBarPlugin::webShortcutSet(const QString &name, const QString &webShor
     KConfigGroup service(&_service, "Desktop Entry");
     service.writeEntry("Keys", webShortcut);
     _service.sync();
-    
+
     // Update filters in running applications including ourselves...
     QDBusConnection::sessionBus().send(QDBusMessage::createSignal("/", "org.kde.KUriFilterPlugin", "configure"));
 
@@ -565,7 +573,7 @@ void SearchBarPlugin::addSearchSuggestion(const QStringList &suggestions)
 }
 
 SearchBarCombo::SearchBarCombo(QWidget *parent)
-    :KHistoryComboBox(true, parent)
+    : KHistoryComboBox(true, parent)
 {
     setDuplicatesEnabled(false);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -575,8 +583,8 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
     Q_ASSERT(useCompletion());
 
     KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
-    setCompletionMode (static_cast<KCompletion::CompletionMode>(config.readEntry("CompletionMode", static_cast<int>(KCompletion::CompletionPopup))));
-    const QStringList list = config.readEntry( "History list", QStringList() );
+    setCompletionMode(static_cast<KCompletion::CompletionMode>(config.readEntry("CompletionMode", static_cast<int>(KCompletion::CompletionPopup))));
+    const QStringList list = config.readEntry("History list", QStringList());
     setHistoryItems(list, true);
     Q_ASSERT(currentText().isEmpty()); // KHistoryComboBox calls clearEditText
 
@@ -587,7 +595,7 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
     connect(this, SIGNAL(aboutToShowContextMenu(QMenu*)), SLOT(addEnableMenuItem(QMenu*)));
 
     // use our own item delegate to display our fancy stuff :D
-    KCompletionBox* box = completionBox();
+    KCompletionBox *box = completionBox();
     box->setItemDelegate(new SearchBarItemDelegate(this));
     connect(lineEdit(), SIGNAL(textEdited(QString)), box, SLOT(setCancelledText(QString)));
 }
@@ -595,9 +603,9 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
 SearchBarCombo::~SearchBarCombo()
 {
     KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
-    config.writeEntry( "History list", historyItems() );
+    config.writeEntry("History list", historyItems());
     const int mode = completionMode();
-    config.writeEntry( "CompletionMode", mode);
+    config.writeEntry("CompletionMode", mode);
     delete m_enableAction;
 }
 
@@ -613,7 +621,7 @@ void SearchBarCombo::setIcon(const QPixmap &icon)
     if (count() == 0) {
         insertItem(0, m_icon, 0);
     } else {
-        for(int i = 0; i < count(); i++) {
+        for (int i = 0; i < count(); i++) {
             setItemIcon(i, m_icon);
         }
     }
@@ -627,7 +635,7 @@ void SearchBarCombo::setSuggestionEnabled(bool enable)
 
 int SearchBarCombo::findHistoryItem(const QString &searchText)
 {
-    for(int i = 0; i < count(); i++) {
+    for (int i = 0; i < count(); i++) {
         if (itemText(i) == searchText) {
             return i;
         }
@@ -690,7 +698,6 @@ void SearchBarCombo::clearSuggestions()
     lineEdit()->blockSignals(oldBlock);
 }
 
-
 void SearchBarCombo::addEnableMenuItem(QMenu *menu)
 {
     if (menu) {
@@ -720,7 +727,7 @@ void SearchBarItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
         QRect rect(option.rect.x(), option.rect.y(), option.rect.width() - width, option.rect.height());
         QFontMetrics textFontMetrics(option.font);
         QString elidedText = textFontMetrics.elidedText(text,
-                Qt::ElideRight, option.rect.width() - width - option.decorationSize.width());
+                             Qt::ElideRight, option.rect.width() - width - option.decorationSize.width());
 
         QAbstractItemModel *itemModel = const_cast<QAbstractItemModel *>(index.model());
         itemModel->setData(index, elidedText, Qt::DisplayRole);
@@ -735,8 +742,7 @@ void SearchBarItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
         if (index.row() > 0) {
             painter->drawLine(option.rect.x(), option.rect.y(), option.rect.x() + option.rect.width(), option.rect.y());
         }
-    }
-    else {
+    } else {
         QItemDelegate::paint(painter, option, index);
     }
 }

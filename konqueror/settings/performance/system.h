@@ -26,28 +26,28 @@
 class System_ui : public QWidget, public Ui::System_ui
 {
 public:
-  System_ui( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
+    System_ui(QWidget *parent) : QWidget(parent)
+    {
+        setupUi(this);
+    }
 };
-
 
 namespace KCMPerformance
 {
 
 class SystemWidget
     : public System_ui
-    {
+{
     Q_OBJECT
-    public:
-        SystemWidget( QWidget* parent_P = NULL );
-        void load();
-        void save();
-        void defaults();
-    Q_SIGNALS:
-        void changed();
-    };
+public:
+    SystemWidget(QWidget *parent_P = NULL);
+    void load();
+    void save();
+    void defaults();
+Q_SIGNALS:
+    void changed();
+};
 
-}  // namespace 
+}  // namespace
 
 #endif

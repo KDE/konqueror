@@ -55,7 +55,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqHistoryDialog::slotOpenWindow);
     connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqHistoryDialog::slotOpenTab);
 
-    KActionCollection* collection = m_historyView->actionCollection();
+    KActionCollection *collection = m_historyView->actionCollection();
 
     QToolBar *toolBar = new QToolBar(mainWidget());
     toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -92,9 +92,9 @@ QSize KonqHistoryDialog::sizeHint() const
     return QSize(500, 400);
 }
 
-void KonqHistoryDialog::slotOpenWindow(const QUrl& url)
+void KonqHistoryDialog::slotOpenWindow(const QUrl &url)
 {
-    KonqMainWindow* mw = KonqMisc::createNewWindow(url);
+    KonqMainWindow *mw = KonqMisc::createNewWindow(url);
     mw->show();
 }
 
@@ -104,7 +104,7 @@ void KonqHistoryDialog::slotOpenTab(const QUrl &url)
 }
 
 // Called when double-clicking on a row
-void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex& index)
+void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex &index)
 {
     const QUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {

@@ -48,18 +48,19 @@ public:
      * This is a bit like "qApp": you can access the instance anywhere, but you need to
      * create it first.
      */
-    static KonqHistoryProvider *self() {
-        return static_cast<KonqHistoryProvider*>(KParts::HistoryProvider::self());
+    static KonqHistoryProvider *self()
+    {
+        return static_cast<KonqHistoryProvider *>(KParts::HistoryProvider::self());
     }
 
-    explicit KonqHistoryProvider(QObject* parent = 0);
+    explicit KonqHistoryProvider(QObject *parent = 0);
     virtual ~KonqHistoryProvider();
 
     /**
      * @returns the list of all history entries, sorted by date
      * (oldest entries first)
      */
-    const KonqHistoryList& entries() const;
+    const KonqHistoryList &entries() const;
 
     /**
      * @returns the current maximum number of history entries.
@@ -105,7 +106,7 @@ public:
      *
      * The history is saved after receiving the D-Bus call.
      */
-    void emitRemoveListFromHistory(const QList<QUrl>& urls);
+    void emitRemoveListFromHistory(const QList<QUrl> &urls);
 
     /**
      * Clears the history and tells all other Konqueror instances via D-Bus
@@ -123,18 +124,18 @@ Q_SIGNALS:
     /**
      * Emitted after a new entry was added
      */
-    void entryAdded( const KonqHistoryEntry& entry );
+    void entryAdded(const KonqHistoryEntry &entry);
 
     /**
      * Emitted after an entry was removed from the history
      * Note, that this entry will be deleted immediately after you got
      * that signal.
      */
-    void entryRemoved( const KonqHistoryEntry& entry );
+    void entryRemoved(const KonqHistoryEntry &entry);
 
 protected: // only to be used by konqueror's KonqHistoryManager
 
-    virtual void finishAddingEntry(const KonqHistoryEntry& entry, bool isSender);
+    virtual void finishAddingEntry(const KonqHistoryEntry &entry, bool isSender);
     virtual void removeEntry(KonqHistoryList::iterator it);
 
     /**
@@ -143,16 +144,16 @@ protected: // only to be used by konqueror's KonqHistoryManager
      * Can't be used everywhere, because it always returns end() for "pending"
      * entries, as those are not added to the dict, currently.
      */
-    KonqHistoryList::iterator findEntry(const QUrl& url);
-    KonqHistoryList::const_iterator constFindEntry(const QUrl& url) const;
+    KonqHistoryList::iterator findEntry(const QUrl &url);
+    KonqHistoryList::const_iterator constFindEntry(const QUrl &url) const;
 
     /**
      * Notifies all running instances about a new HistoryEntry via D-Bus.
      */
-    void emitAddToHistory(const KonqHistoryEntry& entry);
+    void emitAddToHistory(const KonqHistoryEntry &entry);
 
 private:
-    KonqHistoryProviderPrivate* const d;
+    KonqHistoryProviderPrivate *const d;
     friend class KonqHistoryProviderPrivate;
 };
 

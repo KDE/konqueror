@@ -32,16 +32,18 @@ class ScanFile;
 
 class ScanItem
 {
- public:
-  ScanItem(const QString& p, ScanDir* d)
-    { absPath = p; dir = d; }
+public:
+    ScanItem(const QString &p, ScanDir *d)
+    {
+        absPath = p;
+        dir = d;
+    }
 
-  QString absPath;
-  ScanDir* dir;
+    QString absPath;
+    ScanDir *dir;
 };
 
-typedef QList<ScanItem*> ScanItemList;
-
+typedef QList<ScanItem *> ScanItemList;
 
 /**
  * Listener for events from directory scanning.
@@ -55,17 +57,15 @@ typedef QList<ScanItem*> ScanItemList;
  */
 class ScanListener
 {
- public:
-  virtual ~ScanListener(){}
-  virtual void scanStarted(ScanDir*) {}
-  virtual void sizeChanged(ScanDir*) {}
-  virtual void scanFinished(ScanDir*) {}
-  // destroyed events are not delivered to listeners of ScanManager
-  virtual void destroyed(ScanDir*) {}
-  virtual void destroyed(ScanFile*) {}
+public:
+    virtual ~ScanListener() {}
+    virtual void scanStarted(ScanDir *) {}
+    virtual void sizeChanged(ScanDir *) {}
+    virtual void scanFinished(ScanDir *) {}
+    // destroyed events are not delivered to listeners of ScanManager
+    virtual void destroyed(ScanDir *) {}
+    virtual void destroyed(ScanFile *) {}
 };
-
-
 
 /**
  * ScanManager
@@ -78,70 +78,91 @@ class ScanListener
  */
 class ScanManager
 {
- public:
-  ScanManager();
-  ScanManager(const QString& path);
-  ~ScanManager();
+public:
+    ScanManager();
+    ScanManager(const QString &path);
+    ~ScanManager();
 
-  /** Set the top path for scanning
-   * The ScanDir object created gets attribute data.
-   */
-  ScanDir* setTop(const QString& path, int data = 0);
-  ScanDir* top() { return _topDir; }
+    /** Set the top path for scanning
+     * The ScanDir object created gets attribute data.
+     */
+    ScanDir *setTop(const QString &path, int data = 0);
+    ScanDir *top()
+    {
+        return _topDir;
+    }
 
-  bool scanRunning();
-  int scanLength() const { return _list.count(); }
-  
-  /**
-   * Starts the scan. Stop previous scan if running.
-   * For the actual scan to happen, you have to call
-   * scan() peridically.
-   *
-   * If from !=0, restart scan at given position; from must
-   * be from the previous scan of this manager.
-   */
-  void startScan(ScanDir* from = 0);
+    bool scanRunning();
+    int scanLength() const
+    {
+        return _list.count();
+    }
 
-  /** Stop a current running scan.
-   * Make all directories to finish their scan.
-   */
-  void stopScan();
+    /**
+     * Starts the scan. Stop previous scan if running.
+     * For the actual scan to happen, you have to call
+     * scan() peridically.
+     *
+     * If from !=0, restart scan at given position; from must
+     * be from the previous scan of this manager.
+     */
+    void startScan(ScanDir *from = 0);
 
-  /**
-   * Scan first directory from todo list.
-   * Directories added to the todo list are attributed with data. 
-   * Returns the number of new subdirectories created for scanning.
-   */
-  int scan(int data);
+    /** Stop a current running scan.
+     * Make all directories to finish their scan.
+     */
+    void stopScan();
 
-  /* set listener to get a callbacks from this ScanDir */
-  void setListener(ScanListener*);
-  ScanListener* listener() { return _listener; }
+    /**
+     * Scan first directory from todo list.
+     * Directories added to the todo list are attributed with data.
+     * Returns the number of new subdirectories created for scanning.
+     */
+    int scan(int data);
 
- private:
-  ScanItemList _list;
-  ScanDir* _topDir;
-  ScanListener* _listener;
+    /* set listener to get a callbacks from this ScanDir */
+    void setListener(ScanListener *);
+    ScanListener *listener()
+    {
+        return _listener;
+    }
+
+private:
+    ScanItemList _list;
+    ScanDir *_topDir;
+    ScanListener *_listener;
 };
 
 class ScanFile
 {
- public:
-  ScanFile();
-  ScanFile(const QString& n, KIO::fileoffset_t s);
-  ~ScanFile();
+public:
+    ScanFile();
+    ScanFile(const QString &n, KIO::fileoffset_t s);
+    ~ScanFile();
 
-  const QString& name() { return _name; }
-  KIO::fileoffset_t size() { return _size; }
+    const QString &name()
+    {
+        return _name;
+    }
+    KIO::fileoffset_t size()
+    {
+        return _size;
+    }
 
-  /* set listener to get callbacks from this ScanDir */
-  void setListener(ScanListener* l) { _listener = l; }
-  ScanListener* listener() { return _listener; }
+    /* set listener to get callbacks from this ScanDir */
+    void setListener(ScanListener *l)
+    {
+        _listener = l;
+    }
+    ScanListener *listener()
+    {
+        return _listener;
+    }
 
- private:
-  QString _name;
-  KIO::fileoffset_t _size;
-  ScanListener* _listener;
+private:
+    QString _name;
+    KIO::fileoffset_t _size;
+    ScanListener *_listener;
 };
 
 typedef QVector<ScanFile> ScanFileVector;
@@ -154,75 +175,120 @@ typedef QVector<ScanDir> ScanDirVector;
  */
 class ScanDir
 {
- public:
-  ScanDir();
-  ScanDir(const QString& n, ScanManager* m,
-	  ScanDir* p = 0, int data = 0);
-  ~ScanDir();
-  
-  /* Get items of this directory
-   * and append subdirectories to todo list.
-   *
-   * Directories added to the todo list are attributed with data.
-   * Returns the number of new subdirectories created for scanning.
-   */
-  int scan(ScanItem* si, ScanItemList& list, int data);
+public:
+    ScanDir();
+    ScanDir(const QString &n, ScanManager *m,
+            ScanDir *p = 0, int data = 0);
+    ~ScanDir();
 
-  /* clear scan objects below */
-  void clear();
+    /* Get items of this directory
+     * and append subdirectories to todo list.
+     *
+     * Directories added to the todo list are attributed with data.
+     * Returns the number of new subdirectories created for scanning.
+     */
+    int scan(ScanItem *si, ScanItemList &list, int data);
 
-  /*
-   * Setup for child rescan
-   */
-  void setupChildRescan();
+    /* clear scan objects below */
+    void clear();
 
-  /* Absolute path. Warning: Slow, loops to top parent. */
-  QString path();
+    /*
+     * Setup for child rescan
+     */
+    void setupChildRescan();
 
-  /* get integer data attribute */
-  int data() { return _data; }
-  void setData(int d) { _data = d; }
+    /* Absolute path. Warning: Slow, loops to top parent. */
+    QString path();
 
-  ScanFileVector& files() { return _files; }
-  ScanDirVector& dirs() { return _dirs; }
-  const QString& name() { return _name; }
-  KIO::fileoffset_t size() { update(); return _size; }
-  unsigned int fileCount() { update(); return _fileCount; }
-  unsigned int dirCount() { update(); return _dirCount; }
-  ScanDir* parent() { return _parent; }
-  bool scanStarted() { return (_dirsFinished >= 0); }
-  bool scanFinished() { return (_dirsFinished == _dirs.count()); }
-  bool scanRunning() { return scanStarted() && !scanFinished(); }
-  
-  /* set listener to get a callbacks from this ScanDir */
-  void setListener(ScanListener*);
-  ScanListener* listener() { return _listener; }
-  ScanManager* manager() { return _manager; }
+    /* get integer data attribute */
+    int data()
+    {
+        return _data;
+    }
+    void setData(int d)
+    {
+        _data = d;
+    }
 
-  /* force current scan to be finished */
-  void finish();
+    ScanFileVector &files()
+    {
+        return _files;
+    }
+    ScanDirVector &dirs()
+    {
+        return _dirs;
+    }
+    const QString &name()
+    {
+        return _name;
+    }
+    KIO::fileoffset_t size()
+    {
+        update();
+        return _size;
+    }
+    unsigned int fileCount()
+    {
+        update();
+        return _fileCount;
+    }
+    unsigned int dirCount()
+    {
+        update();
+        return _dirCount;
+    }
+    ScanDir *parent()
+    {
+        return _parent;
+    }
+    bool scanStarted()
+    {
+        return (_dirsFinished >= 0);
+    }
+    bool scanFinished()
+    {
+        return (_dirsFinished == _dirs.count());
+    }
+    bool scanRunning()
+    {
+        return scanStarted() && !scanFinished();
+    }
 
- private:
-  void update();
-  bool isForbiddenDir(QString&);
+    /* set listener to get a callbacks from this ScanDir */
+    void setListener(ScanListener *);
+    ScanListener *listener()
+    {
+        return _listener;
+    }
+    ScanManager *manager()
+    {
+        return _manager;
+    }
 
-  /* this propagates file count and size to upper dirs */
-  void subScanFinished();
-  void callScanStarted();
-  void callSizeChanged();
-  void callScanFinished();
-  
-  ScanFileVector _files;
-  ScanDirVector _dirs;
+    /* force current scan to be finished */
+    void finish();
 
-  QString _name;
-  bool _dirty; /* needs a call to update() */
-  KIO::fileoffset_t _size, _fileSize;
-  unsigned int _fileCount, _dirCount;
-  int _dirsFinished, _data;
-  ScanDir* _parent;
-  ScanListener* _listener;
-  ScanManager* _manager;
+private:
+    void update();
+    bool isForbiddenDir(QString &);
+
+    /* this propagates file count and size to upper dirs */
+    void subScanFinished();
+    void callScanStarted();
+    void callSizeChanged();
+    void callScanFinished();
+
+    ScanFileVector _files;
+    ScanDirVector _dirs;
+
+    QString _name;
+    bool _dirty; /* needs a call to update() */
+    KIO::fileoffset_t _size, _fileSize;
+    unsigned int _fileCount, _dirCount;
+    int _dirsFinished, _data;
+    ScanDir *_parent;
+    ScanListener *_listener;
+    ScanManager *_manager;
 };
 
 #endif // KONQ_PLUGIN_SCAN_H

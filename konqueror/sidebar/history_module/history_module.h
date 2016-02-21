@@ -30,19 +30,19 @@ class KonqSidebarHistoryModule : public KonqSidebarModule
 {
     Q_OBJECT
 public:
-    KonqSidebarHistoryModule(QWidget *parent, const KConfigGroup& configGroup);
+    KonqSidebarHistoryModule(QWidget *parent, const KConfigGroup &configGroup);
     virtual ~KonqSidebarHistoryModule();
     virtual QWidget *getWidget();
 
 private Q_SLOTS:
-    void slotActivated(const QModelIndex& index);
-    void slotPressed(const QModelIndex& index);
-    void slotClicked(const QModelIndex& index);
+    void slotActivated(const QModelIndex &index);
+    void slotPressed(const QModelIndex &index);
+    void slotClicked(const QModelIndex &index);
     void slotOpenWindow(const QUrl &url);
-    void slotOpenTab(const QUrl& url);
+    void slotOpenTab(const QUrl &url);
 
 private:
-    KonqHistoryView* m_historyView;
+    KonqHistoryView *m_historyView;
     Qt::MouseButtons m_lastPressedButtons;
 };
 

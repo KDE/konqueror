@@ -33,11 +33,13 @@ OpenSearchWriter::OpenSearchWriter()
 
 bool OpenSearchWriter::write(QIODevice *device, OpenSearchEngine *engine)
 {
-    if (!engine)
+    if (!engine) {
         return false;
+    }
 
-    if (!device->isOpen())
+    if (!device->isOpen()) {
         device->open(QIODevice::WriteOnly);
+    }
 
     setDevice(device);
     write(engine);
@@ -101,8 +103,9 @@ void OpenSearchWriter::write(OpenSearchEngine *engine)
         writeEndElement();
     }
 
-    if (!engine->imageUrl().isEmpty())
+    if (!engine->imageUrl().isEmpty()) {
         writeTextElement(QLatin1String("Image"), engine->imageUrl());
+    }
 
     writeEndElement();
     writeEndDocument();

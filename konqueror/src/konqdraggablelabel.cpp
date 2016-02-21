@@ -28,67 +28,66 @@
 
 #include <KUrlMimeData>
 
-KonqDraggableLabel::KonqDraggableLabel( KonqMainWindow* mw, const QString& text )
-  : QLabel( text )
-  , m_mw(mw)
+KonqDraggableLabel::KonqDraggableLabel(KonqMainWindow *mw, const QString &text)
+    : QLabel(text)
+    , m_mw(mw)
 {
-  setBackgroundRole( QPalette::Button );
-  setAlignment( (QApplication::isRightToLeft() ? Qt::AlignRight : Qt::AlignLeft) |
-                 Qt::AlignVCenter );
-  setAcceptDrops(true);
-  adjustSize();
-  validDrag = false;
-}
-
-void KonqDraggableLabel::mousePressEvent( QMouseEvent * ev )
-{
-  validDrag = true;
-  startDragPos = ev->pos();
-}
-
-void KonqDraggableLabel::mouseMoveEvent( QMouseEvent * ev )
-{
-  if ((startDragPos - ev->pos()).manhattanLength() > QApplication::startDragDistance())
-  {
+    setBackgroundRole(QPalette::Button);
+    setAlignment((QApplication::isRightToLeft() ? Qt::AlignRight : Qt::AlignLeft) |
+                 Qt::AlignVCenter);
+    setAcceptDrops(true);
+    adjustSize();
     validDrag = false;
-    if ( m_mw->currentView() )
-    {
-      QList<QUrl> lst;
-      lst.append( m_mw->currentView()->url() );
-      QDrag* drag = new QDrag( m_mw );
-      QMimeData* md = new QMimeData;
-      md->setUrls(lst);
-      drag->setMimeData( md );
-      QString iconName = KIO::iconNameForUrl( lst.first() );
+}
 
-      drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
+void KonqDraggableLabel::mousePressEvent(QMouseEvent *ev)
+{
+    validDrag = true;
+    startDragPos = ev->pos();
+}
 
-      drag->start();
+void KonqDraggableLabel::mouseMoveEvent(QMouseEvent *ev)
+{
+    if ((startDragPos - ev->pos()).manhattanLength() > QApplication::startDragDistance()) {
+        validDrag = false;
+        if (m_mw->currentView()) {
+            QList<QUrl> lst;
+            lst.append(m_mw->currentView()->url());
+            QDrag *drag = new QDrag(m_mw);
+            QMimeData *md = new QMimeData;
+            md->setUrls(lst);
+            drag->setMimeData(md);
+            QString iconName = KIO::iconNameForUrl(lst.first());
+
+            drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
+
+            drag->start();
+        }
     }
-  }
 }
 
-void KonqDraggableLabel::mouseReleaseEvent( QMouseEvent * )
+void KonqDraggableLabel::mouseReleaseEvent(QMouseEvent *)
 {
-  validDrag = false;
+    validDrag = false;
 }
 
-void KonqDraggableLabel::dragEnterEvent( QDragEnterEvent *ev )
+void KonqDraggableLabel::dragEnterEvent(QDragEnterEvent *ev)
 {
-  if ( ev->mimeData()->hasUrls() )
-    ev->accept();
+    if (ev->mimeData()->hasUrls()) {
+        ev->accept();
+    }
 }
 
-void KonqDraggableLabel::dropEvent( QDropEvent* ev )
+void KonqDraggableLabel::dropEvent(QDropEvent *ev)
 {
     _savedLst.clear();
     _savedLst = KUrlMimeData::urlsFromMimeData(ev->mimeData());
-    if ( !_savedLst.isEmpty() ) {
+    if (!_savedLst.isEmpty()) {
         QMetaObject::invokeMethod(this, "delayedOpenURL", Qt::QueuedConnection);
     }
 }
 
 void KonqDraggableLabel::delayedOpenURL()
 {
-    m_mw->openUrl( 0L, _savedLst.first() );
+    m_mw->openUrl(0L, _savedLst.first());
 }

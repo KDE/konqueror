@@ -1,4 +1,4 @@
-/* 
+/*
    Copyright (C) 2001 Malte Starostik <malte@kde.org>
 
    This program is free software; you can redistribute it and/or
@@ -18,7 +18,7 @@
 */
 
 // $Id$
-// 
+//
 #ifndef __webarchivecreator_h__
 #define __webarchivecreator_h__
 
@@ -33,24 +33,23 @@ class KHTMLPart;
 
 class WebArchiveCreator : public QObject, public ThumbCreator
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	WebArchiveCreator();
-	virtual ~WebArchiveCreator();
-	virtual bool create(const QString &path, int width, int height, QImage &img);
-	virtual Flags flags() const;
+    WebArchiveCreator();
+    virtual ~WebArchiveCreator();
+    virtual bool create(const QString &path, int width, int height, QImage &img);
+    virtual Flags flags() const;
 
 protected:
-	virtual void timerEvent(QTimerEvent *);
+    virtual void timerEvent(QTimerEvent *);
 
 private slots:
-	void slotCompleted();
+    void slotCompleted();
 
 private:
-	KHTMLPart *m_html;
-	bool m_completed;
+    KHTMLPart *m_html;
+    bool m_completed;
 };
 
 #endif
 
-// vim: ts=4 sw=4 et

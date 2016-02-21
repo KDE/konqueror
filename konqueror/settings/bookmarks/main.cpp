@@ -32,7 +32,7 @@
 #include "bookmarks.h"
 
 K_PLUGIN_FACTORY(KioConfigFactory,
-        registerPlugin<BookmarksConfigModule>("bookmarks");
-	)
+                 registerPlugin<BookmarksConfigModule>("bookmarks");
+                )
 K_EXPORT_PLUGIN(KioConfigFactory("kcmbookmarks"))
 #include "main.moc"

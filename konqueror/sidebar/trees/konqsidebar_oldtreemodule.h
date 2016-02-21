@@ -10,7 +10,7 @@ class KonqSidebarOldTreeModule : public KonqSidebarModule
     Q_OBJECT
 public:
     KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
-                     const QString &desktopName_, const KConfigGroup& configGroup);
+                             const QString &desktopName_, const KConfigGroup &configGroup);
     ~KonqSidebarOldTreeModule();
     virtual QWidget *getWidget();
 

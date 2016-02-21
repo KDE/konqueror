@@ -49,22 +49,25 @@ public:
         m_closeButton(0)
     {}
 
-    bool isRichText() const { return m_text.startsWith("<html>") || m_text.startsWith("<qt>"); }
+    bool isRichText() const
+    {
+        return m_text.startsWith("<html>") || m_text.startsWith("<qt>");
+    }
 
     KonqStatusBarMessageLabel::Type m_type;
     KonqStatusBarMessageLabel::State m_state;
     int m_illumination;
     int m_minTextHeight;
-    QTimer* m_timer;
+    QTimer *m_timer;
     QString m_text;
     QString m_defaultText;
     QTextDocument m_textDocument;
     QList<QString> m_pendingMessages;
     QPixmap m_pixmap;
-    QToolButton* m_closeButton;
+    QToolButton *m_closeButton;
 };
 
-KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget* parent) :
+KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget *parent) :
     QWidget(parent), d(new Private)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum /*the sizeHint is the max*/);
@@ -88,8 +91,8 @@ KonqStatusBarMessageLabel::~KonqStatusBarMessageLabel()
     delete d;
 }
 
-void KonqStatusBarMessageLabel::setMessage(const QString& text,
-                                           Type type)
+void KonqStatusBarMessageLabel::setMessage(const QString &text,
+        Type type)
 {
     if ((text == d->m_text) && (type == d->m_type)) {
         return;
@@ -122,7 +125,7 @@ void KonqStatusBarMessageLabel::setMessage(const QString& text,
     d->m_illumination = 0;
     d->m_state = DefaultState;
 
-    const char* iconName = 0;
+    const char *iconName = 0;
     QPixmap pixmap;
     switch (type) {
     case OperationCompleted:
@@ -174,7 +177,7 @@ QString KonqStatusBarMessageLabel::text() const
     return d->m_text;
 }
 
-void KonqStatusBarMessageLabel::setDefaultText(const QString& text)
+void KonqStatusBarMessageLabel::setDefaultText(const QString &text)
 {
     d->m_defaultText = text;
 }
@@ -200,7 +203,7 @@ int KonqStatusBarMessageLabel::minimumTextHeight() const
     return d->m_minTextHeight;
 }
 
-void KonqStatusBarMessageLabel::paintEvent(QPaintEvent* /* event */)
+void KonqStatusBarMessageLabel::paintEvent(QPaintEvent * /* event */)
 {
     QPainter painter(this);
 
@@ -252,7 +255,7 @@ void KonqStatusBarMessageLabel::paintEvent(QPaintEvent* /* event */)
     painter.end();
 }
 
-void KonqStatusBarMessageLabel::resizeEvent(QResizeEvent* event)
+void KonqStatusBarMessageLabel::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     updateCloseButtonPosition();

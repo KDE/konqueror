@@ -41,14 +41,14 @@
 #include "Windows.h"
 #endif
 
-KonqCopyToMenuPrivate::KonqCopyToMenuPrivate(QWidget* parentWidget)
+KonqCopyToMenuPrivate::KonqCopyToMenuPrivate(QWidget *parentWidget)
     : m_urls(), m_readOnly(false), m_parentWidget(parentWidget)
 {
 }
 
 ////
 
-KonqCopyToMenu::KonqCopyToMenu(QWidget* parentWidget)
+KonqCopyToMenu::KonqCopyToMenu(QWidget *parentWidget)
     : d(new KonqCopyToMenuPrivate(parentWidget))
 {
 }
@@ -58,13 +58,14 @@ KonqCopyToMenu::~KonqCopyToMenu()
     delete d;
 }
 
-void KonqCopyToMenu::setItems(const KFileItemList& items)
+void KonqCopyToMenu::setItems(const KFileItemList &items)
 {
     // For now we lose all the information except for the urls
     // But this API is useful in case KIO can make use of this information later
     // (e.g. to avoid stat'ing the source urls)
-    Q_FOREACH(const KFileItem& item, items)
+    Q_FOREACH (const KFileItem &item, items) {
         d->m_urls.append(item.url());
+    }
 }
 
 void KonqCopyToMenu::setUrls(const QList<QUrl> &urls)
@@ -77,24 +78,24 @@ void KonqCopyToMenu::setReadOnly(bool ro)
     d->m_readOnly = ro;
 }
 
-void KonqCopyToMenu::addActionsTo(QMenu* menu)
+void KonqCopyToMenu::addActionsTo(QMenu *menu)
 {
-    QMenu* mainCopyMenu = new KonqCopyToMainMenu(menu, d, Copy);
+    QMenu *mainCopyMenu = new KonqCopyToMainMenu(menu, d, Copy);
     mainCopyMenu->setTitle(i18nc("@title:menu", "Copy To"));
-    mainCopyMenu->menuAction()->setObjectName( QLatin1String("copyTo_submenu" )); // for the unittest
+    mainCopyMenu->menuAction()->setObjectName(QLatin1String("copyTo_submenu"));   // for the unittest
     menu->addMenu(mainCopyMenu);
 
     if (!d->m_readOnly) {
-        QMenu* mainMoveMenu = new KonqCopyToMainMenu(menu, d, Move);
+        QMenu *mainMoveMenu = new KonqCopyToMainMenu(menu, d, Move);
         mainMoveMenu->setTitle(i18nc("@title:menu", "Move To"));
-        mainMoveMenu->menuAction()->setObjectName( QLatin1String("moveTo_submenu" )); // for the unittest
+        mainMoveMenu->menuAction()->setObjectName(QLatin1String("moveTo_submenu"));   // for the unittest
         menu->addMenu(mainMoveMenu);
     }
 }
 
 ////
 
-KonqCopyToMainMenu::KonqCopyToMainMenu(QMenu* parent, KonqCopyToMenuPrivate* _d, MenuType menuType)
+KonqCopyToMainMenu::KonqCopyToMainMenu(QMenu *parent, KonqCopyToMenuPrivate *_d, MenuType menuType)
     : QMenu(parent), m_menuType(menuType),
       m_actionGroup(static_cast<QWidget *>(0)),
       d(_d),
@@ -107,7 +108,7 @@ KonqCopyToMainMenu::KonqCopyToMainMenu(QMenu* parent, KonqCopyToMenuPrivate* _d,
 void KonqCopyToMainMenu::slotAboutToShow()
 {
     clear();
-    KonqCopyToDirectoryMenu* subMenu;
+    KonqCopyToDirectoryMenu *subMenu;
     // Home Folder
     subMenu = new KonqCopyToDirectoryMenu(this, this, QDir::homePath());
     subMenu->setTitle(i18nc("@title:menu", "Home Folder"));
@@ -121,28 +122,28 @@ void KonqCopyToMainMenu::slotAboutToShow()
     subMenu->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
     addMenu(subMenu);
 #else
-    foreach ( const QFileInfo& info, QDir::drives() ) {
+    foreach (const QFileInfo &info, QDir::drives()) {
         uint type = DRIVE_UNKNOWN;
         QString driveIcon = "drive-harddisk";
         type = GetDriveTypeW((wchar_t *)info.absoluteFilePath().utf16());
         switch (type) {
-            case DRIVE_REMOVABLE:
-                driveIcon = "drive-removable-media";
-                break;
-            case DRIVE_FIXED:
-                driveIcon = "drive-harddisk";
-                break;
-            case DRIVE_REMOTE:
-                driveIcon = "network-server";
-                break;
-            case DRIVE_CDROM:
-                driveIcon = "drive-optical";
-                break;
-            case DRIVE_RAMDISK:
-            case DRIVE_UNKNOWN:
-            case DRIVE_NO_ROOT_DIR:
-            default:
-                driveIcon = "drive-harddisk";
+        case DRIVE_REMOVABLE:
+            driveIcon = "drive-removable-media";
+            break;
+        case DRIVE_FIXED:
+            driveIcon = "drive-harddisk";
+            break;
+        case DRIVE_REMOTE:
+            driveIcon = "network-server";
+            break;
+        case DRIVE_CDROM:
+            driveIcon = "drive-optical";
+            break;
+        case DRIVE_RAMDISK:
+        case DRIVE_UNKNOWN:
+        case DRIVE_NO_ROOT_DIR:
+        default:
+            driveIcon = "drive-harddisk";
         }
         subMenu = new KonqCopyToDirectoryMenu(this, this, info.absoluteFilePath());
         subMenu->setTitle(info.absoluteFilePath());
@@ -152,7 +153,7 @@ void KonqCopyToMainMenu::slotAboutToShow()
 #endif
 
     // Browse... action, shows a file dialog
-    QAction * browseAction = new QAction(i18nc("@title:menu in Copy To or Move To submenu", "Browse..."), this);
+    QAction *browseAction = new QAction(i18nc("@title:menu in Copy To or Move To submenu", "Browse..."), this);
     connect(browseAction, &QAction::triggered, this, &KonqCopyToMainMenu::slotBrowse);
     addAction(browseAction);
 
@@ -160,10 +161,10 @@ void KonqCopyToMainMenu::slotAboutToShow()
 
     // Recent Destinations
     const QStringList recentDirs = m_recentDirsGroup.readPathEntry("Paths", QStringList());
-    Q_FOREACH(const QString& recentDir, recentDirs) {
+    Q_FOREACH (const QString &recentDir, recentDirs) {
         const QUrl url(recentDir);
         const QString text = KStringHandler::csqueeze(url.toDisplayString(), 60); // shorten very long paths (#61386)
-        QAction * act = new QAction(text, this);
+        QAction *act = new QAction(text, this);
         act->setData(url);
         m_actionGroup.addAction(act);
         addAction(act);
@@ -178,14 +179,14 @@ void KonqCopyToMainMenu::slotBrowse()
     }
 }
 
-void KonqCopyToMainMenu::slotTriggered(QAction* action)
+void KonqCopyToMainMenu::slotTriggered(QAction *action)
 {
     const QUrl url = action->data().value<QUrl>();
     Q_ASSERT(!url.isEmpty());
     copyOrMoveTo(url);
 }
 
-void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
+void KonqCopyToMainMenu::copyOrMoveTo(const QUrl &dest)
 {
     // Insert into the recent destinations list
     QStringList recentDirs = m_recentDirsGroup.readPathEntry("Paths", QStringList());
@@ -202,11 +203,12 @@ void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
     // dest doesn't exist anymore: it was creating a file with the name of
     // the now non-existing dest.
     QUrl dirDest = dest;
-    if (!dirDest.path().endsWith(QLatin1Char('/')))
+    if (!dirDest.path().endsWith(QLatin1Char('/'))) {
         dirDest.setPath(dirDest.path() + QLatin1Char('/'));
+    }
 
     // And now let's do the copy or move -- with undo/redo support.
-    KIO::CopyJob* job = m_menuType == Copy ? KIO::copy(d->m_urls, dirDest) : KIO::move(d->m_urls, dirDest);
+    KIO::CopyJob *job = m_menuType == Copy ? KIO::copy(d->m_urls, dirDest) : KIO::move(d->m_urls, dirDest);
     KIO::FileUndoManager::self()->recordCopyJob(job);
     KJobWidgets::setWindow(job, d->m_parentWidget ? d->m_parentWidget : this);
     job->ui()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
@@ -214,7 +216,7 @@ void KonqCopyToMainMenu::copyOrMoveTo(const QUrl& dest)
 
 ////
 
-KonqCopyToDirectoryMenu::KonqCopyToDirectoryMenu(QMenu* parent, KonqCopyToMainMenu* mainMenu, const QString& path)
+KonqCopyToDirectoryMenu::KonqCopyToDirectoryMenu(QMenu *parent, KonqCopyToMainMenu *mainMenu, const QString &path)
     : QMenu(parent), m_mainMenu(mainMenu), m_path(path)
 {
     connect(this, &KonqCopyToDirectoryMenu::aboutToShow, this, &KonqCopyToDirectoryMenu::slotAboutToShow);
@@ -223,7 +225,7 @@ KonqCopyToDirectoryMenu::KonqCopyToDirectoryMenu(QMenu* parent, KonqCopyToMainMe
 void KonqCopyToDirectoryMenu::slotAboutToShow()
 {
     clear();
-    QAction * act = new QAction(m_mainMenu->menuType() == Copy
+    QAction *act = new QAction(m_mainMenu->menuType() == Copy
                                ? i18nc("@title:menu", "Copy Here")
                                : i18nc("@title:menu", "Move Here"), this);
     act->setData(QUrl::fromLocalFile(m_path));
@@ -241,12 +243,13 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
     const QStringList entries = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::LocaleAware);
     const QMimeDatabase db;
     const QMimeType dirMime = db.mimeTypeForName(QStringLiteral("inode/directory"));
-    Q_FOREACH(const QString& subDir, entries) {
+    Q_FOREACH (const QString &subDir, entries) {
         QString subPath = m_path;
-        if (!subPath.endsWith(QLatin1Char('/')))
+        if (!subPath.endsWith(QLatin1Char('/'))) {
             subPath.append(QLatin1Char('/'));
+        }
         subPath += subDir;
-        KonqCopyToDirectoryMenu* subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
+        KonqCopyToDirectoryMenu *subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
         QString menuTitle(subDir);
         // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
         // correctly and not misinterpreted as an indicator for a keyboard shortcut

@@ -33,7 +33,6 @@
 #include "treemap.h"
 #include "scan.h"
 
-
 /**
  * A specialized version of a TreeMapItem
  * for representation of an Directory or File.
@@ -45,53 +44,65 @@
 class Inode: public TreeMapItem, public ScanListener
 {
 public:
-  Inode();
-  Inode(ScanDir*, Inode*);
-  Inode(ScanFile*, Inode*);
-  ~Inode();
-  void init(const QString&);
+    Inode();
+    Inode(ScanDir *, Inode *);
+    Inode(ScanFile *, Inode *);
+    ~Inode();
+    void init(const QString &);
 
-  void setPeer(ScanDir*);
+    void setPeer(ScanDir *);
 
-  TreeMapItemList* children();
+    TreeMapItemList *children();
 
-  double value() const;
-  double size() const;
-  unsigned int fileCount() const;
-  unsigned int dirCount() const;
-  QString path() const;
-  QString text(int i) const;
-  QPixmap pixmap(int i) const;
-  QColor backColor() const;
-  QMimeType mimeType() const;
+    double value() const;
+    double size() const;
+    unsigned int fileCount() const;
+    unsigned int dirCount() const;
+    QString path() const;
+    QString text(int i) const;
+    QPixmap pixmap(int i) const;
+    QColor backColor() const;
+    QMimeType mimeType() const;
 
-  const QFileInfo& fileInfo() const { return _info; }
-  ScanDir* dirPeer() { return _dirPeer; }
-  ScanFile* filePeer() { return _filePeer; }
-  bool isDir() { return (_dirPeer != 0); }
+    const QFileInfo &fileInfo() const
+    {
+        return _info;
+    }
+    ScanDir *dirPeer()
+    {
+        return _dirPeer;
+    }
+    ScanFile *filePeer()
+    {
+        return _filePeer;
+    }
+    bool isDir()
+    {
+        return (_dirPeer != 0);
+    }
 
-  void sizeChanged(ScanDir*);
-  void scanFinished(ScanDir*);
-  void destroyed(ScanDir*);
-  void destroyed(ScanFile*);
+    void sizeChanged(ScanDir *);
+    void scanFinished(ScanDir *);
+    void destroyed(ScanDir *);
+    void destroyed(ScanFile *);
 
 private:
-  void setMetrics(double, unsigned int);
+    void setMetrics(double, unsigned int);
 
-  QFileInfo _info;
-  ScanDir* _dirPeer;
-  ScanFile* _filePeer;
+    QFileInfo _info;
+    ScanDir *_dirPeer;
+    ScanFile *_filePeer;
 
-  double _sizeEstimation;
-  unsigned int _fileCountEstimation, _dirCountEstimation;
+    double _sizeEstimation;
+    unsigned int _fileCountEstimation, _dirCountEstimation;
 
-  bool _resortNeeded;
+    bool _resortNeeded;
 
-  // Cached values, calculated lazy.
-  // This means a change even in const methods, thus has to be "mutable"
-  mutable bool _mimeSet, _mimePixmapSet;
-  mutable QMimeType _mimeType;
-  mutable QPixmap _mimePixmap;
+    // Cached values, calculated lazy.
+    // This means a change even in const methods, thus has to be "mutable"
+    mutable bool _mimeSet, _mimePixmapSet;
+    mutable QMimeType _mimeType;
+    mutable QPixmap _mimePixmap;
 };
 
 #endif

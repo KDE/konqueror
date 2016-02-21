@@ -27,14 +27,14 @@ class KonqView;
 class KonqBrowserInterface : public KParts::BrowserInterface
 {
     Q_OBJECT
-    Q_PROPERTY( uint historyLength READ historyLength )
+    Q_PROPERTY(uint historyLength READ historyLength)
 public:
-    explicit KonqBrowserInterface( KonqView *view );
+    explicit KonqBrowserInterface(KonqView *view);
 
     uint historyLength() const;
 
 public Q_SLOTS:
-    void goHistory( int );
+    void goHistory(int);
 
 private:
     KonqView *m_view;

@@ -30,8 +30,8 @@ public:
     bool m_paste;
 };
 
-KonqSidebarModule::KonqSidebarModule( QObject *parent,
-                                     const KConfigGroup& configGroup_)
+KonqSidebarModule::KonqSidebarModule(QObject *parent,
+                                     const KConfigGroup &configGroup_)
     : QObject(parent),
       m_configGroup(configGroup_),
       d(new KonqSidebarModulePrivate)
@@ -43,24 +43,24 @@ KonqSidebarModule::~KonqSidebarModule()
     delete d;
 }
 
-void KonqSidebarModule::openUrl(const QUrl& url)
+void KonqSidebarModule::openUrl(const QUrl &url)
 {
     handleURL(url);
 }
 
-void KonqSidebarModule::openPreview(const KFileItemList& items)
+void KonqSidebarModule::openPreview(const KFileItemList &items)
 {
     handlePreview(items);
 }
 
-void KonqSidebarModule::openPreviewOnMouseOver(const KFileItem& item)
+void KonqSidebarModule::openPreviewOnMouseOver(const KFileItem &item)
 {
     handlePreviewOnMouseOver(item);
 }
 
-void KonqSidebarModule::handlePreview(const KFileItemList& /*items*/) {}
+void KonqSidebarModule::handlePreview(const KFileItemList & /*items*/) {}
 
-void KonqSidebarModule::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
+void KonqSidebarModule::handlePreviewOnMouseOver(const KFileItem & /*items*/) {}
 
 KConfigGroup KonqSidebarModule::configGroup()
 {
@@ -104,7 +104,7 @@ void KonqSidebarModule::showPopupMenu(const QPoint &global, const KFileItemList 
                                       const KParts::OpenUrlArguments &args,
                                       const KParts::BrowserArguments &browserArgs,
                                       KParts::BrowserExtension::PopupFlags flags,
-                                      const KParts::BrowserExtension::ActionGroupMap& actionGroups)
+                                      const KParts::BrowserExtension::ActionGroupMap &actionGroups)
 {
     emit popupMenu(this, global, items, args, browserArgs, flags, actionGroups);
 }

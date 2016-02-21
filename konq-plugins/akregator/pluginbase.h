@@ -34,25 +34,25 @@ namespace Akregator
 
 class PluginBase
 {
-    public:
-        PluginBase();
-        ~PluginBase();
-    
-    public:
-        /**
-        * Tells you if aKregator is running.
-        * @return true when aKregator is running
-         */
-        bool akregatorRunning();
-        /**
-         * Adds feed to aKregator via DBUS.
-         */
-        void addFeedsViaDBUS(const QStringList& urls);
-        /**
-         * Adds feed to aKregator via command line.
-         */
-        void addFeedViaCmdLine(const QString &url);
-        QString fixRelativeURL(const QString &s, const KUrl &baseurl);
+public:
+    PluginBase();
+    ~PluginBase();
+
+public:
+    /**
+    * Tells you if aKregator is running.
+    * @return true when aKregator is running
+     */
+    bool akregatorRunning();
+    /**
+     * Adds feed to aKregator via DBUS.
+     */
+    void addFeedsViaDBUS(const QStringList &urls);
+    /**
+     * Adds feed to aKregator via command line.
+     */
+    void addFeedViaCmdLine(const QString &url);
+    QString fixRelativeURL(const QString &s, const KUrl &baseurl);
 };
 
 }

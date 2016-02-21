@@ -34,7 +34,7 @@
 #include <QIcon>
 #include <QMouseEvent>
 
-static QPixmap statusBarIcon(const char* name)
+static QPixmap statusBarIcon(const char *name)
 {
     return KIconLoader::global()->loadIcon(QLatin1String(name),
                                            KIconLoader::User,
@@ -50,10 +50,10 @@ class KonqCheckBox : public QCheckBox
 {
     //Q_OBJECT // for classname. not used, and needs a moc
 public:
-    explicit KonqCheckBox(QWidget *parent=0)
-      : QCheckBox( parent ) {}
+    explicit KonqCheckBox(QWidget *parent = 0)
+        : QCheckBox(parent) {}
 protected:
-    void paintEvent( QPaintEvent * );
+    void paintEvent(QPaintEvent *);
 
     QSize sizeHint() const
     {
@@ -66,13 +66,13 @@ protected:
     }
 
 private:
-    const QPixmap& connectPixmap() const
+    const QPixmap &connectPixmap() const
     {
         static QPixmap indicator_connect(statusBarIcon("indicator_connect"));
         return indicator_connect;
     }
 
-    const QPixmap& noConnectPixmap() const
+    const QPixmap &noConnectPixmap() const
     {
         static QPixmap indicator_noconnect(statusBarIcon("indicator_noconnect"));
         return indicator_noconnect;
@@ -81,7 +81,7 @@ private:
 
 #define DEFAULT_HEADER_HEIGHT 13
 
-void KonqCheckBox::paintEvent( QPaintEvent * )
+void KonqCheckBox::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
@@ -92,50 +92,50 @@ void KonqCheckBox::paintEvent( QPaintEvent * )
         pixmap);
 }
 
-KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
-  : KStatusBar( _parent ),
-    m_pParentKonqFrame( _parent ),
-    m_pStatusLabel(Q_NULLPTR)
+KonqFrameStatusBar::KonqFrameStatusBar(KonqFrame *_parent)
+    : KStatusBar(_parent),
+      m_pParentKonqFrame(_parent),
+      m_pStatusLabel(Q_NULLPTR)
 {
-    setSizeGripEnabled( false );
+    setSizeGripEnabled(false);
 
     // TODO remove active view indicator and use a different bg color like dolphin does?
     // Works nicely for file management, but not so much with other parts...
-    m_led = new QLabel( this );
-    m_led->setAlignment( Qt::AlignCenter );
-    m_led->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed ));
-    addWidget( m_led, 0 ); // led (active view indicator)
+    m_led = new QLabel(this);
+    m_led->setAlignment(Qt::AlignCenter);
+    m_led->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
+    addWidget(m_led, 0);   // led (active view indicator)
     m_led->hide();
 
     // TODO re-enable squeezing
     //m_pStatusLabel = new KSqueezedTextLabel( this );
-    m_pStatusLabel = new KonqStatusBarMessageLabel( this );
+    m_pStatusLabel = new KonqStatusBarMessageLabel(this);
     m_pStatusLabel->installEventFilter(this);
-    addWidget( m_pStatusLabel, 1 /*stretch*/ ); // status label
+    addWidget(m_pStatusLabel, 1 /*stretch*/);   // status label
 
-    m_pLinkedViewCheckBox = new KonqCheckBox( this );
-    m_pLinkedViewCheckBox->setObjectName( QLatin1String( "m_pLinkedViewCheckBox" ) );
+    m_pLinkedViewCheckBox = new KonqCheckBox(this);
+    m_pLinkedViewCheckBox->setObjectName(QLatin1String("m_pLinkedViewCheckBox"));
     m_pLinkedViewCheckBox->setFocusPolicy(Qt::NoFocus);
-    m_pLinkedViewCheckBox->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum ));
-    m_pLinkedViewCheckBox->setWhatsThis( i18n("Checking this box on at least two views sets those views as 'linked'. "
-                          "Then, when you change directories in one view, the other views "
-                          "linked with it will automatically update to show the current directory. "
-                          "This is especially useful with different types of views, such as a "
-                          "directory tree with an icon view or detailed view, and possibly a "
-                          "terminal emulator window." ) );
-    addPermanentWidget( m_pLinkedViewCheckBox, 0 );
-    connect( m_pLinkedViewCheckBox, SIGNAL(toggled(bool)),
-            this, SIGNAL(linkedViewClicked(bool)) );
+    m_pLinkedViewCheckBox->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+    m_pLinkedViewCheckBox->setWhatsThis(i18n("Checking this box on at least two views sets those views as 'linked'. "
+                                        "Then, when you change directories in one view, the other views "
+                                        "linked with it will automatically update to show the current directory. "
+                                        "This is especially useful with different types of views, such as a "
+                                        "directory tree with an icon view or detailed view, and possibly a "
+                                        "terminal emulator window."));
+    addPermanentWidget(m_pLinkedViewCheckBox, 0);
+    connect(m_pLinkedViewCheckBox, SIGNAL(toggled(bool)),
+            this, SIGNAL(linkedViewClicked(bool)));
 
-    m_progressBar = new QProgressBar( this );
+    m_progressBar = new QProgressBar(this);
     // Minimum width of QProgressBar::sizeHint depends on PM_ProgressBarChunkWidth which doesn't make sense;
     // we don't want chunking but we want a reasonably-sized progressbar :)
     m_progressBar->setMinimumWidth(150);
     m_progressBar->setMaximumHeight(fontMetrics().height());
     m_progressBar->hide();
-    addPermanentWidget( m_progressBar, 0 );
+    addPermanentWidget(m_progressBar, 0);
 
-    installEventFilter( this );
+    installEventFilter(this);
 }
 
 KonqFrameStatusBar::~KonqFrameStatusBar()
@@ -144,78 +144,75 @@ KonqFrameStatusBar::~KonqFrameStatusBar()
 
 // I don't think this code _ever_ gets called!
 // I don't want to remove it, though.  :-)
-void KonqFrameStatusBar::mousePressEvent( QMouseEvent* event )
+void KonqFrameStatusBar::mousePressEvent(QMouseEvent *event)
 {
-   QWidget::mousePressEvent( event );
-   if ( !m_pParentKonqFrame->childView()->isPassiveMode() )
-   {
-      emit clicked();
-      update();
-   }
+    QWidget::mousePressEvent(event);
+    if (!m_pParentKonqFrame->childView()->isPassiveMode()) {
+        emit clicked();
+        update();
+    }
 
-   //Blocks menu of custom status bar entries
-   //if (event->button()==RightButton)
-   //   splitFrameMenu();
+    //Blocks menu of custom status bar entries
+    //if (event->button()==RightButton)
+    //   splitFrameMenu();
 }
 
 void KonqFrameStatusBar::splitFrameMenu()
 {
-   KonqMainWindow * mw = m_pParentKonqFrame->childView()->mainWindow();
+    KonqMainWindow *mw = m_pParentKonqFrame->childView()->mainWindow();
 
-   // We have to ship the remove view action ourselves,
-   // since this may not be the active view (passive view)
-   QAction actRemoveView(QIcon::fromTheme("view-close"), i18n("Close View"), 0);
-   actRemoveView.setObjectName( QLatin1String("removethisview" ));
-   connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
-   actRemoveView.setEnabled( mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode() );
+    // We have to ship the remove view action ourselves,
+    // since this may not be the active view (passive view)
+    QAction actRemoveView(QIcon::fromTheme("view-close"), i18n("Close View"), 0);
+    actRemoveView.setObjectName(QLatin1String("removethisview"));
+    connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
+    actRemoveView.setEnabled(mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode());
 
-   // For the rest, we borrow them from the main window
-   // ###### might be not right for passive views !
-   KActionCollection *actionColl = mw->actionCollection();
+    // For the rest, we borrow them from the main window
+    // ###### might be not right for passive views !
+    KActionCollection *actionColl = mw->actionCollection();
 
-   QMenu menu;
+    QMenu menu;
 
-   menu.addAction( actionColl->action( "splitviewh" ) );
-   menu.addAction( actionColl->action( "splitviewv" ) );
-   menu.addSeparator();
-   menu.addAction( actionColl->action( "lock" ) );
-   menu.addAction( &actRemoveView );
+    menu.addAction(actionColl->action("splitviewh"));
+    menu.addAction(actionColl->action("splitviewv"));
+    menu.addSeparator();
+    menu.addAction(actionColl->action("lock"));
+    menu.addAction(&actRemoveView);
 
-   menu.exec(QCursor::pos());
+    menu.exec(QCursor::pos());
 }
 
-bool KonqFrameStatusBar::eventFilter(QObject* o, QEvent *e)
+bool KonqFrameStatusBar::eventFilter(QObject *o, QEvent *e)
 {
-   if (o == m_pStatusLabel && e->type()==QEvent::MouseButtonPress)
-   {
-      emit clicked();
-      update();
-      if ( static_cast<QMouseEvent *>(e)->button() == Qt::RightButton)
-         splitFrameMenu();
-      return true;
-   }
-   else if ( o == this && e->type() == QEvent::ApplicationPaletteChange )
-   {
-      //unsetPalette();
-      setPalette(QPalette());
-      updateActiveStatus();
-      return true;
-   }
+    if (o == m_pStatusLabel && e->type() == QEvent::MouseButtonPress) {
+        emit clicked();
+        update();
+        if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
+            splitFrameMenu();
+        }
+        return true;
+    } else if (o == this && e->type() == QEvent::ApplicationPaletteChange) {
+        //unsetPalette();
+        setPalette(QPalette());
+        updateActiveStatus();
+        return true;
+    }
 
-   return KStatusBar::eventFilter(o, e);
+    return KStatusBar::eventFilter(o, e);
 }
 
-void KonqFrameStatusBar::message( const QString &msg )
+void KonqFrameStatusBar::message(const QString &msg)
 {
     // We don't use the message()/clear() mechanism of QStatusBar because
     // it really looks ugly (the label border goes away, the active-view indicator
     // is hidden...)
     QString saveMsg = m_savedMessage;
-    slotDisplayStatusText( msg );
+    slotDisplayStatusText(msg);
     m_savedMessage = saveMsg;
 }
 
-void KonqFrameStatusBar::slotDisplayStatusText(const QString& text)
+void KonqFrameStatusBar::slotDisplayStatusText(const QString &text)
 {
     //kDebug() << text;
     m_pStatusLabel->setMessage(text, KonqStatusBarMessageLabel::Default);
@@ -225,10 +222,10 @@ void KonqFrameStatusBar::slotDisplayStatusText(const QString& text)
 // ### TODO: was also used in kde3 for the signals from kactioncollection...
 void KonqFrameStatusBar::slotClear()
 {
-    slotDisplayStatusText( m_savedMessage );
+    slotDisplayStatusText(m_savedMessage);
 }
 
-void KonqFrameStatusBar::slotLoadingProgress( int percent )
+void KonqFrameStatusBar::slotLoadingProgress(int percent)
 {
     if (percent == -1 || percent == 100) { // hide on error and on success
         m_progressBar->hide();
@@ -239,47 +236,48 @@ void KonqFrameStatusBar::slotLoadingProgress( int percent )
     m_progressBar->setValue(percent);
 }
 
-void KonqFrameStatusBar::slotSpeedProgress( int bytesPerSecond )
+void KonqFrameStatusBar::slotSpeedProgress(int bytesPerSecond)
 {
-  QString sizeStr;
+    QString sizeStr;
 
-  if ( bytesPerSecond > 0 )
-    sizeStr = i18n( "%1/s", KIO::convertSize( bytesPerSecond ) );
-  else
-    sizeStr = i18n( "Stalled" );
+    if (bytesPerSecond > 0) {
+        sizeStr = i18n("%1/s", KIO::convertSize(bytesPerSecond));
+    } else {
+        sizeStr = i18n("Stalled");
+    }
 
-  slotDisplayStatusText( sizeStr ); // let's share the same label...
+    slotDisplayStatusText(sizeStr);   // let's share the same label...
 }
 
-void KonqFrameStatusBar::slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *,KParts::ReadOnlyPart *newOne)
+void KonqFrameStatusBar::slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *, KParts::ReadOnlyPart *newOne)
 {
-   if (newOne)
-      connect(newOne,SIGNAL(setStatusBarText(QString)),this,SLOT(slotDisplayStatusText(QString)));
-   slotDisplayStatusText( QString() );
+    if (newOne) {
+        connect(newOne, SIGNAL(setStatusBarText(QString)), this, SLOT(slotDisplayStatusText(QString)));
+    }
+    slotDisplayStatusText(QString());
 }
 
-void KonqFrameStatusBar::showActiveViewIndicator( bool b )
+void KonqFrameStatusBar::showActiveViewIndicator(bool b)
 {
-    m_led->setVisible( b );
+    m_led->setVisible(b);
     updateActiveStatus();
 }
 
-void KonqFrameStatusBar::showLinkedViewIndicator( bool b )
+void KonqFrameStatusBar::showLinkedViewIndicator(bool b)
 {
-    m_pLinkedViewCheckBox->setVisible( b );
+    m_pLinkedViewCheckBox->setVisible(b);
 }
 
-void KonqFrameStatusBar::setLinkedView( bool b )
+void KonqFrameStatusBar::setLinkedView(bool b)
 {
-    m_pLinkedViewCheckBox->blockSignals( true );
-    m_pLinkedViewCheckBox->setChecked( b );
-    m_pLinkedViewCheckBox->blockSignals( false );
+    m_pLinkedViewCheckBox->blockSignals(true);
+    m_pLinkedViewCheckBox->setChecked(b);
+    m_pLinkedViewCheckBox->blockSignals(false);
 }
 
 void KonqFrameStatusBar::updateActiveStatus()
 {
-    if ( m_led->isHidden() )
-    {
+    if (m_led->isHidden()) {
         //unsetPalette();
         setPalette(QPalette());
         return;
@@ -295,10 +293,10 @@ void KonqFrameStatusBar::updateActiveStatus()
 
     static QPixmap indicator_viewactive(statusBarIcon("indicator_viewactive"));
     static QPixmap indicator_empty(statusBarIcon("indicator_empty"));
-    m_led->setPixmap( hasFocus ? indicator_viewactive : indicator_empty );
+    m_led->setPixmap(hasFocus ? indicator_viewactive : indicator_empty);
 }
 
-void KonqFrameStatusBar::setMessage(const QString& msg, KonqStatusBarMessageLabel::Type type)
+void KonqFrameStatusBar::setMessage(const QString &msg, KonqStatusBarMessageLabel::Type type)
 {
     m_pStatusLabel->setMessage(msg, type);
 }

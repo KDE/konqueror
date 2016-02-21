@@ -1,5 +1,4 @@
 //  -*- c-basic-offset:4; indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
    Copyright (C) 1999 Kurt Granroth <granroth@kde.org>
 
@@ -53,9 +52,9 @@ public:
      *
      * @param parent the parent widget for the bookmark toolbar
      */
-    KBookmarkBar( KBookmarkManager* manager,
-                  KBookmarkOwner *owner, KToolBar *toolBar,
-                  QObject *parent = 0);
+    KBookmarkBar(KBookmarkManager *manager,
+                 KBookmarkOwner *owner, KToolBar *toolBar,
+                 QObject *parent = 0);
 
     virtual ~KBookmarkBar();
 
@@ -63,28 +62,28 @@ public:
 
 public Q_SLOTS:
     void clear();
-    void contextMenu( const QPoint & );
+    void contextMenu(const QPoint &);
 
-    void slotBookmarksChanged( const QString & );
+    void slotBookmarksChanged(const QString &);
     void slotConfigChanged();
 
 protected:
-    void fillBookmarkBar( const KBookmarkGroup & parent );
-    virtual bool eventFilter( QObject *o, QEvent *e );
+    void fillBookmarkBar(const KBookmarkGroup &parent);
+    virtual bool eventFilter(QObject *o, QEvent *e);
 
 private:
     KBookmarkGroup getToolbar();
     void removeTempSep();
-    bool handleToolbarDragMoveEvent(const QPoint& pos, const QList<QAction *>& actions, const QString &text);
+    bool handleToolbarDragMoveEvent(const QPoint &pos, const QList<QAction *> &actions, const QString &text);
 
     KBookmarkOwner *m_pOwner;
     QPointer<KToolBar> m_toolBar;
     KActionCollection *m_actionCollection;
     KBookmarkManager *m_pManager;
     QList<KBookmarkMenu *> m_lstSubMenus;
-    QAction* m_toolBarSeparator;
+    QAction *m_toolBarSeparator;
 
-    KBookmarkBarPrivate * const d;
+    KBookmarkBarPrivate *const d;
 };
 
 #endif // KONQBOOKMARKBAR_H

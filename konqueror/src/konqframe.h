@@ -47,14 +47,14 @@ class KSeparator;
 
 namespace KParts
 {
-  class ReadOnlyPart;
+class ReadOnlyPart;
 }
 
-typedef QList<KonqView*> ChildViewList;
+typedef QList<KonqView *> ChildViewList;
 
 class KONQ_TESTS_EXPORT KonqFrameBase
 {
- public:
+public:
     enum Option {
         None = 0x0,
         saveURLs = 0x01, // TODO rename to SaveUrls
@@ -62,42 +62,48 @@ class KONQ_TESTS_EXPORT KonqFrameBase
     };
     Q_DECLARE_FLAGS(Options, Option)
 
-  enum FrameType { View, Tabs, ContainerBase, Container, MainWindow };
+    enum FrameType { View, Tabs, ContainerBase, Container, MainWindow };
 
-  virtual ~KonqFrameBase() {}
+    virtual ~KonqFrameBase() {}
 
     virtual bool isContainer() const = 0;
 
-    virtual bool accept( KonqFrameVisitor* visitor ) = 0;
+    virtual bool accept(KonqFrameVisitor *visitor) = 0;
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
+    virtual void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) = 0;
 
-  virtual void copyHistory( KonqFrameBase *other ) = 0;
+    virtual void copyHistory(KonqFrameBase *other) = 0;
 
-  KonqFrameContainerBase* parentContainer() const { return m_pParentContainer; }
-  void setParentContainer(KonqFrameContainerBase* parent) { m_pParentContainer = parent; }
+    KonqFrameContainerBase *parentContainer() const
+    {
+        return m_pParentContainer;
+    }
+    void setParentContainer(KonqFrameContainerBase *parent)
+    {
+        m_pParentContainer = parent;
+    }
 
-  virtual void setTitle( const QString &title , QWidget* sender) = 0;
-  virtual void setTabIcon( const QUrl &url, QWidget* sender ) = 0;
+    virtual void setTitle(const QString &title, QWidget *sender) = 0;
+    virtual void setTabIcon(const QUrl &url, QWidget *sender) = 0;
 
-  virtual QWidget* asQWidget() = 0;
+    virtual QWidget *asQWidget() = 0;
 
-  virtual FrameType frameType() const = 0;
+    virtual FrameType frameType() const = 0;
 
-  virtual void activateChild() = 0;
+    virtual void activateChild() = 0;
 
-  virtual KonqView* activeChildView() const = 0;
+    virtual KonqView *activeChildView() const = 0;
 
-  static QString frameTypeToString( const FrameType frameType );
-  static FrameType frameTypeFromString( const QString& str );
+    static QString frameTypeToString(const FrameType frameType);
+    static FrameType frameTypeFromString(const QString &str);
 
 protected:
-  KonqFrameBase();
+    KonqFrameBase();
 
-  KonqFrameContainerBase* m_pParentContainer;
+    KonqFrameContainerBase *m_pParentContainer;
 };
 
-  Q_DECLARE_OPERATORS_FOR_FLAGS ( KonqFrameBase::Options )
+Q_DECLARE_OPERATORS_FOR_FLAGS(KonqFrameBase::Options)
 
 /**
  * The KonqFrame is the actual container for the views. It takes care of the
@@ -109,89 +115,110 @@ protected:
 
 class KONQ_TESTS_EXPORT KonqFrame : public QWidget, public KonqFrameBase
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0 );
-  virtual ~KonqFrame();
+    explicit KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer = 0);
+    virtual ~KonqFrame();
 
-    virtual bool isContainer() const { return false; }
+    virtual bool isContainer() const
+    {
+        return false;
+    }
 
-    virtual bool accept( KonqFrameVisitor* visitor );
+    virtual bool accept(KonqFrameVisitor *visitor);
 
-  /**
-   * Attach a view to the KonqFrame.
-   * @param viewFactory the view to attach (instead of the current one, if any)
-   */
-  KParts::ReadOnlyPart *attach( const KonqViewFactory &viewFactory );
+    /**
+     * Attach a view to the KonqFrame.
+     * @param viewFactory the view to attach (instead of the current one, if any)
+     */
+    KParts::ReadOnlyPart *attach(const KonqViewFactory &viewFactory);
 
-  /**
-   * Inserts the widget and the statusbar into the layout
-   */
-  void attachWidget(QWidget* widget);
+    /**
+     * Inserts the widget and the statusbar into the layout
+     */
+    void attachWidget(QWidget *widget);
 
-  /**
-   * Inserts a widget at the top of the part's widget, in the layout
-   * (used for the find functionality)
-   */
-  void insertTopWidget( QWidget * widget );
+    /**
+     * Inserts a widget at the top of the part's widget, in the layout
+     * (used for the find functionality)
+     */
+    void insertTopWidget(QWidget *widget);
 
-  /**
-   * Returns the part that is currently connected to the Frame.
-   */
-  KParts::ReadOnlyPart *part() { return m_pPart; }
-  /**
-   * Returns the view that is currently connected to the Frame.
-   */
-  KonqView* childView() const;
+    /**
+     * Returns the part that is currently connected to the Frame.
+     */
+    KParts::ReadOnlyPart *part()
+    {
+        return m_pPart;
+    }
+    /**
+     * Returns the view that is currently connected to the Frame.
+     */
+    KonqView *childView() const;
 
-  bool isActivePart();
+    bool isActivePart();
 
-  void setView( KonqView* child );
+    void setView(KonqView *child);
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
-  virtual void copyHistory( KonqFrameBase *other );
+    virtual void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0);
+    virtual void copyHistory(KonqFrameBase *other);
 
-  virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon(const QUrl &url, QWidget* sender );
+    virtual void setTitle(const QString &title, QWidget *sender);
+    virtual void setTabIcon(const QUrl &url, QWidget *sender);
 
-  virtual QWidget* asQWidget() { return this; }
-  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::View; }
+    virtual QWidget *asQWidget()
+    {
+        return this;
+    }
+    virtual KonqFrameBase::FrameType frameType() const
+    {
+        return KonqFrameBase::View;
+    }
 
-  QVBoxLayout *layout()const { return m_pLayout; }
+    QVBoxLayout *layout()const
+    {
+        return m_pLayout;
+    }
 
-  KonqFrameStatusBar *statusbar() const { return m_pStatusBar; }
+    KonqFrameStatusBar *statusbar() const
+    {
+        return m_pStatusBar;
+    }
 
-  virtual void activateChild();
+    virtual void activateChild();
 
-  virtual KonqView* activeChildView() const;
+    virtual KonqView *activeChildView() const;
 
-  QString title() const { return m_title; }
+    QString title() const
+    {
+        return m_title;
+    }
 
 public Q_SLOTS:
 
-  /**
-   * Is called when the frame statusbar has been clicked
-   */
-  void slotStatusBarClicked();
+    /**
+     * Is called when the frame statusbar has been clicked
+     */
+    void slotStatusBarClicked();
 
-  void slotLinkedViewClicked( bool mode );
+    void slotLinkedViewClicked(bool mode);
 
-  /**
-   * Is called when 'Remove View' is called from the popup menu
-   */
-  void slotRemoveView();
+    /**
+     * Is called when 'Remove View' is called from the popup menu
+     */
+    void slotRemoveView();
 
 private:
-  QVBoxLayout *m_pLayout;
-  QPointer<KonqView> m_pView;
+    QVBoxLayout *m_pLayout;
+    QPointer<KonqView> m_pView;
 
-  QPointer<KParts::ReadOnlyPart> m_pPart;
+    QPointer<KParts::ReadOnlyPart> m_pPart;
 
-  KSeparator *m_separator;
-  KonqFrameStatusBar* m_pStatusBar;
+    KSeparator *m_separator;
+    KonqFrameStatusBar *m_pStatusBar;
 
-  QString m_title;
+    QString m_title;
 };
 
 #endif

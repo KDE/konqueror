@@ -37,16 +37,40 @@ public:
     enum VisitorBehavior { VisitAllTabs = 1, VisitCurrentTabOnly = 2 };
     KonqFrameVisitor(VisitorBehavior behavior = VisitAllTabs) : m_behavior(behavior) {}
     virtual ~KonqFrameVisitor() {}
-    virtual bool visit(KonqFrame*) { return true; }
-    virtual bool visit(KonqFrameContainer*) { return true; }
-    virtual bool visit(KonqFrameTabs*) { return true; }
-    virtual bool visit(KonqMainWindow*) { return true; }
+    virtual bool visit(KonqFrame *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqFrameContainer *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqFrameTabs *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqMainWindow *)
+    {
+        return true;
+    }
 
-    virtual bool endVisit(KonqFrameContainer*) { return true; }
-    virtual bool endVisit(KonqFrameTabs*) { return true; }
-    virtual bool endVisit(KonqMainWindow*) { return true; }
+    virtual bool endVisit(KonqFrameContainer *)
+    {
+        return true;
+    }
+    virtual bool endVisit(KonqFrameTabs *)
+    {
+        return true;
+    }
+    virtual bool endVisit(KonqMainWindow *)
+    {
+        return true;
+    }
 
-    bool visitAllTabs() const { return m_behavior & VisitAllTabs; }
+    bool visitAllTabs() const
+    {
+        return m_behavior & VisitAllTabs;
+    }
 private:
     VisitorBehavior m_behavior;
 };
@@ -57,11 +81,20 @@ private:
 class KONQ_TESTS_EXPORT KonqViewCollector : public KonqFrameVisitor
 {
 public:
-    static QList<KonqView *> collect(KonqFrameBase* topLevel);
-    virtual bool visit(KonqFrame* frame);
-    virtual bool visit(KonqFrameContainer*) { return true; }
-    virtual bool visit(KonqFrameTabs*) { return true; }
-    virtual bool visit(KonqMainWindow*) { return true; }
+    static QList<KonqView *> collect(KonqFrameBase *topLevel);
+    virtual bool visit(KonqFrame *frame);
+    virtual bool visit(KonqFrameContainer *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqFrameTabs *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqMainWindow *)
+    {
+        return true;
+    }
 private:
     QList<KonqView *> m_views;
 };
@@ -72,11 +105,20 @@ private:
 class KonqLinkableViewsCollector : public KonqFrameVisitor
 {
 public:
-    static QList<KonqView *> collect(KonqFrameBase* topLevel);
-    virtual bool visit(KonqFrame* frame);
-    virtual bool visit(KonqFrameContainer*) { return true; }
-    virtual bool visit(KonqFrameTabs*) { return true; }
-    virtual bool visit(KonqMainWindow*) { return true; }
+    static QList<KonqView *> collect(KonqFrameBase *topLevel);
+    virtual bool visit(KonqFrame *frame);
+    virtual bool visit(KonqFrameContainer *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqFrameTabs *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqMainWindow *)
+    {
+        return true;
+    }
 private:
     KonqLinkableViewsCollector() : KonqFrameVisitor(VisitCurrentTabOnly) {}
     QList<KonqView *> m_views;
@@ -89,11 +131,20 @@ private:
 class KonqModifiedViewsCollector : public KonqFrameVisitor
 {
 public:
-    static QList<KonqView *> collect(KonqFrameBase* topLevel);
-    virtual bool visit(KonqFrame* frame);
-    virtual bool visit(KonqFrameContainer*) { return true; }
-    virtual bool visit(KonqFrameTabs*) { return true; }
-    virtual bool visit(KonqMainWindow*) { return true; }
+    static QList<KonqView *> collect(KonqFrameBase *topLevel);
+    virtual bool visit(KonqFrame *frame);
+    virtual bool visit(KonqFrameContainer *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqFrameTabs *)
+    {
+        return true;
+    }
+    virtual bool visit(KonqMainWindow *)
+    {
+        return true;
+    }
 private:
     QList<KonqView *> m_views;
 };

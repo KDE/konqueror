@@ -39,7 +39,8 @@ OpenSearchManager::OpenSearchManager(QObject *parent)
     m_state = IDLE;
 }
 
-OpenSearchManager::~OpenSearchManager() {
+OpenSearchManager::~OpenSearchManager()
+{
     qDeleteAll(m_enginesMap);
     m_enginesMap.clear();
 }
@@ -65,8 +66,7 @@ void OpenSearchManager::setSearchProvider(const QString &searchProvider)
 
         if (engine) {
             m_enginesMap.insert(searchProvider, engine);
-        }
-        else {
+        } else {
             return;
         }
     }
@@ -133,8 +133,7 @@ void OpenSearchManager::jobFinished(KJob *job)
         kDebug(1202) << "Received suggestion from " << m_activeEngine->name() << ": " << suggestionsList;
 
         emit suggestionReceived(suggestionsList);
-    }
-    else if (m_state == REQ_DESCRIPTION) {
+    } else if (m_state == REQ_DESCRIPTION) {
         OpenSearchReader reader;
         OpenSearchEngine *engine = reader.read(m_jobData);
         if (engine) {
@@ -147,8 +146,7 @@ void OpenSearchManager::jobFinished(KJob *job)
 
             QString searchUrl = OpenSearchEngine::parseTemplate("\\{@}", engine->searchUrlTemplate());
             emit openSearchEngineAdded(engine->name(), searchUrl, fileName);
-        }
-        else {
+        } else {
             kFatal() << "Error while adding new open search engine";
         }
     }
@@ -161,8 +159,7 @@ QString OpenSearchManager::trimmedEngineName(const QString &engineName) const
     while (constIter != engineName.constEnd()) {
         if (constIter->isSpace()) {
             trimmed.append('-');
-        }
-        else if (*constIter != '.') {
+        } else if (*constIter != '.') {
             trimmed.append(constIter->toLower());
         }
         constIter++;
@@ -170,5 +167,4 @@ QString OpenSearchManager::trimmedEngineName(const QString &engineName) const
 
     return trimmed;
 }
-
 

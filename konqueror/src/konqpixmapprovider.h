@@ -35,7 +35,7 @@ class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject, public KPixma
 {
     Q_OBJECT
 public:
-    static KonqPixmapProvider * self();
+    static KonqPixmapProvider *self();
 
     virtual ~KonqPixmapProvider();
 
@@ -51,17 +51,17 @@ public:
     /**
      * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
      */
-    virtual QPixmap pixmapFor( const QString& url, int size = 0 );
+    virtual QPixmap pixmapFor(const QString &url, int size = 0);
 
     /**
      * Loads the cache to @p kc from key @p key.
      */
-    void load( KConfigGroup& kc, const QString& key );
+    void load(KConfigGroup &kc, const QString &key);
     /**
      * Saves the cache to @p kc as key @p key.
      * Only those @p items are saved, otherwise the cache would grow forever.
      */
-    void save( KConfigGroup& kc, const QString& key, const QStringList& items );
+    void save(KConfigGroup &kc, const QString &key, const QStringList &items);
 
     /**
      * Clears the pixmap cache
@@ -71,19 +71,18 @@ public:
     /**
      * Looks up an iconname for @p url. Uses a cache for the iconname of url.
      */
-    QString iconNameFor(const QUrl &url );
+    QString iconNameFor(const QUrl &url);
 
 Q_SIGNALS:
     void changed();
 
 private:
-    QPixmap loadIcon( const QString& icon, int size );
+    QPixmap loadIcon(const QString &icon, int size);
 
     KonqPixmapProvider();
     friend class KonqPixmapProviderSingleton;
 
-    QMap<QUrl,QString> iconMap;
+    QMap<QUrl, QString> iconMap;
 };
-
 
 #endif // KONQ_PIXMAPPROVIDER_H

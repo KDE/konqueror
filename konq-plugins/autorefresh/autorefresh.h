@@ -24,7 +24,7 @@
 
 #include <QVariant>
 #include <kparts/plugin.h>
- 
+
 class QTimer;
 class KSelectAction;
 
@@ -50,7 +50,7 @@ public:
     /**
      * Construct a new KParts plugin.
      */
-    explicit AutoRefresh( QObject* parent = 0, const QVariantList &args = QVariantList() );
+    explicit AutoRefresh(QObject *parent = 0, const QVariantList &args = QVariantList());
 
     /**
      * Destructor.
@@ -60,10 +60,10 @@ public:
 public slots:
     void slotRefresh();
     void slotIntervalChanged();
-    
+
 private:
-   KSelectAction *refresher;
-   QTimer *timer;
+    KSelectAction *refresher;
+    QTimer *timer;
 };
 
 #endif

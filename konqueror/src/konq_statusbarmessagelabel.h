@@ -39,7 +39,7 @@ class KonqStatusBarMessageLabel : public QWidget
     Q_OBJECT
 
 public:
-    explicit KonqStatusBarMessageLabel(QWidget* parent);
+    explicit KonqStatusBarMessageLabel(QWidget *parent);
     virtual ~KonqStatusBarMessageLabel();
 
     /**
@@ -54,13 +54,13 @@ public:
         Error
     };
 
-    void setMessage(const QString& text, Type type);
+    void setMessage(const QString &text, Type type);
 
     Type type() const;
 
     QString text() const;
 
-    void setDefaultText(const QString& text);
+    void setDefaultText(const QString &text);
     QString defaultText() const;
 
     // TODO: maybe a better approach is possible with the size hint
@@ -74,10 +74,10 @@ public:
 
 protected:
     /** @see QWidget::paintEvent() */
-    virtual void paintEvent(QPaintEvent* event);
+    virtual void paintEvent(QPaintEvent *event);
 
     /** @see QWidget::resizeEvent() */
-    virtual void resizeEvent(QResizeEvent* event);
+    virtual void resizeEvent(QResizeEvent *event);
 
 private Q_SLOTS:
     void timerDone();
@@ -120,8 +120,7 @@ private:
     void reset();
 
 private:
-    enum State
-    {
+    enum State {
         DefaultState,
         Illuminate,
         Illuminated,
@@ -129,7 +128,7 @@ private:
     };
 
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 #endif

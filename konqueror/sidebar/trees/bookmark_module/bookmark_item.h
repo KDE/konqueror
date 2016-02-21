@@ -28,12 +28,12 @@
 class KonqSidebarBookmarkItem : public KonqSidebarTreeItem
 {
 public:
-    KonqSidebarBookmarkItem( KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem,
-                      const KBookmark & bk, int key );
+    KonqSidebarBookmarkItem(KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem,
+                            const KBookmark &bk, int key);
 
     virtual ~KonqSidebarBookmarkItem() {}
 
-    virtual bool populateMimeData( QMimeData* mimeData, bool move );
+    virtual bool populateMimeData(QMimeData *mimeData, bool move);
 
     virtual void middleButtonClicked();
     virtual void rightButtonPressed();
@@ -49,7 +49,7 @@ public:
     // Called when this item is selected
     virtual void itemSelected();
 
-    virtual QString key( int column, bool /*ascending*/ ) const;
+    virtual QString key(int column, bool /*ascending*/) const;
 
     virtual KBookmark &bookmark();
 
