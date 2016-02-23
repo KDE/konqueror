@@ -688,9 +688,9 @@ void KonqView::setCaption(const QString &caption)
     // For local URLs we prefer to use only the directory name
     if (url().isLocalFile()) {
         // Is the caption a URL?  If so, is it local?  If so, only display the filename!
-        QUrl url(QUrl::fromUserInput(caption));
-        if (url.isValid() && url.isLocalFile() && url.fileName() == this->url().fileName()) {
-            adjustedCaption = url.fileName();
+        const QUrl captionUrl(QUrl::fromUserInput(caption));
+        if (captionUrl.isValid() && captionUrl.isLocalFile() && captionUrl.path() == url().path()) {
+            adjustedCaption = captionUrl.adjusted(QUrl::StripTrailingSlash).fileName();
             if (adjustedCaption.isEmpty()) {
                 adjustedCaption = QLatin1Char('/');
             }
