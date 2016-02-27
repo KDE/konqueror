@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998-2008 David Faure <faure@kde.org>
+   Copyright (C) 1998-2016 David Faure <faure@kde.org>
    Copyright (C) 2001 Holger Freyther <freyther@yahoo.com>
 
    This library is free software; you can redistribute it and/or
@@ -21,35 +21,32 @@
 #ifndef __konqpopupmenu_h
 #define __konqpopupmenu_h
 
-#include <sys/types.h>
-
-#include <QMap>
 #include <QMenu>
 
-#include <QAction>
-#include <kactioncollection.h>
-#include <kfileitem.h>
 #include <kparts/browserextension.h>
-#include <kservice.h>
 
 #include <libkonq_export.h>
 
+class KFileItemList;
 class KNewFileMenu;
 class KFileItemActions;
 
+class KActionCollection;
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
 class QUrl;
 
 /**
- * This class implements the popup menu for URLs in konqueror and kdesktop
- * It's usage is very simple : on right click, create the KonqPopupMenu instance
- * with the correct arguments, then exec() to make it appear, then destroy it.
+ * This class implements the popup menu for URLs in file managers.
  *
- * Users of KonqPopupMenu include: konqueror, the media applet, the trash applet
- * (and the desktop icons, in kde3)
+ * The recommended usage is to use QMenu::popup() to avoid modal popupmenus.
+ *
+ * Either reuse the instance, or delete it after use with
+ *   connect(menu, &QMenu::aboutToHide, [menu]() { menu->deleteLater(); });
+ *
+ * Users of KonqPopupMenu include: konqueror, kfind, the folderview desktop plasmoid.
  */
-class LIBKONQ_EXPORT KonqPopupMenu : public QMenu // KDE5 TODO: inherit KMenu to benefit from KAcceleratorManager automatically
+class LIBKONQ_EXPORT KonqPopupMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -105,7 +102,13 @@ public:
      * This is used if the user chooses to add a bookmark for this URL.
      */
     void setURLTitle(const QString &urlTitle);
-    KFileItemActions *fileItemActions() const;
+
+Q_SIGNALS:
+    /**
+     * Emitted before the "Open With" dialog is shown
+     * This is used e.g in folderview to close the folder peek popups on invoking the "Open With" menu action
+     */
+    void openWithDialogAboutToBeShown();
 
 private:
     KonqPopupMenuPrivate *d;

@@ -19,6 +19,9 @@
 */
 
 #include "konq_popupmenu.h"
+
+#include <KActionCollection>
+
 #include <kfileitemlistproperties.h>
 #include "konq_copytomenu.h"
 #include "kfileitemactions.h"
@@ -459,6 +462,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     // Anything else that is provided by the part
     addGroup("partactions");
+
+    QObject::connect(&m_menuActions, &KFileItemActions::openWithDialogAboutToBeShown, q, &KonqPopupMenu::openWithDialogAboutToBeShown);
 }
 
 KonqPopupMenu::~KonqPopupMenu()
@@ -470,11 +475,6 @@ KonqPopupMenu::~KonqPopupMenu()
 void KonqPopupMenu::setURLTitle(const QString &urlTitle)
 {
     d->m_urlTitle = urlTitle;
-}
-
-KFileItemActions *KonqPopupMenu::fileItemActions() const
-{
-    return &(d->m_menuActions);
 }
 
 void KonqPopupMenuPrivate::slotPopupNewView()
