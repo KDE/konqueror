@@ -39,7 +39,7 @@
 #include "konqviewmanager.h"
 
 PopupMenuGUIClient::PopupMenuGUIClient(const KService::List &embeddingServices,
-                                       KParts::BrowserExtension::ActionGroupMap &actionGroups,
+                                       KonqPopupMenu::ActionGroupMap &actionGroups,
                                        QAction *showMenuBar, QAction *stopFullScreen)
     : m_actionCollection(this),
       m_embeddingServices(embeddingServices)
@@ -74,9 +74,9 @@ PopupMenuGUIClient::PopupMenuGUIClient(const KService::List &embeddingServices,
                 previewActions.append(act);
             }
         }
-        actionGroups.insert("preview", previewActions);
+        actionGroups.insert(KonqPopupMenu::PreviewActions, previewActions);
     }
-    actionGroups.insert("topactions", topActions);
+    actionGroups.insert(KonqPopupMenu::TopActions, topActions);
 }
 
 PopupMenuGUIClient::~PopupMenuGUIClient()

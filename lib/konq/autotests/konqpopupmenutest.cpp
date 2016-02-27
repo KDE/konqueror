@@ -24,7 +24,6 @@
 #include <kconfiggroup.h>
 #include <kbookmarkmanager.h>
 #include <KSharedConfig>
-#include <kparts/browserextension.h>
 #include <knewfilemenu.h>
 #include <kfileitemlistproperties.h>
 
@@ -171,15 +170,16 @@ void KonqPopupMenuTest::testFile()
     KFileItemList itemList;
     itemList << m_fileItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-            | KParts::BrowserExtension::ShowReload
-            | KParts::BrowserExtension::ShowUrlOperations;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
-    actionGroups.insert("editactions", m_fileEditActions->actions());
-    actionGroups.insert("preview", QList<QAction *>() << m_preview1);
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowProperties
+            | KonqPopupMenu::ShowReload
+            | KonqPopupMenu::ShowUrlOperations;
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
+    actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -208,17 +208,18 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     QVERIFY(!capabilities.supportsMoving());
 
     QUrl viewUrl = QUrl::fromLocalFile("/etc");
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-            | KParts::BrowserExtension::ShowReload
-            | KParts::BrowserExtension::ShowUrlOperations;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowProperties
+            | KonqPopupMenu::ShowReload
+            | KonqPopupMenu::ShowUrlOperations;
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
     // DolphinPart doesn't add rename/trash when supportsMoving is false
     // Maybe we should test dolphinpart directly :)
-    //actionGroups.insert("editactions", m_fileEditActions->actions());
-    actionGroups.insert("preview", QList<QAction *>() << m_preview1);
+    //actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -242,15 +243,16 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     KFileItemList itemList;
     itemList << m_fileItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-            | KParts::BrowserExtension::ShowReload
-            | KParts::BrowserExtension::ShowUrlOperations;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
-    actionGroups.insert("editactions", m_fileEditActions->actions());
-    actionGroups.insert("preview", m_previewActions->actions());
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowProperties
+            | KonqPopupMenu::ShowReload
+            | KonqPopupMenu::ShowUrlOperations;
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
+    actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -273,14 +275,16 @@ void KonqPopupMenuTest::testSubDirectory()
     KFileItemList itemList;
     itemList << m_subDirItem;
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
-            | KParts::BrowserExtension::ShowUrlOperations;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
-    actionGroups.insert("editactions", m_fileEditActions->actions());
-    actionGroups.insert("preview", m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowProperties
+            | KonqPopupMenu::ShowUrlOperations;
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
+    actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
+
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -302,17 +306,17 @@ void KonqPopupMenuTest::testViewDirectory()
     KFileItemList itemList;
     itemList << m_thisDirectoryItem;
     QUrl viewUrl = m_thisDirectoryItem.url();
-    KParts::BrowserExtension::PopupFlags beflags =
-        KParts::BrowserExtension::ShowNavigationItems |
-        KParts::BrowserExtension::ShowUp |
-        KParts::BrowserExtension::ShowCreateDirectory |
-        KParts::BrowserExtension::ShowUrlOperations |
-        KParts::BrowserExtension::ShowProperties;
+    const KonqPopupMenu::Flags flags = m_appFlags |
+        KonqPopupMenu::ShowNavigationItems |
+        KonqPopupMenu::ShowUp |
+        KonqPopupMenu::ShowCreateDirectory |
+        KonqPopupMenu::ShowUrlOperations |
+        KonqPopupMenu::ShowProperties;
     // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("preview", m_previewActions->actions());
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -337,17 +341,17 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     KFileItemList itemList;
     itemList << rootItem;
     QUrl viewUrl = rootItem.url();
-    KParts::BrowserExtension::PopupFlags beflags =
-        KParts::BrowserExtension::ShowNavigationItems |
-        KParts::BrowserExtension::ShowUp |
-        KParts::BrowserExtension::ShowCreateDirectory |
-        KParts::BrowserExtension::ShowUrlOperations |
-        KParts::BrowserExtension::ShowProperties;
+    const KonqPopupMenu::Flags flags = m_appFlags |
+        KonqPopupMenu::ShowNavigationItems |
+        KonqPopupMenu::ShowUp |
+        KonqPopupMenu::ShowCreateDirectory |
+        KonqPopupMenu::ShowUrlOperations |
+        KonqPopupMenu::ShowProperties;
     // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("preview", m_previewActions->actions());
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -370,17 +374,17 @@ void KonqPopupMenuTest::testHtmlLink()
     KFileItemList itemList;
     itemList << m_linkItem;
     QUrl viewUrl("http://www.kde.org");
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
-            | KParts::BrowserExtension::ShowReload
-            | KParts::BrowserExtension::IsLink;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
-    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
-    actionGroups.insert("preview", m_previewActions->actions());
-    actionGroups.insert("editactions", m_htmlEditActions->actions());
-    actionGroups.insert("linkactions", m_linkActions->actions());
-    actionGroups.insert("partactions", m_partActions->actions());
-
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowBookmark
+            | KonqPopupMenu::ShowReload
+            | KonqPopupMenu::IsLink;
+    KonqPopupMenu::ActionGroupMap actionGroups;
+    actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
+    actionGroups.insert(KonqPopupMenu::EditActions, m_htmlEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
+    actionGroups.insert(KonqPopupMenu::LinkActions, m_linkActions->actions());
+    actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -402,23 +406,25 @@ void KonqPopupMenuTest::testHtmlPage()
     KFileItemList itemList;
     itemList << m_linkItem;
     QUrl viewUrl = m_linkItem.url();
-    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
-            | KParts::BrowserExtension::ShowReload
-            | KParts::BrowserExtension::ShowNavigationItems;
-    KParts::BrowserExtension::ActionGroupMap actionGroups;
+
+    const KonqPopupMenu::Flags flags = m_appFlags
+            | KonqPopupMenu::ShowBookmark
+            | KonqPopupMenu::ShowReload
+            | KonqPopupMenu::ShowNavigationItems;
+    KonqPopupMenu::ActionGroupMap actionGroups;
     // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
     // TODO we could just move that logic to KonqPopupMenu...
-    //actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
-    actionGroups.insert("preview", m_previewActions->actions());
-    actionGroups.insert("editactions", m_htmlEditActions->actions());
-    //actionGroups.insert("linkactions", m_linkActions->actions());
+    //actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
+    actionGroups.insert(KonqPopupMenu::EditActions, m_htmlEditActions->actions());
+    actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
+    //actionGroups.insert(KonqPopupMenu::LinkActions, m_linkActions->actions());
     QAction *security = new QAction(m_partActions);
     m_actionCollection.addAction("security", security);
     QAction *setEncoding = new QAction(m_partActions);
     m_actionCollection.addAction("setEncoding", setEncoding);
-    actionGroups.insert("partactions", m_partActions->actions());
+    actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);

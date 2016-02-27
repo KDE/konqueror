@@ -23,8 +23,6 @@
 
 #include <QMenu>
 
-#include <kparts/browserextension.h>
-
 #include <libkonq_export.h>
 
 class KFileItemList;
@@ -52,28 +50,55 @@ class LIBKONQ_EXPORT KonqPopupMenu : public QMenu
 public:
 
     /**
-     * Flags set by the calling application (e.g. konqueror), unlike
-     * KParts::BrowserExtension::PopupFlags, which are set by the calling part
+     * Each action group is inserted into the context menu at a specific position.
+     * "editactions" for actions related text editing,
+     * "linkactions" for actions related to hyperlinks,
+     * "partactions" for any other actions provided by the part
      */
-    typedef uint Flags;
-    enum { NoFlags = 0,
-           ShowNewWindow = 1,
-           NoPlugins = 2 /*for the unittest*/
-         };
-    // WARNING: bitfield. Next item is 4
+    enum ActionGroup {
+        TopActions,  ///< actions to be shown at the top of the context menu, like "show menu bar"
+        TabHandlingActions, ///< actions for tab handling, like "open in new tab"
+        EditActions, ///< move to trash, delete, etc.
+        PreviewActions, ///< actions related to viewing the selected file with an embedded viewer
+        CustomActions, ///< group for more custom actions, such as those provided by KParts components
+        LinkActions  ///< actions related to handling of hyperlinks, only shown if the IsLink flag is set
+    };
+
+    typedef QMap<ActionGroup, QList<QAction *> > ActionGroupMap;
+
+    /**
+     * Set of flags to ask for some items in the popup menu.
+     */
+    enum Flag {
+        DefaultPopupItems = 0x0000, ///< default value, no additional menu item
+        ShowNavigationItems = 0x0001, ///< show "back" and "forward" (usually done when clicking the background of the view, but not an item)
+        ShowUp = 0x0002, ///<  show "up" (same thing, but not over e.g. HTTP). Requires ShowNavigationItems.
+        ShowReload = 0x0004, ///< show "reload" (usually done when clicking the background of the view, but not an item)
+        ShowBookmark = 0x0008, ///< show "add to bookmarks" (usually not done on the local filesystem)
+        ShowCreateDirectory = 0x0010, ///<  show "create directory" (usually only done on the background of the view, or
+                                      /// in hierarchical views like directory trees, where the new dir would be visible)
+        ShowTextSelectionItems = 0x0020, ///< set when selecting text, for a popup that only contains text-related items.
+        NoDeletion = 0x0040, ///< "cut" not allowed (e.g. parent dir not writeable).
+                             /// (this is only needed if the protocol itself supports deletion, unlike e.g. HTTP)
+        IsLink = 0x0080, ///< show "Bookmark This Link" and other link-related actions (LinkActions group)
+        ShowUrlOperations = 0x0100, ///< show copy, paste, as well as cut if NoDeletion is not set.
+        ShowProperties = 0x0200,   ///< show "Properties" action (usually done by directory views)
+        ShowNewWindow = 0x0400, ///< Show "Open in new window" action
+        NoPlugins = 0x0800      ///< Disable plugins - mostly for the unittest
+     };
+    Q_DECLARE_FLAGS(Flags, Flag)
 
     /**
      * Constructor
      * @param manager the bookmark manager for the "add to bookmark" action
-     * Only used if KParts::BrowserExtension::ShowBookmark is set
+     * Only used if ShowBookmark is set
      * @param items the list of file items the popupmenu should be shown for
      * @param viewURL the URL shown in the view, to test for RMB click on view background
      * @param actions list of actions the caller wants to see in the menu
      * @param newMenu "New" menu, shared with the File menu, in konqueror
+     * @param flags flags which control which items to show in the popupmenu
      * @param parentWidget the widget we're showing this popup for. Helps destroying
      * the popup if the widget is destroyed before the popup.
-     * @param appFlags flags from the KonqPopupMenu::Flags enum, set by the calling application
-     * @param partFlags flags from the BrowserExtension enum, set by the calling part
      *
      * The actions to pass in include :
      * showmenubar, go_back, go_forward, go_up, cut, copy, paste, pasteto
@@ -85,11 +110,10 @@ public:
                   const QUrl &viewURL,
                   KActionCollection &actions,
                   KNewFileMenu *newMenu,
-                  Flags appFlags,
-                  KParts::BrowserExtension::PopupFlags partFlags /*= KParts::BrowserExtension::DefaultPopupItems*/,
+                  Flags flags,
                   QWidget *parentWidget,
                   KBookmarkManager *manager = 0,
-                  const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap()
+                  const ActionGroupMap &actionGroups = ActionGroupMap()
                  );
 
     /**

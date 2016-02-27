@@ -42,7 +42,7 @@ class PopupMenuGUIClient : public QObject
 public:
     // The action groups are inserted into @p actionGroups
     PopupMenuGUIClient(const KService::List &embeddingServices,
-                       KParts::BrowserExtension::ActionGroupMap &actionGroups,
+                       KonqPopupMenu::ActionGroupMap &actionGroups,
                        QAction *showMenuBar, QAction *stopFullScreen);
     virtual ~PopupMenuGUIClient();
 

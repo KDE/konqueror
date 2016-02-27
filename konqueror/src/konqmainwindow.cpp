@@ -4589,6 +4589,20 @@ QString KonqMainWindow::currentTitle() const
     return m_currentView ? m_currentView->caption() : QString();
 }
 
+// Convert between deprecated string-based KParts::BrowserExtension::ActionGroupMap
+// to newer enum-based KonqPopupMenu::ActionGroupMap
+static KonqPopupMenu::ActionGroupMap convertActionGroups(const KParts::BrowserExtension::ActionGroupMap &input)
+{
+    KonqPopupMenu::ActionGroupMap agm;
+    agm.insert(KonqPopupMenu::TopActions, input.value("topactions"));
+    agm.insert(KonqPopupMenu::TabHandlingActions, input.value("tabhandling"));
+    agm.insert(KonqPopupMenu::EditActions, input.value("editactions"));
+    agm.insert(KonqPopupMenu::PreviewActions, input.value("preview"));
+    agm.insert(KonqPopupMenu::CustomActions, input.value("partactions"));
+    agm.insert(KonqPopupMenu::LinkActions, input.value("linkactions"));
+    return agm;
+}
+
 void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap &actionGroups)
 {
     KFileItem item(url, args.mimeType(), mode);
@@ -4597,10 +4611,8 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const QUrl &url, mode_t
     slotPopupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
-void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags itemFlags, const KParts::BrowserExtension::ActionGroupMap &_actionGroups)
+void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, KParts::BrowserExtension::PopupFlags itemFlags, const KParts::BrowserExtension::ActionGroupMap &actionGroups)
 {
-    KParts::BrowserExtension::ActionGroupMap actionGroups = _actionGroups;
-
     KonqView *m_oldView = m_currentView;
     KonqView *currentView = childView(static_cast<KParts::ReadOnlyPart *>(sender()->parent()));
 
@@ -4709,8 +4721,13 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
                                 "and exist [Library]");
     }
 
+    // TODO: get rid of KParts::BrowserExtension::PopupFlags
+    KonqPopupMenu::Flags popupFlags = static_cast<KonqPopupMenu::Flags>(static_cast<int>(itemFlags));
+
+    KonqPopupMenu::ActionGroupMap popupActionGroups = convertActionGroups(actionGroups);
+
     PopupMenuGUIClient *konqyMenuClient = new PopupMenuGUIClient(embeddingServices,
-            actionGroups,
+            popupActionGroups,
             !menuBar()->isVisible() ? m_paShowMenuBar : 0,
             fullScreenMode() ? m_ptaFullScreen : 0
                                                                 );
@@ -4748,30 +4765,24 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     }
 
     if (currentView->isHierarchicalView()) {
-        itemFlags |= KParts::BrowserExtension::ShowCreateDirectory;
+        popupFlags |= KonqPopupMenu::ShowCreateDirectory;
     }
-
-    KonqPopupMenu::Flags kpf = 0;
 
     if (doTabHandling) {
-        actionGroups.insert("tabhandling", tabHandlingActions);
+        popupActionGroups.insert(KonqPopupMenu::TabHandlingActions, tabHandlingActions);
     }
-    //if (kpf & KonqPopupMenu::IsLink)
-    //    actionGroups.insert("linkactions", linkActions);
-    // TODO actionGroups.insert("partactions", partActions);
 
     QPointer<KonqPopupMenu> pPopupMenu = new KonqPopupMenu(
         items,
         viewURL,
         popupMenuCollection,
         m_pMenuNew,
-        kpf,
-        itemFlags,
+        popupFlags,
         // This parent ensures that if the part destroys itself (e.g. KHTML redirection),
         // it will close the popupmenu
         currentView->part()->widget(),
         s_bookmarkManager,
-        actionGroups);
+        popupActionGroups);
 
     if (openedForViewURL && !viewURL.isLocalFile()) {
         pPopupMenu->setURLTitle(currentView->caption());
