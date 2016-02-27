@@ -41,8 +41,10 @@ KonqPopupMenuTest::KonqPopupMenuTest()
     m_appFlags = KonqPopupMenu::NoPlugins;
 }
 
-static QStringList extractActionNames(const QMenu &menu)
+static QStringList extractActionNames(QMenu &menu)
 {
+    menu.aboutToShow(); // signals are now public in Qt5, how convenient :-)
+
     QString lastObjectName;
     QStringList ret;
     bool lastIsSeparator = false;

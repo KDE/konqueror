@@ -95,7 +95,8 @@ public:
     void addNamedAction(const char *name);
     void addGroup(KonqPopupMenu::ActionGroup group);
     void addPlugins();
-    void init(KonqPopupMenu::Flags popupFlags);
+    void populate();
+    void aboutToShow();
 
     void slotPopupNewDir();
     void slotPopupNewView();
@@ -142,9 +143,9 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
     d->m_bookmarkManager = mgr;
     d->m_popupItemProperties.setItems(items);
     d->m_menuActions.setParentWidget(parentWidget);
-    d->init(popupFlags);
+    d->m_popupFlags = popupFlags;
 
-    KAcceleratorManager::manage(this);
+    connect(this, &QMenu::aboutToShow, this, [this]() { d->aboutToShow(); });
 }
 
 void KonqPopupMenuPrivate::addNamedAction(const char *name)
@@ -155,10 +156,14 @@ void KonqPopupMenuPrivate::addNamedAction(const char *name)
     }
 }
 
-void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags popupFlags)
+void KonqPopupMenuPrivate::aboutToShow()
 {
-    m_popupFlags = popupFlags;
+    populate();
+    KAcceleratorManager::manage(q);
+}
 
+void KonqPopupMenuPrivate::populate()
+{
     Q_ASSERT(m_popupItemProperties.items().count() >= 1);
 
     bool bTrashIncluded = false;
@@ -239,7 +244,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags popupFlags)
     // Either 'newview' is in the actions we're given (probably in the tabhandling group)
     // or we need to insert it ourselves (e.g. for the desktop).
     // In the first case, actNewWindow must remain 0.
-    if (((popupFlags & KonqPopupMenu::ShowNewWindow) != 0) && sReading) {
+    if (((m_popupFlags & KonqPopupMenu::ShowNewWindow) != 0) && sReading) {
         const QString openStr = i18n("&Open");
         actNewWindow = new QAction(m_parentWidget /*for status tips*/);
         m_ownActions.append(actNewWindow);
@@ -439,7 +444,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags popupFlags)
     }
 
     if (!isCurrentTrash && !isIntoTrash && sReading &&
-            (popupFlags & KonqPopupMenu::NoPlugins) == 0) {
+            (m_popupFlags & KonqPopupMenu::NoPlugins) == 0) {
         addPlugins(); // now it's time to add plugins
     }
 
