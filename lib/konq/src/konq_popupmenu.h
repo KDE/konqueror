@@ -98,11 +98,9 @@ public:
      * @param parentWidget the widget we're showing this popup for. Helps destroying
      * the popup if the widget is destroyed before the popup.
      *
-     * The actions to pass in include :
-     * showmenubar, go_back, go_forward, go_up, cut, copy, paste, pasteto
+     * The actions to pass in the action collection are :
+     * go_back, go_forward, go_up, reload, cut, copy, paste, pasteto
      * The others items are automatically inserted.
-     *
-     * @todo that list is probably not be up-to-date
      */
     KonqPopupMenu(const KFileItemList &items,
                   const QUrl &viewURL,

@@ -82,8 +82,7 @@ public:
           m_pMenuNew(0),
           m_copyToMenu(parentWidget),
           m_bookmarkManager(0),
-          m_actions(actions),
-          m_ownActionCollection(static_cast<QWidget *>(0))
+          m_actions(actions)
     {
     }
 
@@ -119,7 +118,6 @@ public:
     KonqCopyToMenu m_copyToMenu;
     KBookmarkManager *m_bookmarkManager;
     KActionCollection &m_actions;
-    KActionCollection m_ownActionCollection; // only used by plugins; KDE5: pass m_ownActions instead
     QList<QAction *> m_ownActions;
     KonqPopupMenu::ActionGroupMap m_actionGroups;
 };
