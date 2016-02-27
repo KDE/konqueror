@@ -90,8 +90,6 @@ public:
 
     /**
      * Constructor
-     * @param manager the bookmark manager for the "add to bookmark" action
-     * Only used if ShowBookmark is set
      * @param items the list of file items the popupmenu should be shown for
      * @param viewURL the URL shown in the view, to test for RMB click on view background
      * @param actions list of actions the caller wants to see in the menu
@@ -111,15 +109,24 @@ public:
                   KActionCollection &actions,
                   KNewFileMenu *newMenu,
                   Flags flags,
-                  QWidget *parentWidget,
-                  KBookmarkManager *manager = 0,
-                  const ActionGroupMap &actionGroups = ActionGroupMap()
+                  QWidget *parentWidget
                  );
 
     /**
      * Don't forget to destroy the object
      */
     ~KonqPopupMenu();
+
+    /**
+     * Sets the bookmark manager for the "add to bookmark" action.
+     * Only used if ShowBookmark is set
+     */
+    void setBookmarkManager(KBookmarkManager *manager);
+
+    /**
+     * Sets the additional actions to show in the context menu
+     */
+    void setActionGroups(const ActionGroupMap &actionGroups);
 
     /**
      * Set the title of the URL, when the popupmenu is opened for a single URL.

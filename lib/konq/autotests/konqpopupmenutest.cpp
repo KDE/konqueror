@@ -182,7 +182,8 @@ void KonqPopupMenuTest::testFile()
     actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -222,7 +223,8 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -255,7 +257,8 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -287,7 +290,8 @@ void KonqPopupMenuTest::testSubDirectory()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
     qDebug() << actions;
@@ -319,7 +323,8 @@ void KonqPopupMenuTest::testViewDirectory()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -354,7 +359,8 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -387,7 +393,9 @@ void KonqPopupMenuTest::testHtmlLink()
     actionGroups.insert(KonqPopupMenu::LinkActions, m_linkActions->actions());
     actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
+    popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
 
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
@@ -427,7 +435,9 @@ void KonqPopupMenuTest::testHtmlPage()
     actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
+                        0 /*parent*/);
+    popup.setActionGroups(actionGroups);
+    popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
 
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;

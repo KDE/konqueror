@@ -131,16 +131,12 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
                              KActionCollection &actions,
                              KNewFileMenu *newMenu,
                              Flags popupFlags,
-                             QWidget *parentWidget,
-                             KBookmarkManager *mgr,
-                             const KonqPopupMenu::ActionGroupMap &actionGroups)
+                             QWidget *parentWidget)
     : QMenu(parentWidget),
       d(new KonqPopupMenuPrivate(this, actions, parentWidget))
 {
-    d->m_actionGroups = actionGroups;
     d->m_pMenuNew = newMenu;
     d->m_sViewURL = viewURL;
-    d->m_bookmarkManager = mgr;
     d->m_popupItemProperties.setItems(items);
     d->m_menuActions.setParentWidget(parentWidget);
     d->m_popupFlags = popupFlags;
@@ -474,6 +470,16 @@ KonqPopupMenu::~KonqPopupMenu()
 {
     delete d;
     //kDebug(1203) << "~KonqPopupMenu leave";
+}
+
+void KonqPopupMenu::setBookmarkManager(KBookmarkManager *manager)
+{
+    d->m_bookmarkManager = manager;
+}
+
+void KonqPopupMenu::setActionGroups(const KonqPopupMenu::ActionGroupMap &actionGroups)
+{
+    d->m_actionGroups = actionGroups;
 }
 
 void KonqPopupMenu::setURLTitle(const QString &urlTitle)
