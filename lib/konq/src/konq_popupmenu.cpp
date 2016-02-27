@@ -127,13 +127,11 @@ public:
 KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
                              const QUrl &viewURL,
                              KActionCollection &actions,
-                             KNewFileMenu *newMenu,
                              Flags popupFlags,
                              QWidget *parentWidget)
     : QMenu(parentWidget),
       d(new KonqPopupMenuPrivate(this, actions, parentWidget))
 {
-    d->m_pMenuNew = newMenu;
     d->m_sViewURL = viewURL;
     d->m_popupItemProperties.setItems(items);
     d->m_menuActions.setParentWidget(parentWidget);
@@ -468,6 +466,11 @@ KonqPopupMenu::~KonqPopupMenu()
 {
     delete d;
     //kDebug(1203) << "~KonqPopupMenu leave";
+}
+
+void KonqPopupMenu::setNewFileMenu(KNewFileMenu *newMenu)
+{
+    d->m_pMenuNew = newMenu;
 }
 
 void KonqPopupMenu::setBookmarkManager(KBookmarkManager *manager)

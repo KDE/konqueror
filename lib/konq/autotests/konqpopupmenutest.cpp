@@ -181,8 +181,9 @@ void KonqPopupMenuTest::testFile()
     actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
     actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags,
                         0 /*parent*/);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -222,8 +223,8 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     //actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
     actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -256,8 +257,8 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -289,8 +290,8 @@ void KonqPopupMenuTest::testSubDirectory()
     actionGroups.insert(KonqPopupMenu::EditActions, m_fileEditActions->actions());
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -322,8 +323,8 @@ void KonqPopupMenuTest::testViewDirectory()
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -358,8 +359,8 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -392,8 +393,8 @@ void KonqPopupMenuTest::testHtmlLink()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
     actionGroups.insert(KonqPopupMenu::LinkActions, m_linkActions->actions());
     actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
     popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
 
@@ -434,8 +435,8 @@ void KonqPopupMenuTest::testHtmlPage()
     m_actionCollection.addAction("setEncoding", setEncoding);
     actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags,
-                        0 /*parent*/);
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
+    popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
     popup.setBookmarkManager(KBookmarkManager::userBookmarksManager());
 

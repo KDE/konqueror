@@ -105,15 +105,18 @@ public:
     KonqPopupMenu(const KFileItemList &items,
                   const QUrl &viewURL,
                   KActionCollection &actions,
-                  KNewFileMenu *newMenu,
                   Flags flags,
-                  QWidget *parentWidget
-                 );
+                  QWidget *parentWidget = 0);
 
     /**
      * Don't forget to destroy the object
      */
     ~KonqPopupMenu();
+
+    /**
+     * Sets the "New file" menu instance. This allows to share it with the menubar.
+     */
+    void setNewFileMenu(KNewFileMenu *newMenu);
 
     /**
      * Sets the bookmark manager for the "add to bookmark" action.

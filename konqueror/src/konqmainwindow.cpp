@@ -4776,11 +4776,11 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         items,
         viewURL,
         popupMenuCollection,
-        m_pMenuNew,
         popupFlags,
         // This parent ensures that if the part destroys itself (e.g. KHTML redirection),
         // it will close the popupmenu
         currentView->part()->widget());
+    pPopupMenu->setNewFileMenu(m_pMenuNew);
     pPopupMenu->setBookmarkManager(s_bookmarkManager);
     pPopupMenu->setActionGroups(popupActionGroups);
 
