@@ -314,6 +314,8 @@ bool WebKitSettings::hoverLink() const
 
 void WebKitSettings::init()
 {
+  initWebKitSettings();
+
   KConfig global( "khtmlrc", KConfig::NoGlobals );
   init( &global, true );
 
@@ -324,7 +326,6 @@ void WebKitSettings::init()
 
   initNSPluginSettings();
   initCookieJarSettings();
-  initWebKitSettings();
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
