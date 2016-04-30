@@ -112,7 +112,7 @@
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <ksycoca.h>
-#include <ktemporaryfile.h>
+#include <QTemporaryFile>
 #include <ktogglefullscreenaction.h>
 #include <ktoolbarpopupaction.h>
 #include <kurlcompletion.h>
@@ -1541,24 +1541,23 @@ void KonqMainWindow::slotSendFile()
         }
         if ((*it).isLocalFile() && QFileInfo((*it).toLocalFile()).isDir()) {
             // Create a temp dir, so that we can put the ZIP file in it with a proper name
-            QString zipFileName;
-            {
-                //TODO This should use KTempDir
-                KTemporaryFile zipFile;
-                zipFile.open();
-                zipFileName = zipFile.fileName();
+            // Problem: when to delete it?
+            QTemporaryDir tempDir;
+            tempDir.setAutoRemove(false);
+            if (!tempDir.isValid()) {
+                qWarning() << "Could not create temporary dir";
+                continue;
             }
-
-            QDir().mkdir(zipFileName);
-            zipFileName = zipFileName + '/' + (*it).fileName() + ".zip";
+            const QString zipFileName = tempDir.path() + '/' + (*it).fileName() + ".zip";
             KZip zip(zipFileName);
             if (!zip.open(QIODevice::WriteOnly)) {
-                continue;    // TODO error message
+                qWarning() << "Could not open" << zipFileName << "for writing";
+                continue;
             }
             zip.addLocalDirectory((*it).path(), QString());
             zip.close();
             fileNameList += (*it).fileName() + ".zip";
-            urls.append(zipFileName);
+            urls.append(QUrl::fromLocalFile(zipFileName).url());
         } else {
             fileNameList += (*it).fileName();
             urls.append((*it).url());
@@ -5171,16 +5170,13 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
                 ) {
                 case KMessageBox::Yes :
                     break;
-                case KMessageBox::No : {
+                case KMessageBox::No :
                     e->ignore();
                     slotRemoveTab();
                     return;
-                }
-                break;
-                case KMessageBox::Cancel : {
+                case KMessageBox::Cancel :
                     e->ignore();
                     return;
-                }
                 }
             }
         }
@@ -5396,8 +5392,8 @@ void KonqMainWindow::slotAddWebSideBar(const QUrl &url, const QString &name)
 
 void KonqMainWindow::addBookmarksIntoCompletion(const KBookmarkGroup &group)
 {
-    static const QString &http = KGlobal::staticQString("http");
-    static const QString &ftp = KGlobal::staticQString("ftp");
+    const QString http = QStringLiteral("http");
+    const QString ftp = QStringLiteral("ftp");
 
     if (group.isNull()) {
         return;

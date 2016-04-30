@@ -25,11 +25,11 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 
-#include <ktemporaryfile.h>
 #include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <QDebug>
 #include <kcmdlineargs.h>
+#include <kglobal.h>
 #include <QtCore/QFile>
 
 #include <config-konqueror.h>

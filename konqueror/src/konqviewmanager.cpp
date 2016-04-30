@@ -44,7 +44,7 @@
 #include <QDebug>
 #include <kapplication.h>
 #include <kglobalsettings.h>
-#include <ktemporaryfile.h>
+#include <QTemporaryFile>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kmenu.h>
@@ -292,7 +292,7 @@ void KonqViewManager::duplicateTab(int tabIndex, bool openAfterCurrentPage)
     printFullHierarchy();
 #endif
 
-    KTemporaryFile tempFile;
+    QTemporaryFile tempFile;
     tempFile.open();
     KConfig config(tempFile.fileName());
     KConfigGroup profileGroup(&config, "Profile");
@@ -326,7 +326,7 @@ KonqMainWindow *KonqViewManager::breakOffTab(int tab, const QSize &windowSize)
     printFullHierarchy();
 #endif
 
-    KTemporaryFile tempFile;
+    QTemporaryFile tempFile;
     tempFile.open();
     KSharedConfigPtr config = KSharedConfig::openConfig(tempFile.fileName());
     KConfigGroup profileGroup(config, "Profile");
@@ -1650,7 +1650,7 @@ void KonqViewManager::applyConfiguration()
 
 KonqMainWindow *KonqViewManager::duplicateWindow()
 {
-    KTemporaryFile tempFile;
+    QTemporaryFile tempFile;
     tempFile.open();
     KConfig config(tempFile.fileName());
     KConfigGroup profileGroup(&config, "Profile");
