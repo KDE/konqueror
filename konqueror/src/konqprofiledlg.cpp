@@ -27,7 +27,7 @@
 #include <kvbox.h>
 #include <QListWidgetItem>
 
-#include <kdebug.h>
+#include <QDebug>
 #include <kstandardguiitem.h>
 #include <kio/global.h>
 #include <kstandarddirs.h>
@@ -155,7 +155,7 @@ void KonqProfileDlg::loadAllProfiles(const QString &preselectProfile)
     for (; eIt != eEnd; ++eIt) {
         QListWidgetItem *item = new KonqProfileItem(d->m_pListView, eIt.key());
         QString filename = eIt.value().mid(eIt.value().lastIndexOf('/') + 1);
-        kDebug() << filename;
+        qDebug() << filename;
         if (filename == preselectProfile) {
             profileFound = true;
             d->m_pProfileNameLineEdit->setText(eIt.key());
@@ -182,7 +182,7 @@ void KonqProfileDlg::slotSave()
         }
     }
 
-    kDebug() << "Saving as " << name;
+    qDebug() << "Saving as " << name;
     d->m_pViewManager->saveViewProfileToFile(name, d->m_pProfileNameLineEdit->text(),
             d->m_cbSaveURLs->isChecked() ? KonqFrameBase::saveURLs : KonqFrameBase::None);
 

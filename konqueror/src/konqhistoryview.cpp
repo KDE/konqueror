@@ -33,7 +33,7 @@
 
 #include <kactioncollection.h>
 #include <QAction>
-#include <kdebug.h>
+#include <QDebug>
 #include <QIcon>
 #include <klineedit.h>
 #include <KLocalizedString>

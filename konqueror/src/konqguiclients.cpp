@@ -22,7 +22,7 @@
 
 // KDE
 #include <ktoggleaction.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <QIcon>
 #include <kiconloader.h>
 #include <KLocalizedString>
@@ -132,7 +132,7 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
     for (; cIt != cEnd; ++cIt) {
         QString description = i18n("Show %1", (*cIt)->name());
         QString name = (*cIt)->desktopEntryName();
-        //kDebug() << "ToggleViewGUIClient: name=" << name;
+        //qDebug() << "ToggleViewGUIClient: name=" << name;
         KToggleAction *action = new KToggleAction(description, this);
         mainWindow->actionCollection()->addAction(name.toLatin1(), action);
 
@@ -218,7 +218,7 @@ void ToggleViewGUIClient::slotToggleView(bool toggle)
             viewManager->setActivePart(childView->part());
         }
 
-        kDebug() << "ToggleViewGUIClient::slotToggleView setToggleView(true) on " << childView;
+        qDebug() << "ToggleViewGUIClient::slotToggleView setToggleView(true) on " << childView;
         childView->setToggleView(true);
 
         m_mainWindow->viewCountChanged();

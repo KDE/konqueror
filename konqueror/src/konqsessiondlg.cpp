@@ -28,7 +28,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QDirIterator>
 
-#include <kdebug.h>
+#include <QDebug>
 #include <kio/copyjob.h>
 #include <ktempdir.h>
 #include <kio/renamedialog.h>

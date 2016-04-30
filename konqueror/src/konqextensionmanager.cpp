@@ -23,7 +23,7 @@
 // KDE
 #include <kxmlguifactory.h>
 #include <kconfig.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <KLocalizedString>
 #include <kcomponentdata.h>
 #include <kparts/plugin.h>

@@ -26,7 +26,7 @@
 #include "konqview.h"
 
 #include <kapplication.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kurifilter.h>
 #include <KLocalizedString>
 #include <kstandarddirs.h>
@@ -78,7 +78,7 @@ KonqMainWindow *KonqMisc::createSimpleWindow(const QUrl &url, const KParts::Open
 
 KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequest &req, bool openUrl)
 {
-    //kDebug() << "url=" << url;
+    //qDebug() << "url=" << url;
     // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
     const QString profileName = url.isEmpty() || // e.g. in window.open
                                 (!(KProtocolManager::supportsListing(url)) || // e.g. any HTTP url

@@ -37,7 +37,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kcompletionbox.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kiconloader.h>
 #include <kicontheme.h>
 #include <klineedit.h>
@@ -203,7 +203,7 @@ void KonqCombo::slotTextEdited(const QString &text)
 
 void KonqCombo::setURL(const QString &url)
 {
-    //kDebug() << url << "returnPressed=" << m_returnPressed;
+    //qDebug() << url << "returnPressed=" << m_returnPressed;
     setTemporary(url);
 
     if (m_returnPressed) {   // Really insert...
@@ -224,7 +224,7 @@ void KonqCombo::setTemporary(const QString &text)
 
 void KonqCombo::setTemporary(const QString &url, const QPixmap &pix)
 {
-    //kDebug() << url << "temporary=" << temporary;
+    //qDebug() << url << "temporary=" << temporary;
 
     // Insert a temporary item when we don't have one yet
     if (count() == 0) {
@@ -242,7 +242,7 @@ void KonqCombo::setTemporary(const QString &url, const QPixmap &pix)
 
 void KonqCombo::removeDuplicates(int index)
 {
-    //kDebug() << "starting index= " << index;
+    //qDebug() << "starting index= " << index;
 
     QString url(temporaryItem());
     if (url.endsWith('/')) {
@@ -265,7 +265,7 @@ void KonqCombo::removeDuplicates(int index)
 // called via DBUS in all instances
 void KonqCombo::insertPermanent(const QString &url)
 {
-    //kDebug() << "url=" << url;
+    //qDebug() << "url=" << url;
     saveState();
     setTemporary(url);
     m_permanent = true;
@@ -286,7 +286,7 @@ void KonqCombo::applyPermanent()
 
         QString item = temporaryItem();
         insertItem(KonqPixmapProvider::self()->pixmapFor(item), item, 1, titleOfURL(item));
-        //kDebug() << url;
+        //qDebug() << url;
 
         // Remove all duplicates starting from index = 2
         removeDuplicates(2);
@@ -312,7 +312,7 @@ void KonqCombo::updateItem(const QPixmap &pix, const QString &t, int index, cons
         return;
     }
 
-    // kDebug() << "item=" << t << "index=" << index;
+    // qDebug() << "item=" << t << "index=" << index;
 
     setItemText(index, t);
     setItemIcon(index, pix);

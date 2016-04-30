@@ -21,7 +21,7 @@
 #include "konqrun.h"
 
 // KDE
-#include <kdebug.h>
+#include <QDebug>
 #include <kmessagebox.h>
 #include <KLocalizedString>
 #include <kio/job.h>
@@ -43,7 +43,7 @@ KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
                          !req.args.reload() || req.userRequestedReload),
       m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
 {
-    //kDebug() << "KonqRun::KonqRun() " << this;
+    //qDebug() << "KonqRun::KonqRun() " << this;
     Q_ASSERT(!m_pMainWindow.isNull());
     if (m_pView) {
         m_pView->setLoading(true);
@@ -52,7 +52,7 @@ KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
 
 KonqRun::~KonqRun()
 {
-    //kDebug() << "KonqRun::~KonqRun() " << this;
+    //qDebug() << "KonqRun::~KonqRun() " << this;
     if (m_pView && m_pView->run() == this) {
         m_pView->setRun(0);
     }
@@ -60,7 +60,7 @@ KonqRun::~KonqRun()
 
 void KonqRun::foundMimeType(const QString &_type)
 {
-    //kDebug() << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
+    //qDebug() << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
 
     QString mimeType = _type; // this ref comes from the job, we lose it when using KIO again
 
@@ -137,7 +137,7 @@ void KonqRun::foundMimeType(const QString &_type)
     }
 
     if (!hasFinished()) {
-        kDebug() << "Nothing special to do in KonqRun, falling back to KRun";
+        qDebug() << "Nothing special to do in KonqRun, falling back to KRun";
         KRun::foundMimeType(mimeType);
     }
 }
@@ -206,7 +206,7 @@ void KonqRun::scanFile()
 void KonqRun::slotRedirection(KIO::Job *job, const QUrl &redirectedToURL)
 {
     QUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
-    kDebug() << redirectFromURL << "->" << redirectedToURL;
+    qDebug() << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending(redirectFromURL);
 
     if (redirectedToURL.scheme() == "mailto") {

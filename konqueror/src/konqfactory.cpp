@@ -32,7 +32,7 @@
 
 // KDE
 #include <k4aboutdata.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
@@ -70,7 +70,7 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
     KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, QString(), m_args);
 
     if (!part) {
-        kError() << "No KParts::ReadOnlyPart created from" << m_libName;
+        qWarning() << "No KParts::ReadOnlyPart created from" << m_libName;
     } else {
         QFrame *frame = qobject_cast<QFrame *>(part->widget());
         if (frame) {
@@ -102,7 +102,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
                                         KService::List *appServiceOffers,
                                         bool forceAutoEmbed)
 {
-    kDebug() << "Trying to create view for" << serviceType << serviceName;
+    qDebug() << "Trying to create view for" << serviceType << serviceName;
 
     // We need to get those in any case
     KService::List offers, appOffers;
@@ -129,7 +129,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     if (! forceAutoEmbed) {
         if (! KonqFMSettings::settings()->shouldEmbed(serviceType)) {
-            kDebug() << "KonqFMSettings says: don't embed this servicetype";
+            qDebug() << "KonqFMSettings says: don't embed this servicetype";
             return KonqViewFactory();
         }
     }
@@ -141,7 +141,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         KService::List::const_iterator it = offers.constBegin();
         for (; it != offers.constEnd() && !service; ++it) {
             if ((*it)->desktopEntryName() == serviceName) {
-                kDebug() << "Found requested service" << serviceName;
+                qDebug() << "Found requested service" << serviceName;
                 service = *it;
             }
         }
@@ -149,7 +149,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     KonqViewFactory viewFactory;
     if (service) {
-        kDebug() << "Trying to open lib for requested service " << service->desktopEntryName();
+        qDebug() << "Trying to open lib for requested service " << service->desktopEntryName();
         viewFactory = tryLoadingService(service);
         // If this fails, then return an error.
         // When looking for konq_sidebartng or konq_aboutpage, we don't want to end up
@@ -160,13 +160,13 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
             service = (*it);
             // Allowed as default ?
             QVariant prop = service->property("X-KDE-BrowserView-AllowAsDefault");
-            kDebug() << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
+            qDebug() << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
             if (!prop.isValid() || prop.toBool()) {   // defaults to true
-                //kDebug() << "Trying to open lib for service " << service->name();
+                //qDebug() << "Trying to open lib for service " << service->name();
                 viewFactory = tryLoadingService(service);
                 // If this works, we exit the loop.
             } else {
-                kDebug() << "Not allowed as default " << service->desktopEntryName();
+                qDebug() << "Not allowed as default " << service->desktopEntryName();
             }
         }
     }
@@ -177,9 +177,9 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     if (viewFactory.isNull()) {
         if (offers.isEmpty()) {
-            kWarning() << "no part was associated with" << serviceType;
+            qWarning() << "no part was associated with" << serviceType;
         } else {
-            kWarning() << "no part could be loaded";    // full error was shown to user already
+            qWarning() << "no part could be loaded";    // full error was shown to user already
         }
         return viewFactory;
     }

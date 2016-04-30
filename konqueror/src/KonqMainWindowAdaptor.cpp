@@ -22,7 +22,7 @@
 #include "KonqViewAdaptor.h"
 #include "konqview.h"
 
-#include <kdebug.h>
+#include <QDebug>
 #include <kstartupinfo.h>
 
 KonqMainWindowAdaptor::KonqMainWindowAdaptor(KonqMainWindow *mainWindow)
@@ -69,7 +69,7 @@ void KonqMainWindowAdaptor::reload()
 
 QDBusObjectPath KonqMainWindowAdaptor::currentView()
 {
-    kDebug();
+    qDebug();
     KonqView *view = m_pMainWindow->currentView();
     if (!view) {
         return QDBusObjectPath();

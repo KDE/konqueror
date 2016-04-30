@@ -28,7 +28,7 @@
 #include "konqsettings.h"
 
 #include <kapplication.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kwindowsystem.h>
 
 #include <QtCore/QFile>
@@ -112,7 +112,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile(const QString &
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime(0);
 #endif
-    kDebug() << path << "," << filename;
+    qDebug() << path << "," << filename;
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename);
     if (!res) {
         return QDBusObjectPath("/");
@@ -230,10 +230,10 @@ bool KonquerorAdaptor::processCanBeReused(int screen)
         return true;
     }
     foreach (KonqMainWindow *window, *windows) {
-        kDebug() << "processCanBeReused: count=" << window->viewCount();
+        qDebug() << "processCanBeReused: count=" << window->viewCount();
         const KonqMainWindow::MapViews &views = window->viewMap();
         foreach (KonqView *view, views) {
-            kDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url();
+            qDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url();
             if (!allowed_parts.contains(view->service()->entryPath())) {
                 return false;
             }

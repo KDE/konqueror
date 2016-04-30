@@ -23,7 +23,7 @@
 
 #include <QtDBus/QtDBus>
 #include <QTimer>
-#include <kdebug.h>
+#include <QDebug>
 #include <kconfig.h>
 #include <kcompletion.h>
 
@@ -89,7 +89,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
                                       const QString &typedUrl,
                                       const QString &title)
 {
-    //kDebug() << _url << "Typed URL:" << typedUrl << ", Title:" << title;
+    //qDebug() << _url << "Typed URL:" << typedUrl << ", Title:" << title;
 
     if (filterOut(_url)) {   // we only want remote URLs
         return;
@@ -169,7 +169,7 @@ void KonqHistoryManager::insert(const QString &url)
 
 void KonqHistoryManager::removePending(const QUrl &url)
 {
-    // kDebug() << "Removing pending..." << url;
+    // qDebug() << "Removing pending..." << url;
 
     if (url.isLocalFile()) {
         return;

@@ -23,7 +23,7 @@
 #include "konqsettingsxt.h"
 #include "konqpixmapprovider.h"
 
-#include <kdebug.h>
+#include <QDebug>
 #include <QIcon>
 #include <kmenu.h>
 #include <kglobal.h>
@@ -43,7 +43,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry *> &history, int his
 {
     Q_ASSERT(popup);   // kill me if this 0... :/
 
-    //kDebug() << "fillHistoryPopup position: " << history.at();
+    //qDebug() << "fillHistoryPopup position: " << history.at();
     int index = 0;
     if (onlyBack || onlyForward) { // this if() is always true nowadays.
         index += historyIndex; // Jump to current item
@@ -63,7 +63,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry *> &history, int his
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction *action = new QAction(QIcon::fromTheme(iconName), text, popup);
         action->setData(index - historyIndex);
-        //kDebug() << text << index - historyIndex;
+        //qDebug() << text << index - historyIndex;
         popup->addAction(action);
         if (++i > 10) {
             break;
@@ -74,7 +74,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry *> &history, int his
             ++index;
         }
     }
-    //kDebug() << "After fillHistoryPopup position: " << history.at();
+    //qDebug() << "After fillHistoryPopup position: " << history.at();
 }
 
 ///////////////////////////////

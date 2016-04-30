@@ -19,7 +19,7 @@
 
 #include "delayedinitializer.h"
 #include <QtCore/QTimer>
-#include <kdebug.h>
+#include <QDebug>
 #include <QtCore/QEvent>
 
 DelayedInitializer::DelayedInitializer(int eventType, QObject *parent)

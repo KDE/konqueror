@@ -28,7 +28,7 @@
 #include <ktemporaryfile.h>
 #include <KLocalizedString>
 #include <kstandarddirs.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kcmdlineargs.h>
 #include <QtCore/QFile>
 
@@ -73,7 +73,7 @@ static bool tryPreload()
         // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
         KonqMainWindow::setPreloadedFlag(true);
         KonqMainWindow::setPreloadedWindow(win);
-        kDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
+        qDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
         return true;
     } else {
         return false; // no preloading
@@ -125,7 +125,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             if (className == QLatin1String("KonqMainWindow")) {
                 (new KonqMainWindow())->restore(n);
             } else {
-                kWarning() << "Unknown class" << className << "in session saved data!";
+                qWarning() << "Unknown class" << className << "in session saved data!";
             }
             ++n;
         }
@@ -150,7 +150,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
             QDirIterator it(sessionPath, QDir::Readable | QDir::Files);
             if (!it.hasNext()) {
-                kError() << "session" << session << "not found or empty";
+                qWarning() << "session" << session << "not found or empty";
                 return -1;
             }
 
@@ -210,7 +210,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             KonqMainWindow *mainwin = 0;
             if (args->isSet("profile")) {
                 const QString profile = args->getOption("profile");
-                //kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
+                //qDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
                 mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, req);
             } else {
                 mainwin = KonqMisc::createNewWindow(firstUrl, req);

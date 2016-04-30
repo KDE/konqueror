@@ -18,7 +18,7 @@
 */
 
 #include "konqframestatusbar.h"
-#include <kdebug.h>
+#include <QDebug>
 #include "konqframe.h"
 #include "konqview.h"
 #include <kiconloader.h>
@@ -214,7 +214,7 @@ void KonqFrameStatusBar::message(const QString &msg)
 
 void KonqFrameStatusBar::slotDisplayStatusText(const QString &text)
 {
-    //kDebug() << text;
+    //qDebug() << text;
     m_pStatusLabel->setMessage(text, KonqStatusBarMessageLabel::Default);
     m_savedMessage = text;
 }

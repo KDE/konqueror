@@ -30,7 +30,7 @@
 #include <kactionmenu.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kconfiggroup.h>
 #include <kio/global.h>
 #include <kbookmarkmanager.h>
@@ -125,7 +125,7 @@ void KBookmarkBar::clear()
 void KBookmarkBar::slotBookmarksChanged(const QString &group)
 {
     KBookmarkGroup tb = getToolbar(); // heavy for non cached toolbar version
-    kDebug(7043) << "KBookmarkBar::slotBookmarksChanged( " << group << " )";
+    qDebug() << "KBookmarkBar::slotBookmarksChanged( " << group << " )";
 
     if (tb.isNull()) {
         return;
@@ -318,7 +318,7 @@ bool KBookmarkBar::eventFilter(QObject *, QEvent *e)
             return false;
         }
         if (list.count() > 1)
-            kWarning(7043) << "Sorry, currently you can only drop one address "
+            qWarning() << "Sorry, currently you can only drop one address "
                            "onto the bookmark bar!";
         KBookmark toInsert = list.first();
 

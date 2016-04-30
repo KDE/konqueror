@@ -21,17 +21,16 @@
 #include "konqhistorysettings.h"
 
 // KDE
-#include <kapplication.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
-#include <kglobal.h>
 #include <kconfiggroup.h>
 
-struct KonqHistorySettingsSingleton {
+class KonqHistorySettingsSingleton {
+public:
     KonqHistorySettings self;
 };
 
-K_GLOBAL_STATIC(KonqHistorySettingsSingleton, globalHistorySettings)
+Q_GLOBAL_STATIC(KonqHistorySettingsSingleton, globalHistorySettings)
 KonqHistorySettings *KonqHistorySettings::self()
 {
     return &globalHistorySettings->self;
@@ -58,13 +57,7 @@ KonqHistorySettings::~KonqHistorySettings()
 
 void KonqHistorySettings::readSettings(bool reparse)
 {
-    KSharedConfigPtr config;
-
-    if (KGlobal::mainComponent().componentName() == QLatin1String("konqueror")) {
-        config = KSharedConfig::openConfig();
-    } else {
-        config = KSharedConfig::openConfig("konquerorrc");
-    }
+    KSharedConfigPtr config = KSharedConfig::openConfig(); // read konquerorrc
 
     if (reparse) {
         config->reparseConfiguration();
@@ -89,7 +82,7 @@ void KonqHistorySettings::readSettings(bool reparse)
 
 void KonqHistorySettings::applySettings()
 {
-    KConfigGroup config(KSharedConfig::openConfig("konquerorrc"), "HistorySettings");
+    KConfigGroup config(KSharedConfig::openConfig(), "HistorySettings"); // write to konquerorrc
 
     config.writeEntry("Value youngerThan", m_valueYoungerThan);
     config.writeEntry("Value olderThan", m_valueOlderThan);

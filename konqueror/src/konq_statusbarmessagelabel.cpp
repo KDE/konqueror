@@ -26,7 +26,7 @@
 #include <kiconloader.h>
 #include <QIcon>
 #include <KLocalizedString>
-#include <kdebug.h>
+#include <QDebug>
 
 #include <QFontMetrics>
 #include <QPainter>
@@ -237,7 +237,7 @@ void KonqStatusBarMessageLabel::paintEvent(QPaintEvent * /* event */)
 
         // Vertical centering
         const QRect textRect = QStyle::alignedRect(Qt::LeftToRight, Qt::AlignLeft | Qt::AlignVCenter, sz, availTextRect);
-        //kDebug() << d->m_text << " sz=" << sz << textRect;
+        //qDebug() << d->m_text << " sz=" << sz << textRect;
 
         // What about wordwrap here?
 
