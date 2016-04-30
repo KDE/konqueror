@@ -1,6 +1,5 @@
 @PACKAGE_INIT@
 
-find_dependency(KF5KDELibs4Support)
 find_dependency(KF5XmlGui)
 find_dependency(KF5Config)
 find_dependency(KF5KIO)
