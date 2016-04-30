@@ -39,6 +39,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QCursor>
+#include <KSharedConfig>
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())
 

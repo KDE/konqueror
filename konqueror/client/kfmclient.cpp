@@ -25,7 +25,7 @@
 #include <kcmdlineargs.h>
 #include <KLocalizedString>
 #include <kprocess.h>
-#include <kstandarddirs.h>
+
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kmimetype.h>
@@ -45,10 +45,11 @@
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
 
-#include <QtCore/QDir>
-#include <QtCore/QMimeDatabase>
-#include <QtCore/QRegExp>
-#include <QtCore/QUrl>
+#include <QDir>
+#include <QMimeDatabase>
+#include <QRegExp>
+#include <QUrl>
+#include <QStandardPaths>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -201,7 +202,7 @@ static bool startNewKonqueror(QString url, QString mimetype, const QString &prof
         if (profile.isEmpty()) {
             return true;
         }
-        QString profilepath = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + profile);
+        QString profilepath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profile);
         if (profilepath.isEmpty()) {
             return true;
         }
@@ -490,7 +491,7 @@ bool ClientApp::openProfile(const QString &profileName, const QString &url, cons
         // so when we arrive here, konq is up and running already, and appId contains the identification
     }
 
-    QString profile = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + profileName);
+    QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profileName);
     if (profile.isEmpty()) {
         fprintf(stderr, "%s: %s", programName, i18n("Profile '%1' not found\n", profileName).toLocal8Bit().data());
         ::exit(0);

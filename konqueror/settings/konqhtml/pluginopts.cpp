@@ -43,6 +43,8 @@
 #include <KStandardGuiItem>
 #include <KGlobal>
 #include <KUrl>
+#include <QStandardPaths>
+#include <KSharedConfig>
 // Local
 #include "htmlopts.h"
 #include "ui_nsconfigwidget.h"
@@ -333,7 +335,7 @@ void KPluginOptions::scan()
 
     nspluginscan = new KProcess(this);
     nspluginscan->setOutputChannelMode(KProcess::SeparateChannels);
-    QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
+    QString scanExe = KStandardDirs::findExe("nspluginscan");
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer";
 
@@ -543,7 +545,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
     QRegExp version(";version=[^:]*:");
 
     // open the cache file
-    QFile cachef(KStandardDirs::locate("data", "nsplugins/cache"));
+    QFile cachef(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "nsplugins/cache"));
     if (!cachef.exists() || !cachef.open(QIODevice::ReadOnly)) {
         kDebug() << "Could not load plugin cache file!";
         return;

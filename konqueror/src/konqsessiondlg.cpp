@@ -46,6 +46,7 @@
 #include <kdialog.h>
 #include <klistwidget.h>
 #include <kpushbutton.h>
+#include <QStandardPaths>
 
 class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
@@ -82,7 +83,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->m_pDeleteButton->setIcon(QIcon::fromTheme("edit-delete"));
     d->m_pNewButton->setIcon(QIcon::fromTheme("document-new"));
 
-    QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
 
     d->m_pModel = new KDirModel(d->m_pListView);
     d->m_pModel->sort(QDir::Name);
@@ -182,7 +183,7 @@ void KonqSessionDlg::slotRename(QUrl dirpathTo)
         if (dir.exists()) {
             slotRename(dirpathTo);
         } else {
-            QDir dir(KStandardDirs::locateLocal("appdata", "sessions/"));
+            QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/");
             dir.rename(dirpathFrom.fileName(), dlg.newDestUrl().fileName());
         }
     }

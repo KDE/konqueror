@@ -37,6 +37,7 @@
 #include <kaboutdata.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <KSharedConfig>
 
 // Local
 #include "jsopts.h"

@@ -39,6 +39,7 @@
 
 #include <QtDBus/QtDBus>
 #include <QDir>
+#include <QStandardPaths>
 
 static void listProfiles()
 {
@@ -52,7 +53,7 @@ static void listProfiles()
 
 static void listSessions()
 {
-    const QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
+    const QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
     QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
     while (it.hasNext()) {
         QFileInfo fileInfo(it.next());
@@ -145,7 +146,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             const QString session = args->getOption("open-session");
             QString sessionPath = session;
             if (!session.startsWith('/')) {
-                sessionPath = KStandardDirs::locateLocal("appdata", "sessions/" + session);
+                sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
             }
 
             QDirIterator it(sessionPath, QDir::Readable | QDir::Files);

@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QClipboard>
 #include <QApplication>
+#include <QStandardPaths>
 
 KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
         const QString &desktopName_, const KConfigGroup &configGroup)
@@ -29,7 +30,7 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
         // and for the toplevel item is broken. When renaming the toplevel item,
         // the module isn't renamed until the next konqueror restart (!).
         // We probably want to get rid of toplevel items when there's only one?
-        path = KStandardDirs::locate("data", "konqsidebartng/entries/" + desktopName_); // ### this breaks global/local merging!
+        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqsidebartng/entries/" + desktopName_); // ### this breaks global/local merging!
     }
 
     widget = new KVBox(parent);

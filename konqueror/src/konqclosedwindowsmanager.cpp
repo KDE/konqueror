@@ -30,9 +30,11 @@
 #include <QtDBus/QtDBus>
 #include <kglobal.h>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+
 #include <kconfig.h>
 #include <unistd.h> // getpid
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 Q_DECLARE_METATYPE(QList<QVariant>)
 
@@ -58,7 +60,7 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyRemove", this, SLOT(slotNotifyRemove(QString,QString,QDBusMessage)));
 
     QString filename = "closeditems/" + KonqMisc::encodeFilename(dbus.baseService());
-    QString file = KStandardDirs::locateLocal("tmp", filename);
+    QString file = QDir::tempPath() + QLatin1Char('/') +  filename;
     QFile::remove(file);
 
     KConfigGroup configGroup(KSharedConfig::openConfig(), "Undo");
@@ -331,7 +333,7 @@ void KonqClosedWindowsManager::removeClosedItemsConfigFiles()
 
     // We are the only instance of konqueror left and thus we can safely remove
     // all those temporary files.
-    QString dir = KStandardDirs::locateLocal("tmp", "closeditems/");
+    QString dir = QDir::tempPath() + QLatin1Char('/') +  "closeditems/";
     QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
     QDirIterator it(dir, QDir::Writable | QDir::Files);
     while (it.hasNext()) {
@@ -349,7 +351,7 @@ void KonqClosedWindowsManager::saveConfig()
 
     // Create / overwrite the saved closed windows list
     QString filename = "closeditems_saved";
-    QString file = KStandardDirs::locateLocal("appdata", filename);
+    QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
     QFile::remove(file);
 
     KConfig *config = new KConfig(file, KConfig::SimpleConfig);
@@ -384,7 +386,7 @@ void KonqClosedWindowsManager ::readConfig()
     }
 
     QString filename = "closeditems_saved";
-    QString file = KStandardDirs::locateLocal("appdata", filename);
+    QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
 
     m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);
 

@@ -25,6 +25,7 @@
 #include <QUrl>
 
 #include <kparts/part.h>
+#include <KSharedConfig>
 
 #include "konqsidebarplugin.h"
 #include "module_manager.h"
@@ -53,8 +54,6 @@ public:
           URL(url_), libName(lib), displayName(dispName_), iconName(iconName_)
     {
     }
-
-    ~ButtonInfo() {}
 
     KonqSidebarPlugin *plugin(QObject *parent);
 

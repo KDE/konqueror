@@ -34,6 +34,7 @@
 #include <kurlrequester.h>
 #include <kconfiggroup.h>
 #include <QStandardPaths>
+#include <KSharedConfig>
 
 // Local
 #include "konqkcmfactory.h"

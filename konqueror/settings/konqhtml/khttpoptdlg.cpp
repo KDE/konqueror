@@ -17,6 +17,7 @@
 #include <kglobal.h>
 #include <kconfiggroup.h>
 #include <KAboutData>
+#include <KSharedConfig>
 
 KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent)
     : KCModule(aboutData, parent), m_pConfig(config), m_groupname(group)

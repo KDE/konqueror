@@ -33,6 +33,8 @@
 #include <konqsessionmanager.h>
 
 #include <QObject>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 class KonqHtmlTest : public QObject
 {
@@ -56,7 +58,7 @@ private Q_SLOTS:
         profile->sync();
 
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-        QProcess::execute(KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME));
+        QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
     }
     void cleanupTestCase()
     {
@@ -132,7 +134,7 @@ private Q_SLOTS:
         origTempFile.close();
 
         KonqMainWindow *mainWindow = new KonqMainWindow;
-        const QString profile = KStandardDirs::locate("data", "konqueror/profiles/webbrowsing");
+        const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
         mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", KUrl(origFile));
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();

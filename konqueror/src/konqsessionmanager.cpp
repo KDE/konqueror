@@ -54,6 +54,8 @@
 #include <QScrollBar>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 class KonqSessionManagerPrivate
 {
@@ -357,7 +359,7 @@ bool SessionRestoreDialog::shouldBeShown(const QString &dontShowAgainName, int *
 }
 
 KonqSessionManager::KonqSessionManager()
-    : m_autosaveDir(KStandardDirs::locateLocal("appdata", "autosave"))
+    : m_autosaveDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "autosave")
     , m_autosaveEnabled(false) // so that enableAutosave works
     , m_createdOwnedByDir(false)
     , m_sessionConfig(0)
@@ -414,7 +416,7 @@ void KonqSessionManager::enableAutosave()
 
     // Create the config file for autosaving current session
     QString filename = QLatin1String("autosave/") + m_baseService;
-    const QString filePath = KStandardDirs::locateLocal("appdata", filename);
+    const QString filePath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
 
     delete m_sessionConfig;
     m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig);

@@ -39,7 +39,7 @@
 
 #include <kaccelgen.h>
 #include <kactionmenu.h>
-#include <kstandarddirs.h>
+
 #include <kstringhandler.h>
 #include <QDebug>
 #include <kapplication.h>
@@ -51,6 +51,8 @@
 #include <kdeversion.h>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 //#define DEBUG_VIEWMGR
 
@@ -892,8 +894,7 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
 
 void KonqViewManager::saveViewProfileToFile(const QString &fileName, const QString &profileName, KonqFrameBase::Options options)
 {
-    const QString path = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                         fileName);
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/konqueror/profiles/") + fileName;
     QFile::remove(path); // in case it exists already
 
     KConfig _cfg(path, KConfig::SimpleConfig);
@@ -936,11 +937,11 @@ void KonqViewManager::setCurrentProfile(const QString &profileFileName)
     m_currentProfile = profileFileName;
 
     // We'll use the profile for saving window settings - so ensure we can save to it
-    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") + profileFileName);
+    const QString localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QString::fromLatin1("konqueror/profiles/") + profileFileName;
     qDebug() << profileFileName << "localPath=" << localPath;
     KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
     if (!QFile::exists(localPath)) {
-        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") + profileFileName);
+        const QString globalFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("konqueror/profiles/") + profileFileName);
         qDebug() << "globalFile=" << globalFile;
         if (!globalFile.isEmpty()) {
             KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);

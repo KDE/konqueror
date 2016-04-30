@@ -31,7 +31,7 @@
 #include <kiconeffect.h>
 #include <konqpixmapprovider.h>
 #include <kcolorscheme.h>
-#include <kstandarddirs.h>
+
 #include <unistd.h>
 #include <QFontDatabase>
 

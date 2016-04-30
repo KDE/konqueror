@@ -29,13 +29,15 @@
 #include <QDebug>
 #include <kurifilter.h>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+
 #include <kwindowsystem.h>
 #include <kprotocolmanager.h>
 #include <kstartupinfo.h>
 #include <kiconloader.h>
 #include <kconfiggroup.h>
 #include <QList>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 /**********************************************
  *
@@ -85,7 +87,7 @@ KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequ
                                  KMimeType::findByUrl(url)->name() == "text/html")
                                 ? "webbrowsing" : "filemanagement";
 
-    const QString profilePath = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + profileName);
+    const QString profilePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profileName);
     return createBrowserWindowFromProfile(profilePath, profileName,
                                           url, req, openUrl);
 }
@@ -100,7 +102,7 @@ KonqMainWindow *KonqMisc::createBrowserWindowFromProfile(const QString &_path, c
             filename = defaultProfileName();
         }
         if (QDir::isRelativePath(filename)) {
-            path = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + filename);
+            path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + filename);
             if (path.isEmpty()) { // not found
                 filename = defaultProfileName();
                 path = defaultProfilePath();
@@ -221,7 +223,7 @@ QString KonqMisc::defaultProfileName()
 
 QString KonqMisc::defaultProfilePath()
 {
-    return KStandardDirs::locate("data", QLatin1String("konqueror/profiles/") + defaultProfileName());
+    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + defaultProfileName());
 }
 
 QString KonqMisc::encodeFilename(QString filename)

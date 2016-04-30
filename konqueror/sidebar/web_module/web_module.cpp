@@ -31,7 +31,7 @@
 #include <kpluginfactory.h>
 #include <kparts/browserextension.h>
 #include <knameandurlinputdialog.h>
-#include <kstandarddirs.h>
+
 #include <khbox.h>
 #include <knuminput.h>
 

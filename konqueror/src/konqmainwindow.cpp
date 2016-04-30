@@ -160,6 +160,8 @@
 #include <kglobalsettings.h>
 #include <kurlauthorized.h>
 #include <QFontDatabase>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
@@ -2983,7 +2985,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     connect(manageSessionsAction, &QAction::triggered, this, &KonqMainWindow::manageSessions);
     popup->insertSeparator(static_cast<QAction *>(0));
 
-    QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
     QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
 
     while (it.hasNext()) {

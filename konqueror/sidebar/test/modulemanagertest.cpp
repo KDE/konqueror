@@ -24,6 +24,8 @@
 #include <kconfiggroup.h>
 #include <module_manager.h>
 #include <qtest_kde.h>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 class ModuleManagerTest : public QObject
 {
@@ -57,7 +59,7 @@ QTEST_KDEMAIN(ModuleManagerTest, NoGUI)
 
 void ModuleManagerTest::initTestCase()
 {
-    const QString configFile = KStandardDirs::locateLocal("config", "konqsidebartngrc");
+    const QString configFile = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + "konqsidebartngrc";
     QFile::remove(configFile);
     KSharedConfig::Ptr config = KSharedConfig::openConfig("konqsidebartngrc");
 
@@ -74,11 +76,11 @@ void ModuleManagerTest::initTestCase()
 
     // Create a "global" dir for the (fake) pre-installed modules,
     // which isn't really global of course, but we can register it as such...
-    m_globalDir = KStandardDirs::locateLocal("data", "sidebartest_global/konqsidebartng/entries/");
+    m_globalDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/konqsidebartng/entries/";
     QVERIFY(QDir(m_globalDir).exists());
     QFile::remove(m_globalDir + "testModule.desktop");
 
-    KGlobal::dirs()->addResourceDir("data", KStandardDirs::locateLocal("data", "sidebartest_global/"), true);
+    KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
 
     // Create a fake pre-installed plugin there.
     KDesktopFile testModule(m_globalDir + "testModule.desktop");
@@ -99,7 +101,7 @@ void ModuleManagerTest::cleanupTestCase()
     delete m_configGroup;
     delete m_configGroup2;
     QFile::remove(m_globalDir + "testModule.desktop");
-    QFile::remove(KStandardDirs::locateLocal("data", "konqsidebartng/entries/testModule.desktop"));
+    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqsidebartng/entries/testModule.desktop");
 }
 
 // This test checks the initial state of things.
@@ -164,7 +166,7 @@ void ModuleManagerTest::testRenameGlobalModule()
     QCOMPARE(modules.count(), m_realModules + 2);
     QVERIFY(modules.contains("testModule.desktop"));
     // A local copy was made
-    const QString localCopy = KStandardDirs::locateLocal("data", "konqsidebartng/entries/testModule.desktop");
+    const QString localCopy = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqsidebartng/entries/testModule.desktop";
     kDebug() << localCopy;
     QVERIFY(QFile(localCopy).exists());
     // We didn't lose the icon (e.g. due to lack of merging)

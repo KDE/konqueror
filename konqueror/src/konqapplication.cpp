@@ -24,6 +24,7 @@
 #include "KonquerorAdaptor.h"
 #include "konqviewmanager.h"
 #include <kglobal.h>
+#include <KSharedConfig>
 
 KonquerorApplication::KonquerorApplication()
     : KApplication()

@@ -28,6 +28,8 @@
 #include <kstandarddirs.h>
 #include <QDir>
 #include <QUrl>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 // Input data:
 // Global dir: list of desktop files.
@@ -47,7 +49,7 @@
 ModuleManager::ModuleManager(KConfigGroup *config)
     : m_config(config)
 {
-    m_localPath = KGlobal::dirs()->saveLocation("data", relativeDataPath(), true);
+    m_localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + relativeDataPath();
 }
 
 QStringList ModuleManager::modules() const
@@ -56,7 +58,7 @@ QStringList ModuleManager::modules() const
     const QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
     const QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
 
-    const QStringList entries_dirs = KGlobal::dirs()->findDirs("data", relativeDataPath());
+    const QStringList entries_dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, relativeDataPath());
     if (entries_dirs.isEmpty()) { // Ooops
         kWarning() << "No global directory found for apps/konqsidebartng/entries. Installation problem!";
         return QStringList();
@@ -86,7 +88,7 @@ KService::List ModuleManager::availablePlugins() const
 {
     // For the "add" menu, we need all available plugins.
     // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
-    const QStringList files = KGlobal::dirs()->findAllResources("data", "konqsidebartng/plugins/*.desktop");
+    const QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/plugins/*.desktop");
     KService::List services;
     Q_FOREACH (const QString &path, files) {
         KDesktopFile df(path); // no merging. KService warns, and we don't need it.
@@ -102,12 +104,12 @@ QString ModuleManager::moduleDataPath(const QString &fileName) const
 
 QString ModuleManager::moduleFullPath(const QString &fileName) const
 {
-    return KGlobal::dirs()->locate("data", moduleDataPath(fileName));
+    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, moduleDataPath(fileName));
 }
 
 void ModuleManager::rollbackToDefault()
 {
-    const QString loc = KGlobal::dirs()->saveLocation("data", "konqsidebartng/");
+    const QString loc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/konqsidebartng/";
     QDir dir(loc);
     const QStringList dirEntries = dir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     Q_FOREACH (const QString &subdir, dirEntries) {
@@ -184,12 +186,12 @@ QString ModuleManager::addModuleFromTemplate(QString &templ)
     }
 
     QString filename = templ.arg(QString());
-    QString myFile = KStandardDirs::locateLocal("data", moduleDataPath(filename));
+    QString myFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + moduleDataPath(filename);
 
     if (QFile::exists(myFile)) {
         for (ulong l = 1; l < ULONG_MAX; l++) {
             filename = templ.arg(l);
-            myFile = KStandardDirs::locateLocal("data", moduleDataPath(filename));
+            myFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + moduleDataPath(filename);
             if (!QFile::exists(myFile)) {
                 break;
             } else {
@@ -212,7 +214,7 @@ void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
     QMap<int, QString> sorter;
     Q_FOREACH (const QString &fileName, fileNames) {
         const QString path = moduleDataPath(fileName);
-        if (KStandardDirs::locate("data", path).isEmpty()) {
+        if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, path).isEmpty()) {
             // doesn't exist anymore, skip it
             kDebug() << "Skipping" << path;
         } else {
@@ -226,7 +228,7 @@ void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
             // While we have the config file open, fix migration issue between old and new history sidebar
             if (configGroup.readEntry("X-KDE-TreeModule") == "History") {
                 // Old local file still there; remove it
-                const QString localFile = KStandardDirs::locateLocal("data", path);
+                const QString localFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + path;
                 QFile::rename(localFile, localFile + ".orig");
                 kDebug() << "Migration: moving" << localFile << "out of the way";
             }

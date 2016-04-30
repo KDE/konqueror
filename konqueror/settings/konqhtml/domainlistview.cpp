@@ -32,6 +32,7 @@
 #include <kconfig.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
+#include <KSharedConfig>
 
 // Local
 #include "policies.h"

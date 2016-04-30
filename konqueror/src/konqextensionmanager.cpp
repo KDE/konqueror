@@ -32,6 +32,7 @@
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
 #include <kglobal.h>
+#include <KSharedConfig>
 
 // Local
 #include "konqview.h"

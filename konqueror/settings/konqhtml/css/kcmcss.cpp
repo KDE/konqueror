@@ -12,7 +12,7 @@
 #include <kdialog.h>
 #include <kfontdialog.h>
 #include <kglobalsettings.h>
-#include <kstandarddirs.h>
+
 #include <kurlrequester.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
@@ -22,6 +22,7 @@
 #include <kparts/openurlarguments.h>
 
 #include <kurl.h>
+#include <QStandardPaths>
 
 // Local
 #include "template.h"
@@ -329,7 +330,7 @@ static QUrl toDataUri(const QString &content, const QByteArray &contentType)
 
 void CSSCustomDialog::slotPreview()
 {
-    const QString templ(KStandardDirs::locate("data", "kcmcss/template.css"));
+    const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcmcss/template.css"));
 
     if (templ.isEmpty()) {
         return;

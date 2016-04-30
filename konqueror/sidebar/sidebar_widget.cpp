@@ -34,7 +34,7 @@
 // KDE
 #include <KLocalizedString>
 #include <kconfig.h>
-#include <kstandarddirs.h>
+
 #include <kdebug.h>
 #include <kdesktopfile.h>
 #include <kiconloader.h>
@@ -51,6 +51,8 @@
 #include <KUrlRequester>
 #include <KJobUiDelegate>
 #include <KJobWidgets>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -485,7 +487,7 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 
     const QString moduleDataPath = m_moduleManager.moduleDataPath(desktopFileName);
     // Check the desktop file still exists
-    if (KStandardDirs::locate("data", moduleDataPath).isEmpty()) {
+    if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, moduleDataPath).isEmpty()) {
         return false;
     }
 

@@ -37,6 +37,7 @@
 #include <khbox.h>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
+#include <KSharedConfig>
 
 // Local
 #include "htmlopts.h"

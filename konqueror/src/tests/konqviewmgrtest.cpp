@@ -40,6 +40,8 @@
 #include <khtmlview.h>
 #include <dom/html_inline.h>
 #include <dom/html_document.h>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 QTEST_KDEMAIN_WITH_COMPONENTNAME(ViewMgrTest, GUI, "konqueror")
 
@@ -169,7 +171,7 @@ void ViewMgrTest::initTestCase()
     profile->sync();
 
     // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-    QProcess::execute(KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME));
+    QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
 }
 
 void ViewMgrTest::testCreateFirstView()
@@ -675,7 +677,7 @@ void ViewMgrTest::testDeletePartInTab()
 
 static void loadFileManagementProfile(KonqMainWindow &mainWindow)
 {
-    const QString profile = KStandardDirs::locate("data", "konqueror/profiles/filemanagement");
+    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/filemanagement");
     QVERIFY(!profile.isEmpty());
     const QString path = QDir::homePath();
     mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
@@ -908,7 +910,7 @@ void ViewMgrTest::testBreakOffTab()
 
     // Verify that breaking off a tab preserves the view profile (bug 210686)
 
-    const QString profile = KStandardDirs::locate("data", "konqueror/profiles/webbrowsing");
+    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
     QVERIFY(!profile.isEmpty());
     const QString path = QDir::homePath();
     mainWindow.viewManager()->loadViewProfileFromFile(profile, "webbrowsing");

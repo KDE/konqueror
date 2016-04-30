@@ -29,6 +29,7 @@
 // Local
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <KSharedConfig>
 
 //-----------------------------------------------------------------------------
 

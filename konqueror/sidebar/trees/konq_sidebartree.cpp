@@ -54,6 +54,7 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <QStandardPaths>
 
 static const int autoOpenTimeout = 750;
 
@@ -164,7 +165,7 @@ KonqSidebarTree::KonqSidebarTree(KonqSidebarOldTreeModule *parent, QWidget *pare
             this, SLOT(slotItemRenamed(Q3ListViewItem*,QString,int)));
 
     if (moduleType == VIRT_Folder) {
-        m_dirtreeDir.dir.setPath(KGlobal::dirs()->saveLocation("data", "konqsidebartng/virtual_folders/" + path + '/'));
+        m_dirtreeDir.dir.setPath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqsidebartng/virtual_folders/" + path + '/');
         m_dirtreeDir.relDir = path;
     } else {
         m_dirtreeDir.dir.setPath(path);
@@ -654,9 +655,9 @@ void KonqSidebarTree::scanDir(KonqSidebarTreeItem *parent, const QString &path, 
         }
         if (copyConfig) {
             // We will copy over the configuration for the dirtree, from the global directory
-            const QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data", "konqsidebartng/virtual_folders/" + m_dirtreeDir.relDir + '/');
+            const QStringList dirtree_dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/virtual_folders/" + m_dirtreeDir.relDir + '/');
 
-//            QString dirtree_dir = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/").last();  // most global
+//            QString dirtree_dir = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/").last();  // most global
 //            kDebug(1201) << "dirtree_dir=" << dirtree_dir;
 
             /*

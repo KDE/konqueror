@@ -26,6 +26,7 @@
 
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
+#include <KSharedConfig>
 #include "policies.h"
 
 class QButtonGroup;

@@ -47,6 +47,7 @@
 #include <KConfigGroup>
 
 #include <kurl.h>
+#include <KSharedConfig>
 
 KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     : KCModule(parent),

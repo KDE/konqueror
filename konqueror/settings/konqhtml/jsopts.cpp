@@ -28,7 +28,7 @@
 #include <QVBoxLayout>
 // KDE
 #include <kconfig.h>
-#include <kdebug.h>
+#include <KSharedConfig>
 #include <kurlrequester.h>
 #include <KLocalizedString>
 #include <kparts/htmlextension.h>
@@ -42,7 +42,6 @@
 #endif
 
 // == class KJavaScriptOptions =====
-#include <KDebug>
 KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent) :
     KCModule(/*componentData,*/ parent),
     _removeJavaScriptDomainAdvice(false),

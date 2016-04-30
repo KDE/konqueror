@@ -20,6 +20,7 @@ class QCheckBox;
 
 #include <kcmodule.h>
 #include <kconfig.h>
+#include <KSharedConfig>
 #include "ui_nsconfigwidget.h"
 
 class QBoxLayout;

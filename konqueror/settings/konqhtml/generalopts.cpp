@@ -27,7 +27,7 @@
 #include <kmimetype.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
-#include <kstandarddirs.h>
+
 #include <kurlrequester.h>
 #include <KConfigGroup>
 #include <KGlobal>
@@ -36,6 +36,8 @@
 #include "ui_advancedTabOptions.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_HOMEPAGE[] = "http://www.kde.org";
@@ -129,7 +131,7 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 static QString readStartUrlFromProfile()
 {
     const QString blank = "about:blank";
-    const QString profile = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/webbrowsing"));
+    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/webbrowsing"));
     if (profile.isEmpty()) {
         return blank;
     }
@@ -259,10 +261,10 @@ static void updateWebbrowsingProfile(const QString &homeUrl, StartPage startPage
     const QString profileFileName = "webbrowsing";
 
     // Create local copy of the profile if needed -- copied from KonqViewManager::setCurrentProfile
-    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/);
+    const QString localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/;
     KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
     if (!QFile::exists(localPath)) {
-        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/);
+        const QString globalFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/);
         if (!globalFile.isEmpty()) {
             KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
             globalCfg->copyTo(localPath, cfg.data());
@@ -307,7 +309,7 @@ void KKonqGeneralOptions::save()
 #if 0 //PORT QT5
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
-        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
         KConfigGroup removedServices(profile, "Added KDE Service Associations");
         Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {

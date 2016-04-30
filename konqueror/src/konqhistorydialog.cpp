@@ -40,6 +40,7 @@
 #include <KLocalizedString>
 #include <klineedit.h>
 #include <ktoggleaction.h>
+#include <KSharedConfig>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     : KDialog(parent), m_mainWindow(parent)
