@@ -46,7 +46,7 @@ public:
 
     // Follow a URL opened in another view - only implement if the module
     // has anything to do with URLs
-    virtual void followURL(const KUrl &) {}
+    virtual void followURL(const QUrl &) {}
 
     KonqSidebarTree *tree() const
     {

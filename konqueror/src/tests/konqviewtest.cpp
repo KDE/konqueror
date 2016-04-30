@@ -32,7 +32,7 @@ private Q_SLOTS:
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
         KonqOpenURLRequest req; req.forceAutoEmbed = true;
-        mainWindow.openUrl(0, KUrl("data:text/plain, Hello World"), "text/plain", req);
+        mainWindow.openUrl(0, QUrl("data:text/plain, Hello World"), "text/plain", req);
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -44,7 +44,7 @@ private Q_SLOTS:
 
         // Now open HTML, as if we typed a URL in the location bar.
         KonqOpenURLRequest req2; req2.typedUrl = "http://www.kde.org";
-        mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html", req2);
+        mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html", req2);
         qDebug() << view->service()->entryPath();
         QVERIFY(view->service()->entryPath() != firstService);
     }
@@ -53,7 +53,7 @@ private Q_SLOTS:
     {
         // Related to the previous test; ensure we keep the same viewmode when switching between folders
         KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, KUrl(QDir::homePath()));
+        mainWindow.openUrl(0, QUrl(QDir::homePath()));
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QPointer<KParts::ReadOnlyPart> part = view->part();
@@ -64,7 +64,7 @@ private Q_SLOTS:
         view->setInternalViewMode("details");
         QCOMPARE(view->internalViewMode(), QString("details"));
 
-        mainWindow.openUrl(0, KUrl("applications:/"));
+        mainWindow.openUrl(0, QUrl("applications:/"));
         QCOMPARE(static_cast<KParts::ReadOnlyPart *>(part), view->part());
         QCOMPARE(view->internalViewMode(), QString("details"));
     }

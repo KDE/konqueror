@@ -198,7 +198,7 @@ private:
     QTimer *m_autoOpenTimer;
 
     // The base URL for our configuration directory
-    //KUrl m_dirtreeDir;
+    //QUrl m_dirtreeDir;
     DirTreeConfigData m_dirtreeDir;
 
     bool m_scrollingLocked;

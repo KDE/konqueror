@@ -31,7 +31,7 @@
 #include <kurlrequester.h>
 #include <KConfigGroup>
 #include <KGlobal>
-#include <KUrl>
+#include <QUrl>
 // Local
 #include "ui_advancedTabOptions.h"
 #include <KPluginFactory>
@@ -208,7 +208,7 @@ void KKonqGeneralOptions::load()
 
 void KKonqGeneralOptions::defaults()
 {
-    homeURL->setUrl(KUrl(DEFAULT_HOMEPAGE));
+    homeURL->setUrl(QUrl(DEFAULT_HOMEPAGE));
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);

@@ -69,7 +69,7 @@ private Q_SLOTS:
     {
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+        mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -82,7 +82,7 @@ private Q_SLOTS:
     void loadDirectory() // #164495
     {
         KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, KUrl(QDir::homePath()), "text/html");
+        mainWindow.openUrl(0, QUrl(QDir::homePath()), "text/html");
         KonqView *view = mainWindow.currentView();
         kDebug() << "Waiting for first completed signal";
         QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // error calls openUrlRequest
@@ -95,7 +95,7 @@ private Q_SLOTS:
     {
         QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow->openUrl(0, KUrl(
+        mainWindow->openUrl(0, QUrl(
                                 "data:text/html, <script type=\"text/javascript\">"
                                 "function closeMe() { window.close(); } "
                                 "document.onmousedown = closeMe; "
@@ -125,7 +125,7 @@ private Q_SLOTS:
         QVERIFY(origTempFile.open());
         origTempFile.write(
             "<html><script>"
-            "function openWindow() { window.open('" + KUrl(tempFile.fileName()).url().toUtf8() + "'); } "
+            "function openWindow() { window.open('" + QUrl(tempFile.fileName()).url().toUtf8() + "'); } "
             "document.onmousedown = openWindow; "
             "</script>"
         );
@@ -135,7 +135,7 @@ private Q_SLOTS:
 
         KonqMainWindow *mainWindow = new KonqMainWindow;
         const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
-        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", KUrl(origFile));
+        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", QUrl(origFile));
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
@@ -174,7 +174,7 @@ private Q_SLOTS:
         // would lead to double deletion (#228255)
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, KUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
+        mainWindow.openUrl(0, QUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());

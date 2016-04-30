@@ -70,9 +70,9 @@ void KonqSidebarTreeTopLevelItem::drop(QDropEvent *ev)
     if (m_bTopLevelGroup) {
         // When dropping something to "Network" or its subdirs, we want to create
         // a desktop link, not to move/copy/link - except for .desktop files :-}
-        KUrl::List lst;
+        QList<QUrl> lst;
         if (K3URLDrag::decode(ev, lst) && !lst.isEmpty()) {   // Are they urls ?
-            KUrl::List::Iterator it = lst.begin();
+            QList<QUrl>::Iterator it = lst.begin();
             for (; it != lst.end(); it++) {
                 tree()->addUrl(this, *it);
             }
@@ -115,7 +115,7 @@ void KonqSidebarTreeTopLevelItem::middleButtonClicked()
 
 void KonqSidebarTreeTopLevelItem::rightButtonPressed()
 {
-    KUrl url;
+    QUrl url;
     url.setPath(m_path);
     // We don't show "edit file type" (useless here) and "properties" (shows the wrong name,
     // i.e. the filename instead of the Name field). There's the Rename item for that.
@@ -138,8 +138,8 @@ void KonqSidebarTreeTopLevelItem::del()
 
 void KonqSidebarTreeTopLevelItem::delOperation(KonqOperations::Operation method)
 {
-    KUrl url(m_path);
-    KUrl::List lst;
+    QUrl url(m_path);
+    QList<QUrl> lst;
     lst.append(url);
 
     KonqOperations::del(tree(), method, lst);
@@ -155,7 +155,7 @@ void KonqSidebarTreeTopLevelItem::paste()
         kDebug(1201) << "move (from clipboard data) = " << move;
     }
 
-    KUrl destURL;
+    QUrl destURL;
     if (m_bTopLevelGroup) {
         destURL.setPath(m_path);
     } else {
@@ -172,7 +172,7 @@ void KonqSidebarTreeTopLevelItem::rename()
 
 void KonqSidebarTreeTopLevelItem::rename(const QString &name)
 {
-    KUrl url(m_path);
+    QUrl url(m_path);
 
     // Adjust the Name field of the .directory or desktop file
     QString desktopFile = m_path;
@@ -184,7 +184,7 @@ void KonqSidebarTreeTopLevelItem::rename(const QString &name)
     cfg.sync();
 
     // Notify about the change
-    KUrl::List lst;
+    QList<QUrl> lst;
     lst.append(url);
     OrgKdeKDirNotifyInterface::emitFilesChanged(lst.toStringList());
 }

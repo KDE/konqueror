@@ -264,11 +264,11 @@ void KonqSidebarTree::clearTree()
     }
 }
 
-void KonqSidebarTree::followURL(const KUrl &url)
+void KonqSidebarTree::followURL(const QUrl &url)
 {
     // Maybe we're there already ?
     KonqSidebarTreeItem *selection = static_cast<KonqSidebarTreeItem *>(selectedItem());
-    if (selection && selection->externalURL().equals(url, KUrl::CompareWithoutTrailingSlash)) {
+    if (selection && selection->externalURL().equals(url, QUrl::CompareWithoutTrailingSlash)) {
         ensureItemVisible(selection);
         return;
     }
@@ -360,9 +360,9 @@ void KonqSidebarTree::contentsDropEvent(QDropEvent *ev)
 
         if (!selectedItem()) {
             //        KonqOperations::doDrop( 0L, m_dirtreeDir.dir, ev, this );
-            KUrl::List urls;
+            QList<QUrl> urls;
             if (K3URLDrag::decode(ev, urls)) {
-                for (KUrl::List::ConstIterator it = urls.constBegin();
+                for (QList<QUrl>::ConstIterator it = urls.constBegin();
                         it != urls.constEnd(); ++it) {
                     addUrl(0, *it);
                 }
@@ -400,7 +400,7 @@ void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem *item, const QUrl &url)
         path = m_dirtreeDir.dir.path();
     }
 
-    KUrl destUrl;
+    QUrl destUrl;
 
     if (url.isLocalFile() && url.fileName().endsWith(".desktop")) {
         QString filename = findUniqueFilename(path, url.fileName());
@@ -424,7 +424,7 @@ void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem *item, const QUrl &url)
             icon = KMimeType::favIconForUrl(url);
         }
         if (icon.isEmpty()) {
-            icon = KProtocolInfo::icon(url.protocol());
+            icon = KProtocolInfo::icon(url.scheme());
         }
         cfg.writeEntry("Icon", icon);
         cfg.writeEntry("Name", name);
@@ -432,7 +432,7 @@ void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem *item, const QUrl &url)
         cfg.sync();
     }
 
-    destUrl.setPath(destUrl.directory());
+    destUrl.setPath(destUrl.adjusted(QUrl::RemoveFilename|QUrl::StripTrailingSlash).path());
     OrgKdeKDirNotifyInterface::emitFilesAdded(destUrl.url());
 
     if (item) {
@@ -515,7 +515,7 @@ void KonqSidebarTree::slotExecuted(Q3ListViewItem *item)
     args.setMimeType(dItem->externalMimeType());
     KParts::BrowserArguments browserArgs;
     browserArgs.trustedSource = true; // is this needed?
-    KUrl externalURL = dItem->externalURL();
+    QUrl externalURL = dItem->externalURL();
     if (!externalURL.isEmpty()) {
         openUrlRequest(externalURL, args, browserArgs);
     }
@@ -588,7 +588,7 @@ void KonqSidebarTree::slotSelectionChanged()
 
 void KonqSidebarTree::slotFilesAdded(const QString &dir)
 {
-    KUrl urlDir(dir);
+    QUrl urlDir(dir);
     kDebug(1201) << dir;
     if (m_dirtreeDir.dir.isParentOf(urlDir))
         // We use a timer in case of DBus re-entrance..
@@ -601,7 +601,7 @@ void KonqSidebarTree::slotFilesRemoved(const QStringList &urls)
 {
     //kDebug(1201) << "KonqSidebarTree::slotFilesRemoved " << urls.count();
     for (QStringList::ConstIterator it = urls.constBegin(); it != urls.constEnd(); ++it) {
-        KUrl u(*it);
+        QUrl u(*it);
         //kDebug(1201) <<  "KonqSidebarTree::slotFilesRemoved " << u;
         if (m_dirtreeDir.dir.isParentOf(u)) {
             QTimer::singleShot(0, this, SLOT(rescanConfiguration()));
@@ -990,7 +990,7 @@ void KonqSidebarTree::slotProperties()
         return;
     }
 
-    KUrl url(m_currentTopLevelItem->path());
+    QUrl url(m_currentTopLevelItem->path());
 
     QPointer<KPropertiesDialog> dlg(new KPropertiesDialog(url, this));
     dlg->setFileNameReadOnly(true);
@@ -1032,7 +1032,7 @@ void KonqSidebarTree::slotCopyLocation()
     if (!m_currentTopLevelItem) {
         return;
     }
-    KUrl url = m_currentTopLevelItem->externalURL();
+    QUrl url = m_currentTopLevelItem->externalURL();
     qApp->clipboard()->setMimeData(mimeDataFor(url), QClipboard::Selection);
     qApp->clipboard()->setMimeData(mimeDataFor(url), QClipboard::Clipboard);
 }

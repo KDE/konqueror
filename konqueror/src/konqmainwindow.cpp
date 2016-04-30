@@ -1654,14 +1654,14 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
 #if 0
         // Problem: dolphinpart doesn't currently implement it. But we don't need it that much
         // now that it's the main filemanagement part for all standard modes.
-        KUrl::List filesToSelect = childView->part()->property("filesToSelect").value<KUrl::List>();
+        QList<QUrl> filesToSelect = childView->part()->property("filesToSelect").value<QList<QUrl>>();
 #endif
 
         m_currentView->changePart(m_currentView->serviceType(), modeName);
         QUrl locURL(locationBarURL);
         QString nameFilter = detectNameFilter(locURL);
 #if 0
-        childView->part()->setProperty("filesToSelect", KUrl::List(req.filesToSelect));
+        childView->part()->setProperty("filesToSelect", QList<QUrl>(req.filesToSelect));
 #endif
         m_currentView->openUrl(locURL, locationBarURL, nameFilter);
     }

@@ -22,7 +22,7 @@
 #include "konq_sidebartreeitem.h"
 
 #include <kfileitem.h>
-#include <kurl.h>
+#include <QUrl>
 #include <konq_operations.h>
 
 #include <QtCore/QStringList>

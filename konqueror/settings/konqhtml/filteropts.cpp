@@ -46,7 +46,7 @@
 #include <KTabWidget>
 #include <KConfigGroup>
 
-#include <kurl.h>
+#include <QUrl>
 #include <KSharedConfig>
 
 KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
@@ -257,7 +257,7 @@ void KCMFilter::updateButton()
 
 void KCMFilter::importFilters()
 {
-    QString inFile = KFileDialog::getOpenFileName(KUrl(), QString(), this);
+    QString inFile = KFileDialog::getOpenFileName(QUrl(), QString(), this);
     if (!inFile.isEmpty()) {
         QFile f(inFile);
         if (f.open(QIODevice::ReadOnly)) {
@@ -302,7 +302,7 @@ void KCMFilter::importFilters()
 
 void KCMFilter::exportFilters()
 {
-    QString outFile = KFileDialog::getSaveFileName(KUrl(), QString(), this);
+    QString outFile = KFileDialog::getSaveFileName(QUrl(), QString(), this);
     if (!outFile.isEmpty()) {
 
         QFile f(outFile);

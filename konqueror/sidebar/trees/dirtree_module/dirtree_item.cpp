@@ -70,7 +70,7 @@ void KonqSidebarDirTreeItem::reset()
     bool expandable = true;
     // For local dirs, find out if they have no children, to remove the "+"
     if (m_fileItem.isDir()) {
-        KUrl url = m_fileItem.url();
+        QUrl url = m_fileItem.url();
         if (url.isLocalFile()) {
             struct stat buff;
             if (KDE::stat(url.toLocalFile(), &buff) != -1) {
@@ -89,7 +89,7 @@ void KonqSidebarDirTreeItem::reset()
         }
     }
     setExpandable(expandable);
-    id = m_fileItem.url().url(KUrl::RemoveTrailingSlash);
+    id = m_fileItem.url().adjusted(QUrl::StripTrailingSlash).toString();
 }
 
 void KonqSidebarDirTreeItem::setOpen(bool open)
@@ -185,7 +185,7 @@ bool KonqSidebarDirTreeItem::populateMimeData(QMimeData *mimeData, bool move)
 void KonqSidebarDirTreeItem::itemSelected()
 {
     const QMimeData *mimeData = QApplication::clipboard()->mimeData();
-    const KUrl::List urls = KUrl::List::fromMimeData(mimeData);
+    const QList<QUrl> urls = mimeData->urls();
     const QList<QUrl> urls =
         const bool paste = !urls.isEmpty();
     tree()->enableActions(true, true, paste);
@@ -297,7 +297,7 @@ void KonqSidebarDirTreeItem::del()
 
 void KonqSidebarDirTreeItem::delOperation(KonqOperations::Operation method)
 {
-    KUrl::List lst;
+    QList<QUrl> lst;
     lst.append(m_fileItem.url());
 
     KonqOperations::del(tree(), method, lst);
@@ -315,8 +315,9 @@ void KonqSidebarDirTreeItem::rename()
 
 void KonqSidebarDirTreeItem::rename(const QString &name)
 {
-    KUrl url(m_fileItem.url());
+    QUrl url(m_fileItem.url());
     KonqOperations::rename(tree(), url, name);
-    url.setPath(url.directory(KUrl::AppendTrailingSlash) + name);
+    url.setPath(url.adjusted(QUrl::RemoveFilename).path() + name);
     m_fileItem.setUrl(url);
 }
+

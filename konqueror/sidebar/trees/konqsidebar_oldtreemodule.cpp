@@ -180,8 +180,8 @@ public:
         Q_UNUSED(unused);
         const KDesktopFile df(actionData.toString());
         const KConfigGroup desktopGroup = df.desktopGroup();
-        KUrl url = desktopGroup.readEntry("X-KDE-Default-URL");
-        KNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
+        QUrl url = desktopGroup.readEntry("X-KDE-Default-URL");
+        KNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), QUrl(), parentWidget);
         dlg.setCaption(i18nc("@title:window", "Add folder sidebar module"));
         dlg.setSuggestedName(df.readName());
         if (!dlg.exec()) {

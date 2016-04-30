@@ -39,7 +39,7 @@
 #include <KJobWidgets>
 
 //KDELibs4Support
-#include <KUrl>
+#include <QUrl>
 #include <kdeversion.h>
 
 #include <konq_mainwindow_interface.h>
@@ -328,7 +328,7 @@ static QString konqyToReuse(const QString &url, const QString &mimetype, const Q
     return QString();
 }
 
-static KUrl filteredUrl(KCmdLineArgs *args)
+static QUrl filteredUrl(KCmdLineArgs *args)
 {
     if (args) {
         KUriFilterData data;
@@ -340,7 +340,7 @@ static KUrl filteredUrl(KCmdLineArgs *args)
             return data.uri();
         }
     }
-    return KUrl();
+    return QUrl();
 }
 
 void ClientApp::sendASNChange()

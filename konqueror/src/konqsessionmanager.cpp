@@ -34,7 +34,7 @@
 #include <khbox.h>
 #include <KLocalizedString>
 #include <kdialog.h>
-#include <kurl.h>
+#include <QUrl>
 #include <QIcon>
 #include <ktempdir.h>
 #include <ksqueezedtextlabel.h>

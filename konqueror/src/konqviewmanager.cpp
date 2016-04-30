@@ -1279,7 +1279,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
 
                 if (!url.isEmpty()) {
                     //qDebug() << "calling openUrl" << url;
-                    //childView->openUrl( url, url.prettyUrl() );
+                    //childView->openUrl( url, url.toDisplayString() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
                     if (url.scheme() != "about") {

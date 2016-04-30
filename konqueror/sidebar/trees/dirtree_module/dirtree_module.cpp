@@ -43,15 +43,15 @@ KonqSidebarDirTreeModule::~KonqSidebarDirTreeModule()
 {
     // KDirLister may still emit canceled while being deleted.
     if (m_dirLister) {
-        disconnect(m_dirLister, SIGNAL(canceled(KUrl)),
-                   this, SLOT(slotListingStopped(KUrl)));
+        disconnect(m_dirLister, SIGNAL(canceled(QUrl)),
+                   this, SLOT(slotListingStopped(QUrl)));
         delete m_dirLister;
     }
 }
 
-KUrl::List KonqSidebarDirTreeModule::selectedUrls()
+QList<QUrl> KonqSidebarDirTreeModule::selectedUrls()
 {
-    KUrl::List lst;
+    QList<QUrl> lst;
     KonqSidebarDirTreeItem *selection = static_cast<KonqSidebarDirTreeItem *>(m_pTree->selectedItem());
     if (!selection) {
         kError() << "no selection!" << endl;
@@ -70,7 +70,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem(KonqSidebarTreeTopLevelItem *item
     KDesktopFile cfg(item->path());
     KConfigGroup desktopGroup = cfg.desktopGroup();
 
-    KUrl targetURL;
+    QUrl targetURL;
     targetURL.setPath(item->path());
 
     if (cfg.hasLinkType()) {
@@ -99,7 +99,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem(KonqSidebarTreeTopLevelItem *item
     }
 
     bool bListable = KProtocolManager::supportsListing(targetURL);
-    //kDebug(1201) << targetURL.prettyUrl() << " listable : " << bListable;
+    //kDebug(1201) << targetURL.toDisplayString() << " listable : " << bListable;
 
     if (!bListable) {
         item->setExpandable(false);
@@ -121,7 +121,7 @@ void KonqSidebarDirTreeModule::openTopLevelItem(KonqSidebarTreeTopLevelItem *ite
 
 void KonqSidebarDirTreeModule::addSubDir(KonqSidebarTreeItem *item)
 {
-    QString id = item->externalURL().url(KUrl::RemoveTrailingSlash);
+    QString id = item->externalURL().adjusted(QUrl::StripTrailingSlash).toString();
     kDebug(1201) << this << id;
     m_dictSubDirs.insert(id, item);
 
@@ -266,7 +266,7 @@ void KonqSidebarDirTreeModule::removeSubDir(KonqSidebarTreeItem *item, bool chil
     }
 
     if (!childrenOnly) {
-        QString id = item->externalURL().url(KUrl::RemoveTrailingSlash);
+        QString id = item->externalURL().adjusted(QUrl::StripTrailingSlash).toString();
         remove(m_dictSubDirs, id, item);
         while (!(item->alias.isEmpty())) {
             remove(m_dictSubDirs, item->alias.front(), item);
@@ -298,12 +298,12 @@ void KonqSidebarDirTreeModule::openSubFolder(KonqSidebarTreeItem *item)
                 this, SLOT(slotRefreshItems(QList<QPair<KFileItem,KFileItem> >)));
         connect(m_dirLister, SIGNAL(deleteItem(KFileItem)),
                 this, SLOT(slotDeleteItem(KFileItem)));
-        connect(m_dirLister, SIGNAL(completed(KUrl)),
-                this, SLOT(slotListingStopped(KUrl)));
-        connect(m_dirLister, SIGNAL(canceled(KUrl)),
-                this, SLOT(slotListingStopped(KUrl)));
-        connect(m_dirLister, SIGNAL(redirection(KUrl,KUrl)),
-                this, SLOT(slotRedirection(KUrl,KUrl)));
+        connect(m_dirLister, SIGNAL(completed(QUrl)),
+                this, SLOT(slotListingStopped(QUrl)));
+        connect(m_dirLister, SIGNAL(canceled(QUrl)),
+                this, SLOT(slotListingStopped(QUrl)));
+        connect(m_dirLister, SIGNAL(redirection(QUrl,QUrl)),
+                this, SLOT(slotRedirection(QUrl,QUrl)));
     }
 
     if (!item->isTopLevelItem() &&
@@ -321,8 +321,8 @@ void KonqSidebarDirTreeModule::openSubFolder(KonqSidebarTreeItem *item)
 void KonqSidebarDirTreeModule::listDirectory(KonqSidebarTreeItem *item)
 {
     // This causes a reparsing, but gets rid of the trailing slash
-    QString strUrl = item->externalURL().url(KUrl::RemoveTrailingSlash);
-    KUrl url(strUrl);
+    QString strUrl = item->externalURL().adjusted(QUrl::StripTrailingSlash).toString();
+    QUrl url(strUrl);
 
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem *openItem;
@@ -389,21 +389,22 @@ void KonqSidebarDirTreeModule::slotNewItems(const KFileItemList &entries)
     const KFileItem firstItem = entries.first();
 
     // Find parent item - it's the same for all the items
-    KUrl dir(firstItem.url().url(KUrl::RemoveTrailingSlash));
-    dir.setFileName("");
-    kDebug(1201) << this << "dir=" << dir.url(KUrl::RemoveTrailingSlash);
+    QUrl dir(firstItem.url().adjusted(QUrl::StripTrailingSlash).toString());
+    dir = dir.adjusted(QUrl::RemoveFilename);
+    dir.setPath(dir.path() + "");
+    kDebug(1201) << this << "dir=" << dir.adjusted(QUrl::StripTrailingSlash).toString();
 
     Q3PtrList<KonqSidebarTreeItem> *parentItemList;
     KonqSidebarTreeItem *parentItem;
-    lookupItems(m_dictSubDirs, dir.url(KUrl::RemoveTrailingSlash), parentItem, parentItemList);
+    lookupItems(m_dictSubDirs, dir.adjusted(QUrl::StripTrailingSlash).toString(), parentItem, parentItemList);
 
     if (!parentItem) {   // hack for dnssd://domain/type/service listed in dnssd:/type/ dir
         dir.setHost(QString());
-        lookupItems(m_dictSubDirs, dir.url(KUrl::RemoveTrailingSlash), parentItem, parentItemList);
+        lookupItems(m_dictSubDirs, dir.adjusted(QUrl::StripTrailingSlash).toString(), parentItem, parentItemList);
     }
 
     if (!parentItem) {
-        KMessageBox::error(tree(), i18n("Cannot find parent item %1 in the tree. Internal error.", dir.url(KUrl::RemoveTrailingSlash)));
+        KMessageBox::error(tree(), i18n("Cannot find parent item %1 in the tree. Internal error.", dir.adjusted(QUrl::StripTrailingSlash).toString()));
         return;
     }
 
@@ -455,19 +456,19 @@ void KonqSidebarDirTreeModule::slotRefreshItems(const QList<QPair<KFileItem, KFi
         lookupItems(m_ptrdictSubDirs, oldFileItem, item, itemList);
 
         if (!item) {
-            kWarning(1201) << "can't find old entry for " << oldFileItem.url().url(KUrl::RemoveTrailingSlash);
+            kWarning(1201) << "can't find old entry for " << oldFileItem.url().adjusted(QUrl::StripTrailingSlash).toString();
             continue;
         }
 
         do {
             if (item->isTopLevelItem()) { // we only have dirs and one toplevel item in the dict
-                kWarning(1201) << "entry for " << oldFileItem.url().url(KUrl::RemoveTrailingSlash) << "matches against toplevel.";
+                kWarning(1201) << "entry for " << oldFileItem.url().adjusted(QUrl::StripTrailingSlash).toString() << "matches against toplevel.";
                 break;
             }
 
             KonqSidebarDirTreeItem *dirTreeItem = static_cast<KonqSidebarDirTreeItem *>(item);
             // Item renamed ?
-            if (dirTreeItem->id != fileItem.url().url(KUrl::RemoveTrailingSlash)) {
+            if (dirTreeItem->id != fileItem.url().adjusted(QUrl::StripTrailingSlash).toString()) {
                 kDebug(1201) << "renaming" << oldFileItem << "->" << fileItem;
                 // We need to update the URL in m_dictSubDirs, and to get rid of the child items, so remove and add.
                 // Then remove + delete
@@ -497,12 +498,12 @@ void KonqSidebarDirTreeModule::slotRefreshItems(const QList<QPair<KFileItem, KFi
 
 void KonqSidebarDirTreeModule::slotDeleteItem(const KFileItem &fileItem)
 {
-    kDebug(1201) << fileItem.url().url(KUrl::RemoveTrailingSlash);
+    kDebug(1201) << fileItem.url().adjusted(QUrl::StripTrailingSlash).toString();
 
     // All items are in m_ptrdictSubDirs, so look it up fast
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem *item;
-    lookupItems(m_dictSubDirs, fileItem.url().url(KUrl::RemoveTrailingSlash), item, itemList);
+    lookupItems(m_dictSubDirs, fileItem.url().adjusted(QUrl::StripTrailingSlash).toString(), item, itemList);
     while (item) {
         removeSubDir(item);
         delete item;
@@ -512,12 +513,12 @@ void KonqSidebarDirTreeModule::slotDeleteItem(const KFileItem &fileItem)
     delete itemList;
 }
 
-void KonqSidebarDirTreeModule::slotRedirection(const KUrl &oldUrl, const KUrl &newUrl)
+void KonqSidebarDirTreeModule::slotRedirection(const QUrl &oldUrl, const QUrl &newUrl)
 {
     kDebug(1201) << newUrl;
 
-    QString oldUrlStr = oldUrl.url(KUrl::RemoveTrailingSlash);
-    QString newUrlStr = newUrl.url(KUrl::RemoveTrailingSlash);
+    QString oldUrlStr = oldUrl.adjusted(QUrl::StripTrailingSlash).toString();
+    QString newUrlStr = newUrl.adjusted(QUrl::StripTrailingSlash).toString();
 
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem *item;
@@ -543,13 +544,13 @@ void KonqSidebarDirTreeModule::slotRedirection(const KUrl &oldUrl, const KUrl &n
     delete itemList;
 }
 
-void KonqSidebarDirTreeModule::slotListingStopped(const KUrl &url)
+void KonqSidebarDirTreeModule::slotListingStopped(const QUrl &url)
 {
     //kDebug(1201) << url;
 
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem *item;
-    lookupItems(m_dictSubDirs, url.url(KUrl::RemoveTrailingSlash), item, itemList);
+    lookupItems(m_dictSubDirs, url.adjusted(QUrl::StripTrailingSlash).toString(), item, itemList);
 
     while (item) {
         if (item->childCount() == 0) {
@@ -564,41 +565,41 @@ void KonqSidebarDirTreeModule::slotListingStopped(const KUrl &url)
 
     //kDebug(1201) << "m_selectAfterOpening " << m_selectAfterOpening.prettyUrl();
     if (!m_selectAfterOpening.isEmpty() && url.isParentOf(m_selectAfterOpening)) {
-        KUrl theURL(m_selectAfterOpening);
-        m_selectAfterOpening = KUrl();
+        QUrl theURL(m_selectAfterOpening);
+        m_selectAfterOpening = QUrl();
         followURL(theURL);
     }
 }
 
-void KonqSidebarDirTreeModule::followURL(const KUrl &url)
+void KonqSidebarDirTreeModule::followURL(const QUrl &url)
 {
     // Check if we already know this URL
-    KonqSidebarTreeItem *item = m_dictSubDirs[ url.url(KUrl::RemoveTrailingSlash) ];
+    KonqSidebarTreeItem *item = m_dictSubDirs[ url.adjusted(QUrl::StripTrailingSlash).toString() ];
     if (item) { // found it  -> ensure visible, select, return.
         m_pTree->ensureItemVisible(item);
         m_pTree->setSelected(item, true);
         return;
     }
 
-    KUrl uParent(url);
+    QUrl uParent(url);
     KonqSidebarTreeItem *parentItem = 0L;
     // Go up to the first known parent
     do {
         uParent = uParent.upUrl();
-        parentItem = m_dictSubDirs[ uParent.url(KUrl::RemoveTrailingSlash) ];
+        parentItem = m_dictSubDirs[ uParent.adjusted(QUrl::StripTrailingSlash).toString() ];
     } while (!parentItem && !uParent.path().isEmpty() && uParent.path() != "/");
 
     // Not found !?!
     if (!parentItem) {
-        kDebug() << "No parent found for url " << url.prettyUrl();
+        kDebug() << "No parent found for url " << url.toDisplayString();
         return;
     }
-    kDebug() << "Found parent " << uParent.prettyUrl();
+    kDebug() << "Found parent " << uParent.toDisplayString();
 
     // That's the parent directory we found. Open if not open...
     if (!parentItem->isOpen()) {
         parentItem->setOpen(true);
-        if (parentItem->childCount() && m_dictSubDirs[ url.url(KUrl::RemoveTrailingSlash) ]) {
+        if (parentItem->childCount() && m_dictSubDirs[ url.adjusted(QUrl::StripTrailingSlash).toString() ]) {
             // Immediate opening, if the dir was already listed
             followURL(url);   // equivalent to a goto-beginning-of-method
         } else {

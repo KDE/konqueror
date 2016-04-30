@@ -42,7 +42,7 @@
 #include <KGuiItem>
 #include <KStandardGuiItem>
 #include <KGlobal>
-#include <KUrl>
+#include <QUrl>
 #include <QStandardPaths>
 #include <KSharedConfig>
 // Local
@@ -224,7 +224,7 @@ void KPluginOptions::load()
     KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
     KConfigGroup cg(config, "Misc");
 
-    m_widget.dirEdit->setUrl(KUrl());
+    m_widget.dirEdit->setUrl(QUrl());
     m_widget.dirEdit->setEnabled(false);
     m_widget.dirRemove->setEnabled(false);
     m_widget.dirUp->setEnabled(false);
@@ -252,7 +252,7 @@ void KPluginOptions::defaults()
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QString(), KConfig::NoGlobals);
 
-    m_widget.dirEdit->setUrl(KUrl());
+    m_widget.dirEdit->setUrl(QUrl());
     m_widget.dirEdit->setEnabled(false);
     m_widget.dirRemove->setEnabled(false);
 

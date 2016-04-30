@@ -21,7 +21,7 @@
 #include <kparts/part.h>
 #include <kparts/openurlarguments.h>
 
-#include <kurl.h>
+#include <QUrl>
 #include <QStandardPaths>
 
 // Local
@@ -197,7 +197,7 @@ void CSSConfig::defaults()
     configWidget->useDefault->setChecked(true);
     configWidget->useUser->setChecked(false);
     configWidget->useAccess->setChecked(false);
-    configWidget->urlRequester->setUrl(KUrl());
+    configWidget->urlRequester->setUrl(QUrl());
 
     customDialog->basefontsize->setEditText(QString::number(12));
     customDialog->dontScale->setChecked(false);
