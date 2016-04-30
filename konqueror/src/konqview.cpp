@@ -657,7 +657,7 @@ void KonqView::setIconURL(const QUrl &iconURL)
 // It does not set the tab's favIcon.
 {
     if (KonqSettings::enableFavicon()) {
-        KonqPixmapProvider::self()->setIconForUrl(m_sLocationBarURL, iconURL.url());
+        KonqPixmapProvider::self()->setIconForUrl(QUrl(m_sLocationBarURL), iconURL);
         m_bGotIconURL = true;
     }
 }

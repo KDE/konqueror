@@ -194,9 +194,9 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
         if (KUriFilter::self()->filterUri(data)) {
             if (data.uriType() == KUriFilterData::Error) {
                 if (data.errorMsg().isEmpty()) {
-                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, QUrl(_url));
                 } else {
-                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+                    return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), QUrl(_url));
                 }
             } else {
                 return data.uri();
@@ -205,7 +205,7 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
 
         // NOTE: a valid URL like http://kde.org always passes the filtering test.
         // As such, this point could only be reached when _url is NOT a valid URL.
-        return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+        return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, QUrl(_url));
     }
 
     const bool isKnownAbout = (_url == QLatin1String("about:blank")

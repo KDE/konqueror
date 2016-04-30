@@ -168,7 +168,7 @@ static StartPage urlToStartPageEnum(const QString &startUrl)
 void KKonqGeneralOptions::load()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
-    homeURL->setUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE));
+    homeURL->setUrl(QUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE)));
     const QString startUrl = readStartUrlFromProfile();
     const StartPage startPage = urlToStartPageEnum(startUrl);
     const int startComboIndex = m_startCombo->findData(startPage);
@@ -232,7 +232,7 @@ static void updateWebbrowsingProfile(const QString &homeUrl, StartPage startPage
         url = homeUrl;
         // Check if we can determine the mimetype of that URL; profile loading requires the mimetype to be known
         // This handles the case of a local directory, at least.
-        KMimeType::Ptr mime = KMimeType::findByUrl(url);
+        KMimeType::Ptr mime = KMimeType::findByUrl(QUrl(url));
         if (mime && !mime->isDefault()) {
             serviceType = mime->name();
         } else {

@@ -88,7 +88,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->m_pModel = new KDirModel(d->m_pListView);
     d->m_pModel->sort(QDir::Name);
     d->m_pModel->dirLister()->setDirOnlyMode(true);
-    d->m_pModel->dirLister()->openUrl(dir);
+    d->m_pModel->dirLister()->openUrl(QUrl::fromLocalFile(dir));
     d->m_pListView->setModel(d->m_pModel);
 
     d->m_pListView->setMinimumSize(d->m_pListView->sizeHint());

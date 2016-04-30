@@ -46,7 +46,7 @@ public:
     }
     ButtonInfo(const KSharedConfig::Ptr &configFile_,
                const QString &file_,
-               const QString &url_, const QString &lib,
+               const QUrl &url_, const QString &lib,
                const QString &dispName_, const QString &iconName_)
         : configFile(configFile_),
           file(file_), dock(NULL),
@@ -62,7 +62,7 @@ public:
     QPointer<QWidget> dock;
     KonqSidebarModule *module;
     KonqSidebarPlugin *m_plugin;
-    QString URL; // TODO remove
+    QUrl URL; // TODO remove (after removing the place where it's used)
     QString libName;
     QString displayName;
     QString iconName;

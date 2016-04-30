@@ -671,7 +671,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         if (mimeType == "application/x-desktop") {
             KDesktopFile df(url.toLocalFile());
             if (df.hasLinkType()) {
-                url = df.readUrl();
+                url = QUrl(df.readUrl());
                 mimeType.clear(); // to be determined again
             }
         }
@@ -2867,18 +2867,18 @@ void KonqMainWindow::slotUp()
         req.newTabInFront = !req.newTabInFront;
     }
 
-    const QString &url = m_currentView->upUrl().url();
+    const QUrl &url = m_currentView->upUrl();
     if (goKeyboardState & Qt::ControlModifier) {
-        openFilteredUrl(url, req);
+        openFilteredUrl(url.url(), req);
     } else if (goMouseState & Qt::MidButton) {
         if (KonqSettings::mmbOpensTab()) {
-            openFilteredUrl(url, req);
+            openFilteredUrl(url.url(), req);
         } else {
             KonqMainWindow *mw = KonqMisc::createNewWindow(url);
             mw->show();
         }
     } else {
-        openFilteredUrl(url, false);
+        openFilteredUrl(url.url(), false);
     }
 }
 

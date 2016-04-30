@@ -82,7 +82,7 @@ private Q_SLOTS:
     void loadDirectory() // #164495
     {
         KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, QUrl(QDir::homePath()), "text/html");
+        mainWindow.openUrl(0, QUrl::fromLocalFile(QDir::homePath()), "text/html");
         KonqView *view = mainWindow.currentView();
         kDebug() << "Waiting for first completed signal";
         QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // error calls openUrlRequest
@@ -125,7 +125,7 @@ private Q_SLOTS:
         QVERIFY(origTempFile.open());
         origTempFile.write(
             "<html><script>"
-            "function openWindow() { window.open('" + QUrl(tempFile.fileName()).url().toUtf8() + "'); } "
+            "function openWindow() { window.open('" + QUrl::fromLocalFile(tempFile.fileName()).url().toUtf8() + "'); } "
             "document.onmousedown = openWindow; "
             "</script>"
         );
@@ -135,7 +135,7 @@ private Q_SLOTS:
 
         KonqMainWindow *mainWindow = new KonqMainWindow;
         const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
-        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", QUrl(origFile));
+        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", QUrl::fromLocalFile(origFile));
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);

@@ -468,7 +468,7 @@ void KPluginOptions::dirSelect(QListWidgetItem *item)
     int cur = m_widget.dirList->currentRow();
     m_widget.dirDown->setEnabled(item != 0 && cur < m_widget.dirList->count() - 1);
     m_widget.dirUp->setEnabled(item != 0 && cur > 0);
-    m_widget.dirEdit->setUrl(item != 0 ? item->text() : QString());
+    m_widget.dirEdit->setUrl(item != 0 ? QUrl::fromUserInput(item->text()) : QUrl());
 }
 
 void KPluginOptions::dirNew()
@@ -476,14 +476,14 @@ void KPluginOptions::dirNew()
     m_widget.dirList->insertItem(0, QString());
     m_widget.dirList->setCurrentRow(0);
     dirSelect(m_widget.dirList->currentItem());
-    m_widget.dirEdit->setUrl(QString());
+    m_widget.dirEdit->setUrl(QUrl());
     m_widget.dirEdit->setFocus();
     change();
 }
 
 void KPluginOptions::dirRemove()
 {
-    m_widget.dirEdit->setUrl(QString());
+    m_widget.dirEdit->setUrl(QUrl());
     delete m_widget.dirList->currentItem();
     m_widget.dirRemove->setEnabled(false);
     m_widget.dirUp->setEnabled(false);

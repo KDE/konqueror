@@ -680,7 +680,7 @@ static void loadFileManagementProfile(KonqMainWindow &mainWindow)
     const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/filemanagement");
     QVERIFY(!profile.isEmpty());
     const QString path = QDir::homePath();
-    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl(path));
+    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl::fromLocalFile(path));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
     QCOMPARE(mainWindow.locationBarURL(), path);
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
@@ -728,10 +728,10 @@ void ViewMgrTest::testLoadOldProfile()
     QVERIFY(!profileSrc.isEmpty());
     const QString profile = profileSrc + ".copy";
     // KonqViewManager fixes up the old profile, so let's make a copy of it first.
-    KIO::FileCopyJob *job = KIO::file_copy(profileSrc, profile, -1, KIO::Overwrite);
+    KIO::FileCopyJob *job = KIO::file_copy(QUrl::fromLocalFile(profileSrc), QUrl::fromLocalFile(profile), -1, KIO::Overwrite);
     QVERIFY(job->exec());
     const QString path = QDir::homePath();
-    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl(path));
+    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl::fromLocalFile(path));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
     QCOMPARE(mainWindow.locationBarURL(), path);
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);

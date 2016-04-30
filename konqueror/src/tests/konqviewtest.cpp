@@ -53,7 +53,7 @@ private Q_SLOTS:
     {
         // Related to the previous test; ensure we keep the same viewmode when switching between folders
         KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, QUrl(QDir::homePath()));
+        mainWindow.openUrl(0, QUrl::fromLocalFile(QDir::homePath()));
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QPointer<KParts::ReadOnlyPart> part = view->part();

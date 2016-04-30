@@ -498,7 +498,7 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
     const QString icon = configGroup.readEntry("Icon", QString());
     const QString name = configGroup.readEntry("Name", QString());
     const QString comment = configGroup.readEntry("Comment", QString());
-    const QString url = configGroup.readPathEntry("URL", QString());
+    const QUrl url(configGroup.readPathEntry("URL", QString()));
     const QString lib = configGroup.readEntry("X-KDE-KonqSidebarModule");
 
     if (pos == -1) { // TODO handle insertion

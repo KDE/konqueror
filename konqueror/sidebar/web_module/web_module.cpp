@@ -110,7 +110,7 @@ KonqSideBarWebModule::KonqSideBarWebModule(QWidget *parent, const KConfigGroup &
             SIGNAL(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)));
 
     reloadTimeout = configGroup.readEntry("Reload", 0);
-    _url = configGroup.readPathEntry("URL", QString());
+    _url = QUrl(configGroup.readPathEntry("URL", QString()));
     _htmlPart->openUrl(_url);
     // Must load this delayed
     QTimer::singleShot(0, this, SLOT(loadFavicon()));
@@ -230,7 +230,7 @@ bool KHTMLSideBar::urlSelected(const QString &url, int button,
 {
     if (button == Qt::LeftButton) {
         if (_target.toLower() == "_self") {
-            openUrl(url);
+            openUrl(completeURL(url));
         } else if (_target.toLower() == "_blank") {
             emit openUrlNewWindow(completeURL(url).url(), args);
         } else { // isEmpty goes here too

@@ -85,7 +85,7 @@ void CSSConfig::load()
     configWidget->useDefault->setChecked(u == "default");
     configWidget->useUser->setChecked(u == "user");
     configWidget->useAccess->setChecked(u == "access");
-    configWidget->urlRequester->setUrl(group.readEntry("SheetName"));
+    configWidget->urlRequester->setUrl(QUrl::fromUserInput(group.readEntry("SheetName")));
 
     group = c->group("Font");
     customDialog->basefontsize->setEditText(QString::number(group.readEntry("BaseSize", 12)));
