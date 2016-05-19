@@ -39,7 +39,7 @@
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
 {
-    if (!KAuthorized::authorizeKAction("shell_access")) {
+    if (!KAuthorized::authorize("shell_access")) {
         return;
     }
 
