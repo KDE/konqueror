@@ -535,20 +535,11 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         const QWebElement element = frame->findFirstElement(QL1S("head>link[rel=icon], "
                                                                  "head>link[rel=\"shortcut icon\"]"));
         QUrl shortcutIconUrl;
-        if (element.isNull()) {
-            shortcutIconUrl = frame->baseUrl();
-            QString urlPath = shortcutIconUrl.path();
-            const int index = urlPath.indexOf(QL1C('/'));
-            if (index > -1)
-              urlPath.truncate(index);
-            urlPath += QL1S("/favicon.ico");
-            shortcutIconUrl.setPath(urlPath);
-        } else {
-            shortcutIconUrl = frame->baseUrl().resolved( QUrl(element.attribute("href")));
+        if (!element.isNull()) {
+            shortcutIconUrl = frame->baseUrl().resolved(QUrl(element.attribute("href")));
+            //kDebug() << "setting favicon to" << shortcutIconUrl;
+            m_browserExtension->setIconUrl(shortcutIconUrl);
         }
-
-        //kDebug() << "setting favicon to" << shortcutIconUrl;
-        m_browserExtension->setIconUrl(shortcutIconUrl);
     }
 
     slotFrameLoadFinished(ok);
