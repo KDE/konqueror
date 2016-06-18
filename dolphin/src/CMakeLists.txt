@@ -249,7 +249,7 @@ target_link_libraries(kdeinit_dolphin4
     ${KDE4_KCMUTILS_LIBRARY}
     konq
     dolphinprivate4
-    knewstuff3
+    ${KDE4_KNEWSTUFF3_LIBS}
     ${KDE4_SOLID_LIBS}
     ${KDE4_PHONON_LIBS}
 )
