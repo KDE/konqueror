@@ -76,13 +76,13 @@ void KIGPDialog::slotDefault()
     m_foregroundColor->setColor(QColor("#d0ffd0"));
     m_backgroundColor->setColor(QColor("#333333"));
 
-    m_imageNameReq->setUrl(QString(m_path + "images.html"));
+    m_imageNameReq->setUrl(QUrl::fromLocalFile(m_path + "images.html"));
     m_recurseSubDir->setChecked(false);
     m_recursionLevel->setEnabled(false);
     m_recursionLevel->setValue(0);
     m_copyOriginalFiles->setChecked(false);
     m_useCommentFile->setChecked(false);
-    m_commentFileReq->setUrl(QString(m_path + "comments"));
+    m_commentFileReq->setUrl(QUrl::fromLocalFile(m_path + "comments"));
     m_commentFileReq->setEnabled(false);
 
     m_imageFormat->setItemText(m_imageFormat->currentIndex(), "JPEG");
@@ -211,7 +211,7 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
     whatsThis = i18n("<p>The name of the HTML file this gallery will be saved to.</p>");
     label->setWhatsThis(whatsThis);
 
-    m_imageNameReq = new KUrlRequester(QString(path + "images.html"), page);
+    m_imageNameReq = new KUrlRequester(QUrl::fromLocalFile(QString(path + "images.html")), page);
     label->setBuddy(m_imageNameReq);
     dvlay->addWidget(m_imageNameReq);
     connect(m_imageNameReq, SIGNAL(textChanged(QString)),
@@ -279,7 +279,7 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
                      "<br />and so on</p>");
     label->setWhatsThis(whatsThis);
 
-    m_commentFileReq = new KUrlRequester(QString(path + "comments"), page);
+    m_commentFileReq = new KUrlRequester(QUrl::fromLocalFile(QString(path + "comments")), page);
     m_commentFileReq->setEnabled(useCommentFile);
     label->setBuddy(m_commentFileReq);
     dvlay->addWidget(m_commentFileReq);

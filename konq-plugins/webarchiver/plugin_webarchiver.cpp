@@ -31,6 +31,8 @@
 
 #include <QDir>
 #include <QFile>
+#include <QIcon>
+#include <QUrl>
 
 #include <kaction.h>
 #include <kcomponentdata.h>
@@ -48,10 +50,6 @@
 #include "plugin_webarchiver.h"
 #include "archivedialog.h"
 
-//KDELibs4Support
-#include <kicon.h>
-#include <kurl.h>
-
 K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
 K_EXPORT_PLUGIN(PluginWebArchiverFactory("webarchiver"))
 
@@ -61,7 +59,7 @@ PluginWebArchiver::PluginWebArchiver(QObject *parent,
 {
     QAction *a = actionCollection()->addAction("archivepage");
     a->setText(i18n("Archive &Web Page..."));
-    a->setIcon(KIcon("webarchiver"));
+    a->setIcon(QIcon::fromTheme("webarchiver"));
     connect(a, SIGNAL(triggered()), this, SLOT(slotSaveToArchive()));
 }
 
@@ -98,21 +96,21 @@ void PluginWebArchiver::slotSaveToArchive()
                       QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
     archiveName = lastCWD + "/" + archiveName + ".war";
 
-    KUrl url = KFileDialog::getSaveUrl(archiveName, i18n("*.war *.tgz|Web Archives"), part->widget(),
+    QUrl url = KFileDialog::getSaveUrl(QUrl::fromLocalFile(archiveName), i18n("*.war *.tgz|Web Archives"), part->widget(),
                                        i18n("Save Page as Web-Archive"));
 
     if (url.isEmpty()) {
         return;
     }
 
-    if (!(url.isValid())) {
+    if (!url.isValid()) {
         const QString title = i18nc("@title:window", "Invalid URL");
-        const QString text = i18n("The URL\n%1\nis not valid.", url.prettyUrl());
+        const QString text = i18n("The URL\n%1\nis not valid.", url.toString());
         KMessageBox::sorry(part->widget(), text, title);
         return;
     }
 
-    lastCWD = url.directory();
+    lastCWD = url.adjusted(QUrl::RemoveFilename).toLocalFile();
     if (! lastCWD.isNull()) {
         configGroup.writePathEntry("savedialogcwd", lastCWD);
         config.sync();
@@ -121,7 +119,7 @@ void PluginWebArchiver::slotSaveToArchive()
     const QFile file(url.path());
     if (file.exists()) {
         const QString title = i18nc("@title:window", "File Exists");
-        const QString text = i18n("Do you really want to overwrite:\n%1?", url.prettyUrl());
+        const QString text = i18n("Do you really want to overwrite:\n%1?", url.toDisplayString());
         if (KMessageBox::Continue != KMessageBox::warningContinueCancel(part->widget(), text, title, KGuiItem(i18n("Overwrite")))) {
             return;
         }
