@@ -326,10 +326,10 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
     if (!view())
         return;
 
-    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    KConfigGroup cgHtml(KSharedConfig::openConfig(), "HTML Settings");
     bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
     cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
-    KGlobal::config()->reparseConfiguration();
+    cgHtml.sync();
 
     view()->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
 }
@@ -577,7 +577,7 @@ void WebKitBrowserExtension::slotViewDocumentSource()
         tempFile.setAutoRemove(false);
         if (tempFile.open()) {
             tempFile.write(view()->page()->mainFrame()->toHtml().toUtf8());
-            KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
         }
     }
 }
@@ -596,7 +596,7 @@ void WebKitBrowserExtension::slotViewFrameSource()
         tempFile.setAutoRemove(false);
         if (tempFile.open()) {
             tempFile.write(view()->page()->currentFrame()->toHtml().toUtf8());
-            KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
         }
     }
 }

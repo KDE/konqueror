@@ -861,7 +861,7 @@ void WebView::hideAccessKeys()
 static QString linkElementKey(const QWebElement& element)
 {
     if (element.hasAttribute(QL1S("href"))) {
-        const QUrl url = element.webFrame()->baseUrl().resolved(element.attribute(QL1S("href")));
+        const QUrl url = element.webFrame()->baseUrl().resolved(QUrl(element.attribute(QL1S("href"))));
         QString linkKey (url.toString());
         if (element.hasAttribute(QL1S("target"))) {
             linkKey += QL1C('+');
