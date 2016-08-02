@@ -34,76 +34,79 @@
 
 #include <kparts/plugin.h>
 
+//KDELibs4Support
+#include <kurl.h>
+
 class KAction;
 class KActionMenu;
 class KUrl;
 namespace KIO
 {
-  class Job;
+class Job;
 }
 namespace KParts
 {
-  class ReadOnlyPart;
-  class StatusBarExtension;
+class ReadOnlyPart;
+class StatusBarExtension;
 }
 class ClickIconLabel;
 struct ValidationResult;
 
 class PluginValidators : public KParts::Plugin
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  PluginValidators( QObject* parent,
-                    const QVariantList & );
-  virtual ~PluginValidators();
+    PluginValidators(QObject *parent,
+                     const QVariantList &);
+    virtual ~PluginValidators();
 
-  static const char s_boundary[];
-  static const char s_CRLF[];
+    static const char s_boundary[];
+    static const char s_CRLF[];
 
 public slots:
-  void slotValidateHtmlByUri();
-  void slotValidateHtmlByUpload();
-  void slotValidateCssByUri();
-  void slotValidateCssByUpload();
-  void slotValidateLinks();
-  void slotConfigure();
+    void slotValidateHtmlByUri();
+    void slotValidateHtmlByUpload();
+    void slotValidateCssByUri();
+    void slotValidateCssByUpload();
+    void slotValidateLinks();
+    void slotConfigure();
 
 private slots:
-  void slotStarted( KIO::Job* );
-  void slotCompleted();
-  void slotContextMenu();
-  void slotTidyValidation();
-  void slotShowTidyValidationReport();
-  void setURLs();
+    void slotStarted(KIO::Job *);
+    void slotCompleted();
+    void slotContextMenu();
+    void slotTidyValidation();
+    void slotShowTidyValidationReport();
+    void setURLs();
 
 private:
-  KActionMenu *m_menu;
-  QPointer<ValidatorsDialog> m_configDialog; // |
-                                    // +-> Order dependency.
-  KParts::ReadOnlyPart* m_part;                // |
+    KActionMenu *m_menu;
+    QPointer<ValidatorsDialog> m_configDialog; // |
+    // +-> Order dependency.
+    KParts::ReadOnlyPart *m_part;                // |
 
-  KUrl m_WWWValidatorUrl, m_WWWValidatorUploadUrl;
-  KUrl m_CSSValidatorUrl, m_CSSValidatorUploadUrl;
-  KUrl m_linkValidatorUrl;
+    KUrl m_WWWValidatorUrl, m_WWWValidatorUploadUrl;
+    KUrl m_CSSValidatorUrl, m_CSSValidatorUploadUrl;
+    KUrl m_linkValidatorUrl;
 
-  QAction *m_validateHtmlUri, *m_validateHtmlUpload;
-  QAction *m_validateCssUri, *m_validateCssUpload;
-  QAction *m_validateLinks;
-  QAction *m_localValidation, *m_localValidationReport;
+    QAction *m_validateHtmlUri, *m_validateHtmlUpload;
+    QAction *m_validateCssUri, *m_validateCssUpload;
+    QAction *m_validateLinks;
+    QAction *m_localValidation, *m_localValidationReport;
 
-  ClickIconLabel *m_icon;
-  KParts::StatusBarExtension *m_statusBarExt;
-  QList<ValidationResult *> m_lastResults;
+    ClickIconLabel *m_icon;
+    KParts::StatusBarExtension *m_statusBarExt;
+    QList<ValidationResult *> m_lastResults;
 
-  bool canValidateByUri() const;
-  bool canValidateByUpload() const;
-  bool canValidateLocally() const;
-  QString documentSource() const;
-  void validateByUri(const KUrl &url);
-  void validateByUpload(const KUrl &url, const QList<QPair<QByteArray, QByteArray> > &formData);
-  bool doExternalValidationChecks();
-  void addStatusBarIcon();
-  void removeStatusBarIcon();
+    bool canValidateByUri() const;
+    bool canValidateByUpload() const;
+    bool canValidateLocally() const;
+    QString documentSource() const;
+    void validateByUri(const KUrl &url);
+    void validateByUpload(const KUrl &url, const QList<QPair<QByteArray, QByteArray> > &formData);
+    bool doExternalValidationChecks();
+    void addStatusBarIcon();
+    void removeStatusBarIcon();
 };
 
 #endif

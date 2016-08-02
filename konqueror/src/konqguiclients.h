@@ -41,12 +41,15 @@ class PopupMenuGUIClient : public QObject
     Q_OBJECT
 public:
     // The action groups are inserted into @p actionGroups
-    PopupMenuGUIClient( const KService::List &embeddingServices,
-                        KParts::BrowserExtension::ActionGroupMap& actionGroups,
-                        QAction* showMenuBar, QAction* stopFullScreen );
+    PopupMenuGUIClient(const KService::List &embeddingServices,
+                       KonqPopupMenu::ActionGroupMap &actionGroups,
+                       QAction *showMenuBar, QAction *stopFullScreen);
     virtual ~PopupMenuGUIClient();
 
-    KActionCollection* actionCollection() { return &m_actionCollection; }
+    KActionCollection *actionCollection()
+    {
+        return &m_actionCollection;
+    }
 
 signals:
     void openEmbedded(KService::Ptr service);
@@ -55,7 +58,7 @@ private slots:
     void slotOpenEmbedded();
 
 private:
-    QAction* addEmbeddingService( int idx, const QString &name, const KService::Ptr &service );
+    QAction *addEmbeddingService(int idx, const QString &name, const KService::Ptr &service);
 
     KActionCollection m_actionCollection;
     KService::List m_embeddingServices;
@@ -63,27 +66,33 @@ private:
 
 class ToggleViewGUIClient : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit ToggleViewGUIClient( KonqMainWindow *mainWindow );
-  virtual ~ToggleViewGUIClient();
+    explicit ToggleViewGUIClient(KonqMainWindow *mainWindow);
+    virtual ~ToggleViewGUIClient();
 
-  bool empty() const { return m_empty; }
+    bool empty() const
+    {
+        return m_empty;
+    }
 
-  QList<QAction*> actions() const;
-  QAction *action( const QString &name ) { return m_actions[ name ]; }
+    QList<QAction *> actions() const;
+    QAction *action(const QString &name)
+    {
+        return m_actions[ name ];
+    }
 
-  void saveConfig( bool add, const QString &serviceName );
+    void saveConfig(bool add, const QString &serviceName);
 
 private Q_SLOTS:
-  void slotToggleView( bool toggle );
-  void slotViewAdded( KonqView *view );
-  void slotViewRemoved( KonqView *view );
+    void slotToggleView(bool toggle);
+    void slotViewAdded(KonqView *view);
+    void slotViewRemoved(KonqView *view);
 private:
-  KonqMainWindow *m_mainWindow;
-  QHash<QString,QAction*> m_actions;
-  bool m_empty;
-  QMap<QString,bool> m_mapOrientation;
+    KonqMainWindow *m_mainWindow;
+    QHash<QString, QAction *> m_actions;
+    bool m_empty;
+    QMap<QString, bool> m_mapOrientation;
 };
 
 #endif

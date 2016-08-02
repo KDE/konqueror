@@ -10,7 +10,6 @@
 #define GENERALOPTS_H
 
 #include <QCheckBox>
-#include <QComboBox>
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>
@@ -25,7 +24,7 @@ class KKonqGeneralOptions : public KCModule
     Q_OBJECT
 
 public:
-    KKonqGeneralOptions( QWidget *parent, const QVariantList& );
+    KKonqGeneralOptions(QWidget *parent, const QVariantList &);
     ~KKonqGeneralOptions();
     virtual void load();
     virtual void save();
@@ -35,14 +34,14 @@ private Q_SLOTS:
     void slotChanged();
 
 private:
-    void addHomeUrlWidgets(QVBoxLayout*);
+    void addHomeUrlWidgets(QVBoxLayout *);
 
     KSharedConfig::Ptr m_pConfig;
 
-    KComboBox* m_startCombo;
+    KComboBox *m_startCombo;
     KUrlRequester *homeURL;
-    KComboBox* m_webEngineCombo;
-    Ui_advancedTabOptions* tabOptions;
+    KComboBox *m_webEngineCombo;
+    Ui_advancedTabOptions *tabOptions;
 };
 
 #endif // GENERALOPTS_H

@@ -36,7 +36,7 @@ class KonqViewAdaptor : public QObject
 
 public:
 
-    explicit KonqViewAdaptor( KonqView * view );
+    explicit KonqViewAdaptor(KonqView *view);
     ~KonqViewAdaptor();
 
 public slots:
@@ -45,9 +45,9 @@ public slots:
      * Displays another URL, but without changing the view mode
      * (Make sure the part can display this URL)
      */
-    void openUrl( const QString& url,
-                  const QString& locationBarURL,
-                  const QString& nameFilter );
+    void openUrl(const QString &url,
+                 const QString &locationBarURL,
+                 const QString &nameFilter);
 
     /**
      * Reload
@@ -60,8 +60,8 @@ public slots:
      * @param serviceName allows to enforce a particular service to be chosen,
      *        @see KonqFactory.
      */
-    bool changeViewMode( const QString &mimeType,
-                         const QString &serviceName );
+    bool changeViewMode(const QString &mimeType,
+                        const QString &serviceName);
 
     /**
      * Call this to prevent next openUrl() call from changing history lists
@@ -103,8 +103,7 @@ public slots:
     /**
      * Enable/Disable the context popup menu for this view.
      */
-    void enablePopupMenu( bool b );
-
+    void enablePopupMenu(bool b);
 
     bool isPopupMenuEnabled() const;
 
@@ -131,7 +130,7 @@ public slots:
 
 private:
 
-    KonqView * m_pView;
+    KonqView *m_pView;
 
 };
 

@@ -27,15 +27,16 @@
 
 #include <kdebug.h>
 
-PluginBase::PluginBase() {
+PluginBase::PluginBase()
+{
 }
 
-
-PluginBase::~PluginBase() {
+PluginBase::~PluginBase()
+{
 }
 
-
-void PluginBase::addVCardViaDCOP(const QString& card) {
+void PluginBase::addVCardViaDCOP(const QString &card)
+{
     QDBusInterface kaddressbook("org.kde.kaddressbook", "/AddressBookService", "org.kde.adressbook.service");
     kaddressbook.call("importVCardFromData", card);
 }

@@ -21,7 +21,7 @@
 #include "signalreceiver.h"
 
 SignalReceiver::SignalReceiver(QObject *parent)
-: QObject(parent), rcvd(false)
+    : QObject(parent), rcvd(false)
 {
 }
 
@@ -31,7 +31,6 @@ SignalReceiver::~SignalReceiver()
 
 void SignalReceiver::slot()
 {
-  rcvd = true;
+    rcvd = true;
 }
 
-#include "signalreceiver.moc"

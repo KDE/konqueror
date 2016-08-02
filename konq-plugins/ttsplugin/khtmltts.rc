@@ -1,0 +1,14 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="khtmlttsplugin" library="khtmlttsplugin" version="3" >
+	<MenuBar>
+		<Menu name="tools">
+		<text>&amp;Tools</text>
+			<Action name="tools_tts"/>
+		</Menu>
+	</MenuBar>
+	<ToolBar name="speechToolbar" hidden="true">
+		<text>Speech Toolbar</text>
+		<Action name="tools_tts"/>
+	</ToolBar>
+</kpartgui>
+

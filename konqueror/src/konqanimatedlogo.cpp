@@ -32,10 +32,11 @@ KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)
     setAutoRaise(true);
     setFocusPolicy(Qt::NoFocus);
     setToolButtonStyle(Qt::ToolButtonIconOnly);
-    QToolBar * bar = qobject_cast<QToolBar *>(parent);
+    QToolBar *bar = qobject_cast<QToolBar *>(parent);
     if (bar) {
         connectToToolBar(bar);
     }
+    setAnimatedLogoSize(iconSize());
 }
 
 void KonqAnimatedLogo::changeEvent(QEvent *event)
@@ -62,7 +63,6 @@ void KonqAnimatedLogo::connectToToolBar(QToolBar *bar)
 void KonqAnimatedLogo::setAnimatedLogoSize(const QSize &size)
 {
     setIconSize(size);
-    updateIcons();
+    const int sizeToLoad = qMin(size.width(), size.height());
+    setAnimationPath(KIconLoader::global()->iconPath("process-working-kde", -sizeToLoad));
 }
-
-#include "konqanimatedlogo_p.moc"

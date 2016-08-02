@@ -19,102 +19,106 @@
 
 // $Id$
 
+#include "webarchivecreator.h"
+
 #include <time.h>
 
-#include <qpixmap.h>
-#include <qimage.h>
-#include <qpainter.h>
+#include <QPixmap>
+#include <QImage>
+#include <QPainter>
 //Added by qt3to4:
 #include <QTimerEvent>
 #include <QAbstractEventDispatcher>
-#include <kapplication.h>
 #include <khtml_part.h>
+
+// KDELibs4Support
+#include  <kurl.h>
+#include <kapplication.h>
 
 #include "webarchivecreator.moc"
 
 extern "C"
 {
-	KDE_EXPORT ThumbCreator *new_creator()
-	{
-		return new WebArchiveCreator;
-	}
+    Q_DECL_EXPORT ThumbCreator *new_creator()
+    {
+        return new WebArchiveCreator;
+    }
 }
 
 WebArchiveCreator::WebArchiveCreator()
-	: m_html(0)
+    : m_html(0)
 {
 }
 
 WebArchiveCreator::~WebArchiveCreator()
 {
-	delete m_html;
+    delete m_html;
 }
 
 bool WebArchiveCreator::create(const QString &path, int width, int height, QImage &img)
 {
-	if (!m_html)
-	{
-		m_html = new KHTMLPart;
-		connect(m_html, SIGNAL(completed()), SLOT(slotCompleted()));
-		m_html->setJScriptEnabled(false);
-		m_html->setJavaEnabled(false);
-		m_html->setPluginsEnabled(false);
-	}
-	KUrl url;
-	url.setProtocol( "tar" );
-	url.setPath( path );
-	url.addPath( "index.html" );
-	m_html->openUrl( url );
-	m_completed = false;
-	int timerId = startTimer(5000);
-	while (!m_completed)
-		kapp->processEvents(QEventLoop::WaitForMoreEvents);
-	killTimer(timerId);
-    
-	// render the HTML page on a bigger pixmap and use smoothScale,
-	// looks better than directly scaling with the QPainter (malte)
-	QSize pixSize;
-	if (width > 400 || height > 600)
-	{
-		if (height * 3 > width * 4)
-			pixSize = QSize(width, width * 4 / 3);
-		else
-			pixSize = QSize(height * 3 / 4, height);
-	}
-	else
-		pixSize = QSize(400, 600);
-	QPixmap pix(pixSize);
-	// light-grey background, in case loadind the page failed
-	pix.fill( QColor( 245, 245, 245 ) );
+    if (!m_html) {
+        m_html = new KHTMLPart;
+        connect(m_html, SIGNAL(completed()), SLOT(slotCompleted()));
+        m_html->setJScriptEnabled(false);
+        m_html->setJavaEnabled(false);
+        m_html->setPluginsEnabled(false);
+    }
+    KUrl url;
+    url.setProtocol("tar");
+    url.setPath(path);
+    url.addPath("index.html");
+    m_html->openUrl(url);
+    m_completed = false;
+    int timerId = startTimer(5000);
+    while (!m_completed) {
+        kapp->processEvents(QEventLoop::WaitForMoreEvents);
+    }
+    killTimer(timerId);
 
-	int borderX = pix.width() / width,
-	borderY = pix.height() / height;
-	QRect rc(borderX, borderY, pix.width() - borderX * 2, pix.height() - borderY *
-2);
+    // render the HTML page on a bigger pixmap and use smoothScale,
+    // looks better than directly scaling with the QPainter (malte)
+    QSize pixSize;
+    if (width > 400 || height > 600) {
+        if (height * 3 > width * 4) {
+            pixSize = QSize(width, width * 4 / 3);
+        } else {
+            pixSize = QSize(height * 3 / 4, height);
+        }
+    } else {
+        pixSize = QSize(400, 600);
+    }
+    QPixmap pix(pixSize);
+    // light-grey background, in case loadind the page failed
+    pix.fill(QColor(245, 245, 245));
 
-	QPainter p;
-	p.begin(&pix);
-	m_html->paint(&p, rc);
-	p.end();
+    int borderX = pix.width() / width,
+        borderY = pix.height() / height;
+    QRect rc(borderX, borderY, pix.width() - borderX * 2, pix.height() - borderY *
+             2);
 
-	img = pix.toImage();
-	return true;
+    QPainter p;
+    p.begin(&pix);
+    m_html->paint(&p, rc);
+    p.end();
+
+    img = pix.toImage();
+    return true;
 }
 
 void WebArchiveCreator::timerEvent(QTimerEvent *)
 {
-	m_html->closeUrl();
-	m_completed = true;
+    m_html->closeUrl();
+    m_completed = true;
 }
 
 void WebArchiveCreator::slotCompleted()
 {
-	m_completed = true;
+    m_completed = true;
 }
 
 ThumbCreator::Flags WebArchiveCreator::flags() const
 {
-	return DrawFrame;
+    return DrawFrame;
 }
 
-// vim: ts=4 sw=4 et

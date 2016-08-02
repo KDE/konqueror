@@ -24,9 +24,10 @@
 #include <KPluginLoader>
 
 K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
-        registerPlugin<KBehaviourOptions>("behavior");
-        //registerPlugin<DesktopBehaviorModule>("dbehavior");
-        //registerPlugin<KonqFontOptions>("appearance");
-        //registerPlugin<KonqFontOptionsDesktop>("dappearance");
-        )
+                            registerPlugin<KBehaviourOptions>("behavior");
+                            //registerPlugin<DesktopBehaviorModule>("dbehavior");
+                            //registerPlugin<KonqFontOptions>("appearance");
+                            //registerPlugin<KonqFontOptionsDesktop>("dappearance");
+                           )
 K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))
+#include "moc_konqkcmfactory.cpp"

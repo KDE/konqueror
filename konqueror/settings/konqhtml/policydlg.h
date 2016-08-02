@@ -45,18 +45,18 @@ public:
 
     /** constructor
      * @param policies policies object this dialog will write the settings
-     *		into. Note that it always reflects the current settings,
-     *		even if the dialog has been canceled.
+     *      into. Note that it always reflects the current settings,
+     *      even if the dialog has been canceled.
      * @param parent parent widget this belongs to
      * @param name internal name
      */
-    explicit PolicyDialog(Policies *policies, QWidget *parent = 0, const char *name = 0 );
+    explicit PolicyDialog(Policies *policies, QWidget *parent = 0, const char *name = 0);
 
     virtual ~PolicyDialog() {}
 
     /*
     * @return whether this feature should be activated, deactivated or
-    *	inherited from the respective global policy.
+    *   inherited from the respective global policy.
     */
     FeatureEnabledPolicy featureEnabledPolicy() const;
 
@@ -69,7 +69,10 @@ public:
     /*
     * @return the hostname for which the policy is being set
     */
-    QString domain() const { return le_domain->text(); }
+    QString domain() const
+    {
+        return le_domain->text();
+    }
 
     /*
     * Sets the line-edit to be enabled/disabled.
@@ -80,7 +83,7 @@ public:
     * @param state @p true to enable the line-edit, otherwise disabled.
     * @param text  the text to be set in the line-edit. Default is NULL.
     */
-    void setDisableEdit( bool /*state*/, const QString& text = QString() );
+    void setDisableEdit(bool /*state*/, const QString &text = QString());
 
     /**
      * Sets the label for the "feature enabled" policy
@@ -109,14 +112,14 @@ public:
      *
      * Currently at most one widget can be added.
      * @param panel pointer to widget to insert. The dialog takes ownership
-     *		of it, but does not reparent it.
+     *      of it, but does not reparent it.
      */
     void addPolicyPanel(QWidget *panel);
 
 protected Q_SLOTS:
 
     virtual void accept();
-    void slotTextChanged( const QString &text);
+    void slotTextChanged(const QString &text);
 
 private:
     Policies *policies;

@@ -2,14 +2,16 @@
 
 set(konqsidebar_web_PART_SRCS web_module.cpp )
 
-qt4_add_dbus_interface(konqsidebar_web_PART_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
+add_library(konqsidebar_web MODULE ${konqsidebar_web_PART_SRCS})
 
-kde4_add_plugin(konqsidebar_web ${konqsidebar_web_PART_SRCS})
+target_link_libraries(konqsidebar_web
+   KF5::KHtml
+   konqsidebarplugin
+   KF5::Konq
+   KF5::KIOGui)
 
-target_link_libraries(konqsidebar_web  ${KDE4_KHTML_LIBS} konqsidebarplugin konq )
-
-install(TARGETS konqsidebar_web  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konqsidebar_web  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES konqsidebar_web.desktop  DESTINATION  ${DATA_INSTALL_DIR}/konqsidebartng/plugins )
+install( FILES konqsidebar_web.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqsidebartng/plugins )

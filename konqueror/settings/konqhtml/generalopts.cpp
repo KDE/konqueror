@@ -23,19 +23,21 @@
 // KDE
 #include <kcombobox.h>
 #include <kconfig.h>
-#include <kdebug.h>
+#include <qdebug.h>
 #include <kmimetype.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
-#include <kstandarddirs.h>
-#include <kurlrequester.h>
 
+#include <kurlrequester.h>
+#include <KConfigGroup>
+#include <KGlobal>
+#include <QUrl>
 // Local
 #include "ui_advancedTabOptions.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
-
-K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_HOMEPAGE[] = "http://www.kde.org";
@@ -43,8 +45,8 @@ enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage, ShowBookmarksPage }
 
 //-----------------------------------------------------------------------------
 
-KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
-    : KCModule( KcmKonqHtmlFactory::componentData(), parent )
+KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
+    : KCModule(/*KcmKonqHtmlFactory::componentData(),*/ parent)
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -52,7 +54,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
 
     addHomeUrlWidgets(lay);
 
-    QGroupBox* tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
+    QGroupBox *tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
 
     tabOptions = new Ui_advancedTabOptions;
     tabOptions->setupUi(tabsGroup);
@@ -73,12 +75,12 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     emit changed(false);
 }
 
-void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
+void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 {
     QFormLayout *formLayout = new QFormLayout;
     lay->addLayout(formLayout);
 
-    QLabel* startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
+    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
 
     m_startCombo = new KComboBox(this);
     m_startCombo->setEditable(false);
@@ -111,7 +113,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 
     ////
 
-    QLabel* webLabel = new QLabel(i18n("Default web browser engine:"), this);
+    QLabel *webLabel = new QLabel(i18n("Default web browser engine:"), this);
 
     m_webEngineCombo = new KComboBox(this);
     m_webEngineCombo->setEditable(false);
@@ -129,14 +131,16 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 static QString readStartUrlFromProfile()
 {
     const QString blank = "about:blank";
-    const QString profile = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/webbrowsing"));
-    if (profile.isEmpty())
+    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/webbrowsing"));
+    if (profile.isEmpty()) {
         return blank;
+    }
     KConfig cfg(profile, KConfig::SimpleConfig);
     KConfigGroup profileGroup(&cfg, "Profile");
     const QString rootItem = profileGroup.readEntry("RootItem");
-    if (rootItem.isEmpty())
+    if (rootItem.isEmpty()) {
         return blank;
+    }
     if (rootItem.startsWith("View")) {
         const QString prefix = rootItem + '_';
         const QString urlKey = QString("URL").prepend(prefix);
@@ -147,21 +151,24 @@ static QString readStartUrlFromProfile()
     return profileGroup.readPathEntry("ViewT0_URL", blank);
 }
 
-static StartPage urlToStartPageEnum(const QString& startUrl)
+static StartPage urlToStartPageEnum(const QString &startUrl)
 {
-    if (startUrl == "about:blank")
+    if (startUrl == "about:blank") {
         return ShowBlankPage;
-    if (startUrl == "about:" || startUrl == "about:konqueror")
+    }
+    if (startUrl == "about:" || startUrl == "about:konqueror") {
         return ShowAboutPage;
-    if (startUrl == "bookmarks:" || startUrl == "bookmarks:/")
+    }
+    if (startUrl == "bookmarks:" || startUrl == "bookmarks:/") {
         return ShowBookmarksPage;
+    }
     return ShowHomePage;
 }
 
 void KKonqGeneralOptions::load()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
-    homeURL->setUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE));
+    homeURL->setUrl(QUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE)));
     const QString startUrl = readStartUrlFromProfile();
     const StartPage startPage = urlToStartPageEnum(startUrl);
     const int startComboIndex = m_startCombo->findData(startPage);
@@ -173,7 +180,7 @@ void KKonqGeneralOptions::load()
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
     const KService::List partOfferList = KMimeTypeTrader::self()->query("text/html", "KParts/ReadOnlyPart", "not ('KParts/ReadWritePart' in ServiceTypes)");
     // Sorted list, so the first one is the preferred one, no need for a setCurrentIndex.
-    Q_FOREACH(const KService::Ptr partService, partOfferList) {
+    Q_FOREACH (const KService::Ptr partService, partOfferList) {
         // We want only the HTML-capable parts, not any text/plain part (via inheritance)
         // This is a small "private inheritance" hack, pending a more general solution
         if (!partService->hasMimeType("text/plain")) {
@@ -183,25 +190,25 @@ void KKonqGeneralOptions::load()
 
     KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
 
-    tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", true ) );
-    tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
+    tabOptions->m_pShowMMBInTabs->setChecked(cg.readEntry("MMBOpensTab", true));
+    tabOptions->m_pDynamicTabbarHide->setChecked(!(cg.readEntry("AlwaysTabbedMode", false)));
 
-    tabOptions->m_pNewTabsInBackground->setChecked( ! (cg.readEntry( "NewTabsInFront", false)) );
-    tabOptions->m_pOpenAfterCurrentPage->setChecked( cg.readEntry( "OpenAfterCurrentPage", false) );
-    tabOptions->m_pPermanentCloseButton->setChecked( cg.readEntry( "PermanentCloseButton", true) );
-    tabOptions->m_pKonquerorTabforExternalURL->setChecked( cg.readEntry( "KonquerorTabforExternalURL", false) );
-    tabOptions->m_pPopupsWithinTabs->setChecked( cg.readEntry( "PopupsWithinTabs", false) );
-    tabOptions->m_pTabCloseActivatePrevious->setChecked( cg.readEntry( "TabCloseActivatePrevious", false) );
-    tabOptions->m_pMiddleClickClose->setChecked( cg.readEntry( "MouseMiddleClickClosesTab", false ) );
+    tabOptions->m_pNewTabsInBackground->setChecked(!(cg.readEntry("NewTabsInFront", false)));
+    tabOptions->m_pOpenAfterCurrentPage->setChecked(cg.readEntry("OpenAfterCurrentPage", false));
+    tabOptions->m_pPermanentCloseButton->setChecked(cg.readEntry("PermanentCloseButton", true));
+    tabOptions->m_pKonquerorTabforExternalURL->setChecked(cg.readEntry("KonquerorTabforExternalURL", false));
+    tabOptions->m_pPopupsWithinTabs->setChecked(cg.readEntry("PopupsWithinTabs", false));
+    tabOptions->m_pTabCloseActivatePrevious->setChecked(cg.readEntry("TabCloseActivatePrevious", false));
+    tabOptions->m_pMiddleClickClose->setChecked(cg.readEntry("MouseMiddleClickClosesTab", false));
 
     cg = KConfigGroup(m_pConfig, "Notification Messages");
-    tabOptions->m_pTabConfirm->setChecked( !cg.hasKey("MultipleTabConfirm") );
+    tabOptions->m_pTabConfirm->setChecked(!cg.hasKey("MultipleTabConfirm"));
 
 }
 
 void KKonqGeneralOptions::defaults()
 {
-    homeURL->setUrl(KUrl(DEFAULT_HOMEPAGE));
+    homeURL->setUrl(QUrl(DEFAULT_HOMEPAGE));
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
@@ -215,18 +222,17 @@ void KKonqGeneralOptions::defaults()
 // ViewT0_ServiceName=khtml (if http)
 // ViewT0_ServiceType=text/html (if http)
 // ViewT0_URL[$e]=http://www.kde.org/
-static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage, const QString& preferredWebEngine)
+static void updateWebbrowsingProfile(const QString &homeUrl, StartPage startPage, const QString &preferredWebEngine)
 {
     QString url;
     QString serviceType;
     QString serviceName;
-    switch(startPage) {
-    case ShowHomePage:
-    {
+    switch (startPage) {
+    case ShowHomePage: {
         url = homeUrl;
         // Check if we can determine the mimetype of that URL; profile loading requires the mimetype to be known
         // This handles the case of a local directory, at least.
-        KMimeType::Ptr mime = KMimeType::findByUrl(url);
+        KMimeType::Ptr mime = KMimeType::findByUrl(QUrl(url));
         if (mime && !mime->isDefault()) {
             serviceType = mime->name();
         } else {
@@ -255,12 +261,10 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
     const QString profileFileName = "webbrowsing";
 
     // Create local copy of the profile if needed -- copied from KonqViewManager::setCurrentProfile
-    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+    const QString localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/;
     KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
     if (!QFile::exists(localPath)) {
-        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") +
-                                                         profileFileName, KGlobal::mainComponent());
+        const QString globalFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/);
         if (!globalFile.isEmpty()) {
             KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
             globalCfg->copyTo(localPath, cfg.data());
@@ -296,18 +300,19 @@ void KKonqGeneralOptions::save()
 
     const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
     QString engineEntryName = preferredWebEngine;
-    if (engineEntryName.endsWith(".desktop")) // turn the storageId into a desktopEntryName: remove .desktop
+    if (engineEntryName.endsWith(".desktop")) { // turn the storageId into a desktopEntryName: remove .desktop
         engineEntryName.truncate(engineEntryName.length() - 8);
-    kDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
+    }
+    //qDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
 
     updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice), engineEntryName);
-
+#if 0 //PORT QT5
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
-        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
         KConfigGroup removedServices(profile, "Added KDE Service Associations");
-        Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+        Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             services.removeAll(preferredWebEngine);
             services.prepend(preferredWebEngine); // make it the preferred one
@@ -324,26 +329,27 @@ void KKonqGeneralOptions::save()
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
         KBuildSycocaProgressDialog::rebuildKSycoca(this);
     }
-
+#endif
 
     KConfigGroup cg(m_pConfig, "FMSettings");
-    cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );
-    cg.writeEntry( "AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()) );
+    cg.writeEntry("MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked());
+    cg.writeEntry("AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()));
 
-    cg.writeEntry( "NewTabsInFront", !(tabOptions->m_pNewTabsInBackground->isChecked()) );
-    cg.writeEntry( "OpenAfterCurrentPage", tabOptions->m_pOpenAfterCurrentPage->isChecked() );
-    cg.writeEntry( "PermanentCloseButton", tabOptions->m_pPermanentCloseButton->isChecked() );
-    cg.writeEntry( "KonquerorTabforExternalURL", tabOptions->m_pKonquerorTabforExternalURL->isChecked() );
-    cg.writeEntry( "PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked() );
-    cg.writeEntry( "TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked() );
-    cg.writeEntry( "MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked() );
+    cg.writeEntry("NewTabsInFront", !(tabOptions->m_pNewTabsInBackground->isChecked()));
+    cg.writeEntry("OpenAfterCurrentPage", tabOptions->m_pOpenAfterCurrentPage->isChecked());
+    cg.writeEntry("PermanentCloseButton", tabOptions->m_pPermanentCloseButton->isChecked());
+    cg.writeEntry("KonquerorTabforExternalURL", tabOptions->m_pKonquerorTabforExternalURL->isChecked());
+    cg.writeEntry("PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked());
+    cg.writeEntry("TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked());
+    cg.writeEntry("MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked());
     cg.sync();
     // It only matters whether the key is present, its value has no meaning
-    cg = KConfigGroup(m_pConfig,"Notification Messages");
-    if ( tabOptions->m_pTabConfirm->isChecked() )
-        cg.deleteEntry( "MultipleTabConfirm" );
-    else
-        cg.writeEntry( "MultipleTabConfirm", true );
+    cg = KConfigGroup(m_pConfig, "Notification Messages");
+    if (tabOptions->m_pTabConfirm->isChecked()) {
+        cg.deleteEntry("MultipleTabConfirm");
+    } else {
+        cg.writeEntry("MultipleTabConfirm", true);
+    }
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
@@ -352,11 +358,8 @@ void KKonqGeneralOptions::save()
     emit changed(false);
 }
 
-
 void KKonqGeneralOptions::slotChanged()
 {
     emit changed(true);
 }
-
-#include "generalopts.moc"
 

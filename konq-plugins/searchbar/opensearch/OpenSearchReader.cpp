@@ -61,7 +61,7 @@ OpenSearchEngine *OpenSearchReader::read()
     }
 
     if (name() != QLatin1String("OpenSearchDescription")
-        || namespaceUri() != QLatin1String("http://a9.com/-/spec/opensearch/1.1/")) {
+            || namespaceUri() != QLatin1String("http://a9.com/-/spec/opensearch/1.1/")) {
         raiseError(i18n("The file is not an OpenSearch 1.1 file."));
         return engine;
     }
@@ -75,16 +75,15 @@ OpenSearchEngine *OpenSearchReader::read()
 
         if (name() == QLatin1String("ShortName")) {
             engine->setName(readElementText());
-        }
-        else if (name() == QLatin1String("Description")) {
+        } else if (name() == QLatin1String("Description")) {
             engine->setDescription(readElementText());
-        }
-        else if (name() == QLatin1String("Url")) {
+        } else if (name() == QLatin1String("Url")) {
             QString type = attributes().value(QLatin1String("type")).toString();
             QString url = attributes().value(QLatin1String("template")).toString();
 
-            if (url.isEmpty())
+            if (url.isEmpty()) {
                 continue;
+            }
 
             QList<OpenSearchEngine::Parameter> parameters;
 
@@ -111,21 +110,19 @@ OpenSearchEngine *OpenSearchReader::read()
             if (type == QLatin1String("application/x-suggestions+json")) {
                 engine->setSuggestionsUrlTemplate(url);
                 engine->setSuggestionsParameters(parameters);
-            }
-            else {
+            } else {
                 engine->setSearchUrlTemplate(url);
                 engine->setSearchParameters(parameters);
             }
-        }
-        else if (name() == QLatin1String("Image")) {
-             engine->setImageUrl(readElementText());
+        } else if (name() == QLatin1String("Image")) {
+            engine->setImageUrl(readElementText());
         }
 
         if (!engine->name().isEmpty()
-            && !engine->description().isEmpty()
-            && !engine->suggestionsUrlTemplate().isEmpty()
-            && !engine->searchUrlTemplate().isEmpty()
-            && !engine->imageUrl().isEmpty()) {
+                && !engine->description().isEmpty()
+                && !engine->suggestionsUrlTemplate().isEmpty()
+                && !engine->searchUrlTemplate().isEmpty()
+                && !engine->imageUrl().isEmpty()) {
             break;
         }
     }

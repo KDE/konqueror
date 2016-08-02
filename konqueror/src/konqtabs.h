@@ -42,115 +42,124 @@ class NewTabToolButton;
 
 class KONQ_TESTS_EXPORT KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentContainer,
-		KonqViewManager* viewManager);
-  virtual ~KonqFrameTabs();
+    KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentContainer,
+                  KonqViewManager *viewManager);
+    virtual ~KonqFrameTabs();
 
-    virtual bool accept( KonqFrameVisitor* visitor );
+    virtual bool accept(KonqFrameVisitor *visitor);
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options,
-			   KonqFrameBase* docContainer, int id = 0, int depth = 0 );
-  virtual void copyHistory( KonqFrameBase *other );
+    virtual void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options,
+                            KonqFrameBase *docContainer, int id = 0, int depth = 0);
+    virtual void copyHistory(KonqFrameBase *other);
 
-  const QList<KonqFrameBase*>& childFrameList() const { return m_childFrameList; }
+    const QList<KonqFrameBase *> &childFrameList() const
+    {
+        return m_childFrameList;
+    }
 
-  virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon( const KUrl &url, QWidget* sender );
+    virtual void setTitle(const QString &title, QWidget *sender);
+    virtual void setTabIcon(const QUrl &url, QWidget *sender);
 
-  virtual QWidget* asQWidget() { return this; }
-  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Tabs; }
+    virtual QWidget *asQWidget()
+    {
+        return this;
+    }
+    virtual KonqFrameBase::FrameType frameType() const
+    {
+        return KonqFrameBase::Tabs;
+    }
 
-  void activateChild();
+    void activateChild();
 
     /**
      * Insert a new frame into the container.
      */
-    void insertChildFrame(KonqFrameBase * frame, int index = -1);
+    void insertChildFrame(KonqFrameBase *frame, int index = -1);
 
     /**
      * Call this before deleting one of our children.
      */
-    void childFrameRemoved( KonqFrameBase * frame );
+    void childFrameRemoved(KonqFrameBase *frame);
 
-    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
+    virtual void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame);
 
     /**
      * Returns the tab at a given index
      * (same as widget(index), but casted to a KonqFrameBase)
      */
-    KonqFrameBase* tabAt(int index) const;
+    KonqFrameBase *tabAt(int index) const;
 
     /**
      * Returns the current tab
      * (same as currentWidget(), but casted to a KonqFrameBase)
      */
-    KonqFrameBase* currentTab() const;
+    KonqFrameBase *currentTab() const;
 
-  void moveTabBackward(int index);
-  void moveTabForward(int index);
+    void moveTabBackward(int index);
+    void moveTabForward(int index);
 
-  void setLoading(KonqFrameBase* frame, bool loading);
+    void setLoading(KonqFrameBase *frame, bool loading);
 
-  /**
-   * Returns the tab index that contains (directly or indirectly) the frame @p frame,
-   * or -1 if the frame is not in the tab widget.
-   */
-  int tabIndexContaining(KonqFrameBase* frame) const;
+    /**
+     * Returns the tab index that contains (directly or indirectly) the frame @p frame,
+     * or -1 if the frame is not in the tab widget.
+     */
+    int tabIndexContaining(KonqFrameBase *frame) const;
 
-  /**
-   * Implemented to catch MMB click when KonqSettings::mouseMiddleClickClosesTab()
-   * returns true so that the tab can be properly closed without being activated
-   * first.
-   */
-  virtual bool eventFilter(QObject*, QEvent*);
+    /**
+     * Implemented to catch MMB click when KonqSettings::mouseMiddleClickClosesTab()
+     * returns true so that the tab can be properly closed without being activated
+     * first.
+     */
+    virtual bool eventFilter(QObject *, QEvent *);
 
 public Q_SLOTS:
-  void slotCurrentChanged( int index );
-  void setAlwaysTabbedMode( bool );
+    void slotCurrentChanged(int index);
+    void setAlwaysTabbedMode(bool);
 
 Q_SIGNALS:
-  void removeTabPopup();
-    void openUrl(KonqView* view, const KUrl& url);
+    void removeTabPopup();
+    void openUrl(KonqView *view, const QUrl &url);
 
 private:
-  void refreshSubPopupMenuTab();
+    void refreshSubPopupMenuTab();
     void updateTabBarVisibility();
     void initPopupMenu();
-   /**
-    * Returns the index position of the tab where the frame @p frame is, assuming that
-    * it's the active frame in that tab,
-    * or -1 if the frame is not in the tab widget or it's not active.
-    */
-    int tabWhereActive(KonqFrameBase* frame) const;
+    /**
+     * Returns the index position of the tab where the frame @p frame is, assuming that
+     * it's the active frame in that tab,
+     * or -1 if the frame is not in the tab widget or it's not active.
+     */
+    int tabWhereActive(KonqFrameBase *frame) const;
 
 private Q_SLOTS:
-  void slotContextMenu( const QPoint& );
-  void slotContextMenu( QWidget*, const QPoint& );
-  void slotCloseRequest( QWidget* );
-  void slotMovedTab( int, int );
-  void slotMouseMiddleClick();
-  void slotMouseMiddleClick( QWidget* );
+    void slotContextMenu(const QPoint &);
+    void slotContextMenu(QWidget *, const QPoint &);
+    void slotCloseRequest(QWidget *);
+    void slotMovedTab(int, int);
+    void slotMouseMiddleClick();
+    void slotMouseMiddleClick(QWidget *);
 
-  void slotTestCanDecode(const QDragMoveEvent *e, bool &accept /* result */);
-  void slotReceivedDropEvent( QDropEvent* );
-  void slotInitiateDrag( QWidget * );
-  void slotReceivedDropEvent( QWidget *, QDropEvent * );
-  void slotSubPopupMenuTabActivated( QAction * );
+    void slotTestCanDecode(const QDragMoveEvent *e, bool &accept /* result */);
+    void slotReceivedDropEvent(QDropEvent *);
+    void slotInitiateDrag(QWidget *);
+    void slotReceivedDropEvent(QWidget *, QDropEvent *);
+    void slotSubPopupMenuTabActivated(QAction *);
 
 private:
-  QList<KonqFrameBase*> m_childFrameList;
+    QList<KonqFrameBase *> m_childFrameList;
 
-  KonqViewManager* m_pViewManager;
-  QMenu* m_pPopupMenu;
-  QMenu* m_pSubPopupMenuTab;
-  QToolButton* m_rightWidget;
-  NewTabToolButton* m_leftWidget;
-  bool m_permanentCloseButtons;
-  bool m_alwaysTabBar;
-  QMap<QString,QAction*> m_popupActions;
+    KonqViewManager *m_pViewManager;
+    QMenu *m_pPopupMenu;
+    QMenu *m_pSubPopupMenuTab;
+    QToolButton *m_rightWidget;
+    NewTabToolButton *m_leftWidget;
+    bool m_permanentCloseButtons;
+    bool m_alwaysTabBar;
+    QMap<QString, QAction *> m_popupActions;
 };
 
 #include <QToolButton>
@@ -159,28 +168,29 @@ class NewTabToolButton : public QToolButton // subclass with drag'n'drop functio
 {
     Q_OBJECT
 public:
-    NewTabToolButton( QWidget *parent )
-            : QToolButton( parent ) {
-        setAcceptDrops( true );
+    NewTabToolButton(QWidget *parent)
+        : QToolButton(parent)
+    {
+        setAcceptDrops(true);
     }
 
 Q_SIGNALS:
-    void testCanDecode( const QDragMoveEvent *event, bool &accept );
-    void receivedDropEvent( QDropEvent *event );
+    void testCanDecode(const QDragMoveEvent *event, bool &accept);
+    void receivedDropEvent(QDropEvent *event);
 
 protected:
-    void dragEnterEvent( QDragEnterEvent *event )
+    void dragEnterEvent(QDragEnterEvent *event)
     {
         bool accept = false;
-        emit testCanDecode( event, accept );
-        if ( accept ) {
+        emit testCanDecode(event, accept);
+        if (accept) {
             event->acceptProposedAction();
         }
     }
 
-    void dropEvent( QDropEvent *event )
+    void dropEvent(QDropEvent *event)
     {
-        emit receivedDropEvent( event );
+        emit receivedDropEvent(event);
         event->acceptProposedAction();
     }
 };

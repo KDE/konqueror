@@ -46,14 +46,14 @@ bool PluginBase::akregatorRunning()
     return QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.akregator");
 }
 
-void PluginBase::addFeedsViaDBUS(const QStringList& urls)
+void PluginBase::addFeedsViaDBUS(const QStringList &urls)
 {
     kDebug() << "PluginBase::addFeedsViaDBUS";
     QDBusInterface akregator("org.kde.akregator", "/Akregator", "org.kde.akregator.part");
-    QDBusReply<void> reply  = akregator.call("addFeedsToGroup", urls, i18n("Imported Feeds") );
-    if(!reply.isValid()) {
-        KMessageBox::error( 0, i18n( "Akregator feed icon - DBus Call failed" ),
-        i18nc( "@title:window", "The DBus call addFeedToGroup failed" ));
+    QDBusReply<void> reply  = akregator.call("addFeedsToGroup", urls, i18n("Imported Feeds"));
+    if (!reply.isValid()) {
+        KMessageBox::error(0, i18n("Akregator feed icon - DBus Call failed"),
+                           i18nc("@title:window", "The DBus call addFeedToGroup failed"));
     }
 }
 
@@ -68,29 +68,23 @@ void PluginBase::addFeedViaCmdLine(const QString &url)
 // handle all the wild stuff that KUrl doesn't handle
 QString PluginBase::fixRelativeURL(const QString &s, const KUrl &baseurl)
 {
-    QString s2=s;
+    QString s2 = s;
     KUrl u;
-    if (KUrl::isRelativeUrl(s2))
-    {
-        if (s2.startsWith("//"))
-        {
-            s2=s2.prepend(baseurl.protocol()+':');
-            u=s2;
-        }
-        else if (s2.startsWith("/"))
-        {
+    if (KUrl::isRelativeUrl(s2)) {
+        if (s2.startsWith("//")) {
+            s2 = s2.prepend(baseurl.protocol() + ':');
+            u = s2;
+        } else if (s2.startsWith("/")) {
             KUrl b2(baseurl);
             b2.setPath(QString()); // delete path and query, so that only protocol://host remains
             b2.setQuery(QString());
-            u = KUrl(b2, s2.remove(0,1)); // remove leading "/"
-        }
-        else
-        {
+            u = KUrl(b2, s2.remove(0, 1)); // remove leading "/"
+        } else {
             u = KUrl(baseurl, s2);
         }
+    } else {
+        u = s2;
     }
-    else
-        u=s2;
 
     u.cleanPath();
     //kDebug() << "AKREGATOR_PLUGIN_FIXURL: " << "url=" << s << " baseurl=" << baseurl.url() << " fixed=" << u.url();

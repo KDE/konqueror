@@ -21,8 +21,8 @@
 #include "KonqViewAdaptor.h"
 #include "konqview.h"
 
-KonqViewAdaptor::KonqViewAdaptor( KonqView * view )
-    : m_pView ( view )
+KonqViewAdaptor::KonqViewAdaptor(KonqView *view)
+    : m_pView(view)
 {
 }
 
@@ -30,15 +30,15 @@ KonqViewAdaptor::~KonqViewAdaptor()
 {
 }
 
-void KonqViewAdaptor::openUrl( const QString& url, const QString & locationBarURL, const QString & nameFilter )
+void KonqViewAdaptor::openUrl(const QString &url, const QString &locationBarURL, const QString &nameFilter)
 {
-    m_pView->openUrl( KUrl(url), locationBarURL, nameFilter );
+    m_pView->openUrl(QUrl::fromUserInput(url), locationBarURL, nameFilter);
 }
 
-bool KonqViewAdaptor::changeViewMode( const QString &mimeType,
-                                      const QString &serviceName )
+bool KonqViewAdaptor::changeViewMode(const QString &mimeType,
+                                     const QString &serviceName)
 {
-    return m_pView->changePart( mimeType, serviceName );
+    return m_pView->changePart(mimeType, serviceName);
 }
 
 void KonqViewAdaptor::lockHistory()
@@ -74,12 +74,12 @@ QStringList KonqViewAdaptor::serviceTypes()
 
 QDBusObjectPath KonqViewAdaptor::part()
 {
-    return QDBusObjectPath( m_pView->partObjectPath() );
+    return QDBusObjectPath(m_pView->partObjectPath());
 }
 
-void KonqViewAdaptor::enablePopupMenu( bool b )
+void KonqViewAdaptor::enablePopupMenu(bool b)
 {
-    m_pView->enablePopupMenu( b );
+    m_pView->enablePopupMenu(b);
 }
 
 uint KonqViewAdaptor::historyLength()const
@@ -119,7 +119,6 @@ bool KonqViewAdaptor::canGoForward()const
 
 void KonqViewAdaptor::reload()
 {
-    return m_pView->mainWindow()->slotReload( m_pView );
+    return m_pView->mainWindow()->slotReload(m_pView);
 }
 
-#include "KonqViewAdaptor.moc"

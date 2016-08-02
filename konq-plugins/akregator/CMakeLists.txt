@@ -6,27 +6,29 @@ MESSAGE(STATUS "akregator popupmenu plugin disabled. Doable via servicemenu or s
 #
 #kde4_add_plugin(akregatorkonqplugin ${akregatorkonqplugin_PART_SRCS})
 #
-#target_link_libraries(akregatorkonqplugin  ${KDE4_KDE3SUPPORT_LIBS} ${QT_QTXML_LIBRARY} konq
-#    ${KDE4_KHTML_LIBS} )
+#target_link_libraries(akregatorkonqplugin  ${KDE4_KDE3SUPPORT_LIBS} Qt5::Xml konq
+#    KF5::KHtml )
 #
-#install(TARGETS akregatorkonqplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+#install(TARGETS akregatorkonqplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### next target ###############
 
 set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginbase.cpp )
 
-kde4_add_plugin(akregatorkonqfeedicon ${akregatorkonqfeedicon_PART_SRCS})
+add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS})
 
-target_link_libraries(akregatorkonqfeedicon ${KDE4_KPARTS_LIBS} )
+target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
 
-install(TARGETS akregatorkonqfeedicon DESTINATION ${PLUGIN_INSTALL_DIR} )
+target_link_libraries(akregatorkonqfeedicon KF5::Parts KF5::KDELibs4Support)
+
+install(TARGETS akregatorkonqfeedicon DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-#install( FILES akregator_konqplugin.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+#install( FILES akregator_konqplugin.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
-install( FILES feed.png DESTINATION ${DATA_INSTALL_DIR}/akregator/pics )
+install( FILES feed.png DESTINATION ${KDE_INSTALL_DATADIR}/akregator/pics )

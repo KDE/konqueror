@@ -23,17 +23,17 @@
 #include <ktoolbarpopupaction.h>
 #include <konqhistorymanager.h>
 #include <kactionmenu.h>
-#include <QWidget>
 #include <QtCore/QList>
 
 struct HistoryEntry;
 class QMenu;
 
-namespace KonqActions {
-    void fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
-                          QMenu * popup,
-                          bool onlyBack,
-                          bool onlyForward);
+namespace KonqActions
+{
+void fillHistoryPopup(const QList<HistoryEntry *> &history, int historyIndex,
+                      QMenu *popup,
+                      bool onlyBack,
+                      bool onlyForward);
 }
 
 #if 0
@@ -43,20 +43,20 @@ namespace KonqActions {
  */
 class KonqBidiHistoryAction : public KToolBarPopupAction
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-    KonqBidiHistoryAction( const QString & text, QObject * parent );
+    KonqBidiHistoryAction(const QString &text, QObject *parent);
     virtual ~KonqBidiHistoryAction();
 
-    void fillGoMenu( const QList<HistoryEntry*> &history, int historyIndex );
+    void fillGoMenu(const QList<HistoryEntry *> &history, int historyIndex);
 
 protected Q_SLOTS:
-    void slotTriggered( QAction* action );
+    void slotTriggered(QAction *action);
 
 Q_SIGNALS:
     void menuAboutToShow();
     // -1 for one step back, 0 for don't move, +1 for one step forward, etc.
-    void step( int );
+    void step(int);
 private:
     int m_startPos;
     int m_currentPos; // == history.at()
@@ -71,28 +71,29 @@ class KonqMostOftenURLSAction : public KActionMenu
     Q_OBJECT
 
 public:
-    KonqMostOftenURLSAction( const QString& text, QObject* parent );
+    KonqMostOftenURLSAction(const QString &text, QObject *parent);
     virtual ~KonqMostOftenURLSAction();
 
-    static bool numberOfVisitOrder( const KonqHistoryEntry& lhs, const KonqHistoryEntry& rhs ) {
+    static bool numberOfVisitOrder(const KonqHistoryEntry &lhs, const KonqHistoryEntry &rhs)
+    {
         return lhs.numberOfTimesVisited < rhs.numberOfTimesVisited;
     }
 
 Q_SIGNALS:
-    void activated(const KUrl&);
+    void activated(const QUrl &);
 
 private Q_SLOTS:
     void slotHistoryCleared();
-    void slotEntryAdded( const KonqHistoryEntry& entry );
-    void slotEntryRemoved( const KonqHistoryEntry& entry );
+    void slotEntryAdded(const KonqHistoryEntry &entry);
+    void slotEntryRemoved(const KonqHistoryEntry &entry);
 
     void slotFillMenu();
-    void slotActivated(QAction* action);
+    void slotActivated(QAction *action);
 
 private:
     void init();
     void parseHistory();
-    static void inSort( const KonqHistoryEntry& entry );
+    static void inSort(const KonqHistoryEntry &entry);
     bool m_parsingDone;
 };
 
@@ -103,15 +104,15 @@ class KonqHistoryAction : public KActionMenu
     Q_OBJECT
 
 public:
-    KonqHistoryAction(const QString& text, QObject* parent);
+    KonqHistoryAction(const QString &text, QObject *parent);
     virtual ~KonqHistoryAction();
 
 Q_SIGNALS:
-    void activated(const KUrl&);
+    void activated(const QUrl &);
 
 private Q_SLOTS:
     void slotFillMenu();
-    void slotActivated(QAction* action);
+    void slotActivated(QAction *action);
 };
 
 #endif

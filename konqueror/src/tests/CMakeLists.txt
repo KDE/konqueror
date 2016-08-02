@@ -1,38 +1,52 @@
 if (NOT WIN32)
 
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${KDE4_INCLUDES} )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/..  )
+
+# for config-apps.h
+include_directories( ${CMAKE_BINARY_DIR} )
 
 ########### centralwidget ###############
 
-kde4_add_executable(centralwidget TEST centralwidget.cpp)
-target_link_libraries(centralwidget konq ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY}
-                      ${QT_QTTEST_LIBRARY})
+add_executable(centralwidget centralwidget.cpp)
+ecm_mark_as_test(centralwidget)
+target_link_libraries(centralwidget KF5::Konq KF5::KDELibs4Support Qt5::Core Qt5::Gui
+                      Qt5::Test)
 
 ########### konqviewmgrtest ###############
 
-kde4_add_unit_test(konqviewmgrtest TEST konqviewmgrtest.cpp)
-target_link_libraries(konqviewmgrtest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY}
-                      ${KDE4_KHTML_LIBS} ${QT_QTTEST_LIBRARY})
+add_executable(konqviewmgrtest konqviewmgrtest.cpp)
+add_test(konqviewmgrtest konqviewmgrtest)
+ecm_mark_as_test(konqviewmgrtest)
+target_link_libraries(konqviewmgrtest kdeinit_konqueror Qt5::Core Qt5::Gui
+                      KF5::KHtml Qt5::Test)
 
 ########### historymanagertest ###############
 
-kde4_add_unit_test(historymanagertest historymanagertest.cpp)
-target_link_libraries(historymanagertest konq konquerorprivate ${KDE4_KDEUI_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+add_executable(historymanagertest historymanagertest.cpp)
+add_test(historymanagertest historymanagertest)
+ecm_mark_as_test(historymanagertest)
+target_link_libraries(historymanagertest KF5::Konq konquerorprivate  Qt5::Core Qt5::Test)
 
 ########### undomanagertest ###############
 
-kde4_add_unit_test(undomanagertest undomanagertest.cpp)
-target_link_libraries(undomanagertest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+add_executable(undomanagertest undomanagertest.cpp)
+add_test(undomanagertest undomanagertest)
+ecm_mark_as_test(undomanagertest)
+target_link_libraries(undomanagertest kdeinit_konqueror Qt5::Core Qt5::Test)
 
 ########### konqhtmltest ###############
 
-kde4_add_unit_test(konqhtmltest konqhtmltest.cpp)
-target_link_libraries(konqhtmltest kdeinit_konqueror ${KDE4_KHTML_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+add_executable(konqhtmltest konqhtmltest.cpp)
+add_test(konqhtmltest konqhtmltest)
+ecm_mark_as_test(konqhtmltest)
+target_link_libraries(konqhtmltest kdeinit_konqueror KF5::KHtml Qt5::Core Qt5::Test)
 
 ########### konqviewtest ###############
 
-kde4_add_unit_test(konqviewtest konqviewtest.cpp)
-target_link_libraries(konqviewtest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+add_executable(konqviewtest konqviewtest.cpp)
+add_test(konqviewtest konqviewtest)
+ecm_mark_as_test(konqviewtest)
+target_link_libraries(konqviewtest kdeinit_konqueror Qt5::Core Qt5::Test)
 
 endif (NOT WIN32)

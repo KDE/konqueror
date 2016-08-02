@@ -21,10 +21,11 @@
 #include <kconfiggroup.h>
 #include <QtCore/QTimer>
 
-#include <QtCore/QPointer>
+#include <QPointer>
+#include <QUrl>
 
-#include <kurl.h>
 #include <kparts/part.h>
+#include <KSharedConfig>
 
 #include "konqsidebarplugin.h"
 #include "module_manager.h"
@@ -32,11 +33,9 @@
 class KonqMultiTabBar;
 class KonqSidebarPlugin;
 class QMenu;
-class KMultiTabBar;
 class QHBoxLayout;
 class QSplitter;
 class QStringList;
-class KMenu;
 
 class ButtonInfo
 {
@@ -45,9 +44,9 @@ public:
         : module(NULL), m_plugin(NULL)
     {
     }
-    ButtonInfo(const KSharedConfig::Ptr& configFile_,
-               const QString& file_,
-               const QString &url_,const QString &lib,
+    ButtonInfo(const KSharedConfig::Ptr &configFile_,
+               const QString &file_,
+               const QUrl &url_, const QString &lib,
                const QString &dispName_, const QString &iconName_)
         : configFile(configFile_),
           file(file_), dock(NULL),
@@ -56,16 +55,14 @@ public:
     {
     }
 
-    ~ButtonInfo() {}
-
-    KonqSidebarPlugin* plugin(QObject* parent);
+    KonqSidebarPlugin *plugin(QObject *parent);
 
     KSharedConfig::Ptr configFile;
     QString file;
     QPointer<QWidget> dock;
     KonqSidebarModule *module;
-    KonqSidebarPlugin* m_plugin;
-    QString URL; // TODO remove
+    KonqSidebarPlugin *m_plugin;
+    QUrl URL; // TODO remove (after removing the place where it's used)
     QString libName;
     QString displayName;
     QString iconName;
@@ -80,20 +77,20 @@ public:
     Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
                    const QString &currentProfile);
     ~Sidebar_Widget();
-    bool openUrl(const KUrl &url);
+    bool openUrl(const QUrl &url);
     void stdAction(const char *handlestd);
 
     KParts::BrowserExtension *getExtension();
     virtual QSize sizeHint() const;
 
 public Q_SLOTS:
-    void addWebSideBar(const KUrl& url, const QString& name);
+    void addWebSideBar(const QUrl &url, const QString &name);
 
 protected:
-    void customEvent(QEvent* ev);
+    void customEvent(QEvent *ev);
     //void resizeEvent(QResizeEvent* ev);
-    virtual bool eventFilter(QObject*,QEvent*);
-    virtual void mousePressEvent(QMouseEvent*);
+    virtual bool eventFilter(QObject *, QEvent *);
+    virtual void mousePressEvent(QMouseEvent *);
 
 protected Q_SLOTS:
     void showHidePage(int value);
@@ -112,60 +109,63 @@ protected Q_SLOTS:
     void slotSetIcon();
     void slotRemove();
 
-    void slotUrlsDropped(const KUrl::List& urls);
+    void slotUrlsDropped(const QList<QUrl> &urls);
 
 Q_SIGNALS:
     void started(KIO::Job *);
     void completed();
-    void fileSelection(const KFileItemList& iems);
-    void fileMouseOver(const KFileItem& item);
+    void fileSelection(const KFileItemList &iems);
+    void fileMouseOver(const KFileItem &item);
 
     /* The following public slots are wrappers for browserextension signals */
 public Q_SLOTS:
-    void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
+    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
     /* @internal
      * ### KDE4 remove me
      */
-    void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+    void submitFormRequest(const char *, const QString &, const QByteArray &, const QString &, const QString &, const QString &);
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
                          const KParts::WindowArgs &windowArgs);
 
-    void slotEnableAction(KonqSidebarModule* module, const char * name, bool enabled);
+    void slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled);
 
 private:
 
     bool addButton(const QString &desktopFileName, int pos = -1);
     bool createView(ButtonInfo &buttonInfo);
     KonqSidebarModule *loadModule(QWidget *par, const QString &desktopName,
-                                  ButtonInfo& buttonInfo, const KSharedConfig::Ptr& config);
+                                  ButtonInfo &buttonInfo, const KSharedConfig::Ptr &config);
     void readConfig();
     void doLayout();
     void connectModule(KonqSidebarModule *mod);
     void collapseExpandSidebar();
     void doEnableActions();
-    ButtonInfo& currentButtonInfo() { return m_buttons[m_currentButtonIndex]; }
+    ButtonInfo &currentButtonInfo()
+    {
+        return m_buttons[m_currentButtonIndex];
+    }
 
     /**
      * Create a module without the interactive "createNewModule" implemented
      * in the plugin.
      */
-    bool createDirectModule(const QString& templ,
-                            const QString& name,
-                            const KUrl& url,
-                            const QString& icon,
-                            const QString& module,
-                            const QString& treeModule = QString());
+    bool createDirectModule(const QString &templ,
+                            const QString &name,
+                            const QUrl &url,
+                            const QString &icon,
+                            const QString &module,
+                            const QString &treeModule = QString());
 private Q_SLOTS:
     void aboutToShowAddMenu();
-    void triggeredAddMenu(QAction* action);
+    void triggeredAddMenu(QAction *action);
 
-    void slotPopupMenu(KonqSidebarModule*, const QPoint &global, const KFileItemList &items,
+    void slotPopupMenu(KonqSidebarModule *, const QPoint &global, const KFileItemList &items,
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
                        KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                       const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                       const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
-    void slotAddItem(const KFileItem& item);
+    void slotStatResult(KJob *job);
 
 private:
     KParts::ReadOnlyPart *m_partParent;
@@ -179,7 +179,7 @@ private:
 
     QMenu *m_addMenu;
     QActionGroup m_addMenuActionGroup;
-    QMap<QAction*, KonqSidebarPlugin*> m_pluginForAction;
+    QMap<QAction *, KonqSidebarPlugin *> m_pluginForAction;
 
     QPointer<KonqSidebarModule> m_activeModule; // during RMB popups inside the module
 
@@ -188,7 +188,7 @@ private:
     KConfigGroup *m_config;
     QTimer m_configTimer;
 
-    KUrl m_storedUrl;
+    QUrl m_storedUrl;
     int m_savedWidth;
     int m_latestViewed;
 

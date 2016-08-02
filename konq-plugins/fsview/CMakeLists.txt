@@ -15,28 +15,28 @@ set(libfsview_SRCS
 
 set(fsview_SRCS main.cpp ${libfsview_SRCS} )
 
-kde4_add_executable(fsview ${fsview_SRCS})
+add_executable(fsview ${fsview_SRCS})
 
-target_link_libraries(fsview  ${KDE4_KIO_LIBS})
+target_link_libraries(fsview KF5::KIOWidgets KF5::KDELibs4Support)
 
-install(TARGETS fsview ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### next target ###############
 
 set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
-kde4_add_plugin(fsviewpart  ${fsviewpart_PART_SRCS})
+add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
 
-target_link_libraries(fsviewpart  ${KDE4_KPARTS_LIBS}  konq )
+target_link_libraries(fsviewpart KF5::Parts KF5::KDELibs4Support)
 
-install(TARGETS fsviewpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS fsviewpart  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES fsview_part.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES fsview_part.rc  DESTINATION  ${DATA_INSTALL_DIR}/fsview )
+install( FILES fsview_part.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES fsview_part.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/fsview )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ICONS 22-apps-fsview.png  32-apps-fsview.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor   )
 

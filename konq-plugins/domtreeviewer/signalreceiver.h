@@ -44,24 +44,30 @@
  */
 class SignalReceiver : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-public:  
-  explicit SignalReceiver(QObject *parent = 0);
-  virtual ~SignalReceiver();
-  
-  /** returns true if any signal has been received */
-  bool signalReceived() const { return rcvd; }
-  
-  /** returns true if any signal has been received */
-  bool operator ()() const { return rcvd; }
+public:
+    explicit SignalReceiver(QObject *parent = 0);
+    virtual ~SignalReceiver();
+
+    /** returns true if any signal has been received */
+    bool signalReceived() const
+    {
+        return rcvd;
+    }
+
+    /** returns true if any signal has been received */
+    bool operator()() const
+    {
+        return rcvd;
+    }
 
 public slots:
-  /** connect a signal to this slot to receive it */
-  void slot();
+    /** connect a signal to this slot to receive it */
+    void slot();
 
 private:
-  bool rcvd;
+    bool rcvd;
 };
 
 #endif // KONQ_PLUGIN_SIGNALRECEIVER_H

@@ -52,11 +52,12 @@ public:
      * This is a bit like "qApp": you can access the instance anywhere, but you need to
      * create it first.
      */
-    static KonqHistoryManager *kself() {
-        return static_cast<KonqHistoryManager*>( KParts::HistoryProvider::self() );
+    static KonqHistoryManager *kself()
+    {
+        return static_cast<KonqHistoryManager *>(KParts::HistoryProvider::self());
     }
 
-    explicit KonqHistoryManager( KBookmarkManager* bookmarkManager, QObject *parent = 0 );
+    explicit KonqHistoryManager(KBookmarkManager *bookmarkManager, QObject *parent = 0);
     ~KonqHistoryManager();
 
     /**
@@ -76,26 +77,29 @@ public:
      * @param title The title of the URL. If you don't know it (yet), you may
                     specify it in @ref confirmPending().
      */
-    void addPending( const KUrl& url, const QString& typedUrl = QString(),
-		     const QString& title = QString() );
+    void addPending(const QUrl &url, const QString &typedUrl = QString(),
+                    const QString &title = QString());
 
     /**
      * Confirms and updates the entry for @p url.
      */
-    void confirmPending( const KUrl& url,
-			 const QString& typedUrl = QString(),
-			 const QString& title = QString() );
+    void confirmPending(const QUrl &url,
+                        const QString &typedUrl = QString(),
+                        const QString &title = QString());
 
     /**
      * Removes a pending url from the history, e.g. when the url does not
      * exist, or the user aborted loading.
      */
-    void removePending( const KUrl& url );
+    void removePending(const QUrl &url);
 
     /**
      * @returns the KCompletion object.
      */
-    KCompletion * completionObject() const { return m_pCompletion; }
+    KCompletion *completionObject() const
+    {
+        return m_pCompletion;
+    }
 
     // HistoryProvider interface, let konq handle this
     /**
@@ -104,8 +108,8 @@ public:
      * By default, file:/ urls will be filtered out, but if they come thru
      * the HistoryProvider interface, they are added to the history.
      */
-    virtual void insert( const QString& );
-    virtual void remove( const QString& ) {}
+    virtual void insert(const QString &);
+    virtual void remove(const QString &) {}
     virtual void clear() {}
 
 private:
@@ -125,19 +129,18 @@ private:
      * If @p pending is false, @p url will be removed from the pending urls
      * (if available) and NOT be added again in that case.
      */
-    void addToHistory( bool pending, const KUrl& url,
-		       const QString& typedUrl = QString(),
-		       const QString& title = QString() );
-
+    void addToHistory(bool pending, const QUrl &url,
+                      const QString &typedUrl = QString(),
+                      const QString &title = QString());
 
     /**
      * @returns true if the given @p url should be filtered out and not be
      * added to the history. By default, all local urls (url.isLocalFile())
      * will return true, as well as urls with an empty host.
      */
-    virtual bool filterOut( const KUrl& url );
+    virtual bool filterOut(const QUrl &url);
 
-    void addToUpdateList( const QString& url );
+    void addToUpdateList(const QString &url);
 
     /**
      * The list of urls that is going to be emitted in slotEmitUpdated. Add
@@ -154,14 +157,14 @@ private Q_SLOTS:
     void slotEmitUpdated();
 
     void slotCleared();
-    void slotEntryRemoved(const KonqHistoryEntry& entry);
+    void slotEntryRemoved(const KonqHistoryEntry &entry);
 
 private:
-    virtual void finishAddingEntry(const KonqHistoryEntry& entry, bool isSender);
+    virtual void finishAddingEntry(const KonqHistoryEntry &entry, bool isSender);
     void clearPending();
 
-    void addToCompletion( const QString& url, const QString& typedUrl, int numberOfTimesVisited = 1 );
-    void removeFromCompletion( const QString& url, const QString& typedUrl );
+    void addToCompletion(const QString &url, const QString &typedUrl, int numberOfTimesVisited = 1);
+    void removeFromCompletion(const QString &url, const QString &typedUrl);
 
     /**
      * List of pending entries, which were added to the history, but not yet
@@ -169,7 +172,7 @@ private:
      * Note: when removing an entry, you have to delete the KonqHistoryEntry
      * of the item you remove.
      */
-    QMap<QString,KonqHistoryEntry*> m_pending;
+    QMap<QString, KonqHistoryEntry *> m_pending;
 
     KCompletion *m_pCompletion; // the completion object we sync with
 
@@ -179,10 +182,9 @@ private:
      */
     QTimer *m_updateTimer;
 
-    KBookmarkManager* m_bookmarkManager;
+    KBookmarkManager *m_bookmarkManager;
 
     static const int s_historyVersion;
 };
-
 
 #endif // KONQ_HISTORY_H

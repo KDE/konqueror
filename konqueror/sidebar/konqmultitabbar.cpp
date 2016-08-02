@@ -20,30 +20,32 @@
 
 #include "konqmultitabbar.h"
 #include <QDragEnterEvent>
-#include <kdebug.h>
+#include <QMimeData>
 
-KonqMultiTabBar::KonqMultiTabBar(QWidget* parent)
+#include <KUrlMimeData>
+
+KonqMultiTabBar::KonqMultiTabBar(QWidget *parent)
     : KMultiTabBar(KMultiTabBar::Left, parent)
 {
     setAcceptDrops(true);
 }
 
-void KonqMultiTabBar::dragEnterEvent(QDragEnterEvent* event)
+void KonqMultiTabBar::dragEnterEvent(QDragEnterEvent *event)
 {
-    if (KUrl::List::canDecode(event->mimeData())) {
+    if (event->mimeData()->hasUrls()) {
         event->accept();
     }
 }
 
-void KonqMultiTabBar::dragMoveEvent(QDragMoveEvent* event)
+void KonqMultiTabBar::dragMoveEvent(QDragMoveEvent *event)
 {
-    if (KUrl::List::canDecode(event->mimeData())) {
+    if (event->mimeData()->hasUrls()) {
         event->accept();
     }
 }
 
-void KonqMultiTabBar::dropEvent(QDropEvent* event)
+void KonqMultiTabBar::dropEvent(QDropEvent *event)
 {
-    const KUrl::List urls = KUrl::List::fromMimeData(event->mimeData());
+    const QList<QUrl> urls = KUrlMimeData::urlsFromMimeData(event->mimeData());
     emit urlsDropped(urls);
 }

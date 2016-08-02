@@ -25,36 +25,35 @@
 
 class KonqyPreloader
     : public KDEDModule
-    {
+{
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.konqueror.Preloader")
 
-    public:
-        KonqyPreloader(QObject* parent, const QList<QVariant>&);
-        virtual ~KonqyPreloader();
+public:
+    KonqyPreloader(QObject *parent, const QList<QVariant> &);
+    virtual ~KonqyPreloader();
 
-    public Q_SLOTS:
-        bool registerPreloadedKonqy( const QString &id, int screen );
-        QString getPreloadedKonqy( int screen );
-        void unregisterPreloadedKonqy( const QString &id );
-        void reconfigure();
-        void unloadAllPreloaded();
-    private Q_SLOTS:
-        void appChanged( const QString &id, const QString &oldOwner, const QString &newOwner );
-        void checkAlwaysPreloaded();
-    private:
-        void updateCount();
-        struct KonqyData
-            {
-            KonqyData() {} // for QValueList
-            KonqyData( const QString& id_P, int screen_P )
-                : id( id_P ), screen( screen_P ) {}
-            QString id;
-            int screen;
-            };
-        typedef QList< KonqyData > InstancesList;
-        InstancesList instances;
-	QTimer check_always_preloaded_timer;
+public Q_SLOTS:
+    bool registerPreloadedKonqy(const QString &id, int screen);
+    QString getPreloadedKonqy(int screen);
+    void unregisterPreloadedKonqy(const QString &id);
+    void reconfigure();
+    void unloadAllPreloaded();
+private Q_SLOTS:
+    void appChanged(const QString &id, const QString &oldOwner, const QString &newOwner);
+    void checkAlwaysPreloaded();
+private:
+    void updateCount();
+    struct KonqyData {
+        KonqyData() {} // for QValueList
+        KonqyData(const QString &id_P, int screen_P)
+            : id(id_P), screen(screen_P) {}
+        QString id;
+        int screen;
     };
+    typedef QList< KonqyData > InstancesList;
+    InstancesList instances;
+    QTimer check_always_preloaded_timer;
+};
 
 #endif

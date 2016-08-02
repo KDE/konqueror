@@ -29,28 +29,28 @@ class SettingsPlugin : public KParts::Plugin
 {
     Q_OBJECT
 public:
-    SettingsPlugin( QObject* parent, 
-	            const QVariantList & );
+    SettingsPlugin(QObject *parent,
+                   const QVariantList &);
     virtual ~SettingsPlugin();
 
 private:
-    bool cookiesEnabled( const QString& url );
+    bool cookiesEnabled(const QString &url);
     void updateIOSlaves();
-    
+
 private slots:
-    void toggleJavascript( bool checked );
-    void toggleJava( bool checked );
-    void toggleCookies( bool checked );
-    void togglePlugins( bool checked );
-    void toggleImageLoading( bool checked );
-    void toggleProxy( bool checked );
-    void toggleCache( bool checked );
-    void cachePolicyChanged( int p );
+    void toggleJavascript(bool checked);
+    void toggleJava(bool checked);
+    void toggleCookies(bool checked);
+    void togglePlugins(bool checked);
+    void toggleImageLoading(bool checked);
+    void toggleProxy(bool checked);
+    void toggleCache(bool checked);
+    void cachePolicyChanged(int p);
 
     void showPopup();
-    
+
 private:
-    KConfig* mConfig;
+    KConfig *mConfig;
 };
 
 #endif // SETTINGS_PLUGIN

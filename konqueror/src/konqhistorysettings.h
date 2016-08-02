@@ -38,7 +38,7 @@ class KonqHistorySettings : public QObject
 public:
     enum { MINUTES, DAYS };
 
-    static KonqHistorySettings* self();
+    static KonqHistorySettings *self();
     virtual ~KonqHistorySettings();
 
     void applySettings();
@@ -62,7 +62,7 @@ private Q_SLOTS:
     void slotSettingsChanged();
 
 protected:
-    Q_DISABLE_COPY( KonqHistorySettings )
+    Q_DISABLE_COPY(KonqHistorySettings)
 
 Q_SIGNALS:
     // DBus signals
@@ -80,9 +80,10 @@ class KonqHistorySettingsAdaptor : public QDBusAbstractAdaptor
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.Konqueror.SidebarHistorySettings")
 public:
-    KonqHistorySettingsAdaptor( KonqHistorySettings* parent )
-        : QDBusAbstractAdaptor( parent ) {
-        setAutoRelaySignals( true );
+    KonqHistorySettingsAdaptor(KonqHistorySettings *parent)
+        : QDBusAbstractAdaptor(parent)
+    {
+        setAutoRelaySignals(true);
     }
 
 Q_SIGNALS:

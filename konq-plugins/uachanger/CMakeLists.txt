@@ -2,13 +2,13 @@
 
 set(uachangerplugin_PART_SRCS uachangerplugin.cpp )
 
-kde4_add_plugin(uachangerplugin  ${uachangerplugin_PART_SRCS})
+add_library(uachangerplugin MODULE ${uachangerplugin_PART_SRCS})
 
-target_link_libraries(uachangerplugin  ${KDE4_KPARTS_LIBS} )
+target_link_libraries(uachangerplugin  KF5::Parts )
 
-install(TARGETS uachangerplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS uachangerplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
+install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )

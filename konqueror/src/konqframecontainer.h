@@ -35,39 +35,62 @@ public:
     /**
      * Insert a new frame into the container.
      */
-    virtual void insertChildFrame(KonqFrameBase * frame, int index = -1) = 0;
+    virtual void insertChildFrame(KonqFrameBase *frame, int index = -1) = 0;
     /**
      * Replace a child frame with another
      */
-    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
+    virtual void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame);
     /**
      * Split one of our child frames
      */
-    KonqFrameContainer* splitChildFrame(KonqFrameBase* frame, Qt::Orientation orientation);
+    KonqFrameContainer *splitChildFrame(KonqFrameBase *frame, Qt::Orientation orientation);
 
     /**
      * Call this before deleting one of our children.
      */
-    virtual void childFrameRemoved( KonqFrameBase * frame ) = 0;
+    virtual void childFrameRemoved(KonqFrameBase *frame) = 0;
 
-    virtual bool isContainer() const { return true; }
+    virtual bool isContainer() const
+    {
+        return true;
+    }
 
-    virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::ContainerBase; }
+    virtual KonqFrameBase::FrameType frameType() const
+    {
+        return KonqFrameBase::ContainerBase;
+    }
 
-  KonqFrameBase* activeChild() const { return m_pActiveChild; }
+    KonqFrameBase *activeChild() const
+    {
+        return m_pActiveChild;
+    }
 
-  virtual void setActiveChild( KonqFrameBase* activeChild ) { m_pActiveChild = activeChild;
-                                                              m_pParentContainer->setActiveChild( this ); }
+    virtual void setActiveChild(KonqFrameBase *activeChild)
+    {
+        m_pActiveChild = activeChild;
+        m_pParentContainer->setActiveChild(this);
+    }
 
-  virtual void activateChild() { if (m_pActiveChild) m_pActiveChild->activateChild(); }
+    virtual void activateChild()
+    {
+        if (m_pActiveChild) {
+            m_pActiveChild->activateChild();
+        }
+    }
 
-  virtual KonqView* activeChildView() const { if (m_pActiveChild) return m_pActiveChild->activeChildView();
-                                        else return 0; }
+    virtual KonqView *activeChildView() const
+    {
+        if (m_pActiveChild) {
+            return m_pActiveChild->activeChildView();
+        } else {
+            return 0;
+        }
+    }
 
 protected:
-  KonqFrameContainerBase() {}
+    KonqFrameContainerBase() {}
 
-  KonqFrameBase* m_pActiveChild;
+    KonqFrameBase *m_pActiveChild;
 };
 
 /**
@@ -80,53 +103,68 @@ protected:
  */
 class KONQ_TESTS_EXPORT KonqFrameContainer : public QSplitter, public KonqFrameContainerBase   // TODO rename to KonqFrameContainerSplitter?
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KonqFrameContainer( Qt::Orientation o,
-                      QWidget* parent,
-                      KonqFrameContainerBase* parentContainer );
-  virtual ~KonqFrameContainer();
+    KonqFrameContainer(Qt::Orientation o,
+                       QWidget *parent,
+                       KonqFrameContainerBase *parentContainer);
+    virtual ~KonqFrameContainer();
 
-    virtual bool accept( KonqFrameVisitor* visitor );
+    virtual bool accept(KonqFrameVisitor *visitor);
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
-  virtual void copyHistory( KonqFrameBase *other );
+    virtual void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0);
+    virtual void copyHistory(KonqFrameBase *other);
 
-  KonqFrameBase* firstChild() { return m_pFirstChild; }
-  KonqFrameBase* secondChild() { return m_pSecondChild; }
-  KonqFrameBase* otherChild( KonqFrameBase* child );
+    KonqFrameBase *firstChild()
+    {
+        return m_pFirstChild;
+    }
+    KonqFrameBase *secondChild()
+    {
+        return m_pSecondChild;
+    }
+    KonqFrameBase *otherChild(KonqFrameBase *child);
 
-  void swapChildren();
+    void swapChildren();
 
-  virtual void setTitle( const QString &title, QWidget* sender );
-  virtual void setTabIcon( const KUrl &url, QWidget* sender );
+    virtual void setTitle(const QString &title, QWidget *sender);
+    virtual void setTabIcon(const QUrl &url, QWidget *sender);
 
-  virtual QWidget* asQWidget() { return this; }
-  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Container; }
+    virtual QWidget *asQWidget()
+    {
+        return this;
+    }
+    virtual KonqFrameBase::FrameType frameType() const
+    {
+        return KonqFrameBase::Container;
+    }
 
     /**
      * Insert a new frame into the splitter.
      */
-    void insertChildFrame(KonqFrameBase * frame, int index = -1);
+    void insertChildFrame(KonqFrameBase *frame, int index = -1);
     /**
      * Call this before deleting one of our children.
      */
-    void childFrameRemoved(KonqFrameBase * frame);
+    void childFrameRemoved(KonqFrameBase *frame);
 
-    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
+    virtual void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame);
 
-    void setAboutToBeDeleted() { m_bAboutToBeDeleted = true; }
+    void setAboutToBeDeleted()
+    {
+        m_bAboutToBeDeleted = true;
+    }
 
 protected:
-    virtual void childEvent( QChildEvent * );
+    virtual void childEvent(QChildEvent *);
 
 Q_SIGNALS:
-  void setRubberbandCalled();
+    void setRubberbandCalled();
 
 protected:
-  KonqFrameBase* m_pFirstChild;
-  KonqFrameBase* m_pSecondChild;
-  bool m_bAboutToBeDeleted;
+    KonqFrameBase *m_pFirstChild;
+    KonqFrameBase *m_pSecondChild;
+    bool m_bAboutToBeDeleted;
 };
 
 #endif /* KONQ_FRAMECONTAINER_H */

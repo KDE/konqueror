@@ -44,12 +44,13 @@ class QTimer;
 class KonqSidebarTree_Internal;
 
 enum ModuleType { VIRT_Link = 0,  // a single .desktop file
-                  VIRT_Folder = 1 }; // a directory which is parsed for .desktop files
+                  VIRT_Folder = 1
+                }; // a directory which is parsed for .desktop files
 
-typedef KonqSidebarTreeModule*(*getModule)(KonqSidebarTree*, const bool);
+typedef KonqSidebarTreeModule *(*getModule)(KonqSidebarTree *, const bool);
 
 struct DirTreeConfigData { // TODO make base class with two subclasses?
-    KUrl dir; // only used for VIRT_Folder
+    QUrl dir; // only used for VIRT_Folder
     ModuleType type;
     QString relDir; // only used for VIRT_Folder
 };
@@ -69,64 +70,76 @@ class KonqSidebarTree : public K3ListView // PORTING NOTE: DO NOT PORT TO QTreeW
 {
     Q_OBJECT
 public:
-    KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path );
+    KonqSidebarTree(KonqSidebarOldTreeModule *parent, QWidget *parentWidget, ModuleType moduleType, const QString &path);
     virtual ~KonqSidebarTree();
 
-    void followURL( const KUrl &url );
+    void followURL(const QUrl &url);
 
     /**
      * @return the current (i.e. selected) item
      */
-    KonqSidebarTreeItem * currentItem() const;
+    KonqSidebarTreeItem *currentItem() const;
 
-    void startAnimation( KonqSidebarTreeItem * item, const char * iconBaseName = "kde", uint iconCount = 6, const QPixmap * originalPixmap = 0L );
-    void stopAnimation( KonqSidebarTreeItem * item );
+    void startAnimation(KonqSidebarTreeItem *item, const char *iconBaseName = "kde", uint iconCount = 6, const QPixmap *originalPixmap = 0L);
+    void stopAnimation(KonqSidebarTreeItem *item);
 
-    KonqSidebarOldTreeModule * sidebarModule() { return m_sidebarModule; }
+    KonqSidebarOldTreeModule *sidebarModule()
+    {
+        return m_sidebarModule;
+    }
 
-    KActionCollection *actionCollection() { return m_collection; }
+    KActionCollection *actionCollection()
+    {
+        return m_collection;
+    }
 
-    void lockScrolling( bool lock ) { m_scrollingLocked = lock; }
+    void lockScrolling(bool lock)
+    {
+        m_scrollingLocked = lock;
+    }
 
-    bool isOpeningFirstChild() const { return m_bOpeningFirstChild; }
+    bool isOpeningFirstChild() const
+    {
+        return m_bOpeningFirstChild;
+    }
 
     void enableActions(bool copy, bool cut, bool paste);
 
-    void itemDestructed( KonqSidebarTreeItem *item );
+    void itemDestructed(KonqSidebarTreeItem *item);
 
-    void setDropFormats( const QStringList &formats ); // used in K3ListView mode
+    void setDropFormats(const QStringList &formats);   // used in K3ListView mode
 
     // Show context menu for toplevel items
     void showToplevelContextMenu();
 
     // Add an URL
-    void addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl&url);
+    void addUrl(KonqSidebarTreeTopLevelItem *item, const QUrl &url);
 
 public slots:
     // Connected to KDirNotify dbus signals
-    void slotFilesAdded( const QString & dir );
-    void slotFilesRemoved( const QStringList & urls );
-    void slotFilesChanged( const QStringList & urls );
+    void slotFilesAdded(const QString &dir);
+    void slotFilesRemoved(const QStringList &urls);
+    void slotFilesChanged(const QStringList &urls);
 
-    virtual void setContentsPos( int x, int y );
+    virtual void setContentsPos(int x, int y);
 
 protected:
-    virtual void contentsDragEnterEvent( QDragEnterEvent *e );
-    virtual void contentsDragMoveEvent( QDragMoveEvent *e );
-    virtual void contentsDragLeaveEvent( QDragLeaveEvent *e );
-    virtual void contentsDropEvent( QDropEvent *ev );
-    virtual bool acceptDrag(QDropEvent* e) const; // used in K3ListView mode
+    virtual void contentsDragEnterEvent(QDragEnterEvent *e);
+    virtual void contentsDragMoveEvent(QDragMoveEvent *e);
+    virtual void contentsDragLeaveEvent(QDragLeaveEvent *e);
+    virtual void contentsDropEvent(QDropEvent *ev);
+    virtual bool acceptDrag(QDropEvent *e) const; // used in K3ListView mode
 
-    virtual bool eventFilter(QObject* obj, QEvent* ev);
-    virtual void leaveEvent( QEvent * );
+    virtual bool eventFilter(QObject *obj, QEvent *ev);
+    virtual void leaveEvent(QEvent *);
 
-    virtual Q3DragObject* dragObject();
+    virtual Q3DragObject *dragObject();
 
 private slots:
-    void slotDoubleClicked( Q3ListViewItem *item );
-    void slotExecuted( Q3ListViewItem *item );
-    void slotMouseButtonPressed(int _button, Q3ListViewItem* _item, const QPoint&, int col);
-    void slotMouseButtonClicked(int _button, Q3ListViewItem* _item, const QPoint&, int col);
+    void slotDoubleClicked(Q3ListViewItem *item);
+    void slotExecuted(Q3ListViewItem *item);
+    void slotMouseButtonPressed(int _button, Q3ListViewItem *_item, const QPoint &, int col);
+    void slotMouseButtonClicked(int _button, Q3ListViewItem *_item, const QPoint &, int col);
     void slotSelectionChanged();
 
     void slotAnimation();
@@ -135,7 +148,7 @@ private slots:
 
     void rescanConfiguration();
 
-    void slotItemRenamed(Q3ListViewItem*, const QString &, int);
+    void slotItemRenamed(Q3ListViewItem *, const QString &, int);
 
     void slotCreateFolder();
     void slotDelete();
@@ -148,13 +161,13 @@ private slots:
 
 private:
     void clearTree();
-    void scanDir( KonqSidebarTreeItem *parent, const QString &path, bool isRoot = false );
+    void scanDir(KonqSidebarTreeItem *parent, const QString &path, bool isRoot = false);
     void loadTopLevelGroup(KonqSidebarTreeItem *parent, const QString &path);
     void loadTopLevelItem(KonqSidebarTreeItem *parent, const QString &path);
 
     void loadModuleFactories();
 
-    bool overrideShortcut(const QKeyEvent* e);
+    bool overrideShortcut(const QKeyEvent *e);
 
 private:
     Q3PtrList<KonqSidebarTreeTopLevelItem> m_topLevelItems;
@@ -164,9 +177,8 @@ private:
 
     KonqSidebarOldTreeModule *m_sidebarModule;
 
-    struct AnimationInfo
-    {
-        AnimationInfo( const char * _iconBaseName, uint _iconCount, const QPixmap & _originalPixmap )
+    struct AnimationInfo {
+        AnimationInfo(const char *_iconBaseName, uint _iconCount, const QPixmap &_originalPixmap)
             : iconBaseName(_iconBaseName), iconCount(_iconCount), iconNumber(1), originalPixmap(_originalPixmap) {}
         AnimationInfo() : iconCount(0) {}
         QByteArray iconBaseName;
@@ -186,7 +198,7 @@ private:
     QTimer *m_autoOpenTimer;
 
     // The base URL for our configuration directory
-    //KUrl m_dirtreeDir;
+    //QUrl m_dirtreeDir;
     DirTreeConfigData m_dirtreeDir;
 
     bool m_scrollingLocked;
@@ -215,10 +227,10 @@ signals:
 #undef signals
 #define signals protected
 #endif
-    void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
-    void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
+    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                         const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
 };
 
 #endif // KONQ_SIDEBARTREE_H

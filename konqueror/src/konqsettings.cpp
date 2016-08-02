@@ -24,7 +24,7 @@
 #include <kglobal.h>
 #include <kmimetype.h>
 #include <kdesktopfile.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kconfiggroup.h>
 
 class KonqEmbedSettingsSingleton
@@ -34,7 +34,7 @@ public:
 };
 K_GLOBAL_STATIC(KonqEmbedSettingsSingleton, globalEmbedSettings)
 
-KonqFMSettings* KonqFMSettings::settings()
+KonqFMSettings *KonqFMSettings::settings()
 {
     return &globalEmbedSettings->self;
 }
@@ -57,8 +57,9 @@ KonqFMSettings::~KonqFMSettings()
 
 void KonqFMSettings::init(bool reparse)
 {
-    if (reparse)
+    if (reparse) {
         fileTypesConfig()->reparseConfiguration();
+    }
     m_embedMap = fileTypesConfig()->entryMap("EmbedSettings");
 }
 
@@ -70,36 +71,38 @@ KSharedConfig::Ptr KonqFMSettings::fileTypesConfig()
     return m_fileTypesConfig;
 }
 
-static bool alwaysEmbedMimeTypeGroup(const QString& mimeType)
+static bool alwaysEmbedMimeTypeGroup(const QString &mimeType)
 {
-    if ( mimeType.startsWith("inode") || mimeType.startsWith("Browser") || mimeType.startsWith("Konqueror"))
-        return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
+    if (mimeType.startsWith("inode") || mimeType.startsWith("Browser") || mimeType.startsWith("Konqueror")) {
+        return true;    //always embed mimetype inode/*, Browser/* and Konqueror/*
+    }
     return false;
 }
 
-bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
+bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
 {
     KMimeType::Ptr mime = KMimeType::mimeType(_mimeType, KMimeType::ResolveAliases);
     if (!mime) {
-        kWarning() << "Unknown mimetype" << _mimeType;
+        qWarning() << "Unknown mimetype" << _mimeType;
         return false; // unknown mimetype!
     }
     const QString mimeType = mime->name();
 
     // First check in user's settings whether to embed or not
     // 1 - in the filetypesrc config file (written by the configuration module)
-    QMap<QString, QString>::const_iterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeType );
-    if ( it != m_embedMap.end() ) {
-        kDebug() << mimeType << it.value();
+    QMap<QString, QString>::const_iterator it = m_embedMap.find(QString::fromLatin1("embed-") + mimeType);
+    if (it != m_embedMap.end()) {
+        qDebug() << mimeType << it.value();
         return it.value() == QLatin1String("true");
     }
     // 2 - in the configuration for the group if nothing was found in the mimetype
-    if (alwaysEmbedMimeTypeGroup(mimeType))
-        return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
+    if (alwaysEmbedMimeTypeGroup(mimeType)) {
+        return true;    //always embed mimetype inode/*, Browser/* and Konqueror/*
+    }
     const QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
-    it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
-    if ( it != m_embedMap.end() ) {
-        kDebug() << mimeType << "group setting:" << it.value();
+    it = m_embedMap.find(QString::fromLatin1("embed-") + mimeTypeGroup);
+    if (it != m_embedMap.end()) {
+        qDebug() << mimeType << "group setting:" << it.value();
         return it.value() == QLatin1String("true");
     }
     // 2 bis - configuration for group of parent mimetype, if different
@@ -113,8 +116,9 @@ bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
             }
             KMimeType::Ptr mime = KMimeType::mimeType(parent);
             Q_ASSERT(mime); // how could the -parent- be null?
-            if (mime)
+            if (mime) {
                 parents += mime->parentMimeTypes();
+            }
         }
     }
 
@@ -122,7 +126,8 @@ bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
     // Note: if you change those defaults, also change keditfiletype/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
     const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(mimeType).isEmpty();
-    if (mimeTypeGroup == "image" || mimeTypeGroup == "multipart" || hasLocalProtocolRedirect)
+    if (mimeTypeGroup == "image" || mimeTypeGroup == "multipart" || hasLocalProtocolRedirect) {
         return true;
+    }
     return false;
 }

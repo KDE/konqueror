@@ -18,23 +18,26 @@
 #define _konq_sidebar_test_h_
 #include <konqsidebarplugin.h>
 #include <QLabel>
-#include <QLayout>
+#include <QUrl>
 
 class SidebarTest : public KonqSidebarModule
 {
     Q_OBJECT
 public:
-    SidebarTest(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
-        : KonqSidebarModule(componentData, parent, configGroup)
+    SidebarTest(QWidget *parent, const QString &desktopName, const KConfigGroup &configGroup)
+        : KonqSidebarModule(parent, configGroup)
     {
         Q_UNUSED(desktopName);
         widget = new QLabel("Init Value", parent);
     }
-    ~SidebarTest(){}
-    virtual QWidget *getWidget(){return widget;}
+    ~SidebarTest() {}
+    virtual QWidget *getWidget()
+    {
+        return widget;
+    }
 protected:
     QLabel *widget;
-    virtual void handleURL(const KUrl &url)
+    virtual void handleURL(const QUrl &url)
     {
         widget->setText(url.url());
     }

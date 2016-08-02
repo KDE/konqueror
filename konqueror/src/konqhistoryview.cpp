@@ -32,15 +32,15 @@
 #include <QVBoxLayout>
 
 #include <kactioncollection.h>
-#include <kaction.h>
-#include <kdebug.h>
-#include <kicon.h>
+#include <QAction>
+#include <QDebug>
+#include <QIcon>
 #include <klineedit.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <krun.h>
 
-KonqHistoryView::KonqHistoryView(QWidget* parent)
+KonqHistoryView::KonqHistoryView(QWidget *parent)
     : QWidget(parent)
     , m_searchTimer(0)
 {
@@ -49,7 +49,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     m_treeView->setHeaderHidden(true);
 
     m_historyProxyModel = new KonqHistoryProxyModel(KonqHistorySettings::self(), m_treeView);
-    connect(m_treeView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotContextMenu(QPoint)));
+    connect(m_treeView, &QTreeView::customContextMenuRequested, this, &KonqHistoryView::slotContextMenu);
     m_historyModel = new KonqHistoryModel(m_historyProxyModel);
     m_treeView->setModel(m_historyProxyModel);
     m_historyProxyModel->setSourceModel(m_historyModel);
@@ -58,37 +58,37 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(m_treeView); // make shortcuts work
     QAction *action = m_collection->addAction("open_new");
-    action->setIcon(KIcon("window-new"));
+    action->setIcon(QIcon::fromTheme("window-new"));
     action->setText(i18n("Open in New &Window"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotNewWindow()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewWindow);
 
     action = m_collection->addAction("open_tab");
-    action->setIcon(KIcon("tab-new"));
+    action->setIcon(QIcon::fromTheme("tab-new"));
     action->setText(i18n("Open in New Tab"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotNewTab()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewTab);
 
     action = m_collection->addAction("copylinklocation");
     action->setText(i18n("&Copy Link Address"));
-    connect(action, SIGNAL(triggered()), this, SLOT(slotCopyLinkLocation()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotCopyLinkLocation);
 
     action = m_collection->addAction("remove");
-    action->setIcon(KIcon("edit-delete"));
+    action->setIcon(QIcon::fromTheme("edit-delete"));
     action->setText(i18n("&Remove Entry"));
     action->setShortcut(Qt::Key_Delete); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotRemoveEntry()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotRemoveEntry);
 
     action = m_collection->addAction("clear");
-    action->setIcon(KIcon("edit-clear-history"));
+    action->setIcon(QIcon::fromTheme("edit-clear-history"));
     action->setText(i18n("C&lear History"));
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotClearHistory()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotClearHistory);
 
     action = m_collection->addAction("preferences");
-    action->setIcon(KIcon("configure"));
+    action->setIcon(QIcon::fromTheme("configure"));
     action->setText(i18n("&Preferences..."));
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotPreferences()));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotPreferences);
 
-    QActionGroup* sortGroup = new QActionGroup(this);
+    QActionGroup *sortGroup = new QActionGroup(this);
     sortGroup->setExclusive(true);
 
     action = m_collection->addAction("byName");
@@ -103,17 +103,17 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     action->setData(qVariantFromValue(1));
     sortGroup->addAction(action);
 
-    KonqHistorySettings* settings = KonqHistorySettings::self();
+    KonqHistorySettings *settings = KonqHistorySettings::self();
     sortGroup->actions().at(settings->m_sortsByName ? 0 : 1)->setChecked(true);
-    connect(sortGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotSortChange(QAction*)));
+    connect(sortGroup, &QActionGroup::triggered, this, &KonqHistoryView::slotSortChange);
 
     m_searchLineEdit = new KLineEdit(this);
     m_searchLineEdit->setClickMessage(i18n("Search in history"));
     m_searchLineEdit->setClearButtonShown(true);
 
-    connect(m_searchLineEdit, SIGNAL(textChanged(QString)), this, SLOT(slotFilterTextChanged(QString)));
+    connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
     mainLayout->addWidget(m_searchLineEdit);
     mainLayout->addWidget(m_treeView);
@@ -165,12 +165,12 @@ void KonqHistoryView::slotRemoveEntry()
 void KonqHistoryView::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon(KIcon("edit-clear-history"));
+    guiitem.setIcon(QIcon::fromTheme("edit-clear-history"));
 
     if (KMessageBox::warningContinueCancel(this,
-            i18n("Do you really want to clear the entire history?"),
-            i18nc("@title:window", "Clear History?"), guiitem)
-        == KMessageBox::Continue) {
+                                           i18n("Do you really want to clear the entire history?"),
+                                           i18nc("@title:window", "Clear History?"), guiitem)
+            == KMessageBox::Continue) {
         KonqHistoryProvider::self()->emitClear();
     }
 }
@@ -178,7 +178,7 @@ void KonqHistoryView::slotClearHistory()
 void KonqHistoryView::slotPreferences()
 {
     // Run the history sidebar settings.
-    KRun::run("kcmshell4 kcmhistory", KUrl::List(), this);
+    KRun::run("kcmshell5 kcmhistory", QList<QUrl>(), this);
 }
 
 void KonqHistoryView::slotSortChange(QAction *action)
@@ -188,7 +188,7 @@ void KonqHistoryView::slotSortChange(QAction *action)
     }
 
     const int which = action->data().toInt();
-    KonqHistorySettings* settings = KonqHistorySettings::self();
+    KonqHistorySettings *settings = KonqHistorySettings::self();
     settings->m_sortsByName = (which == 0);
     settings->applySettings();
 }
@@ -199,7 +199,7 @@ void KonqHistoryView::slotFilterTextChanged(const QString &text)
     if (!m_searchTimer) {
         m_searchTimer = new QTimer(this);
         m_searchTimer->setSingleShot(true);
-        connect(m_searchTimer, SIGNAL(timeout()), this, SLOT(slotTimerTimeout()));
+        connect(m_searchTimer, &QTimer::timeout, this, &KonqHistoryView::slotTimerTimeout);
     }
     m_searchTimer->start(600);
 }
@@ -209,53 +209,49 @@ void KonqHistoryView::slotTimerTimeout()
     m_historyProxyModel->setFilterFixedString(m_searchLineEdit->text());
 }
 
-QTreeView* KonqHistoryView::treeView() const
+QTreeView *KonqHistoryView::treeView() const
 {
     return m_treeView;
 }
 
-KLineEdit* KonqHistoryView::lineEdit() const
+KLineEdit *KonqHistoryView::lineEdit() const
 {
     return m_searchLineEdit;
 }
 
 void KonqHistoryView::slotNewWindow()
 {
-    const KUrl url = urlForIndex(m_treeView->currentIndex());
-    if (url.isValid())
+    const QUrl url = urlForIndex(m_treeView->currentIndex());
+    if (url.isValid()) {
         emit openUrlInNewWindow(url);
+    }
 }
 
 void KonqHistoryView::slotNewTab()
 {
-    const KUrl url = urlForIndex(m_treeView->currentIndex());
-    if (url.isValid())
+    const QUrl url = urlForIndex(m_treeView->currentIndex());
+    if (url.isValid()) {
         emit openUrlInNewTab(url);
+    }
 }
 
-KUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const
+QUrl KonqHistoryView::urlForIndex(const QModelIndex &index) const
 {
     if (!index.isValid() || (index.data(KonqHistory::TypeRole).toInt() != KonqHistory::HistoryType)) {
-        return KUrl();
+        return QUrl();
     }
 
-    return index.data(KonqHistory::UrlRole).value<KUrl>();
+    return index.data(KonqHistory::UrlRole).value<QUrl>();
 }
 
 // Code taken from KHTMLPopupGUIClient::slotCopyLinkLocation
 void KonqHistoryView::slotCopyLinkLocation()
 {
-    KUrl safeURL = urlForIndex(m_treeView->currentIndex());
-    safeURL.setPass(QString());
+    QUrl safeURL = urlForIndex(m_treeView->currentIndex()).adjusted(QUrl::RemovePassword);
 
     // Set it in both the mouse selection and in the clipboard
-    QMimeData* mimeData = new QMimeData;
-    safeURL.populateMimeData( mimeData );
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
-
-    mimeData = new QMimeData;
-    safeURL.populateMimeData( mimeData );
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
+    QMimeData *mimeData = new QMimeData;
+    mimeData->setUrls(QList<QUrl>() << safeURL);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
-
-#include "konqhistoryview.moc"

@@ -61,6 +61,5 @@ void GlibEvents::process()
         g_main_context_iteration( g_main_context_default(), false );
     }
 
-#include "glibevents.moc"
 
 #endif

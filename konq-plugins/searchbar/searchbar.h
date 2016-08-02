@@ -29,9 +29,13 @@
 #include <QItemDelegate>
 #include <QPixmap>
 
-namespace KParts {
-    class Part;
-    class ReadOnlyPart;
+//KDELibs4Support
+#include <kaction.h>
+
+namespace KParts
+{
+class Part;
+class ReadOnlyPart;
 }
 
 class OpenSearchManager;
@@ -40,6 +44,7 @@ class WebShortcutWidget;
 class QAction;
 class QMenu;
 class QTimer;
+class QWidgetAction;
 
 /**
  * Combo box which catches mouse clicks on the pixmap.
@@ -106,7 +111,7 @@ Q_SIGNALS:
     /**
      * Emitted when the suggestion enable state is changed via the popup menu
      */
-    void suggestionEnabled(bool enable);  
+    void suggestionEnabled(bool enable);
 
 protected:
     /**
@@ -200,11 +205,11 @@ private:
     void previousSearchEntry();
 
     QWeakPointer<KParts::ReadOnlyPart> m_part;
-    SearchBarCombo* m_searchCombo;
-    KAction* m_searchComboAction;
+    SearchBarCombo *m_searchCombo;
+    QWidgetAction *m_searchComboAction;
     QList<KAction *> m_addSearchActions;
-    QMenu* m_popupMenu;
-    WebShortcutWidget* m_addWSWidget;
+    QMenu *m_popupMenu;
+    WebShortcutWidget *m_addWSWidget;
     QPixmap m_searchIcon;
     SearchModes m_searchMode;
     QString m_providerName;
@@ -214,11 +219,12 @@ private:
     QStringList m_searchEngines;
     QMap<QString, KUriFilterSearchProvider> m_searchProviders;
     QChar m_delimiter;
-    OpenSearchManager* m_openSearchManager;
-    QTimer* m_timer;
+    OpenSearchManager *m_openSearchManager;
+    QTimer *m_timer;
     bool m_suggestionEnabled;
     QMap<QString, QString> m_openSearchDescs;
     bool m_reloadConfiguration;
+    QString m_searchProvidersDir;
 };
 
 /**
@@ -229,7 +235,7 @@ class SearchBarItemDelegate : public QItemDelegate
 {
 public:
     SearchBarItemDelegate(QObject *parent = 0);
-    virtual void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const;
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 };
 
 #endif // SEARCHBAR_PLUGIN

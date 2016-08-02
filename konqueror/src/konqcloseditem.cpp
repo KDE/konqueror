@@ -20,25 +20,26 @@
 
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanager.h"
-#include <QFile>
 #include <QFont>
 #include <QFontMetrics>
 #include <QPainter>
 #include <kconfig.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kglobal.h>
 #include <kglobalsettings.h>
-#include <kicon.h>
+#include <QIcon>
 #include <kiconeffect.h>
 #include <konqpixmapprovider.h>
 #include <kcolorscheme.h>
-#include <kstandarddirs.h>
-#include <unistd.h>
 
-class KonqIcon {
+#include <unistd.h>
+#include <QFontDatabase>
+
+class KonqIcon
+{
 public:
     KonqIcon()
-        : image(KIcon("konqueror").pixmap(16).toImage())
+        : image(QIcon::fromTheme("konqueror").pixmap(16).toImage())
     {
         KIconEffect::deSaturate(image, 0.60f);
     }
@@ -48,37 +49,38 @@ public:
 
 K_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
-KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
+KonqClosedItem::KonqClosedItem(const QString &title, const QString &group, quint64 serialNumber)
     : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->memoryStore(), group), m_serialNumber(serialNumber)
 {
 }
 
 KonqClosedItem::~KonqClosedItem()
 {
+    qDebug() << "deleting group" << m_configGroup.name();
     m_configGroup.deleteGroup();
-    kDebug() << "deleted group" << m_configGroup.name();
 }
 
-KonqClosedTabItem::KonqClosedTabItem(const QString& url, const QString& title, int pos, quint64 serialNumber)
-      :  KonqClosedItem(title, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
+KonqClosedTabItem::KonqClosedTabItem(const QString &url, const QString &title, int pos, quint64 serialNumber)
+    :  KonqClosedItem(title, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
 {
-    kDebug() << m_configGroup.name();
+    qDebug() << m_configGroup.name();
 }
 
 KonqClosedTabItem::~KonqClosedTabItem()
 {
     m_configGroup.deleteGroup();
-    kDebug() << "deleted group" << m_configGroup.name();
+    qDebug() << "deleted group" << m_configGroup.name();
 }
 
-QPixmap KonqClosedTabItem::icon() const {
+QPixmap KonqClosedTabItem::icon() const
+{
     return KonqPixmapProvider::self()->pixmapFor(m_url);
 }
 
-KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialNumber, int numTabs)
-      :  KonqClosedItem(title, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
+KonqClosedWindowItem::KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs)
+    :  KonqClosedItem(title, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
 {
-    kDebug() << m_configGroup.name();
+    qDebug() << m_configGroup.name();
 }
 
 KonqClosedWindowItem::~KonqClosedWindowItem()
@@ -89,16 +91,15 @@ QPixmap KonqClosedWindowItem::icon() const
 {
     QImage overlayImg = s_lightIconImage->image.copy();
     int oldWidth = overlayImg.width();
-    QString countStr = QString::number( m_numTabs );
+    QString countStr = QString::number(m_numTabs);
 
-    QFont f = KGlobalSettings::generalFont();
+    QFont f = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     f.setBold(true);
 
     float pointSize = f.pointSizeF();
     QFontMetrics fm(f);
     int w = fm.width(countStr);
-    if( w > (oldWidth) )
-    {
+    if (w > (oldWidth)) {
         pointSize *= float(oldWidth) / float(w);
         f.setPointSizeF(pointSize);
     }
@@ -118,14 +119,14 @@ int KonqClosedWindowItem::numTabs() const
     return m_numTabs;
 }
 
-KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString& title,
-    const QString& groupName, const QString& configFileName, quint64 serialNumber,
-    int numTabs, const QString& dbusService)
+KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString &title,
+        const QString &groupName, const QString &configFileName, quint64 serialNumber,
+        int numTabs, const QString &dbusService)
     : KonqClosedWindowItem(title, serialNumber, numTabs),
-    m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
-    m_dbusService(dbusService), m_remoteConfigGroup(0L), m_remoteConfig(0L)
+      m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
+      m_dbusService(dbusService), m_remoteConfigGroup(0L), m_remoteConfig(0L)
 {
-    kDebug();
+    qDebug();
 }
 
 KonqClosedRemoteWindowItem::~KonqClosedRemoteWindowItem()
@@ -137,29 +138,30 @@ KonqClosedRemoteWindowItem::~KonqClosedRemoteWindowItem()
 void KonqClosedRemoteWindowItem::readConfig() const
 {
     // only do this once
-    if(m_remoteConfig || m_remoteConfigGroup)
+    if (m_remoteConfig || m_remoteConfigGroup) {
         return;
+    }
 
-    m_remoteConfig = new KConfig( m_remoteConfigFileName, KConfig::SimpleConfig, "tmp");
+    m_remoteConfig = new KConfig(m_remoteConfigFileName, KConfig::SimpleConfig);
     m_remoteConfigGroup = new KConfigGroup(m_remoteConfig, m_remoteGroupName);
-    kDebug();
+    qDebug();
 }
 
-const KConfigGroup& KonqClosedRemoteWindowItem::configGroup() const
+const KConfigGroup &KonqClosedRemoteWindowItem::configGroup() const
 {
     readConfig();
     return *m_remoteConfigGroup;
 }
 
-KConfigGroup& KonqClosedRemoteWindowItem::configGroup()
+KConfigGroup &KonqClosedRemoteWindowItem::configGroup()
 {
     readConfig();
     return *m_remoteConfigGroup;
 }
 
-bool KonqClosedRemoteWindowItem::equalsTo(const QString& groupName,
-    const QString& configFileName) const
+bool KonqClosedRemoteWindowItem::equalsTo(const QString &groupName,
+        const QString &configFileName) const
 {
     return (m_remoteGroupName == groupName &&
-        m_remoteConfigFileName == configFileName);
+            m_remoteConfigFileName == configFileName);
 }

@@ -1,5 +1,7 @@
 project (searchbar)
 
+find_package(Qt5 REQUIRED Script)
+
 add_subdirectory( icons )
 add_subdirectory( opensearch )
 
@@ -14,13 +16,13 @@ set(searchbarplugin_PART_SRCS
     opensearch/OpenSearchReader.cpp
     opensearch/OpenSearchWriter.cpp)
 
-kde4_add_plugin(searchbarplugin ${searchbarplugin_PART_SRCS})
+add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
-target_link_libraries(searchbarplugin ${KDE4_KPARTS_LIBS} ${QT_QTSCRIPT_LIBRARY} )
+target_link_libraries(searchbarplugin KF5::Parts Qt5::Script KF5::KDELibs4Support)
 
-install(TARGETS searchbarplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS searchbarplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES searchbar.rc searchbar.desktop  DESTINATION  ${DATA_INSTALL_DIR}/konqueror/kpartplugins )
+install( FILES searchbar.rc searchbar.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqueror/kpartplugins )
 

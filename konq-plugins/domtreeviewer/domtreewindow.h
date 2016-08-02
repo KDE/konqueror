@@ -25,14 +25,15 @@
 
 #include <qpointer.h>
 
-
-namespace domtreeviewer {
-  class ManipulationCommand;
+namespace domtreeviewer
+{
+class ManipulationCommand;
 }
 
-namespace KParts {
-  class Part;
-  class PartManager;
+namespace KParts
+{
+class Part;
+class PartManager;
 }
 
 class DOMTreeView;
@@ -70,12 +71,18 @@ public:
     /**
      * returns the dom tree view
      */
-    DOMTreeView *view() const { return m_view; }
+    DOMTreeView *view() const
+    {
+        return m_view;
+    }
 
     /**
      * returns the command history
      */
-    KUndoStack *commandHistory() const { return m_commandHistory; }
+    KUndoStack *commandHistory() const
+    {
+        return m_commandHistory;
+    }
 
     /**
      * creates and returns the context menu for the list info panel
@@ -85,7 +92,10 @@ public:
     /**
      * returns the context menu for the list info panel
      */
-    QMenu *infoPanelAttrContextMenu() { return infopanel_ctx; }
+    QMenu *infoPanelAttrContextMenu()
+    {
+        return infopanel_ctx;
+    }
 
     /**
      * creates and returns the context menu for the DOM tree view
@@ -95,7 +105,10 @@ public:
     /**
      * returns the context menu for the DOM tree view
      */
-    QMenu *domTreeViewContextMenu() { return domtree_ctx; }
+    QMenu *domTreeViewContextMenu()
+    {
+        return domtree_ctx;
+    }
 
     /**
      * Executes the given command and adds it to the history.
@@ -107,12 +120,21 @@ public:
     /**
      * Returns the config object for this plugin.
      */
-    KConfig *config() const { return _config; }
+    KConfig *config() const
+    {
+        return _config;
+    }
 
     /** returns the attribute delete action */
-    QAction *deleteAttributeAction() const { return del_attr; }
+    QAction *deleteAttributeAction() const
+    {
+        return del_attr;
+    }
     /** returns the node delete action */
-    QAction *deleteNodeAction() const { return del_tree; }
+    QAction *deleteNodeAction() const
+    {
+        return del_tree;
+    }
 
 public slots:
     /**
@@ -147,7 +169,6 @@ protected:
      */
     void readProperties(const KConfigGroup &);
 
-
 private slots:
     void slotCut();
     void slotCopy();
@@ -159,8 +180,8 @@ private slots:
     void optionsPreferences();
     void newToolbarConfig();
 
-    void changeStatusbar(const QString& text);
-    void changeCaption(const QString& text);
+    void changeStatusbar(const QString &text);
+    void changeCaption(const QString &text);
 
     void slotHtmlPartChanged(KHTMLPart *);
     void slotActivePartChanged(KParts::Part *);

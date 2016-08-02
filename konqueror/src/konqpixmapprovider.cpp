@@ -19,13 +19,13 @@
 
 #include "konqpixmapprovider.h"
 
-#include <QBitmap>
-#include <QPainter>
+#include <QMimeDatabase>
 
+#include <KIO/FavIconRequestJob>
 #include <kiconloader.h>
+#include <kio/global.h>
 #include <kmimetype.h>
 #include <kprotocolinfo.h>
-
 #include <kconfiggroup.h>
 
 class KonqPixmapProviderSingleton
@@ -33,120 +33,146 @@ class KonqPixmapProviderSingleton
 public:
     KonqPixmapProvider self;
 };
-K_GLOBAL_STATIC( KonqPixmapProviderSingleton, globalPixmapProvider )
+Q_GLOBAL_STATIC(KonqPixmapProviderSingleton, globalPixmapProvider)
 
-KonqPixmapProvider * KonqPixmapProvider::self()
+KonqPixmapProvider *KonqPixmapProvider::self()
 {
     return &globalPixmapProvider->self;
 }
 
 KonqPixmapProvider::KonqPixmapProvider()
-    : KPixmapProvider(),
-    org::kde::FavIcon("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus())
+    : KPixmapProvider()
 {
-    QObject::connect(this, SIGNAL(iconChanged(bool,QString,QString)),
-                     this, SLOT(notifyChange(bool,QString,QString)) );
 }
 
 KonqPixmapProvider::~KonqPixmapProvider()
 {
 }
 
+void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
+{
+    KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
+    // I don't dare capturing a ref into the lambda, so storing a property in the job instead.
+    // TODO once KF 5.20 can be required, just use job->hostUrl() in the slot
+    job->setProperty("_hostUrl", QVariant::fromValue(hostUrl));
+    connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
+        bool modified = false;
+        const QUrl _hostUrl = job->property("_hostUrl").value<QUrl>();
+        QMap<QUrl, QString>::iterator itEnd = iconMap.end();
+        for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
+            const QUrl url(it.key());
+            if (url.host() == _hostUrl.host()) {
+                // For host default-icons still query the favicon manager to get
+                // the correct icon for pages that have an own one.
+                const QString icon = KIO::favIconForUrl(url);
+                if (!icon.isEmpty()) {
+                    *it = icon;
+                    modified = true;
+                }
+            }
+        }
+        if (modified) {
+            emit changed();
+        }
+    });
+}
+
+void KonqPixmapProvider::setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl)
+{
+    KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
+    job->setIconUrl(iconUrl);
+    // I don't dare capturing a ref into the lambda, so storing a property in the job instead.
+    // TODO once KF 5.20 can be required, just use job->hostUrl() in the slot
+    job->setProperty("_hostUrl", QVariant::fromValue(hostUrl));
+    connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
+        bool modified = false;
+        const QUrl _hostUrl = job->property("_hostUrl").value<QUrl>();
+        QMap<QUrl, QString>::iterator itEnd = iconMap.end();
+        for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
+            const QUrl url(it.key());
+            if (url.host() == _hostUrl.host() && url.path() == _hostUrl.path()) {
+                const QString icon = job->iconFile();
+                if (!icon.isEmpty()) {
+                    *it = icon;
+                    modified = true;
+                }
+            }
+        }
+        if (modified) {
+            emit changed();
+        }
+    });
+}
+
 // at first, tries to find the iconname in the cache
 // if not available, tries to find the pixmap for the mimetype of url
 // if that fails, gets the icon for the protocol
 // finally, inserts the url/icon pair into the cache
-QString KonqPixmapProvider::iconNameFor( const KUrl& url )
+QString KonqPixmapProvider::iconNameFor(const QUrl &url)
 {
-    QMap<KUrl,QString>::iterator it = iconMap.find( url );
+    QMap<QUrl, QString>::iterator it = iconMap.find(url);
     QString icon;
-    if ( it != iconMap.end() ) {
+    if (it != iconMap.end()) {
         icon = it.value();
-        if ( !icon.isEmpty() )
+        if (!icon.isEmpty()) {
             return icon;
+        }
     }
 
-    if ( url.url().isEmpty() ) {
+    if (url.url().isEmpty()) {
         // Use the folder icon for the empty URL
-        const KMimeType::Ptr directoryType = KMimeType::mimeType( "inode/directory" );
-        if( directoryType.isNull() ) // no mimetypes installed!
-            return QString();
-        icon = directoryType->iconName();
-        Q_ASSERT( !icon.isEmpty() );
-    }
-    else
-    {
-        icon = KMimeType::iconNameForUrl( url );
-        Q_ASSERT( !icon.isEmpty() );
+        QMimeDatabase db;
+        const QMimeType directoryType = db.mimeTypeForName("inode/directory");
+        icon = directoryType.iconName();
+        Q_ASSERT(!icon.isEmpty());
+    } else {
+        icon = KIO::iconNameForUrl(url);
+        Q_ASSERT(!icon.isEmpty());
     }
 
     // cache the icon found for url
-    iconMap.insert( url, icon );
+    iconMap.insert(url, icon);
 
     return icon;
 }
 
-QPixmap KonqPixmapProvider::pixmapFor( const QString& url, int size )
+QPixmap KonqPixmapProvider::pixmapFor(const QString &url, int size)
 {
-    return loadIcon( iconNameFor( KUrl( url ) ), size );
+    return loadIcon(iconNameFor(QUrl::fromUserInput(url)), size);
 }
 
-void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
+void KonqPixmapProvider::load(KConfigGroup &kc, const QString &key)
 {
     iconMap.clear();
-    const QStringList list = kc.readPathEntry( key, QStringList() );
+    const QStringList list = kc.readPathEntry(key, QStringList());
     QStringList::const_iterator it = list.begin();
     QStringList::const_iterator itEnd = list.end();
-    while ( it != itEnd ) {
-        const QString url (*it);
-        if ( (++it) == itEnd )
+    while (it != itEnd) {
+        const QString url(*it);
+        if ((++it) == itEnd) {
             break;
-        const QString icon (*it);
-        iconMap.insert( KUrl( url ), icon );
+        }
+        const QString icon(*it);
+        iconMap.insert(QUrl::fromUserInput(url), icon);
         ++it;
     }
 }
 
 // only saves the cache for the given list of items to prevent the cache
 // from growing forever.
-void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
-                               const QStringList& items )
+void KonqPixmapProvider::save(KConfigGroup &kc, const QString &key,
+                              const QStringList &items)
 {
     QStringList list;
     QStringList::const_iterator itEnd = items.end();
     for (QStringList::const_iterator it = items.begin(); it != itEnd; ++it) {
-        QMap<KUrl,QString>::const_iterator mit = iconMap.constFind( KUrl(*it) );
-        if ( mit != iconMap.constEnd() ) {
-            list.append( mit.key().url() );
-            list.append( mit.value() );
+        QMap<QUrl, QString>::const_iterator mit = iconMap.constFind(QUrl::fromUserInput(*it));
+        if (mit != iconMap.constEnd()) {
+            list.append(mit.key().url());
+            list.append(mit.value());
         }
     }
-    kc.writePathEntry( key, list );
-}
-
-void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
-    const QString& iconName )
-{
-    KUrl u;
-    if ( !isHost )
-        u = hostOrURL;
-
-    QMap<KUrl,QString>::iterator itEnd = iconMap.end();
-    for ( QMap<KUrl,QString>::iterator it = iconMap.begin(); it != itEnd; ++it )
-    {
-        KUrl url( it.key() );
-        if ( ( isHost && url.host() == hostOrURL ) ||
-             ( !isHost && url.host() == u.host() && url.path() == u.path() ) )
-        {
-            // For host default-icons still query the favicon manager to get
-            // the correct icon for pages that have an own one.
-            QString icon = isHost ? KMimeType::favIconForUrl( url ) : iconName;
-            if ( !icon.isEmpty() )
-                *it = icon;
-        }
-    }
-
-    emit changed();
+    kc.writePathEntry(key, list);
 }
 
 void KonqPixmapProvider::clear()
@@ -154,12 +180,12 @@ void KonqPixmapProvider::clear()
     iconMap.clear();
 }
 
-QPixmap KonqPixmapProvider::loadIcon( const QString& icon, int size )
+QPixmap KonqPixmapProvider::loadIcon(const QString &icon, int size)
 {
-    if ( size <= KIconLoader::SizeSmall )
-        return SmallIcon( icon, size );
+    if (size <= KIconLoader::SizeSmall) {
+        return SmallIcon(icon, size);
+    }
 
-    return KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
+    return KIconLoader::global()->loadIcon(icon, KIconLoader::Panel, size);
 }
 
-#include "konqpixmapprovider.moc"

@@ -23,40 +23,41 @@
 #include <qapplication.h>
 
 #include <kglobalsettings.h>
+#include <QFontDatabase>
 
-DOMListViewItem::DOMListViewItem( const DOM::Node &node, QTreeWidget *parent )
-  : QTreeWidgetItem( parent ), m_node(node)
+DOMListViewItem::DOMListViewItem(const DOM::Node &node, QTreeWidget *parent)
+    : QTreeWidgetItem(parent), m_node(node)
 {
-  init();
+    init();
 }
 
-DOMListViewItem::DOMListViewItem( const DOM::Node &node, QTreeWidget *parent, QTreeWidgetItem *preceding)
-  : QTreeWidgetItem( parent, preceding ), m_node(node)
+DOMListViewItem::DOMListViewItem(const DOM::Node &node, QTreeWidget *parent, QTreeWidgetItem *preceding)
+    : QTreeWidgetItem(parent, preceding), m_node(node)
 {
-  init();
+    init();
 }
 
-DOMListViewItem::DOMListViewItem( const DOM::Node &node, QTreeWidgetItem *parent )
-  : QTreeWidgetItem( parent ), m_node(node)
+DOMListViewItem::DOMListViewItem(const DOM::Node &node, QTreeWidgetItem *parent)
+    : QTreeWidgetItem(parent), m_node(node)
 {
-  init();
+    init();
 }
 
-DOMListViewItem::DOMListViewItem( const DOM::Node &node, QTreeWidgetItem *parent, QTreeWidgetItem *preceding)
-  : QTreeWidgetItem( parent, preceding ), m_node(node)
+DOMListViewItem::DOMListViewItem(const DOM::Node &node, QTreeWidgetItem *parent, QTreeWidgetItem *preceding)
+    : QTreeWidgetItem(parent, preceding), m_node(node)
 {
-  init();
+    init();
 }
 
 DOMListViewItem::~DOMListViewItem()
 {
-  //NOP
+    //NOP
 }
 
 void DOMListViewItem::init()
 {
-  setColor(QApplication::palette().color(QPalette::Active, QPalette::Text));
-  m_font = KGlobalSettings::generalFont();
-  QTreeWidgetItem::setFont(0, m_font);
-  clos = false;
+    setColor(QApplication::palette().color(QPalette::Active, QPalette::Text));
+    m_font = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    QTreeWidgetItem::setFont(0, m_font);
+    clos = false;
 }

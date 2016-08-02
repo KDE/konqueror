@@ -31,8 +31,8 @@
 #include <qlist.h>
 #include <qobject.h>
 
-
-namespace domtreeviewer {
+namespace domtreeviewer
+{
 
 class ManipulationCommandSignalEmitter;
 class ChangedNodeSet;
@@ -46,25 +46,25 @@ QString domErrorMessage(int exception_code);
  */
 class ManipulationCommandSignalEmitter : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  ManipulationCommandSignalEmitter();
-  virtual ~ManipulationCommandSignalEmitter();
+    ManipulationCommandSignalEmitter();
+    virtual ~ManipulationCommandSignalEmitter();
 
 // public signals:
 signals:
 #if !defined(Q_MOC_RUN) && !defined(DOXYGEN_SHOULD_SKIP_THIS) && !defined(IN_IDE_PARSER)
 public:
 #endif
-  /** emitted if the DOM structure has been changed */
-  void structureChanged();
-  /** emitted if a DOM node has been changed */
-  void nodeChanged(const DOM::Node &changedNode);
-  /** emitted if an error occurred
-   * @param err_id DOM error id
-   * @param msg error message
-   */
-  void error(int err_id, const QString &msg);
+    /** emitted if the DOM structure has been changed */
+    void structureChanged();
+    /** emitted if a DOM node has been changed */
+    void nodeChanged(const DOM::Node &changedNode);
+    /** emitted if an error occurred
+     * @param err_id DOM error id
+     * @param msg error message
+     */
+    void error(int err_id, const QString &msg);
 };
 
 /**
@@ -74,47 +74,59 @@ public:
 class ManipulationCommand : public QUndoCommand
 {
 public:
-  ManipulationCommand();
-  virtual ~ManipulationCommand();
+    ManipulationCommand();
+    virtual ~ManipulationCommand();
 
-  /** returns whether this command is still valid and can be executed */
-  bool isValid() const { return !_exception.code; }
-  /** returns the last occurred DOM exception */
-  DOM::DOMException exception() const { return _exception; }
-  /** returns true when the next issue of execute will reapply the command */
-  bool shouldReapply() const { return _reapplied; }
-  /** returns true if the command may emit signals */
-  bool allowSignals() const { return allow_signals; }
+    /** returns whether this command is still valid and can be executed */
+    bool isValid() const
+    {
+        return !_exception.code;
+    }
+    /** returns the last occurred DOM exception */
+    DOM::DOMException exception() const
+    {
+        return _exception;
+    }
+    /** returns true when the next issue of execute will reapply the command */
+    bool shouldReapply() const
+    {
+        return _reapplied;
+    }
+    /** returns true if the command may emit signals */
+    bool allowSignals() const
+    {
+        return allow_signals;
+    }
 
-  /** connects the given signal to a slot */
-  static void connect(const char *signal, QObject *recv, const char *slot);
+    /** connects the given signal to a slot */
+    static void connect(const char *signal, QObject *recv, const char *slot);
 
-  /** does grunt work and calls apply()/reapply() */
-  virtual void redo();
-  /** does grunt work and calls unapply() */
-  virtual void undo();
+    /** does grunt work and calls apply()/reapply() */
+    virtual void redo();
+    /** does grunt work and calls unapply() */
+    virtual void undo();
 
 protected:
-  virtual void apply() = 0;
-  virtual void reapply();
-  virtual void unapply() = 0;
+    virtual void apply() = 0;
+    virtual void reapply();
+    virtual void unapply() = 0;
 
-  void handleException(DOM::DOMException &);
-  void checkAndEmitSignals();
-  void addChangedNode(const DOM::Node &);
+    void handleException(DOM::DOMException &);
+    void checkAndEmitSignals();
+    void addChangedNode(const DOM::Node &);
 
-  static ManipulationCommandSignalEmitter *mcse();
+    static ManipulationCommandSignalEmitter *mcse();
 
 protected:
-  DOM::DOMException _exception;
-  ChangedNodeSet *changedNodes;
-  bool _reapplied:1;
-  bool struc_changed:1;
+    DOM::DOMException _exception;
+    ChangedNodeSet *changedNodes;
+    bool _reapplied: 1;
+    bool struc_changed: 1;
 
 private:
-  bool allow_signals:1;
+    bool allow_signals: 1;
 
-  friend class MultiCommand;
+    friend class MultiCommand;
 };
 
 /**
@@ -126,23 +138,23 @@ private:
 class MultiCommand : public ManipulationCommand
 {
 public:
-  MultiCommand(const QString &name);
-  virtual ~MultiCommand();
+    MultiCommand(const QString &name);
+    virtual ~MultiCommand();
 
-  /** Adds a new command. Will take ownership of \c cmd */
-  void addCommand(ManipulationCommand *cmd);
+    /** Adds a new command. Will take ownership of \c cmd */
+    void addCommand(ManipulationCommand *cmd);
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
-
-  void mergeChangedNodesFrom(ManipulationCommand *cmd);
+    virtual QString name() const;
 
 protected:
-  QList<ManipulationCommand*> cmds;
-  QString _name;
+    virtual void apply();
+    virtual void unapply();
+
+    void mergeChangedNodesFrom(ManipulationCommand *cmd);
+
+protected:
+    QList<ManipulationCommand *> cmds;
+    QString _name;
 };
 
 /**
@@ -152,19 +164,19 @@ protected:
 class AddAttributeCommand : public ManipulationCommand
 {
 public:
-  AddAttributeCommand(const DOM::Element &element, const QString &attrName, const QString &attrValue);
-  virtual ~AddAttributeCommand();
+    AddAttributeCommand(const DOM::Element &element, const QString &attrName, const QString &attrValue);
+    virtual ~AddAttributeCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::Element _element;
-  DOM::DOMString attrName;
-  DOM::DOMString attrValue;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::Element _element;
+    DOM::DOMString attrName;
+    DOM::DOMString attrValue;
 };
 
 /**
@@ -174,20 +186,20 @@ protected:
 class ChangeAttributeValueCommand : public ManipulationCommand
 {
 public:
-  ChangeAttributeValueCommand(const DOM::Element &element, const QString &attr, const QString &value);
-  virtual ~ChangeAttributeValueCommand();
+    ChangeAttributeValueCommand(const DOM::Element &element, const QString &attr, const QString &value);
+    virtual ~ChangeAttributeValueCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::Element _element;
-  DOM::DOMString _attr;
-  DOM::DOMString old_value;
-  DOM::DOMString new_value;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::Element _element;
+    DOM::DOMString _attr;
+    DOM::DOMString old_value;
+    DOM::DOMString new_value;
 };
 
 /**
@@ -197,19 +209,19 @@ protected:
 class RemoveAttributeCommand : public ManipulationCommand
 {
 public:
-  RemoveAttributeCommand(const DOM::Element &element, const QString &attrName);
-  virtual ~RemoveAttributeCommand();
+    RemoveAttributeCommand(const DOM::Element &element, const QString &attrName);
+    virtual ~RemoveAttributeCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::Element _element;
-  DOM::DOMString attrName;
-  DOM::DOMString oldAttrValue;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::Element _element;
+    DOM::DOMString attrName;
+    DOM::DOMString oldAttrValue;
 };
 
 /**
@@ -219,20 +231,20 @@ protected:
 class RenameAttributeCommand : public ManipulationCommand
 {
 public:
-  RenameAttributeCommand(const DOM::Element &element, const QString &attrOldName, const QString &attrNewName);
-  virtual ~RenameAttributeCommand();
+    RenameAttributeCommand(const DOM::Element &element, const QString &attrOldName, const QString &attrNewName);
+    virtual ~RenameAttributeCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::Element _element;
-  DOM::DOMString attrOldName;
-  DOM::DOMString attrNewName;
-  DOM::DOMString attrValue;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::Element _element;
+    DOM::DOMString attrOldName;
+    DOM::DOMString attrNewName;
+    DOM::DOMString attrValue;
 };
 
 /**
@@ -242,20 +254,20 @@ protected:
 class ChangeCDataCommand : public ManipulationCommand
 {
 public:
-  ChangeCDataCommand(const DOM::CharacterData &, const QString &value);
-  virtual ~ChangeCDataCommand();
+    ChangeCDataCommand(const DOM::CharacterData &, const QString &value);
+    virtual ~ChangeCDataCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::CharacterData cdata;
-  DOM::DOMString value;
-  DOM::DOMString oldValue;
-  bool has_newlines;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::CharacterData cdata;
+    DOM::DOMString value;
+    DOM::DOMString oldValue;
+    bool has_newlines;
 };
 
 /**
@@ -265,21 +277,21 @@ protected:
 class ManipulateNodeCommand : public ManipulationCommand
 {
 public:
-  /**
-   * Prepare command, where \c node is to be contained in \c parent, just
-   * before \c after. If \c after is 0, it is appended at the end.
-   */
-  ManipulateNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-  virtual ~ManipulateNodeCommand();
+    /**
+     * Prepare command, where \c node is to be contained in \c parent, just
+     * before \c after. If \c after is 0, it is appended at the end.
+     */
+    ManipulateNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
+    virtual ~ManipulateNodeCommand();
 
 protected:
-  void insert();
-  void remove();
+    void insert();
+    void remove();
 
 protected:
-  DOM::Node _node;
-  DOM::Node _parent;
-  DOM::Node _after;
+    DOM::Node _node;
+    DOM::Node _parent;
+    DOM::Node _after;
 };
 
 /**
@@ -292,18 +304,18 @@ protected:
 class InsertNodeCommand : public ManipulateNodeCommand
 {
 public:
-  /**
-   * Prepare insertion command, inserting \c node into \c parent, just
-   * before \c after. If \c after is 0, append it to the list of children.
-   */
-  InsertNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-  virtual ~InsertNodeCommand();
+    /**
+     * Prepare insertion command, inserting \c node into \c parent, just
+     * before \c after. If \c after is 0, append it to the list of children.
+     */
+    InsertNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
+    virtual ~InsertNodeCommand();
 
-  virtual QString name() const;
+    virtual QString name() const;
 
 protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual void apply();
+    virtual void unapply();
 
 protected:
 };
@@ -318,18 +330,18 @@ protected:
 class RemoveNodeCommand : public ManipulateNodeCommand
 {
 public:
-  /**
-   * Prepare insertion command, inserting \c node into \c parent, just
-   * before \c after. If \c after is 0, append it to the list of children.
-   */
-  RemoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-  virtual ~RemoveNodeCommand();
+    /**
+     * Prepare insertion command, inserting \c node into \c parent, just
+     * before \c after. If \c after is 0, append it to the list of children.
+     */
+    RemoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
+    virtual ~RemoveNodeCommand();
 
-  virtual QString name() const;
+    virtual QString name() const;
 
 protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual void apply();
+    virtual void unapply();
 
 protected:
 };
@@ -341,23 +353,23 @@ protected:
 class MoveNodeCommand : public ManipulationCommand
 {
 public:
-  /**
-   * Move \c node from current position into \c parent, just before \c after.
-   * Appends if \c after is 0.
-   */
-  MoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-  virtual ~MoveNodeCommand();
+    /**
+     * Move \c node from current position into \c parent, just before \c after.
+     * Appends if \c after is 0.
+     */
+    MoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
+    virtual ~MoveNodeCommand();
 
-  virtual QString name() const;
-
-protected:
-  virtual void apply();
-  virtual void unapply();
+    virtual QString name() const;
 
 protected:
-  DOM::Node _node;
-  DOM::Node old_parent, old_after;
-  DOM::Node new_parent, new_after;
+    virtual void apply();
+    virtual void unapply();
+
+protected:
+    DOM::Node _node;
+    DOM::Node old_parent, old_after;
+    DOM::Node new_parent, new_after;
 };
 
 } // namespace domtreeviewer

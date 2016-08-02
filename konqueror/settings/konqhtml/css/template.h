@@ -9,15 +9,14 @@ class CSSTemplate
 {
 public:
 
-  CSSTemplate(const QString& templateFilename):m_templateFilename(templateFilename) {}
-  bool expandToFile(const QString& outputFilename, const QMap<QString,QString> &dict);
-  QString expandToString(const QMap<QString,QString> &dict);
+    CSSTemplate(const QString &templateFilename): m_templateFilename(templateFilename) {}
+    bool expandToFile(const QString &outputFilename, const QMap<QString, QString> &dict);
+    QString expandToString(const QMap<QString, QString> &dict);
 
 protected:
-  void doExpand(QTextStream &is, QTextStream &os, const QMap<QString,QString> &dict);
+    void doExpand(QTextStream &is, QTextStream &os, const QMap<QString, QString> &dict);
 
-  QString m_templateFilename;
+    QString m_templateFilename;
 };
-
 
 #endif

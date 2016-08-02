@@ -36,87 +36,98 @@ class FSViewPart;
 
 class FSViewBrowserExtension : public KParts::BrowserExtension
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit FSViewBrowserExtension(FSViewPart *viewPart);
-  ~FSViewBrowserExtension();
+    explicit FSViewBrowserExtension(FSViewPart *viewPart);
+    ~FSViewBrowserExtension();
 
 protected slots:
-  void selected(TreeMapItem*);
-  void refresh();
+    void selected(TreeMapItem *);
+    void refresh();
 
-  void copy() { copySelection( false ); }
-  void cut() { copySelection( true ); }
-  void trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers);
-  void del();
-  void editMimeType();
+    void copy()
+    {
+        copySelection(false);
+    }
+    void cut()
+    {
+        copySelection(true);
+    }
+    void trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers);
+    void del();
+    void editMimeType();
 
 private:
-  void copySelection( bool move );
+    void copySelection(bool move);
 
-  FSView* _view;
+    FSView *_view;
 };
 
 class FSJob: public KIO::Job
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit FSJob(FSView*);
+    explicit FSJob(FSView *);
 
-  virtual void kill( bool quietly = true );
+    virtual void kill(bool quietly = true);
 
 public slots:
-  void progressSlot(int percent, int dirs, const QString& lastDir);
+    void progressSlot(int percent, int dirs, const QString &lastDir);
 
 private:
-  FSView* _view;
+    FSView *_view;
 };
-
 
 class FSViewPart : public KParts::ReadOnlyPart
 {
-  Q_OBJECT
-  Q_PROPERTY( bool supportsUndo READ supportsUndo )
+    Q_OBJECT
+    Q_PROPERTY(bool supportsUndo READ supportsUndo)
 public:
-  FSViewPart(QWidget *parentWidget,
-             QObject *parent, const QList<QVariant> &args);
+    FSViewPart(QWidget *parentWidget,
+               QObject *parent, const QList<QVariant> &args);
 
-  virtual ~FSViewPart();
+    virtual ~FSViewPart();
 
-  bool supportsUndo() const { return false; }
+    bool supportsUndo() const
+    {
+        return false;
+    }
 
-  FSView* view() const { return _view; }
+    FSView *view() const
+    {
+        return _view;
+    }
 
 public slots:
-  void updateActions();
-  void contextMenu(TreeMapItem*,const QPoint&);
-  void showInfo();
-  void showHelp();
-  void startedSlot();
-  void completedSlot(int dirs);
-  void slotShowVisMenu();
-  void slotShowAreaMenu();
-  void slotShowDepthMenu();
-  void slotShowColorMenu();
-  void slotSettingsChanged(int);
-  void slotProperties();
+    void updateActions();
+    void contextMenu(TreeMapItem *, const QPoint &);
+    void showInfo();
+    void showHelp();
+    void startedSlot();
+    void completedSlot(int dirs);
+    void slotShowVisMenu();
+    void slotShowAreaMenu();
+    void slotShowDepthMenu();
+    void slotShowColorMenu();
+    void slotSettingsChanged(int);
+    void slotProperties();
 
 protected:
-  /**
-   * This must be implemented by each part
-   */
-  virtual bool openFile();
-  virtual bool openUrl(const KUrl &url);
-  virtual bool closeUrl();
+    /**
+     * This must be implemented by each part
+     */
+    virtual bool openFile();
+    virtual bool openUrl(const QUrl &url);
+    virtual bool closeUrl();
 
 private:
-  FSView* _view;
-  FSJob* _job;
-  FSViewBrowserExtension* _ext;
-  KActionMenu *_visMenu, *_areaMenu, *_depthMenu, *_colorMenu;
-  void setNonStandardActionEnabled(const char* actionName, bool enabled);
+    FSView *_view;
+    FSJob *_job;
+    FSViewBrowserExtension *_ext;
+    KActionMenu *_visMenu, *_areaMenu, *_depthMenu, *_colorMenu;
+    void setNonStandardActionEnabled(const char *actionName, bool enabled);
 };
 
 #endif // FSVIEW_PART_H

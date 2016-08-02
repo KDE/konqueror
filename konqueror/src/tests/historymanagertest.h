@@ -32,6 +32,5 @@ private Q_SLOTS:
     void testAddHistoryEntry();
 };
 
-
 #endif
 

@@ -27,8 +27,10 @@ class QProgressBar;
 class QCheckBox;
 class KonqView;
 class KonqFrame;
-namespace KParts { class ReadOnlyPart; }
-
+namespace KParts
+{
+class ReadOnlyPart;
+}
 
 /**
  * The KonqFrameStatusBar is the statusbar under each konqueror view.
@@ -39,36 +41,36 @@ class KonqFrameStatusBar : public KStatusBar
     Q_OBJECT
 
 public:
-    explicit KonqFrameStatusBar( KonqFrame *_parent = 0 );
+    explicit KonqFrameStatusBar(KonqFrame *_parent = 0);
     virtual ~KonqFrameStatusBar();
 
-    void setMessage(const QString& msg, KonqStatusBarMessageLabel::Type type);
+    void setMessage(const QString &msg, KonqStatusBarMessageLabel::Type type);
 
     /**
      * Checks/unchecks the linked-view checkbox
      */
-    void setLinkedView( bool b );
+    void setLinkedView(bool b);
     /**
      * Shows/hides the active-view indicator
      */
-    void showActiveViewIndicator( bool b );
+    void showActiveViewIndicator(bool b);
     /**
      * Shows/hides the linked-view indicator
      */
-    void showLinkedViewIndicator( bool b );
+    void showLinkedViewIndicator(bool b);
     /**
      * Updates the active-view indicator and the statusbar color.
      */
     void updateActiveStatus();
 
 public Q_SLOTS:
-    void slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *oldOne,KParts::ReadOnlyPart *newOne);
-    void slotLoadingProgress( int percent );
-    void slotSpeedProgress( int bytesPerSecond );
-    void slotDisplayStatusText(const QString& text);
+    void slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *oldOne, KParts::ReadOnlyPart *newOne);
+    void slotLoadingProgress(int percent);
+    void slotSpeedProgress(int bytesPerSecond);
+    void slotDisplayStatusText(const QString &text);
 
     void slotClear();
-    void message ( const QString & message );
+    void message(const QString &message);
 
 Q_SIGNALS:
     /**
@@ -79,22 +81,22 @@ Q_SIGNALS:
     /**
      * The "linked view" checkbox was clicked
      */
-    void linkedViewClicked( bool mode );
+    void linkedViewClicked(bool mode);
 
 protected:
-    virtual bool eventFilter(QObject*,QEvent *);
-    virtual void mousePressEvent( QMouseEvent* );
+    virtual bool eventFilter(QObject *, QEvent *);
+    virtual void mousePressEvent(QMouseEvent *);
     /**
      * Brings up the context menu for this frame
      */
     virtual void splitFrameMenu();
 
 private:
-    KonqFrame* m_pParentKonqFrame;
+    KonqFrame *m_pParentKonqFrame;
     QCheckBox *m_pLinkedViewCheckBox;
     QProgressBar *m_progressBar;
     KonqStatusBarMessageLabel *m_pStatusLabel;
-    QLabel* m_led;
+    QLabel *m_led;
     QString m_savedMessage;
 };
 

@@ -28,7 +28,7 @@
 #include "konqsettings.h"
 
 #include <kapplication.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kwindowsystem.h>
 
 #include <QtCore/QFile>
@@ -46,143 +46,151 @@
 // are not for user scripting
 
 KonquerorAdaptor::KonquerorAdaptor()
- : QObject( kapp )
+    : QObject(kapp)
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    dbus.registerObject( KONQ_MAIN_PATH, this, QDBusConnection::ExportNonScriptableSlots );
+    dbus.registerObject(KONQ_MAIN_PATH, this, QDBusConnection::ExportNonScriptableSlots);
 }
 
 KonquerorAdaptor::~KonquerorAdaptor()
 {
 }
 
-QDBusObjectPath KonquerorAdaptor::openBrowserWindow( const QString& url, const QByteArray& startup_id )
+QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
-    KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url), KParts::OpenUrlArguments() );
-    if ( !res )
+    KonqMainWindow *res = KonqMisc::createSimpleWindow(QUrl::fromUserInput(url), KParts::OpenUrlArguments());
+    if (!res) {
         return QDBusObjectPath("/");
-    return QDBusObjectPath( res->dbusName() );
+    }
+    return QDBusObjectPath(res->dbusName());
 }
 
-QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile )
+QDBusObjectPath KonquerorAdaptor::createNewWindow(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
     KParts::OpenUrlArguments args;
-    args.setMimeType( mimetype );
+    args.setMimeType(mimetype);
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
-    KUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
+    QUrl finalURL = KonqMisc::konqFilteredURL(0, url);
     KonqOpenURLRequest req;
     req.args = args;
     req.tempFile = tempFile;
     KonqMainWindow *res = KonqMisc::createNewWindow(finalURL, req);
-    if ( !res )
+    if (!res) {
         return QDBusObjectPath("/");
+    }
     res->show();
-    return QDBusObjectPath( res->dbusName() );
+    return QDBusObjectPath(res->dbusName());
 }
 
-QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& url, const QStringList& filesToSelect, const QByteArray& startup_id )
+QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &url, const QStringList &filesToSelect, const QByteArray &startup_id)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
     KonqOpenURLRequest req;
     req.filesToSelect = filesToSelect;
-    KonqMainWindow *res = KonqMisc::createNewWindow(KUrl(url), req);
-    if ( !res )
+    KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url), req);
+    if (!res) {
         return QDBusObjectPath("/");
+    }
     res->show();
-    return QDBusObjectPath( res->dbusName() );
+    return QDBusObjectPath(res->dbusName());
 }
 
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString& path, const QString& filename, const QByteArray& startup_id )
+QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile(const QString &path, const QString &filename, const QByteArray &startup_id)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
-    kDebug() << path << "," << filename;
+    qDebug() << path << "," << filename;
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename);
-    if ( !res )
+    if (!res) {
         return QDBusObjectPath("/");
+    }
     res->show();
-    return QDBusObjectPath( res->dbusName() );
+    return QDBusObjectPath(res->dbusName());
 }
 
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QString& path, const QString& filename, const QString& url, const QByteArray& startup_id )
+QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl(const QString &path, const QString &filename, const QString &url, const QByteArray &startup_id)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url) );
-    if ( !res )
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url));
+    if (!res) {
         return QDBusObjectPath("/");
+    }
     res->show();
-    return QDBusObjectPath( res->dbusName() );
+    return QDBusObjectPath(res->dbusName());
 }
 
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( const QString& path, const QString& filename, const QString& url, const QString& mimetype, const QByteArray& startup_id )
+QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType(const QString &path, const QString &filename, const QString &url, const QString &mimetype, const QByteArray &startup_id)
 {
-    kapp->setStartupId( startup_id );
+    kapp->setStartupId(startup_id);
 #ifdef Q_WS_X11
-    QX11Info::setAppUserTime( 0 );
+    QX11Info::setAppUserTime(0);
 #endif
     KParts::OpenUrlArguments args;
-    args.setMimeType( mimetype );
+    args.setMimeType(mimetype);
     KonqOpenURLRequest req;
     req.args = args;
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, KUrl(url), req);
-    if ( !res )
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url), req);
+    if (!res) {
         return QDBusObjectPath("/");
+    }
     res->show();
-    return QDBusObjectPath( res->dbusName() );
+    return QDBusObjectPath(res->dbusName());
 }
 
 void KonquerorAdaptor::updateProfileList()
 {
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( !mainWindows )
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (!mainWindows) {
         return;
+    }
 
-    foreach ( KonqMainWindow* window, *mainWindows )
-        window->viewManager()->profileListDirty( false );
+    foreach (KonqMainWindow *window, *mainWindows) {
+        window->viewManager()->profileListDirty(false);
+    }
 }
 
 QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
 {
     QList<QDBusObjectPath> lst;
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( mainWindows )
-    {
-      foreach ( KonqMainWindow* window, *mainWindows )
-        lst.append( QDBusObjectPath( window->dbusName() ) );
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (mainWindows) {
+        foreach (KonqMainWindow *window, *mainWindows) {
+            lst.append(QDBusObjectPath(window->dbusName()));
+        }
     }
     return lst;
 }
 
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
-    QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
-    if ( mainWindows ) {
-        foreach ( KonqMainWindow* window, *mainWindows ) {
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (mainWindows) {
+        foreach (KonqMainWindow *window, *mainWindows) {
 #ifdef Q_WS_X11
-            KWindowInfo winfo = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
-            if( winfo.isOnCurrentDesktop() &&
+            KWindowInfo winfo = KWindowSystem::windowInfo(window->winId(), NET::WMDesktop);
+            if (winfo.isOnCurrentDesktop() &&
 #else
-	    if(
+            if (
 #endif
-                !KonqMainWindow::isPreloaded() ) { // we want a tab in an already shown window
+                    !KonqMainWindow::isPreloaded()) {  // we want a tab in an already shown window
                 Q_ASSERT(!window->dbusName().isEmpty());
-                return QDBusObjectPath( window->dbusName() );
+                return QDBusObjectPath(window->dbusName());
             }
         }
     }
@@ -191,44 +199,44 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     return QDBusObjectPath("/");
 }
 
-bool KonquerorAdaptor::processCanBeReused( int screen )
+bool KonquerorAdaptor::processCanBeReused(int screen)
 {
 #ifdef Q_WS_X11
-	QX11Info info;
-    if( info.screen() != screen )
-        return false; // this instance run on different screen, and Qt apps can't migrate
+    QX11Info info;
+    if (info.screen() != screen) {
+        return false;    // this instance run on different screen, and Qt apps can't migrate
+    }
 #endif
-    if( KonqMainWindow::isPreloaded())
-        return false; // will be handled by preloading related code instead
-    QList<KonqMainWindow*>* windows = KonqMainWindow::mainWindowList();
-    if( windows == NULL )
+    if (KonqMainWindow::isPreloaded()) {
+        return false;    // will be handled by preloading related code instead
+    }
+    QList<KonqMainWindow *> *windows = KonqMainWindow::mainWindowList();
+    if (windows == NULL) {
         return true;
+    }
     QStringList allowed_parts = KonqSettings::safeParts();
     bool all_parts_allowed = false;
 
-    if( allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String( "SAFE" ))
-    {
+    if (allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String("SAFE")) {
         allowed_parts.clear();
         // is duplicated in client/kfmclient.cc
-        allowed_parts << QLatin1String( "dolphinpart.desktop" )
-                      << QLatin1String( "konq_sidebartng.desktop" );
-    }
-    else if( allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String( "ALL" ))
-    {
+        allowed_parts << QLatin1String("dolphinpart.desktop")
+                      << QLatin1String("konq_sidebartng.desktop");
+    } else if (allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String("ALL")) {
         allowed_parts.clear();
         all_parts_allowed = true;
     }
-    if( all_parts_allowed )
+    if (all_parts_allowed) {
         return true;
-    foreach ( KonqMainWindow* window, *windows )
-    {
-        kDebug() << "processCanBeReused: count=" << window->viewCount();
-        const KonqMainWindow::MapViews& views = window->viewMap();
-        foreach ( KonqView* view, views )
-        {
-            kDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url().prettyUrl();
-            if( !allowed_parts.contains( view->service()->entryPath()))
+    }
+    foreach (KonqMainWindow *window, *windows) {
+        qDebug() << "processCanBeReused: count=" << window->viewCount();
+        const KonqMainWindow::MapViews &views = window->viewMap();
+        foreach (KonqView *view, views) {
+            qDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url();
+            if (!allowed_parts.contains(view->service()->entryPath())) {
                 return false;
+            }
         }
     }
     return true;
@@ -236,8 +244,8 @@ bool KonquerorAdaptor::processCanBeReused( int screen )
 
 void KonquerorAdaptor::terminatePreloaded()
 {
-    if( KonqMainWindow::isPreloaded())
+    if (KonqMainWindow::isPreloaded()) {
         kapp->exit();
+    }
 }
 
-#include "KonquerorAdaptor.moc"

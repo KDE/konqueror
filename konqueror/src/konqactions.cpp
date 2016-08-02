@@ -23,61 +23,70 @@
 #include "konqsettingsxt.h"
 #include "konqpixmapprovider.h"
 
-#include <kdebug.h>
-#include <kicon.h>
+#include <QDebug>
+#include <QIcon>
 #include <kmenu.h>
+#include <kglobal.h>
+#include <QAction>
 
 #include <algorithm>
 
-template class QList<KonqHistoryEntry*>;
+template class QList<KonqHistoryEntry *>;
 
 /////////////////
 
 //static - used by back/forward popups in KonqMainWindow
-void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
-                                   QMenu * popup,
+void KonqActions::fillHistoryPopup(const QList<HistoryEntry *> &history, int historyIndex,
+                                   QMenu *popup,
                                    bool onlyBack,
                                    bool onlyForward)
 {
-  Q_ASSERT( popup ); // kill me if this 0... :/
+    Q_ASSERT(popup);   // kill me if this 0... :/
 
-  //kDebug() << "fillHistoryPopup position: " << history.at();
-  int index = 0;
-  if (onlyBack || onlyForward) // this if() is always true nowadays.
-  {
-      index += historyIndex; // Jump to current item
-      if ( !onlyForward ) --index; else ++index; // And move off it
-  }
+    //qDebug() << "fillHistoryPopup position: " << history.at();
+    int index = 0;
+    if (onlyBack || onlyForward) { // this if() is always true nowadays.
+        index += historyIndex; // Jump to current item
+        if (!onlyForward) {
+            --index;
+        } else {
+            ++index;    // And move off it
+        }
+    }
 
-  QFontMetrics fm = popup->fontMetrics();
-  int i = 0;
-  while ( index < history.count() && index >= 0 )
-  {
+    QFontMetrics fm = popup->fontMetrics();
+    int i = 0;
+    while (index < history.count() && index >= 0) {
         QString text = history[ index ]->title;
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
-        text.replace( '&', "&&" );
+        text.replace('&', "&&");
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
-        KAction* action = new KAction(KIcon(iconName), text, popup);
+        QAction *action = new QAction(QIcon::fromTheme(iconName), text, popup);
         action->setData(index - historyIndex);
-        //kDebug() << text << index - historyIndex;
+        //qDebug() << text << index - historyIndex;
         popup->addAction(action);
-        if (++i > 10)
+        if (++i > 10) {
             break;
-        if (!onlyForward) --index; else ++index;
-  }
-  //kDebug() << "After fillHistoryPopup position: " << history.at();
+        }
+        if (!onlyForward) {
+            --index;
+        } else {
+            ++index;
+        }
+    }
+    //qDebug() << "After fillHistoryPopup position: " << history.at();
 }
 
 ///////////////////////////////
 
 static int s_maxEntries = 0;
 
-KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
-						  QObject* parent )
-    : KActionMenu( KIcon("go-jump"), text, parent ),
+KonqMostOftenURLSAction::KonqMostOftenURLSAction(const QString &text,
+        QObject *parent)
+    : KActionMenu(QIcon::fromTheme("go-jump"), text, parent),
       m_parsingDone(false)
 {
-    setDelayed( false );
+    setDelayed(false);
 
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
     connect(menu(), SIGNAL(triggered(QAction*)), SLOT(slotActivated(QAction*)));
@@ -94,88 +103,90 @@ void KonqMostOftenURLSAction::init()
     s_maxEntries = KonqSettings::numberofmostvisitedURLs();
 
     KonqHistoryManager *mgr = KonqHistoryManager::kself();
-    setEnabled( !mgr->entries().isEmpty() && s_maxEntries > 0 );
+    setEnabled(!mgr->entries().isEmpty() && s_maxEntries > 0);
 }
 
-K_GLOBAL_STATIC( KonqHistoryList, s_mostEntries )
+K_GLOBAL_STATIC(KonqHistoryList, s_mostEntries)
 
-void KonqMostOftenURLSAction::inSort( const KonqHistoryEntry& entry ) {
-    KonqHistoryList::iterator it = std::lower_bound( s_mostEntries->begin(),
-                                                     s_mostEntries->end(),
-                                                     entry,
-                                                     numberOfVisitOrder );
-    s_mostEntries->insert( it, entry );
+void KonqMostOftenURLSAction::inSort(const KonqHistoryEntry &entry)
+{
+    KonqHistoryList::iterator it = std::lower_bound(s_mostEntries->begin(),
+                                   s_mostEntries->end(),
+                                   entry,
+                                   numberOfVisitOrder);
+    s_mostEntries->insert(it, entry);
 }
 
 void KonqMostOftenURLSAction::parseHistory() // only ever called once
 {
     KonqHistoryManager *mgr = KonqHistoryManager::kself();
 
-    connect( mgr, SIGNAL(entryAdded(KonqHistoryEntry)),
-             SLOT(slotEntryAdded(KonqHistoryEntry)));
-    connect( mgr, SIGNAL(entryRemoved(KonqHistoryEntry)),
-             SLOT(slotEntryRemoved(KonqHistoryEntry)));
-    connect( mgr, SIGNAL(cleared()), SLOT(slotHistoryCleared()));
+    connect(mgr, SIGNAL(entryAdded(KonqHistoryEntry)),
+            SLOT(slotEntryAdded(KonqHistoryEntry)));
+    connect(mgr, SIGNAL(entryRemoved(KonqHistoryEntry)),
+            SLOT(slotEntryRemoved(KonqHistoryEntry)));
+    connect(mgr, SIGNAL(cleared()), SLOT(slotHistoryCleared()));
 
     const KonqHistoryList mgrEntries = mgr->entries();
     KonqHistoryList::const_iterator it = mgrEntries.begin();
     const KonqHistoryList::const_iterator end = mgrEntries.end();
-    for ( int i = 0; it != end && i < s_maxEntries; ++i, ++it ) {
-	s_mostEntries->append( *it );
+    for (int i = 0; it != end && i < s_maxEntries; ++i, ++it) {
+        s_mostEntries->append(*it);
     }
-    qSort( s_mostEntries->begin(), s_mostEntries->end(), numberOfVisitOrder );
+    qSort(s_mostEntries->begin(), s_mostEntries->end(), numberOfVisitOrder);
 
-    while ( it != end ) {
-	const KonqHistoryEntry& leastOften = s_mostEntries->first();
-	const KonqHistoryEntry& entry = *it;
-	if ( leastOften.numberOfTimesVisited < entry.numberOfTimesVisited ) {
-	    s_mostEntries->removeFirst();
-	    inSort( entry );
-	}
+    while (it != end) {
+        const KonqHistoryEntry &leastOften = s_mostEntries->first();
+        const KonqHistoryEntry &entry = *it;
+        if (leastOften.numberOfTimesVisited < entry.numberOfTimesVisited) {
+            s_mostEntries->removeFirst();
+            inSort(entry);
+        }
 
-	++it;
+        ++it;
     }
 }
 
-void KonqMostOftenURLSAction::slotEntryAdded( const KonqHistoryEntry& entry )
+void KonqMostOftenURLSAction::slotEntryAdded(const KonqHistoryEntry &entry)
 {
     // if it's already present, remove it, and inSort it
-    s_mostEntries->removeEntry( entry.url );
+    s_mostEntries->removeEntry(entry.url);
 
-    if ( s_mostEntries->count() >= s_maxEntries ) {
-	const KonqHistoryEntry& leastOften = s_mostEntries->first();
-	if ( leastOften.numberOfTimesVisited < entry.numberOfTimesVisited ) {
-	    s_mostEntries->removeFirst();
-	    inSort( entry );
-	}
+    if (s_mostEntries->count() >= s_maxEntries) {
+        const KonqHistoryEntry &leastOften = s_mostEntries->first();
+        if (leastOften.numberOfTimesVisited < entry.numberOfTimesVisited) {
+            s_mostEntries->removeFirst();
+            inSort(entry);
+        }
     }
 
-    else
-	inSort( entry );
-    setEnabled( !s_mostEntries->isEmpty() );
+    else {
+        inSort(entry);
+    }
+    setEnabled(!s_mostEntries->isEmpty());
 }
 
-void KonqMostOftenURLSAction::slotEntryRemoved( const KonqHistoryEntry& entry )
+void KonqMostOftenURLSAction::slotEntryRemoved(const KonqHistoryEntry &entry)
 {
-    s_mostEntries->removeEntry( entry.url );
-    setEnabled( !s_mostEntries->isEmpty() );
+    s_mostEntries->removeEntry(entry.url);
+    setEnabled(!s_mostEntries->isEmpty());
 }
 
 void KonqMostOftenURLSAction::slotHistoryCleared()
 {
     s_mostEntries->clear();
-    setEnabled( false );
+    setEnabled(false);
 }
 
-static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
+static void createHistoryAction(const KonqHistoryEntry &entry, QMenu *menu)
 {
     // we take either title, typedUrl or URL (in this order)
     const QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
-                                                  entry.url.prettyUrl() :
-                                                  entry.typedUrl) :
+                         entry.url.toDisplayString() :
+                         entry.typedUrl) :
                          entry.title;
-    KAction* action = new KAction(
-        KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
+    QAction *action = new QAction(
+        QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(entry.url)),
         text, menu);
     action->setData(entry.url);
     menu->addAction(action);
@@ -184,7 +195,7 @@ static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
 void KonqMostOftenURLSAction::slotFillMenu()
 {
     if (!m_parsingDone) { // first time
-	parseHistory();
+        parseHistory();
         m_parsingDone = true;
     }
 
@@ -193,18 +204,18 @@ void KonqMostOftenURLSAction::slotFillMenu()
     for (int id = s_mostEntries->count() - 1; id >= 0; --id) {
         createHistoryAction(s_mostEntries->at(id), menu());
     }
-    setEnabled( !s_mostEntries->isEmpty() );
+    setEnabled(!s_mostEntries->isEmpty());
 }
 
-void KonqMostOftenURLSAction::slotActivated(QAction* action)
+void KonqMostOftenURLSAction::slotActivated(QAction *action)
 {
-    emit activated(action->data().value<KUrl>());
+    emit activated(action->data().value<QUrl>());
 }
 
 ///////////////////////////////
 
-KonqHistoryAction::KonqHistoryAction(const QString& text, QObject* parent)
-    : KActionMenu(KIcon("go-jump"), text, parent)
+KonqHistoryAction::KonqHistoryAction(const QString &text, QObject *parent)
+    : KActionMenu(QIcon::fromTheme("go-jump"), text, parent)
 {
     setDelayed(false);
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
@@ -232,9 +243,7 @@ void KonqHistoryAction::slotFillMenu()
     }
 }
 
-void KonqHistoryAction::slotActivated(QAction* action)
+void KonqHistoryAction::slotActivated(QAction *action)
 {
-    emit activated(action->data().value<KUrl>());
+    emit activated(action->data().value<QUrl>());
 }
-
-#include "konqactions.moc"

@@ -22,7 +22,7 @@
 #include "konq_sidebartreeitem.h"
 
 #include <kfileitem.h>
-#include <kurl.h>
+#include <QUrl>
 #include <konq_operations.h>
 
 #include <QtCore/QStringList>
@@ -32,19 +32,22 @@ class QDropEvent;
 class KonqSidebarDirTreeItem : public KonqSidebarTreeItem
 {
 public:
-    KonqSidebarDirTreeItem( KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem );
-    KonqSidebarDirTreeItem( KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem );
+    KonqSidebarDirTreeItem(KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem);
+    KonqSidebarDirTreeItem(KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem);
     ~KonqSidebarDirTreeItem();
 
-    KFileItem fileItem() const { return m_fileItem; }
+    KFileItem fileItem() const
+    {
+        return m_fileItem;
+    }
 
-    virtual void setOpen( bool open );
+    virtual void setOpen(bool open);
 
-    virtual void paintCell( QPainter *_painter, const QColorGroup & _cg, int _column, int _width, int _alignment );
+    virtual void paintCell(QPainter *_painter, const QColorGroup &_cg, int _column, int _width, int _alignment);
 
-    virtual bool acceptsDrops( const Q3StrList & formats );
-    virtual void drop( QDropEvent * ev );
-    virtual bool populateMimeData( QMimeData* mimeData, bool move );
+    virtual bool acceptsDrops(const Q3StrList &formats);
+    virtual void drop(QDropEvent *ev);
+    virtual bool populateMimeData(QMimeData *mimeData, bool move);
 
     virtual void middleButtonClicked();
     virtual void rightButtonPressed();
@@ -53,10 +56,10 @@ public:
     virtual void trash();
     virtual void del();
     virtual void rename(); // start a rename operation
-    void rename( const QString & name ); // do the actual renaming
+    void rename(const QString &name);    // do the actual renaming
 
     // The URL to open when this link is clicked
-    virtual KUrl externalURL() const;
+    virtual QUrl externalURL() const;
     virtual QString externalMimeType() const;
     virtual QString toolTipText() const;
 
@@ -69,7 +72,7 @@ public:
     QString id;
 
 private:
-    void delOperation( KonqOperations::Operation method );
+    void delOperation(KonqOperations::Operation method);
     KFileItem m_fileItem;
 };
 

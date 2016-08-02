@@ -23,49 +23,73 @@
 #include <qlist.h>
 #include <qstring.h>
 
-struct TidyReport
-{
-  TidyReport(const QString &m, uint l, uint c)
-    : msg(m), line(l), col(c)
-  {}
+struct TidyReport {
+    TidyReport(const QString &m, uint l, uint c)
+        : msg(m), line(l), col(c)
+    {}
 
-  QString msg;
-  uint line;
-  uint col;
+    QString msg;
+    uint line;
+    uint col;
 };
 
-struct ValidationResult
-{
-  QString frameName;
-  QList<TidyReport> errors;
-  QList<TidyReport> warnings;
-  QList<TidyReport> accesswarns;
+struct ValidationResult {
+    QString frameName;
+    QList<TidyReport> errors;
+    QList<TidyReport> warnings;
+    QList<TidyReport> accesswarns;
 };
 
 class TidyValidator
 {
 public:
-  TidyValidator(const QString &fileName);
-  TidyValidator(const QByteArray &fileContent);
+    TidyValidator(const QString &fileName);
+    TidyValidator(const QByteArray &fileContent);
 
-  int errorCount() const { return d.errors.count(); }
-  TidyReport error(int i) const { return d.errors.at(i); }
-  QList<TidyReport> errors() const { return d.errors; }
-  int warningCount() const { return d.warnings.count(); }
-  TidyReport warning(int i) const { return d.warnings.at(i); }
-  QList<TidyReport> warnings() const { return d.warnings; }
-  int accessibilityWarningCount() const { return d.accesswarns.count(); }
-  TidyReport accessibilityWarning(int i) const { return d.accesswarns.at(i); }
-  QList<TidyReport> accessibilityWarnings() const { return d.accesswarns; }
+    int errorCount() const
+    {
+        return d.errors.count();
+    }
+    TidyReport error(int i) const
+    {
+        return d.errors.at(i);
+    }
+    QList<TidyReport> errors() const
+    {
+        return d.errors;
+    }
+    int warningCount() const
+    {
+        return d.warnings.count();
+    }
+    TidyReport warning(int i) const
+    {
+        return d.warnings.at(i);
+    }
+    QList<TidyReport> warnings() const
+    {
+        return d.warnings;
+    }
+    int accessibilityWarningCount() const
+    {
+        return d.accesswarns.count();
+    }
+    TidyReport accessibilityWarning(int i) const
+    {
+        return d.accesswarns.at(i);
+    }
+    QList<TidyReport> accessibilityWarnings() const
+    {
+        return d.accesswarns;
+    }
 
-  struct Data
-  {
-    QList<TidyReport> errors;
-    QList<TidyReport> warnings;
-    QList<TidyReport> accesswarns;
-  };
+    struct Data {
+        QList<TidyReport> errors;
+        QList<TidyReport> warnings;
+        QList<TidyReport> accesswarns;
+    };
 private:
-  TidyValidator::Data d;
+    TidyValidator::Data d;
 };
 
 #endif

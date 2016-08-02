@@ -19,7 +19,7 @@
 #ifndef KONQDRAGGABLELABEL_H
 #define KONQDRAGGABLELABEL_H
 
-#include <kurl.h>
+#include <QUrl>
 #include <QLabel>
 class KonqMainWindow;
 
@@ -27,14 +27,14 @@ class KonqDraggableLabel : public QLabel
 {
     Q_OBJECT
 public:
-    KonqDraggableLabel( KonqMainWindow * mw, const QString & text );
+    KonqDraggableLabel(KonqMainWindow *mw, const QString &text);
 
 protected:
-    void mousePressEvent( QMouseEvent * ev );
-    void mouseMoveEvent( QMouseEvent * ev );
-    void mouseReleaseEvent( QMouseEvent * );
-    void dragEnterEvent( QDragEnterEvent *ev );
-    void dropEvent( QDropEvent* ev );
+    void mousePressEvent(QMouseEvent *ev);
+    void mouseMoveEvent(QMouseEvent *ev);
+    void mouseReleaseEvent(QMouseEvent *);
+    void dragEnterEvent(QDragEnterEvent *ev);
+    void dropEvent(QDropEvent *ev);
 
 private Q_SLOTS:
     void delayedOpenURL();
@@ -42,8 +42,7 @@ private Q_SLOTS:
 private:
     QPoint startDragPos;
     bool validDrag;
-    KonqMainWindow * m_mw;
-    KUrl::List _savedLst;
+    KonqMainWindow *m_mw;
+    QList<QUrl> _savedLst;
 };
 #endif
-

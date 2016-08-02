@@ -1,2 +1,2 @@
-install( FILES google.xml DESTINATION ${DATA_INSTALL_DIR}/konqueror/opensearch )
+install( FILES google.xml DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/opensearch )
 

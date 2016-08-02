@@ -34,28 +34,28 @@
  */
 class KSortFilterProxyModelPrivate;
 
-class KSortFilterProxyModel 
+class KSortFilterProxyModel
     : public QSortFilterProxyModel
 {
-  Q_OBJECT
-    public:
-      /*! Constructs a sorting filter model with the given parent. */
-      KSortFilterProxyModel(QObject * parent = 0);
-      /*! Destroys this sorting filter model. */
-      ~KSortFilterProxyModel();
+    Q_OBJECT
+public:
+    /*! Constructs a sorting filter model with the given parent. */
+    KSortFilterProxyModel(QObject *parent = 0);
+    /*! Destroys this sorting filter model. */
+    ~KSortFilterProxyModel();
 
-      /*! Whether to show the children of a matching parent.
-       *  This is false by default. */
-      bool showAllChildren() const;
-      /*! Set whether to show the children of a matching parent.
-       *  This is false by default. */
-      void setShowAllChildren(bool showAllChildren);
+    /*! Whether to show the children of a matching parent.
+     *  This is false by default. */
+    bool showAllChildren() const;
+    /*! Set whether to show the children of a matching parent.
+     *  This is false by default. */
+    void setShowAllChildren(bool showAllChildren);
 
-    protected:
-      /*! \reimp */
-      virtual bool filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const;
-      KSortFilterProxyModelPrivate * const d_ptr;
+protected:
+    /*! \reimp */
+    virtual bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
+    KSortFilterProxyModelPrivate *const d_ptr;
 
-      Q_DISABLE_COPY( KSortFilterProxyModel )
+    Q_DISABLE_COPY(KSortFilterProxyModel)
 };
 #endif

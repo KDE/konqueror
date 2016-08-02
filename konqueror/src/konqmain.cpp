@@ -25,39 +25,37 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 
-#include <ktemporaryfile.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
-#include <kdebug.h>
+#include <QDebug>
 #include <kcmdlineargs.h>
+#include <kglobal.h>
 #include <QtCore/QFile>
-#include <QApplication>
-#include <QWidget>
 
-#ifdef Q_WS_X11
+#include <config-konqueror.h>
+#ifdef KONQ_HAVE_X11
 #include <QX11Info>
 #endif
 
 #include <QtDBus/QtDBus>
 #include <QDir>
+#include <QStandardPaths>
 
 static void listProfiles()
 {
     QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", KStandardDirs::NoDuplicates);
     profiles.sort();
-    Q_FOREACH(const QString& _file, profiles)
-    {
-        const QString file = _file.mid(_file.lastIndexOf('/')+1);
+    Q_FOREACH (const QString &_file, profiles) {
+        const QString file = _file.mid(_file.lastIndexOf('/') + 1);
         printf("%s\n", QFile::encodeName(file).constData());
     }
 }
 
 static void listSessions()
 {
-    const QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
-    QDirIterator it(dir, QDir::Readable|QDir::NoDotAndDotDot|QDir::Dirs);
-    while (it.hasNext())
-    {
+    const QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
+    QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
+    while (it.hasNext()) {
         QFileInfo fileInfo(it.next());
         printf("%s\n", QFile::encodeName(fileInfo.baseName()).constData());
     }
@@ -65,18 +63,18 @@ static void listSessions()
 
 static bool tryPreload()
 {
-#ifdef Q_WS_X11
-    if(KonqSettings::maxPreloadCount() > 0) {
+#ifdef KONQ_HAVE_X11
+    if (QX11Info::isPlatformX11() && KonqSettings::maxPreloadCount() > 0) {
         QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-        QX11Info info;
-        QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), info.screen());
-        if(!retVal)
-            return false; // too many preloaded or failed
-        KonqMainWindow* win = new KonqMainWindow; // prepare an empty window too
+        QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
+        if (!retVal) {
+            return false;    // too many preloaded or failed
+        }
+        KonqMainWindow *win = new KonqMainWindow; // prepare an empty window too
         // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
         KonqMainWindow::setPreloadedFlag(true);
         KonqMainWindow::setPreloadedWindow(win);
-        kDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
+        qDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
         return true;
     } else {
         return false; // no preloading
@@ -86,10 +84,9 @@ static bool tryPreload()
 #endif
 }
 
-extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
+extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     KCmdLineArgs::init(argc, argv, KonqFactory::aboutData());
-
 
     KCmdLineOptions options;
 
@@ -116,9 +113,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
     KCmdLineArgs::addTempFileOption();
 
     KonquerorApplication app;
-    app.setQuitOnLastWindowClosed(false);
-
-    KGlobal::locale()->insertCatalog("libkonq"); // needed for apps using libkonq
+    KLocalizedString::setApplicationDomain("konqueror");
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
@@ -126,20 +121,21 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
 
         int n = 1;
-        while (KonqMainWindow::canBeRestored(n))
-        {
+        while (KonqMainWindow::canBeRestored(n)) {
             const QString className = KXmlGuiWindow::classNameOfToplevel(n);
-            if (className == QLatin1String("KonqMainWindow"))
+            if (className == QLatin1String("KonqMainWindow")) {
                 (new KonqMainWindow())->restore(n);
-            else
-                kWarning() << "Unknown class" << className << "in session saved data!" ;
+            } else {
+                qWarning() << "Unknown class" << className << "in session saved data!";
+            }
             ++n;
         }
     } else {
         // First the invocations that do not take urls.
         if (args->isSet("preload")) {
-            if (!tryPreload())
-                return 0; // no preloading
+            if (!tryPreload()) {
+                return 0;    // no preloading
+            }
         } else if (args->isSet("profiles")) {
             listProfiles();
             return 0;
@@ -150,12 +146,12 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             const QString session = args->getOption("open-session");
             QString sessionPath = session;
             if (!session.startsWith('/')) {
-                sessionPath = KStandardDirs::locateLocal("appdata", "sessions/" + session);
+                sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
             }
 
-            QDirIterator it(sessionPath, QDir::Readable|QDir::Files);
+            QDirIterator it(sessionPath, QDir::Readable | QDir::Files);
             if (!it.hasNext()) {
-                kError() << "session" << session << "not found or empty";
+                qWarning() << "session" << session << "not found or empty";
                 return -1;
             }
 
@@ -164,19 +160,20 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             // No args. If --silent, do nothing, otherwise create a default window.
             if (!args->isSet("silent")) {
                 const QString profile = args->getOption("profile");
-                KonqMainWindow* mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
+                KonqMainWindow *mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
                 mainWin->show();
             }
         } else {
             // Now is a good time to parse each argument as a URL.
-            KUrl::List urlList;
+            QList<QUrl> urlList;
             for (int i = 0; i < args->count(); i++) {
                 // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below
-                const KUrl url = args->url(i);
-                if (url.isLocalFile() && QFile::exists(url.toLocalFile())) // "konqueror index.html"
+                const QUrl url = args->url(i);
+                if (url.isLocalFile() && QFile::exists(url.toLocalFile())) { // "konqueror index.html"
                     urlList += url;
-                else
-                    urlList += KUrl(KonqMisc::konqFilteredURL(0L, args->arg(i))); // "konqueror slashdot.org"
+                } else {
+                    urlList += KonqMisc::konqFilteredURL(0L, args->arg(i));    // "konqueror slashdot.org"
+                }
             }
 
             QStringList filesToSelect;
@@ -184,22 +181,26 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             if (args->isSet("select")) {
                 // Get all distinct directories from 'files' and open a tab
                 // for each directory.
-                QList<KUrl> dirs;
-                Q_FOREACH(const KUrl& url, urlList) {
-                    const KUrl dir(url.directory());
+                QList<QUrl> dirs;
+                Q_FOREACH (const QUrl &url, urlList) {
+                    const QUrl dir(url.adjusted(QUrl::RemoveFilename).path());
                     if (!dirs.contains(dir)) {
                         dirs.append(dir);
                     }
                 }
-                filesToSelect = urlList.toStringList();
+                foreach (const QUrl &url, urlList) {
+                    filesToSelect << url.url();
+                }
+
                 urlList = dirs;
             }
 
-            KUrl firstUrl = urlList.takeFirst();
+            QUrl firstUrl = urlList.takeFirst();
 
             KParts::OpenUrlArguments urlargs;
-            if (args->isSet("mimetype"))
+            if (args->isSet("mimetype")) {
                 urlargs.setMimeType(args->getOption("mimetype"));
+            }
 
             KonqOpenURLRequest req;
             req.args = urlargs;
@@ -207,10 +208,10 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             req.tempFile = KCmdLineArgs::isTempFileSet();
             req.serviceName = args->getOption("part");
 
-            KonqMainWindow * mainwin = 0;
+            KonqMainWindow *mainwin = 0;
             if (args->isSet("profile")) {
                 const QString profile = args->getOption("profile");
-                //kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
+                //qDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
                 mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, req);
             } else {
                 mainwin = KonqMisc::createNewWindow(firstUrl, req);
@@ -230,8 +231,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
     // any parts loaded when KLibLoader::cleanUp is called.
     // Their deletion was postponed in their event()
     // (and Qt doesn't delete WDestructiveClose widgets on exit anyway :()
-    while(KonqMainWindow::mainWindowList() != NULL)
-    { // the list will be deleted by last KonqMainWindow
+    while (KonqMainWindow::mainWindowList() != NULL) {
+        // the list will be deleted by last KonqMainWindow
         delete KonqMainWindow::mainWindowList()->first();
     }
 

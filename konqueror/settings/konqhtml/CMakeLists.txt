@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmkonqhtml\")
+
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/css
     )
@@ -21,21 +23,21 @@ set(kcm_konqhtml_PART_SRCS
    css/kcmcss.cpp
    )
 
-kde4_add_ui_files(kcm_konqhtml_PART_SRCS
+ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     nsconfigwidget.ui
     advancedTabOptions.ui
     css/csscustom.ui
     css/cssconfig.ui
     )
 
-kde4_add_plugin(kcm_konqhtml ${kcm_konqhtml_PART_SRCS})
+add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
 
-target_link_libraries(kcm_konqhtml ${KDE4_KPARTS_LIBS})
+target_link_libraries(kcm_konqhtml KF5::Parts KF5::KDELibs4Support KF5::KHtml)
 
-install(TARGETS kcm_konqhtml  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kcm_konqhtml  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 ########### install files ###############
 
-install( FILES khtml_general.desktop khtml_behavior.desktop khtml_java_js.desktop khtml_appearance.desktop khtml_filter.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES css/template.css  DESTINATION  ${DATA_INSTALL_DIR}/kcmcss )
+install( FILES khtml_general.desktop khtml_behavior.desktop khtml_java_js.desktop khtml_appearance.desktop khtml_filter.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES css/template.css  DESTINATION  ${KDE_INSTALL_DATADIR}/kcmcss )

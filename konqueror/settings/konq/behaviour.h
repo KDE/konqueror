@@ -27,30 +27,28 @@
 class QCheckBox;
 class QLabel;
 
-class KUrlRequester;
-
 class KBehaviourOptions : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit KBehaviourOptions(QWidget *parent, const QVariantList &args = QVariantList());
+    explicit KBehaviourOptions(QWidget *parent, const QVariantList &args = QVariantList());
     ~KBehaviourOptions();
-  virtual void load();
-  virtual void save();
-  virtual void defaults();
+    virtual void load();
+    virtual void save();
+    virtual void defaults();
 
 protected Q_SLOTS:
-  void updateWinPixmap(bool);
+    void updateWinPixmap(bool);
 
 private:
-  KSharedConfig::Ptr g_pConfig;
-  QString groupname;
+    KSharedConfig::Ptr g_pConfig;
+    QString groupname;
 
-  QCheckBox *cbNewWin;
+    QCheckBox *cbNewWin;
 
-  QLabel *winPixmap;
+    QLabel *winPixmap;
 
-  QCheckBox *cbShowDeleteCommand;
+    QCheckBox *cbShowDeleteCommand;
 };
 
 #endif // BEHAVIOUR_H

@@ -1,7 +1,8 @@
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 
-macro_optional_find_package(LibTidy)
+find_package(LibTidy)
+find_package(KF5 REQUIRED KHtml WidgetsAddons IconThemes)
 set_package_properties(LibTidy PROPERTIES DESCRIPTION "HTML Tidy"
                        URL "http://tidy.sourceforge.net"
                        TYPE OPTIONAL
@@ -33,30 +34,30 @@ if (LIBTIDY_FOUND)
   )
 endif (LIBTIDY_FOUND)
 
-kde4_add_ui_files(validatorsplugin_PART_SRCS
+ki18n_wrap_ui(validatorsplugin_PART_SRCS
   internalvalidator.ui
   remotevalidators.ui
   reportwidget.ui
 )
 
-kde4_add_kcfg_files(validatorsplugin_PART_SRCS settings.kcfgc)
+kconfig_add_kcfg_files(validatorsplugin_PART_SRCS settings.kcfgc)
 
-kde4_add_plugin(validatorsplugin ${validatorsplugin_PART_SRCS})
+add_library(validatorsplugin MODULE ${validatorsplugin_PART_SRCS})
 
 
 
-target_link_libraries(validatorsplugin ${KDE4_KPARTS_LIBS} ${KDE4_KHTML_LIBRARY})
+target_link_libraries(validatorsplugin KF5::Parts KF5::KHtml KF5::WidgetsAddons KF5::KDELibs4Support KF5::IconThemes)
 if (LIBTIDY_FOUND)
   target_link_libraries(validatorsplugin ${LIBTIDY_LIBRARIES})
 endif (LIBTIDY_FOUND)
 
-install(TARGETS validatorsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS validatorsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
+install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 
-install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
+install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
-install(FILES validators.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES validators.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

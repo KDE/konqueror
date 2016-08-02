@@ -33,63 +33,61 @@
 static Bool tidy_report_filter(TidyDoc tdoc, TidyReportLevel lvl,
                                uint line, uint col, ctmbstr msg)
 {
-  TidyValidator::Data* d = reinterpret_cast<TidyValidator::Data *>(tidyGetAppData(tdoc));
-  Q_ASSERT(d);
-  switch (lvl)
-  {
+    TidyValidator::Data *d = reinterpret_cast<TidyValidator::Data *>(tidyGetAppData(tdoc));
+    Q_ASSERT(d);
+    switch (lvl) {
     case TidyInfo:
-      break;
+        break;
     case TidyWarning:
-      d->warnings.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
-      break;
+        d->warnings.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
+        break;
     case TidyAccess:
-      d->accesswarns.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
-      break;
+        d->accesswarns.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
+        break;
     case TidyError:
-      d->errors.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
-      break;
-    default: ;
-  }
-  return yes;
+        d->errors.append(TidyReport(QString::fromLocal8Bit(msg), line, col));
+        break;
+    default:;
+    }
+    return yes;
 }
-
 
 TidyValidator::TidyValidator(const QString &fileName)
 {
-  TidyBuffer errbuf;
-  int rc = -1;
-  TidyDoc tdoc = tidyCreate();
+    TidyBuffer errbuf;
+    int rc = -1;
+    TidyDoc tdoc = tidyCreate();
 #ifdef HAVE_TIDY_ULONG_VERSION
-  tidySetAppData(tdoc, (ulong)&d);
+    tidySetAppData(tdoc, (ulong)&d);
 #else
-  tidySetAppData(tdoc, &d);
+    tidySetAppData(tdoc, &d);
 #endif
-  tidyBufInit( &errbuf );
-  tidySetErrorBuffer(tdoc, &errbuf);
-  tidySetReportFilter(tdoc, tidy_report_filter);
-  tidyOptSetInt(tdoc, TidyAccessibilityCheckLevel, ValidatorsSettings::accessibilityLevel());
-  rc = tidyParseFile(tdoc, QFile::encodeName(fileName));
+    tidyBufInit(&errbuf);
+    tidySetErrorBuffer(tdoc, &errbuf);
+    tidySetReportFilter(tdoc, tidy_report_filter);
+    tidyOptSetInt(tdoc, TidyAccessibilityCheckLevel, ValidatorsSettings::accessibilityLevel());
+    rc = tidyParseFile(tdoc, QFile::encodeName(fileName));
 
-  tidyBufFree(&errbuf);
-  tidyRelease(tdoc);
+    tidyBufFree(&errbuf);
+    tidyRelease(tdoc);
 }
 
 TidyValidator::TidyValidator(const QByteArray &fileContent)
 {
-  TidyBuffer errbuf;
-  int rc = -1;
-  TidyDoc tdoc = tidyCreate();
+    TidyBuffer errbuf;
+    int rc = -1;
+    TidyDoc tdoc = tidyCreate();
 #ifdef HAVE_TIDY_ULONG_VERSION
-  tidySetAppData(tdoc, (ulong)&d);
+    tidySetAppData(tdoc, (ulong)&d);
 #else
-  tidySetAppData(tdoc, &d);
+    tidySetAppData(tdoc, &d);
 #endif
-  tidyBufInit(&errbuf);
-  tidySetErrorBuffer(tdoc, &errbuf);
-  tidySetReportFilter(tdoc, tidy_report_filter);
-  tidyOptSetInt(tdoc, TidyAccessibilityCheckLevel, ValidatorsSettings::accessibilityLevel());
-  rc = tidyParseString(tdoc, fileContent);
+    tidyBufInit(&errbuf);
+    tidySetErrorBuffer(tdoc, &errbuf);
+    tidySetReportFilter(tdoc, tidy_report_filter);
+    tidyOptSetInt(tdoc, TidyAccessibilityCheckLevel, ValidatorsSettings::accessibilityLevel());
+    rc = tidyParseString(tdoc, fileContent);
 
-  tidyBufFree(&errbuf);
-  tidyRelease(tdoc);
+    tidyBufFree(&errbuf);
+    tidyRelease(tdoc);
 }

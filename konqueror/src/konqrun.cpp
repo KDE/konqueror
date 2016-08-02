@@ -21,9 +21,9 @@
 #include "konqrun.h"
 
 // KDE
-#include <kdebug.h>
+#include <QDebug>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kio/job.h>
 
 // Local
@@ -32,41 +32,43 @@
 #include "konqhistorymanager.h"
 #include "konqsettings.h"
 
-
-KonqRun::KonqRun(KonqMainWindow* mainWindow, KonqView *_childView,
-                  const KUrl & _url, const KonqOpenURLRequest & req, bool trustedSource)
+KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
+                 const QUrl &_url, const KonqOpenURLRequest &req, bool trustedSource)
     : KParts::BrowserRun(_url, req.args, req.browserArgs, _childView ? _childView->part() : 0L, mainWindow,
-                          //remove referrer if request was typed in manually.
-                          // ### TODO: turn this off optionally.
-                          !req.typedUrl.isEmpty(), trustedSource,
-                          // Don't use inline errors on reloading due to auto-refresh sites, but use them in all other cases
-                          // (no reload or user-requested reload)
-                          !req.args.reload() || req.userRequestedReload),
+                         //remove referrer if request was typed in manually.
+                         // ### TODO: turn this off optionally.
+                         !req.typedUrl.isEmpty(), trustedSource,
+                         // Don't use inline errors on reloading due to auto-refresh sites, but use them in all other cases
+                         // (no reload or user-requested reload)
+                         !req.args.reload() || req.userRequestedReload),
       m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
 {
-    //kDebug() << "KonqRun::KonqRun() " << this;
+    //qDebug() << "KonqRun::KonqRun() " << this;
     Q_ASSERT(!m_pMainWindow.isNull());
-    if (m_pView)
+    if (m_pView) {
         m_pView->setLoading(true);
+    }
 }
 
 KonqRun::~KonqRun()
 {
-    //kDebug() << "KonqRun::~KonqRun() " << this;
-    if (m_pView && m_pView->run() == this)
+    //qDebug() << "KonqRun::~KonqRun() " << this;
+    if (m_pView && m_pView->run() == this) {
         m_pView->setRun(0);
+    }
 }
 
-void KonqRun::foundMimeType(const QString & _type)
+void KonqRun::foundMimeType(const QString &_type)
 {
-    //kDebug() << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
+    //qDebug() << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
 
     QString mimeType = _type; // this ref comes from the job, we lose it when using KIO again
 
     m_bFoundMimeType = true;
 
-    if (m_pView)
-        m_pView->setLoading(false); // first phase finished, don't confuse KonqView
+    if (m_pView) {
+        m_pView->setLoading(false);    // first phase finished, don't confuse KonqView
+    }
 
     // Check if the main window wasn't deleted meanwhile
     if (!m_pMainWindow) {
@@ -81,8 +83,9 @@ void KonqRun::foundMimeType(const QString & _type)
 
     bool tryEmbed = true;
     // One case where we shouldn't try to embed, is when the server asks us to save
-    if (serverSuggestsSave())
+    if (serverSuggestsSave()) {
         tryEmbed = false;
+    }
 
     const bool associatedAppIsKonqueror = KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType);
 
@@ -99,8 +102,9 @@ void KonqRun::foundMimeType(const QString & _type)
         // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
         KService::Ptr selectedService;
         KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable(mimeType, &selectedService);
-        if (res == KParts::BrowserRun::Delayed)
+        if (res == KParts::BrowserRun::Delayed) {
             return;
+        }
         setFinished(res == KParts::BrowserRun::Handled);
         if (hasFinished()) {
             // save or cancel -> nothing else will happen in m_pView, so clear statusbar (#163628)
@@ -108,14 +112,15 @@ void KonqRun::foundMimeType(const QString & _type)
         } else {
             if (!tryEmbed) {
                 // "Open" selected for a serverSuggestsSave() file - let's open. #171869
-                if (tryOpenView(mimeType, associatedAppIsKonqueror))
+                if (tryOpenView(mimeType, associatedAppIsKonqueror)) {
                     return;
+                }
             }
             // "Open" selected, possible with a specific application
-            if (selectedService)
+            if (selectedService) {
                 KRun::setPreferredService(selectedService->desktopEntryName());
-            else {
-                KRun::displayOpenWithDialog(url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
+            } else {
+                KRun::displayOpenWithDialog(QList<QUrl>() << url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
                 setFinished(true);
             }
         }
@@ -132,16 +137,17 @@ void KonqRun::foundMimeType(const QString & _type)
     }
 
     if (!hasFinished()) {
-        kDebug() << "Nothing special to do in KonqRun, falling back to KRun";
+        qDebug() << "Nothing special to do in KonqRun, falling back to KRun";
         KRun::foundMimeType(mimeType);
     }
 }
 
-bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror)
+bool KonqRun::tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror)
 {
     KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
-    if (associatedAppIsKonqueror)
+    if (associatedAppIsKonqueror) {
         m_req.forceAutoEmbed = true;
+    }
 
     // When text/html is associated with another browser,
     // we need to find out if we should keep browsing the web in konq,
@@ -150,8 +156,8 @@ bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror
     else if (mime &&
              (mime->is("text/html")
               || mime->name().startsWith("image/")) // #83513
-              && (m_pView && !m_pView->showsDirectory())) {
-            m_req.forceAutoEmbed = true;
+             && (m_pView && !m_pView->showsDirectory())) {
+        m_req.forceAutoEmbed = true;
     }
 
     const bool ok = m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req);
@@ -174,10 +180,10 @@ void KonqRun::init()
     KParts::BrowserRun::init();
     // Maybe init went to the "let's try stat'ing" part. Then connect to info messages.
     // (in case it goes to scanFile, this will be done below)
-    KIO::StatJob *job = dynamic_cast<KIO::StatJob*>(KRun::job());
+    KIO::StatJob *job = dynamic_cast<KIO::StatJob *>(KRun::job());
     if (job && !job->error() && m_pView) {
         connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
-                 m_pView, SLOT(slotInfoMessage(KJob*,QString)));
+                m_pView, SLOT(slotInfoMessage(KJob*,QString)));
     }
 }
 
@@ -186,10 +192,10 @@ void KonqRun::scanFile()
     KParts::BrowserRun::scanFile();
     // could be a static cast as of now, but who would notify when
     // BrowserRun changes
-    KIO::TransferJob *job = dynamic_cast<KIO::TransferJob*>(KRun::job());
+    KIO::TransferJob *job = dynamic_cast<KIO::TransferJob *>(KRun::job());
     if (job && !job->error()) {
-        connect(job, SIGNAL(redirection(KIO::Job*,KUrl)),
-                SLOT(slotRedirection(KIO::Job*,KUrl)));
+        connect(job, SIGNAL(redirection(KIO::Job*,QUrl)),
+                SLOT(slotRedirection(KIO::Job*,QUrl)));
         if (m_pView && m_pView->service()->desktopEntryName() != "konq_sidebartng") {
             connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
                     m_pView, SLOT(slotInfoMessage(KJob*,QString)));
@@ -197,28 +203,28 @@ void KonqRun::scanFile()
     }
 }
 
-void KonqRun::slotRedirection(KIO::Job *job, const KUrl& redirectedToURL)
+void KonqRun::slotRedirection(KIO::Job *job, const QUrl &redirectedToURL)
 {
-    KUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
-    kDebug() << redirectFromURL << "->" << redirectedToURL;
+    QUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
+    qDebug() << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending(redirectFromURL);
 
-    if (redirectedToURL.protocol() == "mailto") {
-       m_mailto = redirectedToURL;
-       return; // Error will follow
+    if (redirectedToURL.scheme() == "mailto") {
+        m_mailto = redirectedToURL;
+        return; // Error will follow
     }
     KonqHistoryManager::kself()->addPending(redirectedToURL);
 
     // Do not post data on reload if we were redirected to a new URL when
     // doing a POST request.
-    if (redirectFromURL != redirectedToURL)
-        browserArguments().setDoPost (false);
+    if (redirectFromURL != redirectedToURL) {
+        browserArguments().setDoPost(false);
+    }
     browserArguments().setRedirectedRequest(true);
 }
 
-KonqView * KonqRun::childView() const
+KonqView *KonqRun::childView() const
 {
     return m_pView;
 }
 
-#include "konqrun.moc"

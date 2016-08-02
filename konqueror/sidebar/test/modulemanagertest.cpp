@@ -24,6 +24,8 @@
 #include <kconfiggroup.h>
 #include <module_manager.h>
 #include <qtest_kde.h>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 class ModuleManagerTest : public QObject
 {
@@ -42,22 +44,22 @@ private Q_SLOTS:
     void testAvailablePlugins();
 
 private:
-    ModuleManager* m_moduleManager;
-    ModuleManager* m_moduleManager2;
+    ModuleManager *m_moduleManager;
+    ModuleManager *m_moduleManager2;
     QString m_profile;
     QString m_profile2;
-    KConfigGroup* m_configGroup;
-    KConfigGroup* m_configGroup2;
+    KConfigGroup *m_configGroup;
+    KConfigGroup *m_configGroup2;
 
     int m_realModules;
     QString m_globalDir;
 };
 
-QTEST_KDEMAIN( ModuleManagerTest, NoGUI )
+QTEST_KDEMAIN(ModuleManagerTest, NoGUI)
 
 void ModuleManagerTest::initTestCase()
 {
-    const QString configFile = KStandardDirs::locateLocal("config", "konqsidebartngrc");
+    const QString configFile = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + "konqsidebartngrc";
     QFile::remove(configFile);
     KSharedConfig::Ptr config = KSharedConfig::openConfig("konqsidebartngrc");
 
@@ -74,11 +76,11 @@ void ModuleManagerTest::initTestCase()
 
     // Create a "global" dir for the (fake) pre-installed modules,
     // which isn't really global of course, but we can register it as such...
-    m_globalDir = KStandardDirs::locateLocal("data", "sidebartest_global/konqsidebartng/entries/");
+    m_globalDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/konqsidebartng/entries/";
     QVERIFY(QDir(m_globalDir).exists());
     QFile::remove(m_globalDir + "testModule.desktop");
 
-    KGlobal::dirs()->addResourceDir("data", KStandardDirs::locateLocal("data", "sidebartest_global/"), true);
+    KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
 
     // Create a fake pre-installed plugin there.
     KDesktopFile testModule(m_globalDir + "testModule.desktop");
@@ -99,7 +101,7 @@ void ModuleManagerTest::cleanupTestCase()
     delete m_configGroup;
     delete m_configGroup2;
     QFile::remove(m_globalDir + "testModule.desktop");
-    QFile::remove(KStandardDirs::locateLocal("data", "konqsidebartng/entries/testModule.desktop"));
+    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqsidebartng/entries/testModule.desktop");
 }
 
 // This test checks the initial state of things.
@@ -111,7 +113,7 @@ void ModuleManagerTest::testListModules()
     QCOMPARE(modules.count(), m_realModules + 1);
     QVERIFY(modules.contains("testModule.desktop"));
     QVERIFY(m_moduleManager->moduleDataPath("testModule.desktop").endsWith("/testModule.desktop"));
-    const KDesktopFile df("data", m_moduleManager->moduleDataPath("testModule.desktop"));
+    const KDesktopFile df(QStandardPaths::GenericDataLocation, m_moduleManager->moduleDataPath("testModule.desktop"));
     QCOMPARE(df.readName(), QString::fromLatin1("SideBar Test Plugin"));
 
     const QStringList modules2 = m_moduleManager2->modules();
@@ -136,8 +138,9 @@ void ModuleManagerTest::testAddLocalModule()
     QVERIFY(QFile::exists(path));
 
     const QStringList modules = m_moduleManager->modules();
-    if (modules.count() != m_realModules + 2)
+    if (modules.count() != m_realModules + 2) {
         kDebug() << modules;
+    }
     QCOMPARE(modules.count(), m_realModules + 2);
     QVERIFY(modules.contains("testModule.desktop"));
     QVERIFY(modules.contains(fileName));
@@ -157,17 +160,18 @@ void ModuleManagerTest::testRenameGlobalModule()
 {
     m_moduleManager->setModuleName("testModule.desktop", "new name");
     const QStringList modules = m_moduleManager->modules();
-    if (modules.count() != m_realModules + 2)
+    if (modules.count() != m_realModules + 2) {
         kDebug() << modules;
+    }
     QCOMPARE(modules.count(), m_realModules + 2);
     QVERIFY(modules.contains("testModule.desktop"));
     // A local copy was made
-    const QString localCopy = KStandardDirs::locateLocal("data", "konqsidebartng/entries/testModule.desktop");
+    const QString localCopy = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqsidebartng/entries/testModule.desktop";
     kDebug() << localCopy;
     QVERIFY(QFile(localCopy).exists());
     // We didn't lose the icon (e.g. due to lack of merging)
     // Well, this code does the merging ;)
-    const QString icon = KDesktopFile("data", "konqsidebartng/entries/testModule.desktop").readIcon();
+    const QString icon = KDesktopFile(QStandardPaths::GenericDataLocation, "konqsidebartng/entries/testModule.desktop").readIcon();
     QVERIFY(!icon.isEmpty());
 }
 
@@ -204,8 +208,9 @@ void ModuleManagerTest::testAvailablePlugins()
     KService::List availablePlugins = m_moduleManager->availablePlugins();
     QVERIFY(availablePlugins.count() >= 2);
     QStringList libs;
-    Q_FOREACH(KService::Ptr service, availablePlugins)
+    Q_FOREACH (KService::Ptr service, availablePlugins) {
         libs.append(service->library());
+    }
     qDebug() << libs;
     QVERIFY(libs.contains("konqsidebar_tree"));
     QVERIFY(libs.contains("konqsidebar_web"));

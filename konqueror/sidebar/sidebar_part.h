@@ -29,7 +29,7 @@ class KonqSidebarBrowserExtension : public KParts::BrowserExtension
     Q_OBJECT
 public:
     KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget);
-    ~KonqSidebarBrowserExtension(){}
+    ~KonqSidebarBrowserExtension() {}
 
 protected:
     QPointer<Sidebar_Widget> widget;
@@ -37,10 +37,30 @@ protected:
     // The following slots are needed for konqueror's standard actions
     // They are called from the RMB popup menu
 protected Q_SLOTS:
-    void copy() { if (widget) widget->stdAction("copy"); }
-    void cut() { if (widget) widget->stdAction("cut"); }
-    void paste() { if (widget) widget->stdAction("paste"); }
-    void pasteTo(const KUrl&) { if (widget) widget->stdAction("pasteToSelection"); }
+    void copy()
+    {
+        if (widget) {
+            widget->stdAction("copy");
+        }
+    }
+    void cut()
+    {
+        if (widget) {
+            widget->stdAction("cut");
+        }
+    }
+    void paste()
+    {
+        if (widget) {
+            widget->stdAction("paste");
+        }
+    }
+    void pasteTo(const QUrl &)
+    {
+        if (widget) {
+            widget->stdAction("pasteToSelection");
+        }
+    }
 };
 
 /**
@@ -58,23 +78,23 @@ public:
     /**
      * Default constructor
      */
-    KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&);
+    KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList &);
 
     /**
      * Destructor
      */
     virtual ~KonqSidebarPart();
 
-    virtual bool openUrl(const KUrl &url);
+    virtual bool openUrl(const QUrl &url);
 
 protected:
     /**
      * This must be implemented by each part
      */
-    KonqSidebarBrowserExtension * m_extension;
+    KonqSidebarBrowserExtension *m_extension;
     virtual bool openFile();
 
-    virtual void customEvent(QEvent* ev);
+    virtual void customEvent(QEvent *ev);
 
 private:
     Sidebar_Widget *m_widget;

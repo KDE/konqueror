@@ -26,31 +26,33 @@
 class MyListener: public ScanListener
 {
 public:
-  void scanStarted(ScanDir* d)
-  { 
-    printf("Started Scan on %s\n", qPrintable(d->name()));
-  };
+    void scanStarted(ScanDir *d)
+    {
+        printf("Started Scan on %s\n", qPrintable(d->name()));
+    };
 
-  void sizeChanged(ScanDir* d)
-  {
-    printf("Change in %s: Dirs %d, Files %d",
-	   qPrintable(d->name()),
-	   d->dirCount(), d->fileCount());
-    printf("Size %llu\n", (unsigned long long int)d->size());
-  }
+    void sizeChanged(ScanDir *d)
+    {
+        printf("Change in %s: Dirs %d, Files %d",
+               qPrintable(d->name()),
+               d->dirCount(), d->fileCount());
+        printf("Size %llu\n", (unsigned long long int)d->size());
+    }
 
-  void scanFinished(ScanDir* d)
-  {
-    printf("Finished Scan on %s\n", qPrintable(d->name()));
-  }
+    void scanFinished(ScanDir *d)
+    {
+        printf("Finished Scan on %s\n", qPrintable(d->name()));
+    }
 };
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  ScanManager m("/opt");
-  if (argc>1) m.setTop(argv[1]);
+    ScanManager m("/opt");
+    if (argc > 1) {
+        m.setTop(argv[1]);
+    }
 
-  m.setListener(new MyListener());
-  m.startScan();
-  while(m.scan(1));
+    m.setListener(new MyListener());
+    m.startScan();
+    while (m.scan(1));
 }

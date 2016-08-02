@@ -18,7 +18,6 @@
 #ifndef KCMCSS_H
 #define KCMCSS_H
 
-
 #include <QtCore/QMap>
 
 #include <KParts/ReadOnlyPart>
@@ -27,53 +26,49 @@
 
 class KDialog;
 class CSSConfigWidget;
-class KHTMLPart;
 
 class CSSCustomDialog: public QWidget, public Ui::CSSCustomDialog
 {
     Q_OBJECT
 public:
-  CSSCustomDialog( QWidget *parent );
-  QMap<QString,QString> cssDict();
+    CSSCustomDialog(QWidget *parent);
+    QMap<QString, QString> cssDict();
 
 public Q_SLOTS:
-  void slotPreview();
+    void slotPreview();
 
 Q_SIGNALS:
-  void changed();
+    void changed();
 
 private:
-  KParts::ReadOnlyPart* part;
+    KParts::ReadOnlyPart *part;
 };
-
-
 
 class CSSConfig : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-	  
-  explicit CSSConfig(QWidget *parent = 0L, const QVariantList &list =QVariantList() );
 
-  void load();
-  void save();
-  void defaults();
+    explicit CSSConfig(QWidget *parent = 0L, const QVariantList &list = QVariantList());
+
+    void load();
+    void save();
+    void defaults();
 
 public Q_SLOTS:
- 
-  void slotCustomize();
+
+    void slotCustomize();
 
 Q_SIGNALS:
-  void changed(bool);//connected to KCModule signal
-  void changed();//connected to KCModule slot
+    void changed(bool);//connected to KCModule signal
+    void changed();//connected to KCModule slot
 
 private:
 
-  CSSConfigWidget *configWidget;
-  KDialog *customDialogBase;
-  CSSCustomDialog *customDialog;
+    CSSConfigWidget *configWidget;
+    KDialog *customDialogBase;
+    CSSCustomDialog *customDialog;
 };
-
 
 #endif

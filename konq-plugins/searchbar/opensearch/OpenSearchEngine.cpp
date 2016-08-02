@@ -45,7 +45,7 @@ QString OpenSearchEngine::parseTemplate(const QString &searchTerm, const QString
     result.replace(QLatin1String("{count}"), QLatin1String("20"));
     result.replace(QLatin1String("{startIndex}"), QLatin1String("0"));
     result.replace(QLatin1String("{startPage}"), QLatin1String("0"));
-    result.replace(QLatin1String("{language}"), KGlobal::locale()->language());
+    result.replace(QLatin1String("{language}"), KLocale::global()->language());
     result.replace(QLatin1String("{inputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{outputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{searchTerms}"), searchTerm);

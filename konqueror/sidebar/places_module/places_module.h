@@ -36,34 +36,33 @@ public:
     virtual ~KonqPlacesCustomPlacesView();
 
 signals:
-    void urlChanged(const KUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers);
+    void urlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers);
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
     virtual void mousePressEvent(QMouseEvent *event);
 
 private slots:
-    void emitUrlChanged(const KUrl &url);
+    void emitUrlChanged(const QUrl &url);
 
 private:
     Qt::MouseButtons m_mouseButtons;
     Qt::KeyboardModifiers m_keyModifiers;
 };
 
-
 class KonqSideBarPlacesModule : public KonqSidebarModule
 {
     Q_OBJECT
 
 public:
-    KonqSideBarPlacesModule(const KComponentData &componentData, QWidget *parent,
+    KonqSideBarPlacesModule(QWidget *parent,
                             const KConfigGroup &configGroup);
     virtual ~KonqSideBarPlacesModule();
 
     virtual QWidget *getWidget();
 
 private slots:
-    void slotPlaceUrlChanged(const KUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
+    void slotPlaceUrlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
 
 private:
     KFilePlacesView *m_placesView;

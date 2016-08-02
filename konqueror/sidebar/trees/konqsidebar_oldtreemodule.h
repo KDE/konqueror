@@ -10,7 +10,7 @@ class KonqSidebarOldTreeModule : public KonqSidebarModule
     Q_OBJECT
 public:
     KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
-                     const QString &desktopName_, const KConfigGroup& configGroup);
+                             const QString &desktopName_, const KConfigGroup &configGroup);
     ~KonqSidebarOldTreeModule();
     virtual QWidget *getWidget();
 
@@ -23,7 +23,7 @@ public Q_SLOTS:
 protected:
     QWidget *widget;
     KonqSidebarTree *tree;
-    virtual void handleURL(const KUrl &url);
+    virtual void handleURL(const QUrl &url);
 };
 
 #endif // KONQSIDEBAR_TREEMODULE_H

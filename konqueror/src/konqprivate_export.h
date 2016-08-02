@@ -20,37 +20,15 @@
 #ifndef KONQPRIVATE_EXPORT_H
 #define KONQPRIVATE_EXPORT_H
 
-/* needed for KDE_EXPORT and KDE_IMPORT macros */
-#include <kdemacros.h>
+#include "konquerorprivate_export.h"
 
 /* Classes from the Konqueror application, which are exported only for unit tests */
 #ifdef COMPILING_TESTS
 # ifndef KONQ_TESTS_EXPORT
-#  if defined(MAKE_KDEINIT_KONQUEROR_LIB) || defined(MAKE_KDED_KONQY_PRELOADER_LIB)
-    /* We are building this library */
-#   define KONQ_TESTS_EXPORT KDE_EXPORT
-#  else
-    /* We are using this library */
-#   define KONQ_TESTS_EXPORT KDE_IMPORT
-#  endif
+#  define KONQ_TESTS_EXPORT KONQUERORPRIVATE_EXPORT
 # endif
 #else /* not compiling tests */
 # define KONQ_TESTS_EXPORT
-#endif
-
-/* Classes from the libkonquerorprivate library */
-#ifndef KONQUERORPRIVATE_EXPORT
-# if defined(MAKE_KONQUERORPRIVATE_LIB)
-   /* We are building this library */
-#  define KONQUERORPRIVATE_EXPORT KDE_EXPORT
-# else
-   /* We are using this library */
-#  define KONQUERORPRIVATE_EXPORT KDE_IMPORT
-# endif
-#endif
-
-#ifndef KONQUERORPRIVATE_EXPORT_DEPRECATED
-# define KONQUERORPRIVATE_EXPORT_DEPRECATED KDE_DEPRECATED KONQUERORPRIVATE_EXPORT
 #endif
 
 #endif

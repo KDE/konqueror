@@ -22,11 +22,11 @@
 #include "KonqViewAdaptor.h"
 #include "konqview.h"
 
-#include <kdebug.h>
+#include <QDebug>
 #include <kstartupinfo.h>
 
-KonqMainWindowAdaptor::KonqMainWindowAdaptor( KonqMainWindow * mainWindow )
-    : QDBusAbstractAdaptor( mainWindow ), m_pMainWindow( mainWindow )
+KonqMainWindowAdaptor::KonqMainWindowAdaptor(KonqMainWindow *mainWindow)
+    : QDBusAbstractAdaptor(mainWindow), m_pMainWindow(mainWindow)
 {
 //  m_dcopActionProxy = new KDCOPActionProxy( mainWindow->actionCollection(), this );
 }
@@ -36,76 +36,82 @@ KonqMainWindowAdaptor::~KonqMainWindowAdaptor()
 //  delete m_dcopActionProxy;
 }
 
-void KonqMainWindowAdaptor::openUrl( const QString& url, bool tempFile )
+void KonqMainWindowAdaptor::openUrl(const QString &url, bool tempFile)
 {
-  m_pMainWindow->openFilteredUrl( url, false, tempFile );
+    m_pMainWindow->openFilteredUrl(url, false, tempFile);
 }
 
-void KonqMainWindowAdaptor::newTab( const QString& url, bool tempFile )
+void KonqMainWindowAdaptor::newTab(const QString &url, bool tempFile)
 {
-  m_pMainWindow->openFilteredUrl( url, true, tempFile );
+    m_pMainWindow->openFilteredUrl(url, true, tempFile);
 }
 
-void KonqMainWindowAdaptor::newTabASN( const QString& url, const QByteArray& startup_id, bool tempFile )
+void KonqMainWindowAdaptor::newTabASN(const QString &url, const QByteArray &startup_id, bool tempFile)
 {
 #ifdef Q_WS_X11
-  KStartupInfo::setNewStartupId( m_pMainWindow, startup_id );
+    KStartupInfo::setNewStartupId(m_pMainWindow, startup_id);
 #endif
-  m_pMainWindow->openFilteredUrl( url, true, tempFile );
+    m_pMainWindow->openFilteredUrl(url, true, tempFile);
 }
 
-void KonqMainWindowAdaptor::newTabASNWithMimeType(const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile)
+void KonqMainWindowAdaptor::newTabASNWithMimeType(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile)
 {
 #ifdef Q_WS_X11
-  KStartupInfo::setNewStartupId( m_pMainWindow, startup_id );
+    KStartupInfo::setNewStartupId(m_pMainWindow, startup_id);
 #endif
-    m_pMainWindow->openFilteredUrl( url, mimetype, true, tempFile );
+    m_pMainWindow->openFilteredUrl(url, mimetype, true, tempFile);
 }
 
 void KonqMainWindowAdaptor::reload()
 {
-  m_pMainWindow->slotReload();
+    m_pMainWindow->slotReload();
 }
 
 QDBusObjectPath KonqMainWindowAdaptor::currentView()
 {
-  kDebug() ;
-  KonqView *view = m_pMainWindow->currentView();
-  if ( !view )
-    return QDBusObjectPath();
+    qDebug();
+    KonqView *view = m_pMainWindow->currentView();
+    if (!view) {
+        return QDBusObjectPath();
+    }
 
-  return QDBusObjectPath( view->dbusObjectPath() );
+    return QDBusObjectPath(view->dbusObjectPath());
 }
 
 QDBusObjectPath KonqMainWindowAdaptor::currentPart()
 {
-  KonqView *view = m_pMainWindow->currentView();
-  if ( !view )
-    return QDBusObjectPath();
+    KonqView *view = m_pMainWindow->currentView();
+    if (!view) {
+        return QDBusObjectPath();
+    }
 
-  return QDBusObjectPath( view->partObjectPath() );
+    return QDBusObjectPath(view->partObjectPath());
 }
 
 QDBusObjectPath KonqMainWindowAdaptor::view(int viewNumber)
 {
-  KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
-  KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
-  for ( int i = 0; it != viewMap.constEnd() && i < viewNumber; ++i )
-      ++it;
-  if ( it == viewMap.constEnd() )
-      return QDBusObjectPath();
-  return QDBusObjectPath( (*it)->dbusObjectPath() );
+    KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
+    KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
+    for (int i = 0; it != viewMap.constEnd() && i < viewNumber; ++i) {
+        ++it;
+    }
+    if (it == viewMap.constEnd()) {
+        return QDBusObjectPath();
+    }
+    return QDBusObjectPath((*it)->dbusObjectPath());
 }
 
 QDBusObjectPath KonqMainWindowAdaptor::part(int partNumber)
 {
-  KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
-  KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
-  for ( int i = 0; it != viewMap.constEnd() && i < partNumber; ++i )
-      ++it;
-  if ( it == viewMap.constEnd() )
-      return QDBusObjectPath();
-  return QDBusObjectPath( (*it)->partObjectPath() );
+    KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
+    KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
+    for (int i = 0; it != viewMap.constEnd() && i < partNumber; ++i) {
+        ++it;
+    }
+    if (it == viewMap.constEnd()) {
+        return QDBusObjectPath();
+    }
+    return QDBusObjectPath((*it)->partObjectPath());
 }
 
 void KonqMainWindowAdaptor::splitViewHorizontally()
@@ -118,4 +124,3 @@ void KonqMainWindowAdaptor::splitViewVertically()
     m_pMainWindow->slotSplitViewVertical();
 }
 
-#include "KonqMainWindowAdaptor.moc"

@@ -22,6 +22,7 @@
 #define _ARCHIVEDIALOG_H_
 
 #include <kdialog.h>
+#include <kio/job_base.h>
 
 #include <qlinkedlist.h>
 
@@ -40,8 +41,9 @@ class QTextStream;
 class ArchiveViewBase : public QWidget, public Ui::ArchiveViewBase
 {
 public:
-    ArchiveViewBase( QWidget *parent ) : QWidget( parent ) {
-        setupUi( this );
+    ArchiveViewBase(QWidget *parent) : QWidget(parent)
+    {
+        setupUi(this);
     }
 };
 
@@ -49,23 +51,24 @@ public:
 /// HTML files and inlined images, stylesheets ...
 class ArchiveDialog : public KDialog
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   ArchiveDialog(QWidget *parent, const QString &targetFilename, KHTMLPart *part);
-   ~ArchiveDialog();
+    ArchiveDialog(QWidget *parent, const QString &targetFilename, KHTMLPart *part);
+    ~ArchiveDialog();
 
-   void archive();
+    void archive();
 
 protected:
     /// Holds attributes that are not #CDATA
-    class NonCDataAttr : public QSet<QString> {
+    class NonCDataAttr : public QSet<QString>
+    {
     public:
         NonCDataAttr();
     };
 
     static NonCDataAttr non_cdata_attr;
 
-    KIO::Job *startDownload( const KUrl &url, KHTMLPart *part );
+    KIO::Job *startDownload(const KUrl &url, KHTMLPart *part);
 
 private:
 
@@ -82,7 +85,6 @@ private:
     typedef QHash< KHTMLPart *, PartFrameData > FramesInPart;
     typedef QHash< QString, KHTMLPart * >       TarName2Part;
     typedef QHash< KHTMLPart *, QString >       Part2TarName;
-
 
     // Stylesheets
 
@@ -152,29 +154,23 @@ private:
     void obtainPartURLsLower(const DOM::Node &pNode, int level, RecurseData &data);
     void obtainStyleSheetURLsLower(DOM::CSSStyleSheet styleSheet, RecurseData &data);
 
-    bool insertTranslateURL( const KUrl &fullURL, RecurseData &data );
-    bool insertHRefFromStyleSheet( const QString &hrefRaw, RawHRef2FullURL &raw2full,
-            const KUrl &fullURL, RecurseData &data );
+    bool insertTranslateURL(const KUrl &fullURL, RecurseData &data);
+    bool insertHRefFromStyleSheet(const QString &hrefRaw, RawHRef2FullURL &raw2full,
+                                  const KUrl &fullURL, RecurseData &data);
     void parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDeclaration decl,
-            RawHRef2FullURL &urls, RecurseData &data /*, bool verbose = false*/);
-
+                               RawHRef2FullURL &urls, RecurseData &data /*, bool verbose = false*/);
 
     bool saveTopFrame();
     bool saveFrame(KHTMLPart *part, int level);
     void saveHTMLPart(RecurseData &data);
     void saveHTMLPartLower(const DOM::Node &pNode, int indent, RecurseData &data);
 
-
     QString  extractCSSURL(const QString &text);
     QString &changeCSSURLs(QString &text, const RawHRef2FullURL &raw2full);
-
 
     static bool hasAttrWithValue(const DOM::Element &elem, const QString &attrName, const QString &attrValue);
     static bool hasChildNode(const DOM::Node &pNode, const QString &nodeName);
     static AttrList::Iterator getAttribute(AttrList &attrList, const QString &attr);
-
-
-
 
     /**
      * completes a potentially partial URL in a HTML document (like &lt;img href="...")
@@ -199,7 +195,7 @@ private:
      *
      * @return fully qualified URL of @p partURL relative to the HTML document in @c data.part
      */
-    static KUrl absoluteURL( const QString &partURL, RecurseData &data );
+    static KUrl absoluteURL(const QString &partURL, RecurseData &data);
 
     /**
      * TODO KDE4 is this in KHTML function available now?
@@ -229,7 +225,6 @@ private:
      */
     QString escapeHTML(QString in);
 
-
     /**
      * Adds a suffix that hints at the mimetypes if such a suffix is not
      * present already. If there is no such mimetype in the KDE database
@@ -242,7 +237,7 @@ private:
     QString appendMimeTypeSuffix(QString filename, const QString &mimetype);
 
 private:
-    KHTMLPart *      m_top;
+    KHTMLPart       *m_top;
 
     FramesInPart     m_framesInPart;
 
@@ -254,25 +249,23 @@ private:
     URLsInStyleElement  m_URLsInStyleElement;
     Node2StyleSheet     m_topStyleSheets;
 
-    KIO::Job *             m_job;
+    KIO::Job              *m_job;
     CSSURLSet::Iterator    m_styleSheets_it;
     DownloadList           m_objects;
     DownloadList::Iterator m_objects_it;
     UrlTarMap::Iterator    m_dlurl2tar_it;
 
     int              m_uniqId;
-    KTar *           m_tarBall;
-    time_t           m_archiveTime;
+    KTar            *m_tarBall;
+    QDateTime           m_archiveTime;
     QString          m_filename;
 
-    ArchiveViewBase *   m_widget;
-
+    ArchiveViewBase    *m_widget;
 
 private slots:
     void slotObjectFinished(KJob *job);
     void slotStyleSheetFinished(KJob *job);
     void slotButtonClicked(int button);
 };
-
 
 #endif // _ARCHIVEDIALOG_H_

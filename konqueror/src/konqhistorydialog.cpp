@@ -32,12 +32,15 @@
 #include <QModelIndex>
 #include <QTreeView>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kguiitem.h>
-#include <klocale.h>
+#include <kglobal.h>
+#include <QIcon>
+#include <KLocalizedString>
 #include <klineedit.h>
 #include <ktoggleaction.h>
+#include <KSharedConfig>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     : KDialog(parent), m_mainWindow(parent)
@@ -50,16 +53,16 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
 
     m_historyView = new KonqHistoryView(mainWidget());
     connect(m_historyView->treeView(), SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));
-    connect(m_historyView, SIGNAL(openUrlInNewWindow(KUrl)), this, SLOT(slotOpenWindow(KUrl)));
-    connect(m_historyView, SIGNAL(openUrlInNewTab(KUrl)), this, SLOT(slotOpenTab(KUrl)));
+    connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqHistoryDialog::slotOpenWindow);
+    connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqHistoryDialog::slotOpenTab);
 
-    KActionCollection* collection = m_historyView->actionCollection();
+    KActionCollection *collection = m_historyView->actionCollection();
 
     QToolBar *toolBar = new QToolBar(mainWidget());
     toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QToolButton *sortButton = new QToolButton(toolBar);
     sortButton->setText(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
-    sortButton->setIcon(KIcon("view-sort-ascending"));
+    sortButton->setIcon(QIcon::fromTheme("view-sort-ascending"));
     sortButton->setPopupMode(QToolButton::InstantPopup);
     sortButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QMenu *sortMenu = new QMenu(sortButton);
@@ -73,7 +76,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_historyView);
 
-    restoreDialogSize(KGlobal::config()->group("History Dialog"));
+    restoreDialogSize(KSharedConfig::openConfig()->group("History Dialog"));
 
     // give focus to the search line edit when opening the dialog (#240513)
     m_historyView->lineEdit()->setFocus();
@@ -81,7 +84,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
 
 KonqHistoryDialog::~KonqHistoryDialog()
 {
-    KConfigGroup group(KGlobal::config(), "History Dialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "History Dialog");
     saveDialogSize(group);
 }
 
@@ -90,24 +93,23 @@ QSize KonqHistoryDialog::sizeHint() const
     return QSize(500, 400);
 }
 
-void KonqHistoryDialog::slotOpenWindow(const KUrl& url)
+void KonqHistoryDialog::slotOpenWindow(const QUrl &url)
 {
-    KonqMainWindow* mw = KonqMisc::createNewWindow(url);
+    KonqMainWindow *mw = KonqMisc::createNewWindow(url);
     mw->show();
 }
 
-void KonqHistoryDialog::slotOpenTab(const KUrl& url)
+void KonqHistoryDialog::slotOpenTab(const QUrl &url)
 {
-    m_mainWindow->openMultiURL(KUrl::List() << url);
+    m_mainWindow->openMultiURL(QList<QUrl>() << url);
 }
 
 // Called when double-clicking on a row
-void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex& index)
+void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex &index)
 {
-    const KUrl url = m_historyView->urlForIndex(index);
+    const QUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {
         slotOpenWindow(url); // should we call slotOpenTab instead?
     }
 }
 
-#include "konqhistorydialog.moc"

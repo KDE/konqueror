@@ -36,12 +36,14 @@
 */
 class KUrlLabel;
 
-namespace KParts {
-    class StatusBarExtension;
-    class ReadOnlyPart;
+namespace KParts
+{
+class StatusBarExtension;
+class ReadOnlyPart;
 }
 
-namespace Akregator {
+namespace Akregator
+{
 class KonqFeedIcon : public KParts::Plugin, PluginBase
 {
     Q_OBJECT

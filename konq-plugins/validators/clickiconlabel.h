@@ -26,25 +26,25 @@ class QLabel;
 
 class ClickIconLabel : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  ClickIconLabel(QWidget* parent = 0);
+    ClickIconLabel(QWidget *parent = 0);
 
-  void setText(const QString &text);
-  void setPixmap(const QPixmap &pixmap);
+    void setText(const QString &text);
+    void setPixmap(const QPixmap &pixmap);
 
 signals:
-  void leftClicked();
-  void rightClicked();
-  void midClicked();
+    void leftClicked();
+    void rightClicked();
+    void midClicked();
 
 protected:
-  void changeEvent(QEvent* event);
-  void mouseReleaseEvent(QMouseEvent* event);
+    void changeEvent(QEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
 
 private:
-  QLabel* m_text;
-  QLabel* m_pixmap;
+    QLabel *m_text;
+    QLabel *m_pixmap;
 };
 
 #endif

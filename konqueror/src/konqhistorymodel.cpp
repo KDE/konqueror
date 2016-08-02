@@ -23,23 +23,20 @@
 #include "konq_historyprovider.h"
 
 #include <kglobal.h>
-#include <kicon.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmimetype.h>
 #include <kprotocolinfo.h>
 
-#include <QtCore/QHash>
-#include <QTextDocument> // Qt::escape
-#include <QtCore/QList>
+#include <QHash>
+#include <QList>
+#include <QIcon>
 
 namespace KHM
 {
 
-struct Entry
-{
-    enum Type
-    {
+struct Entry {
+    enum Type {
         History,
         Group,
         Root
@@ -53,13 +50,14 @@ struct Entry
     {}
 
     virtual QVariant data(int /*role*/, int /*column*/) const
-    { return QVariant(); }
+    {
+        return QVariant();
+    }
 
     const Type type;
 };
 
-struct HistoryEntry : public Entry
-{
+struct HistoryEntry : public Entry {
     HistoryEntry(const KonqHistoryEntry &_entry, GroupEntry *_parent);
 
     virtual QVariant data(int role, int column) const;
@@ -70,9 +68,8 @@ struct HistoryEntry : public Entry
     QIcon icon;
 };
 
-struct GroupEntry : public Entry
-{
-    GroupEntry(const KUrl &_url, const QString &_key);
+struct GroupEntry : public Entry {
+    GroupEntry(const QUrl &_url, const QString &_key);
 
     ~GroupEntry()
     {
@@ -80,18 +77,17 @@ struct GroupEntry : public Entry
     }
 
     virtual QVariant data(int role, int column) const;
-    HistoryEntry* findChild(const KonqHistoryEntry &entry, int *index = 0) const;
-    KUrl::List urls() const;
+    HistoryEntry *findChild(const KonqHistoryEntry &entry, int *index = 0) const;
+    QList<QUrl> urls() const;
 
     QList<HistoryEntry *> entries;
-    KUrl url;
+    QUrl url;
     QString key;
     QIcon icon;
     bool hasFavIcon : 1;
 };
 
-struct RootEntry : public Entry
-{
+struct RootEntry : public Entry {
     RootEntry()
         : Entry(Root)
     {}
@@ -136,9 +132,9 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
-                    Qt::escape(entry.url.pathOrUrl()),
-                    KGlobal::locale()->formatDateTime(entry.lastVisited),
-                    KGlobal::locale()->formatDateTime(entry.firstVisited),
+                    entry.url.toDisplayString().toHtmlEscaped(),
+                    KLocale::global()->formatDateTime(entry.lastVisited),
+                    KLocale::global()->formatDateTime(entry.firstVisited),
                     entry.numberOfTimesVisited);
     case KonqHistory::LastVisitedRole:
         return entry.lastVisited;
@@ -156,17 +152,16 @@ void HistoryEntry::update(const KonqHistoryEntry &_entry)
     if (parent->hasFavIcon && (path.isNull() || path == QLatin1String("/"))) {
         icon = parent->icon;
     } else {
-        icon = QIcon(SmallIcon(KProtocolInfo::icon(entry.url.protocol())));
+        icon = QIcon(SmallIcon(KProtocolInfo::icon(entry.url.scheme())));
     }
 }
 
-
-GroupEntry::GroupEntry(const KUrl &_url, const QString &_key)
+GroupEntry::GroupEntry(const QUrl &_url, const QString &_key)
     : Entry(Group), url(_url), key(_key), hasFavIcon(false)
 {
     const QString iconPath = KMimeType::favIconForUrl(url);
     if (iconPath.isEmpty()) {
-        icon = KIcon("folder");
+        icon = QIcon::fromTheme("folder");
     } else {
         icon = QIcon(SmallIcon(iconPath));
         hasFavIcon = true;
@@ -198,12 +193,12 @@ QVariant GroupEntry::data(int role, int /*column*/) const
     return QVariant();
 }
 
-HistoryEntry* GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) const
+HistoryEntry *GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) const
 {
     HistoryEntry *item = 0;
     QList<HistoryEntry *>::const_iterator it = entries.constBegin(), itEnd = entries.constEnd();
     int i = 0;
-    for ( ; it != itEnd; ++it, ++i) {
+    for (; it != itEnd; ++it, ++i) {
         if ((*it)->entry.url == entry.url) {
             item = *it;
             break;
@@ -215,9 +210,9 @@ HistoryEntry* GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) c
     return item;
 }
 
-KUrl::List GroupEntry::urls() const
+QList<QUrl> GroupEntry::urls() const
 {
-    KUrl::List list;
+    QList<QUrl> list;
     Q_FOREACH (HistoryEntry *e, entries) {
         list.append(e->entry.url);
     }
@@ -226,17 +221,15 @@ KUrl::List GroupEntry::urls() const
 
 }
 
-
-static QString groupForUrl(const KUrl &url)
+static QString groupForUrl(const QUrl &url)
 {
-   if (url.isLocalFile()) {
-       static const QString &local = KGlobal::staticQString(i18n("Local"));
-       return local;
-   }
-   static const QString &misc = KGlobal::staticQString(i18n("Miscellaneous"));
-   return url.host().isEmpty() ? misc : url.host();
+    if (url.isLocalFile()) {
+        static const QString &local = i18n("Local");
+        return local;
+    }
+    static const QString &misc = i18n("Miscellaneous");
+    return url.host().isEmpty() ? misc : url.host();
 }
-
 
 KonqHistoryModel::KonqHistoryModel(QObject *parent)
     : QAbstractItemModel(parent), m_root(new KHM::RootEntry())
@@ -253,7 +246,7 @@ KonqHistoryModel::KonqHistoryModel(QObject *parent)
 
     KonqHistoryList::const_iterator it = entries.constBegin();
     const KonqHistoryList::const_iterator end = entries.constEnd();
-    for ( ; it != end ; ++it) {
+    for (; it != end; ++it) {
         KHM::GroupEntry *group = getGroupItem((*it).url, DontEmitSignals);
         KHM::HistoryEntry *item = new KHM::HistoryEntry((*it), group);
         Q_UNUSED(item);
@@ -267,7 +260,7 @@ KonqHistoryModel::~KonqHistoryModel()
 
 int KonqHistoryModel::columnCount(const QModelIndex &parent) const
 {
-    KHM::Entry* entry = entryFromIndex(parent, true);
+    KHM::Entry *entry = entryFromIndex(parent, true);
     switch (entry->type) {
     case KHM::Entry::History:
         return 0;
@@ -280,7 +273,7 @@ int KonqHistoryModel::columnCount(const QModelIndex &parent) const
 
 QVariant KonqHistoryModel::data(const QModelIndex &index, int role) const
 {
-    KHM::Entry* entry = entryFromIndex(index);
+    KHM::Entry *entry = entryFromIndex(index);
     if (!entry) {
         return QVariant();
     }
@@ -294,7 +287,7 @@ QModelIndex KonqHistoryModel::index(int row, int column, const QModelIndex &pare
         return QModelIndex();
     }
 
-    KHM::Entry* entry = entryFromIndex(parent, true);
+    KHM::Entry *entry = entryFromIndex(parent, true);
     switch (entry->type) {
     case KHM::Entry::History:
         return QModelIndex();
@@ -318,7 +311,7 @@ QModelIndex KonqHistoryModel::index(int row, int column, const QModelIndex &pare
 
 QModelIndex KonqHistoryModel::parent(const QModelIndex &index) const
 {
-    KHM::Entry* entry = entryFromIndex(index);
+    KHM::Entry *entry = entryFromIndex(index);
     if (!entry) {
         return QModelIndex();
     }
@@ -334,7 +327,7 @@ QModelIndex KonqHistoryModel::parent(const QModelIndex &index) const
 
 int KonqHistoryModel::rowCount(const QModelIndex &parent) const
 {
-    KHM::Entry* entry = entryFromIndex(parent, true);
+    KHM::Entry *entry = entryFromIndex(parent, true);
     switch (entry->type) {
     case KHM::Entry::History:
         return 0;
@@ -348,7 +341,7 @@ int KonqHistoryModel::rowCount(const QModelIndex &parent) const
 
 void KonqHistoryModel::deleteItem(const QModelIndex &index)
 {
-    KHM::Entry* entry = entryFromIndex(index);
+    KHM::Entry *entry = entryFromIndex(index);
     if (!entry) {
         return;
     }
@@ -387,8 +380,9 @@ void KonqHistoryModel::slotEntryAdded(const KonqHistoryEntry &entry)
         endInsertRows();
     } else {
         // Do not update existing entries, otherwise items jump around when clicking on them (#61450)
-        if (item->entry.lastVisited.isValid())
+        if (item->entry.lastVisited.isValid()) {
             return;
+        }
         item->update(entry);
         const QModelIndex index = indexFor(item);
         emit dataChanged(index, index);
@@ -431,7 +425,7 @@ void KonqHistoryModel::slotEntryRemoved(const KonqHistoryEntry &entry)
     }
 }
 
-KHM::Entry* KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool returnRootIfNull) const
+KHM::Entry *KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool returnRootIfNull) const
 {
     if (index.isValid()) {
         return reinterpret_cast<KHM::Entry *>(index.internalPointer());
@@ -439,7 +433,7 @@ KHM::Entry* KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool retu
     return returnRootIfNull ? m_root : 0;
 }
 
-KHM::GroupEntry* KonqHistoryModel::getGroupItem(const KUrl &url, SignalEmission se)
+KHM::GroupEntry *KonqHistoryModel::getGroupItem(const QUrl &url, SignalEmission se)
 {
     const QString &groupKey = groupForUrl(url);
     KHM::GroupEntry *group = m_root->groupsByName.value(groupKey);
@@ -476,4 +470,3 @@ QModelIndex KonqHistoryModel::indexFor(KHM::GroupEntry *entry) const
     return createIndex(row, 0, entry);
 }
 
-#include "konqhistorymodel.moc"

@@ -24,7 +24,6 @@
 #include "plugin_domtreeviewer.h"
 #include "ui_messagedialog.h"
 
-
 #include <kundostack.h>
 #include <kconfig.h>
 #include <khtml_part.h>
@@ -50,6 +49,10 @@
 #include <QMenu>
 #include <QDropEvent>
 
+//KDELibs4Support
+#include <kdialog.h>
+#include <kdebug.h>
+#include <kicon.h>
 
 class MessageDialog : public KDialog, public Ui::MessageDialog
 {
@@ -77,14 +80,13 @@ public:
     }
 };
 
-
 using domtreeviewer::ManipulationCommand;
 
 DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
-    : KXmlGuiWindow( 0 ),
+    : KXmlGuiWindow(0),
       m_plugin(plugin), m_view(new DOMTreeView(this))
 {
-    setObjectName("DOMTreeWindow" );
+    setObjectName("DOMTreeWindow");
     part_manager = 0;
 
     // set configuration object
@@ -104,8 +106,7 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
     setupActions();
 
     // Add typical actions and save size/toolbars/statusbar
-    setupGUI(ToolBar | Keys | StatusBar | Save | Create,
-             KStandardDirs::locate( "data", "domtreeviewer/domtreeviewerui.rc", componentData()));
+    setupGUI(ToolBar | Keys | StatusBar | Save | Create, KStandardDirs::locate("data", "domtreeviewer/domtreeviewerui.rc"));
 
     // allow the view to change the statusbar and caption
 #if 0
@@ -115,10 +116,10 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
             this,   SLOT(changeCaption(QString)));
 #endif
     connect(view(), SIGNAL(htmlPartChanged(KHTMLPart*)),
-    		SLOT(slotHtmlPartChanged(KHTMLPart*)));
+            SLOT(slotHtmlPartChanged(KHTMLPart*)));
 
     ManipulationCommand::connect(SIGNAL(error(int,QString)),
-    				this, SLOT(addMessage(int,QString)));
+                                 this, SLOT(addMessage(int,QString)));
 
     infopanel_ctx = createInfoPanelAttrContextMenu();
     domtree_ctx = createDOMTreeViewContextMenu();
@@ -154,11 +155,10 @@ void DOMTreeWindow::setupActions()
 
     m_commandHistory = new KUndoStack;
 
-    QAction* undoAction = m_commandHistory->createUndoAction(actionCollection());
+    QAction *undoAction = m_commandHistory->createUndoAction(actionCollection());
     connect(undoAction, SIGNAL(triggered()), m_commandHistory, SLOT(undo()));
-    QAction* redoAction = m_commandHistory->createRedoAction(actionCollection());
+    QAction *redoAction = m_commandHistory->createRedoAction(actionCollection());
     connect(redoAction, SIGNAL(triggered()), m_commandHistory, SLOT(redo()));
-
 
     KStandardAction::find(this, SLOT(slotFind()), actionCollection());
 
@@ -188,7 +188,7 @@ void DOMTreeWindow::setupActions()
     // toggle manipulation dialog
     QAction *a = actionCollection()->addAction("show_msg_dlg");
     a->setText(i18n("Show Message Log"));
-    a->setShortcut(Qt::CTRL+Qt::Key_E);
+    a->setShortcut(Qt::CTRL + Qt::Key_E);
     connect(a, SIGNAL(triggered()), this, SLOT(showMessageLog()));
 
 //     KAction *custom = new KAction(i18n("Cus&tom Menuitem"), 0,
@@ -197,23 +197,23 @@ void DOMTreeWindow::setupActions()
 
     // actions for the dom tree list view toolbar
     QAction *tree = KStandardAction::up(view(), SLOT(moveToParent()), actionCollection());
-    actionCollection()->addAction("tree_up",tree);
+    actionCollection()->addAction("tree_up", tree);
     QAction *tree_inc_level = actionCollection()->addAction("tree_inc_level");
     tree_inc_level->setText(i18n("Expand"));
     tree_inc_level->setIcon(KIcon("arrow-right"));
-    tree_inc_level->setShortcut(Qt::CTRL+Qt::Key_Greater);
+    tree_inc_level->setShortcut(Qt::CTRL + Qt::Key_Greater);
     tree_inc_level->setToolTip(i18n("Increase expansion level"));
     connect(tree_inc_level, SIGNAL(triggered()), view(), SLOT(increaseExpansionDepth()));
-    QAction *tree_dec_level = actionCollection()->addAction( "tree_dec_level");
+    QAction *tree_dec_level = actionCollection()->addAction("tree_dec_level");
     tree_dec_level->setText(i18n("Collapse"));
     tree_dec_level->setIcon(KIcon("arrow-left"));
-    tree_dec_level->setShortcut(Qt::CTRL+Qt::Key_Less);
+    tree_dec_level->setShortcut(Qt::CTRL + Qt::Key_Less);
     tree_dec_level->setToolTip(i18n("Decrease expansion level"));
     connect(tree_dec_level, SIGNAL(triggered()), view(), SLOT(decreaseExpansionDepth()));
 
     // actions for the dom tree list view context menu
 
-    del_tree = actionCollection()->addAction( "tree_delete");
+    del_tree = actionCollection()->addAction("tree_delete");
     del_tree->setText(i18n("&Delete"));
     del_tree->setIcon(KIcon("edit-delete"));
     del_tree->setShortcut(Qt::Key_Delete);
@@ -221,17 +221,17 @@ void DOMTreeWindow::setupActions()
     del_tree->setShortcutContext(Qt::WidgetShortcut);
     view()->m_listView->addAction(del_tree);
     connect(del_tree, SIGNAL(triggered()), view(), SLOT(deleteNodes()));
-    QAction *new_elem = actionCollection()->addAction( "tree_add_element");
+    QAction *new_elem = actionCollection()->addAction("tree_add_element");
     new_elem->setText(i18n("New &Element..."));
     new_elem->setIcon(KIcon("document-new"));
     connect(new_elem, SIGNAL(triggered()), view(), SLOT(slotAddElementDlg()));
-    QAction *new_text = actionCollection()->addAction( "tree_add_text");
+    QAction *new_text = actionCollection()->addAction("tree_add_text");
     new_text->setText(i18n("New &Text Node..."));
     new_text->setIcon(KIcon("draw-text"));
     connect(new_text, SIGNAL(triggered()), view(), SLOT(slotAddTextDlg()));
 
     // actions for the info panel attribute list context menu
-    del_attr = actionCollection()->addAction( "attr_delete");
+    del_attr = actionCollection()->addAction("attr_delete");
     del_attr->setText(i18n("&Delete"));
     del_attr->setIcon(KIcon("edit-delete"));
     del_attr->setShortcut(Qt::Key_Delete);
@@ -244,16 +244,16 @@ void DOMTreeWindow::setupActions()
 
 QMenu *DOMTreeWindow::createInfoPanelAttrContextMenu()
 {
-  QWidget *w = factory()->container("infopanelattr_context", this);
-  Q_ASSERT(w);
-  return static_cast<QMenu *>(w);
+    QWidget *w = factory()->container("infopanelattr_context", this);
+    Q_ASSERT(w);
+    return static_cast<QMenu *>(w);
 }
 
 QMenu *DOMTreeWindow::createDOMTreeViewContextMenu()
 {
-  QWidget *w = factory()->container("domtree_context", this);
-  Q_ASSERT(w);
-  return static_cast<QMenu *>(w);
+    QWidget *w = factory()->container("domtree_context", this);
+    Q_ASSERT(w);
+    return static_cast<QMenu *>(w);
 }
 
 void DOMTreeWindow::saveProperties(KConfigGroup &config)
@@ -266,177 +266,165 @@ void DOMTreeWindow::saveProperties(KConfigGroup &config)
     if (!m_view->currentURL().isNull()) {
         config.writePathEntry("lastURL", m_view->currentURL());
 #endif
-}
+    }
 
-void DOMTreeWindow::readProperties(const KConfigGroup &config)
-{
-    // the 'config' object points to the session managed
-    // config file.  this function is automatically called whenever
-    // the app is being restored.  read in here whatever you wrote
-    // in 'saveProperties'
+    void DOMTreeWindow::readProperties(const KConfigGroup & config) {
+        // the 'config' object points to the session managed
+        // config file.  this function is automatically called whenever
+        // the app is being restored.  read in here whatever you wrote
+        // in 'saveProperties'
 
 #if 0
-    QString url = config.readPathEntry("lastURL", QString());
+        QString url = config.readPathEntry("lastURL", QString());
 
-    if (!url.isEmpty())
-        m_view->openUrl(KUrl::fromPathOrUrl(url));
-#endif
-}
-
-void DOMTreeWindow::dragEnterEvent(QDragEnterEvent *event)
-{
-    // accept uri drops only
-    event->setAccepted(KUrl::List::canDecode(event->mimeData()));
-}
-
-void DOMTreeWindow::dropEvent(QDropEvent *event)
-{
-    // this is a very simplistic implementation of a drop event.  we
-    // will only accept a dropped URL.  the Qt dnd code can do *much*
-    // much more, so please read the docs there
-
-    // see if we can decode a URI.. if not, just ignore it
-    KUrl::List urls = KUrl::List::fromMimeData( event->mimeData() );
-    if (!urls.isEmpty())
-    {
-        // okay, we have a URI.. process it
-        const KUrl &url = urls.first();
-#if 0
-        // load in the file
-        load(url);
+        if (!url.isEmpty()) {
+            m_view->openUrl(KUrl::fromPathOrUrl(url));
+        }
 #endif
     }
-}
 
-void DOMTreeWindow::addMessage(int msg_id, const QString &msg)
-{
-  QDateTime t(QDateTime::currentDateTime());
-  QString fullmsg = t.toString();
-  fullmsg += ':';
-
-  if (msg_id != 0)
-    fullmsg += " (" + QString::number(msg_id) + ") ";
-  fullmsg += msg;
-
-  if (msgdlg) msgdlg->addMessage(fullmsg);
-  view()->setMessage(msg);
-  kWarning() << fullmsg ;
-}
-void DOMTreeWindow::slotCut()
-{
-  // TODO implement
-}
-
-void DOMTreeWindow::slotCopy()
-{
-  // TODO implement
-}
-
-void DOMTreeWindow::slotPaste()
-{
-  // TODO implement
-}
-
-void DOMTreeWindow::slotFind()
-{
-  view()->slotFindClicked();
-}
-
-void DOMTreeWindow::showMessageLog()
-{
-  msgdlg->show();
-  msgdlg->raise();
-  msgdlg->activateWindow();
-}
-
-void DOMTreeWindow::optionsConfigureToolbars()
-{
-    // use the standard toolbar editor
-    saveMainWindowSettings( config()->group( autoSaveGroup() ) );
-    KEditToolBar dlg(actionCollection());
-    connect(&dlg, SIGNAL(newToolbarConfig()), this, SLOT(newToolbarConfig()));
-    dlg.exec();
-}
-
-void DOMTreeWindow::newToolbarConfig()
-{
-    // this slot is called when user clicks "Ok" or "Apply" in the toolbar editor.
-    // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
-    createGUI(KStandardDirs::locate( "data", "domtreeviewer/domtreeviewerui.rc", componentData()));
-    applyMainWindowSettings( config()->group( autoSaveGroup() ) );
-}
-
-void DOMTreeWindow::optionsPreferences()
-{
-#if 0
-    // popup some sort of preference dialog, here
-    DOMTreeWindowPreferences dlg;
-    if (dlg.exec())
-    {
-        // redo your settings
+    void DOMTreeWindow::dragEnterEvent(QDragEnterEvent * event) {
+        // accept uri drops only
+        event->setAccepted(KUrl::List::canDecode(event->mimeData()));
     }
+
+    void DOMTreeWindow::dropEvent(QDropEvent * event) {
+        // this is a very simplistic implementation of a drop event.  we
+        // will only accept a dropped URL.  the Qt dnd code can do *much*
+        // much more, so please read the docs there
+
+        // see if we can decode a URI.. if not, just ignore it
+        KUrl::List urls = KUrl::List::fromMimeData(event->mimeData());
+        if (!urls.isEmpty()) {
+            // okay, we have a URI.. process it
+            const KUrl &url = urls.first();
+#if 0
+            // load in the file
+            load(url);
 #endif
-}
+        }
+    }
 
-void DOMTreeWindow::changeStatusbar(const QString& text)
-{
-    // display the text on the statusbar
-    statusBar()->showMessage(text);
-}
+    void DOMTreeWindow::addMessage(int msg_id, const QString & msg) {
+        QDateTime t(QDateTime::currentDateTime());
+        QString fullmsg = t.toString();
+        fullmsg += ':';
 
-void DOMTreeWindow::changeCaption(const QString& text)
-{
-    // display the text on the caption
-    setCaption(text);
-}
+        if (msg_id != 0) {
+            fullmsg += " (" + QString::number(msg_id) + ") ";
+        }
+        fullmsg += msg;
 
-void DOMTreeWindow::slotHtmlPartChanged(KHTMLPart *p)
-{
-  kDebug(90180) << p;
+        if (msgdlg) {
+            msgdlg->addMessage(fullmsg);
+        }
+        view()->setMessage(msg);
+        kWarning() << fullmsg;
+    }
+    void DOMTreeWindow::slotCut() {
+        // TODO implement
+    }
 
-  if (p) {
-    // set up manager connections
-    if ( part_manager )
-        disconnect(part_manager);
+    void DOMTreeWindow::slotCopy() {
+        // TODO implement
+    }
 
-    part_manager = p->manager();
+    void DOMTreeWindow::slotPaste() {
+        // TODO implement
+    }
 
-    connect(part_manager, SIGNAL(activePartChanged(KParts::Part*)),
-    	SLOT(slotActivePartChanged(KParts::Part*)));
-    connect(part_manager, SIGNAL(partRemoved(KParts::Part*)),
-    	SLOT(slotPartRemoved(KParts::Part*)));
+    void DOMTreeWindow::slotFind() {
+        view()->slotFindClicked();
+    }
 
-    // set up browser extension connections
-    connect(p, SIGNAL(docCreated()), SLOT(slotClosePart()));
-  }
-}
+    void DOMTreeWindow::showMessageLog() {
+        msgdlg->show();
+        msgdlg->raise();
+        msgdlg->activateWindow();
+    }
 
-void DOMTreeWindow::slotActivePartChanged(KParts::Part *p)
-{
-  kDebug(90180) << p;
-  if (p == view()->htmlPart())
-    return;
+    void DOMTreeWindow::optionsConfigureToolbars() {
+        // use the standard toolbar editor
+        KConfigGroup autoSaveGrp = config()->group(autoSaveGroup());
+        saveMainWindowSettings(autoSaveGrp);
+        KEditToolBar dlg(actionCollection());
+        connect(&dlg, SIGNAL(newToolbarConfig()), this, SLOT(newToolbarConfig()));
+        dlg.exec();
+    }
 
-  m_commandHistory->clear();
-  view()->disconnectFromTornDownPart();
-  view()->setHtmlPart(qobject_cast<KHTMLPart *>(p));
-}
+    void DOMTreeWindow::newToolbarConfig() {
+        // this slot is called when user clicks "Ok" or "Apply" in the toolbar editor.
+        // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
+        createGUI(KStandardDirs::locate("data", "domtreeviewer/domtreeviewerui.rc"));
+        applyMainWindowSettings(config()->group(autoSaveGroup()));
+    }
 
-void DOMTreeWindow::slotPartRemoved(KParts::Part *p)
-{
-  kDebug(90180) << p;
-  if (p != view()->htmlPart()) return;
+    void DOMTreeWindow::optionsPreferences() {
+#if 0
+        // popup some sort of preference dialog, here
+        DOMTreeWindowPreferences dlg;
+        if (dlg.exec()) {
+            // redo your settings
+        }
+#endif
+    }
 
-  m_commandHistory->clear();
-  view()->disconnectFromTornDownPart();
-  view()->setHtmlPart(0);
-}
+    void DOMTreeWindow::changeStatusbar(const QString & text) {
+        // display the text on the statusbar
+        statusBar()->showMessage(text);
+    }
 
-void DOMTreeWindow::slotClosePart()
-{
-  kDebug(90180) ;
-  view()->disconnectFromTornDownPart();
-  view()->connectToPart();
-}
+    void DOMTreeWindow::changeCaption(const QString & text) {
+        // display the text on the caption
+        setCaption(text);
+    }
 
-#include "domtreewindow.moc"
+    void DOMTreeWindow::slotHtmlPartChanged(KHTMLPart * p) {
+        kDebug(90180) << p;
+
+        if (p) {
+            // set up manager connections
+            if (part_manager) {
+                disconnect(part_manager);
+            }
+
+            part_manager = p->manager();
+
+            connect(part_manager, SIGNAL(activePartChanged(KParts::Part*)),
+                    SLOT(slotActivePartChanged(KParts::Part*)));
+            connect(part_manager, SIGNAL(partRemoved(KParts::Part*)),
+                    SLOT(slotPartRemoved(KParts::Part*)));
+
+            // set up browser extension connections
+            connect(p, SIGNAL(docCreated()), SLOT(slotClosePart()));
+        }
+    }
+
+    void DOMTreeWindow::slotActivePartChanged(KParts::Part * p) {
+        kDebug(90180) << p;
+        if (p == view()->htmlPart()) {
+            return;
+        }
+
+        m_commandHistory->clear();
+        view()->disconnectFromTornDownPart();
+        view()->setHtmlPart(qobject_cast<KHTMLPart *>(p));
+    }
+
+    void DOMTreeWindow::slotPartRemoved(KParts::Part * p) {
+        kDebug(90180) << p;
+        if (p != view()->htmlPart()) {
+            return;
+        }
+
+        m_commandHistory->clear();
+        view()->disconnectFromTornDownPart();
+        view()->setHtmlPart(0);
+    }
+
+    void DOMTreeWindow::slotClosePart() {
+        kDebug(90180);
+        view()->disconnectFromTornDownPart();
+        view()->connectToPart();
+    }
+

@@ -11,10 +11,11 @@
 #include <QLineEdit>
 #include <QCheckBox>
 
-
 #include <kcmodule.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
+
+class KAboutData;
 
 /**
 *  Dialog for configuring HTTP Options like charset and language negotiation
@@ -22,26 +23,26 @@
 */
 class KHTTPOptions : public KCModule
 {
-Q_OBJECT
-  public:
-    KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent);
+    Q_OBJECT
+public:
+    KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent);
 
     virtual void load();
     virtual void save();
     virtual void defaults();
 
-  private:
+private:
 
     KSharedConfig::Ptr m_pConfig;
     QString m_groupname;
 
     // Acceptable languages "LANG" - locale selected languages
-    QLabel *lb_languages;	
-    QLineEdit *le_languages;	
+    QLabel *lb_languages;
+    QLineEdit *le_languages;
 
     // Acceptable charsets "CHARSET" - locale selected charset
-    QLabel *lb_charsets;	
-    QLineEdit *le_charsets;	
+    QLabel *lb_charsets;
+    QLineEdit *le_charsets;
 
     QString defaultCharsets;
 

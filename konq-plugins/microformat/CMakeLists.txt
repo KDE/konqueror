@@ -6,17 +6,17 @@
 
 set(mfkonqmficon_PART_SRCS konqmficon.cpp pluginbase.cpp )
 
-kde4_add_plugin(mfkonqmficon ${mfkonqmficon_PART_SRCS})
+add_library(mfkonqmficon MODULE ${mfkonqmficon_PART_SRCS})
 
 
 
-target_link_libraries(mfkonqmficon ${KDE4_KHTML_LIBS})
+target_link_libraries(mfkonqmficon KF5::KHtml)
 
-install(TARGETS mfkonqmficon  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS mfkonqmficon  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
 ########### install files ###############
 
-install( FILES microformat.png  DESTINATION  ${DATA_INSTALL_DIR}/microformat/pics )
-install( FILES mf_konqmficon.desktop mf_konqmficon.rc  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
+install( FILES microformat.png  DESTINATION  ${KDE_INSTALL_DATADIR}/microformat/pics )
+install( FILES mf_konqmficon.desktop mf_konqmficon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 

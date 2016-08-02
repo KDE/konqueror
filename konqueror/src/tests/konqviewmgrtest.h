@@ -19,8 +19,6 @@
 #ifndef KONQVIEWMGRTEST_H
 #define KONQVIEWMGRTEST_H
 
-#include <QMainWindow>
-
 #include <QObject>
 #include <kcomponentdata.h>
 
@@ -62,7 +60,7 @@ private Q_SLOTS:
     void testBreakOffTab();
     void moveTabLeft();
 
-    static void sendAllPendingResizeEvents(QWidget*);
+    static void sendAllPendingResizeEvents(QWidget *);
 
 private:
     KComponentData m_konqComponentData;

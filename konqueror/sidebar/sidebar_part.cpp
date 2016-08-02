@@ -22,24 +22,19 @@
 #include <kdebug.h>
 #include <QApplication>
 #include <kacceleratormanager.h>
-
-static KAboutData createAboutData()
-{
-    KAboutData aboutData("konqsidebartng", 0, ki18n("Extended Sidebar"), "0.2");
-    aboutData.addAuthor(ki18n("Joseph Wenninger"), KLocalizedString(), "jowenn@bigfoot.com");
-    aboutData.addAuthor(ki18n("David Faure"), KLocalizedString(), "faure@kde.org");
-    return aboutData;
-}
+#include <KLocalizedString>
 
 K_PLUGIN_FACTORY(KonqSidebarFactory,
                  registerPlugin<KonqSidebarPart>();
-    )
-K_EXPORT_PLUGIN(KonqSidebarFactory(createAboutData()))
+                )
 
-KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&)
+KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList &)
     : KParts::ReadOnlyPart(parent)
 {
-    setComponentData(KonqSidebarFactory::componentData());
+    KAboutData aboutData("konqsidebartng", i18n("Extended Sidebar"), "0.2");
+    aboutData.addAuthor(i18n("Joseph Wenninger"), "", "jowenn@bigfoot.com");
+    aboutData.addAuthor(i18n("David Faure"), "", "faure@kde.org");
+    setComponentData(aboutData);
 
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
     if (currentProfile.isEmpty()) {
@@ -51,8 +46,8 @@ KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const Q
             this, SIGNAL(started(KIO::Job*)));
     connect(m_widget, SIGNAL(completed()),
             this, SIGNAL(completed()));
-    connect(m_extension, SIGNAL(addWebSideBar(KUrl,QString)),
-            m_widget, SLOT(addWebSideBar(KUrl,QString)));
+    connect(m_extension, SIGNAL(addWebSideBar(QUrl,QString)),
+            m_widget, SLOT(addWebSideBar(QUrl,QString)));
     KAcceleratorManager::setNoAccel(m_widget);
     setWidget(m_widget);
 }
@@ -66,19 +61,17 @@ bool KonqSidebarPart::openFile()
     return true;
 }
 
-bool KonqSidebarPart::openUrl(const KUrl &url)
+bool KonqSidebarPart::openUrl(const QUrl &url)
 {
     return m_widget->openUrl(url);
 }
 
-void KonqSidebarPart::customEvent(QEvent* ev)
+void KonqSidebarPart::customEvent(QEvent *ev)
 {
     if (KonqFileSelectionEvent::test(ev) ||
-        KonqFileMouseOverEvent::test(ev) ||
-        KonqConfigEvent::test(ev))
-    {
+            KonqFileMouseOverEvent::test(ev)) {
         // Forward the event to the widget
-        QApplication::sendEvent( widget(), ev );
+        QApplication::sendEvent(widget(), ev);
     }
 }
 

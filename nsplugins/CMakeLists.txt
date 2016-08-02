@@ -24,24 +24,24 @@ if (X11_Xt_LIB)
        ${nsplugins_SRCS}
     )
 
-  qt4_add_dbus_adaptor( nsplugins_PART_SRCS org.kde.nsplugins.CallBack.xml ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.h PluginPart )
+  qt5_add_dbus_adaptor( nsplugins_PART_SRCS org.kde.nsplugins.CallBack.xml ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.h PluginPart )
 
   set(nsplugins_class_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.class.xml)
-  QT4_ADD_DBUS_INTERFACE( nsplugins_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
+  qt5_add_dbus_interface( nsplugins_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
 
   set(nsplugins_instance_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.instance.xml)
   set_source_files_properties(${nsplugins_instance_xml} PROPERTIES INCLUDE "comm/dbustypes.h")
-  QT4_ADD_DBUS_INTERFACE( nsplugins_PART_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
+  qt5_add_dbus_interface( nsplugins_PART_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
 
   set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.viewer.xml)
-  QT4_ADD_DBUS_INTERFACE( nsplugins_PART_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
+  qt5_add_dbus_interface( nsplugins_PART_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
 
 
-  kde4_add_plugin(libnsplugin ${nsplugins_PART_SRCS})
+  add_library(libnsplugin MODULE ${nsplugins_PART_SRCS})
 
-  target_link_libraries(libnsplugin ${KDE4_KPARTS_LIBS} ${QT_QTGUI_LIBRARY})
+  target_link_libraries(libnsplugin KF5::Parts Qt5::Gui)
 
-  install(TARGETS libnsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS libnsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
   ########### next target ###############
@@ -49,28 +49,28 @@ if (X11_Xt_LIB)
   set(kcminit_nsplugins_SRCS kcm_nsplugins.cpp plugin_paths.cpp)
 
 
-  kde4_add_plugin(kcminit_nsplugins WITH_PREFIX  ${kcminit_nsplugins_SRCS})
+  add_library(kcminit_nsplugins MODULE WITH_PREFIX  ${kcminit_nsplugins_SRCS})
 
-  target_link_libraries(kcminit_nsplugins ${KDE4_KDECORE_LIBS} )
+  target_link_libraries(kcminit_nsplugins KF5::KDELibs4Support )
 
-  install(TARGETS kcminit_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS kcminit_nsplugins  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
   ########### nspluginscan ###############
 
   set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp mimetypewriter.cpp)
 
-  kde4_add_executable(nspluginscan ${nspluginscan_SRCS})
+  add_executable(nspluginscan ${nspluginscan_SRCS})
 
-  target_link_libraries(nspluginscan  ${KDE4_KIO_LIBS} ${X11_Xt_LIB})
+  target_link_libraries(nspluginscan  KF5::KIOCore ${X11_Xt_LIB})
 
-  install(TARGETS nspluginscan ${INSTALL_TARGETS_DEFAULT_ARGS})
+  install(TARGETS nspluginscan ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
   ########### install files ###############
 
-  install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-  install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/nsplugin )
-  install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+  install( FILES khtml_plugins.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+  install( FILES nspluginpart.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/nsplugin )
+  install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )
 
   add_subdirectory( test )
 

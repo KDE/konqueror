@@ -53,158 +53,176 @@ class PolicyDialog;
  *
  * @author Leo Savernik
  */
-class DomainListView : public QGroupBox {
-  Q_OBJECT
+class DomainListView : public QGroupBox
+{
+    Q_OBJECT
 public:
-  /** Enumerates the available buttons.
-    */
-  enum PushButton {
-    AddButton, ChangeButton, DeleteButton, ImportButton, ExportButton
-  };
+    /** Enumerates the available buttons.
+      */
+    enum PushButton {
+        AddButton, ChangeButton, DeleteButton, ImportButton, ExportButton
+    };
 
-  /**
-   * constructor
-   * @param config configuration to read from and to write to
-   * @param title title to be used for enclosing group box
-   * @param parent parent widget
-   * @param name internal name for debugging
-   */
-  DomainListView(KSharedConfig::Ptr config,const QString &title,QWidget *parent );
+    /**
+     * constructor
+     * @param config configuration to read from and to write to
+     * @param title title to be used for enclosing group box
+     * @param parent parent widget
+     * @param name internal name for debugging
+     */
+    DomainListView(KSharedConfig::Ptr config, const QString &title, QWidget *parent);
 
-  virtual ~DomainListView();
+    virtual ~DomainListView();
 
-  /**
-   * clears the list view.
-   */
+    /**
+     * clears the list view.
+     */
 //  void clear();
 
-  /**
-   * returns the list view displaying the domains
-   */
-  QTreeWidget *listView() const { return domainSpecificLV; }
+    /**
+     * returns the list view displaying the domains
+     */
+    QTreeWidget *listView() const
+    {
+        return domainSpecificLV;
+    }
 
-  /**
-   * returns the add push-button.
-   *
-   * Note: The add button already contains a default "what's this" text.
-   */
-  QPushButton *addButton() const { return addDomainPB; }
+    /**
+     * returns the add push-button.
+     *
+     * Note: The add button already contains a default "what's this" text.
+     */
+    QPushButton *addButton() const
+    {
+        return addDomainPB;
+    }
 
-  /**
-   * returns the change push-button.
-   *
-   * Note: The change button already contains a default "what's this" text.
-   */
-  QPushButton *changeButton() const { return changeDomainPB; }
+    /**
+     * returns the change push-button.
+     *
+     * Note: The change button already contains a default "what's this" text.
+     */
+    QPushButton *changeButton() const
+    {
+        return changeDomainPB;
+    }
 
-  /**
-   * returns the delete push-button.
-   *
-   * Note: The delete button already contains a default "what's this" text.
-   */
-  QPushButton *deleteButton() const { return deleteDomainPB; }
+    /**
+     * returns the delete push-button.
+     *
+     * Note: The delete button already contains a default "what's this" text.
+     */
+    QPushButton *deleteButton() const
+    {
+        return deleteDomainPB;
+    }
 
-  /**
-   * returns the import push-button.
-   */
-  QPushButton *importButton() const { return importDomainPB; }
+    /**
+     * returns the import push-button.
+     */
+    QPushButton *importButton() const
+    {
+        return importDomainPB;
+    }
 
-  /**
-   * returns the export push-button.
-   */
-  QPushButton *exportButton() const { return exportDomainPB; }
+    /**
+     * returns the export push-button.
+     */
+    QPushButton *exportButton() const
+    {
+        return exportDomainPB;
+    }
 
-  /**
-   * Initializes the list view with the given list of domains as well
-   * as the domain policy map.
-   *
-   * This method may be called multiple times on a DomainListView instance.
-   *
-   * @param domainList given list of domains
-   */
-  void initialize(const QStringList &domainList);
+    /**
+     * Initializes the list view with the given list of domains as well
+     * as the domain policy map.
+     *
+     * This method may be called multiple times on a DomainListView instance.
+     *
+     * @param domainList given list of domains
+     */
+    void initialize(const QStringList &domainList);
 
-  /**
-   * saves the current state of all domains to the configuration object.
-   * @param group the group the information is to be saved under
-   * @param domainListKey the name of the key which the list of domains
-   *	is stored under.
-   */
-  void save(const QString &group, const QString &domainListKey);
-
+    /**
+     * saves the current state of all domains to the configuration object.
+     * @param group the group the information is to be saved under
+     * @param domainListKey the name of the key which the list of domains
+     *    is stored under.
+     */
+    void save(const QString &group, const QString &domainListKey);
 
 Q_SIGNALS:
-  /**
-   * indicates that a configuration has been changed within this list view.
-   * @param state true if changed, false if not
-   */
-  void changed(bool state);
+    /**
+     * indicates that a configuration has been changed within this list view.
+     * @param state true if changed, false if not
+     */
+    void changed(bool state);
 
 protected:
-  /**
-   * factory method for creating a new domain-specific policies object.
-   *
-   * Example:
-   * <pre>
-   * JavaPolicies *JavaDomainListView::createPolicies() {
-   *   return new JavaPolicies(m_pConfig,m_groupname,false);
-   * }
-   * </pre>
-   */
-  virtual Policies *createPolicies() = 0;
+    /**
+     * factory method for creating a new domain-specific policies object.
+     *
+     * Example:
+     * <pre>
+     * JavaPolicies *JavaDomainListView::createPolicies() {
+     *   return new JavaPolicies(m_pConfig,m_groupname,false);
+     * }
+     * </pre>
+     */
+    virtual Policies *createPolicies() = 0;
 
-  /**
-   * factory method for copying a policies object.
-   *
-   * Derived classes must interpret the given object as the same type
-   * as those created by createPolicies and return a copy of this very type.
-   *
-   * Example:
-   * <pre>
-   * JavaPolicies *JavaDomainListView::copyPolicies(Policies *pol) {
-   *   return new JavaPolicies(*static_cast<JavaPolicies *>(pol));
-   * }
-   * </pre>
-   * @param pol policies object to be copied
-   */
-  virtual Policies *copyPolicies(Policies *pol) = 0;
+    /**
+     * factory method for copying a policies object.
+     *
+     * Derived classes must interpret the given object as the same type
+     * as those created by createPolicies and return a copy of this very type.
+     *
+     * Example:
+     * <pre>
+     * JavaPolicies *JavaDomainListView::copyPolicies(Policies *pol) {
+     *   return new JavaPolicies(*static_cast<JavaPolicies *>(pol));
+     * }
+     * </pre>
+     * @param pol policies object to be copied
+     */
+    virtual Policies *copyPolicies(Policies *pol) = 0;
 
-  /**
-   * allows derived classes to customize the policy dialog.
-   *
-   * The default implementation does nothing.
-   * @param trigger triggered by which button
-   * @param pDlg reference to policy dialog
-   * @param copy policies object this dialog is used for changing. Derived
-   *	classes can safely cast the @p copy object to the same type they
-   *	returned in their createPolicies implementation.
-   */
-  virtual void setupPolicyDlg(PushButton trigger,PolicyDialog &pDlg,
-  		Policies *copy);
+    /**
+     * allows derived classes to customize the policy dialog.
+     *
+     * The default implementation does nothing.
+     * @param trigger triggered by which button
+     * @param pDlg reference to policy dialog
+     * @param copy policies object this dialog is used for changing. Derived
+     *    classes can safely cast the @p copy object to the same type they
+     *    returned in their createPolicies implementation.
+     */
+    virtual void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
+                                Policies *copy);
 
 private Q_SLOTS:
-  void addPressed();
-  void changePressed();
-  void deletePressed();
-  void importPressed();
-  void exportPressed();
+    void addPressed();
+    void changePressed();
+    void deletePressed();
+    void importPressed();
+    void exportPressed();
     void updateButton();
 
 protected:
 
-  KSharedConfig::Ptr config;
+    KSharedConfig::Ptr config;
 
-  QTreeWidget *domainSpecificLV;
+    QTreeWidget *domainSpecificLV;
 
-  QPushButton* addDomainPB;
-  QPushButton* changeDomainPB;
-  QPushButton* deleteDomainPB;
-  QPushButton* importDomainPB;
-  QPushButton* exportDomainPB;
+    QPushButton *addDomainPB;
+    QPushButton *changeDomainPB;
+    QPushButton *deleteDomainPB;
+    QPushButton *importDomainPB;
+    QPushButton *exportDomainPB;
 
-  typedef QMap<QTreeWidgetItem*, Policies *> DomainPolicyMap;
-  DomainPolicyMap domainPolicies;
+    typedef QMap<QTreeWidgetItem *, Policies *> DomainPolicyMap;
+    DomainPolicyMap domainPolicies;
 };
 
-#endif		// DOMAINLISTVIEW_H
+#endif      // DOMAINLISTVIEW_H
 

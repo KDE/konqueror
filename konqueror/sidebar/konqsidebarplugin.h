@@ -22,7 +22,7 @@
 
 #include <kconfiggroup.h>
 #include <QWidget>
-#include <kurl.h>
+#include "konqsidebarplugin.h"
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
@@ -32,11 +32,11 @@
 
 #ifndef KONQSIDEBARPLUGIN_EXPORT
 # if defined(MAKE_KONQSIDEBARPLUGIN_LIB)
-    /* We are building this library */
-#  define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
+/* We are building this library */
+#  define KONQSIDEBARPLUGIN_EXPORT Q_DECL_EXPORT
 # else
-   /* We are using this library */
-#  define KONQSIDEBARPLUGIN_EXPORT KDE_IMPORT
+/* We are using this library */
+#  define KONQSIDEBARPLUGIN_EXPORT Q_DECL_IMPORT
 # endif
 #endif
 
@@ -54,14 +54,11 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarModule : public QObject
 {
     Q_OBJECT
 public:
-    KonqSidebarModule(const KComponentData &componentData,
-                      QObject *parent,
-                      const KConfigGroup& configGroup);
+    KonqSidebarModule(QObject *parent,
+                      const KConfigGroup &configGroup);
     ~KonqSidebarModule();
 
     virtual QWidget *getWidget() = 0;
-
-    const KComponentData &parentComponentData() const;
     KConfigGroup configGroup();
 
     /**
@@ -79,61 +76,63 @@ public:
                        const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
                        KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                       const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                       const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
 protected:
     /**
      * Called by the sidebar's openUrl. Reimplement this in order to
      * follow the navigation happening in konqueror's current view.
      */
-    virtual void handleURL(const KUrl &url) { Q_UNUSED(url); }
-    virtual void handlePreview(const KFileItemList & items);
+    virtual void handleURL(const QUrl &url)
+    {
+        Q_UNUSED(url);
+    }
+    virtual void handlePreview(const KFileItemList &items);
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
 
 public Q_SLOTS:
-    void openUrl(const KUrl& url);
+    void openUrl(const QUrl &url);
 
-    void openPreview(const KFileItemList& items);
+    void openPreview(const KFileItemList &items);
 
-    void openPreviewOnMouseOver(const KFileItem& item); // not used yet
+    void openPreviewOnMouseOver(const KFileItem &item); // not used yet
 
 Q_SIGNALS:
     void started(KIO::Job *);
     void completed();
-    void setIcon(const QString& icon);
-    void setCaption(const QString& caption);
+    void setIcon(const QString &icon);
+    void setCaption(const QString &caption);
 
     /**
      * Ask konqueror to open @p url.
      */
-    void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                        const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments());
+    void openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                        const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments());
     /**
      * Ask konqueror to create a new window (or tab, see BrowserArguments) for @p url.
      */
-    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                         const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                         const KParts::WindowArgs& = KParts::WindowArgs());
+    void createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                         const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                         const KParts::WindowArgs & = KParts::WindowArgs());
 
     /**
      * Ask konqueror to show the standard popup menu for the given @p items.
      */
-    void popupMenu(KonqSidebarModule* module,
+    void popupMenu(KonqSidebarModule *module,
                    const QPoint &global, const KFileItemList &items,
                    const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                    const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
                    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                   const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
+                   const KParts::BrowserExtension::ActionGroupMap &actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
     // TODO
-    void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
+    void submitFormRequest(const char *, const QString &, const QByteArray &, const QString &, const QString &, const QString &);
 
-    void enableAction(KonqSidebarModule* module, const char* name, bool enabled);
+    void enableAction(KonqSidebarModule *module, const char *name, bool enabled);
 
 private:
-    KComponentData m_parentComponentData;
     KConfigGroup m_configGroup;
-    KonqSidebarModulePrivate* const d;
+    KonqSidebarModulePrivate *const d;
 
 };
 
@@ -146,23 +145,24 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 {
     Q_OBJECT
 public:
-    KonqSidebarPlugin(QObject* parent, const QVariantList& args)
+    KonqSidebarPlugin(QObject *parent, const QVariantList &args)
         : QObject(parent)
-    { Q_UNUSED(args); }
+    {
+        Q_UNUSED(args);
+    }
     virtual ~KonqSidebarPlugin() {}
 
     /**
      * Create new module for the sidebar.
-     * @param componentData
      * @param parent parent widget, for the plugin's widget
      * @param configGroup desktop group from the plugin's desktop file
      * @param desktopName filename of the plugin's desktop file - for compatibility only
      * @param unused for future extensions
      */
-    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
-                                            const KConfigGroup& configGroup,
+    virtual KonqSidebarModule *createModule(QWidget *parent,
+                                            const KConfigGroup &configGroup,
                                             const QString &desktopname,
-                                            const QVariant& unused) = 0;
+                                            const QVariant &unused) = 0;
 
     /**
      * Creates QActions for the "Add new" menu.
@@ -171,9 +171,10 @@ public:
      * modules multiple times
      * @param unused for future extensions
      */
-    virtual QList<QAction*> addNewActions(QObject* parent,
-                                          const QList<KConfigGroup>& existingModules,
-                                          const QVariant& unused) {
+    virtual QList<QAction *> addNewActions(QObject *parent,
+                                           const QList<KConfigGroup> &existingModules,
+                                           const QVariant &unused)
+    {
         Q_UNUSED(parent); Q_UNUSED(existingModules); Q_UNUSED(unused);
         return QList<QAction *>();
     }
@@ -184,8 +185,9 @@ public:
      * multiple "new" actions)
      * @param unused for future extensions
      */
-    virtual QString templateNameForNewModule(const QVariant& actionData,
-                                             const QVariant& unused) const {
+    virtual QString templateNameForNewModule(const QVariant &actionData,
+            const QVariant &unused) const
+    {
         Q_UNUSED(actionData); Q_UNUSED(unused);
         return QString();
     }
@@ -199,9 +201,10 @@ public:
      * @param parentWidget in case the plugin shows dialogs in this method
      * @param unused for future extensions
      */
-    virtual bool createNewModule(const QVariant& actionData, KConfigGroup& configGroup,
-                                 QWidget* parentWidget,
-                                 const QVariant& unused) {
+    virtual bool createNewModule(const QVariant &actionData, KConfigGroup &configGroup,
+                                 QWidget *parentWidget,
+                                 const QVariant &unused)
+    {
         Q_UNUSED(actionData); Q_UNUSED(configGroup);
         Q_UNUSED(parentWidget); Q_UNUSED(unused);
         return false;

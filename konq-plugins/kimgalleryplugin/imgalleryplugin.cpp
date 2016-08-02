@@ -48,39 +48,39 @@ Boston, MA 02110-1301, USA.
 #include "imgallerydialog.h"
 #include "imgalleryplugin.h"
 
+//KDELibs4Support
+#include <kdeversion.h>
 
 K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
-K_EXPORT_PLUGIN(KImGalleryPluginFactory( "imgalleryplugin" ))
 
-
-    KImGalleryPlugin::KImGalleryPlugin( QObject* parent, const QVariantList & )
-        : KParts::Plugin( parent ), m_commentMap(0)
+KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
+    : KParts::Plugin(parent), m_commentMap(0)
 {
-    KAction *a = actionCollection()->addAction("create_img_gallery");
+    QAction *a = actionCollection()->addAction("create_img_gallery");
     a->setText(i18n("&Create Image Gallery..."));
     a->setIcon(KIcon("imagegallery"));
-    a->setShortcut(KShortcut(Qt::CTRL+Qt::Key_I));
+    a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
     connect(a, SIGNAL(triggered()), this, SLOT(slotExecute()));
 }
 
 void KImGalleryPlugin::slotExecute()
 {
-    m_progressDlg=0L;
-    if ( !parent())
-    {
-        KMessageBox::sorry( 0L, i18n("Could not create the plugin, please report a bug."));
+    m_progressDlg = 0L;
+    if (!parent()) {
+        KMessageBox::sorry(0L, i18n("Could not create the plugin, please report a bug."));
         return;
     }
-    m_part = qobject_cast<KParts::ReadOnlyPart*>(parent());
+    m_part = qobject_cast<KParts::ReadOnlyPart *>(parent());
 
-    if (!m_part || !m_part->url().isLocalFile()) {	//TODO support remote URLs too?
+    if (!m_part || !m_part->url().isLocalFile()) {  //TODO support remote URLs too?
         KMessageBox::sorry(m_part->widget(), i18n("Creating an image gallery works only on local folders."));
         return;
     }
 
-    m_configDlg = new KIGPDialog(m_part->widget(), m_part->url().path(KUrl::AddTrailingSlash));
+    QString path = m_part->url().adjusted(QUrl::StripTrailingSlash).toLocalFile() + '/';
+    m_configDlg = new KIGPDialog(m_part->widget(), path);
 
-    if ( m_configDlg->exec() == QDialog::Accepted ) {
+    if (m_configDlg->exec() == QDialog::Accepted) {
         kDebug(90170) << "dialog is ok";
         m_configDlg->writeConfig();
         m_copyFiles = m_configDlg->copyOriginalFiles();
@@ -89,16 +89,16 @@ void KImGalleryPlugin::slotExecute()
         m_imagesPerRow = m_configDlg->getImagesPerRow();
 
         KUrl url(m_configDlg->getImageUrl());
-        if ( !url.isEmpty() && url.isValid()) {
+        if (!url.isEmpty() && url.isValid()) {
             m_progressDlg = new QProgressDialog(m_part->widget());
-            QObject::connect(m_progressDlg, SIGNAL(cancelled()), this, SLOT(slotCancelled()) );
+            QObject::connect(m_progressDlg, SIGNAL(canceled()), this, SLOT(slotCancelled()));
 
-            m_progressDlg->setLabelText( i18n("Creating thumbnails") );
-            m_progressDlg->setCancelButton(new KPushButton(KStandardGuiItem::cancel(),m_progressDlg));
+            m_progressDlg->setLabelText(i18n("Creating thumbnails"));
+            m_progressDlg->setCancelButton(new KPushButton(KStandardGuiItem::cancel(), m_progressDlg));
             m_cancelled = false;
             m_progressDlg->show();
-            if ( createHtml( url, m_part->url().path(), m_configDlg->recursionLevel() > 0 ? m_configDlg->recursionLevel() + 1 : 0 , m_configDlg->getImageFormat()) ) {
-                KToolInvocation::invokeBrowser(url.url());	// Open a browser to show the result
+            if (createHtml(url, m_part->url().path(), m_configDlg->recursionLevel() > 0 ? m_configDlg->recursionLevel() + 1 : 0, m_configDlg->getImageFormat())) {
+                KToolInvocation::invokeBrowser(url.url());  // Open a browser to show the result
             } else {
                 deleteCancelledGallery(url, m_part->url().path(), m_configDlg->recursionLevel() > 0 ? m_configDlg->recursionLevel() + 1 : 0, m_configDlg->getImageFormat());
             }
@@ -112,12 +112,12 @@ bool KImGalleryPlugin::createDirectory(const QDir &dir, const QString &imgGaller
     QDir thumb_dir(dir);
 
     if (!thumb_dir.exists()) {
-        thumb_dir.setPath( imgGalleryDir);
+        thumb_dir.setPath(imgGalleryDir);
         if (!(thumb_dir.mkdir(dirName/*, false*/))) {
             KMessageBox::sorry(m_part->widget(), i18n("Could not create folder: %1", thumb_dir.path()));
             return false;
         } else {
-            thumb_dir.setPath( imgGalleryDir + '/' + dirName + '/' );
+            thumb_dir.setPath(imgGalleryDir + '/' + dirName + '/');
             return true;
         }
     } else {
@@ -125,7 +125,7 @@ bool KImGalleryPlugin::createDirectory(const QDir &dir, const QString &imgGaller
     }
 }
 
-void KImGalleryPlugin::createHead(QTextStream& stream)
+void KImGalleryPlugin::createHead(QTextStream &stream)
 {
     const QString chsetName = QTextCodec::codecForLocale()->name();
 
@@ -133,14 +133,14 @@ void KImGalleryPlugin::createHead(QTextStream& stream)
     stream << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">" << endl;
     stream << "<html xmlns=\"http://www.w3.org/1999/xhtml\">" << endl;
     stream << "<head>" << endl;
-    stream << "<title>" <<Qt::escape(m_configDlg->getTitle()) << "</title>" << endl;
+    stream << "<title>" << m_configDlg->getTitle().toHtmlEscaped() << "</title>" << endl;
     stream << "<meta http-equiv=\"content-type\" content=\"text/html; charset=" << chsetName << "\"/>" << endl;
     stream << "<meta name=\"GENERATOR\" content=\"KDE Konqueror KImgallery plugin version " KDE_VERSION_STRING "\"/>" << endl;
     createCSSSection(stream);
     stream << "</head>" << endl;
 }
 
-void KImGalleryPlugin::createCSSSection(QTextStream& stream)
+void KImGalleryPlugin::createCSSSection(QTextStream &stream)
 {
     const QString backgroundColor = m_configDlg->getBackgroundColor().name();
     const QString foregroundColor = m_configDlg->getForegroundColor().name();
@@ -156,25 +156,26 @@ void KImGalleryPlugin::createCSSSection(QTextStream& stream)
     stream << "</style>" << endl;
 }
 
-
-QString KImGalleryPlugin::extension(const QString& imageFormat)
+QString KImGalleryPlugin::extension(const QString &imageFormat)
 {
-	if (imageFormat == "PNG")
-		return ".png";
-	if (imageFormat == "JPEG")
-		return ".jpg";
-	Q_ASSERT(false);
-	return QString();
+    if (imageFormat == "PNG") {
+        return ".png";
+    }
+    if (imageFormat == "JPEG") {
+        return ".jpg";
+    }
+    Q_ASSERT(false);
+    return QString();
 }
 
-void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirName, const QStringList& subDirList,
-                                  const QDir& imageDir, const KUrl& url, const QString& imageFormat)
+void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirName, const QStringList &subDirList,
+                                  const QDir &imageDir, const KUrl &url, const QString &imageFormat)
 {
     int numOfImages = imageDir.count();
     const QString imgGalleryDir = url.directory();
-    const QString today(KGlobal::locale()->formatDate(QDate::currentDate()));
+    const QString today(KLocale::global()->formatDate(QDate::currentDate()));
 
-    stream << "<body>\n<h1>" << Qt::escape(m_configDlg->getTitle()) << "</h1><p>" << endl;
+    stream << "<body>\n<h1>" << m_configDlg->getTitle().toHtmlEscaped() << "</h1><p>" << endl;
     stream << i18n("<i>Number of images</i>: %1", numOfImages) << "<br/>" << endl;
     stream << i18n("<i>Created on</i>: %1", today) << "</p>" << endl;
 
@@ -183,8 +184,9 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
     if (m_recurseSubDirectories && subDirList.count() > 2) { //subDirList.count() is always >= 2 because of the "." and ".." directories
         stream << i18n("<i>Subfolders</i>:") << "<br>" << endl;
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd(); it++) {
-            if (*it == "." || *it == "..")
-                continue; //disregard the "." and ".." directories
+            if (*it == "." || *it == "..") {
+                continue;    //disregard the "." and ".." directories
+            }
             stream << "<a href=\"" << *it << "/" << url.fileName()
                    << "\">" << *it << "</a><br>" << endl;
         }
@@ -200,7 +202,7 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
     for (imgIndex = 0; !m_cancelled && (imgIndex < numOfImages);) {
         stream << "<tr>" << endl;
 
-        for (int col=0; !m_cancelled && (col < m_imagesPerRow) && (imgIndex < numOfImages); col++) {
+        for (int col = 0; !m_cancelled && (col < m_imagesPerRow) && (imgIndex < numOfImages); col++) {
             const QString imgName = imageDir[imgIndex];
 
             if (m_copyFiles) {
@@ -209,15 +211,14 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
                 stream << "<td align='center'>\n<a href=\"" << imgName << "\">";
             }
 
-
             if (createThumb(imgName, sourceDirName, imgGalleryDir, imageFormat)) {
                 const QString imgPath("thumbs/" + imgName + extension(imageFormat));
                 stream << "<img src=\"" << imgPath << "\" width=\"" << m_imgWidth << "\" ";
                 stream << "height=\"" << m_imgHeight << "\" alt=\"" << imgPath << "\"/>";
-                m_progressDlg->setLabelText( i18n("Created thumbnail for: \n%1", imgName) );
+                m_progressDlg->setLabelText(i18n("Created thumbnail for: \n%1", imgName));
             } else {
                 kDebug(90170) << "Creating thumbnail for " << imgName << " failed";
-                m_progressDlg->setLabelText( i18n("Creating thumbnail for: \n%1\n failed", imgName) );
+                m_progressDlg->setLabelText(i18n("Creating thumbnail for: \n%1\n failed", imgName));
             }
             stream << "</a>" << endl;
 
@@ -229,23 +230,23 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
 #ifdef __GNUC__
 #warning "kde4: verify it : imageDir.absoluteFilePath(imgName,true)";
 #endif
-                imgProp.load( imageDir.absoluteFilePath(imgName) );
+                imgProp.load(imageDir.absoluteFilePath(imgName));
                 stream << "<div>" << imgProp.width() << " x " << imgProp.height() << "</div>" << endl;
             }
 
             if (m_configDlg->printImageSize()) {
-                imginfo.setFile( imageDir, imgName );
+                imginfo.setFile(imageDir, imgName);
                 stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KiB") << ")" << "</div>" << endl;
             }
 
             if (m_useCommentFile) {
                 QString imgComment = (*m_commentMap)[imgName];
-                stream << "<div>" << Qt::escape(imgComment) << "</div>" << endl;
+                stream << "<div>" << imgComment.toHtmlEscaped() << "</div>" << endl;
             }
             stream << "</td>" << endl;
 
-            m_progressDlg->setMaximum( numOfImages );
-            m_progressDlg->setValue( imgIndex );
+            m_progressDlg->setMaximum(numOfImages);
+            m_progressDlg->setValue(imgIndex);
             qApp->processEvents();
             imgIndex++;
         }
@@ -255,36 +256,41 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
     stream << "</table>\n</body>\n</html>" << endl;
 }
 
-
-bool KImGalleryPlugin::createHtml(const KUrl& url, const QString& sourceDirName, int recursionLevel, const QString& imageFormat)
+bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
 {
-    if(m_cancelled) return false;
-
-
-    if( !parent() || !parent()->inherits("DolphinPart"))
+    if (m_cancelled) {
         return false;
+    }
+
+    if (!parent() || !parent()->inherits("DolphinPart")) {
+        return false;
+    }
 
     QStringList subDirList;
     if (m_recurseSubDirectories && (recursionLevel >= 0)) { //recursionLevel == 0 means endless
-        QDir toplevel_dir = QDir( sourceDirName );
-        toplevel_dir.setFilter( QDir::Dirs | QDir::Readable | QDir::Writable );
+        QDir toplevel_dir = QDir(sourceDirName);
+        toplevel_dir.setFilter(QDir::Dirs | QDir::Readable | QDir::Writable);
         subDirList = toplevel_dir.entryList();
 
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd() && !m_cancelled; it++) {
             const QString currentDir = *it;
-            if (currentDir == "." || currentDir == "..") { continue;} //disregard the "." and ".." directories
-            QDir subDir = QDir( url.directory() + '/' + currentDir );
+            if (currentDir == "." || currentDir == "..") {
+                continue;   //disregard the "." and ".." directories
+            }
+            QDir subDir = QDir(url.directory() + '/' + currentDir);
             if (!subDir.exists()) {
-                subDir.setPath( url.directory() );
+                subDir.setPath(url.directory());
                 if (!(subDir.mkdir(currentDir/*, false*/))) {
                     KMessageBox::sorry(m_part->widget(), i18n("Could not create folder: %1", subDir.path()));
                     continue;
                 } else {
-                    subDir.setPath( url.directory() + '/' + currentDir );
+                    subDir.setPath(url.directory() + '/' + currentDir);
                 }
             }
-            if(!createHtml( KUrl( subDir.path() + '/' + url.fileName() ), sourceDirName + '/' + currentDir,
-                            recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat)) { return false; }
+            if (!createHtml(KUrl(subDir.path() + '/' + url.fileName()), sourceDirName + '/' + currentDir,
+                            recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat)) {
+                return false;
+            }
         }
     }
 
@@ -297,29 +303,31 @@ bool KImGalleryPlugin::createHtml(const KUrl& url, const QString& sourceDirName,
     //#### perhaps an accessor should be added to KImageIO instead?
     QString filter = KImageIO::pattern(KImageIO::Reading).section('|', 0, 0);
 
-    QDir imageDir( sourceDirName, filter.toLatin1(),
-                   QDir::Name|QDir::IgnoreCase, QDir::Files|QDir::Readable);
+    QDir imageDir(sourceDirName, filter.toLatin1(),
+                  QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::Readable);
 
     const QString imgGalleryDir = url.directory();
     kDebug(90170) << "imgGalleryDir: " << imgGalleryDir;
 
     // Create the "thumbs" subdirectory if necessary
-    QDir thumb_dir( imgGalleryDir + QLatin1String("/thumbs/"));
-    if (createDirectory(thumb_dir, imgGalleryDir, "thumbs") == false)
+    QDir thumb_dir(imgGalleryDir + QLatin1String("/thumbs/"));
+    if (createDirectory(thumb_dir, imgGalleryDir, "thumbs") == false) {
         return false;
-
-    // Create the "images" subdirectory if necessary
-    QDir images_dir( imgGalleryDir + QLatin1String("/images/"));
-    if (m_copyFiles) {
-        if (createDirectory(images_dir, imgGalleryDir, "images") == false)
-            return false;
     }
 
-    QFile file( url.path() );
-    kDebug(90170) << "url.path(): " << url.path() << ", thumb_dir: "<< thumb_dir.path()
-              << ", imageDir: "<< imageDir.path() << endl;
+    // Create the "images" subdirectory if necessary
+    QDir images_dir(imgGalleryDir + QLatin1String("/images/"));
+    if (m_copyFiles) {
+        if (createDirectory(images_dir, imgGalleryDir, "images") == false) {
+            return false;
+        }
+    }
 
-    if ( imageDir.exists() && file.open(QIODevice::WriteOnly) ) {
+    QFile file(url.path());
+    kDebug(90170) << "url.path(): " << url.path() << ", thumb_dir: " << thumb_dir.path()
+                  << ", imageDir: " << imageDir.path() << endl;
+
+    if (imageDir.exists() && file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
         stream.setCodec(QTextCodec::codecForLocale());
 
@@ -331,54 +339,54 @@ bool KImGalleryPlugin::createHtml(const KUrl& url, const QString& sourceDirName,
         return !m_cancelled;
 
     } else {
-        KMessageBox::sorry(m_part->widget(),i18n("Could not open file: %1", url.path(KUrl::AddTrailingSlash)));
+        KMessageBox::sorry(m_part->widget(), i18n("Could not open file: %1", url.path(KUrl::AddTrailingSlash)));
         return false;
     }
 }
 
-void KImGalleryPlugin::deleteCancelledGallery(const KUrl& url, const QString& sourceDirName, int recursionLevel, const QString& imageFormat)
+void KImGalleryPlugin::deleteCancelledGallery(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
 {
     if (m_recurseSubDirectories && (recursionLevel >= 0)) {
         QStringList subDirList;
-        QDir toplevel_dir = QDir( sourceDirName );
-        toplevel_dir.setFilter( QDir::Dirs );
+        QDir toplevel_dir = QDir(sourceDirName);
+        toplevel_dir.setFilter(QDir::Dirs);
         subDirList = toplevel_dir.entryList();
 
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd(); it++) {
             if (*it == "." || *it == ".." || *it == "thumbs" || (m_copyFiles && *it == "images")) {
                 continue; //disregard the "." and ".." directories
             }
-            deleteCancelledGallery( KUrl( url.directory() + '/' + *it + '/' + url.fileName() ),
-                                    sourceDirName + '/' + *it,
-                                    recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat);
+            deleteCancelledGallery(KUrl(url.directory() + '/' + *it + '/' + url.fileName()),
+                                   sourceDirName + '/' + *it,
+                                   recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat);
         }
     }
 
     const QString imgGalleryDir = url.directory();
-    QDir thumb_dir( imgGalleryDir + QLatin1String("/thumbs/"));
-    QDir images_dir( imgGalleryDir + QLatin1String("/images/"));
-    QDir imageDir( sourceDirName, "*.png *.PNG *.gif *.GIF *.jpg *.JPG *.jpeg *.JPEG *.bmp *.BMP",
-                   QDir::Name|QDir::IgnoreCase, QDir::Files|QDir::Readable);
-    QFile file( url.path() );
+    QDir thumb_dir(imgGalleryDir + QLatin1String("/thumbs/"));
+    QDir images_dir(imgGalleryDir + QLatin1String("/images/"));
+    QDir imageDir(sourceDirName, "*.png *.PNG *.gif *.GIF *.jpg *.JPG *.jpeg *.JPEG *.bmp *.BMP",
+                  QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::Readable);
+    QFile file(url.path());
 
     // Remove the image file ..
     file.remove();
     // ..all the thumbnails ..
-    for (uint i=0; i < imageDir.count(); i++) {
+    for (uint i = 0; i < imageDir.count(); i++) {
         const QString imgName = imageDir[i];
         const QString imgNameFormat = imgName + extension(imageFormat);
         bool isRemoved = thumb_dir.remove(imgNameFormat);
-        kDebug(90170) << "removing: " << thumb_dir.path() << "/" << imgNameFormat << "; "<< isRemoved;
+        kDebug(90170) << "removing: " << thumb_dir.path() << "/" << imgNameFormat << "; " << isRemoved;
     }
     // ..and the thumb directory
     thumb_dir.rmdir(thumb_dir.path());
 
     // ..and the images directory if images were to be copied
     if (m_copyFiles) {
-        for (uint i=0; i < imageDir.count(); i++) {
+        for (uint i = 0; i < imageDir.count(); i++) {
             const QString imgName = imageDir[i];
             bool isRemoved = images_dir.remove(imgName);
-            kDebug(90170) << "removing: " << images_dir.path() << "/" << imgName << "; "<< isRemoved;
+            kDebug(90170) << "removing: " << images_dir.path() << "/" << imgName << "; " << isRemoved;
         }
         images_dir.rmdir(images_dir.path());
     }
@@ -390,7 +398,7 @@ void KImGalleryPlugin::loadCommentFile()
     if (file.open(QIODevice::ReadOnly)) {
         kDebug(90170) << "File opened.";
 
-        QTextStream* m_textStream = new QTextStream(&file);
+        QTextStream *m_textStream = new QTextStream(&file);
         m_textStream->setCodec(QTextCodec::codecForLocale());
 
         delete m_commentMap;
@@ -404,7 +412,7 @@ void KImGalleryPlugin::loadCommentFile()
             if (!(curLineStripped.isEmpty()) && !curLineStripped.startsWith("#")) {
                 if (curLineStripped.endsWith(":")) {
                     picComment.clear();
-                    picName = curLineStripped.left(curLineStripped.length()-1);
+                    picName = curLineStripped.left(curLineStripped.length() - 1);
                     kDebug(90170) << "picName: " << picName;
                 } else {
                     do {
@@ -419,7 +427,7 @@ void KImGalleryPlugin::loadCommentFile()
             }
         }
         CommentMap::ConstIterator it;
-        for( it = m_commentMap->constBegin(); it != m_commentMap->constEnd(); ++it ) {
+        for (it = m_commentMap->constBegin(); it != m_commentMap->constEnd(); ++it) {
             kDebug(90170) << "picName: " << it.key() << ", picComment: " << it.value();
         }
         file.close();
@@ -431,8 +439,8 @@ void KImGalleryPlugin::loadCommentFile()
     }
 }
 
-bool KImGalleryPlugin::createThumb( const QString& imgName, const QString& sourceDirName,
-                                    const QString& imgGalleryDir, const QString& imageFormat)
+bool KImGalleryPlugin::createThumb(const QString &imgName, const QString &sourceDirName,
+                                   const QString &imgGalleryDir, const QString &imageFormat)
 {
     QImage img;
     const QString pixPath = sourceDirName + QLatin1String("/") + imgName;
@@ -454,40 +462,36 @@ bool KImGalleryPlugin::createThumb( const QString& imgName, const QString& sourc
 
     m_imgWidth = 120; // Setting the size of the images is
     m_imgHeight = 90; // required to generate faster 'loading' pages
-    if ( img.load( pixPath ) )
-    {
+    if (img.load(pixPath)) {
         int w = img.width(), h = img.height();
         // scale to pixie size
         // kDebug(90170) << "w: " << w << " h: " << h;
         // Resizing if to big
-        if(w > extent || h > extent)
-        {
-            if(w > h)
-            {
-                h = (int)( (double)( h * extent ) / w );
-                if ( h == 0 ) h = 1;
+        if (w > extent || h > extent) {
+            if (w > h) {
+                h = (int)((double)(h * extent) / w);
+                if (h == 0) {
+                    h = 1;
+                }
                 w = extent;
-                Q_ASSERT( h <= extent );
-            }
-            else
-            {
-                w = (int)( (double)( w * extent ) / h );
-                if ( w == 0 ) w = 1;
+                Q_ASSERT(h <= extent);
+            } else {
+                w = (int)((double)(w * extent) / h);
+                if (w == 0) {
+                    w = 1;
+                }
                 h = extent;
-                Q_ASSERT( w <= extent );
+                Q_ASSERT(w <= extent);
             }
             const QImage scaleImg(img.scaled(w, h, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-            if ( scaleImg.width() != w || scaleImg.height() != h )
-            {
+            if (scaleImg.width() != w || scaleImg.height() != h) {
                 kDebug(90170) << "Resizing failed. Aborting.";
                 return false;
             }
             img = scaleImg;
-            if (m_configDlg->colorDepthSet() == true )
-            {
+            if (m_configDlg->colorDepthSet() == true) {
                 QImage::Format format;
-                switch (m_configDlg->getColorDepth())
-                {
+                switch (m_configDlg->getColorDepth()) {
                 case 1:
                     format = QImage::Format_Mono;
                     break;
@@ -507,9 +511,8 @@ bool KImGalleryPlugin::createThumb( const QString& imgName, const QString& sourc
                 img = depthImg;
             }
         }
-        kDebug(90170) << "Saving thumbnail to: " << thumbDir + imgNameFormat ;
-        if (!img.save(thumbDir + imgNameFormat, imageFormat.toLatin1()))
-        {
+        kDebug(90170) << "Saving thumbnail to: " << thumbDir + imgNameFormat;
+        if (!img.save(thumbDir + imgNameFormat, imageFormat.toLatin1())) {
             kDebug(90170) << "Saving failed. Aborting.";
             return false;
         }

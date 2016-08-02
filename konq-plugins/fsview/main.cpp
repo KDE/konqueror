@@ -4,51 +4,55 @@
  * (C) 2002, Josef Weidendorfer
  */
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
 #include <kaboutdata.h>
-#include <klocale.h>
-#include <kglobal.h>
 #include <kconfig.h>
 
 #include "fsview.h"
 #include <kconfiggroup.h>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
+#include <QApplication>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
-
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  // KDE compliant startup
-  KAboutData aboutData("fsview", 0, ki18n("FSView"), "0.1",
-                       ki18n("Filesystem Viewer"),
-                       KAboutData::License_GPL,
-                       ki18n("(c) 2002, Josef Weidendorfer"));
-  KCmdLineArgs::init(argc, argv, &aboutData);
+    // KDE compliant startup
+    KAboutData aboutData("fsview", i18n("FSView"), "0.1",
+                         i18n("Filesystem Viewer"),
+                         KAboutLicense::GPL,
+                         i18n("(c) 2002, Josef Weidendorfer"));
+    QApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-  KCmdLineOptions options;
-  options.add("+[folder]", ki18n("View filesystem starting from this folder"));
-  KCmdLineArgs::addCmdLineOptions(options);
-  KApplication a;
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[folder]"), i18n("View filesystem starting from this folder")));
 
-  KConfigGroup gconfig(KGlobal::config(), "General");
-  QString path = gconfig.readPathEntry("Path", ".");
+    KConfigGroup gconfig(KSharedConfig::openConfig(), "General");
+    QString path = gconfig.readPathEntry("Path", ".");
 
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-  if (args->count()>0) path = args->arg(0);
+    if (parser.positionalArguments().count() > 0) {
+        path = parser.positionalArguments().at(0);
+    }
 
-  // TreeMap Widget as toplevel window
-  FSView w(new Inode());
+    // TreeMap Widget as toplevel window
+    FSView w(new Inode());
 
-  QObject::connect(&w,SIGNAL(clicked(TreeMapItem*)),
-                   &w,SLOT(selected(TreeMapItem*)));
-  QObject::connect(&w,SIGNAL(returnPressed(TreeMapItem*)),
-                   &w,SLOT(selected(TreeMapItem*)));
-  QObject::connect(&w,
-                   SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
-                   &w,SLOT(contextMenu(TreeMapItem*,QPoint)));
+    QObject::connect(&w, SIGNAL(clicked(TreeMapItem*)),
+                     &w, SLOT(selected(TreeMapItem*)));
+    QObject::connect(&w, SIGNAL(returnPressed(TreeMapItem*)),
+                     &w, SLOT(selected(TreeMapItem*)));
+    QObject::connect(&w, SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
+                     &w, SLOT(contextMenu(TreeMapItem*,QPoint)));
 
-  w.setPath(path);
-  w.show();
+    w.setPath(path);
+    w.show();
 
-  a.connect( &a, SIGNAL(lastWindowClosed()), &w, SLOT(quit()) );
-  return a.exec();
+    return app.exec();
 }

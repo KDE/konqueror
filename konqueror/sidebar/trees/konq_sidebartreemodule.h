@@ -33,29 +33,41 @@ class KonqSidebarTree;
 class KonqSidebarTreeModule
 {
 public:
-    explicit KonqSidebarTreeModule( KonqSidebarTree * parentTree , bool showHidden=false)
-        : m_pTree( parentTree ), m_showHidden(showHidden) {}
+    explicit KonqSidebarTreeModule(KonqSidebarTree *parentTree, bool showHidden = false)
+        : m_pTree(parentTree), m_showHidden(showHidden) {}
     virtual ~KonqSidebarTreeModule() {}
 
     // Handle this new toplevel item [can only be called once currently]
-    virtual void addTopLevelItem( KonqSidebarTreeTopLevelItem * item ) = 0;
+    virtual void addTopLevelItem(KonqSidebarTreeTopLevelItem *item) = 0;
 
     // Open this toplevel item - you don't need to reimplement if
     // you create the item's children right away
-    virtual void openTopLevelItem( KonqSidebarTreeTopLevelItem * ) {}
+    virtual void openTopLevelItem(KonqSidebarTreeTopLevelItem *) {}
 
     // Follow a URL opened in another view - only implement if the module
     // has anything to do with URLs
-    virtual void followURL( const KUrl & ) {}
+    virtual void followURL(const QUrl &) {}
 
-    KonqSidebarTree *tree() const { return m_pTree; }
-    bool showHidden() { return m_showHidden;}
-    virtual void setShowHidden(bool showhidden) {m_showHidden=showhidden;}
+    KonqSidebarTree *tree() const
+    {
+        return m_pTree;
+    }
+    bool showHidden()
+    {
+        return m_showHidden;
+    }
+    virtual void setShowHidden(bool showhidden)
+    {
+        m_showHidden = showhidden;
+    }
 
-    virtual bool handleTopLevelContextMenu( KonqSidebarTreeTopLevelItem *, const QPoint& ) { return false; }
+    virtual bool handleTopLevelContextMenu(KonqSidebarTreeTopLevelItem *, const QPoint &)
+    {
+        return false;
+    }
 
 protected:
-    KonqSidebarTree * m_pTree;
+    KonqSidebarTree *m_pTree;
     bool m_showHidden;
 };
 

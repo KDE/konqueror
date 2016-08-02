@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="domtreeviewer" version="1">
+<gui name="domtreeviewer" version="1">
 <MenuBar>
  <Menu name="file"><text>&amp;File</text>
  </Menu>
@@ -46,4 +46,4 @@
   <Separator />
   <Action name="tree_delete" />
 </Menu>
-</kpartgui>
+</gui>

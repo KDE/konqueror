@@ -3,10 +3,10 @@
 <MenuBar>
  <Menu name="tools"><text>&amp;Tools</text>
   <Menu name="rellinksMenu"><text>Document Relations</text>
-    <Action name="rellinks_top"/>
+    <Action name="rellinks_home"/>
     <Action name="rellinks_up"/>
-    <Action name="rellinks_first"/>
-    <Action name="rellinks_previous"/>
+    <Action name="rellinks_begin"/>
+    <Action name="rellinks_prev"/>
     <Action name="rellinks_next"/>
     <Action name="rellinks_last"/>
     <Action name="rellinks_search"/>
@@ -19,10 +19,10 @@
 
 
 <ToolBar name="rellinksToolBar" hidden="true"><text>Document Relations</text>
-	<Action name="rellinks_top"/>
+	<Action name="rellinks_home"/>
 	<Action name="rellinks_up"/>
-	<Action name="rellinks_first"/>
-	<Action name="rellinks_previous"/>
+	<Action name="rellinks_begin"/>
+	<Action name="rellinks_prev"/>
 	<Action name="rellinks_next"/>
 	<Action name="rellinks_last"/>
 	<Action name="rellinks_search"/>

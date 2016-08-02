@@ -25,20 +25,22 @@
 #include <QtDBus/QtDBus>
 #include <QCheckBox>
 #include <QGroupBox>
-#include <QLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 
 // KDE
-#include <klocale.h>
-#include <kstandarddirs.h>
+#include <KLocalizedString>
+
 #include <kurlrequester.h>
 #include <kconfiggroup.h>
+#include <QStandardPaths>
+#include <KSharedConfig>
 
 // Local
 #include "konqkcmfactory.h"
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
-    : KCModule(KonqKcmFactory::componentData(), parent)
+    : KCModule(parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
     , groupname("FMSettings")
 {
@@ -46,13 +48,13 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    QGroupBox * miscGb = new QGroupBox(i18n("Misc Options"), this);
+    QGroupBox *miscGb = new QGroupBox(i18n("Misc Options"), this);
     QHBoxLayout *miscHLayout = new QHBoxLayout;
     QVBoxLayout *miscLayout = new QVBoxLayout;
 
     winPixmap = new QLabel(this);
     winPixmap->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data", "kcontrol/pics/onlyone.png")));
+    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
     winPixmap->setFixedSize(winPixmap->sizeHint());
 
     cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
@@ -64,9 +66,9 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     miscLayout->addWidget(cbNewWin);
 
     QHBoxLayout *previewLayout = new QHBoxLayout;
-    QWidget* spacer = new QWidget(this);
-    spacer->setMinimumSize( 20, 0 );
-    spacer->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum );
+    QWidget *spacer = new QWidget(this);
+    spacer->setMinimumSize(20, 0);
+    spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum);
 
     previewLayout->addWidget(spacer);
 
@@ -98,30 +100,30 @@ KBehaviourOptions::~KBehaviourOptions()
 void KBehaviourOptions::load()
 {
     KConfigGroup cg(g_pConfig, groupname);
-    cbNewWin->setChecked( cg.readEntry("AlwaysNewWin", false) );
+    cbNewWin->setChecked(cg.readEntry("AlwaysNewWin", false));
     updateWinPixmap(cbNewWin->isChecked());
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
-    cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
+    cbShowDeleteCommand->setChecked(cg2.readEntry("ShowDeleteCommand", false));
 }
 
 void KBehaviourOptions::defaults()
 {
     cbNewWin->setChecked(false);
 
-    cbShowDeleteCommand->setChecked( false );
+    cbShowDeleteCommand->setChecked(false);
 }
 
 void KBehaviourOptions::save()
 {
     KConfigGroup cg(g_pConfig, groupname);
 
-    cg.writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
+    cg.writeEntry("AlwaysNewWin", cbNewWin->isChecked());
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
-    cg2.writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
+    cg2.writeEntry("ShowDeleteCommand", cbShowDeleteCommand->isChecked());
     cg2.sync();
 
     // Send signal to all konqueror instances
@@ -132,12 +134,10 @@ void KBehaviourOptions::save()
 
 void KBehaviourOptions::updateWinPixmap(bool b)
 {
-  if (b)
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data",
-                                        "kcontrol/pics/overlapping.png")));
-  else
-    winPixmap->setPixmap(QPixmap(KStandardDirs::locate("data",
-                                        "kcontrol/pics/onlyone.png")));
+    if (b) {
+        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/overlapping.png")));
+    } else {
+        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
+    }
 }
 
-#include "behaviour.moc"

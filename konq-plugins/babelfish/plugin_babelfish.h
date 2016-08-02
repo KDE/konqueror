@@ -26,23 +26,23 @@
 
 class PluginBabelFish : public KParts::Plugin
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit PluginBabelFish( QObject* parent,
-	           const QVariantList & );
-  virtual ~PluginBabelFish();
+    explicit PluginBabelFish(QObject *parent,
+                             const QVariantList &);
+    virtual ~PluginBabelFish();
 
 private slots:
-  void translateURL(QAction *);
-  void slotAboutToShow();
-  void slotEnableMenu();
+    void translateURL(QAction *);
+    void slotAboutToShow();
+    void slotEnableMenu();
 
 private:
-  void addTopLevelAction(const QString& name, const QString& text);
+    void addTopLevelAction(const QString &name, const QString &text);
 
 private:
-  QActionGroup m_actionGroup;
-  KActionMenu* m_menu;
+    QActionGroup m_actionGroup;
+    KActionMenu *m_menu;
 };
 
 #endif

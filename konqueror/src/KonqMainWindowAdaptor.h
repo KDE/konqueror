@@ -39,7 +39,7 @@ class KonqMainWindowAdaptor : public QDBusAbstractAdaptor
 
 public:
 
-    explicit KonqMainWindowAdaptor( KonqMainWindow * mainWindow );
+    explicit KonqMainWindowAdaptor(KonqMainWindow *mainWindow);
     ~KonqMainWindowAdaptor();
 
 public slots:
@@ -49,17 +49,17 @@ public slots:
      * @param url the url to open
      * @param tempFile whether to delete the file after use, usually this is false
      */
-    void openUrl( const QString& url, bool tempFile );
+    void openUrl(const QString &url, bool tempFile);
     /**
      * Open a url in a new tab in this window
      * @param url the url to open
      * @param tempFile whether to delete the file after use, usually this is false
      */
-    void newTab( const QString& url, bool tempFile );
+    void newTab(const QString &url, bool tempFile);
 
-    void newTabASN( const QString& url, const QByteArray& startup_id, bool tempFile );
+    void newTabASN(const QString &url, const QByteArray &startup_id, bool tempFile);
 
-    void newTabASNWithMimeType(const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile);
+    void newTabASNWithMimeType(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile);
 
     void splitViewHorizontally();
     void splitViewVertically();
@@ -84,7 +84,7 @@ public slots:
 
 private:
 
-    KonqMainWindow * m_pMainWindow;
+    KonqMainWindow *m_pMainWindow;
 };
 
 #endif

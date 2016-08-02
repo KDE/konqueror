@@ -26,13 +26,14 @@
 
 class QString;
 
-class PluginBase {
-	public:
-		PluginBase();
-		~PluginBase();
+class PluginBase
+{
+public:
+    PluginBase();
+    ~PluginBase();
 
-	public:
-		void addVCardViaDCOP(const QString& vcard);
+public:
+    void addVCardViaDCOP(const QString &vcard);
 };
 
 #endif

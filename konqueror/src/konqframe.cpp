@@ -28,18 +28,16 @@
 #include "konqframestatusbar.h"
 
 // Qt
-#include <QKeyEvent>
 #include <QApplication>
 #include <QtCore/QEvent>
-#include <QLabel>
-#include <QBoxLayout>
+#include <QVBoxLayout>
+#include <QUrl>
 
 // KDE
 #include <kactioncollection.h>
-#include <kdebug.h>
-#include <kicon.h>
+#include <QDebug>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <ksqueezedtextlabel.h>
 #include <konq_events.h>
 #include <kconfiggroup.h>
@@ -49,209 +47,218 @@ KonqFrameBase::KonqFrameBase()
 {
 }
 
-QString KonqFrameBase::frameTypeToString( const KonqFrameBase::FrameType frameType )
+QString KonqFrameBase::frameTypeToString(const KonqFrameBase::FrameType frameType)
 {
-    switch ( frameType ) {
-        case View :
-            return QString("View");
-        case Tabs :
-            return QString("Tabs");
-        case ContainerBase :
-            return QString("ContainerBase");
-        case Container :
-            return QString("Container");
-        case MainWindow :
-            return QString("MainWindow");
+    switch (frameType) {
+    case View :
+        return QString("View");
+    case Tabs :
+        return QString("Tabs");
+    case ContainerBase :
+        return QString("ContainerBase");
+    case Container :
+        return QString("Container");
+    case MainWindow :
+        return QString("MainWindow");
     }
     Q_ASSERT(0);
     return QString();
 }
 
-KonqFrameBase::FrameType frameTypeFromString( const QString& str )
+KonqFrameBase::FrameType frameTypeFromString(const QString &str)
 {
-    if ( str == "View" )
+    if (str == "View") {
         return KonqFrameBase::View;
-    if ( str == "Tabs" )
+    }
+    if (str == "Tabs") {
         return KonqFrameBase::Tabs;
-    if ( str == "ContainerBase" )
+    }
+    if (str == "ContainerBase") {
         return KonqFrameBase::ContainerBase;
-    if ( str == "Container" )
+    }
+    if (str == "Container") {
         return KonqFrameBase::Container;
-    if ( str == "MainWindow" )
+    }
+    if (str == "MainWindow") {
         return KonqFrameBase::MainWindow;
+    }
     Q_ASSERT(0);
     return KonqFrameBase::View;
 }
 
-KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
-    : QWidget ( parent )
+KonqFrame::KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer)
+    : QWidget(parent)
 {
-   //kDebug() << "KonqFrame::KonqFrame()";
+    //qDebug() << "KonqFrame::KonqFrame()";
 
-   m_pLayout = 0L;
-   m_pView = 0L;
+    m_pLayout = 0L;
+    m_pView = 0L;
 
-   // the frame statusbar
-   m_pStatusBar = new KonqFrameStatusBar( this);
-   m_pStatusBar->setSizePolicy(QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
-   connect(m_pStatusBar, SIGNAL(clicked()), this, SLOT(slotStatusBarClicked()));
-   connect( m_pStatusBar, SIGNAL(linkedViewClicked(bool)), this, SLOT(slotLinkedViewClicked(bool)) );
-   m_separator = 0;
-   m_pParentContainer = parentContainer;
+    // the frame statusbar
+    m_pStatusBar = new KonqFrameStatusBar(this);
+    m_pStatusBar->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
+    connect(m_pStatusBar, &KonqFrameStatusBar::clicked, this, &KonqFrame::slotStatusBarClicked);
+    connect(m_pStatusBar, &KonqFrameStatusBar::linkedViewClicked, this, &KonqFrame::slotLinkedViewClicked);
+    m_separator = 0;
+    m_pParentContainer = parentContainer;
 }
 
 KonqFrame::~KonqFrame()
 {
-    //kDebug() << this;
+    //qDebug() << this;
 }
 
 bool KonqFrame::isActivePart()
 {
-  return ( m_pView &&
-           static_cast<KonqView*>(m_pView) == m_pView->mainWindow()->currentView() );
+    return (m_pView &&
+            static_cast<KonqView *>(m_pView) == m_pView->mainWindow()->currentView());
 }
 
-void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int /*id*/, int /*depth*/ )
+void KonqFrame::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int /*id*/, int /*depth*/)
 {
-  if (m_pView) m_pView->saveConfig(config, prefix, options);
-  //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
-  if (this == docContainer) config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
-
-#if 0 // currently unused
-  KonqConfigEvent ev( config.config(), prefix+'_', true/*save*/);
-  QApplication::sendEvent( childView()->part(), &ev );
-#endif
+    if (m_pView) {
+        m_pView->saveConfig(config, prefix, options);
+    }
+    //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
+    if (this == docContainer) {
+        config.writeEntry(QString::fromLatin1("docContainer").prepend(prefix), true);
+    }
 }
 
-void KonqFrame::copyHistory( KonqFrameBase *other )
+void KonqFrame::copyHistory(KonqFrameBase *other)
 {
     Q_ASSERT(other->frameType() == KonqFrameBase::View);
-    if (m_pView)
-        m_pView->copyHistory( static_cast<KonqFrame *>( other )->childView() );
+    if (m_pView) {
+        m_pView->copyHistory(static_cast<KonqFrame *>(other)->childView());
+    }
 }
 
-KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
+KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
 {
-   KonqViewFactory factory( viewFactory );
+    KonqViewFactory factory(viewFactory);
 
-   // Note that we set the parent to 0.
-   // We don't want that deleting the widget deletes the part automatically
-   // because we already have that taken care of in KParts...
+    // Note that we set the parent to 0.
+    // We don't want that deleting the widget deletes the part automatically
+    // because we already have that taken care of in KParts...
 
-   m_pPart = factory.create( this, 0 );
+    m_pPart = factory.create(this, 0);
 
-   if (!m_pPart) {
-      kWarning() << "No part was created!";
-      return 0;
-   }
-   if (!m_pPart->widget()) {
-       kWarning() << "The part" << m_pPart << "didn't create a widget!";
-       delete m_pPart;
-       m_pPart = 0;
-       return 0;
-   }
+    if (!m_pPart) {
+        qWarning() << "No part was created!";
+        return 0;
+    }
+    if (!m_pPart->widget()) {
+        qWarning() << "The part" << m_pPart << "didn't create a widget!";
+        delete m_pPart;
+        m_pPart = 0;
+        return 0;
+    }
 
-   attachWidget(m_pPart->widget());
+    attachWidget(m_pPart->widget());
 
-   m_pStatusBar->slotConnectToNewView(0, 0, m_pPart);
+    m_pStatusBar->slotConnectToNewView(0, 0, m_pPart);
 
-   return m_pPart;
+    return m_pPart;
 }
 
-void KonqFrame::attachWidget(QWidget* widget)
+void KonqFrame::attachWidget(QWidget *widget)
 {
-   //kDebug() << "KonqFrame::attachInternal()";
-   delete m_pLayout;
+    //qDebug() << "KonqFrame::attachInternal()";
+    delete m_pLayout;
 
-   m_pLayout = new QVBoxLayout( this );
-   m_pLayout->setObjectName( QLatin1String( "KonqFrame's QVBoxLayout" ) );
-   m_pLayout->setMargin( 0 );
-   m_pLayout->setSpacing( 0 );
+    m_pLayout = new QVBoxLayout(this);
+    m_pLayout->setObjectName(QLatin1String("KonqFrame's QVBoxLayout"));
+    m_pLayout->setMargin(0);
+    m_pLayout->setSpacing(0);
 
-   m_pLayout->addWidget( widget, 1 );
-   m_pLayout->addWidget( m_pStatusBar, 0 );
-   widget->show();
+    m_pLayout->addWidget(widget, 1);
+    m_pLayout->addWidget(m_pStatusBar, 0);
+    widget->show();
 
-   m_pLayout->activate();
+    m_pLayout->activate();
 
-   installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
-}
-
-void KonqFrame::insertTopWidget( QWidget * widget )
-{
-    Q_ASSERT(m_pLayout);
-    Q_ASSERT(widget);
-    m_pLayout->insertWidget( 0, widget );
     installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
 }
 
-void KonqFrame::setView( KonqView* child )
+void KonqFrame::insertTopWidget(QWidget *widget)
 {
-   m_pView = child;
-   if (m_pView)
-   {
-     connect(m_pView,SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
-             m_pStatusBar,SLOT(slotConnectToNewView(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
-   }
+    Q_ASSERT(m_pLayout);
+    Q_ASSERT(widget);
+    m_pLayout->insertWidget(0, widget);
+    installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
 }
 
-void KonqFrame::setTitle( const QString &title , QWidget* /*sender*/)
+void KonqFrame::setView(KonqView *child)
 {
-  //kDebug() << "KonqFrame::setTitle( " << title << " )";
-  m_title = title;
-  if (m_pParentContainer) m_pParentContainer->setTitle( title , this);
+    m_pView = child;
+    if (m_pView) {
+        connect(m_pView, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
+                m_pStatusBar, SLOT(slotConnectToNewView(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
+    }
 }
 
-void KonqFrame::setTabIcon( const KUrl &url, QWidget* /*sender*/ )
+void KonqFrame::setTitle(const QString &title, QWidget * /*sender*/)
 {
-  //kDebug() << "KonqFrame::setTabIcon( " << url << " )";
-  if (m_pParentContainer) m_pParentContainer->setTabIcon( url, this );
+    //qDebug() << "KonqFrame::setTitle( " << title << " )";
+    m_title = title;
+    if (m_pParentContainer) {
+        m_pParentContainer->setTitle(title, this);
+    }
+}
+
+void KonqFrame::setTabIcon(const QUrl &url, QWidget * /*sender*/)
+{
+    //qDebug() << "KonqFrame::setTabIcon( " << url << " )";
+    if (m_pParentContainer) {
+        m_pParentContainer->setTabIcon(url, this);
+    }
 }
 
 void KonqFrame::slotStatusBarClicked()
 {
-  if ( !isActivePart() && m_pView && !m_pView->isPassiveMode() )
-    m_pView->mainWindow()->viewManager()->setActivePart( part() );
+    if (!isActivePart() && m_pView && !m_pView->isPassiveMode()) {
+        m_pView->mainWindow()->viewManager()->setActivePart(part());
+    }
 }
 
-void KonqFrame::slotLinkedViewClicked( bool mode )
+void KonqFrame::slotLinkedViewClicked(bool mode)
 {
-  if ( m_pView->mainWindow()->linkableViewsCount() == 2 )
-    m_pView->mainWindow()->slotLinkView();
-  else
-    m_pView->setLinkedView( mode );
+    if (m_pView->mainWindow()->linkableViewsCount() == 2) {
+        m_pView->mainWindow()->slotLinkView();
+    } else {
+        m_pView->setLinkedView(mode);
+    }
 }
 
 void KonqFrame::slotRemoveView()
 {
-   m_pView->mainWindow()->viewManager()->removeView( m_pView );
+    m_pView->mainWindow()->viewManager()->removeView(m_pView);
 }
 
 void KonqFrame::activateChild()
 {
-    if (m_pView && !m_pView->isPassiveMode() ) {
-        m_pView->mainWindow()->viewManager()->setActivePart( part() );
+    if (m_pView && !m_pView->isPassiveMode()) {
+        m_pView->mainWindow()->viewManager()->setActivePart(part());
 
-        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == "about:blank")) {
-            //kDebug() << "SET FOCUS on the location bar";
+        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl("about:blank"))) {
+            //qDebug() << "SET FOCUS on the location bar";
             m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
         }
     }
 }
 
-KonqView* KonqFrame::childView() const
+KonqView *KonqFrame::childView() const
 {
-  return m_pView;
+    return m_pView;
 }
 
-KonqView* KonqFrame::activeChildView() const
+KonqView *KonqFrame::activeChildView() const
 {
-  return m_pView;
+    return m_pView;
 }
 
-bool KonqFrame::accept( KonqFrameVisitor* visitor )
+bool KonqFrame::accept(KonqFrameVisitor *visitor)
 {
-    return visitor->visit( this );
+    return visitor->visit(this);
 }
 
-#include "konqframe.moc"
