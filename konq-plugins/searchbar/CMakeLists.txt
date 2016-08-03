@@ -1,5 +1,5 @@
 project (searchbar)
-
+add_definitions(-DTRANSLATION_DOMAIN=\"searchbarplugin\")
 find_package(Qt5 REQUIRED Script)
 
 add_subdirectory( icons )
