@@ -1,5 +1,5 @@
 project(babelfish)
-
+add_definitions(-DTRANSLATION_DOMAIN=\"babelfish\")
 ########### babelfishplugin ###############
 
 set(babelfishplugin_PART_SRCS plugin_babelfish.cpp )

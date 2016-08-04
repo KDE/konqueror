@@ -1,5 +1,5 @@
 ########### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"uachangerplugin\")
 set(uachangerplugin_PART_SRCS uachangerplugin.cpp )
 
 add_library(uachangerplugin MODULE ${uachangerplugin_PART_SRCS})

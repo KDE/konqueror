@@ -1,7 +1,7 @@
 
 ########### next target ###############
 find_package(KF5 REQUIRED Su)
-
+add_definitions(-DTRANSLATION_DOMAIN=\"kshellcmdplugin\")
 set(konq_shellcmdplugin_PART_SRCS kshellcmdexecutor.cpp kshellcmddialog.cpp kshellcmdplugin.cpp )
 
 

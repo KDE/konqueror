@@ -1,5 +1,5 @@
 find_package(KF5 REQUIRED KHtml)
-
+add_definitions(-DTRANSLATION_DOMAIN=\"domtreeviewer\")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABLE_EXCEPTIONS}")
 ########### next target ###############
 

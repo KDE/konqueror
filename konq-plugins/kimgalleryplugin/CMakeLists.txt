@@ -1,5 +1,5 @@
 ########### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"imgalleryplugin\")
 set(kimgallery_PART_SRCS imgalleryplugin.cpp imgallerydialog.cpp )
 
 add_library(kimgallery MODULE ${kimgallery_PART_SRCS})

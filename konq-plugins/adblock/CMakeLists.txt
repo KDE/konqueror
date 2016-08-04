@@ -1,7 +1,7 @@
 
 
 ########### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"adblock\")
 set(adblock_PART_SRCS adblock.cpp  adblockdialog.cpp )
 
 add_library(adblock MODULE ${adblock_PART_SRCS})

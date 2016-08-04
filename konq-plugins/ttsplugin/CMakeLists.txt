@@ -1,5 +1,5 @@
 ########### khtmlttsplugin ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"khtmltts\")
 set(khtmlttsplugin_PART_SRCS khtmltts.cpp )
 
 add_library(khtmlttsplugin MODULE ${khtmlttsplugin_PART_SRCS})

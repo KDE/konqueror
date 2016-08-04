@@ -3,6 +3,7 @@
 
 
 ########### next target ###############
+add_definitions(-DTRANSLATION_DOMAIN=\"autorefresh\")
 
 set(autorefresh_PART_SRCS autorefresh.cpp )
 

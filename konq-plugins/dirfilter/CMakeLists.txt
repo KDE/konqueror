@@ -1,5 +1,5 @@
 ############### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"dirfilterplugin\")
 set(dirfilterplugin_PART_SRCS dirfilterplugin.cpp )
 
 add_library(dirfilterplugin MODULE ${dirfilterplugin_PART_SRCS})

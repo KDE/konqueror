@@ -1,4 +1,4 @@
-
+add_definitions(-DTRANSLATION_DOMAIN=\"fsview\")
 add_subdirectory(tests)
 
 ########### next target ###############

@@ -1,5 +1,5 @@
 ########### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"akregator_konqplugin\")
 MESSAGE(STATUS "akregator popupmenu plugin disabled. Doable via servicemenu or should we re-introduce ServiceMenusPlugin?")
 
 #set(akregatorkonqplugin_PART_SRCS akregatorplugin.cpp pluginbase.cpp )

@@ -2,7 +2,7 @@
 
 
 ########### next target ###############
-
+add_definitions(-DTRANSLATION_DOMAIN=\"rellinks\")
 find_package(KF5 REQUIRED KHtml)
 
 set(rellinksplugin_PART_SRCS plugin_rellinks.cpp )

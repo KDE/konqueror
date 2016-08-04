@@ -3,6 +3,7 @@
 
 
 ########### next target ###############
+add_definitions(-DTRANSLATION_DOMAIN=\"minitoolsplugin\")
 
 find_package(KF5 REQUIRED KHtml)
 
