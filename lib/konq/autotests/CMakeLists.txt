@@ -4,9 +4,6 @@ find_package(Qt5Test CONFIG REQUIRED)
 
 include(ECMAddTests)
 
-# For konqpopupmenutest
-remove_definitions(-DQT_NO_URL_CAST_FROM_STRING)
-
 ########### konqpopupmenutest ###############
 
 ecm_add_tests(

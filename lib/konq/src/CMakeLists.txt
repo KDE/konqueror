@@ -1,5 +1,4 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
-remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 
 ########### libkonq ###############
 
