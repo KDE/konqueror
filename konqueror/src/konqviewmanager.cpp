@@ -615,7 +615,7 @@ void KonqViewManager::removeView( KonqView *view )
     removeTab( frame );
   }
   else if (parentContainer->frameType() == KonqFrameBase::MainWindow)
-    kDebug() << "parentContainer is a KonqMainWindow.  This shouldn't be removeable, not removing.";
+    kDebug() << "parentContainer is a KonqMainWindow.  This shouldn't be removable, not removing.";
   else
     kDebug() << "Unrecognized frame type, not removing.";
 
