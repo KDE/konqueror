@@ -1089,8 +1089,8 @@ this sign selects or deselects the item, respectively.
 <itemizedlist>
 
 <listitem><para>
-If an arrow key, &PgUp;, &PgDn;,
-&Home;, or &End; is pressed, the new current item
+If an arrow key, <keysym>PgUp</keysym>, <keysym>PgDn</keysym>,
+<keycap>Home</keycap>, or <keycap>End</keycap> is pressed, the new current item
 is selected, and the previous selection is cleared.
 </para></listitem>
 
@@ -1105,7 +1105,7 @@ between the previous current item and the new current item will be selected.
 </para></listitem>
 
 <listitem><para>
-If <keycombo action="simul">&Ctrl;&Space;</keycombo> is pressed,
+If <keycombo action="simul">&Ctrl;<keysym>Space</keysym></keycombo> is pressed,
 the selection state of the current item is toggled.
 </para></listitem>
 
@@ -1479,12 +1479,12 @@ complicated set of <acronym>HTML</acronym> pages, but make sure the little link
 box at the bottom right hand corner is empty when you are doing
 this.</para>
 <para>To go back to the previous page use the <keycombo
-action="simul">&Alt;&Left;</keycombo>
+action="simul">&Alt;<keysym>Left</keysym></keycombo>
 shortcut, the <guibutton>Back</guibutton> button on the Toolbar, or the menubar
 <menuchoice><guimenu>Go</guimenu> <guimenuitem>Back</guimenuitem></menuchoice>
 option.</para>
 <para>Similarly, once you have gone back you can go forward by using
-<keycombo action="simul">&Alt;&Right;</keycombo>, the
+<keycombo action="simul">&Alt;<keysym>Right</keysym></keycombo>, the
 <guibutton>Forward</guibutton> button, or the menubar
 <menuchoice><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem></menuchoice> option.</para>
@@ -1492,12 +1492,12 @@ option.</para>
 <!-- copy from okular Navigating -->
 <para>
 There are multiple ways of scrolling the viewing area. One is to use the 
-&Up; and &Down; keys. You may also use
-the scrollbar, your mousewheel or the &PgUp; and &PgDn;
+<keysym>Up</keysym> and <keysym>Down</keysym> keys. You may also use
+the scrollbar, your mousewheel or the <keysym>PgUp</keysym> and <keysym>PgDn</keysym>
 keys.</para>
 <para>If you want to read a long webpage use the automatic scrolling feature of &konqueror;.
-Start automatic scrolling with <keycombo action="simul">&Shift;&Down;</keycombo> or
-<keycombo action="simul">&Shift;&Up;</keycombo>. Then use these keys to increase and
+Start automatic scrolling with <keycombo action="simul">&Shift;<keysym>Down</keysym></keycombo> or
+<keycombo action="simul">&Shift;<keysym>Up</keysym></keycombo>. Then use these keys to increase and
 decrease the scrolling speed. You can start or stop automatic scrolling temporarily by pressing the &Shift; key;
 pressing any other key deactivates this feature.
 </para>
@@ -1872,7 +1872,7 @@ you wanted or press &Enter; to accept it.</para></listitem>
 possible matches to what you have typed so far. When the path or &URL; that 
 you want appears in the window click on it with the &LMB;. 
 You can also use the 
-&Down; or &Tab; and &Up; or
+<keysym>Down</keysym> or &Tab; and <keysym>Up</keysym> or
 <keycombo action="simul">&Shift;&Tab;</keycombo>
 keys to select it then press &Enter;.</para></listitem>
 </varlistentry>
@@ -1963,9 +1963,9 @@ change to <keycap>v</keycap>; <mousebutton>left</mousebutton> clicking on the
 <keycap>v</keycap> arrow will collapse the subfolder view.</para>
 
 <para>To select an item in the list you can <mousebutton>left</mousebutton> 
-click on it, or you can navigate through the list by using the &Up;
-and &Down; keys to move around, &Right; to expand a subfolder and
-&Left; to collapse it.</para>
+click on it, or you can navigate through the list by using the <keysym>Up</keysym>
+and <keysym>Down</keysym> keys to move around, <keysym>Right</keysym> to expand a subfolder and
+<keysym>Left</keysym> to collapse it.</para>
 
 <para>You can move an item to a different place in the list by using the 
 normal Drag and Drop or <guimenuitem>Cut</guimenuitem> and <guimenuitem>
