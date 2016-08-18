@@ -145,7 +145,7 @@ Browser)</guimenuitem></menuchoice> to start it as a browser.
 
 <listitem><para><keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo>
 will open &krunner;, enter a path to a folder and press
-&Enter; to start in file manager mode, or just enter a &URL; such as
+<keysym>Enter</keysym> to start in file manager mode, or just enter a &URL; such as
  <userinput>http://www.konqueror.org</userinput> to start &konqueror; as a
 browser.</para></listitem>
 
@@ -204,7 +204,7 @@ to change the <interface>Toolbar</interface>'s appearance and position.</para>
 
 <para>The <interface>Location Toolbar</interface> shows the path to the
 directory, &URL; or file being viewed. You can type a path or &URL; here and
-press &Enter; or <mousebutton>left</mousebutton> click on the
+press <keysym>Enter</keysym> or <mousebutton>left</mousebutton> click on the
 <guiicon>Go</guiicon> icon at the right hand end of the <interface>Location
 Toolbar</interface> to go to it. The black icon at the right hand end of the
 <interface>Location Toolbar</interface> clears the text entry box.</para>
@@ -726,7 +726,7 @@ tree:</para>
 <listitem><para>To descend into a subfolder <mousebutton>left
 </mousebutton> click on its name or
 icon -- or if you have already <quote>selected</quote> it (see below) -- then just press
-&Enter;.</para></listitem> 
+<keysym>Enter</keysym>.</para></listitem> 
 <listitem><para>To go up the folder tree you can click on the <guiicon>Up</guiicon> 
 button in the Toolbar, use<keycombo action="simul">&Alt;<keysym>Up</keysym></keycombo>, or use the Menubar
 <menuchoice><guimenu>Go</guimenu><guimenuitem>Up</guimenuitem></menuchoice>
@@ -1404,7 +1404,7 @@ you make in the normal file manager view. not synched in kf5?--></para>
 <para>Once you are connected to the Internet you can use &konqueror; to browse
 the Web just as easily as you can use it to handle your local files. Just type
 a &URL; into the <guilabel>Location</guilabel> Toolbar window, press
-&Enter;, and you are away!</para>
+<keysym>Enter</keysym>, and you are away!</para>
 
 <itemizedlist>
 <listitem><para>If you use a dial-up modem connection, then you will be using
@@ -1443,7 +1443,7 @@ you have entered an incorrect &URL;.</para></note>
 &konqueror; just as you can with any other browser.</para>
 
 <para>Type a &URL; into the Location Toolbar window, press
-&Enter; or <mousebutton>left</mousebutton> click on the 
+<keysym>Enter</keysym> or <mousebutton>left</mousebutton> click on the 
 <guiicon><inlinemediaobject><imageobject>
 <imagedata fileref="go-jump.png" format="PNG"/>
 </imageobject></inlinemediaobject></guiicon>
@@ -1610,7 +1610,7 @@ page from the current &konqueror; window and opens it in a new instance of
 <para>If enabled, &konqueror;'s Web Shortcuts
 feature lets you submit a query directly to a search engine or similar web site
 without having to visit the site first.</para> <para>For example, entering
-<userinput>gg:konqueror</userinput> into the Location Bar and pressing &Enter;
+<userinput>gg:konqueror</userinput> into the Location Bar and pressing <keysym>Enter</keysym>
 will ask <trademark>Google</trademark> to search for items related to
 &konqueror;.</para>
 <para>To see what Web Shortcuts are available, and perhaps
@@ -1750,7 +1750,7 @@ type the &URL;</para>
 <userinput>ftp://ftp.l10n.kde.org</userinput>
 </screen>
 
-<para>into the Location Toolbar and press &Enter;. As long as 
+<para>into the Location Toolbar and press <keysym>Enter</keysym>. As long as 
 you are connected to the Internet, you should end up seeing the <filename
 class="directory">ftp</filename> folder of the l10n server.</para>
 
@@ -1863,7 +1863,7 @@ possible to do so unambiguously.</para></listitem>
 <listitem><para>As you type into the Location Toolbar window &konqueror; will 
 automatically extend what you type to complete one possible path or &URL;,  
 highlighting the characters it has added. Continue typing if that's not what 
-you wanted or press &Enter; to accept it.</para></listitem>
+you wanted or press <keysym>Enter</keysym> to accept it.</para></listitem>
  </varlistentry>
 
 <varlistentry>
@@ -1874,7 +1874,7 @@ you want appears in the window click on it with the &LMB;.
 You can also use the 
 <keysym>Down</keysym> or &Tab; and <keysym>Up</keysym> or
 <keycombo action="simul">&Shift;&Tab;</keycombo>
-keys to select it then press &Enter;.</para></listitem>
+keys to select it then press <keysym>Enter</keysym>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1882,7 +1882,7 @@ keys to select it then press &Enter;.</para></listitem>
 <listitem><para>This is like Automatic mode except that it only extends 
 what you have typed as far as the next <keycap>/</keycap> symbol in the path 
 or &URL;. Press <keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo> or &Tab; to accept the 
-suggestion, &Enter; when the complete path or &URL; is 
+suggestion, <keysym>Enter</keysym> when the complete path or &URL; is 
 shown.</para></listitem>
 </varlistentry>
 
@@ -1925,7 +1925,7 @@ Web, letting you build up a list of useful sites.</para>
 <para>To open the <guimenu>Bookmarks</guimenu> menu
 <mousebutton>left</mousebutton> click on the <guimenu>Bookmarks</guimenu> menu.
 Once the list is visible, you can navigate through it with the arrow keys or
-with your mouse, then press &Enter; or <mousebutton>left</mousebutton>
+with your mouse, then press <keysym>Enter</keysym> or <mousebutton>left</mousebutton>
 click to visit the selected location.</para>
 
 <para>To add a new item to the list use <menuchoice><guimenu>Bookmarks
