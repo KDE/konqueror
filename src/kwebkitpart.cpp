@@ -329,6 +329,14 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 //    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
 //            this, SLOT(slotMainFrameLoadFinished(bool)));
 
+
+    connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
+        if (WebKitSettings::self()->favIconsEnabled()
+            /*&& !page->settings()->testAttribute(QWebEngineSettings::PrivateBrowsingEnabled)*/){
+                m_browserExtension->setIconUrl(url);
+        }
+    });
+
 #if 0
     KWebWallet *wallet = page->wallet();
     if (wallet) {
@@ -506,26 +514,6 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         // documents...
         slotUrlChanged(url);
     }
-
-#if 0
-   QWebFrame* frame =  page()->mainFrame();
-
-    if (!frame || frame->url() == *globalBlankUrl)
-        return;
-
-    // Set the favicon specified through the <link> tag...
-    if (WebKitSettings::self()->favIconsEnabled()
-        && !frame->page()->settings()->testAttribute(QWebSettings::PrivateBrowsingEnabled)) {
-        const QWebElement element = frame->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                 "head>link[rel=\"shortcut icon\"]"));
-        QUrl shortcutIconUrl;
-        if (!element.isNull()) {
-            shortcutIconUrl = frame->baseUrl().resolved(QUrl(element.attribute("href")));
-            //kDebug() << "setting favicon to" << shortcutIconUrl;
-            m_browserExtension->setIconUrl(shortcutIconUrl);
-        }
-    }
-#endif
 
     slotFrameLoadFinished(ok);
 }
