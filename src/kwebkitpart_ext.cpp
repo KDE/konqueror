@@ -105,16 +105,16 @@ WebView* WebKitBrowserExtension::view()
 
 int WebKitBrowserExtension::xOffset()
 {
-  //  if (view())
-  //      return view()->page()->mainFrame()->scrollPosition().x();
+    if (view())
+        return view()->page()->scrollPosition().x();
 
     return KParts::BrowserExtension::xOffset();
 }
 
 int WebKitBrowserExtension::yOffset()
 {
- //   if (view())
- //       return view()->page()->mainFrame()->scrollPosition().y();
+   if (view())
+        return view()->page()->scrollPosition().y();
 
     return KParts::BrowserExtension::yOffset();
 }

@@ -31,8 +31,6 @@
 class QUrl;
 class KWebKitPart;
 class WebView;
-//class KSaveFile;
-//class QWebFrame;
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
 {
@@ -42,10 +40,10 @@ public:
     WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& cachedHistoryData);
     ~WebKitBrowserExtension();
 
-    virtual int xOffset();
-    virtual int yOffset();
-    virtual void saveState(QDataStream &);
-    virtual void restoreState(QDataStream &);
+    virtual int xOffset() override;
+    virtual int yOffset() override;
+    virtual void saveState(QDataStream &) override;
+    virtual void restoreState(QDataStream &) override;
     void saveHistory();
 
 Q_SIGNALS:
