@@ -121,7 +121,7 @@ protected:
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    //virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type) override;
+    virtual bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -133,7 +133,7 @@ protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
     void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
-    //void slotFeaturePermissionRequested(QWebEngineFrame* frame, QWebEnginePage::Feature feature);
+    void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
@@ -178,7 +178,7 @@ protected:
     //virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
 
 private Q_SLOTS:
-    void slotGeometryChangeRequested(const QRect& rect);
+    void slotGeometryChangeRequested(const QRect& rect) override;
     void slotMenuBarVisibilityChangeRequested(bool visible);
     void slotStatusBarVisibilityChangeRequested(bool visible);
     void slotToolBarVisibilityChangeRequested(bool visible);
