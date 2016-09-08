@@ -40,7 +40,6 @@
 #include <KDE/KStringHandler>
 #include <KDE/KDebug>
 #include <KDE/KLocalizedString>
-#include <KDE/KIcon>
 
 #include <QTimer>
 #include <QMimeData>
@@ -153,7 +152,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     if (m_result.isContentEditable()) {
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
         editableContentActionPopupMenu(mapAction);
-    } else if (m_result.mediaType() != QWebEngineContextMenuData::MediaTypeVideo || m_result.mediaType() == QWebEngineContextMenuData::MediaTypeAudio) {
+    } else if (m_result.mediaType() == QWebEngineContextMenuData::MediaTypeVideo || m_result.mediaType() == QWebEngineContextMenuData::MediaTypeAudio) {
         multimediaActionPopupMenu(mapAction);
     } else if (!m_result.linkUrl().isValid()) {
         if (m_result.mediaType() == QWebEngineContextMenuData::MediaTypeImage) {
@@ -388,18 +387,13 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         }
     }
 
-    const bool showDocSourceAction = (!m_result.linkUrl().isValid() &&
-                                      !m_result.mediaUrl().isValid() &&
-                                      !m_result.selectedText().isEmpty());
-
     {
         QAction *separatorAction = new QAction(m_actionCollection);
         separatorAction->setSeparator(true);
         partActions.append(separatorAction);
     }
 
-    if (showDocSourceAction)
-        partActions.append(m_part->actionCollection()->action("viewDocumentSource"));
+    partActions.append(m_part->actionCollection()->action("viewDocumentSource"));
 
     partActions.append(pageAction(QWebEnginePage::InspectElement));
 
@@ -421,7 +415,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
     data.setCheckForExecutables(false);
     if (KUriFilter::self()->filterUri(data, QStringList() << "kshorturifilter" << "fixhosturifilter") &&
         data.uri().isValid() && data.uriType() == KUriFilterData::NetProtocol) {
-        QAction *action = new QAction(KIcon("window-new"), i18nc("open selected url", "Open '%1'",
+        QAction *action = new QAction(QIcon::fromTheme("window-new"), i18nc("open selected url", "Open '%1'",
                                             KStringHandler::rsqueeze(data.uri().url(), 18)), this);
         m_actionCollection->addAction(QL1S("openSelection"), action);
         action->setData(QUrl(data.uri()));
@@ -456,7 +450,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         linkActions.append(action);
     } else {
         if (m_result.selectedText().isEmpty()) {
-            action = new QAction(KIcon("edit-copy"), i18n("Copy Link &Text"), this);
+            action = new QAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
             linkActions.append(action);
@@ -478,37 +472,27 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
 
 void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
 {
-#if 0
     QList<QAction*> multimediaActions;
 
-    QWebElement element (m_result.element());
-    const bool isPaused = element.evaluateJavaScript(QL1S("this.paused")).toBool();
-    const bool isMuted = element.evaluateJavaScript(QL1S("this.muted")).toBool();
-    const bool isLoopOn = element.evaluateJavaScript(QL1S("this.loop")).toBool();
-    const bool areControlsOn = element.evaluateJavaScript(QL1S("this.controls")).toBool();
-    const bool isVideoElement = (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0);
-    const bool isAudioElement = (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0);
+    const bool isVideoElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeVideo;
+    const bool isAudioElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeAudio;
 
-    QAction* action = new QAction((isPaused ? i18n("&Play") : i18n("&Pause")), this);
+    QAction* action = new QAction(i18n("&Play/Pause"), this);
     m_actionCollection->addAction(QL1S("playmultimedia"), action);
     connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotPlayMedia()));
     multimediaActions.append(action);
 
-    action = new QAction((isMuted ? i18n("Un&mute") : i18n("&Mute")), this);
+    action = new QAction(i18n("Un&mute/&Mute"), this);
     m_actionCollection->addAction(QL1S("mutemultimedia"), action);
     connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotMuteMedia()));
     multimediaActions.append(action);
 
-    action = new QAction(i18n("&Loop"), this);
-    action->setCheckable(true);
-    action->setChecked(isLoopOn);
+    action = new QAction(i18n("Toggle &Loop"), this);
     m_actionCollection->addAction(QL1S("loopmultimedia"), action);
     connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotLoopMedia()));
     multimediaActions.append(action);
 
-    action = new QAction(i18n("Show &Controls"), this);
-    action->setCheckable(true);
-    action->setChecked(areControlsOn);
+    action = new QAction(i18n("Toggle &Controls"), this);
     m_actionCollection->addAction(QL1S("showmultimediacontrols"), action);
     connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotShowMediaControls()));
     multimediaActions.append(action);
@@ -540,7 +524,6 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     multimediaActions.append(action);
 
     mmGroupMap.insert("partactions", multimediaActions);
-#endif
 }
 
 void WebView::slotStopAutoScroll()
@@ -570,7 +553,7 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* v
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         const QString squeezedText = KStringHandler::rsqueeze(selectedText, 20);
-        QAction *action = new QAction(KIcon(data.iconName()),
+        QAction *action = new QAction(QIcon::fromTheme(data.iconName()),
                                       i18nc("Search \"search provider\" for \"text\"", "Search %1 for '%2'",
                                             data.searchProvider(), squeezedText), view);
         action->setData(QUrl(data.uri()));
@@ -587,7 +570,7 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* v
                 if (searchProvider == data.searchProvider())
                     continue;
 
-                QAction *action = new QAction(KIcon(data.iconNameForPreferredSearchProvider(searchProvider)), searchProvider, view);
+                QAction *action = new QAction(QIcon::fromTheme(data.iconNameForPreferredSearchProvider(searchProvider)), searchProvider, view);
                 action->setData(data.queryForPreferredSearchProvider(searchProvider));
                 m_actionCollection->addAction(searchProvider, action);
                 connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(searchProvider()));
