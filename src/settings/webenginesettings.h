@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef WEBKITSETTINGS_H
-#define WEBKITSETTINGS_H
+#ifndef WEBENGINESETTINGS_H
+#define WEBENGINESETTINGS_H
 
 class KConfig;
 class KConfigGroup;
@@ -31,12 +31,12 @@ class KConfigGroup;
 #include <KParts/HtmlSettingsInterface>
 
 struct KPerDomainSettings;
-class WebKitSettingsPrivate;
+class WebEngineSettingsPrivate;
 
 /**
  * Settings for the HTML view.
  */
-class WebKitSettings
+class WebEngineSettings
 {
 public:
 
@@ -60,7 +60,7 @@ public:
     /**
      * Destructor. Don't delete any instance by yourself.
      */
-    virtual ~WebKitSettings();
+    virtual ~WebEngineSettings();
 
     void computeFontSizes(int logicalDpi);
     bool zoomToDPI() const;
@@ -123,7 +123,7 @@ public:
     bool allowMixedContentDisplay() const;
 
     // Global config object stuff.
-    static WebKitSettings* self();
+    static WebEngineSettings* self();
 
 private:
     /**
@@ -198,16 +198,16 @@ private:
  
     QString lookupFont(int i) const;
 
-    void initWebKitSettings();
+    void initWebEngineSettings();
     void initCookieJarSettings();
     void initNSPluginSettings();
 
     /**
      * @internal Constructor
      */
-    WebKitSettings();
+    WebEngineSettings();
 
-    WebKitSettingsPrivate* const d;
+    WebEngineSettingsPrivate* const d;
 };
 
 #endif

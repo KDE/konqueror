@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef WEBKITPART_EXT_H
-#define WEBKITPART_EXT_H
+#ifndef WEBENGINEPART_EXT_H
+#define WEBENGINEPART_EXT_H
 
 #include <QPointer>
 
@@ -29,16 +29,16 @@
 #include <kparts/scriptableextension.h>
 
 class QUrl;
-class KWebKitPart;
+class WebEnginePart;
 class WebView;
 
-class WebKitBrowserExtension : public KParts::BrowserExtension
+class WebEngineBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 
 public:
-    WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& cachedHistoryData);
-    ~WebKitBrowserExtension();
+    WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData);
+    ~WebEngineBrowserExtension();
 
     virtual int xOffset() override;
     virtual int yOffset() override;
@@ -114,7 +114,7 @@ public Q_SLOTS:
 
 private:
     WebView* view();
-    QPointer<KWebKitPart> m_part;
+    QPointer<WebEnginePart> m_part;
     QPointer<WebView> m_view;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
@@ -125,25 +125,25 @@ private:
  * @internal
  * Implements the TextExtension interface
  */
-class KWebKitTextExtension : public KParts::TextExtension
+class WebEngineTextExtension : public KParts::TextExtension
 {
     Q_OBJECT
 public:
-    KWebKitTextExtension(KWebKitPart* part);
+    WebEngineTextExtension(WebEnginePart* part);
 
     virtual bool hasSelection() const;
     virtual QString selectedText(Format format) const;
     virtual QString completeText(Format format) const;
 
 private:
-    KWebKitPart* part() const;
+    WebEnginePart* part() const;
 };
 
 /**
  * @internal
  * Implements the HtmlExtension interface
  */
-class KWebKitHtmlExtension : public KParts::HtmlExtension,
+class WebEngineHtmlExtension : public KParts::HtmlExtension,
                              public KParts::SelectorInterface,
                              public KParts::HtmlSettingsInterface
 {
@@ -152,7 +152,7 @@ class KWebKitHtmlExtension : public KParts::HtmlExtension,
     Q_INTERFACES(KParts::HtmlSettingsInterface)
 
 public:
-    KWebKitHtmlExtension(KWebKitPart* part);
+    WebEngineHtmlExtension(WebEnginePart* part);
 
     // HtmlExtension
     virtual QUrl baseUrl() const;
@@ -168,15 +168,15 @@ public:
     virtual bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value);
 
 private:
-    KWebKitPart* part() const;
+    WebEnginePart* part() const;
 };
 
-class KWebKitScriptableExtension : public KParts::ScriptableExtension
+class WebEngineScriptableExtension : public KParts::ScriptableExtension
 {
   Q_OBJECT
 
 public:
-    KWebKitScriptableExtension(KWebKitPart* part);
+    WebEngineScriptableExtension(WebEnginePart* part);
 
     virtual QVariant rootObject();
 
@@ -195,7 +195,7 @@ public:
 
 private:
      virtual QVariant encloserForKid(KParts::ScriptableExtension* kid);
-     KWebKitPart* part();
+     WebEnginePart* part();
 };
 
-#endif // WEBKITPART_EXT_H
+#endif // WEBENGINEPART_EXT_H

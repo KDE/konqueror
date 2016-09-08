@@ -61,7 +61,7 @@
 #define ALTERNATE_DEFAULT_WEB_SHORTCUT    QL1S("google")
 #define ALTERNATE_WEB_SHORTCUTS           QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
 
-WebView::WebView(KWebKitPart* part, QWidget* parent)
+WebView::WebView(WebEnginePart* part, QWidget* parent)
         :QWebEngineView(parent),
          m_actionCollection(new KActionCollection(this)),
          m_part(part),
@@ -76,7 +76,7 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
 
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
     
-    if (WebKitSettings::self()->zoomToDPI())
+    if (WebEngineSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
 }
 
@@ -371,7 +371,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewImage()));
         partActions.append(action);
 
-        if (WebKitSettings::self()->isAdFilterEnabled()) {
+        if (WebEngineSettings::self()->isAdFilterEnabled()) {
             action = new QAction(i18n("Block Image..."), this);
             m_actionCollection->addAction(QL1S("blockimage"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockImage()));

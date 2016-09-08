@@ -19,8 +19,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-#ifndef KWEBKITPART_H
-#define KWEBKITPART_H
+#ifndef WEBENGINEPART_H
+#define WEBENGINEPART_H
 
 #include <QtWebEngineWidgets/QWebEnginePage>
 
@@ -40,27 +40,27 @@ class SearchBar;
 class PasswordBar;
 class FeaturePermissionBar;
 class KUrlLabel;
-class WebKitBrowserExtension;
+class WebEngineBrowserExtension;
 
 /**
- * A KPart wrapper for the QtWebKit's browser rendering engine.
+ * A KPart wrapper for the QtWebEngine's browser rendering engine.
  *
  * This class attempts to provide the same type of integration into KPart
  * plugin applications, such as Konqueror, in much the same way as KHTML.
  *
  * Unlink the KHTML part however, access into the internals of the rendering
- * engine are provided through existing QtWebKit class ; @see QWebView.
+ * engine are provided through existing QtWebEngine class ; @see QWebEngineView.
  *
  */
-class Q_DECL_EXPORT KWebKitPart : public KParts::ReadOnlyPart
+class Q_DECL_EXPORT WebEnginePart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
 public:
-    explicit KWebKitPart(QWidget* parentWidget = 0, QObject* parent = 0,
+    explicit WebEnginePart(QWidget* parentWidget = 0, QObject* parent = 0,
                          const QByteArray& cachedHistory = QByteArray(),
                          const QStringList& = QStringList());
-    ~KWebKitPart();
+    ~WebEnginePart();
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -157,9 +157,9 @@ private:
     SearchBar* m_searchBar;
     PasswordBar* m_passwordBar;
     FeaturePermissionBar* m_featurePermissionBar;
-    WebKitBrowserExtension* m_browserExtension;
+    WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebView* m_webView;
 };
 
-#endif // WEBKITPART_H
+#endif // WEBENGINEPART_H

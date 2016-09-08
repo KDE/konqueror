@@ -86,7 +86,7 @@ void PasswordBar::onNotNowButtonClicked()
 
 void PasswordBar::onNeverButtonClicked()
 {
-    WebKitSettings::self()->addNonPasswordStorableSite(m_url.host());
+    WebEngineSettings::self()->addNonPasswordStorableSite(m_url.host());
     onNotNowButtonClicked();
 }
 

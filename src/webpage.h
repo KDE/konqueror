@@ -35,7 +35,7 @@
 
 class QUrl;
 class WebSslInfo;
-class KWebKitPart;
+class WebEnginePart;
 class QWebEngineDownloadItem;
 
 
@@ -43,7 +43,7 @@ class WebPage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    explicit WebPage(KWebKitPart *wpart, QWidget *parent = 0);
+    explicit WebPage(WebEnginePart *wpart, QWidget *parent = 0);
     ~WebPage();
 
     /**
@@ -77,16 +77,16 @@ Q_SIGNALS:
 
 protected:
     /**
-     * Returns the webkit part in use by this object.
+     * Returns the webengine part in use by this object.
      * @internal
      */
-    KWebKitPart* part() const;
+    WebEnginePart* part() const;
 
     /**
-     * Sets the webkit part to be used by this object.
+     * Sets the webengine part to be used by this object.
      * @internal
      */
-    void setPart(KWebKitPart*);
+    void setPart(WebEnginePart*);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -120,13 +120,13 @@ private:
     bool m_noJSOpenWindowCheck;
 
     WebSslInfo m_sslInfo;
-    QPointer<KWebKitPart> m_part;
+    QPointer<WebEnginePart> m_part;
 };
 
 
 /**
  * This is a fake implementation of WebPage to workaround the ugly API used
- * to request for the creation of a new window from javascript in QtWebKit.
+ * to request for the creation of a new window from javascript in QtWebEngine. PORTING_TODO
  *
  * The KPart API for creating new windows requires all the information about the
  * new window up front. Unfortunately QWebPage::createWindow function does not
@@ -140,7 +140,7 @@ class NewWindowPage : public WebPage
 {
     Q_OBJECT
 public:
-    NewWindowPage(WebWindowType windowType, KWebKitPart* part,
+    NewWindowPage(WebWindowType windowType, WebEnginePart* part,
                   bool disableJSWindowOpenCheck= false, QWidget* parent = 0);
     virtual ~NewWindowPage();
 

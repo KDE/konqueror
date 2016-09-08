@@ -62,7 +62,7 @@
 #define QL1C(x)     QLatin1Char(x)
 
 
-WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteArray& cachedHistoryData)
+WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
                        :KParts::BrowserExtension(parent),
                         m_part(parent)
 {
@@ -81,7 +81,7 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteA
         return;
     }
 
-    // NOTE: When restoring history, webkit automatically navigates to
+    // NOTE: When restoring history, webengine PORTING_TODO automatically navigates to
     // the previous "currentItem". Since we do not want that to happen,
     // we set a property on the WebPage object that is used to allow or
     // disallow history navigation in WebPage::acceptNavigationRequest.
@@ -90,11 +90,11 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QByteA
     s >> *(view()->history());
 }
 
-WebKitBrowserExtension::~WebKitBrowserExtension()
+WebEngineBrowserExtension::~WebEngineBrowserExtension()
 {
 }
 
-WebView* WebKitBrowserExtension::view()
+WebView* WebEngineBrowserExtension::view()
 {
     if (!m_view && m_part) {
         m_view = qobject_cast<WebView*>(m_part->view());
@@ -103,7 +103,7 @@ WebView* WebKitBrowserExtension::view()
     return m_view;
 }
 
-int WebKitBrowserExtension::xOffset()
+int WebEngineBrowserExtension::xOffset()
 {
     if (view())
         return view()->page()->scrollPosition().x();
@@ -111,7 +111,7 @@ int WebKitBrowserExtension::xOffset()
     return KParts::BrowserExtension::xOffset();
 }
 
-int WebKitBrowserExtension::yOffset()
+int WebEngineBrowserExtension::yOffset()
 {
    if (view())
         return view()->page()->scrollPosition().y();
@@ -119,7 +119,7 @@ int WebKitBrowserExtension::yOffset()
     return KParts::BrowserExtension::yOffset();
 }
 
-void WebKitBrowserExtension::saveState(QDataStream &stream)
+void WebEngineBrowserExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
     QWebEngineHistory* history = (view() ? view()->history() : 0);
@@ -133,7 +133,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
            << m_historyData;
 }
 
-void WebKitBrowserExtension::restoreState(QDataStream &stream)
+void WebEngineBrowserExtension::restoreState(QDataStream &stream)
 {
     QUrl u;
     QByteArray historyData;
@@ -202,43 +202,43 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
 }
 
 
-void WebKitBrowserExtension::cut()
+void WebEngineBrowserExtension::cut()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Cut);
 }
 
-void WebKitBrowserExtension::copy()
+void WebEngineBrowserExtension::copy()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Copy);
 }
 
-void WebKitBrowserExtension::paste()
+void WebEngineBrowserExtension::paste()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::Paste);
 }
 
-void WebKitBrowserExtension::slotSaveDocument()
+void WebEngineBrowserExtension::slotSaveDocument()
 {
     if (view())
         emit saveUrl(view()->url());
 }
 
-void WebKitBrowserExtension::slotSaveFrame()
+void WebEngineBrowserExtension::slotSaveFrame()
 {
     if (view())
         emit saveUrl(view()->page()->url()); // TODO lol
 }
 
-void WebKitBrowserExtension::print()
+void WebEngineBrowserExtension::print()
 {
 //    if (view())
 //        slotPrintRequested(view()->page());
 }
 
-void WebKitBrowserExtension::updateEditActions()
+void WebEngineBrowserExtension::updateEditActions()
 {
     if (!view())
         return;
@@ -248,14 +248,14 @@ void WebKitBrowserExtension::updateEditActions()
     enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
 }
 
-void WebKitBrowserExtension::updateActions()
+void WebEngineBrowserExtension::updateActions()
 {
     const QString protocol (m_part->url().scheme());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
     enableAction("print", isValidDocument);
 }
 
-void WebKitBrowserExtension::searchProvider()
+void WebEngineBrowserExtension::searchProvider()
 {
     if (!view())
         return;
@@ -281,13 +281,13 @@ void WebKitBrowserExtension::searchProvider()
     emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
 }
 
-void WebKitBrowserExtension::reparseConfiguration()
+void WebEngineBrowserExtension::reparseConfiguration()
 {
     // Force the configuration stuff to reparse...
-    WebKitSettings::self()->init();
+    WebEngineSettings::self()->init();
 }
 
-void WebKitBrowserExtension::disableScrolling()
+void WebEngineBrowserExtension::disableScrolling()
 {
 #if 0
     QWebEngineView* currentView = view();
@@ -302,29 +302,29 @@ void WebKitBrowserExtension::disableScrolling()
 #endif
 }
 
-void WebKitBrowserExtension::zoomIn()
+void WebEngineBrowserExtension::zoomIn()
 {
     if (view())
         view()->setZoomFactor(view()->zoomFactor() + 0.1);
 }
 
-void WebKitBrowserExtension::zoomOut()
+void WebEngineBrowserExtension::zoomOut()
 {
     if (view())
         view()->setZoomFactor(view()->zoomFactor() - 0.1);
 }
 
-void WebKitBrowserExtension::zoomNormal()
+void WebEngineBrowserExtension::zoomNormal()
 {
     if (view()) {
-        if (WebKitSettings::self()->zoomToDPI())
+        if (WebEngineSettings::self()->zoomToDPI())
             view()->setZoomFactor(view()->logicalDpiY() / 96.0f);
         else
             view()->setZoomFactor(1);
     }
 }
 
-void WebKitBrowserExtension::toogleZoomTextOnly()
+void WebEngineBrowserExtension::toogleZoomTextOnly()
 {
     if (!view())
         return;
@@ -337,13 +337,13 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
     // view()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, !zoomTextOnly);
 }
 
-void WebKitBrowserExtension::toogleZoomToDPI()
+void WebEngineBrowserExtension::toogleZoomToDPI()
 {
     if (!view())
         return;
 
-    bool zoomToDPI = !WebKitSettings::self()->zoomToDPI();
-    WebKitSettings::self()->setZoomToDPI(zoomToDPI);
+    bool zoomToDPI = !WebEngineSettings::self()->zoomToDPI();
+    WebEngineSettings::self()->setZoomToDPI(zoomToDPI);
     
     if (zoomToDPI)
         view()->setZoomFactor(view()->zoomFactor() * view()->logicalDpiY() / 96.0f);
@@ -351,16 +351,16 @@ void WebKitBrowserExtension::toogleZoomToDPI()
         view()->setZoomFactor(view()->zoomFactor() * 96.0f / view()->logicalDpiY());
     
     // Recompute default font-sizes since they are only DPI dependent when zoomToDPI is false.
-    WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
+    WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
 }
 
-void WebKitBrowserExtension::slotSelectAll()
+void WebEngineBrowserExtension::slotSelectAll()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::SelectAll);
 }
 
-void WebKitBrowserExtension::slotFrameInWindow()
+void WebEngineBrowserExtension::slotFrameInWindow()
 {
     if (!view())
         return;
@@ -377,7 +377,7 @@ void WebKitBrowserExtension::slotFrameInWindow()
     emit createNewWindow(QUrl(url), uargs, bargs);
 }
 
-void WebKitBrowserExtension::slotFrameInTab()
+void WebEngineBrowserExtension::slotFrameInTab()
 {
     if (!view())
         return;
@@ -394,7 +394,7 @@ void WebKitBrowserExtension::slotFrameInTab()
     emit createNewWindow(QUrl(url), uargs, bargs);
 }
 
-void WebKitBrowserExtension::slotFrameInTop()
+void WebEngineBrowserExtension::slotFrameInTop()
 {
     if (!view())
         return;
@@ -411,7 +411,7 @@ void WebKitBrowserExtension::slotFrameInTop()
     emit openUrlRequest(QUrl(url), uargs, bargs);
 }
 
-void WebKitBrowserExtension::slotReloadFrame()
+void WebEngineBrowserExtension::slotReloadFrame()
 {
     if (view())
         view()->page()->load(view()->page()->url());
@@ -424,7 +424,7 @@ static QString iframeUrl(QWebFrame* frame)
 }
 #endif
 
-void WebKitBrowserExtension::slotBlockIFrame()
+void WebEngineBrowserExtension::slotBlockIFrame()
 {
     if (!view())
         return;
@@ -435,18 +435,18 @@ void WebKitBrowserExtension::slotBlockIFrame()
                                               i18n("Enter the URL:"),
                                               urlStr, &ok);
     if (ok) {
-        WebKitSettings::self()->addAdFilter(url);
+        WebEngineSettings::self()->addAdFilter(url);
         reparseConfiguration();
     }
 }
 
-void WebKitBrowserExtension::slotSaveImageAs()
+void WebEngineBrowserExtension::slotSaveImageAs()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::DownloadImageToDisk);
 }
 
-void WebKitBrowserExtension::slotSendImage()
+void WebEngineBrowserExtension::slotSendImage()
 {
     if (!view())
         return;
@@ -460,7 +460,7 @@ void WebKitBrowserExtension::slotSendImage()
                                   urls); // attachments
 }
 
-void WebKitBrowserExtension::slotCopyImageURL()
+void WebEngineBrowserExtension::slotCopyImageURL()
 {
     if (!view())
         return;
@@ -481,7 +481,7 @@ void WebKitBrowserExtension::slotCopyImageURL()
 }
 
 
-void WebKitBrowserExtension::slotCopyImage()
+void WebEngineBrowserExtension::slotCopyImage()
 {
     if (!view())
         return;
@@ -504,13 +504,13 @@ void WebKitBrowserExtension::slotCopyImage()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
-void WebKitBrowserExtension::slotViewImage()
+void WebEngineBrowserExtension::slotViewImage()
 {
 //    if (view())
 //        emit createNewWindow(view()->contextMenuResult().imageUrl());
 }
 
-void WebKitBrowserExtension::slotBlockImage()
+void WebEngineBrowserExtension::slotBlockImage()
 {
     if (!view())
         return;
@@ -521,29 +521,29 @@ void WebKitBrowserExtension::slotBlockImage()
                                               QString(), //view()->contextMenuResult().imageUrl().toString(),
                                               &ok);
     if (ok) {
-        WebKitSettings::self()->addAdFilter(url);
+        WebEngineSettings::self()->addAdFilter(url);
         reparseConfiguration();
     }
 }
 
-void WebKitBrowserExtension::slotBlockHost()
+void WebEngineBrowserExtension::slotBlockHost()
 {
     if (!view())
         return;
 
     QUrl url; // (view()->contextMenuResult().imageUrl());
     url.setPath(QL1S("/*"));
-    WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveUserInfo | QUrl::RemovePort));
+    WebEngineSettings::self()->addAdFilter(url.toString(QUrl::RemoveUserInfo | QUrl::RemovePort));
     reparseConfiguration();
 }
 
-void WebKitBrowserExtension::slotCopyLinkURL()
+void WebEngineBrowserExtension::slotCopyLinkURL()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::CopyLinkToClipboard);
 }
 
-void WebKitBrowserExtension::slotCopyLinkText()
+void WebEngineBrowserExtension::slotCopyLinkText()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
@@ -552,7 +552,7 @@ void WebKitBrowserExtension::slotCopyLinkText()
     }
 }
 
-void WebKitBrowserExtension::slotCopyEmailAddress()
+void WebEngineBrowserExtension::slotCopyEmailAddress()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
@@ -562,13 +562,13 @@ void WebKitBrowserExtension::slotCopyEmailAddress()
     }
 }
 
-void WebKitBrowserExtension::slotSaveLinkAs()
+void WebEngineBrowserExtension::slotSaveLinkAs()
 {
     if (view())
         view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
 }
 
-void WebKitBrowserExtension::slotViewDocumentSource()
+void WebEngineBrowserExtension::slotViewDocumentSource()
 {
     if (!view())
         return;
@@ -587,7 +587,7 @@ void WebKitBrowserExtension::slotViewDocumentSource()
     }
 }
 
-void WebKitBrowserExtension::slotViewFrameSource()
+void WebEngineBrowserExtension::slotViewFrameSource()
 {
     if (!view())
         return;
@@ -618,7 +618,7 @@ static bool isMultimediaElement(const QWebElement& element)
 }
 #endif
 
-void WebKitBrowserExtension::slotLoopMedia()
+void WebEngineBrowserExtension::slotLoopMedia()
 {
     if (!view())
         return;
@@ -630,7 +630,7 @@ void WebKitBrowserExtension::slotLoopMedia()
     //element.evaluateJavaScript(QL1S("this.loop = !this.loop;"));
 }
 
-void WebKitBrowserExtension::slotMuteMedia()
+void WebEngineBrowserExtension::slotMuteMedia()
 {
     if (!view())
         return;
@@ -642,7 +642,7 @@ void WebKitBrowserExtension::slotMuteMedia()
     //element.evaluateJavaScript(QL1S("this.muted = !this.muted;"));
 }
 
-void WebKitBrowserExtension::slotPlayMedia()
+void WebEngineBrowserExtension::slotPlayMedia()
 {
     if (!view())
         return;
@@ -656,7 +656,7 @@ void WebKitBrowserExtension::slotPlayMedia()
 #endif
 }
 
-void WebKitBrowserExtension::slotShowMediaControls()
+void WebEngineBrowserExtension::slotShowMediaControls()
 {
     if (!view())
         return;
@@ -683,7 +683,7 @@ static QUrl mediaUrlFrom(QWebElement& element)
 }
 #endif
 
-void WebKitBrowserExtension::slotSaveMedia()
+void WebEngineBrowserExtension::slotSaveMedia()
 {
     if (!view())
         return;
@@ -697,7 +697,7 @@ void WebKitBrowserExtension::slotSaveMedia()
 #endif
 }
 
-void WebKitBrowserExtension::slotCopyMedia()
+void WebEngineBrowserExtension::slotCopyMedia()
 {
     if (!view())
         return;
@@ -725,7 +725,7 @@ void WebKitBrowserExtension::slotCopyMedia()
 #endif
 }
 
-void WebKitBrowserExtension::slotTextDirectionChanged()
+void WebEngineBrowserExtension::slotTextDirectionChanged()
 {
     QAction* action = qobject_cast<QAction*>(sender());
     if (action) {
@@ -748,7 +748,7 @@ static QVariant execJScript(WebView* view, const QString& script)
     return QVariant();
 }
 
-void WebKitBrowserExtension::slotCheckSpelling()
+void WebEngineBrowserExtension::slotCheckSpelling()
 {
     const QString text (execJScript(view(), QL1S("this.value")).toString());
 
@@ -770,7 +770,7 @@ void WebKitBrowserExtension::slotCheckSpelling()
     spellDialog->show();
 }
 
-void WebKitBrowserExtension::slotSpellCheckSelection()
+void WebEngineBrowserExtension::slotSpellCheckSelection()
 {
     QString text (execJScript(view(), QL1S("this.value")).toString());
 
@@ -794,7 +794,7 @@ void WebKitBrowserExtension::slotSpellCheckSelection()
     spellDialog->show();
 }
 
-void WebKitBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
+void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
 {
     // Adjust the selection end...
     if (m_spellTextSelectionEnd > 0) {
@@ -814,7 +814,7 @@ void WebKitBrowserExtension::spellCheckerCorrected(const QString& original, int 
     execJScript(view(), script);
 }
 
-void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
+void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
 {
     // kDebug() << text << pos;
     QString selectionScript (QL1S("this.setSelectionRange("));
@@ -825,7 +825,7 @@ void WebKitBrowserExtension::spellCheckerMisspelling(const QString& text, int po
     execJScript(view(), selectionScript);
 }
 
-void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
+void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
 {
     // Restore the text selection if one was present before we started the
     // spell check.
@@ -840,7 +840,7 @@ void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
 }
 
 
-void WebKitBrowserExtension::saveHistory()
+void WebEngineBrowserExtension::saveHistory()
 {
     QWebEngineHistory* history = (view() ? view()->history() : 0);
 
@@ -866,7 +866,7 @@ void WebKitBrowserExtension::saveHistory()
 }
 
 #if 0
-void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
+void WebEngineBrowserExtension::slotPrintRequested(QWebFrame* frame)
 {
     if (!frame)
         return;
@@ -880,7 +880,7 @@ void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
 }
 #endif
 
-void WebKitBrowserExtension::slotPrintPreview()
+void WebEngineBrowserExtension::slotPrintPreview()
 {
 #if 0
     // Make it non-modal, in case a redirection deletes the part
@@ -892,7 +892,7 @@ void WebKitBrowserExtension::slotPrintPreview()
 #endif
 }
 
-void WebKitBrowserExtension::slotOpenSelection()
+void WebEngineBrowserExtension::slotOpenSelection()
 {
     QAction *action = qobject_cast<QAction*>(sender());
     if (action) {
@@ -902,7 +902,7 @@ void WebKitBrowserExtension::slotOpenSelection()
     }
 }
 
-void WebKitBrowserExtension::slotLinkInTop()
+void WebEngineBrowserExtension::slotLinkInTop()
 {
     if (!view())
         return;
@@ -920,23 +920,23 @@ void WebKitBrowserExtension::slotLinkInTop()
 
 ////
 
-KWebKitTextExtension::KWebKitTextExtension(KWebKitPart* part)
+WebEngineTextExtension::WebEngineTextExtension(WebEnginePart* part)
     : KParts::TextExtension(part)
 {
     connect(part->view(), SIGNAL(selectionChanged()), this, SIGNAL(selectionChanged()));
 }
 
-KWebKitPart* KWebKitTextExtension::part() const
+WebEnginePart* WebEngineTextExtension::part() const
 {
-    return static_cast<KWebKitPart*>(parent());
+    return static_cast<WebEnginePart*>(parent());
 }
 
-bool KWebKitTextExtension::hasSelection() const
+bool WebEngineTextExtension::hasSelection() const
 {
     return part()->view()->hasSelection();
 }
 
-QString KWebKitTextExtension::selectedText(Format format) const
+QString WebEngineTextExtension::selectedText(Format format) const
 {
     switch(format) {
     case PlainText:
@@ -947,7 +947,7 @@ QString KWebKitTextExtension::selectedText(Format format) const
     return QString();
 }
 
-QString KWebKitTextExtension::completeText(Format format) const
+QString WebEngineTextExtension::completeText(Format format) const
 {
 #if 0
     switch(format) {
@@ -962,23 +962,23 @@ QString KWebKitTextExtension::completeText(Format format) const
 
 ////
 
-KWebKitHtmlExtension::KWebKitHtmlExtension(KWebKitPart* part)
+WebEngineHtmlExtension::WebEngineHtmlExtension(WebEnginePart* part)
     : KParts::HtmlExtension(part)
 {
 }
 
 
-QUrl KWebKitHtmlExtension::baseUrl() const
+QUrl WebEngineHtmlExtension::baseUrl() const
 {
     return part()->view()->page()->url();
 }
 
-bool KWebKitHtmlExtension::hasSelection() const
+bool WebEngineHtmlExtension::hasSelection() const
 {
     return part()->view()->hasSelection();
 }
 
-KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMethods() const
+KParts::SelectorInterface::QueryMethods WebEngineHtmlExtension::supportedQueryMethods() const
 {
     return (KParts::SelectorInterface::EntireContent
             | KParts::SelectorInterface::SelectedContent);
@@ -1042,7 +1042,7 @@ static QList<KParts::SelectorInterface::Element> convertSelectionElements(const 
     return elements;
 }
 
-KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
+KParts::SelectorInterface::Element WebEngineHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
     KParts::SelectorInterface::Element element;
 
@@ -1074,7 +1074,7 @@ KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QSt
     return element;
 }
 
-QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const
+QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
     QList<KParts::SelectorInterface::Element> elements;
 
@@ -1107,7 +1107,7 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     return elements;
 }
 
-QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const
+QVariant WebEngineHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const
 {
     QWebEngineView* view = part() ? part()->view() : 0;
     QWebEnginePage* page = view ? view->page() : 0;
@@ -1145,7 +1145,7 @@ QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterfac
     return QVariant();
 }
 
-bool KWebKitHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type, const QVariant& value)
+bool WebEngineHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type, const QVariant& value)
 {
     QWebEngineView* view = part() ? part()->view() : 0;
     QWebEnginePage* page = view ? view->page() : 0;
@@ -1195,33 +1195,33 @@ bool KWebKitHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface
     return false;
 }
 
-KWebKitPart* KWebKitHtmlExtension::part() const
+WebEnginePart* WebEngineHtmlExtension::part() const
 {
-    return static_cast<KWebKitPart*>(parent());
+    return static_cast<WebEnginePart*>(parent());
 }
 
-KWebKitScriptableExtension::KWebKitScriptableExtension(KWebKitPart* part)
+WebEngineScriptableExtension::WebEngineScriptableExtension(WebEnginePart* part)
     : ScriptableExtension(part)
 {
 }
 
-QVariant KWebKitScriptableExtension::rootObject()
+QVariant WebEngineScriptableExtension::rootObject()
 {
     return QVariant::fromValue(KParts::ScriptableExtension::Object(this, reinterpret_cast<quint64>(this)));
 }
 
-bool KWebKitScriptableExtension::setException (KParts::ScriptableExtension* callerPrincipal, const QString& message)
+bool WebEngineScriptableExtension::setException (KParts::ScriptableExtension* callerPrincipal, const QString& message)
 {
     return KParts::ScriptableExtension::setException (callerPrincipal, message);
 }
 
-QVariant KWebKitScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
+QVariant WebEngineScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
 {
     //kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
     return callerPrincipal->get (0, objId, propName);
 }
 
-bool KWebKitScriptableExtension::put (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value)
+bool WebEngineScriptableExtension::put (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value)
 {
     return KParts::ScriptableExtension::put (callerPrincipal, objId, propName, value);
 }
@@ -1232,7 +1232,7 @@ static QVariant exception(const char* msg)
     return QVariant::fromValue(KParts::ScriptableExtension::Exception(QString::fromLatin1(msg)));
 }
 
-QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension* callerPrincipal,
+QVariant WebEngineScriptableExtension::evaluateScript (KParts::ScriptableExtension* callerPrincipal,
                                                      quint64 contextObjectId,
                                                      const QString& code,
                                                      KParts::ScriptableExtension::ScriptLanguage lang)
@@ -1265,12 +1265,12 @@ QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension
 #endif
 }
 
-bool KWebKitScriptableExtension::isScriptLanguageSupported (KParts::ScriptableExtension::ScriptLanguage lang) const
+bool WebEngineScriptableExtension::isScriptLanguageSupported (KParts::ScriptableExtension::ScriptLanguage lang) const
 {
     return (lang == KParts::ScriptableExtension::ECMAScript);
 }
 
-QVariant KWebKitScriptableExtension::encloserForKid (KParts::ScriptableExtension* kid)
+QVariant WebEngineScriptableExtension::encloserForKid (KParts::ScriptableExtension* kid)
 {
 #if 0
     KParts::ReadOnlyPart* part = kid ? qobject_cast<KParts::ReadOnlyPart*>(kid->parent()) : 0;
@@ -1283,9 +1283,9 @@ QVariant KWebKitScriptableExtension::encloserForKid (KParts::ScriptableExtension
     return QVariant::fromValue(ScriptableExtension::Null());
 }
 
-KWebKitPart* KWebKitScriptableExtension::part()
+WebEnginePart* WebEngineScriptableExtension::part()
 {
-    return qobject_cast<KWebKitPart*>(parent());
+    return qobject_cast<WebEnginePart*>(parent());
 }
 
 #include "webenginepart_ext.moc"

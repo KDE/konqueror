@@ -20,8 +20,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef WEBKIT_FILTER_P_H
-#define WEBKIT_FILTER_P_H
+#ifndef WEBENGNINE_FILTER_P_H
+#define WEBENGNINE_FILTER_P_H
 
 #include <QString>
 #include <QRegExp>
@@ -55,6 +55,6 @@ private:
 
 }
 
-#endif // WEBKIT_FILTER_P_H
+#endif // WEBENGINE_FILTER_P_H
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

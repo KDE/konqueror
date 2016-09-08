@@ -30,13 +30,13 @@
 #include <QWebEngineContextMenuData>
 
 class QUrl;
-class KWebKitPart;
+class WebEnginePart;
 
 class WebView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    WebView(KWebKitPart* part, QWidget* parent);
+    WebView(WebEnginePart* part, QWidget* parent);
     ~WebView();
 
     /**
@@ -114,7 +114,7 @@ private:
 
     KActionCollection* m_actionCollection;
     QWebEngineContextMenuData m_result;
-    QPointer<KWebKitPart> m_part;
+    QPointer<WebEnginePart> m_part;
 
     qint32 m_autoScrollTimerId;
     qint32 m_verticalAutoScrollSpeed;

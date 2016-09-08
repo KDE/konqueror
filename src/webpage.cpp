@@ -67,7 +67,7 @@ static bool isBlankUrl(const QUrl& url)
     return (url.isEmpty() || url.url() == QL1S("about:blank"));
 }
 
-WebPage::WebPage(KWebKitPart *part, QWidget *parent)
+WebPage::WebPage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
@@ -75,7 +75,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
          m_part(part)
 {
     if (view())
-        WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
+        WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
 
     //setForwardUnsupportedContent(true);
 
@@ -258,7 +258,7 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
     }
 
     // Honor the enabling/disabling of plugins per host.
-    settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebKitSettings::self()->isPluginsEnabled(reqUrl.host()));
+    settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
@@ -303,12 +303,12 @@ static int errorCodeFromReply(QNetworkReply* reply)
     return 0;
 }
 
-KWebKitPart* WebPage::part() const
+WebEnginePart* WebPage::part() const
 {
     return m_part.data();
 }
 
-void WebPage::setPart(KWebKitPart* part)
+void WebPage::setPart(WebEnginePart* part)
 {
     m_part = part;
 }
@@ -459,7 +459,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     // time of its creation, which is always the case in QWebPage::createWindow,
     // then any move operation will seem not to work. That is because the new
     // window will be in maximized mode where moving it will not be possible...
-    if (WebKitSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
+    if (WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
         emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
@@ -480,7 +480,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
         return;
     }
 
-    if (WebKitSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
+    if (WebEngineSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
         //kDebug() << "resizing to " << width << "x" << height;
         emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
     }
@@ -495,7 +495,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
 
-    if ((moveByX || moveByY) && WebKitSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow)
+    if ((moveByX || moveByY) && WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow)
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
@@ -650,9 +650,9 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
 {
     const QString hostname (url.host());
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled,
-                             WebKitSettings::self()->isJavaScriptEnabled(hostname));
+                             WebEngineSettings::self()->isJavaScriptEnabled(hostname));
 
-    const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(hostname);
+    const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(hostname);
     settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows,
                              (policy != KParts::HtmlSettingsInterface::JSWindowOpenDeny &&
                               policy != KParts::HtmlSettingsInterface::JSWindowOpenSmart));
@@ -664,7 +664,7 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
 
 /************************************* Begin NewWindowPage ******************************************/
 
-NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, bool disableJSOpenwindowCheck, QWidget* parent)
+NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, bool disableJSOpenwindowCheck, QWidget* parent)
               :WebPage(part, parent) , m_type(type) , m_createNewWindow(true)
               , m_disableJSOpenwindowCheck(disableJSOpenwindowCheck)
 {
@@ -691,7 +691,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         const QUrl reqUrl (request.url());
 
         if (!m_disableJSOpenwindowCheck) {
-            const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(reqUrl.host());
+            const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(reqUrl.host());
             switch (policy) {
             case KParts::HtmlSettingsInterface::JSWindowOpenDeny:
                 // TODO: Implement support for dealing with blocked pop up windows.
@@ -749,10 +749,10 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         }
 
         // Get the webview...
-        KWebKitPart* webkitPart = qobject_cast<KWebKitPart*>(newWindowPart);
-        WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
+        WebEnginePart* webenginePart = qobject_cast<WebEnginePart*>(newWindowPart);
+        WebView* webView = webenginePart ? qobject_cast<WebView*>(webenginePart->view()) : 0;
 
-        // If the newly created window is NOT a webkitpart...
+        // If the newly created window is NOT a webenginepart...
         if (!webView) {
             newWindowPart->openUrl(reqUrl);
             this->deleteLater();
@@ -763,9 +763,9 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         // Replace the webpage of the new webview with this one. Nice trick...
         webView->setPage(this);
         // Set the new part as the one this page will use going forward.
-        setPart(webkitPart);
+        setPart(webenginePart);
         // Connect all the signals from this page to the slots in the new part.
-        webkitPart->connectWebPageSignals(this);
+        webenginePart->connectWebPageSignals(this);
         //Set the create new window flag to false...
         m_createNewWindow = false;
     }
@@ -835,8 +835,8 @@ void NewWindowPage::slotLoadFinished(bool ok)
     kDebug() << "Created new window" << newWindowPart;
 
     // Get the webview...
-    KWebKitPart* webkitPart = newWindowPart ? qobject_cast<KWebKitPart*>(newWindowPart) : 0;
-    WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
+    WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : 0;
+    WebView* webView = webenginePart ? qobject_cast<WebView*>(webenginePart->view()) : 0;
 
     if (webView) {
         // if a new window is created, set a new window meta-data flag.
@@ -850,9 +850,9 @@ void NewWindowPage::slotLoadFinished(bool ok)
         // Replace the webpage of the new webview with this one. Nice trick...
         webView->setPage(this);
         // Set the new part as the one this page will use going forward.
-        setPart(webkitPart);
+        setPart(webenginePart);
         // Connect all the signals from this page to the slots in the new part.
-        webkitPart->connectWebPageSignals(this);
+        webenginePart->connectWebPageSignals(this);
     }
 
     //Set the create new window flag to false...

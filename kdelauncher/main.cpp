@@ -78,7 +78,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(const QString& url = QString()): currentZoom(100) {
-        view = new KWebKitPart(this);
+        view = new WebEnginePart(this);
         setCentralWidget(view->widget());
 
         connect(view->view(), &QWebEngineView::loadFinished,
@@ -307,7 +307,7 @@ private:
 
     }
 
-    KWebKitPart *view;
+    WebEnginePart *view;
     KLineEdit *urlEdit;
     QProgressBar *progress;
 

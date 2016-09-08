@@ -20,11 +20,9 @@ qt5_wrap_ui(webenginepart_LIB_SRCS
                   ui/searchbar.ui
 )
 
-########################### kwebkitpart #############################
 add_library(webenginepart ${webenginepart_LIB_SRCS})
 
 target_link_libraries(webenginepart Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets KF5::Parts KF5::KDELibs4Support KF5::SonnetCore)
-########################### kwebkitpart #############################
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 

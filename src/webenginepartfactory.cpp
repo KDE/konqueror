@@ -26,12 +26,12 @@
 
 #include <QWidget>
 
-KWebKitFactory::~KWebKitFactory()
+WebEngineFactory::~WebEngineFactory()
 {
     // kDebug() << this;
 }
 
-QObject *KWebKitFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString& keyword)
+QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString& keyword)
 {
     Q_UNUSED(iface);
     Q_UNUSED(keyword);
@@ -40,31 +40,31 @@ QObject *KWebKitFactory::create(const char* iface, QWidget *parentWidget, QObjec
     kDebug() << parentWidget << parent;
     connect(parentWidget, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
 
-    // NOTE: The code below is what makes it possible to properly integrate QtWebKit's
+    // NOTE: The code below is what makes it possible to properly integrate QtWebEngine's PORTING_TODO
     // history management with any KParts based application.
     QByteArray histData (m_historyBufContainer.value(parentWidget));
     if (!histData.isEmpty()) histData = qUncompress(histData);
-    KWebKitPart* part = new KWebKitPart(parentWidget, parent, histData);
-    WebKitBrowserExtension* ext = qobject_cast<WebKitBrowserExtension*>(part->browserExtension());
+    WebEnginePart* part = new WebEnginePart(parentWidget, parent, histData);
+    WebEngineBrowserExtension* ext = qobject_cast<WebEngineBrowserExtension*>(part->browserExtension());
     if (ext) {
         connect(ext, SIGNAL(saveHistory(QObject*,QByteArray)), this, SLOT(slotSaveHistory(QObject*,QByteArray)));
     }
     return part;
 }
 
-void KWebKitFactory::slotSaveHistory(QObject* widget, const QByteArray& buffer)
+void WebEngineFactory::slotSaveHistory(QObject* widget, const QByteArray& buffer)
 {
     // kDebug() << "Caching history data from" << widget;
     m_historyBufContainer.insert(widget, buffer);
 }
 
-void KWebKitFactory::slotDestroyed(QObject* object)
+void WebEngineFactory::slotDestroyed(QObject* object)
 {
     // kDebug() << "Removing cached history data of" << object;
     m_historyBufContainer.remove(object);
 }
 
 
-K_EXPORT_PLUGIN(KWebKitFactory)
+K_EXPORT_PLUGIN(WebEngineFactory)
 
 #include "webenginepartfactory.moc"

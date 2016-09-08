@@ -82,7 +82,7 @@
 
 K_GLOBAL_STATIC_WITH_ARGS(QUrl, globalBlankUrl, ("about:blank"))
 
-KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
+WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
@@ -93,21 +93,22 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_passwordBar(0),
              m_featurePermissionBar(0)
 {
-    KAboutData about = KAboutData("kwebkitpart",
-                                  i18nc("Program Name", "KWebKitPart"),
+    KAboutData about = KAboutData("webenginepart",
+                                  i18nc("Program Name", "WebEnginePart"),
                                   /*version*/ "1.3.0",
-                                  i18nc("Short Description", "QtWebKit Browser Engine Component"),
+                                  i18nc("Short Description", "QtWebEngine Browser Engine Component"),
                                   KAboutLicense::LGPL,
                                   i18n("(C) 2009-2010 Dawit Alemayehu\n"
                                         "(C) 2008-2010 Urs Wolfer\n"
                                         "(C) 2007 Trolltech ASA"));
 
-    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Maintainer, Developer"), "adawit@kde.org");
+    about.addAuthor(i18n("Sune Vuorela"), i18n("Maintainer, Developer"), "sune@kde.org");
+    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Developer"), "adawit@kde.org");
     about.addAuthor(i18n("Urs Wolfer"), i18n("Maintainer, Developer"), "uwolfer@kde.org");
     about.addAuthor(i18n("Michael Howell"), i18n("Developer"), "mhowell123@gmail.com");
     about.addAuthor(i18n("Laurent Montel"), i18n("Developer"), "montel@kde.org");
     about.addAuthor(i18n("Dirk Mueller"), i18n("Developer"), "mueller@kde.org");
-    about.setProductName("kwebkitpart/general");
+    about.setProductName("webenginepart/general");
 //    KComponentData componentData(&about);
     setComponentData(about, false /*don't load plugins yet*/);
 
@@ -121,17 +122,17 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
                                                 .arg(KDE::versionMinor())
                                                 .arg(KDE::versionRelease()));
 #endif
-    setXMLFile(QL1S("kwebkitpart.rc"));
+    setXMLFile(QL1S("webenginepart.rc"));
 
     // Create this KPart's widget
     QWidget *mainWidget = new QWidget (parentWidget);
-    mainWidget->setObjectName("kwebkitpart");
+    mainWidget->setObjectName("webenginepart");
 
     // Create the WebView...
     m_webView = new WebView (this, parentWidget);
 
     // Create the browser extension.
-    m_browserExtension = new WebKitBrowserExtension(this, cachedHistory);
+    m_browserExtension = new WebEngineBrowserExtension(this, cachedHistory);
 
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
@@ -141,9 +142,9 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 //        QWebHistoryInterface::setDefaultInterface(new WebHistoryInterface(this));
 
     // Add text and html extensions...
-    new KWebKitTextExtension(this);
-    new KWebKitHtmlExtension(this);
-    new KWebKitScriptableExtension(this);
+    new WebEngineTextExtension(this);
+    new WebEngineHtmlExtension(this);
+    new WebEngineScriptableExtension(this);
 
 
     // Layout the GUI...
@@ -181,25 +182,25 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     loadPlugins();
 }
 
-KWebKitPart::~KWebKitPart()
+WebEnginePart::~WebEnginePart()
 {
 }
 
-WebPage* KWebKitPart::page()
+WebPage* WebEnginePart::page()
 {
     if (m_webView)
         return qobject_cast<WebPage*>(m_webView->page());
     return 0;
 }
 
-const WebPage* KWebKitPart::page() const
+const WebPage* WebEnginePart::page() const
 {
     if (m_webView)
         return qobject_cast<const WebPage*>(m_webView->page());
     return 0;
 }
 
-void KWebKitPart::initActions()
+void WebEnginePart::initActions()
 {
     actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
                                   m_browserExtension, SLOT(slotSaveDocument()));
@@ -265,7 +266,7 @@ void KWebKitPart::initActions()
                               "Shows a dialog that allows you to find text on the displayed page."));
 }
 
-void KWebKitPart::updateActions()
+void WebEnginePart::updateActions()
 {
     m_browserExtension->updateActions();
 
@@ -282,7 +283,7 @@ void KWebKitPart::updateActions()
 
 }
 
-void KWebKitPart::connectWebPageSignals(WebPage* page)
+void WebEnginePart::connectWebPageSignals(WebPage* page)
 {
     if (!page)
         return;
@@ -292,7 +293,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(loadAborted(QUrl)),
             this, SLOT(slotLoadAborted(QUrl)));
     connect(page, &QWebEnginePage::linkHovered,
-            this, &KWebKitPart::slotLinkHovered);
+            this, &WebEnginePart::slotLinkHovered);
 //    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
 //            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
 //    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
@@ -321,7 +322,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
 
     connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
-        if (WebKitSettings::self()->favIconsEnabled()
+        if (WebEngineSettings::self()->favIconsEnabled()
             && !page->profile()->isOffTheRecord()){
                 m_browserExtension->setIconUrl(url);
         }
@@ -339,7 +340,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 #endif
 }
 
-bool KWebKitPart::openUrl(const QUrl &_u)
+bool WebEnginePart::openUrl(const QUrl &_u)
 {
     QUrl u (_u);
 
@@ -385,32 +386,32 @@ bool KWebKitPart::openUrl(const QUrl &_u)
     return true;
 }
 
-bool KWebKitPart::closeUrl()
+bool WebEnginePart::closeUrl()
 {
     m_webView->triggerPageAction(QWebEnginePage::Stop);
     m_webView->stop();
     return true;
 }
 
-QWebEngineView* KWebKitPart::view()
+QWebEngineView* WebEnginePart::view()
 {
     return m_webView;
 }
 
-bool KWebKitPart::isModified() const
+bool WebEnginePart::isModified() const
 {
     //return m_webView->isModified();
     return false;
 }
 
-void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
+void WebEnginePart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {
     if (event && event->activated() && m_webView) {
         emit setWindowCaption(m_webView->title());
     }
 }
 
-bool KWebKitPart::openFile()
+bool WebEnginePart::openFile()
 {
     // never reached
     return false;
@@ -419,13 +420,13 @@ bool KWebKitPart::openFile()
 
 /// slots...
 
-void KWebKitPart::slotLoadStarted()
+void WebEnginePart::slotLoadStarted()
 {
     emit started(0);
     updateActions();
 }
 
-void KWebKitPart::slotMainFrameLoadFinished (bool ok)
+void WebEnginePart::slotMainFrameLoadFinished (bool ok)
 {
     if (!ok || !m_doLoadFinishedActions)
         return;
@@ -452,7 +453,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
     if (url() != *globalBlankUrl) {
         m_hasCachedFormData = false;
 
-        if (WebKitSettings::self()->isNonPasswordStorableSite(url().host())) {
+        if (WebEngineSettings::self()->isNonPasswordStorableSite(url().host())) {
             addWalletStatusBarIcon();
         } else {
 // Attempt to fill the web form...
@@ -464,7 +465,7 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
     }
 }
 
-void KWebKitPart::slotLoadFinished(bool ok)
+void WebEnginePart::slotLoadFinished(bool ok)
 {
     bool pending = false;
 
@@ -474,7 +475,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
        // if (ok &&
        //     frame == page()->mainFrame() &&
        //     !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
-       //     if (WebKitSettings::self()->autoPageRefresh()) {
+       //     if (WebEngineSettings::self()->autoPageRefresh()) {
        //         pending = true;
        //     } else {
        //         frame->page()->triggerAction(QWebEnginePage::Stop);
@@ -485,7 +486,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
     emit completed ((ok && pending));
 }
 
-void KWebKitPart::slotLoadAborted(const QUrl & url)
+void WebEnginePart::slotLoadAborted(const QUrl & url)
 {
     closeUrl();
     m_doLoadFinishedActions = false;
@@ -495,7 +496,7 @@ void KWebKitPart::slotLoadAborted(const QUrl & url)
         setUrl(m_webView->url());
 }
 
-void KWebKitPart::slotUrlChanged(const QUrl& url)
+void WebEnginePart::slotUrlChanged(const QUrl& url)
 {
     // Ignore if empty
     if (url.isEmpty())
@@ -521,7 +522,7 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     }
 }
 
-void KWebKitPart::slotShowSecurity()
+void WebEnginePart::slotShowSecurity()
 {
     if (!page())
         return;
@@ -548,7 +549,7 @@ void KWebKitPart::slotShowSecurity()
 }
 
 #if 0
-void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
+void WebEnginePart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     if (!frame || !item) {
         return;
@@ -574,7 +575,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
         }
     }
 
-    // For some reason, QtWebKit does not restore scroll position when
+    // For some reason, QtWebEngine PORTING_TODO does not restore scroll position when
     // QWebHistory is restored from persistent storage. Therefore, we
     // preserve that information and restore it as needed. See
     // slotRestoreFrameState.
@@ -587,7 +588,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 #endif
 
 #if 0
-void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
+void WebEnginePart::slotRestoreFrameState(QWebFrame *frame)
 {
     QWebPage* page = (frame ? frame->page() : 0);
     QWebHistory* history = (page ? page->history() : 0);
@@ -609,7 +610,7 @@ void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
 }
 #endif
 
-void KWebKitPart::slotLinkHovered(const QString& _link)
+void WebEnginePart::slotLinkHovered(const QString& _link)
 {
     QString message;
 
@@ -684,7 +685,7 @@ void KWebKitPart::slotLinkHovered(const QString& _link)
     emit setStatusBarText(message);
 }
 
-void KWebKitPart::slotSearchForText(const QString &text, bool backward)
+void WebEnginePart::slotSearchForText(const QString &text, bool backward)
 {
     QWebEnginePage::FindFlags flags; // = QWebEnginePage::FindWrapsAroundDocument;
 
@@ -700,7 +701,7 @@ void KWebKitPart::slotSearchForText(const QString &text, bool backward)
     });
 }
 
-void KWebKitPart::slotShowSearchBar()
+void WebEnginePart::slotShowSearchBar()
 {
     if (!m_searchBar) {
         // Create the search bar...
@@ -722,14 +723,14 @@ void KWebKitPart::slotShowSearchBar()
     m_searchBar->setSearchText(text.left(150));
 }
 
-void KWebKitPart::slotLinkMiddleOrCtrlClicked(const QUrl& linkUrl)
+void WebEnginePart::slotLinkMiddleOrCtrlClicked(const QUrl& linkUrl)
 {
     emit m_browserExtension->createNewWindow(linkUrl);
 }
 
-void KWebKitPart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, const QString& searchText)
+void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, const QString& searchText)
 {
-    if (!WebKitSettings::self()->isOpenMiddleClickEnabled())
+    if (!WebEngineSettings::self()->isOpenMiddleClickEnabled())
         return;
 
     if (!searchText.isEmpty() &&
@@ -742,7 +743,7 @@ void KWebKitPart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, const
     emit m_browserExtension->openUrlRequest(selectedUrl);
 }
 
-void KWebKitPart::slotWalletClosed()
+void WebEnginePart::slotWalletClosed()
 {
     if (!m_statusBarWalletLabel)
        return;
@@ -753,11 +754,11 @@ void KWebKitPart::slotWalletClosed()
     m_hasCachedFormData = false;
 }
 
-void KWebKitPart::slotShowWalletMenu()
+void WebEnginePart::slotShowWalletMenu()
 {
     QMenu *menu = new QMenu(0);
 
-    if (m_webView && WebKitSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
+    if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
       menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
 
     if (m_hasCachedFormData)
@@ -770,7 +771,7 @@ void KWebKitPart::slotShowWalletMenu()
     menu->popup(QCursor::pos());
 }
 
-void KWebKitPart::slotLaunchWalletManager()
+void WebEnginePart::slotLaunchWalletManager()
 {
     QDBusInterface r("org.kde.kwalletmanager", "/kwalletmanager/MainWindow_1");
     if (r.isValid())
@@ -779,13 +780,13 @@ void KWebKitPart::slotLaunchWalletManager()
         KToolInvocation::startServiceByDesktopName("kwalletmanager_show");
 }
 
-void KWebKitPart::slotDeleteNonPasswordStorableSite()
+void WebEnginePart::slotDeleteNonPasswordStorableSite()
 {
     if (m_webView)
-        WebKitSettings::self()->removeNonPasswordStorableSite(m_webView->url().host());
+        WebEngineSettings::self()->removeNonPasswordStorableSite(m_webView->url().host());
 }
 
-void KWebKitPart::slotRemoveCachedPasswords()
+void WebEnginePart::slotRemoveCachedPasswords()
 {
     if (!page()) // || !page()->wallet())
         return;
@@ -794,7 +795,7 @@ void KWebKitPart::slotRemoveCachedPasswords()
     m_hasCachedFormData = false;
 }
 
-void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
+void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
 {
     // FIXME: The code below that sets the text encoding has been reported not to work.
     if (!page())
@@ -810,14 +811,14 @@ void KWebKitPart::slotSetTextEncoding(QTextCodec * codec)
     page()->triggerAction(QWebEnginePage::Reload);
 }
 
-void KWebKitPart::slotSetStatusBarText(const QString& text)
+void WebEnginePart::slotSetStatusBarText(const QString& text)
 {
     const QString host (page() ? page()->url().host() : QString());
-    if (WebKitSettings::self()->windowStatusPolicy(host) == KParts::HtmlSettingsInterface::JSWindowStatusAllow)
+    if (WebEngineSettings::self()->windowStatusPolicy(host) == KParts::HtmlSettingsInterface::JSWindowStatusAllow)
         emit setStatusBarText(text);
 }
 
-void KWebKitPart::slotWindowCloseRequested()
+void WebEnginePart::slotWindowCloseRequested()
 {
     emit m_browserExtension->requestFocus(this);
 #if 0
@@ -830,7 +831,7 @@ void KWebKitPart::slotWindowCloseRequested()
     this->deleteLater();
 }
 
-void KWebKitPart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature)
+void WebEnginePart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature)
 {
     // FIXME: Allow multiple concurrent feature permission requests.
     if (m_featurePermissionBar && m_featurePermissionBar->isVisible())
@@ -858,24 +859,24 @@ void KWebKitPart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature)
     m_featurePermissionBar->animatedShow();
 }
 
-void KWebKitPart::slotFeaturePermissionGranted(QWebEnginePage::Feature feature)
+void WebEnginePart::slotFeaturePermissionGranted(QWebEnginePage::Feature feature)
 {
     Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
     page()->setFeaturePermission(page()->url(), feature, QWebEnginePage::PermissionGrantedByUser);
 }
 
-void KWebKitPart::slotFeaturePermissionDenied(QWebEnginePage::Feature feature)
+void WebEnginePart::slotFeaturePermissionDenied(QWebEnginePage::Feature feature)
 {
     Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
     page()->setFeaturePermission(page()->url(), feature, QWebEnginePage::PermissionDeniedByUser);
 }
 
-void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
+void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
 {
-    if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
+    if (WebEngineSettings::self()->isNonPasswordStorableSite(url.host()))
         return;
 
-    if (!WebKitSettings::self()->askToSaveSitePassword())
+    if (!WebEngineSettings::self()->askToSaveSitePassword())
         return;
 
     if (m_passwordBar && m_passwordBar->isVisible())
@@ -914,7 +915,7 @@ void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url
     m_passwordBar->animatedShow();
 }
 
-void KWebKitPart::slotSaveFormDataDone()
+void WebEnginePart::slotSaveFormDataDone()
 {
     if (!m_passwordBar)
         return;
@@ -924,7 +925,7 @@ void KWebKitPart::slotSaveFormDataDone()
         lay->removeWidget(m_passwordBar);
 }
 
-void KWebKitPart::addWalletStatusBarIcon ()
+void WebEnginePart::addWalletStatusBarIcon ()
 {
     if (m_statusBarWalletLabel) {
         m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
@@ -939,7 +940,7 @@ void KWebKitPart::addWalletStatusBarIcon ()
     m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
 }
 
-void KWebKitPart::slotFillFormRequestCompleted (bool ok)
+void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
     if ((m_hasCachedFormData = ok))
         addWalletStatusBarIcon();

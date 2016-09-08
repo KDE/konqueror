@@ -82,7 +82,7 @@ struct KPerDomainSettings {
 
 typedef QMap<QString,KPerDomainSettings> PolicyMap;
 
-class WebKitSettingsData
+class WebEngineSettingsData
 {
 public:  
     bool m_bChangeCursor : 1;
@@ -125,8 +125,8 @@ public:
     int m_fontSize;
     int m_minFontSize;
     int m_maxFormCompletionItems;
-    WebKitSettings::KAnimationAdvice m_showAnimations;
-    WebKitSettings::KSmoothScrollingMode m_smoothScrolling;
+    WebEngineSettings::KAnimationAdvice m_showAnimations;
+    WebEngineSettings::KSmoothScrollingMode m_smoothScrolling;
 
     QString m_encoding;
     QString m_userSheet;
@@ -147,7 +147,7 @@ public:
     KSharedConfig::Ptr nonPasswordStorableSites;
 };
 
-class WebKitSettingsPrivate : public QObject, public WebKitSettingsData
+class WebEngineSettingsPrivate : public QObject, public WebEngineSettingsData
 {
     Q_OBJECT
 public:
@@ -180,7 +180,7 @@ public Q_SLOTS:
         if ( job->error() == KJob::NoError )
         {
             const QByteArray byteArray = tJob->data();
-            const QString localFileName = tJob->property( "webkitsettings_adBlock_filename" ).toString();
+            const QString localFileName = tJob->property( "webenginesettings_adBlock_filename" ).toString();
 
             QFile file(localFileName);
             if ( file.open(QFile::WriteOnly) )
@@ -204,7 +204,7 @@ public Q_SLOTS:
 /** Returns a writeable per-domains settings instance for the given domain
   * or a deep copy of the global settings if not existent.
   */
-static KPerDomainSettings &setup_per_domain_policy(WebKitSettingsPrivate* const d, const QString &domain)
+static KPerDomainSettings &setup_per_domain_policy(WebEngineSettingsPrivate* const d, const QString &domain)
 {
   if (domain.isEmpty())
     kWarning() << "setup_per_domain_policy: domain is empty";
@@ -225,7 +225,7 @@ static T readEntry(const KConfigGroup& config, const QString& key, int defaultVa
     return static_cast<T>(config.readEntry(key, defaultValue));
 }
 
-void WebKitSettings::readDomainSettings(const KConfigGroup &config, bool reset,
+void WebEngineSettings::readDomainSettings(const KConfigGroup &config, bool reset,
                                         bool global, KPerDomainSettings &pd_settings)
 {
   const QString javaPrefix ((global ? QString() : QLatin1String("java.")));
@@ -286,35 +286,35 @@ void WebKitSettings::readDomainSettings(const KConfigGroup &config, bool reset,
 }
 
 
-WebKitSettings::WebKitSettings()
-  :d (new WebKitSettingsPrivate)
+WebEngineSettings::WebEngineSettings()
+  :d (new WebEngineSettingsPrivate)
 {
   init();
 }
 
-WebKitSettings::~WebKitSettings()
+WebEngineSettings::~WebEngineSettings()
 {
   delete d;
 }
 
-bool WebKitSettings::changeCursor() const
+bool WebEngineSettings::changeCursor() const
 {
   return d->m_bChangeCursor;
 }
 
-bool WebKitSettings::underlineLink() const
+bool WebEngineSettings::underlineLink() const
 {
   return d->m_underlineLink;
 }
 
-bool WebKitSettings::hoverLink() const
+bool WebEngineSettings::hoverLink() const
 {
   return d->m_hoverLink;
 }
 
-void WebKitSettings::init()
+void WebEngineSettings::init()
 {
-  initWebKitSettings();
+  initWebEngineSettings();
 
   KConfig global( "khtmlrc", KConfig::NoGlobals );
   init( &global, true );
@@ -328,7 +328,7 @@ void WebKitSettings::init()
   initCookieJarSettings();
 }
 
-void WebKitSettings::init( KConfig * config, bool reset )
+void WebEngineSettings::init( KConfig * config, bool reset )
 {
   KConfigGroup cg( config, "MainView Settings" );
   if (reset || cg.exists() )
@@ -399,7 +399,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
                       KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
                       QObject::connect( job, SIGNAL(result(KJob*)), d, SLOT(adblockFilterResult(KJob*)) );
                       /** for later reference, store name of cache file */
-                      job->setProperty("webkitsettings_adBlock_filename", localFile);
+                      job->setProperty("webenginesettings_adBlock_filename", localFile);
                   }
               }
           }
@@ -712,7 +712,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::CursiveFont, cursiveFontName());
   QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::FantasyFont, fantasyFontName());
 
-  // TODO: Create a webkit config module that gets embeded into Konqueror's kcm.
+  // TODO: Create a webengine config module that gets embeded into Konqueror's kcm.
   // Turn on WebGL support
 //  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...
@@ -727,7 +727,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
 }
 
 
-void WebKitSettings::computeFontSizes( int logicalDpi )
+void WebEngineSettings::computeFontSizes( int logicalDpi )
 {
   if (zoomToDPI())
       logicalDpi = 96;
@@ -741,12 +741,12 @@ void WebKitSettings::computeFontSizes( int logicalDpi )
   QWebEngineSettings::globalSettings()->setFontSize(QWebEngineSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
 }
 
-bool WebKitSettings::zoomToDPI() const
+bool WebEngineSettings::zoomToDPI() const
 {
     return d->m_zoomToDPI;
 }
 
-void WebKitSettings::setZoomToDPI(bool enabled)
+void WebEngineSettings::setZoomToDPI(bool enabled)
 {
   d->m_zoomToDPI = enabled;
   // save it
@@ -759,7 +759,7 @@ void WebKitSettings::setZoomToDPI(bool enabled)
   *
   * In case of doubt, the global domain is returned.
   */
-static const KPerDomainSettings& lookup_hostname_policy(const WebKitSettingsPrivate* const d,
+static const KPerDomainSettings& lookup_hostname_policy(const WebEngineSettingsPrivate* const d,
                                                         const QString& hostname)
 {
 #ifdef DEBUG_SETTINGS
@@ -812,32 +812,32 @@ static const KPerDomainSettings& lookup_hostname_policy(const WebKitSettingsPriv
   return d->global;
 }
 
-bool WebKitSettings::isOpenMiddleClickEnabled()
+bool WebEngineSettings::isOpenMiddleClickEnabled()
 {
   return d->m_bOpenMiddleClick;
 }
 
-bool WebKitSettings::accessKeysEnabled() const
+bool WebEngineSettings::accessKeysEnabled() const
 {
     return d->m_accessKeysEnabled;
 }
 
-bool WebKitSettings::favIconsEnabled() const
+bool WebEngineSettings::favIconsEnabled() const
 {
     return d->m_bEnableFavicon;
 }
 
-bool WebKitSettings::isAdFilterEnabled() const
+bool WebEngineSettings::isAdFilterEnabled() const
 {
     return d->m_adFilterEnabled;
 }
 
-bool WebKitSettings::isHideAdsEnabled() const
+bool WebEngineSettings::isHideAdsEnabled() const
 {
     return d->m_hideAdsEnabled;
 }
 
-bool WebKitSettings::isAdFiltered( const QString &url ) const
+bool WebEngineSettings::isAdFiltered( const QString &url ) const
 {
     if (!d->m_adFilterEnabled)
         return false;
@@ -848,7 +848,7 @@ bool WebKitSettings::isAdFiltered( const QString &url ) const
     return d->adBlackList.isUrlMatched(url) && !d->adWhiteList.isUrlMatched(url);
 }
 
-QString WebKitSettings::adFilteredBy( const QString &url, bool *isWhiteListed ) const
+QString WebEngineSettings::adFilteredBy( const QString &url, bool *isWhiteListed ) const
 {
     QString m = d->adWhiteList.urlMatchedBy(url);
 
@@ -867,7 +867,7 @@ QString WebKitSettings::adFilteredBy( const QString &url, bool *isWhiteListed ) 
     return m;
 }
 
-void WebKitSettings::addAdFilter( const QString &url )
+void WebEngineSettings::addAdFilter( const QString &url )
 {
     KConfigGroup config = KSharedConfig::openConfig( "khtmlrc", KConfig::NoGlobals )->group( "Filter Settings" );
 
@@ -907,64 +907,64 @@ void WebKitSettings::addAdFilter( const QString &url )
     }
 }
 
-bool WebKitSettings::isJavaEnabled( const QString& hostname ) const
+bool WebEngineSettings::isJavaEnabled( const QString& hostname ) const
 {
   return lookup_hostname_policy(d,hostname.toLower()).m_bEnableJava;
 }
 
-bool WebKitSettings::isJavaScriptEnabled( const QString& hostname ) const
+bool WebEngineSettings::isJavaScriptEnabled( const QString& hostname ) const
 {
   return lookup_hostname_policy(d,hostname.toLower()).m_bEnableJavaScript;
 }
 
-bool WebKitSettings::isJavaScriptDebugEnabled( const QString& /*hostname*/ ) const
+bool WebEngineSettings::isJavaScriptDebugEnabled( const QString& /*hostname*/ ) const
 {
   // debug setting is global for now, but could change in the future
   return d->m_bEnableJavaScriptDebug;
 }
 
-bool WebKitSettings::isJavaScriptErrorReportingEnabled( const QString& /*hostname*/ ) const
+bool WebEngineSettings::isJavaScriptErrorReportingEnabled( const QString& /*hostname*/ ) const
 {
   // error reporting setting is global for now, but could change in the future
   return d->m_bEnableJavaScriptErrorReporting;
 }
 
-bool WebKitSettings::isPluginsEnabled( const QString& hostname ) const
+bool WebEngineSettings::isPluginsEnabled( const QString& hostname ) const
 {
   return lookup_hostname_policy(d,hostname.toLower()).m_bEnablePlugins;
 }
 
-KParts::HtmlSettingsInterface::JSWindowOpenPolicy WebKitSettings::windowOpenPolicy(const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowOpenPolicy WebEngineSettings::windowOpenPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowOpenPolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowMovePolicy WebKitSettings::windowMovePolicy(const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowMovePolicy WebEngineSettings::windowMovePolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowMovePolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowResizePolicy WebKitSettings::windowResizePolicy(const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowResizePolicy WebEngineSettings::windowResizePolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowResizePolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowStatusPolicy WebKitSettings::windowStatusPolicy(const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowStatusPolicy WebEngineSettings::windowStatusPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowStatusPolicy;
 }
 
-KParts::HtmlSettingsInterface::JSWindowFocusPolicy WebKitSettings::windowFocusPolicy(const QString& hostname) const {
+KParts::HtmlSettingsInterface::JSWindowFocusPolicy WebEngineSettings::windowFocusPolicy(const QString& hostname) const {
   return lookup_hostname_policy(d,hostname.toLower()).m_windowFocusPolicy;
 }
 
-int WebKitSettings::mediumFontSize() const
+int WebEngineSettings::mediumFontSize() const
 {
     return d->m_fontSize;
 }
 
-int WebKitSettings::minFontSize() const
+int WebEngineSettings::minFontSize() const
 {
   return d->m_minFontSize;
 }
 
-QString WebKitSettings::settingsToCSS() const
+QString WebEngineSettings::settingsToCSS() const
 {
     // lets start with the link properties
     QString str = "a:link {\ncolor: ";
@@ -995,7 +995,7 @@ QString WebKitSettings::settingsToCSS() const
     return str;
 }
 
-QString WebKitSettings::lookupFont(int i) const
+QString WebEngineSettings::lookupFont(int i) const
 {
     if (d->fonts.count() > i) {
         return d->fonts.at(i);
@@ -1008,136 +1008,136 @@ QString WebKitSettings::lookupFont(int i) const
     return QString();
 }
 
-QString WebKitSettings::stdFontName() const
+QString WebEngineSettings::stdFontName() const
 {
     return lookupFont(0);
 }
 
-QString WebKitSettings::fixedFontName() const
+QString WebEngineSettings::fixedFontName() const
 {
     return lookupFont(1);
 }
 
-QString WebKitSettings::serifFontName() const
+QString WebEngineSettings::serifFontName() const
 {
     return lookupFont(2);
 }
 
-QString WebKitSettings::sansSerifFontName() const
+QString WebEngineSettings::sansSerifFontName() const
 {
     return lookupFont(3);
 }
 
-QString WebKitSettings::cursiveFontName() const
+QString WebEngineSettings::cursiveFontName() const
 {
     return lookupFont(4);
 }
 
-QString WebKitSettings::fantasyFontName() const
+QString WebEngineSettings::fantasyFontName() const
 {
     return lookupFont(5);
 }
 
-void WebKitSettings::setStdFontName(const QString &n)
+void WebEngineSettings::setStdFontName(const QString &n)
 {
     while(d->fonts.count() <= 0)
         d->fonts.append(QString());
     d->fonts[0] = n;
 }
 
-void WebKitSettings::setFixedFontName(const QString &n)
+void WebEngineSettings::setFixedFontName(const QString &n)
 {
     while(d->fonts.count() <= 1)
         d->fonts.append(QString());
     d->fonts[1] = n;
 }
 
-QString WebKitSettings::userStyleSheet() const
+QString WebEngineSettings::userStyleSheet() const
 {
     return d->m_userSheet;
 }
 
-bool WebKitSettings::isFormCompletionEnabled() const
+bool WebEngineSettings::isFormCompletionEnabled() const
 {
   return d->m_formCompletionEnabled;
 }
 
-int WebKitSettings::maxFormCompletionItems() const
+int WebEngineSettings::maxFormCompletionItems() const
 {
   return d->m_maxFormCompletionItems;
 }
 
-const QString &WebKitSettings::encoding() const
+const QString &WebEngineSettings::encoding() const
 {
   return d->m_encoding;
 }
 
-bool WebKitSettings::followSystemColors() const
+bool WebEngineSettings::followSystemColors() const
 {
     return d->m_follow_system_colors;
 }
 
-const QColor& WebKitSettings::textColor() const
+const QColor& WebEngineSettings::textColor() const
 {
   return d->m_textColor;
 }
 
-const QColor& WebKitSettings::baseColor() const
+const QColor& WebEngineSettings::baseColor() const
 {
   return d->m_baseColor;
 }
 
-const QColor& WebKitSettings::linkColor() const
+const QColor& WebEngineSettings::linkColor() const
 {
   return d->m_linkColor;
 }
 
-const QColor& WebKitSettings::vLinkColor() const
+const QColor& WebEngineSettings::vLinkColor() const
 {
   return d->m_vLinkColor;
 }
 
-bool WebKitSettings::autoPageRefresh() const
+bool WebEngineSettings::autoPageRefresh() const
 {
   return d->m_bAutoRefreshPage;
 }
 
-bool WebKitSettings::autoLoadImages() const
+bool WebEngineSettings::autoLoadImages() const
 {
   return d->m_bAutoLoadImages;
 }
 
-bool WebKitSettings::unfinishedImageFrame() const
+bool WebEngineSettings::unfinishedImageFrame() const
 {
   return d->m_bUnfinishedImageFrame;
 }
 
-WebKitSettings::KAnimationAdvice WebKitSettings::showAnimations() const
+WebEngineSettings::KAnimationAdvice WebEngineSettings::showAnimations() const
 {
   return d->m_showAnimations;
 }
 
-WebKitSettings::KSmoothScrollingMode WebKitSettings::smoothScrolling() const
+WebEngineSettings::KSmoothScrollingMode WebEngineSettings::smoothScrolling() const
 {
   return d->m_smoothScrolling;
 }
 
-bool WebKitSettings::zoomTextOnly() const
+bool WebEngineSettings::zoomTextOnly() const
 {
   return d->m_zoomTextOnly;
 }
 
-bool WebKitSettings::isAutoDelayedActionsEnabled() const
+bool WebEngineSettings::isAutoDelayedActionsEnabled() const
 {
   return d->m_autoDelayedActionsEnabled;
 }
 
-bool WebKitSettings::jsErrorsEnabled() const
+bool WebEngineSettings::jsErrorsEnabled() const
 {
   return d->m_jsErrorsEnabled;
 }
 
-void WebKitSettings::setJSErrorsEnabled(bool enabled)
+void WebEngineSettings::setJSErrorsEnabled(bool enabled)
 {
   d->m_jsErrorsEnabled = enabled;
   // save it
@@ -1146,22 +1146,22 @@ void WebKitSettings::setJSErrorsEnabled(bool enabled)
   cg.sync();
 }
 
-bool WebKitSettings::allowTabulation() const
+bool WebEngineSettings::allowTabulation() const
 {
     return d->m_allowTabulation;
 }
 
-bool WebKitSettings::autoSpellCheck() const
+bool WebEngineSettings::autoSpellCheck() const
 {
     return d->m_autoSpellCheck;
 }
 
-QList< QPair< QString, QChar > > WebKitSettings::fallbackAccessKeysAssignments() const
+QList< QPair< QString, QChar > > WebEngineSettings::fallbackAccessKeysAssignments() const
 {
     return d->m_fallbackAccessKeysAssignments;
 }
 
-void WebKitSettings::setJSPopupBlockerPassivePopup(bool enabled)
+void WebEngineSettings::setJSPopupBlockerPassivePopup(bool enabled)
 {
     d->m_jsPopupBlockerPassivePopup = enabled;
     // save it
@@ -1170,12 +1170,12 @@ void WebKitSettings::setJSPopupBlockerPassivePopup(bool enabled)
     cg.sync();
 }
 
-bool WebKitSettings::jsPopupBlockerPassivePopup() const
+bool WebEngineSettings::jsPopupBlockerPassivePopup() const
 {
     return d->m_jsPopupBlockerPassivePopup;
 }
 
-bool WebKitSettings::isCookieJarEnabled() const
+bool WebEngineSettings::isCookieJarEnabled() const
 {
     return d->m_useCookieJar;
 }
@@ -1190,14 +1190,14 @@ static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
     return KConfigGroup(configPtr, "NonPasswordStorableSites");
 }
 
-bool WebKitSettings::isNonPasswordStorableSite(const QString &host) const
+bool WebEngineSettings::isNonPasswordStorableSite(const QString &host) const
 {
     KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
     const QStringList sites = cg.readEntry("Sites", QStringList());
     return sites.contains(host);
 }
 
-void WebKitSettings::addNonPasswordStorableSite(const QString &host)
+void WebEngineSettings::addNonPasswordStorableSite(const QString &host)
 {
     KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
     QStringList sites = cg.readEntry("Sites", QStringList());
@@ -1206,7 +1206,7 @@ void WebKitSettings::addNonPasswordStorableSite(const QString &host)
     cg.sync();
 }
 
-void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
+void WebEngineSettings::removeNonPasswordStorableSite(const QString &host)
 {
     KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
     QStringList sites = cg.readEntry("Sites", QStringList());
@@ -1215,35 +1215,35 @@ void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
     cg.sync();
 }
 
-bool WebKitSettings::askToSaveSitePassword() const
+bool WebEngineSettings::askToSaveSitePassword() const
 {
     return d->m_offerToSaveWebSitePassword;
 }
 
-bool WebKitSettings::isInternalPluginHandlingDisabled() const
+bool WebEngineSettings::isInternalPluginHandlingDisabled() const
 {
     return d->m_disableInternalPluginHandling;
 }
 
-bool WebKitSettings::isLoadPluginsOnDemandEnabled() const
+bool WebEngineSettings::isLoadPluginsOnDemandEnabled() const
 {
     return d->m_loadPluginsOnDemand;
 }
 
-bool WebKitSettings::allowMixedContentDisplay() const
+bool WebEngineSettings::allowMixedContentDisplay() const
 {
     return d->m_allowMixedContentDisplay;
 }
 
-bool WebKitSettings::alowActiveMixedContent() const
+bool WebEngineSettings::alowActiveMixedContent() const
 {
     return d->m_allowActiveMixedContent;
 }
 
 
-void WebKitSettings::initWebKitSettings()
+void WebEngineSettings::initWebEngineSettings()
 {
-    KConfig cfg ("kwebkitpartrc", KConfig::NoGlobals);
+    KConfig cfg ("webenginepartrc", KConfig::NoGlobals);
     KConfigGroup generalCfg (&cfg, "General");
     d->m_disableInternalPluginHandling = generalCfg.readEntry("DisableInternalPluginHandling", false);
     d->m_enableLocalStorage = generalCfg.readEntry("EnableLocalStorage", true);
@@ -1257,14 +1257,14 @@ void WebKitSettings::initWebKitSettings()
     d->nonPasswordStorableSites.reset();
 }
 
-void WebKitSettings::initCookieJarSettings()
+void WebEngineSettings::initCookieJarSettings()
 {
     KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcookiejarrc", KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
     d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
 }
 
-void WebKitSettings::initNSPluginSettings()
+void WebEngineSettings::initNSPluginSettings()
 {
     KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcmnspluginrc", KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Misc");
@@ -1272,10 +1272,10 @@ void WebKitSettings::initNSPluginSettings()
 }
 
 
-WebKitSettings* WebKitSettings::self()
+WebEngineSettings* WebEngineSettings::self()
 {
-    K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)
-    return s_webKitSettings;
+    K_GLOBAL_STATIC(WebEngineSettings, s_webEngineSettings)
+    return s_webEngineSettings;
 }
 
 #include "webenginesettings.moc"

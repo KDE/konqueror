@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef WEBKITPARTFACTORY
-#define WEBKITPARTFACTORY
+#ifndef WEBENGINEPARTFACTORY
+#define WEBENGINEPARTFACTORY
 
 #include <kpluginfactory.h>
 
@@ -27,13 +27,13 @@
 
 class QWidget;
 
-class KWebKitFactory : public KPluginFactory
+class WebEngineFactory : public KPluginFactory
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.KPluginFactory" FILE "")
     Q_INTERFACES(KPluginFactory)
 public:
-    virtual ~KWebKitFactory();
+    virtual ~WebEngineFactory();
     virtual QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword);
 
 private Q_SLOTS:
@@ -44,4 +44,4 @@ private:
     QHash<QObject*, QByteArray> m_historyBufContainer;
 };
 
-#endif // WEBKITPARTFACTORY
+#endif // WEBENGINEPARTFACTORY
