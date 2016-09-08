@@ -32,12 +32,9 @@
 
 #include <kdeversion.h>
 #include <KDE/KMessageBox>
-#include <KDE/KGlobalSettings>
-#include <KDE/KGlobal>
-#include <KDE/KLocale>
 #include <KDE/KRun>
+#include <KDE/KLocalizedString>
 #include <KDE/KShell>
-#include <KDE/KStandardDirs>
 #include <KDE/KAuthorized>
 #include <KDE/KDebug>
 #include <KDE/KFileDialog>
@@ -46,19 +43,20 @@
 #include <KDE/KIconLoader>
 #include <KDE/KMimeType>
 #include <KDE/KUrlAuthorized>
+#include <KDE/KSharedConfig>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
 #include <KParts/HtmlExtension>
+#include <QStandardPaths>
+#include <QDesktopWidget>
 
 #include <QFile>
 #include <QApplication>
 #include <QTextDocument> // Qt::escape
 #include <QNetworkReply>
-//#include <QWebFrame>
-//#include <QWebElement>
-#include <QtWebEngineWidgets/QWebEngineHistory>
-#include <QtWebEngineWidgets/QWebEngineHistoryItem>
+#include <QWebEngineHistory>
+#include <QWebEngineHistoryItem>
 //#include <QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
@@ -124,13 +122,12 @@ void WebPage::setSslInfo (const WebSslInfo& info)
 static void checkForDownloadManager(QWidget* widget, QString& cmd)
 {
     cmd.clear();
-    KGlobal::locale();
     KConfigGroup cfg (KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals), "HTML Settings");
     const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
     if (fileName.isEmpty())
         return;
 
-    const QString exeName = KStandardDirs::findExe(fileName);
+    const QString exeName = QStandardPaths::findExecutable(fileName);
     if (exeName.isEmpty()) {
         KMessageBox::detailedSorry(widget,
                                    i18n("The download manager (%1) could not be found in your installation.", fileName),
@@ -188,7 +185,7 @@ QString WebPage::errorPage(int code, const QString& text, const QUrl& reqUrl) co
 
     stream >> errorName >> techName >> description >> causes >> solutions;
 
-    QFile file (KStandardDirs::locate ("data", QL1S("kwebkitpart/error.html")));
+    QFile file (QStandardPaths::locate (QStandardPaths::DataLocation, QL1S("kwebkitpart/error.html")));
     if ( !file.open( QIODevice::ReadOnly ) )
         return i18n("<html><body><h3>Unable to display error message</h3>"
                     "<p>The error template file <em>error.html</em> could not be "
@@ -227,7 +224,7 @@ QString WebPage::errorPage(int code, const QString& text, const QUrl& reqUrl) co
     }
 
     doc += i18n( "Date and Time: %1",
-                 KGlobal::locale()->formatDateTime(QDateTime::currentDateTime(), KLocale::LongDate) );
+                 QDateTime::currentDateTime().toString(Qt::RFC2822Date) );
     doc += QL1S( "</li><li>" );
     // escape text twice: once for i18n, and once for HTML.
     doc += i18n( "Additional Information: %1", Qt::escape( Qt::escape( text ) ) );
@@ -678,7 +675,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
         return;
     }
 
-    QRect sg = KGlobalSettings::desktopGeometry(view());
+    QRect sg = QApplication::desktop()->screenGeometry(view());
 
     if (width > sg.width() || height > sg.height()) {
         kWarning() << "Window resize refused, window would be too big (" << width << "," << height << ")";
