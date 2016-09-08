@@ -239,7 +239,7 @@ void KWebKitPart::initActions()
 
     action = new QAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
-    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    KConfigGroup cgHtml(KSharedConfig::openConfig(), "HTML Settings");
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
     action->setChecked(zoomTextOnly);
     actionCollection()->addAction("zoomTextOnly", action);
@@ -257,7 +257,7 @@ void KWebKitPart::initActions()
     action->setShortcutContext(Qt::WidgetShortcut);
     m_webView->addAction(action);
 
-    KCodecAction *codecAction = new KCodecAction( KIcon("character-set"), i18n( "Set &Encoding" ), this, true );
+    KCodecAction *codecAction = new KCodecAction( QIcon("character-set"), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( "setEncoding", codecAction );
     connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
 
@@ -810,7 +810,7 @@ void KWebKitPart::slotWalletClosed()
 
 void KWebKitPart::slotShowWalletMenu()
 {
-    KMenu *menu = new KMenu(0);
+    QMenu *menu = new QMenu(0);
 
     if (m_webView && WebKitSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
       menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
