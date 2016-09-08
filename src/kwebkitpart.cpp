@@ -27,7 +27,8 @@
 //#include <QWebFrame>
 //#include <QWebElement>
 //#include <QWebHistoryItem>
-#include <QtWebEngineWidgets/QWebEngineSettings>
+#include <QWebEngineSettings>
+#include <QWebEngineProfile>
 
 #include "kwebkitpart_ext.h"
 #include "sslinfodialog_p.h"
@@ -163,10 +164,10 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             this, SIGNAL(setWindowCaption(QString)));
     connect(m_webView, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotUrlChanged(QUrl)));
-    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(QUrl)),
-            this, SLOT(slotLinkMiddleOrCtrlClicked(QUrl)));
-    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(QUrl,QString)),
-            this, SLOT(slotSelectionClipboardUrlPasted(QUrl,QString)));
+//    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(QUrl)),
+//            this, SLOT(slotLinkMiddleOrCtrlClicked(QUrl)));
+//    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(QUrl,QString)),
+//            this, SLOT(slotSelectionClipboardUrlPasted(QUrl,QString)));
     connect(m_webView, SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
 
@@ -290,30 +291,30 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             this, SLOT(slotLoadStarted()));
     connect(page, SIGNAL(loadAborted(QUrl)),
             this, SLOT(slotLoadAborted(QUrl)));
-    connect(page, SIGNAL(linkHovered(QString,QString,QString)),
-            this, SLOT(slotLinkHovered(QString,QString,QString)));
-    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
-            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
-    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
-            this, SLOT(slotRestoreFrameState(QWebFrame*)));
-    connect(page, SIGNAL(statusBarMessage(QString)),
-            this, SLOT(slotSetStatusBarText(QString)));
+    connect(page, &QWebEnginePage::linkHovered,
+            this, &KWebKitPart::slotLinkHovered);
+//    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
+//            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
+//    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
+//            this, SLOT(slotRestoreFrameState(QWebFrame*)));
+//    connect(page, SIGNAL(statusBarMessage(QString)),
+//            this, SLOT(slotSetStatusBarText(QString)));
     connect(page, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
-    connect(page, SIGNAL(printRequested(QWebFrame*)),
-            m_browserExtension, SLOT(slotPrintRequested(QWebFrame*)));
-    connect(page, SIGNAL(frameCreated(QWebFrame*)),
-            this, SLOT(slotFrameCreated(QWebFrame*)));
+//    connect(page, SIGNAL(printRequested(QWebFrame*)),
+//            m_browserExtension, SLOT(slotPrintRequested(QWebFrame*)));
+ //   connect(page, SIGNAL(frameCreated(QWebFrame*)),
+ //           this, SLOT(slotFrameCreated(QWebFrame*)));
 
-    connect(m_webView, SIGNAL(linkShiftClicked(QUrl)),
-            page, SLOT(downloadUrl(QUrl)));
+//    connect(m_webView, SIGNAL(linkShiftClicked(QUrl)),
+//            page, SLOT(downloadUrl(QUrl)));
 
     connect(page, SIGNAL(loadProgress(int)),
             m_browserExtension, SIGNAL(loadingProgress(int)));
     connect(page, SIGNAL(selectionChanged()),
             m_browserExtension, SLOT(updateEditActions()));
-    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
-            page, SLOT(downloadUrl(QUrl)));
+//    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
+//            page, SLOT(downloadUrl(QUrl)));
 
 //    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
 //            this, SLOT(slotMainFrameLoadFinished(bool)));
@@ -321,7 +322,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
         if (WebKitSettings::self()->favIconsEnabled()
-            /*&& !page->settings()->testAttribute(QWebEngineSettings::PrivateBrowsingEnabled)*/){
+            && !page->profile()->isOffTheRecord()){
                 m_browserExtension->setIconUrl(url);
         }
     });
@@ -608,7 +609,7 @@ void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
 }
 #endif
 
-void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/, const QString& /*content*/)
+void KWebKitPart::slotLinkHovered(const QString& _link)
 {
     QString message;
 
@@ -693,11 +694,10 @@ void KWebKitPart::slotSearchForText(const QString &text, bool backward)
     if (m_searchBar->caseSensitive())
         flags |= QWebEnginePage::FindCaseSensitively;
 
-//    if (m_searchBar->highlightMatches())
-//        flags |= QWebPage::HighlightAllOccurrences;
-
     //kDebug() << "search for text:" << text << ", backward ?" << backward;
-    // TODO callback m_searchBar->setFoundMatch(page()->findText(text, flags));
+    page()->findText(text, flags, [this](bool found) {
+        m_searchBar->setFoundMatch(found);
+    });
 }
 
 void KWebKitPart::slotShowSearchBar()

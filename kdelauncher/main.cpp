@@ -81,13 +81,13 @@ public:
         view = new KWebKitPart(this);
         setCentralWidget(view->widget());
 
-        connect(view, SIGNAL(loadFinished(bool)),
-                this, SLOT(loadFinished()));
-        connect(view, SIGNAL(titleChanged(QString)),
+        connect(view->view(), &QWebEngineView::loadFinished,
+                this, &MainWindow::loadFinished);
+        connect(view->view(), SIGNAL(titleChanged(QString)),
                 this, SLOT(setWindowTitle(QString)));
-        //connect(view->page(), SIGNAL(linkHovered(QString,QString,QString)),
-        //        this, SLOT(showLinkHover(QString,QString)));
-        //connect(view->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
+        connect(view->view()->page(), SIGNAL(linkHovered(QString)),
+                this, SLOT(showLinkHover(QString)));
+        connect(view->view()->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
 
         setupUI();
 
@@ -136,12 +136,8 @@ protected slots:
         urlModel.setStringList(urlList);
     }
 
-    void showLinkHover(const QString &link, const QString &toolTip) {
+    void showLinkHover(const QString &link) {
         statusBar()->showMessage(link);
-#ifndef QT_NO_TOOLTIP
-        if (!toolTip.isEmpty())
-            QToolTip::showText(QCursor::pos(), toolTip);
-#endif
     }
 
     void zoomIn() {
@@ -228,9 +224,9 @@ private:
         progress->hide();
         statusBar()->addPermanentWidget(progress);
 
-        connect(view, SIGNAL(loadProgress(int)), progress, SLOT(show()));
-        connect(view, SIGNAL(loadProgress(int)), progress, SLOT(setValue(int)));
-        connect(view, SIGNAL(loadFinished(bool)), progress, SLOT(hide()));
+        connect(view->view(), SIGNAL(loadProgress(int)), progress, SLOT(show()));
+        connect(view->view(), SIGNAL(loadProgress(int)), progress, SLOT(setValue(int)));
+        connect(view->view(), SIGNAL(loadFinished(bool)), progress, SLOT(hide()));
 
         urlEdit = new KLineEdit(this);
         urlEdit->setSizePolicy(QSizePolicy::Expanding, urlEdit->sizePolicy().verticalPolicy());

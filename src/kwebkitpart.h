@@ -121,7 +121,7 @@ private Q_SLOTS:
     void slotMainFrameLoadFinished(bool);
 
     void slotSearchForText(const QString &text, bool backward);
-    void slotLinkHovered(const QString &, const QString&, const QString &);
+    void slotLinkHovered(const QString &);
     //void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
     //void slotRestoreFrameState(QWebFrame *frame);
     void slotLinkMiddleOrCtrlClicked(const QUrl&);

@@ -75,7 +75,6 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
     setPage(new WebPage(part, this));
 
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
-    connect(this, SIGNAL(loadStarted()), this, SLOT(hideAccessKeys()));
     
     if (WebKitSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
@@ -111,18 +110,6 @@ QWebEngineContextMenuData WebView::contextMenuResult() const
 {
     return m_result;
 }
-#if 0
-static bool isMultimediaElement(const QWebElement& element)
-{
-    if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
-        return true;
-
-    if (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0)
-        return true;
-
-    return false;
-}
-#endif
 
 static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 {

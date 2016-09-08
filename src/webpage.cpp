@@ -79,12 +79,12 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     //setForwardUnsupportedContent(true);
 
-    connect(this, SIGNAL(geometryChangeRequested(QRect)),
-            this, SLOT(slotGeometryChangeRequested(QRect)));
-    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
-            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
-    connect(this, SIGNAL(featurePermissionRequested(QWebFrame*, QWebPage::Feature)),
-            this, SLOT(slotFeaturePermissionRequested(QWebFrame*, QWebPage::Feature)));
+    connect(this, &QWebEnginePage::geometryChangeRequested,
+            this, &WebPage::slotGeometryChangeRequested);
+//    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
+//            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
+    connect(this, &QWebEnginePage::featurePermissionRequested,
+            this, &WebPage::slotFeaturePermissionRequested);
 //    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
 //            this, SLOT(slotRequestFinished(QNetworkReply*)));
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
