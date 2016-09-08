@@ -88,7 +88,10 @@ WebPage::WebPage(WebEnginePart *part, QWidget *parent)
 //    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
 //            this, SLOT(slotRequestFinished(QNetworkReply*)));
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
-    this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + ", Konqueror (WebEnginePart)");
+    if(!this->profile()->httpUserAgent().contains("Konqueror"))
+    {
+        this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
+    }
 }
 
 WebPage::~WebPage()
