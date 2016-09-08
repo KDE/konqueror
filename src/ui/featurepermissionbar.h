@@ -24,7 +24,7 @@
 
 #include <KDE/KMessageWidget>
 
-#include <QWebPage>
+#include <QtWebEngineWidgets/QWebEnginePage>
 
 
 class FeaturePermissionBar : public KMessageWidget
@@ -34,13 +34,13 @@ public:
     explicit FeaturePermissionBar(QWidget *parent = 0);
     ~FeaturePermissionBar();
 
-    QWebPage::Feature feature() const;
+    QWebEnginePage::Feature feature() const;
 
-    void setFeature(QWebPage::Feature);
+    void setFeature(QWebEnginePage::Feature);
 
 Q_SIGNALS:
-    void permissionGranted(QWebPage::Feature);
-    void permissionDenied(QWebPage::Feature);
+    void permissionGranted(QWebEnginePage::Feature);
+    void permissionDenied(QWebEnginePage::Feature);
     void done();
 
 private Q_SLOTS:
@@ -48,7 +48,7 @@ private Q_SLOTS:
     void onGrantedButtonClicked();
 
 private:
-    QWebPage::Feature m_feature;
+    QWebEnginePage::Feature m_feature;
 };
 
 #endif // FEATUREPERMISSIONBAR_H

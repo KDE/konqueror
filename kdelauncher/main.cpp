@@ -29,8 +29,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <kwebview.h>
-
 #include <KDE/KApplication>
 #include <KDE/KAboutData>
 #include <KDE/KCmdLineArgs>
@@ -39,14 +37,15 @@
 #include <KDE/KUriFilter>
 #include <KDE/KInputDialog>
 #include <KDE/KLineEdit>
+#include <kwebkitpart.h>
 
-#include <QUiLoader>
-#include <QWebPage>
-#include <QWebView>
-#include <QWebFrame>
-#include <QWebSettings>
-#include <QWebElement>
-#include <QWebElementCollection>
+//#include <QUiLoader>
+//#include <QWebEnginePage>
+#include <QWebEngineView>
+//#include <QWebFrame>
+#include <QWebEngineSettings>
+//#include <QWebElement>
+//#include <QWebElementCollection>
 
 #if !defined(QT_NO_PRINTER)
 #include <QPrintPreviewDialog>
@@ -77,23 +76,23 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(const QString& url = QString()): currentZoom(100) {
-        view = new KWebView(this);
-        setCentralWidget(view);
+        view = new KWebKitPart(this);
+        setCentralWidget(view->widget());
 
         connect(view, SIGNAL(loadFinished(bool)),
                 this, SLOT(loadFinished()));
         connect(view, SIGNAL(titleChanged(QString)),
                 this, SLOT(setWindowTitle(QString)));
-        connect(view->page(), SIGNAL(linkHovered(QString,QString,QString)),
-                this, SLOT(showLinkHover(QString,QString)));
-        connect(view->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
+        //connect(view->page(), SIGNAL(linkHovered(QString,QString,QString)),
+        //        this, SLOT(showLinkHover(QString,QString)));
+        //connect(view->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
 
         setupUI();
 
         QUrl qurl(KUriFilter::self()->filteredUri(url, QStringList() << "kshorturifilter"));
         if (qurl.isValid()) {
             urlEdit->setText(qurl.toEncoded());
-            view->load(qurl);
+            view->openUrl(qurl);
 
             // the zoom values are chosen to be like in Mozilla Firefox 3
             zoomLevels << 30 << 50 << 67 << 80 << 90;
@@ -102,20 +101,20 @@ public:
         }
     }
 
-    QWebPage* webPage() const {
-        return view->page();
+    QWebEnginePage* webPage() const {
+        return view->view()->page();
     }
 
-    QWebView* webView() const {
-        return view;
+    QWebEngineView* webView() const {
+        return view->view();
     }
 
 protected slots:
 
     void changeLocation() {
         QUrl url (KUriFilter::self()->filteredUri(urlEdit->text(), QStringList() << "kshorturifilter"));
-        view->load(url);
-        view->setFocus(Qt::OtherFocusReason);
+        view->openUrl(url);
+        view->view()->setFocus(Qt::OtherFocusReason);
     }
 
     void loadFinished() {
@@ -149,7 +148,7 @@ protected slots:
         if (i < zoomLevels.count() - 1)
             currentZoom = zoomLevels[i + 1];
 
-        view->setZoomFactor(qreal(currentZoom)/100.0);
+        view->view()->setZoomFactor(qreal(currentZoom)/100.0);
     }
 
     void zoomOut() {
@@ -158,18 +157,18 @@ protected slots:
         if (i > 0)
             currentZoom = zoomLevels[i - 1];
 
-        view->setZoomFactor(qreal(currentZoom)/100.0);
+        view->view()->setZoomFactor(qreal(currentZoom)/100.0);
     }
 
     void resetZoom()
     {
        currentZoom = 100;
-       view->setZoomFactor(1.0);
+       view->view()->setZoomFactor(1.0);
     }
 
     void toggleZoomTextOnly(bool b)
     {
-        view->page()->settings()->setAttribute(QWebSettings::ZoomTextOnly, b);
+//        view->view()->page()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, b);
     }
 
     void print() {
@@ -182,12 +181,12 @@ protected slots:
     }
 
     void setEditable(bool on) {
-        view->page()->setContentEditable(on);
+//        view->view()->page()->setContentEditable(on);
         formatMenuAction->setVisible(on);
     }
 
     void dumpHtml() {
-        kDebug() << "HTML: " << view->page()->mainFrame()->toHtml();
+        // callback kDebug() << "HTML: " << view->view()->page()->toHtml();
     }
 
     void selectElements() {
@@ -196,11 +195,11 @@ protected slots:
                                             i18nc("input dialog text for selecting html elements", "Choose elements"),
                                             QLatin1String("a"), &ok, this);
         if (ok && !str.isEmpty()) {
-            QWebElementCollection collection = view->page()->mainFrame()->findAllElements(str);
-            const int count = collection.count();
-            for (int i=0; i < count; i++)
-                collection.at(i).setStyleProperty("background-color", "yellow");
-            statusBar()->showMessage(i18np("%1 element selected", "%1 elements selected", count), 5000);
+            //QWebElementCollection collection = view->page()->mainFrame()->findAllElements(str);
+            //const int count = collection.count();
+            //for (int i=0; i < count; i++)
+            //    collection.at(i).setStyleProperty("background-color", "yellow");
+            //statusBar()->showMessage(i18np("%1 element selected", "%1 elements selected", count), 5000);
         }
     }
 
@@ -238,10 +237,10 @@ private:
         completer->setModel(&urlModel);
 
         QToolBar *bar = addToolBar("Navigation");
-        bar->addAction(view->pageAction(QWebPage::Back));
-        bar->addAction(view->pageAction(QWebPage::Forward));
-        bar->addAction(view->pageAction(QWebPage::Reload));
-        bar->addAction(view->pageAction(QWebPage::Stop));
+        bar->addAction(view->view()->pageAction(QWebEnginePage::Back));
+        bar->addAction(view->view()->pageAction(QWebEnginePage::Forward));
+        bar->addAction(view->view()->pageAction(QWebEnginePage::Reload));
+        bar->addAction(view->view()->pageAction(QWebEnginePage::Stop));
         bar->addWidget(urlEdit);
 
         QMenu *fileMenu = menuBar()->addMenu(i18n("&File"));
@@ -251,19 +250,19 @@ private:
         fileMenu->addAction(i18n("Close"), this, SLOT(close()));
 
         QMenu *editMenu = menuBar()->addMenu(i18n("&Edit"));
-        editMenu->addAction(view->pageAction(QWebPage::Undo));
-        editMenu->addAction(view->pageAction(QWebPage::Redo));
+        editMenu->addAction(view->view()->pageAction(QWebEnginePage::Undo));
+        editMenu->addAction(view->view()->pageAction(QWebEnginePage::Redo));
         editMenu->addSeparator();
-        editMenu->addAction(view->pageAction(QWebPage::Cut));
-        editMenu->addAction(view->pageAction(QWebPage::Copy));
-        editMenu->addAction(view->pageAction(QWebPage::Paste));
+        editMenu->addAction(view->view()->pageAction(QWebEnginePage::Cut));
+        editMenu->addAction(view->view()->pageAction(QWebEnginePage::Copy));
+        editMenu->addAction(view->view()->pageAction(QWebEnginePage::Paste));
         editMenu->addSeparator();
         QAction *setEditable = editMenu->addAction(i18n("Set Editable"), this, SLOT(setEditable(bool)));
         setEditable->setCheckable(true);
 
         QMenu *viewMenu = menuBar()->addMenu(i18n("&View"));
-        viewMenu->addAction(view->pageAction(QWebPage::Stop));
-        viewMenu->addAction(view->pageAction(QWebPage::Reload));
+        viewMenu->addAction(view->view()->pageAction(QWebEnginePage::Stop));
+        viewMenu->addAction(view->view()->pageAction(QWebEnginePage::Reload));
         viewMenu->addSeparator();
         QAction *zoomIn = viewMenu->addAction(i18n("Zoom &In"), this, SLOT(zoomIn()));
         QAction *zoomOut = viewMenu->addAction(i18n("Zoom &Out"), this, SLOT(zoomOut()));
@@ -274,40 +273,41 @@ private:
         viewMenu->addSeparator();
         viewMenu->addAction(i18n("Dump HTML"), this, SLOT(dumpHtml()));
 
+#if 0
         QMenu *formatMenu = new QMenu(i18n("F&ormat"));
         formatMenuAction = menuBar()->addMenu(formatMenu);
         formatMenuAction->setVisible(false);
-        formatMenu->addAction(view->pageAction(QWebPage::ToggleBold));
-        formatMenu->addAction(view->pageAction(QWebPage::ToggleItalic));
-        formatMenu->addAction(view->pageAction(QWebPage::ToggleUnderline));
+        formatMenu->addAction(view->view()->pageAction(QWebEnginePage::ToggleBold));
+        formatMenu->addAction(view->view()->pageAction(QWebEnginePage::ToggleItalic));
+        formatMenu->addAction(view->view()->pageAction(QWebEnginePage::ToggleUnderline));
         QMenu *writingMenu = formatMenu->addMenu(i18n("Writing Direction"));
-        writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionDefault));
-        writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionLeftToRight));
-        writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionRightToLeft));
-
+        writingMenu->addAction(view->view()->pageAction(QWebEnginePage::SetTextDirectionDefault));
+        writingMenu->addAction(view->view()->pageAction(QWebEnginePage::SetTextDirectionLeftToRight));
+        writingMenu->addAction(view->view()->pageAction(QWebEnginePage::SetTextDirectionRightToLeft));
+#endif
         newWindow->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_N));
-        view->pageAction(QWebPage::Back)->setShortcut(QKeySequence::Back);
-        view->pageAction(QWebPage::Stop)->setShortcut(Qt::Key_Escape);
-        view->pageAction(QWebPage::Forward)->setShortcut(QKeySequence::Forward);
-        view->pageAction(QWebPage::Reload)->setShortcut(QKeySequence::Refresh);
-        view->pageAction(QWebPage::Undo)->setShortcut(QKeySequence::Undo);
-        view->pageAction(QWebPage::Redo)->setShortcut(QKeySequence::Redo);
-        view->pageAction(QWebPage::Cut)->setShortcut(QKeySequence::Cut);
-        view->pageAction(QWebPage::Copy)->setShortcut(QKeySequence::Copy);
-        view->pageAction(QWebPage::Paste)->setShortcut(QKeySequence::Paste);
+        view->view()->pageAction(QWebEnginePage::Back)->setShortcut(QKeySequence::Back);
+        view->view()->pageAction(QWebEnginePage::Stop)->setShortcut(Qt::Key_Escape);
+        view->view()->pageAction(QWebEnginePage::Forward)->setShortcut(QKeySequence::Forward);
+        view->view()->pageAction(QWebEnginePage::Reload)->setShortcut(QKeySequence::Refresh);
+        view->view()->pageAction(QWebEnginePage::Undo)->setShortcut(QKeySequence::Undo);
+        view->view()->pageAction(QWebEnginePage::Redo)->setShortcut(QKeySequence::Redo);
+        view->view()->pageAction(QWebEnginePage::Cut)->setShortcut(QKeySequence::Cut);
+        view->view()->pageAction(QWebEnginePage::Copy)->setShortcut(QKeySequence::Copy);
+        view->view()->pageAction(QWebEnginePage::Paste)->setShortcut(QKeySequence::Paste);
         zoomIn->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Plus));
         zoomOut->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Minus));
         resetZoom->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_0));
-        view->pageAction(QWebPage::ToggleBold)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_B));
-        view->pageAction(QWebPage::ToggleItalic)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_I));
-        view->pageAction(QWebPage::ToggleUnderline)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_U));
+//        view->view()->pageAction(QWebEnginePage::ToggleBold)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_B));
+//        view->view()->pageAction(QWebEnginePage::ToggleItalic)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_I));
+//        view->view()->pageAction(QWebEnginePage::ToggleUnderline)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_U));
 
         QMenu *toolsMenu = menuBar()->addMenu(i18n("&Tools"));
         toolsMenu->addAction(i18n("Select elements..."), this, SLOT(selectElements()));
 
     }
 
-    QWebView *view;
+    KWebKitPart *view;
     KLineEdit *urlEdit;
     QProgressBar *progress;
 
@@ -321,7 +321,7 @@ class URLLoader : public QObject
 {
     Q_OBJECT
 public:
-    URLLoader(QWebView* view, const QString& inputFileName)
+    URLLoader(QWebEngineView* view, const QString& inputFileName)
         : m_view(view)
         , m_stdOut(stdout)
     {
@@ -376,7 +376,7 @@ private:
 private:
     QVector<QString> m_urls;
     int m_index;
-    QWebView* m_view;
+    QWebEngineView* m_view;
     QTextStream m_stdOut;
 };
 
@@ -396,12 +396,12 @@ int main(int argc, char **argv)
 
     QString url = QString("%1/%2").arg(QDir::homePath()).arg(QLatin1String("index.html"));
 
-    QWebSettings::setMaximumPagesInCache(4);
+//    QWebEngineSettings::globalSettings()->setMaximumPagesInCache(4);
 
-    QWebSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
+//    QWebEngineSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
 
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
+    QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
+//    QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
 
     const QStringList args = app.arguments();
 
@@ -413,7 +413,7 @@ int main(int argc, char **argv)
             exit(0);
         }
         MainWindow window;
-        QWebView *view = window.webView();
+        QWebEngineView *view = window.webView();
         URLLoader loader(view, listFile);
         QObject::connect(view, SIGNAL(loadFinished(bool)), &loader, SLOT(loadNext()));
         loader.loadNext();

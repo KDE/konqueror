@@ -48,12 +48,12 @@ FeaturePermissionBar::~FeaturePermissionBar()
 {
 }
 
-QWebPage::Feature FeaturePermissionBar::feature() const
+QWebEnginePage::Feature FeaturePermissionBar::feature() const
 {
     return m_feature;
 }
 
-void FeaturePermissionBar::setFeature (QWebPage::Feature feature)
+void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
 {
     m_feature = feature;
 }

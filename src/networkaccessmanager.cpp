@@ -30,8 +30,8 @@
 #include <QTimer>
 #include <QWidget>
 #include <QNetworkReply>
-#include <QWebFrame>
-#include <QWebPage>
+//#include <QWebFrame>
+//#include <QWebPage>
 #include <QWebSettings>
 #include <QWebElementCollection>
 

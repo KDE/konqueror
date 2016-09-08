@@ -31,8 +31,8 @@
 class QUrl;
 class KWebKitPart;
 class WebView;
-class KSaveFile;
-class QWebFrame;
+//class KSaveFile;
+//class QWebFrame;
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
 {
@@ -108,7 +108,7 @@ public Q_SLOTS:
     void slotSpellCheckDone(const QString&);
     void spellCheckerCorrected(const QString&, int, const QString&);
     void spellCheckerMisspelling(const QString&, int);
-    void slotPrintRequested(QWebFrame*);
+    //void slotPrintRequested(QWebFrame*);
     void slotPrintPreview();
 
     void slotOpenSelection();

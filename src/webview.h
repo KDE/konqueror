@@ -25,17 +25,14 @@
 
 #include <QPointer>
 #include <KDE/KParts/BrowserExtension>
-#include <KDE/KWebView>
 
-#include <QWebHitTestResult>
+#include <QWebEngineView>
+#include <QWebEngineContextMenuData>
 
 class QUrl;
 class KWebKitPart;
-class QWebHitTestResult;
-class QWebInspector;
-class QLabel;
 
-class WebView : public KWebView
+class WebView : public QWebEngineView
 {
     Q_OBJECT
 public:
@@ -53,7 +50,7 @@ public:
      */
     void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
 
-    QWebHitTestResult contextMenuResult() const;
+    QWebEngineContextMenuData contextMenuResult() const;
 
 protected:
     /**
@@ -106,7 +103,6 @@ protected:
 
 private Q_SLOTS:
     void slotStopAutoScroll();
-    void hideAccessKeys();
 
 private:
     void editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
@@ -114,29 +110,16 @@ private:
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &);
     void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
-    void addSearchActions(QList<QAction*>& selectActions, QWebView*);
-
-    void showAccessKeys();
-    bool checkForAccessKey(QKeyEvent *event);
-    void makeAccessKeyLabel(const QChar &accessKey, const QWebElement &element);
+    void addSearchActions(QList<QAction*>& selectActions, QWebEngineView*);
 
     KActionCollection* m_actionCollection;
-    QWebHitTestResult m_result;
+    QWebEngineContextMenuData m_result;
     QPointer<KWebKitPart> m_part;
-    QWebInspector* m_webInspector;
 
     qint32 m_autoScrollTimerId;
     qint32 m_verticalAutoScrollSpeed;
     qint32 m_horizontalAutoScrollSpeed;
 
-    enum AccessKeyState {
-        NotActivated,
-        PreActivated,
-        Activated
-    };
-    AccessKeyState m_accessKeyActivated;
-    QList<QLabel*> m_accessKeyLabels;
-    QHash<QChar, QWebElement> m_accessKeyNodes;
     QHash<QString, QChar> m_duplicateLinkElements;
 };
 

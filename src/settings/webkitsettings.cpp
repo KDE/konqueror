@@ -32,7 +32,7 @@
 #include <KDE/KMessageBox>
 #include <KDE/KStandardDirs>
 
-#include <QWebSettings>
+#include <QtWebEngineWidgets/QWebEngineSettings>
 #include <QFontDatabase>
 #include <QFileInfo>
 
@@ -672,53 +672,55 @@ void WebKitSettings::init( KConfig * config, bool reset )
     }
   }
 
+#if 0
   // DNS Prefect support...
   if ( reset || cgHtml.hasKey( "DNSPrefetch" ) )
   {
     // Enabled, Disabled, OnlyWWWAndSLD
     QString value = cgHtml.readEntry( "DNSPrefetch", "Enabled" ).toLower();
+
     if (value == "enabled")
-        QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, true);
+        QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, true);
     else
-        QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, false);
+        QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, false);
   }
 
-  // Sync with QWebSettings.
+  // Sync with QWebEngineSettings.
   if (!d->m_encoding.isEmpty())
-      QWebSettings::globalSettings()->setDefaultTextEncoding(d->m_encoding);
+      QWebEngineSettings::globalSettings()->setDefaultTextEncoding(d->m_encoding);
+  QWebEngineSettings::globalSettings()->setUserStyleSheetUrl(QUrl::fromUserInput(userStyleSheet()));
+#endif
 
-  QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl::fromUserInput(userStyleSheet()));
-
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, autoLoadImages());
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, isJavaScriptEnabled());
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavaEnabled, isJavaEnabled());
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, isPluginsEnabled());
+  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::AutoLoadImages, autoLoadImages());
+  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::JavascriptEnabled, isJavaScriptEnabled());
+ // QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::JavaEnabled, isJavaEnabled());
+  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, isPluginsEnabled());
 
   // By default disable JS window.open when policy is deny or smart.
   const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = windowOpenPolicy();
   if (policy == KParts::HtmlSettingsInterface::JSWindowOpenDeny || policy == KParts::HtmlSettingsInterface::JSWindowOpenSmart)
-      QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, false);
+      QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
   else
-      QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
+      QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
 
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly, zoomTextOnly());
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, isJavaScriptDebugEnabled());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, stdFontName());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, fixedFontName());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, serifFontName());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, sansSerifFontName());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
-  QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
+//  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::ZoomTextOnly, zoomTextOnly());
+//  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, isJavaScriptDebugEnabled());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::StandardFont, stdFontName());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::FixedFont, fixedFontName());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::SerifFont, serifFontName());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::SansSerifFont, sansSerifFontName());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::CursiveFont, cursiveFontName());
+  QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::FantasyFont, fantasyFontName());
 
   // TODO: Create a webkit config module that gets embeded into Konqueror's kcm.
   // Turn on WebGL support
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, d->m_enableWebGL);
+//  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled, d->m_enableLocalStorage);
+//  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::OfflineStorageDatabaseEnabled, d->m_enableOfflineStorageDb);
+//  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::OfflineWebApplicationCacheEnabled, d->m_enableOfflineWebAppCache);
+  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, d->m_enableLocalStorage);
 
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
+  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);
@@ -735,8 +737,8 @@ void WebKitSettings::computeFontSizes( int logicalDpi )
   if (toPix < 96.0/72.0)
       toPix = 96.0/72.0;
 
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, qRound(minFontSize() * toPix));
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
+  QWebEngineSettings::globalSettings()->setFontSize(QWebEngineSettings::MinimumFontSize, qRound(minFontSize() * toPix));
+  QWebEngineSettings::globalSettings()->setFontSize(QWebEngineSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
 }
 
 bool WebKitSettings::zoomToDPI() const

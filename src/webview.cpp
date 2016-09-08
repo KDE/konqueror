@@ -47,10 +47,10 @@
 #include <QDropEvent>
 #include <QLabel>
 #include <QNetworkRequest>
-#include <QWebFrame>
-#include <QWebElement>
-#include <QWebHitTestResult>
-#include <QWebInspector>
+//#include <QWebFrame>
+//#include <QWebElement>
+//#include <QWebHitTestResult>
+//#include <QWebInspector>
 #include <QToolTip>
 #include <QCoreApplication>
 #include <unistd.h>
@@ -62,14 +62,12 @@
 #define ALTERNATE_WEB_SHORTCUTS           QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
 
 WebView::WebView(KWebKitPart* part, QWidget* parent)
-        :KWebView(parent, false),
+        :QWebEngineView(parent),
          m_actionCollection(new KActionCollection(this)),
          m_part(part),
-         m_webInspector(0),
          m_autoScrollTimerId(-1),
          m_verticalAutoScrollSpeed(0),
-         m_horizontalAutoScrollSpeed(0),
-         m_accessKeyActivated(NotActivated)
+         m_horizontalAutoScrollSpeed(0)
 {
     setAcceptDrops(true);
 
@@ -78,7 +76,6 @@ WebView::WebView(KWebKitPart* part, QWidget* parent)
 
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
     connect(this, SIGNAL(loadStarted()), this, SLOT(hideAccessKeys()));
-    connect(page(), SIGNAL(scrollRequested(int,int,QRect)), this, SLOT(hideAccessKeys()));
     
     if (WebKitSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
@@ -104,17 +101,17 @@ void WebView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, con
     }
 
     if (bargs.postData.isEmpty()) {
-        KWebView::load(request);
+        QWebEngineView::load(url);
     } else {
-        KWebView::load(request, QNetworkAccessManager::PostOperation, bargs.postData);
+     //   QWebEngineView::load(url, QNetworkAccessManager::PostOperation, bargs.postData);
     }
 }
 
-QWebHitTestResult WebView::contextMenuResult() const
+QWebEngineContextMenuData WebView::contextMenuResult() const
 {
     return m_result;
 }
-
+#if 0
 static bool isMultimediaElement(const QWebElement& element)
 {
     if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
@@ -125,6 +122,7 @@ static bool isMultimediaElement(const QWebElement& element)
 
     return false;
 }
+#endif
 
 static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 {
@@ -153,7 +151,7 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)
 {
-    m_result = page()->mainFrame()->hitTestContent(e->pos());
+    m_result = page()->contextMenuData();
 
     // Clear the previous collection entries first...
     m_actionCollection->clear();
@@ -164,25 +162,22 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     bool forcesNewWindow = false;
 
     QUrl emitUrl;
+
     if (m_result.isContentEditable()) {
-        if (m_result.element().hasAttribute(QL1S("disabled"))) {
-            e->accept();
-            return;
-        }
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
         editableContentActionPopupMenu(mapAction);
-    } else if (isMultimediaElement(m_result.element())) {
+    } else if (m_result.mediaType() != QWebEngineContextMenuData::MediaTypeVideo || m_result.mediaType() == QWebEngineContextMenuData::MediaTypeAudio) {
         multimediaActionPopupMenu(mapAction);
     } else if (!m_result.linkUrl().isValid()) {
-        if (m_result.imageUrl().isValid()) {
-            emitUrl = m_result.imageUrl();
+        if (m_result.mediaType() == QWebEngineContextMenuData::MediaTypeImage) {
+            emitUrl = m_result.mediaUrl();
             extractMimeTypeFor(emitUrl, mimeType);
         } else {
             flags |= KParts::BrowserExtension::ShowBookmark;
             flags |= KParts::BrowserExtension::ShowReload;
             emitUrl = m_part->url();
 
-            if (m_result.isContentSelected()) {
+            if (!m_result.selectedText().isEmpty()) {
                 flags |= KParts::BrowserExtension::ShowTextSelectionItems;
                 selectActionPopupMenu(mapAction);
             } else {
@@ -203,7 +198,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         partActionPopupMenu(mapAction);
 
         // Show the OpenInThisWindow context menu item
-        forcesNewWindow = (page()->currentFrame() != m_result.linkTargetFrame());
+//        forcesNewWindow = (page()->currentFrame() != m_result.linkTargetFrame());
     }
 
     if (!mapAction.isEmpty()) {
@@ -216,51 +211,17 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         return;
     }
 
-    KWebView::contextMenuEvent(e);
-}
-
-static bool isEditableElement(QWebPage* page)
-{
-    const QWebFrame* frame = (page ? page->currentFrame() : 0);
-    QWebElement element = (frame ? frame->findFirstElement(QL1S(":focus")) : QWebElement());
-    if (!element.isNull()) {
-        const QString tagName(element.tagName());
-        if (tagName.compare(QL1S("textarea"), Qt::CaseInsensitive) == 0) {
-            return true;
-        }
-        const QString type(element.attribute(QL1S("type")).toLower());
-        if (tagName.compare(QL1S("input"), Qt::CaseInsensitive) == 0
-            && (type.isEmpty() || type == QL1S("text") || type == QL1S("password"))) {
-            return true;
-        }
-        if (element.evaluateJavaScript("this.isContentEditable").toBool()) {
-            return true;
-        }
-    }
-    return false;
+    QWebEngineView::contextMenuEvent(e);
 }
 
 void WebView::keyPressEvent(QKeyEvent* e)
 {
     if (e && hasFocus()) {
         const int key = e->key();
-        if (WebKitSettings::self()->accessKeysEnabled()) {
-            if (m_accessKeyActivated == Activated) {
-                if (checkForAccessKey(e)) {
-                    hideAccessKeys();
-                    e->accept();
-                    return;
-                }
-                hideAccessKeys();
-            } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(page())) {
-                m_accessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
-            }
-        }
-
         if (e->modifiers() & Qt::ShiftModifier) {
             switch (key) {
             case Qt::Key_Up:
-                if (!isEditableElement(page())) {
+               /* if (!isEditableElement(page()))*/ {
                     m_verticalAutoScrollSpeed--;
                     if (m_autoScrollTimerId == -1)
                         m_autoScrollTimerId = startTimer(100);
@@ -269,7 +230,7 @@ void WebView::keyPressEvent(QKeyEvent* e)
                 }
                 break;
             case Qt::Key_Down:
-                if (!isEditableElement(page())) {
+                /*if (!isEditableElement(page()))*/ {
                     m_verticalAutoScrollSpeed++;
                     if (m_autoScrollTimerId == -1)
                         m_autoScrollTimerId = startTimer(100);
@@ -278,7 +239,7 @@ void WebView::keyPressEvent(QKeyEvent* e)
                 }
                 break;
             case Qt::Key_Left:
-                if (!isEditableElement(page())) {
+                /*if (!isEditableElement(page()))*/ {
                     m_horizontalAutoScrollSpeed--;
                     if (m_autoScrollTimerId == -1)
                         m_autoScrollTimerId = startTimer(100);
@@ -287,7 +248,7 @@ void WebView::keyPressEvent(QKeyEvent* e)
                 }
                 break;
             case Qt::Key_Right:
-                if (!isEditableElement(page())) {
+                /*if (!isEditableElement(page()))*/ {
                     m_horizontalAutoScrollSpeed--;
                     if (m_autoScrollTimerId == -1)
                         m_autoScrollTimerId = startTimer(100);
@@ -305,58 +266,39 @@ void WebView::keyPressEvent(QKeyEvent* e)
             return;
         }
     }
-    KWebView::keyPressEvent(e);
+    QWebEngineView::keyPressEvent(e);
 }
 
 void WebView::keyReleaseEvent(QKeyEvent *e)
 {
-    if (WebKitSettings::self()->accessKeysEnabled() && m_accessKeyActivated == PreActivated) {
-        // Activate only when the CTRL key is pressed and released by itself.
-        if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
-            showAccessKeys();
-            emit statusBarMessage(i18n("Access keys activated"));
-            m_accessKeyActivated = Activated;
-        } else {
-            m_accessKeyActivated = NotActivated;
-        }
-    }
-    KWebView::keyReleaseEvent(e);
+    QWebEngineView::keyReleaseEvent(e);
 }
 
 void WebView::mouseReleaseEvent(QMouseEvent* e)
 {
-    if (WebKitSettings::self()->accessKeysEnabled() && m_accessKeyActivated == PreActivated
-        && e->button() != Qt::NoButton && (e->modifiers() & Qt::ControlModifier)) {
-        m_accessKeyActivated = NotActivated;
-    }
-    KWebView::mouseReleaseEvent(e);
+    QWebEngineView::mouseReleaseEvent(e);
 }
 
 void WebView::wheelEvent (QWheelEvent* e)
 {
-    if (WebKitSettings::self()->accessKeysEnabled() &&
-        m_accessKeyActivated == PreActivated &&
-        (e->modifiers() & Qt::ControlModifier)) {
-        m_accessKeyActivated = NotActivated;
-    }
-    KWebView::wheelEvent(e);
+    QWebEngineView::wheelEvent(e);
 }
 
 
 void WebView::timerEvent(QTimerEvent* e)
 {
+#if 0
     if (e && e->timerId() == m_autoScrollTimerId) {
         // do the scrolling
-        page()->currentFrame()->scroll(m_horizontalAutoScrollSpeed, m_verticalAutoScrollSpeed);
-
+        scroll(m_horizontalAutoScrollSpeed, m_verticalAutoScrollSpeed);
         // check if we reached the end
-        const int y = page()->currentFrame()->scrollPosition().y();
+        const int y = page()->scrollPosition().y();
         if (y == page()->currentFrame()->scrollBarMinimum(Qt::Vertical) ||
             y == page()->currentFrame()->scrollBarMaximum(Qt::Vertical)) {
             m_verticalAutoScrollSpeed = 0;
         }
 
-        const int x = page()->currentFrame()->scrollPosition().x();
+        const int x = page()->scrollPosition().x();
         if (x == page()->currentFrame()->scrollBarMinimum(Qt::Horizontal) ||
             x == page()->currentFrame()->scrollBarMaximum(Qt::Horizontal)) {
             m_horizontalAutoScrollSpeed = 0;
@@ -367,117 +309,42 @@ void WebView::timerEvent(QTimerEvent* e)
             killTimer(m_autoScrollTimerId);
             m_autoScrollTimerId = -1;
         }
-
         e->accept();
         return;
     }
-    KWebView::timerEvent(e);
-}
-
-static bool showSpellCheckAction(const QWebElement& element)
-{
-    if (element.hasAttribute(QL1S("readonly")))
-        return false;
-
-    if (element.attribute(QL1S("spellcheck"), QL1S("true")).compare(QL1S("false"), Qt::CaseInsensitive) == 0)
-        return false;
-
-    if (element.hasAttribute(QL1S("type"))
-        && element.attribute(QL1S("type")).compare(QL1S("text"), Qt::CaseInsensitive) != 0)
-        return false;
-
-    return true;
+#endif
+    QWebEngineView::timerEvent(e);
 }
 
 void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
     QList<QAction*> editableContentActions;
 
-    KActionMenu* menu = new KActionMenu(i18nc("Text direction", "Direction"), this);
     QActionGroup* group = new QActionGroup(this);
     group->setExclusive(true);
 
-    QAction *action = m_actionCollection->addAction(QL1S("text-direction-default"),  m_part->browserExtension(), SLOT(slotTextDirectionChanged()));
-    action->setText(i18n("Default"));
-    action->setCheckable(true);
-    action->setData(QWebPage::SetTextDirectionDefault);
-    action->setEnabled(pageAction(QWebPage::SetTextDirectionDefault)->isEnabled());
-    action->setCheckable(pageAction(QWebPage::SetTextDirectionDefault)->isChecked());
-    action->setActionGroup(group);
-    menu->addAction(action);
-
-    action = m_actionCollection->addAction(QL1S("text-direction-left-to-right"),  m_part->browserExtension(), SLOT(slotTextDirectionChanged()));
-    action->setText(i18n("Left to right"));
-    action->setCheckable(true);
-    action->setData(QWebPage::SetTextDirectionLeftToRight);
-    action->setEnabled(pageAction(QWebPage::SetTextDirectionLeftToRight)->isEnabled());
-    action->setChecked(pageAction(QWebPage::SetTextDirectionLeftToRight)->isChecked());
-    action->setActionGroup(group);
-    menu->addAction(action);
-
-    action = m_actionCollection->addAction(QL1S("text-direction-right-to-left"),  m_part->browserExtension(), SLOT(slotTextDirectionChanged()));
-    action->setText(i18n("Right to left"));
-    action->setCheckable(true);
-    action->setData(QWebPage::SetTextDirectionRightToLeft);
-    action->setEnabled(pageAction(QWebPage::SetTextDirectionRightToLeft)->isEnabled());
-    action->setChecked(pageAction(QWebPage::SetTextDirectionRightToLeft)->isChecked());
-    action->setActionGroup(group);
-    menu->addAction(action);
-
-    editableContentActions.append(menu);
-
-    action = new QAction(m_actionCollection);
+    QAction* action = new QAction(m_actionCollection);
     action->setSeparator(true);
     editableContentActions.append(action);
 
     action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
-    action->setEnabled(pageAction(QWebPage::Copy)->isEnabled());
+    action->setEnabled(pageAction(QWebEnginePage::Copy)->isEnabled());
     editableContentActions.append(action);
 
     action = m_actionCollection->addAction(KStandardAction::Cut, QL1S("cut"),  m_part->browserExtension(), SLOT(cut()));
-    action->setEnabled(pageAction(QWebPage::Cut)->isEnabled());
+    action->setEnabled(pageAction(QWebEnginePage::Cut)->isEnabled());
     editableContentActions.append(action);
 
     action = m_actionCollection->addAction(KStandardAction::Paste, QL1S("paste"),  m_part->browserExtension(), SLOT(paste()));
-    action->setEnabled(pageAction(QWebPage::Paste)->isEnabled());
+    action->setEnabled(pageAction(QWebEnginePage::Paste)->isEnabled());
     editableContentActions.append(action);
 
     action = new QAction(m_actionCollection);
     action->setSeparator(true);
     editableContentActions.append(action);
 
-    const bool hasContent = (!m_result.element().evaluateJavaScript(QL1S("this.value")).toString().isEmpty());
-    action = m_actionCollection->addAction(KStandardAction::SelectAll, QL1S("selectall"),  m_part->browserExtension(), SLOT(slotSelectAll()));
-    action->setEnabled((pageAction(QWebPage::SelectAll)->isEnabled() && hasContent));
-    editableContentActions.append(action);
-
-    if (showSpellCheckAction(m_result.element())) {
-        action = new QAction(m_actionCollection);
-        action->setSeparator(true);
-        editableContentActions.append(action);
-        action = m_actionCollection->addAction(KStandardAction::Spelling, QL1S("spelling"), m_part->browserExtension(), SLOT(slotCheckSpelling()));
-        action->setText(i18n("Check Spelling..."));
-        action->setEnabled(hasContent);
-        editableContentActions.append(action);
-
-        const bool hasSelection = (hasContent && m_result.isContentSelected());
-        action = m_actionCollection->addAction(KStandardAction::Spelling, QL1S("spellcheckSelection"), m_part->browserExtension(), SLOT(slotSpellCheckSelection()));
-        action->setText(i18n("Spellcheck selection..."));
-        action->setEnabled(hasSelection);
-        editableContentActions.append(action);
-    }
-
-    if (settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled)) {
-        if (!m_webInspector) {
-            m_webInspector = new QWebInspector;
-            m_webInspector->setPage(page());
-            connect(page(), SIGNAL(destroyed()), m_webInspector, SLOT(deleteLater()));
-        }
-        action = new QAction(m_actionCollection);
-        action->setSeparator(true);
-        editableContentActions.append(action);
-        editableContentActions.append(pageAction(QWebPage::InspectElement));
-    }
+    editableContentActions.append(pageAction(QWebEnginePage::SelectAll));
+    editableContentActions.append(pageAction(QWebEnginePage::InspectElement));
 
     partGroupMap.insert("editactions" , editableContentActions);
 }
@@ -487,7 +354,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
 {
     QList<QAction*> partActions;
 
-    if (m_result.imageUrl().isValid()) {
+    if (m_result.mediaUrl().isValid()) {
         QAction *action;
         action = new QAction(i18n("Save Image As..."), this);
         m_actionCollection->addAction(QL1S("saveimageas"), action);
@@ -504,13 +371,15 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyImageURL()));
         partActions.append(action);
 
+#if 0
         action = new QAction(i18n("Copy Image"), this);
         m_actionCollection->addAction(QL1S("copyimage"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyImage()));
         action->setEnabled(!m_result.pixmap().isNull());
         partActions.append(action);
+#endif
 
-        action = new QAction(i18n("View Image (%1)", QUrl(m_result.imageUrl()).fileName()), this);
+        action = new QAction(i18n("View Image (%1)", QUrl(m_result.mediaUrl()).fileName()), this);
         m_actionCollection->addAction(QL1S("viewimage"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewImage()));
         partActions.append(action);
@@ -521,81 +390,22 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockImage()));
             partActions.append(action);
 
-            if (!m_result.imageUrl().host().isEmpty() &&
-                !m_result.imageUrl().scheme().isEmpty())
+            if (!m_result.mediaUrl().host().isEmpty() &&
+                !m_result.mediaUrl().scheme().isEmpty())
             {
-                action = new QAction(i18n("Block Images From %1" , m_result.imageUrl().host()), this);
+                action = new QAction(i18n("Block Images From %1" , m_result.mediaUrl().host()), this);
                 m_actionCollection->addAction(QL1S("blockhost"), action);
                 connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockHost()));
                 partActions.append(action);
             }
         }
-    } else if (m_result.frame() && m_result.frame()->parentFrame() && !m_result.isContentSelected() && m_result.linkUrl().isEmpty()) {
-        KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
-
-        QAction* action = new QAction(KIcon("window-new"), i18n("Open in New &Window"), this);
-        m_actionCollection->addAction(QL1S("frameinwindow"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInWindow()));
-        menu->addAction(action);
-
-        action = new QAction(i18n("Open in &This Window"), this);
-        m_actionCollection->addAction(QL1S("frameintop"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInTop()));
-        menu->addAction(action);
-
-        action = new QAction(KIcon("tab-new"), i18n("Open in &New Tab"), this);
-        m_actionCollection->addAction(QL1S("frameintab"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInTab()));
-        menu->addAction(action);
-
-        action = new QAction(m_actionCollection);
-        action->setSeparator(true);
-        menu->addAction(action);
-
-        action = new QAction(i18n("Reload Frame"), this);
-        m_actionCollection->addAction(QL1S("reloadframe"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotReloadFrame()));
-        menu->addAction(action);
-
-        action = new QAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
-        m_actionCollection->addAction(QL1S("printFrame"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(print()));
-        menu->addAction(action);
-
-        action = new QAction(i18n("Save &Frame As..."), this);
-        m_actionCollection->addAction(QL1S("saveFrame"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveFrame()));
-        menu->addAction(action);
-
-        action = new QAction(i18n("View Frame Source"), this);
-        m_actionCollection->addAction(QL1S("viewFrameSource"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewFrameSource()));
-        menu->addAction(action);
-///TODO Slot not implemented yet
-//         action = new QAction(i18n("View Frame Information"), this);
-//         m_actionCollection->addAction(QL1S("viewFrameInfo"), action);
-//         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewPageInfo()));
-
-        action = new QAction(m_actionCollection);
-        action->setSeparator(true);
-        menu->addAction(action);
-
-        if (WebKitSettings::self()->isAdFilterEnabled()) {
-            action = new QAction(i18n("Block IFrame..."), this);
-            m_actionCollection->addAction(QL1S("blockiframe"), action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockIFrame()));
-            menu->addAction(action);
-        }
-
-        partActions.append(menu);
     }
 
     const bool showDocSourceAction = (!m_result.linkUrl().isValid() &&
-                                      !m_result.imageUrl().isValid() &&
-                                      !m_result.isContentSelected());
-    const bool showInspectorAction = settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled);
+                                      !m_result.mediaUrl().isValid() &&
+                                      !m_result.selectedText().isEmpty());
 
-    if (showDocSourceAction || showInspectorAction) {
+    {
         QAction *separatorAction = new QAction(m_actionCollection);
         separatorAction->setSeparator(true);
         partActions.append(separatorAction);
@@ -604,19 +414,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
     if (showDocSourceAction)
         partActions.append(m_part->actionCollection()->action("viewDocumentSource"));
 
-    if (showInspectorAction) {
-        if (!m_webInspector) {
-            m_webInspector = new QWebInspector;
-            m_webInspector->setPage(page());
-            connect(page(), SIGNAL(destroyed()), m_webInspector, SLOT(deleteLater()));
-        }
-        partActions.append(pageAction(QWebPage::InspectElement));
-    } else {
-        if (m_webInspector) {
-            delete m_webInspector;
-            m_webInspector = 0;
-        }
-    }
+    partActions.append(pageAction(QWebEnginePage::InspectElement));
 
     partGroupMap.insert("partactions", partActions);
 }
@@ -657,7 +455,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
 
     QAction* action;
 
-    if (m_result.isContentSelected()) {
+    if (!m_result.selectedText().isEmpty()) {
         action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
         action->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
@@ -670,7 +468,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyEmailAddress()));
         linkActions.append(action);
     } else {
-        if (!m_result.isContentSelected()) {
+        if (m_result.selectedText().isEmpty()) {
             action = new QAction(KIcon("edit-copy"), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
@@ -693,6 +491,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
 
 void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
 {
+#if 0
     QList<QAction*> multimediaActions;
 
     QWebElement element (m_result.element());
@@ -754,6 +553,7 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     multimediaActions.append(action);
 
     mmGroupMap.insert("partactions", multimediaActions);
+#endif
 }
 
 void WebView::slotStopAutoScroll()
@@ -769,7 +569,7 @@ void WebView::slotStopAutoScroll()
 
 }
 
-void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
+void WebView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* view)
 {
    // search text
     const QString selectedText = view->selectedText().simplified();
@@ -813,208 +613,4 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
     }
 }
 
-bool WebView::checkForAccessKey(QKeyEvent *event)
-{
-    if (m_accessKeyLabels.isEmpty())
-        return false;
-
-    QString text = event->text();
-    if (text.isEmpty())
-        return false;
-    QChar key = text.at(0).toUpper();
-    bool handled = false;
-    if (m_accessKeyNodes.contains(key)) {
-        QWebElement element = m_accessKeyNodes[key];
-        QPoint p = element.geometry().center();
-        QWebFrame *frame = element.webFrame();
-        Q_ASSERT(frame);
-        do {
-            p -= frame->scrollPosition();
-            frame = frame->parentFrame();
-        } while (frame && frame != page()->mainFrame());
-        QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &pevent);
-        QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &revent);
-        handled = true;
-    }
-    return handled;
-}
-
-void WebView::hideAccessKeys()
-{
-    if (!m_accessKeyLabels.isEmpty()) {
-        for (int i = 0, count = m_accessKeyLabels.count(); i < count; ++i) {
-            QLabel *label = m_accessKeyLabels[i];
-            label->hide();
-            label->deleteLater();
-        }
-        m_accessKeyLabels.clear();
-        m_accessKeyNodes.clear();
-        m_duplicateLinkElements.clear();
-        m_accessKeyActivated = NotActivated;
-        emit statusBarMessage(QString());
-        update();
-    }
-}
-
-static QString linkElementKey(const QWebElement& element)
-{
-    if (element.hasAttribute(QL1S("href"))) {
-        const QUrl url = element.webFrame()->baseUrl().resolved(QUrl(element.attribute(QL1S("href"))));
-        QString linkKey (url.toString());
-        if (element.hasAttribute(QL1S("target"))) {
-            linkKey += QL1C('+');
-            linkKey += element.attribute(QL1S("target"));
-        }
-        return linkKey; 
-    }
-    return QString();
-}
-
-static void handleDuplicateLinkElements(const QWebElement& element, QHash<QString, QChar>* dupLinkList, QChar* accessKey)
-{
-    if (element.tagName().compare(QL1S("A"), Qt::CaseInsensitive) == 0) {
-        const QString linkKey (linkElementKey(element));
-        // kDebug() << "LINK KEY:" << linkKey;
-        if (dupLinkList->contains(linkKey)) {
-            // kDebug() << "***** Found duplicate link element:" << linkKey << endl;
-            *accessKey = dupLinkList->value(linkKey);
-        } else if (!linkKey.isEmpty()) {
-            dupLinkList->insert(linkKey, *accessKey);
-        }
-        if (linkKey.isEmpty())
-            *accessKey = QChar();
-    }
-}
-
-static bool isHiddenElement(const QWebElement& element)
-{
-    // width property set to less than zero
-    if (element.hasAttribute(QL1S("width")) && element.attribute(QL1S("width")).toInt() < 1) {
-        return true;
-    }
-
-    // height property set to less than zero
-    if (element.hasAttribute(QL1S("height")) && element.attribute(QL1S("height")).toInt() < 1) {
-        return true;
-    }
-
-    // visiblity set to 'hidden' in the element itself or its parent elements.
-    if (element.styleProperty(QL1S("visibility"),QWebElement::ComputedStyle).compare(QL1S("hidden"), Qt::CaseInsensitive) == 0) {
-        return true;
-    }
-
-    // display set to 'none' in the element itself or its parent elements.
-    if (element.styleProperty(QL1S("display"),QWebElement::ComputedStyle).compare(QL1S("none"), Qt::CaseInsensitive) == 0) {
-        return true;
-    }
-
-    return false;
-}
-
-void WebView::showAccessKeys()
-{
-    QList<QChar> unusedKeys;
-    for (char c = 'A'; c <= 'Z'; ++c)
-        unusedKeys << QLatin1Char(c);
-    for (char c = '0'; c <= '9'; ++c)
-        unusedKeys << QLatin1Char(c);
-
-    QList<QWebElement> unLabeledElements;
-    QRect viewport = QRect(page()->mainFrame()->scrollPosition(), page()->viewportSize());
-    const QString selectorQuery (QLatin1String("a[href],"
-                                               "area,"
-                                               "button:not([disabled]),"
-                                               "input:not([disabled]):not([hidden]),"
-                                               "label[for],"
-                                               "legend,"
-                                               "select:not([disabled]),"
-                                               "textarea:not([disabled])"));
-    QList<QWebElement> result = page()->mainFrame()->findAllElements(selectorQuery).toList();
-
-    // Priority first goes to elements with accesskey attributes
-    Q_FOREACH (const QWebElement& element, result) {
-        const QRect geometry = element.geometry();
-        if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
-            continue;
-        }
-        if (isHiddenElement(element)) {
-            continue;    // Do not show access key for hidden elements...
-        }
-        const QString accessKeyAttribute (element.attribute(QLatin1String("accesskey")).toUpper());
-        if (accessKeyAttribute.isEmpty()) {
-            unLabeledElements.append(element);
-            continue;
-        }
-        QChar accessKey;
-        for (int i = 0; i < accessKeyAttribute.count(); i+=2) {
-            const QChar &possibleAccessKey = accessKeyAttribute[i];
-            if (unusedKeys.contains(possibleAccessKey)) {
-                accessKey = possibleAccessKey;
-                break;
-            }
-        }
-        if (accessKey.isNull()) {
-            unLabeledElements.append(element);
-            continue;
-        }
-
-        handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
-        if (!accessKey.isNull()) {
-            unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
-        }
-    }
-
-
-    // Pick an access key first from the letters in the text and then from the
-    // list of unused access keys
-    Q_FOREACH (const QWebElement &element, unLabeledElements) {
-        const QRect geometry = element.geometry();
-        if (unusedKeys.isEmpty()
-            || geometry.size().isEmpty()
-            || !viewport.contains(geometry.topLeft()))
-            continue;
-        QChar accessKey;
-        QString text = element.toPlainText().toUpper();
-        for (int i = 0; i < text.count(); ++i) {
-            const QChar &c = text.at(i);
-            if (unusedKeys.contains(c)) {
-                accessKey = c;
-                break;
-            }
-        }
-        if (accessKey.isNull())
-            accessKey = unusedKeys.takeFirst();
-
-        handleDuplicateLinkElements(element, &m_duplicateLinkElements, &accessKey);
-        if (!accessKey.isNull()) {
-            unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
-        }
-    }
-
-    m_accessKeyActivated = (m_accessKeyLabels.isEmpty() ? Activated : NotActivated);
-}
-
-void WebView::makeAccessKeyLabel(const QChar &accessKey, const QWebElement &element)
-{
-    QLabel *label = new QLabel(this);
-    QFont font (label->font());
-    font.setBold(true);
-    label->setFont(font);
-    label->setText(accessKey);
-    label->setPalette(QToolTip::palette());
-    label->setAutoFillBackground(true);
-    label->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QPoint point = element.geometry().center();
-    point -= page()->mainFrame()->scrollPosition();
-    label->move(point);
-    label->show();
-    point.setX(point.x() - label->width() / 2);
-    label->move(point);
-    m_accessKeyLabels.append(label);
-    m_accessKeyNodes.insertMulti(accessKey, element);
-}
 #include "webview.moc"

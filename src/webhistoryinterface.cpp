@@ -24,7 +24,6 @@
 
 
 WebHistoryInterface::WebHistoryInterface(QObject* parent)
-                    :QWebHistoryInterface(parent)
 {
 }
 

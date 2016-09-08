@@ -8,8 +8,8 @@ include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(FeatureSummary)
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core DBus Gui Widgets WebKitWidgets UiTools)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED Archive Bookmarks CoreAddons Config ConfigWidgets DBusAddons KIO KDELibs4Support Parts Activities I18n WebKit)
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core DBus Gui Widgets WebEngineWidgets UiTools)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED Archive Bookmarks CoreAddons Config ConfigWidgets DBusAddons KIO KDELibs4Support Parts Activities I18n)
 find_package(KF5Parts)
 find_package(KF5Sonnet)
 include(MacroLibrary)
@@ -22,5 +22,6 @@ include_directories(${CMAKE_SOURCE_DIR}/../src)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(kdelauncher main.cpp )
-target_link_libraries(kdelauncher Qt5::Core Qt5::Gui Qt5::Widgets Qt5::WebKitWidgets Qt5::UiTools KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::KDELibs4Support KF5::WebKit)
+target_link_libraries(kdelauncher kwebkitpart Qt5::Core Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets KF5::I18n KF5::KDELibs4Support)
+
 set_target_properties(kdelauncher PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)

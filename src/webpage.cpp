@@ -26,9 +26,9 @@
 #include "websslinfo.h"
 #include "webview.h"
 #include "sslinfodialog_p.h"
-#include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
-#include "webpluginfactory.h"
+//#include "webpluginfactory.h"
+#include <QtWebEngineWidgets/QWebEngineSettings>
 
 #include <kdeversion.h>
 #include <KDE/KMessageBox>
@@ -55,11 +55,11 @@
 #include <QApplication>
 #include <QTextDocument> // Qt::escape
 #include <QNetworkReply>
-#include <QWebFrame>
-#include <QWebElement>
-#include <QWebHistory>
-#include <QWebHistoryItem>
-#include <QWebSecurityOrigin>
+//#include <QWebFrame>
+//#include <QWebElement>
+#include <QtWebEngineWidgets/QWebEngineHistory>
+#include <QtWebEngineWidgets/QWebEngineHistoryItem>
+//#include <QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
@@ -70,32 +70,16 @@ static bool isBlankUrl(const QUrl& url)
 }
 
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
-        :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
+        : QWebEnginePage(parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_noJSOpenWindowCheck(false),
          m_part(part)
 {
-    // FIXME: Need a better way to handle request filtering than to inherit
-    // KIO::Integration::AccessManager...
-    KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
-    manager->setEmitReadyReadOnMetaDataChange(true);
-    manager->setCache(0);
-    QWidget* window = parent ? parent->window() : 0;
-    if (window) {
-        manager->setWindow(window);
-    }
-    setNetworkAccessManager(manager);
-
-    setPluginFactory(new WebPluginFactory(part, this));
-
-    setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
-
-    // Set font sizes accordingly...
     if (view())
         WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
 
-    setForwardUnsupportedContent(true);
+    //setForwardUnsupportedContent(true);
 
     // Add all KDE's local protocols to QWebSecurityOrigin
     Q_FOREACH (const QString& protocol, KProtocolInfo::protocols()) {
@@ -107,7 +91,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         if (KProtocolInfo::protocolClass(protocol) != QL1S(":local"))
             continue;
 
-        QWebSecurityOrigin::addLocalScheme(protocol);
+        //QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
     connect(this, SIGNAL(geometryChangeRequested(QRect)),
@@ -118,8 +102,8 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(this, SIGNAL(featurePermissionRequested(QWebFrame*, QWebPage::Feature)),
             this, SLOT(slotFeaturePermissionRequested(QWebFrame*, QWebPage::Feature)));
-    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
-            this, SLOT(slotRequestFinished(QNetworkReply*)));
+//    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
+//            this, SLOT(slotRequestFinished(QNetworkReply*)));
 }
 
 WebPage::~WebPage()
@@ -174,7 +158,7 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
         }
     }
 
-    KWebPage::downloadRequest(request);
+//    QWebEnginePage::downloadRequest(request);
 }
 
 static QString warningIconData()
@@ -274,6 +258,7 @@ QString WebPage::errorPage(int code, const QString& text, const QUrl& reqUrl) co
     return html;
 }
 
+#if 0
 bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
 {
     switch (extension) {
@@ -309,7 +294,9 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 
     return KWebPage::extension(extension, option, output);
 }
+#endif
 
+#if 0
 bool WebPage::supportsExtension(Extension extension) const
 {
     //kDebug() << extension << m_ignoreError;
@@ -324,8 +311,9 @@ bool WebPage::supportsExtension(Extension extension) const
 
     return KWebPage::supportsExtension(extension);
 }
+#endif
 
-QWebPage *WebPage::createWindow(WebWindowType type)
+QWebEnginePage *WebPage::createWindow(WebWindowType type)
 {
     // kDebug() << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
@@ -357,14 +345,17 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-static void resetPluginsLoadedOnDemandFor(QWebPluginFactory* _factory)
+#if 0
+static void resetPluginsLoadedOnDemandFor(QWebEnginePluginFactory* _factory)
 {
     WebPluginFactory* factory = qobject_cast<WebPluginFactory*>(_factory);
     if (factory) {
         factory->resetPluginOnDemandList();
     }
 }
+#endif
 
+#if 0
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
     QUrl reqUrl (request.url());
@@ -462,10 +453,10 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     settings()->setAttribute(QWebSettings::PluginsEnabled, WebKitSettings::self()->isPluginsEnabled(reqUrl.host()));
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
-
+#endif
 QString WebPage::userAgentForUrl(const QUrl& url) const
 {
-    QString userAgent = KWebPage::userAgentForUrl(url);
+    QString userAgent ; //= QWebEnginePage::usAgentForUrl(url);
 
     // Remove the useless "U" if it is present.
     const int index = userAgent.indexOf(QL1S(" U;"), -1, Qt::CaseInsensitive);
@@ -537,6 +528,8 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     if (!m_requestQueue.removeOne(requestUrl))
         return;
 
+    return;
+#if 0
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
         return;
@@ -591,10 +584,12 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->browserExtension()->setPageSecurity(security);
     }
+#endif
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 {
+#if 0
     //kDebug() << reply->url();
     QString mimeType;
     KIO::MetaData metaData;
@@ -606,7 +601,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         reply->setProperty("DownloadManagerExe", downloadCmd);
     }
 
-    if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
+    if (QWePage::handleReply(reply, &mimeType, &metaData)) {
         reply->deleteLater();
         if (qobject_cast<NewWindowPage*>(this) && isBlankUrl(m_part->url())) {
             m_part->closeUrl();
@@ -628,9 +623,11 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         emit m_part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
         return;
     }
+#endif
     reply->deleteLater();
-}
 
+}
+#if 0
 void WebPage::slotFeaturePermissionRequested(QWebFrame* frame, QWebPage::Feature feature)
 {
     if (frame == mainFrame()) {
@@ -661,10 +658,11 @@ void WebPage::slotFeaturePermissionRequested(QWebFrame* frame, QWebPage::Feature
         break;
     }
 }
+#endif
 
 void WebPage::slotGeometryChangeRequested(const QRect & rect)
 {
-    const QString host = mainFrame()->url().host();
+    const QString host = url().host();
 
     // NOTE: If a new window was created from another window which is in
     // maximized mode and its width and/or height were not specified at the
@@ -714,7 +712,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
 bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
 {
     // Check whether the request is authorized or not...
-    if (!KUrlAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
+    if (!KUrlAuthorized::authorizeUrlAction("redirect", url(), req.url())) {
 
         //kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
@@ -722,7 +720,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
         int response = KMessageBox::Cancel;
         QUrl linkUrl (req.url());
 
-        if (type == QWebPage::NavigationTypeLinkClicked) {
+        if (type == QWebEnginePage::NavigationTypeLinkClicked) {
             message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
                            "<br/>Do you want to follow the link?</qt>", linkUrl.url());
             title = i18n("Security Warning");
@@ -822,7 +820,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
         QUrl mailtoUrl (sanitizeMailToUrl(url, files));
 
         switch (type) {
-            case QWebPage::NavigationTypeLinkClicked:
+            case QWebEnginePage::NavigationTypeLinkClicked:
                 if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
                                                                                i18n("<qt>Do you want to allow this site to attach "
                                                                                     "the following files to the email message?</qt>"),
@@ -837,8 +835,8 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
                     }
                 }
                 break;
-            case QWebPage::NavigationTypeFormSubmitted:
-            case QWebPage::NavigationTypeFormResubmitted:
+            case QWebEnginePage::NavigationTypeFormSubmitted:
+            //case QWebEnginePage::NavigationTypeFormResubmitted:
                 if (!files.isEmpty()) {
                     KMessageBox::information(0, i18n("This site attempted to attach a file from your "
                                                      "computer in the form submission. The attachment "
@@ -861,11 +859,11 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
 void WebPage::setPageJScriptPolicy(const QUrl &url)
 {
     const QString hostname (url.host());
-    settings()->setAttribute(QWebSettings::JavascriptEnabled,
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled,
                              WebKitSettings::self()->isJavaScriptEnabled(hostname));
 
     const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(hostname);
-    settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
+    settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows,
                              (policy != KParts::HtmlSettingsInterface::JSWindowOpenDeny &&
                               policy != KParts::HtmlSettingsInterface::JSWindowOpenSmart));
 }
@@ -888,14 +886,14 @@ NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, bool disable
             this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
-    connect(mainFrame(), SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
+  //  connect(mainFrame(), SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
 }
 
 NewWindowPage::~NewWindowPage()
 {
     //kDebug() << this;
 }
-
+#if 0
 bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
     // kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
@@ -984,6 +982,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
 
     return WebPage::acceptNavigationRequest(frame, request, type);
 }
+#endif
 
 void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
 {
@@ -1028,9 +1027,9 @@ void NewWindowPage::slotLoadFinished(bool ok)
 
     // Browser args...
     KParts::BrowserArguments bargs;
-    bargs.frameName = mainFrame()->frameName();
-    if (m_type == WebModalDialog)
-        bargs.setForcesNewWindow(true);
+    //bargs.frameName = mainFrame()->frameName();
+    //if (m_type == WebModalDialog)
+    //    bargs.setForcesNewWindow(true);
 
     // OpenUrl args...
     KParts::OpenUrlArguments uargs;

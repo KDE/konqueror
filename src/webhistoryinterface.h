@@ -20,11 +20,10 @@
 #ifndef WEBHISTORYINTERFACE_H
 #define WEBHISTORYINTERFACE_H
 
+#include <QObject>
 
-#include <QWebHistoryInterface>
 
-
-class WebHistoryInterface : public QWebHistoryInterface
+class WebHistoryInterface
 {
 public:
     WebHistoryInterface(QObject* parent = 0);

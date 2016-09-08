@@ -22,7 +22,7 @@
 #ifndef KWEBKITPART_H
 #define KWEBKITPART_H
 
-#include <QWebPage>
+#include <QtWebEngineWidgets/QWebEnginePage>
 
 #include <KDE/KParts/ReadOnlyPart>
 #include <QUrl>
@@ -32,9 +32,8 @@ namespace KParts {
   class StatusBarExtension;
 }
 
-class QWebView;
-class QWebFrame;
-class QWebHistoryItem;
+class QWebEngineView;
+class QWebEngineHistoryItem;
 class WebView;
 class WebPage;
 class SearchBar;
@@ -53,7 +52,7 @@ class WebKitBrowserExtension;
  * engine are provided through existing QtWebKit class ; @see QWebView.
  *
  */
-class KWebKitPart : public KParts::ReadOnlyPart
+class Q_DECL_EXPORT KWebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
@@ -82,7 +81,7 @@ public:
      *
      * @see QWebView.
      */
-    virtual QWebView *view();
+    virtual QWebEngineView *view();
 
     /**
      * Checks whether the page contains unsubmitted form changes.
@@ -102,7 +101,7 @@ public:
      */
     void connectWebPageSignals(WebPage* page);
 
-    void slotShowFeaturePermissionBar(QWebPage::Feature);
+    void slotShowFeaturePermissionBar(QWebEnginePage::Feature);
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -129,8 +128,8 @@ private Q_SLOTS:
 
     void slotSearchForText(const QString &text, bool backward);
     void slotLinkHovered(const QString &, const QString&, const QString &);
-    void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
-    void slotRestoreFrameState(QWebFrame *frame);
+    //void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
+    //void slotRestoreFrameState(QWebFrame *frame);
     void slotLinkMiddleOrCtrlClicked(const QUrl&);
     void slotSelectionClipboardUrlPasted(const QUrl&, const QString&);
 
@@ -146,11 +145,11 @@ private Q_SLOTS:
     void slotSaveFormDataRequested(const QString &, const QUrl &);
     void slotSaveFormDataDone();
     void slotFillFormRequestCompleted(bool);
-    void slotFrameCreated(QWebFrame*);
+//    void slotFrameCreated(QWebFrame*);
     void slotToggleCaretMode();
 
-    void slotFeaturePermissionGranted(QWebPage::Feature);
-    void slotFeaturePermissionDenied(QWebPage::Feature);
+    void slotFeaturePermissionGranted(QWebEnginePage::Feature);
+    void slotFeaturePermissionDenied(QWebEnginePage::Feature);
 
 private:
     WebPage* page();

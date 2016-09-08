@@ -25,8 +25,8 @@
 
 #include "websslinfo.h"
 
-#include <KDE/KWebPage>
 #include <KDE/KParts/BrowserExtension>
+#include <QtWebEngineWidgets/QWebEnginePage>
 
 #include <QUrl>
 #include <QDebug>
@@ -36,10 +36,9 @@
 class QUrl;
 class WebSslInfo;
 class KWebKitPart;
-class QWebFrame;
 
 
-class WebPage : public KWebPage
+class WebPage : public QWebEnginePage
 {
     Q_OBJECT
 public:
@@ -83,14 +82,14 @@ public:
      *
      * @see QWebPage::extension()
      */
-    bool extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output);
+    //bool extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output);
 
     /**
      * Re-implemented to handle ErrorPageExtension.
      *
      * @see QWebPage::supportsExtension()
      */
-    bool supportsExtension(Extension extension) const;
+    //bool supportsExtension(Extension extension) const;
 
 Q_SIGNALS:
     /**
@@ -116,13 +115,13 @@ protected:
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    virtual QWebPage* createWindow(WebWindowType type);
+    virtual QWebEnginePage* createWindow(WebWindowType type);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
+    //virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -134,7 +133,7 @@ protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
     void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
-    void slotFeaturePermissionRequested(QWebFrame* frame, QWebPage::Feature feature);
+    //void slotFeaturePermissionRequested(QWebEngineFrame* frame, QWebEnginePage::Feature feature);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
@@ -176,7 +175,7 @@ public:
     virtual ~NewWindowPage();
 
 protected:
-    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
+    //virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
 
 private Q_SLOTS:
     void slotGeometryChangeRequested(const QRect& rect);

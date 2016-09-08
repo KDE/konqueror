@@ -24,6 +24,7 @@
 #include "webview.h"
 #include "webpage.h"
 #include "settings/webkitsettings.h"
+#include <QtWebEngineWidgets/QWebEngineSettings>
 
 #include <KDE/KAction>
 #include <KDE/KUriFilterData>
@@ -52,10 +53,10 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
-#include <QWebFrame>
-#include <QWebHistory>
-#include <QWebElement>
-#include <QWebElementCollection>
+//#include <QWebFrame>
+#include <QtWebEngineWidgets/QWebEngineHistory>
+//#include <QWebElement>
+//#include <QWebElementCollection>
 
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
@@ -104,16 +105,16 @@ WebView* WebKitBrowserExtension::view()
 
 int WebKitBrowserExtension::xOffset()
 {
-    if (view())
-        return view()->page()->mainFrame()->scrollPosition().x();
+  //  if (view())
+  //      return view()->page()->mainFrame()->scrollPosition().x();
 
     return KParts::BrowserExtension::xOffset();
 }
 
 int WebKitBrowserExtension::yOffset()
 {
-    if (view())
-        return view()->page()->mainFrame()->scrollPosition().y();
+ //   if (view())
+ //       return view()->page()->mainFrame()->scrollPosition().y();
 
     return KParts::BrowserExtension::yOffset();
 }
@@ -121,7 +122,7 @@ int WebKitBrowserExtension::yOffset()
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
-    QWebHistory* history = (view() ? view()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->history() : 0);
     const int historyIndex = (history ? history->currentItemIndex() : -1);
     const QUrl historyUrl = (history ? QUrl(history->currentItem().url()) : m_part->url());
 
@@ -139,7 +140,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
     stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyData;
 
-    QWebHistory* history = (view() ? view()->page()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->page()->history() : 0);
     if (history) {
         bool success = false;
         if (history->count() == 0) {   // Handle restoration: crash recovery, tab close undo, session restore
@@ -150,11 +151,11 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
                     QDataStream stream (&buffer);
                     view()->page()->setProperty("HistoryNavigationLocked", true);
                     stream >> *history;
-                    QWebHistoryItem currentItem (history->currentItem());
+                    QWebEngineHistoryItem currentItem (history->currentItem());
                     if (currentItem.isValid()) {
-                        if (currentItem.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
+                        if (currentItem.isValid() && (xOfs != -1 || yOfs != -1)) {
                             const QPoint scrollPos (xOfs, yOfs);
-                            currentItem.setUserData(scrollPos);
+//                            currentItem.setUserData(scrollPos);
                         }
                         // NOTE 1: The following Konqueror specific workaround is necessary
                         // because Konqueror only preserves information for the last visited
@@ -175,12 +176,12 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
         } else {        // Handle navigation: back and forward button navigation.
             //kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
             if (history->count() > historyItemIndex && historyItemIndex > -1) {
-                QWebHistoryItem item (history->itemAt(historyItemIndex));
+                QWebEngineHistoryItem item (history->itemAt(historyItemIndex));
                 //kDebug() << "URL:" << u << "Item URL:" << item.url();
                 if (u == item.url()) {
-                    if (item.userData().isNull() && (xOfs != -1 || yOfs != -1)) {
+                    if (item.isValid() && (xOfs != -1 || yOfs != -1)) {
                         const QPoint scrollPos (xOfs, yOfs);
-                        item.setUserData(scrollPos);
+//                        item.setUserData(scrollPos);
                     }
                     m_part->setProperty("NoEmitOpenUrlNotification", true);
                     history->goToItem(item);
@@ -204,19 +205,19 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
 void WebKitBrowserExtension::cut()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::Cut);
+        view()->triggerPageAction(QWebEnginePage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::Copy);
+        view()->triggerPageAction(QWebEnginePage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::Paste);
+        view()->triggerPageAction(QWebEnginePage::Paste);
 }
 
 void WebKitBrowserExtension::slotSaveDocument()
@@ -228,13 +229,13 @@ void WebKitBrowserExtension::slotSaveDocument()
 void WebKitBrowserExtension::slotSaveFrame()
 {
     if (view())
-        emit saveUrl(view()->page()->currentFrame()->url());
+        emit saveUrl(view()->page()->url()); // TODO lol
 }
 
 void WebKitBrowserExtension::print()
 {
-    if (view())
-        slotPrintRequested(view()->page()->currentFrame());
+//    if (view())
+//        slotPrintRequested(view()->page());
 }
 
 void WebKitBrowserExtension::updateEditActions()
@@ -242,9 +243,9 @@ void WebKitBrowserExtension::updateEditActions()
     if (!view())
         return;
 
-    enableAction("cut", view()->pageAction(QWebPage::Cut)->isEnabled());
-    enableAction("copy", view()->pageAction(QWebPage::Copy)->isEnabled());
-    enableAction("paste", view()->pageAction(QWebPage::Paste)->isEnabled());
+    enableAction("cut", view()->pageAction(QWebEnginePage::Cut)->isEnabled());
+    enableAction("copy", view()->pageAction(QWebEnginePage::Copy)->isEnabled());
+    enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
 }
 
 void WebKitBrowserExtension::updateActions()
@@ -288,15 +289,17 @@ void WebKitBrowserExtension::reparseConfiguration()
 
 void WebKitBrowserExtension::disableScrolling()
 {
-    QWebView* currentView = view();
-    QWebPage* page = currentView ? currentView->page() : 0;
-    QWebFrame* frame = page ? page->mainFrame() : 0;
+#if 0
+    QWebEngineView* currentView = view();
+    QWebEnginePage* page = currentView ? currentView->page() : 0;
+    QWebEngineFrame* frame = page ? page->mainFrame() : 0;
 
     if (!frame)
         return;
 
     frame->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
     frame->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
+#endif
 }
 
 void WebKitBrowserExtension::zoomIn()
@@ -331,7 +334,7 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
     cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
     cgHtml.sync();
 
-    view()->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
+    // view()->settings()->setAttribute(QWebEngineSettings::ZoomTextOnly, !zoomTextOnly);
 }
 
 void WebKitBrowserExtension::toogleZoomToDPI()
@@ -354,7 +357,7 @@ void WebKitBrowserExtension::toogleZoomToDPI()
 void WebKitBrowserExtension::slotSelectAll()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::SelectAll);
+        view()->triggerPageAction(QWebEnginePage::SelectAll);
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
@@ -368,8 +371,8 @@ void WebKitBrowserExtension::slotFrameInWindow()
     KParts::OpenUrlArguments uargs;
     uargs.setActionRequestedByUser(true);
 
-    QUrl url (view()->page()->currentFrame()->baseUrl());
-    url.resolved(view()->page()->currentFrame()->url());
+    QUrl url (view()->page()->url());
+    url.resolved(view()->page()->url());
 
     emit createNewWindow(QUrl(url), uargs, bargs);
 }
@@ -385,8 +388,8 @@ void WebKitBrowserExtension::slotFrameInTab()
     KParts::BrowserArguments bargs;
     bargs.setNewTab(true);
 
-    QUrl url (view()->page()->currentFrame()->baseUrl());
-    url.resolved(view()->page()->currentFrame()->url());
+    QUrl url (view()->page()->url());
+    url.resolved(view()->page()->url());
 
     emit createNewWindow(QUrl(url), uargs, bargs);
 }
@@ -402,8 +405,8 @@ void WebKitBrowserExtension::slotFrameInTop()
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
-    QUrl url (view()->page()->currentFrame()->baseUrl());
-    url.resolved(view()->page()->currentFrame()->url());
+    QUrl url (view()->page()->url());
+    url.resolved(view()->page()->url());
 
     emit openUrlRequest(QUrl(url), uargs, bargs);
 }
@@ -411,13 +414,15 @@ void WebKitBrowserExtension::slotFrameInTop()
 void WebKitBrowserExtension::slotReloadFrame()
 {
     if (view())
-        view()->page()->currentFrame()->load(view()->page()->currentFrame()->url());
+        view()->page()->load(view()->page()->url());
 }
 
+#if 0
 static QString iframeUrl(QWebFrame* frame)
 {
    return ((frame && frame->baseUrl().isValid()) ? frame->baseUrl() : frame->url()).toString();
 }
+#endif
 
 void WebKitBrowserExtension::slotBlockIFrame()
 {
@@ -425,7 +430,7 @@ void WebKitBrowserExtension::slotBlockIFrame()
         return;
 
     bool ok = false;
-    const QString urlStr = iframeUrl(view()->contextMenuResult().frame());
+    const QString urlStr; // = iframeUrl(view()->contextMenuResult().frame());
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
                                               urlStr, &ok);
@@ -438,7 +443,7 @@ void WebKitBrowserExtension::slotBlockIFrame()
 void WebKitBrowserExtension::slotSaveImageAs()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::DownloadImageToDisk);
+        view()->triggerPageAction(QWebEnginePage::DownloadImageToDisk);
 }
 
 void WebKitBrowserExtension::slotSendImage()
@@ -447,8 +452,8 @@ void WebKitBrowserExtension::slotSendImage()
         return;
 
     QStringList urls;
-    urls.append(view()->contextMenuResult().imageUrl().path());
-    const QString subject = view()->contextMenuResult().imageUrl().path();
+    //urls.append(view()->contextMenuResult().imageUrl().path());
+    const QString subject ; //= view()->contextMenuResult().imageUrl().path();
     KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
                                   QString(), //body
                                   QString(),
@@ -460,7 +465,7 @@ void WebKitBrowserExtension::slotCopyImageURL()
     if (!view())
         return;
 
-    QUrl safeURL(view()->contextMenuResult().imageUrl());
+    QUrl safeURL; //view()->contextMenuResult().imageUrl());
     safeURL.setPassword(QString());
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
@@ -481,12 +486,12 @@ void WebKitBrowserExtension::slotCopyImage()
     if (!view())
         return;
 
-    QUrl safeURL(view()->contextMenuResult().imageUrl());
+    QUrl safeURL; //(view()->contextMenuResult().imageUrl());
     safeURL.setPassword(QString());
 
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-    mimeData->setImageData(view()->contextMenuResult().pixmap());
+//    mimeData->setImageData(view()->contextMenuResult().pixmap());
 //TODO: Porting: test
     QList<QUrl> safeURLList;
     safeURLList.append(safeURL);
@@ -494,15 +499,15 @@ void WebKitBrowserExtension::slotCopyImage()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
-    mimeData->setImageData(view()->contextMenuResult().pixmap());
+//    mimeData->setImageData(view()->contextMenuResult().pixmap());
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
 void WebKitBrowserExtension::slotViewImage()
 {
-    if (view())
-        emit createNewWindow(view()->contextMenuResult().imageUrl());
+//    if (view())
+//        emit createNewWindow(view()->contextMenuResult().imageUrl());
 }
 
 void WebKitBrowserExtension::slotBlockImage()
@@ -513,7 +518,7 @@ void WebKitBrowserExtension::slotBlockImage()
     bool ok = false;
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
-                                              view()->contextMenuResult().imageUrl().toString(),
+                                              QString(), //view()->contextMenuResult().imageUrl().toString(),
                                               &ok);
     if (ok) {
         WebKitSettings::self()->addAdFilter(url);
@@ -526,7 +531,7 @@ void WebKitBrowserExtension::slotBlockHost()
     if (!view())
         return;
 
-    QUrl url (view()->contextMenuResult().imageUrl());
+    QUrl url; // (view()->contextMenuResult().imageUrl());
     url.setPath(QL1S("/*"));
     WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveUserInfo | QUrl::RemovePort));
     reparseConfiguration();
@@ -535,14 +540,14 @@ void WebKitBrowserExtension::slotBlockHost()
 void WebKitBrowserExtension::slotCopyLinkURL()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::CopyLinkToClipboard);
+        view()->triggerPageAction(QWebEnginePage::CopyLinkToClipboard);
 }
 
 void WebKitBrowserExtension::slotCopyLinkText()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        data->setText(view()->contextMenuResult().linkText());
+        // data->setText(view()->contextMenuResult().linkText());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
 }
@@ -551,7 +556,7 @@ void WebKitBrowserExtension::slotCopyEmailAddress()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        const QUrl url (view()->contextMenuResult().linkUrl());
+        const QUrl url ; // (view()->contextMenuResult().linkUrl());
         data->setText(url.path());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
@@ -560,7 +565,7 @@ void WebKitBrowserExtension::slotCopyEmailAddress()
 void WebKitBrowserExtension::slotSaveLinkAs()
 {
     if (view())
-        view()->triggerPageAction(QWebPage::DownloadLinkToDisk);
+        view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
 }
 
 void WebKitBrowserExtension::slotViewDocumentSource()
@@ -576,8 +581,8 @@ void WebKitBrowserExtension::slotViewDocumentSource()
         tempFile.setSuffix(QL1S(".html"));
         tempFile.setAutoRemove(false);
         if (tempFile.open()) {
-            tempFile.write(view()->page()->mainFrame()->toHtml().toUtf8());
-            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
+//            tempFile.write(view()->page()->toHtml().toUtf8());
+//            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
         }
     }
 }
@@ -587,7 +592,7 @@ void WebKitBrowserExtension::slotViewFrameSource()
     if (!view())
         return;
 
-    const QUrl frameUrl(view()->page()->currentFrame()->url());
+    const QUrl frameUrl(view()->page()->url());
     if (frameUrl.isLocalFile()) {
         KRun::runUrl(frameUrl, QL1S("text/plain"), view(), false);
     } else {
@@ -595,12 +600,12 @@ void WebKitBrowserExtension::slotViewFrameSource()
         tempFile.setSuffix(QL1S(".html"));
         tempFile.setAutoRemove(false);
         if (tempFile.open()) {
-            tempFile.write(view()->page()->currentFrame()->toHtml().toUtf8());
-            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
+//            tempFile.write(view()->page()->toHtml().toUtf8());
+//            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
         }
     }
 }
-
+#if 0
 static bool isMultimediaElement(const QWebElement& element)
 {
     if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
@@ -611,17 +616,18 @@ static bool isMultimediaElement(const QWebElement& element)
 
     return false;
 }
+#endif
 
 void WebKitBrowserExtension::slotLoopMedia()
 {
     if (!view())
         return;
 
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
-        return;
+    //QWebElement element (view()->contextMenuResult().element());
+    //if (!isMultimediaElement(element))
+    //    return;
 
-    element.evaluateJavaScript(QL1S("this.loop = !this.loop;"));
+    //element.evaluateJavaScript(QL1S("this.loop = !this.loop;"));
 }
 
 void WebKitBrowserExtension::slotMuteMedia()
@@ -629,11 +635,11 @@ void WebKitBrowserExtension::slotMuteMedia()
     if (!view())
         return;
 
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
-        return;
+    //QWebElement element (view()->contextMenuResult().element());
+    //if (!isMultimediaElement(element))
+    //    return;
 
-    element.evaluateJavaScript(QL1S("this.muted = !this.muted;"));
+    //element.evaluateJavaScript(QL1S("this.muted = !this.muted;"));
 }
 
 void WebKitBrowserExtension::slotPlayMedia()
@@ -641,11 +647,13 @@ void WebKitBrowserExtension::slotPlayMedia()
     if (!view())
         return;
 
+#if 0
     QWebElement element (view()->contextMenuResult().element());
     if (!isMultimediaElement(element))
         return;
 
     element.evaluateJavaScript(QL1S("this.paused ? this.play() : this.pause();"));
+#endif
 }
 
 void WebKitBrowserExtension::slotShowMediaControls()
@@ -653,13 +661,14 @@ void WebKitBrowserExtension::slotShowMediaControls()
     if (!view())
         return;
 
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
-        return;
+//    QWebElement element (view()->contextMenuResult().element());
+//    if (!isMultimediaElement(element))
+//        return;
 
-    element.evaluateJavaScript(QL1S("this.controls = !this.controls;"));
+//    element.evaluateJavaScript(QL1S("this.controls = !this.controls;"));
 }
 
+#if 0
 static QUrl mediaUrlFrom(QWebElement& element)
 {
     QWebFrame* frame = element.webFrame();
@@ -672,24 +681,27 @@ static QUrl mediaUrlFrom(QWebElement& element)
 
     return QUrl(frame->baseUrl().resolved(QUrl::fromEncoded(QUrl::toPercentEncoding(src), QUrl::StrictMode)));
 }
+#endif
 
 void WebKitBrowserExtension::slotSaveMedia()
 {
     if (!view())
         return;
 
+#if 0
     QWebElement element (view()->contextMenuResult().element());
     if (!isMultimediaElement(element))
         return;
 
     emit saveUrl(mediaUrlFrom(element));
+#endif
 }
 
 void WebKitBrowserExtension::slotCopyMedia()
 {
     if (!view())
         return;
-
+#if 0
     QWebElement element (view()->contextMenuResult().element());
     if (!isMultimediaElement(element))
         return;
@@ -710,6 +722,7 @@ void WebKitBrowserExtension::slotCopyMedia()
     mimeData = new QMimeData;
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+#endif
 }
 
 void WebKitBrowserExtension::slotTextDirectionChanged()
@@ -719,17 +732,20 @@ void WebKitBrowserExtension::slotTextDirectionChanged()
         bool ok = false;
         const int value = action->data().toInt(&ok);
         if (ok) {
-            view()->triggerPageAction(static_cast<QWebPage::WebAction>(value));
+            view()->triggerPageAction(static_cast<QWebEnginePage::WebAction>(value));
         }
     }
 }
 
 static QVariant execJScript(WebView* view, const QString& script)
 {
+#if 0
     QWebElement element (view->contextMenuResult().element());
     if (element.isNull())
         return QVariant();
     return element.evaluateJavaScript(script);
+#endif
+    return QVariant();
 }
 
 void WebKitBrowserExtension::slotCheckSpelling()
@@ -826,7 +842,7 @@ void WebKitBrowserExtension::slotSpellCheckDone(const QString&)
 
 void WebKitBrowserExtension::saveHistory()
 {
-    QWebHistory* history = (view() ? view()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->history() : 0);
 
     if (history && history->count() > 0) {
         //kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
@@ -849,6 +865,7 @@ void WebKitBrowserExtension::saveHistory()
     }
 }
 
+#if 0
 void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
 {
     if (!frame)
@@ -861,15 +878,18 @@ void WebKitBrowserExtension::slotPrintRequested(QWebFrame* frame)
     }
     delete dlg;
 }
+#endif
 
 void WebKitBrowserExtension::slotPrintPreview()
 {
+#if 0
     // Make it non-modal, in case a redirection deletes the part
     QPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
     connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
             view()->page()->currentFrame(), SLOT(print(QPrinter*)));
     dlg->exec();
     delete dlg;
+#endif
 }
 
 void WebKitBrowserExtension::slotOpenSelection()
@@ -893,7 +913,7 @@ void WebKitBrowserExtension::slotLinkInTop()
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
-    const QUrl url (view()->contextMenuResult().linkUrl());
+    const QUrl url; // (view()->contextMenuResult().linkUrl());
 
     emit openUrlRequest(url, uargs, bargs);
 }
@@ -921,20 +941,22 @@ QString KWebKitTextExtension::selectedText(Format format) const
     switch(format) {
     case PlainText:
         return part()->view()->selectedText();
-    case HTML:
-        return part()->view()->selectedHtml();
+    //case HTML:
+    //    return part()->view()->selectedHtml();
     }
     return QString();
 }
 
 QString KWebKitTextExtension::completeText(Format format) const
 {
+#if 0
     switch(format) {
     case PlainText:
-        return part()->view()->page()->currentFrame()->toPlainText();
+//        return part()->view()->page()->toPlainText();
     case HTML:
-        return part()->view()->page()->currentFrame()->toHtml();
+//        return part()->view()->page()->toHtml();
     }
+#endif
     return QString();
 }
 
@@ -948,7 +970,7 @@ KWebKitHtmlExtension::KWebKitHtmlExtension(KWebKitPart* part)
 
 QUrl KWebKitHtmlExtension::baseUrl() const
 {
-    return part()->view()->page()->mainFrame()->baseUrl();
+    return part()->view()->page()->url();
 }
 
 bool KWebKitHtmlExtension::hasSelection() const
@@ -962,6 +984,7 @@ KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMeth
             | KParts::SelectorInterface::SelectedContent);
 }
 
+#if 0
 static KParts::SelectorInterface::Element convertWebElement(const QWebElement& webElem)
 {
     KParts::SelectorInterface::Element element;
@@ -971,7 +994,7 @@ static KParts::SelectorInterface::Element convertWebElement(const QWebElement& w
     }
     return element;
 }
-
+#endif
 
 static QString queryOne(const QString& query)
 {
@@ -1031,6 +1054,7 @@ KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QSt
     if (!(supportedQueryMethods() & method))
         return element;
 
+#if 0
     switch (method) {
     case KParts::SelectorInterface::EntireContent: {
         const QWebFrame* webFrame = part()->view()->page()->mainFrame();
@@ -1045,6 +1069,7 @@ KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QSt
     default:
         break;
     }
+#endif
 
     return element;
 }
@@ -1060,7 +1085,7 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     // If the specified method is not supported, return an empty list...
     if (!(supportedQueryMethods() & method))
         return elements;
-
+#if 0
     switch (method) {
     case KParts::SelectorInterface::EntireContent: {
         const QWebFrame* webFrame = part()->view()->page()->mainFrame();
@@ -1078,39 +1103,40 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     default:
         break;
     }
+#endif
     return elements;
 }
 
 QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const
 {
-    QWebView* view = part() ? part()->view() : 0;
-    QWebPage* page = view ? view->page() : 0;
-    QWebSettings* settings = page ? page->settings() : 0;
+    QWebEngineView* view = part() ? part()->view() : 0;
+    QWebEnginePage* page = view ? view->page() : 0;
+    QWebEngineSettings* settings = page ? page->settings() : 0;
 
     if (settings) {
         switch (type) {
         case KParts::HtmlSettingsInterface::AutoLoadImages:
-            return settings->testAttribute(QWebSettings::AutoLoadImages);
+            return settings->testAttribute(QWebEngineSettings::AutoLoadImages);
         case KParts::HtmlSettingsInterface::JavaEnabled:
-            return settings->testAttribute(QWebSettings::JavaEnabled);
+            return false; // settings->testAttribute(QWebEngineSettings::JavaEnabled);
         case KParts::HtmlSettingsInterface::JavascriptEnabled:
-            return settings->testAttribute(QWebSettings::JavascriptEnabled);
+            return settings->testAttribute(QWebEngineSettings::JavascriptEnabled);
         case KParts::HtmlSettingsInterface::PluginsEnabled:
-            return settings->testAttribute(QWebSettings::PluginsEnabled);
+            return settings->testAttribute(QWebEngineSettings::PluginsEnabled);
         case KParts::HtmlSettingsInterface::DnsPrefetchEnabled:
-            return settings->testAttribute(QWebSettings::DnsPrefetchEnabled);
+            return false; //settings->testAttribute(QWebEngineSettings::DnsPrefetchEnabled);
         case KParts::HtmlSettingsInterface::MetaRefreshEnabled:
-            return view->pageAction(QWebPage::StopScheduledPageRefresh)->isEnabled();
+            return view->pageAction(QWebEnginePage::Stop)->isEnabled();
         case KParts::HtmlSettingsInterface::LocalStorageEnabled:
-            return settings->testAttribute(QWebSettings::LocalStorageEnabled);
+            return settings->testAttribute(QWebEngineSettings::LocalStorageEnabled);
         case KParts::HtmlSettingsInterface::OfflineStorageDatabaseEnabled:
-            return settings->testAttribute(QWebSettings::OfflineStorageDatabaseEnabled);
+            return false; //settings->testAttribute(QWebEngineSettings::OfflineStorageDatabaseEnabled);
         case KParts::HtmlSettingsInterface::OfflineWebApplicationCacheEnabled:
-            return settings->testAttribute(QWebSettings::OfflineWebApplicationCacheEnabled);
+            return false ;//settings->testAttribute(QWebEngineSettings::OfflineWebApplicationCacheEnabled);
         case KParts::HtmlSettingsInterface::PrivateBrowsingEnabled:
-            return settings->testAttribute(QWebSettings::PrivateBrowsingEnabled);
+            return false; //settings->testAttribute(QWebEngineSettings::PrivateBrowsingEnabled);
         case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
-            return settings->userStyleSheetUrl();
+            return false; //settings->userStyleSheetUrl();
         default:
             break;
         }
@@ -1121,46 +1147,46 @@ QVariant KWebKitHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterfac
 
 bool KWebKitHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type, const QVariant& value)
 {
-    QWebView* view = part() ? part()->view() : 0;
-    QWebPage* page = view ? view->page() : 0;
-    QWebSettings* settings = page ? page->settings() : 0;
+    QWebEngineView* view = part() ? part()->view() : 0;
+    QWebEnginePage* page = view ? view->page() : 0;
+    QWebEngineSettings* settings = page ? page->settings() : 0;
 
     if (settings) {
         switch (type) {
         case KParts::HtmlSettingsInterface::AutoLoadImages:
-            settings->setAttribute(QWebSettings::AutoLoadImages, value.toBool());
+            settings->setAttribute(QWebEngineSettings::AutoLoadImages, value.toBool());
             return true;
         case KParts::HtmlSettingsInterface::JavaEnabled:
-            settings->setAttribute(QWebSettings::JavaEnabled, value.toBool());
-            return true;
+            //settings->setAttribute(QWebESettings::JavaEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::JavascriptEnabled:
-            settings->setAttribute(QWebSettings::JavascriptEnabled, value.toBool());
+            settings->setAttribute(QWebEngineSettings::JavascriptEnabled, value.toBool());
             return true;
         case KParts::HtmlSettingsInterface::PluginsEnabled:
-            settings->setAttribute(QWebSettings::PluginsEnabled, value.toBool());
+            settings->setAttribute(QWebEngineSettings::PluginsEnabled, value.toBool());
             return true;
         case KParts::HtmlSettingsInterface::DnsPrefetchEnabled:
-            settings->setAttribute(QWebSettings::DnsPrefetchEnabled, value.toBool());
-            return true;
+//            settings->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::MetaRefreshEnabled:
-            view->triggerPageAction(QWebPage::StopScheduledPageRefresh);
+            view->triggerPageAction(QWebEnginePage::Stop);
             return true;
         case KParts::HtmlSettingsInterface::LocalStorageEnabled:
-            settings->setAttribute(QWebSettings::LocalStorageEnabled, value.toBool());
-            return true;
+            settings->setAttribute(QWebEngineSettings::LocalStorageEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::OfflineStorageDatabaseEnabled:
-            settings->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, value.toBool());
-            return true;
+            //settings->setAttribute(QWebEngineSettings::OfflineStorageDatabaseEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::OfflineWebApplicationCacheEnabled:
-            settings->setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, value.toBool());
-            return true;
+            //settings->setAttribute(QWebEngineSettings::OfflineWebApplicationCacheEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::PrivateBrowsingEnabled:
-            settings->setAttribute(QWebSettings::PrivateBrowsingEnabled, value.toBool());
-            return true;
+            //settings->setAttribute(QWebEnngineSettings::PrivateBrowsingEnabled, value.toBool());
+            return false;
         case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
             //kDebug() << "Setting user style sheet for" << page << "to" << value.toUrl();
-            settings->setUserStyleSheetUrl(value.toUrl());
-            return true;
+          //  settings->setUserStyleSheetUrl(value.toUrl());
+            return false;
         default:
             break;
         }
@@ -1219,10 +1245,10 @@ QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension
 
 
     KParts::ReadOnlyPart* part = callerPrincipal ? qobject_cast<KParts::ReadOnlyPart*>(callerPrincipal->parent()) : 0;
-    QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
-    if (!frame)
+   // QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
+   // if (!frame)
         return exception("failed to resolve principal");
-
+#if 0
     QVariant result (frame->evaluateJavaScript(code));
 
     if (result.type() == QVariant::Map) {
@@ -1236,6 +1262,7 @@ QVariant KWebKitScriptableExtension::evaluateScript (KParts::ScriptableExtension
     }
 
     return QVariant::fromValue(ScriptableExtension::Null());
+#endif
 }
 
 bool KWebKitScriptableExtension::isScriptLanguageSupported (KParts::ScriptableExtension::ScriptLanguage lang) const
@@ -1245,11 +1272,13 @@ bool KWebKitScriptableExtension::isScriptLanguageSupported (KParts::ScriptableEx
 
 QVariant KWebKitScriptableExtension::encloserForKid (KParts::ScriptableExtension* kid)
 {
+#if 0
     KParts::ReadOnlyPart* part = kid ? qobject_cast<KParts::ReadOnlyPart*>(kid->parent()) : 0;
     QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
     if (frame) {
         return QVariant::fromValue(KParts::ScriptableExtension::Object(kid, reinterpret_cast<quint64>(kid)));
     }
+#endif
 
     return QVariant::fromValue(ScriptableExtension::Null());
 }
