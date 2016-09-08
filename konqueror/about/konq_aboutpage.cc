@@ -1,26 +1,23 @@
 #include "konq_aboutpage.h"
 
-#include <QtCore/QTextCodec>
 #include <QApplication>
-#include <QtCore/QDir>
+#include <QDir>
+#include <QSaveFile>
+#include <QStandardPaths>
+#include <QTextCodec>
 
 #include <kaboutdata.h>
-#include <kaction.h>
 #include <kactioncollection.h>
-#include <kdebug.h>
 #include <kiconloader.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kpluginfactory.h>
-#include <ksavefile.h>
-#include <kstandarddirs.h>
 #include <ktoolinvocation.h>
 
 K_PLUGIN_FACTORY(KonqAboutPageFactory, registerPlugin<KonqAboutPage>();)
 K_EXPORT_PLUGIN(KonqAboutPageFactory("konqaboutpage"))
 
-K_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
+Q_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 
 KonqAboutPageSingleton::KonqAboutPageSingleton()
 {
@@ -61,7 +58,7 @@ QString KonqAboutPageSingleton::launch()
         return m_launch_html;
     }
 
-    QString res = loadFile(KStandardDirs::locate("data", "konqueror/about/launch.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/launch.html"));
     if (res.isEmpty()) {
         return res;
     }
@@ -75,9 +72,9 @@ QString KonqAboutPageSingleton::launch()
     QString home_folder = QUrl::fromLocalFile(QDir::homePath()).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
     } else {
         res = res.arg("");
     }
@@ -124,7 +121,7 @@ QString KonqAboutPageSingleton::intro()
         return m_intro_html;
     }
 
-    QString res = loadFile(KStandardDirs::locate("data", "konqueror/about/intro.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/intro.html"));
     if (res.isEmpty()) {
         return res;
     }
@@ -134,9 +131,9 @@ QString KonqAboutPageSingleton::intro()
     QString gohome_icon_path = QUrl::fromLocalFile(iconloader->iconPath("go-home", KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
     } else {
         res = res.arg("");
     }
@@ -184,15 +181,15 @@ QString KonqAboutPageSingleton::specs()
     }
 
     KIconLoader *iconloader = KIconLoader::global();
-    QString res = loadFile(KStandardDirs::locate("data", "konqueror/about/specs.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/specs.html"));
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
     if (res.isEmpty()) {
         return res;
     }
 
-    res = res.arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
     } else {
         res = res.arg("");
     }
@@ -269,7 +266,7 @@ QString KonqAboutPageSingleton::tips()
         return m_tips_html;
     }
 
-    QString res = loadFile(KStandardDirs::locate("data", "konqueror/about/tips.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/tips.html"));
     if (res.isEmpty()) {
         return res;
     }
@@ -291,9 +288,9 @@ QString KonqAboutPageSingleton::tips()
         QUrl::fromLocalFile(iconloader->iconPath("view-split-left-right", KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(KStandardDirs::locate("data", "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
     } else {
         res = res.arg("");
     }
@@ -353,7 +350,7 @@ QString KonqAboutPageSingleton::plugins()
         return m_plugins_html;
     }
 
-    QString res = loadFile(KStandardDirs::locate("data", qApp->layoutDirection() == Qt::RightToLeft ? "konqueror/about/plugins_rtl.html" : "konqueror/about/plugins.html"))
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, qApp->layoutDirection() == Qt::RightToLeft ? "konqueror/about/plugins_rtl.html" : "konqueror/about/plugins.html"))
                   .arg(i18n("Installed Plugins"))
                   .arg(i18n("<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"))
                   .arg(i18n("Installed"))
@@ -370,13 +367,13 @@ KonqAboutPage::KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVari
     : KHTMLPart(parentWidget, parent, BrowserViewGUI)
 {
     Q_UNUSED(args)
+#if 0
     QTextCodec *codec = KGlobal::locale()->codecForEncoding();
     if (codec) {
         setEncoding(codec->name(), true);
     } else {
         setEncoding("iso-8859-1", true);
     }
-#if 0
     // about:blah isn't a kioslave -> disable View source
     QAction *act = actionCollection()->action("viewDocumentSource");
     if (act) {
@@ -471,12 +468,13 @@ bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const
                                             "the introduction in the webbrowsing profile?"),
                                        i18nc("@title:window", "Faster Startup?"), KGuiItem(i18n("Disable")), KGuiItem(i18n("Keep")))
                 == KMessageBox::Yes) {
-            QString profile = KStandardDirs::locateLocal("data", "konqueror/profiles/webbrowsing");
-            KSaveFile file(profile);
-            if (file.open()) {
+            QString profile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqueror/profiles/webbrowsing";
+            QSaveFile file(profile);
+            if (file.open(QIODevice::WriteOnly)) {
                 QTextStream stream(&file);
                 stream << "[Profile]\n"
                        "Name=Web-Browser";
+                file.commit();
             }
         }
         return true;
