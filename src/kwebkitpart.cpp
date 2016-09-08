@@ -270,12 +270,6 @@ void KWebKitPart::initActions()
     actionCollection()->addAction("security", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotShowSecurity()));
 
-    action = new KToggleAction(i18n("Toggle Caret Mode"), this);
-    actionCollection()->addAction("caretMode", action);
-    action->setShortcut( QKeySequence(Qt::Key_F7) );
-    action->setChecked(isCaretMode());
-    connect(action, SIGNAL(triggered(bool)), SLOT(slotToggleCaretMode()));
-    
     action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
@@ -422,17 +416,6 @@ bool KWebKitPart::openUrl(const QUrl &_u)
     m_doLoadFinishedActions = true;
     m_webView->loadUrl(u, args, bargs);
     return true;
-}
-
-bool KWebKitPart::isCaretMode() const
-{
-    //return page()->settings()->testAttribute(QWebEngineSettings::CaretBrowsingEnabled);
-    return false;
-}
-
-void KWebKitPart::slotToggleCaretMode()
-{
-    //page()->settings()->setAttribute(QWebEngineSettings::CaretBrowsingEnabled, !isCaretMode());
 }
 
 bool KWebKitPart::closeUrl()
