@@ -15,10 +15,6 @@ find_package(KF5Sonnet)
 include(MacroLibrary)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
-link_directories(${CMAKE_BINARY_DIR}/../src)
-include_directories(${CMAKE_SOURCE_DIR}/../src)
-
-
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(kdelauncher main.cpp )
