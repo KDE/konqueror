@@ -124,7 +124,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
     // TODO: Save information such as form data from the current page.
     QWebEngineHistory* history = (view() ? view()->history() : 0);
     const int historyIndex = (history ? history->currentItemIndex() : -1);
-    const QUrl historyUrl = (history ? QUrl(history->currentItem().url()) : m_part->url());
+    const QUrl historyUrl = (history && historyIndex > -1) ? QUrl(history->currentItem().url()) : m_part->url();
 
     stream << historyUrl
            << static_cast<qint32>(xOffset())
