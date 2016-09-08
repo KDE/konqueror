@@ -30,5 +30,3 @@ install(TARGETS kwebkitpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 install(FILES kwebkitpart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 
 install(FILES kwebkitpart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kwebkitpart)
-
-install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/kwebkitpart)

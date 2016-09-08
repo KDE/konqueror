@@ -68,30 +68,6 @@ public:
      */
     void downloadRequest(QWebEngineDownloadItem* request);
 
-    /**
-     * Returns the error page associated with the KIO error @p code.
-     *
-     * @param text the error message.
-     * @param url the url where the error was encountered.
-     *
-     * @return html error page.
-     */
-    QString errorPage(int code, const QString& text, const QUrl& url) const;
-
-    /**
-     * Re-implemented to handle ErrorPageExtension.
-     *
-     * @see QWebPage::extension()
-     */
-    //bool extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output);
-
-    /**
-     * Re-implemented to handle ErrorPageExtension.
-     *
-     * @see QWebPage::supportsExtension()
-     */
-    //bool supportsExtension(Extension extension) const;
-
 Q_SIGNALS:
     /**
      * This signal is emitted whenever a user cancels/aborts a load resource
