@@ -39,6 +39,8 @@
 #include <KDE/KLineEdit>
 #include <kwebkitpart.h>
 
+#include <QInputDialog>
+
 //#include <QUiLoader>
 //#include <QWebEnginePage>
 #include <QWebEngineView>
@@ -186,14 +188,16 @@ protected slots:
     }
 
     void dumpHtml() {
-        // callback kDebug() << "HTML: " << view->view()->page()->toHtml();
+        view->view()->page()->toHtml([](const QString& text) {
+            kDebug() << "HTML: " << text;
+        });
     }
 
     void selectElements() {
         bool ok;
-        QString str = KInputDialog::getText(i18nc("input dialog window title for selecting html elements", "Select elements"),
-                                            i18nc("input dialog text for selecting html elements", "Choose elements"),
-                                            QLatin1String("a"), &ok, this);
+        QString str = QInputDialog::getText(this, i18nc("input dialog window title for selecting html elements", "Select elements"),
+                                            i18nc("input dialog text for selecting html elements", "Choose elements"), QLineEdit::Normal,
+                                            QLatin1String("a"), &ok);
         if (ok && !str.isEmpty()) {
             //QWebElementCollection collection = view->page()->mainFrame()->findAllElements(str);
             //const int count = collection.count();
