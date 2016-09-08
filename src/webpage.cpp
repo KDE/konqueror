@@ -27,8 +27,8 @@
 #include "webview.h"
 #include "sslinfodialog_p.h"
 #include "settings/webkitsettings.h"
-//#include "webpluginfactory.h"
-#include <QtWebEngineWidgets/QWebEngineSettings>
+#include <QWebEngineSettings>
+#include <QWebEngineProfile>
 
 #include <kdeversion.h>
 #include <KDE/KMessageBox>
@@ -38,7 +38,6 @@
 #include <KDE/KAuthorized>
 #include <KDE/KDebug>
 #include <KDE/KFileDialog>
-#include <KDE/KProtocolInfo>
 #include <KDE/KStringHandler>
 #include <KDE/KIconLoader>
 #include <KDE/KMimeType>
@@ -57,6 +56,7 @@
 #include <QNetworkReply>
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
+#include <QWebEngineDownloadItem>
 //#include <QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
@@ -79,29 +79,16 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     //setForwardUnsupportedContent(true);
 
-    // Add all KDE's local protocols to QWebSecurityOrigin
-    Q_FOREACH (const QString& protocol, KProtocolInfo::protocols()) {
-        // file is already a known local scheme and about must not be added
-        // to this list since there is about:blank.
-        if (protocol == QL1S("about") || protocol == QL1S("file"))
-            continue;
-
-        if (KProtocolInfo::protocolClass(protocol) != QL1S(":local"))
-            continue;
-
-        //QWebSecurityOrigin::addLocalScheme(protocol);
-    }
-
     connect(this, SIGNAL(geometryChangeRequested(QRect)),
             this, SLOT(slotGeometryChangeRequested(QRect)));
-    connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
-            this, SLOT(downloadRequest(QNetworkRequest)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(this, SIGNAL(featurePermissionRequested(QWebFrame*, QWebPage::Feature)),
             this, SLOT(slotFeaturePermissionRequested(QWebFrame*, QWebPage::Feature)));
 //    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
 //            this, SLOT(slotRequestFinished(QNetworkReply*)));
+    connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
+    this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + ", Konqueror (QWebEnginePart)");
 }
 
 WebPage::~WebPage()
@@ -140,9 +127,9 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebPage::downloadRequest(const QNetworkRequest &request)
+void WebPage::downloadRequest(QWebEngineDownloadItem* request)
 {
-    const QUrl url(request.url());
+    const QUrl url(request->url());
 
     // Integration with a download manager...
     if (!url.isLocalFile()) {
@@ -154,8 +141,8 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
             return;
         }
     }
+    request->accept();
 
-//    QWebEnginePage::downloadRequest(request);
 }
 
 static QString warningIconData()
@@ -342,16 +329,6 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-#if 0
-static void resetPluginsLoadedOnDemandFor(QWebEnginePluginFactory* _factory)
-{
-    WebPluginFactory* factory = qobject_cast<WebPluginFactory*>(_factory);
-    if (factory) {
-        factory->resetPluginOnDemandList();
-    }
-}
-#endif
-
 bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
     QUrl reqUrl (url);
@@ -405,23 +382,14 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()
             //         << "of" << history()->count() << "):" << history()->currentItem().url();
             inPageRequest = false;
-            if (!isBlankUrl(reqUrl)) {
-                //resetPluginsLoadedOnDemandFor(pluginFactory());
-            }
             break;
 #endif
         case QWebEnginePage::NavigationTypeReload:
 //            setRequestMetaData(QL1S("cache"), QL1S("reload"));
             inPageRequest = false;
-            if (!isBlankUrl(reqUrl)) {
-         //       resetPluginsLoadedOnDemandFor(pluginFactory());
-            }
             break;
         case QWebEnginePage::NavigationTypeOther:
             inPageRequest = !isTypedUrl;
-            if (isTypedUrl && !isBlankUrl(reqUrl)) {
-   //           resetPluginsLoadedOnDemandFor(pluginFactory());
-            }
             break;
         default:
             break;
@@ -436,8 +404,6 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
         }
 
         // Insert the request into the queue...
-        reqUrl.setUserInfo(QString());
-        m_requestQueue << reqUrl;
     } else {
         // If request came from javascript, set m_noJSOpenWindowCheck to true.
 //        m_noJSOpenWindowCheck = (!isTypedUrl && type != QWebEnginePage::NavigationTypeOther);
@@ -446,18 +412,6 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebKitSettings::self()->isPluginsEnabled(reqUrl.host()));
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
-}
-
-QString WebPage::userAgentForUrl(const QUrl& url) const
-{
-    QString userAgent ; //= QWebEnginePage::usAgentForUrl(url);
-
-    // Remove the useless "U" if it is present.
-    const int index = userAgent.indexOf(QL1S(" U;"), -1, Qt::CaseInsensitive);
-    if (index > -1)
-        userAgent.remove(index, 3);
-
-    return userAgent.trimmed();
 }
 
 static int errorCodeFromReply(QNetworkReply* reply)
@@ -517,10 +471,6 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
     QUrl requestUrl (reply->request().url());
     requestUrl.setUserInfo(QString());
-
-    // Disregards requests that are not in the request queue...
-    if (!m_requestQueue.removeOne(requestUrl))
-        return;
 
     return;
 #if 0

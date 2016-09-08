@@ -36,6 +36,7 @@
 class QUrl;
 class WebSslInfo;
 class KWebKitPart;
+class QWebEngineDownloadItem;
 
 
 class WebPage : public QWebEnginePage
@@ -65,7 +66,7 @@ public:
      * @internal
      * @see KWebPage::downloadRequest.
      */
-    void downloadRequest(const QNetworkRequest &request);
+    void downloadRequest(QWebEngineDownloadItem* request);
 
     /**
      * Returns the error page associated with the KIO error @p code.
@@ -123,12 +124,6 @@ protected:
      */
     virtual bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    virtual QString userAgentForUrl(const QUrl& url) const;
-
 protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
     void slotUnsupportedContent(QNetworkReply* reply);
@@ -149,7 +144,6 @@ private:
     bool m_noJSOpenWindowCheck;
 
     WebSslInfo m_sslInfo;
-    QList<QUrl> m_requestQueue;
     QPointer<KWebKitPart> m_part;
 };
 
