@@ -145,7 +145,7 @@ public:
     virtual ~NewWindowPage();
 
 protected:
-    //virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
+    virtual bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
 private Q_SLOTS:
     void slotGeometryChangeRequested(const QRect& rect) override;

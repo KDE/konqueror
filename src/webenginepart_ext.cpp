@@ -1217,6 +1217,7 @@ QVariant WebEngineScriptableExtension::evaluateScript (KParts::ScriptableExtensi
                                                      KParts::ScriptableExtension::ScriptLanguage lang)
 {
     Q_UNUSED(contextObjectId);
+    Q_UNUSED(code)
     //kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
 
     if (lang != ECMAScript)

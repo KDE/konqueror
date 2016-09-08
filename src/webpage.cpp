@@ -676,19 +676,19 @@ NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, bool disab
             this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
-  //  connect(mainFrame(), SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
+    connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
 }
 
 NewWindowPage::~NewWindowPage()
 {
     //kDebug() << this;
 }
-#if 0
-bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
+
+bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
     // kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
     if (m_createNewWindow) {
-        const QUrl reqUrl (request.url());
+        const QUrl reqUrl (url);
 
         if (!m_disableJSOpenwindowCheck) {
             const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(reqUrl.host());
@@ -719,13 +719,12 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
             }
         }
 
-        if (!part() && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
+        if (!part() && !isMainFrame && type != QWebEnginePage::NavigationTypeOther)
             return false;
 
         // Browser args...
         KParts::BrowserArguments bargs;
-        bargs.frameName = mainFrame()->frameName();
-        if (m_type == WebModalDialog)
+        if (m_type == WebDialog)
             bargs.setForcesNewWindow(true);
 
         // OpenUrl args...
@@ -770,9 +769,8 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         m_createNewWindow = false;
     }
 
-    return WebPage::acceptNavigationRequest(frame, request, type);
+    return WebPage::acceptNavigationRequest(url, type, isMainFrame);
 }
-#endif
 
 void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
 {
