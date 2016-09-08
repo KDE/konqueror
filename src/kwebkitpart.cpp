@@ -424,30 +424,6 @@ void KWebKitPart::slotLoadStarted()
     updateActions();
 }
 
-void KWebKitPart::slotFrameLoadFinished(bool ok)
-{
-    //QWebFrame* frame = (sender() ? qobject_cast<QWebFrame*>(sender()) : page()->mainFrame());
-
-    if (ok) {
-        const QUrl currentUrl ; //(frame->baseUrl().resolved(frame->url()));
-        // kDebug() << "mainframe:" << m_webView->page()->mainFrame() << "frame:" << sender();
-        // kDebug() << "url:" << frame->url() << "base url:" << frame->baseUrl() << "request url:" << frame->requestedUrl();
-        if (currentUrl != *globalBlankUrl) {
-            m_hasCachedFormData = false;
-
-            if (WebKitSettings::self()->isNonPasswordStorableSite(currentUrl.host())) {
-                addWalletStatusBarIcon();
-            } else {
-                // Attempt to fill the web form...
-      //          KWebWallet *webWallet = page() ? page()->wallet() : 0;
-      //          if (webWallet) {
-      //              webWallet->fillFormData(frame, false);
-      //          }
-            }
-        }
-    }
-}
-
 void KWebKitPart::slotMainFrameLoadFinished (bool ok)
 {
     if (!ok || !m_doLoadFinishedActions)
@@ -472,8 +448,19 @@ void KWebKitPart::slotMainFrameLoadFinished (bool ok)
         // documents...
         slotUrlChanged(url);
     }
+    if (url() != *globalBlankUrl) {
+        m_hasCachedFormData = false;
 
-    slotFrameLoadFinished(ok);
+        if (WebKitSettings::self()->isNonPasswordStorableSite(url().host())) {
+            addWalletStatusBarIcon();
+        } else {
+// Attempt to fill the web form...
+//          KWebWallet *webWallet = page() ? page()->wallet() : 0;
+//          if (webWallet) {
+//              webWallet->fillFormData(frame, false);
+//          }
+        }
+    }
 }
 
 void KWebKitPart::slotLoadFinished(bool ok)
@@ -957,14 +944,5 @@ void KWebKitPart::slotFillFormRequestCompleted (bool ok)
     if ((m_hasCachedFormData = ok))
         addWalletStatusBarIcon();
 }
-
-#if 0
-void KWebKitPart::slotFrameCreated (QWebFrame* frame)
-{
-    if (frame != page()->mainFrame()) {
-        connect(frame, SIGNAL(loadFinished(bool)), this, SLOT(slotFrameLoadFinished(bool)), Qt::UniqueConnection);
-    }
-}
-#endif
 
 #include "kwebkitpart.moc"
