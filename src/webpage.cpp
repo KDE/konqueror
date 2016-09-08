@@ -372,7 +372,8 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
                 return false;
             }
             break;
-        case QWebEnginePage::NavigationTypeBackOrForward:
+#endif
+        case QWebEnginePage::NavigationTypeBackForward:
             // If history navigation is locked, ignore all such requests...
             if (property("HistoryNavigationLocked").toBool()) {
                 setProperty("HistoryNavigationLocked", QVariant());
@@ -383,7 +384,6 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
             //         << "of" << history()->count() << "):" << history()->currentItem().url();
             inPageRequest = false;
             break;
-#endif
         case QWebEnginePage::NavigationTypeReload:
 //            setRequestMetaData(QL1S("cache"), QL1S("reload"));
             inPageRequest = false;
