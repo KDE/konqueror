@@ -53,10 +53,8 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
-//#include <QWebFrame>
-#include <QtWebEngineWidgets/QWebEngineHistory>
-//#include <QWebElement>
-//#include <QWebElementCollection>
+#include <QInputDialog>
+#include <QWebEngineHistory>
 
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
@@ -431,8 +429,8 @@ void WebEngineBrowserExtension::slotBlockIFrame()
 
     bool ok = false;
     const QString urlStr; // = iframeUrl(view()->contextMenuResult().frame());
-    const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
-                                              i18n("Enter the URL:"),
+    const QString url = QInputDialog::getText(view(), i18n("Add URL to Filter"),
+                                              i18n("Enter the URL:"), QLineEdit::Normal,
                                               urlStr, &ok);
     if (ok) {
         WebEngineSettings::self()->addAdFilter(url);
@@ -516,9 +514,9 @@ void WebEngineBrowserExtension::slotBlockImage()
         return;
 
     bool ok = false;
-    const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
-                                              i18n("Enter the URL:"),
-                                              QString(), //view()->contextMenuResult().imageUrl().toString(),
+    const QString url = QInputDialog::getText(view(), i18n("Add URL to Filter"),
+                                              i18n("Enter the URL:"), QLineEdit::Normal,
+                                              view()->contextMenuResult().mediaUrl().toString(),
                                               &ok);
     if (ok) {
         WebEngineSettings::self()->addAdFilter(url);
@@ -577,57 +575,39 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
     if (pageUrl.isLocalFile()) {
         KRun::runUrl(pageUrl, QL1S("text/plain"), view(), false);
     } else {
-        KTemporaryFile tempFile;
-        tempFile.setSuffix(QL1S(".html"));
-        tempFile.setAutoRemove(false);
-        if (tempFile.open()) {
-//            tempFile.write(view()->page()->toHtml().toUtf8());
-//            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
-        }
+        view()->page()->toHtml([this](const QString& html) {
+            QTemporaryFile tempFile;
+            tempFile.setFileTemplate(tempFile.fileTemplate() + QL1S(".html"));
+            tempFile.setAutoRemove(false);
+            if (tempFile.open()) {
+                tempFile.write(html.toUtf8());
+                KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
+            }
+        });
     }
 }
 
-void WebEngineBrowserExtension::slotViewFrameSource()
+static bool isMultimediaElement(QWebEngineContextMenuData::MediaType mediaType)
 {
-    if (!view())
-        return;
-
-    const QUrl frameUrl(view()->page()->url());
-    if (frameUrl.isLocalFile()) {
-        KRun::runUrl(frameUrl, QL1S("text/plain"), view(), false);
-    } else {
-        KTemporaryFile tempFile;
-        tempFile.setSuffix(QL1S(".html"));
-        tempFile.setAutoRemove(false);
-        if (tempFile.open()) {
-//            tempFile.write(view()->page()->toHtml().toUtf8());
-//            KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
-        }
+    switch(mediaType)
+    {
+        case QWebEngineContextMenuData::MediaTypeVideo:
+        case QWebEngineContextMenuData::MediaTypeAudio:
+            return true;
+        default:
+            return false;
     }
 }
-#if 0
-static bool isMultimediaElement(const QWebElement& element)
-{
-    if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
-        return true;
-
-    if (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0)
-        return true;
-
-    return false;
-}
-#endif
 
 void WebEngineBrowserExtension::slotLoopMedia()
 {
     if (!view())
         return;
 
-    //QWebElement element (view()->contextMenuResult().element());
-    //if (!isMultimediaElement(element))
-    //    return;
-
-    //element.evaluateJavaScript(QL1S("this.loop = !this.loop;"));
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
+        return;
+    view()->page()->triggerAction(QWebEnginePage::ToggleMediaLoop);
 }
 
 void WebEngineBrowserExtension::slotMuteMedia()
@@ -635,11 +615,10 @@ void WebEngineBrowserExtension::slotMuteMedia()
     if (!view())
         return;
 
-    //QWebElement element (view()->contextMenuResult().element());
-    //if (!isMultimediaElement(element))
-    //    return;
-
-    //element.evaluateJavaScript(QL1S("this.muted = !this.muted;"));
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
+        return;
+    view()->page()->triggerAction(QWebEnginePage::ToggleMediaMute);
 }
 
 void WebEngineBrowserExtension::slotPlayMedia()
@@ -647,13 +626,10 @@ void WebEngineBrowserExtension::slotPlayMedia()
     if (!view())
         return;
 
-#if 0
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
         return;
-
-    element.evaluateJavaScript(QL1S("this.paused ? this.play() : this.pause();"));
-#endif
+    view()->page()->triggerAction(QWebEnginePage::ToggleMediaPlayPause);
 }
 
 void WebEngineBrowserExtension::slotShowMediaControls()
@@ -661,11 +637,10 @@ void WebEngineBrowserExtension::slotShowMediaControls()
     if (!view())
         return;
 
-//    QWebElement element (view()->contextMenuResult().element());
-//    if (!isMultimediaElement(element))
-//        return;
-
-//    element.evaluateJavaScript(QL1S("this.controls = !this.controls;"));
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
+        return;
+    view()->page()->triggerAction(QWebEnginePage::ToggleMediaControls);
 }
 
 #if 0
@@ -688,25 +663,21 @@ void WebEngineBrowserExtension::slotSaveMedia()
     if (!view())
         return;
 
-#if 0
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
         return;
-
-    emit saveUrl(mediaUrlFrom(element));
-#endif
+    emit saveUrl(data.mediaUrl());
 }
 
 void WebEngineBrowserExtension::slotCopyMedia()
 {
     if (!view())
         return;
-#if 0
-    QWebElement element (view()->contextMenuResult().element());
-    if (!isMultimediaElement(element))
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType()))
         return;
 
-    QUrl safeURL(mediaUrlFrom(element));
+    QUrl safeURL(data.mediaUrl());
     if (!safeURL.isValid())
         return;
 
@@ -722,7 +693,6 @@ void WebEngineBrowserExtension::slotCopyMedia()
     mimeData = new QMimeData;
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
-#endif
 }
 
 void WebEngineBrowserExtension::slotTextDirectionChanged()
@@ -941,22 +911,31 @@ QString WebEngineTextExtension::selectedText(Format format) const
     switch(format) {
     case PlainText:
         return part()->view()->selectedText();
-    //case HTML:
-    //    return part()->view()->selectedHtml();
+    case HTML:
+        // PORTING_TODO selectedText might not be html
+        return part()->view()->selectedText();
     }
     return QString();
 }
 
 QString WebEngineTextExtension::completeText(Format format) const
 {
-#if 0
+    // TODO David will hunt me down with a rusty spork if he sees this
+    QEventLoop ev;
+    QString str;
     switch(format) {
     case PlainText:
-//        return part()->view()->page()->toPlainText();
+        part()->view()->page()->toPlainText([&ev,&str](const QString& data) {
+            str = data;
+            ev.quit();
+        });
     case HTML:
-//        return part()->view()->page()->toHtml();
+        part()->view()->page()->toHtml([&ev,&str](const QString& data) {
+            str = data;
+            ev.quit();
+        });
     }
-#endif
+    ev.exec();
     return QString();
 }
 

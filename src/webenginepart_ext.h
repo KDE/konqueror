@@ -89,7 +89,6 @@ public Q_SLOTS:
     void slotCopyEmailAddress();
 
     void slotViewDocumentSource();
-    void slotViewFrameSource();
 
     void updateEditActions();
     void updateActions();
