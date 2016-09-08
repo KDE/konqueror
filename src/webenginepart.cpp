@@ -22,7 +22,7 @@
  *
  */
 
-#include "kwebkitpart.h"
+#include "webenginepart.h"
 
 //#include <QWebFrame>
 //#include <QWebElement>
@@ -30,7 +30,7 @@
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
-#include "kwebkitpart_ext.h"
+#include "webenginepart_ext.h"
 #include "sslinfodialog_p.h"
 #include "webview.h"
 #include "webpage.h"
@@ -40,7 +40,7 @@
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
 #include "ui/featurepermissionbar.h"
-#include "settings/webkitsettings.h"
+#include "settings/webenginesettings.h"
 
 #include <kdeversion.h>
 #include <kcodecaction.h>
@@ -945,4 +945,4 @@ void KWebKitPart::slotFillFormRequestCompleted (bool ok)
         addWalletStatusBarIcon();
 }
 
-#include "kwebkitpart.moc"
+#include "webenginepart.moc"

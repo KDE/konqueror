@@ -22,11 +22,11 @@
 
 #include "webpage.h"
 
-#include "kwebkitpart.h"
+#include "webenginepart.h"
 #include "websslinfo.h"
 #include "webview.h"
 #include "sslinfodialog_p.h"
-#include "settings/webkitsettings.h"
+#include "settings/webenginesettings.h"
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
@@ -88,7 +88,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 //    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
 //            this, SLOT(slotRequestFinished(QNetworkReply*)));
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
-    this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + ", Konqueror (QWebEnginePart)");
+    this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + ", Konqueror (WebEnginePart)");
 }
 
 WebPage::~WebPage()

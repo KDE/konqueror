@@ -23,8 +23,8 @@
 
 #include "webview.h"
 #include "webpage.h"
-#include "kwebkitpart.h"
-#include "settings/webkitsettings.h"
+#include "webenginepart.h"
+#include "settings/webenginesettings.h"
 
 #include <kio/global.h>
 #include <KDE/KAboutData>

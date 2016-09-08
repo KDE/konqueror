@@ -18,12 +18,12 @@
  *
  */
 
-#include "kwebkitpart_ext.h"
+#include "webenginepart_ext.h"
 
-#include "kwebkitpart.h"
+#include "webenginepart.h"
 #include "webview.h"
 #include "webpage.h"
-#include "settings/webkitsettings.h"
+#include "settings/webenginesettings.h"
 #include <QtWebEngineWidgets/QWebEngineSettings>
 
 #include <KDE/KAction>
@@ -1288,4 +1288,4 @@ KWebKitPart* KWebKitScriptableExtension::part()
     return qobject_cast<KWebKitPart*>(parent());
 }
 
-#include "kwebkitpart_ext.moc"
+#include "webenginepart_ext.moc"

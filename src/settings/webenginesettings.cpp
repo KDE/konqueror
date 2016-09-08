@@ -17,9 +17,9 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "webkitsettings.h"
+#include "webenginesettings.h"
 
-#include "webkit_filter.h"
+#include "webengine_filter.h"
 
 #include <KDE/KConfig>
 #include <KDE/KConfigGroup>
@@ -1278,4 +1278,4 @@ WebKitSettings* WebKitSettings::self()
     return s_webKitSettings;
 }
 
-#include "webkitsettings.moc"
+#include "webenginesettings.moc"

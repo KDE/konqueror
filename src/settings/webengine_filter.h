@@ -26,7 +26,7 @@
 #include <QString>
 #include <QRegExp>
 #include <QVector>
-#include <kwebkitpart.h>
+#include <webenginepart.h>
 
 class StringsMatcher;
 

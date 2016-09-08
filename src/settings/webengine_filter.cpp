@@ -20,7 +20,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "webkit_filter.h"
+#include "webengine_filter.h"
 #include <KDE/KDebug>
 
 #include <QHash>

@@ -21,7 +21,7 @@
 
 #include "passwordbar.h"
 
-#include "settings/webkitsettings.h"
+#include "settings/webenginesettings.h"
 
 #include <KDE/KIcon>
 #include <KDE/KDebug>

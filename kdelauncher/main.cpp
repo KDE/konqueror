@@ -37,7 +37,7 @@
 #include <KDE/KUriFilter>
 #include <KDE/KInputDialog>
 #include <KDE/KLineEdit>
-#include <kwebkitpart.h>
+#include <webenginepart.h>
 
 #include <QInputDialog>
 

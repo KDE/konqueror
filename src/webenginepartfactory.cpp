@@ -18,9 +18,9 @@
  *
  */
 
-#include "kwebkitpartfactory.h"
-#include "kwebkitpart_ext.h"
-#include "kwebkitpart.h"
+#include "webenginepartfactory.h"
+#include "webenginepart_ext.h"
+#include "webenginepart.h"
 
 #include <KDE/KDebug>
 
@@ -67,4 +67,4 @@ void KWebKitFactory::slotDestroyed(QObject* object)
 
 K_EXPORT_PLUGIN(KWebKitFactory)
 
-#include "kwebkitpartfactory.moc"
+#include "webenginepartfactory.moc"
