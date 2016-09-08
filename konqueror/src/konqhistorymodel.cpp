@@ -22,14 +22,13 @@
 #include "konqhistory.h"
 #include "konq_historyprovider.h"
 
-#include <kglobal.h>
-#include <kiconloader.h>
 #include <KLocalizedString>
-#include <kmimetype.h>
+#include <kio/global.h>
 #include <kprotocolinfo.h>
 
 #include <QHash>
 #include <QList>
+#include <QLocale>
 #include <QIcon>
 
 namespace KHM
@@ -133,8 +132,8 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
                     entry.url.toDisplayString().toHtmlEscaped(),
-                    KLocale::global()->formatDateTime(entry.lastVisited),
-                    KLocale::global()->formatDateTime(entry.firstVisited),
+                    QLocale().toString(entry.lastVisited),
+                    QLocale().toString(entry.firstVisited),
                     entry.numberOfTimesVisited);
     case KonqHistory::LastVisitedRole:
         return entry.lastVisited;
@@ -152,18 +151,18 @@ void HistoryEntry::update(const KonqHistoryEntry &_entry)
     if (parent->hasFavIcon && (path.isNull() || path == QLatin1String("/"))) {
         icon = parent->icon;
     } else {
-        icon = QIcon(SmallIcon(KProtocolInfo::icon(entry.url.scheme())));
+        icon = QIcon(KProtocolInfo::icon(entry.url.scheme()));
     }
 }
 
 GroupEntry::GroupEntry(const QUrl &_url, const QString &_key)
     : Entry(Group), url(_url), key(_key), hasFavIcon(false)
 {
-    const QString iconPath = KMimeType::favIconForUrl(url);
+    const QString iconPath = KIO::favIconForUrl(url);
     if (iconPath.isEmpty()) {
         icon = QIcon::fromTheme("folder");
     } else {
-        icon = QIcon(SmallIcon(iconPath));
+        icon = QIcon(iconPath);
         hasFavIcon = true;
     }
 }

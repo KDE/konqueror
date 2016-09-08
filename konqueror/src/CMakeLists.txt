@@ -44,8 +44,7 @@ target_link_libraries(konquerorprivate
    KF5::Konq
    KF5::Parts
    KF5::KIOGui
-   ${ZLIB_LIBRARY}
-   KF5::KDELibs4Support
+   #   ${ZLIB_LIBRARY}
 )
 
 if(X11_FOUND)

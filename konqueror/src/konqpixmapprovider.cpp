@@ -22,9 +22,9 @@
 #include <QMimeDatabase>
 
 #include <KIO/FavIconRequestJob>
-#include <kiconloader.h>
 #include <kio/global.h>
-#include <kmimetype.h>
+#include <QMimeType>
+#include <QIcon>
 #include <kprotocolinfo.h>
 #include <kconfiggroup.h>
 
@@ -182,10 +182,6 @@ void KonqPixmapProvider::clear()
 
 QPixmap KonqPixmapProvider::loadIcon(const QString &icon, int size)
 {
-    if (size <= KIconLoader::SizeSmall) {
-        return SmallIcon(icon, size);
-    }
-
-    return KIconLoader::global()->loadIcon(icon, KIconLoader::Panel, size);
+    return QIcon::fromTheme(icon).pixmap(size);
 }
 

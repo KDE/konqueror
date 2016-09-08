@@ -18,11 +18,11 @@
 */
 
 #include "historymanagertest.h"
-#include <qtest_kde.h>
+#include <QTest>
+#include <QSignalSpy>
 #include <konqhistorymanager.h>
-#include <kio/netaccess.h>
 
-QTEST_KDEMAIN(HistoryManagerTest, NoGUI)
+QTEST_MAIN(HistoryManagerTest)
 
 void HistoryManagerTest::testGetSetMaxCount()
 {

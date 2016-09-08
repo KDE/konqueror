@@ -26,17 +26,15 @@
 // Qt
 #include <QCheckBox>
 #include <QPushButton>
+#include <QIcon>
+#include <QFontDialog>
 
 // KDE
-#include <kapplication.h>
-#include <kconfig.h>
-#include <kdialog.h>
-#include <kfontdialog.h>
-#include <kglobal.h>
-#include <QIcon>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KFontChooser>
 #include <KLocalizedString>
 #include <kmessagebox.h>
-#include <knuminput.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
 
@@ -67,7 +65,7 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
 
     dialog->spinEntries->setRange(0, INT_MAX);
     dialog->spinExpire->setRange(0, INT_MAX);
-    dialog->spinExpire->setSuffix(ki18np(" day", " days"));
+    dialog->spinExpire->setSuffix(i18n("days"));
 
     dialog->spinNewer->setRange(0, INT_MAX);
     dialog->spinOlder->setRange(0, INT_MAX);
@@ -235,16 +233,18 @@ void HistorySidebarConfig::slotOlderChanged(int value)
 
 void HistorySidebarConfig::slotGetFontNewer()
 {
-    int result = KFontDialog::getFont(m_fontNewer, KFontChooser::NoDisplayFlags, this);
-    if (result == KFontDialog::Accepted) {
+    bool ok = false;
+    m_fontNewer = QFontDialog::getFont(&ok, m_fontNewer, this);
+    if (ok) {
         configChanged();
     }
 }
 
 void HistorySidebarConfig::slotGetFontOlder()
 {
-    int result = KFontDialog::getFont(m_fontOlder, KFontChooser::NoDisplayFlags, this);
-    if (result == KFontDialog::Accepted) {
+    bool ok = false;
+    m_fontOlder = QFontDialog::getFont(&ok, m_fontOlder, this);
+    if (ok) {
         configChanged();
     }
 }
