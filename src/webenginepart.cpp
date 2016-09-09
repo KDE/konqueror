@@ -202,21 +202,21 @@ void WebEnginePart::initActions()
     actionCollection()->addAction("saveFrame", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
 
-    action = new QAction(QIcon("document-print-preview"), i18n("Print Preview"), this);
+    action = new QAction(QIcon::fromTheme("document-print-preview"), i18n("Print Preview"), this);
     actionCollection()->addAction("printPreview", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotPrintPreview()));
 
-    action = new QAction(QIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
+    action = new QAction(QIcon::fromTheme("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
     action->setShortcut(QKeySequence("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
-    action = new QAction(QIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
+    action = new QAction(QIcon::fromTheme("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
     actionCollection()->addAction("zoomOut", action);
     action->setShortcut(QKeySequence("CTRL+-; CTRL+_"));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
-    action = new QAction(QIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
+    action = new QAction(QIcon::fromTheme("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction("zoomNormal", action);
     action->setShortcut(QKeySequence("CTRL+0"));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomNormal()));
@@ -241,7 +241,7 @@ void WebEnginePart::initActions()
     action->setShortcutContext(Qt::WidgetShortcut);
     m_webView->addAction(action);
 
-    KCodecAction *codecAction = new KCodecAction( QIcon("character-set"), i18n( "Set &Encoding" ), this, true );
+    KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme("character-set"), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( "setEncoding", codecAction );
     connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
 
