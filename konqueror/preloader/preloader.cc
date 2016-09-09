@@ -21,11 +21,10 @@
 #include "konqsettingsxt.h"
 #include "preloaderadaptor.h"
 
-#include <kdebug.h>
-#include <ktoolinvocation.h>
+#include <QProcess>
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
 K_PLUGIN_FACTORY(KonqyPreloaderFactory,
                  registerPlugin<KonqyPreloader>();
@@ -101,7 +100,7 @@ void KonqyPreloader::appChanged(const QString & /*id*/,  const QString &oldOwner
 
 void KonqyPreloader::reconfigure()
 {
-    KonqSettings::self()->readConfig();
+    KonqSettings::self()->load();
     updateCount();
     // Ignore "PreloadOnStartup" here, it's used by the .desktop file
     // in the autostart folder, which will do 'konqueror --preload' in autostart
@@ -120,12 +119,10 @@ void KonqyPreloader::updateCount()
             KonqSettings::maxPreloadCount() > 0 &&
             instances.count() == 0) {
         if (!check_always_preloaded_timer.isActive()) {
-            if (KToolInvocation::kdeinitExec(QLatin1String("konqueror"),
-                                             QStringList() << QLatin1String("--preload"), NULL, NULL, "0") == 0) {
-                kDebug() << "Preloading Konqueror instance";
-                check_always_preloaded_timer.start(5000);
-            }
-            // else do nothing, the launching failed
+            const QStringList args = { QStringLiteral("--preload") };
+            QProcess::startDetached(QStringLiteral("konqueror"), args);
+            qDebug() << "Preloading Konqueror instance";
+            check_always_preloaded_timer.start(5000);
         }
     }
 }

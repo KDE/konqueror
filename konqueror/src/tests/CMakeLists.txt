@@ -10,8 +10,9 @@ include_directories( ${CMAKE_BINARY_DIR} )
 
 add_executable(centralwidget centralwidget.cpp)
 ecm_mark_as_test(centralwidget)
-target_link_libraries(centralwidget KF5::Konq KF5::KDELibs4Support Qt5::Core Qt5::Gui
-                      Qt5::Test)
+target_link_libraries(centralwidget
+   Qt5::Widgets
+   Qt5::Test)
 
 ########### konqviewmgrtest ###############
 
