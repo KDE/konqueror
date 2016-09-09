@@ -69,11 +69,7 @@
 #include <QDBusInterface>
 #include <QMenu>
 #include <QStatusBar>
-
-#define QL1S(x)  QLatin1String(x)
-#define QL1C(x)  QLatin1Char(x)
-
-Q_GLOBAL_STATIC_WITH_ARGS(QUrl, globalBlankUrl, ("about:blank"))
+#include "utils.h"
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
@@ -362,7 +358,7 @@ bool WebEnginePart::openUrl(const QUrl &_u)
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
-    if (u != *globalBlankUrl) {
+    if (!Utils::isBlankUrl(u)) {
         // Get the SSL information sent, if any...
         if (args.metaData().contains(QL1S("ssl_in_use"))) {
             WebSslInfo sslInfo;
@@ -415,7 +411,10 @@ bool WebEnginePart::openFile()
 
 void WebEnginePart::slotLoadStarted()
 {
-    emit started(0);
+    if(!Utils::isBlankUrl(url()))
+    {
+        emit started(0);
+    }
     updateActions();
 }
 
@@ -443,7 +442,7 @@ void WebEnginePart::slotMainFrameLoadFinished (bool ok)
         // documents...
         slotUrlChanged(url);
     }
-    if (url() != *globalBlankUrl) {
+    if (!Utils::isBlankUrl(url())) {
         m_hasCachedFormData = false;
 
         if (WebEngineSettings::self()->isNonPasswordStorableSite(url().host())) {
@@ -509,7 +508,7 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
     setUrl(u);
 
     // Do not update the location bar with about:blank
-    if (url != *globalBlankUrl) {
+    if (!Utils::isBlankUrl(url)) {
         //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
         emit m_browserExtension->setLocationBarUrl(u.toDisplayString());
     }

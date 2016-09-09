@@ -55,14 +55,8 @@
 #include <QUrlQuery>
 #include <KConfigGroup>
 //#include <QWebSecurityOrigin>
+#include "utils.h"
 
-#define QL1S(x)  QLatin1String(x)
-#define QL1C(x)  QLatin1Char(x)
-
-static bool isBlankUrl(const QUrl& url)
-{
-    return (url.isEmpty() || url.url() == QL1S("about:blank"));
-}
 
 WebPage::WebPage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
