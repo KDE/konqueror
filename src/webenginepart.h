@@ -24,7 +24,7 @@
 
 #include <QtWebEngineWidgets/QWebEnginePage>
 
-#include <KDE/KParts/ReadOnlyPart>
+#include <KParts/ReadOnlyPart>
 #include <QUrl>
 
 namespace KParts {

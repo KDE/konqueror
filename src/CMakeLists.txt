@@ -22,7 +22,7 @@ qt5_wrap_ui(webenginepart_LIB_SRCS
 
 add_library(webenginepart ${webenginepart_LIB_SRCS})
 
-target_link_libraries(webenginepart Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets KF5::Parts KF5::KDELibs4Support KF5::SonnetCore)
+target_link_libraries(webenginepart Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport KF5::Parts KF5::SonnetCore)
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 

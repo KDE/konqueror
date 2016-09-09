@@ -27,32 +27,26 @@
 #include "settings/webenginesettings.h"
 
 #include <kio/global.h>
-#include <KDE/KAboutData>
-#include <KDE/KAction>
-#include <KDE/KActionCollection>
-#include <KDE/KConfigGroup>
-#include <KDE/KMimeType>
-#include <KDE/KService>
-#include <KDE/KUriFilter>
-#include <KDE/KStandardDirs>
-#include <KDE/KActionMenu>
-#include <KDE/KIO/AccessManager>
-#include <KDE/KStringHandler>
-#include <KDE/KDebug>
-#include <KDE/KLocalizedString>
+#include <KAboutData>
+#include <KActionCollection>
+#include <KConfigGroup>
+#include <KService>
+#include <KUriFilter>
+#include <KActionMenu>
+#include <KIO/AccessManager>
+#include <KStringHandler>
+#include <KLocalizedString>
 
 #include <QTimer>
 #include <QMimeData>
 #include <QDropEvent>
 #include <QLabel>
 #include <QNetworkRequest>
-//#include <QWebFrame>
-//#include <QWebElement>
-//#include <QWebHitTestResult>
-//#include <QWebInspector>
 #include <QToolTip>
 #include <QCoreApplication>
 #include <unistd.h>
+#include <QMimeType>
+#include <QMimeDatabase>
 
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
@@ -117,22 +111,22 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
     if (fname.isEmpty() || url.hasFragment() || url.hasQuery())
         return;
  
-    KMimeType::Ptr pmt = KMimeType::findByPath(fname, 0, true);
+    QMimeType pmt = QMimeDatabase().mimeTypeForFile(fname);
 
     // Further check for mime types guessed from the extension which,
     // on a web page, are more likely to be a script delivering content
     // of undecidable type. If the mime type from the extension is one
     // of these, don't use it.  Retain the original type 'text/html'.
-    if (pmt->name() == KMimeType::defaultMimeType() ||
-        pmt->is(QL1S("application/x-perl")) ||
-        pmt->is(QL1S("application/x-perl-module")) ||
-        pmt->is(QL1S("application/x-php")) ||
-        pmt->is(QL1S("application/x-python-bytecode")) ||
-        pmt->is(QL1S("application/x-python")) ||
-        pmt->is(QL1S("application/x-shellscript")))
+    if (pmt.isDefault() ||
+        pmt.inherits(QL1S("application/x-perl")) ||
+        pmt.inherits(QL1S("application/x-perl-module")) ||
+        pmt.inherits(QL1S("application/x-php")) ||
+        pmt.inherits(QL1S("application/x-python-bytecode")) ||
+        pmt.inherits(QL1S("application/x-python")) ||
+        pmt.inherits(QL1S("application/x-shellscript")))
         return;
 
-    mimeType = pmt->name();
+    mimeType = pmt.name();
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)
@@ -178,7 +172,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         emitUrl = m_result.linkUrl();
         linkActionPopupMenu(mapAction);
         if (emitUrl.isLocalFile())
-            mimeType = KMimeType::findByUrl(emitUrl, 0, true, false)->name();
+            mimeType = QMimeDatabase().mimeTypeForUrl(emitUrl).name();
         else
             extractMimeTypeFor(emitUrl, mimeType);
         partActionPopupMenu(mapAction);

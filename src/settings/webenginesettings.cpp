@@ -21,16 +21,13 @@
 
 #include "webengine_filter.h"
 
-#include <KDE/KConfig>
-#include <KDE/KConfigGroup>
-#include <KDE/KJob>
-#include <KDE/KIO/Job>
-#include <KDE/KDebug>
-#include <KDE/KGlobal>
-#include <KDE/KGlobalSettings>
-#include <KDE/KLocale>
-#include <KDE/KMessageBox>
-#include <KDE/KStandardDirs>
+#include <KConfig>
+#include <KSharedConfig>
+#include <KLocalizedString>
+#include <KConfigGroup>
+#include <KJob>
+#include <KIO/Job>
+#include <KMessageBox>
 
 #include <QtWebEngineWidgets/QWebEngineSettings>
 #include <QFontDatabase>
@@ -189,14 +186,14 @@ public Q_SLOTS:
                 if ( success )
                     adblockFilterLoadList(localFileName);
                 else
-                    kWarning() << "Could not write" << byteArray.size() << "to file" << localFileName;
+                    qWarning() << "Could not write" << byteArray.size() << "to file" << localFileName;
                 file.close();
             }
             else
-                kDebug() << "Cannot open file" << localFileName << "for filter list";
+                qDebug() << "Cannot open file" << localFileName << "for filter list";
         }
         else
-            kDebug() << "Downloading" << tJob->url() << "failed with message:" << job->errorText();
+            qDebug() << "Downloading" << tJob->url() << "failed with message:" << job->errorText();
     }
 };
 
@@ -207,7 +204,7 @@ public Q_SLOTS:
 static KPerDomainSettings &setup_per_domain_policy(WebEngineSettingsPrivate* const d, const QString &domain)
 {
   if (domain.isEmpty())
-    kWarning() << "setup_per_domain_policy: domain is empty";
+    qWarning() << "setup_per_domain_policy: domain is empty";
 
   const QString ldomain = domain.toLower();
   PolicyMap::iterator it = d->domainPolicy.find(ldomain);
@@ -319,7 +316,7 @@ void WebEngineSettings::init()
   KConfig global( "khtmlrc", KConfig::NoGlobals );
   init( &global, true );
 
-  KSharedConfig::Ptr local = KGlobal::config();
+  KSharedConfig::Ptr local = KSharedConfig::openConfig();
   if ( local ) {
       init( local.data(), false );
   }
@@ -382,7 +379,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
               if (filterEnabled && url.isValid()) {
                   /** determine where to cache HTMLFilterList file */
                   QString localFile = cgFilter.readEntry(QString("HTMLFilterListLocalFilename-").append(QString::number(id)));
-                  localFile = KStandardDirs::locateLocal("data", "khtml/" + localFile);
+                  localFile = QStandardPaths::locate(QStandardPaths::ConfigLocation, "khtml/" + localFile);
 
                   /** determine existence and age of cache file */
                   QFileInfo fileInfo(localFile);
@@ -412,8 +409,8 @@ void WebEngineSettings::init( KConfig * config, bool reset )
     // Fonts and colors
     if( reset ) {
         d->defaultFonts = QStringList();
-        d->defaultFonts.append( cgHtml.readEntry( "StandardFont", KGlobalSettings::generalFont().family() ) );
-        d->defaultFonts.append( cgHtml.readEntry( "FixedFont", KGlobalSettings::fixedFont().family() ) );
+        d->defaultFonts.append( cgHtml.readEntry( "StandardFont", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family() ) );
+        d->defaultFonts.append( cgHtml.readEntry( "FixedFont", QFontDatabase::systemFont(QFontDatabase::FixedFont).family() ));
         d->defaultFonts.append( cgHtml.readEntry( "SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT ) );
         d->defaultFonts.append( cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
         d->defaultFonts.append( cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
@@ -436,8 +433,6 @@ void WebEngineSettings::init( KConfig * config, bool reset )
         d->enforceCharset = cgHtml.readEntry( "EnforceDefaultCharset", false );
 
     // Behavior
-    if ( reset || cgHtml.hasKey( "ChangeCursor" ) )
-        d->m_bChangeCursor = cgHtml.readEntry( "ChangeCursor", KDE_DEFAULT_CHANGECURSOR );
 
     if ( reset || cgHtml.hasKey("UnderlineLinks") )
         d->m_underlineLink = cgHtml.readEntry( "UnderlineLinks", true );
@@ -750,7 +745,7 @@ void WebEngineSettings::setZoomToDPI(bool enabled)
 {
   d->m_zoomToDPI = enabled;
   // save it
-  KConfigGroup cg( KGlobal::config(), "HTML Settings");
+  KConfigGroup cg( KSharedConfig::openConfig(), "HTML Settings");
   cg.writeEntry("ZoomToDPI", enabled);
   cg.sync();
 }
@@ -1141,7 +1136,7 @@ void WebEngineSettings::setJSErrorsEnabled(bool enabled)
 {
   d->m_jsErrorsEnabled = enabled;
   // save it
-  KConfigGroup cg( KGlobal::config(), "HTML Settings");
+  KConfigGroup cg( KSharedConfig::openConfig(), "HTML Settings");
   cg.writeEntry("ReportJSErrors", enabled);
   cg.sync();
 }
@@ -1165,7 +1160,7 @@ void WebEngineSettings::setJSPopupBlockerPassivePopup(bool enabled)
 {
     d->m_jsPopupBlockerPassivePopup = enabled;
     // save it
-    KConfigGroup cg( KGlobal::config(), "Java/JavaScript Settings");
+    KConfigGroup cg( KSharedConfig::openConfig(), "Java/JavaScript Settings");
     cg.writeEntry("PopupBlockerPassivePopup", enabled);
     cg.sync();
 }
@@ -1184,7 +1179,7 @@ bool WebEngineSettings::isCookieJarEnabled() const
 static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
 {
     if (!configPtr) {
-        configPtr = KSharedConfig::openConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"), KConfig::NoGlobals);
+        configPtr = KSharedConfig::openConfig(QStandardPaths::locate(QStandardPaths::DataLocation, "khtml/formcompletions"), KConfig::NoGlobals);
     }
 
     return KConfigGroup(configPtr, "NonPasswordStorableSites");
@@ -1274,8 +1269,8 @@ void WebEngineSettings::initNSPluginSettings()
 
 WebEngineSettings* WebEngineSettings::self()
 {
-    K_GLOBAL_STATIC(WebEngineSettings, s_webEngineSettings)
-    return s_webEngineSettings;
+    static WebEngineSettings s_webEngineSettings;
+    return &s_webEngineSettings;
 }
 
 #include "webenginesettings.moc"

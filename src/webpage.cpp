@@ -30,19 +30,14 @@
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
-#include <kdeversion.h>
-#include <KDE/KMessageBox>
-#include <KDE/KRun>
-#include <KDE/KLocalizedString>
-#include <KDE/KShell>
-#include <KDE/KAuthorized>
-#include <KDE/KDebug>
-#include <KDE/KFileDialog>
-#include <KDE/KStringHandler>
-#include <KDE/KIconLoader>
-#include <KDE/KMimeType>
-#include <KDE/KUrlAuthorized>
-#include <KDE/KSharedConfig>
+#include <KMessageBox>
+#include <KRun>
+#include <KLocalizedString>
+#include <KShell>
+#include <KAuthorized>
+#include <KStringHandler>
+#include <KUrlAuthorized>
+#include <KSharedConfig>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
@@ -57,6 +52,8 @@
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
 #include <QWebEngineDownloadItem>
+#include <QUrlQuery>
+#include <KConfigGroup>
 //#include <QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
@@ -228,7 +225,7 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
             // If history navigation is locked, ignore all such requests...
             if (property("HistoryNavigationLocked").toBool()) {
                 setProperty("HistoryNavigationLocked", QVariant());
-                kDebug() << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
+                qDebug() << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
                 return false;
             }
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()
@@ -472,14 +469,14 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     // parts of following code are based on kjs_window.cpp
     // Security check: within desktop limits and bigger than 100x100 (per spec)
     if (width < 100 || height < 100) {
-        kWarning() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        qWarning() << "Window resize refused, window would be too small (" << width << "," << height << ")";
         return;
     }
 
     QRect sg = QApplication::desktop()->screenGeometry(view());
 
     if (width > sg.width() || height > sg.height()) {
-        kWarning() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        qWarning() << "Window resize refused, window would be too big (" << width << "," << height << ")";
         return;
     }
 
@@ -521,7 +518,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
         } else {
             title = i18n("Security Alert");
             message = i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
-                           Qt::escape(linkUrl.toDisplayString()));
+                           linkUrl.toDisplayString().toHtmlEscaped());
         }
 
         if (buttonText.isEmpty()) {
@@ -587,11 +584,11 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     else
       sanitizedUrl = QUrl(url.scheme() + QL1S(":?") + url.path());
 
-    QListIterator<QPair<QString, QString> > it (sanitizedUrl.queryItems());
-    sanitizedUrl.setEncodedQuery(QByteArray());    // clear out the query componenet
+    QUrlQuery query(sanitizedUrl);
+    const QList<QPair<QString, QString> > items (query.queryItems());
 
-    while (it.hasNext()) {
-        QPair<QString, QString> queryItem = it.next();
+    QUrlQuery sanitizedQuery;
+    for(auto queryItem : items) {
         if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
             // ### DF: this hack breaks mailto:faure@kde.org, kmail doesn't expect mailto:?to=faure@kde.org
             queryItem.second = queryItem.first;
@@ -600,9 +597,10 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
             files << queryItem.second;
             continue;
         }
-        sanitizedUrl.addQueryItem(queryItem.first, queryItem.second);
+        sanitizedQuery.addQueryItem(queryItem.first, queryItem.second);
     }
 
+    sanitizedUrl.setQuery(sanitizedQuery);
     return sanitizedUrl;
 }
 
@@ -623,9 +621,11 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
 
                    // Re-add the attachments...
                     QStringListIterator filesIt (files);
+                    QUrlQuery query(mailtoUrl);
                     while (filesIt.hasNext()) {
-                        mailtoUrl.addQueryItem(QL1S("attach"), filesIt.next());
+                        query.addQueryItem(QL1S("attach"), filesIt.next());
                     }
+                    mailtoUrl.setQuery(query);
                 }
                 break;
             case QWebEnginePage::NavigationTypeFormSubmitted:
@@ -706,7 +706,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
                                                "Do you want to allow this?") :
                                           i18n("<qt>This site is requesting to open a popup window to"
                                                "<p>%1</p><br/>Do you want to allow this?</qt>",
-                                               KStringHandler::rsqueeze(Qt::escape(reqUrl.toDisplayString()), 100)));
+                                               KStringHandler::rsqueeze(reqUrl.toDisplayString().toHtmlEscaped(), 100)));
                 if (KMessageBox::questionYesNo(view(), message,
                                                i18n("Javascript Popup Confirmation"),
                                                KGuiItem(i18n("Allow")),
@@ -740,7 +740,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         KParts::ReadOnlyPart* newWindowPart =0;
         part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
-        kDebug() << "Created new window" << newWindowPart;
+        qDebug() << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
             return false;
@@ -833,7 +833,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     KParts::ReadOnlyPart* newWindowPart =0;
     part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
-    kDebug() << "Created new window" << newWindowPart;
+    qDebug() << "Created new window" << newWindowPart;
 
     // Get the webview...
     WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : 0;

@@ -26,36 +26,30 @@
 #include "settings/webenginesettings.h"
 #include <QtWebEngineWidgets/QWebEngineSettings>
 
-#include <KDE/KAction>
-#include <KDE/KUriFilterData>
-#include <KDE/KDesktopFile>
-#include <KDE/KConfigGroup>
-#include <KDE/KToolInvocation>
-#include <KDE/KGlobal>
-#include <KDE/KSharedConfig>
-#include <KDE/KRun>
-#include <KDE/KDebug>
-#include <KDE/KPrintPreview>
-#include <KDE/KSaveFile>
-#include <KDE/KComponentData>
-#include <KDE/KProtocolInfo>
-#include <KDE/KInputDialog>
-#include <KDE/KLocalizedString>
-#include <KDE/KTemporaryFile>
+#include <KDesktopFile>
+#include <KConfigGroup>
+#include <KToolInvocation>
+#include <KSharedConfig>
+#include <KRun>
+#include <KProtocolInfo>
+#include <QInputDialog>
+#include <KLocalizedString>
+#include <QTemporaryFile>
+#include <KUriFilter>
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
-#include <kdeversion.h>
 
 #include <QBuffer>
 #include <QVariant>
 #include <QClipboard>
 #include <QApplication>
+#include <QAction>
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QInputDialog>
 #include <QWebEngineHistory>
-
+#include <QMimeData>
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
@@ -195,7 +189,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
 
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
-    kDebug() << "Normal history navgation logic failed! Falling back to opening url directly.";
+    qDebug() << "Normal history navgation logic failed! Falling back to opening url directly.";
     m_part->openUrl(u);
 }
 
@@ -1207,7 +1201,7 @@ bool WebEngineScriptableExtension::put (KParts::ScriptableExtension* callerPrinc
 
 static QVariant exception(const char* msg)
 {
-    kWarning() << msg;
+    qWarning() << msg;
     return QVariant::fromValue(KParts::ScriptableExtension::Exception(QString::fromLatin1(msg)));
 }
 

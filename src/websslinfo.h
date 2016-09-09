@@ -20,7 +20,7 @@
 #ifndef WEBSSLINFO_H
 #define WEBSSLINFO_H
 
-#include <kdemacros.h>
+//#include <kdemacros.h>
 
 #include <QUrl>
 #include <QList>

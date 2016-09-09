@@ -24,7 +24,7 @@
 #define WEBVIEW_H
 
 #include <QPointer>
-#include <KDE/KParts/BrowserExtension>
+#include <KParts/BrowserExtension>
 
 #include <QWebEngineView>
 #include <QWebEngineContextMenuData>

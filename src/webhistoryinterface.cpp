@@ -20,7 +20,7 @@
 
 #include "webhistoryinterface.h"
 
-#include <KDE/KParts/HistoryProvider>
+#include <KParts/HistoryProvider>
 
 
 WebHistoryInterface::WebHistoryInterface(QObject* parent)

@@ -22,8 +22,6 @@
 #include "webenginepart_ext.h"
 #include "webenginepart.h"
 
-#include <KDE/KDebug>
-
 #include <QWidget>
 
 WebEngineFactory::~WebEngineFactory()
@@ -37,7 +35,7 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     Q_UNUSED(keyword);
     Q_UNUSED(args);
 
-    kDebug() << parentWidget << parent;
+    qDebug() << parentWidget << parent;
     connect(parentWidget, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
 
     // NOTE: The code below is what makes it possible to properly integrate QtWebEngine's PORTING_TODO

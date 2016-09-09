@@ -21,9 +21,9 @@
 #ifndef SSLINFODIALOG_P_H
 #define SSLINFODIALOG_P_H
 
-#include <kdemacros.h>
+//#include <kdemacros.h>
 
-#include <KDE/KDialog>
+#include <QDialog>
 #include <ktcpsocket.h>
 
 // NOTE: We need a copy of this header file here because it is never
@@ -42,7 +42,7 @@
  * @see KSSL
  * @short KDE SSL Information Dialog
  */
-class KSslInfoDialog : public KDialog {
+class KSslInfoDialog : public QDialog {
 	Q_OBJECT
 public:
 	/**

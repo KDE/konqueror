@@ -22,7 +22,7 @@
 
 #include "featurepermissionbar.h"
 
-#include <KDE/KLocalizedString>
+#include <KLocalizedString>
 
 #include <QAction>
 

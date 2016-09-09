@@ -24,11 +24,10 @@
 
 #include "webenginepart.h"
 
-//#include <QWebFrame>
-//#include <QWebElement>
 //#include <QWebHistoryItem>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <QUrlQuery>
 
 #include "webenginepart_ext.h"
 #include "sslinfodialog_p.h"
@@ -42,33 +41,25 @@
 #include "ui/featurepermissionbar.h"
 #include "settings/webenginesettings.h"
 
-#include <kdeversion.h>
 #include <kcodecaction.h>
 #include <kio/global.h>
-#include <kglobal.h>
-#include <kiconloader.h>
 
-#include <KDE/KActionCollection>
-#include <KDE/KAboutData>
-#include <KDE/KComponentData>
-#include <KDE/KDebug>
-#include <KDE/KUrlLabel>
-#include <KDE/KMessageBox>
-#include <KDE/KStringHandler>
-#include <KDE/KMenu>
-//#include <KDE/KWebWallet>
-#include <KDE/KToolInvocation>
-#include <KDE/KAcceleratorManager>
-#include <KDE/KStatusBar>
-#include <KDE/KFileItem>
-#include <KDE/KMessageWidget>
-#include <KDE/KProtocolInfo>
-#include <KDE/KToggleAction>
+#include <KActionCollection>
+#include <KAboutData>
+#include <KUrlLabel>
+#include <KMessageBox>
+#include <KStringHandler>
+#include <KToolInvocation>
+#include <KAcceleratorManager>
+#include <KFileItem>
+#include <KMessageWidget>
+#include <KProtocolInfo>
+#include <KToggleAction>
 #include <KParts/StatusBarExtension>
-#include <KDE/KAction>
-#include <KDE/KIcon>
-#include <KDE/KShortcut>
 #include <KParts/GUIActivateEvent>
+#include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #include <QUrl>
 #include <QFile>
@@ -76,11 +67,13 @@
 #include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QDBusInterface>
+#include <QMenu>
+#include <QStatusBar>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-K_GLOBAL_STATIC_WITH_ARGS(QUrl, globalBlankUrl, ("about:blank"))
+Q_GLOBAL_STATIC_WITH_ARGS(QUrl, globalBlankUrl, ("about:blank"))
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
@@ -344,7 +337,7 @@ bool WebEnginePart::openUrl(const QUrl &_u)
 {
     QUrl u (_u);
 
-    kDebug() << u;
+    qDebug() << u;
 
     // Ignore empty requests...
     if (u.isEmpty())
@@ -633,7 +626,8 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
               linkUrl = QUrl(scheme + '?' + linkUrl.path());
 
             QMap<QString, QStringList> fields;
-            QList<QPair<QString, QString> > queryItems = linkUrl.queryItems();
+            QUrlQuery query(linkUrl);
+            QList<QPair<QString, QString> > queryItems = query.queryItems();
             const int count = queryItems.count();
 
             for(int i = 0; i < count; ++i) {
@@ -805,7 +799,7 @@ void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
     if (!localSettings)
         return;
 
-    kDebug() << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
+    qDebug() << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
 
     localSettings->setDefaultTextEncoding(codec->name());
     page()->triggerAction(QWebEnginePage::Reload);
@@ -933,7 +927,7 @@ void WebEnginePart::addWalletStatusBarIcon ()
         m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
         m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
         m_statusBarWalletLabel->setUseCursor(false);
-        m_statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
+        m_statusBarWalletLabel->setPixmap(QIcon::fromTheme("wallet-open").pixmap(QSize(16,16)));
         connect(m_statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
         connect(m_statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
     }

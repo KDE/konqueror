@@ -22,7 +22,7 @@
 #ifndef FEATUREPERMISSIONBAR_H
 #define FEATUREPERMISSIONBAR_H
 
-#include <KDE/KMessageWidget>
+#include <KMessageWidget>
 
 #include <QtWebEngineWidgets/QWebEnginePage>
 

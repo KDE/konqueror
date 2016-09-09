@@ -23,10 +23,8 @@
 
 #include "settings/webenginesettings.h"
 
-#include <KDE/KIcon>
-#include <KDE/KDebug>
-#include <KDE/KColorScheme>
-#include <KDE/KLocalizedString>
+#include <KColorScheme>
+#include <KLocalizedString>
 
 #include <QCoreApplication>
 #include <QAction>

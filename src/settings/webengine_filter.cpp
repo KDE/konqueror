@@ -21,7 +21,6 @@
 */
 
 #include "webengine_filter.h"
-#include <KDE/KDebug>
 
 #include <QHash>
 #include <QBitArray>

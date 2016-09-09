@@ -22,7 +22,7 @@
 #ifndef PASSWORDBAR_H
 #define PASSWORDBAR_H
 
-#include <KDE/KMessageWidget>
+#include <KMessageWidget>
 
 #include <QUrl>
 
