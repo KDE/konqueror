@@ -190,52 +190,10 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     return QDBusObjectPath("/");
 }
 
-bool KonquerorAdaptor::processCanBeReused(int screen)
-{
-#if KONQ_HAVE_X11
-    if (QX11Info::appScreen() != screen) {
-        return false;    // this instance run on different screen, and Qt apps can't migrate
-    }
-#endif
-    if (KonqMainWindow::isPreloaded()) {
-        return false;    // will be handled by preloading related code instead
-    }
-    QList<KonqMainWindow *> *windows = KonqMainWindow::mainWindowList();
-    if (windows == NULL) {
-        return true;
-    }
-    QStringList allowed_parts = KonqSettings::safeParts();
-    bool all_parts_allowed = false;
-
-    if (allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String("SAFE")) {
-        allowed_parts.clear();
-        // is duplicated in client/kfmclient.cc
-        allowed_parts << QLatin1String("dolphinpart.desktop")
-                      << QLatin1String("konq_sidebartng.desktop");
-    } else if (allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String("ALL")) {
-        allowed_parts.clear();
-        all_parts_allowed = true;
-    }
-    if (all_parts_allowed) {
-        return true;
-    }
-    foreach (KonqMainWindow *window, *windows) {
-        qDebug() << "processCanBeReused: count=" << window->viewCount();
-        const KonqMainWindow::MapViews &views = window->viewMap();
-        foreach (KonqView *view, views) {
-            qDebug() << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url();
-            if (!allowed_parts.contains(view->service()->entryPath())) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
 
 void KonquerorAdaptor::terminatePreloaded()
 {
     if (KonqMainWindow::isPreloaded()) {
-        kapp->exit();
+        qApp->exit();
     }
 }
-

@@ -30,29 +30,6 @@ namespace KCMPerformance
 Konqueror::Konqueror(QWidget *parent_P)
     : Konqueror_ui(parent_P)
 {
-    rb_never_reuse->setWhatsThis(
-        i18n("Disables the minimization of memory usage and allows you "
-             "to make each browsing activity independent from the others"));
-    rb_file_browsing_reuse->setWhatsThis(
-        i18n("<p>With this option activated, only one instance of Konqueror "
-             "used for file browsing will exist in the memory of your computer "
-             "at any moment, "
-             "no matter how many file browsing windows you open, "
-             "thus reducing resource requirements.</p>"
-             "<p>Be aware that this also means that, if something goes wrong, "
-             "all your file browsing windows will be closed simultaneously</p>"));
-    rb_always_reuse->setWhatsThis(
-        i18n("<p>With this option activated, only one instance of Konqueror "
-             "will exist in the memory of your computer at any moment, "
-             "no matter how many browsing windows you open, "
-             "thus reducing resource requirements.</p>"
-             "<p>Be aware that this also means that, if something goes wrong, "
-             "all your browsing windows will be closed simultaneously.</p>"));
-    connect(rb_never_reuse, SIGNAL(toggled(bool)), SIGNAL(changed()));
-    connect(rb_file_browsing_reuse, SIGNAL(toggled(bool)), SIGNAL(changed()));
-    connect(rb_always_reuse, SIGNAL(toggled(bool)), SIGNAL(changed()));
-    rb_file_browsing_reuse->setChecked(true);
-
     QString tmp =
         i18n("<p>If non-zero, this option allows keeping Konqueror instances "
              "in memory after all their windows have been closed, up to the "
@@ -95,14 +72,6 @@ void Konqueror::load()
 {
     KConfig _cfg("konquerorrc");
     KConfigGroup cfg(&_cfg, "Reusing");
-    allowed_parts = cfg.readEntry("SafeParts", "SAFE");
-    if (allowed_parts == "ALL") {
-        rb_always_reuse->setChecked(true);
-    } else if (allowed_parts.isEmpty()) {
-        rb_never_reuse->setChecked(true);
-    } else {
-        rb_file_browsing_reuse->setChecked(true);
-    }
     sb_preload_count->setValue(cfg.readEntry("MaxPreloadCount", 1));
     cb_always_have_preloaded->setChecked(cfg.readEntry("AlwaysHavePreloaded", false));
     cb_preload_on_startup->setChecked(cfg.readEntry("PreloadOnStartup", false));
@@ -112,17 +81,6 @@ void Konqueror::save()
 {
     KConfig _cfg("konquerorrc");
     KConfigGroup cfg(&_cfg, "Reusing");
-    if (rb_always_reuse->isChecked()) {
-        allowed_parts = "ALL";
-    } else if (rb_never_reuse->isChecked()) {
-        allowed_parts = "";
-    } else {
-        if (allowed_parts.isEmpty() || allowed_parts == "ALL") {
-            allowed_parts = "SAFE";
-        }
-        // else - keep allowed_parts as read from the file, as the user may have modified the list there
-    }
-    cfg.writeEntry("SafeParts", allowed_parts);
     int count = sb_preload_count->value();
     cfg.writeEntry("MaxPreloadCount", count);
     cfg.writeEntry("PreloadOnStartup", cb_preload_on_startup->isChecked() && count >= 1);
@@ -138,8 +96,6 @@ void Konqueror::save()
 
 void Konqueror::defaults()
 {
-    rb_file_browsing_reuse->setChecked(true);
-    allowed_parts = "SAFE";
     sb_preload_count->setValue(1);
     cb_preload_on_startup->setChecked(false);
     cb_always_have_preloaded->setChecked(false);

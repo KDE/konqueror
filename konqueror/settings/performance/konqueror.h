@@ -47,8 +47,6 @@ Q_SIGNALS:
     void changed();
 private Q_SLOTS:
     void preload_count_changed(int);
-private:
-    QString allowed_parts;
 };
 
 }  // namespace

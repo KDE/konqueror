@@ -160,88 +160,6 @@ static void needInstance()
     Q_UNUSED(tmp);
 }
 
-/*
- Whether to start a new konqueror or reuse an existing process.
-
- First of all, this concept is actually broken, as the view used to show
- the data may change at any time, and therefore Konqy reused to browse
- "safe" data may eventually browse something completely different.
- Moreover, it's quite difficult to find out when to reuse, and thus this
- function is an ugly hack. You've been warned.
-
- Kfmclient will attempt to find an instance for reusing if either reusing
- is configured to reuse always,
- or it's not configured to never reuse, and the URL to-be-opened is "safe".
- The URL is safe, if the view used to view it is listed in the allowed KPart's.
- In order to find out the part, mimetype is needed, and KMimeTypeTrader is needed.
- If mimetype is not known, KMimeType is used (which doesn't work e.g. for remote
- URLs, but oh well). Since this function may be running without a KApplication
- instance, I'm actually quite surprised it works, and it may sooner or later break.
- Nice, isn't it?
-
- If a profile is being used, and no url has been explicitly given, it needs to be
- read from the profile. If there's more than one URL listed in the profile, no reusing
- will be done (oh well), if there's no URL, no reusing will be done either (also
- because the webbrowsing profile doesn't have any URL listed).
-*/
-static bool startNewKonqueror(QString url, QString mimetype, const QString &profile)
-{
-    needInstance();
-    KConfig konqCfg(QLatin1String("konquerorrc"));
-    const KConfigGroup reusingGroup(&konqCfg, "Reusing");
-    QStringList allowed_parts;
-    // is duplicated in ../KonquerorAdaptor.cpp
-    allowed_parts << QLatin1String("dolphinpart.desktop")
-                  << QLatin1String("konq_sidebartng.desktop");
-    if (reusingGroup.hasKey("SafeParts")
-            && reusingGroup.readEntry("SafeParts") != QLatin1String("SAFE")) {
-        allowed_parts = reusingGroup.readEntry("SafeParts", QStringList());
-    }
-    if (allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String("ALL")) {
-        return false;    // all parts allowed
-    }
-    if (url.isEmpty()) {
-        if (profile.isEmpty()) {
-            return true;
-        }
-        QString profilepath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profile);
-        if (profilepath.isEmpty()) {
-            return true;
-        }
-        KConfig cfg(profilepath);
-        KConfigGroup profileGroup(&cfg, "Profile");
-        const QMap< QString, QString > entries = profileGroup.entryMap();
-        QRegExp urlregexp(QLatin1String("^View[0-9]*_URL$"));
-        QStringList urls;
-        for (QMap< QString, QString >::ConstIterator it = entries.begin();
-                it != entries.end();
-                ++it) {
-            // don't read value from map, dollar expansion is needed
-            QString value = profileGroup.readEntry(it.key(), QString());
-            if (urlregexp.indexIn(it.key()) >= 0 && !value.isEmpty()) {
-                urls << value;
-            }
-        }
-        if (urls.count() != 1) {
-            return true;
-        }
-        url = urls.first();
-        mimetype.clear();
-    }
-    if (mimetype.isEmpty()) {
-        mimetype = QMimeDatabase().mimeTypeForUrl(QUrl(url)).name();
-    }
-    if (mimetype == "application/octet-stream") {
-        return true;
-    }
-    KService::List offers = KMimeTypeTrader::self()->query(mimetype, QLatin1String("KParts/ReadOnlyPart"));
-    KService::Ptr serv;
-    if (offers.count() > 0) {
-        serv = offers.first();
-    }
-    return !serv || !allowed_parts.contains(serv->desktopEntryName() + QLatin1String(".desktop"));
-}
-
 static int currentScreen()
 {
 #if KONQ_HAVE_X11
@@ -280,40 +198,6 @@ static QString getPreloadedKonqy()
     if (reply.isValid()) {
         return reply;
     }
-    return QString();
-}
-
-static QString konqyToReuse(const QString &url, const QString &mimetype, const QString &profile)
-{
-    // prefer(?) preloaded ones
-
-    QString ret = getPreloadedKonqy();
-    if (!ret.isEmpty()) {
-        return ret;
-    }
-    if (startNewKonqueror(url, mimetype, profile)) {
-        return QString();
-    }
-    needDBus();
-    QDBusConnection dbus = QDBusConnection::sessionBus();
-    QDBusReply<QStringList> reply = dbus.interface()->registeredServiceNames();
-    if (!reply.isValid()) {
-        return QString();
-    }
-
-    const QStringList allServices = reply;
-    const int screen = currentScreen();
-    for (QStringList::const_iterator it = allServices.begin(), end = allServices.end(); it != end; ++it) {
-        const QString service = *it;
-        if (service.startsWith("org.kde.konqueror")) {
-            org::kde::Konqueror::Main konq(service, "/KonqMain", dbus);
-            QDBusReply<bool> reuse = konq.processCanBeReused(screen);
-            if (reuse.isValid() && reuse) {
-                return service;
-            }
-        }
-    }
-
     return QString();
 }
 
@@ -419,7 +303,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         }
     }
 
-    QString appId = konqyToReuse(url.url(), mimetype, QString());
+    QString appId = getPreloadedKonqy();
     if (!appId.isEmpty()) {
         kDebug() << "ClientApp::createNewWindow using existing konqueror";
         org::kde::Konqueror::Main konq(appId, "/KonqMain", dbus);
@@ -461,7 +345,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 bool ClientApp::openProfile(const QString &profileName, const QString &url, const QString &mimetype)
 {
     needInstance();
-    QString appId = konqyToReuse(url, mimetype, profileName);
+    QString appId = getPreloadedKonqy();
     if (appId.isEmpty()) {
         QString error;
         if (KToolInvocation::startServiceByDesktopPath(QLatin1String("konqueror.desktop"),
