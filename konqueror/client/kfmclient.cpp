@@ -39,10 +39,9 @@
 #include <KConfigGroup>
 #include <KJobWidgets>
 #include <KService>
+#include <KWindowSystem>
 
-//KDELibs4Support
-#include <QUrl>
-#include <kdeversion.h>
+#include <kcoreaddons_version.h>
 
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
@@ -73,8 +72,6 @@ bool ClientApp::m_ok = true;
 bool s_interactive = true;
 
 K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_instance, ("kfmclient"))
-
-static void needInstance();
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
@@ -124,14 +121,14 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     // Use kfmclient from the session KDE version
     if ((args->arg(0) == "openURL" || args->arg(0) == "newTab")
-            && getenv("KDE_FULL_SESSION") != NULL) {
-        int version = KDE_VERSION_MAJOR;
-        if (getenv("KDE_SESSION_VERSION") == NULL) {  // this is KDE3
+            && qEnvironmentVariableIsSet("KDE_FULL_SESSION")) {
+        int version = KCOREADDONS_VERSION_MAJOR;
+        if (!qEnvironmentVariableIsSet("KDE_SESSION_VERSION")) {  // this is KDE3
             version = 3;
         } else {
             version = atoi(getenv("KDE_SESSION_VERSION"));
         }
-        if (version != 0 && version != KDE_VERSION_MAJOR) {
+        if (version != 0 && version != KCOREADDONS_VERSION_MAJOR) {
             kDebug() << "Forwarding to kfmclient from KDE version " << version;
             char wrapper[ 10 ];
             sprintf(wrapper, "kde%d", version);
@@ -149,15 +146,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     }
 
     // ClientApp internally uses KConfig and hence needs a valid KComponentData
-    needInstance();
     return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
-}
-
-// Call needInstance before any use of KConfig
-static void needInstance()
-{
-    KComponentData *tmp = s_instance; // inits the global static if referenced for the first time
-    Q_UNUSED(tmp);
 }
 
 static int currentScreen()
@@ -185,7 +174,6 @@ static void needDBus()
 
 static QString getPreloadedKonqy()
 {
-    needInstance();
     KConfig konqCfg(QLatin1String("konquerorrc"));
     const KConfigGroup reusingGroup(&konqCfg, "Reusing");
     if (reusingGroup.readEntry("MaxPreloadCount", 1) == 0) {
@@ -219,20 +207,13 @@ static QUrl filteredUrl(KCmdLineArgs *args)
 void ClientApp::sendASNChange()
 {
 #if KONQ_HAVE_X11
-    KStartupInfoId id;
-    id.initId(startup_id_str);
-    KStartupInfoData data;
-    data.addPid(0);     // say there's another process for this ASN with unknown PID
-    data.setHostname(); // ( no need to bother to get this konqy's PID )
-    Display *dpy = QX11Info::display();
-    if (dpy == NULL) { // we may be running without QApplication here
-        dpy = XOpenDisplay(NULL);
-    }
-    if (dpy != NULL) {
-        KStartupInfo::sendChangeX(dpy, id, data);
-    }
-    if (dpy != NULL && dpy != QX11Info::display()) {
-        XCloseDisplay(dpy);
+    if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
+        KStartupInfoId id;
+        id.initId(startup_id_str);
+        KStartupInfoData data;
+        data.addPid(0);     // say there's another process for this ASN with unknown PID
+        data.setHostname(); // ( no need to bother to get this konqy's PID )
+        KStartupInfo::sendChangeXcb(QX11Info::connection(), QX11Info::appScreen(), id, data);
     }
 #endif
 }
@@ -242,7 +223,6 @@ static bool krun_has_error = false;
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
     qDebug() << url << "mimetype=" << mimetype;
-    needInstance();
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
         KConfig config(QLatin1String("kfmclientrc"));
@@ -344,7 +324,6 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 
 bool ClientApp::openProfile(const QString &profileName, const QString &url, const QString &mimetype)
 {
-    needInstance();
     QString appId = getPreloadedKonqy();
     if (appId.isEmpty()) {
         QString error;

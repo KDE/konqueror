@@ -173,12 +173,8 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
         foreach (KonqMainWindow *window, *mainWindows) {
-//#if KONQ_HAVE_X11
             KWindowInfo winfo(window->winId(), NET::WMDesktop);
             if (winfo.isOnCurrentDesktop() &&
-//#else
-//            if (
-//#endif
                     !KonqMainWindow::isPreloaded()) {  // we want a tab in an already shown window
                 Q_ASSERT(!window->dbusName().isEmpty());
                 return QDBusObjectPath(window->dbusName());
