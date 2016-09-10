@@ -81,7 +81,7 @@
 #include <QtCore/QArgument>
 #include <QStackedWidget>
 #include <QtCore/QFileInfo>
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
 #include <QX11Info>
 #endif
 #include <QtCore/QEvent>
@@ -143,17 +143,17 @@
 #include <netwm.h>
 #include <sonnet/configdialog.h>
 #ifdef KDE_MALLINFO_MALLOC
+#include <QDesktopServices>
 #include <malloc.h>
 #endif
 
 #include <sys/time.h>
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <fixx11h.h>
 #endif
 #include <kauthorized.h>
-#include <ktoolinvocation.h>
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
 #include <kshortcut.h>
@@ -325,9 +325,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL, const QString &xmluiFile)
         m_bNeedApplyKonqMainWindowSettings = false;
     }
 
-    if (!initialGeometrySet()) {
-        resize(700, 480);
-    }
+    resize(700, 480);
 
     //qDebug() << this << "done";
 
@@ -400,7 +398,7 @@ QWidget *KonqMainWindow::createContainer(QWidget *parent, int index, const QDomE
     static QString tagToolBar = QLatin1String("ToolBar");
     if (res && (element.tagName() == tagToolBar) && (element.attribute("name") == nameBookmarkBar)) {
         Q_ASSERT(::qobject_cast<KToolBar *>(res));
-        if (!KAuthorized::authorizeKAction("bookmarks")) {
+        if (!KAuthorized::authorizeAction("bookmarks")) {
             delete res;
             return 0;
         }
@@ -635,10 +633,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
 
     // Fast mode for local files: do the stat ourselves instead of letting KRun do it.
     if (mimeType.isEmpty() && url.isLocalFile()) {
-        KDE_struct_stat buff;
-        if (KDE::stat(url.toLocalFile(), &buff) != -1) {
-            mimeType = KMimeType::findByUrl(url, buff.st_mode)->name();
-        }
+        QMimeDatabase db;
+        mimeType = db.mimeTypeForFile(url.toLocalFile()).name();
     }
 
     if (url.isLocalFile()) {
@@ -729,7 +725,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                         // Open with no offer means the user clicked on "Open With..." button.
                         if (!offer && !isExecutable) {
                             (void) KRun::displayOpenWithDialog(lst, this);
-                        } else if (isExecutable || !KRun::run(*offer, lst, this)) {
+                        } else if (isExecutable || !KRun::runApplication(*offer, lst, this)) {
                             setLocationBarURL(oldLocationBarURL);   // Revert to previous locationbar URL
                             (void)new KRun(url, this);
                         }
@@ -788,7 +784,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     // Second argument is referring URL
     if (!KUrlAuthorized::authorizeUrlAction("open", childView ? childView->url() : QUrl(), _url)) {
         QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, _url.toDisplayString());
-        KMessageBox::queuedMessageBox(this, KMessageBox::Error, msg);
+        QMessageBox::warning(this, i18n("Access denied"), msg);
         return true; // Nothing else to do.
     }
 
@@ -1339,7 +1335,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
         mainWindow->viewManager()->setActivePart(*part);
     }
 
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
     // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
     // so that the size and location settings we set below always take effect.
     KWindowSystem::clearState(mainWindow->winId(), NET::Max);
@@ -1443,38 +1439,40 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 // and the WM should take care of it itself.
     bool wm_usertime_support = false;
 
-#ifdef Q_WS_X11
-    Time saved_last_input_time = QX11Info::appUserTime();
-    if (windowArgs.lowerWindow()) {
-        NETRootInfo wm_info(QX11Info::display(), NET::Supported);
-        wm_usertime_support = wm_info.isSupported(NET::WM2UserTime);
-        if (wm_usertime_support) {
-            // *sigh*, and I thought nobody would need QWidget::dontFocusOnShow().
-            // Avoid Qt's support for user time by setting it to 0, and
-            // set the property ourselves.
-            QX11Info::setAppUserTime(0);
-            KWindowSystem::setUserTime(mainWindow->winId(), 0);
-        }
-        // Put below the current window before showing, in case that actually works with the WM.
-        // First do complete lower(), then stackUnder(), because the latter may not work with many WMs.
-        mainWindow->lower();
-        mainWindow->stackUnder(this);
-    }
-
-    mainWindow->show();
-
-    if (windowArgs.lowerWindow()) {
-        QX11Info::setAppUserTime(saved_last_input_time);
-        if (!wm_usertime_support) {
-            // No WM support. Let's try ugly tricks.
+#if KONQ_HAVE_X11
+    if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
+        Time saved_last_input_time = QX11Info::appUserTime();
+        if (windowArgs.lowerWindow()) {
+            NETRootInfo wm_info(QX11Info::connection(), NET::Supported);
+            wm_usertime_support = wm_info.isSupported(NET::WM2UserTime);
+            if (wm_usertime_support) {
+                // *sigh*, and I thought nobody would need QWidget::dontFocusOnShow().
+                // Avoid Qt's support for user time by setting it to 0, and
+                // set the property ourselves.
+                QX11Info::setAppUserTime(0);
+                KWindowSystem::setUserTime(mainWindow->winId(), 0);
+            }
+            // Put below the current window before showing, in case that actually works with the WM.
+            // First do complete lower(), then stackUnder(), because the latter may not work with many WMs.
             mainWindow->lower();
             mainWindow->stackUnder(this);
-            if (this->isActiveWindow()) {
-                this->activateWindow();
+        }
+
+        mainWindow->show();
+
+        if (windowArgs.lowerWindow()) {
+            QX11Info::setAppUserTime(saved_last_input_time);
+            if (!wm_usertime_support) {
+                // No WM support. Let's try ugly tricks.
+                mainWindow->lower();
+                mainWindow->stackUnder(this);
+                if (this->isActiveWindow()) {
+                    this->activateWindow();
+                }
             }
         }
     }
-#else // Q_WS_X11
+#else // KONQ_HAVE_X11
     mainWindow->show();
 #endif
 
@@ -1526,8 +1524,13 @@ void KonqMainWindow::slotSendURL()
     } else { // directory view
         subject = fileNameList;
     }
-    KToolInvocation::invokeMailer(QString(), QString(), QString(),
-                                  subject, body);
+    QUrl mailtoUrl;
+    mailtoUrl.setScheme("mailto");
+    QUrlQuery query;
+    query.addQueryItem("subject", subject);
+    query.addQueryItem("body", body);
+    mailtoUrl.setQuery(query);
+    QDesktopServices::openUrl(mailtoUrl);
 }
 
 void KonqMainWindow::slotSendFile()
@@ -1569,10 +1572,15 @@ void KonqMainWindow::slotSendFile()
     } else {
         subject = fileNameList;
     }
-    KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
-                                  QString(), //body
-                                  QString(),
-                                  urls); // attachments
+    QUrl mailtoUrl;
+    mailtoUrl.setScheme("mailto");
+    QUrlQuery query;
+    query.addQueryItem("subject", subject);
+    for (const QString& url : urls) {
+        query.addQueryItem("attachment", url);
+    }
+    mailtoUrl.setQuery(query);
+    QDesktopServices::openUrl(mailtoUrl);
 }
 
 void KonqMainWindow::slotOpenLocation()
@@ -1615,17 +1623,14 @@ void KonqMainWindow::slotOpenWith()
         return;
     }
 
-    QList<QUrl> lst;
-    lst.append(m_currentView->url());
-
+    const QList<QUrl> lst{ m_currentView->url() };
     const QString serviceName = sender()->objectName();
-
     const KService::List offers = m_currentView->appServiceOffers();
     KService::List::ConstIterator it = offers.begin();
     const KService::List::ConstIterator end = offers.end();
     for (; it != end; ++it) {
         if ((*it)->desktopEntryName() == serviceName) {
-            KRun::run(**it, lst, this);
+            KRun::runApplication(**it, lst, this);
             return;
         }
     }
@@ -1863,7 +1868,7 @@ void KonqMainWindow::slotConfigure()
         //BEGIN SYNC with initActions()
         const char *const toplevelModules[] = {
             "khtml_general",
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
             "kcmkonqyperformance",
 #endif
             "bookmarks"
@@ -2002,7 +2007,7 @@ void KonqMainWindow::slotRunFinished()
     const KonqRun *run = static_cast<const KonqRun *>(sender());
 
     if (!run->mailtoURL().isEmpty()) {
-        KToolInvocation::invokeMailer(run->mailtoURL());
+        QDesktopServices::openUrl(run->mailtoURL());
     }
 
     if (run->hasError()) {   // we had an error
@@ -4966,7 +4971,7 @@ void KonqMainWindow::updateOpenWithActions()
     delete m_openWithMenu;
     m_openWithMenu = 0;
 
-    if (!KAuthorized::authorizeKAction("openwith")) {
+    if (!KAuthorized::authorizeAction("openwith")) {
         return;
     }
 
@@ -5148,8 +5153,7 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
     // This breaks session management (the window is withdrawn in kwin)
     // so let's do this only when closed by the user.
 
-    // kapp is 0 in unit tests
-    if (kapp && !kapp->sessionSaving()) {
+    if (!qApp->isSavingSession()) {
         KonqFrameTabs *tabContainer = m_pViewManager->tabContainer();
         if (tabContainer->count() > 1) {
             KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -5760,7 +5764,7 @@ void KonqMainWindow::setPreloadedWindow(KonqMainWindow *window)
 // that won't be reset by loading a profile
 void KonqMainWindow::resetWindow()
 {
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
     char data[ 1 ];
     // empty append to get current X timestamp
     QWidget tmp_widget;
@@ -5834,7 +5838,7 @@ bool KonqMainWindow::event(QEvent *e)
 
 bool KonqMainWindow::stayPreloaded()
 {
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
     // last window?
     if (mainWindowList()->count() > 1) {
         return false;
@@ -5855,8 +5859,7 @@ bool KonqMainWindow::stayPreloaded()
         return false;
     }
     QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    QX11Info info;
-    QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), info.screen());
+    QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
     if (!retVal) {
         return false;
     }

@@ -33,7 +33,7 @@
 #include <QtCore/QFile>
 
 #include <config-konqueror.h>
-#ifdef KONQ_HAVE_X11
+#if KONQ_HAVE_X11
 #include <QX11Info>
 #endif
 
@@ -63,7 +63,7 @@ static void listSessions()
 
 static bool tryPreload()
 {
-#ifdef KONQ_HAVE_X11
+#if KONQ_HAVE_X11
     if (QX11Info::isPlatformX11() && KonqSettings::maxPreloadCount() > 0) {
         QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
         QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());

@@ -14,4 +14,4 @@
 #cmakedefine KDE_MALLINFO_STDLIB 1
 
 /* compiling for X11 */
-#cmakedefine KONQ_HAVE_X11
+#cmakedefine01 KONQ_HAVE_X11

@@ -30,9 +30,10 @@
 #include <kapplication.h>
 #include <QDebug>
 #include <kwindowsystem.h>
+#include <KStartupInfo>
 
 #include <QtCore/QFile>
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
 #include <QX11Info>
 #include <X11/Xlib.h>
 #endif
@@ -46,7 +47,7 @@
 // are not for user scripting
 
 KonquerorAdaptor::KonquerorAdaptor()
-    : QObject(kapp)
+    : QObject(qApp)
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject(KONQ_MAIN_PATH, this, QDBusConnection::ExportNonScriptableSlots);
@@ -56,12 +57,17 @@ KonquerorAdaptor::~KonquerorAdaptor()
 {
 }
 
-QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)
+static void setStartupId(const QByteArray &startup_id)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
+    KStartupInfo::setStartupId(startup_id);
+#if KONQ_HAVE_X11
     QX11Info::setAppUserTime(0);
 #endif
+}
+
+QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)
+{
+    setStartupId(startup_id);
     KonqMainWindow *res = KonqMisc::createSimpleWindow(QUrl::fromUserInput(url), KParts::OpenUrlArguments());
     if (!res) {
         return QDBusObjectPath("/");
@@ -71,10 +77,7 @@ QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QB
 
 QDBusObjectPath KonquerorAdaptor::createNewWindow(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
-    QX11Info::setAppUserTime(0);
-#endif
+    setStartupId(startup_id);
     KParts::OpenUrlArguments args;
     args.setMimeType(mimetype);
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
@@ -92,10 +95,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow(const QString &url, const QStr
 
 QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &url, const QStringList &filesToSelect, const QByteArray &startup_id)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
-    QX11Info::setAppUserTime(0);
-#endif
+    setStartupId(startup_id);
     KonqOpenURLRequest req;
     req.filesToSelect = filesToSelect;
     KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url), req);
@@ -108,10 +108,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &ur
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile(const QString &path, const QString &filename, const QByteArray &startup_id)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
-    QX11Info::setAppUserTime(0);
-#endif
+    setStartupId(startup_id);
     qDebug() << path << "," << filename;
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename);
     if (!res) {
@@ -123,10 +120,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile(const QString &
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl(const QString &path, const QString &filename, const QString &url, const QByteArray &startup_id)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
-    QX11Info::setAppUserTime(0);
-#endif
+    setStartupId(startup_id);
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url));
     if (!res) {
         return QDBusObjectPath("/");
@@ -137,10 +131,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl(const QSt
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType(const QString &path, const QString &filename, const QString &url, const QString &mimetype, const QByteArray &startup_id)
 {
-    kapp->setStartupId(startup_id);
-#ifdef Q_WS_X11
-    QX11Info::setAppUserTime(0);
-#endif
+    setStartupId(startup_id);
     KParts::OpenUrlArguments args;
     args.setMimeType(mimetype);
     KonqOpenURLRequest req;
@@ -182,12 +173,12 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
     if (mainWindows) {
         foreach (KonqMainWindow *window, *mainWindows) {
-#ifdef Q_WS_X11
-            KWindowInfo winfo = KWindowSystem::windowInfo(window->winId(), NET::WMDesktop);
+//#if KONQ_HAVE_X11
+            KWindowInfo winfo(window->winId(), NET::WMDesktop);
             if (winfo.isOnCurrentDesktop() &&
-#else
-            if (
-#endif
+//#else
+//            if (
+//#endif
                     !KonqMainWindow::isPreloaded()) {  // we want a tab in an already shown window
                 Q_ASSERT(!window->dbusName().isEmpty());
                 return QDBusObjectPath(window->dbusName());
@@ -201,9 +192,8 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
 
 bool KonquerorAdaptor::processCanBeReused(int screen)
 {
-#ifdef Q_WS_X11
-    QX11Info info;
-    if (info.screen() != screen) {
+#if KONQ_HAVE_X11
+    if (QX11Info::appScreen() != screen) {
         return false;    // this instance run on different screen, and Qt apps can't migrate
     }
 #endif

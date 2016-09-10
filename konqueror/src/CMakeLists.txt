@@ -124,9 +124,9 @@ target_link_libraries(kdeinit_konqueror
 get_target_property(khtml_include_dir KF5::KHtml INTERFACE_INCLUDE_DIRECTORIES)
 target_include_directories(kdeinit_konqueror PRIVATE "${khtml_include_dir}")
 
-if (UNIX)
+if (X11_FOUND)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
-endif (UNIX)
+endif ()
 
 if (KActivities_FOUND)
   target_link_libraries(kdeinit_konqueror ${KACTIVITIES_LIBRARY})

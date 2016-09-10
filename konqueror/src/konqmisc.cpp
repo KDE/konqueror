@@ -52,7 +52,7 @@ void KonqMisc::abortFullScreenMode()
     if (mainWindows) {
         foreach (KonqMainWindow *window, *mainWindows) {
             if (window->fullScreenMode()) {
-                KWindowInfo info = KWindowSystem::windowInfo(window->winId(), NET::WMDesktop);
+                KWindowInfo info(window->winId(), NET::WMDesktop);
                 if (info.valid() && info.isOnCurrentDesktop()) {
                     window->setWindowState(window->windowState() & ~Qt::WindowFullScreen);
                 }
@@ -128,9 +128,7 @@ KonqMainWindow *KonqMisc::createBrowserWindowFromProfile(const QString &_path, c
         }
     } else if (KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL) {
         mainWindow = KonqMainWindow::preloadedWindow();
-#ifdef Q_WS_X11
-        KStartupInfo::setWindowStartupId(mainWindow->winId(), kapp->startupId());
-#endif
+        KStartupInfo::setWindowStartupId(mainWindow->winId(), KStartupInfo::startupId());
         KonqMainWindow::setPreloadedWindow(NULL);
         KonqMainWindow::setPreloadedFlag(false);
         mainWindow->resetWindow();

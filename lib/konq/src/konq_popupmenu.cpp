@@ -228,7 +228,7 @@ void KonqPopupMenuPrivate::populate()
 
 #if 0 // TODO in the desktop code itself.
     if ((flags & KonqPopupMenu::ShowProperties) && isOnDesktop &&
-            !KAuthorized::authorizeKAction("editable_desktop_icons")) {
+            !KAuthorized::authorizeAction("editable_desktop_icons")) {
         flags &= ~KonqPopupMenu::ShowProperties; // remove flag
     }
 #endif
@@ -389,7 +389,7 @@ void KonqPopupMenuPrivate::populate()
         if (lstItems.count() > 1) {
             act->setEnabled(false);
         }
-        if (KAuthorized::authorizeKAction(QStringLiteral("bookmarks"))) {
+        if (KAuthorized::authorizeAction(QStringLiteral("bookmarks"))) {
             q->addAction(act);
         }
         if (bIsLink) {

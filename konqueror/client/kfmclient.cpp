@@ -25,6 +25,7 @@
 #include <kcmdlineargs.h>
 #include <KLocalizedString>
 #include <kprocess.h>
+#include "../src/config-konqueror.h"
 
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
@@ -37,6 +38,7 @@
 #include <kurifilter.h>
 #include <KConfigGroup>
 #include <KJobWidgets>
+#include <KService>
 
 //KDELibs4Support
 #include <QUrl>
@@ -56,7 +58,7 @@
 #include <signal.h>
 #include <unistd.h>
 
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
 #include <X11/Xlib.h>
 #include <QX11Info>
 #endif
@@ -242,21 +244,8 @@ static bool startNewKonqueror(QString url, QString mimetype, const QString &prof
 
 static int currentScreen()
 {
-#ifdef Q_WS_X11
-    QX11Info info;
-    if (QX11Info::display() != NULL) {
-        return info.screen();
-    }
-    // case when there's no KApplication instance
-    const char *env = getenv("DISPLAY");
-    if (env == NULL) {
-        return 0;
-    }
-    const char *dotpos = strrchr(env, '.');
-    const char *colonpos = strrchr(env, ':');
-    if (dotpos != NULL && colonpos != NULL && dotpos > colonpos) {
-        return atoi(dotpos + 1);
-    }
+#if KONQ_HAVE_X11
+    return QX11Info::appScreen();
 #endif
     return 0;
 }
@@ -345,7 +334,7 @@ static QUrl filteredUrl(KCmdLineArgs *args)
 
 void ClientApp::sendASNChange()
 {
-#ifdef Q_WS_X11
+#if KONQ_HAVE_X11
     KStartupInfoId id;
     id.initId(startup_id_str);
     KStartupInfoData data;
@@ -368,7 +357,7 @@ static bool krun_has_error = false;
 
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
-    kDebug() << url << "mimetype=" << mimetype;
+    qDebug() << url << "mimetype=" << mimetype;
     needInstance();
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
@@ -379,10 +368,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
                 && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp))) {
             kDebug() << "Using external browser" << browserApp;
             Q_ASSERT(qApp);
-            //ClientApp app;
-#ifdef Q_WS_X11
             KStartupInfo::appStarted();
-#endif
 
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
@@ -448,11 +434,9 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
             kError() << "Couldn't start konqueror from konqueror.desktop: " << error << endl;
             */
         // pass kfmclient's startup id to konqueror using kshell
-#ifdef Q_WS_X11
         KStartupInfoId id;
         id.initId(startup_id_str);
         id.setupStartupEnv();
-#endif
         QStringList args;
         args << QLatin1String("konqueror");
         if (!mimetype.isEmpty()) {
@@ -462,14 +446,12 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
             args << "-tempfile";
         }
         args << url.url();
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
         KProcess::startDetached(QLatin1String("kwrapper5"), args);
 #else
         KProcess::startDetached(QLatin1String("kshell5"), args);
 #endif
-#ifdef Q_WS_X11
         KStartupInfo::resetStartupEnv();
-#endif
         kDebug() << "ClientApp::createNewWindow KProcess started";
         //}
     }
@@ -545,10 +527,8 @@ bool ClientApp::doIt()
     }
     QString command = args->arg(0);
 
-#ifdef Q_WS_X11
     // read ASN env. variable for non-KApp cases
     startup_id_str = KStartupInfo::currentStartupIdEnv().id();
-#endif
 
     kDebug() << "Creating ClientApp";
     int fake_argc = 1;
