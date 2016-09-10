@@ -46,9 +46,11 @@
 #include <KJobWidgets>
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
+#include <KPluginMetaData>
 
 #include <QIcon>
 #include <QFileInfo>
+#include <QMimeDatabase>
 
 /*
  Test cases:
@@ -563,21 +565,57 @@ void KonqPopupMenuPrivate::addPlugins()
     }
 
     const KService::List fileItemPlugins = KMimeTypeTrader::self()->query(commonMimeType, QStringLiteral("KFileItemAction/Plugin"), QStringLiteral("exist Library"));
-    if (!fileItemPlugins.isEmpty()) {
-        const KConfig config(QStringLiteral("kservicemenurc"), KConfig::NoGlobals);
-        const KConfigGroup showGroup = config.group("Show");
 
-        foreach (const auto &service, fileItemPlugins) {
-            if (!showGroup.readEntry(service->desktopEntryName(), true)) {
-                // The plugin has been disabled
-                continue;
-            }
+    QSet<QString> addedPlugins;
+    const KConfig config(QStringLiteral("kservicemenurc"), KConfig::NoGlobals);
+    const KConfigGroup showGroup = config.group("Show");
 
-            KAbstractFileItemActionPlugin *abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
-            if (abstractPlugin) {
-                abstractPlugin->setParent(q);
-                q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
+    foreach (const auto &service, fileItemPlugins) {
+        if (!showGroup.readEntry(service->desktopEntryName(), true)) {
+            // The plugin has been disabled
+            continue;
+        }
+
+        KAbstractFileItemActionPlugin *abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
+        if (abstractPlugin) {
+            abstractPlugin->setParent(q);
+            q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
+            addedPlugins << service->desktopEntryName();
+        }
+    }
+
+    const auto jsonPlugins = KPluginLoader::findPlugins(QStringLiteral("kf5/kfileitemaction"), [=](const KPluginMetaData& metaData) {
+        if (!metaData.serviceTypes().contains(QStringLiteral("KFileItemAction/Plugin"))) {
+            return false;
+        }
+
+        auto mimeType = QMimeDatabase().mimeTypeForName(commonMimeType);
+        foreach (const auto &supportedMimeType, metaData.mimeTypes()) {
+            if (mimeType.inherits(supportedMimeType)) {
+                return true;
             }
+        }
+
+        return false;
+    });
+
+    foreach (const auto &jsonMetadata, jsonPlugins) {
+        // The plugin has been disabled
+        if (!showGroup.readEntry(jsonMetadata.pluginId(), true)) {
+            continue;
+        }
+
+        // The plugin also has a .desktop file and has already been added.
+        if (addedPlugins.contains(jsonMetadata.pluginId())) {
+            continue;
+        }
+
+        KPluginFactory *factory = KPluginLoader(jsonMetadata.fileName()).factory();
+        KAbstractFileItemActionPlugin* abstractPlugin = factory->create<KAbstractFileItemActionPlugin>();
+        if (abstractPlugin) {
+            abstractPlugin->setParent(q);
+            q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
+            addedPlugins << jsonMetadata.pluginId();
         }
     }
 }
