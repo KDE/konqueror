@@ -90,7 +90,7 @@ void Konqueror::save()
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
     QDBusConnection::sessionBus().send(message);
 
-    QDBusInterface kded("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader");
+    QDBusInterface kded("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader");
     kded.call("reconfigure");
 }
 

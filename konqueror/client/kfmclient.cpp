@@ -180,8 +180,7 @@ static QString getPreloadedKonqy()
         return QString();
     }
     needDBus();
-    QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    // ## used to have NoEventLoop and 3s timeout with dcop
+    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
     QDBusReply<QString> reply = ref.call("getPreloadedKonqy", currentScreen());
     if (reply.isValid()) {
         return reply;
@@ -223,6 +222,7 @@ static bool krun_has_error = false;
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
     qDebug() << url << "mimetype=" << mimetype;
+    Q_ASSERT(qApp);
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
         KConfig config(QLatin1String("kfmclientrc"));
@@ -230,8 +230,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
         if (!browserApp.isEmpty() && !browserApp.startsWith("!kfmclient")
                 && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp))) {
-            kDebug() << "Using external browser" << browserApp;
-            Q_ASSERT(qApp);
+            qDebug() << "Using external browser" << browserApp;
             KStartupInfo::appStarted();
 
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
@@ -285,7 +284,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 
     QString appId = getPreloadedKonqy();
     if (!appId.isEmpty()) {
-        kDebug() << "ClientApp::createNewWindow using existing konqueror";
+        qDebug() << "ClientApp::createNewWindow using existing konqueror" << appId;
         org::kde::Konqueror::Main konq(appId, "/KonqMain", dbus);
         konq.createNewWindow(url.url(), mimetype, startup_id_str, tempFile);
         sendASNChange();
@@ -311,12 +310,12 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         }
         args << url.url();
 #ifdef Q_OS_WIN
-        KProcess::startDetached(QLatin1String("kwrapper5"), args);
+        const int pid = KProcess::startDetached(QLatin1String("kwrapper5"), args);
 #else
-        KProcess::startDetached(QLatin1String("kshell5"), args);
+        const int pid = KProcess::startDetached(QLatin1String("kshell5"), args);
 #endif
         KStartupInfo::resetStartupEnv();
-        kDebug() << "ClientApp::createNewWindow KProcess started";
+        qDebug() << "ClientApp::createNewWindow KProcess started, pid=" << pid;
         //}
     }
     return true;

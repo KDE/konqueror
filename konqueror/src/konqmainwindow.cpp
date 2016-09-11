@@ -5746,7 +5746,7 @@ void KonqMainWindow::setPreloadedFlag(bool preloaded)
     s_preloadedWindow = NULL;
     kapp->enableSessionManagement(); // enable SM again
     KonqSessionManager::self()->enableAutosave(); // enable session saving again
-    QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
+    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
     ref.call("unregisterPreloadedKonqy", QDBusConnection::sessionBus().baseService());
 }
 
@@ -5764,7 +5764,8 @@ void KonqMainWindow::setPreloadedWindow(KonqMainWindow *window)
 // that won't be reset by loading a profile
 void KonqMainWindow::resetWindow()
 {
-#if KONQ_HAVE_X11
+    // This code compiles, but hangs. It needs to be ported to xcb!
+#if 0 // KONQ_HAVE_X11
     char data[ 1 ];
     // empty append to get current X timestamp
     QWidget tmp_widget;
@@ -5858,7 +5859,7 @@ bool KonqMainWindow::stayPreloaded()
     if (!checkPreloadResourceUsage()) {
         return false;
     }
-    QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
+    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
     QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
     if (!retVal) {
         return false;

@@ -65,7 +65,7 @@ static bool tryPreload()
 {
 #if KONQ_HAVE_X11
     if (QX11Info::isPlatformX11() && KonqSettings::maxPreloadCount() > 0) {
-        QDBusInterface ref("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
+        QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
         QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
         if (!retVal) {
             return false;    // too many preloaded or failed
