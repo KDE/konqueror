@@ -53,7 +53,7 @@ add_subdirectory( client )
 
 add_subdirectory( about )
 add_subdirectory( pics )
-add_subdirectory( sidebar )
+#add_subdirectory( sidebar )
 add_subdirectory( preloader )
 add_subdirectory( settings )
 
@@ -67,17 +67,6 @@ install(FILES konqueror.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appda
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
 install( FILES konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
-
-install(FILES profile_webbrowsing.desktop    DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME webbrowsing)
-install(FILES profile_filemanagement.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME filemanagement)
-install(FILES profile_tabbedbrowsing.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME tabbedbrowsing)
-install(FILES profile_kde_devel.desktop      DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME kde_devel)
-
-if(NOT WIN32)
-   install(FILES profile_midnightcommander.desktop DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/profiles/ RENAME midnightcommander)
-endif(NOT WIN32)
-
-###
 
 # TODO Remove the if/endif lines if Konqueror is split.
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${Konqueror_SOURCE_DIR}")

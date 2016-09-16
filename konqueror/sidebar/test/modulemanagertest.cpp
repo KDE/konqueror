@@ -59,6 +59,8 @@ QTEST_KDEMAIN(ModuleManagerTest, NoGUI)
 
 void ModuleManagerTest::initTestCase()
 {
+    QStandardPaths::setTestModeEnabled(true);
+
     const QString configFile = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + "konqsidebartngrc";
     QFile::remove(configFile);
     KSharedConfig::Ptr config = KSharedConfig::openConfig("konqsidebartngrc");
@@ -77,10 +79,11 @@ void ModuleManagerTest::initTestCase()
     // Create a "global" dir for the (fake) pre-installed modules,
     // which isn't really global of course, but we can register it as such...
     m_globalDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/konqsidebartng/entries/";
-    QVERIFY(QDir(m_globalDir).exists());
+    QVERIFY(QDir().mkpath(m_globalDir));
     QFile::remove(m_globalDir + "testModule.desktop");
 
-    KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
+    //PORTING TODO setter for global dir
+    //KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
 
     // Create a fake pre-installed plugin there.
     KDesktopFile testModule(m_globalDir + "testModule.desktop");
