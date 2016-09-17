@@ -401,7 +401,9 @@ int KonqHistoryProvider::maxAge() const
 
 bool KonqHistoryProviderPrivate::saveHistory()
 {
-    const QString filename = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror/konq_history");
+    const QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/konqueror");
+    QDir().mkpath(dir);
+    const QString filename = dir + QLatin1String("/konq_history");
     QSaveFile file(filename);
     if (!file.open(QIODevice::WriteOnly)) {
         qWarning() << "Can't open" << file.fileName() << "for saving history";
