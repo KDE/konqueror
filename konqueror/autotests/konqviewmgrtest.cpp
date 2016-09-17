@@ -17,7 +17,7 @@
 
 #include "konqviewmgrtest.h"
 #include <konqmainwindowfactory.h>
-#include "../konqsettingsxt.h"
+#include "../src/konqsettingsxt.h"
 #include <QToolBar>
 #include <QProcess>
 #include <qtestkeyboard.h>

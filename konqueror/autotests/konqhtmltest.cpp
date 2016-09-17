@@ -25,7 +25,7 @@
 #include <ksycoca.h>
 #include <QScrollArea>
 #include <QProcess>
-#include <qtest_gui.h>
+#include <qtest.h>
 
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>

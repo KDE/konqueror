@@ -1,10 +1,9 @@
 if(BUILD_TESTING)
-    find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
     # only with this definition will the KONQ_TESTS_EXPORT macro do something
     add_definitions(-DCOMPILING_TESTS)
-    add_subdirectory( tests )
 endif(BUILD_TESTING)
 
+add_subdirectory( tests )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 

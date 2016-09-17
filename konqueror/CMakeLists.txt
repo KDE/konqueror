@@ -50,6 +50,7 @@ configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konq
 
 add_subdirectory( src )
 add_subdirectory( client )
+add_subdirectory( autotests )
 
 add_subdirectory( about )
 add_subdirectory( pics )
