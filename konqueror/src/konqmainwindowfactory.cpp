@@ -71,7 +71,7 @@ KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,
         mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
         // TODO read config, to be able to disable this
-        mainWindow->openUrl(Q_NULLPTR, QUrl("about:konqueror"), QStringLiteral("KonqAboutPage"));
+        mainWindow->openUrl(Q_NULLPTR, QUrl("about:konqueror"));
         mainWindow->focusLocationBar();
     }
     return mainWindow;

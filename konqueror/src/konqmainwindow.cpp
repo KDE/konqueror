@@ -673,15 +673,20 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         }
     }
 
-    //qDebug() << "trying openView for" << url << "( mimeType" << mimeType << ")";
-    if ((!mimeType.isEmpty() && mimeType != "application/octet-stream") ||
-            url.url() == "about:" || url.url().startsWith("about:konqueror") || url.url() == "about:plugins") {
-        KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mimeType, "Application");
-        const bool associatedAppIsKonqueror = isMimeTypeAssociatedWithSelf(mimeType, offer);
+    const bool hasMimeType = (!mimeType.isEmpty() && mimeType != "application/octet-stream");
+    KService::Ptr offer;
+    bool associatedAppIsKonqueror = false;
+    if (hasMimeType) {
+        offer = KMimeTypeTrader::self()->preferredService(mimeType, "Application");
+        associatedAppIsKonqueror = isMimeTypeAssociatedWithSelf(mimeType, offer);
         // If the associated app is konqueror itself, then make sure we try to embed before bailing out.
         if (associatedAppIsKonqueror) {
             req.forceAutoEmbed = true;
         }
+    }
+
+    //qDebug() << "trying openView for" << url << "( mimeType" << mimeType << ")";
+    if (hasMimeType || url.url() == "about:" || url.url().startsWith("about:konqueror") || url.url() == "about:plugins") {
 
         // Built-in view ?
         if (!openView(mimeType, url, view /* can be 0 */, req)) {
