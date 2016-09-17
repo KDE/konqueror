@@ -3,6 +3,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/..  )
 
 ########### centralwidget ###############
 
+include(ECMMarkAsTest)
 add_executable(centralwidget centralwidget.cpp)
 ecm_mark_as_test(centralwidget)
 target_link_libraries(centralwidget
