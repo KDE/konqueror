@@ -30,6 +30,7 @@
 #include "konqcloseditem.h"
 #include "konqapplication.h"
 #include "konqguiclients.h"
+#include "konqmainwindowfactory.h"
 #include "KonqMainWindowAdaptor.h"
 #include "KonquerorAdaptor.h"
 #include "konqview.h"
@@ -1297,16 +1298,14 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
     req.forceAutoEmbed = true;
     req.serviceName = preferredService(m_currentView, args.mimeType());
 
-    // Pass the URL to createNewWindow so that it can select the right profile for it
-    // Note that it's always empty in case of window.open, though.
-    mainWindow = KonqMisc::createNewWindow(url, req, false /*do not open URL*/);
+    mainWindow = KonqMainWindowFactory::createEmptyWindow();
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
     // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
     if (args.mimeType().isEmpty()) {
         mainWindow->openUrl(0, url, QString(), req);
     } else {
-        if (!mainWindow->openView(args.mimeType(), url, m_currentView, req)) {
+        if (!mainWindow->openView(args.mimeType(), url, 0, req)) {
             // we have problems. abort.
             delete mainWindow;
 
@@ -1316,6 +1315,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
             return;
         }
     }
+
+    qDebug() << "newWindow" << mainWindow << "currentView" << mainWindow->currentView() << "views" << mainWindow->viewMap().count();
 
     KonqView *view = 0;
     // cannot use activePart/currentView, because the activation through the partmanager
@@ -1483,19 +1484,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 
 void KonqMainWindow::slotNewWindow()
 {
-    // Use profile from current window, if set
-    QString profile = m_pViewManager->currentProfile();
-    if (profile.isEmpty()) {
-        if (m_currentView && m_currentView->url().scheme().startsWith("http")) {
-            profile = QLatin1String("webbrowsing");
-        } else {
-            profile = QLatin1String("filemanagement");
-        }
-    }
-    KonqMainWindow *mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
-    if (mainWin) {
-        mainWin->show();
-    }
+    KonqMainWindow *mainWin = KonqMisc::createNewWindow();
+    mainWin->show();
 }
 
 void KonqMainWindow::slotDuplicateWindow()
@@ -2817,11 +2807,6 @@ KonqView *KonqMainWindow::otherView(KonqView *view) const
     return 0;
 }
 
-void KonqMainWindow::slotSaveViewProfile()
-{
-    m_pViewManager->showProfileDlg(m_pViewManager->currentProfile());
-}
-
 void KonqMainWindow::slotUpAboutToShow()
 {
     if (!m_currentView) {
@@ -3709,10 +3694,6 @@ void KonqMainWindow::initActions()
 
     // Settings menu
 
-    m_paSaveViewProfile = actionCollection()->addAction("saveviewprofile");
-    m_paSaveViewProfile->setText(i18n("&Save View Profile As..."));
-    connect(m_paSaveViewProfile, &QAction::triggered, this, &KonqMainWindow::slotSaveViewProfile);
-
     // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
     QStringList configureModules;
     configureModules << "khtml_general" << "bookmarks" <<
@@ -3819,14 +3800,6 @@ void KonqMainWindow::initActions()
     action->setText(i18n("Dump Debug Info"));
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotDumpDebugInfo);
 #endif
-
-    m_paSaveRemoveViewProfile = actionCollection()->addAction("saveremoveviewprofile");
-    m_paSaveRemoveViewProfile->setText(i18n("C&onfigure View Profiles..."));
-    connect(m_paSaveRemoveViewProfile, &QAction::triggered, m_pViewManager, &KonqViewManager::slotProfileDlg);
-    m_pamLoadViewProfile = new KActionMenu(i18n("Load &View Profile"), this);
-    actionCollection()->addAction("loadviewprofile", m_pamLoadViewProfile);
-
-    m_pViewManager->setProfiles(m_pamLoadViewProfile);
 
     m_ptaFullScreen = KStandardAction::fullScreen(0, 0, this, this);
     actionCollection()->addAction(m_ptaFullScreen->objectName(), m_ptaFullScreen);
@@ -4343,12 +4316,6 @@ void KonqMainWindow::setProfileConfig(const KConfigGroup &cfg)
 {
     // Read toolbar settings and window size from profile, and autosave into that profile from now on
     setAutoSaveSettings(cfg);
-    currentProfileChanged();
-}
-
-void KonqMainWindow::currentProfileChanged()
-{
-    m_paSaveViewProfile->setEnabled(!m_pViewManager->currentProfile().isEmpty());
 }
 
 void KonqMainWindow::enableAllActions(bool enable)
@@ -4374,11 +4341,6 @@ void KonqMainWindow::enableAllActions(bool enable)
         // we surely don't have any history buffers at this time
         m_paBack->setEnabled(false);
         m_paForward->setEnabled(false);
-
-        // Load profile submenu
-        m_pViewManager->profileListDirty(false);
-
-        currentProfileChanged();
 
         updateViewActions(); // undo, lock, link and other view-dependent actions
         updateClosedItemsAction();
@@ -4432,9 +4394,6 @@ void KonqMainWindow::disableActionsNoView()
             act->setEnabled(true);
         }
     }
-    m_pamLoadViewProfile->setEnabled(true);
-    m_paSaveViewProfile->setEnabled(true);
-    m_paSaveRemoveViewProfile->setEnabled(true);
     m_combo->clearTemporary();
 }
 
@@ -4454,6 +4413,7 @@ void KonqMainWindow::setCaption(const QString &caption)
 
 void KonqMainWindow::showEvent(QShowEvent *event)
 {
+    //qDebug() << QTime::currentTime();
     // We need to check if our toolbars are shown/hidden here, and set
     // our menu items accordingly. We can't do it in the constructor because
     // view profiles store toolbar info, and that info is read after
@@ -4472,11 +4432,6 @@ QUrl KonqExtendedBookmarkOwner::currentUrl() const
 {
     const KonqView *view = m_pKonqMainWindow->currentView();
     return view ? view->url() : QUrl();
-}
-
-QString KonqMainWindow::currentProfile() const
-{
-    return m_pViewManager->currentProfile();
 }
 
 QString KonqMainWindow::currentURL() const
@@ -4937,7 +4892,7 @@ void KonqMainWindow::saveProperties(KConfigGroup &config)
     // -> KSycoca running kbuildsycoca -> nested event loop.
     if (m_fullyConstructed) {
         KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-        m_pViewManager->saveViewProfileToGroup(config, flags);
+        m_pViewManager->saveConfigToGroup(config, flags);
     }
 }
 
@@ -5254,7 +5209,6 @@ void KonqMainWindow::addClosedWindowToUndoList()
 void KonqMainWindow::updateWindowIcon()
 {
     const QString url = m_combo->currentText();
-    // TODO (kfm-devel email 13/09/2008) should we use a profile-defined icon instead of a url-dependent window icon?
     const QPixmap pix = KonqPixmapProvider::self()->pixmapFor(url);
     KParts::MainWindow::setWindowIcon(pix);
 

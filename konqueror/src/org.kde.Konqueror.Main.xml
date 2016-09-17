@@ -22,34 +22,11 @@
       <arg name="filesToSelect" type="as" direction="in"/>
       <arg name="startup_id" type="ay" direction="in"/>
     </method>
-    <method name="createBrowserWindowFromProfile">
-      <arg type="o" direction="out"/>
-      <arg name="path" type="s" direction="in"/>
-      <arg name="filename" type="s" direction="in"/>
-      <arg name="startup_id" type="ay" direction="in"/>
-    </method>
-    <method name="createBrowserWindowFromProfileAndUrl">
-      <arg type="o" direction="out"/>
-      <arg name="path" type="s" direction="in"/>
-      <arg name="filename" type="s" direction="in"/>
-      <arg name="url" type="s" direction="in"/>
-      <arg name="startup_id" type="ay" direction="in"/>
-    </method>
-    <method name="createBrowserWindowFromProfileUrlAndMimeType">
-      <arg type="o" direction="out"/>
-      <arg name="path" type="s" direction="in"/>
-      <arg name="filename" type="s" direction="in"/>
-      <arg name="url" type="s" direction="in"/>
-      <arg name="mimetype" type="s" direction="in"/>
-      <arg name="startup_id" type="ay" direction="in"/>
-    </method>
     <method name="crashLogFile">
       <arg type="s" direction="out"/>
     </method>
     <method name="windowForTab">
       <arg type="o" direction="out"/>
-    </method>
-    <method name="updateProfileList">
     </method>
     <method name="addToCombo">
       <arg name="url" type="s" direction="in"/>

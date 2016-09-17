@@ -74,7 +74,6 @@ set(konqueror_KDEINIT_SRCS
    konqframecontainer.cpp
    konqtabs.cpp
    konqactions.cpp
-   konqprofiledlg.cpp
    konqsessiondlg.cpp
    konqfactory.cpp
    konqcombo.cpp
@@ -82,6 +81,7 @@ set(konqueror_KDEINIT_SRCS
    delayedinitializer.cpp
    konqanimatedlogo.cpp
    konqmainwindow.cpp
+   konqmainwindowfactory.cpp
    konqextensionmanager.cpp
    konqbookmarkbar.cpp
    konqsettings.cpp
@@ -97,7 +97,6 @@ set(konqueror_KDEINIT_SRCS
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
-ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
 

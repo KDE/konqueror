@@ -187,39 +187,14 @@ public:
     void updatePixmaps();
 
     /**
-     * Saves the current view layout to a config file, including menu/toolbar settings.
-     * Remove config file before saving, especially if saveURLs is false.
-     * @param fileName the name of the config file
-     * @param profileName the name of the profile
-     * @param saveURLs whether to save the URLs in the profile
-     */
-    void saveViewProfileToFile(const QString &fileName, const QString &profileName,
-                               KonqFrameBase::Options options);
-
-    /**
      * Saves the current view layout to a group in a config file.
      * This is shared between saveViewProfileToFile and saveProperties (session management)
      * Remove config file before saving, especially if saveURLs is false.
      * @param cfg the config file
      * @param options whether to save nothing, the URLs or the complete history of each view in the profile
      */
-    void saveViewProfileToGroup(KConfigGroup &cfg, KonqFrameBase::Options options);
+    void saveConfigToGroup(KConfigGroup &cfg, KonqFrameBase::Options options);
 
-    /**
-     * Loads a view layout from a config file. Removes all views before loading.
-     * @param path the full path to the config file
-     * @param filename if set, remember the file name of the profile (for save settings)
-     * It has to be under the profiles dir. Otherwise, set to QString()
-     * @param forcedUrl if set, the URL to open, whatever the profile says
-     * @param req attributes related to @p forcedUrl
-     * @param resetWindow if the profile doesn't have attributes like size or toolbar
-     * settings, they will be reset to the defaults
-     */
-    void loadViewProfileFromFile(const QString &path, const QString &filename,
-                                 const QUrl &forcedUrl = QUrl(),
-                                 const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-                                 bool resetWindow = false, bool openUrl = true);
-    // Overload for KonqMisc::createBrowserWindowFromProfile
     void loadViewProfileFromConfig(const KSharedConfigPtr &config,
                                    const QString &path,
                                    const QString &filename,
@@ -241,23 +216,6 @@ public:
                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                   bool openUrl = true);
     /**
-     * Return the filename of the last profile that was loaded
-     * by the view manager. For "save settings".
-     */
-    QString currentProfile() const
-    {
-        return m_currentProfile;
-    }
-    /**
-     * Return the name (i18n'ed) of the last profile that was loaded
-     * by the view manager. For "save settings".
-     */
-    QString currentProfileText() const
-    {
-        return m_currentProfileText;
-    }
-
-    /**
      * Whether we are currently loading a profile
      */
     bool isLoadingProfile() const
@@ -277,13 +235,6 @@ public:
      */
     void viewCountChanged();
 
-    void setProfiles(KActionMenu *profiles);
-
-    void profileListDirty(bool broadcast = true);
-
-//  KonqFrameBase *docContainer() const { return m_pDocContainer; }
-//  void setDocContainer( KonqFrameBase* docContainer ) { m_pDocContainer = docContainer; }
-
     KonqMainWindow *mainWindow() const
     {
         return m_pMainWindow;
@@ -300,8 +251,6 @@ public:
     virtual void setActivePart(KParts::Part *part, QWidget *widget = 0);
 
     void doSetActivePart(KParts::ReadOnlyPart *part);
-
-    void showProfileDlg(const QString &preselectProfile);
 
     /**
      * Read default size from profile (e.g. Width=80%)
@@ -355,14 +304,8 @@ public Q_SLOTS:
      */
     void openClosedTab(const KonqClosedTabItem &closedTab);
 
-    void slotProfileDlg();
-
 private Q_SLOTS:
     void emitActivePartChanged();
-
-    void slotProfileActivated(QAction *action);
-
-    void slotProfileListAboutToShow();
 
     void slotPassiveModePartDeleted();
 
@@ -392,11 +335,6 @@ private:
                       int pos = -1);
 
     void createTabContainer(QWidget *parent, KonqFrameContainerBase *parentContainer);
-
-    // Disabled - we do it ourselves
-    virtual void setActiveComponent(const KComponentData &) {}
-
-    void setCurrentProfile(const QString &profileFileName);
 
 signals:
 // the signal is only emitted when the contents of the view represented by
@@ -439,11 +377,7 @@ private:
 
     KonqFrameTabs *m_tabContainer;
 
-    QPointer<KActionMenu> m_pamProfiles;
-    bool m_bProfileListDirty;
     bool m_bLoadingProfile;
-    QString m_currentProfile;
-    QString m_currentProfileText;
 
     QMap<QString /*display name*/, QString /*path to file*/> m_mapProfileNames;
 };

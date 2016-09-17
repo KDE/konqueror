@@ -133,9 +133,7 @@ private Q_SLOTS:
         const QString origFile = origTempFile.fileName();
         origTempFile.close();
 
-        KonqMainWindow *mainWindow = new KonqMainWindow;
-        const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
-        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing", QUrl::fromLocalFile(origFile));
+        KonqMainWindow *mainWindow = KonqMisc::createNewWindow(QUrl::fromLocalFile(origFile));
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
@@ -150,14 +148,13 @@ private Q_SLOTS:
         QTest::qWait(100); // just in case there's more delayed calls :)
         // Did it open a window?
         QCOMPARE(KMainWindow::memberList().count(), 2);
-        KMainWindow *newWindow = KMainWindow::memberList().last();
+        KonqMainWindow *newWindow = qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last());
+        QVERIFY(newWindow);
         QVERIFY(newWindow != mainWindow);
         compareToolbarSettings(mainWindow, newWindow);
-        // Does the window contain exactly one tab?
-        QTabWidget *tab = newWindow->findChild<QTabWidget *>();
-        QVERIFY(tab);
-        QCOMPARE(tab->count(), 1);
-        KonqFrame *frame = qobject_cast<KonqFrame *>(tab->widget(0));
+        // Does the window contain exactly one view?
+        QCOMPARE(newWindow->viewCount(), 1);
+        KonqFrame *frame = newWindow->currentView()->frame();
         QVERIFY(frame);
         QVERIFY(!frame->childView()->isLoading());
         KHTMLPart *part = qobject_cast<KHTMLPart *>(frame->part());

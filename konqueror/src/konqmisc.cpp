@@ -18,21 +18,18 @@
 */
 #include "konqmisc.h"
 #include <kparts/browserrun.h>
-#include <QDir>
-#include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include "konqmainwindow.h"
 #include "konqviewmanager.h"
 #include "konqview.h"
+#include "konqmainwindowfactory.h"
 
 #include <kapplication.h>
 #include <QDebug>
 #include <kurifilter.h>
 #include <KLocalizedString>
 
-#include <kwindowsystem.h>
 #include <kprotocolmanager.h>
-#include <kstartupinfo.h>
 #include <kiconloader.h>
 #include <kconfiggroup.h>
 #include <QList>
@@ -45,104 +42,18 @@
  *
  **********************************************/
 
-// Terminates fullscreen-mode for any full-screen window on the current desktop
-void KonqMisc::abortFullScreenMode()
+KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url,
+                                          const KonqOpenURLRequest &req)
 {
-    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
-    if (mainWindows) {
-        foreach (KonqMainWindow *window, *mainWindows) {
-            if (window->fullScreenMode()) {
-                KWindowInfo info(window->winId(), NET::WMDesktop);
-                if (info.valid() && info.isOnCurrentDesktop()) {
-                    window->setWindowState(window->windowState() & ~Qt::WindowFullScreen);
-                }
-            }
-        }
-    }
-}
-
-KonqMainWindow *KonqMisc::createSimpleWindow(const QUrl &url, const KParts::OpenUrlArguments &args,
-        const KParts::BrowserArguments &browserArgs,
-        bool tempFile)
-{
-    abortFullScreenMode();
-
-    KonqOpenURLRequest req;
-    req.args = args;
-    req.browserArgs = browserArgs;
-    req.tempFile = tempFile;
-    KonqMainWindow *win = new KonqMainWindow;
-    win->openUrl(0L, url, QString(), req);
-    win->show();
-
-    return win;
-}
-
-KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url, const KonqOpenURLRequest &req, bool openUrl)
-{
-    //qDebug() << "url=" << url;
-    // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
-    const QString profileName = url.isEmpty() || // e.g. in window.open
-                                (!(KProtocolManager::supportsListing(url)) || // e.g. any HTTP url
-                                 KMimeType::findByUrl(url)->name() == "text/html")
-                                ? "webbrowsing" : "filemanagement";
-
-    const QString profilePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profileName);
-    return createBrowserWindowFromProfile(profilePath, profileName,
-                                          url, req, openUrl);
-}
-
-KonqMainWindow *KonqMisc::createBrowserWindowFromProfile(const QString &_path, const QString &_filename, const QUrl &url,
-        const KonqOpenURLRequest &req, bool openUrl)
-{
-    QString path(_path);
-    QString filename(_filename);
-    if (path.isEmpty()) { // no path given, determine it from the filename
-        if (filename.isEmpty()) {
-            filename = defaultProfileName();
-        }
-        if (QDir::isRelativePath(filename)) {
-            path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + filename);
-            if (path.isEmpty()) { // not found
-                filename = defaultProfileName();
-                path = defaultProfilePath();
-            }
-        } else {
-            path = filename; // absolute path
-        }
-    }
-
-    abortFullScreenMode();
-    KonqMainWindow *mainWindow;
-    // Ask the user to recover session if appliable
-    if (KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions()) {
-        QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
-        if (mainWindowList && !mainWindowList->isEmpty()) {
-            mainWindow = mainWindowList->first();
-        } else { // This should never happen but just to be sure
-            mainWindow = new KonqMainWindow;
-        }
-
-        if (!url.isEmpty()) {
-            mainWindow->openUrl(0, url, QString(), req);
-        }
-    } else if (KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL) {
-        mainWindow = KonqMainWindow::preloadedWindow();
-        KStartupInfo::setWindowStartupId(mainWindow->winId(), KStartupInfo::startupId());
-        KonqMainWindow::setPreloadedWindow(NULL);
-        KonqMainWindow::setPreloadedFlag(false);
-        mainWindow->resetWindow();
-        mainWindow->reparseConfiguration();
-        mainWindow->viewManager()->loadViewProfileFromFile(path, filename, url, req, true, openUrl);
+    KonqMainWindow *mainWindow = KonqMainWindowFactory::createEmptyWindow();
+    if (!url.isEmpty()) {
+        mainWindow->openUrl(Q_NULLPTR, url, QString(), req);
+        mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
-        KSharedConfigPtr cfg = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
-        const KConfigGroup profileGroup(cfg, "Profile");
-        const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile", "konqueror.rc");
-
-        mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
-        mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
+        // TODO read config, to be able to disable this
+        mainWindow->openUrl(Q_NULLPTR, QUrl("about:konqueror"), QStringLiteral("KonqAboutPage"));
+        mainWindow->focusLocationBar();
     }
-    mainWindow->setInitialFrameName(req.browserArgs.frameName);
     return mainWindow;
 }
 
@@ -153,18 +64,17 @@ KonqMainWindow *KonqMisc::newWindowFromHistory(KonqView *view, int steps)
 
     const HistoryEntry *he = view->historyAt(newPos);
     if (!he) {
-        return 0L;
+        return Q_NULLPTR;
     }
 
-    KonqMainWindow *mainwindow = createNewWindow(he->url, KonqOpenURLRequest(),
-                                 /*openUrl*/false);
+    KonqMainWindow *mainwindow = KonqMainWindowFactory::createEmptyWindow();
     if (!mainwindow) {
-        return 0L;
+        return Q_NULLPTR;
     }
     KonqView *newView = mainwindow->currentView();
 
     if (!newView) {
-        return 0L;
+        return Q_NULLPTR;
     }
 
     newView->copyHistory(view);

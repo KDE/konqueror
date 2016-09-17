@@ -41,16 +41,6 @@
 #include <QDir>
 #include <QStandardPaths>
 
-static void listProfiles()
-{
-    QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", KStandardDirs::NoDuplicates);
-    profiles.sort();
-    Q_FOREACH (const QString &_file, profiles) {
-        const QString file = _file.mid(_file.lastIndexOf('/') + 1);
-        printf("%s\n", QFile::encodeName(file).constData());
-    }
-}
-
 static void listSessions()
 {
     const QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
@@ -94,9 +84,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     options.add("preload", ki18n("Preload for later use. This mode does not support URLs on the command line"));
 
-    options.add("profile <profile>", ki18n("Profile to open"));
-
-    options.add("profiles", ki18n("List available profiles"));
+    options.add("profile <profile>", ki18n("Profile to open (DEPRECATED, IGNORED)"));
 
     options.add("sessions", ki18n("List available sessions"));
 
@@ -136,9 +124,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             if (!tryPreload()) {
                 return 0;    // no preloading
             }
-        } else if (args->isSet("profiles")) {
-            listProfiles();
-            return 0;
         } else if (args->isSet("sessions")) {
             listSessions();
             return 0;
@@ -159,8 +144,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         } else if (args->count() == 0) {
             // No args. If --silent, do nothing, otherwise create a default window.
             if (!args->isSet("silent")) {
-                const QString profile = args->getOption("profile");
-                KonqMainWindow *mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
+                KonqMainWindow *mainWin = KonqMisc::createNewWindow();
                 mainWin->show();
             }
         } else {
@@ -208,14 +192,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             req.tempFile = KCmdLineArgs::isTempFileSet();
             req.serviceName = args->getOption("part");
 
-            KonqMainWindow *mainwin = 0;
-            if (args->isSet("profile")) {
-                const QString profile = args->getOption("profile");
-                //qDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
-                mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, req);
-            } else {
-                mainwin = KonqMisc::createNewWindow(firstUrl, req);
-            }
+            KonqMainWindow *mainwin = KonqMisc::createNewWindow(firstUrl, req);
             mainwin->show();
             if (!urlList.isEmpty()) {
                 // Open the other urls as tabs in that window

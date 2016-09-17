@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 2006 David Faure <faure@kde.org>
+   Copyright (C) 1998, 1999, 2016 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,27 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQ_APPLICATION_H
-#define KONQ_APPLICATION_H
+#ifndef KONQMAINWINDOWFACTORY_H
+#define KONQMAINWINDOWFACTORY_H
 
-#include "konqprivate_export.h"
-#include <kapplication.h>
+class KonqMainWindow;
+class QUrl;
 
-class QDBusMessage;
-
-class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
+namespace KonqMainWindowFactory
 {
-    Q_OBJECT
-public:
-    KonquerorApplication();
 
-public slots:
-    void slotReparseConfiguration();
+/**
+ * Create a new empty window.
+ * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
+ * and offers restoring windows after a crash.
+ * Note: the caller must call show()
+ */
+KonqMainWindow *createEmptyWindow();
 
-private slots:
-    void slotAddToCombo(const QString &url, const QDBusMessage &msg);
-    void slotRemoveFromCombo(const QString &url, const QDBusMessage &msg);
-    void slotComboCleared(const QDBusMessage &msg);
 };
 
-#endif
+#endif // KONQMAINWINDOWFACTORY_H

@@ -26,7 +26,6 @@
 #include "konqview.h"
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
-#include "konqprofiledlg.h"
 #include "konqsettingsxt.h"
 #include "konqframevisitor.h"
 #include <konq_events.h>
@@ -61,8 +60,6 @@ KonqViewManager::KonqViewManager(KonqMainWindow *mainWindow)
 {
     m_pMainWindow = mainWindow;
 
-    m_pamProfiles = 0L;
-    m_bProfileListDirty = true;
     m_bLoadingProfile = false;
     m_tabContainer = 0;
 
@@ -342,7 +339,6 @@ KonqMainWindow *KonqViewManager::breakOffTab(int tab, const QSize &windowSize)
 
     KonqFrameTabs *newTabContainer = mainWindow->viewManager()->tabContainer();
     mainWindow->viewManager()->loadRootItem(profileGroup, newTabContainer, QUrl(), true, QUrl());
-    mainWindow->viewManager()->setCurrentProfile(currentProfile());
 
     removeTab(tabFrame, false);
 
@@ -890,25 +886,8 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
     return v;
 }
 
-///////////////// Profile stuff ////////////////
 
-void KonqViewManager::saveViewProfileToFile(const QString &fileName, const QString &profileName, KonqFrameBase::Options options)
-{
-    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/konqueror/profiles/") + fileName;
-    QFile::remove(path); // in case it exists already
-
-    KConfig _cfg(path, KConfig::SimpleConfig);
-    KConfigGroup profileGroup(&_cfg, "Profile");
-    if (!profileName.isEmpty()) {
-        profileGroup.writePathEntry("Name", profileName);
-    }
-
-    saveViewProfileToGroup(profileGroup, options);
-
-    _cfg.sync();
-}
-
-void KonqViewManager::saveViewProfileToGroup(KConfigGroup &profileGroup, KonqFrameBase::Options options)
+void KonqViewManager::saveConfigToGroup(KConfigGroup &profileGroup, KonqFrameBase::Options options)
 {
     if (m_pMainWindow->childFrame()) {
         QString prefix = KonqFrameBase::frameTypeToString(m_pMainWindow->childFrame()->frameType())
@@ -924,38 +903,7 @@ void KonqViewManager::saveViewProfileToGroup(KConfigGroup &profileGroup, KonqFra
     m_pMainWindow->saveMainWindowSettings(profileGroup);
 }
 
-void KonqViewManager::loadViewProfileFromFile(const QString &path, const QString &filename,
-        const QUrl &forcedUrl, const KonqOpenURLRequest &req,
-        bool resetWindow, bool openUrl)
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
-    loadViewProfileFromConfig(config, path, filename, forcedUrl, req, resetWindow, openUrl);
-}
-
-void KonqViewManager::setCurrentProfile(const QString &profileFileName)
-{
-    m_currentProfile = profileFileName;
-
-    // We'll use the profile for saving window settings - so ensure we can save to it
-    const QString localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QString::fromLatin1("konqueror/profiles/") + profileFileName;
-    qDebug() << profileFileName << "localPath=" << localPath;
-    KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
-    if (!QFile::exists(localPath)) {
-        const QString globalFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("konqueror/profiles/") + profileFileName);
-        qDebug() << "globalFile=" << globalFile;
-        if (!globalFile.isEmpty()) {
-            KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
-            globalCfg->copyTo(localPath, cfg.data());
-        }
-    }
-
-    KConfigGroup profileGroup(cfg, "Profile");
-    m_currentProfileText = profileGroup.readPathEntry("Name", m_currentProfile);
-
-    // setProfileConfig must be done after setting m_currentProfile/m_currentProfileText
-    // We also do it after loadViewProfileFromGroup so that we can override the default size (Width=80%)
-    m_pMainWindow->setProfileConfig(profileGroup);
-}
+///////////////// Profile stuff ////////////////
 
 void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr &_cfg,
         const QString &path,
@@ -982,7 +930,7 @@ void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr &_cfg,
 
     loadViewProfileFromGroup(profileGroup, filename, forcedUrl, req, openUrl);
 
-    setCurrentProfile(filename);
+    m_pMainWindow->setProfileConfig(profileGroup);
 
 #ifdef DEBUG_VIEWMGR
     printFullHierarchy();
@@ -1379,122 +1327,6 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
     //qDebug() << "end" << name;
 }
 
-void KonqViewManager::setProfiles(KActionMenu *profiles)
-{
-    m_pamProfiles = profiles;
-    connect(m_pamProfiles->menu(), SIGNAL(triggered(QAction*)),
-            this, SLOT(slotProfileActivated(QAction*)));
-    connect(m_pamProfiles->menu(), SIGNAL(aboutToShow()),
-            this, SLOT(slotProfileListAboutToShow()));
-    //KonqMainWindow::enableAllActions will call it anyway
-    //profileListDirty();
-}
-
-void KonqViewManager::showProfileDlg(const QString &preselectProfile)
-{
-    KonqProfileDlg dlg(this, preselectProfile, m_pMainWindow);
-    dlg.exec();
-    profileListDirty();
-}
-
-void KonqViewManager::slotProfileDlg()
-{
-    showProfileDlg(QString());
-}
-
-void KonqViewManager::profileListDirty(bool broadcast)
-{
-    if (!broadcast) {
-        m_bProfileListDirty = true;
-        return;
-    }
-
-    // Send signal to all konqueror instances
-    QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "updateAllProfileList");
-    QDBusConnection::sessionBus().send(message);
-}
-
-void KonqViewManager::slotProfileActivated(QAction *action)
-{
-    if (tabContainer()->count() > 1) {
-        if (KMessageBox::warningContinueCancel(m_pMainWindow,
-                                               i18n("You have multiple tabs open in this window.\n"
-                                                       "Loading a view profile will close them."),
-                                               i18nc("@title:window", "Confirmation"),
-                                               KGuiItem(i18n("Load View Profile")),
-                                               KStandardGuiItem::cancel(),
-                                               "LoadProfileTabsConfirm") == KMessageBox::Cancel) {
-            return;
-        }
-    }
-    const int originalTabIndex = m_tabContainer->currentIndex();
-    foreach (KonqFrameBase *frame, m_tabContainer->childFrameList()) {
-        KonqView *view = frame->activeChildView();
-        if (view && view->isModified()) {
-            showTab(view);
-            if (KMessageBox::warningContinueCancel(0,
-                                                   i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
-                                                   i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue)
-                /* WE: maybe KStandardGuiItem(Discard) here? */
-            {
-                showTab(originalTabIndex);
-                return;
-            }
-        }
-    }
-    showTab(originalTabIndex);
-
-    const QString profilePath = action->data().toString();
-    const QString fileName = QUrl::fromLocalFile(profilePath).fileName();
-    KConfig cfg(profilePath);
-    KConfigGroup profileGroup(&cfg, "Profile");
-    const QString xmluiFile = normalizedXMLFileName(profileGroup.readEntry("XMLUIFile", "konqueror.rc"));
-
-    //If the profile specifies an xmlgui file that differs from the currently
-    //loaded one, then we have no choice but to recreate the window.  I've
-    //experimented with trying to get xmlgui to recreate the gui, but it is
-    //too brittle.  The only other choice is to ignore the profile which is
-    //not very nice.
-    if (xmluiFile != m_pMainWindow->xmlFile()) {
-        m_pMainWindow->deleteLater();
-        KonqMainWindow *mw = KonqMisc::createBrowserWindowFromProfile(profilePath, fileName, m_pMainWindow->currentView()->url());
-        if (mw) {
-            mw->show();
-        }
-    } else {
-        loadViewProfileFromFile(profilePath, fileName);
-    }
-}
-
-void KonqViewManager::slotProfileListAboutToShow()
-{
-    if (!m_pamProfiles || !m_bProfileListDirty) {
-        return;
-    }
-
-    QMenu *popup = m_pamProfiles->menu();
-    popup->clear();
-
-    // Fetch profiles
-    m_mapProfileNames = KonqProfileDlg::readAllProfiles();
-
-    // Generate accelerators
-    const QStringList profileNames = m_mapProfileNames.keys();
-    QStringList accel_strings;
-    KAccelGen::generate(profileNames, accel_strings);
-
-    // Store menu items
-    const QStringList profilePaths = m_mapProfileNames.values();
-    for (int i = 0; i < accel_strings.count(); ++i) {
-        QAction *action = new QAction(accel_strings.at(i), popup);
-        action->setData(profilePaths.at(i));
-        popup->addAction(action);
-    }
-
-    m_bProfileListDirty = false;
-}
-
 void KonqViewManager::setLoading(KonqView *view, bool loading)
 {
     tabContainer()->setLoading(view->frame(), loading);
@@ -1626,7 +1458,7 @@ bool KonqViewManager::isTabBarVisible() const
     if (!m_tabContainer) {
         return false;
     }
-    return !m_tabContainer->isTabBarHidden();
+    return !m_tabContainer->tabBar()->isHidden();
 }
 
 void KonqViewManager::createTabContainer(QWidget *parent, KonqFrameContainerBase *parentContainer)
@@ -1655,7 +1487,7 @@ KonqMainWindow *KonqViewManager::duplicateWindow()
     KConfig config(tempFile.fileName());
     KConfigGroup profileGroup(&config, "Profile");
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    saveViewProfileToGroup(profileGroup, flags);
+    saveConfigToGroup(profileGroup, flags);
 
     KonqMainWindow *mainWindow = openSavedWindow(profileGroup);
 #ifndef NDEBUG

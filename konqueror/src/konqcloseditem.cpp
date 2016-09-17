@@ -56,7 +56,7 @@ KonqClosedItem::KonqClosedItem(const QString &title, const QString &group, quint
 
 KonqClosedItem::~KonqClosedItem()
 {
-    qDebug() << "deleting group" << m_configGroup.name();
+    //qDebug() << "deleting group" << m_configGroup.name();
     m_configGroup.deleteGroup();
 }
 

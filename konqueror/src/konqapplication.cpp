@@ -36,7 +36,6 @@ KonquerorApplication::KonquerorApplication()
     const QString dbusInterface = "org.kde.Konqueror.Main";
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "reparseConfiguration", this, SLOT(slotReparseConfiguration()));
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "updateAllProfileList", this, SLOT(slotUpdateProfileList()));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "addToCombo", this,
                  SLOT(slotAddToCombo(QString,QDBusMessage)));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "removeFromCombo", this,
@@ -54,18 +53,6 @@ void KonquerorApplication::slotReparseConfiguration()
         foreach (KonqMainWindow *window, *mainWindows) {
             window->reparseConfiguration();
         }
-    }
-}
-
-void KonquerorApplication::slotUpdateProfileList()
-{
-    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
-    if (!mainWindows) {
-        return;
-    }
-
-    foreach (KonqMainWindow *window, *mainWindows) {
-        window->viewManager()->profileListDirty(false);
     }
 }
 

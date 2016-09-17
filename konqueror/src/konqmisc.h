@@ -35,42 +35,13 @@ class KonqView;
 namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWindowCreator, and KonqGlobal?
 {
 /**
- * Stop full-screen mode in all windows.
- */
-void abortFullScreenMode();
-
-/**
- * Create a new window with a single view, showing @p url, using @p args
- */
-KonqMainWindow *createSimpleWindow(const QUrl &url, const KParts::OpenUrlArguments &args,
-                                   const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                                   bool tempFile = false);
-
-/**
- * Create a new window for @p url using @p args and the appropriate profile for this URL.
- * @param req Additional arguments, see KonqOpenURLRequest.
- * @param openUrl If it is false, no url is opened in the new window (and the aboutpage is not shown).
- * The url is used to guess the profile.
- */
-KONQ_TESTS_EXPORT KonqMainWindow *createNewWindow(const QUrl &url,
-        const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-        bool openUrl = true);
-
-/**
- * Create a new window from the profile defined by @p profilePath and @p profileFilename.
- * @param profilePath full path to the profile definition, or leave it empty if from the usual profile directory
- * @param profileFilename the filename of the profile definition
- * @param url an optional URL to open in this profile
- * @param req Additional arguments, see KonqOpenURLRequest
- * @param openUrl If false no url is opened
- *
+ * Create a new window for @p url using @p args and @p req.
+ * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
+ * and offers restoring windows after a crash.
  * Note: the caller must call show()
  */
-KonqMainWindow *createBrowserWindowFromProfile(const QString &profilePath,
-        const QString &profileFilename,
-        const QUrl &url = QUrl(),
-        const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-        bool openUrl = true);
+KONQ_TESTS_EXPORT KonqMainWindow *createNewWindow(const QUrl &url = QUrl(),
+        const KonqOpenURLRequest &req = KonqOpenURLRequest());
 
 /**
  * Creates a new window from the history of a view, copies the history

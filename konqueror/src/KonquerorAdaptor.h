@@ -18,8 +18,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef __KonquerorAdaptor_h__
-#define __KonquerorAdaptor_h__
+#ifndef KONQUERORADAPTOR_H
+#define KONQUERORADAPTOR_H
 
 #include <QtCore/QStringList>
 #include <QtDBus/QtDBus>
@@ -68,43 +68,6 @@ public slots:
     QDBusObjectPath createNewWindowWithSelection(const QString &url, const QStringList &filesToSelect, const QByteArray &startup_id);
 
     /**
-     * As the name says, this creates a window from a profile.
-     * Used for instance by kfmclient.
-     * @param path full path to the profile file
-     * @param filename name of the profile file, if under the profiles dir (can be empty if not known, e.g. from khelpcenter)
-     * @param startup_id sets the application startup notification (ASN) property on the window, if not empty.
-     * @return the DBUS object path of the window
-     */
-    QDBusObjectPath createBrowserWindowFromProfile(const QString &path, const QString &filename,
-            const QByteArray &startup_id);
-
-    /**
-     * Creates a window from a profile and a URL.
-     * Used by kfmclient to open http URLs with the webbrowsing profile
-     * and others with the filemanagement profile.
-     * @param path full path to the profile file
-     * @param filename name of the profile file, if under the profiles dir
-     * @param url the URL to open
-     * @param startup_id sets the application startup notification (ASN) property on the window, if not empty.
-     * @return the DBUS object path of the window
-     */
-    QDBusObjectPath createBrowserWindowFromProfileAndUrl(const QString &path, const QString &filename, const QString &url,
-            const QByteArray &startup_id);
-    /**
-     * Creates a window the fastest way : the caller has to provide
-     * profile, URL, and mimetype.
-     * @param path full path to the profile file
-     * @param filename name of the profile file, if under the profiles dir
-     * @param url the URL to open
-     * @param mimetype the mimetype that the URL we want to open has
-     * @param startup_id sets the application startup notification (ASN) property on the window, if not empty.
-     * @return the DBUS object path of the window
-     */
-    QDBusObjectPath createBrowserWindowFromProfileUrlAndMimeType(const QString &path, const QString &filename,
-            const QString &url, const QString &mimetype,
-            const QByteArray &startup_id);
-
-    /**
      * @return a list of references to all the windows
      */
     QList<QDBusObjectPath> getWindows();
@@ -113,11 +76,6 @@ public slots:
      * Find a window which can be used for a new tab. Called by kfmclient.
      */
     QDBusObjectPath windowForTab();
-
-    /**
-     *  Called internally as broadcast when the user adds/removes/renames a view profile
-      */
-    Q_NOREPLY void updateProfileList();
 
     /**
      * Called from konqy_preloader to terminate this Konqueror instance,
@@ -130,10 +88,6 @@ Q_SIGNALS:
      * Emitted by kcontrol when the global configuration changes
      */
     void reparseConfiguration();
-    /**
-     * Emitted by konqueror when we must update list of profiles
-     */
-    void updateAllProfileList();
     /**
      * Used internally by Konqueror to notify all instances when a URL should be added to the combobox.
      */

@@ -33,7 +33,6 @@
 
 #include <kfileitem.h>
 #include <kparts/mainwindow.h>
-#include <kglobalsettings.h>
 #include <kservice.h>
 
 #include "konqcombo.h"
@@ -92,7 +91,6 @@ class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqF
     Q_PROPERTY(QString currentTitle READ currentTitle)
     Q_PROPERTY(QString currentURL READ currentURL)
     Q_PROPERTY(bool isHTMLAllowed READ isHTMLAllowed)
-    Q_PROPERTY(QString currentProfile READ currentProfile)
 public:
     enum ComboAction { ComboClear, ComboAdd, ComboRemove };
     enum PageSecurity { NotCrypted, Encrypted, Mixed };
@@ -277,7 +275,6 @@ public:
      * so we should save mainwindow settings into that file from now on
      */
     void setProfileConfig(const KConfigGroup &cfg);
-    void currentProfileChanged();
 
     // operates on all combos of all mainwindows of this instance
     // up to now adds an entry or clears all entries
@@ -346,7 +343,6 @@ public:
     // Not used by konqueror itself; only exists for the Q_PROPERTY,
     // which I guess is used by scripts and plugins...
     QString currentURL() const;
-    QString currentProfile() const;
     void applyWindowSizeFromProfile(const KConfigGroup &profileGroup);
 
     void updateHistoryActions();
@@ -468,8 +464,6 @@ private Q_SLOTS:
     void slotActivateTab();
 
     void slotDumpDebugInfo();
-
-    void slotSaveViewProfile();
 
     void slotOpenEmbedded(KService::Ptr);
 
@@ -645,8 +639,6 @@ private: // members
     KActionMenu *m_paSessions;
     QAction *m_paHome;
 
-    QAction *m_paSaveViewProfile;
-
     QAction *m_paSplitViewHor;
     QAction *m_paSplitViewVer;
     QAction *m_paAddTab;
@@ -657,9 +649,6 @@ private: // members
     QAction *m_paRemoveOtherTabs;
     QAction *m_paActivateNextTab;
     QAction *m_paActivatePrevTab;
-
-    QAction *m_paSaveRemoveViewProfile;
-    KActionMenu *m_pamLoadViewProfile;
 
     KToggleAction *m_paLockView;
     KToggleAction *m_paLinkView;

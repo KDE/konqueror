@@ -465,7 +465,7 @@ bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const
     else if (url == QLatin1String("config:/disable_overview")) {
         if (KMessageBox::questionYesNo(widget(),
                                        i18n("Do you want to disable showing "
-                                            "the introduction in the webbrowsing profile?"),
+                                            "the introduction page on startup?"),
                                        i18nc("@title:window", "Faster Startup?"), KGuiItem(i18n("Disable")), KGuiItem(i18n("Keep")))
                 == KMessageBox::Yes) {
             QString profile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqueror/profiles/webbrowsing";

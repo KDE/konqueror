@@ -799,7 +799,7 @@ void KonqComboItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
     const QSize size = icon.actualSize(option.decorationSize, mode);
     QPixmap pixmap = icon.pixmap(size, mode);
 
-    QStyleOptionViewItemV3 opt(option);
+    QStyleOptionViewItem opt(option);
 
     painter->save();
 

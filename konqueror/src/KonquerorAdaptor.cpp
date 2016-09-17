@@ -68,7 +68,7 @@ static void setStartupId(const QByteArray &startup_id)
 QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)
 {
     setStartupId(startup_id);
-    KonqMainWindow *res = KonqMisc::createSimpleWindow(QUrl::fromUserInput(url), KParts::OpenUrlArguments());
+    KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url));
     if (!res) {
         return QDBusObjectPath("/");
     }
@@ -104,56 +104,6 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &ur
     }
     res->show();
     return QDBusObjectPath(res->dbusName());
-}
-
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile(const QString &path, const QString &filename, const QByteArray &startup_id)
-{
-    setStartupId(startup_id);
-    qDebug() << path << "," << filename;
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename);
-    if (!res) {
-        return QDBusObjectPath("/");
-    }
-    res->show();
-    return QDBusObjectPath(res->dbusName());
-}
-
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl(const QString &path, const QString &filename, const QString &url, const QByteArray &startup_id)
-{
-    setStartupId(startup_id);
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url));
-    if (!res) {
-        return QDBusObjectPath("/");
-    }
-    res->show();
-    return QDBusObjectPath(res->dbusName());
-}
-
-QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType(const QString &path, const QString &filename, const QString &url, const QString &mimetype, const QByteArray &startup_id)
-{
-    setStartupId(startup_id);
-    KParts::OpenUrlArguments args;
-    args.setMimeType(mimetype);
-    KonqOpenURLRequest req;
-    req.args = args;
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, QUrl::fromUserInput(url), req);
-    if (!res) {
-        return QDBusObjectPath("/");
-    }
-    res->show();
-    return QDBusObjectPath(res->dbusName());
-}
-
-void KonquerorAdaptor::updateProfileList()
-{
-    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
-    if (!mainWindows) {
-        return;
-    }
-
-    foreach (KonqMainWindow *window, *mainWindows) {
-        window->viewManager()->profileListDirty(false);
-    }
 }
 
 QList<QDBusObjectPath> KonquerorAdaptor::getWindows()

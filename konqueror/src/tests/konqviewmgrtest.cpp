@@ -232,10 +232,9 @@ void ViewMgrTest::testCreateFirstView()
 
 void ViewMgrTest::testEmptyWindow()
 {
-    KonqMainWindow *emptyWindow = KonqMisc::createNewWindow(QUrl());
+    QScopedPointer<KonqMainWindow> emptyWindow(KonqMisc::createNewWindow());
     QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
     QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
-    delete emptyWindow;
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -683,69 +682,6 @@ void ViewMgrTest::testDeletePartInTab()
     QVERIFY(mainWindow.isNull());
 }
 
-static void loadFileManagementProfile(KonqMainWindow &mainWindow)
-{
-    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/filemanagement");
-    QVERIFY(!profile.isEmpty());
-    const QString path = QDir::homePath();
-    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl::fromLocalFile(path));
-    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
-    QCOMPARE(mainWindow.locationBarURL(), path);
-    QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
-}
-
-void ViewMgrTest::testLoadProfile()
-{
-    MyKonqMainWindow mainWindow;
-    loadFileManagementProfile(mainWindow);
-
-    sendAllPendingResizeEvents(&mainWindow);
-
-    QVERIFY(mainWindow.width() > 680);
-    // QCOMPARE(frameType,QByteArray("Container")) leads to unreadable output on a mismatch :)
-    QCOMPARE(mainWindow.childFrame()->frameType(), KonqFrameBase::Container);
-    KonqFrameContainer *container = static_cast<KonqFrameContainer *>(mainWindow.childFrame());
-    KonqFrameBase *firstChild = container->firstChild();
-    QWidget *sidebarFrame = container->widget(0);
-    QCOMPARE(firstChild->asQWidget(), sidebarFrame);
-    QCOMPARE(firstChild->frameType(), KonqFrameBase::View);
-    //QVERIFY(qobject_cast<KonqFrame*>(sidebarFrame));
-    KonqFrameBase *secondChild = container->secondChild();
-    QCOMPARE(secondChild->frameType(), KonqFrameBase::Tabs);
-    QWidget *tabFrame = container->widget(1);
-    QCOMPARE(secondChild->asQWidget(), tabFrame);
-    QCOMPARE(sidebarFrame->sizePolicy().horizontalPolicy(), QSizePolicy::Preferred);
-    QCOMPARE(sidebarFrame->sizePolicy().horizontalStretch(), 0);
-    QCOMPARE(tabFrame->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
-    QCOMPARE(tabFrame->sizePolicy().horizontalStretch(), 0);
-    const QList<int> sizes = container->sizes();
-    QCOMPARE(sizes.count(), 2);
-    QVERIFY(sizes[0] < sizes[1]);
-
-    QTest::qWait(100);
-
-    // Part widget should have focus, not location bar
-    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), tabFrame->focusWidget()->metaObject()->className());
-}
-
-void ViewMgrTest::testLoadOldProfile()
-{
-    MyKonqMainWindow mainWindow;
-
-    const QString profileSrc = QFINDTESTDATA("filemanagement.old.profile");
-    QVERIFY(!profileSrc.isEmpty());
-    const QString profile = profileSrc + ".copy";
-    // KonqViewManager fixes up the old profile, so let's make a copy of it first.
-    KIO::FileCopyJob *job = KIO::file_copy(QUrl::fromLocalFile(profileSrc), QUrl::fromLocalFile(profile), -1, KIO::Overwrite);
-    QVERIFY(job->exec());
-    const QString path = QDir::homePath();
-    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", QUrl::fromLocalFile(path));
-    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
-    QCOMPARE(mainWindow.locationBarURL(), path);
-    QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
-    QFile::remove(profile);
-}
-
 void ViewMgrTest::testSaveProfile()
 {
     MyKonqMainWindow mainWindow;
@@ -797,9 +733,8 @@ void ViewMgrTest::testDuplicateWindow()
     KonqView *splitted = viewManager->splitView(viewTab2, Qt::Horizontal);
     Q_UNUSED(splitted);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FC(FF)]."));   // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
-    KonqMainWindow *secondWindow = viewManager->duplicateWindow();
-    QCOMPARE(DebugFrameVisitor::inspect(secondWindow), QString("MT[FC(FF)]."));   // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
-    delete secondWindow;
+    QScopedPointer<KonqMainWindow> secondWindow(viewManager->duplicateWindow());
+    QCOMPARE(DebugFrameVisitor::inspect(secondWindow.data()), QString("MT[FC(FF)]."));   // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
 }
 
 void ViewMgrTest::testCloseOtherTabs()
@@ -845,16 +780,6 @@ void ViewMgrTest::testCloseTabsFast() // #210551/#150162
     mainWindow.slotRemoveTabPopup();
     QTest::qWait(100); // process the delayed invocations
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, 1 tab left
-}
-
-void ViewMgrTest::testDuplicateWindowWithSidebar()
-{
-    MyKonqMainWindow mainWindow;
-    loadFileManagementProfile(mainWindow);
-    KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqMainWindow *secondWindow = viewManager->duplicateWindow();
-    QCOMPARE(DebugFrameVisitor::inspect(secondWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
-    delete secondWindow;
 }
 
 void ViewMgrTest::testBrowserArgumentsNewTab()
