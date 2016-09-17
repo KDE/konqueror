@@ -15,7 +15,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <konqmisc.h>
+#include <konqmainwindowfactory.h>
 #include <khtml_part.h>
 #include <khtmlview.h>
 #include <QTemporaryFile>
@@ -133,7 +133,7 @@ private Q_SLOTS:
         const QString origFile = origTempFile.fileName();
         origTempFile.close();
 
-        KonqMainWindow *mainWindow = KonqMisc::createNewWindow(QUrl::fromLocalFile(origFile));
+        KonqMainWindow *mainWindow = KonqMainWindowFactory::createNewWindow(QUrl::fromLocalFile(origFile));
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);

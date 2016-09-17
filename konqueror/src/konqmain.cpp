@@ -21,6 +21,7 @@
 #include "konqmisc.h"
 #include "konqfactory.h"
 #include "konqmainwindow.h"
+#include "konqmainwindowfactory.h"
 #include "konqsessionmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
@@ -144,7 +145,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         } else if (args->count() == 0) {
             // No args. If --silent, do nothing, otherwise create a default window.
             if (!args->isSet("silent")) {
-                KonqMainWindow *mainWin = KonqMisc::createNewWindow();
+                KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
                 mainWin->show();
             }
         } else {
@@ -192,7 +193,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             req.tempFile = KCmdLineArgs::isTempFileSet();
             req.serviceName = args->getOption("part");
 
-            KonqMainWindow *mainwin = KonqMisc::createNewWindow(firstUrl, req);
+            KonqMainWindow *mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
             mainwin->show();
             if (!urlList.isEmpty()) {
                 // Open the other urls as tabs in that window

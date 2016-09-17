@@ -41,22 +41,6 @@
  * KonqMisc
  *
  **********************************************/
-
-KonqMainWindow *KonqMisc::createNewWindow(const QUrl &url,
-                                          const KonqOpenURLRequest &req)
-{
-    KonqMainWindow *mainWindow = KonqMainWindowFactory::createEmptyWindow();
-    if (!url.isEmpty()) {
-        mainWindow->openUrl(Q_NULLPTR, url, QString(), req);
-        mainWindow->setInitialFrameName(req.browserArgs.frameName);
-    } else {
-        // TODO read config, to be able to disable this
-        mainWindow->openUrl(Q_NULLPTR, QUrl("about:konqueror"), QStringLiteral("KonqAboutPage"));
-        mainWindow->focusLocationBar();
-    }
-    return mainWindow;
-}
-
 KonqMainWindow *KonqMisc::newWindowFromHistory(KonqView *view, int steps)
 {
     int oldPos = view->historyIndex();

@@ -26,23 +26,13 @@
 
 #include <krun.h>
 #include <kparts/browserextension.h>
-#include "konqopenurlrequest.h"
 #include <ksharedconfig.h>
 
 class KonqMainWindow;
 class KonqView;
 
-namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWindowCreator, and KonqGlobal?
+namespace KonqMisc
 {
-/**
- * Create a new window for @p url using @p args and @p req.
- * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
- * and offers restoring windows after a crash.
- * Note: the caller must call show()
- */
-KONQ_TESTS_EXPORT KonqMainWindow *createNewWindow(const QUrl &url = QUrl(),
-        const KonqOpenURLRequest &req = KonqOpenURLRequest());
-
 /**
  * Creates a new window from the history of a view, copies the history
  * @param view the History is copied from this view

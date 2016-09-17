@@ -1484,7 +1484,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 
 void KonqMainWindow::slotNewWindow()
 {
-    KonqMainWindow *mainWin = KonqMisc::createNewWindow();
+    KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
     mainWin->show();
 }
 
@@ -1819,7 +1819,7 @@ void KonqMainWindow::slotHome()
             openFilteredUrl(homeURL, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(this, homeURL);
-            KonqMainWindow *mw = KonqMisc::createNewWindow(finalURL);
+            KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(finalURL);
             mw->show();
         }
     } else {
@@ -2528,7 +2528,7 @@ void KonqMainWindow::slotPopupNewWindow()
     req.args = m_popupUrlArgs;
     req.browserArgs = m_popupUrlBrowserArgs;
     for (; it != end; ++it) {
-        KonqMainWindow *mw = KonqMisc::createNewWindow((*it).targetUrl(), req);
+        KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow((*it).targetUrl(), req);
         mw->show();
     }
 }
@@ -2864,7 +2864,7 @@ void KonqMainWindow::slotUp()
         if (KonqSettings::mmbOpensTab()) {
             openFilteredUrl(url.url(), req);
         } else {
-            KonqMainWindow *mw = KonqMisc::createNewWindow(url);
+            KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(url);
             mw->show();
         }
     } else {
@@ -4027,7 +4027,7 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButto
             m_pKonqMainWindow->openFilteredUrl(url, req);
         } else {
             const QUrl finalURL = KonqMisc::konqFilteredURL(m_pKonqMainWindow, url);
-            KonqMainWindow *mw = KonqMisc::createNewWindow(finalURL);
+            KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(finalURL);
             mw->show();
         }
     } else {
@@ -4541,7 +4541,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
 void KonqExtendedBookmarkOwner::openInNewWindow(const KBookmark &bm)
 {
     const QUrl finalURL(KonqMisc::konqFilteredURL(m_pKonqMainWindow, bm.url().url()));
-    KonqMainWindow *mw = KonqMisc::createNewWindow(finalURL);
+    KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(finalURL);
     mw->show();
 }
 

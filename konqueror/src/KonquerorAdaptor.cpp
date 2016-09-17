@@ -22,6 +22,7 @@
 #include "konqmisc.h"
 #include "KonqMainWindowAdaptor.h"
 #include "konqmainwindow.h"
+#include "konqmainwindowfactory.h"
 #include "konqviewmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
@@ -68,7 +69,7 @@ static void setStartupId(const QByteArray &startup_id)
 QDBusObjectPath KonquerorAdaptor::openBrowserWindow(const QString &url, const QByteArray &startup_id)
 {
     setStartupId(startup_id);
-    KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url));
+    KonqMainWindow *res = KonqMainWindowFactory::createNewWindow(QUrl::fromUserInput(url));
     if (!res) {
         return QDBusObjectPath("/");
     }
@@ -85,7 +86,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow(const QString &url, const QStr
     KonqOpenURLRequest req;
     req.args = args;
     req.tempFile = tempFile;
-    KonqMainWindow *res = KonqMisc::createNewWindow(finalURL, req);
+    KonqMainWindow *res = KonqMainWindowFactory::createNewWindow(finalURL, req);
     if (!res) {
         return QDBusObjectPath("/");
     }
@@ -98,7 +99,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &ur
     setStartupId(startup_id);
     KonqOpenURLRequest req;
     req.filesToSelect = filesToSelect;
-    KonqMainWindow *res = KonqMisc::createNewWindow(QUrl::fromUserInput(url), req);
+    KonqMainWindow *res = KonqMainWindowFactory::createNewWindow(QUrl::fromUserInput(url), req);
     if (!res) {
         return QDBusObjectPath("/");
     }

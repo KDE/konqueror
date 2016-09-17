@@ -18,7 +18,7 @@
 #include <qtestkeyboard.h>
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
-#include <konqmisc.h>
+#include <konqmainwindowfactory.h>
 #include "../konqsettingsxt.h"
 #include <QToolBar>
 #include <qtestmouse.h>
@@ -232,7 +232,7 @@ void ViewMgrTest::testCreateFirstView()
 
 void ViewMgrTest::testEmptyWindow()
 {
-    QScopedPointer<KonqMainWindow> emptyWindow(KonqMisc::createNewWindow());
+    QScopedPointer<KonqMainWindow> emptyWindow(KonqMainWindowFactory::createNewWindow());
     QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
     QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
 }

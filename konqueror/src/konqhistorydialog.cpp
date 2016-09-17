@@ -22,7 +22,7 @@
 
 #include "konqhistory.h"
 #include "konqmainwindow.h"
-#include "konqmisc.h"
+#include "konqmainwindowfactory.h"
 
 #include <QtCore/QTimer>
 #include <QMenu>
@@ -35,7 +35,6 @@
 #include <QAction>
 #include <kactioncollection.h>
 #include <kguiitem.h>
-#include <kglobal.h>
 #include <QIcon>
 #include <KLocalizedString>
 #include <klineedit.h>
@@ -95,7 +94,7 @@ QSize KonqHistoryDialog::sizeHint() const
 
 void KonqHistoryDialog::slotOpenWindow(const QUrl &url)
 {
-    KonqMainWindow *mw = KonqMisc::createNewWindow(url);
+    KonqMainWindow *mw = KonqMainWindowFactory::createNewWindow(url);
     mw->show();
 }
 
