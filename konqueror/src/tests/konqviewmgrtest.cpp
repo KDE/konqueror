@@ -174,9 +174,17 @@ void ViewMgrTest::initTestCase()
     QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
 }
 
+class MyKonqMainWindow : public KonqMainWindow
+{
+public:
+    MyKonqMainWindow() : KonqMainWindow() {
+        setPluginLoadingMode(KParts::PartBase::DoNotLoadPlugins); // make the test faster
+    }
+};
+
 void ViewMgrTest::testCreateFirstView()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
     QVERIFY(view);
@@ -232,7 +240,7 @@ void ViewMgrTest::testEmptyWindow()
 
 void ViewMgrTest::testRemoveFirstView()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
@@ -243,7 +251,7 @@ void ViewMgrTest::testRemoveFirstView()
 
 void ViewMgrTest::testSplitView()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
 
@@ -327,7 +335,7 @@ void ViewMgrTest::testSplitView()
 
 void ViewMgrTest::testSplitMainContainer()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
@@ -379,7 +387,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
 
 void ViewMgrTest::testLinkedViews()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KonqView *view = mainWindow.currentView();
     // Split it
@@ -414,7 +422,7 @@ void ViewMgrTest::testLinkedViews()
 
 void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     QCOMPARE(tabs->currentIndex(), 0);
@@ -446,7 +454,7 @@ static void checkSecondWindowHasOneTab() // and delete it.
 
 void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KFileItem item(QUrl("data:text/html, hello"), "text/html", S_IFREG);
     mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
@@ -529,7 +537,7 @@ static void openTabWithTitle(KonqMainWindow &mainWindow, const QString &title, K
 
 void ViewMgrTest::testAddTabs()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
 
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
@@ -584,7 +592,7 @@ void ViewMgrTest::testAddTabs()
 
 void ViewMgrTest::testDuplicateTab()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     /*KonqView* view =*/ viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
     viewManager->duplicateTab(0); // should return a KonqFrameBase?
@@ -595,7 +603,7 @@ void ViewMgrTest::testDuplicateTab()
 
 void ViewMgrTest::testDuplicateSplittedTab()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
     KonqView *view2 = viewManager->splitView(view, Qt::Vertical);
@@ -651,7 +659,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 // where the part deletes itself.
 void ViewMgrTest::testDeletePartInTab()
 {
-    QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
+    QPointer<MyKonqMainWindow> mainWindow = new MyKonqMainWindow;
     QVERIFY(mainWindow->testAttribute(Qt::WA_DeleteOnClose));
     KonqViewManager *viewManager = mainWindow->viewManager();
     QPointer<KonqView> view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
@@ -688,7 +696,7 @@ static void loadFileManagementProfile(KonqMainWindow &mainWindow)
 
 void ViewMgrTest::testLoadProfile()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     loadFileManagementProfile(mainWindow);
 
     sendAllPendingResizeEvents(&mainWindow);
@@ -722,7 +730,7 @@ void ViewMgrTest::testLoadProfile()
 
 void ViewMgrTest::testLoadOldProfile()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
 
     const QString profileSrc = QFINDTESTDATA("filemanagement.old.profile");
     QVERIFY(!profileSrc.isEmpty());
@@ -740,7 +748,7 @@ void ViewMgrTest::testLoadOldProfile()
 
 void ViewMgrTest::testSaveProfile()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     const QUrl url("data:text/html, <p>Hello World</p>");
     mainWindow.openUrl(0, url, "text/html");
     KonqViewManager *viewManager = mainWindow.viewManager();
@@ -782,7 +790,7 @@ void ViewMgrTest::testSaveProfile()
 
 void ViewMgrTest::testDuplicateWindow()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *viewTab2 = viewManager->addTab("text/html");
@@ -796,7 +804,7 @@ void ViewMgrTest::testDuplicateWindow()
 
 void ViewMgrTest::testCloseOtherTabs()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager *viewManager = mainWindow.viewManager();
     KTabWidget *tabWidget = mainWindow.findChild<KTabWidget *>();
@@ -823,7 +831,7 @@ void ViewMgrTest::testCloseOtherTabs()
 
 void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager *viewManager = mainWindow.viewManager();
     viewManager->addTab("text/html");
@@ -841,7 +849,7 @@ void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 
 void ViewMgrTest::testDuplicateWindowWithSidebar()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     loadFileManagementProfile(mainWindow);
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqMainWindow *secondWindow = viewManager->duplicateWindow();
@@ -851,7 +859,7 @@ void ViewMgrTest::testDuplicateWindowWithSidebar()
 
 void ViewMgrTest::testBrowserArgumentsNewTab()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KParts::OpenUrlArguments urlArgs;
     KParts::BrowserArguments browserArgs;
@@ -870,7 +878,7 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
 
 void ViewMgrTest::testBreakOffTab()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
     /*KonqView* firstView =*/ viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
 
@@ -907,23 +915,11 @@ void ViewMgrTest::testBreakOffTab()
     QVERIFY(mainWindow2->viewManager()->tabContainer()->activeChild());
 
     delete mainWindow2;
-
-    // Verify that breaking off a tab preserves the view profile (bug 210686)
-
-    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/profiles/webbrowsing");
-    QVERIFY(!profile.isEmpty());
-    const QString path = QDir::homePath();
-    mainWindow.viewManager()->loadViewProfileFromFile(profile, "webbrowsing");
-    viewManager->duplicateTab(0);
-    mainWindow2 = viewManager->breakOffTab(0, mainWindow.size());
-    QCOMPARE(viewManager->currentProfile(), mainWindow2->viewManager()->currentProfile());
-
-    delete mainWindow2;
 }
 
 void ViewMgrTest::moveTabLeft()
 {
-    KonqMainWindow mainWindow;
+    MyKonqMainWindow mainWindow;
     mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view1 = viewManager->addTab("text/html");
