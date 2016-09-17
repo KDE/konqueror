@@ -162,10 +162,6 @@ QString KonqAboutPageSingleton::intro()
                     "home button <img width='16' height='16' src=\"%1\"></img>.", gohome_icon_path))
           .arg(i18n("For more detailed documentation on Konqueror click <a href=\"%1\">here</a>.",
                     QString("exec:/khelpcenter help:/konqueror")))
-          .arg(i18n("<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster,"
-                    " you can turn off this information screen by clicking <a href=\"%1\">here</a>. You can re-enable it"
-                    " by choosing the Help -> Konqueror Introduction menu option, and then pressing "
-                    "Settings -> Save View Profile As... -> \"Web Browsing\".", QString("config:/disable_overview")))
           .arg("<img width='16' height='16' src=\"%1\">").arg(continue_icon_path)
           .arg(i18n("Next: Tips & Tricks"))
           ;
@@ -459,24 +455,6 @@ bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const
     } else if (url == QLatin1String("about:konqueror/tips")) {
         emit browserExtension()->openUrlNotify();
         serve(s_staticData->tips(), "konqueror/tips");
-        return true;
-    }
-
-    else if (url == QLatin1String("config:/disable_overview")) {
-        if (KMessageBox::questionYesNo(widget(),
-                                       i18n("Do you want to disable showing "
-                                            "the introduction page on startup?"),
-                                       i18nc("@title:window", "Faster Startup?"), KGuiItem(i18n("Disable")), KGuiItem(i18n("Keep")))
-                == KMessageBox::Yes) {
-            QString profile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "konqueror/profiles/webbrowsing";
-            QSaveFile file(profile);
-            if (file.open(QIODevice::WriteOnly)) {
-                QTextStream stream(&file);
-                stream << "[Profile]\n"
-                       "Name=Web-Browser";
-                file.commit();
-            }
-        }
         return true;
     }
 
