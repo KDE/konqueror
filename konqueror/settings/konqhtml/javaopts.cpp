@@ -28,7 +28,6 @@
 #include <QTreeWidget>
 
 // KDE
-//#include <config-apps.h>
 #include <kurlrequester.h>
 #include <kdebug.h>
 #include <klineedit.h>
@@ -192,11 +191,7 @@ void KJavaOptions::load()
     bool bUseKio = m_pConfig->group(m_groupname).readEntry("UseKio", false);
     bool bServerShutdown  = m_pConfig->group(m_groupname).readEntry("ShutdownAppletServer", true);
     int  serverTimeout    = m_pConfig->group(m_groupname).readEntry("AppletServerTimeout", 60);
-#if defined(PATH_JAVA)
-    QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry("JavaPath", PATH_JAVA);
-#else
     QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry("JavaPath", "java");
-#endif
 
     if (sJavaPath == "/usr/lib/jdk") {
         sJavaPath = "java";

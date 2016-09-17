@@ -15,9 +15,6 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
-# for config-apps.h
-include_directories( ${CMAKE_BINARY_DIR} )
-
 # For crc32 in konqhistorymanager.cpp
 include_directories( ${ZLIB_INCLUDE_DIR} )
 if (KActivities_FOUND)
