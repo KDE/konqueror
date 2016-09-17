@@ -37,7 +37,7 @@ public:
     static bool createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype = QString());
 
     /** Make konqueror open a window for @p profile, @p url and @p mimetype */
-    static bool openProfile(const QString &profile, const QString &url, const QString &mimetype = QString());
+    static bool openProfile(const QString &profile, const QUrl &url, const QString &mimetype = QString());
 
 protected Q_SLOTS:
     void slotResult(KJob *);

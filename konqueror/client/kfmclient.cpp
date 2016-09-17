@@ -69,13 +69,13 @@ static const char version[] = "2.0";
 
 QByteArray ClientApp::startup_id_str;
 bool ClientApp::m_ok = true;
-bool s_interactive = true;
-
-K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_instance, ("kfmclient"))
+static bool s_interactive = true;
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description));
+
+    //qDebug() << "kfmclient starting" << QTime::currentTime();
 
     KCmdLineOptions options;
 
@@ -107,11 +107,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         puts(i18n("  kfmclient newTab 'url' ['mimetype']\n"
                   "            # Same as above but opens a new tab with 'url' in an existing Konqueror\n"
                   "            #   window on the current active desktop if possible.\n\n").toLocal8Bit());
-
-        puts(i18n("  kfmclient openProfile 'profile' ['url']\n"
-                  "            # Opens a window using the given profile.\n"
-                  "            #   'profile' is a file under ~/.kde/share/apps/konqueror/profiles.\n"
-                  "            #   'url' is an optional URL to open.\n\n").toLocal8Bit());
 
         puts(i18n("  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
                   "            # See kioclient exec for more information.\n").toLocal8Bit());
@@ -145,7 +140,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         }
     }
 
-    // ClientApp internally uses KConfig and hence needs a valid KComponentData
     return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
 }
 
@@ -169,8 +163,6 @@ static void needDBus()
         s_dbus_initialized = true;
     }
 }
-
-// when reusing a preloaded konqy, make sure your always use a DBus call which opens a profile !
 
 static QString getPreloadedKonqy()
 {
@@ -321,38 +313,10 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
     return true;
 }
 
-bool ClientApp::openProfile(const QString &profileName, const QString &url, const QString &mimetype)
+bool ClientApp::openProfile(const QString &profileName, const QUrl &url, const QString &mimetype)
 {
-    QString appId = getPreloadedKonqy();
-    if (appId.isEmpty()) {
-        QString error;
-        if (KToolInvocation::startServiceByDesktopPath(QLatin1String("konqueror.desktop"),
-                QLatin1String("--silent"), &error, &appId, NULL, startup_id_str) > 0) {
-            kError() << "Couldn't start konqueror from konqueror.desktop: " << error << endl;
-            return false;
-        }
-        // startServiceByDesktopPath waits for the app to register with DBus
-        // so when we arrive here, konq is up and running already, and appId contains the identification
-    }
-
-    QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + profileName);
-    if (profile.isEmpty()) {
-        fprintf(stderr, "%s: %s", programName, i18n("Profile '%1' not found\n", profileName).toLocal8Bit().data());
-        ::exit(0);
-    }
-    needDBus();
-    org::kde::Konqueror::Main konqy(appId, "/KonqMain", QDBusConnection::sessionBus());
-    if (url.isEmpty()) {
-        konqy.createBrowserWindowFromProfile(profile, profileName, startup_id_str);
-    } else if (mimetype.isEmpty()) {
-        konqy.createBrowserWindowFromProfileAndUrl(profile, profileName, url, startup_id_str);
-    } else {
-        konqy.createBrowserWindowFromProfileUrlAndMimeType(profile, profileName, url, mimetype, startup_id_str);
-    }
-    sleep(2); // Martin Schenk <martin@schenk.com> says this is necessary to let the server read from the socket
-    // ######## so those methods should probably not be ASYNC
-    sendASNChange();
-    return true;
+    Q_UNUSED(profileName); // the concept disappeared
+    return createNewWindow(url, false, false, mimetype);
 }
 
 void ClientApp::delayedQuit()
@@ -409,11 +373,11 @@ bool ClientApp::doIt()
         if (argc == 3) {
             return createNewWindow(filteredUrl(args), command == "newTab", tempFile, args->arg(2));
         }
-    } else if (command == "openProfile") {
+    } else if (command == "openProfile") { // deprecated command, kept for compat
         checkArgumentCount(argc, 2, 3);
-        QString url;
+        QUrl url;
         if (argc == 3) {
-            url = args->url(2).url();
+            url = args->url(2);
         }
         return openProfile(args->arg(1), url);
     } else if (command == "exec" && argc >= 2) {
