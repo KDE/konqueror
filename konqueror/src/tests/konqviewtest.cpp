@@ -15,7 +15,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <qtest_kde.h>
+#include <qtest_gui.h>
+#include <QSignalSpy>
 #include <konqmainwindow.h>
 #include <konqview.h>
 
@@ -24,6 +25,11 @@ class KonqViewTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
+    void initTestCase()
+    {
+        QStandardPaths::setTestModeEnabled(true);
+    }
+
     void textThenHtml()
     {
         // This is test for the bug "embed katepart and then type a website URL -> loaded into katepart"
@@ -36,7 +42,8 @@ private Q_SLOTS:
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(10000));
         QCOMPARE(view->serviceType(), QString("text/plain"));
         const QString firstService = view->service()->entryPath();
         qDebug() << firstService;
@@ -58,7 +65,8 @@ private Q_SLOTS:
         QVERIFY(view);
         QPointer<KParts::ReadOnlyPart> part = view->part();
         QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(10000));
         QCOMPARE(view->serviceType(), QString("inode/directory"));
         qDebug() << view->internalViewMode();
         view->setInternalViewMode("details");
@@ -71,6 +79,6 @@ private Q_SLOTS:
 
 };
 
-QTEST_KDEMAIN_WITH_COMPONENTNAME(KonqViewTest, GUI, "konqueror")
+QTEST_MAIN(KonqViewTest)
 
 #include "konqviewtest.moc"

@@ -18,7 +18,8 @@
 */
 
 #include <konqcloseditem.h>
-#include <qtest_kde.h>
+#include <qtest_gui.h>
+#include <QSignalSpy>
 #include <konqundomanager.h>
 #include <konqsessionmanager.h>
 
@@ -32,11 +33,12 @@ private Q_SLOTS:
     void testUndoLastClosedTab();
 };
 
-QTEST_KDEMAIN(UndoManagerTest, GUI)
+QTEST_MAIN(UndoManagerTest)
 
 void UndoManagerTest::initTestCase()
 {
     // Make sure we start clean
+    QStandardPaths::setTestModeEnabled(true);
     KonqSessionManager::self()->disableAutosave();
     KonqUndoManager manager(0);
     QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)));
@@ -53,7 +55,7 @@ void UndoManagerTest::testAddClosedTabItem()
     QVERIFY(!manager.undoAvailable());
     KonqClosedTabItem *item = new KonqClosedTabItem("url", "title", 0, manager.newCommandSerialNumber());
     QCOMPARE(item->url(), QString("url"));
-    QCOMPARE(item->serialNumber(), (quint64)1001);
+    QCOMPARE(item->serialNumber(), quint64(1001));
     QCOMPARE(item->pos(), 0);
     KConfigGroup configGroup = item->configGroup();
     QVERIFY(!configGroup.exists());

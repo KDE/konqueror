@@ -20,7 +20,6 @@
 #define KONQVIEWMGRTEST_H
 
 #include <QObject>
-#include <kcomponentdata.h>
 
 class ViewMgrTest : public QObject
 {
@@ -58,9 +57,6 @@ private Q_SLOTS:
     void moveTabLeft();
 
     static void sendAllPendingResizeEvents(QWidget *);
-
-private:
-    KComponentData m_konqComponentData;
 };
 
 #endif

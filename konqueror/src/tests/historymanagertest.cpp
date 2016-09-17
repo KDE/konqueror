@@ -17,12 +17,30 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include "historymanagertest.h"
 #include <QTest>
 #include <QSignalSpy>
 #include <konqhistorymanager.h>
 
+#include <QObject>
+#include <QStandardPaths>
+
+class HistoryManagerTest : public QObject
+{
+    Q_OBJECT
+
+private Q_SLOTS:
+    void initTestCase();
+    void testGetSetMaxCount();
+    void testGetSetMaxAge();
+    void testAddHistoryEntry();
+};
+
 QTEST_MAIN(HistoryManagerTest)
+
+void HistoryManagerTest::initTestCase()
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void HistoryManagerTest::testGetSetMaxCount()
 {
@@ -122,3 +140,5 @@ void HistoryManagerTest::testAddHistoryEntry()
     QCOMPARE(entry.title, title);
     QCOMPARE(int(entry.numberOfTimesVisited), 1);
 }
+
+#include "historymanagertest.moc"

@@ -24,13 +24,14 @@
 #include <kdebug.h>
 #include <ksycoca.h>
 #include <QScrollArea>
-#include <qtest_kde.h>
+#include <QProcess>
 #include <qtest_gui.h>
 
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
 #include <konqview.h>
 #include <konqsessionmanager.h>
+#include <QSignalSpy>
 
 #include <QObject>
 #include <QStandardPaths>
@@ -42,6 +43,8 @@ class KonqHtmlTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        QStandardPaths::setTestModeEnabled(true);
+
         KonqSessionManager::self()->disableAutosave();
         //qRegisterMetaType<KonqView *>("KonqView*");
 
@@ -73,7 +76,8 @@ private Q_SLOTS:
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         //KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
         //QVERIFY(part);
@@ -85,9 +89,10 @@ private Q_SLOTS:
         mainWindow.openUrl(0, QUrl::fromLocalFile(QDir::homePath()), "text/html");
         KonqView *view = mainWindow.currentView();
         kDebug() << "Waiting for first completed signal";
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // error calls openUrlRequest
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(20000));        // error calls openUrlRequest
         kDebug() << "Waiting for first second signal";
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // which then opens the right part
+        QVERIFY(spyCompleted.wait(20000));        // which then opens the right part
         QCOMPARE(view->serviceType(), QString("inode/directory"));
     }
 
@@ -102,7 +107,8 @@ private Q_SLOTS:
                                 "</script>"), QString("text/html"));
         QPointer<KonqView> view = mainWindow->currentView();
         QVERIFY(view);
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 10000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(20000));
         QWidget *widget = partWidget(view);
         qDebug() << "Clicking on" << widget;
         QTest::mousePress(widget, Qt::RightButton);
@@ -137,7 +143,8 @@ private Q_SLOTS:
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 10000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(20000));
         qApp->processEvents();
         QWidget *widget = partWidget(view);
         kDebug() << "Clicking on the khtmlview";
@@ -175,7 +182,8 @@ private Q_SLOTS:
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
+        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
+        QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         delete view->part();
     }
@@ -222,6 +230,6 @@ private:
     }
 };
 
-QTEST_KDEMAIN_WITH_COMPONENTNAME(KonqHtmlTest, GUI, "konqueror")
+QTEST_MAIN(KonqHtmlTest)
 
 #include "konqhtmltest.moc"
