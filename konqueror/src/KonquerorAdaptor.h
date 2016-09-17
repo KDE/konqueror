@@ -50,7 +50,7 @@ public slots:
     QDBusObjectPath openBrowserWindow(const QString &url, const QByteArray &startup_id);
 
     /**
-     * Opens a new window for the given @p url (using createNewWindow, i.e. with an appropriate profile)
+     * Opens a new window for the given @p url (using createNewWindow)
      * @param url the url to open
      * @param mimetype pass the mimetype of the url, if known, to speed up the process.
      * @param startup_id sets the application startup notification (ASN) property on the window, if not empty.

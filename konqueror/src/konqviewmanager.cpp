@@ -335,7 +335,7 @@ KonqMainWindow *KonqViewManager::breakOffTab(int tab, const QSize &windowSize)
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
     tabFrame->saveConfig(profileGroup, prefix, flags, 0L, 0, 1);
 
-    KonqMainWindow *mainWindow = new KonqMainWindow(QUrl(), m_pMainWindow->xmlFile());
+    KonqMainWindow *mainWindow = new KonqMainWindow;
 
     KonqFrameTabs *newTabContainer = mainWindow->viewManager()->tabContainer();
     mainWindow->viewManager()->loadRootItem(profileGroup, newTabContainer, QUrl(), true, QUrl());
@@ -362,11 +362,8 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem &closedWindowI
 
 KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup &configGroup)
 {
-    const QString xmluiFile =
-        configGroup.readEntry("XMLUIFile", "konqueror.rc");
-
     // TODO factorize to avoid code duplication with loadViewProfileFromGroup
-    KonqMainWindow *mainWindow = new KonqMainWindow(QUrl(), xmluiFile);
+    KonqMainWindow *mainWindow = new KonqMainWindow;
 
     if (configGroup.readEntry("FullScreen", false)) {
         // Full screen on
@@ -887,7 +884,7 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
 }
 
 
-void KonqViewManager::saveConfigToGroup(KConfigGroup &profileGroup, KonqFrameBase::Options options)
+void KonqViewManager::saveViewConfigToGroup(KConfigGroup &profileGroup, KonqFrameBase::Options options)
 {
     if (m_pMainWindow->childFrame()) {
         QString prefix = KonqFrameBase::frameTypeToString(m_pMainWindow->childFrame()->frameType())
@@ -898,46 +895,11 @@ void KonqViewManager::saveConfigToGroup(KConfigGroup &profileGroup, KonqFrameBas
     }
 
     profileGroup.writeEntry("FullScreen", m_pMainWindow->fullScreenMode());
-    profileGroup.writeEntry("XMLUIFile", m_pMainWindow->xmlFile());
 
     m_pMainWindow->saveMainWindowSettings(profileGroup);
 }
 
-///////////////// Profile stuff ////////////////
-
-void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr &_cfg,
-        const QString &path,
-        const QString &filename,
-        const QUrl &forcedUrl,
-        const KonqOpenURLRequest &req,
-        bool resetWindow, bool openUrl)
-{
-    Q_UNUSED(path); // _cfg and path could be passed to setCurrentProfile for optimization
-    // resetWindow was used to resize the window to a default size,
-    // not needed anymore, since the size is in the profile (## what about about:blank?)
-    Q_UNUSED(resetWindow);
-
-    KConfigGroup profileGroup(_cfg, "Profile");
-
-    // Repair profiles without tabs (#203166)
-    const QString rootItem = profileGroup.readEntry("RootItem", "empty");
-    const QString childrenKey = rootItem + "_Children";
-    if (profileGroup.readEntry(childrenKey, QStringList()) == (QStringList() << "View1" << "View2")) {
-        qDebug() << "Activating special tabwidget-insertion-hack";
-        profileGroup.writeEntry(childrenKey, QStringList() << "View1" << "Tabs1");
-        profileGroup.writeEntry("Tabs1_Children", "View2");
-    }
-
-    loadViewProfileFromGroup(profileGroup, filename, forcedUrl, req, openUrl);
-
-    m_pMainWindow->setProfileConfig(profileGroup);
-
-#ifdef DEBUG_VIEWMGR
-    printFullHierarchy();
-#endif
-}
-
-void KonqViewManager::loadViewProfileFromGroup(const KConfigGroup &profileGroup, const QString &filename,
+void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, const QString &filename,
         const QUrl &forcedUrl, const KonqOpenURLRequest &req,
         bool openUrl)
 {
@@ -1132,9 +1094,8 @@ void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBa
     m_pMainWindow->enableAllActions(true);
 
     // This flag disables calls to viewCountChanged while creating the views,
-    // so we do it once at the end :
+    // so we do it once at the end:
     viewCountChanged();
-
 }
 
 void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,
@@ -1485,24 +1446,15 @@ KonqMainWindow *KonqViewManager::duplicateWindow()
     QTemporaryFile tempFile;
     tempFile.open();
     KConfig config(tempFile.fileName());
-    KConfigGroup profileGroup(&config, "Profile");
+    KConfigGroup group(&config, "Profile");
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    saveConfigToGroup(profileGroup, flags);
+    saveViewConfigToGroup(group, flags);
 
-    KonqMainWindow *mainWindow = openSavedWindow(profileGroup);
+    KonqMainWindow *mainWindow = openSavedWindow(group);
 #ifndef NDEBUG
     mainWindow->viewManager()->printFullHierarchy();
 #endif
     return mainWindow;
 }
 
-QString KonqViewManager::normalizedXMLFileName(const QString &xmluiFile)
-{
-    // Compatibility with pre-kde-4.2 times where there were 2 forks of konqueror.rc
-    // Those have been merged back again, so convert to "konqueror.rc".
-    if (xmluiFile == "konq-filemanagement.rc" || xmluiFile == "konq-webbrowsing.rc") {
-        return "konqueror.rc";
-    }
-    return xmluiFile;
-}
 

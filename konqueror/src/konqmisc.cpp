@@ -107,17 +107,6 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
     return isKnownAbout ? QUrl(_url) : QUrl("about:");
 }
 
-QString KonqMisc::defaultProfileName()
-{
-    // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
-    return "webbrowsing";
-}
-
-QString KonqMisc::defaultProfilePath()
-{
-    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/") + defaultProfileName());
-}
-
 QString KonqMisc::encodeFilename(QString filename)
 {
     return filename.replace(':', '_');

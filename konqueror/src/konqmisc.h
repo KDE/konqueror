@@ -50,16 +50,6 @@ KonqMainWindow *newWindowFromHistory(KonqView *view, int steps);
 QUrl konqFilteredURL(KonqMainWindow *parent, const QString &url, const QUrl &currentDirectory = QUrl());
 
 /**
- * Name of the default profile
- */
-QString defaultProfileName();
-
-/**
- * Path to the default profile
- */
-QString defaultProfilePath();
-
-/**
 * These are some helper functions to encode/decode session filenames. The
 * problem here is that windows doesn't like files with ':' inside.
 */

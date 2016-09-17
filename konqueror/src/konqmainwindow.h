@@ -95,11 +95,7 @@ public:
     enum ComboAction { ComboClear, ComboAdd, ComboRemove };
     enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
-    // TODO remove xmluiFile argument, this solution can't work for session management,
-    // see readProperties.
-
-    explicit KonqMainWindow(const QUrl &initialURL = QUrl(),
-                            const QString &xmluiFile = "konqueror.rc");
+    explicit KonqMainWindow(const QUrl &initialURL = QUrl());
     ~KonqMainWindow();
 
     /**
@@ -269,12 +265,6 @@ public:
 
     void linkableViewCountChanged();
     void viewCountChanged();
-
-    /**
-     * For the view manager: we are loading the profile from this config file,
-     * so we should save mainwindow settings into that file from now on
-     */
-    void setProfileConfig(const KConfigGroup &cfg);
 
     // operates on all combos of all mainwindows of this instance
     // up to now adds an entry or clears all entries

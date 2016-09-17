@@ -203,7 +203,7 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
     m_pKonqMainWindow = w;
 }
 
-KonqMainWindow::KonqMainWindow(const QUrl &initialURL, const QString &xmluiFile)
+KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     : KParts::MainWindow()
     , m_paClosedItems(0)
     , m_fullyConstructed(false)
@@ -291,12 +291,11 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL, const QString &xmluiFile)
 
     connect(KGlobalSettings::self(), &KGlobalSettings::kdisplayFontChanged, this, &KonqMainWindow::slotReconfigure);
 
-    //load the xmlui file specified in the profile or the default konqueror.rc
-    setXMLFile(KonqViewManager::normalizedXMLFileName(xmluiFile));
+    setXMLFile("konqueror.rc");
 
     setStandardToolBarMenuEnabled(true);
 
-    createGUI(0);
+    createGUI(Q_NULLPTR);
 
     m_combo->setParent(toolBar("locationToolBar"));
     m_combo->setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
@@ -2035,7 +2034,7 @@ void KonqMainWindow::slotRunFinished()
                 childView->setLocationBarURL(childView->currentHistoryEntry()->locationBarURL);
             }
         }
-    } else { // No view, e.g. empty webbrowsing profile
+    } else { // No view, e.g. starting up empty
         stopAnimation();
     }
 }
@@ -4312,12 +4311,6 @@ void KonqMainWindow::setActionText(const char *name, const QString &text)
     }
 }
 
-void KonqMainWindow::setProfileConfig(const KConfigGroup &cfg)
-{
-    // Read toolbar settings and window size from profile, and autosave into that profile from now on
-    setAutoSaveSettings(cfg);
-}
-
 void KonqMainWindow::enableAllActions(bool enable)
 {
     //qDebug() << enable;
@@ -4892,20 +4885,13 @@ void KonqMainWindow::saveProperties(KConfigGroup &config)
     // -> KSycoca running kbuildsycoca -> nested event loop.
     if (m_fullyConstructed) {
         KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-        m_pViewManager->saveConfigToGroup(config, flags);
+        m_pViewManager->saveViewConfigToGroup(config, flags);
     }
 }
 
 void KonqMainWindow::readProperties(const KConfigGroup &configGroup)
 {
-    // ######### THIS CANNOT WORK. It's too late to change the xmlfile, the GUI has been built already!
-    // We need to delay doing setXMLFile+createGUI until we know which profile we are going to use, then...
-    // TODO: Big refactoring needed for this feature. On the other hand, all default profiles shipped with
-    // konqueror use konqueror.rc again, so the need for this is almost zero now.
-    const QString xmluiFile = configGroup.readEntry("XMLUIFile", "konqueror.rc");
-    setXMLFile(KonqViewManager::normalizedXMLFileName(xmluiFile));
-
-    m_pViewManager->loadViewProfileFromGroup(configGroup, QString() /*no profile name*/);
+    m_pViewManager->loadViewConfigFromGroup(configGroup, QString() /*no profile name*/);
     // read window settings
     applyMainWindowSettings(configGroup);
 }

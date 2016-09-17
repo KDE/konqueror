@@ -193,14 +193,8 @@ public:
      * @param cfg the config file
      * @param options whether to save nothing, the URLs or the complete history of each view in the profile
      */
-    void saveConfigToGroup(KConfigGroup &cfg, KonqFrameBase::Options options);
+    void saveViewConfigToGroup(KConfigGroup &cfg, KonqFrameBase::Options options);
 
-    void loadViewProfileFromConfig(const KSharedConfigPtr &config,
-                                   const QString &path,
-                                   const QString &filename,
-                                   const QUrl &forcedUrl = QUrl(),
-                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-                                   bool resetWindow = false, bool openUrl = true);
     /**
      * Loads a view layout from a config file. Removes all views before loading.
      * @param cfg the config file
@@ -211,7 +205,7 @@ public:
      * @param resetWindow if the profile doesn't have attributes like size or toolbar
      * settings, they will be reset to the defaults
      */
-    void loadViewProfileFromGroup(const KConfigGroup &cfg, const QString &filename,
+    void loadViewConfigFromGroup(const KConfigGroup &cfg, const QString &filename,
                                   const QUrl &forcedUrl = QUrl(),
                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                   bool openUrl = true);
@@ -264,13 +258,6 @@ public:
     void setLoading(KonqView *view, bool loading);
 
     void showHTML(bool b);
-
-    /**
-     * Normalize the name of the .rc file to use; this is just
-     * for handling compatibility with old profiles mentionning
-     * konq-webbrowsing.rc or konq-filemanagement.rc
-     */
-    static QString normalizedXMLFileName(const QString &xmluiFile);
 
     /**
      * Creates a copy of the current window

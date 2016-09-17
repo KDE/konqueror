@@ -446,9 +446,9 @@ void KonqFrameTabs::slotInitiateDrag(QWidget *w)
 void KonqFrameTabs::updateTabBarVisibility()
 {
     if (m_alwaysTabBar) {
-        setTabBarHidden(false);
+        tabBar()->show();
     } else {
-        setTabBarHidden(count() <= 1);
+        tabBar()->setVisible(count() > 1);
     }
 }
 
