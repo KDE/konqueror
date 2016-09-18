@@ -246,8 +246,10 @@ Bookmark Toolbar, or even to add an Extra Toolbar.</para></listitem>
 <mousebutton>left</mousebutton> clicking on the handle at the left hand end
 of a bar and move it around by holding the &LMB; down while you
 drag it. </para></listitem>
+<!--
 <listitem><para>This screenshot does not show the optional <link linkend="sidebar">
 Sidebar</link>.</para></listitem>
+-->
 </itemizedlist>
 
 <para>For more details of how to change &konqueror;'s appearance, see the <link
@@ -264,7 +266,7 @@ this entire document if you take advantage of <guilabel>Tooltips</guilabel> and
  the 
 <guimenuitem>What's This?</guimenuitem> feature.</para>
 
-<para>When you hover the mouse pointer over a Toolbar or Sidebar tab 
+<para>When you hover the mouse pointer over a Toolbar tab 
 button it should bring up a terse description of what that button does.</para>
 
 <para><guimenuitem>What's This?</guimenuitem> is invoked by the Menubar
@@ -410,15 +412,9 @@ properties.</para></listitem> </varlistentry>
 <varlistentry>
 <term>On the Status Bar</term>
 <listitem><para><mousebutton>Right</mousebutton> click on the Status Bar at the
-bottom of a window or view to add or remove a view within &konqueror;'s
+bottom of a window or view to add or remove a view and lock or link views within &konqueror;'s
 window.</para></listitem> 
 </varlistentry>
-<!--FIXME Split / Lock to Current Location / Close 
-#: src/konqmainwindow.cpp:4000
-msgid "A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder"
-#: src/konqmainwindow.cpp:4001
-msgid "Sets the view as 'linked'. A linked view follows folder changes made in other linked views."
--->
 </variablelist>
 
 </sect1>
@@ -600,7 +596,7 @@ the extra data would take too long set a file size limit at the bottom of the
 <sect2 id="dolphin-view-information">
 <title>Information in the View</title>
 <para>
-In all view modes &kappname; shows at least an icon and a name for each item. 
+In all view modes &konqueror; shows at least an icon and a name for each item. 
 Using <guisubmenu>Additional Information</guisubmenu> in the <guimenu>View</guimenu> 
 menu or the context menu of the header in <guilabel>Details</guilabel> mode, you can select
 more information for each item to be shown:
@@ -637,7 +633,7 @@ more information for each item to be shown:
 
 <para>
 The following settings control how the contents of a folder are displayed in the
-&kappname; view, and are stored on a per-folder basis by default:
+&konqueror; view, and are stored on a per-folder basis by default:
 </para>
 <itemizedlist>
 
@@ -657,7 +653,7 @@ Sorting of folders and files &ndash; are folders shown first or not?
 
 <listitem><para>
 Previews &ndash; are they shown instead of icons (based on the settings made in
-<guilabel>Previews</guilabel> tab of &kappname;'s General settings) or not?
+<guilabel>Previews</guilabel> tab of &konqueror;'s General settings) or not?
 </para></listitem>
 
 <listitem><para>
@@ -749,10 +745,10 @@ The small box will then change to show a <keycap>v</keycap> sign.
 <mousebutton>Left</mousebutton> click on that to collapse the sub tree. Once 
 you have found the folder you are looking for, <mousebutton>left
 </mousebutton> click on the folder name or icon to open it.</para>
-
+<!--
 <para>The <link linkend="sidebar">Sidebar</link> can also help you 
 find your way around the file system.</para>
-
+-->
 <para>You can go directly to any folder by switching with 
  <menuchoice><guimenu>File</guimenu><guimenuitem>Open Location</guimenuitem>
 </menuchoice> or <keycombo action="simul">&Alt;<keycap>O</keycap>
@@ -1451,9 +1447,11 @@ you have entered an incorrect &URL;.</para></note>
 Toolbar, and &konqueror; will download and display that page. 
 If you have visited the page before, &konqueror;'s 
 <link linkend="path-complete">Automatic Text Completion</link> feature can help 
-you type the &URL; a second time, or you could look through the 
+you type the &URL; a second time.
+<!--, or you could look through the 
 <guilabel>History</guilabel> page in the 
-<link linkend="sidebar">Sidebar</link>. If you want to use one of 
+<link linkend="sidebar">Sidebar</link>. -->
+If you want to use one of 
 the web's search engines, &konqueror;'s <link linkend="enhanced-browsing">
 Web Shortcuts</link> feature can make this easier.</para>
 
@@ -1558,8 +1556,8 @@ menu with the following options:</para>
 <term><guimenuitem>New Tab</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo>)</term>
 <listitem><para>This opens a new, blank, tabbed page view. 
 You can then download a web page into it by typing the &URL; into the 
-Location Bar or by making a selection from the Bookmark Toolbar or the 
-<link linkend="sidebar">Sidebar</link> history page.</para>
+Location Bar or by making a selection from the Bookmark Toolbar<!-- or the 
+<link linkend="sidebar">Sidebar</link> history page-->.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -1802,8 +1800,7 @@ just add a key line
 OverridenPorts=CommaSeparatedListOfAllowedPorts
 </userinput></screen>
 to <filename>kio_httprc</filename> in the folder
-<filename class="directory">$(qtpaths --paths GenericConfigLocation)</filename>
-.</para>
+<filename class="directory">$(qtpaths --paths GenericConfigLocation)</filename>.</para>
 <para>For example
 <screen><userinput>OverridenPorts=23,15
 </userinput></screen> 
@@ -1901,10 +1898,11 @@ substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
 </variablelist>
 <para>You should try out these different modes and pick the one that suits you
  best.</para>
+ <!--
 <para>The history of recently visited &URL;s that &konqueror; uses for the 
 Text Completion function can be viewed and edited in the <guilabel>History
 </guilabel> page of the <link linkend="sidebar">Sidebar</link>.</para>
-
+-->
 </chapter>
 
 <chapter id="bookmarks">
@@ -1941,10 +1939,10 @@ other bookmarks, you can create these with <menuchoice><guimenu>Bookmarks
 To add a bookmark into a subfolder rather than into the main Bookmark list, 
 select the folder from within the <guimenu>Bookmarks</guimenu> list and use 
 the <guimenuitem>Add Bookmark</guimenuitem> item in that folder.</para>
-
+<!--
 <para>You can also access your bookmarks from the <link linkend="sidebar">
 <guilabel>Sidebar</guilabel></link> or from the <guilabel>Bookmark Toolbar</guilabel>.</para>
-
+-->
 <para>If you enter <userinput>bookmarks:</userinput> in the location bar the
 bookmarks home page with an overview of all bookmarks and folders is shown.</para> 
 
@@ -2015,13 +2013,15 @@ the <guilabel>Bookmark Editor</guilabel>.
 
 
 </chapter>
-
- <chapter id="sidebar"> <!-- 4.11-->
+<!--FIXME sidebar is empty https://bugs.kde.org/show_bug.cgi?id=366762
+update chapter + take new screenshot dirtree.png when fixed
+comment for now
+<chapter id="sidebar">
 
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<! - - TRANS:ROLES_OF_TRANSLATORS - ->
 </authorgroup>
 
 </chapterinfo>
@@ -2128,7 +2128,7 @@ find your own <quote>Home</quote> folder again.</para>
 <guilabel>Fonts</guilabel> and <guilabel>Video DVD Browser</guilabel>.</para>
 </listitem>
 </varlistentry>
-<!-- Different in dolphin + filedialog-->
+<!- - Different in dolphin + filedialog- ->
 <varlistentry>
 <term><guilabel>Places</guilabel></term>
 <listitem><para>
@@ -2222,8 +2222,8 @@ as described above.</para>
 </variablelist>
 
 </chapter>
-
-<chapter id="save-settings"> <!-- 4.11-->
+-->
+<chapter id="save-settings">
 
 <chapterinfo>
 <authorgroup>
@@ -2285,23 +2285,23 @@ when you load that view profile. This functions in a similar way to the
 <quote>Home Page</quote> in many web browsers. If you want &konqueror; to start
 up with an empty window enter <userinput>about:blank</userinput> into the
 location bar before saving the profile.</para>
-
-<note><para>You can create a desktop icon to start &konqueror; with your new
-profile. First create a desktop icon by clicking with the &RMB; onto the &konqueror; 
-entry in the application launcher menu. Then select <guimenuitem>Add to Desktop</guimenuitem>
-in the context menu. Open the settings dialog of the new icon on your desktop by 
-clicking on the <guiicon>Tools</guiicon> icon. Change <guilabel>
-Command</guilabel> in the <guilabel>Application</guilabel> tab page to
+<note><para>You can create a desktop icon in a <guilabel>Folder View</guilabel>
+widget to start &konqueror; with your new profile.
+First drag and drop the &konqueror; entry in the application launcher menu into
+a <guilabel>Folder View</guilabel> widget on the desktop or select <guimenuitem>Add
+to Desktop</guimenuitem> from the contextmenu if your Desktop has a
+<guilabel>Folder View</guilabel> layout. Open the settings dialog
+of the new icon by selecting <guilabel>Properties</guilabel> from its context menu.
+Change <guilabel>Command</guilabel> in the <guilabel>Application</guilabel> tab page to
 <userinput><command>kfmclient</command> <option>openProfile
 <replaceable>MyNewProfile</replaceable></option></userinput>,
 <replaceable>MyNewProfile</replaceable> being what you called the new
 profile. Then change the name to something like <filename>MyNewProfile</filename>
 .</para></note>
-
 </sect1>
 </chapter>
 
-<chapter id="plugins"> <!-- 4.11-->
+<chapter id="plugins">
 
 <chapterinfo>
 <authorgroup>
@@ -2314,56 +2314,12 @@ profile. Then change the name to something like <filename>MyNewProfile</filename
 
 <title>Plugins</title>
 
-<sect1 id="netscape-plugin">
-<title>&Netscape; Plugins</title>
-
-<para>Currently, &konqueror; supports &Netscape; plugins.</para>
-
-<para>Selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Configure Konqueror...</guimenuitem>
-</menuchoice> opens the configuration dialog. Select the 
-<guilabel>Plugins</guilabel> page, where you find two tabs:
-<guilabel>Global Settings</guilabel> to enable plugins and configure 
-how they are used in &konqueror; and <guilabel>Plugins</guilabel>
-which shows you the &Netscape; plugins that &kde; has found
-and allows you to scan for plugins.</para>
-
-<para>For more information see the <ulink url="help:/kcontrol/khtml-plugins/index.html">
-Browser Plugins</ulink> help page.</para>
-
-</sect1>
-
 <!-- 
-missing from extragear base:
-minitools (Bookmarklets - Enables the use of bookmarklets)
-This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
-Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
-they are simple "one-click" tools that can add substantial functionality to the browser.
-http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
-
-autorefresh
-This works on any readonly part (though currently it only plugs into
-khtmlpart). It lets you tell konqueror to refresh a page automatically
-after a specific period. This is useful for things like news pages,
-and should be very nice for people using kiosk mode
-
-rellinks
-Name=Document Relations
-Comment=Displays the document relations of a document
-
 adblock from baseapps+extragear
 Show all blockable html elements
 
 akregator
 This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
-
-not ported to kde4 yet
-sidebar
-microformat
-mediarealfolder
-<listitem>
-<para><ulink url="help:/konq-plugins/mediaplayer/index.html">The Embedded Media
-Player</ulink></para>
 
 konq plugins in other modules
 kdeutils 
@@ -2400,17 +2356,18 @@ playground/utils
 Extensions...</guimenuitem></menuchoice> to open a dialog with all installed plugins and select
 the ones you need. All plugins are accessible in the <guimenu>Tools</guimenu> menu.</para>
 
-<para>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebKit view) 
+<para>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebKit view)
 are listed in the dialog.</para>
 
 <variablelist>
 <title>Browser Mode</title>
 <!-- 
-FIXME 4.11
-KHTML:  Adblock, Auto Refresh, Bookmarklets, Document Relations, DOM Tree Viewer, KHTML Settings, Search Bar, Text-to-Speech, Translate, UserAgent Changer, Web Archiver, Website Validators
-WebKit: Auto Refresh, KHTML Settings, Search Bar, Text-to-Speech, Translate, UserAgent Changer, Website Validators
+FIXME 16.12
+KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), DOM Tree Viewer, Document Relations, Web Archiver, Website Validators, Search Bar
+kwebkitpart for kf5 in extragear/base in branch frameworks
+WebKit only HTML Settings and Translate (disabled)
 -->
-<varlistentry>
+<varlistentry> <!-- disabled here, why?-->
 <term>Web Page Translation</term>
 <listitem><para>This uses the machine translation service provided by <ulink
 url="http://translate.google.com/">Google Translate</ulink> to translate the current
@@ -2452,7 +2409,7 @@ page.</para>
 </varlistentry>
 
 <varlistentry>
-<term>Web Page Validator</term>
+<term>Web Page Validator (KHTML view only)</term>
 <listitem>
 <para>This plugin uses the W3C HTML validator to validate the current page, very useful when
 creating web pages.</para>
@@ -2487,13 +2444,13 @@ to validate your &HTML; and &CSS;.</para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
-<!-- icon W3 right in statusbar
+<!--FIXME icon W3 right in statusbar
 &LBM; click context menu with items above but no Configure Validator
  -->
 </varlistentry>
 
 <varlistentry>
-<term>HTML Settings</term>
+<term>HTML Settings (KHTML/WebKit view)</term>
 <listitem><para>Select <menuchoice><guimenu>Tools</guimenu><guisubmenu>HTML
 Settings</guisubmenu></menuchoice> to enable or disable a number of HTML
 settings without going through the <guimenu>Settings</guimenu> dialog.
@@ -2550,7 +2507,7 @@ settings without going through the <guimenu>Settings</guimenu> dialog.
 
 </listitem>
 </varlistentry>
-
+<!--FIXME not in kf5
 <varlistentry>
 <term>User Agent Changer</term>
 <listitem><para>Select <menuchoice><guimenu>Tools</guimenu><guisubmenu>Change
@@ -2590,7 +2547,7 @@ The following menu items show a list of popular browsers such as <guimenuitem>Fi
 
 </listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term>Archive Web Page (KHTML view only)</term>
 <listitem><para>Invoked with <menuchoice><guimenu>Tools</guimenu><guisubmenu>
@@ -2598,6 +2555,32 @@ Archive Web Page</guisubmenu></menuchoice>, this tool creates an archive
 (<literal role="extension">.war</literal> ) file containing the web page being 
 viewed including the images. <mousebutton>Left</mousebutton> click on the 
 archive file name to view the saved page.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Auto Refresh (KHTML view only)</term>
+<listitem><para>This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell &konqueror; to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using Kiosk mode
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Minitools (KHTML view only)</term>
+<listitem><para>
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple <quote>one-click</quote> tools that can add substantial functionality to the browser.
+<!--http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/-->
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Document Relations (KHTML view only)</term>
+<listitem><para>
+Displays the document relations of a document
 </para></listitem>
 </varlistentry>
 
@@ -2809,8 +2792,8 @@ used for the thumbnail images.</para></listitem>
 <term>Search Bar</term>
 <listitem><para>Provides a text box for easy access to search engines such as Google.
 Clicking on the icon on the left side of the search box opens a menu to select
-and enable different search engines and configure their <ulink 
-url="help:/kcontrol/ebrowsing/index.html">Web Shortcuts</ulink>.
+and enable different search engines and configure their <ulink
+url="help:/kcontrol/webshortcuts/index.html">Web Shortcuts</ulink>.
 </para>
 </listitem>
 </varlistentry>
@@ -2834,16 +2817,16 @@ Additional Download Manager from KGet
 
 </chapter>
 
-<chapter id="view-extensions"> <!-- 4.11-->
+<chapter id="view-extensions">
 
 <title>View Mode Extensions</title>
 
 <!--filemanager mode:
-default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
-additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
 browser mode:
-default KHTML, WebKit, Embedded Advanced Text Editor
-additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+default KHTML, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
   -->
 <para>&konqueror; provides additional views in <menuchoice><guimenu>View</guimenu>
 <guisubmenu>View Mode</guisubmenu></menuchoice> in file manager and browser mode, if 
@@ -2998,7 +2981,7 @@ usage tutorial for the TreeMap widget developed within
 </sect1>
 </chapter>
 
-<chapter id="config"> <!-- 4.11-->
+<chapter id="config">
 
 <chapterinfo>
 <authorgroup>
@@ -3014,94 +2997,14 @@ usage tutorial for the TreeMap widget developed within
 <para>In common with the rest of &kde;, &konqueror; is highly configurable, so
 you can really get the look and feel that best fits your needs and
 wishes.</para>
-<!--FIXME replace with link to fundamentals-->
-<sect1 id="configure-bars">
-<title>Toolbars</title>
 
 <para>When &kde; is newly installed, &konqueror;'s window contains a Menubar, 
 Main and Location Toolbars and possibly a Bookmark Toolbar.</para>
 
-<para>Maybe you don't need all these toolbars. To hide one of them, go into
-the <menuchoice><guimenu>Settings</guimenu><guisubmenu>Toolbars Shown</guisubmenu>
-</menuchoice> menu and uncheck its box. To show a hidden toolbar, just check 
-the box.</para> 
-
-<para>The Menubar itself can be toggled on and off with the shortcut key 
-combination <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>.
+<para>For detailed information how to modify toolbars and shortcuts please
+read the sections about <ulink url="help:/fundamentals/config.html#toolbars">Toolbars</ulink>
+and <ulink url="help:/fundamentals/config.html#shortcuts">Shortcuts</ulink> in the Fundamentals.
 </para>
-
-<para>If you <mousebutton>right</mousebutton> click on a Toolbar, you 
-will get a menu to configure this bar. You can lock or unlock the toolbar position
-and choose the text position, icon size and the orientation of unlocked bars.</para>
-
-<para>If the toolbars are unlocked, on the left hand end of each bar you can see  
-some handles. By &LMB; clicking on them, you can drag a bar into a new position
-and even detach it from the window and place it anywhere on your screen.</para>
-
-<para>The icons shown in the various bars can be changed by using the 
-<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure 
-Toolbars...</guimenuitem></menuchoice> option, which brings up the 
-<guilabel>Configure Toolbars</guilabel> dialog box. The
-number and type of these toolbars will depend on whether &konqueror; is in Web
-Browser or File Manager mode and whether you have &konqueror; plugins
-installed.</para>
-
-</sect1>
-<!--FIXME replace with link to fundamentals-->
-<sect1 id="configshort">
-<title>Shortcuts</title>
-<para>To change the shortcut key arrangements used by &konqueror; select 
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...
-</guimenuitem></menuchoice>. This will launch a dialog box as shown below.
-</para>
-<mediaobject>
-<imageobject>
-<imagedata fileref="shortcut1.png" format="PNG"/>
-</imageobject>
-<textobject>
-<phrase>Shortcut config screenshot 1</phrase>
-</textobject>
-</mediaobject>
-<para>Use the search box to find the action you want to add or 
-change the shortcut keys for and select it by <mousebutton>left</mousebutton> 
-clicking on the name. </para>
-
-<para>After you have selected an action in the list you will notice that
-this item is highlighted and you see two additional check boxes below
-this item in the list view. There you can configure a
-combination of keys or maybe no key binding at all for the selected
-action. </para>
-
-<mediaobject>
-<imageobject>
-<imagedata fileref="shortcut2.png" format="PNG"/>
-</imageobject>
-<textobject>
-<phrase>Shortcut config screenshot 2</phrase>
-</textobject>
-</mediaobject>
-
-<itemizedlist>
-<listitem><para><guilabel>Default</guilabel>: the selected action
-will be associated with &kde;'s default value. This is a good choice
-for most actions, as &kde; comes with reasonable key bindings we have
-thought about. </para></listitem>
-<listitem><para><guilabel>Custom</guilabel>: if this option is
-enabled, you can create a key combination for the selected
-action. Click on the button labeled either <guibutton>None</guibutton>
-or labeled with the previously selected custom shortcut. Now the button label
-changes to <guibutton>Input</guibutton>. Then press any modifier key
-(&ie; &Shift;, &Ctrl;, or &Alt;) and then normal key or a function key (&eg; <keycap>F11</keycap>)
-you want to assign to this key combination.</para></listitem>
-<listitem><para>You can reset the shortcut to <guilabel>None</guilabel> by using 
-this button: <inlinemediaobject><imageobject> <imagedata
-fileref="reset.png" format="PNG"/></imageobject></inlinemediaobject>.
-</para>
-<para>Clicking on the <guilabel>Alternate</guilabel> column of a row in the list
-allows to edit the second shortcut for the action.</para></listitem>
-</itemizedlist>
-
-</sect1>
 
 <sect1 id="othersettings">
 <title>Other Settings</title>
@@ -3140,9 +3043,7 @@ Configure the proxy servers used</para></listitem>
 Configure how to display web pages</para></listitem>
 <listitem><para><ulink url="help:/kcontrol/khtml-adblock/index.html">AdBlocK Filters</ulink>: 
 Configure &konqueror; AdBlocK filters</para></listitem>
-<listitem><para><ulink url="help:/kcontrol/ebrowsing/index.html">Web Shortcuts</ulink>: 
-Configure enhanced browsing</para></listitem>
-<listitem><para><ulink url="help:/kcontrol/cache/index.html">Cache</ulink>: 
+<listitem><para><ulink url="help:/kcontrol/cache/index.html">Cache</ulink>:
 Configure web cache settings</para></listitem>
 <listitem><para><ulink url="help:/kcontrol/history/index.html">History</ulink>: 
 Configure the history sidebar</para></listitem>
@@ -3152,8 +3053,6 @@ Configure the way cookies work</para></listitem>
 Configure the way Konqueror reports itself</para></listitem>
 <listitem><para><ulink url="help:/kcontrol/khtml-java-js/index.html">Java &amp; JavaScript</ulink>: 
 Configure the behavior of Java and JavaScript</para></listitem>
-<listitem><para><ulink url="help:/kcontrol/khtml-plugins/index.html">Plugins</ulink>: 
-Configure the browser plugins</para></listitem>
 </itemizedlist>
 <para>Pressing the <guibutton>Help</guibutton> button will give you 
 detailed instructions about how to use each of these sections, or you can 
@@ -3162,7 +3061,7 @@ use the <link linkend="bubble">What's This?</link> feature.</para>
 
 </chapter>
 
-<chapter id="commands"> <!-- 4.11-->
+<chapter id="commands">
 
 <chapterinfo>
 <authorgroup>
@@ -3175,7 +3074,7 @@ use the <link linkend="bubble">What's This?</link> feature.</para>
 <title>Command Reference</title>
 
 <note><para>The shortcut key combinations shown in this chapter are the 
-default ones. They can of course be <link linkend="configshort">changed</link>.
+default ones. They can of course be changed.
 </para></note>
 
 <sect1 id="specshort">
@@ -3222,7 +3121,7 @@ the items for these two modes are described in this chapter.
 </para>
 
 <para>If <emphasis>&konqueror;</emphasis> is using embedded components (&kde; Parts) 
-such as <application>Gwenview</application> for image viewing, &okular; for
+such as &gwenview; for image viewing, &okular; for
 <acronym>PDF</acronym> and &PostScript; documents &etc; the menu items from these
 applications are merged into &konqueror;'s menu. Help for these additional menu items
 you find in the handbook of the embedded application.</para>
@@ -3350,25 +3249,16 @@ use with a web site that uses frames.</para></listitem>
 <listitem><para>Print selected frame of a Web
 page.</para></listitem>
 </varlistentry>
-<!--FIXME
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
 <guimenuitem>Open With</guimenuitem>
 </menuchoice></term>
-<listitem><para>???</para></listitem> 
+<listitem><para>Displays a list of applications installed on the system associated
+with the mimetype of the current URL.</para></listitem>
 </varlistentry>
-browser 2 items + submenu with apps
-filemanager dophin/gwenview + submenu with apps
-is this hardcoded? detected at runtime?
 
-DF: The list of applications is entirely dynamic, it is the list of
-   apps associated with the mimetype (of the current URL).
- Compare with "Edit File Associations"  (kcmshell filetypes), you'll see that
-  it's the same list of apps, so it entirely depends on which apps are installed
-  on the system.
-
--->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -3388,9 +3278,8 @@ DF: The list of applications is entirely dynamic, it is the list of
 <sect2 id="menu-edit">
 <title>The Edit Menu</title>
 
-<!-- not in kde4
-note><para>Most items in the Menubar <guimenu>Edit</guimenu> menu can also be
-found by &RMB; clicking on a free area of a view.</para></note-->
+<note><para>Some items in the Menubar <guimenu>Edit</guimenu> menu can also be
+found by &RMB; clicking on a free area of a view.</para></note>
 
 <variablelist>
 
@@ -3438,7 +3327,7 @@ clipboard.</para></listitem>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Paste</guimenuitem></menuchoice> (Browser mode)</term>
-<listitem><para>Paste the clipboard content into the Location Bar.</para></listitem>
+<listitem><para>Paste the clipboard content into the Location Bar, if the Location Bar has the focus.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -3447,7 +3336,10 @@ clipboard.</para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Paste Clipboard Contents...</guimenuitem></menuchoice> (File Manager mode)</term>
+<guimenuitem>Paste Clipboard Contents...</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste one File</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste one Folder</guimenuitem></menuchoice> or
+<menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste x Items</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Paste the currently copied/cut item(s) to the current folder. If the
 clipboard does not contain files or folders, the clipboard contents (such as text 
 or image data) will be pasted into a new file.</para></listitem>
@@ -3501,26 +3393,6 @@ folder.</para></listitem>
 <guimenuitem>Delete</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Delete the selected item(s).</para></listitem>
 </varlistentry>
-
-<!-- not in kde4
-varlistentry>
-<term><menuchoice>
-<shortcut><keycap>F7</keycap></shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Copy Files</guimenuitem>
-</menuchoice></term>
-<listitem><para>Copy the selected item(s) to another
-folder.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Edit</guimenu>
-<guimenuitem>Move Files</guimenuitem>
-</menuchoice></term>
-<listitem><para>Move the selected item(s) to another
-folder.</para></listitem>
-</varlistentry-->
 
 <varlistentry>
 <term><menuchoice>
@@ -3611,72 +3483,24 @@ folders.</para></listitem>
 Start typing to find a text string in a text page you are previewing or in an &HTML;
 page.</para></listitem>
 </varlistentry>
-<!--FIXME no menu item in WebKit view mode 
-WebKit+KHTML mode find bar with 
-Next F3, Previous Shift F3 + Options 
-WebKit Match Case/Highlight All Matches/Search As You Type
-KHTML Case sensitive/Whole words only/From cursor/Selected Text/Regular expression/Find links only
--->
+
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycap>F3</keycap></shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Find Next</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>Find Next</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem><para>Find the next occurrence of the text string 
 in the text or &HTML; page.</para></listitem> 
 </varlistentry>
-<!--FIXME no menu item in WebKit view mode -->
+
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Find Previous</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>Find Previous</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem><para>Find the previous occurrence of the text string 
 in the text or &HTML; page.</para></listitem> 
 </varlistentry>
-<!--
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Find Text as You Type</guimenuitem></menuchoice> (Browser mode)</term>
-<listitem><para>???</para></listitem> 
-</varlistentry>
-
-DF: No the initial shortcut is "/"  (forward slash). This matches VI, for instance.
-F3 is "find again", after 
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycap>'</keycap></shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Find Links as You Type</guimenuitem></menuchoice> (Browser mode)</term>
-<listitem><para>???</para></listitem> 
-</varlistentry>
-> BL: both disabled in menu
-
-DF: bug in khtml. enableFindAheadActions(false) called by focusOutEvent.
-   How about we just get rid of this shortcut, and let people use Ctrl+F instead?
-
-DF: We still have to do something about "find text in links", ideally integrating that functionality
- into the find bar; as a short term fix we could just give it a better (Ctrl+something) shortcut
- and get rid of the "focusin/focusout enables/disables the action" logic.
-
-> BL: but shortcut works then typing -> to the first match, then stops
-> BL: how to find next match? why does it stop?
-
-DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
-
--->
-<!-- not in kde4 from editor view
-varlistentry>
-<term><menuchoice>
-<guimenu>Edit</guimenu>
-<guimenuitem>Go to Line...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Go to a particular line number in a text
-page you are previewing.</para></listitem>
-</varlistentry-->
 
 </variablelist>
 
@@ -3693,7 +3517,7 @@ page you are previewing.</para></listitem>
 <guisubmenu>View Mode</guisubmenu>
 </menuchoice></term>
 <listitem><para>In browser mode this submenu holds items to select embedded
-views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>Embedded Advanced 
+views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>WebKit</guimenuitem>, <guimenuitem>Embedded Advanced 
 Text Editor</guimenuitem> and more embedded views.</para>
 <para>In file manager mode this submenu holds items to select <guimenuitem>Icon</guimenuitem>,
 <guimenuitem>Details</guimenuitem>, <guimenuitem>Compact</guimenuitem>,
@@ -3720,16 +3544,6 @@ files.</para></listitem>
 with <guimenuitem>Link View</guimenuitem> to explore many files from 
 one folder.</para></listitem>
 </varlistentry>
-  
-<!-- not in kde4
-varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Unlock all views</guimenuitem>
-</menuchoice></term>
-<listitem><para>Unlock all views.
-</para></listitem>
-</varlistentry-->
 
 <varlistentry>
 <term><menuchoice>
@@ -3750,7 +3564,7 @@ with an icon view or detailed view, and possibly a terminal emulator window.</pa
 </menuchoice></term>
 <listitem><para>Reload.</para></listitem>
 </varlistentry>
-	  
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>&Esc;</shortcut>
@@ -3760,8 +3574,7 @@ with an icon view or detailed view, and possibly a terminal emulator window.</pa
 <listitem><para>Stop load (particularly useful when web
 browsing).</para></listitem>
 </varlistentry>
-<!--FIXME Browser mode WebKit
-  Zoom In, Zoom Out, Actual Size, Zoom Text Only-->
+
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
@@ -3770,40 +3583,12 @@ browsing).</para></listitem>
 <menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo></shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>Shrink Font</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>Shrink Font</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem><para>Use these to adjust the size of the text in the
 page if you find it difficult to read. How well this works will
 depend on how the web page has been constructed.</para></listitem> 
 </varlistentry>
 
-<!--  not in kde4
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Icon Size</guimenuitem>
-</menuchoice></term>
-<listitem><para>Select size of icons used when
-viewing a folder in Icon Mode.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guisubmenu>Sort</guisubmenu>
-</menuchoice></term>
-<listitem><para>Choose order in which items are presented in the
-window when in Icon or MultiColumn View mode.</para></listitem>
-</varlistentry>
-  
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Case Insensitive Sort</guimenuitem>
-</menuchoice></term>
-<listitem><para>Choose whether the sort order in Tree, Detailed List
-or Text View modes is case sensitive.</para></listitem>
-</varlistentry>
--->
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>U</keycap>
@@ -3829,6 +3614,17 @@ page.</para>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Zoom In</guimenuitem> <guimenuitem>Zoom Out</guimenuitem>
+<guimenuitem>Actual Size</guimenuitem> <guimenuitem>Zoom Text Only</guimenuitem>
+<guimenuitem>Zoom To DPI</guimenuitem></menuchoice> (Browser mode - WebKit view)</term>
+<listitem><para>These menuitems offer different actions to modify the size of the items
+in the page.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>I</keycap>
 </keycombo>
 </shortcut>
@@ -3840,18 +3636,7 @@ headers used in retrieving the document.</para>
 page.</para>
 </listitem>
 </varlistentry>
-<!-- not in kde4
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Security...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Tells you whether the current browser connection is
-secured with <acronym>SSL</acronym> and lets you bring up the
-<guilabel>Cryptography Configuration...</guilabel> dialog
-box. <mousebutton>Left</mousebutton> clicking on the Menubar padlock icon does
-the same thing.</para></listitem> </varlistentry>
--->
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
@@ -3869,7 +3654,7 @@ choice.</para></listitem>
 </varlistentry>
 http://websvn.kde.org/?view=revision&revision=269436
 -->
-<!--FIXME synced with Dolphin 4.11-->
+<!--FIXME synced with Dolphin 16.04-->
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
@@ -3942,7 +3727,7 @@ Dialog</link>.</action></para></listitem>
 <guimenuitem>Up</guimenuitem>
 </menuchoice></term>
 <listitem><para>Go up a level in the folder
-hierarchy.</para></listitem>
+hierarchy or select a folder in the hierarchy from the submenu.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -3953,7 +3738,7 @@ hierarchy.</para></listitem>
 <guimenuitem>Back</guimenuitem>
 </menuchoice></term>
 <listitem><para>Go back to the previous
-view.</para></listitem>
+view or select a previously visited item from the submenu.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -4037,8 +3822,8 @@ folder.</para></listitem>
 </shortcut><guimenu>Go</guimenu>
 <guimenuitem>Show History</guimenuitem>
 </menuchoice></term>
-<listitem><para>shows a tree view of your browsing history in a separate window. 
-See <link linkend="sidebar">Sidebar</link>.</para></listitem>
+<listitem><para>Shows a tree view of your browsing history in a separate window. 
+        <!--See <link linkend="sidebar">Sidebar</link>.--></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -4176,26 +3961,11 @@ details.</para>
 <note><para>See also the section <link linkend="save-settings">Saving Settings
 and Profiles</link>.</para></note>
 
+<para>Apart from the common &kde; Settings menu items described in the
+<ulink url="help:/fundamentals/ui.html#menus-settings">Settings Menu</ulink>
+chapter of the &kde; Fundamentals &konqueror; has these application specific menu entries:
+</para>
 <variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guisubmenu>Toolbars Shown</guisubmenu>
-</menuchoice></term>
-<listitem><para>Opens a submenu where you can choose to show or hide
-the various Toolbars.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo></shortcut>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Menubar</guimenuitem>
-</menuchoice></term>
-<listitem><para>Show/Hide the menubar.</para></listitem>
-</varlistentry>
 
 <varlistentry>
 <term><menuchoice>
@@ -4205,7 +3975,7 @@ the various Toolbars.</para></listitem>
 <listitem><para>Open a small text terminal view at the bottom of the
 main window.</para></listitem>
 </varlistentry>
-
+<!--
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -4216,7 +3986,7 @@ main window.</para></listitem>
 <listitem><para>Toggles the display of the &konqueror; sidebar. See
 <xref linkend="sidebar"/>.</para></listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -4234,27 +4004,7 @@ icon on the toolbar, or press <keycombo action="simul">&Ctrl;&Shift;
 <keycap>F</keycap></keycombo>.</para>
 </listitem>
 </varlistentry>
-<!-- not in kde4
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>View Properties Saved in Folder</guimenuitem>
-</menuchoice></term>
-<listitem><para>Save View properties to current
- folder. If this is selected, a <filename>.directory</filename> file will be
-written in the current directory storing the settings you last used to view the
-directory. These settings are then loaded when you open the directory in &konqueror;.</para></listitem>
-</varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Remove Folder Properties</guimenuitem>
-</menuchoice></term>
-<listitem><para>Remove settings stored in folder by <guimenuitem>View
-Properties Saved in Folder</guimenuitem>.</para></listitem>
-</varlistentry>
--->
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
@@ -4297,33 +4047,6 @@ and allows you to select the ones you need. All plugins are accessible in the
 <para>Displays the spell checking configuration dialog box, in which you can
 change settings associated with spell checking in &konqueror;.</para>
 </listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice> <guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem>
-</menuchoice></term> <listitem><para>Lets you
-see and change &konqueror;'s shortcut key bindings, &ie; the
-associations between actions such as <guimenuitem>Copy</guimenuitem> and keys
-or combinations of keys such as <keycombo
-action="simul">&Ctrl;<keycap>V</keycap></keycombo>. If you do 
-this take care not to duplicate an existing shortcut.</para>
-</listitem></varlistentry>
-
-<varlistentry>
-<term><menuchoice> <guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term> <listitem><para>
-Lets you configure the Main, Extra and Location Toolbars. See the
-section <link linkend="configure-bars">Changing Bars</link>. 
-</para></listitem> </varlistentry>
-
-<varlistentry>
-<term><menuchoice> <guimenu>Settings</guimenu>
-<guimenuitem>Configure &konqueror;...</guimenuitem> </menuchoice></term>
-<listitem><para>Lets you configure &konqueror;'s behavior in file manager and 
-browser mode.
-</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -4466,7 +4189,7 @@ to revisit the introductory pages that you got when
 
 </chapter>
 
-<chapter id="faq"> <!-- 4.11-->
+<chapter id="faq">
 <chapterinfo>
 <authorgroup>
 <author>&Pamela.Roberts;</author>
@@ -4479,20 +4202,11 @@ to revisit the introductory pages that you got when
 
 <qandaset>
 
-<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
-<qandaentry>
-<question><para>How can I browse web sites using non latin
- scripts?</para></question>
-<answer><para>Detailed instructions can be found at <ulink
-url="http://www.konqueror.org/i18n.html">http://www.konqueror.org/i18n.html</ulink></para></answer>
-</qandaentry>
--->
-
 <qandaentry>
 <question><para>Can I run &konqueror; from another window
 manager?</para></question>
 
-<answer><para>Just install &Qt;, kdelibs and kdebase, and from your favorite
+<answer><para>Just install &Qt;, &kf5; and &konqueror;, and from your favorite
 window manager, launch &konqueror;. It should work just fine, but if it
 doesn't (&kde; developers don't test that case often), report it to <ulink
 url="http://bugs.kde.org">http://bugs.kde.org</ulink> and try running
@@ -4503,39 +4217,40 @@ helps.</para></answer>
 <qandaentry>
 <question><para>Where does &konqueror; keep all its configuration
 data?</para></question>
-<answer><para>Generally in the <filename>~/.kde</filename> folder (this may 
-be <filename>~/.kde4</filename> on your system, depending on how &kde;  
-was installed). Don't alter these files unless you really know what you are 
+<answer><para>Generally in the <filename class="directory">qtpaths --paths GenericDataLocation</filename> folder (this may
+be <filename>~/.local/share</filename> on your system, depending on how &konqueror;
+was installed). Don't alter these files unless you really know what you are
 doing.</para>
 
 <itemizedlist>
 
 <listitem><para>The <filename
-class="directory">~/.kde/share/apps/konqueror/profiles</filename> folder
+class="directory">konqueror/profiles</filename> folder
 holds individual files containing settings for each of your <link
-linkend="save-settings">profiles.  </link></para></listitem>
+linkend="save-settings">profiles.</link></para></listitem>
 
 <listitem><para>Your bookmarks are held in <filename
-class="directory">~/.kde/share/apps/konqueror/bookmarks.xml</filename></para></listitem>
+class="directory">konqueror/bookmarks.xml</filename></para></listitem>
 <listitem><para>Cookies are held in <filename
-class="directory">~/.kde/share/apps/kcookiejar/cookies</filename></para></listitem>
+class="directory">kcookiejar/cookies</filename></para></listitem>
+
 <listitem><para>Your history, as used for the auto-completion feature,  is in
-<filename>~/.kde/share/config/konq_history</filename></para></listitem>
+<filename>konq_history</filename> in the folder
+<filename class="directory">qtpaths --paths GenericConfigLocation</filename>.</para></listitem>
 
 <listitem><para>In the folder <filename
-class="directory">~/.kde/share/config/</filename> the files
-<filename>konqiconviewrc</filename>, <filename>konqlistviewrc</filename> and
-<filename>konquerorrc</filename> hold a whole lot of general configuration
+class="directory">qtpaths --paths GenericConfigLocation</filename> the file
+<filename>konquerorrc</filename> holds a whole lot of general configuration
 settings.</para></listitem>
 
-<listitem><para>The folder
-<filename class="directory">~/.kde/cache-<replaceable>hostname</replaceable>/http/</filename> 
+<listitem><para>The folder <filename class="directory">kio_http/</filename> in
+<filename class="directory">qtpaths --paths GenericCacheLocation</filename>
 contains the browser cache.</para></listitem>
-
-<listitem><para>The Sidebar uses the files and subfolders in
-<filename class="directory">~/.kde/share/apps/konqsidebartng</filename></para></listitem>
+<!--
+<listitem><para>The Sidebar uses the files and subfolders in <filename>konqsidebartng</filename>
+in the folder <filename class="directory">qtpaths - -paths GenericConfigLocation</filename></para></listitem>
+-->
 </itemizedlist>
-
 <para>Any folder specific view settings are put into <literal
 role="extension">.directory</literal> files in the individual
 folders.</para></answer>
@@ -4553,11 +4268,11 @@ box and select <guimenuitem>Clear History
 <listitem><para>The other is the log of visited locations. Select the History
 page in the Sidebar, 
 <mousebutton>right</mousebutton> click on an entry and choose
-<guimenuitem>Remove Entry</guimenuitem> (<keycap>Del</keycap>) to remove just that entry or
+<guimenuitem>Remove Entry</guimenuitem> (&Del;) to remove just that entry or
 <guimenuitem>Clear History</guimenuitem> to delete all
 entries.</para></listitem>
 </itemizedlist>
-<note><para>You can also use the application <application>Sweeper</application> from 
+<note><para>You can also use the application &sweeper; from
 the kdeutils module which allows you to clean up cookies, favicons, web history and cache, 
 form completion entries and cache policies of visited websites.</para></note>
 </answer>
@@ -4578,8 +4293,8 @@ policy.</para>
 <qandaentry>
 <question><para>How can I change the timeout values used by &konqueror; 
 when web browsing?</para></question> <answer>
-<para>In the &systemsettings; category <guilabel>Network and Connectivity</guilabel>
-on the <menuchoice><guimenu>Network Settings</guimenu>
+<para>In the &systemsettings; category <guilabel>Network</guilabel>
+on the <menuchoice><guimenu>Settings</guimenu>
 <guimenuitem>Connection Preferences</guimenuitem></menuchoice> page.</para>
 </answer>
 </qandaentry>
