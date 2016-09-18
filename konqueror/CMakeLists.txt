@@ -58,6 +58,7 @@ add_subdirectory( pics )
 #add_subdirectory( sidebar )
 add_subdirectory( preloader )
 add_subdirectory( settings )
+add_subdirectory( plugins )
 
 ########### install files ###############
 install( PROGRAMS
