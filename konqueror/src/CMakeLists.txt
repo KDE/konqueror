@@ -15,8 +15,6 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
-# For crc32 in konqhistorymanager.cpp
-include_directories( ${ZLIB_INCLUDE_DIR} )
 if (KActivities_FOUND)
   include_directories(${KACTIVITIES_INCLUDE_DIRS})
 endif (KActivities_FOUND)
@@ -40,7 +38,6 @@ target_link_libraries(konquerorprivate
    KF5::Konq
    KF5::Parts
    KF5::KIOGui
-   #   ${ZLIB_LIBRARY}
 )
 
 if(X11_FOUND)

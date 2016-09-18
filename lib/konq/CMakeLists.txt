@@ -31,7 +31,7 @@ find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"
                        URL "http://www.zlib.net"
                        TYPE REQUIRED
-                       PURPOSE "Required for building Konqueror"
+                       PURPOSE "Required for building LibKonq"
                       )
 
 # Targets
