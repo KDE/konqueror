@@ -281,17 +281,13 @@ void WebEngineBrowserExtension::reparseConfiguration()
 
 void WebEngineBrowserExtension::disableScrolling()
 {
-#if 0
     QWebEngineView* currentView = view();
     QWebEnginePage* page = currentView ? currentView->page() : 0;
-    QWebEngineFrame* frame = page ? page->mainFrame() : 0;
 
-    if (!frame)
+    if (!page)
         return;
 
-    frame->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
-    frame->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
-#endif
+    page->runJavaScript("document.documentElement.style.overflow = 'hidden';");
 }
 
 void WebEngineBrowserExtension::zoomIn()
@@ -444,8 +440,8 @@ void WebEngineBrowserExtension::slotSendImage()
         return;
 
     QStringList urls;
-    //urls.append(view()->contextMenuResult().imageUrl().path());
-    const QString subject ; //= view()->contextMenuResult().imageUrl().path();
+    urls.append(view()->contextMenuResult().mediaUrl().path());
+    const QString subject = view()->contextMenuResult().mediaUrl().path();
     KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
                                   QString(), //body
                                   QString(),
@@ -457,7 +453,7 @@ void WebEngineBrowserExtension::slotCopyImageURL()
     if (!view())
         return;
 
-    QUrl safeURL; //view()->contextMenuResult().imageUrl());
+    QUrl safeURL = view()->contextMenuResult().mediaUrl();
     safeURL.setPassword(QString());
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
@@ -498,8 +494,8 @@ void WebEngineBrowserExtension::slotCopyImage()
 
 void WebEngineBrowserExtension::slotViewImage()
 {
-//    if (view())
-//        emit createNewWindow(view()->contextMenuResult().imageUrl());
+    if (view())
+        emit createNewWindow(view()->contextMenuResult().mediaUrl());
 }
 
 void WebEngineBrowserExtension::slotBlockImage()
@@ -539,7 +535,7 @@ void WebEngineBrowserExtension::slotCopyLinkText()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        // data->setText(view()->contextMenuResult().linkText());
+        data->setText(view()->contextMenuResult().linkText());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
 }
@@ -548,7 +544,7 @@ void WebEngineBrowserExtension::slotCopyEmailAddress()
 {
     if (view()) {
         QMimeData* data = new QMimeData;
-        const QUrl url ; // (view()->contextMenuResult().linkUrl());
+        const QUrl url(view()->contextMenuResult().linkUrl());
         data->setText(url.path());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
@@ -877,7 +873,7 @@ void WebEngineBrowserExtension::slotLinkInTop()
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_top");
 
-    const QUrl url; // (view()->contextMenuResult().linkUrl());
+    const QUrl url(view()->contextMenuResult().linkUrl());
 
     emit openUrlRequest(url, uargs, bargs);
 }

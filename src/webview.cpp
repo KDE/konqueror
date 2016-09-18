@@ -443,7 +443,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyEmailAddress()));
         linkActions.append(action);
     } else {
-        if (m_result.selectedText().isEmpty()) {
+        if (!m_result.linkText().isEmpty()) {
             action = new QAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
