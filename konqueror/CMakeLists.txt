@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
 project(Konqueror)
 
-set(QT_MIN_VERSION "5.2.0")
+set(QT_MIN_VERSION "5.4.0")
+set(KF5_MIN_VERSION "5.24.0")
 
 find_package(ECM 1.7.0 CONFIG REQUIRED)
 
@@ -18,10 +19,10 @@ include(ECMSetupVersion)
 
 set(KONQUEROR_LIB_VERSION "5.0.97")
 
-find_package(Qt5 REQUIRED COMPONENTS Core)
-find_package(KF5 REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
 
-find_package(KF5 COMPONENTS Activities)
+find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities) # Optional
 
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${Konqueror_SOURCE_DIR}")
     find_package(KF5Konq CONFIG REQUIRED)

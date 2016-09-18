@@ -13,6 +13,7 @@ set(konq_LIB_SRCS
 
 add_library(KF5Konq ${konq_LIB_SRCS})
 
+include(GenerateExportHeader)
 generate_export_header(KF5Konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
 
 add_library(KF5::Konq ALIAS KF5Konq)
