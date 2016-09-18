@@ -95,7 +95,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_appServiceOffers = appServiceOffers;
     m_serviceType = serviceType;
 
-    m_bAllowHTML = m_pMainWindow->isHTMLAllowed();
     m_lstHistoryIndex = -1;
     m_bLoading = false;
     m_bPendingRedirection = false;

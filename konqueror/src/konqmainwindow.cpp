@@ -312,10 +312,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
         m_toggleViewGUIClient = 0;
     }
 
-    m_bHTMLAllowed = KonqSettings::htmlAllowed();
-
-    m_ptaUseHTML->setChecked(m_bHTMLAllowed);
-
     m_bNeedApplyKonqMainWindowSettings = true;
 
     if (!initialURL.isEmpty()) {
@@ -895,37 +891,6 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         } else { // Save
             KParts::BrowserRun::saveUrl(url, suggestedFileName, this, req.args);
             return true; // handled
-        }
-    }
-
-    // Look for which view mode to use, if a directory - not if view locked
-    if ((!childView || (!childView->isLockedViewMode()))
-            && mimeType == "inode/directory") {
-
-        if (url.isLocalFile()) {   // local, check .directory file
-            // Read HTMLAllowed in the .directory file, default to m_bHTMLAllowed
-            QUrl urlDotDir(url);
-            urlDotDir.setPath(urlDotDir.path() + "/.directory");
-            bool HTMLAllowed = m_bHTMLAllowed;
-            QFile f(urlDotDir.toLocalFile());
-            if (f.open(QIODevice::ReadOnly)) {
-                f.close();
-                KConfig config(urlDotDir.path(), KConfig::SimpleConfig);
-                KConfigGroup urlProperties(&config, "URL properties");
-                HTMLAllowed = urlProperties.readEntry("HTMLAllowed", m_bHTMLAllowed);
-                //serviceName = urlProperties.readEntry( "ViewMode", serviceName );
-                //qDebug() << "serviceName=" << serviceName;
-            }
-            QString indexFile;
-            if (HTMLAllowed &&
-                    (!(indexFile = findIndexFile(url.toLocalFile())).isEmpty())) {
-                mimeType = "text/html";
-                url = QUrl(indexFile);
-                //serviceName.clear(); // cancel what we just set, this is not a dir finally
-            }
-
-            // Reflect this setting in the menu
-            m_ptaUseHTML->setChecked(HTMLAllowed);
         }
     }
 
@@ -1667,54 +1632,6 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
     if (!internalViewMode.isEmpty() && internalViewMode != m_currentView->internalViewMode()) {
         m_currentView->setInternalViewMode(internalViewMode);
     }
-}
-
-void KonqMainWindow::showHTML(KonqView *_view, bool b, bool _activateView)
-{
-    // Save this setting
-    // This has to be done before calling openView since it relies on it
-    KonqSettings::setHtmlAllowed(b);
-    KonqSettings::self()->save();
-    if (_activateView) {
-        m_bHTMLAllowed = b;
-    }
-
-    if (b && _view->showsDirectory()) {
-        _view->lockHistory();
-        openView("inode/directory", _view->url(), _view);
-    } else if (!b && _view->supportsMimeType("text/html")) {
-        QUrl u(_view->url());
-        QString fileName = u.fileName().toLower();
-        if (KProtocolManager::supportsListing(u) && fileName.startsWith("index.htm")) {
-            _view->lockHistory();
-            u = u.adjusted(QUrl::RemoveFilename);
-            openView("inode/directory", u, _view);
-        }
-    }
-}
-
-void KonqMainWindow::slotShowHTML()
-{
-    if (!m_currentView) {
-        return;
-    }
-
-    bool b = !m_currentView->allowHTML();
-
-    m_currentView->stop();
-    m_currentView->setAllowHTML(b);
-    showHTML(m_currentView, b, true);   //current view
-    m_pViewManager->showHTML(b);
-
-}
-
-void KonqMainWindow::setShowHTML(bool b)
-{
-    m_bHTMLAllowed = b;
-    if (m_currentView) {
-        m_currentView->setAllowHTML(b);
-    }
-    m_ptaUseHTML->setChecked(b);
 }
 
 void KonqMainWindow::slotLockView()
@@ -3619,9 +3536,6 @@ void KonqMainWindow::initActions()
     m_paPrint = actionCollection()->addAction(KStandardAction::Print, "print", 0, 0);
     actionCollection()->addAction(KStandardAction::Quit, "quit", this, SLOT(close()));
 
-    m_ptaUseHTML = new KToggleAction(i18n("&Use index.html"), this);
-    actionCollection()->addAction("usehtml", m_ptaUseHTML);
-    connect(m_ptaUseHTML, &KToggleAction::triggered, this, &KonqMainWindow::slotShowHTML);
     m_paLockView = new KToggleAction(i18n("Lock to Current Location"), this);
     actionCollection()->addAction("lock", m_paLockView);
     connect(m_paLockView, &KToggleAction::triggered, this, &KonqMainWindow::slotLockView);
@@ -4002,9 +3916,6 @@ void KonqMainWindow::initActions()
                                  "services such as creating a PDF file from the current document.</html>"));
     m_paPrint->setStatusTip(i18n("Print the current document"));
 
-    // Please proof-read those (David)
-
-    m_ptaUseHTML->setStatusTip(i18n("If present, open index.html when entering a folder."));
     m_paLockView->setStatusTip(i18n("A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder"));
     m_paLinkView->setStatusTip(i18n("Sets the view as 'linked'. A linked view follows folder changes made in other linked views."));
 }
@@ -4087,22 +3998,6 @@ void KonqMainWindow::updateToolBarActions(bool pendingAction /*=false*/)
         m_paAnimatedLogo->stop();
         m_paStop->setEnabled(pendingAction);    //enable/disable based on any pending actions...
     }
-
-    bool ptaUseHTMLEnable = m_currentView
-                            && m_currentView->url().isLocalFile()
-                            && !m_currentView->isLockedViewMode();
-
-    ptaUseHTMLEnable = ptaUseHTMLEnable &&
-                       (
-                           m_currentView->showsDirectory() ||
-                           (
-                               // Currently viewing an index.html file via this feature (i.e. url points to a dir)
-                               m_currentView->serviceTypes().contains("text/html") &&
-                               QFileInfo(QUrl::fromUserInput(m_currentView->locationBarURL()).toLocalFile()).isDir()
-                           )
-                       );
-
-    m_ptaUseHTML->setEnabled(ptaUseHTMLEnable);
 }
 
 void KonqMainWindow::updateViewActions()
@@ -4365,7 +4260,6 @@ void KonqMainWindow::disableActionsNoView()
     m_paReloadAllTabs->setEnabled(false);
     m_paBack->setEnabled(false);
     m_paForward->setEnabled(false);
-    m_ptaUseHTML->setEnabled(false);
     m_paLockView->setEnabled(false);
     m_paLockView->setChecked(false);
     m_paSplitViewVer->setEnabled(false);
@@ -4869,8 +4763,6 @@ void KonqMainWindow::reparseConfiguration()
     KonqSettings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqRmbEventFilter::self()->reparseConfiguration();
-
-    m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
     if (m_combo) {
         m_combo->setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));

@@ -90,7 +90,6 @@ class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqF
     Q_PROPERTY(bool fullScreenMode READ fullScreenMode)
     Q_PROPERTY(QString currentTitle READ currentTitle)
     Q_PROPERTY(QString currentURL READ currentURL)
-    Q_PROPERTY(bool isHTMLAllowed READ isHTMLAllowed)
 public:
     enum ComboAction { ComboClear, ComboAdd, ComboRemove };
     enum PageSecurity { NotCrypted, Encrypted, Mixed };
@@ -232,10 +231,6 @@ public:
 
     bool sidebarVisible() const;
 
-    void setShowHTML(bool b);
-
-    void showHTML(KonqView *view, bool b, bool _activateView);
-
     bool fullScreenMode() const;
 
     /**
@@ -248,15 +243,6 @@ public:
 
     void enableAction(const char *name, bool enabled);
     void setActionText(const char *name, const QString &text);
-
-    /**
-    * The default settings "allow HTML" - the one used when creating a new view
-    * Might not match the current view !
-    */
-    bool isHTMLAllowed() const
-    {
-        return m_bHTMLAllowed;
-    }
 
     static QList<KonqMainWindow *> *mainWindowList()
     {
@@ -377,7 +363,6 @@ public Q_SLOTS:
 
     // View menu
     void slotViewModeTriggered(QAction *action);
-    void slotShowHTML();
     void slotLockView();
     void slotLinkView();
     void slotReload(KonqView *view = 0L, bool softReload = true);
@@ -667,7 +652,6 @@ private: // members
 #if 0
     KToggleAction *m_paFindFiles;
 #endif
-    KToggleAction *m_ptaUseHTML;
 
     KToggleAction *m_paShowMenuBar;
     KToggleAction *m_paShowStatusBar;
@@ -677,8 +661,6 @@ private: // members
     bool m_fullyConstructed: 1;
     bool m_bLocationBarConnected: 1;
     bool m_bURLEnterLock: 1;
-    // Global settings
-    bool m_bHTMLAllowed: 1;
     // Set in constructor, used in slotRunFinished
     bool m_bNeedApplyKonqMainWindowSettings: 1;
     bool m_urlCompletionStarted: 1;

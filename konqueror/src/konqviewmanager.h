@@ -257,8 +257,6 @@ public:
 
     void setLoading(KonqView *view, bool loading);
 
-    void showHTML(bool b);
-
     /**
      * Creates a copy of the current window
      */

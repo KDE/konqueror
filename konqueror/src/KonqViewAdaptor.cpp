@@ -87,11 +87,6 @@ uint KonqViewAdaptor::historyLength()const
     return m_pView->historyLength();
 }
 
-bool KonqViewAdaptor::allowHTML() const
-{
-    return m_pView->allowHTML();
-}
-
 void KonqViewAdaptor::goForward()
 {
     m_pView->go(-1);

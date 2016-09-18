@@ -353,16 +353,6 @@ public:
     // True if showing a directory
     bool showsDirectory() const;
 
-    // True if "Use index.html" is set (->the view doesn't necessarily show HTML!)
-    bool allowHTML() const
-    {
-        return m_bAllowHTML;
-    }
-    void setAllowHTML(bool allow)
-    {
-        m_bAllowHTML = allow;
-    }
-
     // True if currently loading
     bool isLoading() const
     {
@@ -542,7 +532,7 @@ public Q_SLOTS:
     /**
      * Store location-bar URL in the child view
      * and updates the main view if this view is the current one
-     * May be different from url e.g. if using "allowHTML".
+     * May be different from url.
      */
     void setLocationBarURL(const QString &locationBarURL);
     /**
@@ -654,7 +644,6 @@ private:
     KonqRun *m_pRun;
     KonqFrame *m_pKonqFrame;
 
-    uint m_bAllowHTML: 1;
     uint m_bLoading: 1;
     uint m_bLockedLocation: 1;
     uint m_bPassiveMode: 1;
