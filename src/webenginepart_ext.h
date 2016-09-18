@@ -71,12 +71,6 @@ public Q_SLOTS:
     void toogleZoomToDPI();
     void slotSelectAll();
 
-    void slotFrameInWindow();
-    void slotFrameInTab();
-    void slotFrameInTop();
-    void slotReloadFrame();
-    void slotBlockIFrame();
-
     void slotSaveImageAs();
     void slotSendImage();
     void slotCopyImageURL();
