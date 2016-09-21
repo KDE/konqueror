@@ -4490,22 +4490,10 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
     //qDebug() << "current view=" << m_currentView << m_currentView->part()->metaObject()->className();
 
     // This action collection is used to pass actions to KonqPopupMenu.
-    // It has to be a KActionCollection instead of a KActionPtrList because we need
+    // It has to be a KActionCollection instead of a QList<QAction *> because we need
     // the actionStatusText signal...
     KActionCollection popupMenuCollection(static_cast<QWidget *>(0));
 
-    // m_paBack is a submenu, for the toolbar & edit menu "back",
-    // but in the RMB we want a simple one-click back instead.
-    QAction *simpleBack = KStandardAction::back(this, SLOT(slotBack()), &popupMenuCollection);
-    simpleBack->setEnabled(m_paBack->isEnabled());
-    popupMenuCollection.addAction("go_back", simpleBack);
-
-    QAction *simpleForward = KStandardAction::forward(this, SLOT(slotForward()), &popupMenuCollection);
-    simpleForward->setEnabled(m_paForward->isEnabled());
-    popupMenuCollection.addAction("go_forward", simpleForward);
-
-    popupMenuCollection.addAction("go_up", m_paUp);
-    popupMenuCollection.addAction("reload", m_paReload);
     popupMenuCollection.addAction("closeditems", m_paClosedItems);
 
 #if 0

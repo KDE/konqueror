@@ -71,9 +71,6 @@ public:
      */
     enum Flag {
         DefaultPopupItems = 0x0000, ///< default value, no additional menu item
-        ShowNavigationItems = 0x0001, ///< show "back" and "forward" (usually done when clicking the background of the view, but not an item)
-        ShowUp = 0x0002, ///<  show "up" (same thing, but not over e.g. HTTP). Requires ShowNavigationItems.
-        ShowReload = 0x0004, ///< show "reload" (usually done when clicking the background of the view, but not an item)
         ShowBookmark = 0x0008, ///< show "add to bookmarks" (usually not done on the local filesystem)
         ShowCreateDirectory = 0x0010, ///<  show "create directory" (usually only done on the background of the view, or
                                       /// in hierarchical views like directory trees, where the new dir would be visible)
@@ -99,7 +96,7 @@ public:
      * the popup if the widget is destroyed before the popup.
      *
      * The actions to pass in the action collection are :
-     * go_back, go_forward, go_up, reload, cut, copy, paste, pasteto
+     * reload, cut, copy, paste, pasteto
      * The others items are automatically inserted.
      */
     KonqPopupMenu(const KFileItemList &items,

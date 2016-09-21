@@ -51,10 +51,6 @@ private:
     KFileItem m_linkItem;
     KFileItem m_subDirItem;
     KFileItem m_thisDirectoryItem;
-    QAction *m_back;
-    QAction *m_forward;
-    QAction *m_up;
-    QAction *m_reload;
     QAction *m_cut;
     QAction *m_copy;
     QAction *m_paste;

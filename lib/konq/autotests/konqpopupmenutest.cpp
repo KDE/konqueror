@@ -105,14 +105,6 @@ void KonqPopupMenuTest::initTestCase()
     m_actionCollection.addAction("paste", m_paste);
     m_pasteTo = KStandardAction::paste(0, 0, this);
     m_actionCollection.addAction("pasteto", m_pasteTo);
-    m_back = new QAction(this);
-    m_actionCollection.addAction("go_back", m_back);
-    m_forward = new QAction(this);
-    m_actionCollection.addAction("go_forward", m_forward);
-    m_up = new QAction(this);
-    m_actionCollection.addAction("go_up", m_up);
-    m_reload = new QAction(this);
-    m_actionCollection.addAction("reload", m_reload);
     m_properties = new QAction(this);
     m_actionCollection.addAction("properties", m_properties);
 
@@ -158,13 +150,13 @@ void KonqPopupMenuTest::initTestCase()
 
     // Check if extractActionNames works
     QMenu popup;
-    popup.addAction(m_back);
+    popup.addAction(m_rename);
     QMenu *subMenu = new QMenu(&popup);
     popup.addMenu(subMenu);
-    subMenu->addAction(m_up);
+    subMenu->addAction(m_trash);
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
-    QCOMPARE(actions, QStringList() << "go_back" << "submenu");
+    QCOMPARE(actions, QStringList() << "rename" << "submenu");
 }
 
 void KonqPopupMenuTest::testFile()
@@ -174,7 +166,6 @@ void KonqPopupMenuTest::testFile()
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowProperties
-            | KonqPopupMenu::ShowReload
             | KonqPopupMenu::ShowUrlOperations;
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
@@ -214,7 +205,6 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     QUrl viewUrl = QUrl::fromLocalFile("/etc");
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowProperties
-            | KonqPopupMenu::ShowReload
             | KonqPopupMenu::ShowUrlOperations;
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
@@ -250,7 +240,6 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     QUrl viewUrl = QUrl::fromLocalFile(QDir::currentPath());
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowProperties
-            | KonqPopupMenu::ShowReload
             | KonqPopupMenu::ShowUrlOperations;
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
@@ -314,8 +303,6 @@ void KonqPopupMenuTest::testViewDirectory()
     itemList << m_thisDirectoryItem;
     QUrl viewUrl = m_thisDirectoryItem.url();
     const KonqPopupMenu::Flags flags = m_appFlags |
-        KonqPopupMenu::ShowNavigationItems |
-        KonqPopupMenu::ShowUp |
         KonqPopupMenu::ShowCreateDirectory |
         KonqPopupMenu::ShowUrlOperations |
         KonqPopupMenu::ShowProperties;
@@ -332,7 +319,6 @@ void KonqPopupMenuTest::testViewDirectory()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "newmenu" << "separator"
-                    << "go_up" << "go_back" << "go_forward" << "separator"
                     << "paste" << "separator"
                     << "openwith"
                     << "preview_submenu";
@@ -350,8 +336,6 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     itemList << rootItem;
     QUrl viewUrl = rootItem.url();
     const KonqPopupMenu::Flags flags = m_appFlags |
-        KonqPopupMenu::ShowNavigationItems |
-        KonqPopupMenu::ShowUp |
         KonqPopupMenu::ShowCreateDirectory |
         KonqPopupMenu::ShowUrlOperations |
         KonqPopupMenu::ShowProperties;
@@ -367,8 +351,7 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     actions.removeAll("services_submenu");
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "go_up" << "go_back" << "go_forward" << "separator"
-                    // << "paste" // no paste since readonly
+    expectedActions // << "paste" // no paste since readonly
                     << "openwith"
                     << "preview_submenu";
     expectedActions << "separator";
@@ -385,7 +368,6 @@ void KonqPopupMenuTest::testHtmlLink()
     QUrl viewUrl("http://www.kde.org");
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowBookmark
-            | KonqPopupMenu::ShowReload
             | KonqPopupMenu::IsLink;
     KonqPopupMenu::ActionGroupMap actionGroups;
     actionGroups.insert(KonqPopupMenu::TabHandlingActions, m_tabHandlingActions->actions());
@@ -419,9 +401,7 @@ void KonqPopupMenuTest::testHtmlPage()
     QUrl viewUrl = m_linkItem.url();
 
     const KonqPopupMenu::Flags flags = m_appFlags
-            | KonqPopupMenu::ShowBookmark
-            | KonqPopupMenu::ShowReload
-            | KonqPopupMenu::ShowNavigationItems;
+            | KonqPopupMenu::ShowBookmark;
     KonqPopupMenu::ActionGroupMap actionGroups;
     // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
     // TODO we could just move that logic to KonqPopupMenu...
@@ -443,8 +423,7 @@ void KonqPopupMenuTest::testHtmlPage()
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "go_back" << "go_forward" << "reload" << "separator"
-                    << "bookmark_add"
+    expectedActions << "bookmark_add"
                     << "separator"
                     << "openwith"
                     << "preview_submenu"
@@ -454,10 +433,6 @@ void KonqPopupMenuTest::testHtmlPage()
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
-
-// TODO test ShowReload (khtml passes it, but not the file views. Maybe show it if "not a directory" or "not local")
-
-// (because file viewers don't react on changes, and remote things don't notify) -- then get rid of ShowReload.
 
 // TODO test ShowBookmark. Probably the same logic?
 // TODO separate filemanager and webbrowser bookmark managers, too (share file bookmarks with file dialog)

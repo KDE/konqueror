@@ -282,18 +282,6 @@ void KonqPopupMenuPrivate::populate()
         q->addAction(act);
     }
 
-    if (m_popupFlags & KonqPopupMenu::ShowNavigationItems) {
-        if (m_popupFlags & KonqPopupMenu::ShowUp) {
-            addNamedAction("go_up");
-        }
-        addNamedAction("go_back");
-        addNamedAction("go_forward");
-        if (m_popupFlags & KonqPopupMenu::ShowReload) {
-            addNamedAction("reload");
-        }
-        q->addSeparator();
-    }
-
     if (!currentDir && isSymLink && !isSymLinkInSameDir) {
         // #65151: offer to open the target's parent dir
         act = new QAction(m_parentWidget);
