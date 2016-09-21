@@ -4,7 +4,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
 
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
-   konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
    konq_events.cpp
    konq_historyentry.cpp
    konq_historyloader.cpp
@@ -49,7 +48,6 @@ install(TARGETS KF5Konq EXPORT KF5KonqTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS
 
 install(FILES directory_bookmarkbar.desktop DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kbookmark)
 install(FILES
-    konq_copytomenu.h
     konq_events.h
     konq_historyentry.h
     konq_historyprovider.h
