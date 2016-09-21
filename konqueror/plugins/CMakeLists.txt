@@ -30,7 +30,6 @@ add_subdirectory( validators )
 add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
-#add_subdirectory( quickprint )
 if (Qt5TextToSpeech_FOUND)
    add_subdirectory(ttsplugin)
 endif()
