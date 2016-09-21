@@ -154,20 +154,16 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
             extractMimeTypeFor(emitUrl, mimeType);
         } else {
             flags |= KParts::BrowserExtension::ShowBookmark;
-            flags |= KParts::BrowserExtension::ShowReload;
             emitUrl = m_part->url();
 
             if (!m_result.selectedText().isEmpty()) {
                 flags |= KParts::BrowserExtension::ShowTextSelectionItems;
                 selectActionPopupMenu(mapAction);
-            } else {
-                flags |= KParts::BrowserExtension::ShowNavigationItems;
             }
         }
         partActionPopupMenu(mapAction);
     } else {
         flags |= KParts::BrowserExtension::ShowBookmark;
-        flags |= KParts::BrowserExtension::ShowReload;
         flags |= KParts::BrowserExtension::IsLink;
         emitUrl = m_result.linkUrl();
         linkActionPopupMenu(mapAction);
