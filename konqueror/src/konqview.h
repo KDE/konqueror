@@ -374,13 +374,6 @@ public:
     }
     void setPassiveMode(bool mode);
 
-    // True if is hierarchical view
-    bool isHierarchicalView() const
-    {
-        return m_bHierarchicalView;
-    }
-    void setHierarchicalView(bool mode);
-
     // True if 'link' symbol set
     bool isLinkedView() const
     {
@@ -657,7 +650,6 @@ private:
     uint m_bPendingRedirection: 1;
     uint m_bBuiltinView: 1;
     uint m_bURLDropHandling: 1;
-    uint m_bHierarchicalView: 1;
     uint m_bDisableScrolling: 1;
     uint m_bErrorURL: 1;
     KService::List m_partServiceOffers;

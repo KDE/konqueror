@@ -4517,11 +4517,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         sReading = KProtocolManager::supportsReading(m_popupUrl);
     }
 
-    // Don't set the view URL for a toggle view.
-    // (This is a bit of a hack for the directory tree....)
-    // ## should use the new currentView->isHierarchicalView() instead?
-    // Would this be correct for the konqlistview tree view?
-    QUrl viewURL = currentView->isToggleView() ? QUrl() : currentView->url();
+    QUrl viewURL = currentView->url();
     qDebug() << "viewURL=" << viewURL;
 
     bool openedForViewURL = false;
@@ -4603,10 +4599,6 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         QAction *separator = new QAction(konqyMenuClient->actionCollection());
         separator->setSeparator(true);
         tabHandlingActions.append(separator);
-    }
-
-    if (currentView->isHierarchicalView()) {
-        popupFlags |= KonqPopupMenu::ShowCreateDirectory;
     }
 
     if (doTabHandling) {
@@ -4871,12 +4863,6 @@ void KonqMainWindow::updateViewModeActions()
         const KService::Ptr service = *it;
         const QVariant propToggable = service->property("X-KDE-BrowserView-Toggable");
         const bool toggable = propToggable.isValid() && propToggable.toBool();
-        const QVariant propHierarchical = service->property("X-KDE-BrowserView-HierarchicalView");
-        const bool hierarchical = propHierarchical.isValid() && propHierarchical.toBool();
-        // No hierarchical toggable views in view mode (i.e. konsole ok, but no sidebar)
-        if (toggable && hierarchical) {
-            continue;
-        }
 
         const QString desktopEntryName = service->desktopEntryName();
         bool bIsCurrentView = desktopEntryName == m_currentView->service()->desktopEntryName();
