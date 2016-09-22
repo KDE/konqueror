@@ -5,8 +5,6 @@ find_package(ECM 1.7.0 CONFIG REQUIRED)
 
 include(FeatureSummary)
 
-include_directories (${KDE_BASEAPPS_SOURCE_DIR}/lib/konq)
-
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 
 include(KDEInstallDirs)
