@@ -32,8 +32,14 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
 
 add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
+# For khtmldefaults.h. We don't need to link to khtml, just to include that header...
+get_target_property(khtml_include_dir KF5::KHtml INTERFACE_INCLUDE_DIRECTORIES)
+target_include_directories(kcm_konqhtml PRIVATE "${khtml_include_dir}")
 
-target_link_libraries(kcm_konqhtml KF5::Parts KF5::KDELibs4Support KF5::KHtml)
+target_link_libraries(kcm_konqhtml
+   KF5::Parts
+   KF5::KDELibs4Support
+)
 
 install(TARGETS kcm_konqhtml  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 

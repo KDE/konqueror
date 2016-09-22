@@ -113,10 +113,6 @@ target_link_libraries(kdeinit_konqueror
    KF5::Crash
 )
 
-# For khtmldefaults.h. We don't need to link to khtml, just to include that header...
-get_target_property(khtml_include_dir KF5::KHtml INTERFACE_INCLUDE_DIRECTORIES)
-target_include_directories(kdeinit_konqueror PRIVATE "${khtml_include_dir}")
-
 if (X11_FOUND)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
 endif ()
