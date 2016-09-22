@@ -42,6 +42,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
+add_subdirectory( libkonq )
 add_subdirectory( src )
 add_subdirectory( client )
 add_subdirectory( autotests )
