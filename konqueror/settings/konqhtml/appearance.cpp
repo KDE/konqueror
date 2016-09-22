@@ -314,7 +314,6 @@ void KAppearanceOptions::load()
     KConfigGroup cg(m_pConfig, "");
 #define SET_GROUP(x) cg = KConfigGroup(m_pConfig,x); khtmlrc = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),x)
 #define READ_NUM(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
-#define READ_ENTRY(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
 #define READ_LIST(x) cg.readEntry(x, khtmlrc.readEntry(x, QStringList() ))
 #define READ_BOOL(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
 #define READ_ENTRYNODEFAULT(x) cg.readEntry(x, khtmlrc.readEntry(x))
@@ -327,12 +326,12 @@ void KAppearanceOptions::load()
     }
 
     defaultFonts = QStringList();
-    defaultFonts.append(READ_ENTRY("StandardFont", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family()));
-    defaultFonts.append(READ_ENTRY("FixedFont", QFontDatabase::systemFont(QFontDatabase::FixedFont).family()));
-    defaultFonts.append(READ_ENTRY("SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT));
-    defaultFonts.append(READ_ENTRY("SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT));
-    defaultFonts.append(READ_ENTRY("CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT));
-    defaultFonts.append(READ_ENTRY("FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT));
+    defaultFonts.append(QFontDatabase::systemFont(QFontDatabase::GeneralFont).family());
+    defaultFonts.append(QFontDatabase::systemFont(QFontDatabase::FixedFont).family());
+    defaultFonts.append(HTML_DEFAULT_VIEW_SERIF_FONT);
+    defaultFonts.append(HTML_DEFAULT_VIEW_SANSSERIF_FONT);
+    defaultFonts.append(HTML_DEFAULT_VIEW_CURSIVE_FONT);
+    defaultFonts.append(HTML_DEFAULT_VIEW_FANTASY_FONT);
     defaultFonts.append(QString("0"));   // default font size adjustment
 
     if (cg.hasKey("Fonts")) {
