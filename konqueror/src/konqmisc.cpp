@@ -24,7 +24,6 @@
 #include "konqview.h"
 #include "konqmainwindowfactory.h"
 
-#include <kapplication.h>
 #include <QDebug>
 #include <kurifilter.h>
 #include <KLocalizedString>

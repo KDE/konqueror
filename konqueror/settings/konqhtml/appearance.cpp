@@ -5,7 +5,6 @@
 #include <QtDBus/QDBusConnection>
 #include <QGroupBox>
 
-#include <kapplication.h>
 #include <kcharsets.h>
 #include <ksharedconfig.h>
 #include <kdebug.h>

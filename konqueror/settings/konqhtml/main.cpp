@@ -33,7 +33,6 @@
 #include <QtDBus/QtDBus>
 
 // KDE
-#include <kapplication.h>
 #include <kaboutdata.h>
 #include <KPluginFactory>
 #include <KPluginLoader>

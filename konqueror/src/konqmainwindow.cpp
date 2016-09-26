@@ -56,6 +56,7 @@
 #include <konqpixmapprovider.h>
 #include <kbookmarkmanager.h>
 #include <kinputdialog.h>
+#include <kcomponentdata.h>
 #include <klineedit.h>
 #include <kzip.h>
 #include <pwd.h>
@@ -5034,7 +5035,7 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
         }
     }
     KParts::MainWindow::closeEvent(e);
-    if (kapp && !kapp->sessionSaving() && stayPreloaded()) {
+    if (qApp && !qApp->isSavingSession() && stayPreloaded()) {
         e->ignore();
         hide();
     }
@@ -5549,13 +5550,11 @@ void KonqMainWindow::setPreloadedFlag(bool preloaded)
     }
     s_preloaded = preloaded;
     if (s_preloaded) {
-        kapp->disableSessionManagement(); // don't restore preloaded konqy's
         KonqSessionManager::self()->disableAutosave(); // don't save sessions
         return; // was registered before calling this
     }
     delete s_preloadedWindow; // preloaded state was abandoned without reusing the window
     s_preloadedWindow = NULL;
-    kapp->enableSessionManagement(); // enable SM again
     KonqSessionManager::self()->enableAutosave(); // enable session saving again
     QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
     ref.call("unregisterPreloadedKonqy", QDBusConnection::sessionBus().baseService());

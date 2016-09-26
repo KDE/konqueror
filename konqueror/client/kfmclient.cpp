@@ -353,7 +353,7 @@ bool ClientApp::doIt()
     }
     QString command = args->arg(0);
 
-    // read ASN env. variable for non-KApp cases
+    // read ASN env. variable
     startup_id_str = KStartupInfo::currentStartupIdEnv().id();
 
     kDebug() << "Creating ClientApp";

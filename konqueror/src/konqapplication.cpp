@@ -23,11 +23,10 @@
 #include "konqmainwindow.h"
 #include "KonquerorAdaptor.h"
 #include "konqviewmanager.h"
-#include <kglobal.h>
 #include <KSharedConfig>
 
-KonquerorApplication::KonquerorApplication()
-    : KApplication()
+KonquerorApplication::KonquerorApplication(int &argc, char **argv)
+    : QApplication(argc, argv)
 {
     // enable high dpi support
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);

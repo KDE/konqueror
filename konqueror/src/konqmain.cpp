@@ -101,7 +101,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KCmdLineArgs::addCmdLineOptions(options); // Add our own options.
     KCmdLineArgs::addTempFileOption();
 
-    KonquerorApplication app;
+    KonquerorApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("konqueror");
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();

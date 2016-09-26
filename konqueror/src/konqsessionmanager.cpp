@@ -55,6 +55,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QStandardPaths>
+#include <QSessionManager>
 #include <KSharedConfig>
 
 class KonqSessionManagerPrivate
@@ -383,6 +384,8 @@ KonqSessionManager::KonqSessionManager()
                 SLOT(autoSaveSession()));
     }
     enableAutosave();
+
+    connect(qApp, &QGuiApplication::commitDataRequest, this, &KonqSessionManager::slotCommitData);
 }
 
 KonqSessionManager::~KonqSessionManager()
@@ -391,6 +394,14 @@ KonqSessionManager::~KonqSessionManager()
         QFile::remove(m_sessionConfig->name());
     }
     delete m_sessionConfig;
+}
+
+// Don't restore preloaded konquerors
+void KonqSessionManager::slotCommitData(QSessionManager &sm)
+{
+    if (!m_autosaveEnabled) {
+        sm.setRestartHint(QSessionManager::RestartNever);
+    }
 }
 
 void KonqSessionManager::disableAutosave()

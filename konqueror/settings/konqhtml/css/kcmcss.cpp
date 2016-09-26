@@ -6,7 +6,6 @@
 #include <QCheckBox>
 
 // KDE
-#include <kapplication.h>
 #include <kcolorbutton.h>
 #include <kconfig.h>
 #include <kdialog.h>

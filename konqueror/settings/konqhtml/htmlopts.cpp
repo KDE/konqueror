@@ -24,7 +24,6 @@
 #include <kdialog.h>
 #include <knuminput.h>
 #include <kseparator.h>
-#include <kapplication.h>
 
 // Local
 #include <KPluginFactory>

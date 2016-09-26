@@ -29,7 +29,6 @@
 #include <QIcon>
 #include <QMimeData>
 
-#include <kapplication.h>
 #include <kcolorscheme.h>
 #include <QDebug>
 #include <kiconloader.h>

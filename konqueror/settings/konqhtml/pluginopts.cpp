@@ -27,7 +27,6 @@
 
 // KDE
 #include <kprocess.h>
-#include <kapplication.h>
 #include <QIcon>
 #include <kdebug.h>
 #include <kfiledialog.h>

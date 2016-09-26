@@ -32,6 +32,7 @@
 
 class KonqMainWindow;
 class QTreeWidgetItem;
+class QSessionManager;
 
 class SessionRestoreDialog : public KDialog
 {
@@ -182,6 +183,10 @@ public Q_SLOTS:
      * dbus signal).
      */
     void saveCurrentSessions(const QString &path);
+
+private Q_SLOTS:
+    void slotCommitData(QSessionManager &sm);
+
 private:
     KonqSessionManager();
 

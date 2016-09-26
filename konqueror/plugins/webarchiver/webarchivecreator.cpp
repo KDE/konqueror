@@ -26,14 +26,13 @@
 #include <QPixmap>
 #include <QImage>
 #include <QPainter>
-//Added by qt3to4:
+#include <QApplication>
 #include <QTimerEvent>
 #include <QAbstractEventDispatcher>
 #include <khtml_part.h>
 
 // KDELibs4Support
 #include  <kurl.h>
-#include <kapplication.h>
 
 #include "webarchivecreator.moc"
 
@@ -72,7 +71,7 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
     m_completed = false;
     int timerId = startTimer(5000);
     while (!m_completed) {
-        kapp->processEvents(QEventLoop::WaitForMoreEvents);
+        qApp->processEvents(QEventLoop::WaitForMoreEvents);
     }
     killTimer(timerId);
 

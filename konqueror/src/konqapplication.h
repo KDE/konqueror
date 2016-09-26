@@ -21,15 +21,15 @@
 #define KONQ_APPLICATION_H
 
 #include "konqprivate_export.h"
-#include <kapplication.h>
+#include <QApplication>
 
 class QDBusMessage;
 
-class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
+class KONQ_TESTS_EXPORT KonquerorApplication : public QApplication
 {
     Q_OBJECT
 public:
-    KonquerorApplication();
+    KonquerorApplication(int &argc, char **argv);
 
 public slots:
     void slotReparseConfiguration();

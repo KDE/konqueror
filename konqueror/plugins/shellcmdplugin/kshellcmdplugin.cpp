@@ -24,7 +24,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kshell.h>
-#include <kapplication.h>
 #include <kpluginfactory.h>
 #include <kauthorized.h>
 #include <kio/netaccess.h>
