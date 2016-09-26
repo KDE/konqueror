@@ -3,7 +3,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libkonq\")
 ########### libkonq ###############
 
 set(konq_LIB_SRCS
-   konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
+   konq_popupmenu.cpp       # now only used by konqueror, could move there
    konq_events.cpp
    konq_historyentry.cpp
    konq_historyloader.cpp
