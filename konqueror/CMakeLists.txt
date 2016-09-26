@@ -24,10 +24,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDE
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities) # Optional
 
-if ("${CMAKE_SOURCE_DIR}" STREQUAL "${Konqueror_SOURCE_DIR}")
-    find_package(KF5Konq CONFIG REQUIRED)
-endif()
-
 find_package(KDED REQUIRED)
 
 find_package(X11)
