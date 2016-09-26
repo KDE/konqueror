@@ -2262,45 +2262,6 @@ from the <guimenu>View</guimenu> menu) when you open it, while
 not displaying images as thumbnails in other folders.</para></note>
 </sect1>
 
-<sect1 id="save-settings-view-profiles">
-<title>View Profiles</title>
-<para>&konqueror; can save a whole set of options as a <quote>View
-Profile</quote>. Some view profiles are part of the standard &konqueror;
-installation, such as <property>Web Browsing</property>, <property>File
-Management</property>, <property>KDE Development</property>, 
-<property>Midnight Commander</property> and <property>Tabbed Browsing</property>;
-but you can add your own, too.</para>
-
-<para>To modify a view profile (say, the <property>Web Browsing</property>
-profile), load the profile with
-<menuchoice><guimenu>Settings</guimenu><guisubmenu>Load View
-Profile</guisubmenu><guimenuitem>Web Browsing</guimenuitem> </menuchoice>, and
-change the &konqueror; settings to whatever you want. Now select
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Save View Profile As...
-</guimenuitem></menuchoice>. In the dialog which appears, you can
-change the name of the profile, which will create a new profile with that name,
-or you can leave the name as it is to modify the current profile. If you select
-<guilabel>Save URLs in profile</guilabel>, the current &URL; will be loaded
-when you load that view profile. This functions in a similar way to the
-<quote>Home Page</quote> in many web browsers. If you want &konqueror; to start
-up with an empty window enter <userinput>about:blank</userinput> into the
-location bar before saving the profile.</para>
-<note><para>You can create a desktop icon in a <guilabel>Folder View</guilabel>
-widget to start &konqueror; with your new profile.
-First drag and drop the &konqueror; entry in the application launcher menu into
-a <guilabel>Folder View</guilabel> widget on the desktop or select <guimenuitem>Add
-to Desktop</guimenuitem> from the contextmenu if your Desktop has a
-<guilabel>Folder View</guilabel> layout. Open the settings dialog
-of the new icon by selecting <guilabel>Properties</guilabel> from its context menu.
-Change <guilabel>Command</guilabel> in the <guilabel>Application</guilabel> tab page to
-<userinput><command>kfmclient</command> <option>openProfile
-<replaceable>MyNewProfile</replaceable></option></userinput>,
-<replaceable>MyNewProfile</replaceable> being what you called the new
-profile. Then change the name to something like <filename>MyNewProfile</filename>
-.</para></note>
-</sect1>
-</chapter>
-
 <chapter id="plugins">
 
 <chapterinfo>

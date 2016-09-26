@@ -319,9 +319,7 @@ QString KonqAboutPageSingleton::tips()
                     "sessions.", window_fullscreen_icon_path))
           .arg(i18n("Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
                     "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split View "
-                    "Left/Right) you can make Konqueror appear the way you like. You"
-                    " can even load some example view-profiles (e.g. Midnight Commander)"
-                    ", or create your own ones.", view_left_right_icon_path))
+                    "Left/Right) you can make Konqueror appear the way you like.", view_left_right_icon_path))
           .arg(i18n("Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                     "asks you to use a different browser "
                     "(and do not forget to send a complaint to the webmaster!)", QString("exec:/kcmshell5 useragent")))

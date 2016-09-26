@@ -56,8 +56,8 @@ add_subdirectory( plugins )
 
 ########### install files ###############
 install( PROGRAMS
-   kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop kfmclient_war.desktop
-   konqbrowser.desktop konquerorsu.desktop Home.desktop
+   kfmclient.desktop kfmclient_html.desktop kfmclient_war.desktop
+   konqbrowser.desktop
    DESTINATION  ${KDE_INSTALL_APPDIR} )
 install(FILES konqueror.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata )
 
