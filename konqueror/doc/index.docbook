@@ -428,7 +428,7 @@ window.</para></listitem>
 
 <para>To view a &kde; Help page, enter
 <userinput>help:/<replaceable>application name</replaceable></userinput> (for
-example <userinput>help:/kmail</userinput> to view the &kmail; documentation.)
+example <userinput>help:/<replaceable>kmail</replaceable></userinput> to view the &kmail; documentation.)
 into &konqueror;'s Location Toolbar window.
 </para>
 
@@ -2233,9 +2233,7 @@ as described above.</para>
 
 </chapterinfo>
 
-<title>Saving Settings &amp; Profiles</title>
-<sect1 id="save-settings-general">
-<title>General Settings</title>
+<title>Saving Settings</title>
 <para>When you close down &konqueror; your current <guimenu>View</guimenu> 
 menu settings (such as the <guimenuitem>View Mode</guimenuitem>, 
 <guimenuitem>Use index.html</guimenuitem> and <guimenuitem>Show Hidden 
@@ -2260,7 +2258,6 @@ pictures (by choosing the <menuchoice><guisubmenu>View Mode</guisubmenu>
 <guimenuitem>Icons</guimenuitem></menuchoice> and <guimenuitem>Preview</guimenuitem> 
 from the <guimenu>View</guimenu> menu) when you open it, while 
 not displaying images as thumbnails in other folders.</para></note>
-</sect1>
 
 </chapter>
 
