@@ -14,8 +14,8 @@
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 
-class KComboBox;
-class KUrlRequester;
+class QComboBox;
+class QLineEdit;
 class Ui_advancedTabOptions;
 class QVBoxLayout;
 
@@ -38,9 +38,10 @@ private:
 
     KSharedConfig::Ptr m_pConfig;
 
-    KComboBox *m_startCombo;
-    KUrlRequester *homeURL;
-    KComboBox *m_webEngineCombo;
+    QComboBox *m_startCombo;
+    QLineEdit *homeURL;
+    QLineEdit *startURL;
+    QComboBox *m_webEngineCombo;
     Ui_advancedTabOptions *tabOptions;
 };
 
