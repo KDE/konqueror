@@ -1,5 +1,6 @@
 /*
     Copyright (c) 2009 David Faure <faure@kde.org>
+    Copyright (c) 2016 Anthony Fieroni <bvbfan@abv.bg>
 
     This library is free software; you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -18,67 +19,93 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include "konqrmbeventfilter.h"
+#include "konqmouseeventfilter.h"
 #include "konqframe.h"
 #include "konqview.h"
 #include "konqmainwindow.h"
 #include "konqsettingsxt.h"
 #include <kglobal.h>
+
 #include <QApplication>
 #include <QMouseEvent>
-class KonqRmbEventFilterSingleton
+
+class KonqMouseEventFilterSingleton
 {
 public:
-    KonqRmbEventFilter self;
+    KonqMouseEventFilter self;
 };
 
-K_GLOBAL_STATIC(KonqRmbEventFilterSingleton, globalRmbEventFilter)
+K_GLOBAL_STATIC(KonqMouseEventFilterSingleton, globalMouseEventFilter)
 
-KonqRmbEventFilter *KonqRmbEventFilter::self()
+KonqMouseEventFilter *KonqMouseEventFilter::self()
 {
-    return &globalRmbEventFilter->self;
+    return &globalMouseEventFilter->self;
 }
 
-KonqRmbEventFilter::KonqRmbEventFilter()
+KonqMouseEventFilter::KonqMouseEventFilter()
     : QObject(0)
 {
-    m_bBackRightClick = KonqSettings::backRightClick();
-    if (m_bBackRightClick) {
-        qApp->installEventFilter(this);
-    }
+    reparseConfiguration();
+    qApp->installEventFilter(this);
 }
 
-static KonqFrame *parentFrame(QWidget *w)
+static KonqMainWindow* parentWindow(QWidget *w)
 {
-    KonqFrame *frame = 0;
+    KonqFrame *frame = nullptr;
     while (w && !frame) {
         w = w->parentWidget(); // yes this fails if the initial widget itself is a KonqFrame, but this can't happen
         frame = qobject_cast<KonqFrame *>(w);
     }
-    return frame;
+    if (!frame) {
+        return nullptr;
+    }
+    if (auto view = frame->childView()) {
+        return view->mainWindow();
+    }
+    return nullptr;
 }
 
-bool KonqRmbEventFilter::eventFilter(QObject *obj, QEvent *e)
+bool KonqMouseEventFilter::eventFilter(QObject *obj, QEvent *e)
 {
     const int type = e->type();
     switch (type) {
     case QEvent::MouseButtonPress:
-        if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
-            return true;
+        switch (static_cast<QMouseEvent*>(e)->button()) {
+        case Qt::RightButton:
+            if (m_bBackRightClick) {
+                return true;
+            }
+            break;
+        case Qt::ForwardButton:
+            if (auto window = parentWindow(qobject_cast<QWidget*>(obj))) {
+                window->slotForward();
+                return true;
+            }
+            break;
+        case Qt::BackButton:
+            if (auto window = parentWindow(qobject_cast<QWidget*>(obj))) {
+                window->slotBack();
+                return true;
+            }
+            break;
+        default:
+            break;
         }
         break;
     case QEvent::MouseButtonRelease:
-        if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
-            QWidget *w = static_cast<QWidget *>(obj);
-            if (KonqFrame *frame = parentFrame(w)) {
-                frame->childView()->mainWindow()->slotBack();
+        if (!m_bBackRightClick) {
+            break;
+        }
+        if (static_cast<QMouseEvent*>(e)->button() == Qt::RightButton) {
+            if (auto window = parentWindow(qobject_cast<QWidget*>(obj))) {
+                window->slotBack();
                 return true;
             }
         }
         break;
     case QEvent::MouseMove: {
-        QMouseEvent *ev = static_cast<QMouseEvent *>(e);
-        if (ev->buttons() & Qt::RightButton) {
+        QMouseEvent *ev = static_cast<QMouseEvent*>(e);
+        if (m_bBackRightClick && ev->buttons() & Qt::RightButton) {
             qApp->removeEventFilter(this);
             QMouseEvent me(QEvent::MouseButtonPress, ev->pos(), Qt::RightButton, Qt::RightButton, Qt::NoModifier);
             QApplication::sendEvent(obj, &me);
@@ -89,7 +116,7 @@ bool KonqRmbEventFilter::eventFilter(QObject *obj, QEvent *e)
         break;
     }
     case QEvent::ContextMenu: {
-        QContextMenuEvent *ev = static_cast<QContextMenuEvent *>(e);
+        QContextMenuEvent *ev = static_cast<QContextMenuEvent*>(e);
         if (ev->reason() == QContextMenuEvent::Mouse) {
             return true;
         }
@@ -102,13 +129,7 @@ bool KonqRmbEventFilter::eventFilter(QObject *obj, QEvent *e)
     return false;
 }
 
-void KonqRmbEventFilter::reparseConfiguration()
+void KonqMouseEventFilter::reparseConfiguration()
 {
-    const bool oldBackRightClick = m_bBackRightClick;
     m_bBackRightClick = KonqSettings::backRightClick();
-    if (!oldBackRightClick && m_bBackRightClick) {
-        qApp->installEventFilter(this);
-    } else if (oldBackRightClick && !m_bBackRightClick) {
-        qApp->removeEventFilter(this);
-    }
 }

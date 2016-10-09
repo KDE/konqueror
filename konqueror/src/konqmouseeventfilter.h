@@ -1,5 +1,6 @@
 /*
     Copyright (c) 2009 David Faure <faure@kde.org>
+    Copyright (c) 2016 Anthony Fieroni <bvbfan@abv.bg>
 
     This library is free software; you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
@@ -18,29 +19,29 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQRMBEVENTFILTER_H
-#define KONQRMBEVENTFILTER_H
+#ifndef KONQMOUSEEVENTFILTER_H
+#define KONQMOUSEEVENTFILTER_H
 
 #include <QObject>
 
-class KonqRmbEventFilter : public QObject
+class KonqMouseEventFilter : public QObject
 {
     Q_OBJECT
 
 public:
-    static KonqRmbEventFilter *self();
+    static KonqMouseEventFilter *self();
 
     void reparseConfiguration();
 
 protected:
-    virtual bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *obj, QEvent *e) Q_DECL_OVERRIDE;
 
 private:
-    explicit KonqRmbEventFilter();
-    friend class KonqRmbEventFilterSingleton;
+    explicit KonqMouseEventFilter();
+    friend class KonqMouseEventFilterSingleton;
 
     bool m_bBackRightClick;
 };
 
-#endif /* KONQRMBEVENTFILTER_H */
+#endif /* KONQMOUSEEVENTFILTER_H */
 

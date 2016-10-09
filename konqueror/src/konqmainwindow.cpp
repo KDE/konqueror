@@ -22,7 +22,7 @@
 */
 
 #include "konqmainwindow.h"
-#include "konqrmbeventfilter.h"
+#include "konqmouseeventfilter.h"
 #include "konqclosedwindowsmanager.h"
 #include "konqsessionmanager.h"
 #include "konqsessiondlg.h"
@@ -227,7 +227,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     s_lstViews->append(this);
 
-    KonqRmbEventFilter::self(); // create it
+    KonqMouseEventFilter::self(); // create it
 
     m_pChildFrame = 0;
     m_pActiveChild = 0;
@@ -4743,7 +4743,7 @@ void KonqMainWindow::reparseConfiguration()
 
     KonqSettings::self()->load();
     m_pViewManager->applyConfiguration();
-    KonqRmbEventFilter::self()->reparseConfiguration();
+    KonqMouseEventFilter::self()->reparseConfiguration();
 
     if (m_combo) {
         m_combo->setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));

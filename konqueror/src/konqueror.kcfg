@@ -254,7 +254,7 @@
       <label></label>
       <whatsthis></whatsthis>
     </entry>
-  
+
 <!-- Are these entries? Can't find writeEntry(..)! They belong maybe to DefaultEncoding.
 
     <entry name="iso8859_1" key="iso8859-1" type="StringList"> </entry>
@@ -285,7 +285,7 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-    <entry key="BackRightClick" type="Bool"> <!--konqrmbeventfilter.cpp but also in KHTML !?-->
+    <entry key="BackRightClick" type="Bool"> <!--konqmouseeventfilter.cpp but also in KHTML !?-->
       <default>false</default>
       <label></label>
       <whatsthis></whatsthis>
@@ -426,7 +426,7 @@ PATH_JAVA
       <label></label>
       <whatsthis></whatsthis>
     </entry>
-<!-- pluginopts.cpp -->  
+<!-- pluginopts.cpp -->
     <entry key="EnablePlugins" type="Bool"> <!--KHTML-->
       <default>true</default>
       <label></label>
@@ -446,7 +446,7 @@ PATH_JAVA
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-  
+
     <entry name="plugin_application_x_shockwave_flash" key="plugin-application/x-shockwave-flash" type="String">
       <label></label>
       <whatsthis></whatsthis>
@@ -456,7 +456,7 @@ PATH_JAVA
       <whatsthis></whatsthis>
     </entry>
   </group>
- 
+
   <group name="Reusing" >
     <entry key="SafeParts" type="StringList">
       <default>SAFE</default>

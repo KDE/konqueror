@@ -59,7 +59,7 @@ set(konqueror_KDEINIT_SRCS
    konqrun.cpp
    konqview.cpp
    konqviewmanager.cpp
-   konqrmbeventfilter.cpp
+   konqmouseeventfilter.cpp
    konqmisc.cpp
    konqdraggablelabel.cpp
    konqframe.cpp
