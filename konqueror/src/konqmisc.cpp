@@ -33,7 +33,6 @@
 #include <kconfiggroup.h>
 #include <QList>
 #include <QStandardPaths>
-#include <KSharedConfig>
 
 /**********************************************
  *

@@ -20,6 +20,7 @@
 #include "konqmainwindowfactory.h"
 #include "konqmainwindow.h"
 #include "konqsessionmanager.h"
+#include "konqsettingsxt.h"
 #include <KWindowInfo>
 #include <KStartupInfo>
 
@@ -70,7 +71,7 @@ KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,
         mainWindow->openUrl(Q_NULLPTR, url, QString(), req);
         mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
-        mainWindow->openUrl(Q_NULLPTR, QUrl("about:konqueror"));
+        mainWindow->openUrl(Q_NULLPTR, QUrl(KonqSettings::startURL()));
         mainWindow->focusLocationBar();
     }
     return mainWindow;

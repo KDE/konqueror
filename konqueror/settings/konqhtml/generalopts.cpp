@@ -10,38 +10,40 @@
 
 // Own
 #include "generalopts.h"
-#include <kbuildsycocaprogressdialog.h>
 
 // Qt
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
-#include <QGroupBox>
+#include <QComboBox>
+#include <QDebug>
 #include <QFormLayout>
-#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QLineEdit>
 #include <QLabel>
+#include <QStandardPaths>
+#include <QUrl>
+#include <QVBoxLayout>
 
 // KDE
-#include <kcombobox.h>
 #include <kconfig.h>
-#include <qdebug.h>
+#include <kbuildsycocaprogressdialog.h>
 #include <kmimetype.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
-
-#include <kurlrequester.h>
 #include <KConfigGroup>
 #include <KGlobal>
-#include <QUrl>
-// Local
-#include "ui_advancedTabOptions.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
-#include <QStandardPaths>
 #include <KSharedConfig>
 
+// Local
+#include "ui_advancedTabOptions.h"
+
 // Keep in sync with konqueror.kcfg
+static const char DEFAULT_STARTPAGE[] = "about:konqueror";
 static const char DEFAULT_HOMEPAGE[] = "http://www.kde.org";
-enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage, ShowBookmarksPage };
+// Keep in sync with the order in the combo
+enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
 
 //-----------------------------------------------------------------------------
 
@@ -82,32 +84,47 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
     QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
 
-    m_startCombo = new KComboBox(this);
+    QWidget *containerWidget = new QWidget(this);
+    QHBoxLayout *hboxLayout = new QHBoxLayout(containerWidget);
+    hboxLayout->setMargin(0);
+    formLayout->addRow(startLabel, containerWidget);
+
+    m_startCombo = new QComboBox(this);
     m_startCombo->setEditable(false);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Introduction Page"), ShowAboutPage);
-    m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Home Page"), ShowHomePage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Start Page"), ShowStartUrlPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Blank Page"), ShowBlankPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Bookmarks"), ShowBookmarksPage);
-    formLayout->addRow(startLabel, m_startCombo);
     startLabel->setBuddy(m_startCombo);
     connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+    hboxLayout->addWidget(m_startCombo);
+
+    startURL = new QLineEdit(this);
+    startURL->setWindowTitle(i18nc("@title:window", "Select Start Page"));
+    hboxLayout->addWidget(startURL);
+    connect(startURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
+
+    QString startstr = i18n("This is the URL of the web page "
+                           "Konqueror will show when starting.");
+    startURL->setWhatsThis(startstr);
+    connect(m_startCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this](int idx) {
+            startURL->setEnabled(idx == ShowStartUrlPage);
+            });
+    startURL->setEnabled(false);
 
     ////
 
     QLabel *label = new QLabel(i18n("Home page:"), this);
 
-    homeURL = new KUrlRequester(this);
-    homeURL->setMode(KFile::Directory);
+    homeURL = new QLineEdit(this);
     homeURL->setWindowTitle(i18nc("@title:window", "Select Home Page"));
     formLayout->addRow(label, homeURL);
     connect(homeURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     label->setBuddy(homeURL);
 
     QString homestr = i18n("This is the URL of the web page where "
-                           "Konqueror (as web browser) will jump to when "
-                           "the \"Home\" button is pressed. When Konqueror is "
-                           "started as a file manager, that button makes it jump "
-                           "to your local home folder instead.");
+                           "Konqueror will jump to when "
+                           "the \"Home\" button is pressed.");
     label->setWhatsThis(homestr);
     homeURL->setWhatsThis(homestr);
 
@@ -115,40 +132,21 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
     QLabel *webLabel = new QLabel(i18n("Default web browser engine:"), this);
 
-    m_webEngineCombo = new KComboBox(this);
+    m_webEngineCombo = new QComboBox(this);
     m_webEngineCombo->setEditable(false);
     m_webEngineCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     formLayout->addRow(webLabel, m_webEngineCombo);
     webLabel->setBuddy(m_webEngineCombo);
     connect(m_webEngineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+
+    // TODO PORT QT5/KF5
+    webLabel->hide();
+    m_webEngineCombo->hide();
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
     delete tabOptions;
-}
-
-static QString readStartUrlFromProfile()
-{
-    const QString blank = "about:blank";
-    const QString profile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("konqueror/profiles/webbrowsing"));
-    if (profile.isEmpty()) {
-        return blank;
-    }
-    KConfig cfg(profile, KConfig::SimpleConfig);
-    KConfigGroup profileGroup(&cfg, "Profile");
-    const QString rootItem = profileGroup.readEntry("RootItem");
-    if (rootItem.isEmpty()) {
-        return blank;
-    }
-    if (rootItem.startsWith("View")) {
-        const QString prefix = rootItem + '_';
-        const QString urlKey = QString("URL").prepend(prefix);
-        return profileGroup.readPathEntry(urlKey, blank);
-    }
-    // simplify the other cases: whether root is a splitter or directly the tabwidget,
-    // we want to look at the first view inside the tabs, i.e. ViewT0.
-    return profileGroup.readPathEntry("ViewT0_URL", blank);
 }
 
 static StartPage urlToStartPageEnum(const QString &startUrl)
@@ -162,15 +160,32 @@ static StartPage urlToStartPageEnum(const QString &startUrl)
     if (startUrl == "bookmarks:" || startUrl == "bookmarks:/") {
         return ShowBookmarksPage;
     }
-    return ShowHomePage;
+    return ShowStartUrlPage;
+}
+
+static QString startPageEnumToUrl(StartPage startPage)
+{
+    switch (startPage) {
+        case ShowBlankPage:
+            return QStringLiteral("about:blank");
+        case ShowAboutPage:
+            return QStringLiteral("about:konqueror");
+        case ShowBookmarksPage:
+            return QStringLiteral("bookmarks:/");
+        case ShowStartUrlPage:
+            return QString();
+    }
+    return QString();
 }
 
 void KKonqGeneralOptions::load()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
-    homeURL->setUrl(QUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE)));
-    const QString startUrl = readStartUrlFromProfile();
-    const StartPage startPage = urlToStartPageEnum(startUrl);
+    const QUrl homeUrl(QUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE)));
+    const QUrl startUrl(QUrl(userSettings.readEntry("StartURL", DEFAULT_STARTPAGE)));
+    homeURL->setText(homeUrl.toString());
+    startURL->setText(startUrl.toString());
+    const StartPage startPage = urlToStartPageEnum(startUrl.toString());
     const int startComboIndex = m_startCombo->findData(startPage);
     Q_ASSERT(startComboIndex != -1);
     m_startCombo->setCurrentIndex(startComboIndex);
@@ -208,7 +223,8 @@ void KKonqGeneralOptions::load()
 
 void KKonqGeneralOptions::defaults()
 {
-    homeURL->setUrl(QUrl(DEFAULT_HOMEPAGE));
+    homeURL->setText(QUrl(DEFAULT_HOMEPAGE).toString());
+    startURL->setText(QUrl(DEFAULT_STARTPAGE).toString());
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
@@ -216,87 +232,16 @@ void KKonqGeneralOptions::defaults()
     m_pConfig->setReadDefaults(old);
 }
 
-// create local webbrowsing profile,
-// look for View0_ServiceName=konq_aboutpage or ViewT0_ServiceName=khtml
-// and replace with
-// ViewT0_ServiceName=khtml (if http)
-// ViewT0_ServiceType=text/html (if http)
-// ViewT0_URL[$e]=http://www.kde.org/
-static void updateWebbrowsingProfile(const QString &homeUrl, StartPage startPage, const QString &preferredWebEngine)
-{
-    QString url;
-    QString serviceType;
-    QString serviceName;
-    switch (startPage) {
-    case ShowHomePage: {
-        url = homeUrl;
-        // Check if we can determine the mimetype of that URL; profile loading requires the mimetype to be known
-        // This handles the case of a local directory, at least.
-        KMimeType::Ptr mime = KMimeType::findByUrl(QUrl(url));
-        if (mime && !mime->isDefault()) {
-            serviceType = mime->name();
-        } else {
-            serviceType = "text/html";
-            serviceName = preferredWebEngine;
-        }
-    }
-    break;
-    case ShowAboutPage:
-        url = "about:";
-        serviceType = "KonqAboutPage";
-        serviceName = "konq_aboutpage";
-        break;
-    case ShowBlankPage:
-        url = "about:blank";
-        serviceType = "text/html";
-        serviceName = preferredWebEngine;
-        break;
-    case ShowBookmarksPage:
-        url = "bookmarks:";
-        serviceType = "text/html";
-        serviceName = preferredWebEngine;
-        break;
-    }
-
-    const QString profileFileName = "webbrowsing";
-
-    // Create local copy of the profile if needed -- copied from KonqViewManager::setCurrentProfile
-    const QString localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/;
-    KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
-    if (!QFile::exists(localPath)) {
-        const QString globalFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("konqueror/profiles/%1").arg(profileFileName)/*, KGlobal::mainComponent()*/);
-        if (!globalFile.isEmpty()) {
-            KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
-            globalCfg->copyTo(localPath, cfg.data());
-        }
-    }
-    KConfigGroup profileGroup(cfg, "Profile");
-
-    QString rootItem = profileGroup.readEntry("RootItem");
-    if (rootItem.isEmpty()) {
-        rootItem = "View0";
-        profileGroup.writeEntry("RootItem", rootItem);
-    }
-    QString prefix;
-    if (rootItem.startsWith("View")) {
-        prefix = rootItem + '_';
-    } else {
-        // simplify the other cases: whether root is a splitter or directly the tabwidget,
-        // we want to look at the first view inside the tabs, i.e. ViewT0.
-        prefix = "ViewT0_";
-    }
-    profileGroup.writeEntry(prefix + "URL", url);
-    profileGroup.writeEntry(prefix + "ServiceType", serviceType);
-    profileGroup.writeEntry(prefix + "ServiceName", serviceName);
-    profileGroup.sync();
-}
-
 void KKonqGeneralOptions::save()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
-    userSettings.writeEntry("HomeURL", homeURL->url().url());
     const int startComboIndex = m_startCombo->currentIndex();
     const int choice = m_startCombo->itemData(startComboIndex).toInt();
+    QString startUrl(startPageEnumToUrl(static_cast<StartPage>(choice)));
+    if (startUrl.isEmpty())
+        startUrl = startURL->text();
+    userSettings.writeEntry("StartURL", startUrl);
+    userSettings.writeEntry("HomeURL", homeURL->text());
 
     const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
     QString engineEntryName = preferredWebEngine;
@@ -305,7 +250,6 @@ void KKonqGeneralOptions::save()
     }
     //qDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
 
-    updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice), engineEntryName);
 #if 0 //PORT QT5
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.

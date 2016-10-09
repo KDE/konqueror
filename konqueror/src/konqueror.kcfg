@@ -6,11 +6,15 @@
   <kcfgfile name="konquerorrc" />
 
   <group name="UserSettings">
+    <entry key="StartURL" type="Path">
+      <default>about:konqueror</default>
+      <label>Start Page</label>
+      <whatsthis>This is the URL of the web page where Konqueror will start from.</whatsthis>
+    </entry>
     <entry key="HomeURL" type="Path">
       <default>http://www.kde.org</default>
       <label>Home Page</label>
-      <whatsthis>This is the URL of the web page where Konqueror (as web browser) will jump to when the \"Home\" button is pressed. When Konqueror is started as a file manager, that button makes it jump to your local home folder instead.</whatsthis>
-      <!-- checked -->
+      <whatsthis>This is the URL of the web page where Konqueror will jump to when the \"Home\" button is pressed.</whatsthis>
     </entry>
   </group>
 
