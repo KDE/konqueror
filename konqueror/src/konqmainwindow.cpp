@@ -557,8 +557,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             // I think we can't really get here anymore; I tried and didn't succeed.
             // URL filtering catches this case before hand, and in cases without filtering
             // (e.g. HTML link), the url is empty here, not invalid.
-            // But just to be safe, let's keep this code path, even if it can't show the typed string.
-            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url /*empty*/);
+            // But just to be safe, let's keep this code path
+            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
         } else if (!KProtocolInfo::isKnownProtocol(url)) {
             url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
         }
@@ -5447,8 +5447,6 @@ void KonqMainWindow::dumpViewList()
 }
 #endif
 
-// KonqFrameContainerBase implementation BEGIN
-
 void KonqMainWindow::insertChildFrame(KonqFrameBase *frame, int /*index*/)
 {
     m_pChildFrame = frame;
@@ -5485,11 +5483,10 @@ void KonqMainWindow::copyHistory(KonqFrameBase *other)
 
 void KonqMainWindow::setTitle(const QString &/*title*/, QWidget * /*sender*/)
 {
-    return;
 }
+
 void KonqMainWindow::setTabIcon(const QUrl &/*url*/, QWidget * /*sender*/)
 {
-    return;
 }
 
 QWidget *KonqMainWindow::asQWidget()
@@ -5509,7 +5506,6 @@ KonqFrameBase *KonqMainWindow::childFrame()const
 
 void KonqMainWindow::setActiveChild(KonqFrameBase * /*activeChild*/)
 {
-    return;
 }
 
 void KonqMainWindow::setWorkingTab(int index)
@@ -5540,8 +5536,6 @@ bool KonqMainWindow::refuseExecutingKonqueror(const QString &mimeType)
     }
     return false; // no error
 }
-
-// KonqFrameContainerBase implementation END
 
 void KonqMainWindow::setPreloadedFlag(bool preloaded)
 {
