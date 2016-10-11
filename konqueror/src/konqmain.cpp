@@ -61,7 +61,7 @@ static bool tryPreload()
         if (!retVal) {
             return false;    // too many preloaded or failed
         }
-        KonqMainWindow *win = new KonqMainWindow; // prepare an empty window too
+        KonqMainWindow *win = new KonqMainWindow(QUrl("about:blank")); // prepare an empty window, with the web renderer preloaded
         // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
         KonqMainWindow::setPreloadedFlag(true);
         KonqMainWindow::setPreloadedWindow(win);
