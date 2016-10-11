@@ -175,13 +175,13 @@ KCompletion *KonqMainWindow::s_pCompletion = 0;
 
 bool KonqMainWindow::s_preloaded = false;
 KonqMainWindow *KonqMainWindow::s_preloadedWindow = 0;
-static int s_initialMemoryUsage = -1;
+static qint64 s_initialMemoryUsage = -1;
 static time_t s_startupTime;
 static int s_preloadUsageCount;
 
 KonqOpenURLRequest KonqOpenURLRequest::null;
 
-static int current_memory_usage(int *limit = NULL);
+static qint64 current_memory_usage(int *limit = NULL);
 
 static const unsigned short int s_closedItemsListLength = 10;
 static unsigned long s_konqMainWindowInstancesCount = 0;
@@ -5694,10 +5694,10 @@ bool KonqMainWindow::checkPreloadResourceUsage()
         return false;
     }
     int limit;
-    int usage = current_memory_usage(&limit);
+    qint64 usage = current_memory_usage(&limit);
     qDebug() << "Memory usage increase: " << (usage - s_initialMemoryUsage)
-             << " (" << usage << "/" << s_initialMemoryUsage << "), increase limit: " << limit;
-    int max_allowed_usage = s_initialMemoryUsage + limit;
+             << " (" << usage << " - " << s_initialMemoryUsage << "), increase limit: " << limit;
+    const qint64 max_allowed_usage = s_initialMemoryUsage + limit;
     if (usage > max_allowed_usage) { // too much memory used?
         qDebug() << "Not keeping for preloading due to high memory usage";
         return false;
@@ -5714,19 +5714,19 @@ bool KonqMainWindow::checkPreloadResourceUsage()
     return true;
 }
 
-static int current_memory_usage(int *limit)
+static qint64 current_memory_usage(int *limit)
 {
 #ifdef __linux__  //krazy:exclude=cpp
 // Check whole memory usage - VmSize
     QFile f(QString::fromLatin1("/proc/%1/statm").arg(getpid()));
     if (f.open(QIODevice::ReadOnly)) {
         QByteArray buffer; buffer.resize(100);
-        const int bytes = f.readLine(buffer.data(), buffer.size() - 1);
+        const auto bytes = f.readLine(buffer.data(), buffer.size() - 1);
         if (bytes != -1) {
             QString line = QString::fromLatin1(buffer).trimmed();
-            const int usage = line.section(' ', 0, 0).toInt();
+            const qint64 usage = line.section(' ', 0, 0).toLongLong();
             if (usage > 0) {
-                int pagesize = sysconf(_SC_PAGE_SIZE);
+                qint64 pagesize = sysconf(_SC_PAGE_SIZE);
                 if (pagesize < 0) {
                     pagesize = 4096;
                 }
