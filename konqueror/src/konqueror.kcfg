@@ -462,24 +462,13 @@ PATH_JAVA
   </group>
 
   <group name="Reusing" >
-    <entry key="SafeParts" type="StringList">
-      <default>SAFE</default>
-      <label></label>
-      <whatsthis></whatsthis>
-    </entry>
     <entry key="AlwaysHavePreloaded" type="Bool">
-      <default>false</default>
+      <default>true</default>
       <label></label>
       <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-    <entry key="MaxPreloadCount" type="Int">
-      <default>1</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
     </entry>
     <entry key="PreloadOnStartup" type="Bool">
+      <default>false</default>
       <label></label>
       <whatsthis></whatsthis>
     </entry>

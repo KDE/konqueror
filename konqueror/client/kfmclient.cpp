@@ -164,21 +164,8 @@ static void needDBus()
     }
 }
 
-static QString getPreloadedKonqy()
-{
-    KConfig konqCfg(QLatin1String("konquerorrc"));
-    const KConfigGroup reusingGroup(&konqCfg, "Reusing");
-    if (reusingGroup.readEntry("MaxPreloadCount", 1) == 0) {
-        return QString();
-    }
-    needDBus();
-    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    QDBusReply<QString> reply = ref.call("getPreloadedKonqy", currentScreen());
-    if (reply.isValid()) {
-        return reply;
-    }
-    return QString();
-}
+// keep in sync with konqpreloadinghandler.cpp
+static const char s_preloadDBusName[] = "org.kde.konqueror.preloaded";
 
 static QUrl filteredUrl(KCmdLineArgs *args)
 {
@@ -274,20 +261,13 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         }
     }
 
-    QString appId = getPreloadedKonqy();
-    if (!appId.isEmpty()) {
-        qDebug() << "ClientApp::createNewWindow using existing konqueror" << appId;
-        org::kde::Konqueror::Main konq(appId, "/KonqMain", dbus);
-        konq.createNewWindow(url.url(), mimetype, startup_id_str, tempFile);
+    const QString appId = QString::fromLatin1(s_preloadDBusName);
+    org::kde::Konqueror::Main konq(appId, "/KonqMain", dbus);
+    QDBusReply<QDBusObjectPath> reply = konq.createNewWindow(url.url(), mimetype, startup_id_str, tempFile);
+    if (reply.isValid()) {
         sendASNChange();
     } else {
         QString error;
-        /* Well, we can't pass a mimetype through startServiceByDesktopPath !
-        if ( KToolInvocation::startServiceByDesktopPath( QLatin1String("konqueror.desktop"),
-                                                      url.url(), &error ) > 0 )
-        {
-            kError() << "Couldn't start konqueror from konqueror.desktop: " << error << endl;
-            */
         // pass kfmclient's startup id to konqueror using kshell
         KStartupInfoId id;
         id.initId(startup_id_str);
@@ -308,7 +288,6 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 #endif
         KStartupInfo::resetStartupEnv();
         qDebug() << "ClientApp::createNewWindow KProcess started, pid=" << pid;
-        //}
     }
     return true;
 }

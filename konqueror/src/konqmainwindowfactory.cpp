@@ -53,6 +53,7 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
             return new KonqMainWindow;
         }
     } else if (KonqMainWindow *mainWindow = KonqPreloadingHandler::self()->takePreloadedWindow()) {
+        qDebug() << "Using preloaded window";
         KStartupInfo::setWindowStartupId(mainWindow->winId(), KStartupInfo::startupId());
         mainWindow->reparseConfiguration();
         return mainWindow;

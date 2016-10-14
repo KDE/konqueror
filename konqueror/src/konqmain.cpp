@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 1998, 1999 Simon Hausmann <hausmann@kde.org>
+   Copyright (C) 2016 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -28,20 +29,17 @@
 #include "konqsettingsxt.h"
 
 #include <KLocalizedString>
-#include <kstandarddirs.h>
-#include <QDebug>
 #include <kcmdlineargs.h>
-#include <kglobal.h>
-#include <QtCore/QFile>
 
 #include <config-konqueror.h>
-#if KONQ_HAVE_X11
-#include <QX11Info>
-#endif
 
-#include <QtDBus/QtDBus>
+#include <QDebug>
+#include <QFile>
 #include <QDir>
+#include <QDirIterator>
 #include <QStandardPaths>
+
+#include <KDBusAddons/KDBusService>
 
 static void listSessions()
 {
@@ -54,26 +52,6 @@ static void listSessions()
 }
 
 static KonqPreloadingHandler s_preloadingHandler;
-
-static bool tryPreload()
-{
-#if KONQ_HAVE_X11
-    if (QX11Info::isPlatformX11() && KonqSettings::maxPreloadCount() > 0) {
-        QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-        QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
-        if (!retVal) {
-            return false;    // too many preloaded or failed
-        }
-        s_preloadingHandler.makePreloadedWindow();
-        qDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
-        return true;
-    } else {
-        return false; // no preloading
-    }
-#else
-    return false; // no preloading
-#endif
-}
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
@@ -104,6 +82,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KonquerorApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("konqueror");
 
+    KDBusService dbusService(KDBusService::Multiple);
+
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     if (app.isSessionRestored()) {
@@ -122,7 +102,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     } else {
         // First the invocations that do not take urls.
         if (args->isSet("preload")) {
-            if (!tryPreload()) {
+            if (!s_preloadingHandler.registerAsPreloaded()) {
                 return 0;    // no preloading
             }
         } else if (args->isSet("sessions")) {
@@ -203,12 +183,15 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     }
     args->clear();
 
-    app.exec();
+    // In case there is no `konqueror --preload` running, start one
+    // (not this process, it might exit before the preloading is used)
+    s_preloadingHandler.ensurePreloadedProcessExists();
+
+    const int ret = app.exec();
 
     // Delete all KonqMainWindows, so that we don't have
     // any parts loaded when KLibLoader::cleanUp is called.
-    // Their deletion was postponed in their event()
-    // (and Qt doesn't delete WDestructiveClose widgets on exit anyway :()
+    // (and Qt doesn't delete WA_DeleteOnClose widgets on exit anyway :()
     while (KonqMainWindow::mainWindowList() != NULL) {
         // the list will be deleted by last KonqMainWindow
         delete KonqMainWindow::mainWindowList()->first();
@@ -218,5 +201,5 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KonqSessionManager::self()->disableAutosave();
     KonqSessionManager::self()->deleteOwnedSessions();
 
-    return 0;
+    return ret;
 }

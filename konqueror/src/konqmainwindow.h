@@ -569,15 +569,6 @@ private:
     void plugViewModeActions();
     void unplugViewModeActions();
 
-    bool stayPreloaded();
-    bool checkPreloadResourceUsage();
-
-    /**
-    * Manage how many instances of this class are out there.
-    */
-    void incInstancesCount();
-    void decInstancesCount();
-
     QObject *lastFrame(KonqView *view);
 
     QLineEdit *comboEdit();
@@ -714,10 +705,6 @@ private: // members
     */
     bool m_isPopupWithProxyWindow;
     QPointer<KonqMainWindow> m_popupProxyWindow;
-
-    // TODO: move to a KonqPreloadHandler class
-    static bool s_preloaded;
-    static KonqMainWindow *s_preloadedWindow;
 };
 
 #endif // KONQMAINWINDOW_H

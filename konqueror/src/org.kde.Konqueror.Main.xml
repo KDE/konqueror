@@ -22,9 +22,6 @@
       <arg name="filesToSelect" type="as" direction="in"/>
       <arg name="startup_id" type="ay" direction="in"/>
     </method>
-    <method name="crashLogFile">
-      <arg type="s" direction="out"/>
-    </method>
     <method name="windowForTab">
       <arg type="o" direction="out"/>
     </method>
@@ -35,12 +32,6 @@
       <arg name="url" type="s" direction="in"/>
     </method>
     <method name="comboCleared">
-    </method>
-    <method name="processCanBeReused">
-      <arg type="b" direction="out"/>
-      <arg name="screen" type="i" direction="in"/>
-    </method>
-    <method name="terminatePreloaded">
     </method>
   </interface>
 </node>

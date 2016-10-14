@@ -126,7 +126,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
         foreach (KonqMainWindow *window, *mainWindows) {
             KWindowInfo winfo(window->winId(), NET::WMDesktop);
             if (winfo.isOnCurrentDesktop() &&
-                    !KonqPreloadingHandler::self()->isPreloaded()) {  // we want a tab in an already shown window
+                    !KonqPreloadingHandler::self()->hasPreloadedWindow()) {  // we want a tab in an already shown window
                 Q_ASSERT(!window->dbusName().isEmpty());
                 return QDBusObjectPath(window->dbusName());
             }
@@ -135,12 +135,4 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     // We can't use QDBusObjectPath(), dbus type 'o' must be a valid object path.
     // So we use "/" as an indicator for not found.
     return QDBusObjectPath("/");
-}
-
-
-void KonquerorAdaptor::terminatePreloaded()
-{
-    if (KonqPreloadingHandler::self()->isPreloaded()) {
-        qApp->exit();
-    }
 }

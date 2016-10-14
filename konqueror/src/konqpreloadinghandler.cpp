@@ -23,8 +23,8 @@
 #include "konqviewmanager.h"
 #include "konqsettingsxt.h"
 
-#include <QDBusInterface>
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #include <QProcess>
 
 static KonqPreloadingHandler *s_self = nullptr;
@@ -39,52 +39,81 @@ KonqPreloadingHandler *KonqPreloadingHandler::self()
     return s_self;
 }
 
-void KonqPreloadingHandler::setPreloadedFlag(bool preloaded)
+// keep in sync with kfmclient.cpp
+static const char s_preloadDBusName[] = "org.kde.konqueror.preloaded";
+
+bool KonqPreloadingHandler::registerAsPreloaded()
 {
-    if (m_preloaded == preloaded) {
-        return;
+    auto connection = QDBusConnection::sessionBus();
+    if (!connection.registerService(QString::fromLatin1(s_preloadDBusName))) {
+        return false; // another process holds this name already
     }
-    m_preloaded = preloaded;
-    if (m_preloaded) {
-        KonqSessionManager::self()->disableAutosave(); // don't save sessions
-        return; // was registered before calling this
-    }
-    delete m_preloadedWindow; // preloaded state was abandoned without reusing the window
-    m_preloadedWindow = nullptr;
-    KonqSessionManager::self()->enableAutosave(); // enable session saving again
-    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    ref.call("unregisterPreloadedKonqy", QDBusConnection::sessionBus().baseService());
+    KonqSessionManager::self()->disableAutosave(); // don't save sessions
+    makePreloadedWindow();
+    qDebug() << "Konqy preloaded:" << QDBusConnection::sessionBus().baseService();
+    return true;
 }
 
-bool KonqPreloadingHandler::isPreloaded() const
+void KonqPreloadingHandler::startNextPreloadedProcess()
 {
-    return m_preloaded;
+    // Let's make another process ready for the next window
+    if (!KonqSettings::alwaysHavePreloaded()) {
+        return;
+    }
+
+    // not running in full KDE environment?
+    if (qEnvironmentVariableIsEmpty("KDE_FULL_SESSION")) {
+        return;
+    }
+    // not the same user like the one running the session (most likely we're run via sudo or something)
+    bool uidSet = false;
+    const int uidEnvValue = qEnvironmentVariableIntValue("KDE_SESSION_UID", &uidSet);
+    if (uidSet && uid_t(uidEnvValue) != getuid()) {
+        return;
+    }
+
+    qDebug() << "Preloading next Konqueror instance";
+    const QStringList args = { QStringLiteral("--preload") };
+    QProcess::startDetached(QStringLiteral("konqueror"), args);
+}
+
+bool KonqPreloadingHandler::hasPreloadedWindow() const
+{
+    return m_preloadedWindow;
 }
 
 void KonqPreloadingHandler::makePreloadedWindow()
 {
     KonqMainWindow *win = new KonqMainWindow(QUrl("about:blank")); // prepare an empty window, with the web renderer preloaded
-    // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
-    setPreloadedFlag(true);
     win->viewManager()->clear();
     m_preloadedWindow = win;
 }
 
 KonqMainWindow *KonqPreloadingHandler::takePreloadedWindow()
 {
-    if (!m_preloaded)
+    if (!m_preloadedWindow)
         return nullptr;
 
     KonqMainWindow *win = m_preloadedWindow;
     m_preloadedWindow = nullptr;
-    setPreloadedFlag(false);
 
-    // Let's make another process ready for the next window
-    if (KonqSettings::alwaysHavePreloaded()) {
-        qDebug() << "Preloading next Konqueror instance";
-        const QStringList args = { QStringLiteral("--preload") };
-        QProcess::startDetached(QStringLiteral("konqueror"), args);
-    }
+    KonqSessionManager::self()->enableAutosave(); // enable session saving again
+    auto connection = QDBusConnection::sessionBus();
+    connection.unregisterService(QString::fromLatin1(s_preloadDBusName));
+
+    startNextPreloadedProcess();
 
     return win;
+}
+
+void KonqPreloadingHandler::ensurePreloadedProcessExists()
+{
+    if (!KonqSettings::alwaysHavePreloaded()) {
+        return;
+    }
+
+    auto connection = QDBusConnection::sessionBus();
+    if (!connection.interface()->isServiceRegistered(QString::fromLatin1(s_preloadDBusName))) {
+        startNextPreloadedProcess();
+    }
 }

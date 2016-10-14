@@ -110,6 +110,7 @@ target_link_libraries(kdeinit_konqueror
    KF5::KCMUtils
    KF5::Konq
    KF5::Parts
+   KF5::DBusAddons
    KF5::KDELibs4Support
    KF5::Crash
 )

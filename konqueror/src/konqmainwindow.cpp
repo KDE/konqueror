@@ -49,7 +49,6 @@
 #include "konqbookmarkbar.h"
 #include "konqundomanager.h"
 #include "konqhistorydialog.h"
-#include "konqpreloadinghandler.h"
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 
@@ -79,11 +78,11 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include <QtCore/QFile>
+#include <QDesktopServices>
+#include <QFile>
 #include <QClipboard>
-#include <QtCore/QArgument>
 #include <QStackedWidget>
-#include <QtCore/QFileInfo>
+#include <QFileInfo>
 #if KONQ_HAVE_X11
 #include <QX11Info>
 #endif
@@ -145,10 +144,6 @@
 #include <kxmlguifactory.h>
 #include <netwm.h>
 #include <sonnet/configdialog.h>
-#ifdef KDE_MALLINFO_MALLOC
-#include <QDesktopServices>
-#include <malloc.h>
-#endif
 
 #include <sys/time.h>
 #if KONQ_HAVE_X11
@@ -169,21 +164,14 @@
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
 
-KBookmarkManager *s_bookmarkManager = 0;
+static KBookmarkManager *s_bookmarkManager = 0;
 QList<KonqMainWindow *> *KonqMainWindow::s_lstViews = 0;
 KConfig *KonqMainWindow::s_comboConfig = 0;
 KCompletion *KonqMainWindow::s_pCompletion = 0;
 
-static qint64 s_initialMemoryUsage = -1;
-static time_t s_startupTime;
-static int s_preloadUsageCount;
-
 KonqOpenURLRequest KonqOpenURLRequest::null;
 
-static qint64 current_memory_usage(int *limit = NULL);
-
 static const unsigned short int s_closedItemsListLength = 10;
-static unsigned long s_konqMainWindowInstancesCount = 0;
 
 static void raiseWindow(KonqMainWindow *window)
 {
@@ -217,8 +205,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_pURLCompletion(0)
     , m_isPopupWithProxyWindow(false)
 {
-    incInstancesCount();
-
     if (!s_lstViews) {
         s_lstViews = new QList<KonqMainWindow *>;
     }
@@ -322,13 +308,8 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     resize(700, 480);
 
-    //qDebug() << this << "done";
+    //qDebug() << this << "created";
 
-    if (s_initialMemoryUsage == -1) {
-        s_initialMemoryUsage = current_memory_usage();
-        s_startupTime = time(NULL);
-        s_preloadUsageCount = 0;
-    }
     KonqSessionManager::self();
     m_fullyConstructed = true;
 }
@@ -370,19 +351,8 @@ KonqMainWindow::~KonqMainWindow()
     m_locationLabel = 0;
     m_pUndoManager->disconnect();
     delete m_pUndoManager;
-    decInstancesCount();
 
-    //qDebug() << this << "done";
-}
-
-void KonqMainWindow::incInstancesCount()
-{
-    s_konqMainWindowInstancesCount++;
-}
-
-void KonqMainWindow::decInstancesCount()
-{
-    s_konqMainWindowInstancesCount--;
+    //qDebug() << this << "deleted";
 }
 
 QWidget *KonqMainWindow::createContainer(QWidget *parent, int index, const QDomElement &element, QAction *&containerAction)
@@ -3348,17 +3318,6 @@ void KonqMainWindow::slotUpdateFullScreen(bool set)
         m_prevMenuBarVisible = menuBar()->isVisible();
         menuBar()->hide();
         m_paShowMenuBar->setChecked(false);
-
-        // Qt bug, the flags are lost. They know about it.
-        // happens only with the hackish non-_NET_WM_STATE_FULLSCREEN way
-        setAttribute(Qt::WA_DeleteOnClose);
-        // Qt bug (see below)
-//### KDE4: still relevant?
-#if 0
-        setAcceptDrops(false);
-        topData()->dnd = 0;
-        setAcceptDrops(true);
-#endif
     } else {
         unplugActionList("fullscreen");
 
@@ -3366,21 +3325,6 @@ void KonqMainWindow::slotUpdateFullScreen(bool set)
             menuBar()->show();
             m_paShowMenuBar->setChecked(true);
         }
-
-        // Qt bug, the flags aren't restored. They know about it.
-        //setWFlags( WType_TopLevel | WDestructiveClose );
-#ifdef __GNUC__
-#warning "Dunno how to port this, is the workaround still needed?"
-#endif
-//                (  Qt::Window );
-        setAttribute(Qt::WA_DeleteOnClose);
-
-#if 0 //### KDE4: is this still relevant?
-        // Other Qt bug
-        setAcceptDrops(false);
-        topData()->dnd = 0;
-        setAcceptDrops(true);
-#endif
     }
 }
 
@@ -5020,9 +4964,6 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
         }
 
         addClosedWindowToUndoList();
-
-        hide();
-        qApp->flush();
     }
     // We're going to close - tell the parts
     MapViews::ConstIterator it = m_mapViews.constBegin();
@@ -5033,10 +4974,6 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
         }
     }
     KParts::MainWindow::closeEvent(e);
-    if (qApp && !qApp->isSavingSession() && stayPreloaded()) {
-        e->ignore();
-        hide();
-    }
 }
 
 void KonqMainWindow::addClosedWindowToUndoList()
@@ -5537,17 +5474,7 @@ bool KonqMainWindow::refuseExecutingKonqueror(const QString &mimeType)
 
 bool KonqMainWindow::event(QEvent *e)
 {
-    if (e->type() == QEvent::DeferredDelete) {
-        // since the preloading code tries to reuse KonqMainWindow,
-        // the last window shouldn't be really deleted, but only hidden
-        // deleting WDestructiveClose windows is done using deleteLater(),
-        // so catch QEvent::DeferredDelete and check if this window should stay
-        if (stayPreloaded()) {
-            setAttribute(Qt::WA_DeleteOnClose); // was reset before deleteLater()
-            return true; // no deleting
-        }
-
-    } else if (e->type() == QEvent::StatusTip) {
+    if (e->type() == QEvent::StatusTip) {
         if (m_currentView && m_currentView->frame()->statusbar()) {
             KonqFrameStatusBar *statusBar = m_currentView->frame()->statusbar();
             statusBar->message(static_cast<QStatusTipEvent *>(e)->tip());
@@ -5581,131 +5508,11 @@ bool KonqMainWindow::event(QEvent *e)
     return KParts::MainWindow::event(e);
 }
 
-bool KonqMainWindow::stayPreloaded()
-{
-#if KONQ_HAVE_X11
-    // last window?
-    if (mainWindowList()->count() > 1) {
-        return false;
-    }
-    // not running in full KDE environment?
-    if (getenv("KDE_FULL_SESSION") == NULL || getenv("KDE_FULL_SESSION")[ 0 ] == '\0') {
-        return false;
-    }
-    // not the same user like the one running the session (most likely we're run via sudo or something)
-    if (getenv("KDE_SESSION_UID") != NULL && uid_t(atoi(getenv("KDE_SESSION_UID"))) != getuid()) {
-        return false;
-    }
-    if (KonqSettings::maxPreloadCount() == 0) {
-        return false;
-    }
-    viewManager()->clear(); // reduce resource usage before checking it
-    if (!checkPreloadResourceUsage()) {
-        return false;
-    }
-    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    QDBusReply<bool> retVal = ref.call(QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), QX11Info::appScreen());
-    if (!retVal) {
-        return false;
-    }
-    qDebug() << "Konqy kept for preloading:" << QDBusConnection::sessionBus().baseService();
-    KonqPreloadingHandler::self()->makePreloadedWindow();
-    return true;
-#else
-    return false;
-#endif
-}
-
-// try to avoid staying running when leaking too much memory
-// this is checked by using mallinfo() and comparing
-// memory usage during konqy startup and now, if the difference
-// is too large -> leaks -> quit
-// also, if this process is running for too long, or has been
-// already reused too many times -> quit, just in case
-bool KonqMainWindow::checkPreloadResourceUsage()
-{
-    if (
-#ifndef NDEBUG
-        isatty(STDIN_FILENO) ||
-#endif
-        isatty(STDOUT_FILENO) || isatty(STDERR_FILENO)) {
-        qDebug() << "Running from tty, not keeping for preloading";
-        return false;
-    }
-    int limit;
-    qint64 usage = current_memory_usage(&limit);
-    qDebug() << "Memory usage increase: " << (usage - s_initialMemoryUsage)
-             << " (" << usage << " - " << s_initialMemoryUsage << "), increase limit: " << limit;
-    const qint64 max_allowed_usage = s_initialMemoryUsage + limit;
-    if (usage > max_allowed_usage) { // too much memory used?
-        qDebug() << "Not keeping for preloading due to high memory usage";
-        return false;
-    }
-    // working memory usage test ( usage != 0 ) makes others less strict
-    if (++s_preloadUsageCount > (usage != 0 ? 100 : 10)) { // reused too many times?
-        qDebug() << "Not keeping for preloading due to high usage count";
-        return false;
-    }
-    if (time(NULL) > s_startupTime + 60 * 60 * (usage != 0 ? 4 : 1)) {   // running for too long?
-        qDebug() << "Not keeping for preloading due to long usage time";
-        return false;
-    }
-    return true;
-}
-
-static qint64 current_memory_usage(int *limit)
-{
-#ifdef __linux__  //krazy:exclude=cpp
-// Check whole memory usage - VmSize
-    QFile f(QString::fromLatin1("/proc/%1/statm").arg(getpid()));
-    if (f.open(QIODevice::ReadOnly)) {
-        QByteArray buffer; buffer.resize(100);
-        const auto bytes = f.readLine(buffer.data(), buffer.size() - 1);
-        if (bytes != -1) {
-            QString line = QString::fromLatin1(buffer).trimmed();
-            const qint64 usage = line.section(' ', 0, 0).toLongLong();
-            if (usage > 0) {
-                qint64 pagesize = sysconf(_SC_PAGE_SIZE);
-                if (pagesize < 0) {
-                    pagesize = 4096;
-                }
-                if (limit != NULL) {
-                    *limit = 16 * 1024 * 1024;
-                }
-                return usage * pagesize;
-            }
-        }
-    }
-    qWarning() << "Couldn't read VmSize from /proc/*/statm.";
-#endif
-// Check malloc() usage - very imprecise, but better than nothing.
-    int usage_sum = 0;
-#if defined(KDE_MALLINFO_STDLIB) || defined(KDE_MALLINFO_MALLOC)
-    struct mallinfo m = mallinfo();
-#ifdef KDE_MALLINFO_FIELD_hblkhd
-    usage_sum += m.hblkhd;
-#endif
-#ifdef KDE_MALLINFO_FIELD_uordblks
-    usage_sum += m.uordblks;
-#endif
-#ifdef KDE_MALLINFO_FIELD_usmblks
-    usage_sum += m.usmblks;
-#endif
-    // unlike /proc , this doesn't include things like size of dlopened modules,
-    // and also doesn't include malloc overhead
-    if (limit != NULL) {
-        *limit = 6 * 1024 * 1024;
-    }
-#endif
-    return usage_sum;
-}
-
 void KonqMainWindow::slotUndoTextChanged(const QString &newText)
 {
     m_paUndo->setText(newText);
 }
 
-// outlined because of QPointer and gcc3
 KonqView *KonqMainWindow::currentView() const
 {
     return m_currentView;

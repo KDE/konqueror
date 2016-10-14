@@ -29,21 +29,18 @@ public:
 
     static KonqPreloadingHandler *self();
 
-    /**
-     * When the "preloaded" flag is set in this process, it means
-     * this process is the one that has an empty window ready to be used.
-     * The flag is set to false again as soon as the window is used.
-     */
-    bool isPreloaded() const;
+    bool registerAsPreloaded();
 
-    void makePreloadedWindow();
+    bool hasPreloadedWindow() const;
 
     KonqMainWindow *takePreloadedWindow();
 
-private:
-    void setPreloadedFlag(bool preloaded);
+    void ensurePreloadedProcessExists();
 
-    bool m_preloaded = false;
+private:
+    void startNextPreloadedProcess();
+    void makePreloadedWindow();
+
     KonqMainWindow *m_preloadedWindow = nullptr;
 };
 

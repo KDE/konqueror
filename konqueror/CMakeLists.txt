@@ -46,7 +46,6 @@ add_subdirectory( autotests )
 add_subdirectory( about )
 add_subdirectory( pics )
 #add_subdirectory( sidebar )
-add_subdirectory( preloader )
 add_subdirectory( settings )
 add_subdirectory( plugins )
 
@@ -60,6 +59,8 @@ install(FILES konqueror.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appda
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
 install( FILES konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+
+install(FILES konqy_preload.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 
 # TODO Remove the if/endif lines if Konqueror is split.
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${Konqueror_SOURCE_DIR}")
