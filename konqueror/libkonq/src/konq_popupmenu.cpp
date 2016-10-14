@@ -95,7 +95,6 @@ public:
 
     void addNamedAction(const char *name);
     void addGroup(KonqPopupMenu::ActionGroup group);
-    void addPlugins();
     void populate();
     void aboutToShow();
 
@@ -428,7 +427,7 @@ void KonqPopupMenuPrivate::populate()
 
     if (!isCurrentTrash && !isIntoTrash && sReading &&
             (m_popupFlags & KonqPopupMenu::NoPlugins) == 0) {
-        addPlugins(); // now it's time to add plugins
+        m_menuActions.addPluginActionsTo(q);
     }
 
     if ((m_popupFlags & KonqPopupMenu::ShowProperties) && KPropertiesDialog::canDisplay(lstItems)) {
@@ -544,69 +543,6 @@ void KonqPopupMenuPrivate::slotPopupProperties()
 void KonqPopupMenuPrivate::addGroup(KonqPopupMenu::ActionGroup group)
 {
     q->addActions(m_actionGroups.value(group));
-}
-
-void KonqPopupMenuPrivate::addPlugins()
-{
-    QString commonMimeType = m_popupItemProperties.mimeType();
-    if (commonMimeType.isEmpty()) {
-        commonMimeType = QLatin1String("application/octet-stream");
-    }
-
-    const KService::List fileItemPlugins = KMimeTypeTrader::self()->query(commonMimeType, QStringLiteral("KFileItemAction/Plugin"), QStringLiteral("exist Library"));
-
-    QSet<QString> addedPlugins;
-    const KConfig config(QStringLiteral("kservicemenurc"), KConfig::NoGlobals);
-    const KConfigGroup showGroup = config.group("Show");
-
-    foreach (const auto &service, fileItemPlugins) {
-        if (!showGroup.readEntry(service->desktopEntryName(), true)) {
-            // The plugin has been disabled
-            continue;
-        }
-
-        KAbstractFileItemActionPlugin *abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
-        if (abstractPlugin) {
-            abstractPlugin->setParent(q);
-            q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
-            addedPlugins << service->desktopEntryName();
-        }
-    }
-
-    const auto jsonPlugins = KPluginLoader::findPlugins(QStringLiteral("kf5/kfileitemaction"), [=](const KPluginMetaData& metaData) {
-        if (!metaData.serviceTypes().contains(QStringLiteral("KFileItemAction/Plugin"))) {
-            return false;
-        }
-
-        auto mimeType = QMimeDatabase().mimeTypeForName(commonMimeType);
-        foreach (const auto &supportedMimeType, metaData.mimeTypes()) {
-            if (mimeType.inherits(supportedMimeType)) {
-                return true;
-            }
-        }
-
-        return false;
-    });
-
-    foreach (const auto &jsonMetadata, jsonPlugins) {
-        // The plugin has been disabled
-        if (!showGroup.readEntry(jsonMetadata.pluginId(), true)) {
-            continue;
-        }
-
-        // The plugin also has a .desktop file and has already been added.
-        if (addedPlugins.contains(jsonMetadata.pluginId())) {
-            continue;
-        }
-
-        KPluginFactory *factory = KPluginLoader(jsonMetadata.fileName()).factory();
-        KAbstractFileItemActionPlugin* abstractPlugin = factory->create<KAbstractFileItemActionPlugin>();
-        if (abstractPlugin) {
-            abstractPlugin->setParent(q);
-            q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
-            addedPlugins << jsonMetadata.pluginId();
-        }
-    }
 }
 
 void KonqPopupMenuPrivate::slotShowOriginalFile()
