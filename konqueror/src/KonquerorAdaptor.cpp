@@ -23,6 +23,7 @@
 #include "KonqMainWindowAdaptor.h"
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
+#include "konqpreloadinghandler.h"
 #include "konqviewmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
@@ -125,7 +126,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
         foreach (KonqMainWindow *window, *mainWindows) {
             KWindowInfo winfo(window->winId(), NET::WMDesktop);
             if (winfo.isOnCurrentDesktop() &&
-                    !KonqMainWindow::isPreloaded()) {  // we want a tab in an already shown window
+                    !KonqPreloadingHandler::self()->isPreloaded()) {  // we want a tab in an already shown window
                 Q_ASSERT(!window->dbusName().isEmpty());
                 return QDBusObjectPath(window->dbusName());
             }
@@ -139,7 +140,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
 
 void KonquerorAdaptor::terminatePreloaded()
 {
-    if (KonqMainWindow::isPreloaded()) {
+    if (KonqPreloadingHandler::self()->isPreloaded()) {
         qApp->exit();
     }
 }

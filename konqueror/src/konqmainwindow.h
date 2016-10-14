@@ -301,20 +301,6 @@ public:
 
     bool refuseExecutingKonqueror(const QString &mimeType);
 
-    void resetWindow();
-
-    // TODO: move to a KonqPreloadHandler class
-    static void setPreloadedFlag(bool preloaded);
-    static bool isPreloaded()
-    {
-        return s_preloaded;
-    }
-    static void setPreloadedWindow(KonqMainWindow *);
-    static KonqMainWindow *preloadedWindow()
-    {
-        return s_preloadedWindow;
-    }
-
     QString currentTitle() const;
     // Not used by konqueror itself; only exists for the Q_PROPERTY,
     // which I guess is used by scripts and plugins...

@@ -49,6 +49,7 @@
 #include "konqbookmarkbar.h"
 #include "konqundomanager.h"
 #include "konqhistorydialog.h"
+#include "konqpreloadinghandler.h"
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 
@@ -173,8 +174,6 @@ QList<KonqMainWindow *> *KonqMainWindow::s_lstViews = 0;
 KConfig *KonqMainWindow::s_comboConfig = 0;
 KCompletion *KonqMainWindow::s_pCompletion = 0;
 
-bool KonqMainWindow::s_preloaded = false;
-KonqMainWindow *KonqMainWindow::s_preloadedWindow = 0;
 static qint64 s_initialMemoryUsage = -1;
 static time_t s_startupTime;
 static int s_preloadUsageCount;
@@ -219,7 +218,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_isPopupWithProxyWindow(false)
 {
     incInstancesCount();
-    setPreloadedFlag(false);
 
     if (!s_lstViews) {
         s_lstViews = new QList<KonqMainWindow *>;
@@ -5537,64 +5535,6 @@ bool KonqMainWindow::refuseExecutingKonqueror(const QString &mimeType)
     return false; // no error
 }
 
-void KonqMainWindow::setPreloadedFlag(bool preloaded)
-{
-    if (s_preloaded == preloaded) {
-        return;
-    }
-    s_preloaded = preloaded;
-    if (s_preloaded) {
-        KonqSessionManager::self()->disableAutosave(); // don't save sessions
-        return; // was registered before calling this
-    }
-    delete s_preloadedWindow; // preloaded state was abandoned without reusing the window
-    s_preloadedWindow = NULL;
-    KonqSessionManager::self()->enableAutosave(); // enable session saving again
-    QDBusInterface ref("org.kde.kded5", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus());
-    ref.call("unregisterPreloadedKonqy", QDBusConnection::sessionBus().baseService());
-}
-
-void KonqMainWindow::setPreloadedWindow(KonqMainWindow *window)
-{
-    s_preloadedWindow = window;
-    if (window == NULL) {
-        return;
-    }
-    window->viewManager()->clear();
-    KIO::JobUiDelegate::unregisterWindow(window);
-}
-
-// used by preloading - this KonqMainWindow will be reused, reset everything
-// that won't be reset by loading a profile
-void KonqMainWindow::resetWindow()
-{
-    // This code compiles, but hangs. It needs to be ported to xcb!
-#if 0 // KONQ_HAVE_X11
-    char data[ 1 ];
-    // empty append to get current X timestamp
-    QWidget tmp_widget;
-    XChangeProperty(QX11Info::display(), tmp_widget.winId(), XA_WM_CLASS, XA_STRING, 8,
-                    PropModeAppend, reinterpret_cast<unsigned char *>(&data), 0);
-    XEvent ev;
-    XWindowEvent(QX11Info::display(), tmp_widget.winId(), PropertyChangeMask, &ev);
-    long x_time = ev.xproperty.time;
-    // bad hack - without updating the _KDE_NET_WM_USER_CREATION_TIME property,
-    // KWin will apply don't_steal_focus to this window, and will not make it active
-    // (shows mainly with 'konqueror --preload')
-    static Atom atom = XInternAtom(QX11Info::display(), "_KDE_NET_WM_USER_CREATION_TIME", False);
-    XChangeProperty(QX11Info::display(), winId(), atom, XA_CARDINAL, 32,
-                    PropModeReplace, reinterpret_cast<unsigned char *>(&x_time), 1);
-    // reset also user time, so that this window won't have _NET_WM_USER_TIME set
-    QX11Info::setAppUserTime(CurrentTime);
-
-    static Atom atom3 = XInternAtom(QX11Info::display(), "_NET_WM_USER_TIME", False);
-    XDeleteProperty(QX11Info::display(), winId(), atom3);
-#endif
-// Qt remembers the iconic state if the window was withdrawn while on another virtual desktop
-    setWindowState(windowState() & ~Qt::WindowMinimized);
-    // KF5: no longer available -- ignoreInitialGeometry();
-}
-
 bool KonqMainWindow::event(QEvent *e)
 {
     if (e->type() == QEvent::DeferredDelete) {
@@ -5668,9 +5608,8 @@ bool KonqMainWindow::stayPreloaded()
     if (!retVal) {
         return false;
     }
-    KonqMainWindow::setPreloadedFlag(true);
     qDebug() << "Konqy kept for preloading:" << QDBusConnection::sessionBus().baseService();
-    KonqMainWindow::setPreloadedWindow(this);
+    KonqPreloadingHandler::self()->makePreloadedWindow();
     return true;
 #else
     return false;

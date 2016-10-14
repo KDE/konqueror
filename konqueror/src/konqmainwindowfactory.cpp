@@ -19,6 +19,7 @@
 
 #include "konqmainwindowfactory.h"
 #include "konqmainwindow.h"
+#include "konqpreloadinghandler.h"
 #include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include <KWindowInfo>
@@ -51,12 +52,8 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
         } else { // This should never happen but just to be sure
             return new KonqMainWindow;
         }
-    } else if (KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL) {
-        KonqMainWindow *mainWindow = KonqMainWindow::preloadedWindow();
+    } else if (KonqMainWindow *mainWindow = KonqPreloadingHandler::self()->takePreloadedWindow()) {
         KStartupInfo::setWindowStartupId(mainWindow->winId(), KStartupInfo::startupId());
-        KonqMainWindow::setPreloadedWindow(NULL);
-        KonqMainWindow::setPreloadedFlag(false);
-        mainWindow->resetWindow();
         mainWindow->reparseConfiguration();
         return mainWindow;
     }

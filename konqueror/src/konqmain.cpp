@@ -22,6 +22,7 @@
 #include "konqfactory.h"
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
+#include "konqpreloadinghandler.h"
 #include "konqsessionmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
@@ -52,6 +53,8 @@ static void listSessions()
     }
 }
 
+static KonqPreloadingHandler s_preloadingHandler;
+
 static bool tryPreload()
 {
 #if KONQ_HAVE_X11
@@ -61,10 +64,7 @@ static bool tryPreload()
         if (!retVal) {
             return false;    // too many preloaded or failed
         }
-        KonqMainWindow *win = new KonqMainWindow(QUrl("about:blank")); // prepare an empty window, with the web renderer preloaded
-        // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
-        KonqMainWindow::setPreloadedFlag(true);
-        KonqMainWindow::setPreloadedWindow(win);
+        s_preloadingHandler.makePreloadedWindow();
         qDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
         return true;
     } else {
