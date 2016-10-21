@@ -42,7 +42,7 @@ add_subdirectory( libkonq )
 add_subdirectory( src )
 add_subdirectory( client )
 add_subdirectory( autotests )
-add_subdirectory( kwebenginepart )
+add_subdirectory( webenginepart )
 
 add_subdirectory( about )
 add_subdirectory( pics )
