@@ -20,13 +20,14 @@
 #include "konqpixmapprovider.h"
 
 #include <QMimeDatabase>
+#include <QMimeType>
+#include <QIcon>
 
 #include <KIO/FavIconRequestJob>
 #include <kio/global.h>
-#include <QMimeType>
-#include <QIcon>
 #include <kprotocolinfo.h>
 #include <kconfiggroup.h>
+#include <kiconloader.h>
 
 class KonqPixmapProviderSingleton
 {
@@ -182,6 +183,9 @@ void KonqPixmapProvider::clear()
 
 QPixmap KonqPixmapProvider::loadIcon(const QString &icon, int size)
 {
+    if (size == 0) {
+        size = KIconLoader::SizeSmall;
+    }
     return QIcon::fromTheme(icon).pixmap(size);
 }
 

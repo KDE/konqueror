@@ -29,6 +29,7 @@
 #include <kglobalsettings.h>
 #include <QIcon>
 #include <kiconeffect.h>
+#include <kiconloader.h>
 #include <konqpixmapprovider.h>
 #include <kcolorscheme.h>
 
@@ -74,7 +75,7 @@ KonqClosedTabItem::~KonqClosedTabItem()
 
 QPixmap KonqClosedTabItem::icon() const
 {
-    return KonqPixmapProvider::self()->pixmapFor(m_url);
+    return KonqPixmapProvider::self()->pixmapFor(m_url, KIconLoader::SizeSmall);
 }
 
 KonqClosedWindowItem::KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs)

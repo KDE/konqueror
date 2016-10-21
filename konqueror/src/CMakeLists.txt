@@ -35,6 +35,7 @@ set(konquerorprivate_SRCS
 
 add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate
+   KF5::IconThemes
    KF5::Konq
    KF5::Parts
    KF5::KIOGui

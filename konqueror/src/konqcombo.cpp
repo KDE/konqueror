@@ -218,7 +218,7 @@ void KonqCombo::setURL(const QString &url)
 
 void KonqCombo::setTemporary(const QString &text)
 {
-    setTemporary(text, KonqPixmapProvider::self()->pixmapFor(text));
+    setTemporary(text, KonqPixmapProvider::self()->pixmapFor(text, KIconLoader::SizeSmall));
 }
 
 void KonqCombo::setTemporary(const QString &url, const QPixmap &pix)
@@ -284,7 +284,7 @@ void KonqCombo::applyPermanent()
         }
 
         QString item = temporaryItem();
-        insertItem(KonqPixmapProvider::self()->pixmapFor(item), item, 1, titleOfURL(item));
+        insertItem(KonqPixmapProvider::self()->pixmapFor(item, KIconLoader::SizeSmall), item, 1, titleOfURL(item));
         //qDebug() << url;
 
         // Remove all duplicates starting from index = 2
@@ -350,7 +350,7 @@ void KonqCombo::updatePixmaps()
     setUpdatesEnabled(false);
     KonqPixmapProvider *prov = KonqPixmapProvider::self();
     for (int i = 1; i < count(); i++) {
-        setItemIcon(i, prov->pixmapFor(itemText(i)));
+        setItemIcon(i, prov->pixmapFor(itemText(i), KIconLoader::SizeSmall));
     }
     setUpdatesEnabled(true);
     repaint();

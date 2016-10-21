@@ -51,7 +51,7 @@ public:
     /**
      * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
      */
-    virtual QPixmap pixmapFor(const QString &url, int size = 0);
+    virtual QPixmap pixmapFor(const QString &url, int size);
 
     /**
      * Loads the cache to @p kc from key @p key.
