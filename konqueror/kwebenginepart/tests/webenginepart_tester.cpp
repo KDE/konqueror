@@ -434,4 +434,4 @@ int main(int argc, char **argv)
     }
 }
 
-#include "main.moc"
+#include "webenginepart_tester.moc"

@@ -19,7 +19,7 @@ include(ECMSetupVersion)
 
 set(KONQUEROR_LIB_VERSION "5.0.97")
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities) # Optional
@@ -42,6 +42,7 @@ add_subdirectory( libkonq )
 add_subdirectory( src )
 add_subdirectory( client )
 add_subdirectory( autotests )
+add_subdirectory( kwebenginepart )
 
 add_subdirectory( about )
 add_subdirectory( pics )
