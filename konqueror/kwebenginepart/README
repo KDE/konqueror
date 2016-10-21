@@ -1,0 +1,40 @@
+KWebKitPart
+===========
+
+KWebKitPart is a KDE component (KPart) wrapper for QtWebKit. It is intended to
+allow KPart based KDE applications such as Konqueror to use it in place of other
+browser engine, such as KHTML, to browse the web in Konqueror.
+
+Known limitations and unimplemented features are listed in the following
+documents:
+
+* https://projects.kde.org/projects/kde/kdelibs/repository/revisions/master/entry/kdewebkit/ISSUES
+* https://projects.kde.org/projects/extragear/base/kwebkitpart/repository/revisions/master/entry/TODO
+
+Please report any issues to: https://bugs.kde.org
+IMPORTANT NOTE: Do not select "konqueror" as product, but "kwebkitpart"!
+
+There is also a public mailing list available for support:
+
+    webkit-devel @ kde.org
+
+How to use KWebKitPart in Konqueror
+===================================
+
+You can switch between the different rendering engines:
+View -> View Mode -> {KHTML, WebKit} (website needs to be open)
+If WebKit does not show up in Konqueror, run 'kbuildsycoca4' and
+restart Konqueror. Note that this change does not persist. If you
+press the reload button or open a new website, it will fall back
+to the default rendering engine. 
+
+If you want to set KWebKitPart as default for any website, run:
+'keditfiletype text/html'
+and move "WebKit (kwebkitpart)" in the "Embedding" tab to the top.
+
+In KDE 4.6 and higher you can choose the default rendering engine
+in Konqueror's configuration dialog under the "General" section.
+
+For more information about this project please see also:
+http://techbase.kde.org/Projects/WebKit
+

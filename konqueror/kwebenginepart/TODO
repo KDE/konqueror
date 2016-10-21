@@ -1,0 +1,23 @@
+* Proper support for KWebKitPart in the following Konqueror plugins:
+      - adblock    This plugin's GUI needs to be changed to use the KPart plugin
+                   extensions so that it is not khtml specific. Other than that
+                   kwebkitpart supports the ad filtering functionalities supported
+                   by khtml.
+
+* Add KPartStatusBarExtension support for the following plugins/features:
+      - Popup blocker (non-plugin)
+
+* Implement some means of showing information about the webkit rendering engine:
+      - KWebKitPart's version #
+      - QtWebKit's version #
+      - UserAgent string ???
+
+* Look through all of Konqueror's web configuration options and make sure we
+  honor all those we possibly can. Here is a non-complete list of features
+  that are either partially implemented or not implemented at all:
+      - Change cursor over links (TODO, QtWebKit ???).
+      - Smooth scrolling support (TODO, QtWebKit ???).
+      - Underline links support (Partial, does not work as intended).
+      - Enable access key navigation with Ctrl key (TODO, QtWebKit ???).
+      - Animations (TODO, QtWebKit ???).
+      - Draw frames around not completely loaded images (TODO, QtWebKit ???).

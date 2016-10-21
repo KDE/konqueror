@@ -1,0 +1,32 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="kwebkitpart" version="8">
+<MenuBar>
+ <Menu name="file">
+  <Action name="saveDocument" />
+  <Action name="saveFrame" />
+  <Separator />
+  <Action name="printPreview" group="print" />
+ </Menu>
+ <Menu name="edit">
+  <Action name="selectAll" />
+  <Separator />
+  <Action name="find" />
+ </Menu>
+ <Menu name="view">
+  <Action name="zoomIn" />
+  <Action name="zoomOut" />
+  <Action name="zoomNormal" />
+  <Action name="zoomTextOnly" />
+  <Action name="zoomToDPI" />
+  <Separator />
+  <Action name="setEncoding" />
+  <Action name="viewDocumentSource" />
+  <ActionList name="debugScriptList" />
+ </Menu>
+</MenuBar>
+<ToolBar name="htmlToolBar" iconText="icononly" iconSize="22" hidden="true"><text>HTML Toolbar</text>
+  <Action name="zoomIn" />
+  <Action name="zoomOut" />
+  <Action name="zoomNormal" />
+</ToolBar>
+</kpartgui>

@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Form save restore test</title>
+</head>
+<body>
+
+<form name="testform">
+<label for="testedit">Enter text:</label>
+<input type="text" name="testinputtext" id="testedit">
+<br>
+<label>Check this box</label>
+<input type="checkbox" name="testinputcheckbox" value="checked">
+<br>
+<label>File to upload:</label>
+<input type="file" name="testinputfile">
+<br>
+<input type="radio" name="testinputradio" value="one">One</input>
+<br>
+<input type="radio" name="testinputradio" value="two">Two</input>
+<br>
+<input type="radio" name="testinputradio" value="three">Three</input>
+<br>
+</form>
+
+<p>
+Enter some text in the box below:<br/>
+<textarea name="testtextarea"></textarea>
+</p>
+
+<p>
+Disabled text area:<br/>
+<textarea name="testtextarea" disabled></textarea>
+</p>
+
+<p>
+Read only text area:<br/>
+<textarea name="testtextarea" readonly>This is a read only text area.</textarea>
+</p>
+
+<p>
+Text area with spell check disabled:<br/>
+<textarea name="testtextarea" spellcheck="false"></textarea>
+</p>
+
+<p>
+Choose one:
+<select name="testcombobox">
+<option>First</option>
+<option>Second</option>
+<option>Third</option>
+<option>Fourth</option>
+<option>Fifth</option>
+</select>
+</p><p/>
+
+<p>
+Select one or more items:<br/>
+<select name="testlist" multiple>
+<option>One</option>
+<option>Two</option>
+<option>Three</option>
+<option>Four</option>
+<option>Five</option>
+</select>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Javascript Link Tests</title>
+<script type="text/javascript">
+function resize()
+{
+    window.resizeTo(580, 420);
+}
+
+function move()
+{
+    window.moveTo(180, 120);
+}
+
+function promptAndAlertMessage()
+{
+    var message = prompt("Enter a message.", "");
+    alert(message);
+}
+
+function statusMessage()
+{
+    window.status = 'A new status message.';
+}
+
+function openWindow()
+{
+    window.open("about:blank", "NewWindowTest1", "width=300, height=400");
+}
+
+function openWindowFrameTest()
+{
+    var new_window = window.open('about:blank','testpage','width=800,height=600');
+    new_window.location="frameset_test.html";
+}
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.writeln("navigator.appName: " + navigator.appName + "<br />");
+document.writeln("navigator.appVersion: " + navigator.appVersion + "<br />");
+</script>
+<h1>Javascript Link Tests</h1>
+<a href="javascript:resize()">resizeTo</a><br />
+<a href="javascript:move()">moveTo</a><br />
+<a href="javascript:promptAndAlertMessage()">promptAndAlertMessage</a><br />
+<a href="javascript:statusMessage()">status</a><br />
+<a href="javascript:window.open('about:blank', 'NewWindowTest1', 'width=300, height=400')">JS open new window</a><br />
+<a href="javascript:openWindowFrameTest()">JS open new frameset</a><br />
+</body>
+</html>
