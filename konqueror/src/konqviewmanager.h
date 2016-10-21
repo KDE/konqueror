@@ -202,7 +202,6 @@ public:
      * It has to be under the profiles dir. Otherwise, set to QString()
      * @param forcedUrl if set, the URL to open, whatever the profile says
      * @param req attributes related to @p forcedUrl
-     * @param resetWindow if the profile doesn't have attributes like size or toolbar
      * settings, they will be reset to the defaults
      */
     void loadViewConfigFromGroup(const KConfigGroup &cfg, const QString &filename,

@@ -36,7 +36,6 @@
 #include <QtCore/QFile>
 #if KONQ_HAVE_X11
 #include <QX11Info>
-#include <X11/Xlib.h>
 #endif
 
 // these DBus calls come from outside, so any windows created by these

@@ -145,12 +145,6 @@
 #include <netwm.h>
 #include <sonnet/configdialog.h>
 
-#include <sys/time.h>
-#if KONQ_HAVE_X11
-#include <X11/Xlib.h>
-#include <X11/Xatom.h>
-#include <fixx11h.h>
-#endif
 #include <kauthorized.h>
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
@@ -1380,7 +1374,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 
 #if KONQ_HAVE_X11
     if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
-        Time saved_last_input_time = QX11Info::appUserTime();
+        auto saved_last_input_time = QX11Info::appUserTime();
         if (windowArgs.lowerWindow()) {
             NETRootInfo wm_info(QX11Info::connection(), NET::Supported);
             wm_usertime_support = wm_info.isSupported(NET::WM2UserTime);
@@ -4804,8 +4798,6 @@ void KonqMainWindow::updateViewModeActions()
     const KService::List::ConstIterator end = services.constEnd();
     for (; it != end; ++it) {
         const KService::Ptr service = *it;
-        const QVariant propToggable = service->property("X-KDE-BrowserView-Toggable");
-        const bool toggable = propToggable.isValid() && propToggable.toBool();
 
         const QString desktopEntryName = service->desktopEntryName();
         bool bIsCurrentView = desktopEntryName == m_currentView->service()->desktopEntryName();

@@ -52,13 +52,7 @@
 #include <QUrl>
 #include <QStandardPaths>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-
 #if KONQ_HAVE_X11
-#include <X11/Xlib.h>
 #include <QX11Info>
 #endif
 
@@ -141,14 +135,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     }
 
     return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
-}
-
-static int currentScreen()
-{
-#if KONQ_HAVE_X11
-    return QX11Info::appScreen();
-#endif
-    return 0;
 }
 
 static bool s_dbus_initialized = false;
