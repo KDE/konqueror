@@ -22,6 +22,8 @@
 #ifndef WEBENGINEPART_H
 #define WEBENGINEPART_H
 
+#include "kwebenginepartlib_export.h"
+
 #include <QtWebEngineWidgets/QWebEnginePage>
 
 #include <KParts/ReadOnlyPart>
@@ -52,7 +54,7 @@ class WebEngineBrowserExtension;
  * engine are provided through existing QtWebEngine class ; @see QWebEngineView.
  *
  */
-class Q_DECL_EXPORT WebEnginePart : public KParts::ReadOnlyPart
+class KWEBENGINEPARTLIB_EXPORT WebEnginePart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )

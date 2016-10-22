@@ -1,9 +1,8 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-set(webenginepart_LIB_SRCS
+set(kwebenginepartlib_LIB_SRCS
     webenginepart.cpp
     webenginepart_ext.cpp
-    webenginepartfactory.cpp
     webview.cpp
     webpage.cpp
     websslinfo.cpp
@@ -13,16 +12,23 @@ set(webenginepart_LIB_SRCS
     ui/searchbar.cpp
     ui/passwordbar.cpp
     ui/featurepermissionbar.cpp
-    webenginepart.desktop
 )
 
-qt5_wrap_ui(webenginepart_LIB_SRCS
+qt5_wrap_ui(kwebenginepartlib_LIB_SRCS
                   ui/searchbar.ui
 )
 
-add_library(webenginepart ${webenginepart_LIB_SRCS})
+add_library(kwebenginepartlib ${kwebenginepartlib_LIB_SRCS})
 
-target_link_libraries(webenginepart Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport KF5::Parts KF5::SonnetCore)
+generate_export_header(kwebenginepartlib)
+
+target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport KF5::Parts KF5::SonnetCore)
+
+install(TARGETS kwebenginepartlib ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+
+add_library(webenginepart MODULE webenginepartfactory.cpp)
+
+target_link_libraries(webenginepart kwebenginepartlib)
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 

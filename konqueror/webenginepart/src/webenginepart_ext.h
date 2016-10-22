@@ -21,6 +21,8 @@
 #ifndef WEBENGINEPART_EXT_H
 #define WEBENGINEPART_EXT_H
 
+#include "kwebenginepartlib_export.h"
+
 #include <QPointer>
 
 #include <KParts/BrowserExtension>
@@ -34,7 +36,7 @@ class QUrl;
 class WebEnginePart;
 class WebView;
 
-class WebEngineBrowserExtension : public KParts::BrowserExtension
+class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 
