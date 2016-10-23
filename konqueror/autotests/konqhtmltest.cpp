@@ -16,8 +16,8 @@
 */
 
 #include <konqmainwindowfactory.h>
-#include <khtml_part.h>
-#include <khtmlview.h>
+#include <webenginepart.h>
+#include <webview.h>
 #include <QTemporaryFile>
 #include <kstandarddirs.h>
 #include <ktoolbar.h>
@@ -48,20 +48,26 @@ private Q_SLOTS:
         KonqSessionManager::self()->disableAutosave();
         //qRegisterMetaType<KonqView *>("KonqView*");
 
-        // Ensure the tests use KHTML, not kwebkitpart
+        // Ensure the tests use webenginepart, not KHTML or kwebkitpart
         // This code is inspired by settings/konqhtml/generalopts.cpp
+        bool needsUpdate = false;
         KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
         Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
-            services.removeAll("khtml.desktop");
-            services.prepend("khtml.desktop"); // make it the preferred one
-            addedServices.writeXdgListEntry(mimeType, services);
+            const QString wanted = "webenginepart.desktop";
+            if (services.isEmpty() || services.at(0) != wanted) {
+                services.removeAll(wanted);
+                services.prepend(wanted); // make it the preferred one
+                addedServices.writeXdgListEntry(mimeType, services);
+                needsUpdate = true;
+            }
         }
-        profile->sync();
-
-        // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-        QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+        if (needsUpdate) {
+            profile->sync();
+            // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
+            QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+        }
     }
     void cleanupTestCase()
     {
@@ -79,21 +85,28 @@ private Q_SLOTS:
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
-        //KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
-        //QVERIFY(part);
+        WebEnginePart* part = qobject_cast<WebEnginePart *>(view->part());
+        QVERIFY(part);
     }
 
-    void loadDirectory() // #164495
+    void loadDirectory() // #164495, konqueror gets in a loop when setting a directory as homepage
     {
         KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, QUrl::fromLocalFile(QDir::homePath()), "text/html");
+        const QUrl url = QUrl::fromLocalFile(QDir::homePath());
+        mainWindow.openUrl(0, url, "text/html");
         KonqView *view = mainWindow.currentView();
         kDebug() << "Waiting for first completed signal";
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(20000));        // error calls openUrlRequest
-        kDebug() << "Waiting for first second signal";
-        QVERIFY(spyCompleted.wait(20000));        // which then opens the right part
-        QCOMPARE(view->serviceType(), QString("inode/directory"));
+        if (view->aborted()) {
+            kDebug() << "Waiting for second completed signal";
+            QVERIFY(spyCompleted.wait(20000));        // which then opens the right part
+            QCOMPARE(view->serviceType(), QString("inode/directory"));
+        } else {
+            // WebEngine can actually list directories, no error.
+            // To test this: konqueror --mimetype text/html $HOME
+            QCOMPARE(view->url().adjusted(QUrl::StripTrailingSlash), url);
+        }
     }
 
     void rightClickClose() // #149736
@@ -112,9 +125,8 @@ private Q_SLOTS:
         QWidget *widget = partWidget(view);
         qDebug() << "Clicking on" << widget;
         QTest::mousePress(widget, Qt::RightButton);
-        qApp->processEvents();
-        QVERIFY(!view); // deleted
-        QVERIFY(!mainWindow); // the whole window gets deleted, in fact
+        QTRY_VERIFY(!view); // deleted
+        QTRY_VERIFY(!mainWindow); // the whole window gets deleted, in fact
     }
 
     void windowOpen()
@@ -125,7 +137,7 @@ private Q_SLOTS:
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.
         QTemporaryFile tempFile;
         QVERIFY(tempFile.open());
-        tempFile.write("<script>document.write(\"Opener=\" + window.opener);</script>");
+        tempFile.write("<title>Popup</title><script>document.title=\"Opener=\" + window.opener;</script>");
 
         QTemporaryFile origTempFile;
         QVERIFY(origTempFile.open());
@@ -147,14 +159,14 @@ private Q_SLOTS:
         QVERIFY(spyCompleted.wait(20000));
         qApp->processEvents();
         QWidget *widget = partWidget(view);
+        QVERIFY(widget);
         kDebug() << "Clicking on the khtmlview";
         QTest::mousePress(widget, Qt::LeftButton);
         qApp->processEvents(); // openurlrequestdelayed
         qApp->processEvents(); // browserrun
         hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late?
-        QTest::qWait(100); // just in case there's more delayed calls :)
         // Did it open a window?
-        QCOMPARE(KMainWindow::memberList().count(), 2);
+        QTRY_COMPARE(KMainWindow::memberList().count(), 2);
         KonqMainWindow *newWindow = qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last());
         QVERIFY(newWindow);
         QVERIFY(newWindow != mainWindow);
@@ -164,11 +176,10 @@ private Q_SLOTS:
         KonqFrame *frame = newWindow->currentView()->frame();
         QVERIFY(frame);
         QVERIFY(!frame->childView()->isLoading());
-        KHTMLPart *part = qobject_cast<KHTMLPart *>(frame->part());
+        WebEnginePart *part = qobject_cast<WebEnginePart *>(frame->part());
         QVERIFY(part);
-        part->selectAll();
-        const QString text = part->selectedText();
-        QCOMPARE(text, QString("Opener=[object Window]"));
+        QTRY_VERIFY(!part->view()->url().isEmpty()); // hack to wait for webengine to load the page
+        QTRY_COMPARE(part->view()->title(), QString("Opener=[object Window]"));
         deleteAllMainWindows();
     }
 
@@ -176,16 +187,17 @@ private Q_SLOTS:
     {
         // JS errors appear in a statusbar label, and deleting the frame first
         // would lead to double deletion (#228255)
-        KonqMainWindow mainWindow;
+        QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, QUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
-        KonqView *view = mainWindow.currentView();
+        mainWindow->openUrl(0, QUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
+        KonqView *view = mainWindow->currentView();
         QVERIFY(view);
         QVERIFY(view->part());
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         delete view->part();
+        QTRY_VERIFY(!mainWindow); // the window gets deleted
     }
 
 private:
@@ -193,12 +205,15 @@ private:
     static QWidget *partWidget(KonqView *view)
     {
         QWidget *widget = view->part()->widget();
-        KHTMLPart *htmlPart = qobject_cast<KHTMLPart *>(view->part());
+        WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
         if (htmlPart) {
             widget = htmlPart->view();    // khtmlview != widget() nowadays, due to find bar
         }
         if (QScrollArea *scrollArea = qobject_cast<QScrollArea *>(widget)) {
             widget = scrollArea->widget();
+        }
+        if (widget && widget->focusProxy()) { // for WebEngine's RenderWidgetHostViewQtDelegateWidget
+            return widget->focusProxy();
         }
         return widget;
     }

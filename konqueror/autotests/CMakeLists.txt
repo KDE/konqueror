@@ -32,7 +32,7 @@ target_link_libraries(undomanagertest kdeinit_konqueror Qt5::Core Qt5::Test)
 add_executable(konqhtmltest konqhtmltest.cpp)
 add_test(konqhtmltest konqhtmltest)
 ecm_mark_as_test(konqhtmltest)
-target_link_libraries(konqhtmltest kdeinit_konqueror KF5::KHtml Qt5::Core Qt5::Test)
+target_link_libraries(konqhtmltest kdeinit_konqueror kwebenginepartlib Qt5::Core Qt5::Test)
 
 ########### konqviewtest ###############
 
