@@ -141,7 +141,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     l->setContentsMargins(0, 0, 0, 0);
     l->setSpacing(0);
     l->addWidget(m_webView);
-    mainWidget->setLayout(l);
 
     // Set the part's widget
     setWidget(mainWidget);
