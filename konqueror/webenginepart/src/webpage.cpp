@@ -721,8 +721,6 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // Browser args...
         KParts::BrowserArguments bargs;
-        if (m_type == WebDialog)
-            bargs.setForcesNewWindow(true);
 
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
@@ -731,6 +729,20 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // Window args...
         KParts::WindowArgs wargs (m_windowArgs);
+
+        switch (m_type) {
+            case WebDialog:
+            case WebBrowserWindow:
+                bargs.setForcesNewWindow(true);
+                break;
+            case WebBrowserTab:
+                bargs.setNewTab(true);
+                break;
+            case WebBrowserBackgroundTab:
+                bargs.setNewTab(true);
+                wargs.setLowerWindow(true);
+                break;
+        }
 
         KParts::ReadOnlyPart* newWindowPart =0;
         part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);

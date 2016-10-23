@@ -1179,8 +1179,8 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 
     if (createTab && !m_isPopupWithProxyWindow) {
 
-        bool newtabsinfront = KonqSettings::newTabsInFront();
-        if (windowArgs.lowerWindow() || (QApplication::keyboardModifiers() & Qt::ShiftModifier)) {
+        bool newtabsinfront = !windowArgs.lowerWindow();
+        if (KonqSettings::newTabsInFront()) {
             newtabsinfront = !newtabsinfront;
         }
         const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
