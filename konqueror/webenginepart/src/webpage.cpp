@@ -738,10 +738,12 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
             case WebBrowserTab:
                 bargs.setNewTab(true);
                 break;
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
             case WebBrowserBackgroundTab:
                 bargs.setNewTab(true);
                 wargs.setLowerWindow(true);
                 break;
+#endif
         }
 
         KParts::ReadOnlyPart* newWindowPart =0;

@@ -71,6 +71,10 @@ WebView::WebView(WebEnginePart* part, QWidget* parent)
     
     if (WebEngineSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
+
+#ifndef HAVE_WEBENGINECONTEXTMENUDATA
+    m_result = 0;
+#endif
 }
 
 WebView::~WebView()
@@ -131,6 +135,7 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)
 {
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     m_result = page()->contextMenuData();
 
     // Clear the previous collection entries first...
@@ -187,6 +192,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
         return;
     }
 
+#endif
     QWebEngineView::contextMenuEvent(e);
 }
 
@@ -330,6 +336,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
 {
     QList<QAction*> partActions;
 
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     if (m_result.mediaUrl().isValid()) {
         QAction *action;
         action = new QAction(i18n("Save Image As..."), this);
@@ -376,6 +383,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
             }
         }
     }
+#endif
 
     {
         QAction *separatorAction = new QAction(m_actionCollection);
@@ -418,33 +426,43 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
 
 void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
 {
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     Q_ASSERT(!m_result.linkUrl().isEmpty());
 
     const QUrl url(m_result.linkUrl());
+#else
+    const QUrl url;
+#endif
 
     QList<QAction*> linkActions;
 
     QAction* action;
 
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     if (!m_result.selectedText().isEmpty()) {
         action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
         action->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
         linkActions.append(action);
     }
+#endif
 
     if (url.scheme() == "mailto") {
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
         action = new QAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction(QL1S("copylinklocation"), action);
         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyEmailAddress()));
         linkActions.append(action);
+#endif
     } else {
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
         if (!m_result.linkText().isEmpty()) {
             action = new QAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
             linkActions.append(action);
         }
+#endif
 
         action = new QAction(i18n("Copy Link &URL"), this);
         m_actionCollection->addAction(QL1S("copylinkurl"), action);
@@ -462,6 +480,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
 
 void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
 {
+#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     QList<QAction*> multimediaActions;
 
     const bool isVideoElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeVideo;
@@ -514,6 +533,7 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     multimediaActions.append(action);
 
     mmGroupMap.insert("partactions", multimediaActions);
+#endif
 }
 
 void WebView::slotStopAutoScroll()

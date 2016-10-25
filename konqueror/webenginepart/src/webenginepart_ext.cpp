@@ -18,6 +18,7 @@
  *
  */
 
+#include <QtWebEngine/QtWebEngineVersion>
 #include "webenginepart_ext.h"
 
 #include "webenginepart.h"
@@ -97,16 +98,20 @@ WebView* WebEngineBrowserExtension::view()
 
 int WebEngineBrowserExtension::xOffset()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (view())
         return view()->page()->scrollPosition().x();
+#endif
 
     return KParts::BrowserExtension::xOffset();
 }
 
 int WebEngineBrowserExtension::yOffset()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
    if (view())
         return view()->page()->scrollPosition().y();
+#endif
 
     return KParts::BrowserExtension::yOffset();
 }
@@ -356,6 +361,7 @@ void WebEngineBrowserExtension::slotSaveImageAs()
 
 void WebEngineBrowserExtension::slotSendImage()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -366,10 +372,12 @@ void WebEngineBrowserExtension::slotSendImage()
                                   QString(), //body
                                   QString(),
                                   urls); // attachments
+#endif
 }
 
 void WebEngineBrowserExtension::slotCopyImageURL()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -386,11 +394,13 @@ void WebEngineBrowserExtension::slotCopyImageURL()
     mimeData = new QMimeData;
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+#endif
 }
 
 
 void WebEngineBrowserExtension::slotCopyImage()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -410,16 +420,20 @@ void WebEngineBrowserExtension::slotCopyImage()
 //    mimeData->setImageData(view()->contextMenuResult().pixmap());
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+#endif
 }
 
 void WebEngineBrowserExtension::slotViewImage()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (view())
         emit createNewWindow(view()->contextMenuResult().mediaUrl());
+#endif
 }
 
 void WebEngineBrowserExtension::slotBlockImage()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -432,6 +446,7 @@ void WebEngineBrowserExtension::slotBlockImage()
         WebEngineSettings::self()->addAdFilter(url);
         reparseConfiguration();
     }
+#endif
 }
 
 void WebEngineBrowserExtension::slotBlockHost()
@@ -453,21 +468,25 @@ void WebEngineBrowserExtension::slotCopyLinkURL()
 
 void WebEngineBrowserExtension::slotCopyLinkText()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (view()) {
         QMimeData* data = new QMimeData;
         data->setText(view()->contextMenuResult().linkText());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
+#endif
 }
 
 void WebEngineBrowserExtension::slotCopyEmailAddress()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (view()) {
         QMimeData* data = new QMimeData;
         const QUrl url(view()->contextMenuResult().linkUrl());
         data->setText(url.path());
         QApplication::clipboard()->setMimeData(data, QClipboard::Clipboard);
     }
+#endif
 }
 
 void WebEngineBrowserExtension::slotSaveLinkAs()
@@ -497,6 +516,7 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
     }
 }
 
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
 static bool isMultimediaElement(QWebEngineContextMenuData::MediaType mediaType)
 {
     switch(mediaType)
@@ -508,9 +528,11 @@ static bool isMultimediaElement(QWebEngineContextMenuData::MediaType mediaType)
             return false;
     }
 }
+#endif
 
 void WebEngineBrowserExtension::slotLoopMedia()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -518,10 +540,12 @@ void WebEngineBrowserExtension::slotLoopMedia()
     if (!isMultimediaElement( data.mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaLoop);
+#endif
 }
 
 void WebEngineBrowserExtension::slotMuteMedia()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -529,10 +553,12 @@ void WebEngineBrowserExtension::slotMuteMedia()
     if (!isMultimediaElement( data.mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaMute);
+#endif
 }
 
 void WebEngineBrowserExtension::slotPlayMedia()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -540,10 +566,12 @@ void WebEngineBrowserExtension::slotPlayMedia()
     if (!isMultimediaElement( data.mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaPlayPause);
+#endif
 }
 
 void WebEngineBrowserExtension::slotShowMediaControls()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -551,6 +579,7 @@ void WebEngineBrowserExtension::slotShowMediaControls()
     if (!isMultimediaElement( data.mediaType()))
         return;
     view()->page()->triggerAction(QWebEnginePage::ToggleMediaControls);
+#endif
 }
 
 #if 0
@@ -570,6 +599,7 @@ static QUrl mediaUrlFrom(QWebElement& element)
 
 void WebEngineBrowserExtension::slotSaveMedia()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -577,10 +607,12 @@ void WebEngineBrowserExtension::slotSaveMedia()
     if (!isMultimediaElement( data.mediaType()))
         return;
     emit saveUrl(data.mediaUrl());
+#endif
 }
 
 void WebEngineBrowserExtension::slotCopyMedia()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
     QWebEngineContextMenuData data =  view()->contextMenuResult();
@@ -603,6 +635,7 @@ void WebEngineBrowserExtension::slotCopyMedia()
     mimeData = new QMimeData;
     mimeData->setUrls(safeURLList);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+#endif
 }
 
 void WebEngineBrowserExtension::slotTextDirectionChanged()
@@ -784,6 +817,7 @@ void WebEngineBrowserExtension::slotOpenSelection()
 
 void WebEngineBrowserExtension::slotLinkInTop()
 {
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (!view())
         return;
 
@@ -796,6 +830,7 @@ void WebEngineBrowserExtension::slotLinkInTop()
     const QUrl url(view()->contextMenuResult().linkUrl());
 
     emit openUrlRequest(url, uargs, bargs);
+#endif
 }
 
 ////
