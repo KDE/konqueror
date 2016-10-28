@@ -19,8 +19,7 @@
 
 #include "SuggestionEngine.h"
 
-#include <KDebug>
-#include <KUrl>
+#include <QDebug>
 #include <kservice.h>
 
 #include <QXmlStreamReader>
@@ -37,7 +36,7 @@ SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
         if (!suggestionURL.isNull() && !suggestionURL.isEmpty()) {
             m_requestURL = suggestionURL;
         } else {
-            kWarning(1202) << "Missing property [Suggest] for suggestion engine: " + m_engineName;
+            qWarning() << "Missing property [Suggest] for suggestion engine: " + m_engineName;
         }
     }
 }

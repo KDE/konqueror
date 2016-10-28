@@ -23,7 +23,6 @@
 #include "OpenSearchManager.h"
 #include "WebShortcutWidget.h"
 
-#include <KDE/KAction>
 #include <KDE/KBuildSycocaProgressDialog>
 #include <KDE/KCompletionBox>
 #include <KDE/KConfigGroup>
@@ -93,7 +92,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 
     QAction *a = actionCollection()->addAction("focus_search_bar");
     a->setText(i18n("Focus Searchbar"));
-    a->setShortcut(QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_S));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_S));
     connect(a, SIGNAL(triggered()), this, SLOT(focusSearchbar()));
     m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
     QDir().mkpath(m_searchProvidersDir);
@@ -309,22 +308,22 @@ void SearchBarPlugin::showSelectionMenu()
         m_popupMenu->setObjectName("search selection menu");
 
         if (enableFindInPage()) {
-            m_popupMenu->addAction(KIcon("edit-find"), i18n("Find in This Page"), this, SLOT(useFindInThisPage()));
+            m_popupMenu->addAction(QIcon::fromTheme("edit-find"), i18n("Find in This Page"), this, SLOT(useFindInThisPage()));
             m_popupMenu->addSeparator();
         }
 
         for (int i = 0, count = m_searchEngines.count(); i != count; ++i) {
             const KUriFilterSearchProvider &provider = m_searchProviders.value(m_searchEngines.at(i));
-            QAction *action = m_popupMenu->addAction(KIcon(provider.iconName()), provider.name());
+            QAction *action = m_popupMenu->addAction(QIcon::fromTheme(provider.iconName()), provider.name());
             action->setData(qVariantFromValue(i));
         }
 
         m_popupMenu->addSeparator();
-        m_popupMenu->addAction(KIcon("preferences-web-browser-shortcuts"), i18n("Select Search Engines..."),
+        m_popupMenu->addAction(QIcon::fromTheme("preferences-web-browser-shortcuts"), i18n("Select Search Engines..."),
                                this, SLOT(selectSearchEngines()));
         connect(m_popupMenu, SIGNAL(triggered(QAction*)), SLOT(menuActionTriggered(QAction*)));
     } else {
-        Q_FOREACH (KAction *action, m_addSearchActions) {
+        Q_FOREACH (QAction *action, m_addSearchActions) {
             m_popupMenu->removeAction(action);
             delete action;
         }
@@ -338,7 +337,7 @@ void SearchBarPlugin::showSelectionMenu()
     }
 
     Q_FOREACH (const QString &title, m_openSearchDescs.keys()) {
-        KAction *addSearchAction = new KAction(m_popupMenu);
+        QAction *addSearchAction = new QAction(m_popupMenu);
         addSearchAction->setText(i18n("Add %1...", title));
         m_addSearchActions.append(addSearchAction);
         addSearchAction->setData(QVariant::fromValue(title));

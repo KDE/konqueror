@@ -20,12 +20,11 @@
 #include "OpenSearchManager.h"
 
 #include <QtCore/QFile>
+#include <QUrl>
 #include <QStandardPaths>
 
 #include <KDebug>
-#include <KGlobal>
 #include <KStandardDirs>
-#include <KUrl>
 #include <kio/scheduler.h>
 
 #include "opensearch/OpenSearchEngine.h"
@@ -79,7 +78,7 @@ bool OpenSearchManager::isSuggestionAvailable()
     return m_activeEngine != 0;
 }
 
-void OpenSearchManager::addOpenSearchEngine(const KUrl &url, const QString &title)
+void OpenSearchManager::addOpenSearchEngine(const QUrl &url, const QString &title)
 {
     Q_UNUSED(title);
 
@@ -107,7 +106,7 @@ void OpenSearchManager::requestSuggestion(const QString &searchText)
     }
     m_state = REQ_SUGGESTION;
 
-    KUrl url = m_activeEngine->suggestionsUrl(searchText);
+    QUrl url = m_activeEngine->suggestionsUrl(searchText);
     kDebug(1202) << "Requesting for suggestions: " << url.url();
     m_jobData.clear();
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);

@@ -207,7 +207,7 @@ private:
     QWeakPointer<KParts::ReadOnlyPart> m_part;
     SearchBarCombo *m_searchCombo;
     QWidgetAction *m_searchComboAction;
-    QList<KAction *> m_addSearchActions;
+    QList<QAction *> m_addSearchActions;
     QMenu *m_popupMenu;
     WebShortcutWidget *m_addWSWidget;
     QPixmap m_searchIcon;

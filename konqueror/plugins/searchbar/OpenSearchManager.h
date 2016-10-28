@@ -59,7 +59,7 @@ public:
      */
     bool isSuggestionAvailable();
 
-    void addOpenSearchEngine(const KUrl &url, const QString &title);
+    void addOpenSearchEngine(const QUrl &url, const QString &title);
 
 public slots:
     /**
