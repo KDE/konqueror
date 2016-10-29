@@ -83,7 +83,8 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->m_pDeleteButton->setIcon(QIcon::fromTheme("edit-delete"));
     d->m_pNewButton->setIcon(QIcon::fromTheme("document-new"));
 
-    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("sessions/");
+    QDir().mkpath(dir);
 
     d->m_pModel = new KDirModel(d->m_pListView);
     d->m_pModel->sort(QDir::Name);
