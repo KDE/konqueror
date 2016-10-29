@@ -30,8 +30,6 @@
 #include <QDebug>
 #include <kio/deletejob.h>
 #include <kstandarddirs.h>
-#include <kvbox.h>
-#include <khbox.h>
 #include <KLocalizedString>
 #include <kdialog.h>
 #include <QUrl>

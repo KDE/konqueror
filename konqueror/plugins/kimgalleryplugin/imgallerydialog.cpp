@@ -104,9 +104,7 @@ void KIGPDialog::setupLookPage(const QString &path)
     QVBoxLayout *vlay = new QVBoxLayout(page);
     vlay->setMargin(0);
 
-    QLabel *label;
-
-    label = new QLabel(i18n("&Page title:"), page);
+    QLabel *label = new QLabel(i18n("&Page title:"), page);
     vlay->addWidget(label);
 
     m_title = new QLineEdit(i18n("Image Gallery for %1", path), page);
