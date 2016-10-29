@@ -36,7 +36,7 @@ class ValidatorsDialog : public KPageDialog
     Q_OBJECT
 
 public:
-    explicit ValidatorsDialog(QWidget *parent = 0);
+    explicit ValidatorsDialog(QWidget *parent = Q_NULLPTR);
     ~ValidatorsDialog();
 
 signals:

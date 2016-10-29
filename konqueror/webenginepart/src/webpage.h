@@ -43,7 +43,7 @@ class WebPage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    explicit WebPage(WebEnginePart *wpart, QWidget *parent = 0);
+    explicit WebPage(WebEnginePart *wpart, QWidget *parent = Q_NULLPTR);
     ~WebPage();
 
     /**
@@ -140,7 +140,7 @@ class NewWindowPage : public WebPage
     Q_OBJECT
 public:
     NewWindowPage(WebWindowType windowType, WebEnginePart* part,
-                  QWidget* parent = 0);
+                  QWidget* parent = Q_NULLPTR);
     virtual ~NewWindowPage();
 
 protected:

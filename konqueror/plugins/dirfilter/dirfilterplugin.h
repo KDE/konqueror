@@ -44,7 +44,7 @@ class FilterBar : public QWidget
     Q_OBJECT
 
 public:
-    explicit FilterBar(QWidget *parent = 0);
+    explicit FilterBar(QWidget *parent = Q_NULLPTR);
     virtual ~FilterBar();
     void selectAll();
 

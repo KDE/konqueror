@@ -25,7 +25,7 @@ class SCWMainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    SCWMainWindow(QWidget *parent = 0);
+    SCWMainWindow(QWidget *parent = Q_NULLPTR);
 
 private slots:
     void slotSwitchCentralWidget();

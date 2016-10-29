@@ -31,7 +31,7 @@ class FeaturePermissionBar : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit FeaturePermissionBar(QWidget *parent = 0);
+    explicit FeaturePermissionBar(QWidget *parent = Q_NULLPTR);
     ~FeaturePermissionBar();
 
     QWebEnginePage::Feature feature() const;

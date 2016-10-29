@@ -57,7 +57,7 @@ public:
         return static_cast<KonqHistoryManager *>(KParts::HistoryProvider::self());
     }
 
-    explicit KonqHistoryManager(KBookmarkManager *bookmarkManager, QObject *parent = 0);
+    explicit KonqHistoryManager(KBookmarkManager *bookmarkManager, QObject *parent = Q_NULLPTR);
     ~KonqHistoryManager();
 
     /**

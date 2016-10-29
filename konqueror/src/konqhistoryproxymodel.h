@@ -36,7 +36,7 @@ class KonqHistoryProxyModel : public KSortFilterProxyModel
     Q_OBJECT
 
 public:
-    explicit KonqHistoryProxyModel(KonqHistorySettings *settings, QObject *parent = 0);
+    explicit KonqHistoryProxyModel(KonqHistorySettings *settings, QObject *parent = Q_NULLPTR);
     ~KonqHistoryProxyModel();
 
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;

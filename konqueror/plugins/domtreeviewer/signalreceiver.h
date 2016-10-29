@@ -47,7 +47,7 @@ class SignalReceiver : public QObject
     Q_OBJECT
 
 public:
-    explicit SignalReceiver(QObject *parent = 0);
+    explicit SignalReceiver(QObject *parent = Q_NULLPTR);
     virtual ~SignalReceiver();
 
     /** returns true if any signal has been received */

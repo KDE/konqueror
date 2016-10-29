@@ -29,7 +29,7 @@ class WebShortcutWidget : public QDialog
 {
     Q_OBJECT
 public:
-    WebShortcutWidget(QWidget *parent = 0);
+    WebShortcutWidget(QWidget *parent = Q_NULLPTR);
 
     void show(const QString &openSearchName, const QString &fileName);
 

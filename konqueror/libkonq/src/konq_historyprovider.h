@@ -53,7 +53,7 @@ public:
         return static_cast<KonqHistoryProvider *>(KParts::HistoryProvider::self());
     }
 
-    explicit KonqHistoryProvider(QObject *parent = 0);
+    explicit KonqHistoryProvider(QObject *parent = Q_NULLPTR);
     virtual ~KonqHistoryProvider();
 
     /**

@@ -38,7 +38,7 @@ class SessionRestoreDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = 0);
+    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = Q_NULLPTR);
     virtual ~SessionRestoreDialog();
 
     /**
@@ -106,7 +106,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QStringList &sessionFilePathsList, bool
-                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
 
     /**
      * Restore saved session(s).
@@ -119,7 +119,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QString &sessionsDir, bool
-                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
 
     /**
      * Restore saved session.
@@ -130,7 +130,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSession(const QString &sessionFilePath, bool
-                        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
+                        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
 
     /**
      * Disable the autosave feature. It's called when a konqueror instance is

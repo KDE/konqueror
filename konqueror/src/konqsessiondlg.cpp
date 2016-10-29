@@ -52,7 +52,7 @@ class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
 {
 public:
-    KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = 0)
+    KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = Q_NULLPTR)
         : QWidget(parent), m_pViewManager(manager), m_pParent(parent)
     {
         setupUi(this);
@@ -205,7 +205,7 @@ class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
 {
 public:
-    KonqNewSessionDlgPrivate(QWidget *parent = 0)
+    KonqNewSessionDlgPrivate(QWidget *parent = Q_NULLPTR)
         : QWidget(parent), m_pParent(parent)
     {
         setupUi(this);

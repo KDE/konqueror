@@ -32,7 +32,7 @@ class KonqHistoryDialog : public KDialog
     Q_OBJECT
 
 public:
-    KonqHistoryDialog(KonqMainWindow *parent = 0);
+    KonqHistoryDialog(KonqMainWindow *parent = Q_NULLPTR);
     ~KonqHistoryDialog();
 
     QSize sizeHint() const;

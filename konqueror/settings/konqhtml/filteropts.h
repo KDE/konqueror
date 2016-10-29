@@ -36,7 +36,7 @@ class AutomaticFilterModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    AutomaticFilterModel(QObject *parent = 0);
+    AutomaticFilterModel(QObject *parent = Q_NULLPTR);
 
     void load(KConfigGroup &cg);
     void save(KConfigGroup &cg);

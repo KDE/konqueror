@@ -50,7 +50,7 @@ class KonqCheckBox : public QCheckBox
 {
     //Q_OBJECT // for classname. not used, and needs a moc
 public:
-    explicit KonqCheckBox(QWidget *parent = 0)
+    explicit KonqCheckBox(QWidget *parent = Q_NULLPTR)
         : QCheckBox(parent) {}
 protected:
     void paintEvent(QPaintEvent *);

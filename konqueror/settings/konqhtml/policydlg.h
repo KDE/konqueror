@@ -50,7 +50,7 @@ public:
      * @param parent parent widget this belongs to
      * @param name internal name
      */
-    explicit PolicyDialog(Policies *policies, QWidget *parent = 0, const char *name = 0);
+    explicit PolicyDialog(Policies *policies, QWidget *parent = Q_NULLPTR, const char *name = 0);
 
     virtual ~PolicyDialog() {}
 

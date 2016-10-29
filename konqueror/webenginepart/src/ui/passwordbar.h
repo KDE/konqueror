@@ -31,7 +31,7 @@ class PasswordBar : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit PasswordBar(QWidget *parent = 0);
+    explicit PasswordBar(QWidget *parent = Q_NULLPTR);
     ~PasswordBar();
 
     QUrl url() const;

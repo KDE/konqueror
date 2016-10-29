@@ -156,7 +156,7 @@ ScanDir::ScanDir()
     _dirty = true;
     _dirsFinished = -1; /* scan not started */
 
-    _parent = 0;
+    _parent = Q_NULLPTR;
     _manager = 0;
     _listener = 0;
     _data = 0;

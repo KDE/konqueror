@@ -59,7 +59,7 @@ class KWEBENGINEPARTLIB_EXPORT WebEnginePart : public KParts::ReadOnlyPart
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
 public:
-    explicit WebEnginePart(QWidget* parentWidget = 0, QObject* parent = 0,
+    explicit WebEnginePart(QWidget* parentWidget = 0, QObject* parent = Q_NULLPTR,
                          const QByteArray& cachedHistory = QByteArray(),
                          const QStringList& = QStringList());
     ~WebEnginePart();

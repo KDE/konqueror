@@ -298,7 +298,7 @@ public:
                      Horizontal, Vertical
                    };
 
-    explicit TreeMapItem(TreeMapItem *parent = 0, double value = 1.0);
+    explicit TreeMapItem(TreeMapItem *parent = Q_NULLPTR, double value = 1.0);
     TreeMapItem(TreeMapItem *parent, double value,
                 const QString &text1, const QString &text2 = QString(),
                 const QString &text3 = QString(), const QString &text4 = QString());
@@ -496,7 +496,7 @@ public:
     enum SelectionMode { Single, Multi, Extended, NoSelection };
 
     /* The widget gets owner of the base item */
-    explicit TreeMapWidget(TreeMapItem *base, QWidget *parent = 0);
+    explicit TreeMapWidget(TreeMapItem *base, QWidget *parent = Q_NULLPTR);
     ~TreeMapWidget();
 
     /**
@@ -554,7 +554,7 @@ public:
      * parent. When parent == 0, clears whole selection
      * Returns true if selection changed.
      */
-    bool clearSelection(TreeMapItem *parent = 0);
+    bool clearSelection(TreeMapItem *parent = Q_NULLPTR);
 
     /**
      * Selects or unselects items in a range.

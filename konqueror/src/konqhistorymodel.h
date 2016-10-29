@@ -37,7 +37,7 @@ class KonqHistoryModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    explicit KonqHistoryModel(QObject *parent = 0);
+    explicit KonqHistoryModel(QObject *parent = Q_NULLPTR);
     ~KonqHistoryModel();
 
     // reimplementations from QAbstractItemModel

@@ -28,7 +28,7 @@ class ClickIconLabel : public QWidget
 {
     Q_OBJECT
 public:
-    ClickIconLabel(QWidget *parent = 0);
+    ClickIconLabel(QWidget *parent = Q_NULLPTR);
 
     void setText(const QString &text);
     void setPixmap(const QPixmap &pixmap);

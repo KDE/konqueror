@@ -77,8 +77,8 @@ class KonqListWidgetItem : public QListWidgetItem
 public:
     enum ItemType { KonqItemType = 0x1845D5CC };
 
-    KonqListWidgetItem(QListWidget *parent = 0);
-    KonqListWidgetItem(const QString &text, QListWidget *parent = 0);
+    KonqListWidgetItem(QListWidget *parent = Q_NULLPTR);
+    KonqListWidgetItem(const QString &text, QListWidget *parent = Q_NULLPTR);
 
     QVariant data(int role) const;
 
@@ -103,7 +103,7 @@ public:
 class KonqComboLineEdit : public KLineEdit
 {
 public:
-    KonqComboLineEdit(QWidget *parent = 0);
+    KonqComboLineEdit(QWidget *parent = Q_NULLPTR);
     void setCompletedItems(const QStringList &items, bool);
 
 protected:

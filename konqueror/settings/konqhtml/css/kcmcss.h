@@ -50,7 +50,7 @@ class CSSConfig : public QWidget
 
 public:
 
-    explicit CSSConfig(QWidget *parent = 0L, const QVariantList &list = QVariantList());
+    explicit CSSConfig(QWidget *parent = Q_NULLPTR, const QVariantList &list = QVariantList());
 
     void load();
     void save();

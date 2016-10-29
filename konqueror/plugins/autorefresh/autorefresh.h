@@ -50,7 +50,7 @@ public:
     /**
      * Construct a new KParts plugin.
      */
-    explicit AutoRefresh(QObject *parent = 0, const QVariantList &args = QVariantList());
+    explicit AutoRefresh(QObject *parent = Q_NULLPTR, const QVariantList &args = QVariantList());
 
     /**
      * Destructor.
