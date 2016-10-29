@@ -62,7 +62,6 @@ WebPage::WebPage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
-         m_noJSOpenWindowCheck(false),
          m_part(part)
 {
     if (view())
@@ -141,12 +140,11 @@ void WebPage::downloadRequest(QWebEngineDownloadItem* request)
 
 QWebEnginePage *WebPage::createWindow(WebWindowType type)
 {
-    // kDebug() << "window type:" << type;
+    //qDebug() << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
-    NewWindowPage* page = new NewWindowPage(type, part(), m_noJSOpenWindowCheck);
-    m_noJSOpenWindowCheck = false;
+    NewWindowPage* page = new NewWindowPage(type, part());
     return page;
 }
 
@@ -173,6 +171,7 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
+    qDebug() << url;
     QUrl reqUrl (url);
 
     // Handle "mailto:" url here...
@@ -189,11 +188,10 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
     if (isMainFrame && isTypedUrl)
       setProperty("NavigationTypeUrlEntered", QVariant());
 
-    if(true) {
-        // inPage requests are those generarted within the current page through
-        // link clicks, javascript queries, and button clicks (form submission).
-        bool inPageRequest = true;
-        switch (type) {
+    // inPage requests are those generarted within the current page through
+    // link clicks, javascript queries, and button clicks (form submission).
+    bool inPageRequest = true;
+    switch (type) {
         case QWebEnginePage::NavigationTypeFormSubmitted:
             //if (!checkFormData(request))
             //    return false;
@@ -230,29 +228,26 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
 //            setRequestMetaData(QL1S("cache"), QL1S("reload"));
             inPageRequest = false;
             break;
-        case QWebEnginePage::NavigationTypeOther:
+        case QWebEnginePage::NavigationTypeOther: // triggered by javascript
+            qDebug() << "Triggered by javascript";
             inPageRequest = !isTypedUrl;
             break;
         default:
             break;
-        }
-
-        if (inPageRequest) {
-           // if (!checkLinkSecurity(request, type))
-          //      return false;
-
-          //  if (m_sslInfo.isValid())
-          //      setRequestMetaData(QL1S("ssl_was_in_use"), QL1S("TRUE"));
-        }
-
-        // Insert the request into the queue...
-    } else {
-        // If request came from javascript, set m_noJSOpenWindowCheck to true.
-//        m_noJSOpenWindowCheck = (!isTypedUrl && type != QWebEnginePage::NavigationTypeOther);
     }
+
+    if (inPageRequest) {
+        // if (!checkLinkSecurity(request, type))
+        //      return false;
+
+        //  if (m_sslInfo.isValid())
+        //      setRequestMetaData(QL1S("ssl_was_in_use"), QL1S("TRUE"));
+    }
+
 
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
+    // Insert the request into the queue...
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
@@ -661,9 +656,8 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
 
 /************************************* Begin NewWindowPage ******************************************/
 
-NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, bool disableJSOpenwindowCheck, QWidget* parent)
+NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, QWidget* parent)
               :WebPage(part, parent) , m_type(type) , m_createNewWindow(true)
-              , m_disableJSOpenwindowCheck(disableJSOpenwindowCheck)
 {
     Q_ASSERT_X (part, "NewWindowPage", "Must specify a valid KPart");
 
@@ -674,20 +668,48 @@ NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, bool disab
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    if (m_type == WebBrowserBackgroundTab) {
+        m_windowArgs.setLowerWindow(true);
+    }
+#endif
 }
 
 NewWindowPage::~NewWindowPage()
 {
-    //kDebug() << this;
+}
+
+static KParts::BrowserArguments browserArgs(WebPage::WebWindowType type)
+{
+    KParts::BrowserArguments bargs;
+    switch (type) {
+        case WebPage::WebDialog:
+        case WebPage::WebBrowserWindow:
+            bargs.setForcesNewWindow(true);
+            break;
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+        case WebPage::WebBrowserTab:
+        case WebPage::WebBrowserBackgroundTab:
+            // let konq decide, based on user configuration
+            //bargs.setNewTab(true);
+            break;
+#endif
+    }
+    return bargs;
 }
 
 bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    // kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+    //qDebug() << "url:" << url << ", type:" << type << ", isMainFrame:" << isMainFrame << "m_createNewWindow=" << m_createNewWindow;
     if (m_createNewWindow) {
         const QUrl reqUrl (url);
 
-        if (!m_disableJSOpenwindowCheck) {
+        const bool actionRequestedByUser = type != QWebEnginePage::NavigationTypeOther;
+
+        if (actionRequestedByUser) {
+            if (!part() && !isMainFrame) {
+                return false;
+            }
             const KParts::HtmlSettingsInterface::JSWindowOpenPolicy policy = WebEngineSettings::self()->windowOpenPolicy(reqUrl.host());
             switch (policy) {
             case KParts::HtmlSettingsInterface::JSWindowOpenDeny:
@@ -716,35 +738,16 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
             }
         }
 
-        if (!part() && !isMainFrame && type != QWebEnginePage::NavigationTypeOther)
-            return false;
-
         // Browser args...
-        KParts::BrowserArguments bargs;
+        KParts::BrowserArguments bargs = browserArgs(m_type);
 
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
         uargs.setMimeType(QL1S("text/html"));
-        uargs.setActionRequestedByUser(m_disableJSOpenwindowCheck);
+        uargs.setActionRequestedByUser(actionRequestedByUser);
 
         // Window args...
         KParts::WindowArgs wargs (m_windowArgs);
-
-        switch (m_type) {
-            case WebDialog:
-            case WebBrowserWindow:
-                bargs.setForcesNewWindow(true);
-                break;
-            case WebBrowserTab:
-                bargs.setNewTab(true);
-                break;
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-            case WebBrowserBackgroundTab:
-                bargs.setNewTab(true);
-                wargs.setLowerWindow(true);
-                break;
-#endif
-        }
 
         KParts::ReadOnlyPart* newWindowPart =0;
         part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
@@ -764,6 +767,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // If the newly created window is NOT a webenginepart...
         if (!webView) {
+            qDebug() << "Opening URL on" << newWindowPart;
             newWindowPart->openUrl(reqUrl);
             this->deleteLater();
             return false;
@@ -820,20 +824,20 @@ void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
 void NewWindowPage::slotLoadFinished(bool ok)
 {
     Q_UNUSED(ok)
-    //kDebug() << ok;
+    qDebug() << ok;
     if (!m_createNewWindow)
         return;
 
+    const bool actionRequestedByUser = m_type != QWebEnginePage::NavigationTypeOther;
+
     // Browser args...
-    KParts::BrowserArguments bargs;
+    KParts::BrowserArguments bargs = browserArgs(m_type);
     //bargs.frameName = mainFrame()->frameName();
-    //if (m_type == WebModalDialog)
-    //    bargs.setForcesNewWindow(true);
 
     // OpenUrl args...
     KParts::OpenUrlArguments uargs;
     uargs.setMimeType(QL1S("text/html"));
-    uargs.setActionRequestedByUser(m_disableJSOpenwindowCheck);
+    uargs.setActionRequestedByUser(actionRequestedByUser);
 
     // Window args...
     KParts::WindowArgs wargs (m_windowArgs);

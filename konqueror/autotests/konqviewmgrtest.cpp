@@ -20,9 +20,11 @@
 #include "../src/konqsettingsxt.h"
 #include <QToolBar>
 #include <QProcess>
+#include <QScrollArea>
 #include <qtestkeyboard.h>
 #include <qtest_gui.h>
 #include <qtestmouse.h>
+#include <QLabel>
 
 #include <konqframe.h>
 #include <konqmainwindow.h>
@@ -37,10 +39,17 @@
 #include <kio/job.h>
 #include <ksycoca.h>
 
+//#define TEST_KHTML 1
+
+#ifdef TEST_KHTML
 #include <khtml_part.h>
 #include <khtmlview.h>
-#include <dom/html_inline.h>
-#include <dom/html_document.h>
+#else
+#include <webenginepart.h>
+#include <webview.h>
+#include "util.h"
+#endif
+
 #include <QStandardPaths>
 #include <KSharedConfig>
 #include <QSignalSpy>
@@ -61,6 +70,50 @@ public:
                                        bool forceAutoEmbed = false);
 
 };
+#endif
+
+
+// Return the main widget for the given KonqView; used for clicking onto it
+// Duplicated from konqhtmltest.cpp -> move to KonqView?
+static QWidget *partWidget(KonqView *view)
+{
+    QWidget *widget = view->part()->widget();
+#ifdef TEST_KHTML
+    KHTMLPart *htmlPart = qobject_cast<KHTMLPart *>(view->part());
+#else
+    WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
+#endif
+    if (htmlPart) {
+        widget = htmlPart->view();    // khtmlview != widget() nowadays, due to find bar
+    }
+    if (QScrollArea *scrollArea = qobject_cast<QScrollArea *>(widget)) {
+        widget = scrollArea->widget();
+    }
+    if (widget && widget->focusProxy()) { // for WebEngine's RenderWidgetHostViewQtDelegateWidget
+        return widget->focusProxy();
+    }
+    return widget;
+}
+
+#ifndef TEST_KHTML
+// Taken from QtWebEngine's tst_qwebenginepage.cpp
+static QPoint elementCenter(QWebEnginePage *page, const QString &id)
+{
+    QVariantList rectList = evaluateJavaScriptSync(page,
+            "(function(){"
+            "var elem = document.getElementById('" + id + "');"
+            "var rect = elem.getBoundingClientRect();"
+            "return [(rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2];"
+            "})()").toList();
+
+    if (rectList.count() != 2) {
+        qWarning("elementCenter failed.");
+        return QPoint();
+    }
+
+    const QPoint ret(rectList.at(0).toInt(), rectList.at(1).toInt());
+    return ret;
+}
 #endif
 
 void ViewMgrTest::sendAllPendingResizeEvents(QWidget *mainWindow)
@@ -160,20 +213,30 @@ void ViewMgrTest::initTestCase()
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
     QCOMPARE(KonqSettings::popupsWithinTabs(), false);
 
-    // Ensure the tests use KHTML, not kwebkitpart
+    // Ensure the tests use webenginepart (not khtml or webkit)
     // This code is inspired by settings/konqhtml/generalopts.cpp
     KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
     KConfigGroup addedServices(profile, "Added KDE Service Associations");
+    bool needsUpdate = false;
     Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
         QStringList services = addedServices.readXdgListEntry(mimeType);
-        services.removeAll("khtml.desktop");
-        services.prepend("khtml.desktop"); // make it the preferred one
-        addedServices.writeXdgListEntry(mimeType, services);
+#ifdef TEST_KHTML
+        const QString wanted = "khtml.desktop";
+#else
+        const QString wanted = "webenginepart.desktop";
+#endif
+        if (services.isEmpty() || services.at(0) != wanted) {
+            services.removeAll(wanted);
+            services.prepend(wanted); // make it the preferred one
+            addedServices.writeXdgListEntry(mimeType, services);
+            needsUpdate = true;
+        }
     }
-    profile->sync();
-
-    // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-    QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+    if (needsUpdate) {
+        profile->sync();
+        // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
+        QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+    }
 }
 
 class MyKonqMainWindow : public KonqMainWindow
@@ -379,7 +442,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
 {
     // Much like KonqHtmlTest::loadSimpleHtml.
     // We use text/plain as the linked file, in order to test #67956 (switching parts in new tab)
-    mainWindow.openUrl(0, QUrl("data:text/html, <a href=\"data:text/plain, Link target\">Click me</a>"), "text/html");
+    mainWindow.openUrl(0, QUrl("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>"), "text/html");
     KonqView *view = mainWindow.currentView();
     QVERIFY(view);
     QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -392,6 +455,8 @@ void ViewMgrTest::testLinkedViews()
     MyKonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
     KonqView *view = mainWindow.currentView();
+    WebEnginePart *part = qobject_cast<WebEnginePart *>(view->part());
+    QVERIFY(part);
     // Split it
     qDebug() << "SPLITTING";
     mainWindow.slotSplitViewHorizontal();
@@ -407,8 +472,13 @@ void ViewMgrTest::testLinkedViews()
     view->setLinkedView(true);
     view2->setLinkedView(true);
     view->setLockedLocation(true);
+
+    mainWindow.show();
+
     // "Click" on the link
     qDebug() << "ACTIVATING LINK";
+
+#ifdef TEST_KHTML
     KHTMLPart *part = qobject_cast<KHTMLPart *>(view->part());
     QVERIFY(part);
     DOM::HTMLAnchorElement anchor = part->htmlDocument().getElementsByTagName(DOM::DOMString("a")).item(0);
@@ -418,9 +488,17 @@ void ViewMgrTest::testLinkedViews()
     QApplication::sendEvent(part->view(), &ev);
     qApp->processEvents(); // openUrlRequestDelayed
     QTest::qWait(0);
+#else
+    QTest::mouseClick(part->view()->focusProxy(), Qt::LeftButton, Qt::KeyboardModifiers(),
+            elementCenter(part->view()->page(), "linkid"));
+
     // Check that the link opened in the 2nd view, not the first one
+#endif
     QCOMPARE(view->url().url(), origUrl.url());
-    QCOMPARE(view2->url().url(), QUrl("data:text/plain, Link target").url());
+#ifndef TEST_KHTML
+    QEXPECT_FAIL("", "Broken feature right now, requires URLs to be opened by konq rather than the part", Abort);
+#endif
+    QTRY_COMPARE_WITH_TIMEOUT(view2->url().url(), QUrl("data:text/plain, Link target").url(), 400);
 }
 
 void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
@@ -442,17 +520,24 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     }
 }
 
-static void checkSecondWindowHasOneTab() // and delete it.
+static void checkSecondWindowHasOneTab(bool fromPopup) // and delete it.
 {
-    QCOMPARE(KMainWindow::memberList().count(), 2);
-    KonqMainWindow *newWindow = qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last());
-    QVERIFY(newWindow);
-    QCOMPARE(DebugFrameVisitor::inspect(newWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    QTRY_COMPARE(KMainWindow::memberList().count(), 2);
+    QScopedPointer<KonqMainWindow> newWindow(qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last()));
+    QVERIFY(newWindow.data());
+    QCOMPARE(DebugFrameVisitor::inspect(newWindow.data()), QString("MT[F].")); // mainWindow, tab widget, one tab
     QTabWidget *tabWidget = newWindow->findChild<QTabWidget *>();
     QVERIFY(tabWidget);
     // The location bar shouldn't get focus (#208821)
+    QTRY_VERIFY(newWindow->focusWidget());
+    qDebug() << newWindow->focusWidget();
+#ifndef TEST_KHTML
+    if (!fromPopup) {
+        QEXPECT_FAIL("", "This fails because it doesn't go through KRun and KonqView::setLoading yet", Abort);
+    }
+#endif
+    QTRY_VERIFY_WITH_TIMEOUT(tabWidget->focusWidget(), 200);
     QCOMPARE(newWindow->focusWidget()->metaObject()->className(), tabWidget->focusWidget()->metaObject()->className());
-    delete newWindow;
 }
 
 void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
@@ -465,7 +550,7 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
     QTest::qWait(100);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
     QVERIFY(KMainWindow::memberList().last() != &mainWindow);
-    checkSecondWindowHasOneTab();
+    checkSecondWindowHasOneTab(true);
 }
 
 void ViewMgrTest::testCtrlClickOnLink()
@@ -474,17 +559,17 @@ void ViewMgrTest::testCtrlClickOnLink()
     openHtmlWithLink(mainWindow);
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     KonqView *view = mainWindow.currentView();
-    KHTMLPart *part = qobject_cast<KHTMLPart *>(view->part());
+    mainWindow.show();
     qDebug() << "CLICKING NOW";
-    QVERIFY(part);
-    QTest::mouseClick(part->view()->widget(), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
+    QTest::mouseClick(partWidget(view), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
     QTest::qWait(100);
     // Expected behavior for Ctrl+click:
     //  new tab, if mmbOpensTab
     //  new window, if !mmbOpensTab
+    //  (this code is called for both cases)
     if (KonqSettings::mmbOpensTab()) {
-        QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
         QCOMPARE(KMainWindow::memberList().count(), 1);
+        QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
         if (KonqSettings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
             QCOMPARE(tabs->currentIndex(), 1);
             QVERIFY(mainWindow.currentView() != view);
@@ -496,7 +581,7 @@ void ViewMgrTest::testCtrlClickOnLink()
         }
     } else {
         QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
-        checkSecondWindowHasOneTab();
+        checkSecondWindowHasOneTab(false);
     }
 }
 

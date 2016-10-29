@@ -117,7 +117,6 @@ private:
 
     int m_kioErrorCode;
     bool m_ignoreError;
-    bool m_noJSOpenWindowCheck;
 
     WebSslInfo m_sslInfo;
     QPointer<WebEnginePart> m_part;
@@ -141,7 +140,7 @@ class NewWindowPage : public WebPage
     Q_OBJECT
 public:
     NewWindowPage(WebWindowType windowType, WebEnginePart* part,
-                  bool disableJSWindowOpenCheck= false, QWidget* parent = 0);
+                  QWidget* parent = 0);
     virtual ~NewWindowPage();
 
 protected:
@@ -158,7 +157,6 @@ private:
     KParts::WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
-    bool m_disableJSOpenwindowCheck;
 };
 
 #endif // WEBPAGE_H

@@ -11,7 +11,8 @@ add_executable(konqviewmgrtest konqviewmgrtest.cpp)
 add_test(konqviewmgrtest konqviewmgrtest)
 ecm_mark_as_test(konqviewmgrtest)
 target_link_libraries(konqviewmgrtest kdeinit_konqueror Qt5::Core Qt5::Gui
-                      KF5::KHtml Qt5::Test)
+   # KF5::KHtml
+   kwebenginepartlib Qt5::WebEngineWidgets Qt5::Test)
 
 ########### historymanagertest ###############
 
