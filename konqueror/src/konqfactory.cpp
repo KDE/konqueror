@@ -159,7 +159,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         for (; viewFactory.isNull() /* exit as soon as we get one */ && it != offers.end(); ++it) {
             service = (*it);
             // Allowed as default ?
-            QVariant prop = service->property("X-KDE-BrowserView-AllowAsDefault");
+            QVariant prop = service->property(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"));
             qDebug() << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
             if (!prop.isValid() || prop.toBool()) {   // defaults to true
                 //qDebug() << "Trying to open lib for service " << service->name();
@@ -185,14 +185,14 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     }
 
     QVariantList args;
-    const QVariant prop = service->property("X-KDE-BrowserView-Args");
+    const QVariant prop = service->property(QStringLiteral("X-KDE-BrowserView-Args"));
     if (prop.isValid()) {
         Q_FOREACH (const QString &str, prop.toString().split(' ')) {
             args << QVariant(str);
         }
     }
 
-    if (service->serviceTypes().contains("Browser/View")) {
+    if (service->serviceTypes().contains(QStringLiteral("Browser/View"))) {
         args << QLatin1String("Browser/View");
     }
 
@@ -209,17 +209,17 @@ void KonqFactory::getOffers(const QString &serviceType,
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
         *partServiceOffers = KServiceTypeTrader::self()->query(serviceType,
-                             "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
+                             QStringLiteral("DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'"));
         return;
 
     }
     if (appServiceOffers) {
-        *appServiceOffers = KMimeTypeTrader::self()->query(serviceType, "Application",
-                            "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
+        *appServiceOffers = KMimeTypeTrader::self()->query(serviceType, QStringLiteral("Application"),
+                            QStringLiteral("DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'"));
     }
 
     if (partServiceOffers) {
-        *partServiceOffers = KMimeTypeTrader::self()->query(serviceType, "KParts/ReadOnlyPart");
+        *partServiceOffers = KMimeTypeTrader::self()->query(serviceType, QStringLiteral("KParts/ReadOnlyPart"));
     }
 }
 

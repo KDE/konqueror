@@ -20,10 +20,10 @@ PluginDomtreeviewer::PluginDomtreeviewer(QObject *parent,
         const QVariantList &)
     : Plugin(parent), m_dialog(0)
 {
-    QAction *a = actionCollection()->addAction("viewdomtree");
+    QAction *a = actionCollection()->addAction(QStringLiteral("viewdomtree"));
 
     a->setText(i18n("Show &DOM Tree"));
-    a->setIcon(KIcon("view-web-browser-dom-tree"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("view-web-browser-dom-tree")));
     connect(a, SIGNAL(triggered()), this, SLOT(slotShowDOMTree()));
 }
 

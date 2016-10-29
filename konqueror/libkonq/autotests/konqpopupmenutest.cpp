@@ -51,7 +51,7 @@ static QStringList extractActionNames(QMenu &menu)
     foreach (const QAction *action, menu.actions()) {
         if (action->isSeparator()) {
             if (!lastIsSeparator) { // Qt gets rid of duplicate separators, so we should too
-                ret.append("separator");
+                ret.append(QStringLiteral("separator"));
             }
             lastIsSeparator = true;
         } else {
@@ -60,16 +60,16 @@ static QStringList extractActionNames(QMenu &menu)
             const QString objectName = action->objectName();
             if (objectName.isEmpty()) {
                 if (action->menu()) { // if this fails, then we have an unnamed action somewhere...
-                    ret.append("submenu");
+                    ret.append(QStringLiteral("submenu"));
                 } else {
                     ret.append("UNNAMED " + action->text());
                 }
             } else {
-                if (objectName == "menuaction" // a single service-menu action, or a service-menu submenu: skip; too variable.
-                        || objectName == "actions_submenu") {
-                } else if (objectName == "openWith_submenu") {
-                    ret.append("openwith");
-                } else if (objectName == "openwith_browse" && lastObjectName == "openwith") {
+                if (objectName == QLatin1String("menuaction") // a single service-menu action, or a service-menu submenu: skip; too variable.
+                        || objectName == QLatin1String("actions_submenu")) {
+                } else if (objectName == QLatin1String("openWith_submenu")) {
+                    ret.append(QStringLiteral("openwith"));
+                } else if (objectName == QLatin1String("openwith_browse") && lastObjectName == QLatin1String("openwith")) {
                     // We had "open with foo" followed by openwith_browse, all is well.
                     // The expected lists only say "openwith" so that they work in both cases
                     // -> skip the browse action.
@@ -88,55 +88,55 @@ void KonqPopupMenuTest::initTestCase()
 {
     QStandardPaths::setTestModeEnabled(true);
 
-    KSharedConfig::Ptr dolphin = KSharedConfig::openConfig("dolphinrc");
+    KSharedConfig::Ptr dolphin = KSharedConfig::openConfig(QStringLiteral("dolphinrc"));
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
-    m_thisDirectoryItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath()), "inode/directory", S_IFDIR + 0777);
+    m_thisDirectoryItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath()), QStringLiteral("inode/directory"), S_IFDIR + 0777);
     const QString makefile = QDir::currentPath() + "/Makefile";
     QVERIFY2(QFile::exists(makefile), qPrintable(makefile));
-    m_fileItem = KFileItem(QUrl::fromLocalFile(makefile), "text/x-makefile", S_IFREG + 0660);
-    m_linkItem = KFileItem(QUrl::fromLocalFile("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
-    m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
+    m_fileItem = KFileItem(QUrl::fromLocalFile(makefile), QStringLiteral("text/x-makefile"), S_IFREG + 0660);
+    m_linkItem = KFileItem(QUrl::fromLocalFile(QStringLiteral("http://www.kde.org/foo")), QStringLiteral("text/html"), S_IFREG + 0660);
+    m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), QStringLiteral("inode/directory"), S_IFDIR + 0755);
     m_cut = KStandardAction::cut(0, 0, this);
-    m_actionCollection.addAction("cut", m_cut);
+    m_actionCollection.addAction(QStringLiteral("cut"), m_cut);
     m_copy = KStandardAction::copy(0, 0, this);
-    m_actionCollection.addAction("copy", m_copy);
+    m_actionCollection.addAction(QStringLiteral("copy"), m_copy);
     m_paste = KStandardAction::paste(0, 0, this);
-    m_actionCollection.addAction("paste", m_paste);
+    m_actionCollection.addAction(QStringLiteral("paste"), m_paste);
     m_pasteTo = KStandardAction::paste(0, 0, this);
-    m_actionCollection.addAction("pasteto", m_pasteTo);
+    m_actionCollection.addAction(QStringLiteral("pasteto"), m_pasteTo);
     m_properties = new QAction(this);
-    m_actionCollection.addAction("properties", m_properties);
+    m_actionCollection.addAction(QStringLiteral("properties"), m_properties);
 
     m_tabHandlingActions = new QActionGroup(this);
     m_newWindow = new QAction(m_tabHandlingActions);
-    m_actionCollection.addAction("openInNewWindow", m_newWindow);
+    m_actionCollection.addAction(QStringLiteral("openInNewWindow"), m_newWindow);
     m_newTab = new QAction(m_tabHandlingActions);
-    m_actionCollection.addAction("openInNewTab", m_newTab);
+    m_actionCollection.addAction(QStringLiteral("openInNewTab"), m_newTab);
     QAction *separator = new QAction(m_tabHandlingActions);
     separator->setSeparator(true);
     QCOMPARE(m_tabHandlingActions->actions().count(), 3);
 
     m_previewActions = new QActionGroup(this);
     m_preview1 = new QAction(m_previewActions);
-    m_actionCollection.addAction("preview1", m_preview1);
+    m_actionCollection.addAction(QStringLiteral("preview1"), m_preview1);
     m_preview2 = new QAction(m_previewActions);
-    m_actionCollection.addAction("preview2", m_preview2);
+    m_actionCollection.addAction(QStringLiteral("preview2"), m_preview2);
 
     m_fileEditActions = new QActionGroup(this);
     m_rename = new QAction(m_fileEditActions);
-    m_actionCollection.addAction("rename", m_rename);
+    m_actionCollection.addAction(QStringLiteral("rename"), m_rename);
     m_trash = new QAction(m_fileEditActions);
-    m_actionCollection.addAction("trash", m_trash);
+    m_actionCollection.addAction(QStringLiteral("trash"), m_trash);
 
     m_htmlEditActions = new QActionGroup(this);
     // TODO use m_htmlEditActions like in khtml (see khtml_popupmenu.rc)
 
     m_linkActions = new QActionGroup(this);
     QAction *saveLinkAs = new QAction(m_linkActions);
-    m_actionCollection.addAction("savelinkas", saveLinkAs);
+    m_actionCollection.addAction(QStringLiteral("savelinkas"), saveLinkAs);
     QAction *copyLinkLocation = new QAction(m_linkActions);
-    m_actionCollection.addAction("copylinklocation", copyLinkLocation);
+    m_actionCollection.addAction(QStringLiteral("copylinklocation"), copyLinkLocation);
     // TODO there's a whole bunch of things for frames, and for images, see khtml_popupmenu.rc
 
     m_partActions = new QActionGroup(this);
@@ -144,9 +144,9 @@ void KonqPopupMenuTest::initTestCase()
     separator->setSeparator(true);
     m_partActions->addAction(separator); // we better start with a separator
     QAction *viewDocumentSource = new QAction(m_partActions);
-    m_actionCollection.addAction("viewDocumentSource", viewDocumentSource);
+    m_actionCollection.addAction(QStringLiteral("viewDocumentSource"), viewDocumentSource);
 
-    m_newMenu = new KNewFileMenu(&m_actionCollection, "newmenu", 0);
+    m_newMenu = new KNewFileMenu(&m_actionCollection, QStringLiteral("newmenu"), 0);
 
     // Check if extractActionNames works
     QMenu popup;
@@ -178,31 +178,31 @@ void KonqPopupMenuTest::testFile()
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
-                    << "cut" << "copy" << "rename" << "trash" << "separator"
-                    << "openwith"
-                    << "preview1";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
+    expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview1");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("moveTo_submenu") << QStringLiteral("separator");
     // (came from arkplugin) << "compress"
-    expectedActions << "properties";
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testFileInReadOnlyDirectory()
 {
-    const KFileItem item(QUrl::fromLocalFile("/etc/passwd"));
+    const KFileItem item(QUrl::fromLocalFile(QStringLiteral("/etc/passwd")));
     KFileItemList itemList;
     itemList << item;
 
     KFileItemListProperties capabilities(itemList);
     QVERIFY(!capabilities.supportsMoving());
 
-    QUrl viewUrl = QUrl::fromLocalFile("/etc");
+    QUrl viewUrl = QUrl::fromLocalFile(QStringLiteral("/etc"));
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowProperties
             | KonqPopupMenu::ShowUrlOperations;
@@ -218,16 +218,16 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
-                    << "copy" << "separator"
-                    << "openwith"
-                    << "preview1";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "separator";
-    expectedActions << "properties";
+    expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
+                    << QStringLiteral("copy") << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview1");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("separator");
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
@@ -251,16 +251,16 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
-                    << "cut" << "copy" << "rename" << "trash" << "separator"
-                    << "openwith"
-                    << "preview_submenu";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
-    expectedActions << "properties";
+    expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("moveTo_submenu") << QStringLiteral("separator");
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
@@ -283,16 +283,16 @@ void KonqPopupMenuTest::testSubDirectory()
     popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
-                    << "cut" << "copy" << "pasteto" << "rename" << "trash" << "separator"
-                    << "openwith"
-                    << "preview_submenu";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
-    expectedActions << "properties";
+    expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("pasteto") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("moveTo_submenu") << QStringLiteral("separator");
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
@@ -315,23 +315,23 @@ void KonqPopupMenuTest::testViewDirectory()
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "newmenu" << "separator"
-                    << "paste" << "separator"
-                    << "openwith"
-                    << "preview_submenu";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
-    expectedActions << "properties";
+    expectedActions << QStringLiteral("newmenu") << QStringLiteral("separator")
+                    << QStringLiteral("paste") << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("moveTo_submenu") << QStringLiteral("separator");
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testViewReadOnlyDirectory()
 {
-    KFileItem rootItem(QUrl::fromLocalFile(QDir::rootPath()), "inode/directory", KFileItem::Unknown);
+    KFileItem rootItem(QUrl::fromLocalFile(QDir::rootPath()), QStringLiteral("inode/directory"), KFileItem::Unknown);
     KFileItemList itemList;
     itemList << rootItem;
     QUrl viewUrl = rootItem.url();
@@ -348,15 +348,15 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     popup.setActionGroups(actionGroups);
 
     QStringList actions = extractActionNames(popup);
-    actions.removeAll("services_submenu");
+    actions.removeAll(QStringLiteral("services_submenu"));
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions // << "paste" // no paste since readonly
-                    << "openwith"
-                    << "preview_submenu";
-    expectedActions << "separator";
-    expectedActions << "copyTo_submenu" << "separator"; // no moveTo_submenu, since readonly
-    expectedActions << "properties";
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu");
+    expectedActions << QStringLiteral("separator");
+    expectedActions << QStringLiteral("copyTo_submenu") << QStringLiteral("separator"); // no moveTo_submenu, since readonly
+    expectedActions << QStringLiteral("properties");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
@@ -365,7 +365,7 @@ void KonqPopupMenuTest::testHtmlLink()
 {
     KFileItemList itemList;
     itemList << m_linkItem;
-    QUrl viewUrl("http://www.kde.org");
+    QUrl viewUrl(QStringLiteral("http://www.kde.org"));
     const KonqPopupMenu::Flags flags = m_appFlags
             | KonqPopupMenu::ShowBookmark
             | KonqPopupMenu::IsLink;
@@ -383,13 +383,13 @@ void KonqPopupMenuTest::testHtmlLink()
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
-                    << "bookmark_add" << "savelinkas" << "copylinklocation"
-                    << "separator"
-                    << "openwith"
-                    << "preview_submenu"
-                    << "separator"
-                    << "viewDocumentSource";
+    expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
+                    << QStringLiteral("bookmark_add") << QStringLiteral("savelinkas") << QStringLiteral("copylinklocation")
+                    << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu")
+                    << QStringLiteral("separator")
+                    << QStringLiteral("viewDocumentSource");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
@@ -410,9 +410,9 @@ void KonqPopupMenuTest::testHtmlPage()
     actionGroups.insert(KonqPopupMenu::PreviewActions, m_previewActions->actions());
     //actionGroups.insert(KonqPopupMenu::LinkActions, m_linkActions->actions());
     QAction *security = new QAction(m_partActions);
-    m_actionCollection.addAction("security", security);
+    m_actionCollection.addAction(QStringLiteral("security"), security);
     QAction *setEncoding = new QAction(m_partActions);
-    m_actionCollection.addAction("setEncoding", setEncoding);
+    m_actionCollection.addAction(QStringLiteral("setEncoding"), setEncoding);
     actionGroups.insert(KonqPopupMenu::CustomActions, m_partActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags);
@@ -423,13 +423,13 @@ void KonqPopupMenuTest::testHtmlPage()
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
     QStringList expectedActions;
-    expectedActions << "bookmark_add"
-                    << "separator"
-                    << "openwith"
-                    << "preview_submenu"
-                    << "separator"
+    expectedActions << QStringLiteral("bookmark_add")
+                    << QStringLiteral("separator")
+                    << QStringLiteral("openwith")
+                    << QStringLiteral("preview_submenu")
+                    << QStringLiteral("separator")
                     // << TODO "stopanimations"
-                    << "viewDocumentSource" << "security" << "setEncoding";
+                    << QStringLiteral("viewDocumentSource") << QStringLiteral("security") << QStringLiteral("setEncoding");
     qDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }

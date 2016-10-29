@@ -53,7 +53,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     setCaption(i18nc("@title:window", "Configure"));
     setButtons(Default | Cancel | Apply | Ok | User1);
     setButtonGuiItem(User1, KStandardGuiItem::reset());
-    setObjectName(QLatin1String("extensionmanager"));
+    setObjectName(QStringLiteral("extensionmanager"));
 
     d = new KonqExtensionManagerPrivate;
     showButton(User1, false);
@@ -70,11 +70,11 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->mainWindow = mainWindow;
     d->activePart = activePart;
 
-    d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KSharedConfig::openConfig());
+    d->pluginSelector->addPlugins(QStringLiteral("konqueror"), i18n("Extensions"), QStringLiteral("Extensions"), KSharedConfig::openConfig());
     if (activePart) {
         KAboutData componentData = activePart->componentData();
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Tools");
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar");
+        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), QStringLiteral("Tools"));
+        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), QStringLiteral("Statusbar"));
     }
 
     connect(this, SIGNAL(okClicked()), SLOT(slotOk()));
@@ -106,7 +106,7 @@ void KonqExtensionManager::apply()
         setChanged(false);
 
         if (d->mainWindow) {
-            KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, "konqueror");
+            KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, QStringLiteral("konqueror"));
             QList<KParts::Plugin *> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
 
             for (int i = 0; i < plugins.size(); ++i) {

@@ -64,9 +64,9 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
         m_html->setPluginsEnabled(false);
     }
     KUrl url;
-    url.setProtocol("tar");
+    url.setProtocol(QStringLiteral("tar"));
     url.setPath(path);
-    url.addPath("index.html");
+    url.addPath(QStringLiteral("index.html"));
     m_html->openUrl(url);
     m_completed = false;
     int timerId = startTimer(5000);

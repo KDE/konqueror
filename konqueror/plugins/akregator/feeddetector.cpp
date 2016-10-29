@@ -71,8 +71,8 @@ FeedDetectorEntryList FeedDetector::extractFromLinkTags(const QString &s)
         }
 
         // we accept only type attributes indicating a feed
-        if (type != "application/rss+xml" && type != "application/rdf+xml"
-                && type != "application/atom+xml" && type != "application/xml") {
+        if (type != QLatin1String("application/rss+xml") && type != QLatin1String("application/rdf+xml")
+                && type != QLatin1String("application/atom+xml") && type != QLatin1String("application/xml")) {
             continue;
         }
 

@@ -19,7 +19,7 @@
 int main(int argc, char *argv[])
 {
     // KDE compliant startup
-    KAboutData aboutData("fsview", i18n("FSView"), "0.1",
+    KAboutData aboutData(QStringLiteral("fsview"), i18n("FSView"), QStringLiteral("0.1"),
                          i18n("Filesystem Viewer"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002, Josef Weidendorfer"));
@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("+[folder]"), i18n("View filesystem starting from this folder")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[folder]"), i18n("View filesystem starting from this folder")));
 
     KConfigGroup gconfig(KSharedConfig::openConfig(), "General");
-    QString path = gconfig.readPathEntry("Path", ".");
+    QString path = gconfig.readPathEntry("Path", QStringLiteral("."));
 
     if (parser.positionalArguments().count() > 0) {
         path = parser.positionalArguments().at(0);

@@ -51,7 +51,7 @@ public:
 
     bool isRichText() const
     {
-        return m_text.startsWith("<html>") || m_text.startsWith("<qt>");
+        return m_text.startsWith(QLatin1String("<html>")) || m_text.startsWith(QLatin1String("<qt>"));
     }
 
     KonqStatusBarMessageLabel::Type m_type;
@@ -78,7 +78,7 @@ KonqStatusBarMessageLabel::KonqStatusBarMessageLabel(QWidget *parent) :
 
     d->m_closeButton = new QToolButton(this);
     d->m_closeButton->setAutoRaise(true);
-    d->m_closeButton->setIcon(QIcon::fromTheme("dialog-close"));
+    d->m_closeButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     d->m_closeButton->setToolTip(i18nc("@info", "Close"));
     d->m_closeButton->setAccessibleName(i18n("Close"));
     d->m_closeButton->hide();
@@ -114,9 +114,9 @@ void KonqStatusBarMessageLabel::setMessage(const QString &text,
     if (d->isRichText()) {
         d->m_textDocument.setTextWidth(-1);
         d->m_textDocument.setDefaultFont(font());
-        QString html = "<html><font color=\"";
+        QString html = QStringLiteral("<html><font color=\"");
         html += palette().windowText().color().name();
-        html += "\">";
+        html += QLatin1String("\">");
         html += d->m_text;
         d->m_textDocument.setHtml(html);
     }

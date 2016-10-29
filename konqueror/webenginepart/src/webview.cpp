@@ -328,7 +328,7 @@ void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGro
     editableContentActions.append(pageAction(QWebEnginePage::SelectAll));
     editableContentActions.append(pageAction(QWebEnginePage::InspectElement));
 
-    partGroupMap.insert("editactions" , editableContentActions);
+    partGroupMap.insert(QStringLiteral("editactions") , editableContentActions);
 }
 
 
@@ -391,11 +391,11 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         partActions.append(separatorAction);
     }
 
-    partActions.append(m_part->actionCollection()->action("viewDocumentSource"));
+    partActions.append(m_part->actionCollection()->action(QStringLiteral("viewDocumentSource")));
 
     partActions.append(pageAction(QWebEnginePage::InspectElement));
 
-    partGroupMap.insert("partactions", partActions);
+    partGroupMap.insert(QStringLiteral("partactions"), partActions);
 }
 
 void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& selectGroupMap)
@@ -411,9 +411,9 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
 
     KUriFilterData data (selectedText().simplified().left(256));
     data.setCheckForExecutables(false);
-    if (KUriFilter::self()->filterUri(data, QStringList() << "kshorturifilter" << "fixhosturifilter") &&
+    if (KUriFilter::self()->filterUri(data, QStringList() << QStringLiteral("kshorturifilter") << QStringLiteral("fixhosturifilter")) &&
         data.uri().isValid() && data.uriType() == KUriFilterData::NetProtocol) {
-        QAction *action = new QAction(QIcon::fromTheme("window-new"), i18nc("open selected url", "Open '%1'",
+        QAction *action = new QAction(QIcon::fromTheme(QStringLiteral("window-new")), i18nc("open selected url", "Open '%1'",
                                             KStringHandler::rsqueeze(data.uri().url(), 18)), this);
         m_actionCollection->addAction(QL1S("openSelection"), action);
         action->setData(QUrl(data.uri()));
@@ -421,7 +421,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
         selectActions.append(action);
     }
 
-    selectGroupMap.insert("editactions", selectActions);
+    selectGroupMap.insert(QStringLiteral("editactions"), selectActions);
 }
 
 void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
@@ -447,7 +447,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
     }
 #endif
 
-    if (url.scheme() == "mailto") {
+    if (url.scheme() == QLatin1String("mailto")) {
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
         action = new QAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction(QL1S("copylinklocation"), action);
@@ -457,7 +457,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
     } else {
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
         if (!m_result.linkText().isEmpty()) {
-            action = new QAction(QIcon::fromTheme("edit-copy"), i18n("Copy Link &Text"), this);
+            action = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
             linkActions.append(action);
@@ -475,7 +475,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
         linkActions.append(action);
     }
 
-    linkGroupMap.insert("linkactions", linkActions);
+    linkGroupMap.insert(QStringLiteral("linkactions"), linkActions);
 }
 
 void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
@@ -532,7 +532,7 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotCopyMedia()));
     multimediaActions.append(action);
 
-    mmGroupMap.insert("partactions", multimediaActions);
+    mmGroupMap.insert(QStringLiteral("partactions"), multimediaActions);
 #endif
 }
 

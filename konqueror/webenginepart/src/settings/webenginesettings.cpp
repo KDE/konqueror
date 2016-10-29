@@ -225,9 +225,9 @@ static T readEntry(const KConfigGroup& config, const QString& key, int defaultVa
 void WebEngineSettings::readDomainSettings(const KConfigGroup &config, bool reset,
                                         bool global, KPerDomainSettings &pd_settings)
 {
-  const QString javaPrefix ((global ? QString() : QLatin1String("java.")));
-  const QString jsPrefix ((global ? QString() : QLatin1String("javascript.")));
-  const QString pluginsPrefix (global ? QString() : QLatin1String("plugins."));
+  const QString javaPrefix ((global ? QString() : QStringLiteral("java.")));
+  const QString jsPrefix ((global ? QString() : QStringLiteral("javascript.")));
+  const QString pluginsPrefix (global ? QString() : QStringLiteral("plugins."));
 
   // The setting for Java
   QString key = javaPrefix + QLatin1String("EnableJava");
@@ -313,7 +313,7 @@ void WebEngineSettings::init()
 {
   initWebEngineSettings();
 
-  KConfig global( "khtmlrc", KConfig::NoGlobals );
+  KConfig global( QStringLiteral("khtmlrc"), KConfig::NoGlobals );
   init( &global, true );
 
   KSharedConfig::Ptr local = KSharedConfig::openConfig();
@@ -349,7 +349,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
       d->adWhiteList.clear();
 
       /** read maximum age for filter list files, minimum is one day */
-      int htmlFilterListMaxAgeDays = cgFilter.readEntry(QString("HTMLFilterListMaxAgeDays")).toInt();
+      int htmlFilterListMaxAgeDays = cgFilter.readEntry(QStringLiteral("HTMLFilterListMaxAgeDays")).toInt();
       if (htmlFilterListMaxAgeDays < 1)
           htmlFilterListMaxAgeDays = 1;
 
@@ -368,17 +368,17 @@ void WebEngineSettings::init( KConfig * config, bool reset )
               else
                   d->adBlackList.addFilter(url);
           }
-          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = name.mid(19).toInt()) > 0)
+          else if (name.startsWith(QLatin1String("HTMLFilterListName-")) && (id = name.midRef(19).toInt()) > 0)
           {
               /** check if entry is enabled */
-              bool filterEnabled = cgFilter.readEntry(QString("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
+              bool filterEnabled = cgFilter.readEntry(QStringLiteral("HTMLFilterListEnabled-").append(QString::number(id))) != QLatin1String("false");
 
               /** get url for HTMLFilterList */
-              QUrl url(cgFilter.readEntry(QString("HTMLFilterListURL-").append(QString::number(id))));
+              QUrl url(cgFilter.readEntry(QStringLiteral("HTMLFilterListURL-").append(QString::number(id))));
 
               if (filterEnabled && url.isValid()) {
                   /** determine where to cache HTMLFilterList file */
-                  QString localFile = cgFilter.readEntry(QString("HTMLFilterListLocalFilename-").append(QString::number(id)));
+                  QString localFile = cgFilter.readEntry(QStringLiteral("HTMLFilterListLocalFilename-").append(QString::number(id)));
                   localFile = QStandardPaths::locate(QStandardPaths::ConfigLocation, "khtml/" + localFile);
 
                   /** determine existence and age of cache file */
@@ -415,7 +415,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
         d->defaultFonts.append( cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
         d->defaultFonts.append( cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
         d->defaultFonts.append( cgHtml.readEntry( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
-        d->defaultFonts.append( QString( "0" ) ); // font size adjustment
+        d->defaultFonts.append( QStringLiteral( "0" ) ); // font size adjustment
     }
 
     if ( reset || cgHtml.hasKey( "MinimumFontSize" ) )
@@ -462,9 +462,9 @@ void WebEngineSettings::init( KConfig * config, bool reset )
     if ( reset || cgHtml.hasKey( "ShowAnimations" ) )
     {
       QString value = cgHtml.readEntry( "ShowAnimations").toLower();
-      if (value == "disabled")
+      if (value == QLatin1String("disabled"))
          d->m_showAnimations = KAnimationDisabled;
-      else if (value == "looponce")
+      else if (value == QLatin1String("looponce"))
          d->m_showAnimations = KAnimationLoopOnce;
       else
          d->m_showAnimations = KAnimationEnabled;
@@ -473,9 +473,9 @@ void WebEngineSettings::init( KConfig * config, bool reset )
     if ( reset || cgHtml.hasKey( "SmoothScrolling" ) )
     {
       QString value = cgHtml.readEntry( "SmoothScrolling", "whenefficient" ).toLower();
-      if (value == "disabled")
+      if (value == QLatin1String("disabled"))
          d->m_smoothScrolling = KSmoothScrollingDisabled;
-      else if (value == "whenefficient")
+      else if (value == QLatin1String("whenefficient"))
          d->m_smoothScrolling = KSmoothScrollingWhenEfficient;
       else
          d->m_smoothScrolling = KSmoothScrollingEnabled;
@@ -864,7 +864,7 @@ QString WebEngineSettings::adFilteredBy( const QString &url, bool *isWhiteListed
 
 void WebEngineSettings::addAdFilter( const QString &url )
 {
-    KConfigGroup config = KSharedConfig::openConfig( "khtmlrc", KConfig::NoGlobals )->group( "Filter Settings" );
+    KConfigGroup config = KSharedConfig::openConfig( QStringLiteral("khtmlrc"), KConfig::NoGlobals )->group( "Filter Settings" );
 
     QRegExp rx;
 
@@ -962,30 +962,30 @@ int WebEngineSettings::minFontSize() const
 QString WebEngineSettings::settingsToCSS() const
 {
     // lets start with the link properties
-    QString str = "a:link {\ncolor: ";
+    QString str = QStringLiteral("a:link {\ncolor: ");
     str += d->m_linkColor.name();
     str += ';';
     if(d->m_underlineLink)
-        str += "\ntext-decoration: underline;";
+        str += QLatin1String("\ntext-decoration: underline;");
 
     if( d->m_bChangeCursor )
     {
-        str += "\ncursor: pointer;";
-        str += "\n}\ninput[type=image] { cursor: pointer;";
+        str += QLatin1String("\ncursor: pointer;");
+        str += QLatin1String("\n}\ninput[type=image] { cursor: pointer;");
     }
-    str += "\n}\n";
-    str += "a:visited {\ncolor: ";
+    str += QLatin1String("\n}\n");
+    str += QLatin1String("a:visited {\ncolor: ");
     str += d->m_vLinkColor.name();
     str += ';';
     if(d->m_underlineLink)
-        str += "\ntext-decoration: underline;";
+        str += QLatin1String("\ntext-decoration: underline;");
 
     if( d->m_bChangeCursor )
-        str += "\ncursor: pointer;";
-    str += "\n}\n";
+        str += QLatin1String("\ncursor: pointer;");
+    str += QLatin1String("\n}\n");
 
     if(d->m_hoverLink)
-        str += "a:link:hover, a:visited:hover { text-decoration: underline; }\n";
+        str += QLatin1String("a:link:hover, a:visited:hover { text-decoration: underline; }\n");
 
     return str;
 }
@@ -1179,7 +1179,7 @@ bool WebEngineSettings::isCookieJarEnabled() const
 static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
 {
     if (!configPtr) {
-        configPtr = KSharedConfig::openConfig(QStandardPaths::locate(QStandardPaths::DataLocation, "khtml/formcompletions"), KConfig::NoGlobals);
+        configPtr = KSharedConfig::openConfig(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("khtml/formcompletions")), KConfig::NoGlobals);
     }
 
     return KConfigGroup(configPtr, "NonPasswordStorableSites");
@@ -1238,7 +1238,7 @@ bool WebEngineSettings::alowActiveMixedContent() const
 
 void WebEngineSettings::initWebEngineSettings()
 {
-    KConfig cfg ("webenginepartrc", KConfig::NoGlobals);
+    KConfig cfg (QStringLiteral("webenginepartrc"), KConfig::NoGlobals);
     KConfigGroup generalCfg (&cfg, "General");
     d->m_disableInternalPluginHandling = generalCfg.readEntry("DisableInternalPluginHandling", false);
     d->m_enableLocalStorage = generalCfg.readEntry("EnableLocalStorage", true);
@@ -1254,14 +1254,14 @@ void WebEngineSettings::initWebEngineSettings()
 
 void WebEngineSettings::initCookieJarSettings()
 {
-    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcookiejarrc", KConfig::NoGlobals);
+    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig(QStringLiteral("kcookiejarrc"), KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
     d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
 }
 
 void WebEngineSettings::initNSPluginSettings()
 {
-    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig("kcmnspluginrc", KConfig::NoGlobals);
+    KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig(QStringLiteral("kcmnspluginrc"), KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Misc");
     d->m_loadPluginsOnDemand = cookieCfg.readEntry("demandLoad", false);
 }

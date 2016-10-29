@@ -38,12 +38,12 @@
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
 {
-    if (!KAuthorized::authorize("shell_access")) {
+    if (!KAuthorized::authorize(QStringLiteral("shell_access"))) {
         return;
     }
 
-    QAction *action = actionCollection()->addAction("executeshellcommand");
-    action->setIcon(KIcon("system-run"));
+    QAction *action = actionCollection()->addAction(QStringLiteral("executeshellcommand"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("system-run")));
     action->setText(i18n("&Execute Shell Command..."));
     connect(action, SIGNAL(triggered(bool)), SLOT(slotExecuteShellCommand()));
     action->setShortcut(Qt::CTRL + Qt::Key_E);
@@ -85,7 +85,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
                                         path, &ok, part->widget());
     if (ok) {
         QString exeCmd;
-        exeCmd = QLatin1String("cd ");
+        exeCmd = QStringLiteral("cd ");
         exeCmd += KShell::quoteArg(part->url().path());
         exeCmd += QLatin1String("; ");
         exeCmd += cmd;

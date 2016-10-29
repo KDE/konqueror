@@ -54,7 +54,7 @@ public:
         m_sepIndex(-1)
     {
         // see KBookmarkSettings::readSettings in kio
-        KConfig config("kbookmarkrc", KConfig::NoGlobals);
+        KConfig config(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals);
         KConfigGroup cg(&config, "Bookmarks");
         m_filteredToolbar = cg.readEntry("FilteredToolbar", false);
         m_contextMenu = cg.readEntry("ContextMenuActions", true);
@@ -88,7 +88,7 @@ KBookmarkBar::KBookmarkBar(KBookmarkManager *mgr,
 QString KBookmarkBar::parentAddress()
 {
     if (d->m_filteredToolbar) {
-        return "";
+        return QLatin1String("");
     } else {
         return m_pManager->toolbar().address();
     }
@@ -148,7 +148,7 @@ void KBookmarkBar::slotBookmarksChanged(const QString &group)
 
 void KBookmarkBar::slotConfigChanged()
 {
-    KConfig config("kbookmarkrc", KConfig::NoGlobals);
+    KConfig config(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals);
     KConfigGroup cg(&config, "Bookmarks");
     d->m_filteredToolbar = cg.readEntry("FilteredToolbar", false);
     d->m_contextMenu = cg.readEntry("ContextMenuActions", true);

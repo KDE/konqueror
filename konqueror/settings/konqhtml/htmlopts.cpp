@@ -33,9 +33,9 @@
 //-----------------------------------------------------------------------------
 
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent), m_groupname("HTML Settings")
+    : KCModule(parent), m_groupname(QStringLiteral("HTML Settings"))
 {
-    m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
 
     // Bookmarks
@@ -150,7 +150,7 @@ KMiscHTMLOptions::~KMiscHTMLOptions()
 
 void KMiscHTMLOptions::load()
 {
-    KSharedConfigPtr khtmlrcConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
+    KSharedConfigPtr khtmlrcConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::NoGlobals);
 
     // Read the configuration from konquerorrc with khtmlrc as fall back.
     KConfigGroup cg(m_pConfig, "MainView Settings");
@@ -170,11 +170,11 @@ void KMiscHTMLOptions::load()
     cg2 = KConfigGroup(khtmlrcConfig, "Access Keys");
     m_pAccessKeys->setChecked(cg2.readEntry("Enabled", true));
 
-    cg = KConfigGroup(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals), "Bookmarks");
     m_pAdvancedAddBookmarkCheckBox->setChecked(cg.readEntry("AdvancedAddBookmarkDialog", false));
     m_pOnlyMarkedBookmarksCheckBox->setChecked(cg.readEntry("FilteredToolbar", false));
 
-    cg = KConfigGroup(KSharedConfig::openConfig("kioslaverc", KConfig::NoGlobals), QString());
+    cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals), QString());
     m_pDoNotTrack->setChecked(cg.readEntry("DoNotTrack", false));
 }
 
@@ -205,24 +205,24 @@ void KMiscHTMLOptions::save()
     cg.sync();
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
-    cg = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals), "Access Keys");
+    cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::NoGlobals), "Access Keys");
     cg.writeEntry("Enabled", m_pAccessKeys->isChecked());
     cg.sync();
 
-    cg = KConfigGroup(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("kbookmarkrc"), KConfig::NoGlobals), "Bookmarks");
     cg.writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
     cg.writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
     cg.sync();
 
-    cg = KConfigGroup(KSharedConfig::openConfig("kioslaverc", KConfig::NoGlobals), QString());
+    cg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("kioslaverc"), KConfig::NoGlobals), QString());
     cg.writeEntry("DoNotTrack", m_pDoNotTrack->isChecked());
     cg.sync();
 
     // Send signal to all konqueror instances
     QDBusConnection sessionBus(QDBusConnection::sessionBus());
-    sessionBus.send(QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration"));
-    sessionBus.send(QDBusMessage::createSignal("/KBookmarkManager/konqueror", "org.kde.KIO.KBookmarkManager", "bookmarkConfigChanged"));
-    sessionBus.send(QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration"));
+    sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration")));
+    sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KBookmarkManager/konqueror"), QStringLiteral("org.kde.KIO.KBookmarkManager"), QStringLiteral("bookmarkConfigChanged")));
+    sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"), QStringLiteral("reparseSlaveConfiguration")));
 
     emit changed(false);
 }

@@ -53,14 +53,14 @@ SystemWidget::SystemWidget(QWidget *parent_P)
 
 void SystemWidget::load()
 {
-    KConfig _cfg("kdedrc");
+    KConfig _cfg(QStringLiteral("kdedrc"));
     KConfigGroup cfg(&_cfg, "General");
     cb_disable_kbuildsycoca->setChecked(cfg.readEntry("DelayedCheck", false));
 }
 
 void SystemWidget::save()
 {
-    KConfig _cfg("kdedrc");
+    KConfig _cfg(QStringLiteral("kdedrc"));
     KConfigGroup cfg(&_cfg, "General");
     cfg.writeEntry("DelayedCheck", cb_disable_kbuildsycoca->isChecked());
 }

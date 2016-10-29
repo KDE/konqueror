@@ -40,7 +40,7 @@ class KonqIcon
 {
 public:
     KonqIcon()
-        : image(QIcon::fromTheme("konqueror").pixmap(16).toImage())
+        : image(QIcon::fromTheme(QStringLiteral("konqueror")).pixmap(16).toImage())
     {
         KIconEffect::deSaturate(image, 0.60f);
     }

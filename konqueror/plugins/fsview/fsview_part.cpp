@@ -99,7 +99,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
                        const QList<QVariant> & /* args */)
     : KParts::ReadOnlyPart(parent)
 {
-    KAboutData aboutData("fsview", i18n("FSView"), "0.1",
+    KAboutData aboutData(QStringLiteral("fsview"), i18n("FSView"), QStringLiteral("0.1"),
                          i18n("Filesystem Viewer"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002, Josef Weidendorfer"));
@@ -124,22 +124,22 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 
     _areaMenu = new KActionMenu(i18n("Stop at Area"),
                                 actionCollection());
-    actionCollection()->addAction("treemap_areadir", _areaMenu);
+    actionCollection()->addAction(QStringLiteral("treemap_areadir"), _areaMenu);
     _depthMenu = new KActionMenu(i18n("Stop at Depth"),
                                  actionCollection());
-    actionCollection()->addAction("treemap_depthdir", _depthMenu);
+    actionCollection()->addAction(QStringLiteral("treemap_depthdir"), _depthMenu);
     _visMenu = new KActionMenu(i18n("Visualization"),
                                actionCollection());
-    actionCollection()->addAction("treemap_visdir", _visMenu);
+    actionCollection()->addAction(QStringLiteral("treemap_visdir"), _visMenu);
 
     _colorMenu = new KActionMenu(i18n("Color Mode"),
                                  actionCollection());
-    actionCollection()->addAction("treemap_colordir", _colorMenu);
+    actionCollection()->addAction(QStringLiteral("treemap_colordir"), _colorMenu);
 
     QAction *action;
-    action = actionCollection()->addAction("help_fsview");
+    action = actionCollection()->addAction(QStringLiteral("help_fsview"));
     action->setText(i18n("&FSView Manual"));
-    action->setIcon(KIcon("fsview"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("fsview")));
     action->setToolTip(i18n("Show FSView manual"));
     action->setWhatsThis(i18n("Opens the help browser with the "
                               "FSView documentation"));
@@ -180,26 +180,26 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     //rename->setText(i18nc("@action:inmenu Edit", "Rename..."));
     //rename->setShortcut(Qt::Key_F2);
 
-    QAction *moveToTrashAction = actionCollection()->addAction("move_to_trash");
+    QAction *moveToTrashAction = actionCollection()->addAction(QStringLiteral("move_to_trash"));
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
-    moveToTrashAction->setIcon(KIcon("user-trash"));
+    moveToTrashAction->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
     moveToTrashAction->setShortcut(QKeySequence::Delete);
     connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
             _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
 
-    QAction *deleteAction = actionCollection()->addAction("delete");
-    deleteAction->setIcon(KIcon("edit-delete"));
+    QAction *deleteAction = actionCollection()->addAction(QStringLiteral("delete"));
+    deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
     deleteAction->setShortcut(Qt::SHIFT | Qt::Key_Delete);
     connect(deleteAction, SIGNAL(triggered()), _ext, SLOT(del()));
 
-    QAction *editMimeTypeAction = actionCollection()->addAction("editMimeType");
+    QAction *editMimeTypeAction = actionCollection()->addAction(QStringLiteral("editMimeType"));
     editMimeTypeAction->setText(i18nc("@action:inmenu Edit", "&Edit File Type..."));
     connect(editMimeTypeAction, SIGNAL(triggered()), _ext, SLOT(editMimeType()));
 
-    QAction *propertiesAction = actionCollection()->addAction("properties");
+    QAction *propertiesAction = actionCollection()->addAction(QStringLiteral("properties"));
     propertiesAction->setText(i18nc("@action:inmenu File", "Properties"));
-    propertiesAction->setIcon(KIcon("document-properties"));
+    propertiesAction->setIcon(QIcon::fromTheme(QStringLiteral("document-properties")));
     propertiesAction->setShortcut(Qt::ALT | Qt::Key_Return);
     connect(propertiesAction, SIGNAL(triggered()), SLOT(slotProperties()));
 
@@ -207,7 +207,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 
     updateActions();
 
-    setXMLFile("fsview_part.rc");
+    setXMLFile(QStringLiteral("fsview_part.rc"));
 }
 
 FSViewPart::~FSViewPart()
@@ -245,13 +245,13 @@ void FSViewPart::showInfo()
                 "currently visible in FSView, from the outside.\n"
                 "For details, see the 'Help/FSView Manual'.");
 
-    KMessageBox::information(_view, info, QString(), "ShowFSViewInfo");
+    KMessageBox::information(_view, info, QString(), QStringLiteral("ShowFSViewInfo"));
 }
 
 void FSViewPart::showHelp()
 {
-    KToolInvocation::startServiceByDesktopName("khelpcenter",
-            QString("help:/konqueror/index.html#fsview"));
+    KToolInvocation::startServiceByDesktopName(QStringLiteral("khelpcenter"),
+            QStringLiteral("help:/konqueror/index.html#fsview"));
 }
 
 void FSViewPart::startedSlot()
@@ -372,9 +372,9 @@ void FSViewPart::updateActions()
     emit _ext->selectionInfo(urls);
 
     if (canCopy > 0) {
-        stateChanged("has_selection");
+        stateChanged(QStringLiteral("has_selection"));
     } else {
-        stateChanged("has_no_selection");
+        stateChanged(QStringLiteral("has_no_selection"));
     }
 
     kDebug(90100) << "FSViewPart::updateActions, deletable " << canDel;
@@ -421,23 +421,23 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
             addTrash = false;
             addDel = true;
         } else {
-            KSharedConfig::Ptr globalConfig = KSharedConfig::openConfig("kdeglobals", KConfig::IncludeGlobals);
+            KSharedConfig::Ptr globalConfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::IncludeGlobals);
             KConfigGroup configGroup(globalConfig, "KDE");
             addDel = configGroup.readEntry("ShowDeleteCommand", false);
         }
     }
 
     if (addTrash) {
-        editActions.append(actionCollection()->action("move_to_trash"));
+        editActions.append(actionCollection()->action(QStringLiteral("move_to_trash")));
     }
     if (addDel) {
-        editActions.append(actionCollection()->action("delete"));
+        editActions.append(actionCollection()->action(QStringLiteral("delete")));
     }
 
 // FIXME: rename is currently unavailable. Requires popup renaming.
 //     if (canMove)
 //       editActions.append(actionCollection()->action("rename"));
-    actionGroups.insert("editactions", editActions);
+    actionGroups.insert(QStringLiteral("editactions"), editActions);
 
     if (items.count() > 0)
         emit _ext->popupMenu(_view->mapToGlobal(p), items,

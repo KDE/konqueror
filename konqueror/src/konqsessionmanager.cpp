@@ -99,10 +99,10 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
 {
     setCaption(i18nc("@title:window", "Restore Session?"));
     setButtons(KDialog::Yes | KDialog::No | KDialog::Cancel);
-    setObjectName(QLatin1String("restoresession"));
-    setButtonGuiItem(KDialog::Yes, KGuiItem(i18nc("@action:button yes", "Restore Session"), "window-new"));
-    setButtonGuiItem(KDialog::No, KGuiItem(i18nc("@action:button no", "Do Not Restore"), "dialog-close"));
-    setButtonGuiItem(KDialog::Cancel, KGuiItem(i18nc("@action:button ask later", "Ask Me Later"), "chronometer"));
+    setObjectName(QStringLiteral("restoresession"));
+    setButtonGuiItem(KDialog::Yes, KGuiItem(i18nc("@action:button yes", "Restore Session"), QStringLiteral("window-new")));
+    setButtonGuiItem(KDialog::No, KGuiItem(i18nc("@action:button no", "Do Not Restore"), QStringLiteral("dialog-close")));
+    setButtonGuiItem(KDialog::Cancel, KGuiItem(i18nc("@action:button ask later", "Ask Me Later"), QStringLiteral("chronometer")));
     setDefaultButton(KDialog::Yes);
     setButtonFocus(KDialog::Yes);
     setModal(true);
@@ -166,7 +166,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
                         const QString historyIndex = group.readEntry(key, QString());
                         const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
                         // Ignore the sidebar views
-                        if (group.readEntry(prefix + "StrServiceName", QString()).startsWith("konq_sidebar")) {
+                        if (group.readEntry(prefix + "StrServiceName", QString()).startsWith(QLatin1String("konq_sidebar"))) {
                             continue;
                         }
                         const QString url = group.readEntry(prefix + "Url", QString());
@@ -342,14 +342,14 @@ bool SessionRestoreDialog::shouldBeShown(const QString &dontShowAgainName, int *
     KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
     const QString dontAsk = cg.readEntry(dontShowAgainName, QString()).toLower();
 
-    if (dontAsk == "yes" || dontAsk == "true") {
+    if (dontAsk == QLatin1String("yes") || dontAsk == QLatin1String("true")) {
         if (result) {
             *result = Yes;
         }
         return false;
     }
 
-    if (dontAsk == "no" || dontAsk == "false") {
+    if (dontAsk == QLatin1String("no") || dontAsk == QLatin1String("false")) {
         if (result) {
             *result = No;
         }
@@ -368,13 +368,13 @@ KonqSessionManager::KonqSessionManager()
     // Initialize dbus interfaces
     new KonqSessionManagerAdaptor(this);
 
-    const QString dbusPath = "/KonqSessionManager";
-    const QString dbusInterface = "org.kde.Konqueror.SessionManager";
+    const QString dbusPath = QStringLiteral("/KonqSessionManager");
+    const QString dbusInterface = QStringLiteral("org.kde.Konqueror.SessionManager");
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject(dbusPath, this);
     m_baseService = KonqMisc::encodeFilename(dbus.baseService());
-    dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("saveCurrentSession"), this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
     const int interval = KonqSettings::autoSaveInterval();

@@ -47,7 +47,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-    ScanManager m("/opt");
+    ScanManager m(QStringLiteral("/opt"));
     if (argc > 1) {
         m.setTop(argv[1]);
     }

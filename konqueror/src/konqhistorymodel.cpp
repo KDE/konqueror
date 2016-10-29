@@ -160,7 +160,7 @@ GroupEntry::GroupEntry(const QUrl &_url, const QString &_key)
 {
     const QString iconPath = KIO::favIconForUrl(url);
     if (iconPath.isEmpty()) {
-        icon = QIcon::fromTheme("folder");
+        icon = QIcon::fromTheme(QStringLiteral("folder"));
     } else {
         icon = QIcon(iconPath);
         hasFavIcon = true;

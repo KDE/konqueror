@@ -29,10 +29,10 @@ SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
       m_engineName(engineName)
 {
     // First get the suggestion request URL for this engine
-    KService::Ptr service = KService::serviceByDesktopPath(QString("searchproviders/%1.desktop").arg(m_engineName));
+    KService::Ptr service = KService::serviceByDesktopPath(QStringLiteral("searchproviders/%1.desktop").arg(m_engineName));
 
     if (service) {
-        const QString suggestionURL = service->property("Suggest").toString();
+        const QString suggestionURL = service->property(QStringLiteral("Suggest")).toString();
         if (!suggestionURL.isNull() && !suggestionURL.isEmpty()) {
             m_requestURL = suggestionURL;
         } else {

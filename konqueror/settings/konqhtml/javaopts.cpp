@@ -46,7 +46,7 @@
 
 JavaPolicies::JavaPolicies(KSharedConfig::Ptr config, const QString &group, bool global,
                            const QString &domain) :
-    Policies(config, group, global, domain, "java.", "EnableJava")
+    Policies(config, group, global, domain, QStringLiteral("java."), QStringLiteral("EnableJava"))
 {
 }
 
@@ -191,10 +191,10 @@ void KJavaOptions::load()
     bool bUseKio = m_pConfig->group(m_groupname).readEntry("UseKio", false);
     bool bServerShutdown  = m_pConfig->group(m_groupname).readEntry("ShutdownAppletServer", true);
     int  serverTimeout    = m_pConfig->group(m_groupname).readEntry("AppletServerTimeout", 60);
-    QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry("JavaPath", "java");
+    QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry("JavaPath", QStringLiteral("java"));
 
-    if (sJavaPath == "/usr/lib/jdk") {
-        sJavaPath = "java";
+    if (sJavaPath == QLatin1String("/usr/lib/jdk")) {
+        sJavaPath = QStringLiteral("java");
     }
 
     if (m_pConfig->group(m_groupname).hasKey("JavaDomains")) {
@@ -228,8 +228,8 @@ void KJavaOptions::defaults()
     enableJavaGloballyCB->setChecked(false);
     javaSecurityManagerCB->setChecked(true);
     useKioCB->setChecked(false);
-    pathED->lineEdit()->setText("java");
-    addArgED->setText("");
+    pathED->lineEdit()->setText(QStringLiteral("java"));
+    addArgED->setText(QLatin1String(""));
     enableShutdownCB->setChecked(true);
     serverTimeoutSB->setValue(60);
     toggleJavaControls();
@@ -246,7 +246,7 @@ void KJavaOptions::save()
     m_pConfig->group(m_groupname).writeEntry("ShutdownAppletServer", enableShutdownCB->isChecked());
     m_pConfig->group(m_groupname).writeEntry("AppletServerTimeout", serverTimeoutSB->value());
 
-    domainSpecific->save(m_groupname, "JavaDomains");
+    domainSpecific->save(m_groupname, QStringLiteral("JavaDomains"));
 
     if (_removeJavaDomainSettings) {
         m_pConfig->group(m_groupname).deleteEntry("JavaDomainSettings");

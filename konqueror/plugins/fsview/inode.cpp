@@ -356,21 +356,21 @@ QString Inode::text(int i) const
         double s = size();
 
         if (s < 1000) {
-            text = QString("%1 B").arg((int)(s + .5));
+            text = QStringLiteral("%1 B").arg((int)(s + .5));
         } else if (s < 10 * 1024) {
-            text = QString("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .005, 2));
+            text = QStringLiteral("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .005, 2));
         } else if (s < 100 * 1024) {
-            text = QString("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .05, 1));
+            text = QStringLiteral("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .05, 1));
         } else if (s < 1000 * 1024) {
-            text = QString("%1 kB").arg((int)(s / 1024 + .5));
+            text = QStringLiteral("%1 kB").arg((int)(s / 1024 + .5));
         } else if (s < 10 * 1024 * 1024) {
-            text = QString("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .005, 2));
+            text = QStringLiteral("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .005, 2));
         } else if (s < 100 * 1024 * 1024) {
-            text = QString("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .05, 1));
+            text = QStringLiteral("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .05, 1));
         } else if (s < 1000 * 1024 * 1024) {
-            text = QString("%1 MB").arg((int)(s / 1024 / 1024 + .5));
+            text = QStringLiteral("%1 MB").arg((int)(s / 1024 / 1024 + .5));
         } else {
-            text =  QString("%1 GB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 / 1024 + .005, 2));
+            text =  QStringLiteral("%1 GB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 / 1024 + .005, 2));
         }
 
         if (_sizeEstimation > 0) {
@@ -390,10 +390,10 @@ QString Inode::text(int i) const
 
         if (f > 0) {
             while (f > 1000) {
-                text = QString("%1 %2").arg(QString::number(f).right(3)).arg(text);
+                text = QStringLiteral("%1 %2").arg(QString::number(f).right(3)).arg(text);
                 f /= 1000;
             }
-            text = QString("%1 %2").arg(QString::number(f)).arg(text);
+            text = QStringLiteral("%1 %2").arg(QString::number(f)).arg(text);
             if (_fileCountEstimation > 0) {
                 text += '+';
             }

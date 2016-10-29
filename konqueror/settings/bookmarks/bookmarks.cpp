@@ -45,12 +45,12 @@ BookmarksConfigModule::~BookmarksConfigModule()
 
 void BookmarksConfigModule::clearCache()
 {
-    KImageCache::deleteCache("kio_bookmarks");
+    KImageCache::deleteCache(QStringLiteral("kio_bookmarks"));
 }
 
 void BookmarksConfigModule::load()
 {
-    KConfig *c = new KConfig("kiobookmarksrc");
+    KConfig *c = new KConfig(QStringLiteral("kiobookmarksrc"));
     KConfigGroup group = c->group("General");
 
     ui.sbColumns->setValue(group.readEntry("Columns", 4));
@@ -76,7 +76,7 @@ void BookmarksConfigModule::load()
 
 void BookmarksConfigModule::save()
 {
-    KConfig *c = new KConfig("kiobookmarksrc");
+    KConfig *c = new KConfig(QStringLiteral("kiobookmarksrc"));
     KConfigGroup group = c->group("General");
     group.writeEntry("Columns", ui.sbColumns->value());
     group.writeEntry("ShowBackgrounds", ui.cbShowBackgrounds->isChecked());

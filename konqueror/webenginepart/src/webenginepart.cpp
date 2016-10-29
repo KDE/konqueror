@@ -82,21 +82,21 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_passwordBar(0),
              m_featurePermissionBar(0)
 {
-    KAboutData about = KAboutData("webenginepart",
+    KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
-                                  /*version*/ "1.3.0",
+                                  /*version*/ QStringLiteral("1.3.0"),
                                   i18nc("Short Description", "QtWebEngine Browser Engine Component"),
                                   KAboutLicense::LGPL,
                                   i18n("(C) 2009-2010 Dawit Alemayehu\n"
                                         "(C) 2008-2010 Urs Wolfer\n"
                                         "(C) 2007 Trolltech ASA"));
 
-    about.addAuthor(i18n("Sune Vuorela"), i18n("Maintainer, Developer"), "sune@kde.org");
-    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Developer"), "adawit@kde.org");
-    about.addAuthor(i18n("Urs Wolfer"), i18n("Maintainer, Developer"), "uwolfer@kde.org");
-    about.addAuthor(i18n("Michael Howell"), i18n("Developer"), "mhowell123@gmail.com");
-    about.addAuthor(i18n("Laurent Montel"), i18n("Developer"), "montel@kde.org");
-    about.addAuthor(i18n("Dirk Mueller"), i18n("Developer"), "mueller@kde.org");
+    about.addAuthor(i18n("Sune Vuorela"), i18n("Maintainer, Developer"), QStringLiteral("sune@kde.org"));
+    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Developer"), QStringLiteral("adawit@kde.org"));
+    about.addAuthor(i18n("Urs Wolfer"), i18n("Maintainer, Developer"), QStringLiteral("uwolfer@kde.org"));
+    about.addAuthor(i18n("Michael Howell"), i18n("Developer"), QStringLiteral("mhowell123@gmail.com"));
+    about.addAuthor(i18n("Laurent Montel"), i18n("Developer"), QStringLiteral("montel@kde.org"));
+    about.addAuthor(i18n("Dirk Mueller"), i18n("Developer"), QStringLiteral("mueller@kde.org"));
     about.setProductName("webenginepart/general");
 //    KComponentData componentData(&about);
     setComponentData(about, false /*don't load plugins yet*/);
@@ -115,7 +115,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
 
     // Create this KPart's widget
     QWidget *mainWidget = new QWidget (parentWidget);
-    mainWidget->setObjectName("webenginepart");
+    mainWidget->setObjectName(QStringLiteral("webenginepart"));
 
     // Create the WebView...
     m_webView = new WebView (this, parentWidget);
@@ -190,31 +190,31 @@ const WebPage* WebEnginePart::page() const
 
 void WebEnginePart::initActions()
 {
-    actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
+    actionCollection()->addAction(KStandardAction::SaveAs, QStringLiteral("saveDocument"),
                                   m_browserExtension, SLOT(slotSaveDocument()));
 
     QAction* action = new QAction(i18n("Save &Frame As..."), this);
-    actionCollection()->addAction("saveFrame", action);
+    actionCollection()->addAction(QStringLiteral("saveFrame"), action);
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotSaveFrame);
 
-    action = new QAction(QIcon::fromTheme("document-print-preview"), i18n("Print Preview"), this);
-    actionCollection()->addAction("printPreview", action);
+    action = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18n("Print Preview"), this);
+    actionCollection()->addAction(QStringLiteral("printPreview"), action);
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotPrintPreview);
 
-    action = new QAction(QIcon::fromTheme("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
-    actionCollection()->addAction("zoomIn", action);
-    actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence("CTRL++") << QKeySequence("CTRL+="));
+    action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18nc("zoom in action", "Zoom In"), this);
+    actionCollection()->addAction(QStringLiteral("zoomIn"), action);
+    actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence(QStringLiteral("CTRL++")) << QKeySequence(QStringLiteral("CTRL+=")));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomIn);
 
-    action = new QAction(QIcon::fromTheme("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
-    actionCollection()->addAction("zoomOut", action);
-    actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence("CTRL+-") << QKeySequence("CTRL+_"));
+    action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18nc("zoom out action", "Zoom Out"), this);
+    actionCollection()->addAction(QStringLiteral("zoomOut"), action);
+    actionCollection()->setDefaultShortcuts(action, QList<QKeySequence> () << QKeySequence(QStringLiteral("CTRL+-")) << QKeySequence(QStringLiteral("CTRL+_")));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomOut);
 
-    action = new QAction(QIcon::fromTheme("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
-    actionCollection()->addAction("zoomNormal", action);
-    actionCollection()->setDefaultShortcut(action, QKeySequence("CTRL+0"));
-    action->setShortcut(QKeySequence("CTRL+0"));
+    action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-original")), i18nc("reset zoom action", "Actual Size"), this);
+    actionCollection()->addAction(QStringLiteral("zoomNormal"), action);
+    actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("CTRL+0")));
+    action->setShortcut(QKeySequence(QStringLiteral("CTRL+0")));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomNormal);
 
     action = new QAction(i18n("Zoom Text Only"), this);
@@ -222,35 +222,35 @@ void WebEnginePart::initActions()
     KConfigGroup cgHtml(KSharedConfig::openConfig(), "HTML Settings");
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
     action->setChecked(zoomTextOnly);
-    actionCollection()->addAction("zoomTextOnly", action);
+    actionCollection()->addAction(QStringLiteral("zoomTextOnly"), action);
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomTextOnly);
 
     action = new QAction(i18n("Zoom To DPI"), this);
     action->setCheckable(true);
     bool zoomToDPI = cgHtml.readEntry("ZoomToDPI", false);
     action->setChecked(zoomToDPI);
-    actionCollection()->addAction("zoomToDPI", action);
+    actionCollection()->addAction(QStringLiteral("zoomToDPI"), action);
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomToDPI);
 
-    action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
+    action = actionCollection()->addAction(KStandardAction::SelectAll, QStringLiteral("selectAll"),
                                            m_browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);
     m_webView->addAction(action);
 
-    KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme("character-set"), i18n( "Set &Encoding" ), this, true );
-    actionCollection()->addAction( "setEncoding", codecAction );
+    KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme(QStringLiteral("character-set")), i18n( "Set &Encoding" ), this, true );
+    actionCollection()->addAction( QStringLiteral("setEncoding"), codecAction );
     connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
 
     action = new QAction(i18n("View Do&cument Source"), this);
-    actionCollection()->addAction("viewDocumentSource", action);
+    actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
     actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_U));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotViewDocumentSource);
 
     action = new QAction(i18nc("Secure Sockets Layer", "SSL"), this);
-    actionCollection()->addAction("security", action);
+    actionCollection()->addAction(QStringLiteral("security"), action);
     connect(action, &QAction::triggered, this, &WebEnginePart::slotShowSecurity);
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
+    action = actionCollection()->addAction(KStandardAction::Find, QStringLiteral("find"), this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
 }
@@ -633,15 +633,15 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
                 const QPair<QString, QString> queryItem (queryItems.at(i));
                 //kDebug() << "query: " << queryItem.first << queryItem.second;
                 if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty())
-                    fields["to"] << queryItem.first;
+                    fields[QStringLiteral("to")] << queryItem.first;
                 if (QString::compare(queryItem.first, QL1S("to"), Qt::CaseInsensitive) == 0)
-                    fields["to"] << queryItem.second;
+                    fields[QStringLiteral("to")] << queryItem.second;
                 if (QString::compare(queryItem.first, QL1S("cc"), Qt::CaseInsensitive) == 0)
-                    fields["cc"] << queryItem.second;
+                    fields[QStringLiteral("cc")] << queryItem.second;
                 if (QString::compare(queryItem.first, QL1S("bcc"), Qt::CaseInsensitive) == 0)
-                    fields["bcc"] << queryItem.second;
+                    fields[QStringLiteral("bcc")] << queryItem.second;
                 if (QString::compare(queryItem.first, QL1S("subject"), Qt::CaseInsensitive) == 0)
-                    fields["subject"] << queryItem.second;
+                    fields[QStringLiteral("subject")] << queryItem.second;
             }
 
             if (fields.contains(QL1S("to")))
@@ -702,9 +702,9 @@ void WebEnginePart::slotShowSearchBar()
         connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
                 this, SLOT(slotSearchForText(QString,bool)));
 
-        actionCollection()->addAction(KStandardAction::FindNext, "findnext",
+        actionCollection()->addAction(KStandardAction::FindNext, QStringLiteral("findnext"),
                                       m_searchBar, SLOT(findNext()));
-        actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
+        actionCollection()->addAction(KStandardAction::FindPrev, QStringLiteral("findprev"),
                                       m_searchBar, SLOT(findPrevious()));
 
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
@@ -729,8 +729,8 @@ void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, con
     if (!searchText.isEmpty() &&
         KMessageBox::questionYesNo(m_webView,
                                    i18n("<qt>Do you want to search for <b>%1</b>?</qt>", searchText),
-                                   i18n("Internet Search"), KGuiItem(i18n("&Search"), "edit-find"),
-                                   KStandardGuiItem::cancel(), "MiddleClickSearch") != KMessageBox::Yes)
+                                   i18n("Internet Search"), KGuiItem(i18n("&Search"), QStringLiteral("edit-find")),
+                                   KStandardGuiItem::cancel(), QStringLiteral("MiddleClickSearch")) != KMessageBox::Yes)
         return;
 
     emit m_browserExtension->openUrlRequest(selectedUrl);
@@ -766,11 +766,11 @@ void WebEnginePart::slotShowWalletMenu()
 
 void WebEnginePart::slotLaunchWalletManager()
 {
-    QDBusInterface r("org.kde.kwalletmanager", "/kwalletmanager/MainWindow_1");
+    QDBusInterface r(QStringLiteral("org.kde.kwalletmanager"), QStringLiteral("/kwalletmanager/MainWindow_1"));
     if (r.isValid())
-        r.call(QDBus::NoBlock, "show");
+        r.call(QDBus::NoBlock, QStringLiteral("show"));
     else
-        KToolInvocation::startServiceByDesktopName("kwalletmanager_show");
+        KToolInvocation::startServiceByDesktopName(QStringLiteral("kwalletmanager_show"));
 }
 
 void WebEnginePart::slotDeleteNonPasswordStorableSite()
@@ -926,7 +926,7 @@ void WebEnginePart::addWalletStatusBarIcon ()
         m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
         m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
         m_statusBarWalletLabel->setUseCursor(false);
-        m_statusBarWalletLabel->setPixmap(QIcon::fromTheme("wallet-open").pixmap(QSize(16,16)));
+        m_statusBarWalletLabel->setPixmap(QIcon::fromTheme(QStringLiteral("wallet-open")).pixmap(QSize(16,16)));
         connect(m_statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
         connect(m_statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
     }

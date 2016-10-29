@@ -162,12 +162,12 @@ public:
     }
     virtual bool visit(KonqFrameContainer *)
     {
-        m_output += "C(";
+        m_output += QLatin1String("C(");
         return true;
     }
     virtual bool visit(KonqFrameTabs *)
     {
-        m_output += "T[";
+        m_output += QLatin1String("T[");
         return true;
     }
     virtual bool visit(KonqMainWindow *)
@@ -196,7 +196,7 @@ public:
         DebugFrameVisitor dfv;
         bool ok = mainWindow->accept(&dfv);
         if (!ok) {
-            return QString("ERROR: visitor returned false");
+            return QStringLiteral("ERROR: visitor returned false");
         }
         return dfv.output();
     }
@@ -215,7 +215,7 @@ void ViewMgrTest::initTestCase()
 
     // Ensure the tests use webenginepart (not khtml or webkit)
     // This code is inspired by settings/konqhtml/generalopts.cpp
-    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
     KConfigGroup addedServices(profile, "Added KDE Service Associations");
     bool needsUpdate = false;
     Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
@@ -223,7 +223,7 @@ void ViewMgrTest::initTestCase()
 #ifdef TEST_KHTML
         const QString wanted = "khtml.desktop";
 #else
-        const QString wanted = "webenginepart.desktop";
+        const QString wanted = QStringLiteral("webenginepart.desktop");
 #endif
         if (services.isEmpty() || services.at(0) != wanted) {
             services.removeAll(wanted);
@@ -251,7 +251,7 @@ void ViewMgrTest::testCreateFirstView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     QVERIFY(view);
     QVERIFY(viewManager->tabContainer());
 
@@ -306,7 +306,7 @@ void ViewMgrTest::testRemoveFirstView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
     viewManager->removeView(view);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // removing not allowed
@@ -317,7 +317,7 @@ void ViewMgrTest::testSplitView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
 
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
     KonqView *view2 = viewManager->splitView(view, Qt::Horizontal);
@@ -401,10 +401,10 @@ void ViewMgrTest::testSplitMainContainer()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
     KonqFrameContainerBase *tabContainer = view->frame()->parentContainer();
-    KonqView *view2 = viewManager->splitMainContainer(view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true);
+    KonqView *view2 = viewManager->splitMainContainer(view, Qt::Horizontal, QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"), true);
     QVERIFY(view2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
 
@@ -442,7 +442,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
 {
     // Much like KonqHtmlTest::loadSimpleHtml.
     // We use text/plain as the linked file, in order to test #67956 (switching parts in new tab)
-    mainWindow.openUrl(0, QUrl("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>")), QStringLiteral("text/html"));
     KonqView *view = mainWindow.currentView();
     QVERIFY(view);
     QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -490,7 +490,7 @@ void ViewMgrTest::testLinkedViews()
     QTest::qWait(0);
 #else
     QTest::mouseClick(part->view()->focusProxy(), Qt::LeftButton, Qt::KeyboardModifiers(),
-            elementCenter(part->view()->page(), "linkid"));
+            elementCenter(part->view()->page(), QStringLiteral("linkid")));
 
     // Check that the link opened in the 2nd view, not the first one
 #endif
@@ -507,7 +507,7 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     openHtmlWithLink(mainWindow);
     KonqFrameTabs *tabs = mainWindow.viewManager()->tabContainer();
     QCOMPARE(tabs->currentIndex(), 0);
-    KFileItem item(QUrl("data:text/html, hello"), "text/html", S_IFREG);
+    KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
     mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
     QTest::qWait(1000);
@@ -544,7 +544,7 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
 {
     MyKonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
-    KFileItem item(QUrl("data:text/html, hello"), "text/html", S_IFREG);
+    KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
     mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
     QTest::qWait(100);
@@ -610,14 +610,14 @@ void ViewMgrTest::sameTestsWithMmbOpenTabsFalse()
 static void openTabWithTitle(KonqMainWindow &mainWindow, const QString &title, KonqView *&view)
 {
     KonqViewManager *viewManager = mainWindow.viewManager();
-    view = viewManager->addTab("text/html");
+    view = viewManager->addTab(QStringLiteral("text/html"));
     QVERIFY(view);
     QVERIFY(view->supportsMimeType("text/html"));
     QVERIFY(!view->supportsMimeType("text/plain"));
     // correct since it's a subclass of text/html, khtml can display it
     QVERIFY(view->supportsMimeType("application/x-netscape-bookmarks"));
     // Tab caption test
-    view->openUrl(QUrl("data:text/html, <title>" + title.toUtf8() + "</title>"), QString("http://loc.bar.url"));
+    view->openUrl(QUrl("data:text/html, <title>" + title.toUtf8() + "</title>"), QStringLiteral("http://loc.bar.url"));
     QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
     QVERIFY(spyCompleted.wait(10000));
     QCOMPARE(view->caption(), title);
@@ -629,7 +629,7 @@ void ViewMgrTest::testAddTabs()
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
 
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     QVERIFY(view);
     // The testcase was "konqueror www.kde.org www.google.fr bugs.kde.org www.cuil.com www.davidfaure.fr"
     const QStringList titles {
@@ -683,7 +683,7 @@ void ViewMgrTest::testDuplicateTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    /*KonqView* view =*/ viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    /*KonqView* view =*/ viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     viewManager->duplicateTab(0); // should return a KonqFrameBase?
 
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF]."));   // mainWindow, tab widget, two tabs
@@ -694,7 +694,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     KonqView *view2 = viewManager->splitView(view, Qt::Vertical);
     QVERIFY(view2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, one splitter, two frames
@@ -751,11 +751,11 @@ void ViewMgrTest::testDeletePartInTab()
     QPointer<MyKonqMainWindow> mainWindow = new MyKonqMainWindow;
     QVERIFY(mainWindow->testAttribute(Qt::WA_DeleteOnClose));
     KonqViewManager *viewManager = mainWindow->viewManager();
-    QPointer<KonqView> view = viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    QPointer<KonqView> view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
     QVERIFY(!view.isNull());
     QPointer<QWidget> partWidget = view->part()->widget();
 
-    QPointer<KonqView> viewTab2 = viewManager->addTab("text/html");
+    QPointer<KonqView> viewTab2 = viewManager->addTab(QStringLiteral("text/html"));
     QPointer<QWidget> partWidget2 = viewTab2->part()->widget();
     QVERIFY(!viewTab2.isNull());
     QCOMPARE(DebugFrameVisitor::inspect(mainWindow), QString("MT[FF]."));   // mainWindow, tab widget, two tabs
@@ -775,12 +775,12 @@ void ViewMgrTest::testDeletePartInTab()
 void ViewMgrTest::testSaveProfile()
 {
     MyKonqMainWindow mainWindow;
-    const QUrl url("data:text/html, <p>Hello World</p>");
-    mainWindow.openUrl(0, url, "text/html");
+    const QUrl url(QStringLiteral("data:text/html, <p>Hello World</p>"));
+    mainWindow.openUrl(0, url, QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view2 = viewManager->addTab("text/html");
-    const QUrl url2("data:text/html, <p>view2</p>");
-    view2->openUrl(url2, "2");
+    KonqView *view2 = viewManager->addTab(QStringLiteral("text/html"));
+    const QUrl url2(QStringLiteral("data:text/html, <p>view2</p>"));
+    view2->openUrl(url2, QStringLiteral("2"));
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
     QVERIFY(tabWidget);
 
@@ -817,9 +817,9 @@ void ViewMgrTest::testSaveProfile()
 void ViewMgrTest::testDuplicateWindow()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *viewTab2 = viewManager->addTab("text/html");
+    KonqView *viewTab2 = viewManager->addTab(QStringLiteral("text/html"));
     KonqView *splitted = viewManager->splitView(viewTab2, Qt::Horizontal);
     Q_UNUSED(splitted);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FC(FF)]."));   // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
@@ -830,16 +830,16 @@ void ViewMgrTest::testDuplicateWindow()
 void ViewMgrTest::testCloseOtherTabs()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
     QVERIFY(tabWidget);
     QVERIFY(tabWidget->focusWidget());
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), tabWidget->focusWidget()->metaObject()->className());
-    viewManager->addTab("text/html");
-    KonqView *viewTab2 = viewManager->addTab("text/html");
+    viewManager->addTab(QStringLiteral("text/html"));
+    KonqView *viewTab2 = viewManager->addTab(QStringLiteral("text/html"));
     viewManager->splitView(viewTab2, Qt::Horizontal);
-    viewManager->addTab("text/html");
+    viewManager->addTab(QStringLiteral("text/html"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFC(FF)F]."));   // mainWindow, tab widget, first tab = one frame, second tab = one frame, third tab = splitter with two frames, fourth tab = one frame
     QCOMPARE(tabWidget->count(), 4);
     tabWidget->setCurrentIndex(2);
@@ -857,10 +857,10 @@ void ViewMgrTest::testCloseOtherTabs()
 void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
-    viewManager->addTab("text/html");
-    viewManager->addTab("text/html");
+    viewManager->addTab(QStringLiteral("text/html"));
+    viewManager->addTab(QStringLiteral("text/html"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF]."));   // mainWindow, tab widget, 3 simple tabs
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
     tabWidget->setCurrentIndex(2);
@@ -875,14 +875,14 @@ void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 void ViewMgrTest::testBrowserArgumentsNewTab()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KParts::OpenUrlArguments urlArgs;
     KParts::BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
     KonqView *view = mainWindow.currentView();
     KParts::BrowserExtension *ext = view->browserExtension();
     QVERIFY(ext);
-    emit ext->openUrlRequest(QUrl("data:text/html, <p>Second tab test</p>"), urlArgs, browserArgs);
+    emit ext->openUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
     QTest::qWait(5000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));
@@ -895,7 +895,7 @@ void ViewMgrTest::testBreakOffTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    /*KonqView* firstView =*/ viewManager->createFirstView("KonqAboutPage", "konq_aboutpage");
+    /*KonqView* firstView =*/ viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
 
     //KonqFrameBase* tab = firstView->frame();
     viewManager->duplicateTab(0);
@@ -935,12 +935,12 @@ void ViewMgrTest::testBreakOffTab()
 void ViewMgrTest::moveTabLeft()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view1 = viewManager->addTab("text/html");
-    view1->openUrl(QUrl("data:text/html, <p>view1</p>"), "1");
-    KonqView *view2 = viewManager->addTab("text/html");
-    view2->openUrl(QUrl("data:text/html, <p>view2</p>"), "2");
+    KonqView *view1 = viewManager->addTab(QStringLiteral("text/html"));
+    view1->openUrl(QUrl(QStringLiteral("data:text/html, <p>view1</p>")), QStringLiteral("1"));
+    KonqView *view2 = viewManager->addTab(QStringLiteral("text/html"));
+    view2->openUrl(QUrl(QStringLiteral("data:text/html, <p>view2</p>")), QStringLiteral("2"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF]."));   // mainWindow, tab widget, 3 simple tabs
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
     tabWidget->setCurrentIndex(2);

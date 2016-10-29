@@ -106,11 +106,11 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
 {
     m_mainWindow = mainWindow;
 
-    KService::List offers = KServiceTypeTrader::self()->query("Browser/View");
+    KService::List offers = KServiceTypeTrader::self()->query(QStringLiteral("Browser/View"));
     KService::List::Iterator it = offers.begin();
     while (it != offers.end()) {
-        QVariant prop = (*it)->property("X-KDE-BrowserView-Toggable");
-        QVariant orientation = (*it)->property("X-KDE-BrowserView-ToggableView-Orientation");
+        QVariant prop = (*it)->property(QStringLiteral("X-KDE-BrowserView-Toggable"));
+        QVariant orientation = (*it)->property(QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"));
 
         if (!prop.isValid() || !prop.toBool() ||
                 !orientation.isValid() || orientation.toString().isEmpty()) {
@@ -137,7 +137,7 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
         mainWindow->actionCollection()->addAction(name.toLatin1(), action);
 
         // HACK
-        if ((*cIt)->icon() != "unknown") {
+        if ((*cIt)->icon() != QLatin1String("unknown")) {
             action->setIcon(QIcon::fromTheme((*cIt)->icon()));
         }
 
@@ -146,8 +146,8 @@ ToggleViewGUIClient::ToggleViewGUIClient(KonqMainWindow *mainWindow)
 
         m_actions.insert(name, action);
 
-        QVariant orientation = (*cIt)->property("X-KDE-BrowserView-ToggableView-Orientation");
-        bool horizontal = orientation.toString().toLower() == "horizontal";
+        QVariant orientation = (*cIt)->property(QStringLiteral("X-KDE-BrowserView-ToggableView-Orientation"));
+        bool horizontal = orientation.toString().toLower() == QLatin1String("horizontal");
         m_mapOrientation.insert(name, horizontal);
     }
 
@@ -181,7 +181,7 @@ void ToggleViewGUIClient::slotToggleView(bool toggle)
         }
         KonqView *childView = viewManager->splitMainContainer(m_mainWindow->currentView(),
                               horizontal ? Qt::Vertical : Qt::Horizontal,
-                              QLatin1String("Browser/View"),
+                              QStringLiteral("Browser/View"),
                               serviceName,
                               !horizontal /* vertical = make it first */);
 

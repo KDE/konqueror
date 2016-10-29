@@ -148,7 +148,7 @@ void KJavaScriptOptions::save()
     cg.writeEntry("ReportJavaScriptErrors", reportErrorsCB->isChecked());
     cg.writeEntry("EnableJavaScriptDebug", jsDebugWindow->isChecked());
 
-    domainSpecific->save(m_groupname, "ECMADomains");
+    domainSpecific->save(m_groupname, QStringLiteral("ECMADomains"));
     js_policies_frame->save();
 
     if (_removeECMADomainSettings) {

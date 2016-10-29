@@ -48,7 +48,7 @@ QString KonqAboutPageSingleton::loadFile(const QString &file)
     QString basehref = QLatin1String("<BASE HREF=\"file:") +
                        file.left(file.lastIndexOf('/')) +
                        QLatin1String("/\">\n");
-    res.replace("<head>", "<head>\n\t" + basehref, Qt::CaseInsensitive);
+    res.replace(QLatin1String("<head>"), "<head>\n\t" + basehref, Qt::CaseInsensitive);
     return res;
 }
 
@@ -58,25 +58,25 @@ QString KonqAboutPageSingleton::launch()
         return m_launch_html;
     }
 
-    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/launch.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/launch.html")));
     if (res.isEmpty()) {
         return res;
     }
 
     KIconLoader *iconloader = KIconLoader::global();
     int iconSize = iconloader->currentSize(KIconLoader::Desktop);
-    QString home_icon_path = QUrl::fromLocalFile(iconloader->iconPath("user-home", KIconLoader::Desktop)).toString();
-    QString remote_icon_path = QUrl::fromLocalFile(iconloader->iconPath("folder-remote", KIconLoader::Desktop)).toString();
-    QString wastebin_icon_path = QUrl::fromLocalFile(iconloader->iconPath("user-trash-full", KIconLoader::Desktop)).toString();
-    QString bookmarks_icon_path = QUrl::fromLocalFile(iconloader->iconPath("bookmarks", KIconLoader::Desktop)).toString();
+    QString home_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("user-home"), KIconLoader::Desktop)).toString();
+    QString remote_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("folder-remote"), KIconLoader::Desktop)).toString();
+    QString wastebin_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("user-trash-full"), KIconLoader::Desktop)).toString();
+    QString bookmarks_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("bookmarks"), KIconLoader::Desktop)).toString();
     QString home_folder = QUrl::fromLocalFile(QDir::homePath()).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
     } else {
-        res = res.arg("");
+        res = res.arg(QLatin1String(""));
     }
 
     res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
@@ -121,21 +121,21 @@ QString KonqAboutPageSingleton::intro()
         return m_intro_html;
     }
 
-    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/intro.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/intro.html")));
     if (res.isEmpty()) {
         return res;
     }
 
     KIconLoader *iconloader = KIconLoader::global();
     QString back_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-next" : "go-previous", KIconLoader::Small)).toString();
-    QString gohome_icon_path = QUrl::fromLocalFile(iconloader->iconPath("go-home", KIconLoader::Small)).toString();
+    QString gohome_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("go-home"), KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
     } else {
-        res = res.arg("");
+        res = res.arg(QLatin1String(""));
     }
 
     res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
@@ -161,8 +161,8 @@ QString KonqAboutPageSingleton::intro()
           .arg(i18n("To quickly go to your Home folder press the "
                     "home button <img width='16' height='16' src=\"%1\"></img>.", gohome_icon_path))
           .arg(i18n("For more detailed documentation on Konqueror click <a href=\"%1\">here</a>.",
-                    QString("exec:/khelpcenter help:/konqueror")))
-          .arg("<img width='16' height='16' src=\"%1\">").arg(continue_icon_path)
+                    QStringLiteral("exec:/khelpcenter help:/konqueror")))
+          .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
           .arg(i18n("Next: Tips & Tricks"))
           ;
 
@@ -177,17 +177,17 @@ QString KonqAboutPageSingleton::specs()
     }
 
     KIconLoader *iconloader = KIconLoader::global();
-    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/specs.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/specs.html")));
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
     if (res.isEmpty()) {
         return res;
     }
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
     } else {
-        res = res.arg("");
+        res = res.arg(QLatin1String(""));
     }
 
     res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
@@ -205,27 +205,27 @@ QString KonqAboutPageSingleton::specs()
                     "extra support for other common usability features that arise as "
                     "de facto standards across the Internet. Along with this support, "
                     "for such functions as favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, "
-                    "Konqueror also implements:", QString("http://pyxml.sourceforge.net/topics/xbel/")))
+                    "Konqueror also implements:", QStringLiteral("http://pyxml.sourceforge.net/topics/xbel/")))
           .arg(i18n("Web Browsing"))
           .arg(i18n("Supported standards"))
           .arg(i18n("Additional requirements*"))
           .arg(i18n("<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based "
-                    "<A HREF=\"%2\">HTML 4.01</A>", QString("http://www.w3.org/DOM"), QString("http://www.w3.org/TR/html4/")))
+                    "<A HREF=\"%2\">HTML 4.01</A>", QStringLiteral("http://www.w3.org/DOM"), QStringLiteral("http://www.w3.org/TR/html4/")))
           .arg(i18n("built-in"))
-          .arg(i18n("<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)", QString("http://www.w3.org/Style/CSS/")))
+          .arg(i18n("<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)", QStringLiteral("http://www.w3.org/Style/CSS/")))
           .arg(i18n("built-in"))
           .arg(i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)",
-                    QString("http://www.ecma-international.org/publications/standards/ECMA-262.HTM")))
-          .arg(i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")))
-          .arg(i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")))   // leave the double backslashes here, they are necessary for javascript !
-          .arg(i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QString("http://www.oracle.com/technetwork/java/index.html")))
+                    QStringLiteral("http://www.ecma-international.org/publications/standards/ECMA-262.HTM")))
+          .arg(i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))
+          .arg(i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // leave the double backslashes here, they are necessary for javascript !
+          .arg(i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QStringLiteral("http://www.oracle.com/technetwork/java/index.html")))
           .arg(i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF=\"%2\">Sun/Oracle</A>)",
-                    QString("http://www.ibm.com"), QString("http://www.oracle.com/technetwork/java/index.html")))
-          .arg(i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell5 khtml_java_js")))   // TODO Maybe test if Java is enabled ?
+                    QStringLiteral("http://www.ibm.com"), QStringLiteral("http://www.oracle.com/technetwork/java/index.html")))
+          .arg(i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // TODO Maybe test if Java is enabled ?
           .arg(i18n("Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, etc.)",
-                    QString("http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"),
-                    QString("http://www.real.com"), QString("http://www.real.com"),
-                    QString("about:plugins")))
+                    QStringLiteral("http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"),
+                    QStringLiteral("http://www.real.com"), QStringLiteral("http://www.real.com"),
+                    QStringLiteral("about:plugins")))
           .arg(i18n("built-in"))
           .arg(i18n("Secure Sockets Layer"))
           .arg(i18n("(TLS/SSL v2/3) for secure communications up to 168bit"))
@@ -242,13 +242,13 @@ QString KonqAboutPageSingleton::specs()
           .arg(i18n("Transfer protocols"))
           .arg(i18n("HTTP 1.1 (including gzip/bzip2 compression)"))
           .arg(i18n("FTP"))
-          .arg(i18n("and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>", QString("exec:/khelpcenter")))
+          .arg(i18n("and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>", QStringLiteral("exec:/khelpcenter")))
           .arg(i18nc("A feature of Konqueror", "URL-Completion"))
           .arg(i18n("Manual"))
           .arg(i18n("Popup"))
           .arg(i18n("(Short-) Automatic"))
-          .arg("<img width='16' height='16' src=\"%1\">").arg(continue_icon_path)
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QString("about:konqueror")))
+          .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
+          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("about:konqueror")))
 
           ;
 
@@ -262,33 +262,33 @@ QString KonqAboutPageSingleton::tips()
         return m_tips_html;
     }
 
-    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/about/tips.html"));
+    QString res = loadFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/tips.html")));
     if (res.isEmpty()) {
         return res;
     }
 
     KIconLoader *iconloader = KIconLoader::global();
     QString viewmag_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("format-font-size-more", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("format-font-size-more"), KIconLoader::Small)).toString();
     QString history_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("view-history", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-history"), KIconLoader::Small)).toString();
     QString openterm_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("utilities-terminal", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("utilities-terminal"), KIconLoader::Small)).toString();
     QString locationbar_erase_rtl_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("edit-clear-locationbar-ltr", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("edit-clear-locationbar-ltr"), KIconLoader::Small)).toString();
     QString locationbar_erase_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("edit-clear-locationbar-rtl", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("edit-clear-locationbar-rtl"), KIconLoader::Small)).toString();
     QString window_fullscreen_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("view-fullscreen", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-fullscreen"), KIconLoader::Small)).toString();
     QString view_left_right_icon_path =
-        QUrl::fromLocalFile(iconloader->iconPath("view-split-left-right", KIconLoader::Small)).toString();
+        QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-split-left-right"), KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage.css")).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg("@import \"%1\";").arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kf5/infopage/kde_infopage_rtl.css")).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
     } else {
-        res = res.arg("");
+        res = res.arg(QLatin1String(""));
     }
 
     res = res.arg(i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free."))
@@ -304,7 +304,7 @@ QString KonqAboutPageSingleton::tips()
                     "using Google, for the search phrase \"KDE\". There are a lot of "
                     "Web-Shortcuts predefined to make searching for software or looking "
                     "up certain words in an encyclopedia a breeze. You can even "
-                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QString("exec:/kcmshell5 webshortcuts")))
+                    "<a href=\"%1\">create your own</a> Web-Shortcuts.", QStringLiteral("exec:/kcmshell5 webshortcuts")))
           .arg(i18n("Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the HTML"
                     " toolbar to increase the font size on your web page.", viewmag_icon_path))
           .arg(i18n("When you want to paste a new address into the Location toolbar you might want to "
@@ -322,15 +322,15 @@ QString KonqAboutPageSingleton::tips()
                     "Left/Right) you can make Konqueror appear the way you like.", view_left_right_icon_path))
           .arg(i18n("Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                     "asks you to use a different browser "
-                    "(and do not forget to send a complaint to the webmaster!)", QString("exec:/kcmshell5 useragent")))
+                    "(and do not forget to send a complaint to the webmaster!)", QStringLiteral("exec:/kcmshell5 useragent")))
           .arg(i18n("The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar ensures "
                     "that you can keep track of the pages you have visited recently.", history_icon_path))
           .arg(i18n("Use a caching <a href=\"%1\">proxy</a> to speed up your"
-                    " Internet connection.", QString("exec:/kcmshell5 proxy")))
+                    " Internet connection.", QStringLiteral("exec:/kcmshell5 proxy")))
           .arg(i18n("Advanced users will appreciate the Konsole which you can embed into "
                     "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
                     "Terminal Emulator).", openterm_icon_path))
-          .arg("<img width='16' height='16' src=\"%1\">").arg(continue_icon_path)
+          .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
           .arg(i18n("Next: Specifications"))
           ;
 
@@ -383,16 +383,16 @@ KonqAboutPage::~KonqAboutPage()
 bool KonqAboutPage::openUrl(const QUrl &u)
 {
     emit started(0);
-    if (u.url() == "about:plugins") {
-        serve(s_staticData->plugins(), "plugins");
-    } else if (u.url() == "about:konqueror/intro") {
-        serve(s_staticData->intro(), "konqueror/intro");
-    } else if (u.url() == "about:konqueror/specs") {
-        serve(s_staticData->specs(), "konqueror/specs");
-    } else if (u.url() == "about:konqueror/tips") {
-        serve(s_staticData->tips(), "konqueror/tips");
+    if (u.url() == QLatin1String("about:plugins")) {
+        serve(s_staticData->plugins(), QStringLiteral("plugins"));
+    } else if (u.url() == QLatin1String("about:konqueror/intro")) {
+        serve(s_staticData->intro(), QStringLiteral("konqueror/intro"));
+    } else if (u.url() == QLatin1String("about:konqueror/specs")) {
+        serve(s_staticData->specs(), QStringLiteral("konqueror/specs"));
+    } else if (u.url() == QLatin1String("about:konqueror/tips")) {
+        serve(s_staticData->tips(), QStringLiteral("konqueror/tips"));
     } else {
-        serve(s_staticData->launch(), "konqueror");
+        serve(s_staticData->launch(), QStringLiteral("konqueror"));
     }
     emit completed();
     return true;
@@ -419,7 +419,7 @@ void KonqAboutPage::restoreState(QDataStream &stream)
 void KonqAboutPage::serve(const QString &html, const QString &what)
 {
     m_what = what;
-    begin(QUrl(QString("about:%1").arg(what)));
+    begin(QUrl(QStringLiteral("about:%1").arg(what)));
     write(html);
     end();
     m_htmlDoc = html;
@@ -430,7 +430,7 @@ bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const
                                 const KParts::BrowserArguments &browserArgs)
 {
     QUrl u(url);
-    if (u.scheme() == "exec") {
+    if (u.scheme() == QLatin1String("exec")) {
         QStringList execArgs = url.mid(6).split(QChar(' '), QString::SkipEmptyParts);
         QString executable = execArgs.first();
         execArgs.erase(execArgs.begin());
@@ -440,19 +440,19 @@ bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const
 
     if (url == QLatin1String("about:konqueror")) {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->launch(), "konqueror");
+        serve(s_staticData->launch(), QStringLiteral("konqueror"));
         return true;
     } else if (url == QLatin1String("about:konqueror/intro")) {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->intro(), "konqueror/intro");
+        serve(s_staticData->intro(), QStringLiteral("konqueror/intro"));
         return true;
     } else if (url == QLatin1String("about:konqueror/specs")) {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->specs(), "konqueror/specs");
+        serve(s_staticData->specs(), QStringLiteral("konqueror/specs"));
         return true;
     } else if (url == QLatin1String("about:konqueror/tips")) {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->tips(), "konqueror/tips");
+        serve(s_staticData->tips(), QStringLiteral("konqueror/tips"));
         return true;
     }
 

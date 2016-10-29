@@ -33,8 +33,8 @@ KHTMLPluginTTS::KHTMLPluginTTS(QObject *parent, const QVariantList &)
 {
     KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent);
     if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {
-        QAction *action = actionCollection()->addAction("tools_tts");
-        action->setIcon(QIcon::fromTheme("text-speak"));
+        QAction *action = actionCollection()->addAction(QStringLiteral("tools_tts"));
+        action->setIcon(QIcon::fromTheme(QStringLiteral("text-speak")));
         action->setText(i18n("&Speak Text"));
         connect(action, SIGNAL(triggered(bool)), SLOT(slotReadOut()));
     }

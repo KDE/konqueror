@@ -39,7 +39,7 @@
 
 JSPolicies::JSPolicies(KSharedConfig::Ptr config, const QString &group,
                        bool global, const QString &domain) :
-    Policies(config, group, global, domain, "javascript.", "EnableJavaScript")
+    Policies(config, group, global, domain, QStringLiteral("javascript."), QStringLiteral("EnableJavaScript"))
 {
 }
 

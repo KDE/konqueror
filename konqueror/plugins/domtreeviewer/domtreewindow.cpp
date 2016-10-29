@@ -86,11 +86,11 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
     : KXmlGuiWindow(0),
       m_plugin(plugin), m_view(new DOMTreeView(this))
 {
-    setObjectName("DOMTreeWindow");
+    setObjectName(QStringLiteral("DOMTreeWindow"));
     part_manager = 0;
 
     // set configuration object
-    _config = new KConfig("domtreeviewerrc");
+    _config = new KConfig(QStringLiteral("domtreeviewerrc"));
 
     // accept dnd
     setAcceptDrops(true);
@@ -106,7 +106,7 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
     setupActions();
 
     // Add typical actions and save size/toolbars/statusbar
-    setupGUI(ToolBar | Keys | StatusBar | Save | Create, KStandardDirs::locate("data", "domtreeviewer/domtreeviewerui.rc"));
+    setupGUI(ToolBar | Keys | StatusBar | Save | Create, KStandardDirs::locate("data", QStringLiteral("domtreeviewer/domtreeviewerui.rc")));
 
     // allow the view to change the statusbar and caption
 #if 0
@@ -165,20 +165,20 @@ void DOMTreeWindow::setupActions()
     KStandardAction::redisplay(m_view, SLOT(refresh()), actionCollection());
 
     // Show/hide options
-    QAction *pure = actionCollection()->addAction("show_dom_pure");
+    QAction *pure = actionCollection()->addAction(QStringLiteral("show_dom_pure"));
     pure->setText(i18n("Pure DOM Tree"));
     pure->setCheckable(true);
     pure->setChecked(true);
     connect(pure, SIGNAL(toggled(bool)), m_view, SLOT(slotPureToggled(bool)));
 
-    QAction *attr = actionCollection()->addAction("show_dom_attributes");
+    QAction *attr = actionCollection()->addAction(QStringLiteral("show_dom_attributes"));
     attr->setText(i18n("Show DOM Attributes"));
     attr->setCheckable(true);
     attr->setChecked(true);
     connect(attr, SIGNAL(toggled(bool)),
             m_view, SLOT(slotShowAttributesToggled(bool)));
 
-    QAction *highlight = actionCollection()->addAction("show_highlight_html");
+    QAction *highlight = actionCollection()->addAction(QStringLiteral("show_highlight_html"));
     highlight->setText(i18n("Highlight HTML"));
     highlight->setCheckable(true);
     highlight->setChecked(true);
@@ -186,7 +186,7 @@ void DOMTreeWindow::setupActions()
             m_view, SLOT(slotHighlightHTMLToggled(bool)));
 
     // toggle manipulation dialog
-    QAction *a = actionCollection()->addAction("show_msg_dlg");
+    QAction *a = actionCollection()->addAction(QStringLiteral("show_msg_dlg"));
     a->setText(i18n("Show Message Log"));
     a->setShortcut(Qt::CTRL + Qt::Key_E);
     connect(a, SIGNAL(triggered()), this, SLOT(showMessageLog()));
@@ -197,43 +197,43 @@ void DOMTreeWindow::setupActions()
 
     // actions for the dom tree list view toolbar
     QAction *tree = KStandardAction::up(view(), SLOT(moveToParent()), actionCollection());
-    actionCollection()->addAction("tree_up", tree);
-    QAction *tree_inc_level = actionCollection()->addAction("tree_inc_level");
+    actionCollection()->addAction(QStringLiteral("tree_up"), tree);
+    QAction *tree_inc_level = actionCollection()->addAction(QStringLiteral("tree_inc_level"));
     tree_inc_level->setText(i18n("Expand"));
-    tree_inc_level->setIcon(KIcon("arrow-right"));
+    tree_inc_level->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
     tree_inc_level->setShortcut(Qt::CTRL + Qt::Key_Greater);
     tree_inc_level->setToolTip(i18n("Increase expansion level"));
     connect(tree_inc_level, SIGNAL(triggered()), view(), SLOT(increaseExpansionDepth()));
-    QAction *tree_dec_level = actionCollection()->addAction("tree_dec_level");
+    QAction *tree_dec_level = actionCollection()->addAction(QStringLiteral("tree_dec_level"));
     tree_dec_level->setText(i18n("Collapse"));
-    tree_dec_level->setIcon(KIcon("arrow-left"));
+    tree_dec_level->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
     tree_dec_level->setShortcut(Qt::CTRL + Qt::Key_Less);
     tree_dec_level->setToolTip(i18n("Decrease expansion level"));
     connect(tree_dec_level, SIGNAL(triggered()), view(), SLOT(decreaseExpansionDepth()));
 
     // actions for the dom tree list view context menu
 
-    del_tree = actionCollection()->addAction("tree_delete");
+    del_tree = actionCollection()->addAction(QStringLiteral("tree_delete"));
     del_tree->setText(i18n("&Delete"));
-    del_tree->setIcon(KIcon("edit-delete"));
+    del_tree->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     del_tree->setShortcut(Qt::Key_Delete);
     del_tree->setToolTip(i18n("Delete nodes"));
     del_tree->setShortcutContext(Qt::WidgetShortcut);
     view()->m_listView->addAction(del_tree);
     connect(del_tree, SIGNAL(triggered()), view(), SLOT(deleteNodes()));
-    QAction *new_elem = actionCollection()->addAction("tree_add_element");
+    QAction *new_elem = actionCollection()->addAction(QStringLiteral("tree_add_element"));
     new_elem->setText(i18n("New &Element..."));
-    new_elem->setIcon(KIcon("document-new"));
+    new_elem->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     connect(new_elem, SIGNAL(triggered()), view(), SLOT(slotAddElementDlg()));
-    QAction *new_text = actionCollection()->addAction("tree_add_text");
+    QAction *new_text = actionCollection()->addAction(QStringLiteral("tree_add_text"));
     new_text->setText(i18n("New &Text Node..."));
-    new_text->setIcon(KIcon("draw-text"));
+    new_text->setIcon(QIcon::fromTheme(QStringLiteral("draw-text")));
     connect(new_text, SIGNAL(triggered()), view(), SLOT(slotAddTextDlg()));
 
     // actions for the info panel attribute list context menu
-    del_attr = actionCollection()->addAction("attr_delete");
+    del_attr = actionCollection()->addAction(QStringLiteral("attr_delete"));
     del_attr->setText(i18n("&Delete"));
-    del_attr->setIcon(KIcon("edit-delete"));
+    del_attr->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     del_attr->setShortcut(Qt::Key_Delete);
     del_attr->setToolTip(i18n("Delete attributes"));
     del_attr->setShortcutContext(Qt::WidgetShortcut);
@@ -244,14 +244,14 @@ void DOMTreeWindow::setupActions()
 
 QMenu *DOMTreeWindow::createInfoPanelAttrContextMenu()
 {
-    QWidget *w = factory()->container("infopanelattr_context", this);
+    QWidget *w = factory()->container(QStringLiteral("infopanelattr_context"), this);
     Q_ASSERT(w);
     return static_cast<QMenu *>(w);
 }
 
 QMenu *DOMTreeWindow::createDOMTreeViewContextMenu()
 {
-    QWidget *w = factory()->container("domtree_context", this);
+    QWidget *w = factory()->container(QStringLiteral("domtree_context"), this);
     Q_ASSERT(w);
     return static_cast<QMenu *>(w);
 }
@@ -355,7 +355,7 @@ void DOMTreeWindow::saveProperties(KConfigGroup &config)
     void DOMTreeWindow::newToolbarConfig() {
         // this slot is called when user clicks "Ok" or "Apply" in the toolbar editor.
         // recreate our GUI, and re-apply the settings (e.g. "text under icons", etc.)
-        createGUI(KStandardDirs::locate("data", "domtreeviewer/domtreeviewerui.rc"));
+        createGUI(KStandardDirs::locate("data", QStringLiteral("domtreeviewer/domtreeviewerui.rc")));
         applyMainWindowSettings(config()->group(autoSaveGroup()));
     }
 

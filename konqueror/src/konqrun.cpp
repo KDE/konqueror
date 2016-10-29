@@ -154,8 +154,8 @@ bool KonqRun::tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror
     // or if we are clicking on an html file in a directory view (which should
     // then open the other browser)
     else if (mime &&
-             (mime->is("text/html")
-              || mime->name().startsWith("image/")) // #83513
+             (mime->is(QStringLiteral("text/html"))
+              || mime->name().startsWith(QLatin1String("image/"))) // #83513
              && (m_pView && !m_pView->showsDirectory())) {
         m_req.forceAutoEmbed = true;
     }
@@ -196,7 +196,7 @@ void KonqRun::scanFile()
     if (job && !job->error()) {
         connect(job, SIGNAL(redirection(KIO::Job*,QUrl)),
                 SLOT(slotRedirection(KIO::Job*,QUrl)));
-        if (m_pView && m_pView->service()->desktopEntryName() != "konq_sidebartng") {
+        if (m_pView && m_pView->service()->desktopEntryName() != QLatin1String("konq_sidebartng")) {
             connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
                     m_pView, SLOT(slotInfoMessage(KJob*,QString)));
         }
@@ -209,7 +209,7 @@ void KonqRun::slotRedirection(KIO::Job *job, const QUrl &redirectedToURL)
     qDebug() << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending(redirectFromURL);
 
-    if (redirectedToURL.scheme() == "mailto") {
+    if (redirectedToURL.scheme() == QLatin1String("mailto")) {
         m_mailto = redirectedToURL;
         return; // Error will follow
     }

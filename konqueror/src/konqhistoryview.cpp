@@ -57,47 +57,47 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
 
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(m_treeView); // make shortcuts work
-    QAction *action = m_collection->addAction("open_new");
-    action->setIcon(QIcon::fromTheme("window-new"));
+    QAction *action = m_collection->addAction(QStringLiteral("open_new"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("window-new")));
     action->setText(i18n("Open in New &Window"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewWindow);
 
-    action = m_collection->addAction("open_tab");
-    action->setIcon(QIcon::fromTheme("tab-new"));
+    action = m_collection->addAction(QStringLiteral("open_tab"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("tab-new")));
     action->setText(i18n("Open in New Tab"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewTab);
 
-    action = m_collection->addAction("copylinklocation");
+    action = m_collection->addAction(QStringLiteral("copylinklocation"));
     action->setText(i18n("&Copy Link Address"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotCopyLinkLocation);
 
-    action = m_collection->addAction("remove");
-    action->setIcon(QIcon::fromTheme("edit-delete"));
+    action = m_collection->addAction(QStringLiteral("remove"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     action->setText(i18n("&Remove Entry"));
     action->setShortcut(Qt::Key_Delete); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotRemoveEntry);
 
-    action = m_collection->addAction("clear");
-    action->setIcon(QIcon::fromTheme("edit-clear-history"));
+    action = m_collection->addAction(QStringLiteral("clear"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-history")));
     action->setText(i18n("C&lear History"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotClearHistory);
 
-    action = m_collection->addAction("preferences");
-    action->setIcon(QIcon::fromTheme("configure"));
+    action = m_collection->addAction(QStringLiteral("preferences"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     action->setText(i18n("&Preferences..."));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotPreferences);
 
     QActionGroup *sortGroup = new QActionGroup(this);
     sortGroup->setExclusive(true);
 
-    action = m_collection->addAction("byName");
+    action = m_collection->addAction(QStringLiteral("byName"));
     action->setText(i18n("By &Name"));
     action->setCheckable(true);
     action->setData(qVariantFromValue(0));
     sortGroup->addAction(action);
 
-    action = m_collection->addAction("byDate");
+    action = m_collection->addAction(QStringLiteral("byDate"));
     action->setText(i18n("By &Date"));
     action->setCheckable(true);
     action->setData(qVariantFromValue(1));
@@ -131,20 +131,20 @@ void KonqHistoryView::slotContextMenu(const QPoint &pos)
     QMenu *menu = new QMenu(this);
 
     if (nodeType == KonqHistory::HistoryType) {
-        menu->addAction(m_collection->action("open_new"));
-        menu->addAction(m_collection->action("open_tab"));
-        menu->addAction(m_collection->action("copylinklocation"));
+        menu->addAction(m_collection->action(QStringLiteral("open_new")));
+        menu->addAction(m_collection->action(QStringLiteral("open_tab")));
+        menu->addAction(m_collection->action(QStringLiteral("copylinklocation")));
         menu->addSeparator();
     }
 
-    menu->addAction(m_collection->action("remove"));
-    menu->addAction(m_collection->action("clear"));
+    menu->addAction(m_collection->action(QStringLiteral("remove")));
+    menu->addAction(m_collection->action(QStringLiteral("clear")));
     menu->addSeparator();
     QMenu *sortMenu = menu->addMenu(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
-    sortMenu->addAction(m_collection->action("byName"));
-    sortMenu->addAction(m_collection->action("byDate"));
+    sortMenu->addAction(m_collection->action(QStringLiteral("byName")));
+    sortMenu->addAction(m_collection->action(QStringLiteral("byDate")));
     menu->addSeparator();
-    menu->addAction(m_collection->action("preferences"));
+    menu->addAction(m_collection->action(QStringLiteral("preferences")));
 
     menu->exec(m_treeView->viewport()->mapToGlobal(pos));
 
@@ -165,7 +165,7 @@ void KonqHistoryView::slotRemoveEntry()
 void KonqHistoryView::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon(QIcon::fromTheme("edit-clear-history"));
+    guiitem.setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-history")));
 
     if (KMessageBox::warningContinueCancel(this,
                                            i18n("Do you really want to clear the entire history?"),
@@ -178,7 +178,7 @@ void KonqHistoryView::slotClearHistory()
 void KonqHistoryView::slotPreferences()
 {
     // Run the history sidebar settings.
-    KRun::run("kcmshell5 kcmhistory", QList<QUrl>(), this);
+    KRun::run(QStringLiteral("kcmshell5 kcmhistory"), QList<QUrl>(), this);
 }
 
 void KonqHistoryView::slotSortChange(QAction *action)

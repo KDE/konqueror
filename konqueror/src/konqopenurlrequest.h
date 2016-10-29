@@ -46,7 +46,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
             s << "frameName=" + browserArgs.frameName;
         }
         if (browserArgs.newTab()) {
-            s << "newTab";
+            s << QStringLiteral("newTab");
         }
         if (!nameFilter.isEmpty()) {
             s << "nameFilter=" + nameFilter;
@@ -58,24 +58,24 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
             s << "serviceName=" + serviceName;
         }
         if (followMode) {
-            s << "followMode";
+            s << QStringLiteral("followMode");
         }
         if (newTabInFront) {
-            s << "newTabInFront";
+            s << QStringLiteral("newTabInFront");
         }
         if (openAfterCurrentPage) {
-            s << "openAfterCurrentPage";
+            s << QStringLiteral("openAfterCurrentPage");
         }
         if (forceAutoEmbed) {
-            s << "forceAutoEmbed";
+            s << QStringLiteral("forceAutoEmbed");
         }
         if (tempFile) {
-            s << "tempFile";
+            s << QStringLiteral("tempFile");
         }
         if (userRequestedReload) {
-            s << "userRequestedReload";
+            s << QStringLiteral("userRequestedReload");
         }
-        return "[" + s.join(" ") + "]";
+        return "[" + s.join(QStringLiteral(" ")) + "]";
 #else
         return QString();
 #endif

@@ -51,11 +51,11 @@
 
 KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     : KCModule(parent),
-      mGroupname("Filter Settings"),
+      mGroupname(QStringLiteral("Filter Settings")),
       mSelCount(0),
       mOriginalString(QString())
 {
-    mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
+    mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::NoGlobals);
     setButtons(Default | Apply | Help);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
@@ -128,16 +128,16 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     connect(&mAutomaticFilterModel, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
     connect(mRefreshFreqSpinBox, SIGNAL(valueChanged(int)), this, SLOT(spinBoxChanged(int)));
 
-    mInsertButton = new QPushButton(QIcon::fromTheme("list-add"), i18n("Insert"), buttonBox);
+    mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
     connect(mInsertButton, SIGNAL(clicked()), SLOT(insertFilter()));
-    mUpdateButton = new QPushButton(QIcon::fromTheme("document-edit"), i18n("Update"), buttonBox);
+    mUpdateButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Update"), buttonBox);
     connect(mUpdateButton, SIGNAL(clicked()), SLOT(updateFilter()));
-    mRemoveButton = new QPushButton(QIcon::fromTheme("list-remove"), i18n("Remove"), buttonBox);
+    mRemoveButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-remove")), i18n("Remove"), buttonBox);
     connect(mRemoveButton, SIGNAL(clicked()), SLOT(removeFilter()));
 
-    mImportButton = new QPushButton(QIcon::fromTheme("document-import"), i18n("Import..."), buttonBox);
+    mImportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-import")), i18n("Import..."), buttonBox);
     connect(mImportButton, SIGNAL(clicked()), SLOT(importFilters()));
-    mExportButton = new QPushButton(QIcon::fromTheme("document-export"), i18n("Export..."), buttonBox);
+    mExportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-export")), i18n("Export..."), buttonBox);
     connect(mExportButton, SIGNAL(clicked()), SLOT(exportFilters()));
 
     KHBox *impexpBox = new KHBox;
@@ -181,14 +181,14 @@ KCMFilter::~KCMFilter()
 
 void KCMFilter::slotInfoLinkActivated(const QString &url)
 {
-    if (url == "filterhelp") {
+    if (url == QLatin1String("filterhelp")) {
         QWhatsThis::showText(QCursor::pos(), mString->whatsThis());
-    } else if (url == "importhelp")
+    } else if (url == QLatin1String("importhelp"))
         QWhatsThis::showText(QCursor::pos(), i18n("<qt><p>The filter import format is a plain text file. "
                              "Blank lines, comment lines starting with '<tt>!</tt>' "
                              "and the header line <tt>[AdBlock]</tt> are ignored. "
                              "Any other line is added as a filter expression."));
-    else if (url == "exporthelp")
+    else if (url == QLatin1String("exporthelp"))
         QWhatsThis::showText(QCursor::pos(), i18n("<qt><p>The filter export format is a plain text file. "
                              "The file begins with a header line <tt>[AdBlock]</tt>, then all of "
                              "the filters follow each on a separate line."));
@@ -266,13 +266,13 @@ void KCMFilter::importFilters()
             QString line;
             while (!ts.atEnd()) {
                 line = ts.readLine();
-                if (line.isEmpty() || line.compare("[adblock]", Qt::CaseInsensitive) == 0) {
+                if (line.isEmpty() || line.compare(QLatin1String("[adblock]"), Qt::CaseInsensitive) == 0) {
                     continue;
                 }
 
                 // Treat leading ! as filter comment, otherwise check expressions
                 // are valid.
-                if (!line.startsWith("!")) { //krazy:exclude=doublequote_chars
+                if (!line.startsWith(QLatin1String("!"))) { //krazy:exclude=doublequote_chars
                     if (line.length() > 2 && line[0] == '/' && line[line.length() - 1] == '/') {
                         QString inside = line.mid(1, line.length() - 2);
                         QRegExp rx(inside);
@@ -354,7 +354,7 @@ void KCMFilter::save()
     cg.sync();
 
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 }
 
@@ -449,10 +449,10 @@ void KCMFilter::spinBoxChanged(int)
 
 AutomaticFilterModel::AutomaticFilterModel(QObject *parent)
     : QAbstractItemModel(parent),
-      mGroupname("Filter Settings")
+      mGroupname(QStringLiteral("Filter Settings"))
 {
     //mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
-    mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::IncludeGlobals);
+    mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::IncludeGlobals);
 }
 
 void AutomaticFilterModel::load(KConfigGroup &cg)
@@ -464,14 +464,14 @@ void AutomaticFilterModel::load(KConfigGroup &cg)
 
     for (int numFilters = 1; numFilters < maxNumFilters; ++numFilters) {
         struct FilterConfig filterConfig;
-        filterConfig.filterName = cg.readEntry(QString("HTMLFilterListName-") + QString::number(numFilters), "");
-        if (filterConfig.filterName == "") {
+        filterConfig.filterName = cg.readEntry(QStringLiteral("HTMLFilterListName-") + QString::number(numFilters), "");
+        if (filterConfig.filterName == QLatin1String("")) {
             break;
         }
 
-        filterConfig.enableFilter = cg.readEntry(QString("HTMLFilterListEnabled-") + QString::number(numFilters), defaultHTMLFilterListEnabled);
-        filterConfig.filterURL = cg.readEntry(QString("HTMLFilterListURL-") + QString::number(numFilters), "");
-        filterConfig.filterLocalFilename = cg.readEntry(QString("HTMLFilterListLocalFilename-") + QString::number(numFilters), "");
+        filterConfig.enableFilter = cg.readEntry(QStringLiteral("HTMLFilterListEnabled-") + QString::number(numFilters), defaultHTMLFilterListEnabled);
+        filterConfig.filterURL = cg.readEntry(QStringLiteral("HTMLFilterListURL-") + QString::number(numFilters), "");
+        filterConfig.filterLocalFilename = cg.readEntry(QStringLiteral("HTMLFilterListLocalFilename-") + QString::number(numFilters), "");
 
         mFilters << filterConfig;
     }
@@ -481,16 +481,16 @@ void AutomaticFilterModel::load(KConfigGroup &cg)
 void AutomaticFilterModel::save(KConfigGroup &cg)
 {
     for (int i = mFilters.count() - 1; i >= 0; --i) {
-        cg.writeEntry(QString("HTMLFilterListLocalFilename-") + QString::number(i + 1), mFilters[i].filterLocalFilename);
-        cg.writeEntry(QString("HTMLFilterListURL-") + QString::number(i + 1), mFilters[i].filterURL);
-        cg.writeEntry(QString("HTMLFilterListName-") + QString::number(i + 1), mFilters[i].filterName);
-        cg.writeEntry(QString("HTMLFilterListEnabled-") + QString::number(i + 1), mFilters[i].enableFilter);
+        cg.writeEntry(QStringLiteral("HTMLFilterListLocalFilename-") + QString::number(i + 1), mFilters[i].filterLocalFilename);
+        cg.writeEntry(QStringLiteral("HTMLFilterListURL-") + QString::number(i + 1), mFilters[i].filterURL);
+        cg.writeEntry(QStringLiteral("HTMLFilterListName-") + QString::number(i + 1), mFilters[i].filterName);
+        cg.writeEntry(QStringLiteral("HTMLFilterListEnabled-") + QString::number(i + 1), mFilters[i].enableFilter);
     }
 }
 
 void AutomaticFilterModel::defaults()
 {
-    mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::IncludeGlobals);
+    mConfig = KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::IncludeGlobals);
     KConfigGroup cg(mConfig, mGroupname);
     load(cg);
 }

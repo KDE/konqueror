@@ -53,7 +53,7 @@
 
 PluginPolicies::PluginPolicies(KSharedConfig::Ptr config, const QString &group, bool global,
                                const QString &domain) :
-    Policies(config, group, global, domain, "plugins.", "EnablePlugins")
+    Policies(config, group, global, domain, QStringLiteral("plugins."), QStringLiteral("EnablePlugins"))
 {
 }
 
@@ -65,8 +65,8 @@ PluginPolicies::~PluginPolicies()
 
 KPluginOptions::KPluginOptions(QWidget *parent, const QVariantList &)
     : KCModule(parent),
-      m_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)),
-      m_groupname("Java/JavaScript Settings"),
+      m_pConfig(KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals)),
+      m_groupname(QStringLiteral("Java/JavaScript Settings")),
       global_policies(m_pConfig, m_groupname, true)
 {
     QVBoxLayout *toplevel = new QVBoxLayout(this);
@@ -127,7 +127,7 @@ KPluginOptions::KPluginOptions(QWidget *parent, const QVariantList &)
     domainSpecificDlg->setCaption(i18nc("@title:window", "Domain-Specific Policies"));
     domainSpecificDlg->setButtons(KDialog::Close);
     domainSpecificDlg->setDefaultButton(KDialog::Close);
-    domainSpecificDlg->setObjectName(QLatin1String("domainSpecificDlg"));
+    domainSpecificDlg->setObjectName(QStringLiteral("domainSpecificDlg"));
     domainSpecificDlg->setModal(true);
 
     domainSpecific = new PluginDomainListView(m_pConfig, m_groupname, this, domainSpecificDlg);
@@ -175,7 +175,7 @@ KPluginOptions::KPluginOptions(QWidget *parent, const QVariantList &)
 
     // create Designer made widget
     m_widget.setupUi(pluginsSettingsContainer);
-    pluginsSettingsContainer->setObjectName(QLatin1String("configwidget"));
+    pluginsSettingsContainer->setObjectName(QStringLiteral("configwidget"));
     m_widget.dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
 
     // setup widgets
@@ -220,7 +220,7 @@ void KPluginOptions::load()
 
     /****************************************************************************/
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kcmnspluginrc"));
     KConfigGroup cg(config, "Misc");
 
     m_widget.dirEdit->setUrl(QUrl());
@@ -265,18 +265,18 @@ void KPluginOptions::save()
 {
     global_policies.save();
 
-    domainSpecific->save(m_groupname, "PluginDomains");
+    domainSpecific->save(m_groupname, QStringLiteral("PluginDomains"));
 
     m_pConfig->sync();  // I need a sync here, otherwise "apply" won't work
     // instantly
     // Send signal to all konqueror instances
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
     /*****************************************************************************/
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kcmnspluginrc"));
 
     dirSave(config);
     pluginSave(config);
@@ -334,7 +334,7 @@ void KPluginOptions::scan()
 
     nspluginscan = new KProcess(this);
     nspluginscan->setOutputChannelMode(KProcess::SeparateChannels);
-    QString scanExe = KStandardDirs::findExe("nspluginscan");
+    QString scanExe = KStandardDirs::findExe(QStringLiteral("nspluginscan"));
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer";
 
@@ -350,7 +350,7 @@ void KPluginOptions::scan()
     m_progress->progressBar()->setValue(5);
 
     // start nspluginscan
-    *nspluginscan << scanExe << "--verbose";
+    *nspluginscan << scanExe << QStringLiteral("--verbose");
     kDebug() << "Running nspluginscan";
     connect(nspluginscan, SIGNAL(readyReadStandardOutput()),
             this, SLOT(progress()));
@@ -418,23 +418,23 @@ void KPluginOptions::dirLoad(KSharedConfig::Ptr config, bool useDefault)
     if (cg.hasKey("scanPaths") && !useDefault) {
         paths = cg.readEntry("scanPaths", QStringList());
     } else { //keep sync with kdebase/apps/nsplugins
-        paths.append("$HOME/.mozilla/plugins");
-        paths.append("$HOME/.netscape/plugins");
-        paths.append("/usr/lib/firefox/plugins");
-        paths.append("/usr/lib64/browser-plugins");
-        paths.append("/usr/lib/browser-plugins");
-        paths.append("/usr/local/netscape/plugins");
-        paths.append("/opt/mozilla/plugins");
-        paths.append("/opt/mozilla/lib/plugins");
-        paths.append("/opt/netscape/plugins");
-        paths.append("/opt/netscape/communicator/plugins");
-        paths.append("/usr/lib/netscape/plugins");
-        paths.append("/usr/lib/netscape/plugins-libc5");
-        paths.append("/usr/lib/netscape/plugins-libc6");
-        paths.append("/usr/lib/mozilla/plugins");
-        paths.append("/usr/lib64/netscape/plugins");
-        paths.append("/usr/lib64/mozilla/plugins");
-        paths.append("$MOZILLA_HOME/plugins");
+        paths.append(QStringLiteral("$HOME/.mozilla/plugins"));
+        paths.append(QStringLiteral("$HOME/.netscape/plugins"));
+        paths.append(QStringLiteral("/usr/lib/firefox/plugins"));
+        paths.append(QStringLiteral("/usr/lib64/browser-plugins"));
+        paths.append(QStringLiteral("/usr/lib/browser-plugins"));
+        paths.append(QStringLiteral("/usr/local/netscape/plugins"));
+        paths.append(QStringLiteral("/opt/mozilla/plugins"));
+        paths.append(QStringLiteral("/opt/mozilla/lib/plugins"));
+        paths.append(QStringLiteral("/opt/netscape/plugins"));
+        paths.append(QStringLiteral("/opt/netscape/communicator/plugins"));
+        paths.append(QStringLiteral("/usr/lib/netscape/plugins"));
+        paths.append(QStringLiteral("/usr/lib/netscape/plugins-libc5"));
+        paths.append(QStringLiteral("/usr/lib/netscape/plugins-libc6"));
+        paths.append(QStringLiteral("/usr/lib/mozilla/plugins"));
+        paths.append(QStringLiteral("/usr/lib64/netscape/plugins"));
+        paths.append(QStringLiteral("/usr/lib64/mozilla/plugins"));
+        paths.append(QStringLiteral("$MOZILLA_HOME/plugins"));
     }
 
     // fill list
@@ -544,7 +544,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
     QRegExp version(";version=[^:]*:");
 
     // open the cache file
-    QFile cachef(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "nsplugins/cache"));
+    QFile cachef(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("nsplugins/cache")));
     if (!cachef.exists() || !cachef.open(QIODevice::ReadOnly)) {
         kDebug() << "Could not load plugin cache file!";
         return;
@@ -556,7 +556,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
     QTreeWidgetItem *root = new QTreeWidgetItem(m_widget.pluginList, QStringList() << i18n("Netscape Plugins"));
     root->setFlags(Qt::ItemIsEnabled);
     root->setExpanded(true);
-    root->setIcon(0, QIcon::fromTheme("netscape"));
+    root->setIcon(0, QIcon::fromTheme(QStringLiteral("netscape")));
 
     // read in cache
     QString line, plugin;
@@ -566,11 +566,11 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
 
         line = cache.readLine();
         //kDebug() << line;
-        if (line.isEmpty() || (line.left(1) == "#")) {
+        if (line.isEmpty() || (line.left(1) == QLatin1String("#"))) {
             continue;
         }
 
-        if (line.left(1) == "[") {
+        if (line.left(1) == QLatin1String("[")) {
 
             plugin = line.mid(1, line.length() - 2);
             //kDebug() << "plugin=" << plugin;
@@ -626,7 +626,7 @@ void KPluginOptions::pluginSave(KSharedConfig::Ptr /*config*/)
 PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
     QWidget(parent)
 {
-    setObjectName(QLatin1String("PluginDomainDialog"));
+    setObjectName(QStringLiteral("PluginDomainDialog"));
     setWindowTitle(i18nc("@title:window", "Domain-Specific Policies"));
 
     thisLayout = new QVBoxLayout(this);

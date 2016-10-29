@@ -51,15 +51,15 @@ QString KonqFrameBase::frameTypeToString(const KonqFrameBase::FrameType frameTyp
 {
     switch (frameType) {
     case View :
-        return QString("View");
+        return QStringLiteral("View");
     case Tabs :
-        return QString("Tabs");
+        return QStringLiteral("Tabs");
     case ContainerBase :
-        return QString("ContainerBase");
+        return QStringLiteral("ContainerBase");
     case Container :
-        return QString("Container");
+        return QStringLiteral("Container");
     case MainWindow :
-        return QString("MainWindow");
+        return QStringLiteral("MainWindow");
     }
     Q_ASSERT(0);
     return QString();
@@ -67,19 +67,19 @@ QString KonqFrameBase::frameTypeToString(const KonqFrameBase::FrameType frameTyp
 
 KonqFrameBase::FrameType frameTypeFromString(const QString &str)
 {
-    if (str == "View") {
+    if (str == QLatin1String("View")) {
         return KonqFrameBase::View;
     }
-    if (str == "Tabs") {
+    if (str == QLatin1String("Tabs")) {
         return KonqFrameBase::Tabs;
     }
-    if (str == "ContainerBase") {
+    if (str == QLatin1String("ContainerBase")) {
         return KonqFrameBase::ContainerBase;
     }
-    if (str == "Container") {
+    if (str == QLatin1String("Container")) {
         return KonqFrameBase::Container;
     }
-    if (str == "MainWindow") {
+    if (str == QLatin1String("MainWindow")) {
         return KonqFrameBase::MainWindow;
     }
     Q_ASSERT(0);
@@ -121,7 +121,7 @@ void KonqFrame::saveConfig(KConfigGroup &config, const QString &prefix, const Ko
     }
     //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
     if (this == docContainer) {
-        config.writeEntry(QString::fromLatin1("docContainer").prepend(prefix), true);
+        config.writeEntry(QStringLiteral("docContainer").prepend(prefix), true);
     }
 }
 
@@ -167,7 +167,7 @@ void KonqFrame::attachWidget(QWidget *widget)
     delete m_pLayout;
 
     m_pLayout = new QVBoxLayout(this);
-    m_pLayout->setObjectName(QLatin1String("KonqFrame's QVBoxLayout"));
+    m_pLayout->setObjectName(QStringLiteral("KonqFrame's QVBoxLayout"));
     m_pLayout->setMargin(0);
     m_pLayout->setSpacing(0);
 
@@ -240,7 +240,7 @@ void KonqFrame::activateChild()
     if (m_pView && !m_pView->isPassiveMode()) {
         m_pView->mainWindow()->viewManager()->setActivePart(part());
 
-        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl("about:blank"))) {
+        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl(QStringLiteral("about:blank")))) {
             //qDebug() << "SET FOCUS on the location bar";
             m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
         }

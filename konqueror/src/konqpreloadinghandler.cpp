@@ -84,7 +84,7 @@ bool KonqPreloadingHandler::hasPreloadedWindow() const
 
 void KonqPreloadingHandler::makePreloadedWindow()
 {
-    KonqMainWindow *win = new KonqMainWindow(QUrl("about:blank")); // prepare an empty window, with the web renderer preloaded
+    KonqMainWindow *win = new KonqMainWindow(QUrl(QStringLiteral("about:blank"))); // prepare an empty window, with the web renderer preloaded
     win->viewManager()->clear();
     m_preloadedWindow = win;
 }

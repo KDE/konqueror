@@ -123,24 +123,24 @@ PluginValidators::PluginValidators(QObject *parent,
     , m_icon(0), m_statusBarExt(0)
 {
 
-    m_menu = new KActionMenu(KIcon("validators"), i18n("&Validate Web Page"),
+    m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("validators")), i18n("&Validate Web Page"),
                              actionCollection());
-    actionCollection()->addAction("validateWebpage", m_menu);
+    actionCollection()->addAction(QStringLiteral("validateWebpage"), m_menu);
     m_menu->setDelayed(false);
 
-    m_validateHtmlUri = m_menu->menu()->addAction(KIcon("htmlvalidator"),
+    m_validateHtmlUri = m_menu->menu()->addAction(QIcon::fromTheme(QStringLiteral("htmlvalidator")),
                         i18n("Validate HTML (by URI)"),
                         this, SLOT(slotValidateHtmlByUri()));
 
-    m_validateHtmlUpload = m_menu->menu()->addAction(KIcon("htmlvalidator"),
+    m_validateHtmlUpload = m_menu->menu()->addAction(QIcon::fromTheme(QStringLiteral("htmlvalidator")),
                            i18n("Validate HTML (by Upload)"),
                            this, SLOT(slotValidateHtmlByUpload()));
 
-    m_validateCssUri = m_menu->menu()->addAction(KIcon("cssvalidator"),
+    m_validateCssUri = m_menu->menu()->addAction(QIcon::fromTheme(QStringLiteral("cssvalidator")),
                        i18n("Validate CSS (by URI)"),
                        this, SLOT(slotValidateCssByUri()));
 
-    m_validateCssUpload = m_menu->menu()->addAction(KIcon("cssvalidator"),
+    m_validateCssUpload = m_menu->menu()->addAction(QIcon::fromTheme(QStringLiteral("cssvalidator")),
                           i18n("Validate CSS (by Upload)"),
                           this, SLOT(slotValidateCssByUpload()));
     // FIXME temporary disabled, as it does not work
@@ -151,11 +151,11 @@ PluginValidators::PluginValidators(QObject *parent,
 #ifdef HAVE_TIDY
     m_menu->menu()->addSeparator();
 
-    m_localValidation = m_menu->menu()->addAction(KIcon("validators"),
+    m_localValidation = m_menu->menu()->addAction(QIcon::fromTheme("validators"),
                         i18n("Validate Page"),
                         this, SLOT(slotTidyValidation()));
 
-    m_localValidationReport = m_menu->menu()->addAction(KIcon("document-properties"),
+    m_localValidationReport = m_menu->menu()->addAction(QIcon::fromTheme("document-properties"),
                               i18n("View Validator Report"),
                               this, SLOT(slotShowTidyValidationReport()));
 #endif
@@ -163,7 +163,7 @@ PluginValidators::PluginValidators(QObject *parent,
     if (parent) {
         m_menu->menu()->addSeparator();
 
-        m_menu->menu()->addAction(KIcon("configure"), i18n("C&onfigure Validator..."),
+        m_menu->menu()->addAction(QIcon::fromTheme(QStringLiteral("configure")), i18n("C&onfigure Validator..."),
                                   this, SLOT(slotConfigure()));
 
         m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
@@ -451,7 +451,7 @@ void PluginValidators::validateByUri(const KUrl &url)
         return;
     }
     // Set entered URL as a parameter
-    validatorUrl.addQueryItem("uri", partUrl.url());
+    validatorUrl.addQueryItem(QStringLiteral("uri"), partUrl.url());
     kDebug(90120) << "final URL: " << validatorUrl.url();
     KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
     KParts::OpenUrlArguments urlArgs;
@@ -466,7 +466,7 @@ void PluginValidators::validateByUpload(const KUrl &validatorUrl, const QList<QP
     KParts::OpenUrlArguments urlArgs;
     KParts::BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
-    browserArgs.setContentType(QString("Content-Type: multipart/form-data; Boundary=%1").arg(PluginValidators::s_boundary));
+    browserArgs.setContentType(QStringLiteral("Content-Type: multipart/form-data; Boundary=%1").arg(PluginValidators::s_boundary));
     browserArgs.postData = createPostData(formData);
     browserArgs.setDoPost(true);
     browserArgs.setRedirectedRequest(true);
@@ -475,7 +475,7 @@ void PluginValidators::validateByUpload(const KUrl &validatorUrl, const QList<QP
 
 bool PluginValidators::canValidateByUri() const
 {
-    return m_part->url().scheme() == "http";
+    return m_part->url().scheme() == QLatin1String("http");
 }
 
 bool PluginValidators::canValidateByUpload() const
@@ -556,7 +556,7 @@ void PluginValidators::addStatusBarIcon()
     m_icon = new ClickIconLabel(m_statusBarExt->statusBar());
     m_icon->setFixedHeight(KIconLoader::global()->currentSize(KIconLoader::Small));
     m_icon->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
-    m_icon->setPixmap(KIconLoader::global()->loadIcon("htmlvalidator", KIconLoader::Small));
+    m_icon->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("htmlvalidator"), KIconLoader::Small));
     m_icon->setToolTip(i18n("Validation"));
     m_icon->setAutoFillBackground(true);
     connect(m_icon, SIGNAL(leftClicked()), this, SLOT(slotContextMenu()));

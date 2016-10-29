@@ -76,7 +76,7 @@ FSView::FSView(Inode *base, QWidget *parent)
     _dirsFinished = 0;
     _lastDir = 0;
 
-    _config = new KConfig("fsviewrc");
+    _config = new KConfig(QStringLiteral("fsviewrc"));
 
     // restore TreeMap visualization options of last execution
     KConfigGroup tmconfig(_config, "TreeMap");
@@ -94,14 +94,14 @@ FSView::FSView(Inode *base, QWidget *parent)
         double s;
         QString str;
         for (i = 1; i <= ccount; i++) {
-            str = QString("Dir%1").arg(i);
+            str = QStringLiteral("Dir%1").arg(i);
             if (!cconfig.hasKey(str)) {
                 continue;
             }
             str = cconfig.readPathEntry(str, QString());
-            s = cconfig.readEntry(QString("Size%1").arg(i), 0.0);
-            f = cconfig.readEntry(QString("Files%1").arg(i), 0);
-            d = cconfig.readEntry(QString("Dirs%1").arg(i), 0);
+            s = cconfig.readEntry(QStringLiteral("Size%1").arg(i), 0.0);
+            f = cconfig.readEntry(QStringLiteral("Files%1").arg(i), 0);
+            d = cconfig.readEntry(QStringLiteral("Dirs%1").arg(i), 0);
             if (s == 0.0 || f == 0 || d == 0) {
                 continue;
             }
@@ -144,7 +144,7 @@ void FSView::setPath(const QString &p)
 
     KUrl u;
     u.setPath(_path);
-    if (!KUrlAuthorized::authorizeUrlAction("list", KUrl(), u)) {
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), KUrl(), u)) {
         QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.prettyUrl());
         KMessageBox::sorry(this, msg);
     }
@@ -153,7 +153,7 @@ void FSView::setPath(const QString &p)
 
     b->setPeer(d);
 
-    setWindowTitle(QString("%1 - FSView").arg(_path));
+    setWindowTitle(QStringLiteral("%1 - FSView").arg(_path));
     requestUpdate(b);
 }
 
@@ -361,10 +361,10 @@ void FSView::saveMetric(KConfigGroup *g)
     QMap<QString, MetricEntry>::iterator it;
     int c = 1;
     for (it = _dirMetric.begin(); it != _dirMetric.end(); ++it) {
-        g->writePathEntry(QString("Dir%1").arg(c), it.key());
-        g->writeEntry(QString("Size%1").arg(c), (*it).size);
-        g->writeEntry(QString("Files%1").arg(c), (*it).fileCount);
-        g->writeEntry(QString("Dirs%1").arg(c), (*it).dirCount);
+        g->writePathEntry(QStringLiteral("Dir%1").arg(c), it.key());
+        g->writeEntry(QStringLiteral("Size%1").arg(c), (*it).size);
+        g->writeEntry(QStringLiteral("Files%1").arg(c), (*it).fileCount);
+        g->writeEntry(QStringLiteral("Dirs%1").arg(c), (*it).dirCount);
         c++;
     }
     g->writeEntry("Count", c - 1);
@@ -382,17 +382,17 @@ void FSView::setColorMode(FSView::ColorMode cm)
 
 bool FSView::setColorMode(const QString &mode)
 {
-    if (mode == "None") {
+    if (mode == QLatin1String("None")) {
         setColorMode(None);
-    } else if (mode == "Depth") {
+    } else if (mode == QLatin1String("Depth")) {
         setColorMode(Depth);
-    } else if (mode == "Name") {
+    } else if (mode == QLatin1String("Name")) {
         setColorMode(Name);
-    } else if (mode == "Owner") {
+    } else if (mode == QLatin1String("Owner")) {
         setColorMode(Owner);
-    } else if (mode == "Group") {
+    } else if (mode == QLatin1String("Group")) {
         setColorMode(Group);
-    } else if (mode == "Mime") {
+    } else if (mode == QLatin1String("Mime")) {
         setColorMode(Mime);
     } else {
         return false;
@@ -405,13 +405,13 @@ QString FSView::colorModeString() const
 {
     QString mode;
     switch (_colorMode) {
-    case None:  mode = "None"; break;
-    case Depth: mode = "Depth"; break;
-    case Name:  mode = "Name"; break;
-    case Owner: mode = "Owner"; break;
-    case Group: mode = "Group"; break;
-    case Mime:  mode = "Mime"; break;
-    default:    mode = "Unknown"; break;
+    case None:  mode = QStringLiteral("None"); break;
+    case Depth: mode = QStringLiteral("Depth"); break;
+    case Name:  mode = QStringLiteral("Name"); break;
+    case Owner: mode = QStringLiteral("Owner"); break;
+    case Group: mode = QStringLiteral("Group"); break;
+    case Mime:  mode = QStringLiteral("Mime"); break;
+    default:    mode = QStringLiteral("Unknown"); break;
     }
     return mode;
 }

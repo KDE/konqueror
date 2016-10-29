@@ -32,14 +32,14 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     new KonquerorAdaptor; // not really an adaptor
-    const QString dbusInterface = "org.kde.Konqueror.Main";
+    const QString dbusInterface = QStringLiteral("org.kde.Konqueror.Main");
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "reparseConfiguration", this, SLOT(slotReparseConfiguration()));
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "addToCombo", this,
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("reparseConfiguration"), this, SLOT(slotReparseConfiguration()));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("addToCombo"), this,
                  SLOT(slotAddToCombo(QString,QDBusMessage)));
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "removeFromCombo", this,
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("removeFromCombo"), this,
                  SLOT(slotRemoveFromCombo(QString,QDBusMessage)));
-    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "comboCleared", this, SLOT(slotComboCleared(QDBusMessage)));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("comboCleared"), this, SLOT(slotComboCleared(QDBusMessage)));
 }
 
 void KonquerorApplication::slotReparseConfiguration()

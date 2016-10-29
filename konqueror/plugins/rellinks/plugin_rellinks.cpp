@@ -62,176 +62,176 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
       m_viewVisible(false),
       m_linksFound(false)
 {
-    setComponentData(KAboutData("rellinks", i18n("Rellinks"), "1.0"));
+    setComponentData(KAboutData(QStringLiteral("rellinks"), i18n("Rellinks"), QStringLiteral("1.0")));
 
     QActionGroup *grp = new QActionGroup(this);
     connect(grp, SIGNAL(triggered(QAction*)), this, SLOT(actionTriggered(QAction*)));
 
     QAction *a;
     // ------------- Navigation links --------------
-    a =  actionCollection()->addAction("rellinks_home");
+    a =  actionCollection()->addAction(QStringLiteral("rellinks_home"));
     a->setText(i18n("&Top"));
-    a->setIcon(KIcon("go-top"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+T"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("go-top")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+T")));
     a->setWhatsThis(i18n("<p>This link references a home page or the top of some hierarchy.</p>"));
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_up");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_up"));
     a->setText(i18n("&Up"));
-    a->setIcon(KIcon("go-up"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+U"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("go-up")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+U")));
     a->setWhatsThis(i18n("<p>This link references the immediate parent of the current document.</p>"));
     grp->addAction(a);
 
     bool isRTL = QApplication::isRightToLeft();
 
-    a = actionCollection()->addAction("rellinks_begin");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_begin"));
     a->setText(i18n("&First"));
     a->setIcon(KIcon(isRTL ? "go-last" : "go-first"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+F"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+F")));
     a->setWhatsThis(i18n("<p>This link type tells search engines which document is considered by the author to be the starting point of the collection.</p>"));
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_prev");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_prev"));
     a->setText(i18n("&Previous"));
     a->setIcon(KIcon(isRTL ? "go-next" : "go-previous"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+P"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+P")));
     a->setWhatsThis(i18n("<p>This link references the previous document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_next");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_next"));
     a->setText(i18n("&Next"));
     a->setIcon(KIcon(isRTL ? "go-previous" : "go-next"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+N"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+N")));
     a->setWhatsThis(i18n("<p>This link references the next document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_last");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_last"));
     a->setText(i18n("&Last"));
     a->setIcon(KIcon(isRTL ? "go-first" : "go-last"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+L"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+L")));
     a->setWhatsThis(i18n("<p>This link references the end of a sequence of documents.</p>"));
     grp->addAction(a);
 
     // ------------ special items --------------------------
-    a = actionCollection()->addAction("rellinks_search");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_search"));
     a->setText(i18n("&Search"));
-    a->setIcon(KIcon("edit-find"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+S"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("edit-find")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+S")));
     a->setWhatsThis(i18n("<p>This link references the search.</p>"));
     grp->addAction(a);
 
     // ------------ Document structure links ---------------
-    m_document = new KActionMenu(KIcon("go-jump"), i18n("Document"), actionCollection());
-    actionCollection()->addAction("rellinks_document", m_document);
+    m_document = new KActionMenu(QIcon::fromTheme(QStringLiteral("go-jump")), i18n("Document"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_document"), m_document);
     m_document->setWhatsThis(i18n("<p>This menu contains the links referring the document information.</p>"));
     m_document->setDelayed(false);
 
-    a = actionCollection()->addAction("rellinks_contents");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_contents"));
     a->setText(i18n("Table of &Contents"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+C"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+C")));
     a->setWhatsThis(i18n("<p>This link references the table of contents.</p>"));
     m_document->addAction(a);
     grp->addAction(a);
 
-    kactionmenu_map["chapter"] = new KActionMenu(i18n("Chapters"), actionCollection());
-    actionCollection()->addAction("rellinks_chapters", kactionmenu_map["chapter" ]);
+    kactionmenu_map[QStringLiteral("chapter")] = new KActionMenu(i18n("Chapters"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_chapters"), kactionmenu_map[QStringLiteral("chapter") ]);
 
-    m_document->addAction(kactionmenu_map["chapter"]);
-    connect(kactionmenu_map["chapter"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["chapter"]->setWhatsThis(i18n("<p>This menu references the chapters of the document.</p>"));
-    kactionmenu_map["chapter"]->setDelayed(false);
+    m_document->addAction(kactionmenu_map[QStringLiteral("chapter")]);
+    connect(kactionmenu_map[QStringLiteral("chapter")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("chapter")]->setWhatsThis(i18n("<p>This menu references the chapters of the document.</p>"));
+    kactionmenu_map[QStringLiteral("chapter")]->setDelayed(false);
 
-    kactionmenu_map["section"] = new KActionMenu(i18n("Sections"), actionCollection());
-    actionCollection()->addAction("rellinks_sections", kactionmenu_map["section"]);
+    kactionmenu_map[QStringLiteral("section")] = new KActionMenu(i18n("Sections"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_sections"), kactionmenu_map[QStringLiteral("section")]);
 
-    m_document->addAction(kactionmenu_map["section"]);
+    m_document->addAction(kactionmenu_map[QStringLiteral("section")]);
 
-    connect(kactionmenu_map["section"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["section"]->setWhatsThis(i18n("<p>This menu references the sections of the document.</p>"));
-    kactionmenu_map["section"]->setDelayed(false);
+    connect(kactionmenu_map[QStringLiteral("section")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("section")]->setWhatsThis(i18n("<p>This menu references the sections of the document.</p>"));
+    kactionmenu_map[QStringLiteral("section")]->setDelayed(false);
 
-    kactionmenu_map["subsection"] = new KActionMenu(i18n("Subsections"), actionCollection());
-    m_document->addAction(kactionmenu_map["subsection"]);
-    actionCollection()->addAction("rellinks_subsections", kactionmenu_map["subsection"]);
+    kactionmenu_map[QStringLiteral("subsection")] = new KActionMenu(i18n("Subsections"), actionCollection());
+    m_document->addAction(kactionmenu_map[QStringLiteral("subsection")]);
+    actionCollection()->addAction(QStringLiteral("rellinks_subsections"), kactionmenu_map[QStringLiteral("subsection")]);
 
-    connect(kactionmenu_map["subsection"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["subsection"]->setWhatsThis(i18n("<p>This menu references the subsections of the document.</p>"));
-    kactionmenu_map["subsection"]->setDelayed(false);
+    connect(kactionmenu_map[QStringLiteral("subsection")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("subsection")]->setWhatsThis(i18n("<p>This menu references the subsections of the document.</p>"));
+    kactionmenu_map[QStringLiteral("subsection")]->setDelayed(false);
 
-    kactionmenu_map["appendix"] = new KActionMenu(i18n("Appendix"), actionCollection());
-    actionCollection()->addAction("rellinks_appendix", kactionmenu_map["appendix"]);
+    kactionmenu_map[QStringLiteral("appendix")] = new KActionMenu(i18n("Appendix"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_appendix"), kactionmenu_map[QStringLiteral("appendix")]);
 
-    m_document->addAction(kactionmenu_map["appendix"]);
-    connect(kactionmenu_map["appendix"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["appendix"]->setWhatsThis(i18n("<p>This link references the appendix.</p>"));
-    kactionmenu_map["appendix"]->setDelayed(false);
+    m_document->addAction(kactionmenu_map[QStringLiteral("appendix")]);
+    connect(kactionmenu_map[QStringLiteral("appendix")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("appendix")]->setWhatsThis(i18n("<p>This link references the appendix.</p>"));
+    kactionmenu_map[QStringLiteral("appendix")]->setDelayed(false);
 
-    a = actionCollection()->addAction("rellinks_glossary");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_glossary"));
     a->setText(i18n("&Glossary"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+G"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+G")));
     a->setWhatsThis(i18n("<p>This link references the glossary.</p>"));
     m_document->addAction(a);
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_index");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_index"));
     a->setText(i18n("&Index"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+I"));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+I")));
     a->setWhatsThis(i18n("<p>This link references the index.</p>"));
     m_document->addAction(a);
     grp->addAction(a);
 
     // Other links
     m_more  = new KActionMenu(i18n("More"), actionCollection());
-    actionCollection()->addAction("rellinks_more", m_more);
+    actionCollection()->addAction(QStringLiteral("rellinks_more"), m_more);
     m_more->setWhatsThis(i18n("<p>This menu contains other important links.</p>"));
     m_more->setDelayed(false);
 
-    a = actionCollection()->addAction("rellinks_help");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_help"));
     a->setText(i18n("&Help"));
-    a->setIcon(KIcon("help-contents"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+H"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("help-contents")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+H")));
     a->setWhatsThis(i18n("<p>This link references the help.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_author");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_author"));
     a->setText(i18n("&Authors"));
-    a->setIcon(KIcon("x-office-contact"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+A"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("x-office-contact")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+A")));
     a->setWhatsThis(i18n("<p>This link references the author.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
 
-    a = actionCollection()->addAction("rellinks_copyright");
+    a = actionCollection()->addAction(QStringLiteral("rellinks_copyright"));
     a->setText(i18n("Copy&right"));
-    a->setIcon(KIcon("help-about"));
-    a->setShortcut(QKeySequence("Ctrl+Alt+R"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
+    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+R")));
     a->setWhatsThis(i18n("<p>This link references the copyright.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
 
-    kactionmenu_map["bookmark"] = new KActionMenu(KIcon("bookmarks"), i18n("Bookmarks"), actionCollection());
-    actionCollection()->addAction("rellinks_bookmarks", kactionmenu_map["bookmark"]);
-    m_more->addAction(kactionmenu_map["bookmark"]);
-    kactionmenu_map["bookmark"]->setWhatsThis(i18n("<p>This menu references the bookmarks.</p>"));
-    connect(kactionmenu_map["bookmark"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["bookmark"]->setDelayed(false);
+    kactionmenu_map[QStringLiteral("bookmark")] = new KActionMenu(QIcon::fromTheme(QStringLiteral("bookmarks")), i18n("Bookmarks"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_bookmarks"), kactionmenu_map[QStringLiteral("bookmark")]);
+    m_more->addAction(kactionmenu_map[QStringLiteral("bookmark")]);
+    kactionmenu_map[QStringLiteral("bookmark")]->setWhatsThis(i18n("<p>This menu references the bookmarks.</p>"));
+    connect(kactionmenu_map[QStringLiteral("bookmark")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("bookmark")]->setDelayed(false);
 
-    kactionmenu_map["alternate"] = new KActionMenu(i18n("Other Versions"), actionCollection());
-    actionCollection()->addAction("rellinks_other_versions", kactionmenu_map["alternate"]);
-    m_more->addAction(kactionmenu_map["alternate"]);
-    kactionmenu_map["alternate"]->setWhatsThis(i18n("<p>This link references the alternate versions of this document.</p>"));
-    connect(kactionmenu_map["alternate"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["alternate"]->setDelayed(false);
+    kactionmenu_map[QStringLiteral("alternate")] = new KActionMenu(i18n("Other Versions"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_other_versions"), kactionmenu_map[QStringLiteral("alternate")]);
+    m_more->addAction(kactionmenu_map[QStringLiteral("alternate")]);
+    kactionmenu_map[QStringLiteral("alternate")]->setWhatsThis(i18n("<p>This link references the alternate versions of this document.</p>"));
+    connect(kactionmenu_map[QStringLiteral("alternate")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("alternate")]->setDelayed(false);
 
     // Unclassified menu
-    m_links = new KActionMenu(KIcon("rellinks"), i18n("Miscellaneous"), actionCollection());
-    actionCollection()->addAction("rellinks_links", m_links);
-    kactionmenu_map["unclassified"] = m_links;
-    kactionmenu_map["unclassified"]->setWhatsThis(i18n("<p>Miscellaneous links.</p>"));
-    connect(kactionmenu_map["unclassified"]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
-    kactionmenu_map["unclassified"]->setDelayed(false);
+    m_links = new KActionMenu(QIcon::fromTheme(QStringLiteral("rellinks")), i18n("Miscellaneous"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("rellinks_links"), m_links);
+    kactionmenu_map[QStringLiteral("unclassified")] = m_links;
+    kactionmenu_map[QStringLiteral("unclassified")]->setWhatsThis(i18n("<p>Miscellaneous links.</p>"));
+    connect(kactionmenu_map[QStringLiteral("unclassified")]->menu(), &QMenu::triggered, this, &RelLinksPlugin::actionTriggered);
+    kactionmenu_map[QStringLiteral("unclassified")]->setDelayed(false);
 
     // We unactivate all the possible actions
     disableAll();
@@ -247,7 +247,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     // create polling timer and connect it
     m_pollTimer = new QTimer(this);
-    m_pollTimer->setObjectName("polling timer");
+    m_pollTimer->setObjectName(QStringLiteral("polling timer"));
     connect(m_pollTimer, SIGNAL(timeout()), this, SLOT(updateToolbar()));
 
     // delay access to our part's members until it has finished its initialisation
@@ -390,27 +390,27 @@ void RelLinksPlugin::updateToolbar()
 
         // escape ampersand before settings as action title, otherwise the menu entry will interpret it as an
         // accelerator
-        title.replace('&', "&&");
+        title.replace('&', QLatin1String("&&"));
 
         // -- Menus activation --
 
         // Activation of "Document" menu ?
-        if (lrel == "contents" || lrel == "glossary" || lrel == "index" || lrel == "appendix") {
+        if (lrel == QLatin1String("contents") || lrel == QLatin1String("glossary") || lrel == QLatin1String("index") || lrel == QLatin1String("appendix")) {
             m_document->setEnabled(true);
         }
         // Activation of "More" menu ?
-        if (lrel == "help" || lrel == "author" || lrel == "copyright") {
+        if (lrel == QLatin1String("help") || lrel == QLatin1String("author") || lrel == QLatin1String("copyright")) {
             m_more->setEnabled(true);
         }
 
         // -- Buttons or menu items activation / creation --
-        if (lrel == "bookmark" || lrel == "alternate") {
+        if (lrel == QLatin1String("bookmark") || lrel == QLatin1String("alternate")) {
             QAction *a = kactionmenu_map[lrel]->menu()->addAction(title);
             a->setData(QVariant::fromValue(e));
             m_more->setEnabled(true);
             kactionmenu_map[lrel]->setEnabled(true);
 
-        } else if (lrel == "appendix" || lrel == "chapter" || lrel == "section" || lrel == "subsection") {
+        } else if (lrel == QLatin1String("appendix") || lrel == QLatin1String("chapter") || lrel == QLatin1String("section") || lrel == QLatin1String("subsection")) {
             QAction *a = kactionmenu_map[lrel]->menu()->addAction(title);
             m_document->setEnabled(true);
             kactionmenu_map[lrel]->setEnabled(true);
@@ -431,8 +431,8 @@ void RelLinksPlugin::updateToolbar()
             } else {
                 // For the moment all the elements are reference in a separated menu
                 // TODO : reference the unknown ?
-                QAction *a = kactionmenu_map["unclassified"]->menu()->addAction(lrel + " : " + title);
-                kactionmenu_map["unclassified"]->setEnabled(true);
+                QAction *a = kactionmenu_map[QStringLiteral("unclassified")]->menu()->addAction(lrel + " : " + title);
+                kactionmenu_map[QStringLiteral("unclassified")]->setEnabled(true);
                 a->setData(QVariant::fromValue<DOM::Element>(e));
             }
 
@@ -462,7 +462,7 @@ void RelLinksPlugin::guessRelations()
     // - We make also sure the number is not preceded dirrectly by others number
     QRegExp rx("^(.*[=/?&][^=/?&.\\-0-9]*)([\\d]{1,3})([.&][^/0-9]{0,15})?$");
 
-    const QString zeros("0000");
+    const QString zeros(QStringLiteral("0000"));
     QString url = m_part->url().url();
     if (rx.indexIn(url) != -1) {
         uint val = rx.cap(2).toUInt();
@@ -478,7 +478,7 @@ void RelLinksPlugin::guessRelations()
         QString title = i18n("[Autodetected] %1", ref.prettyUrl());
         DOM::Element e = m_part->document().createElement("link");
         e.setAttribute("href", href);
-        QAction *a = actionCollection()->action("rellinks_next");
+        QAction *a = actionCollection()->action(QStringLiteral("rellinks_next"));
         a->setEnabled(true);
         a->setToolTip(title);
         a->setData(QVariant::fromValue(e));
@@ -493,7 +493,7 @@ void RelLinksPlugin::guessRelations()
             QString title = i18n("[Autodetected] %1", ref.prettyUrl());
             e = m_part->document().createElement("link");
             e.setAttribute("href", href);
-            QAction *a = actionCollection()->action("rellinks_prev");
+            QAction *a = actionCollection()->action(QStringLiteral("rellinks_prev"));
             a->setEnabled(true);
             a->setToolTip(title);
             a->setData(QVariant::fromValue(e));
@@ -558,47 +558,47 @@ void RelLinksPlugin::disableAll()
 QString RelLinksPlugin::getLinkType(const QString &lrel)
 {
     // Relations to ignore...
-    if (lrel.contains("stylesheet")
-            || lrel == "script"
-            || lrel == "icon"
-            || lrel == "shortcut icon"
-            || lrel == "prefetch") {
+    if (lrel.contains(QLatin1String("stylesheet"))
+            || lrel == QLatin1String("script")
+            || lrel == QLatin1String("icon")
+            || lrel == QLatin1String("shortcut icon")
+            || lrel == QLatin1String("prefetch")) {
         return QString();
     }
 
     // ...known relations...
-    if (lrel == "top" || lrel == "origin" || lrel == "start") {
-        return "home";
+    if (lrel == QLatin1String("top") || lrel == QLatin1String("origin") || lrel == QLatin1String("start")) {
+        return QStringLiteral("home");
     }
-    if (lrel == "parent") {
-        return "up";
+    if (lrel == QLatin1String("parent")) {
+        return QStringLiteral("up");
     }
-    if (lrel == "first") {
-        return "begin";
+    if (lrel == QLatin1String("first")) {
+        return QStringLiteral("begin");
     }
-    if (lrel == "previous") {
-        return "prev";
+    if (lrel == QLatin1String("previous")) {
+        return QStringLiteral("prev");
     }
-    if (lrel == "child") {
-        return "next";
+    if (lrel == QLatin1String("child")) {
+        return QStringLiteral("next");
     }
-    if (lrel == "end") {
-        return "last";
+    if (lrel == QLatin1String("end")) {
+        return QStringLiteral("last");
     }
-    if (lrel == "toc") {
-        return "contents";
+    if (lrel == QLatin1String("toc")) {
+        return QStringLiteral("contents");
     }
-    if (lrel == "find") {
-        return "search";
+    if (lrel == QLatin1String("find")) {
+        return QStringLiteral("search");
     }
-    if (lrel == "alternative stylesheet") {
-        return "alternate stylesheet";
+    if (lrel == QLatin1String("alternative stylesheet")) {
+        return QStringLiteral("alternate stylesheet");
     }
-    if (lrel == "authors") {
-        return "author";
+    if (lrel == QLatin1String("authors")) {
+        return QStringLiteral("author");
     }
-    if (lrel == "toc") {
-        return "contents";
+    if (lrel == QLatin1String("toc")) {
+        return QStringLiteral("contents");
     }
 
     //...unknown relations or name that don't need to change
@@ -610,20 +610,20 @@ QString RelLinksPlugin::transformRevToRel(const QString &rev)
     QString altRev = getLinkType(rev);
 
     // Known relations
-    if (altRev == "prev") {
-        return getLinkType("next");
+    if (altRev == QLatin1String("prev")) {
+        return getLinkType(QStringLiteral("next"));
     }
-    if (altRev == "next") {
-        return getLinkType("prev");
+    if (altRev == QLatin1String("next")) {
+        return getLinkType(QStringLiteral("prev"));
     }
-    if (altRev == "made") {
-        return getLinkType("author");
+    if (altRev == QLatin1String("made")) {
+        return getLinkType(QStringLiteral("author"));
     }
-    if (altRev == "up") {
-        return getLinkType("child");
+    if (altRev == QLatin1String("up")) {
+        return getLinkType(QStringLiteral("child"));
     }
-    if (altRev == "sibling") {
-        return getLinkType("sibling");
+    if (altRev == QLatin1String("sibling")) {
+        return getLinkType(QStringLiteral("sibling"));
     }
 
     //...unknown inverse relation => ignore for the moment

@@ -64,5 +64,5 @@ void KonqAnimatedLogo::setAnimatedLogoSize(const QSize &size)
 {
     setIconSize(size);
     const int sizeToLoad = qMin(size.width(), size.height());
-    setAnimationPath(KIconLoader::global()->iconPath("process-working-kde", -sizeToLoad));
+    setAnimationPath(KIconLoader::global()->iconPath(QStringLiteral("process-working-kde"), -sizeToLoad));
 }

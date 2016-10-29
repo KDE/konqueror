@@ -24,14 +24,14 @@
 SCWMainWindow::SCWMainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    QLabel *widget1 = new QLabel("widget1");
+    QLabel *widget1 = new QLabel(QStringLiteral("widget1"));
     setCentralWidget(widget1);
     QTimer::singleShot(10, this, SLOT(slotSwitchCentralWidget()));
 }
 
 void SCWMainWindow::slotSwitchCentralWidget()
 {
-    QLabel *widget2 = new QLabel("widget2");
+    QLabel *widget2 = new QLabel(QStringLiteral("widget2"));
     delete centralWidget(); // ## workaround for the crash
     setCentralWidget(widget2);
 }

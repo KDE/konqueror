@@ -43,9 +43,9 @@ AutoRefresh::AutoRefresh(QObject *parent, const QVariantList & /*args*/)
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(slotRefresh()));
 
-    refresher = actionCollection()->add<KSelectAction>("autorefresh");
+    refresher = actionCollection()->add<KSelectAction>(QStringLiteral("autorefresh"));
     refresher->setText(i18n("&Auto Refresh"));
-    refresher->setIcon(KIcon("view-refresh"));
+    refresher->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     connect(refresher, SIGNAL(triggered(QAction*)), this, SLOT(slotIntervalChanged()));
     QStringList sl;
     sl << i18n("None");

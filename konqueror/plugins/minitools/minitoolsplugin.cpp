@@ -46,8 +46,8 @@ MinitoolsPlugin::MinitoolsPlugin(QObject *parent, const QVariantList &)
 {
     m_part = (parent && parent->inherits("KHTMLPart")) ? static_cast<KHTMLPart *>(parent) : 0L;
 
-    m_pMinitoolsMenu = new KActionMenu(KIcon("minitools"), i18n("&Minitools"), actionCollection());
-    actionCollection()->addAction("minitools", m_pMinitoolsMenu);
+    m_pMinitoolsMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("minitools")), i18n("&Minitools"), actionCollection());
+    actionCollection()->addAction(QStringLiteral("minitools"), m_pMinitoolsMenu);
 
     m_pMinitoolsMenu->setDelayed(false);
     m_pMinitoolsMenu->setEnabled(true);
@@ -89,8 +89,8 @@ void MinitoolsPlugin::slotAboutToShow()
     if (m_minitoolsList.count() > 0) {
         MinitoolsList::ConstIterator e = m_minitoolsList.constBegin();
         for (; e != m_minitoolsList.constEnd(); ++e) {
-            if (((*e).first  == "-")
-                    && ((*e).second == "-")
+            if (((*e).first  == QLatin1String("-"))
+                    && ((*e).second == QLatin1String("-"))
                ) {
                 if (!gotSep) {
                     m_pMinitoolsMenu->menu()->addSeparator();
@@ -134,18 +134,18 @@ void MinitoolsPlugin::newBookmarkCallback(
 void MinitoolsPlugin::endFolderCallback()
 {
     kDebug(90150) << "MinitoolsPlugin::endFolderCallback";
-    m_minitoolsList.prepend(qMakePair(QString("-"), QString("-")));
+    m_minitoolsList.prepend(qMakePair(QStringLiteral("-"), QStringLiteral("-")));
 }
 
 QString MinitoolsPlugin::minitoolsFilename(bool local)
 {
-    return local ? KStandardDirs::locateLocal("data", QLatin1String("konqueror/minitools.xml"))
-           : KStandardDirs::locateLocal("data", QLatin1String("konqueror/minitools-global.xml"));
+    return local ? KStandardDirs::locateLocal("data", QStringLiteral("konqueror/minitools.xml"))
+           : KStandardDirs::locateLocal("data", QStringLiteral("konqueror/minitools-global.xml"));
 }
 
 void MinitoolsPlugin::slotEditBookmarks()
 {
-    KBookmarkManager *manager = KBookmarkManager::managerForFile(minitoolsFilename(true), "minitools");
+    KBookmarkManager *manager = KBookmarkManager::managerForFile(minitoolsFilename(true), QStringLiteral("minitools"));
     manager->slotEditBookmarks();
 }
 

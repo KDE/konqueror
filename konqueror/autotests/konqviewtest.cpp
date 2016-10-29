@@ -38,7 +38,7 @@ private Q_SLOTS:
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
         KonqOpenURLRequest req; req.forceAutoEmbed = true;
-        mainWindow.openUrl(0, QUrl("data:text/plain, Hello World"), "text/plain", req);
+        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/plain, Hello World")), QStringLiteral("text/plain"), req);
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -50,8 +50,8 @@ private Q_SLOTS:
         QVERIFY(view->supportsMimeType("text/html")); // it does, since that's a mimetype subclass
 
         // Now open HTML, as if we typed a URL in the location bar.
-        KonqOpenURLRequest req2; req2.typedUrl = "http://www.kde.org";
-        mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html", req2);
+        KonqOpenURLRequest req2; req2.typedUrl = QStringLiteral("http://www.kde.org");
+        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"), req2);
         qDebug() << view->service()->entryPath();
         QVERIFY(view->service()->entryPath() != firstService);
     }
@@ -69,10 +69,10 @@ private Q_SLOTS:
         QVERIFY(spyCompleted.wait(10000));
         QCOMPARE(view->serviceType(), QString("inode/directory"));
         qDebug() << view->internalViewMode();
-        view->setInternalViewMode("details");
+        view->setInternalViewMode(QStringLiteral("details"));
         QCOMPARE(view->internalViewMode(), QString("details"));
 
-        mainWindow.openUrl(0, QUrl("applications:/"));
+        mainWindow.openUrl(0, QUrl(QStringLiteral("applications:/")));
         QCOMPARE(static_cast<KParts::ReadOnlyPart *>(part), view->part());
         QCOMPARE(view->internalViewMode(), QString("details"));
     }

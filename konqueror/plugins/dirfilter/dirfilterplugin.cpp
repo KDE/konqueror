@@ -104,7 +104,7 @@ void SessionManager::save(const KUrl &url, const Filters &filters)
 
 void SessionManager::saveSettings()
 {
-    KConfig cfg("dirfilterrc", KConfig::NoGlobals);
+    KConfig cfg(QStringLiteral("dirfilterrc"), KConfig::NoGlobals);
     KConfigGroup group = cfg.group("General");
 
     group.writeEntry("ShowCount", showCount);
@@ -118,7 +118,7 @@ void SessionManager::loadSettings()
         return;
     }
 
-    KConfig cfg("dirfilterrc", KConfig::NoGlobals);
+    KConfig cfg(QStringLiteral("dirfilterrc"), KConfig::NoGlobals);
     KConfigGroup group = cfg.group("General");
 
     showCount = group.readEntry("ShowCount", false);
@@ -132,7 +132,7 @@ FilterBar::FilterBar(QWidget *parent)
     // Create close button
     QToolButton *closeButton = new QToolButton(this);
     closeButton->setAutoRaise(true);
-    closeButton->setIcon(KIcon("dialog-close"));
+    closeButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeButton->setToolTip(i18nc("@info:tooltip", "Hide Filter Bar"));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closeRequest()));
 
@@ -148,7 +148,7 @@ FilterBar::FilterBar(QWidget *parent)
     setFocusProxy(m_filterInput);
 
     m_typeFilterButton = new QPushButton(this);
-    m_typeFilterButton->setIcon(KIcon("view-filter"));
+    m_typeFilterButton->setIcon(QIcon::fromTheme(QStringLiteral("view-filter")));
     m_typeFilterButton->setText(i18nc("@label:button", "Filter by t&ype"));
     m_typeFilterButton->setToolTip(i18nc("@info:tooltip", "Filter items by file type."));
 
@@ -240,9 +240,9 @@ DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
         connect(notifyExt, SIGNAL(listingEvent(KParts::ListingNotificationExtension::NotificationEventType,KFileItemList)),
                 this, SLOT(slotListingEvent(KParts::ListingNotificationExtension::NotificationEventType,KFileItemList)));
 
-        QAction *action = actionCollection()->addAction(QLatin1String("filterdir"), this, SLOT(slotShowFilterBar()));
+        QAction *action = actionCollection()->addAction(QStringLiteral("filterdir"), this, SLOT(slotShowFilterBar()));
         action->setText(i18nc("@action:inmenu Tools", "Show Filter Bar"));
-        action->setIcon(KIcon("view-filter"));
+        action->setIcon(QIcon::fromTheme(QStringLiteral("view-filter")));
         action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_I);
     }
 }
@@ -286,7 +286,7 @@ void DirFilterPlugin::slotShowPopup()
     while (it.hasNext()) {
         it.next();
 
-        if (it.key().startsWith("inode")) {
+        if (it.key().startsWith(QLatin1String("inode"))) {
             inodes << it.key();
             continue;
         }
@@ -295,7 +295,7 @@ void DirFilterPlugin::slotShowPopup()
             label = it.value().mimeComment;
         } else {
             label = it.value().mimeComment;
-            label += "  (";
+            label += QLatin1String("  (");
             label += QString::number(it.value().filenames.size());
             label += ')';
         }
@@ -319,7 +319,7 @@ void DirFilterPlugin::slotShowPopup()
                 label = m_pMimeInfo[inode].mimeComment;
             } else {
                 label = m_pMimeInfo[inode].mimeComment;
-                label += "  (";
+                label += QLatin1String("  (");
                 label += QString::number(m_pMimeInfo[inode].filenames.size());
                 label += ')';
             }

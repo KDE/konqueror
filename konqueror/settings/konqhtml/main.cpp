@@ -59,23 +59,23 @@ K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
 KJSParts::KJSParts(QWidget *parent, const QVariantList &)
     : KCModule(parent)
 {
-    mConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    mConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     KAboutData *about =
-        new KAboutData("kcmkonqhtml", i18n("Konqueror Browsing Control Module"),
-                       "", "", KAboutLicense::GPL,
+        new KAboutData(QStringLiteral("kcmkonqhtml"), i18n("Konqueror Browsing Control Module"),
+                       QLatin1String(""), QLatin1String(""), KAboutLicense::GPL,
                        i18n("(c) 1999 - 2001 The Konqueror Developers"));
 
-    about->addAuthor(i18n("Waldo Bastian"), "", "bastian@kde.org");
-    about->addAuthor(i18n("David Faure"), "", "faure@kde.org");
-    about->addAuthor(i18n("Matthias Kalle Dalheimer"), "", "kalle@kde.org");
-    about->addAuthor(i18n("Lars Knoll"), "", "knoll@kde.org");
-    about->addAuthor(i18n("Dirk Mueller"), "", "mueller@kde.org");
-    about->addAuthor(i18n("Daniel Molkentin"), "", "molkentin@kde.org");
-    about->addAuthor(i18n("Wynn Wilkes"), "", "wynnw@caldera.com");
+    about->addAuthor(i18n("Waldo Bastian"), QLatin1String(""), QStringLiteral("bastian@kde.org"));
+    about->addAuthor(i18n("David Faure"), QLatin1String(""), QStringLiteral("faure@kde.org"));
+    about->addAuthor(i18n("Matthias Kalle Dalheimer"), QLatin1String(""), QStringLiteral("kalle@kde.org"));
+    about->addAuthor(i18n("Lars Knoll"), QLatin1String(""), QStringLiteral("knoll@kde.org"));
+    about->addAuthor(i18n("Dirk Mueller"), QLatin1String(""), QStringLiteral("mueller@kde.org"));
+    about->addAuthor(i18n("Daniel Molkentin"), QLatin1String(""), QStringLiteral("molkentin@kde.org"));
+    about->addAuthor(i18n("Wynn Wilkes"), QLatin1String(""), QStringLiteral("wynnw@caldera.com"));
 
     about->addCredit(i18n("Leo Savernik"), i18n("JavaScript access controls\n"
                      "Per-domain policies extensions"),
-                     "l.savernik@aon.at");
+                     QStringLiteral("l.savernik@aon.at"));
 
     setAboutData(about);
 
@@ -84,11 +84,11 @@ KJSParts::KJSParts(QWidget *parent, const QVariantList &)
     layout->addWidget(tab);
 
     // ### the groupname is duplicated in KJSParts::save
-    java = new KJavaOptions(mConfig, "Java/JavaScript Settings", this);
+    java = new KJavaOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), this);
     tab->addTab(java, i18n("&Java"));
     connect(java, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
 
-    javascript = new KJavaScriptOptions(mConfig, "Java/JavaScript Settings", this);
+    javascript = new KJavaScriptOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), this);
     tab->addTab(javascript, i18n("Java&Script"));
     connect(javascript, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
 }
@@ -117,7 +117,7 @@ void KJSParts::save()
     // Send signal to konqueror
     // Warning. In case something is added/changed here, keep kfmclient in sync
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 }
 

@@ -73,7 +73,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
 //KLocale::global()->insertCatalog("akregator_konqplugin");
 
     // make our icon foundable by the KIconLoader
-    KIconLoader::global()->addAppDir("akregator");
+    KIconLoader::global()->addAppDir(QStringLiteral("akregator"));
 
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (part) {
@@ -114,20 +114,20 @@ bool KonqFeedIcon::feedFound()
     KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
     QString doc;
     if (selectorInterface) {
-        QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll("head > link[rel=\"alternate\"]", KParts::SelectorInterface::EntireContent);
+        QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(QStringLiteral("head > link[rel=\"alternate\"]"), KParts::SelectorInterface::EntireContent);
         //kDebug() << linkNodes.length() << "links";
         for (int i = 0; i < linkNodes.count(); i++) {
             const KParts::SelectorInterface::Element element = linkNodes.at(i);
 
             // TODO parse the attributes directly here, rather than re-assembling
             // and then re-parsing in extractFromLinkTags!
-            doc += "<link ";
+            doc += QLatin1String("<link ");
             Q_FOREACH (const QString &attrName, element.attributeNames()) {
                 doc += attrName + "=\"";
-                doc += element.attribute(attrName).toHtmlEscaped().replace("\"", "&quot;");
-                doc += "\" ";
+                doc += element.attribute(attrName).toHtmlEscaped().replace(QLatin1String("\""), QLatin1String("&quot;"));
+                doc += QLatin1String("\" ");
             }
-            doc += "/>";
+            doc += QLatin1String("/>");
         }
         kDebug() << doc;
     }
@@ -147,13 +147,13 @@ void KonqFeedIcon::contextMenu()
         m_menu->addTitle(i18n("Add Feeds to Akregator"));
         int id = 0;
         for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
-            QAction *action = m_menu->addAction(KIcon("bookmark-new"), (*it).title(), this, SLOT(addFeed()));
+            QAction *action = m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), (*it).title(), this, SLOT(addFeed()));
             action->setData(qVariantFromValue(id));
             id++;
         }
         //disconnect(m_menu, SIGNAL(activated(int)), this, SLOT(addFeed(int)));
         m_menu->addSeparator();
-        m_menu->addAction(KIcon("bookmark-new"), i18n("Add All Found Feeds to Akregator"), this, SLOT(addFeeds()));
+        m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), i18n("Add All Found Feeds to Akregator"), this, SLOT(addFeeds()));
     }
     m_menu->popup(QCursor::pos());
 }
@@ -176,7 +176,7 @@ void KonqFeedIcon::addFeedIcon()
     m_feedIcon->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     m_feedIcon->setUseCursor(false);
 
-    m_feedIcon->setPixmap(KIconLoader::global()->loadIcon("feed", KIconLoader::User));
+    m_feedIcon->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("feed"), KIconLoader::User));
 
     m_feedIcon->setToolTip(i18n("Subscribe to site updates (using news feed)"));
 
@@ -225,10 +225,10 @@ void KonqFeedIcon::addFeeds()
     } else {
         kDebug() << "KonqFeedIcon::addFeeds(): use command line";
         KProcess proc;
-        proc << "akregator" << "-g" << i18n("Imported Feeds");
+        proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
 
         for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
-            proc << "-a" << fixRelativeURL((*it).url(), baseUrl(m_part));
+            proc << QStringLiteral("-a") << fixRelativeURL((*it).url(), baseUrl(m_part));
         }
 
         proc.startDetached();

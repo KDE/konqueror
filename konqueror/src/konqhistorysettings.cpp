@@ -42,11 +42,11 @@ KonqHistorySettings::KonqHistorySettings()
     m_fontOlderThan.setItalic(true);   // default
 
     new KonqHistorySettingsAdaptor(this);
-    const QString dbusPath = "/KonqHistorySettings";
-    const QString dbusInterface = "org.kde.Konqueror.SidebarHistorySettings";
+    const QString dbusPath = QStringLiteral("/KonqHistorySettings");
+    const QString dbusInterface = QStringLiteral("org.kde.Konqueror.SidebarHistorySettings");
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject(dbusPath, this);
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifySettingsChanged", this, SLOT(slotSettingsChanged()));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifySettingsChanged"), this, SLOT(slotSettingsChanged()));
 
     readSettings(false);
 }
@@ -67,7 +67,7 @@ void KonqHistorySettings::readSettings(bool reparse)
     m_valueYoungerThan = cg.readEntry("Value youngerThan", 1);
     m_valueOlderThan = cg.readEntry("Value olderThan", 2);
 
-    const QString days = QString::fromLatin1("days");
+    const QString days = QStringLiteral("days");
     const QString metricY = cg.readEntry("Metric youngerThan", days);
     m_metricYoungerThan = (metricY == days) ? DAYS : MINUTES;
     const QString metricO = cg.readEntry("Metric olderThan", days);
@@ -77,7 +77,7 @@ void KonqHistorySettings::readSettings(bool reparse)
     m_fontOlderThan   = cg.readEntry("Font olderThan", m_fontOlderThan);
 
     m_detailedTips = cg.readEntry("Detailed Tooltips", true);
-    m_sortsByName = cg.readEntry("SortHistory", "byDate") == "byName";
+    m_sortsByName = cg.readEntry("SortHistory", "byDate") == QLatin1String("byName");
 }
 
 void KonqHistorySettings::applySettings()
@@ -87,8 +87,8 @@ void KonqHistorySettings::applySettings()
     config.writeEntry("Value youngerThan", m_valueYoungerThan);
     config.writeEntry("Value olderThan", m_valueOlderThan);
 
-    const QString minutes = QString::fromLatin1("minutes");
-    const QString days = QString::fromLatin1("days");
+    const QString minutes = QStringLiteral("minutes");
+    const QString days = QStringLiteral("days");
     config.writeEntry("Metric youngerThan", m_metricYoungerThan == DAYS ?  days : minutes);
     config.writeEntry("Metric olderThan", m_metricOlderThan == DAYS ?  days : minutes);
 

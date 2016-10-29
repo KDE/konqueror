@@ -61,16 +61,16 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QToolButton *sortButton = new QToolButton(toolBar);
     sortButton->setText(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
-    sortButton->setIcon(QIcon::fromTheme("view-sort-ascending"));
+    sortButton->setIcon(QIcon::fromTheme(QStringLiteral("view-sort-ascending")));
     sortButton->setPopupMode(QToolButton::InstantPopup);
     sortButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QMenu *sortMenu = new QMenu(sortButton);
-    sortMenu->addAction(collection->action("byName"));
-    sortMenu->addAction(collection->action("byDate"));
+    sortMenu->addAction(collection->action(QStringLiteral("byName")));
+    sortMenu->addAction(collection->action(QStringLiteral("byDate")));
     sortButton->setMenu(sortMenu);
     toolBar->addWidget(sortButton);
     toolBar->addSeparator();
-    toolBar->addAction(collection->action("preferences"));
+    toolBar->addAction(collection->action(QStringLiteral("preferences")));
 
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_historyView);

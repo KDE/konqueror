@@ -50,7 +50,7 @@ enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPa
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
     : KCModule(/*KcmKonqHtmlFactory::componentData(),*/ parent)
 {
-    m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
 
@@ -151,13 +151,13 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 
 static StartPage urlToStartPageEnum(const QString &startUrl)
 {
-    if (startUrl == "about:blank") {
+    if (startUrl == QLatin1String("about:blank")) {
         return ShowBlankPage;
     }
-    if (startUrl == "about:" || startUrl == "about:konqueror") {
+    if (startUrl == QLatin1String("about:") || startUrl == QLatin1String("about:konqueror")) {
         return ShowAboutPage;
     }
-    if (startUrl == "bookmarks:" || startUrl == "bookmarks:/") {
+    if (startUrl == QLatin1String("bookmarks:") || startUrl == QLatin1String("bookmarks:/")) {
         return ShowBookmarksPage;
     }
     return ShowStartUrlPage;
@@ -193,12 +193,12 @@ void KKonqGeneralOptions::load()
     m_webEngineCombo->clear();
     // ## Well, the problem with using the trader to find the available parts, is that if a user
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
-    const KService::List partOfferList = KMimeTypeTrader::self()->query("text/html", "KParts/ReadOnlyPart", "not ('KParts/ReadWritePart' in ServiceTypes)");
+    const KService::List partOfferList = KMimeTypeTrader::self()->query(QStringLiteral("text/html"), QStringLiteral("KParts/ReadOnlyPart"), QStringLiteral("not ('KParts/ReadWritePart' in ServiceTypes)"));
     // Sorted list, so the first one is the preferred one, no need for a setCurrentIndex.
     Q_FOREACH (const KService::Ptr partService, partOfferList) {
         // We want only the HTML-capable parts, not any text/plain part (via inheritance)
         // This is a small "private inheritance" hack, pending a more general solution
-        if (!partService->hasMimeType("text/plain")) {
+        if (!partService->hasMimeType(QStringLiteral("text/plain"))) {
             m_webEngineCombo->addItem(partService->name(), QVariant(partService->storageId()));
         }
     }
@@ -245,7 +245,7 @@ void KKonqGeneralOptions::save()
 
     const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
     QString engineEntryName = preferredWebEngine;
-    if (engineEntryName.endsWith(".desktop")) { // turn the storageId into a desktopEntryName: remove .desktop
+    if (engineEntryName.endsWith(QLatin1String(".desktop"))) { // turn the storageId into a desktopEntryName: remove .desktop
         engineEntryName.truncate(engineEntryName.length() - 8);
     }
     //qDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
@@ -296,7 +296,7 @@ void KKonqGeneralOptions::save()
     }
     // Send signal to all konqueror instances
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
     emit changed(false);

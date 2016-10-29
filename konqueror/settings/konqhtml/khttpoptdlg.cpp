@@ -42,7 +42,7 @@ KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, cons
     lay->addStretch(10);
 
     // defaultCharsets = QString("utf-8 ")+klocale->charset()+" iso-8859-1";
-    defaultCharsets = QString("utf-8 ") + " iso-8859-1"; // TODO
+    defaultCharsets = QStringLiteral("utf-8 ") + " iso-8859-1"; // TODO
     // if lang=ru or uk then +cp1251+koi8u - these are most used encodings (though locale may/should be utf8) --nick shaforostoff
 
 }
@@ -51,7 +51,7 @@ void KHTTPOptions::load()
 {
     QString tmp;
     KConfigGroup cg(m_pConfig, "Browser Settings/HTTP");
-    tmp = cg.readEntry("AcceptLanguages", KLocale::global()->languageList().join(","));
+    tmp = cg.readEntry("AcceptLanguages", KLocale::global()->languageList().join(QStringLiteral(",")));
     le_languages->setText(tmp);
     tmp = cg.readEntry("AcceptCharsets", defaultCharsets);
     le_charsets->setText(tmp);
@@ -67,7 +67,7 @@ void KHTTPOptions::save()
 
 void KHTTPOptions::defaults()
 {
-    le_languages->setText(KLocale::global()->languageList().join(","));
+    le_languages->setText(KLocale::global()->languageList().join(QStringLiteral(",")));
     le_charsets->setText(defaultCharsets);
 }
 

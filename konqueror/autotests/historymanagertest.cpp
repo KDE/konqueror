@@ -91,9 +91,9 @@ void HistoryManagerTest::testAddHistoryEntry()
     qRegisterMetaType<KonqHistoryEntry>("KonqHistoryEntry");
     QSignalSpy addedSpy(&mgr, SIGNAL(entryAdded(KonqHistoryEntry)));
     QSignalSpy removedSpy(&mgr, SIGNAL(entryRemoved(KonqHistoryEntry)));
-    const QUrl url("http://user@historymgrtest.org/");
-    const QString typedUrl = "http://www.example.net";
-    const QString title = "The Title";
+    const QUrl url(QStringLiteral("http://user@historymgrtest.org/"));
+    const QString typedUrl = QStringLiteral("http://www.example.net");
+    const QString title = QStringLiteral("The Title");
     mgr.addPending(url, typedUrl, title);
 
     waitForAddedSignal(&mgr);

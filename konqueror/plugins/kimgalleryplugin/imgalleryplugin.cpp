@@ -56,9 +56,9 @@ K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
 KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent), m_commentMap(0)
 {
-    QAction *a = actionCollection()->addAction("create_img_gallery");
+    QAction *a = actionCollection()->addAction(QStringLiteral("create_img_gallery"));
     a->setText(i18n("&Create Image Gallery..."));
-    a->setIcon(KIcon("imagegallery"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("imagegallery")));
     a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
     connect(a, SIGNAL(triggered()), this, SLOT(slotExecute()));
 }
@@ -158,11 +158,11 @@ void KImGalleryPlugin::createCSSSection(QTextStream &stream)
 
 QString KImGalleryPlugin::extension(const QString &imageFormat)
 {
-    if (imageFormat == "PNG") {
-        return ".png";
+    if (imageFormat == QLatin1String("PNG")) {
+        return QStringLiteral(".png");
     }
-    if (imageFormat == "JPEG") {
-        return ".jpg";
+    if (imageFormat == QLatin1String("JPEG")) {
+        return QStringLiteral(".jpg");
     }
     Q_ASSERT(false);
     return QString();
@@ -184,7 +184,7 @@ void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirN
     if (m_recurseSubDirectories && subDirList.count() > 2) { //subDirList.count() is always >= 2 because of the "." and ".." directories
         stream << i18n("<i>Subfolders</i>:") << "<br>" << endl;
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd(); it++) {
-            if (*it == "." || *it == "..") {
+            if (*it == QLatin1String(".") || *it == QLatin1String("..")) {
                 continue;    //disregard the "." and ".." directories
             }
             stream << "<a href=\"" << *it << "/" << url.fileName()
@@ -274,7 +274,7 @@ bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName,
 
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd() && !m_cancelled; it++) {
             const QString currentDir = *it;
-            if (currentDir == "." || currentDir == "..") {
+            if (currentDir == QLatin1String(".") || currentDir == QLatin1String("..")) {
                 continue;   //disregard the "." and ".." directories
             }
             QDir subDir = QDir(url.directory() + '/' + currentDir);
@@ -311,14 +311,14 @@ bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName,
 
     // Create the "thumbs" subdirectory if necessary
     QDir thumb_dir(imgGalleryDir + QLatin1String("/thumbs/"));
-    if (createDirectory(thumb_dir, imgGalleryDir, "thumbs") == false) {
+    if (createDirectory(thumb_dir, imgGalleryDir, QStringLiteral("thumbs")) == false) {
         return false;
     }
 
     // Create the "images" subdirectory if necessary
     QDir images_dir(imgGalleryDir + QLatin1String("/images/"));
     if (m_copyFiles) {
-        if (createDirectory(images_dir, imgGalleryDir, "images") == false) {
+        if (createDirectory(images_dir, imgGalleryDir, QStringLiteral("images")) == false) {
             return false;
         }
     }
@@ -353,7 +353,7 @@ void KImGalleryPlugin::deleteCancelledGallery(const KUrl &url, const QString &so
         subDirList = toplevel_dir.entryList();
 
         for (QStringList::ConstIterator it = subDirList.constBegin(); it != subDirList.constEnd(); it++) {
-            if (*it == "." || *it == ".." || *it == "thumbs" || (m_copyFiles && *it == "images")) {
+            if (*it == QLatin1String(".") || *it == QLatin1String("..") || *it == QLatin1String("thumbs") || (m_copyFiles && *it == QLatin1String("images"))) {
                 continue; //disregard the "." and ".." directories
             }
             deleteCancelledGallery(KUrl(url.directory() + '/' + *it + '/' + url.fileName()),
@@ -365,7 +365,7 @@ void KImGalleryPlugin::deleteCancelledGallery(const KUrl &url, const QString &so
     const QString imgGalleryDir = url.directory();
     QDir thumb_dir(imgGalleryDir + QLatin1String("/thumbs/"));
     QDir images_dir(imgGalleryDir + QLatin1String("/images/"));
-    QDir imageDir(sourceDirName, "*.png *.PNG *.gif *.GIF *.jpg *.JPG *.jpeg *.JPEG *.bmp *.BMP",
+    QDir imageDir(sourceDirName, QStringLiteral("*.png *.PNG *.gif *.GIF *.jpg *.JPG *.jpeg *.JPEG *.bmp *.BMP"),
                   QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::Readable);
     QFile file(url.path());
 
@@ -409,8 +409,8 @@ void KImGalleryPlugin::loadCommentFile()
             curLine = m_textStream->readLine();
             curLineStripped = curLine.trimmed();
             // Lines starting with '#' are comment
-            if (!(curLineStripped.isEmpty()) && !curLineStripped.startsWith("#")) {
-                if (curLineStripped.endsWith(":")) {
+            if (!(curLineStripped.isEmpty()) && !curLineStripped.startsWith(QLatin1String("#"))) {
+                if (curLineStripped.endsWith(QLatin1String(":"))) {
                     picComment.clear();
                     picName = curLineStripped.left(curLineStripped.length() - 1);
                     kDebug(90170) << "picName: " << picName;
@@ -420,7 +420,7 @@ void KImGalleryPlugin::loadCommentFile()
                         picComment += curLine + '\n';
                         curLine = m_textStream->readLine();
                     } while (!m_textStream->atEnd() && !(curLine.trimmed().isEmpty()) &&
-                             !curLine.trimmed().startsWith("#"));
+                             !curLine.trimmed().startsWith(QLatin1String("#")));
                     //kDebug(90170) << "Pic comment: " << picComment;
                     m_commentMap->insert(picName, picComment);
                 }

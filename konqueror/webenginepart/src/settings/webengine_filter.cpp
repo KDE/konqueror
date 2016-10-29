@@ -274,12 +274,12 @@ void FilterSet::addFilter(const QString& filterStr)
             --last;
 
         if (first > last)
-            filter = QLatin1String("*"); // erm... Well, they asked for it.
+            filter = QStringLiteral("*"); // erm... Well, they asked for it.
         else
             filter = filter.mid(first, last - first + 1);
 
         // Now, do we still have any wildcard stuff left?
-        if (filter.contains("*"))
+        if (filter.contains(QLatin1String("*")))
         {
             // check if we can use RK first (and then check full RE for the rest) for better performance
             int aPos = filter.indexOf('*');

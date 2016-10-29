@@ -40,14 +40,14 @@ ValidatorsDialog::ValidatorsDialog(QWidget *parent)
     m_internalUi.setupUi(internalConfiguration);
     internalConfiguration->layout()->setMargin(0);
     KPageWidgetItem *internalConfigurationItem = addPage(internalConfiguration, i18n("Internal Validation"));
-    internalConfigurationItem->setIcon(KIcon("validators"));
+    internalConfigurationItem->setIcon(QIcon::fromTheme("validators"));
 #endif
 
     QWidget *remoteConfiguration = new QWidget();
     m_remoteUi.setupUi(remoteConfiguration);
     remoteConfiguration->layout()->setMargin(0);
     KPageWidgetItem *remoteConfigurationItem = addPage(remoteConfiguration, i18n("Remote Validation"));
-    remoteConfigurationItem->setIcon(KIcon("validators"));
+    remoteConfigurationItem->setIcon(QIcon::fromTheme(QStringLiteral("validators")));
 
     connect(this, SIGNAL(okClicked()), this, SLOT(slotOk()));
     connect(this, SIGNAL(cancelClicked()), this, SLOT(slotCancel()));

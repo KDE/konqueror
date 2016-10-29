@@ -96,7 +96,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
     }
 
     // http URLs without a path will get redirected immediately to url + '/'
-    if (_url.path().isEmpty() && _url.scheme().startsWith("http")) {
+    if (_url.path().isEmpty() && _url.scheme().startsWith(QLatin1String("http"))) {
         return;
     }
 
@@ -156,7 +156,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
 void KonqHistoryManager::insert(const QString &url)
 {
     QUrl u(url);
-    if (!filterOut(u) || u.scheme() == "about") {     // remote URL
+    if (!filterOut(u) || u.scheme() == QLatin1String("about")) {     // remote URL
         return;
     }
     // Local URL -> add to history

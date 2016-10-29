@@ -56,8 +56,8 @@ KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
 
     m_path = path;
     setWindowTitle(i18nc("@title:window", "Create Image Gallery"));
-    KGuiItem::assign(buttonBox()->button(QDialogButtonBox::Ok), KGuiItem(i18n("Create"), "imagegallery"));
-    m_config = new KConfig("kimgallerypluginrc", KConfig::NoGlobals);
+    KGuiItem::assign(buttonBox()->button(QDialogButtonBox::Ok), KGuiItem(i18n("Create"), QStringLiteral("imagegallery")));
+    m_config = new KConfig(QStringLiteral("kimgallerypluginrc"), KConfig::NoGlobals);
     setupLookPage(path);
     setupDirectoryPage(path);
     setupThumbnailPage(path);
@@ -85,10 +85,10 @@ void KIGPDialog::slotDefault()
     m_commentFileReq->setUrl(QUrl::fromLocalFile(m_path + "comments"));
     m_commentFileReq->setEnabled(false);
 
-    m_imageFormat->setItemText(m_imageFormat->currentIndex(), "JPEG");
+    m_imageFormat->setItemText(m_imageFormat->currentIndex(), QStringLiteral("JPEG"));
     m_thumbnailSize->setValue(140);
     m_colorDepthSet->setChecked(false);
-    m_colorDepth->setItemText(m_colorDepth->currentIndex(), "8");
+    m_colorDepth->setItemText(m_colorDepth->currentIndex(), QStringLiteral("8"));
 }
 
 void KIGPDialog::setupLookPage(const QString &path)
@@ -314,7 +314,7 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
 
     m_imageFormat = new QComboBox(page);
     QStringList lstImgageFormat;
-    lstImgageFormat << "JPEG" << "PNG";
+    lstImgageFormat << QStringLiteral("JPEG") << QStringLiteral("PNG");
     m_imageFormat->addItems(lstImgageFormat);
     m_imageFormat->setItemText(m_imageFormat->currentIndex(), group.readEntry("ImageFormat", "JPEG"));
 
@@ -344,7 +344,7 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
 
     m_colorDepth = new QComboBox(page);
     QStringList lst;
-    lst << "1" << "8" << "16" << "32";
+    lst << QStringLiteral("1") << QStringLiteral("8") << QStringLiteral("16") << QStringLiteral("32");
     m_colorDepth->addItems(lst);
     m_colorDepth->setItemText(m_colorDepth->currentIndex(), group.readEntry("ColorDepth", "8"));
     m_colorDepth->setEnabled(colorDepthSet);

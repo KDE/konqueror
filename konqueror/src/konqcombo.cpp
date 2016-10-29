@@ -207,7 +207,7 @@ void KonqCombo::setURL(const QString &url)
 
     if (m_returnPressed) {   // Really insert...
         m_returnPressed = false;
-        QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "addToCombo");
+        QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("addToCombo"));
         message << url;
         QDBusConnection::sessionBus().send(message);
     }
@@ -427,7 +427,7 @@ void KonqCombo::saveItems()
 
     KConfigGroup locationBarGroup(s_config, "Location Bar");
     locationBarGroup.writePathEntry("ComboContents", items);
-    KonqPixmapProvider::self()->save(locationBarGroup, "ComboIconCache", items);
+    KonqPixmapProvider::self()->save(locationBarGroup, QStringLiteral("ComboIconCache"), items);
 
     s_config->sync();
 }
@@ -548,7 +548,7 @@ void KonqCombo::selectWord(QKeyEvent *e)
 
 void KonqCombo::slotCleared()
 {
-    QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "comboCleared");
+    QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("comboCleared"));
     QDBusConnection::sessionBus().send(message);
 }
 
@@ -744,7 +744,7 @@ QVariant KonqListWidgetItem::data(int role) const
 
         if (!title.isEmpty()) {
             pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
-        } else if (text().indexOf("://") == -1) {
+        } else if (text().indexOf(QLatin1String("://")) == -1) {
             title = titleOfURL("http://" + text());
             if (!title.isEmpty()) {
                 pixmap = provider->pixmapFor("http://" + text(), KIconLoader::SizeSmall);

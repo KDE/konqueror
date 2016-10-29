@@ -38,7 +38,7 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     QHBoxLayout *titleLayout = new QHBoxLayout();
     mainLayout->addLayout(titleLayout);
     QLabel *iconLabel = new QLabel(this);
-    KIcon wsIcon("preferences-web-browser-shortcuts");
+    KIcon wsIcon(QStringLiteral("preferences-web-browser-shortcuts"));
     iconLabel->setPixmap(wsIcon.pixmap(22, 22));
     titleLayout->addWidget(iconLabel);
     m_searchTitleLabel = new QLabel(i18n("Set Uri Shortcuts"), this);

@@ -85,12 +85,12 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     connect(m_searchCombo, SIGNAL(suggestionEnabled(bool)), this, SLOT(enableSuggestion(bool)));
 
     m_searchComboAction = new QWidgetAction(actionCollection());
-    actionCollection()->addAction("toolbar_search_bar", m_searchComboAction);
+    actionCollection()->addAction(QStringLiteral("toolbar_search_bar"), m_searchComboAction);
     m_searchComboAction->setText(i18n("Search Bar"));
     m_searchComboAction->setDefaultWidget(m_searchCombo);
     actionCollection()->setShortcutsConfigurable(m_searchComboAction, false);
 
-    QAction *a = actionCollection()->addAction("focus_search_bar");
+    QAction *a = actionCollection()->addAction(QStringLiteral("focus_search_bar"));
     a->setText(i18n("Focus Searchbar"));
     actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_S));
     connect(a, SIGNAL(triggered()), this, SLOT(focusSearchbar()));
@@ -112,8 +112,8 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     connect(m_openSearchManager, SIGNAL(openSearchEngineAdded(QString,QString,QString)),
             SLOT(openSearchEngineAdded(QString,QString,QString)));
 
-    QDBusConnection::sessionBus().connect(QString(), QString(), "org.kde.KUriFilterPlugin",
-                                          "configure", this, SLOT(reloadConfiguration()));
+    QDBusConnection::sessionBus().connect(QString(), QString(), QStringLiteral("org.kde.KUriFilterPlugin"),
+                                          QStringLiteral("configure"), this, SLOT(reloadConfiguration()));
 }
 
 SearchBarPlugin::~SearchBarPlugin()
@@ -178,7 +178,7 @@ void SearchBarPlugin::nextSearchEntry()
     if (m_searchMode == FindInThisPage) {
         m_searchMode = UseSearchProvider;
         if (m_searchEngines.isEmpty()) {
-            m_currentEngine = QLatin1String("google");
+            m_currentEngine = QStringLiteral("google");
         } else {
             m_currentEngine = m_searchEngines.first();
         }
@@ -198,7 +198,7 @@ void SearchBarPlugin::previousSearchEntry()
     if (m_searchMode == FindInThisPage) {
         m_searchMode = UseSearchProvider;
         if (m_searchEngines.isEmpty()) {
-            m_currentEngine = QLatin1String("google");
+            m_currentEngine = QStringLiteral("google");
         } else {
             m_currentEngine =  m_searchEngines.last();
         }
@@ -265,7 +265,7 @@ void SearchBarPlugin::startSearch(const QString &search)
 void SearchBarPlugin::setIcon()
 {
     if (m_searchMode == FindInThisPage) {
-        m_searchIcon = SmallIcon("edit-find");
+        m_searchIcon = SmallIcon(QStringLiteral("edit-find"));
     } else {
         const QString engine = (m_currentEngine.isEmpty() ? m_searchEngines.first() : m_currentEngine);
         //kDebug() << "Icon Name:" << m_searchProviders.value(engine).iconName();
@@ -305,10 +305,10 @@ void SearchBarPlugin::showSelectionMenu()
 
     if (!m_popupMenu) {
         m_popupMenu = new QMenu(m_searchCombo);
-        m_popupMenu->setObjectName("search selection menu");
+        m_popupMenu->setObjectName(QStringLiteral("search selection menu"));
 
         if (enableFindInPage()) {
-            m_popupMenu->addAction(QIcon::fromTheme("edit-find"), i18n("Find in This Page"), this, SLOT(useFindInThisPage()));
+            m_popupMenu->addAction(QIcon::fromTheme(QStringLiteral("edit-find")), i18n("Find in This Page"), this, SLOT(useFindInThisPage()));
             m_popupMenu->addSeparator();
         }
 
@@ -319,7 +319,7 @@ void SearchBarPlugin::showSelectionMenu()
         }
 
         m_popupMenu->addSeparator();
-        m_popupMenu->addAction(QIcon::fromTheme("preferences-web-browser-shortcuts"), i18n("Select Search Engines..."),
+        m_popupMenu->addAction(QIcon::fromTheme(QStringLiteral("preferences-web-browser-shortcuts")), i18n("Select Search Engines..."),
                                this, SLOT(selectSearchEngines()));
         connect(m_popupMenu, SIGNAL(triggered(QAction*)), SLOT(menuActionTriggered(QAction*)));
     } else {
@@ -389,7 +389,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KRun::runCommand("kcmshell5 webshortcuts", (m_part ? m_part.data()->widget() : 0));
+    KRun::runCommand(QStringLiteral("kcmshell5 webshortcuts"), (m_part ? m_part.data()->widget() : 0));
 }
 
 void SearchBarPlugin::configurationChanged()
@@ -402,7 +402,7 @@ void SearchBarPlugin::configurationChanged()
 
     KUriFilterData data;
     data.setSearchFilteringOptions(KUriFilterData::RetrievePreferredSearchProvidersOnly);
-    data.setAlternateDefaultSearchProvider(QLatin1String("google"));
+    data.setAlternateDefaultSearchProvider(QStringLiteral("google"));
 
     if (KUriFilter::self()->filterSearchUri(data, KUriFilter::NormalTextFilter)) {
         m_delimiter = data.searchTermSeparator();
@@ -417,7 +417,7 @@ void SearchBarPlugin::configurationChanged()
     //kDebug() << "Found search engines:" << m_searchEngines;
     KConfigGroup config = KConfigGroup(KSharedConfig::openConfig(), "SearchBar");
     m_searchMode = (SearchModes) config.readEntry("Mode", static_cast<int>(UseSearchProvider));
-    const QString defaultSearchEngine((m_searchEngines.isEmpty() ?  QString::fromLatin1("google") : m_searchEngines.first()));
+    const QString defaultSearchEngine((m_searchEngines.isEmpty() ?  QStringLiteral("google") : m_searchEngines.first()));
     m_currentEngine = config.readEntry("CurrentEngine", defaultSearchEngine);
     m_suggestionEnabled = config.readEntry("SuggestionEnabled", true);
 
@@ -500,12 +500,12 @@ void SearchBarPlugin::HTMLDocLoaded()
         //if (headElelement.getAttribute("profile") != "http://a9.com/-/spec/opensearch/1.1/") {
         //    kWarning() << "Warning: there is no profile attribute or wrong profile attribute in <head>, as specified by open search specification 1.1";
         //}
-        const QString query(QLatin1String("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
+        const QString query(QStringLiteral("head > link[rel=\"search\"][type=\"application/opensearchdescription+xml\"]"));
         const QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(query, KParts::SelectorInterface::EntireContent);
         //kDebug() << "Found" << linkNodes.length() << "links in" << m_part->url();
         Q_FOREACH (const KParts::SelectorInterface::Element &link, linkNodes) {
-            const QString title = link.attribute("title");
-            const QString href = link.attribute("href");
+            const QString title = link.attribute(QStringLiteral("title"));
+            const QString href = link.attribute(QStringLiteral("href"));
             //kDebug() << "Found opensearch" << title << href;
             m_openSearchDescs.insert(title, href);
             // TODO associate this with m_part; we can get descs from multiple tabs here...
@@ -553,7 +553,7 @@ void SearchBarPlugin::webShortcutSet(const QString &name, const QString &webShor
     _service.sync();
 
     // Update filters in running applications including ourselves...
-    QDBusConnection::sessionBus().send(QDBusMessage::createSignal("/", "org.kde.KUriFilterPlugin", "configure"));
+    QDBusConnection::sessionBus().send(QDBusMessage::createSignal(QStringLiteral("/"), QStringLiteral("org.kde.KUriFilterPlugin"), QStringLiteral("configure")));
 
     // If the providers changed, tell sycoca to rebuild its database...
     KBuildSycocaProgressDialog::rebuildKSycoca(m_searchCombo);

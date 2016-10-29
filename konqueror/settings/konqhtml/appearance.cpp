@@ -32,7 +32,7 @@ enum SmoothScrollingType { SmoothScrollingAlways = 0, SmoothScrollingNever = 1, 
 enum UnderlineLinkType { UnderlineAlways = 0, UnderlineNever = 1, UnderlineHover = 2 };
 
 KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent), m_groupname("HTML Settings"),
+    : KCModule(parent), m_groupname(QStringLiteral("HTML Settings")),
       fSize(10), fMinSize(HTML_DEFAULT_MIN_FONT_SIZE)
 
 {
@@ -122,7 +122,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
 
     l->addStretch(5);
 
-    m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     setQuickHelp(i18n("<h1>Konqueror Fonts</h1>On this page, you can configure "
                       "which fonts Konqueror should use to display the web "
                       "pages you view.") + "<br /><br />" + cssConfig->whatsThis());
@@ -309,7 +309,7 @@ static int stringToIndex(const char *const *possibleValues, int possibleValuesCo
 
 void KAppearanceOptions::load()
 {
-    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals), "");
+    KConfigGroup khtmlrc(KSharedConfig::openConfig(QStringLiteral("khtmlrc"), KConfig::NoGlobals), "");
     KConfigGroup cg(m_pConfig, "");
 #define SET_GROUP(x) cg = KConfigGroup(m_pConfig,x); khtmlrc = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),x)
 #define READ_NUM(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
@@ -331,7 +331,7 @@ void KAppearanceOptions::load()
     defaultFonts.append(HTML_DEFAULT_VIEW_SANSSERIF_FONT);
     defaultFonts.append(HTML_DEFAULT_VIEW_CURSIVE_FONT);
     defaultFonts.append(HTML_DEFAULT_VIEW_FANTASY_FONT);
-    defaultFonts.append(QString("0"));   // default font size adjustment
+    defaultFonts.append(QStringLiteral("0"));   // default font size adjustment
 
     if (cg.hasKey("Fonts")) {
         fonts = cg.readEntry("Fonts", QStringList());
@@ -414,7 +414,7 @@ void KAppearanceOptions::save()
     //TODO move to behaviour
     // If the user chose "Use language encoding", write an empty string
     if (encodingName == i18n("Use Language Encoding")) {
-        encodingName = "";
+        encodingName = QLatin1String("");
     }
     cg.writeEntry("DefaultEncoding", encodingName);
 
@@ -431,7 +431,7 @@ void KAppearanceOptions::save()
     cg.sync();
     // Send signal to all konqueror instances
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
     emit changed(false);

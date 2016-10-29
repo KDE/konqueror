@@ -91,7 +91,7 @@ public:
 
         setupUI();
 
-        QUrl qurl(KUriFilter::self()->filteredUri(url, QStringList() << "kshorturifilter"));
+        QUrl qurl(KUriFilter::self()->filteredUri(url, QStringList() << QStringLiteral("kshorturifilter")));
         if (qurl.isValid()) {
             urlEdit->setText(qurl.toEncoded());
             view->openUrl(qurl);
@@ -114,7 +114,7 @@ public:
 protected slots:
 
     void changeLocation() {
-        QUrl url (KUriFilter::self()->filteredUri(urlEdit->text(), QStringList() << "kshorturifilter"));
+        QUrl url (KUriFilter::self()->filteredUri(urlEdit->text(), QStringList() << QStringLiteral("kshorturifilter")));
         view->openUrl(url);
         view->view()->setFocus(Qt::OtherFocusReason);
     }
@@ -193,7 +193,7 @@ protected slots:
         bool ok;
         QString str = QInputDialog::getText(this, i18nc("input dialog window title for selecting html elements", "Select elements"),
                                             i18nc("input dialog text for selecting html elements", "Choose elements"), QLineEdit::Normal,
-                                            QLatin1String("a"), &ok);
+                                            QStringLiteral("a"), &ok);
         if (ok && !str.isEmpty()) {
             //QWebElementCollection collection = view->page()->mainFrame()->findAllElements(str);
             //const int count = collection.count();
@@ -236,7 +236,7 @@ private:
         urlEdit->setCompleter(completer);
         completer->setModel(&urlModel);
 
-        QToolBar *bar = addToolBar("Navigation");
+        QToolBar *bar = addToolBar(QStringLiteral("Navigation"));
         bar->addAction(view->view()->pageAction(QWebEnginePage::Back));
         bar->addAction(view->view()->pageAction(QWebEnginePage::Forward));
         bar->addAction(view->view()->pageAction(QWebEnginePage::Reload));
@@ -383,7 +383,7 @@ private:
 
 int main(int argc, char **argv)
 {
-    KAboutData about("KDELauncher", i18n("KDELauncher"), "0.0000013");
+    KAboutData about(QStringLiteral("KDELauncher"), i18n("KDELauncher"), QStringLiteral("0.0000013"));
     QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);
@@ -394,7 +394,7 @@ int main(int argc, char **argv)
     parser.process(app);
     about.processCommandLine(&parser);
 
-    QString url = QString("%1/%2").arg(QDir::homePath()).arg(QLatin1String("index.html"));
+    QString url = QStringLiteral("%1/%2").arg(QDir::homePath()).arg(QStringLiteral("index.html"));
 
 //    QWebEngineSettings::globalSettings()->setMaximumPagesInCache(4);
 
@@ -405,7 +405,7 @@ int main(int argc, char **argv)
 
     const QStringList args = app.arguments();
 
-    if (args.contains(QLatin1String("-r"))) {
+    if (args.contains(QStringLiteral("-r"))) {
         // robotized
         QString listFile = args.at(2);
         if (!(args.count() == 3) && QFile::exists(listFile)) {

@@ -177,9 +177,9 @@ ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart
     setMainWidget(m_widget);
 
     KUrl srcURL = part->url();
-    m_widget->urlLabel->setText(QString("<a href=\"") + srcURL.url() + "\">" +
+    m_widget->urlLabel->setText(QStringLiteral("<a href=\"") + srcURL.url() + "\">" +
                                 KStringHandler::csqueeze(srcURL.prettyUrl(), 80) + "</a>");
-    m_widget->targetLabel->setText(QString("<a href=\"") + filename + "\">" +
+    m_widget->targetLabel->setText(QStringLiteral("<a href=\"") + filename + "\">" +
                                    KStringHandler::csqueeze(filename, 80) + "</a>");
 
     //if(part->document().ownerDocument().isNull())
@@ -187,7 +187,7 @@ ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart
     //else
     //   m_document = part->document().ownerDocument();
 
-    m_tarBall = new KTar(filename, "application/x-gzip");
+    m_tarBall = new KTar(filename, QStringLiteral("application/x-gzip"));
     m_archiveTime = QDateTime::currentDateTime();
 }
 
@@ -381,13 +381,13 @@ KIO::Job *ArchiveDialog::startDownload(const KUrl &url, KHTMLPart *part)
     KIO::Job *job = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
 
     // Use entry from cache only. Avoids re-downloading. Requires modified kio_http slave.
-    job->addMetaData("cache", patchedHttpSlave ? "cacheonly" : "cache");
+    job->addMetaData(QStringLiteral("cache"), patchedHttpSlave ? "cacheonly" : "cache");
 
     // This is a duplication of the code in loader.cpp: Loader::servePendingRequests()
 
     //job->addMetaData("accept", req->object->accept());
-    job->addMetaData("referrer", part->url().url());
-    job->addMetaData("cross-domain", part->toplevelURL().url());
+    job->addMetaData(QStringLiteral("referrer"), part->url().url());
+    job->addMetaData(QStringLiteral("cross-domain"), part->toplevelURL().url());
 
     return job;
 }
@@ -606,13 +606,13 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
     //QString indent;
     //indent.fill(' ', level*2);
 
-    QString htmlFileName = (level == 0) ? "index.html" : part->url().fileName();
+    QString htmlFileName = (level == 0) ? QStringLiteral("index.html") : part->url().fileName();
 
     // Add .html extension if not found already.  This works around problems with frames,
     // where the frame is for example "framead.php".  The http-io-slave gets the mimetype
     // from the webserver, but files in a tar archive do not have such metadata.  The result
     // is that Konqueror asks "save 'adframe.php' to file?" without this measure.
-    htmlFileName = appendMimeTypeSuffix(htmlFileName, "text/html");
+    htmlFileName = appendMimeTypeSuffix(htmlFileName, QStringLiteral("text/html"));
 
     // If level == 0, the m_tarName2part map is empty and so uniqTarName will return "index.html" unchanged.
     uniqTarName(htmlFileName, part);
@@ -685,7 +685,7 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
                                   raw2full, data);
         }
 
-        if (nodeName == "BASE") {
+        if (nodeName == QLatin1String("BASE")) {
             data.baseSeen = true;
         }
 
@@ -895,7 +895,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
     bool skipElement   = false;
     bool fullEmptyTags = false;
     bool hasChildren   = const_cast<DOM::Node &>(pNode).hasChildNodes();
-    QString text = "";
+    QString text = QLatin1String("");
 
     bool isElement = !pNode.isNull() && (pNode.nodeType() == DOM::Node::ELEMENT_NODE);
 
@@ -905,10 +905,10 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
         URLsInStyleElement::Iterator style_it = m_URLsInStyleElement.find(element);
         bool hasStyle = (style_it != m_URLsInStyleElement.end());
 
-        if ((nodeName == "META") && hasAttrWithValue(element, "HTTP-EQUIV", "CONTENT-TYPE")) {
+        if ((nodeName == QLatin1String("META")) && hasAttrWithValue(element, QStringLiteral("HTTP-EQUIV"), QStringLiteral("CONTENT-TYPE"))) {
             // Skip content-type meta tag, we provide our own.
             skipElement = true;
-        } else if ((nodeName == "NOFRAMES") && !hasChildren) {
+        } else if ((nodeName == QLatin1String("NOFRAMES")) && !hasChildren) {
             skipElement = true;
         } else {
 
@@ -922,10 +922,10 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
             // make URLs in hyperref links absolute
             if (eurls.absURL != invalid) {
-                KUrl baseurl = absoluteURL("", data);
+                KUrl baseurl = absoluteURL(QLatin1String(""), data);
                 KUrl newurl = KUrl(baseurl, parseURL((*eurls.absURL).value));
                 if (urlCheckFailed(data.part, newurl)) {
-                    (*eurls.absURL).value = "";
+                    (*eurls.absURL).value = QLatin1String("");
                     kDebug(90110) << "removing invalid/insecure href='" << newurl << "'";
                 } else {
                     //
@@ -935,7 +935,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     //
                     assert(! newurl.hasSubUrl());   // @see urlCheckFailed()
                     if (newurl.hasFragment() && baseurl.equals(newurl, KUrl::CompareWithoutFragment)) {
-                        (*eurls.absURL).value = QString("#") + newurl.fragment();
+                        (*eurls.absURL).value = QStringLiteral("#") + newurl.fragment();
                     } else {
                         (*eurls.absURL).value = newurl.url();
                     }
@@ -951,7 +951,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 UrlTarMap::Iterator it = m_url2tar.find(fullURL);
                 if (it == m_url2tar.end()) {
 
-                    (*eurls.transURL).value = "";
+                    (*eurls.transURL).value = QLatin1String("");
                     kDebug(90110) << "removing invalid/insecure link='" << fullURL << "'";
 
                 } else {
@@ -969,7 +969,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 if (it == m_url2tar.end()) {
 
                     kDebug(90110) << "removing invalid/insecure CSS link='" << fullURL << "'";
-                    (*eurls.cssURL).value = "";
+                    (*eurls.cssURL).value = QLatin1String("");
 
                 } else {
 //                     assert( !it.value().tarName.isNull() );
@@ -994,7 +994,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
                     // Always add a 'src' attribute.  If it's not there, add one
                     if (eurls.frameURL == invalid) {
-                        eurls.attrList.prepend(AttrElem(QString("src"), QString::null));
+                        eurls.attrList.prepend(AttrElem(QStringLiteral("src"), QString::null));
                         eurls.frameURL = eurls.attrList.begin();
 
                         // NOTE Now that we changed the list, pray the older iterators of 'attrList' still work...
@@ -1032,20 +1032,20 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             }
 
             // Remove <base href=... > attribute
-            if (nodeName == "BASE") {
-                filterOut1 = getAttribute(eurls.attrList, "href");
+            if (nodeName == QLatin1String("BASE")) {
+                filterOut1 = getAttribute(eurls.attrList, QStringLiteral("href"));
                 data.baseSeen = true;
             }
 
             // Insert <head> tag if not found
-            if (nodeName == "HTML") {
-                if (!hasChildNode(pNode, "HEAD")) {
+            if (nodeName == QLatin1String("HTML")) {
+                if (!hasChildNode(pNode, QStringLiteral("HEAD"))) {
                     text += "<head>" CONTENT_TYPE "</head>\n";
                 }
                 fullEmptyTags = true;
                 // Always write out full closing tags for some tags
-            } else if (nodeName == "HEAD" || nodeName == "FRAME" || nodeName == "IFRAME" || nodeName == "A" ||
-                       nodeName == "DIV" || nodeName == "SPAN") {
+            } else if (nodeName == QLatin1String("HEAD") || nodeName == QLatin1String("FRAME") || nodeName == QLatin1String("IFRAME") || nodeName == QLatin1String("A") ||
+                       nodeName == QLatin1String("DIV") || nodeName == QLatin1String("SPAN")) {
                 fullEmptyTags = true;
             }
 
@@ -1056,7 +1056,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 QString attr  = (*i).name.toLower();
                 QString value = (*i).value;
                 if ((i != filterOut1) && (i != filterOut2)) {
-                    if (hasStyle && (attr == "style")) {
+                    if (hasStyle && (attr == QLatin1String("style"))) {
 //                         kDebug(90110) << "translating URLs in element:";
 //                         kDebug(90110) << "value=" << value;
                         changeCSSURLs(value, style_it.value());
@@ -1073,10 +1073,10 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             // tags later with '/>'. 'fullEmptyTags == true' means to always write an explicit
             // closing tag, e.g. <script></script>
             if (fullEmptyTags || hasChildren) {
-                text += ">";
+                text += QLatin1String(">");
             }
 
-            if (nodeName == "HEAD") {
+            if (nodeName == QLatin1String("HEAD")) {
                 text += CONTENT_TYPE "\n";
             }
         }
@@ -1086,7 +1086,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             // Don't escape < > in JS or CSS
             DOM::Node parentNode = pNode.parentNode();
             QString parentNodeName = parentNode.nodeName().string().toUpper();
-            if (parentNodeName == "STYLE") {
+            if (parentNodeName == QLatin1String("STYLE")) {
                 text = pNode.nodeValue().string(); //analyzeInternalCSS(baseURL, pNode.nodeValue().string());
 
                 Node2StyleSheet::Iterator topcss_it = m_topStyleSheets.find(parentNode);
@@ -1102,13 +1102,13 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     kDebug(90110) << "found style area '" << nodeName << "', but KHMTL didn't feel like parsing it";
                 }
 
-            } else if (parentNodeName == "SCRIPT") {
+            } else if (parentNodeName == QLatin1String("SCRIPT")) {
                 text = pNode.nodeValue().string();
             } else {
                 if (pNode.nodeType() == DOM::Node::COMMENT_NODE) {
-                    text = "<!--";
+                    text = QStringLiteral("<!--");
                     text += nodeValue.toHtmlEscaped();  // No need to escape " as well
-                    text += "-->";
+                    text += QLatin1String("-->");
                 } else {
                     text = escapeHTML(nodeValue);
                 }
@@ -1130,7 +1130,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
         if (fullEmptyTags || hasChildren) {
             text = "</" + nodeName.toLower() + ">";
         } else {
-            text = " />"; // close self-contained tags
+            text = QStringLiteral(" />"); // close self-contained tags
         }
         (*data.textStream) << text;
     }
@@ -1138,7 +1138,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
 QString ArchiveDialog::extractCSSURL(const QString &text)
 {
-    if (text.startsWith("url(") && text.endsWith(")")) {
+    if (text.startsWith(QLatin1String("url(")) && text.endsWith(QLatin1String(")"))) {
         return text.mid(4, text.length() - 5);
     } else {
         return QString::null;
@@ -1160,11 +1160,11 @@ QString &ArchiveDialog::changeCSSURLs(QString &text, const RawHRef2FullURL &raw2
                 text.replace(raw, tarName);
             } else {
                 kDebug(90110) << "changeCSSURLs: raw URL not found in tar map";
-                text.replace(raw, "");
+                text.replace(raw, QLatin1String(""));
             }
         } else {
             kDebug(90110) << "changeCSSURLs: emptying invalid raw URL";
-            text.replace(raw, "");
+            text.replace(raw, QLatin1String(""));
         }
     }
     return text;
@@ -1188,15 +1188,15 @@ ArchiveDialog::ExtractURLs::ExtractURLs(const QString &nodeName, const DOM::Elem
     AttrList::Iterator invalid    = attrList.end();
     for (AttrList::Iterator i = attrList.begin(); i != attrList.end(); ++i) {
         QString attrName  = (*i).name.toUpper();
-        if (attrName == "REL") {
+        if (attrName == QLatin1String("REL")) {
             rel = i;
-        } else if (attrName == "HREF") {
+        } else if (attrName == QLatin1String("HREF")) {
             href = i;
-        } else if (attrName == "BACKGROUND") {
+        } else if (attrName == QLatin1String("BACKGROUND")) {
             background = i;
-        } else if (attrName == "SRC") {
+        } else if (attrName == QLatin1String("SRC")) {
             src = i;
-        } else if (attrName == "NAME") {
+        } else if (attrName == QLatin1String("NAME")) {
             name = i;
         }
     }
@@ -1209,27 +1209,27 @@ ArchiveDialog::ExtractURLs::ExtractURLs(const QString &nodeName, const DOM::Elem
             frameURL  =
                 frameName =
                     cssURL    = attrList.end();
-    if ((nodeName == "A") && (href != invalid)) {
+    if ((nodeName == QLatin1String("A")) && (href != invalid)) {
         absURL = href;
-    } else if ((nodeName == "LINK") && (rel != invalid) && (href != invalid)) {
+    } else if ((nodeName == QLatin1String("LINK")) && (rel != invalid) && (href != invalid)) {
         QString relUp = (*rel).value.toUpper();
-        if (relUp == "STYLESHEET") {
+        if (relUp == QLatin1String("STYLESHEET")) {
             cssURL = href;
-        } else if (relUp == "SHORTCUT ICON") {
+        } else if (relUp == QLatin1String("SHORTCUT ICON")) {
             transURL = href;
         } else {
             absURL = href;
         }
-    } else if (nodeName == "FRAME" || nodeName == "IFRAME") {
+    } else if (nodeName == QLatin1String("FRAME") || nodeName == QLatin1String("IFRAME")) {
         if (src != invalid) {
             frameURL = src;
         }
         if (name != invalid) {
             frameName = name;
         }
-    } else if ((nodeName == "IMG" || nodeName == "INPUT" || nodeName == "SCRIPT") && (src != invalid)) {
+    } else if ((nodeName == QLatin1String("IMG") || nodeName == QLatin1String("INPUT") || nodeName == QLatin1String("SCRIPT")) && (src != invalid)) {
         transURL = src;
-    } else if ((nodeName == "BODY" || nodeName == "TABLE" || nodeName == "TH" || nodeName == "TD") &&
+    } else if ((nodeName == QLatin1String("BODY") || nodeName == QLatin1String("TABLE") || nodeName == QLatin1String("TH") || nodeName == QLatin1String("TD")) &&
                (background != invalid)) {
         kDebug() << "found background URL " << (*background).value;
         transURL = background;
@@ -1290,7 +1290,7 @@ KUrl ArchiveDialog::absoluteURL(const QString &partURL, RecurseData &data)
 QString ArchiveDialog::parseURL(const QString &rawurl)
 {
     QString result = rawurl;
-    return result.replace(QRegExp("[\\x0000-\\x000D]"), "");
+    return result.replace(QRegExp("[\\x0000-\\x000D]"), QLatin1String(""));
 }
 
 QString ArchiveDialog::uniqTarName(const QString &suggestion, KHTMLPart *part)
@@ -1318,18 +1318,18 @@ bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL)
     }
 
     QString prot = fullURL.protocol();
-    bool protFile = (prot == "file");
+    bool protFile = (prot == QLatin1String("file"));
     if (part->onlyLocalReferences() && !protFile) {
         return true;
     }
 
-    bool protHttp = (prot == "http") || (prot == "https");
+    bool protHttp = (prot == QLatin1String("http")) || (prot == QLatin1String("https"));
     if (!protFile && !protHttp) {
         return true;
     }
 
-    if (! KUrlAuthorized::authorizeUrlAction("redirect", part->url(), fullURL) ||
-            ! KUrlAuthorized::authorizeUrlAction("open", part->url(), fullURL)) {
+    if (! KUrlAuthorized::authorizeUrlAction(QStringLiteral("redirect"), part->url(), fullURL) ||
+            ! KUrlAuthorized::authorizeUrlAction(QStringLiteral("open"), part->url(), fullURL)) {
         return true;
     }
 
@@ -1338,7 +1338,7 @@ bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL)
 
 QString ArchiveDialog::escapeHTML(QString in)
 {
-    return in.toHtmlEscaped().replace('"', "&quot;");
+    return in.toHtmlEscaped().replace('"', QLatin1String("&quot;"));
 }
 
 QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mimetype)

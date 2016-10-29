@@ -102,7 +102,7 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
                                || _url == QLatin1String("about:plugins")
                                || _url.startsWith(QLatin1String("about:konqueror")));
 
-    return isKnownAbout ? QUrl(_url) : QUrl("about:");
+    return isKnownAbout ? QUrl(_url) : QUrl(QStringLiteral("about:"));
 }
 
 QString KonqMisc::encodeFilename(QString filename)

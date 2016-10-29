@@ -370,7 +370,7 @@ void KonqPopupMenuPrivate::populate()
 
         act = new QAction(m_parentWidget);
         m_ownActions.append(act);
-        act->setObjectName(QLatin1String("bookmark_add"));   // for unittest
+        act->setObjectName(QStringLiteral("bookmark_add"));   // for unittest
         act->setIcon(QIcon::fromTheme(QStringLiteral("bookmark-new")));
         act->setText(caption);
         QObject::connect(act, &QAction::triggered, [this]() {
@@ -400,7 +400,7 @@ void KonqPopupMenuPrivate::populate()
                 q->addAction(previewActions.first());
             } else {
                 QMenu *subMenu = new QMenu(i18n("Preview In"), q);
-                subMenu->menuAction()->setObjectName(QLatin1String("preview_submenu"));   // for the unittest
+                subMenu->menuAction()->setObjectName(QStringLiteral("preview_submenu"));   // for the unittest
                 q->addMenu(subMenu);
                 subMenu->addActions(previewActions);
             }
@@ -433,7 +433,7 @@ void KonqPopupMenuPrivate::populate()
     if ((m_popupFlags & KonqPopupMenu::ShowProperties) && KPropertiesDialog::canDisplay(lstItems)) {
         act = new QAction(m_parentWidget);
         m_ownActions.append(act);
-        act->setObjectName(QLatin1String("properties"));   // for unittest
+        act->setObjectName(QStringLiteral("properties"));   // for unittest
         act->setText(i18n("&Properties"));
         QObject::connect(act, &QAction::triggered, [this]() {
             slotPopupProperties();

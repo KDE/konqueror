@@ -78,7 +78,7 @@ WebPage::WebPage(WebEnginePart *part, QWidget *parent)
 //    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
 //            this, SLOT(slotRequestFinished(QNetworkReply*)));
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
-    if(!this->profile()->httpUserAgent().contains("Konqueror"))
+    if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
@@ -102,7 +102,7 @@ void WebPage::setSslInfo (const WebSslInfo& info)
 static void checkForDownloadManager(QWidget* widget, QString& cmd)
 {
     cmd.clear();
-    KConfigGroup cfg (KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals), "HTML Settings");
+    KConfigGroup cfg (KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals), "HTML Settings");
     const QString fileName (cfg.readPathEntry("DownloadManager", QString()));
     if (fileName.isEmpty())
         return;
@@ -427,7 +427,7 @@ void WebPage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Fe
                                             i18n("Network Transmission"),
                                             KGuiItem(i18n("Allow access")),
                                             KStandardGuiItem::cancel(),
-                                            "WarnGeolocation") == KMessageBox::Cancel) {
+                                            QStringLiteral("WarnGeolocation")) == KMessageBox::Cancel) {
             setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
         } else {
             setFeaturePermission(url, feature, QWebEnginePage::PermissionGrantedByUser);
@@ -491,7 +491,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
 bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
 {
     // Check whether the request is authorized or not...
-    if (!KUrlAuthorized::authorizeUrlAction("redirect", url(), req.url())) {
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("redirect"), url(), req.url())) {
 
         //kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
@@ -555,7 +555,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
                                             i18n("Network Transmission"),
                                             KGuiItem(i18n("&Send Email")),
                                             KStandardGuiItem::cancel(),
-                                            "WarnTriedEmailSubmit") == KMessageBox::Cancel)) {
+                                            QStringLiteral("WarnTriedEmailSubmit")) == KMessageBox::Cancel)) {
         return false;
     }
 
@@ -581,7 +581,7 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
         if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
             // ### DF: this hack breaks mailto:faure@kde.org, kmail doesn't expect mailto:?to=faure@kde.org
             queryItem.second = queryItem.first;
-            queryItem.first = "to";
+            queryItem.first = QStringLiteral("to");
         } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
             files << queryItem.second;
             continue;
@@ -623,7 +623,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
                     KMessageBox::information(0, i18n("This site attempted to attach a file from your "
                                                      "computer in the form submission. The attachment "
                                                      "was removed for your protection."),
-                                             i18n("Attachment Removed"), "InfoTriedAttach");
+                                             i18n("Attachment Removed"), QStringLiteral("InfoTriedAttach"));
                 }
                 break;
             default:

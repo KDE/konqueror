@@ -137,13 +137,13 @@ void OpenSearchManager::jobFinished(KJob *job)
         OpenSearchEngine *engine = reader.read(m_jobData);
         if (engine) {
             m_enginesMap.insert(engine->name(), engine);
-            QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "/konqueror/opensearch/", QStandardPaths::LocateDirectory) + "/";
+            QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/konqueror/opensearch/"), QStandardPaths::LocateDirectory) + "/";
             QString fileName = trimmedEngineName(engine->name());
             QFile file(path + fileName + ".xml");
             OpenSearchWriter writer;
             writer.write(&file, engine);
 
-            QString searchUrl = OpenSearchEngine::parseTemplate("\\{@}", engine->searchUrlTemplate());
+            QString searchUrl = OpenSearchEngine::parseTemplate(QStringLiteral("\\{@}"), engine->searchUrlTemplate());
             emit openSearchEngineAdded(engine->name(), searchUrl, fileName);
         } else {
             kFatal() << "Error while adding new open search engine";

@@ -80,7 +80,7 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_pKonqFrame = viewFrame;
     m_pKonqFrame->setView(this);
 
-    m_sLocationBarURL = "";
+    m_sLocationBarURL = QLatin1String("");
     m_pageSecurity = KonqMainWindow::NotCrypted;
     m_bLockHistory = false;
     m_doPost = false;
@@ -195,7 +195,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 
     // Set location-bar URL, except for error urls, where we know the browser component
     // will set back the url with the error anyway.
-    if (url.scheme() != "error") {
+    if (url.scheme() != QLatin1String("error")) {
         setLocationBarURL(locationBarURL);
     }
 
@@ -208,7 +208,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
         m_postContentType = browserArgs.contentType();
         m_postData = browserArgs.postData;
         // Save the referrer
-        m_pageReferrer = args.metaData()["referrer"];
+        m_pageReferrer = args.metaData()[QStringLiteral("referrer")];
     }
 
     if (tempFile) {
@@ -270,25 +270,25 @@ void KonqView::switchView(KonqViewFactory &viewFactory)
 
     QVariant prop;
 
-    prop = m_service->property("X-KDE-BrowserView-FollowActive");
+    prop = m_service->property(QStringLiteral("X-KDE-BrowserView-FollowActive"));
     if (prop.isValid() && prop.toBool()) {
         //qDebug() << "X-KDE-BrowserView-FollowActive -> setFollowActive";
         setFollowActive(true);
     }
 
-    prop = m_service->property("X-KDE-BrowserView-Built-Into");
-    m_bBuiltinView = (prop.isValid() && prop.toString() == "konqueror");
+    prop = m_service->property(QStringLiteral("X-KDE-BrowserView-Built-Into"));
+    m_bBuiltinView = (prop.isValid() && prop.toString() == QLatin1String("konqueror"));
 
     if (!m_pMainWindow->viewManager()->isLoadingProfile()) {
         // Honor "non-removable passive mode" (like the dirtree)
-        prop = m_service->property("X-KDE-BrowserView-PassiveMode");
+        prop = m_service->property(QStringLiteral("X-KDE-BrowserView-PassiveMode"));
         if (prop.isValid() && prop.toBool()) {
             qDebug() << "X-KDE-BrowserView-PassiveMode -> setPassiveMode";
             setPassiveMode(true);   // set as passive
         }
 
         // Honor "linked view"
-        prop = m_service->property("X-KDE-BrowserView-LinkedView");
+        prop = m_service->property(QStringLiteral("X-KDE-BrowserView-LinkedView"));
         if (prop.isValid() && prop.toBool()) {
             setLinkedView(true);   // set as linked
             // Two views : link both
@@ -438,7 +438,7 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(requestFocus(KParts::ReadOnlyPart*)),
                 this, SLOT(slotRequestFocus(KParts::ReadOnlyPart*)));
 
-        if (service()->desktopEntryName() != "konq_sidebartng") {
+        if (service()->desktopEntryName() != QLatin1String("konq_sidebartng")) {
             connect(ext, SIGNAL(infoMessage(QString)),
                     m_pKonqFrame->statusbar(), SLOT(message(QString)));
 
@@ -591,7 +591,7 @@ void KonqView::slotCompleted(bool hasPending)
     if (!m_bGotIconURL && !m_bAborted) {
         if (KonqSettings::enableFavicon() == true) {
             // Try to get /favicon.ico
-            if (supportsMimeType("text/html") && url().scheme().startsWith("http")) {
+            if (supportsMimeType(QStringLiteral("text/html")) && url().scheme().startsWith(QLatin1String("http"))) {
                 KonqPixmapProvider::self()->downloadHostIcon(url());
             }
         }
@@ -997,7 +997,7 @@ void KonqView::setLockedLocation(bool b)
 
 void KonqView::aboutToOpenURL(const QUrl &url, const KParts::OpenUrlArguments &args)
 {
-    m_bErrorURL = url.scheme() == "error";
+    m_bErrorURL = url.scheme() == QLatin1String("error");
 
     KParts::OpenUrlEvent ev(m_pPart, url, args);
     QApplication::sendEvent(m_pMainWindow, &ev);
@@ -1190,7 +1190,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
             QList<QObject *> children = qFindChildren<QObject *>(m_pPart->widget());   // ### slow, better write a isChildOf with a loop...
 
             if (!lstDragURLs.isEmpty()
-                    && !lstDragURLs.first().url().startsWith("javascript:", Qt::CaseInsensitive) &&   // ### this looks like a hack to me
+                    && !lstDragURLs.first().url().startsWith(QLatin1String("javascript:"), Qt::CaseInsensitive) &&   // ### this looks like a hack to me
                     ev->source() != m_pPart->widget() &&
                     !children.contains(ev->source())) {
                 ev->acceptProposedAction();
@@ -1257,7 +1257,7 @@ bool KonqView::prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArgu
         }
     }
     // Re-set referrer
-    args.metaData()["referrer"] = m_pageReferrer;
+    args.metaData()[QStringLiteral("referrer")] = m_pageReferrer;
 
     return true;
 }
@@ -1295,63 +1295,63 @@ bool KonqView::supportsMimeType(const QString &mimeType) const
 void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     if (options & KonqFrameBase::saveURLs) {
-        config.writeEntry(QString::fromLatin1("Url").prepend(prefix), url.url());
-        config.writeEntry(QString::fromLatin1("LocationBarURL").prepend(prefix), locationBarURL);
-        config.writeEntry(QString::fromLatin1("Title").prepend(prefix), title);
-        config.writeEntry(QString::fromLatin1("StrServiceType").prepend(prefix), strServiceType);
-        config.writeEntry(QString::fromLatin1("StrServiceName").prepend(prefix), strServiceName);
+        config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
+        config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
+        config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
+        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
+        config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
     } else if (options & KonqFrameBase::saveHistoryItems) {
-        config.writeEntry(QString::fromLatin1("Url").prepend(prefix), url.url());
-        config.writeEntry(QString::fromLatin1("LocationBarURL").prepend(prefix), locationBarURL);
-        config.writeEntry(QString::fromLatin1("Title").prepend(prefix), title);
-        config.writeEntry(QString::fromLatin1("Buffer").prepend(prefix), buffer);
-        config.writeEntry(QString::fromLatin1("StrServiceType").prepend(prefix), strServiceType);
-        config.writeEntry(QString::fromLatin1("StrServiceName").prepend(prefix), strServiceName);
-        config.writeEntry(QString::fromLatin1("PostData").prepend(prefix), postData);
-        config.writeEntry(QString::fromLatin1("PostContentType").prepend(prefix), postContentType);
-        config.writeEntry(QString::fromLatin1("DoPost").prepend(prefix), doPost);
-        config.writeEntry(QString::fromLatin1("PageReferrer").prepend(prefix), pageReferrer);
-        config.writeEntry(QString::fromLatin1("PageSecurity").prepend(prefix), static_cast<int>(pageSecurity));
+        config.writeEntry(QStringLiteral("Url").prepend(prefix), url.url());
+        config.writeEntry(QStringLiteral("LocationBarURL").prepend(prefix), locationBarURL);
+        config.writeEntry(QStringLiteral("Title").prepend(prefix), title);
+        config.writeEntry(QStringLiteral("Buffer").prepend(prefix), buffer);
+        config.writeEntry(QStringLiteral("StrServiceType").prepend(prefix), strServiceType);
+        config.writeEntry(QStringLiteral("StrServiceName").prepend(prefix), strServiceName);
+        config.writeEntry(QStringLiteral("PostData").prepend(prefix), postData);
+        config.writeEntry(QStringLiteral("PostContentType").prepend(prefix), postContentType);
+        config.writeEntry(QStringLiteral("DoPost").prepend(prefix), doPost);
+        config.writeEntry(QStringLiteral("PageReferrer").prepend(prefix), pageReferrer);
+        config.writeEntry(QStringLiteral("PageSecurity").prepend(prefix), static_cast<int>(pageSecurity));
     }
 }
 
 void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     if (options & KonqFrameBase::saveURLs) {
-        url = QUrl(config.readEntry(QString::fromLatin1("Url").prepend(prefix), ""));
-        locationBarURL = config.readEntry(QString::fromLatin1("LocationBarURL").prepend(prefix), "");
-        title = config.readEntry(QString::fromLatin1("Title").prepend(prefix), "");
-        strServiceType = config.readEntry(QString::fromLatin1("StrServiceType").prepend(prefix), "");
-        strServiceName = config.readEntry(QString::fromLatin1("StrServiceName").prepend(prefix), "");
+        url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
+        locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
+        title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
+        strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
+        strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
         reload = true;
     } else if (options & KonqFrameBase::saveHistoryItems) {
-        url = QUrl(config.readEntry(QString::fromLatin1("Url").prepend(prefix), ""));
-        locationBarURL = config.readEntry(QString::fromLatin1("LocationBarURL").prepend(prefix), "");
-        title = config.readEntry(QString::fromLatin1("Title").prepend(prefix), "");
-        buffer = config.readEntry(QString::fromLatin1("Buffer").prepend(prefix), QByteArray());
-        strServiceType = config.readEntry(QString::fromLatin1("StrServiceType").prepend(prefix), "");
-        strServiceName = config.readEntry(QString::fromLatin1("StrServiceName").prepend(prefix), "");
-        postData = config.readEntry(QString::fromLatin1("PostData").prepend(prefix), QByteArray());
-        postContentType = config.readEntry(QString::fromLatin1("PostContentType").prepend(prefix), "");
-        doPost = config.readEntry(QString::fromLatin1("DoPost").prepend(prefix), false);
-        pageReferrer = config.readEntry(QString::fromLatin1("PageReferrer").prepend(prefix), "");
+        url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
+        locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
+        title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
+        buffer = config.readEntry(QStringLiteral("Buffer").prepend(prefix), QByteArray());
+        strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
+        strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
+        postData = config.readEntry(QStringLiteral("PostData").prepend(prefix), QByteArray());
+        postContentType = config.readEntry(QStringLiteral("PostContentType").prepend(prefix), "");
+        doPost = config.readEntry(QStringLiteral("DoPost").prepend(prefix), false);
+        pageReferrer = config.readEntry(QStringLiteral("PageReferrer").prepend(prefix), "");
         pageSecurity = static_cast<KonqMainWindow::PageSecurity>(config.readEntry(
-                           QString::fromLatin1("PageSecurity").prepend(prefix), 0));
+                           QStringLiteral("PageSecurity").prepend(prefix), 0));
         reload = false;
     }
 }
 
 void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-    config.writeEntry(QString::fromLatin1("ServiceType").prepend(prefix), serviceType());
-    config.writeEntry(QString::fromLatin1("ServiceName").prepend(prefix), service()->desktopEntryName());
-    config.writeEntry(QString::fromLatin1("PassiveMode").prepend(prefix), isPassiveMode());
-    config.writeEntry(QString::fromLatin1("LinkedView").prepend(prefix), isLinkedView());
-    config.writeEntry(QString::fromLatin1("ToggleView").prepend(prefix), isToggleView());
-    config.writeEntry(QString::fromLatin1("LockedLocation").prepend(prefix), isLockedLocation());
+    config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), serviceType());
+    config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), service()->desktopEntryName());
+    config.writeEntry(QStringLiteral("PassiveMode").prepend(prefix), isPassiveMode());
+    config.writeEntry(QStringLiteral("LinkedView").prepend(prefix), isLinkedView());
+    config.writeEntry(QStringLiteral("ToggleView").prepend(prefix), isToggleView());
+    config.writeEntry(QStringLiteral("LockedLocation").prepend(prefix), isLockedLocation());
 
     if (options & KonqFrameBase::saveURLs) {
-        config.writePathEntry(QString::fromLatin1("URL").prepend(prefix), url().url());
+        config.writePathEntry(QStringLiteral("URL").prepend(prefix), url().url());
     } else if (options & KonqFrameBase::saveHistoryItems) {
         if (m_pPart && !m_bLockHistory) {
             updateHistoryEntry(true);
@@ -1367,11 +1367,11 @@ void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const Kon
                 options = KonqFrameBase::saveURLs;
             }
 
-            (*it)->saveConfig(config, QString::fromLatin1("HistoryItem")
+            (*it)->saveConfig(config, QLatin1String("HistoryItem")
                               + QString::number(i).prepend(prefix), options);
         }
-        config.writeEntry(QString::fromLatin1("CurrentHistoryItem").prepend(prefix), m_lstHistoryIndex);
-        config.writeEntry(QString::fromLatin1("NumberOfHistoryItems").prepend(prefix), historyLength());
+        config.writeEntry(QStringLiteral("CurrentHistoryItem").prepend(prefix), m_lstHistoryIndex);
+        config.writeEntry(QStringLiteral("NumberOfHistoryItems").prepend(prefix), historyLength());
     }
 }
 
@@ -1381,8 +1381,8 @@ void KonqView::loadHistoryConfig(const KConfigGroup &config, const QString &pref
     qDeleteAll(m_lstHistory);
     m_lstHistory.clear();
 
-    int historySize = config.readEntry(QString::fromLatin1("NumberOfHistoryItems").prepend(prefix), 0);
-    int currentIndex = config.readEntry(QString::fromLatin1("CurrentHistoryItem").prepend(prefix), historySize - 1);
+    int historySize = config.readEntry(QStringLiteral("NumberOfHistoryItems").prepend(prefix), 0);
+    int currentIndex = config.readEntry(QStringLiteral("CurrentHistoryItem").prepend(prefix), historySize - 1);
 
     // No history to restore..
     if (historySize == 0) {
@@ -1402,7 +1402,7 @@ void KonqView::loadHistoryConfig(const KConfigGroup &config, const QString &pref
             options = KonqFrameBase::saveURLs;
         }
 
-        historyEntry->loadItem(config, QString::fromLatin1("HistoryItem") + QString::number(i).prepend(prefix), options);
+        historyEntry->loadItem(config, QLatin1String("HistoryItem") + QString::number(i).prepend(prefix), options);
 
         appendHistoryEntry(historyEntry);
     }
@@ -1436,7 +1436,7 @@ QString KonqView::nameFilter() const
 
 bool KonqView::showsDirectory() const
 {
-    return supportsMimeType(QString::fromLatin1("inode/directory"));
+    return supportsMimeType(QStringLiteral("inode/directory"));
 }
 
 bool KonqView::isModified() const

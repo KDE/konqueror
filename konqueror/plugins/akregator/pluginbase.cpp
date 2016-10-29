@@ -43,14 +43,14 @@ PluginBase::~PluginBase()
 bool PluginBase::akregatorRunning()
 {
     //Laurent if akregator is registered into dbus so akregator is running
-    return QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.akregator");
+    return QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.akregator"));
 }
 
 void PluginBase::addFeedsViaDBUS(const QStringList &urls)
 {
     kDebug() << "PluginBase::addFeedsViaDBUS";
-    QDBusInterface akregator("org.kde.akregator", "/Akregator", "org.kde.akregator.part");
-    QDBusReply<void> reply  = akregator.call("addFeedsToGroup", urls, i18n("Imported Feeds"));
+    QDBusInterface akregator(QStringLiteral("org.kde.akregator"), QStringLiteral("/Akregator"), QStringLiteral("org.kde.akregator.part"));
+    QDBusReply<void> reply  = akregator.call(QStringLiteral("addFeedsToGroup"), urls, i18n("Imported Feeds"));
     if (!reply.isValid()) {
         KMessageBox::error(0, i18n("Akregator feed icon - DBus Call failed"),
                            i18nc("@title:window", "The DBus call addFeedToGroup failed"));
@@ -60,8 +60,8 @@ void PluginBase::addFeedsViaDBUS(const QStringList &urls)
 void PluginBase::addFeedViaCmdLine(const QString &url)
 {
     KProcess proc;
-    proc << "akregator" << "-g" << i18n("Imported Feeds");
-    proc << "-a" << url;
+    proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
+    proc << QStringLiteral("-a") << url;
     proc.startDetached();
 }
 
@@ -71,10 +71,10 @@ QString PluginBase::fixRelativeURL(const QString &s, const KUrl &baseurl)
     QString s2 = s;
     KUrl u;
     if (KUrl::isRelativeUrl(s2)) {
-        if (s2.startsWith("//")) {
+        if (s2.startsWith(QLatin1String("//"))) {
             s2 = s2.prepend(baseurl.protocol() + ':');
             u = s2;
-        } else if (s2.startsWith("/")) {
+        } else if (s2.startsWith(QLatin1String("/"))) {
             KUrl b2(baseurl);
             b2.setPath(QString()); // delete path and query, so that only protocol://host remains
             b2.setQuery(QString());

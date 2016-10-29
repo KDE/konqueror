@@ -53,11 +53,11 @@ private Q_SLOTS:
         // Ensure the tests use webenginepart, not KHTML or kwebkitpart
         // This code is inspired by settings/konqhtml/generalopts.cpp
         bool needsUpdate = false;
-        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
         Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
-            const QString wanted = "webenginepart.desktop";
+            const QString wanted = QStringLiteral("webenginepart.desktop");
             if (services.isEmpty() || services.at(0) != wanted) {
                 services.removeAll(wanted);
                 services.prepend(wanted); // make it the preferred one
@@ -80,7 +80,7 @@ private Q_SLOTS:
     {
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, QUrl("data:text/html, <p>Hello World</p>"), "text/html");
+        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -95,7 +95,7 @@ private Q_SLOTS:
     {
         KonqMainWindow mainWindow;
         const QUrl url = QUrl::fromLocalFile(QDir::homePath());
-        mainWindow.openUrl(0, url, "text/html");
+        mainWindow.openUrl(0, url, QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
         qDebug() << "Waiting for first completed signal";
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -119,7 +119,7 @@ private Q_SLOTS:
                                 "data:text/html, <script type=\"text/javascript\">"
                                 "function closeMe() { window.close(); } "
                                 "document.onmousedown = closeMe; "
-                                "</script>"), QString("text/html"));
+                                "</script>"), QStringLiteral("text/html"));
         QPointer<KonqView> view = mainWindow->currentView();
         QVERIFY(view);
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -194,7 +194,7 @@ private Q_SLOTS:
         // would lead to double deletion (#228255)
         QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow->openUrl(0, QUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
+        mainWindow->openUrl(0, QUrl(QStringLiteral("data:text/html, <script>window.foo=bar</script><p>Hello World</p>")), QStringLiteral("text/html"));
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
         QVERIFY(view->part());

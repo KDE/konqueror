@@ -130,18 +130,18 @@ bool WebSslInfo::saveTo(QMap<QString, QVariant>& data) const
 {
   const bool ok = isValid();
   if (ok) {
-    data.insert("ssl_in_use", true);
-    data.insert("ssl_peer_ip", d->peerAddress.toString());
-    data.insert("ssl_parent_ip", d->parentAddress.toString());
-    data.insert("ssl_protocol_version", d->protocol);
-    data.insert("ssl_cipher", d->ciphers);
-    data.insert("ssl_cert_errors", d->certErrors);
-    data.insert("ssl_cipher_used_bits", d->usedCipherBits);
-    data.insert("ssl_cipher_bits", d->supportedCipherBits);
+    data.insert(QStringLiteral("ssl_in_use"), true);
+    data.insert(QStringLiteral("ssl_peer_ip"), d->peerAddress.toString());
+    data.insert(QStringLiteral("ssl_parent_ip"), d->parentAddress.toString());
+    data.insert(QStringLiteral("ssl_protocol_version"), d->protocol);
+    data.insert(QStringLiteral("ssl_cipher"), d->ciphers);
+    data.insert(QStringLiteral("ssl_cert_errors"), d->certErrors);
+    data.insert(QStringLiteral("ssl_cipher_used_bits"), d->usedCipherBits);
+    data.insert(QStringLiteral("ssl_cipher_bits"), d->supportedCipherBits);
     QByteArray certChain;
     Q_FOREACH(const QSslCertificate& cert, d->certificateChain)
         certChain += cert.toPem();
-    data.insert("ssl_peer_chain", certChain);
+    data.insert(QStringLiteral("ssl_peer_chain"), certChain);
   }
 
   return ok;
@@ -155,15 +155,15 @@ void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url, bool reset)
 
   if (value.isValid() && value.type() == QVariant::Map) {
     QMap<QString,QVariant> metaData = value.toMap();
-    if (metaData.value("ssl_in_use", false).toBool()) {
-        setCertificateChain(metaData.value("ssl_peer_chain").toByteArray());
-        setPeerAddress(metaData.value("ssl_peer_ip").toString());
-        setParentAddress(metaData.value("ssl_parent_ip").toString());
-        setProtocol(metaData.value("ssl_protocol_version").toString());
-        setCiphers(metaData.value("ssl_cipher").toString());
-        setCertificateErrors(metaData.value("ssl_cert_errors").toString());
-        setUsedCipherBits(metaData.value("ssl_cipher_used_bits").toString());
-        setSupportedCipherBits(metaData.value("ssl_cipher_bits").toString());
+    if (metaData.value(QStringLiteral("ssl_in_use"), false).toBool()) {
+        setCertificateChain(metaData.value(QStringLiteral("ssl_peer_chain")).toByteArray());
+        setPeerAddress(metaData.value(QStringLiteral("ssl_peer_ip")).toString());
+        setParentAddress(metaData.value(QStringLiteral("ssl_parent_ip")).toString());
+        setProtocol(metaData.value(QStringLiteral("ssl_protocol_version")).toString());
+        setCiphers(metaData.value(QStringLiteral("ssl_cipher")).toString());
+        setCertificateErrors(metaData.value(QStringLiteral("ssl_cert_errors")).toString());
+        setUsedCipherBits(metaData.value(QStringLiteral("ssl_cipher_used_bits")).toString());
+        setSupportedCipherBits(metaData.value(QStringLiteral("ssl_cipher_bits")).toString());
         setUrl(url);
     }
   }

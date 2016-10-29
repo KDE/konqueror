@@ -302,9 +302,9 @@ DOMListViewItem *DOMTreeView::addElement(const DOM::Node &node,  DOMListViewItem
     if (!element.isNull()) {
         if (!m_bPure) {
             if (isLast) {
-                text = "</";
+                text = QStringLiteral("</");
             } else {
-                text = "<";
+                text = QStringLiteral("<");
             }
             text += nodeName;
         } else {
@@ -328,7 +328,7 @@ DOMListViewItem *DOMTreeView::addElement(const DOM::Node &node,  DOMListViewItem
 
         if (!m_bPure) {
             if (element.firstChild().isNull()) {
-                text += "/>";
+                text += QLatin1String("/>");
             } else {
                 text += '>';
             }
@@ -378,76 +378,76 @@ void DOMTreeView::highlightHTML(DOMListViewItem *cur_item, const QString &nodeNa
 
     QColor namedColor(palette().color(QPalette::Active, QPalette::Text));
     QString tagName = nodeName.toUpper();
-    if (tagName == "HTML") {
+    if (tagName == QLatin1String("HTML")) {
         namedColor = "#0000ff";
         cur_item->setBold(true);
-    } else if (tagName == "HEAD") {
+    } else if (tagName == QLatin1String("HEAD")) {
         namedColor = "#0022ff";
         cur_item->setBold(true);
 
-    } else if (tagName == "TITLE") {
+    } else if (tagName == QLatin1String("TITLE")) {
         namedColor = "#2200ff";
-    } else if (tagName == "SCRIPT") {
+    } else if (tagName == QLatin1String("SCRIPT")) {
         namedColor = "#4400ff";
-    } else if (tagName == "NOSCRIPT") {
+    } else if (tagName == QLatin1String("NOSCRIPT")) {
         namedColor = "#0044ff";
-    } else if (tagName == "STYLE") {
+    } else if (tagName == QLatin1String("STYLE")) {
         namedColor = "#0066ff";
-    } else if (tagName == "LINK") {
+    } else if (tagName == QLatin1String("LINK")) {
         namedColor = "#6600ff";
-    } else if (tagName == "META") {
+    } else if (tagName == QLatin1String("META")) {
         namedColor = "#0088ff";
 
-    } else if (tagName == "BODY") {
+    } else if (tagName == QLatin1String("BODY")) {
         namedColor = "#ff0000";
         cur_item->setBold(true);
-    } else if (tagName == "A") {
+    } else if (tagName == QLatin1String("A")) {
         namedColor = "blue";
         cur_item->setUnderline(true);
-    } else if (tagName == "IMG") {
+    } else if (tagName == QLatin1String("IMG")) {
         namedColor = "magenta";
         cur_item->setUnderline(true);
 
-    } else if (tagName == "DIV") {
+    } else if (tagName == QLatin1String("DIV")) {
         namedColor = "#ff0044";
-    } else if (tagName == "SPAN") {
+    } else if (tagName == QLatin1String("SPAN")) {
         namedColor = "#ff4400";
-    } else if (tagName == "P") {
+    } else if (tagName == QLatin1String("P")) {
         namedColor = "#ff0066";
 
-    } else if (tagName == "DL" || tagName == "OL" || tagName == "UL" || tagName == "TABLE") {
+    } else if (tagName == QLatin1String("DL") || tagName == QLatin1String("OL") || tagName == QLatin1String("UL") || tagName == QLatin1String("TABLE")) {
         namedColor = "#880088";
-    } else if (tagName == "LI") {
+    } else if (tagName == QLatin1String("LI")) {
         namedColor = "#884488";
-    } else if (tagName == "TBODY") {
+    } else if (tagName == QLatin1String("TBODY")) {
         namedColor = "#888888";
-    } else if (tagName == "TR") {
+    } else if (tagName == QLatin1String("TR")) {
         namedColor = "#882288";
-    } else if (tagName == "TD") {
+    } else if (tagName == QLatin1String("TD")) {
         namedColor = "#886688";
 
-    } else if ((tagName == "H1") || (tagName == "H2") || (tagName == "H3") ||
-               (tagName == "H4") || (tagName == "H5") || (tagName == "H6")) {
+    } else if ((tagName == QLatin1String("H1")) || (tagName == QLatin1String("H2")) || (tagName == QLatin1String("H3")) ||
+               (tagName == QLatin1String("H4")) || (tagName == QLatin1String("H5")) || (tagName == QLatin1String("H6"))) {
         namedColor = "#008800";
-    } else if (tagName == "HR") {
+    } else if (tagName == QLatin1String("HR")) {
         namedColor = "#228822";
 
-    } else if (tagName == "FRAME" || tagName == "IFRAME") {
+    } else if (tagName == QLatin1String("FRAME") || tagName == QLatin1String("IFRAME")) {
         namedColor = "#ff22ff";
-    } else if (tagName == "FRAMESET") {
+    } else if (tagName == QLatin1String("FRAMESET")) {
         namedColor = "#dd22dd";
 
-    } else if (tagName == "APPLET" || tagName == "OBJECT") {
+    } else if (tagName == QLatin1String("APPLET") || tagName == QLatin1String("OBJECT")) {
         namedColor = "#bb22bb";
 
-    } else if (tagName == "BASEFONT" || tagName == "FONT") {
+    } else if (tagName == QLatin1String("BASEFONT") || tagName == QLatin1String("FONT")) {
         namedColor = "#097200";
 
-    } else if (tagName == "B" || tagName == "STRONG") {
+    } else if (tagName == QLatin1String("B") || tagName == QLatin1String("STRONG")) {
         cur_item->setBold(true);
-    } else if (tagName == "I" || tagName == "EM") {
+    } else if (tagName == QLatin1String("I") || tagName == QLatin1String("EM")) {
         cur_item->setItalic(true);
-    } else if (tagName == "U") {
+    } else if (tagName == QLatin1String("U")) {
         cur_item->setUnderline(true);
     }
 
@@ -1254,7 +1254,7 @@ void DOMTreeView::initializeStyleSheetsFromDocument(const DOM::Document &doc)
             str += " title=\"" + sheet.title().string() + "\"";
         }
         if (sheet.disabled()) {
-            str += " disabled";
+            str += QLatin1String(" disabled");
         }
         QStringList strList = QStringList(str);
         QTreeWidgetItem *topLevel = new QTreeWidgetItem(strList);

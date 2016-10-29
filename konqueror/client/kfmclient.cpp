@@ -109,7 +109,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     }
 
     // Use kfmclient from the session KDE version
-    if ((args->arg(0) == "openURL" || args->arg(0) == "newTab")
+    if ((args->arg(0) == QLatin1String("openURL") || args->arg(0) == QLatin1String("newTab"))
             && qEnvironmentVariableIsSet("KDE_FULL_SESSION")) {
         int version = KCOREADDONS_VERSION_MAJOR;
         if (!qEnvironmentVariableIsSet("KDE_SESSION_VERSION")) {  // this is KDE3
@@ -190,10 +190,10 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
     Q_ASSERT(qApp);
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
-        KConfig config(QLatin1String("kfmclientrc"));
+        KConfig config(QStringLiteral("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
-        if (!browserApp.isEmpty() && !browserApp.startsWith("!kfmclient")
+        if (!browserApp.isEmpty() && !browserApp.startsWith(QLatin1String("!kfmclient"))
                 && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp))) {
             qDebug() << "Using external browser" << browserApp;
             KStartupInfo::appStarted();
@@ -211,7 +211,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 
     needDBus();
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    KConfig cfg(QLatin1String("konquerorrc"));
+    KConfig cfg(QStringLiteral("konquerorrc"));
     KConfigGroup fmSettings = cfg.group("FMSettings");
     if (newTab || fmSettings.readEntry("KonquerorTabforExternalURL", false)) {
 
@@ -222,13 +222,13 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
             const QStringList allServices = reply;
             for (QStringList::const_iterator it = allServices.begin(), end = allServices.end(); it != end; ++it) {
                 const QString service = *it;
-                if (service.startsWith("org.kde.konqueror")) {
-                    org::kde::Konqueror::Main konq(service, "/KonqMain", dbus);
+                if (service.startsWith(QLatin1String("org.kde.konqueror"))) {
+                    org::kde::Konqueror::Main konq(service, QStringLiteral("/KonqMain"), dbus);
                     QDBusReply<QDBusObjectPath> windowReply = konq.windowForTab();
                     if (windowReply.isValid()) {
                         QDBusObjectPath path = windowReply;
                         // "/" is the indicator for "no object found", since we can't use an empty path
-                        if (path.path() != "/") {
+                        if (path.path() != QLatin1String("/")) {
                             foundApp = service;
                             foundObj = path;
                         }
@@ -248,7 +248,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
     }
 
     const QString appId = QString::fromLatin1(s_preloadDBusName);
-    org::kde::Konqueror::Main konq(appId, "/KonqMain", dbus);
+    org::kde::Konqueror::Main konq(appId, QStringLiteral("/KonqMain"), dbus);
     QDBusReply<QDBusObjectPath> reply = konq.createNewWindow(url.url(), mimetype, startup_id_str, tempFile);
     if (reply.isValid()) {
         sendASNChange();
@@ -259,18 +259,18 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         id.initId(startup_id_str);
         id.setupStartupEnv();
         QStringList args;
-        args << QLatin1String("konqueror");
+        args << QStringLiteral("konqueror");
         if (!mimetype.isEmpty()) {
-            args << "-mimetype" << mimetype;
+            args << QStringLiteral("-mimetype") << mimetype;
         }
         if (tempFile) {
-            args << "-tempfile";
+            args << QStringLiteral("-tempfile");
         }
         args << url.url();
 #ifdef Q_OS_WIN
         const int pid = KProcess::startDetached(QLatin1String("kwrapper5"), args);
 #else
-        const int pid = KProcess::startDetached(QLatin1String("kshell5"), args);
+        const int pid = KProcess::startDetached(QStringLiteral("kshell5"), args);
 #endif
         KStartupInfo::resetStartupEnv();
         qDebug() << "ClientApp::createNewWindow KProcess started, pid=" << pid;
@@ -326,37 +326,37 @@ bool ClientApp::doIt()
     char *(fake_argv[]) = {"kfmclient"};
     ClientApp app(fake_argc, fake_argv);
 
-    if (command == "openURL" || command == "newTab") {
+    if (command == QLatin1String("openURL") || command == QLatin1String("newTab")) {
         checkArgumentCount(argc, 1, 3);
         bool tempFile = KCmdLineArgs::isTempFileSet();
         if (argc == 1) {
-            return createNewWindow(QUrl::fromLocalFile(QDir::homePath()), command == "newTab", tempFile);
+            return createNewWindow(QUrl::fromLocalFile(QDir::homePath()), command == QLatin1String("newTab"), tempFile);
         }
         if (argc == 2) {
-            return createNewWindow(filteredUrl(args), command == "newTab", tempFile);
+            return createNewWindow(filteredUrl(args), command == QLatin1String("newTab"), tempFile);
         }
         if (argc == 3) {
-            return createNewWindow(filteredUrl(args), command == "newTab", tempFile, args->arg(2));
+            return createNewWindow(filteredUrl(args), command == QLatin1String("newTab"), tempFile, args->arg(2));
         }
-    } else if (command == "openProfile") { // deprecated command, kept for compat
+    } else if (command == QLatin1String("openProfile")) { // deprecated command, kept for compat
         checkArgumentCount(argc, 2, 3);
         QUrl url;
         if (argc == 3) {
             url = args->url(2);
         }
         return openProfile(args->arg(1), url);
-    } else if (command == "exec" && argc >= 2) {
+    } else if (command == QLatin1String("exec") && argc >= 2) {
         // compatibility with KDE 3 and xdg-open
         QStringList kioclientArgs;
         if (!s_interactive) {
-            kioclientArgs << QLatin1String("--noninteractive");
+            kioclientArgs << QStringLiteral("--noninteractive");
         }
-        kioclientArgs << "exec" << args->arg(1);
+        kioclientArgs << QStringLiteral("exec") << args->arg(1);
         if (argc == 3) {
             kioclientArgs << args->arg(2);
         }
 
-        int ret = KProcess::execute("kioclient5", kioclientArgs);
+        int ret = KProcess::execute(QStringLiteral("kioclient5"), kioclientArgs);
         return ret == 0;
     } else {
         fprintf(stderr, "%s: %s", programName, i18n("Syntax error, unknown command '%1'\n", command).toLocal8Bit().data());

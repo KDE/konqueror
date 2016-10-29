@@ -123,7 +123,7 @@ QString KonqPixmapProvider::iconNameFor(const QUrl &url)
     if (url.url().isEmpty()) {
         // Use the folder icon for the empty URL
         QMimeDatabase db;
-        const QMimeType directoryType = db.mimeTypeForName("inode/directory");
+        const QMimeType directoryType = db.mimeTypeForName(QStringLiteral("inode/directory"));
         icon = directoryType.iconName();
         Q_ASSERT(!icon.isEmpty());
     } else {

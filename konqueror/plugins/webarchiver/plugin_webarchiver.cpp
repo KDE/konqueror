@@ -57,9 +57,9 @@ PluginWebArchiver::PluginWebArchiver(QObject *parent,
                                      const QVariantList &)
     : Plugin(parent)
 {
-    QAction *a = actionCollection()->addAction("archivepage");
+    QAction *a = actionCollection()->addAction(QStringLiteral("archivepage"));
     a->setText(i18n("Archive &Web Page..."));
-    a->setIcon(QIcon::fromTheme("webarchiver"));
+    a->setIcon(QIcon::fromTheme(QStringLiteral("webarchiver")));
     connect(a, SIGNAL(triggered()), this, SLOT(slotSaveToArchive()));
 }
 
@@ -81,16 +81,16 @@ void PluginWebArchiver::slotSaveToArchive()
         archiveName = i18n("Untitled");
     }
 
-    KConfig config("webarchiverrc", KConfig::SimpleConfig);
+    KConfig config(QStringLiteral("webarchiverrc"), KConfig::SimpleConfig);
     KConfigGroup configGroup = config.group("Recent");
 
     archiveName = archiveName.simplified();
-    archiveName.replace("\\s:", " ");      // what is this intended to do?
-    archiveName.replace("?", "");
-    archiveName.replace(":", "");
-    archiveName.replace("/", "");
+    archiveName.replace(QLatin1String("\\s:"), QLatin1String(" "));      // what is this intended to do?
+    archiveName.replace(QLatin1String("?"), QLatin1String(""));
+    archiveName.replace(QLatin1String(":"), QLatin1String(""));
+    archiveName.replace(QLatin1String("/"), QLatin1String(""));
     // Replace space with underscore, proposed Frank Pieczynski <pieczy@knuut.de>
-    archiveName = archiveName.replace(QRegExp("\\s+"), "_");
+    archiveName = archiveName.replace(QRegExp("\\s+"), QStringLiteral("_"));
 
     QString lastCWD = configGroup.readPathEntry("savedialogcwd",
                       QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));

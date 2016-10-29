@@ -801,8 +801,8 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
         //clone current view
         KonqView *cv = m_pMainWindow->currentView();
         QString _serviceType, _serviceName;
-        if (cv->service()->desktopEntryName() == "konq_sidebartng") {
-            _serviceType = "text/html";
+        if (cv->service()->desktopEntryName() == QLatin1String("konq_sidebartng")) {
+            _serviceType = QStringLiteral("text/html");
         } else {
             _serviceType = cv->serviceType();
             _serviceName = cv->service()->desktopEntryName();
@@ -911,7 +911,7 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
 
     clear();
 
-    if (forcedUrl.url() != "about:blank") {
+    if (forcedUrl.url() != QLatin1String("about:blank")) {
         loadRootItem(profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl, req.serviceName);
     } else {
         // ## in this case we won't resize the window, so bool resetWindow could be useful after all?
@@ -1104,7 +1104,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                                bool openAfterCurrentPage, int pos)
 {
     QString prefix;
-    if (name != "InitialView") { // InitialView is old stuff, not in use anymore
+    if (name != QLatin1String("InitialView")) { // InitialView is old stuff, not in use anymore
         prefix = name + QLatin1Char('_');
     }
 
@@ -1112,24 +1112,24 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
     qDebug() << "begin name=" << name << "openUrl=" << openUrl;
 #endif
 
-    if (name.startsWith("View") || name == "empty") {
+    if (name.startsWith(QLatin1String("View")) || name == QLatin1String("empty")) {
         // load view config
 
         QString serviceType;
         QString serviceName;
-        if (name == "empty") {
+        if (name == QLatin1String("empty")) {
             // An empty profile is an empty KHTML part. Makes all KHTML actions available, avoids crashes,
             // makes it easy to DND a URL onto it, and makes it fast to load a website from there.
-            serviceType = "text/html";
+            serviceType = QStringLiteral("text/html");
             serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
         } else {
-            serviceType = cfg.readEntry(QString::fromLatin1("ServiceType").prepend(prefix), QString("inode/directory"));
-            serviceName = cfg.readEntry(QString::fromLatin1("ServiceName").prepend(prefix), QString());
-            if (serviceName == "konq_aboutpage") {
-                if ((!forcedUrl.isEmpty() && forcedUrl.scheme() != "about") ||
+            serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
+            serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
+            if (serviceName == QLatin1String("konq_aboutpage")) {
+                if ((!forcedUrl.isEmpty() && forcedUrl.scheme() != QLatin1String("about")) ||
                         (forcedUrl.isEmpty() && openUrl == false)) { // e.g. window.open
                     // No point in loading the about page if we're going to replace it with a KHTML part right away
-                    serviceType = "text/html";
+                    serviceType = QStringLiteral("text/html");
                     serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
                 }
             }
@@ -1146,7 +1146,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             return; //ugh..
         }
 
-        bool passiveMode = cfg.readEntry(QString::fromLatin1("PassiveMode").prepend(prefix), false);
+        bool passiveMode = cfg.readEntry(QStringLiteral("PassiveMode").prepend(prefix), false);
 
         //qDebug() << "Creating View Stuff; parent=" << parent;
         if (parent == m_pMainWindow) {
@@ -1155,11 +1155,11 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         KonqView *childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
 
         if (!childView->isFollowActive()) {
-            childView->setLinkedView(cfg.readEntry(QString::fromLatin1("LinkedView").prepend(prefix), false));
+            childView->setLinkedView(cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false));
         }
-        const bool isToggleView = cfg.readEntry(QString::fromLatin1("ToggleView").prepend(prefix), false);
+        const bool isToggleView = cfg.readEntry(QStringLiteral("ToggleView").prepend(prefix), false);
         childView->setToggleView(isToggleView);
-        if (isToggleView /*100373*/ || !cfg.readEntry(QString::fromLatin1("ShowStatusBar").prepend(prefix), true)) {
+        if (isToggleView /*100373*/ || !cfg.readEntry(QStringLiteral("ShowStatusBar").prepend(prefix), true)) {
             childView->frame()->statusbar()->hide();
         }
 
@@ -1169,18 +1169,18 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         }
 
         if (openUrl) {
-            const QString keyHistoryItems = QString::fromLatin1("NumberOfHistoryItems").prepend(prefix);
+            const QString keyHistoryItems = QStringLiteral("NumberOfHistoryItems").prepend(prefix);
             if (cfg.hasKey(keyHistoryItems)) {
                 childView->loadHistoryConfig(cfg, prefix);
                 m_pMainWindow->updateHistoryActions();
             } else {
                 // determine URL
-                const QString urlKey = QString::fromLatin1("URL").prepend(prefix);
+                const QString urlKey = QStringLiteral("URL").prepend(prefix);
                 QUrl url;
                 if (cfg.hasKey(urlKey)) {
-                    url = QUrl(cfg.readPathEntry(urlKey, QString::fromLatin1("about:blank")));
-                } else if (urlKey == "empty_URL") { // old stuff, not in use anymore
-                    url = QUrl(QString::fromLatin1("about:blank"));
+                    url = QUrl(cfg.readPathEntry(urlKey, QStringLiteral("about:blank")));
+                } else if (urlKey == QLatin1String("empty_URL")) { // old stuff, not in use anymore
+                    url = QUrl(QLatin1String("about:blank"));
                 } else {
                     url = defaultURL;
                 }
@@ -1190,7 +1190,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                     //childView->openUrl( url, url.toDisplayString() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
-                    if (url.scheme() != "about") {
+                    if (url.scheme() != QLatin1String("about")) {
                         req.typedUrl = url.toDisplayString();
                     }
                     m_pMainWindow->openView(serviceType, url, childView, req);
@@ -1199,17 +1199,17 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             }
         }
         // Do this after opening the URL, so that it's actually possible to open it :)
-        childView->setLockedLocation(cfg.readEntry(QString::fromLatin1("LockedLocation").prepend(prefix), false));
-    } else if (name.startsWith("Container")) {
+        childView->setLockedLocation(cfg.readEntry(QStringLiteral("LockedLocation").prepend(prefix), false));
+    } else if (name.startsWith(QLatin1String("Container"))) {
         //qDebug() << "Item is Container";
 
         //load container config
-        QString ostr = cfg.readEntry(QString::fromLatin1("Orientation").prepend(prefix), QString());
+        QString ostr = cfg.readEntry(QStringLiteral("Orientation").prepend(prefix), QString());
         //qDebug() << "Orientation:" << ostr;
         Qt::Orientation o;
-        if (ostr == "Vertical") {
+        if (ostr == QLatin1String("Vertical")) {
             o = Qt::Vertical;
-        } else if (ostr == "Horizontal") {
+        } else if (ostr == QLatin1String("Horizontal")) {
             o = Qt::Horizontal;
         } else {
             qWarning() << "Profile Loading Error: No orientation specified in" << name;
@@ -1217,15 +1217,15 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         }
 
         QList<int> sizes =
-            cfg.readEntry(QString::fromLatin1("SplitterSizes").prepend(prefix), QList<int>());
+            cfg.readEntry(QStringLiteral("SplitterSizes").prepend(prefix), QList<int>());
 
-        int index = cfg.readEntry(QString::fromLatin1("activeChildIndex").prepend(prefix), -1);
+        int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), -1);
 
-        QStringList childList = cfg.readEntry(QString::fromLatin1("Children").prepend(prefix), QStringList());
+        QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
         if (childList.count() < 2) {
             qWarning() << "Profile Loading Error: Less than two children in" << name;
             // fallback to defaults
-            loadItem(cfg, parent, "InitialView", defaultURL, openUrl, forcedUrl, forcedService);
+            loadItem(cfg, parent, QStringLiteral("InitialView"), defaultURL, openUrl, forcedUrl, forcedService);
         } else {
             KonqFrameContainer *newContainer = new KonqFrameContainer(o, parent->asQWidget(), parent);
 
@@ -1249,16 +1249,16 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
 
             newContainer->show();
         }
-    } else if (name.startsWith("Tabs")) {
+    } else if (name.startsWith(QLatin1String("Tabs"))) {
         //qDebug() << "Item is a Tabs";
 
-        int index = cfg.readEntry(QString::fromLatin1("activeChildIndex").prepend(prefix), 0);
+        int index = cfg.readEntry(QStringLiteral("activeChildIndex").prepend(prefix), 0);
         if (!m_tabContainer) {
             createTabContainer(parent->asQWidget(), parent);
             parent->insertChildFrame(m_tabContainer);
         }
 
-        const QStringList childList = cfg.readEntry(QString::fromLatin1("Children").prepend(prefix), QStringList());
+        const QStringList childList = cfg.readEntry(QStringLiteral("Children").prepend(prefix), QStringList());
         for (QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it) {
             loadItem(cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl, forcedService);
             QWidget *currentPage = m_tabContainer->currentWidget();
@@ -1320,9 +1320,9 @@ public:
     {
         QString className;
         if (!frame->part()) {
-            className = "NoPart!";
+            className = QStringLiteral("NoPart!");
         } else if (!frame->part()->widget()) {
-            className = "NoWidget!";
+            className = QStringLiteral("NoWidget!");
         } else {
             className = frame->part()->widget()->metaObject()->className();
         }
@@ -1347,7 +1347,7 @@ public:
             qDebug() << "WARNING:" << container << "has a null active child!";
         }
 
-        m_spaces += "  ";
+        m_spaces += QLatin1String("  ");
         return true;
     }
     virtual bool visit(KonqFrameTabs *tabs)
@@ -1358,7 +1358,7 @@ public:
         if (!tabs->activeChild()) {
             qDebug() << "WARNING:" << tabs << "has a null active child!";
         }
-        m_spaces += "  ";
+        m_spaces += QLatin1String("  ");
         return true;
     }
     virtual bool visit(KonqMainWindow *)

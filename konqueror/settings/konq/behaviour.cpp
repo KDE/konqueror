@@ -41,8 +41,8 @@
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     : KCModule(parent)
-    , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
-    , groupname("FMSettings")
+    , g_pConfig(KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::IncludeGlobals))
+    , groupname(QStringLiteral("FMSettings"))
 {
     setQuickHelp(i18n("<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a file manager here."));
 
@@ -54,7 +54,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     winPixmap = new QLabel(this);
     winPixmap->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
-    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
+    winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/onlyone.png"))));
     winPixmap->setFixedSize(winPixmap->sizeHint());
 
     cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
@@ -103,7 +103,7 @@ void KBehaviourOptions::load()
     cbNewWin->setChecked(cg.readEntry("AlwaysNewWin", false));
     updateWinPixmap(cbNewWin->isChecked());
 
-    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
+    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
     cbShowDeleteCommand->setChecked(cg2.readEntry("ShowDeleteCommand", false));
 }
@@ -121,23 +121,23 @@ void KBehaviourOptions::save()
 
     cg.writeEntry("AlwaysNewWin", cbNewWin->isChecked());
 
-    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
+    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
     cg2.writeEntry("ShowDeleteCommand", cbShowDeleteCommand->isChecked());
     cg2.sync();
 
     // Send signal to all konqueror instances
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 }
 
 void KBehaviourOptions::updateWinPixmap(bool b)
 {
     if (b) {
-        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/overlapping.png")));
+        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/overlapping.png"))));
     } else {
-        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcontrol/pics/onlyone.png")));
+        winPixmap->setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcontrol/pics/onlyone.png"))));
     }
 }
 

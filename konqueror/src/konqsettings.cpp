@@ -60,20 +60,20 @@ void KonqFMSettings::init(bool reparse)
     if (reparse) {
         fileTypesConfig()->reparseConfiguration();
     }
-    m_embedMap = fileTypesConfig()->entryMap("EmbedSettings");
+    m_embedMap = fileTypesConfig()->entryMap(QStringLiteral("EmbedSettings"));
 }
 
 KSharedConfig::Ptr KonqFMSettings::fileTypesConfig()
 {
     if (!m_fileTypesConfig) {
-        m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+        m_fileTypesConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
     }
     return m_fileTypesConfig;
 }
 
 static bool alwaysEmbedMimeTypeGroup(const QString &mimeType)
 {
-    if (mimeType.startsWith("inode") || mimeType.startsWith("Browser") || mimeType.startsWith("Konqueror")) {
+    if (mimeType.startsWith(QLatin1String("inode")) || mimeType.startsWith(QLatin1String("Browser")) || mimeType.startsWith(QLatin1String("Konqueror"))) {
         return true;    //always embed mimetype inode/*, Browser/* and Konqueror/*
     }
     return false;
@@ -90,7 +90,7 @@ bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
 
     // First check in user's settings whether to embed or not
     // 1 - in the filetypesrc config file (written by the configuration module)
-    QMap<QString, QString>::const_iterator it = m_embedMap.find(QString::fromLatin1("embed-") + mimeType);
+    QMap<QString, QString>::const_iterator it = m_embedMap.find(QLatin1String("embed-") + mimeType);
     if (it != m_embedMap.end()) {
         qDebug() << mimeType << it.value();
         return it.value() == QLatin1String("true");
@@ -100,7 +100,7 @@ bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
         return true;    //always embed mimetype inode/*, Browser/* and Konqueror/*
     }
     const QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
-    it = m_embedMap.find(QString::fromLatin1("embed-") + mimeTypeGroup);
+    it = m_embedMap.find(QLatin1String("embed-") + mimeTypeGroup);
     if (it != m_embedMap.end()) {
         qDebug() << mimeType << "group setting:" << it.value();
         return it.value() == QLatin1String("true");
@@ -126,7 +126,7 @@ bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
     // Note: if you change those defaults, also change keditfiletype/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
     const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(mimeType).isEmpty();
-    if (mimeTypeGroup == "image" || mimeTypeGroup == "multipart" || hasLocalProtocolRedirect) {
+    if (mimeTypeGroup == QLatin1String("image") || mimeTypeGroup == QLatin1String("multipart") || hasLocalProtocolRedirect) {
         return true;
     }
     return false;

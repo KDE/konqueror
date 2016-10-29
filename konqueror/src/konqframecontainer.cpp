@@ -67,7 +67,7 @@ void KonqFrameContainer::saveConfig(KConfigGroup &config, const QString &prefix,
     int idSecond = id + int(pow(2.0, depth));
 
     //write children sizes
-    config.writeEntry(QString::fromLatin1("SplitterSizes").prepend(prefix), sizes());
+    config.writeEntry(QStringLiteral("SplitterSizes").prepend(prefix), sizes());
 
     //write children
     QStringList strlst;
@@ -78,26 +78,26 @@ void KonqFrameContainer::saveConfig(KConfigGroup &config, const QString &prefix,
         strlst.append(KonqFrameBase::frameTypeToString(secondChild()->frameType()) + QString::number(idSecond));
     }
 
-    config.writeEntry(QString::fromLatin1("Children").prepend(prefix), strlst);
+    config.writeEntry(QStringLiteral("Children").prepend(prefix), strlst);
 
     //write orientation
     QString o;
     if (orientation() == Qt::Horizontal) {
-        o = QString::fromLatin1("Horizontal");
+        o = QStringLiteral("Horizontal");
     } else if (orientation() == Qt::Vertical) {
-        o = QString::fromLatin1("Vertical");
+        o = QStringLiteral("Vertical");
     }
-    config.writeEntry(QString::fromLatin1("Orientation").prepend(prefix), o);
+    config.writeEntry(QStringLiteral("Orientation").prepend(prefix), o);
 
     //write docContainer
     if (this == docContainer) {
-        config.writeEntry(QString::fromLatin1("docContainer").prepend(prefix), true);
+        config.writeEntry(QStringLiteral("docContainer").prepend(prefix), true);
     }
 
     if (m_pSecondChild == m_pActiveChild) {
-        config.writeEntry(QString::fromLatin1("activeChildIndex").prepend(prefix), 1);
+        config.writeEntry(QStringLiteral("activeChildIndex").prepend(prefix), 1);
     } else {
-        config.writeEntry(QString::fromLatin1("activeChildIndex").prepend(prefix), 0);
+        config.writeEntry(QStringLiteral("activeChildIndex").prepend(prefix), 0);
     }
 
     //write child configs

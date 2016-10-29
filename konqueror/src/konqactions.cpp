@@ -59,7 +59,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry *> &history, int his
     while (index < history.count() && index >= 0) {
         QString text = history[ index ]->title;
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
-        text.replace('&', "&&");
+        text.replace('&', QLatin1String("&&"));
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction *action = new QAction(QIcon::fromTheme(iconName), text, popup);
         action->setData(index - historyIndex);
@@ -83,7 +83,7 @@ static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction(const QString &text,
         QObject *parent)
-    : KActionMenu(QIcon::fromTheme("go-jump"), text, parent),
+    : KActionMenu(QIcon::fromTheme(QStringLiteral("go-jump")), text, parent),
       m_parsingDone(false)
 {
     setDelayed(false);
@@ -215,7 +215,7 @@ void KonqMostOftenURLSAction::slotActivated(QAction *action)
 ///////////////////////////////
 
 KonqHistoryAction::KonqHistoryAction(const QString &text, QObject *parent)
-    : KActionMenu(QIcon::fromTheme("go-jump"), text, parent)
+    : KActionMenu(QIcon::fromTheme(QStringLiteral("go-jump")), text, parent)
 {
     setDelayed(false);
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));

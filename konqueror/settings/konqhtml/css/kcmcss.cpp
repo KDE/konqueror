@@ -43,7 +43,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     , customDialogBase(new KDialog(this))
     , customDialog(new CSSCustomDialog(customDialogBase))
 {
-    customDialogBase->setObjectName(QLatin1String("customCSSDialog"));
+    customDialogBase->setObjectName(QStringLiteral("customCSSDialog"));
     customDialogBase->setModal(true);
     customDialogBase->setButtons(KDialog::Close);
     customDialogBase->setDefaultButton(KDialog::Close);
@@ -78,12 +78,12 @@ void CSSConfig::load()
 {
     const bool signalsBlocked = customDialog->blockSignals(true);
 
-    KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
+    KConfig *c = new KConfig(QStringLiteral("kcmcssrc"), KConfig::NoGlobals);
     KConfigGroup group = c->group("Stylesheet");
     QString u = group.readEntry("Use", "default");
-    configWidget->useDefault->setChecked(u == "default");
-    configWidget->useUser->setChecked(u == "user");
-    configWidget->useAccess->setChecked(u == "access");
+    configWidget->useDefault->setChecked(u == QLatin1String("default"));
+    configWidget->useUser->setChecked(u == QLatin1String("user"));
+    configWidget->useAccess->setChecked(u == QLatin1String("access"));
     configWidget->urlRequester->setUrl(QUrl::fromUserInput(group.readEntry("SheetName")));
 
     group = c->group("Font");
@@ -102,9 +102,9 @@ void CSSConfig::load()
 
     group = c->group("Colors");
     QString m = group.readEntry("Mode", "black-on-white");
-    customDialog->blackOnWhite->setChecked(m == "black-on-white");
-    customDialog->whiteOnBlack->setChecked(m == "white-on-black");
-    customDialog->customColor->setChecked(m == "custom");
+    customDialog->blackOnWhite->setChecked(m == QLatin1String("black-on-white"));
+    customDialog->whiteOnBlack->setChecked(m == QLatin1String("white-on-black"));
+    customDialog->customColor->setChecked(m == QLatin1String("custom"));
 
     QColor white(Qt::white);
     QColor black(Qt::black);
@@ -124,7 +124,7 @@ void CSSConfig::load()
 void CSSConfig::save()
 {
     // write to config file
-    KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
+    KConfig *c = new KConfig(QStringLiteral("kcmcssrc"), KConfig::NoGlobals);
     KConfigGroup group = c->group("Stylesheet");
     if (configWidget->useDefault->isChecked()) {
         group.writeEntry("Use", "default");
@@ -166,17 +166,17 @@ void CSSConfig::save()
 
     // generate CSS template
     QString dest;
-    const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcmcss/template.css"));
+    const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcmcss/template.css")));
     if (!templ.isEmpty()) {
         CSSTemplate css(templ);
         dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kcmcss/";
         QDir().mkpath(dest);
-        dest += "override.css";
+        dest += QLatin1String("override.css");
         css.expandToFile(dest, customDialog->cssDict());
     }
 
     // make konqueror use the right stylesheet
-    c = new KConfig("konquerorrc", KConfig::NoGlobals);
+    c = new KConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     group = c->group("HTML Settings");
     group.writeEntry("UserStyleSheetEnabled", !configWidget->useDefault->isChecked());
 
@@ -201,7 +201,7 @@ void CSSConfig::defaults()
     customDialog->basefontsize->setEditText(QString::number(12));
     customDialog->dontScale->setChecked(false);
 
-    const QString fname(QLatin1String("Arial"));
+    const QString fname(QStringLiteral("Arial"));
     for (int i = 0; i < customDialog->fontFamily->count(); ++i) {
         if (customDialog->fontFamily->itemText(i) == fname) {
             customDialog->fontFamily->setCurrentIndex(i);
@@ -225,7 +225,7 @@ static QString px(int i, double scale)
 {
     QString px;
     px.setNum(static_cast<int>(i * scale));
-    px += "px";
+    px += QLatin1String("px");
     return px;
 }
 
@@ -236,49 +236,49 @@ QMap<QString, QString> CSSCustomDialog::cssDict()
     // Fontsizes ------------------------------------------------------
 
     int bfs = basefontsize->currentText().toInt();
-    dict.insert("fontsize-base", px(bfs, 1.0));
+    dict.insert(QStringLiteral("fontsize-base"), px(bfs, 1.0));
 
     if (dontScale->isChecked()) {
-        dict.insert("fontsize-small-1", px(bfs, 1.0));
-        dict.insert("fontsize-large-1", px(bfs, 1.0));
-        dict.insert("fontsize-large-2", px(bfs, 1.0));
-        dict.insert("fontsize-large-3", px(bfs, 1.0));
-        dict.insert("fontsize-large-4", px(bfs, 1.0));
-        dict.insert("fontsize-large-5", px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-small-1"), px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-large-1"), px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-large-2"), px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-large-3"), px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-large-4"), px(bfs, 1.0));
+        dict.insert(QStringLiteral("fontsize-large-5"), px(bfs, 1.0));
     } else {
         // TODO: use something harmonic here
-        dict.insert("fontsize-small-1", px(bfs, 0.8));
-        dict.insert("fontsize-large-1", px(bfs, 1.2));
-        dict.insert("fontsize-large-2", px(bfs, 1.4));
-        dict.insert("fontsize-large-3", px(bfs, 1.5));
-        dict.insert("fontsize-large-4", px(bfs, 1.6));
-        dict.insert("fontsize-large-5", px(bfs, 1.8));
+        dict.insert(QStringLiteral("fontsize-small-1"), px(bfs, 0.8));
+        dict.insert(QStringLiteral("fontsize-large-1"), px(bfs, 1.2));
+        dict.insert(QStringLiteral("fontsize-large-2"), px(bfs, 1.4));
+        dict.insert(QStringLiteral("fontsize-large-3"), px(bfs, 1.5));
+        dict.insert(QStringLiteral("fontsize-large-4"), px(bfs, 1.6));
+        dict.insert(QStringLiteral("fontsize-large-5"), px(bfs, 1.8));
     }
 
     // Colors --------------------------------------------------------
 
     if (customColor->isChecked()) {
-        dict.insert("background-color", backgroundColorButton->color().name());
-        dict.insert("foreground-color", foregroundColorButton->color().name());
+        dict.insert(QStringLiteral("background-color"), backgroundColorButton->color().name());
+        dict.insert(QStringLiteral("foreground-color"), foregroundColorButton->color().name());
     } else {
         const char *blackOnWhiteFG[2] = {"White", "Black"};
         bool bw = blackOnWhite->isChecked();
-        dict.insert("foreground-color", QLatin1String(blackOnWhiteFG[bw]));
-        dict.insert("background-color", QLatin1String(blackOnWhiteFG[!bw]));
+        dict.insert(QStringLiteral("foreground-color"), QLatin1String(blackOnWhiteFG[bw]));
+        dict.insert(QStringLiteral("background-color"), QLatin1String(blackOnWhiteFG[!bw]));
     }
 
     const char *notImportant[2] = {"", "! important"};
-    dict.insert("force-color", QLatin1String(notImportant[sameColor->isChecked()]));
+    dict.insert(QStringLiteral("force-color"), QLatin1String(notImportant[sameColor->isChecked()]));
 
     // Fonts -------------------------------------------------------------
-    dict.insert("font-family", fontFamily->currentText());
-    dict.insert("force-font", QLatin1String(notImportant[sameFamily->isChecked()]));
+    dict.insert(QStringLiteral("font-family"), fontFamily->currentText());
+    dict.insert(QStringLiteral("force-font"), QLatin1String(notImportant[sameFamily->isChecked()]));
 
     // Images
 
     const char *bgNoneImportant[2] = {"", "background-image : none ! important"};
-    dict.insert("display-images", QLatin1String(bgNoneImportant[hideImages->isChecked()]));
-    dict.insert("display-background", QLatin1String(bgNoneImportant[hideBackground->isChecked()]));
+    dict.insert(QStringLiteral("display-images"), QLatin1String(bgNoneImportant[hideImages->isChecked()]));
+    dict.insert(QStringLiteral("display-background"), QLatin1String(bgNoneImportant[hideBackground->isChecked()]));
 
     return dict;
 }
@@ -313,7 +313,7 @@ CSSCustomDialog::CSSCustomDialog(QWidget *parent)
     //QStringList fonts;
     //KFontChooser::getFontList(fonts, 0);
     //fontFamily->addItems(fonts);
-    part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(QLatin1String("text/html"), parent, this);
+    part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(QStringLiteral("text/html"), parent, this);
     QVBoxLayout *l = new QVBoxLayout(previewBox);
     l->addWidget(part->widget());
 }
@@ -329,7 +329,7 @@ static QUrl toDataUri(const QString &content, const QByteArray &contentType)
 
 void CSSCustomDialog::slotPreview()
 {
-    const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kcmcss/template.css"));
+    const QString templ(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcmcss/template.css")));
 
     if (templ.isEmpty()) {
         return;

@@ -71,17 +71,17 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->layout()->setMargin(0);
     setMainWidget(d);
 
-    setObjectName(QLatin1String("konq_session_dialog"));
+    setObjectName(QStringLiteral("konq_session_dialog"));
     setModal(true);
     setCaption(i18nc("@title:window", "Manage Sessions"));
     setButtons(BTN_OPEN | Close);
     setDefaultButton(Close);
 
-    setButtonGuiItem(BTN_OPEN, KGuiItem(i18n("&Open"), "document-open"));
-    d->m_pSaveCurrentButton->setIcon(QIcon::fromTheme("document-save"));
-    d->m_pRenameButton->setIcon(QIcon::fromTheme("edit-rename"));
-    d->m_pDeleteButton->setIcon(QIcon::fromTheme("edit-delete"));
-    d->m_pNewButton->setIcon(QIcon::fromTheme("document-new"));
+    setButtonGuiItem(BTN_OPEN, KGuiItem(i18n("&Open"), QStringLiteral("document-open")));
+    d->m_pSaveCurrentButton->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+    d->m_pRenameButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+    d->m_pDeleteButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    d->m_pNewButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
     QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("sessions/");
     QDir().mkpath(dir);
@@ -220,7 +220,7 @@ KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, QString sessionName)
     d->layout()->setMargin(0);
     setMainWidget(d);
 
-    setObjectName(QLatin1String("konq_new_session_dialog"));
+    setObjectName(QStringLiteral("konq_new_session_dialog"));
     setModal(true);
     setCaption(i18nc("@title:window", "Save Session"));
     setButtons(Ok | Cancel);

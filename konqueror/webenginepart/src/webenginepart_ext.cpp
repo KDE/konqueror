@@ -292,7 +292,7 @@ void WebEngineBrowserExtension::disableScrolling()
     if (!page)
         return;
 
-    page->runJavaScript("document.documentElement.style.overflow = 'hidden';");
+    page->runJavaScript(QStringLiteral("document.documentElement.style.overflow = 'hidden';"));
 }
 
 void WebEngineBrowserExtension::zoomIn()
@@ -810,7 +810,7 @@ void WebEngineBrowserExtension::slotOpenSelection()
     QAction *action = qobject_cast<QAction*>(sender());
     if (action) {
         KParts::BrowserArguments browserArgs;
-        browserArgs.frameName = "_blank";
+        browserArgs.frameName = QStringLiteral("_blank");
         emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
     }
 }

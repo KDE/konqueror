@@ -51,13 +51,13 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
 {
     new KonqClosedWindowsManagerAdaptor(this);
 
-    const QString dbusPath = "/KonqUndoManager";
-    const QString dbusInterface = "org.kde.Konqueror.UndoManager";
+    const QString dbusPath = QStringLiteral("/KonqUndoManager");
+    const QString dbusInterface = QStringLiteral("org.kde.Konqueror.UndoManager");
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject(dbusPath, this);
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyClosedWindowItem", this, SLOT(slotNotifyClosedWindowItem(QString,int,QString,QString,QDBusMessage)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "notifyRemove", this, SLOT(slotNotifyRemove(QString,QString,QDBusMessage)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyClosedWindowItem"), this, SLOT(slotNotifyClosedWindowItem(QString,int,QString,QString,QDBusMessage)));
+    dbus.connect(QString(), dbusPath, dbusInterface, QStringLiteral("notifyRemove"), this, SLOT(slotNotifyRemove(QString,QString,QDBusMessage)));
 
     QString filename = "closeditems/" + KonqMisc::encodeFilename(dbus.baseService());
     QString file = QDir::tempPath() + QLatin1Char('/') +  filename;
@@ -314,7 +314,7 @@ static int numberOfKonquerorProcesses()
     int count = 0; // count the number of running konqueror processes. Should be at least one, us.
     for (QStringList::const_iterator it = allServices.begin(), end = allServices.end(); it != end; ++it) {
         const QString service = *it;
-        if (service.startsWith("org.kde.konqueror")) {
+        if (service.startsWith(QLatin1String("org.kde.konqueror"))) {
             count++;
         }
     }
@@ -350,7 +350,7 @@ void KonqClosedWindowsManager::saveConfig()
     readConfig();
 
     // Create / overwrite the saved closed windows list
-    QString filename = "closeditems_saved";
+    QString filename = QStringLiteral("closeditems_saved");
     QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
     QFile::remove(file);
 
@@ -385,7 +385,7 @@ void KonqClosedWindowsManager ::readConfig()
         return;
     }
 
-    QString filename = "closeditems_saved";
+    QString filename = QStringLiteral("closeditems_saved");
     QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
 
     m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);

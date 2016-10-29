@@ -57,7 +57,7 @@ KShellCommandExecutor::~KShellCommandExecutor()
 int KShellCommandExecutor::exec()
 {
     //kDebug()<<"---------- KShellCommandExecutor::exec()";
-    setText("");
+    setText(QLatin1String(""));
     if (m_shellProcess != 0) {
         ::kill(m_shellProcess->pid(), SIGTERM);
         delete m_shellProcess;

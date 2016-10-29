@@ -50,7 +50,7 @@ Konqueror::Konqueror(QWidget *parent_P)
 
 void Konqueror::load()
 {
-    KConfig _cfg("konquerorrc");
+    KConfig _cfg(QStringLiteral("konquerorrc"));
     KConfigGroup cfg(&_cfg, "Reusing");
     cb_preload_on_startup->setChecked(cfg.readEntry("PreloadOnStartup", false));
     cb_always_have_preloaded->setChecked(cfg.readEntry("AlwaysHavePreloaded", true));
@@ -58,13 +58,13 @@ void Konqueror::load()
 
 void Konqueror::save()
 {
-    KConfig _cfg("konquerorrc");
+    KConfig _cfg(QStringLiteral("konquerorrc"));
     KConfigGroup cfg(&_cfg, "Reusing");
     cfg.writeEntry("PreloadOnStartup", cb_preload_on_startup->isChecked());
     cfg.writeEntry("AlwaysHavePreloaded", cb_always_have_preloaded->isChecked());
     cfg.sync();
     QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+        QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 }
 

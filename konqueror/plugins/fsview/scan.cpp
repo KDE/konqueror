@@ -248,9 +248,9 @@ bool ScanDir::isForbiddenDir(QString &d)
         s = new QSet<QString>;
         // directories without real files on Linux
         // TODO: should be OS specific
-        s->insert("/proc");
-        s->insert("/dev");
-        s->insert("/sys");
+        s->insert(QStringLiteral("/proc"));
+        s->insert(QStringLiteral("/dev"));
+        s->insert(QStringLiteral("/sys"));
     }
     return (s->contains(d));
 }
@@ -271,7 +271,7 @@ int ScanDir::scan(ScanItem *si, ScanItemList &list, int data)
 
     KUrl u;
     u.setPath(si->absPath);
-    if (!KUrlAuthorized::authorizeUrlAction("list", KUrl(), u)) {
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), KUrl(), u)) {
         if (_parent) {
             _parent->subScanFinished();
         }
