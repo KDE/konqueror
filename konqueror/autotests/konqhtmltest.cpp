@@ -16,26 +16,28 @@
 */
 
 #include <konqmainwindowfactory.h>
-#include <webenginepart.h>
-#include <webview.h>
-#include <QTemporaryFile>
-#include <kstandarddirs.h>
-#include <ktoolbar.h>
-#include <kdebug.h>
-#include <ksycoca.h>
-#include <QScrollArea>
-#include <QProcess>
-#include <qtest.h>
+#include "../src/konqsettingsxt.h"
 
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
 #include <konqview.h>
 #include <konqsessionmanager.h>
-#include <QSignalSpy>
 
+#include <webenginepart.h>
+#include <webview.h>
+
+#include <KSharedConfig>
+#include <kstandarddirs.h>
+#include <ktoolbar.h>
+#include <ksycoca.h>
+
+#include <QTemporaryFile>
+#include <QScrollArea>
+#include <QProcess>
+#include <qtest.h>
+#include <QSignalSpy>
 #include <QObject>
 #include <QStandardPaths>
-#include <KSharedConfig>
 
 class KonqHtmlTest : public QObject
 {
@@ -95,11 +97,11 @@ private Q_SLOTS:
         const QUrl url = QUrl::fromLocalFile(QDir::homePath());
         mainWindow.openUrl(0, url, "text/html");
         KonqView *view = mainWindow.currentView();
-        kDebug() << "Waiting for first completed signal";
+        qDebug() << "Waiting for first completed signal";
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(20000));        // error calls openUrlRequest
         if (view->aborted()) {
-            kDebug() << "Waiting for second completed signal";
+            qDebug() << "Waiting for second completed signal";
             QVERIFY(spyCompleted.wait(20000));        // which then opens the right part
             QCOMPARE(view->serviceType(), QString("inode/directory"));
         } else {
@@ -133,6 +135,9 @@ private Q_SLOTS:
     {
         // Simple test for window.open in a onmousedown handler.
 
+        // Want a window, not a tab (historical test)
+        KonqSettings::setMmbOpensTab(false);
+
         // We have to use the same protocol for both the orig and dest urls.
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.
         QTemporaryFile tempFile;
@@ -160,7 +165,7 @@ private Q_SLOTS:
         qApp->processEvents();
         QWidget *widget = partWidget(view);
         QVERIFY(widget);
-        kDebug() << "Clicking on the khtmlview";
+        qDebug() << "Clicking on the khtmlview";
         QTest::mousePress(widget, Qt::LeftButton);
         qApp->processEvents(); // openurlrequestdelayed
         qApp->processEvents(); // browserrun
@@ -238,7 +243,7 @@ private:
     static void hideAllMainWindows()
     {
         const QList<KMainWindow *> windows = KMainWindow::memberList();
-        kDebug() << "hiding" << windows.count() << "windows";
+        qDebug() << "hiding" << windows.count() << "windows";
         Q_FOREACH (KMainWindow *window, windows) {
             window->hide();
         }
