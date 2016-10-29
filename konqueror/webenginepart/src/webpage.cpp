@@ -697,13 +697,13 @@ static KParts::BrowserArguments browserArgs(WebPage::WebWindowType type)
         case WebPage::WebBrowserWindow:
             bargs.setForcesNewWindow(true);
             break;
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
         case WebPage::WebBrowserTab:
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
         case WebPage::WebBrowserBackgroundTab:
+#endif
             // let konq decide, based on user configuration
             //bargs.setNewTab(true);
             break;
-#endif
     }
     return bargs;
 }
