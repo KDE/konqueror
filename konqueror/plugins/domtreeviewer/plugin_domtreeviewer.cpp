@@ -2,7 +2,7 @@
 #include "domtreewindow.h"
 #include "domtreeview.h"
 
-#include <kaction.h>
+
 #include <kcomponentdata.h>
 
 #include <kdebug.h>

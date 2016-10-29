@@ -28,7 +28,7 @@
 #include <kparts/browserextension.h>
 #include <kparts/textextension.h>
 #include <kactionmenu.h>
-#include <kaction.h>
+
 #include <kactioncollection.h>
 #include <kmenu.h>
 #include <kcomponentdata.h>

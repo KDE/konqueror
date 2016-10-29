@@ -28,7 +28,7 @@
 
 
 #include <kmenu.h>
-#include <kaction.h>
+
 #include <klocale.h>
 #include <kfileitem.h>
 #include <kmimetype.h>

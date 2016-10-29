@@ -30,7 +30,7 @@
 #include <QPixmap>
 
 //KDELibs4Support
-#include <kaction.h>
+
 
 namespace KParts
 {

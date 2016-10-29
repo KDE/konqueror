@@ -27,7 +27,7 @@ Boston, MA 02110-1301, USA.
 #include <qtextcodec.h>
 #include <QApplication>
 
-#include <kaction.h>
+
 #include <kglobal.h>
 #include <klocale.h>
 #include <kcharsets.h>

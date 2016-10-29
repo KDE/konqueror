@@ -19,7 +19,7 @@
 
 #include "settingsplugin.h"
 
-#include <kaction.h>
+
 #include <kconfig.h>
 #include <kglobal.h>
 #include <khtml_part.h>

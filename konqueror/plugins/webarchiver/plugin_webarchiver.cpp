@@ -34,7 +34,7 @@
 #include <QIcon>
 #include <QUrl>
 
-#include <kaction.h>
+
 #include <kcomponentdata.h>
 #include <kglobalsettings.h>
 

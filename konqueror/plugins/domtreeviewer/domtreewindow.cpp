@@ -40,7 +40,7 @@
 
 #include <kedittoolbar.h>
 #include <kactioncollection.h>
-#include <kaction.h>
+
 #include <kstandardaction.h>
 
 #include <qdatetime.h>

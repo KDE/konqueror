@@ -33,7 +33,7 @@
 #include <qtextdocument.h>
 
 #include <kaboutdata.h>
-#include <kaction.h>
+
 #include <kactioncollection.h>
 #include <kactionmenu.h>
 #include <kcolorscheme.h>

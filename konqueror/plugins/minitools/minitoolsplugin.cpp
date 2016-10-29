@@ -21,7 +21,7 @@
 #include <qfile.h>
 
 #include <kdebug.h>
-#include <kaction.h>
+
 #include <kglobal.h>
 #include <kconfig.h>
 #include <kcomponentdata.h>

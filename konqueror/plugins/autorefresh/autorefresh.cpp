@@ -22,7 +22,7 @@
 #include <kparts/part.h>
 #include <kdebug.h>
 #include "autorefresh.h"
-#include <kaction.h>
+
 #include <kcomponentdata.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>

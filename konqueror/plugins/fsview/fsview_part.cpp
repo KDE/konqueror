@@ -28,7 +28,7 @@
 #include <kfileitem.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
-#include <kaction.h>
+
 #include <kglobalsettings.h>
 #include <kprotocolmanager.h>
 #include <kio/copyjob.h>

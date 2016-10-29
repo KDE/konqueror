@@ -31,7 +31,7 @@
 #include <dom/dom_element.h>
 #include <dom/dom_string.h>
 #include <dom/html_document.h>
-#include <kaction.h>
+
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <khtml_part.h>
