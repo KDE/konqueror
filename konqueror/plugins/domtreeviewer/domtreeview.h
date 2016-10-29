@@ -35,7 +35,6 @@ class CharacterData;
 class DOMListViewItem;
 class DOMTreeWindow;
 
-class KPushButton;
 class KFindDialog;
 class KHTMLPart;
 
@@ -154,7 +153,6 @@ private:
     KHTMLPart *part;
     QTextStream *m_textStream;
 
-    KPushButton *m_saveButton;
     QObject *focused_child;
     DOM::Node current_node;
     DOM::CSSStyleSheet stylesheet;

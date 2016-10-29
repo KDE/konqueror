@@ -53,7 +53,6 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kpushbutton.h>
 #include <kstandardguiitem.h>
 #include <ktextedit.h>
 #include <QFontDatabase>
