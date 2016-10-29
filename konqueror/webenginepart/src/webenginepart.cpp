@@ -149,16 +149,16 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     mainWidget->setFocusProxy(m_webView);
 
     // Connect the signals from the webview
-    connect(m_webView, SIGNAL(titleChanged(QString)),
-            this, SIGNAL(setWindowCaption(QString)));
-    connect(m_webView, SIGNAL(urlChanged(QUrl)),
-            this, SLOT(slotUrlChanged(QUrl)));
+    connect(m_webView, &QWebEngineView::titleChanged,
+            this, &Part::setWindowCaption);
+    connect(m_webView, &QWebEngineView::urlChanged,
+            this, &WebEnginePart::slotUrlChanged);
 //    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(QUrl)),
 //            this, SLOT(slotLinkMiddleOrCtrlClicked(QUrl)));
 //    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(QUrl,QString)),
 //            this, SLOT(slotSelectionClipboardUrlPasted(QUrl,QString)));
-    connect(m_webView, SIGNAL(loadFinished(bool)),
-            this, SLOT(slotLoadFinished(bool)));
+    connect(m_webView, &QWebEngineView::loadFinished,
+            this, &WebEnginePart::slotLoadFinished);
 
     // Connect the signals from the page...
     connectWebPageSignals(page());
@@ -195,26 +195,26 @@ void WebEnginePart::initActions()
 
     QAction* action = new QAction(i18n("Save &Frame As..."), this);
     actionCollection()->addAction("saveFrame", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotSaveFrame);
 
     action = new QAction(QIcon::fromTheme("document-print-preview"), i18n("Print Preview"), this);
     actionCollection()->addAction("printPreview", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotPrintPreview()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotPrintPreview);
 
     action = new QAction(QIcon::fromTheme("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
     action->setShortcut(QKeySequence("CTRL++; CTRL+="));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomIn);
 
     action = new QAction(QIcon::fromTheme("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
     actionCollection()->addAction("zoomOut", action);
     action->setShortcut(QKeySequence("CTRL+-; CTRL+_"));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomOut);
 
     action = new QAction(QIcon::fromTheme("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction("zoomNormal", action);
     action->setShortcut(QKeySequence("CTRL+0"));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomNormal()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomNormal);
 
     action = new QAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
@@ -222,14 +222,14 @@ void WebEnginePart::initActions()
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
     action->setChecked(zoomTextOnly);
     actionCollection()->addAction("zoomTextOnly", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomTextOnly()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomTextOnly);
 
     action = new QAction(i18n("Zoom To DPI"), this);
     action->setCheckable(true);
     bool zoomToDPI = cgHtml.readEntry("ZoomToDPI", false);
     action->setChecked(zoomToDPI);
     actionCollection()->addAction("zoomToDPI", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomToDPI()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomToDPI);
 
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            m_browserExtension, SLOT(slotSelectAll()));
@@ -243,11 +243,11 @@ void WebEnginePart::initActions()
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction("viewDocumentSource", action);
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotViewDocumentSource()));
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotViewDocumentSource);
 
     action = new QAction(i18nc("Secure Sockets Layer", "SSL"), this);
     actionCollection()->addAction("security", action);
-    connect(action, SIGNAL(triggered(bool)), SLOT(slotShowSecurity()));
+    connect(action, &QAction::triggered, this, &WebEnginePart::slotShowSecurity);
 
     action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
