@@ -22,7 +22,7 @@
 
 #include "settings.h"
 
-#include <kicon.h>
+
 #include <klocale.h>
 
 #include <QPushButton>

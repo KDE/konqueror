@@ -37,7 +37,7 @@
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
-#include <kicon.h>
+
 #include <KConfigGroup>
 #include <KDebug>
 

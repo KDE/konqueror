@@ -34,7 +34,7 @@
 #include <KParts/ReadOnlyPart>
 
 //KDELibs4Support
-#include <KIcon>
+
 #include <kurl.h>
 
 AutoRefresh::AutoRefresh(QObject *parent, const QVariantList & /*args*/)

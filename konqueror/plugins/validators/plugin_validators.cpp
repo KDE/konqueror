@@ -40,7 +40,7 @@
 #include <kcomponentdata.h>
 #include <kdebug.h>
 #include <khtml_part.h>
-#include <kicon.h>
+
 #include <klocale.h>
 #include <kmenu.h>
 #include <kmessagebox.h>

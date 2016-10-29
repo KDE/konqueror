@@ -27,7 +27,7 @@
 #include <kcomponentdata.h>
 #include <khtml_part.h>
 #include <kpluginfactory.h>
-#include <kicon.h>
+
 #include <kstandarddirs.h>
 
 #include <krun.h>

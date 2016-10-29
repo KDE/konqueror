@@ -52,7 +52,7 @@
 //KDELibs4Support
 #include <kdialog.h>
 #include <kdebug.h>
-#include <kicon.h>
+
 
 class MessageDialog : public KDialog, public Ui::MessageDialog
 {

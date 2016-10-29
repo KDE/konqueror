@@ -26,7 +26,7 @@
 #include <QBoxLayout>
 #include <QShowEvent>
 
-#include <kicon.h>
+
 #include <kmenu.h>
 #include <kaction.h>
 #include <klocale.h>
@@ -300,7 +300,7 @@ void DirFilterPlugin::slotShowPopup()
             label += ')';
         }
 
-        QAction *action = filterMenu->addAction(KIcon(it.value().iconName), label);
+        QAction *action = filterMenu->addAction(QIcon::fromTheme(it.value().iconName), label);
         action->setCheckable(true);
         if (it.value().useAsFilter) {
             action->setChecked(true);
@@ -324,7 +324,7 @@ void DirFilterPlugin::slotShowPopup()
                 label += ')';
             }
 
-            QAction *action = filterMenu->addAction(KIcon(m_pMimeInfo[inode].iconName), label);
+            QAction *action = filterMenu->addAction(QIcon::fromTheme(m_pMimeInfo[inode].iconName), label);
             action->setCheckable(true);
             if (m_pMimeInfo[inode].useAsFilter) {
                 action->setChecked(true);

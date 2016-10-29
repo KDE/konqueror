@@ -39,7 +39,7 @@
 #include <kstandarddirs.h>
 #include <kstatusbar.h>
 #include <kurllabel.h>
-#include <kicon.h>
+
 #include <kprotocolinfo.h>
 
 #include <qcursor.h>
@@ -69,9 +69,6 @@ static KUrl baseUrl(KParts::ReadOnlyPart *part)
 KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent), PluginBase(), m_part(0), m_feedIcon(0), m_statusBarEx(0), m_menu(0)
 {
-    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
-//KLocale::global()->insertCatalog("akregator_konqplugin");
-
     // make our icon foundable by the KIconLoader
     KIconLoader::global()->addAppDir(QStringLiteral("akregator"));
 

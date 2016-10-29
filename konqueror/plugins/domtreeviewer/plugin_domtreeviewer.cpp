@@ -12,7 +12,7 @@
 #include <khtml_part.h>
 
 //KDELibs4Support
-#include <kicon.h>
+
 
 K_PLUGIN_FACTORY(DomtreeviewerFactory, registerPlugin<PluginDomtreeviewer>();)
 

@@ -42,7 +42,8 @@ Boston, MA 02110-1301, USA.
 #include <kurlrequester.h>
 #include <kglobalsettings.h>
 #include <kconfig.h>
-#include <kicon.h>
+#include <KIcon>
+
 #include <QFontDatabase>
 #include "imgallerydialog.h"
 

@@ -59,7 +59,7 @@
 #include <QStandardPaths>
 
 //KDELibs4Support
-#include <kicon.h>
+
 #include <kcomponentdata.h>
 
 K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)

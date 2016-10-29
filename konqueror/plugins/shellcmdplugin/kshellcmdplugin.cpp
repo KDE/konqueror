@@ -33,7 +33,7 @@
 
 //KDELibs4Support
 #include <kurl.h>
-#include <kicon.h>
+
 
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)

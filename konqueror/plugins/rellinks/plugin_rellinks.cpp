@@ -47,7 +47,7 @@
 #include <kactioncollection.h>
 // local includes
 #include "plugin_rellinks.h"
-#include <kicon.h>
+
 
 /** Rellinks factory */
 K_PLUGIN_FACTORY(RelLinksFactory, registerPlugin<RelLinksPlugin>();)
@@ -87,28 +87,28 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_begin"));
     a->setText(i18n("&First"));
-    a->setIcon(KIcon(isRTL ? "go-last" : "go-first"));
+    a->setIcon(QIcon::fromTheme(isRTL ? "go-last" : "go-first"));
     a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+F")));
     a->setWhatsThis(i18n("<p>This link type tells search engines which document is considered by the author to be the starting point of the collection.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_prev"));
     a->setText(i18n("&Previous"));
-    a->setIcon(KIcon(isRTL ? "go-next" : "go-previous"));
+    a->setIcon(QIcon::fromTheme(isRTL ? "go-next" : "go-previous"));
     a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+P")));
     a->setWhatsThis(i18n("<p>This link references the previous document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_next"));
     a->setText(i18n("&Next"));
-    a->setIcon(KIcon(isRTL ? "go-previous" : "go-next"));
+    a->setIcon(QIcon::fromTheme(isRTL ? "go-previous" : "go-next"));
     a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+N")));
     a->setWhatsThis(i18n("<p>This link references the next document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_last"));
     a->setText(i18n("&Last"));
-    a->setIcon(KIcon(isRTL ? "go-first" : "go-last"));
+    a->setIcon(QIcon::fromTheme(isRTL ? "go-first" : "go-last"));
     a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+L")));
     a->setWhatsThis(i18n("<p>This link references the end of a sequence of documents.</p>"));
     grp->addAction(a);

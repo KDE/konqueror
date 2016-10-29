@@ -34,7 +34,7 @@
 #include <kactioncollection.h>
 #include <kselectaction.h>
 #include <kactionmenu.h>
-#include <kicon.h>
+
 #include <kparts/part.h>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
