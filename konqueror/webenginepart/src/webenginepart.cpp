@@ -347,8 +347,8 @@ bool WebEnginePart::openUrl(const QUrl &_u)
         u.setPath(QL1S("/"));
     }
 
-    // Do not emit update history when url is typed in since the embedding part
-    // should handle that automatically itself. At least Konqueror does that.
+    // Do not emit update history when url is typed in since the host
+    // should handle that automatically itself.
     m_emitOpenUrlNotify = false;
 
     // Pointer to the page object...

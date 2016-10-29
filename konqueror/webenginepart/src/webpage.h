@@ -101,7 +101,7 @@ protected:
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
-    void slotRequestFinished(QNetworkReply* reply);
+    void slotLoadFinished(bool ok);
     void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);

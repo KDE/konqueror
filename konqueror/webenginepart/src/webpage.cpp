@@ -75,8 +75,8 @@ WebPage::WebPage(WebEnginePart *part, QWidget *parent)
 //            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(this, &QWebEnginePage::featurePermissionRequested,
             this, &WebPage::slotFeaturePermissionRequested);
-//    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
-//            this, SLOT(slotRequestFinished(QNetworkReply*)));
+    connect(this, &QWebEnginePage::loadFinished,
+            this, &WebPage::slotLoadFinished);
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
@@ -251,6 +251,7 @@ bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
+#if 0
 static int errorCodeFromReply(QNetworkReply* reply)
 {
     // First check if there is a KIO error code sent back and use that,
@@ -291,6 +292,7 @@ static int errorCodeFromReply(QNetworkReply* reply)
 
     return 0;
 }
+#endif
 
 WebEnginePart* WebPage::part() const
 {
@@ -302,23 +304,24 @@ void WebPage::setPart(WebEnginePart* part)
     m_part = part;
 }
 
-void WebPage::slotRequestFinished(QNetworkReply *reply)
+void WebPage::slotLoadFinished(bool ok)
 {
-    Q_ASSERT(reply);
-
-    QUrl requestUrl (reply->request().url());
+    QUrl requestUrl = url();
     requestUrl.setUserInfo(QString());
-
-    return;
+    const bool shouldResetSslInfo = (m_sslInfo.isValid() && !domainSchemeMatch(requestUrl, m_sslInfo.url()));
 #if 0
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
         return;
+    const bool isMainFrameRequest = (frame == mainFrame());
+#else
+    // PORTING_TODO
+    const bool isMainFrameRequest = true;
+#endif
 
-    const bool shouldResetSslInfo = (m_sslInfo.isValid() && !domainSchemeMatch(requestUrl, m_sslInfo.url()));
+#if 0
     // Only deal with non-redirect responses...
     const QVariant redirectVar = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-    const bool isMainFrameRequest = (frame == mainFrame());
 
     if (isMainFrameRequest && redirectVar.isValid()) {
         m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
@@ -328,15 +331,22 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
     const int errCode = errorCodeFromReply(reply);
     kDebug() << frame << "is main frame request?" << isMainFrameRequest << requestUrl;
+#endif
+
+    if (ok) {
+        if (isMainFrameRequest) {
+#if 0
+            m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                    reply->url(), shouldResetSslInfo);
+#endif
+            setPageJScriptPolicy(url());
+        }
+    } else {
     // Handle any error...
+#if 0
     switch (errCode) {
         case 0:
         case KIO::ERR_NO_CONTENT:
-            if (isMainFrameRequest) {
-                m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
-                                      reply->url(), shouldResetSslInfo);
-                setPageJScriptPolicy(reply->url());
-            }
             break;
         case KIO::ERR_ABORTED:
         case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
@@ -359,13 +369,13 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             m_ignoreError = (reply->attribute(QNetworkRequest::User).toInt() == QNetworkReply::ContentAccessDenied);
             m_kioErrorCode = errCode;
             break;
+#endif
     }
 
     if (isMainFrameRequest) {
         const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->browserExtension()->setPageSecurity(security);
     }
-#endif
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply* reply)
