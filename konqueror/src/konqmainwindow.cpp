@@ -101,7 +101,6 @@
 #include <kdesktopfile.h>
 #include <kedittoolbar.h>
 #include <klocalizedstring.h>
-#include <kmenubar.h>
 #include <kmessagebox.h>
 #include <kmessagebox_queued.h>
 #include <knewfilemenu.h>
@@ -152,6 +151,7 @@
 #include <kglobalsettings.h>
 #include <kurlauthorized.h>
 #include <QFontDatabase>
+#include <QMenuBar>
 #include <QStandardPaths>
 #include <KSharedConfig>
 
@@ -1575,8 +1575,8 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
         m_currentView->lockHistory();
 
         // Save those, because changePart will lose them
-        //QUrl url = m_currentView->url();
-        QString locationBarURL = m_currentView->locationBarURL();
+        const QUrl url = m_currentView->url();
+        const QString locationBarURL = m_currentView->locationBarURL();
 #if 0
         // Problem: dolphinpart doesn't currently implement it. But we don't need it that much
         // now that it's the main filemanagement part for all standard modes.
@@ -1584,12 +1584,7 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
 #endif
 
         m_currentView->changePart(m_currentView->serviceType(), modeName);
-        QUrl locURL(locationBarURL);
-        QString nameFilter = detectNameFilter(locURL);
-#if 0
-        childView->part()->setProperty("filesToSelect", QList<QUrl>(req.filesToSelect));
-#endif
-        m_currentView->openUrl(locURL, locationBarURL, nameFilter);
+        m_currentView->openUrl(url, locationBarURL);
     }
 
     if (!internalViewMode.isEmpty() && internalViewMode != m_currentView->internalViewMode()) {
