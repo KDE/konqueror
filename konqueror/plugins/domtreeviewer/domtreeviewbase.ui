@@ -51,7 +51,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KPushButton" name="messageListBtn" >
+       <widget class="QPushButton" name="messageListBtn" >
         <property name="font" >
          <font>
           <pointsize>10</pointsize>
@@ -82,7 +82,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="KPushButton" name="messageHideBtn" >
+       <widget class="QPushButton" name="messageHideBtn" >
         <property name="font" >
          <font>
           <pointsize>10</pointsize>
@@ -382,11 +382,6 @@
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>KTextEdit</class>
    <extends>QTextEdit</extends>
    <header>ktextedit.h</header>
@@ -404,7 +399,6 @@
  </tabstops>
  <includes>
   <include location="local" >klineedit.h</include>
-  <include location="local" >kpushbutton.h</include>
   <include location="local" >ktextedit.h</include>
  </includes>
  <resources/>
