@@ -27,7 +27,6 @@
 
 class KFileItemList;
 class KNewFileMenu;
-class KFileItemActions;
 
 class KActionCollection;
 class KBookmarkManager;

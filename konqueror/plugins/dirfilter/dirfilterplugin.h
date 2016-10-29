@@ -31,7 +31,6 @@
 
 class QPushButton;
 class KUrl;
-class KDirLister;
 class KFileItemList;
 class KLineEdit;
 namespace KParts

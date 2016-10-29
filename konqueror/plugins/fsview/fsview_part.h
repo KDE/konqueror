@@ -29,7 +29,6 @@
 
 #include "fsview.h"
 
-class KAboutData;
 class KActionMenu;
 
 class FSViewPart;

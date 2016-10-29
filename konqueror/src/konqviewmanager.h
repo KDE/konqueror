@@ -37,7 +37,6 @@
 
 class KonqFrameTabs;
 class QString;
-class KComponentData;
 class KConfig;
 class KConfigGroup;
 class KonqMainWindow;
@@ -45,7 +44,6 @@ class KonqFrameBase;
 class KonqFrameContainer;
 class KonqFrameContainerBase;
 class KonqView;
-class KActionMenu;
 class KonqClosedTabItem;
 class KonqClosedWindowItem;
 

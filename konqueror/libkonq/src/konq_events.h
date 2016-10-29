@@ -32,7 +32,6 @@ namespace KParts
 class ReadOnlyPart;
 }
 
-class KConfig;
 
 class LIBKONQ_EXPORT KonqFileSelectionEvent : public KParts::Event
 {

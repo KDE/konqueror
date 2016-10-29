@@ -35,7 +35,6 @@ class KConfig;
 
 namespace KIO
 {
-class Job;
 }
 
 class UAChangerPlugin : public KParts::Plugin

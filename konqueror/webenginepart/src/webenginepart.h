@@ -35,7 +35,6 @@ namespace KParts {
 }
 
 class QWebEngineView;
-class QWebEngineHistoryItem;
 class WebView;
 class WebPage;
 class SearchBar;

@@ -26,8 +26,6 @@
 
 #include <KUrl>
 
-class QNetworkAccessManager;
-class QNetworkReply;
 class QScriptEngine;
 
 class OpenSearchEngine

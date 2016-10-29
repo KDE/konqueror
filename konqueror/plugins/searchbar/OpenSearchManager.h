@@ -26,7 +26,6 @@
 //KDELibs4Support
 #include <kurl.h>
 
-class SuggestionEngine;
 
 class OpenSearchEngine;
 
