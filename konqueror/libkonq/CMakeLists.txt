@@ -4,7 +4,7 @@ project(LibKonq)
 add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
 # ECM setup
-find_package(ECM 1.7.0 CONFIG REQUIRED)
+find_package(ECM 5.27.0 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 set(LIBKONQ_VERSION "5.97.0")
