@@ -318,7 +318,7 @@ void PluginValidators::slotContextMenu()
     menu.addAction(m_validateCssUpload);
     menu.addAction(m_validateLinks);
 #ifdef HAVE_TIDY
-    menu.addTitle(i18n("Local Validation"));
+    menu.setTitle(i18n("Local Validation"));
     menu.addAction(m_localValidation);
     menu.addAction(m_localValidationReport);
 #endif
