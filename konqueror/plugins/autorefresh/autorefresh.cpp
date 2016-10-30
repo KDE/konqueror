@@ -41,7 +41,7 @@ AutoRefresh::AutoRefresh(QObject *parent, const QVariantList & /*args*/)
     : Plugin(parent)
 {
     timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(slotRefresh()));
+    connect(timer, &QTimer::timeout, this, &AutoRefresh::slotRefresh);
 
     refresher = actionCollection()->add<KSelectAction>(QStringLiteral("autorefresh"));
     refresher->setText(i18n("&Auto Refresh"));

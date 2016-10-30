@@ -45,8 +45,10 @@ KShellCommandDialog::KShellCommandDialog(const QString &title, const QString &co
     QLabel *label = new QLabel(title, this);
     m_shell = new KShellCommandExecutor(command, this);
 
-    cancelButton = new KPushButton(KStandardGuiItem::cancel(), this);
-    closeButton = new KPushButton(KStandardGuiItem::close(), this);
+    cancelButton = new QPushButton(this);
+    KGuiItem::assign(cancelButton, KStandardGuiItem::cancel());
+    closeButton = new QPushButton(this);
+    KGuiItem::assign(closeButton, KStandardGuiItem::close());
     closeButton->setDefault(true);
 
     label->resize(label->sizeHint());
@@ -64,9 +66,9 @@ KShellCommandDialog::KShellCommandDialog(const QString &title, const QString &co
 
     m_shell->setFocus();
 
-    connect(cancelButton, SIGNAL(clicked()), m_shell, SLOT(slotFinished()));
-    connect(m_shell, SIGNAL(finished()), this, SLOT(disableStopButton()));
-    connect(closeButton, SIGNAL(clicked()), this, SLOT(slotClose()));
+    connect(cancelButton, &QAbstractButton::clicked, m_shell, &KShellCommandExecutor::slotFinished);
+    connect(m_shell, &KShellCommandExecutor::finished, this, &KShellCommandDialog::disableStopButton);
+    connect(closeButton, &QAbstractButton::clicked, this, &KShellCommandDialog::slotClose);
 }
 
 KShellCommandDialog::~KShellCommandDialog()

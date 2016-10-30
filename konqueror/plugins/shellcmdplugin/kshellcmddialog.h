@@ -36,8 +36,8 @@ public:
 protected:
 
     KShellCommandExecutor *m_shell;
-    KPushButton *cancelButton;
-    KPushButton *closeButton;
+    QPushButton *cancelButton;
+    QPushButton *closeButton;
 protected Q_SLOTS:
     void disableStopButton();
     void slotClose();
