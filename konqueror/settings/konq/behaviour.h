@@ -33,9 +33,9 @@ class KBehaviourOptions : public KCModule
 public:
     explicit KBehaviourOptions(QWidget *parent, const QVariantList &args = QVariantList());
     ~KBehaviourOptions();
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void updateWinPixmap(bool);

@@ -105,10 +105,10 @@ class KPluginOptions : public KCModule
 public:
     KPluginOptions(QWidget *parent, const QVariantList &);
 
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
-    QString quickHelp() const;
+    virtual void load() Q_DECL_OVERRIDE;
+    virtual void save() Q_DECL_OVERRIDE;
+    virtual void defaults() Q_DECL_OVERRIDE;
+    QString quickHelp() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotChanged();

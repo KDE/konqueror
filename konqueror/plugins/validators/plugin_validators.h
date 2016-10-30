@@ -37,7 +37,6 @@
 //KDELibs4Support
 #include <kurl.h>
 
-class KAction;
 class KActionMenu;
 class KUrl;
 namespace KIO

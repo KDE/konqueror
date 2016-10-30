@@ -33,9 +33,9 @@ class Config
     Q_OBJECT
 public:
     Config(QWidget *parent_P, const QVariantList &args);
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 private:
     Konqueror *konqueror_widget;
     SystemWidget *system_widget;
@@ -47,9 +47,9 @@ class KonquerorConfig
     Q_OBJECT
 public:
     KonquerorConfig(QWidget *parent_P, const QVariantList &args);
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 private:
     Konqueror *widget;
 };

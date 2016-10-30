@@ -92,13 +92,13 @@ protected:
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    virtual QWebEnginePage* createWindow(WebWindowType type);
+    QWebEnginePage* createWindow(WebWindowType type) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    virtual bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
+    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
@@ -144,7 +144,7 @@ public:
     virtual ~NewWindowPage();
 
 protected:
-    virtual bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
+    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotGeometryChangeRequested(const QRect& rect) override;

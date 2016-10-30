@@ -118,7 +118,7 @@ public:
 
 protected Q_SLOTS:
 
-    virtual void accept();
+    void accept() Q_DECL_OVERRIDE;
     void slotTextChanged(const QString &text);
 
 private:

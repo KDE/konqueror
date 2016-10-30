@@ -36,9 +36,9 @@ public:
     KAppearanceOptions(QWidget *parent, const QVariantList &);
     ~KAppearanceOptions();
 
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     void slotFontSize(int);
