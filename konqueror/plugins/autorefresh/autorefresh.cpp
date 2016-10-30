@@ -26,7 +26,7 @@
 #include <kcomponentdata.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <qtimer.h>
 #include <kselectaction.h>
 #include <kactioncollection.h>

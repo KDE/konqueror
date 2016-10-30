@@ -40,7 +40,7 @@
 #include <QStylePainter>
 #include <QStyleOptionFocusRect>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kconfiggroup.h>

@@ -38,7 +38,7 @@
 #include <khtmlview.h>
 #include <kiconloader.h>
 #include <kcomponentdata.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmenu.h>
 #include <kshortcut.h>
 #include <ktoolbar.h>

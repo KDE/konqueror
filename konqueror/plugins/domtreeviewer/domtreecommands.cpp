@@ -23,7 +23,7 @@
 #include <dom/dom_doc.h>
 #include <dom/dom_exception.h>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <qmap.h>
 

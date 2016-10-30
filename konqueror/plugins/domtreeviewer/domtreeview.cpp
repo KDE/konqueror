@@ -51,7 +51,7 @@
 #include <kglobalsettings.h>
 #include <khtml_part.h>
 #include <klineedit.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kstandardguiitem.h>
 #include <ktextedit.h>

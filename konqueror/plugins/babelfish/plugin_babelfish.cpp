@@ -33,7 +33,7 @@
 #include <kmenu.h>
 #include <kcomponentdata.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>

@@ -21,7 +21,7 @@
 #include <kparts/part.h>
 #include <kactioncollection.h>
 #include <kinputdialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kshell.h>
 #include <kpluginfactory.h>

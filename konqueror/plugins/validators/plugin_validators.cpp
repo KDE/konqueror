@@ -41,7 +41,7 @@
 #include <kdebug.h>
 #include <khtml_part.h>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmenu.h>
 #include <kmessagebox.h>
 #include <kpluginfactory.h>

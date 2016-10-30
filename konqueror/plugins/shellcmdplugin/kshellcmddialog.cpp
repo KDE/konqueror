@@ -25,7 +25,7 @@
 #include <QLabel>
 
 // KDE
-#include <klocale.h>
+#include <KLocalizedString>
 #include <KStandardGuiItem>
 #include <kpushbutton.h>
 

@@ -31,7 +31,7 @@ Boston, MA 02110-1301, USA.
 #include <QHBoxLayout>
 #include <QGridLayout>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kurl.h>
 #include <kfontdialog.h>
 #include <kiconloader.h>

@@ -27,7 +27,7 @@
 #include <kundostack.h>
 #include <kconfig.h>
 #include <khtml_part.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kstandarddirs.h>

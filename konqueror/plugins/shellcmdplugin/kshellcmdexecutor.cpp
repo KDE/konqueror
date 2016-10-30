@@ -29,7 +29,7 @@
 #include <kinputdialog.h>
 #include <kglobalsettings.h>
 #include <kdesu/process.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <QFontDatabase>
 
 using namespace KDESu;

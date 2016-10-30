@@ -29,7 +29,7 @@
 
 #include <kmenu.h>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kfileitem.h>
 #include <kmimetype.h>
 #include <klineedit.h>

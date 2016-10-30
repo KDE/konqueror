@@ -29,7 +29,7 @@ Boston, MA 02110-1301, USA.
 
 
 #include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kcharsets.h>
 #include <kmessagebox.h>
 #include <kurl.h>

@@ -40,7 +40,7 @@
 
 #include <kfiledialog.h>
 #include <kmessagebox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <khtmlview.h>
 #include <khtml_part.h>
 #include <kdebug.h>

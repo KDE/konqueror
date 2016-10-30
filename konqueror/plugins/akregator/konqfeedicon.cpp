@@ -28,7 +28,7 @@
 
 #include <kdebug.h>
 #include <kpluginfactory.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kiconloader.h>
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>

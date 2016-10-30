@@ -23,7 +23,7 @@
 #include "settings.h"
 
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QPushButton>
 

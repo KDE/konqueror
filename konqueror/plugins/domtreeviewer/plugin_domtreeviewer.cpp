@@ -6,7 +6,7 @@
 #include <kcomponentdata.h>
 
 #include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpluginfactory.h>
 #include <kactioncollection.h>
 #include <khtml_part.h>
