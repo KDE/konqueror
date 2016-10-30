@@ -33,7 +33,7 @@
 #include <krun.h>
 #include <kservice.h>
 #include <kactionmenu.h>
-#include <kmenu.h>
+#include <QMenu>
 #include <kbookmarkimporter.h>
 #include <kbookmarkmanager.h>
 #include <kactioncollection.h>

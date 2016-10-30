@@ -30,7 +30,7 @@
 #include <kactionmenu.h>
 
 #include <kactioncollection.h>
-#include <kmenu.h>
+#include <QMenu>
 #include <kcomponentdata.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>

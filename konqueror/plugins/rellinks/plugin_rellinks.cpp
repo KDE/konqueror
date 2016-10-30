@@ -39,7 +39,7 @@
 #include <kiconloader.h>
 #include <kcomponentdata.h>
 #include <KLocalizedString>
-#include <kmenu.h>
+#include <QMenu>
 #include <kshortcut.h>
 #include <ktoolbar.h>
 #include <kurl.h>

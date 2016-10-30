@@ -27,7 +27,7 @@
 #include <QShowEvent>
 
 
-#include <kmenu.h>
+#include <QMenu>
 
 #include <KLocalizedString>
 #include <kfileitem.h>

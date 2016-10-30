@@ -136,12 +136,12 @@ bool KonqFeedIcon::feedFound()
 void KonqFeedIcon::contextMenu()
 {
     delete m_menu;
-    m_menu = new KMenu(m_part->widget());
+    m_menu = new QMenu(m_part->widget());
     if (m_feedList.count() == 1) {
-        m_menu->addTitle(m_feedList.first().title());
+        m_menu->setTitle(m_feedList.first().title());
         m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addFeeds()));
     } else {
-        m_menu->addTitle(i18n("Add Feeds to Akregator"));
+        m_menu->setTitle(i18n("Add Feeds to Akregator"));
         int id = 0;
         for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
             QAction *action = m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), (*it).title(), this, SLOT(addFeed()));

@@ -127,7 +127,7 @@
 #include <KLocalizedString>
 #include <QIcon>
 #include <kiconloader.h>
-#include <kmenu.h>
+#include <QMenu>
 #include <kprocess.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>

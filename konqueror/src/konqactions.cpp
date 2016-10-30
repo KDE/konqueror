@@ -25,7 +25,7 @@
 
 #include <QDebug>
 #include <QIcon>
-#include <kmenu.h>
+#include <QMenu>
 #include <kglobal.h>
 #include <QAction>
 

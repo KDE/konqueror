@@ -26,7 +26,7 @@
 #include <kcomponentdata.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
-#include <kmenu.h>
+#include <QMenu>
 #include <kprotocolmanager.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>

@@ -27,7 +27,7 @@
 
 #include <qpointer.h>
 #include <kparts/plugin.h>
-#include <kmenu.h>
+#include <QMenu>
 #include "feeddetector.h"
 #include "pluginbase.h"
 
@@ -63,7 +63,7 @@ private:
     KUrlLabel *m_feedIcon;
     KParts::StatusBarExtension *m_statusBarEx;
     FeedDetectorEntryList m_feedList;
-    QPointer<KMenu> m_menu;
+    QPointer<QMenu> m_menu;
 
 private slots:
     void contextMenu();

@@ -42,7 +42,7 @@
 #include <khtml_part.h>
 
 #include <KLocalizedString>
-#include <kmenu.h>
+#include <QMenu>
 #include <kmessagebox.h>
 #include <kpluginfactory.h>
 #include <kstatusbar.h>
@@ -310,8 +310,8 @@ void PluginValidators::slotValidateLinks()
 
 void PluginValidators::slotContextMenu()
 {
-    KMenu menu(m_part->widget());
-    menu.addTitle(i18n("Remote Validation"));
+    QMenu menu(m_part->widget());
+    menu.setTitle(i18n("Remote Validation"));
     menu.addAction(m_validateHtmlUri);
     menu.addAction(m_validateHtmlUpload);
     menu.addAction(m_validateCssUri);

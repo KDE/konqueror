@@ -38,7 +38,7 @@
 #include <QPaintEvent>
 #include <QKeyEvent>
 #include <QContextMenuEvent>
-#include <kmenu.h>
+#include <QMenu>
 #include <QMouseEvent>
 #include <kconfiggroup.h>
 
