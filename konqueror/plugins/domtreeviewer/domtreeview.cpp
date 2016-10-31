@@ -71,9 +71,9 @@ public:
         setButtonText(User1, i18n("&Append as Child"));
         setButtonText(User2, i18n("Insert &Before Current"));
 
-        connect(this, SIGNAL(cancelClicked()), this, SLOT(reject()));
-        connect(this, SIGNAL(user1Clicked()), this, SLOT(accept()));
-        connect(this, SIGNAL(user2Clicked()), this, SLOT(accept()));
+        connect(this, &KDialog::cancelClicked, this, &QDialog::reject);
+        connect(this, &KDialog::user1Clicked, this, &QDialog::accept);
+        connect(this, &KDialog::user2Clicked, this, &QDialog::accept);
     }
 };
 
@@ -90,9 +90,9 @@ public:
         setButtonText(User1, i18n("&Append as Child"));
         setButtonText(User2, i18n("Insert &Before Current"));
 
-        connect(this, SIGNAL(cancelClicked()), this, SLOT(reject()));
-        connect(this, SIGNAL(user1Clicked()), this, SLOT(accept()));
-        connect(this, SIGNAL(user2Clicked()), this, SLOT(accept()));
+        connect(this, &KDialog::cancelClicked, this, &QDialog::reject);
+        connect(this, &KDialog::user1Clicked, this, &QDialog::accept);
+        connect(this, &KDialog::user2Clicked, this, &QDialog::accept);
     }
 };
 
@@ -107,8 +107,8 @@ public:
         setWindowTitle(i18nc("@title:window", "Edit Attribute"));
         setButtons(Ok | Cancel);
 
-        connect(this, SIGNAL(okClicked()), this, SLOT(accept()));
-        connect(this, SIGNAL(cancelClicked()), this, SLOT(reject()));
+        connect(this, &KDialog::okClicked, this, &QDialog::accept);
+        connect(this, &KDialog::cancelClicked, this, &QDialog::reject);
         connect(attrName, SIGNAL(returnPressed()), this, SLOT(accept()));
     }
 };

@@ -77,15 +77,15 @@ KJavaOptions::KJavaOptions(KSharedConfig::Ptr config, const QString &group,
      ********************* Global Settings *************************************
      **************************************************************************/
     enableJavaGloballyCB = new QCheckBox(i18n("Enable Ja&va globally"), this);
-    connect(enableJavaGloballyCB, SIGNAL(clicked()), this, SLOT(slotChanged()));
-    connect(enableJavaGloballyCB, SIGNAL(clicked()), this, SLOT(toggleJavaControls()));
+    connect(enableJavaGloballyCB, &QAbstractButton::clicked, this, &KJavaOptions::slotChanged);
+    connect(enableJavaGloballyCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
     toplevel->addWidget(enableJavaGloballyCB);
 
     /***************************************************************************
      ***************** Domain Specific Settings ********************************
      **************************************************************************/
     domainSpecific = new JavaDomainListView(m_pConfig, m_groupname, this, this);
-    connect(domainSpecific, SIGNAL(changed(bool)), SLOT(slotChanged()));
+    connect(domainSpecific, &DomainListView::changed, this, &KJavaOptions::slotChanged);
     toplevel->addWidget(domainSpecific, 2);
 
     /***************************************************************************
@@ -97,29 +97,29 @@ KJavaOptions::KJavaOptions(KSharedConfig::Ptr config, const QString &group,
 
     javaSecurityManagerCB = new QCheckBox(i18n("&Use security manager"), this);
     laygroup1->addRow(javaSecurityManagerCB);
-    connect(javaSecurityManagerCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()));
+    connect(javaSecurityManagerCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
 
     useKioCB = new QCheckBox(i18n("Use &KIO"), this);
     laygroup1->addRow(useKioCB);
-    connect(useKioCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()));
+    connect(useKioCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
 
     enableShutdownCB = new QCheckBox(i18n("Shu&tdown applet server when inactive for more than"), this);
-    connect(enableShutdownCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()));
-    connect(enableShutdownCB, SIGNAL(clicked()), this, SLOT(toggleJavaControls()));
+    connect(enableShutdownCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
+    connect(enableShutdownCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
     KHBox *secondsHB = new KHBox(javartGB);
     laygroup1->addWidget(secondsHB);
     serverTimeoutSB = new KIntNumInput(secondsHB);
     serverTimeoutSB->setRange(0, 1000, 5);
     serverTimeoutSB->setSuffix(ki18np(" second", " seconds"));
-    connect(serverTimeoutSB, SIGNAL(valueChanged(int)), this, SLOT(slotChanged()));
+    connect(serverTimeoutSB, &KIntNumInput::valueChanged, this, &KJavaOptions::slotChanged);
     laygroup1->addRow(enableShutdownCB, serverTimeoutSB);
 
     pathED = new  KUrlRequester(this);
-    connect(pathED, SIGNAL(textChanged(QString)), this, SLOT(slotChanged()));
+    connect(pathED, &KUrlRequester::textChanged, this, &KJavaOptions::slotChanged);
     laygroup1->addRow(i18n("&Path to Java executable, or 'java':"), pathED);
 
     addArgED = new QLineEdit(this);
-    connect(addArgED, SIGNAL(textChanged(QString)), this, SLOT(slotChanged()));
+    connect(addArgED, &QLineEdit::textChanged, this, &KJavaOptions::slotChanged);
     laygroup1->addRow(i18n("Additional Java a&rguments:"), addArgED);
 
     /***************************************************************************

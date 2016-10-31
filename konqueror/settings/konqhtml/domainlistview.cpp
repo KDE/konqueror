@@ -57,25 +57,25 @@ DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &title,
     thisLayout->addLayout(btnsLayout);
     addDomainPB = new QPushButton(i18n("&New..."), this);
     btnsLayout->addWidget(addDomainPB);
-    connect(addDomainPB, SIGNAL(clicked()), SLOT(addPressed()));
+    connect(addDomainPB, &QAbstractButton::clicked, this, &DomainListView::addPressed);
 
     changeDomainPB = new QPushButton(i18n("Chan&ge..."), this);
     btnsLayout->addWidget(changeDomainPB);
-    connect(changeDomainPB, SIGNAL(clicked()), this, SLOT(changePressed()));
+    connect(changeDomainPB, &QAbstractButton::clicked, this, &DomainListView::changePressed);
 
     deleteDomainPB = new QPushButton(i18n("De&lete"), this);
     btnsLayout->addWidget(deleteDomainPB);
-    connect(deleteDomainPB, SIGNAL(clicked()), this, SLOT(deletePressed()));
+    connect(deleteDomainPB, &QAbstractButton::clicked, this, &DomainListView::deletePressed);
 
     importDomainPB = new QPushButton(i18n("&Import..."), this);
     btnsLayout->addWidget(importDomainPB);
-    connect(importDomainPB, SIGNAL(clicked()), this, SLOT(importPressed()));
+    connect(importDomainPB, &QAbstractButton::clicked, this, &DomainListView::importPressed);
     importDomainPB->setEnabled(false);
     importDomainPB->hide();
 
     exportDomainPB = new QPushButton(i18n("&Export..."), this);
     btnsLayout->addWidget(exportDomainPB);
-    connect(exportDomainPB, SIGNAL(clicked()), this, SLOT(exportPressed()));
+    connect(exportDomainPB, &QAbstractButton::clicked, this, &DomainListView::exportPressed);
     exportDomainPB->setEnabled(false);
     exportDomainPB->hide();
 

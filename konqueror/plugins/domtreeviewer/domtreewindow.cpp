@@ -70,7 +70,7 @@ public:
         pal.setColor(messagePane->backgroundRole(), palette().color(QPalette::Active, QPalette::Base));
         messagePane->setPalette(pal);
 
-        connect(this, SIGNAL(closeClicked()), this, SLOT(close()));
+        connect(this, &KDialog::closeClicked, this, &QWidget::close);
         connect(this, SIGNAL(user1Clicked()), messagePane, SLOT(clear()));
     }
 
@@ -149,9 +149,9 @@ void DOMTreeWindow::setupActions()
 {
     KStandardAction::close(this, SLOT(close()), actionCollection());
 
-    KStandardAction::cut(this, SLOT(slotCut()), actionCollection())->setEnabled(false);
-    KStandardAction::copy(this, SLOT(slotCopy()), actionCollection())->setEnabled(false);
-    KStandardAction::paste(this, SLOT(slotPaste()), actionCollection())->setEnabled(false);
+    KStandardAction::cut(this, &DOMTreeWindow::slotCut, actionCollection())->setEnabled(false);
+    KStandardAction::copy(this, &DOMTreeWindow::slotCopy, actionCollection())->setEnabled(false);
+    KStandardAction::paste(this, &DOMTreeWindow::slotPaste, actionCollection())->setEnabled(false);
 
     m_commandHistory = new KUndoStack;
 
