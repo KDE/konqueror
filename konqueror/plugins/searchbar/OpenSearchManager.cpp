@@ -33,7 +33,7 @@
 
 OpenSearchManager::OpenSearchManager(QObject *parent)
     : QObject(parent)
-    , m_activeEngine(0)
+    , m_activeEngine(Q_NULLPTR)
 {
     m_state = IDLE;
 }

@@ -72,14 +72,14 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a =  actionCollection()->addAction(QStringLiteral("rellinks_home"));
     a->setText(i18n("&Top"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("go-top")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+T")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+T")));
     a->setWhatsThis(i18n("<p>This link references a home page or the top of some hierarchy.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_up"));
     a->setText(i18n("&Up"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("go-up")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+U")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+U")));
     a->setWhatsThis(i18n("<p>This link references the immediate parent of the current document.</p>"));
     grp->addAction(a);
 
@@ -88,28 +88,28 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a = actionCollection()->addAction(QStringLiteral("rellinks_begin"));
     a->setText(i18n("&First"));
     a->setIcon(QIcon::fromTheme(isRTL ? "go-last" : "go-first"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+F")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+F")));
     a->setWhatsThis(i18n("<p>This link type tells search engines which document is considered by the author to be the starting point of the collection.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_prev"));
     a->setText(i18n("&Previous"));
     a->setIcon(QIcon::fromTheme(isRTL ? "go-next" : "go-previous"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+P")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+P")));
     a->setWhatsThis(i18n("<p>This link references the previous document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_next"));
     a->setText(i18n("&Next"));
     a->setIcon(QIcon::fromTheme(isRTL ? "go-previous" : "go-next"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+N")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+N")));
     a->setWhatsThis(i18n("<p>This link references the next document in an ordered series of documents.</p>"));
     grp->addAction(a);
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_last"));
     a->setText(i18n("&Last"));
     a->setIcon(QIcon::fromTheme(isRTL ? "go-first" : "go-last"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+L")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+L")));
     a->setWhatsThis(i18n("<p>This link references the end of a sequence of documents.</p>"));
     grp->addAction(a);
 
@@ -117,7 +117,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a = actionCollection()->addAction(QStringLiteral("rellinks_search"));
     a->setText(i18n("&Search"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("edit-find")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+S")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+S")));
     a->setWhatsThis(i18n("<p>This link references the search.</p>"));
     grp->addAction(a);
 
@@ -129,7 +129,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_contents"));
     a->setText(i18n("Table of &Contents"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+C")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+C")));
     a->setWhatsThis(i18n("<p>This link references the table of contents.</p>"));
     m_document->addAction(a);
     grp->addAction(a);
@@ -176,7 +176,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_index"));
     a->setText(i18n("&Index"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+I")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+I")));
     a->setWhatsThis(i18n("<p>This link references the index.</p>"));
     m_document->addAction(a);
     grp->addAction(a);
@@ -190,7 +190,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a = actionCollection()->addAction(QStringLiteral("rellinks_help"));
     a->setText(i18n("&Help"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("help-contents")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+H")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+H")));
     a->setWhatsThis(i18n("<p>This link references the help.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
@@ -198,7 +198,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a = actionCollection()->addAction(QStringLiteral("rellinks_author"));
     a->setText(i18n("&Authors"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("x-office-contact")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+A")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+A")));
     a->setWhatsThis(i18n("<p>This link references the author.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
@@ -206,7 +206,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     a = actionCollection()->addAction(QStringLiteral("rellinks_copyright"));
     a->setText(i18n("Copy&right"));
     a->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+R")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+R")));
     a->setWhatsThis(i18n("<p>This link references the copyright.</p>"));
     m_more->addAction(a);
     grp->addAction(a);
@@ -248,7 +248,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     // create polling timer and connect it
     m_pollTimer = new QTimer(this);
     m_pollTimer->setObjectName(QStringLiteral("polling timer"));
-    connect(m_pollTimer, SIGNAL(timeout()), this, SLOT(updateToolbar()));
+    connect(m_pollTimer, &QTimer::timeout, this, &RelLinksPlugin::updateToolbar);
 
     // delay access to our part's members until it has finished its initialisation
     QTimer::singleShot(0, this, SLOT(delayedSetup()));

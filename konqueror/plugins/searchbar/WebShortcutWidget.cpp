@@ -28,13 +28,15 @@
 
 #include <KGlobalSettings>
 
+#include <KGuiItem>
 #include <KLocale>
+#include <KStandardGuiItem>
 #include <QFontDatabase>
 
 WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     : QDialog(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout();
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QHBoxLayout *titleLayout = new QHBoxLayout();
     mainLayout->addLayout(titleLayout);
     QLabel *iconLabel = new QLabel(this);
@@ -69,16 +71,16 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     mainLayout->addLayout(buttonLayout);
     buttonLayout->addStretch();
-    QPushButton *okButton = new QPushButton(i18n("OK"), this);
+    QPushButton *okButton = new QPushButton(this);
+    KGuiItem::assign(okButton, KStandardGuiItem::ok());
     okButton->setDefault(true);
     buttonLayout->addWidget(okButton);
-    connect(okButton, SIGNAL(clicked()), this, SLOT(okClicked()));
+    connect(okButton, &QAbstractButton::clicked, this, &WebShortcutWidget::okClicked);
 
     QPushButton *cancelButton = new QPushButton(i18n("Cancel"), this);
+    KGuiItem::assign(cancelButton, KStandardGuiItem::cancel());
     buttonLayout->addWidget(cancelButton);
-    connect(cancelButton, SIGNAL(clicked()), this, SLOT(cancelClicked()));
-
-    setLayout(mainLayout);
+    connect(cancelButton, &QAbstractButton::clicked, this, &WebShortcutWidget::cancelClicked);
 
     resize(minimumSizeHint());
 

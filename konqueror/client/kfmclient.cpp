@@ -48,7 +48,6 @@
 
 #include <QDir>
 #include <QMimeDatabase>
-#include <QRegExp>
 #include <QUrl>
 #include <QStandardPaths>
 

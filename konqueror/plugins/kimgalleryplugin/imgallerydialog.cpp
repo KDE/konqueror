@@ -73,8 +73,8 @@ void KIGPDialog::slotDefault()
     m_imageProperty->setChecked(false);
     m_fontName->setItemText(m_fontName->currentIndex(), QFontDatabase::systemFont(QFontDatabase::GeneralFont).family());
     m_fontSize->setValue(14);
-    m_foregroundColor->setColor(QColor("#d0ffd0"));
-    m_backgroundColor->setColor(QColor("#333333"));
+    m_foregroundColor->setColor(QColor(QStringLiteral("#d0ffd0")));
+    m_backgroundColor->setColor(QColor(QStringLiteral("#333333")));
 
     m_imageNameReq->setUrl(QUrl::fromLocalFile(m_path + "images.html"));
     m_recurseSubDir->setChecked(false);
