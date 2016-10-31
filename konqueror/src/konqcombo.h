@@ -66,11 +66,11 @@ public:
     void insertItem(const QPixmap &pixmap, const QString &text, int index = -1, const QString &title = QString());
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *);
-    virtual bool eventFilter(QObject *, QEvent *);
-    virtual void mousePressEvent(QMouseEvent *);
-    virtual void mouseMoveEvent(QMouseEvent *);
-    void paintEvent(QPaintEvent *);
+    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
     void selectWord(QKeyEvent *e);
 
 Q_SIGNALS:

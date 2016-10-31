@@ -84,8 +84,8 @@ Q_SIGNALS:
     void linkedViewClicked(bool mode);
 
 protected:
-    virtual bool eventFilter(QObject *, QEvent *);
-    virtual void mousePressEvent(QMouseEvent *);
+    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
     /**
      * Brings up the context menu for this frame
      */

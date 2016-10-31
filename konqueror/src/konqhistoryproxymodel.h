@@ -39,10 +39,10 @@ public:
     explicit KonqHistoryProxyModel(KonqHistorySettings *settings, QObject *parent = Q_NULLPTR);
     ~KonqHistoryProxyModel();
 
-    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 protected:
-    virtual bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotSettingsChanged();

@@ -53,7 +53,7 @@ public:
 
 protected:
     /*! \reimp */
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const Q_DECL_OVERRIDE;
     KSortFilterProxyModelPrivate *const d_ptr;
 
     Q_DISABLE_COPY(KSortFilterProxyModel)

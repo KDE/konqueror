@@ -68,16 +68,16 @@ public:
     int minimumTextHeight() const;
 
     /** @see QWidget::sizeHint */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
     /** @see QWidget::minimumSizeHint */
-    virtual QSize minimumSizeHint() const;
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
 
 protected:
     /** @see QWidget::paintEvent() */
-    virtual void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
     /** @see QWidget::resizeEvent() */
-    virtual void resizeEvent(QResizeEvent *event);
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void timerDone();

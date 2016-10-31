@@ -35,7 +35,7 @@ public:
     KonqHistoryDialog(KonqMainWindow *parent = Q_NULLPTR);
     ~KonqHistoryDialog();
 
-    QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotOpenWindow(const QUrl &url);
