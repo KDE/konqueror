@@ -55,7 +55,7 @@ install( PROGRAMS
    kfmclient.desktop kfmclient_html.desktop kfmclient_war.desktop
    konqbrowser.desktop
    DESTINATION  ${KDE_INSTALL_APPDIR} )
-install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata )
+install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
