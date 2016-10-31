@@ -171,8 +171,8 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    qDebug() << url;
-    QUrl reqUrl (url);
+    qDebug() << url << "type=" << type;
+    QUrl reqUrl(url);
 
     // Handle "mailto:" url here...
     if (handleMailToUrl(reqUrl, type))
@@ -831,6 +831,9 @@ void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
     m_windowArgs.setToolBarsVisible(visible);
 }
 
+// When is this called? (and acceptNavigationRequest is not called?)
+// The only case I found is Ctrl+click on link to data URL (like in konqviewmgrtest), that's quite specific...
+// Everything else seems to work with this method being commented out...
 void NewWindowPage::slotLoadFinished(bool ok)
 {
     Q_UNUSED(ok)
@@ -838,7 +841,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     if (!m_createNewWindow)
         return;
 
-    const bool actionRequestedByUser = m_type != QWebEnginePage::NavigationTypeOther;
+    const bool actionRequestedByUser = true; // ### we don't have the information here, unlike in acceptNavigationRequest
 
     // Browser args...
     KParts::BrowserArguments bargs = browserArgs(m_type);
@@ -855,7 +858,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     KParts::ReadOnlyPart* newWindowPart =0;
     part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
-    qDebug() << "Created new window" << newWindowPart;
+    qDebug() << "Created new window or tab" << newWindowPart;
 
     // Get the webview...
     WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : 0;
