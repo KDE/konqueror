@@ -563,6 +563,7 @@ void ViewMgrTest::testCtrlClickOnLink()
     qDebug() << "CLICKING NOW";
     QTest::mouseClick(partWidget(view), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
     QTest::qWait(100);
+    KonqView *newView = Q_NULLPTR;
     // Expected behavior for Ctrl+click:
     //  new tab, if mmbOpensTab
     //  new window, if !mmbOpensTab
@@ -579,6 +580,11 @@ void ViewMgrTest::testCtrlClickOnLink()
             QCOMPARE(mainWindow.currentView(), view);
             QCOMPARE(mainWindow.viewManager()->activePart(), view->part());
         }
+        KonqFrame *newFrame = dynamic_cast<KonqFrame *>(mainWindow.viewManager()->tabContainer()->tabAt(1));
+        QVERIFY(newFrame);
+        newView = newFrame->activeChildView();
+        QVERIFY(newView);
+        //QVERIFY(newView->supportsMimeType("text/plain"));
     } else {
         QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
         checkSecondWindowHasOneTab(false);
