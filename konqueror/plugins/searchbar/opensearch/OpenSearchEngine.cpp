@@ -21,8 +21,8 @@
 
 #include "OpenSearchEngine.h"
 
-#include <KDE/KGlobal>
-#include <KDE/KLocale>
+#include <KGlobal>
+#include <KLocale>
 
 #include <QtCore/QRegExp>
 #include <QtCore/QStringList>

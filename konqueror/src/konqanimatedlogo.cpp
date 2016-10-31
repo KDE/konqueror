@@ -21,7 +21,7 @@
 
 #include "konqanimatedlogo_p.h"
 
-#include <KDE/KIconLoader>
+#include <KIconLoader>
 
 #include <QtCore/QEvent>
 #include <QToolBar>

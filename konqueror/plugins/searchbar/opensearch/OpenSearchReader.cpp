@@ -24,7 +24,7 @@
 
 #include <QtCore/QIODevice>
 
-#include <KDE/KLocalizedString>
+#include <KLocalizedString>
 
 OpenSearchReader::OpenSearchReader()
     : QXmlStreamReader()

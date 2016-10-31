@@ -21,9 +21,9 @@
 #ifndef SEARCHBAR_PLUGIN
 #define SEARCHBAR_PLUGIN
 
-#include <KDE/KHistoryComboBox>
-#include <KDE/KUriFilter>
-#include <KDE/KParts/Plugin>
+#include <KHistoryComboBox>
+#include <KUriFilter>
+#include <KParts/Plugin>
 
 #include <QtCore/QStringList>
 #include <QItemDelegate>
