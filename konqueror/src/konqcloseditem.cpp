@@ -26,7 +26,6 @@
 #include <kconfig.h>
 #include <QDebug>
 #include <kglobal.h>
-#include <kglobalsettings.h>
 #include <QIcon>
 #include <kiconeffect.h>
 #include <kiconloader.h>

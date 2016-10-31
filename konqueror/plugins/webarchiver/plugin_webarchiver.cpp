@@ -36,7 +36,6 @@
 
 
 #include <kcomponentdata.h>
-#include <kglobalsettings.h>
 
 #include <kfiledialog.h>
 #include <kmessagebox.h>

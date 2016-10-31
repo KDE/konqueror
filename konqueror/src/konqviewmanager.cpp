@@ -41,7 +41,6 @@
 
 #include <kstringhandler.h>
 #include <QDebug>
-#include <kglobalsettings.h>
 #include <QTemporaryFile>
 #include <KLocalizedString>
 #include <kmessagebox.h>

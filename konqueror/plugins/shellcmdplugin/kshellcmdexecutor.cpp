@@ -27,7 +27,6 @@
 #include <QtCore/QSocketNotifier>
 
 #include <kinputdialog.h>
-#include <kglobalsettings.h>
 #include <kdesu/process.h>
 #include <KLocalizedString>
 #include <QFontDatabase>

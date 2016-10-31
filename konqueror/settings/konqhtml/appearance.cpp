@@ -13,7 +13,6 @@
 #include <khtmldefaults.h>
 #include <KLocalizedString>
 #include <knuminput.h>
-#include <kglobalsettings.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KFontComboBox>

@@ -22,7 +22,6 @@
 #include <qpainter.h>
 #include <qapplication.h>
 
-#include <kglobalsettings.h>
 #include <QFontDatabase>
 
 DOMListViewItem::DOMListViewItem(const DOM::Node &node, QTreeWidget *parent)

@@ -48,7 +48,6 @@
 #include <kcombobox.h>
 #include <kdialog.h>
 #include <kfinddialog.h>
-#include <kglobalsettings.h>
 #include <khtml_part.h>
 #include <klineedit.h>
 #include <KLocalizedString>

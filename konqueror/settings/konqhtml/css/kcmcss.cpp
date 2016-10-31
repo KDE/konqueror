@@ -10,7 +10,6 @@
 #include <kconfig.h>
 #include <kdialog.h>
 #include <kfontdialog.h>
-#include <kglobalsettings.h>
 
 #include <kurlrequester.h>
 #include <kpluginfactory.h>

@@ -19,7 +19,6 @@
 
 #include "konqsettings.h"
 #include <kprotocolmanager.h>
-#include "kglobalsettings.h"
 #include <ksharedconfig.h>
 #include <kglobal.h>
 #include <kmimetype.h>
