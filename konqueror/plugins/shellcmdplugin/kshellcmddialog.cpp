@@ -23,11 +23,11 @@
 // Qt
 #include <QLayout>
 #include <QLabel>
+#include <QPushButton>
 
 // KDE
 #include <KLocalizedString>
 #include <KStandardGuiItem>
-#include <kpushbutton.h>
 
 // Local
 #include "kshellcmdexecutor.h"

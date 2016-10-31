@@ -27,6 +27,7 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QDirIterator>
+#include <QPushButton>
 
 #include <QDebug>
 #include <kio/copyjob.h>
@@ -45,7 +46,6 @@
 #include <kmessagebox.h>
 #include <kdialog.h>
 #include <klistwidget.h>
-#include <kpushbutton.h>
 #include <QStandardPaths>
 
 class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
@@ -105,10 +105,10 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
         KonqSettings::openTabsInsideCurrentWindow());
 
     connect(this, &KonqSessionDlg::user1Clicked, this, &KonqSessionDlg::slotOpen);
-    connect(d->m_pNewButton, &KPushButton::clicked, this, &KonqSessionDlg::slotNew);
-    connect(d->m_pSaveCurrentButton, &KPushButton::clicked, this, &KonqSessionDlg::slotSave);
+    connect(d->m_pNewButton, &QPushButton::clicked, this, &KonqSessionDlg::slotNew);
+    connect(d->m_pSaveCurrentButton, &QPushButton::clicked, this, &KonqSessionDlg::slotSave);
     connect(d->m_pRenameButton, SIGNAL(clicked()), SLOT(slotRename()));
-    connect(d->m_pDeleteButton, &KPushButton::clicked, this, &KonqSessionDlg::slotDelete);
+    connect(d->m_pDeleteButton, &QPushButton::clicked, this, &KonqSessionDlg::slotDelete);
 
     resize(sizeHint());
 }
