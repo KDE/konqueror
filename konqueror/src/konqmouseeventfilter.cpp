@@ -117,7 +117,7 @@ bool KonqMouseEventFilter::eventFilter(QObject *obj, QEvent *e)
     }
     case QEvent::ContextMenu: {
         QContextMenuEvent *ev = static_cast<QContextMenuEvent*>(e);
-        if (ev->reason() == QContextMenuEvent::Mouse) {
+        if (m_bBackRightClick && ev->reason() == QContextMenuEvent::Mouse) {
             return true;
         }
         break;
