@@ -32,7 +32,7 @@
 #include "webenginepart_ext.h"
 #include "sslinfodialog_p.h"
 #include "webengineview.h"
-#include "webpage.h"
+#include "webenginepage.h"
 #include "websslinfo.h"
 #include "webhistoryinterface.h"
 
@@ -104,7 +104,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
 #if 0
     // NOTE: If the application does not set its version number, we automatically
     // set it to KDE's version number so that the default user-agent string contains
-    // proper application version number information. See QWebPage::userAgentForUrl...
+    // proper application version number information. See QWebEnginePage::userAgentForUrl...
     if (QCoreApplication::applicationVersion().isEmpty())
         QCoreApplication::setApplicationVersion(QString("%1.%2.%3")
                                                 .arg(KDE::versionMajor())
@@ -161,7 +161,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
             this, &WebEnginePart::slotLoadFinished);
 
     // Connect the signals from the page...
-    connectWebPageSignals(page());
+    connectWebEnginePageSignals(page());
 
     // Init the QAction we are going to use...
     initActions();
@@ -174,17 +174,17 @@ WebEnginePart::~WebEnginePart()
 {
 }
 
-WebPage* WebEnginePart::page()
+WebEnginePage* WebEnginePart::page()
 {
     if (m_webView)
-        return qobject_cast<WebPage*>(m_webView->page());
+        return qobject_cast<WebEnginePage*>(m_webView->page());
     return 0;
 }
 
-const WebPage* WebEnginePart::page() const
+const WebEnginePage* WebEnginePart::page() const
 {
     if (m_webView)
-        return qobject_cast<const WebPage*>(m_webView->page());
+        return qobject_cast<const WebEnginePage*>(m_webView->page());
     return 0;
 }
 
@@ -272,7 +272,7 @@ void WebEnginePart::updateActions()
 
 }
 
-void WebEnginePart::connectWebPageSignals(WebPage* page)
+void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
 {
     if (!page)
         return;
@@ -352,7 +352,7 @@ bool WebEnginePart::openUrl(const QUrl &_u)
     m_emitOpenUrlNotify = false;
 
     // Pointer to the page object...
-    WebPage* p = page();
+    WebEnginePage* p = page();
     Q_ASSERT(p);
 
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
@@ -582,7 +582,7 @@ void WebEnginePart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 #if 0
 void WebEnginePart::slotRestoreFrameState(QWebFrame *frame)
 {
-    QWebPage* page = (frame ? frame->page() : 0);
+    QWebEnginePage* page = (frame ? frame->page() : 0);
     QWebHistory* history = (page ? page->history() : 0);
 
     // No history item...
@@ -833,10 +833,10 @@ void WebEnginePart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature
     if (!m_featurePermissionBar) {
         m_featurePermissionBar = new FeaturePermissionBar(widget());
 
-        connect(m_featurePermissionBar, SIGNAL(permissionGranted(QWebPage::Feature)),
-                this, SLOT(slotFeaturePermissionGranted(QWebPage::Feature)));
-        connect(m_featurePermissionBar, SIGNAL(permissionDenied(QWebPage::Feature)),
-                this, SLOT(slotFeaturePermissionDenied(QWebPage::Feature)));
+        connect(m_featurePermissionBar, SIGNAL(permissionGranted(QWebEnginePage::Feature)),
+                this, SLOT(slotFeaturePermissionGranted(QWebEnginePage::Feature)));
+        connect(m_featurePermissionBar, SIGNAL(permissionDenied(QWebEnginePage::Feature)),
+                this, SLOT(slotFeaturePermissionDenied(QWebEnginePage::Feature)));
 //         connect(m_passwordBar, SIGNAL(done()),
 //                 this, SLOT(slotSaveFormDataDone()));
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
@@ -939,4 +939,3 @@ void WebEnginePart::slotFillFormRequestCompleted (bool ok)
         addWalletStatusBarIcon();
 }
 
-#include "webenginepart.moc"

@@ -46,7 +46,7 @@
 #include <khtmlview.h>
 #else
 #include <webenginepart.h>
-#include <webview.h>
+#include <webengineview.h>
 #include "util.h"
 #endif
 

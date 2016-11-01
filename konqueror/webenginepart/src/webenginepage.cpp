@@ -20,7 +20,7 @@
  *
  */
 
-#include "webpage.h"
+#include "webenginepage.h"
 
 #include "webenginepart.h"
 #include "websslinfo.h"
@@ -58,7 +58,7 @@
 #include "utils.h"
 
 
-WebPage::WebPage(WebEnginePart *part, QWidget *parent)
+WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
@@ -70,31 +70,31 @@ WebPage::WebPage(WebEnginePart *part, QWidget *parent)
     //setForwardUnsupportedContent(true);
 
     connect(this, &QWebEnginePage::geometryChangeRequested,
-            this, &WebPage::slotGeometryChangeRequested);
+            this, &WebEnginePage::slotGeometryChangeRequested);
 //    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
 //            this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(this, &QWebEnginePage::featurePermissionRequested,
-            this, &WebPage::slotFeaturePermissionRequested);
+            this, &WebEnginePage::slotFeaturePermissionRequested);
     connect(this, &QWebEnginePage::loadFinished,
-            this, &WebPage::slotLoadFinished);
-    connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebPage::downloadRequest);
+            this, &WebEnginePage::slotLoadFinished);
+    connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePage::downloadRequest);
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
 }
 
-WebPage::~WebPage()
+WebEnginePage::~WebEnginePage()
 {
     //kDebug() << this;
 }
 
-const WebSslInfo& WebPage::sslInfo() const
+const WebSslInfo& WebEnginePage::sslInfo() const
 {
     return m_sslInfo;
 }
 
-void WebPage::setSslInfo (const WebSslInfo& info)
+void WebEnginePage::setSslInfo (const WebSslInfo& info)
 {
     m_sslInfo = info;
 }
@@ -120,7 +120,7 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebPage::downloadRequest(QWebEngineDownloadItem* request)
+void WebEnginePage::downloadRequest(QWebEngineDownloadItem* request)
 {
     const QUrl url(request->url());
 
@@ -138,7 +138,7 @@ void WebPage::downloadRequest(QWebEngineDownloadItem* request)
 
 }
 
-QWebEnginePage *WebPage::createWindow(WebWindowType type)
+QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
     //qDebug() << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
@@ -169,7 +169,7 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-bool WebPage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
+bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
     qDebug() << url << "type=" << type;
     QUrl reqUrl(url);
@@ -294,17 +294,17 @@ static int errorCodeFromReply(QNetworkReply* reply)
 }
 #endif
 
-WebEnginePart* WebPage::part() const
+WebEnginePart* WebEnginePage::part() const
 {
     return m_part.data();
 }
 
-void WebPage::setPart(WebEnginePart* part)
+void WebEnginePage::setPart(WebEnginePart* part)
 {
     m_part = part;
 }
 
-void WebPage::slotLoadFinished(bool ok)
+void WebEnginePage::slotLoadFinished(bool ok)
 {
     QUrl requestUrl = url();
     requestUrl.setUserInfo(QString());
@@ -373,12 +373,12 @@ void WebPage::slotLoadFinished(bool ok)
     }
 
     if (isMainFrameRequest) {
-        const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
+        const WebEnginePageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->browserExtension()->setPageSecurity(security);
     }
 }
 
-void WebPage::slotUnsupportedContent(QNetworkReply* reply)
+void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
 {
 #if 0
     //kDebug() << reply->url();
@@ -418,7 +418,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
     reply->deleteLater();
 
 }
-void WebPage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
+void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
 {
     if (url == this->url()) {
         part()->slotShowFeaturePermissionBar(feature);
@@ -449,13 +449,13 @@ void WebPage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Fe
     }
 }
 
-void WebPage::slotGeometryChangeRequested(const QRect & rect)
+void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
 {
     const QString host = url().host();
 
     // NOTE: If a new window was created from another window which is in
     // maximized mode and its width and/or height were not specified at the
-    // time of its creation, which is always the case in QWebPage::createWindow,
+    // time of its creation, which is always the case in QWebEnginePage::createWindow,
     // then any move operation will seem not to work. That is because the new
     // window will be in maximized mode where moving it will not be possible...
     if (WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
@@ -498,7 +498,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
-bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
+bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
 {
     // Check whether the request is authorized or not...
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("redirect"), url(), req.url())) {
@@ -537,7 +537,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
     return true;
 }
 
-bool WebPage::checkFormData(const QNetworkRequest &req) const
+bool WebEnginePage::checkFormData(const QNetworkRequest &req) const
 {
     const QString scheme (req.url().scheme());
 
@@ -603,7 +603,7 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     return sanitizedUrl;
 }
 
-bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
+bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
 {
     if (QString::compare(url.scheme(), QL1S("mailto"), Qt::CaseInsensitive) == 0) {
         QStringList files;
@@ -648,7 +648,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
     return false;
 }
 
-void WebPage::setPageJScriptPolicy(const QUrl &url)
+void WebEnginePage::setPageJScriptPolicy(const QUrl &url)
 {
     const QString hostname (url.host());
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled,
@@ -667,7 +667,7 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
 /************************************* Begin NewWindowPage ******************************************/
 
 NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, QWidget* parent)
-              :WebPage(part, parent) , m_type(type) , m_createNewWindow(true)
+              :WebEnginePage(part, parent) , m_type(type) , m_createNewWindow(true)
 {
     Q_ASSERT_X (part, "NewWindowPage", "Must specify a valid KPart");
 
@@ -689,17 +689,17 @@ NewWindowPage::~NewWindowPage()
 {
 }
 
-static KParts::BrowserArguments browserArgs(WebPage::WebWindowType type)
+static KParts::BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
 {
     KParts::BrowserArguments bargs;
     switch (type) {
-        case WebPage::WebDialog:
-        case WebPage::WebBrowserWindow:
+        case WebEnginePage::WebDialog:
+        case WebEnginePage::WebBrowserWindow:
             bargs.setForcesNewWindow(true);
             break;
-        case WebPage::WebBrowserTab:
+        case WebEnginePage::WebBrowserTab:
 #if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-        case WebPage::WebBrowserBackgroundTab:
+        case WebEnginePage::WebBrowserBackgroundTab:
 #endif
             // let konq decide, based on user configuration
             //bargs.setNewTab(true);
@@ -789,12 +789,12 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         // Set the new part as the one this page will use going forward.
         setPart(webenginePart);
         // Connect all the signals from this page to the slots in the new part.
-        webenginePart->connectWebPageSignals(this);
+        webenginePart->connectWebEnginePageSignals(this);
         //Set the create new window flag to false...
         m_createNewWindow = false;
     }
 
-    return WebPage::acceptNavigationRequest(url, type, isMainFrame);
+    return WebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
 void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
@@ -803,7 +803,7 @@ void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
         return;
 
     if (!m_createNewWindow) {
-        WebPage::slotGeometryChangeRequested(rect);
+        WebEnginePage::slotGeometryChangeRequested(rect);
         return;
     }
 
@@ -878,7 +878,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
         // Set the new part as the one this page will use going forward.
         setPart(webenginePart);
         // Connect all the signals from this page to the slots in the new part.
-        webenginePart->connectWebPageSignals(this);
+        webenginePart->connectWebEnginePageSignals(this);
     }
 
     //Set the create new window flag to false...
@@ -887,4 +887,3 @@ void NewWindowPage::slotLoadFinished(bool ok)
 
 /****************************** End NewWindowPage *************************************************/
 
-#include "webpage.moc"

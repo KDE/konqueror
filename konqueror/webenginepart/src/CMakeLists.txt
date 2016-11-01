@@ -4,7 +4,7 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepart.cpp
     webenginepart_ext.cpp
     webengineview.cpp
-    webpage.cpp
+    webenginepage.cpp
     websslinfo.cpp
     webhistoryinterface.cpp
     settings/webenginesettings.cpp

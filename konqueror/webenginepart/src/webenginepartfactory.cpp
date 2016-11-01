@@ -62,7 +62,4 @@ void WebEngineFactory::slotDestroyed(QObject* object)
     m_historyBufContainer.remove(object);
 }
 
-
 K_EXPORT_PLUGIN(WebEngineFactory)
-
-#include "webenginepartfactory.moc"

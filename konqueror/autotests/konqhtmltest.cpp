@@ -24,7 +24,7 @@
 #include <konqsessionmanager.h>
 
 #include <webenginepart.h>
-#include <webview.h>
+#include <webengineview.h>
 
 #include <KSharedConfig>
 #include <kstandarddirs.h>

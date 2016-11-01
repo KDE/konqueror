@@ -22,7 +22,7 @@
  */
 
 #include "webengineview.h"
-#include "webpage.h"
+#include "webenginepage.h"
 #include "webenginepart.h"
 #include "settings/webenginesettings.h"
 
@@ -65,7 +65,7 @@ WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
     setAcceptDrops(true);
 
     // Create the custom page...
-    setPage(new WebPage(part, this));
+    setPage(new WebEnginePage(part, this));
 
     connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
     
@@ -592,5 +592,3 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
         }
     }
 }
-
-#include "webengineview.moc"

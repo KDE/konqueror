@@ -36,7 +36,7 @@ namespace KParts {
 
 class QWebEngineView;
 class WebEngineView;
-class WebPage;
+class WebEnginePage;
 class SearchBar;
 class PasswordBar;
 class FeaturePermissionBar;
@@ -95,7 +95,7 @@ public:
      * Connects the appropriate signals from the given page to the slots
      * in this class.
      */
-    void connectWebPageSignals(WebPage* page);
+    void connectWebEnginePageSignals(WebEnginePage* page);
 
     void slotShowFeaturePermissionBar(QWebEnginePage::Feature);
 protected:
@@ -145,8 +145,8 @@ private Q_SLOTS:
     void slotFeaturePermissionDenied(QWebEnginePage::Feature);
 
 private:
-    WebPage* page();
-    const WebPage* page() const;
+    WebEnginePage* page();
+    const WebEnginePage* page() const;
     void initActions();
     void updateActions();
     void addWalletStatusBarIcon();

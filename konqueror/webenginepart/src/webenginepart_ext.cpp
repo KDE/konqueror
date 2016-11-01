@@ -23,7 +23,7 @@
 
 #include "webenginepart.h"
 #include "webengineview.h"
-#include "webpage.h"
+#include "webenginepage.h"
 #include "settings/webenginesettings.h"
 #include <QtWebEngineWidgets/QWebEngineSettings>
 
@@ -76,8 +76,8 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
 
     // NOTE: When restoring history, webengine PORTING_TODO automatically navigates to
     // the previous "currentItem". Since we do not want that to happen,
-    // we set a property on the WebPage object that is used to allow or
-    // disallow history navigation in WebPage::acceptNavigationRequest.
+    // we set a property on the WebEnginePage object that is used to allow or
+    // disallow history navigation in WebEnginePage::acceptNavigationRequest.
     view()->page()->setProperty("HistoryNavigationLocked", true);
     QDataStream s (&buffer);
     s >> *(view()->history());
@@ -1213,4 +1213,3 @@ WebEnginePart* WebEngineScriptableExtension::part()
     return qobject_cast<WebEnginePart*>(parent());
 }
 
-#include "webenginepart_ext.moc"

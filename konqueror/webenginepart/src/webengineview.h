@@ -46,7 +46,7 @@ public:
     ~WebEngineView();
 
     /**
-     * Same as QWebPage::load, but with KParts style arguments instead.
+     * Same as QWebEnginePage::load, but with KParts style arguments instead.
      *
      * @see KParts::OpenUrlArguments, KParts::BrowserArguments.
      *

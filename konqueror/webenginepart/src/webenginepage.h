@@ -20,8 +20,8 @@
  *
  */
 
-#ifndef WEBPAGE_H
-#define WEBPAGE_H
+#ifndef WEBENGINEPAGE_H
+#define WEBENGINEPAGE_H
 
 #include "websslinfo.h"
 
@@ -39,12 +39,12 @@ class WebEnginePart;
 class QWebEngineDownloadItem;
 
 
-class WebPage : public QWebEnginePage
+class WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    explicit WebPage(WebEnginePart *wpart, QWidget *parent = Q_NULLPTR);
-    ~WebPage();
+    explicit WebEnginePage(WebEnginePart *wpart, QWidget *parent = Q_NULLPTR);
+    ~WebEnginePage();
 
     /**
      * Returns the SSL information for the current page.
@@ -64,7 +64,7 @@ public:
      * Reimplemented for internal reasons. The API is not affected.
      *
      * @internal
-     * @see KWebPage::downloadRequest.
+     * @see KWebEnginePage::downloadRequest.
      */
     void downloadRequest(QWebEngineDownloadItem* request);
 
@@ -113,7 +113,7 @@ private:
     void setPageJScriptPolicy(const QUrl& url);
 
 private:
-    enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
+    enum WebEnginePageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
 
     int m_kioErrorCode;
     bool m_ignoreError;
@@ -124,18 +124,18 @@ private:
 
 
 /**
- * This is a fake implementation of WebPage to workaround the ugly API used
+ * This is a fake implementation of WebEnginePage to workaround the ugly API used
  * to request for the creation of a new window from javascript in QtWebEngine. PORTING_TODO
  *
  * The KPart API for creating new windows requires all the information about the
- * new window up front. Unfortunately QWebPage::createWindow function does not
+ * new window up front. Unfortunately QWebEnginePage::createWindow function does not
  * provide any of these necessary information except for the window type. All
  * the other necessary information is emitted as signals instead! Hence, the
  * need for this class to collect all of the necessary information, such as
  * window name, size and position, before calling KPart's createNewWindow
  * function.
  */
-class NewWindowPage : public WebPage
+class NewWindowPage : public WebEnginePage
 {
     Q_OBJECT
 public:
@@ -159,4 +159,4 @@ private:
     bool m_createNewWindow;
 };
 
-#endif // WEBPAGE_H
+#endif // WEBENGINEPAGE_H
