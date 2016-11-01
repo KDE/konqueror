@@ -25,7 +25,6 @@
 #include "webenginepart.h"
 #include "websslinfo.h"
 #include "webengineview.h"
-#include "sslinfodialog_p.h"
 #include "settings/webenginesettings.h"
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>

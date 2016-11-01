@@ -30,7 +30,6 @@
 #include <QUrlQuery>
 
 #include "webenginepart_ext.h"
-#include "sslinfodialog_p.h"
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "websslinfo.h"
@@ -60,6 +59,7 @@
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KSslInfoDialog>
 
 #include <QUrl>
 #include <QFile>
