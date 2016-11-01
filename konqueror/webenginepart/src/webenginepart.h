@@ -35,7 +35,7 @@ namespace KParts {
 }
 
 class QWebEngineView;
-class WebView;
+class WebEngineView;
 class WebPage;
 class SearchBar;
 class PasswordBar;
@@ -80,7 +80,7 @@ public:
     /**
      * Returns a pointer to the render widget used to display a web page.
      *
-     * @see QWebView.
+     * @see QWebEngineView.
      */
     virtual QWebEngineView *view();
 
@@ -160,7 +160,7 @@ private:
     FeaturePermissionBar* m_featurePermissionBar;
     WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
-    WebView* m_webView;
+    WebEngineView* m_webView;
 };
 
 #endif // WEBENGINEPART_H

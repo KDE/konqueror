@@ -24,7 +24,7 @@
 
 #include "webenginepart.h"
 #include "websslinfo.h"
-#include "webview.h"
+#include "webengineview.h"
 #include "sslinfodialog_p.h"
 #include "settings/webenginesettings.h"
 #include <QWebEngineSettings>
@@ -773,7 +773,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // Get the webview...
         WebEnginePart* webenginePart = qobject_cast<WebEnginePart*>(newWindowPart);
-        WebView* webView = webenginePart ? qobject_cast<WebView*>(webenginePart->view()) : 0;
+        WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : 0;
 
         // If the newly created window is NOT a webenginepart...
         if (!webView) {
@@ -862,7 +862,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
 
     // Get the webview...
     WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : 0;
-    WebView* webView = webenginePart ? qobject_cast<WebView*>(webenginePart->view()) : 0;
+    WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : 0;
 
     if (webView) {
         // if a new window is created, set a new window meta-data flag.

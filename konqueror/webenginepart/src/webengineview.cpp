@@ -21,7 +21,7 @@
  *
  */
 
-#include "webview.h"
+#include "webengineview.h"
 #include "webpage.h"
 #include "webenginepart.h"
 #include "settings/webenginesettings.h"
@@ -54,7 +54,7 @@
 #define ALTERNATE_DEFAULT_WEB_SHORTCUT    QL1S("google")
 #define ALTERNATE_WEB_SHORTCUTS           QStringList() << QL1S("google") << QL1S("wikipedia") << QL1S("webster") << QL1S("dmoz")
 
-WebView::WebView(WebEnginePart* part, QWidget* parent)
+WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
         :QWebEngineView(parent),
          m_actionCollection(new KActionCollection(this)),
          m_part(part),
@@ -77,12 +77,12 @@ WebView::WebView(WebEnginePart* part, QWidget* parent)
 #endif
 }
 
-WebView::~WebView()
+WebEngineView::~WebEngineView()
 {
     //kDebug();
 }
 
-void WebView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
+void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
 {
     page()->setProperty("NavigationTypeUrlEntered", true);
 
@@ -103,7 +103,7 @@ void WebView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, con
     }
 }
 
-QWebEngineContextMenuData WebView::contextMenuResult() const
+QWebEngineContextMenuData WebEngineView::contextMenuResult() const
 {
     return m_result;
 }
@@ -133,7 +133,7 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
     mimeType = pmt.name();
 }
 
-void WebView::contextMenuEvent(QContextMenuEvent* e)
+void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
 {
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
     m_result = page()->contextMenuData();
@@ -196,7 +196,7 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
     QWebEngineView::contextMenuEvent(e);
 }
 
-void WebView::keyPressEvent(QKeyEvent* e)
+void WebEngineView::keyPressEvent(QKeyEvent* e)
 {
     if (e && hasFocus()) {
         const int key = e->key();
@@ -251,23 +251,23 @@ void WebView::keyPressEvent(QKeyEvent* e)
     QWebEngineView::keyPressEvent(e);
 }
 
-void WebView::keyReleaseEvent(QKeyEvent *e)
+void WebEngineView::keyReleaseEvent(QKeyEvent *e)
 {
     QWebEngineView::keyReleaseEvent(e);
 }
 
-void WebView::mouseReleaseEvent(QMouseEvent* e)
+void WebEngineView::mouseReleaseEvent(QMouseEvent* e)
 {
     QWebEngineView::mouseReleaseEvent(e);
 }
 
-void WebView::wheelEvent (QWheelEvent* e)
+void WebEngineView::wheelEvent (QWheelEvent* e)
 {
     QWebEngineView::wheelEvent(e);
 }
 
 
-void WebView::timerEvent(QTimerEvent* e)
+void WebEngineView::timerEvent(QTimerEvent* e)
 {
 #if 0
     if (e && e->timerId() == m_autoScrollTimerId) {
@@ -298,7 +298,7 @@ void WebView::timerEvent(QTimerEvent* e)
     QWebEngineView::timerEvent(e);
 }
 
-void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
+void WebEngineView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
     QList<QAction*> editableContentActions;
 
@@ -332,7 +332,7 @@ void WebView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGro
 }
 
 
-void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
+void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
     QList<QAction*> partActions;
 
@@ -398,7 +398,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
     partGroupMap.insert(QStringLiteral("partactions"), partActions);
 }
 
-void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& selectGroupMap)
+void WebEngineView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& selectGroupMap)
 {
     QList<QAction*> selectActions;
 
@@ -424,7 +424,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& se
     selectGroupMap.insert(QStringLiteral("editactions"), selectActions);
 }
 
-void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
+void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
 {
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
     Q_ASSERT(!m_result.linkUrl().isEmpty());
@@ -478,7 +478,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
     linkGroupMap.insert(QStringLiteral("linkactions"), linkActions);
 }
 
-void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
+void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
 {
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
     QList<QAction*> multimediaActions;
@@ -536,7 +536,7 @@ void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 #endif
 }
 
-void WebView::slotStopAutoScroll()
+void WebEngineView::slotStopAutoScroll()
 {
     if (m_autoScrollTimerId == -1) {
         return;
@@ -549,7 +549,7 @@ void WebView::slotStopAutoScroll()
 
 }
 
-void WebView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* view)
+void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* view)
 {
    // search text
     const QString selectedText = view->selectedText().simplified();
@@ -593,4 +593,4 @@ void WebView::addSearchActions(QList<QAction*>& selectActions, QWebEngineView* v
     }
 }
 
-#include "webview.moc"
+#include "webengineview.moc"

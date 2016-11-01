@@ -3,7 +3,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 set(kwebenginepartlib_LIB_SRCS
     webenginepart.cpp
     webenginepart_ext.cpp
-    webview.cpp
+    webengineview.cpp
     webpage.cpp
     websslinfo.cpp
     webhistoryinterface.cpp

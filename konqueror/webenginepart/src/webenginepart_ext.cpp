@@ -22,7 +22,7 @@
 #include "webenginepart_ext.h"
 
 #include "webenginepart.h"
-#include "webview.h"
+#include "webengineview.h"
 #include "webpage.h"
 #include "settings/webenginesettings.h"
 #include <QtWebEngineWidgets/QWebEngineSettings>
@@ -87,10 +87,10 @@ WebEngineBrowserExtension::~WebEngineBrowserExtension()
 {
 }
 
-WebView* WebEngineBrowserExtension::view()
+WebEngineView* WebEngineBrowserExtension::view()
 {
     if (!m_view && m_part) {
-        m_view = qobject_cast<WebView*>(m_part->view());
+        m_view = qobject_cast<WebEngineView*>(m_part->view());
     }
 
     return m_view;
@@ -650,7 +650,7 @@ void WebEngineBrowserExtension::slotTextDirectionChanged()
     }
 }
 
-static QVariant execJScript(WebView* view, const QString& script)
+static QVariant execJScript(WebEngineView* view, const QString& script)
 {
 #if 0
     QWebElement element (view->contextMenuResult().element());

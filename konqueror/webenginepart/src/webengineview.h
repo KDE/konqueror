@@ -20,8 +20,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-#ifndef WEBVIEW_H
-#define WEBVIEW_H
+#ifndef WEBENGINEVIEW_H
+#define WEBENGINEVIEW_H
 
 #include <QPointer>
 #include <KParts/BrowserExtension>
@@ -38,12 +38,12 @@ typedef void* QWebEngineContextMenuData;
 class QUrl;
 class WebEnginePart;
 
-class WebView : public QWebEngineView
+class WebEngineView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    WebView(WebEnginePart* part, QWidget* parent);
-    ~WebView();
+    WebEngineView(WebEnginePart* part, QWidget* parent);
+    ~WebEngineView();
 
     /**
      * Same as QWebPage::load, but with KParts style arguments instead.
@@ -129,4 +129,4 @@ private:
     QHash<QString, QChar> m_duplicateLinkElements;
 };
 
-#endif // WEBVIEW_H
+#endif // WEBENGINEVIEW_H

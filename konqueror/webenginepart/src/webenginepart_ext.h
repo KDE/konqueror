@@ -34,7 +34,7 @@
 
 class QUrl;
 class WebEnginePart;
-class WebView;
+class WebEngineView;
 
 class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
 {
@@ -110,9 +110,9 @@ public Q_SLOTS:
     void slotLinkInTop();
 
 private:
-    WebView* view();
+    WebEngineView* view();
     QPointer<WebEnginePart> m_part;
-    QPointer<WebView> m_view;
+    QPointer<WebEngineView> m_view;
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
     QByteArray m_historyData;

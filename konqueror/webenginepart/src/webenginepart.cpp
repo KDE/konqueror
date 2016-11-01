@@ -31,7 +31,7 @@
 
 #include "webenginepart_ext.h"
 #include "sslinfodialog_p.h"
-#include "webview.h"
+#include "webengineview.h"
 #include "webpage.h"
 #include "websslinfo.h"
 #include "webhistoryinterface.h"
@@ -117,8 +117,8 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     QWidget *mainWidget = new QWidget (parentWidget);
     mainWidget->setObjectName(QStringLiteral("webenginepart"));
 
-    // Create the WebView...
-    m_webView = new WebView (this, parentWidget);
+    // Create the WebEngineView...
+    m_webView = new WebEngineView (this, parentWidget);
 
     // Create the browser extension.
     m_browserExtension = new WebEngineBrowserExtension(this, cachedHistory);
