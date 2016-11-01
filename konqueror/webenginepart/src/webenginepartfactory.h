@@ -34,7 +34,7 @@ class WebEngineFactory : public KPluginFactory
     Q_INTERFACES(KPluginFactory)
 public:
     virtual ~WebEngineFactory();
-    virtual QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword);
+    QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotDestroyed(QObject* object);

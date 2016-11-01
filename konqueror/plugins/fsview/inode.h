@@ -52,16 +52,16 @@ public:
 
     void setPeer(ScanDir *);
 
-    TreeMapItemList *children();
+    TreeMapItemList *children() Q_DECL_OVERRIDE;
 
-    double value() const;
+    double value() const Q_DECL_OVERRIDE;
     double size() const;
     unsigned int fileCount() const;
     unsigned int dirCount() const;
     QString path() const;
-    QString text(int i) const;
-    QPixmap pixmap(int i) const;
-    QColor backColor() const;
+    QString text(int i) const Q_DECL_OVERRIDE;
+    QPixmap pixmap(int i) const Q_DECL_OVERRIDE;
+    QColor backColor() const Q_DECL_OVERRIDE;
     QMimeType mimeType() const;
 
     const QFileInfo &fileInfo() const
@@ -81,10 +81,10 @@ public:
         return (_dirPeer != 0);
     }
 
-    void sizeChanged(ScanDir *);
-    void scanFinished(ScanDir *);
-    void destroyed(ScanDir *);
-    void destroyed(ScanFile *);
+    void sizeChanged(ScanDir *) Q_DECL_OVERRIDE;
+    void scanFinished(ScanDir *) Q_DECL_OVERRIDE;
+    void destroyed(ScanDir *) Q_DECL_OVERRIDE;
+    void destroyed(ScanFile *) Q_DECL_OVERRIDE;
 
 private:
     void setMetrics(double, unsigned int);

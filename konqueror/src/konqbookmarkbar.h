@@ -69,7 +69,7 @@ public Q_SLOTS:
 
 protected:
     void fillBookmarkBar(const KBookmarkGroup &parent);
-    virtual bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
 
 private:
     KBookmarkGroup getToolbar();

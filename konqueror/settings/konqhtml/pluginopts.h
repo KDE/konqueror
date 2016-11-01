@@ -67,10 +67,10 @@ public:
     virtual ~PluginDomainListView();
 
 protected:
-    virtual PluginPolicies *createPolicies();
-    virtual PluginPolicies *copyPolicies(Policies *pol);
-    virtual void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy);
+    PluginPolicies *createPolicies() Q_DECL_OVERRIDE;
+    PluginPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
+                                Policies *copy) Q_DECL_OVERRIDE;
 
 private:
     QString group;

@@ -155,37 +155,37 @@ public:
     {
         return m_output;
     }
-    virtual bool visit(KonqFrame *)
+    bool visit(KonqFrame *) Q_DECL_OVERRIDE
     {
         m_output += 'F';
         return true;
     }
-    virtual bool visit(KonqFrameContainer *)
+    bool visit(KonqFrameContainer *) Q_DECL_OVERRIDE
     {
         m_output += QLatin1String("C(");
         return true;
     }
-    virtual bool visit(KonqFrameTabs *)
+    bool visit(KonqFrameTabs *) Q_DECL_OVERRIDE
     {
         m_output += QLatin1String("T[");
         return true;
     }
-    virtual bool visit(KonqMainWindow *)
+    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
     {
         m_output += 'M';
         return true;
     }
-    virtual bool endVisit(KonqFrameContainer *)
+    bool endVisit(KonqFrameContainer *) Q_DECL_OVERRIDE
     {
         m_output += ')';
         return true;
     }
-    virtual bool endVisit(KonqFrameTabs *)
+    bool endVisit(KonqFrameTabs *) Q_DECL_OVERRIDE
     {
         m_output += ']';
         return true;
     }
-    virtual bool endVisit(KonqMainWindow *)
+    bool endVisit(KonqMainWindow *) Q_DECL_OVERRIDE
     {
         m_output += '.';
         return true;

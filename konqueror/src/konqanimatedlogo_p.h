@@ -37,7 +37,7 @@ public:
     KonqAnimatedLogo(QWidget *parent = 0);
 
 protected:
-    void changeEvent(QEvent *event);
+    void changeEvent(QEvent *event) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void setAnimatedLogoSize(const QSize &);

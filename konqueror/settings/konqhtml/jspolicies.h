@@ -160,15 +160,15 @@ public:
     /**
      * (re)loads settings from configuration file given in the constructor.
      */
-    virtual void load();
+    void load() Q_DECL_OVERRIDE;
     /**
      * saves current settings to the configuration file given in the constructor
      */
-    virtual void save();
+    void save() Q_DECL_OVERRIDE;
     /**
      * restores the default settings
      */
-    virtual void defaults();
+    void defaults() Q_DECL_OVERRIDE;
 
 private:
     // one of KParts::HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY

@@ -265,7 +265,7 @@ private:
 private slots:
     void slotObjectFinished(KJob *job);
     void slotStyleSheetFinished(KJob *job);
-    void slotButtonClicked(int button);
+    void slotButtonClicked(int button) Q_DECL_OVERRIDE;
 };
 
 #endif // _ARCHIVEDIALOG_H_

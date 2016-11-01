@@ -49,42 +49,42 @@ public:
                   KonqViewManager *viewManager);
     virtual ~KonqFrameTabs();
 
-    virtual bool accept(KonqFrameVisitor *visitor);
+    bool accept(KonqFrameVisitor *visitor) Q_DECL_OVERRIDE;
 
-    virtual void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options,
-                            KonqFrameBase *docContainer, int id = 0, int depth = 0);
-    virtual void copyHistory(KonqFrameBase *other);
+    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options,
+                            KonqFrameBase *docContainer, int id = 0, int depth = 0) Q_DECL_OVERRIDE;
+    void copyHistory(KonqFrameBase *other) Q_DECL_OVERRIDE;
 
     const QList<KonqFrameBase *> &childFrameList() const
     {
         return m_childFrameList;
     }
 
-    virtual void setTitle(const QString &title, QWidget *sender);
-    virtual void setTabIcon(const QUrl &url, QWidget *sender);
+    void setTitle(const QString &title, QWidget *sender) Q_DECL_OVERRIDE;
+    void setTabIcon(const QUrl &url, QWidget *sender) Q_DECL_OVERRIDE;
 
-    virtual QWidget *asQWidget()
+    QWidget *asQWidget() Q_DECL_OVERRIDE
     {
         return this;
     }
-    virtual KonqFrameBase::FrameType frameType() const
+    KonqFrameBase::FrameType frameType() const Q_DECL_OVERRIDE
     {
         return KonqFrameBase::Tabs;
     }
 
-    void activateChild();
+    void activateChild() Q_DECL_OVERRIDE;
 
     /**
      * Insert a new frame into the container.
      */
-    void insertChildFrame(KonqFrameBase *frame, int index = -1);
+    void insertChildFrame(KonqFrameBase *frame, int index = -1) Q_DECL_OVERRIDE;
 
     /**
      * Call this before deleting one of our children.
      */
-    void childFrameRemoved(KonqFrameBase *frame);
+    void childFrameRemoved(KonqFrameBase *frame) Q_DECL_OVERRIDE;
 
-    virtual void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame);
+    void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame) Q_DECL_OVERRIDE;
 
     /**
      * Returns the tab at a given index
@@ -114,7 +114,7 @@ public:
      * returns true so that the tab can be properly closed without being activated
      * first.
      */
-    virtual bool eventFilter(QObject *, QEvent *);
+    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     void slotCurrentChanged(int index);
@@ -179,7 +179,7 @@ Q_SIGNALS:
     void receivedDropEvent(QDropEvent *event);
 
 protected:
-    void dragEnterEvent(QDragEnterEvent *event)
+    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE
     {
         bool accept = false;
         emit testCanDecode(event, accept);
@@ -188,7 +188,7 @@ protected:
         }
     }
 
-    void dropEvent(QDropEvent *event)
+    void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE
     {
         emit receivedDropEvent(event);
         event->acceptProposedAction();

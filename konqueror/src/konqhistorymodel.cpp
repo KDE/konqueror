@@ -59,7 +59,7 @@ struct Entry {
 struct HistoryEntry : public Entry {
     HistoryEntry(const KonqHistoryEntry &_entry, GroupEntry *_parent);
 
-    virtual QVariant data(int role, int column) const;
+    QVariant data(int role, int column) const Q_DECL_OVERRIDE;
     void update(const KonqHistoryEntry &entry);
 
     KonqHistoryEntry entry;
@@ -75,7 +75,7 @@ struct GroupEntry : public Entry {
         qDeleteAll(entries);
     }
 
-    virtual QVariant data(int role, int column) const;
+    QVariant data(int role, int column) const Q_DECL_OVERRIDE;
     HistoryEntry *findChild(const KonqHistoryEntry &entry, int *index = 0) const;
     QList<QUrl> urls() const;
 

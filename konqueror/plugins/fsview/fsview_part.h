@@ -117,9 +117,9 @@ protected:
     /**
      * This must be implemented by each part
      */
-    virtual bool openFile();
-    virtual bool openUrl(const QUrl &url);
-    virtual bool closeUrl();
+    bool openFile() Q_DECL_OVERRIDE;
+    bool openUrl(const QUrl &url) Q_DECL_OVERRIDE;
+    bool closeUrl() Q_DECL_OVERRIDE;
 
 private:
     FSView *_view;

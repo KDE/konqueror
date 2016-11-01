@@ -33,10 +33,10 @@ public:
     BookmarksConfigModule(QWidget *parent, const QVariantList &args);
     ~BookmarksConfigModule();
 
-    void load();
-    void save();
-    void defaults();
-    QString quickHelp() const;
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
+    QString quickHelp() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void clearCache();

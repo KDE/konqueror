@@ -103,7 +103,7 @@ public:
 
     /* Implementation of listener interface of ScanManager.
      * Used to calculate progress info */
-    void scanFinished(ScanDir *);
+    void scanFinished(ScanDir *) Q_DECL_OVERRIDE;
 
     void stop();
 
@@ -131,7 +131,7 @@ signals:
     void completed(int dirs);
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *);
+    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
 
 private:
     KConfig *_config;

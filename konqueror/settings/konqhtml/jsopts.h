@@ -37,10 +37,10 @@ public:
     void updateDomainListLegacy(const QStringList &domainConfig);
 
 protected:
-    virtual JSPolicies *createPolicies();
-    virtual JSPolicies *copyPolicies(Policies *pol);
-    virtual void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy);
+    JSPolicies *createPolicies() Q_DECL_OVERRIDE;
+    JSPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
+                                Policies *copy) Q_DECL_OVERRIDE;
 
 private:
     QString group;
@@ -53,9 +53,9 @@ class KJavaScriptOptions : public KCModule
 public:
     KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent);
 
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
     bool _removeJavaScriptDomainAdvice;
 

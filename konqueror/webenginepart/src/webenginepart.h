@@ -68,14 +68,14 @@ public:
      *
      * @see KParts::ReadOnlyPart::openUrl
      */
-    virtual bool openUrl(const QUrl &);
+    bool openUrl(const QUrl &) Q_DECL_OVERRIDE;
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
      *
      * @see KParts::ReadOnlyPart::closeUrl
      */
-    virtual bool closeUrl();
+    bool closeUrl() Q_DECL_OVERRIDE;
 
     /**
      * Returns a pointer to the render widget used to display a web page.
@@ -104,14 +104,14 @@ protected:
      *
      * @see KParts::ReadOnlyPart::guiActivateEvent
      */
-    virtual void guiActivateEvent(KParts::GUIActivateEvent *);
+    void guiActivateEvent(KParts::GUIActivateEvent *) Q_DECL_OVERRIDE;
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
      *
      * @see KParts::ReadOnlyPart::openFile
      */
-    virtual bool openFile();
+    bool openFile() Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotShowSecurity();

@@ -1315,7 +1315,7 @@ class KonqDebugFrameVisitor : public KonqFrameVisitor
 {
 public:
     KonqDebugFrameVisitor() {}
-    virtual bool visit(KonqFrame *frame)
+    bool visit(KonqFrame *frame) Q_DECL_OVERRIDE
     {
         QString className;
         if (!frame->part()) {
@@ -1333,7 +1333,7 @@ public:
                  << "whose widget is a" << className;
         return true;
     }
-    virtual bool visit(KonqFrameContainer *container)
+    bool visit(KonqFrameContainer *container) Q_DECL_OVERRIDE
     {
         qDebug() << m_spaces << container
                  << (container->isHidden() ? "hidden" : "shown")
@@ -1349,7 +1349,7 @@ public:
         m_spaces += QLatin1String("  ");
         return true;
     }
-    virtual bool visit(KonqFrameTabs *tabs)
+    bool visit(KonqFrameTabs *tabs) Q_DECL_OVERRIDE
     {
         qDebug() << m_spaces << "KonqFrameTabs" << tabs
                  << "visible=" << tabs->isVisible()
@@ -1360,21 +1360,21 @@ public:
         m_spaces += QLatin1String("  ");
         return true;
     }
-    virtual bool visit(KonqMainWindow *)
+    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
     {
         return true;
     }
-    virtual bool endVisit(KonqFrameTabs *)
-    {
-        m_spaces.resize(m_spaces.size() - 2);
-        return true;
-    }
-    virtual bool endVisit(KonqFrameContainer *)
+    bool endVisit(KonqFrameTabs *) Q_DECL_OVERRIDE
     {
         m_spaces.resize(m_spaces.size() - 2);
         return true;
     }
-    virtual bool endVisit(KonqMainWindow *)
+    bool endVisit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    {
+        m_spaces.resize(m_spaces.size() - 2);
+        return true;
+    }
+    bool endVisit(KonqMainWindow *) Q_DECL_OVERRIDE
     {
         return true;
     }

@@ -102,9 +102,9 @@ public:
     static void connect(const char *signal, QObject *recv, const char *slot);
 
     /** does grunt work and calls apply()/reapply() */
-    virtual void redo();
+    void redo() Q_DECL_OVERRIDE;
     /** does grunt work and calls unapply() */
-    virtual void undo();
+    void undo() Q_DECL_OVERRIDE;
 
 protected:
     virtual void apply() = 0;
@@ -147,8 +147,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
     void mergeChangedNodesFrom(ManipulationCommand *cmd);
 
@@ -170,8 +170,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::Element _element;
@@ -192,8 +192,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::Element _element;
@@ -215,8 +215,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::Element _element;
@@ -237,8 +237,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::Element _element;
@@ -260,8 +260,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::CharacterData cdata;
@@ -314,8 +314,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
 };
@@ -340,8 +340,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
 };
@@ -363,8 +363,8 @@ public:
     virtual QString name() const;
 
 protected:
-    virtual void apply();
-    virtual void unapply();
+    void apply() Q_DECL_OVERRIDE;
+    void unapply() Q_DECL_OVERRIDE;
 
 protected:
     DOM::Node _node;

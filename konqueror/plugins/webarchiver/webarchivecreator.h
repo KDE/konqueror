@@ -37,11 +37,11 @@ class WebArchiveCreator : public QObject, public ThumbCreator
 public:
     WebArchiveCreator();
     virtual ~WebArchiveCreator();
-    virtual bool create(const QString &path, int width, int height, QImage &img);
-    virtual Flags flags() const;
+    bool create(const QString &path, int width, int height, QImage &img) Q_DECL_OVERRIDE;
+    Flags flags() const Q_DECL_OVERRIDE;
 
 protected:
-    virtual void timerEvent(QTimerEvent *);
+    void timerEvent(QTimerEvent *) Q_DECL_OVERRIDE;
 
 private slots:
     void slotCompleted();

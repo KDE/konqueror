@@ -128,9 +128,9 @@ class WebEngineTextExtension : public KParts::TextExtension
 public:
     WebEngineTextExtension(WebEnginePart* part);
 
-    virtual bool hasSelection() const;
-    virtual QString selectedText(Format format) const;
-    virtual QString completeText(Format format) const;
+    bool hasSelection() const Q_DECL_OVERRIDE;
+    QString selectedText(Format format) const Q_DECL_OVERRIDE;
+    QString completeText(Format format) const Q_DECL_OVERRIDE;
 
 private:
     WebEnginePart* part() const;
@@ -152,17 +152,17 @@ public:
     WebEngineHtmlExtension(WebEnginePart* part);
 
     // HtmlExtension
-    virtual QUrl baseUrl() const;
-    virtual bool hasSelection() const;
+    QUrl baseUrl() const Q_DECL_OVERRIDE;
+    bool hasSelection() const Q_DECL_OVERRIDE;
 
     // SelectorInterface
-    virtual QueryMethods supportedQueryMethods() const;
-    virtual Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
-    virtual QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
+    QueryMethods supportedQueryMethods() const Q_DECL_OVERRIDE;
+    Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const Q_DECL_OVERRIDE;
+    QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const Q_DECL_OVERRIDE;
 
     // HtmlSettingsInterface
-    virtual QVariant htmlSettingsProperty(HtmlSettingsType type) const;
-    virtual bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value);
+    QVariant htmlSettingsProperty(HtmlSettingsType type) const Q_DECL_OVERRIDE;
+    bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value) Q_DECL_OVERRIDE;
 
 private:
     WebEnginePart* part() const;
@@ -175,23 +175,23 @@ class WebEngineScriptableExtension : public KParts::ScriptableExtension
 public:
     WebEngineScriptableExtension(WebEnginePart* part);
 
-    virtual QVariant rootObject();
+    QVariant rootObject() Q_DECL_OVERRIDE;
 
-    virtual QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName);
+    QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName) Q_DECL_OVERRIDE;
 
-    virtual bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value);
+    bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value) Q_DECL_OVERRIDE;
 
-    virtual bool setException(ScriptableExtension* callerPrincipal, const QString& message);
+    bool setException(ScriptableExtension* callerPrincipal, const QString& message) Q_DECL_OVERRIDE;
 
-    virtual QVariant evaluateScript(ScriptableExtension* callerPrincipal,
+    QVariant evaluateScript(ScriptableExtension* callerPrincipal,
                                     quint64 contextObjectId,
                                     const QString& code,
-                                    ScriptLanguage language = ECMAScript);
+                                    ScriptLanguage language = ECMAScript) Q_DECL_OVERRIDE;
 
-    virtual bool isScriptLanguageSupported(ScriptLanguage lang) const;
+    bool isScriptLanguageSupported(ScriptLanguage lang) const Q_DECL_OVERRIDE;
 
 private:
-     virtual QVariant encloserForKid(KParts::ScriptableExtension* kid);
+     QVariant encloserForKid(KParts::ScriptableExtension* kid) Q_DECL_OVERRIDE;
      WebEnginePart* part();
 };
 

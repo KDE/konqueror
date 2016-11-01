@@ -39,8 +39,8 @@ signals:
     void midClicked();
 
 protected:
-    void changeEvent(QEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
+    void changeEvent(QEvent *event) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QLabel *m_text;

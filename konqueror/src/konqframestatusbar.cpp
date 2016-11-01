@@ -53,9 +53,9 @@ public:
     explicit KonqCheckBox(QWidget *parent = Q_NULLPTR)
         : QCheckBox(parent) {}
 protected:
-    void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
 
-    QSize sizeHint() const
+    QSize sizeHint() const Q_DECL_OVERRIDE
     {
         QSize size = connectPixmap().size();
         // Add some room around the pixmap. Makes it a bit easier to click and

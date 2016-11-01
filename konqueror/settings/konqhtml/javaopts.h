@@ -67,10 +67,10 @@ public:
     void updateDomainListLegacy(const QStringList &domainConfig);
 
 protected:
-    virtual JavaPolicies *createPolicies();
-    virtual JavaPolicies *copyPolicies(Policies *pol);
-    virtual void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy);
+    JavaPolicies *createPolicies() Q_DECL_OVERRIDE;
+    JavaPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
+                                Policies *copy) Q_DECL_OVERRIDE;
 
 private:
     QString group;
@@ -84,9 +84,9 @@ class KJavaOptions : public KCModule
 public:
     KJavaOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent);
 
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
     bool _removeJavaScriptDomainAdvice;
 

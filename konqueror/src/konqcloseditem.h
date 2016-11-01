@@ -66,7 +66,7 @@ class KONQ_TESTS_EXPORT KonqClosedTabItem : public KonqClosedItem
 public:
     KonqClosedTabItem(const QString &url, const QString &title, int index, quint64 serialNumber);
     virtual ~KonqClosedTabItem();
-    virtual QPixmap icon() const;
+    QPixmap icon() const Q_DECL_OVERRIDE;
     QString url() const
     {
         return m_url;
@@ -91,7 +91,7 @@ class KONQ_TESTS_EXPORT KonqClosedWindowItem : public KonqClosedItem
 public:
     KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs);
     virtual ~KonqClosedWindowItem();
-    virtual QPixmap icon() const;
+    QPixmap icon() const Q_DECL_OVERRIDE;
     int numTabs() const;
 
 protected:
@@ -103,8 +103,8 @@ class KONQ_TESTS_EXPORT KonqClosedRemoteWindowItem : public KonqClosedWindowItem
 public:
     KonqClosedRemoteWindowItem(const QString &title, const QString &groupName, const QString &configFileName, quint64 serialNumber, int numTabs, const QString &dbusService);
     virtual ~KonqClosedRemoteWindowItem();
-    virtual KConfigGroup &configGroup();
-    virtual const KConfigGroup &configGroup() const;
+    KConfigGroup &configGroup() Q_DECL_OVERRIDE;
+    const KConfigGroup &configGroup() const Q_DECL_OVERRIDE;
     bool equalsTo(const QString &groupName, const QString &configFileName) const;
     QString dbusService() const
     {

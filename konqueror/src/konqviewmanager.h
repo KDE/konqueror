@@ -234,12 +234,12 @@ public:
     /**
      * Reimplemented from PartManager
      */
-    virtual void removePart(KParts::Part *part);
+    void removePart(KParts::Part *part) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from PartManager
      */
-    virtual void setActivePart(KParts::Part *part, QWidget *widget = 0);
+    void setActivePart(KParts::Part *part, QWidget *widget = 0) Q_DECL_OVERRIDE;
 
     void doSetActivePart(KParts::ReadOnlyPart *part);
 

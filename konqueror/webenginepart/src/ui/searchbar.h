@@ -48,10 +48,10 @@ public:
     void setFoundMatch(bool match);
     void setSearchText(const QString&);
 
-    virtual bool event(QEvent* e);
+    bool event(QEvent* e) Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
-    virtual void setVisible(bool visible);
+    void setVisible(bool visible) Q_DECL_OVERRIDE;
     void clear();
     void findNext();
     void findPrevious();

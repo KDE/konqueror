@@ -118,7 +118,7 @@ protected:
      * Captures mouse clicks and emits iconClicked() if the icon
      * was clicked.
      */
-    virtual void mousePressEvent(QMouseEvent *e);
+    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void historyCleared();
@@ -151,7 +151,7 @@ public:
     virtual ~SearchBarPlugin();
 
 protected:
-    bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     /**
@@ -235,7 +235,7 @@ class SearchBarItemDelegate : public QItemDelegate
 {
 public:
     SearchBarItemDelegate(QObject *parent = Q_NULLPTR);
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 };
 
 #endif // SEARCHBAR_PLUGIN

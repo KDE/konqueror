@@ -64,10 +64,10 @@ public:
     }
 
 protected:
-    virtual void foundMimeType(const QString &_type);
-    virtual void handleError(KJob *job);
-    virtual void init();
-    virtual void scanFile();
+    void foundMimeType(const QString &_type) Q_DECL_OVERRIDE;
+    void handleError(KJob *job) Q_DECL_OVERRIDE;
+    void init() Q_DECL_OVERRIDE;
+    void scanFile() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void slotRedirection(KIO::Job *, const QUrl &);

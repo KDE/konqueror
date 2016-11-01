@@ -54,7 +54,7 @@ public Q_SLOTS:
     void slotUser1();
 
 protected:
-    virtual void showEvent(QShowEvent *event);
+    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 private:
     KonqExtensionManagerPrivate *d;

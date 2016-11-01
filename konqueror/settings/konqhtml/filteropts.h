@@ -75,10 +75,10 @@ public:
     KCMFilter(QWidget *parent, const QVariantList &);
     ~KCMFilter();
 
-    void load();
-    void save();
-    void defaults();
-    QString quickHelp() const;
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
+    QString quickHelp() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
 
