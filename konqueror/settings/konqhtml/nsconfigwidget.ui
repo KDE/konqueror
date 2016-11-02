@@ -87,7 +87,7 @@
        </widget>
       </item>
       <item rowspan="5" row="1" column="0" >
-       <widget class="KListWidget" name="dirList" >
+       <widget class="QListWidget" name="dirList" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
           <horstretch>0</horstretch>
@@ -149,7 +149,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KListWidget</class>
+   <class>QListWidget</class>
    <extends>QListWidget</extends>
    <header>klistwidget.h</header>
   </customwidget>

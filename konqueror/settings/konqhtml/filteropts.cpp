@@ -38,7 +38,7 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
-#include <KListWidget>
+#include <QListWidget>
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
 #include <QPushButton>
@@ -74,7 +74,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-    mListBox = new KListWidget;
+    mListBox = new QListWidget;
     mListBox->setSelectionMode(QListWidget::ExtendedSelection);
 
     // If the filter list were sensitive to ordering, then we would need to

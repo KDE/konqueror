@@ -23,7 +23,7 @@
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 
-class KListWidget;
+class QListWidget;
 class QPushButton;
 class QLineEdit;
 class QCheckBox;
@@ -98,7 +98,7 @@ protected Q_SLOTS:
     void spinBoxChanged(int);
 
 private:
-    KListWidget *mListBox;
+    QListWidget *mListBox;
     KListWidgetSearchLine *mSearchLine;
     QLineEdit *mString;
     QCheckBox *mEnableCheck;

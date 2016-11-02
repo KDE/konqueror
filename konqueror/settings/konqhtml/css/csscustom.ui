@@ -32,7 +32,7 @@
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="KFontComboBox" name="fontFamily" >
+         <widget class="QFontComboBox" name="fontFamily" >
           <property name="whatsThis" >
            <string>&lt;p>This is the currently selected font family&lt;/p></string>
           </property>
@@ -829,11 +829,6 @@
    <extends>QPushButton</extends>
    <header>kcolorbutton.h</header>
   </customwidget>
-  <customwidget>
-   <class>KFontComboBox</class>
-   <extends>KComboBox</extends>
-   <header>kfontcombobox.h</header>
-  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>sameFamily</tabstop>
@@ -847,7 +842,6 @@
  </tabstops>
  <includes>
   <include location="global" >kcolorbutton.h</include>
-  <include location="local" >kcolorbutton.h</include>
  </includes>
  <resources/>
  <connections>
