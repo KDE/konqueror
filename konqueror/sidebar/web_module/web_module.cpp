@@ -32,7 +32,7 @@
 #include <kparts/browserextension.h>
 #include <knameandurlinputdialog.h>
 
-#include <khbox.h>
+#include <QHBoxLayout>
 #include <knuminput.h>
 
 KHTMLSideBar::KHTMLSideBar()
@@ -134,13 +134,17 @@ void KonqSideBarWebModule::setAutoReload()
     dlg.setCaption(i18nc("@title:window", "Set Refresh Timeout (0 disables)"));
     dlg.setButtons(KDialog::Ok | KDialog::Cancel);
 
-    KHBox *hbox = new KHBox(&dlg);
+    QWidget *hbox = new QWidget(&dlg);
+    QHBoxLayout *hboxHBoxLayout = new QHBoxLayout(hbox);
+    hboxHBoxLayout->setMargin(0);
     dlg.setMainWidget(hbox);
 
     KIntNumInput *mins = new KIntNumInput(hbox);
+    hboxHBoxLayout->addWidget(mins);
     mins->setRange(0, 120);
     mins->setSuffix(ki18np(" minute", " minutes"));
     KIntNumInput *secs = new KIntNumInput(hbox);
+    hboxHBoxLayout->addWidget(secs);
     secs->setRange(0, 59);
     secs->setSuffix(ki18np(" second", " seconds"));
 

@@ -34,7 +34,7 @@
 #include <kconfig.h>
 #include <kfiledialog.h>
 #include <kglobal.h>
-#include <khbox.h>
+#include <QHBoxLayout>
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -84,8 +84,10 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     // of the new hashed matching algorithm.  So the list can stay sorted.
     mListBox->setSortingEnabled(true);
 
-    KHBox *searchBox = new KHBox;
-    searchBox->setSpacing(-1);
+    QWidget *searchBox = new QWidget;
+    QHBoxLayout *searchBoxHBoxLayout = new QHBoxLayout(searchBox);
+    searchBoxHBoxLayout->setMargin(0);
+    searchBoxHBoxLayout->setSpacing(-1);
     new QLabel(i18n("Search:"), searchBox);
 
     mSearchLine = new KListWidgetSearchLine(searchBox, mListBox);
@@ -101,7 +103,9 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     mString = new KLineEdit;
     vbox->addWidget(mString);
 
-    KHBox *buttonBox = new KHBox;
+    QWidget *buttonBox = new QWidget;
+    QHBoxLayout *buttonBoxHBoxLayout = new QHBoxLayout(buttonBox);
+    buttonBoxHBoxLayout->setMargin(0);
     vbox->addWidget(buttonBox);
 
     container->setLayout(vbox);
@@ -129,18 +133,25 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     connect(mRefreshFreqSpinBox, SIGNAL(valueChanged(int)), this, SLOT(spinBoxChanged(int)));
 
     mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
+    buttonBoxHBoxLayout->addWidget(mInsertButton);
     connect(mInsertButton, SIGNAL(clicked()), SLOT(insertFilter()));
     mUpdateButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Update"), buttonBox);
+    buttonBoxHBoxLayout->addWidget(mUpdateButton);
     connect(mUpdateButton, SIGNAL(clicked()), SLOT(updateFilter()));
     mRemoveButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-remove")), i18n("Remove"), buttonBox);
+    buttonBoxHBoxLayout->addWidget(mRemoveButton);
     connect(mRemoveButton, SIGNAL(clicked()), SLOT(removeFilter()));
 
     mImportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-import")), i18n("Import..."), buttonBox);
+    buttonBoxHBoxLayout->addWidget(mImportButton);
     connect(mImportButton, SIGNAL(clicked()), SLOT(importFilters()));
     mExportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-export")), i18n("Export..."), buttonBox);
+    buttonBoxHBoxLayout->addWidget(mExportButton);
     connect(mExportButton, SIGNAL(clicked()), SLOT(exportFilters()));
 
-    KHBox *impexpBox = new KHBox;
+    QWidget *impexpBox = new QWidget;
+    QHBoxLayout *impexpBoxHBoxLayout = new QHBoxLayout(impexpBox);
+    impexpBoxHBoxLayout->setMargin(0);
     QLabel *impexpLabel = new QLabel(i18n("<qt>More information on "
                                           "<a href=\"importhelp\">import format</a>, "
                                           "<a href=\"exporthelp\">export format</a>"), impexpBox);

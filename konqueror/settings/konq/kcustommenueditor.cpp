@@ -32,7 +32,7 @@
 #include <kconfiggroup.h>
 #include <kdialogbuttonbox.h>
 #include <kglobal.h>
-#include <khbox.h>
+#include <QHBoxLayout>
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <kopenwithdialog.h>
@@ -95,9 +95,12 @@ KCustomMenuEditor::KCustomMenuEditor(QWidget *parent)
     setCaption(i18nc("@title:window", "Menu Editor"));
     setButtons(Ok | Cancel);
     setDefaultButton(Ok);
-    KHBox *page = new KHBox(this);
+    QWidget *page = new QWidget(this);
+    QHBoxLayout *pageHBoxLayout = new QHBoxLayout(page);
+    pageHBoxLayout->setMargin(0);
     setMainWidget(page);
     m_listView = new K3ListView(page);
+    pageHBoxLayout->addWidget(m_listView);
     m_listView->addColumn(i18n("Menu"));
     m_listView->setFullWidth(true);
     m_listView->setSorting(-1);

@@ -33,7 +33,7 @@
 #include <klineedit.h>
 #include <KLocalizedString>
 #include <knuminput.h>
-#include <khbox.h>
+#include <QHBoxLayout>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
 #include <KSharedConfig>
@@ -106,9 +106,12 @@ KJavaOptions::KJavaOptions(KSharedConfig::Ptr config, const QString &group,
     enableShutdownCB = new QCheckBox(i18n("Shu&tdown applet server when inactive for more than"), this);
     connect(enableShutdownCB, &QAbstractButton::toggled, this, &KJavaOptions::slotChanged);
     connect(enableShutdownCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
-    KHBox *secondsHB = new KHBox(javartGB);
+    QWidget *secondsHB = new QWidget(javartGB);
+    QHBoxLayout *secondsHBHBoxLayout = new QHBoxLayout(secondsHB);
+    secondsHBHBoxLayout->setMargin(0);
     laygroup1->addWidget(secondsHB);
     serverTimeoutSB = new KIntNumInput(secondsHB);
+    secondsHBHBoxLayout->addWidget(serverTimeoutSB);
     serverTimeoutSB->setRange(0, 1000, 5);
     serverTimeoutSB->setSuffix(ki18np(" second", " seconds"));
     connect(serverTimeoutSB, &KIntNumInput::valueChanged, this, &KJavaOptions::slotChanged);
