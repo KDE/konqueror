@@ -214,7 +214,6 @@ void WebEnginePart::initActions()
     action = new QAction(QIcon::fromTheme(QStringLiteral("zoom-original")), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction(QStringLiteral("zoomNormal"), action);
     actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("CTRL+0")));
-    action->setShortcut(QKeySequence(QStringLiteral("CTRL+0")));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::zoomNormal);
 
     action = new QAction(i18n("Zoom Text Only"), this);

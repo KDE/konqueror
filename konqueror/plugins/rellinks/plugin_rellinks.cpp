@@ -168,7 +168,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     a = actionCollection()->addAction(QStringLiteral("rellinks_glossary"));
     a->setText(i18n("&Glossary"));
-    a->setShortcut(QKeySequence(QStringLiteral("Ctrl+Alt+G")));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(QStringLiteral("Ctrl+Alt+G")));
     a->setWhatsThis(i18n("<p>This link references the glossary.</p>"));
     m_document->addAction(a);
     grp->addAction(a);

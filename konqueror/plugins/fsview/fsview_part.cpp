@@ -183,14 +183,14 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     QAction *moveToTrashAction = actionCollection()->addAction(QStringLiteral("move_to_trash"));
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
-    moveToTrashAction->setShortcut(QKeySequence::Delete);
+    actionCollection()->setDefaultShortcut(moveToTrashAction, QKeySequence(QKeySequence::Delete));
     connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
             _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
 
     QAction *deleteAction = actionCollection()->addAction(QStringLiteral("delete"));
     deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
-    deleteAction->setShortcut(Qt::SHIFT | Qt::Key_Delete);
+    actionCollection()->setDefaultShortcut(deleteAction, QKeySequence(Qt::SHIFT | Qt::Key_Delete));
     connect(deleteAction, SIGNAL(triggered()), _ext, SLOT(del()));
 
     QAction *editMimeTypeAction = actionCollection()->addAction(QStringLiteral("editMimeType"));

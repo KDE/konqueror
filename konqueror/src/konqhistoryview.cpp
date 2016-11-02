@@ -74,7 +74,7 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     action = m_collection->addAction(QStringLiteral("remove"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     action->setText(i18n("&Remove Entry"));
-    action->setShortcut(Qt::Key_Delete); // #135966
+    m_collection->setDefaultShortcut(action, QKeySequence(Qt::Key_Delete)); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotRemoveEntry);
 

@@ -112,6 +112,7 @@ QString KonqAboutPageSingleton::launch()
     i18n("Search the Web");//i18n for possible future use
 
     m_launch_html = res;
+    qDebug()<<" HTML : "<<res;
     return res;
 }
 

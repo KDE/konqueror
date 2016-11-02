@@ -59,7 +59,7 @@ KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
     QAction *a = actionCollection()->addAction(QStringLiteral("create_img_gallery"));
     a->setText(i18n("&Create Image Gallery..."));
     a->setIcon(QIcon::fromTheme(QStringLiteral("imagegallery")));
-    a->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL + Qt::Key_I));
     connect(a, SIGNAL(triggered()), this, SLOT(slotExecute()));
 }
 

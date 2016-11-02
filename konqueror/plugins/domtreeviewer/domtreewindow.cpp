@@ -188,7 +188,7 @@ void DOMTreeWindow::setupActions()
     // toggle manipulation dialog
     QAction *a = actionCollection()->addAction(QStringLiteral("show_msg_dlg"));
     a->setText(i18n("Show Message Log"));
-    a->setShortcut(Qt::CTRL + Qt::Key_E);
+    actionCollection()->setDefaultShortcut(a, Qt::CTRL + Qt::Key_E);
     connect(a, SIGNAL(triggered()), this, SLOT(showMessageLog()));
 
 //     KAction *custom = new KAction(i18n("Cus&tom Menuitem"), 0,
@@ -201,13 +201,13 @@ void DOMTreeWindow::setupActions()
     QAction *tree_inc_level = actionCollection()->addAction(QStringLiteral("tree_inc_level"));
     tree_inc_level->setText(i18n("Expand"));
     tree_inc_level->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
-    tree_inc_level->setShortcut(Qt::CTRL + Qt::Key_Greater);
+    actionCollection()->setDefaultShortcut(tree_inc_level, QKeySequence(Qt::CTRL + Qt::Key_Greater));
     tree_inc_level->setToolTip(i18n("Increase expansion level"));
     connect(tree_inc_level, SIGNAL(triggered()), view(), SLOT(increaseExpansionDepth()));
     QAction *tree_dec_level = actionCollection()->addAction(QStringLiteral("tree_dec_level"));
     tree_dec_level->setText(i18n("Collapse"));
     tree_dec_level->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
-    tree_dec_level->setShortcut(Qt::CTRL + Qt::Key_Less);
+    actionCollection()->setDefaultShortcut(tree_dec_level, QKeySequence(Qt::CTRL + Qt::Key_Less));
     tree_dec_level->setToolTip(i18n("Decrease expansion level"));
     connect(tree_dec_level, SIGNAL(triggered()), view(), SLOT(decreaseExpansionDepth()));
 
@@ -216,7 +216,7 @@ void DOMTreeWindow::setupActions()
     del_tree = actionCollection()->addAction(QStringLiteral("tree_delete"));
     del_tree->setText(i18n("&Delete"));
     del_tree->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    del_tree->setShortcut(Qt::Key_Delete);
+    actionCollection()->setDefaultShortcut(del_tree, QKeySequence(Qt::Key_Delete));
     del_tree->setToolTip(i18n("Delete nodes"));
     del_tree->setShortcutContext(Qt::WidgetShortcut);
     view()->m_listView->addAction(del_tree);
@@ -234,7 +234,7 @@ void DOMTreeWindow::setupActions()
     del_attr = actionCollection()->addAction(QStringLiteral("attr_delete"));
     del_attr->setText(i18n("&Delete"));
     del_attr->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    del_attr->setShortcut(Qt::Key_Delete);
+    actionCollection()->setDefaultShortcut(del_attr, QKeySequence(Qt::Key_Delete));
     del_attr->setToolTip(i18n("Delete attributes"));
     del_attr->setShortcutContext(Qt::WidgetShortcut);
     view()->nodeAttributes->addAction(del_attr);
