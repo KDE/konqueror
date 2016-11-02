@@ -23,7 +23,7 @@
 #include <kdialog.h>
 
 class KShellCommandExecutor;
-class KPushButton;
+class QPushButton;
 
 class KShellCommandDialog: public KDialog
 {

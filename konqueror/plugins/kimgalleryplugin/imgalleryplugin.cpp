@@ -38,7 +38,7 @@ Boston, MA 02110-1301, USA.
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kio/netaccess.h>
-#include <kpushbutton.h>
+#include <QPushButton>
 #include <ktoolinvocation.h>
 #include <QProgressDialog>
 #include <qtextdocument.h>
@@ -94,7 +94,9 @@ void KImGalleryPlugin::slotExecute()
             QObject::connect(m_progressDlg, SIGNAL(canceled()), this, SLOT(slotCancelled()));
 
             m_progressDlg->setLabelText(i18n("Creating thumbnails"));
-            m_progressDlg->setCancelButton(new KPushButton(KStandardGuiItem::cancel(), m_progressDlg));
+            QPushButton *button = new QPushButton(m_progressDlg);
+            KGuiItem::assign(button, KStandardGuiItem::cancel());
+            m_progressDlg->setCancelButton(button);
             m_cancelled = false;
             m_progressDlg->show();
             if (createHtml(url, m_part->url().path(), m_configDlg->recursionLevel() > 0 ? m_configDlg->recursionLevel() + 1 : 0, m_configDlg->getImageFormat())) {
