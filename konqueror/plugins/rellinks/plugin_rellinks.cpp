@@ -40,7 +40,6 @@
 #include <kcomponentdata.h>
 #include <KLocalizedString>
 #include <QMenu>
-#include <kshortcut.h>
 #include <ktoolbar.h>
 #include <kurl.h>
 #include <kactionmenu.h>

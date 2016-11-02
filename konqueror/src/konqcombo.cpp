@@ -44,7 +44,6 @@
 #include <kstandardshortcut.h>
 #include <konqmainwindow.h>
 #include <kstringhandler.h>
-#include <kshortcut.h>
 #include <QApplication>
 
 // Local
@@ -183,7 +182,7 @@ void KonqCombo::init(KCompletion *completion)
     // We use Ctrl+T for new tab, so we need something else for substring completion
     // TODO: how to make that shortcut configurable? If we add a QAction we need to
     // call the KLineEdit code, which we can't do. Well, we could send a keyevent...
-    setKeyBinding(KCompletionBase::SubstringCompletion, KShortcut(Qt::Key_F7));
+    setKeyBinding(KCompletionBase::SubstringCompletion, QList<QKeySequence>() << QKeySequence(Qt::Key_F7));
 
     loadItems();
 }
@@ -474,7 +473,7 @@ void KonqCombo::keyPressEvent(QKeyEvent *e)
     KHistoryComboBox::keyPressEvent(e);
     // we have to set it as temporary, otherwise we wouldn't get our nice
     // pixmap. Yes, QComboBox still sucks.
-    KShortcut key(e->key() | e->modifiers());
+    QList<QKeySequence> key{(e->key() | e->modifiers())};
     if (key == KStandardShortcut::rotateUp() ||
             key == KStandardShortcut::rotateDown()) {
         setTemporary(currentText());

@@ -147,7 +147,6 @@
 #include <kauthorized.h>
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
-#include <kshortcut.h>
 #include <kglobalsettings.h>
 #include <kurlauthorized.h>
 #include <QFontDatabase>
