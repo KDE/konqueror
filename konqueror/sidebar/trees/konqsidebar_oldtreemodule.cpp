@@ -1,7 +1,7 @@
 #include "konqsidebar_oldtreemodule.h"
 #include <kdesktopfile.h>
 #include "konq_sidebartree.h"
-#include <kvbox.h>
+#include <QVBoxLayout>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 #include <KLocalizedString>
@@ -33,11 +33,16 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
         path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqsidebartng/entries/" + desktopName_); // ### this breaks global/local merging!
     }
 
-    widget = new KVBox(parent);
+    widget = new QWidget(parent);
+    QVBoxLayout *widgetVBoxLayout = new QVBoxLayout(widget);
+    widgetVBoxLayout->setMargin(0);
     // TODO use QVBoxLayout
 
     if (configGroup.readEntry("X-KDE-SearchableTreeModule", false)) {
-        KVBox *searchLine = new KVBox(widget);
+        QWidget *searchLine = new QWidget(widget);
+        QVBoxLayout *searchLineVBoxLayout = new QVBoxLayout(searchLine);
+        searchLineVBoxLayout->setMargin(0);
+        widgetVBoxLayout->addWidget(searchLine);
         tree = new KonqSidebarTree(this, widget, virt, path);
         new K3ListViewSearchLineWidget(tree, searchLine);
     } else {
