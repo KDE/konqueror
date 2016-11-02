@@ -203,7 +203,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
         connect(m_pFonts[i], SIGNAL(currentFontChanged(QFont)),
                 SLOT(changed()));
 
-    m_pFontSizeAdjust = new KIntSpinBox(this);
+    m_pFontSizeAdjust = new QSpinBox(this);
     m_pFontSizeAdjust->setRange(-5, 5);
     m_pFontSizeAdjust->setSingleStep(1);
     fl->addRow(i18n("Font &size adjustment for this encoding:"), m_pFontSizeAdjust);
