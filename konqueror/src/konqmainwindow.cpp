@@ -2850,7 +2850,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     connect(saveSessionAction, &QAction::triggered, this, &KonqMainWindow::saveCurrentSession);
     QAction *manageSessionsAction = popup->addAction(QIcon::fromTheme(QStringLiteral("view-choose")), i18n("Manage..."));
     connect(manageSessionsAction, &QAction::triggered, this, &KonqMainWindow::manageSessions);
-    popup->insertSeparator(static_cast<QAction *>(0));
+    popup->addSeparator();
 
     QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
     QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
