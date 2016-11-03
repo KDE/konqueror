@@ -24,7 +24,7 @@
 
 class QSpinBox;
 class QSpinBox;
-class KFontComboBox;
+class QFontComboBox;
 class QComboBox;
 class QCheckBox;
 class CSSConfig;
@@ -70,7 +70,7 @@ private:
     QSpinBox *m_minSize;
     QSpinBox *m_MedSize;
     QSpinBox *m_pageDPI;
-    KFontComboBox *m_pFonts[6];
+    QFontComboBox *m_pFonts[6];
     QComboBox *m_pEncoding;
     QSpinBox *m_pFontSizeAdjust;
 

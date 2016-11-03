@@ -15,7 +15,7 @@
 #include <knuminput.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
-#include <KFontComboBox>
+#include <QFontComboBox>
 #include <KTabWidget>
 #include <QFontDatabase>
 #include <QSpinBox>
@@ -162,38 +162,38 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     lay->addWidget(box);
     fl = new QFormLayout(box);
 
-    m_pFonts[0] = new KFontComboBox(fontsTab);
+    m_pFonts[0] = new QFontComboBox(fontsTab);
     fl->addRow(i18n("S&tandard font:"), m_pFonts[0]);
     m_pFonts[0]->setWhatsThis(i18n("This is the font used to display normal text in a web page."));
     connect(m_pFonts[0], SIGNAL(currentFontChanged(QFont)),
             SLOT(slotStandardFont(QFont)));
 
-    m_pFonts[1] = new KFontComboBox(fontsTab);
+    m_pFonts[1] = new QFontComboBox(fontsTab);
     fl->addRow(i18n("&Fixed font:"), m_pFonts[1]);
     m_pFonts[1]->setWhatsThis(i18n("This is the font used to display fixed-width (i.e. non-proportional) text."));
     connect(m_pFonts[1], SIGNAL(currentFontChanged(QFont)),
             SLOT(slotFixedFont(QFont)));
 
-    m_pFonts[2] = new KFontComboBox(this);
+    m_pFonts[2] = new QFontComboBox(this);
     fl->addRow(i18n("S&erif font:"),  m_pFonts[2]);
     m_pFonts[2]->setWhatsThis(i18n("This is the font used to display text that is marked up as serif."));
 
     connect(m_pFonts[2], SIGNAL(currentFontChanged(QFont)),
             SLOT(slotSerifFont(QFont)));
 
-    m_pFonts[3] = new KFontComboBox(this);
+    m_pFonts[3] = new QFontComboBox(this);
     fl->addRow(i18n("Sa&ns serif font:"),  m_pFonts[3]);
     m_pFonts[3]->setWhatsThis(i18n("This is the font used to display text that is marked up as sans-serif."));
     connect(m_pFonts[3], SIGNAL(currentFontChanged(QFont)),
             SLOT(slotSansSerifFont(QFont)));
 
-    m_pFonts[4] = new KFontComboBox(this);
+    m_pFonts[4] = new QFontComboBox(this);
     fl->addRow(i18n("C&ursive font:"),  m_pFonts[4]);
     m_pFonts[4]->setWhatsThis(i18n("This is the font used to display text that is marked up as italic."));
     connect(m_pFonts[4], SIGNAL(currentFontChanged(QFont)),
             SLOT(slotCursiveFont(QFont)));
 
-    m_pFonts[5] = new KFontComboBox(this);
+    m_pFonts[5] = new QFontComboBox(this);
     fl->addRow(i18n("Fantas&y font:"), m_pFonts[5]);
     m_pFonts[5]->setWhatsThis(i18n("This is the font used to display text that is marked up as a fantasy font."));
     connect(m_pFonts[5], SIGNAL(currentFontChanged(QFont)),
