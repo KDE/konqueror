@@ -513,7 +513,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         mimeType = req.args.mimeType();
     }
 
-    if (url.scheme() != QLatin1String("error")) {
+    if (url.scheme() != QLatin1String("error") && url.scheme() != QLatin1String("about")) {
         if (!url.isValid()) {
             // I think we can't really get here anymore; I tried and didn't succeed.
             // URL filtering catches this case before hand, and in cases without filtering
