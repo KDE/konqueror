@@ -56,27 +56,6 @@ private Q_SLOTS:
         QVERIFY(view->service()->entryPath() != firstService);
     }
 
-    void changePart()
-    {
-        // Related to the previous test; ensure we keep the same viewmode when switching between folders
-        KonqMainWindow mainWindow;
-        mainWindow.openUrl(0, QUrl::fromLocalFile(QDir::homePath()));
-        KonqView *view = mainWindow.currentView();
-        QVERIFY(view);
-        QPointer<KParts::ReadOnlyPart> part = view->part();
-        QVERIFY(view->part());
-        QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
-        QVERIFY(spyCompleted.wait(10000));
-        QCOMPARE(view->serviceType(), QString("inode/directory"));
-        qDebug() << view->internalViewMode();
-        view->setInternalViewMode(QStringLiteral("details"));
-        QCOMPARE(view->internalViewMode(), QString("details"));
-
-        mainWindow.openUrl(0, QUrl(QStringLiteral("applications:/")));
-        QCOMPARE(static_cast<KParts::ReadOnlyPart *>(part), view->part());
-        QCOMPARE(view->internalViewMode(), QString("details"));
-    }
-
 };
 
 QTEST_MAIN(KonqViewTest)
