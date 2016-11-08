@@ -29,7 +29,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2016-08-12</date>
+<date>2016-11-05</date>
 <releaseinfo>Applications 16.12</releaseinfo>
 
 <abstract><para>&konqueror; is &kde;'s advanced File Manager, Web Browser and
@@ -97,8 +97,6 @@ which anyone can <link linkend="config">configure</link> to suit their own
 needs, from changing the overall style and the sizes of text and icons to 
 selecting which items appear in the Menubar, changing the number and 
 positions of the toolbars and even defining new shortcut key combinations. 
-Different configuration <link linkend="save-settings">profiles</link> can be 
-saved for easy recall as needed.
 </para>
 
 </chapter>
@@ -212,9 +210,7 @@ Toolbar</interface> to go to it. The black icon at the right hand end of the
 <para>The <interface>Bookmark Toolbar</interface> is the area under the 
 <interface>Location Toolbar</interface> in the previous screenshot. You can add
 frequently used bookmarks here; see the <link
-linkend="orgbmark">Organizing
-Your
-Bookmarks</link> section of this document.</para>
+linkend="bookmarks">Organizing Your Bookmarks</link> section of this document.</para>
 
 <para>The <interface>Window</interface> is the main area of &konqueror; and 
 can show you the contents of a directory, web page, document or image. Using 
@@ -1946,76 +1942,18 @@ the <guimenuitem>Add Bookmark</guimenuitem> item in that folder.</para>
 <para>If you enter <userinput>bookmarks:</userinput> in the location bar the
 bookmarks home page with an overview of all bookmarks and folders is shown.</para> 
 
-<sect1 id="orgbmark">
-<title>The Bookmark Editor</title>
-
-<para>The <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit
-Bookmarks</guimenuitem> </menuchoice> option opens the <guilabel>Bookmark
-Editor</guilabel>.</para>
-<para>This shows a tree view of your bookmarks and bookmark subfolders. 
-As is usual for tree views in &kde;, subfolders are shown with a small
-<keycap>&gt;</keycap> arrow at the left of the folder name;
-<mousebutton>left</mousebutton> clicking on it will expand the view to
-show the contents of that subfolder and the <keycap>&gt;</keycap> arrow will
-change to <keycap>v</keycap>; <mousebutton>left</mousebutton> clicking on the
-<keycap>v</keycap> arrow will collapse the subfolder view.</para>
-
-<para>To select an item in the list you can <mousebutton>left</mousebutton> 
-click on it, or you can navigate through the list by using the <keysym>Up</keysym>
-and <keysym>Down</keysym> keys to move around, <keysym>Right</keysym> to expand a subfolder and
-<keysym>Left</keysym> to collapse it.</para>
-
-<para>You can move an item to a different place in the list by using the 
-normal Drag and Drop or <guimenuitem>Cut</guimenuitem> and <guimenuitem>
-Paste</guimenuitem> methods. The order in which the items appear in 
-the <guilabel>Bookmark Editor</guilabel> is the order they will appear in the 
-<guimenu>Bookmarks</guimenu> drop down list. The <menuchoice><guimenu>Folder
-</guimenu><guimenuitem>Insert Separator</guimenuitem></menuchoice> option can 
-be used to insert separating lines into the list wherever you wish.</para>
-
-<para>A new subfolder can be created at the selected point in the list by 
-using the <guimenuitem>New Folder...</guimenuitem> option in the 
-<guimenu>Folder</guimenu> menu or from the drop down menu you get when you 
-<mousebutton>right</mousebutton> click on an item in the main part of the 
-window, or with <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+<para>If you want to edit your bookmarks use the <ulink
+url="help:/keditbookmarks/index.html">Bookmark Editor</ulink>
 </para>
-
-<para>To change the name of a bookmark or folder select it then press 
-<keycap>F2</keycap> or choose the <guimenuitem>Rename</guimenuitem> item from 
-the <guimenu>Edit</guimenu> menu or the pop up menu that appears when you 
-<mousebutton>right</mousebutton> click on the item. Similarly, you can edit 
-the &URL; by pressing <keycap>F3</keycap> or choosing the <guimenuitem>
-Change Location</guimenuitem> menu item.</para>
-
-<para>The <guilabel>Bookmark Editor</guilabel> lets you import bookmarks from 
-a range of other browsers into &konqueror;'s bookmark list, putting them into 
- a new folder or replacing all current bookmarks. To do this select 
-<guisubmenu>Import</guisubmenu> from the <guimenu>File</guimenu> menu. The 
-<menuchoice><guimenu>File</guimenu><guisubmenu>Export</guisubmenu>
-</menuchoice> option can be used to export &konqueror;'s bookmarks to a 
-&Netscape; or Mozilla browser.</para>
-
-<para>To select which bookmark subfolder is used to hold the Bookmark 
-Toolbar items select the subfolder then choose <guimenuitem>Set as Toolbar 
-Folder</guimenuitem> from the <guimenu>Folder</guimenu> menu.</para>
-
-<para>If you are tidying up your bookmarks and have forgotten what a 
-particular web page is, you can easily open it from within the <guilabel>
-Bookmark Editor</guilabel> by <mousebutton>right</mousebutton> clicking 
-on the item and selecting <guimenuitem>Open in Konqueror</guimenuitem> from 
-the pop up menu. If you just want to check that the &URL; is still valid 
-select <guimenuitem>Check Status</guimenuitem> instead.</para>
-
-<note><para>All your changes are automatically saved if you close  
-the <guilabel>Bookmark Editor</guilabel>.
-</para></note>
-</sect1> 
-
 
 </chapter>
 <!--FIXME sidebar is empty https://bugs.kde.org/show_bug.cgi?id=366762
 update chapter + take new screenshot dirtree.png when fixed
 comment for now
+
+https://cgit.kde.org/konqueror.git/commit/?id=886b1a9947f578e8cedd96b903ab39eba0a3990c
+disable sidebar subdir, the concept will have to be rethought
+
 <chapter id="sidebar">
 
 <chapterinfo>
@@ -2234,17 +2172,7 @@ as described above.</para>
 </chapterinfo>
 
 <title>Saving Settings</title>
-<para>When you close down &konqueror; your current <guimenu>View</guimenu> 
-menu settings (such as the <guimenuitem>View Mode</guimenuitem>, 
-<guimenuitem>Use index.html</guimenuitem> and <guimenuitem>Show Hidden 
-Files</guimenuitem> items) are not automatically saved as the default
-options; however, you can have &konqueror; remember these settings by
-selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Save View
-Profile As...</guimenuitem></menuchoice> and the current
-setting will become the default option to be used the next time
-&konqueror; is started.</para>
-
-<para>But you can also specify different <guimenu>View</guimenu> menu settings
+<para>You can specify different <guimenu>View</guimenu> menu settings
 for an individual folder. To do this select <menuchoice><guimenu>View</guimenu>
 <guimenuitem>Adjust View Properties...</guimenuitem></menuchoice>,
 change the <guimenu>View</guimenu> settings in the dialog to whatever you want. Then apply 
@@ -2316,7 +2244,7 @@ playground/utils
 Extensions...</guimenuitem></menuchoice> to open a dialog with all installed plugins and select
 the ones you need. All plugins are accessible in the <guimenu>Tools</guimenu> menu.</para>
 
-<para>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebKit view)
+<para>Only plugins appropriate for the current mode (file manager or browser in KHTML/WebEngine view)
 are listed in the dialog.</para>
 
 <variablelist>
@@ -2326,6 +2254,7 @@ FIXME 16.12
 KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), DOM Tree Viewer, Document Relations, Web Archiver, Website Validators, Search Bar
 kwebkitpart for kf5 in extragear/base in branch frameworks
 WebKit only HTML Settings and Translate (disabled)
+WebEngine -> no extensions
 -->
 <varlistentry> <!-- disabled here, why?-->
 <term>Web Page Translation</term>
@@ -2410,7 +2339,7 @@ to validate your &HTML; and &CSS;.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>HTML Settings (KHTML/WebKit view)</term>
+<term>HTML Settings (KHTML view)</term>
 <listitem><para>Select <menuchoice><guimenu>Tools</guimenu><guisubmenu>HTML
 Settings</guisubmenu></menuchoice> to enable or disable a number of HTML
 settings without going through the <guimenu>Settings</guimenu> dialog.
@@ -3166,7 +3095,7 @@ attachment.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
-<guimenuitem>Save Background Image As...</guimenuitem></menuchoice> (Browser mode)</term>
+<guimenuitem>Save Background Image As...</guimenuitem></menuchoice> (Browser mode - KHTML view)</term>
 <listitem>
 <para>Only applies if you are viewing a web page with a background image. Opens
 the <guilabel>Save As</guilabel> dialog box to let you save the background
@@ -3477,22 +3406,11 @@ in the text or &HTML; page.</para></listitem>
 <guisubmenu>View Mode</guisubmenu>
 </menuchoice></term>
 <listitem><para>In browser mode this submenu holds items to select embedded
-views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>WebKit</guimenuitem>, <guimenuitem>Embedded Advanced 
+views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>WebEngine</guimenuitem>, <guimenuitem>Embedded Advanced 
 Text Editor</guimenuitem> and more embedded views.</para>
 <para>In file manager mode this submenu holds items to select <guimenuitem>Icon</guimenuitem>,
 <guimenuitem>Details</guimenuitem>, <guimenuitem>Compact</guimenuitem>,
 <guimenuitem>Terminal Emulator</guimenuitem> and more view modes.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Use index.html</guimenuitem>
-</menuchoice> (File Manager mode)</term>
-<listitem><para>If a selected folder contains a file 
-<filename>index.html</filename>, it will be opened as a web
-page rather than showing the folder as a list of
-files.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -3577,7 +3495,7 @@ page.</para>
 <guimenu>View</guimenu>
 <guimenuitem>Zoom In</guimenuitem> <guimenuitem>Zoom Out</guimenuitem>
 <guimenuitem>Actual Size</guimenuitem> <guimenuitem>Zoom Text Only</guimenuitem>
-<guimenuitem>Zoom To DPI</guimenuitem></menuchoice> (Browser mode - WebKit view)</term>
+<guimenuitem>Zoom To DPI</guimenuitem></menuchoice> (Browser mode - WebEngine view)</term>
 <listitem><para>These menuitems offer different actions to modify the size of the items
 in the page.</para>
 </listitem>
@@ -3743,7 +3661,7 @@ applications.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Go</guimenu>
-<guimenuitem>Network Folder</guimenuitem></menuchoice> (File Manager mode)</term>
+<guimenuitem>Network Folders</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Network folders show up in a special location of &konqueror; and 
 &dolphin; called a virtual folder. You can find more information on how to use this folder
 in the <ulink url="help:/knetattach/index.html">KNetAttach Handbook</ulink>.</para></listitem>
@@ -3918,9 +3836,6 @@ details.</para>
 <sect2 id="menu-settings">
 <title>The Settings Menu</title>
 
-<note><para>See also the section <link linkend="save-settings">Saving Settings
-and Profiles</link>.</para></note>
-
 <para>Apart from the common &kde; Settings menu items described in the
 <ulink url="help:/fundamentals/ui.html#menus-settings">Settings Menu</ulink>
 chapter of the &kde; Fundamentals &konqueror; has these application specific menu entries:
@@ -3963,31 +3878,6 @@ exit full screen mode, click on the <guiicon>Exit Full Screen Mode</guiicon>
 icon on the toolbar, or press <keycombo action="simul">&Ctrl;&Shift;
 <keycap>F</keycap></keycombo>.</para>
 </listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guisubmenu>Load View Profile</guisubmenu>
-</menuchoice></term>
-<listitem><para>Load the settings associated with a particular view profile.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Save View Profile As...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Save the current settings to the current view profile.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure View Profiles...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Lets you change an existing view profile or create a
-new one.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -4184,11 +4074,6 @@ doing.</para>
 
 <itemizedlist>
 
-<listitem><para>The <filename
-class="directory">konqueror/profiles</filename> folder
-holds individual files containing settings for each of your <link
-linkend="save-settings">profiles.</link></para></listitem>
-
 <listitem><para>Your bookmarks are held in <filename
 class="directory">konqueror/bookmarks.xml</filename></para></listitem>
 <listitem><para>Cookies are held in <filename
@@ -4225,9 +4110,8 @@ box. To clear this <mousebutton>right</mousebutton> click on the text entry
 box and select <guimenuitem>Clear History
 </guimenuitem>.</para>
 </listitem>
-<listitem><para>The other is the log of visited locations. Select the History
-page in the Sidebar, 
-<mousebutton>right</mousebutton> click on an entry and choose
+<listitem><para>The other is the log of visited locations. Select <guimenuitem>Show History</guimenuitem>
+in the menu <guimenu>Go</guimenu> and <mousebutton>right</mousebutton> click on an entry and choose
 <guimenuitem>Remove Entry</guimenuitem> (&Del;) to remove just that entry or
 <guimenuitem>Clear History</guimenuitem> to delete all
 entries.</para></listitem>
