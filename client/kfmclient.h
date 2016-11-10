@@ -20,7 +20,6 @@
 #ifndef __kfmclient_h
 #define __kfmclient_h
 
-#include <kglobal.h>
 #include <QApplication>
 class KJob;
 
@@ -28,7 +27,7 @@ class ClientApp : public QApplication
 {
     Q_OBJECT
 public:
-    ClientApp(int &argc, char **argv) : QApplication(argc, argv) {}
+    ClientApp(int &argc, char **argv);
 
     /** Parse command-line arguments and "do it" */
     static bool doIt();
@@ -43,10 +42,6 @@ protected Q_SLOTS:
     void slotResult(KJob *);
     void delayedQuit();
     void slotDialogCanceled();
-    void deref()
-    {
-        KGlobal::deref();
-    }
 
 private:
     static void sendASNChange();

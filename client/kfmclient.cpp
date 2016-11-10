@@ -167,6 +167,11 @@ static QUrl filteredUrl(KCmdLineArgs *args)
     return QUrl();
 }
 
+ClientApp::ClientApp(int &argc, char **argv)
+    : QApplication(argc, argv)
+{
+}
+
 void ClientApp::sendASNChange()
 {
 #if KONQ_HAVE_X11
@@ -199,7 +204,6 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
-            KGlobal::setAllowQuit(true);
             KRun *run = new KRun(url, 0, false /* no progress window */);
             QObject::connect(run, SIGNAL(finished()), qApp, SLOT(delayedQuit()));
             QObject::connect(run, SIGNAL(error()), qApp, SLOT(delayedQuit()));
@@ -287,7 +291,7 @@ void ClientApp::delayedQuit()
 {
     // Quit in 2 seconds. This leaves time for KRun to pop up
     // "app not found" in KProcessRunner, if that was the case.
-    QTimer::singleShot(2000, this, SLOT(deref()));
+    QTimer::singleShot(2000, qApp, SLOT(quit()));
     // don't access the KRun instance later, it will be deleted after calling slots
     if (static_cast< const KRun * >(sender())->hasError()) {
         krun_has_error = true;
