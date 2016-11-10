@@ -178,14 +178,14 @@ WebEnginePage* WebEnginePart::page()
 {
     if (m_webView)
         return qobject_cast<WebEnginePage*>(m_webView->page());
-    return 0;
+    return Q_NULLPTR;
 }
 
 const WebEnginePage* WebEnginePart::page() const
 {
     if (m_webView)
         return qobject_cast<const WebEnginePage*>(m_webView->page());
-    return 0;
+    return Q_NULLPTR;
 }
 
 void WebEnginePart::initActions()
