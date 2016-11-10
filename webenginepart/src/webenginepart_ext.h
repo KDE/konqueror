@@ -35,7 +35,7 @@
 class QUrl;
 class WebEnginePart;
 class WebEngineView;
-
+class QPrinter;
 class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
@@ -109,6 +109,8 @@ public Q_SLOTS:
     void slotOpenSelection();
     void slotLinkInTop();
 
+private Q_SLOTS:
+    void slotHandlePagePrinted(bool result);
 private:
     WebEngineView* view();
     QPointer<WebEnginePart> m_part;
@@ -116,6 +118,7 @@ private:
     quint32 m_spellTextSelectionStart;
     quint32 m_spellTextSelectionEnd;
     QByteArray m_historyData;
+    QPrinter *mCurrentPrinter;
 };
 
 /**

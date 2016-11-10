@@ -54,10 +54,27 @@
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFun)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFun)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
+    return wrapper;
+}
 
 WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
                        :KParts::BrowserExtension(parent),
-                        m_part(parent)
+                        m_part(parent),
+                        mCurrentPrinter(Q_NULLPTR)
 {
     enableAction("cut", false);
     enableAction("copy", false);
@@ -231,9 +248,29 @@ void WebEngineBrowserExtension::slotSaveFrame()
 
 void WebEngineBrowserExtension::print()
 {
-//    if (view())
-//        slotPrintRequested(view()->page());
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 8, 0)
+    if (view()) {
+        mCurrentPrinter = new QPrinter();
+        QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, Q_NULLPTR);
+        dialog->setWindowTitle(i18n("Print Document"));
+        if (dialog->exec() != QDialog::Accepted) {
+            slotHandlePagePrinted(false);
+            delete dialog;
+            return;
+        }
+        delete dialog;
+        view()->page()->print(mCurrentPrinter, invoke(this, &WebEngineBrowserExtension::slotHandlePagePrinted));
+    }
+#endif
 }
+
+void WebEngineBrowserExtension::slotHandlePagePrinted(bool result)
+{
+    Q_UNUSED(result);
+    delete mCurrentPrinter;
+    mCurrentPrinter = Q_NULLPTR;
+}
+
 
 void WebEngineBrowserExtension::updateEditActions()
 {
@@ -777,21 +814,6 @@ void WebEngineBrowserExtension::saveHistory()
         Q_ASSERT(false); // should never happen!!!
     }
 }
-
-#if 0
-void WebEngineBrowserExtension::slotPrintRequested(QWebFrame* frame)
-{
-    if (!frame)
-        return;
-
-    // Make it non-modal, in case a redirection deletes the part
-    QPointer<QPrintDialog> dlg (new QPrintDialog(view()));
-    if (dlg->exec() == QPrintDialog::Accepted) {
-        frame->print(dlg->printer());
-    }
-    delete dlg;
-}
-#endif
 
 void WebEngineBrowserExtension::slotPrintPreview()
 {
