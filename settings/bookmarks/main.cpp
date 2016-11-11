@@ -25,7 +25,7 @@
 
 // KDE
 #include <kcmoduleloader.h>
-#include <kcomponentdata.h>
+//#include <kcomponentdata.h>
 #include <kpluginfactory.h>
 
 // Local

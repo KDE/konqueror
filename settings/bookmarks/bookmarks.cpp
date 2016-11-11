@@ -27,9 +27,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <KLocalizedString>
-#include <knuminput.h>
-#include <kimagecache.h>
 #include <KConfigGroup>
+#include <kimagecache.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 

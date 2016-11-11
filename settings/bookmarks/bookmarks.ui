@@ -155,7 +155,7 @@ It looks less nice but it may help if you have a very big folder you want to spr
        </widget>
       </item>
       <item>
-       <widget class="KIntNumInput" name="sbCacheSize" >
+       <widget class="QSpinBox" name="sbCacheSize" >
         <property name="enabled" >
          <bool>true</bool>
         </property>
@@ -195,13 +195,6 @@ It looks less nice but it may help if you have a very big folder you want to spr
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
