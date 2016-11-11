@@ -744,9 +744,9 @@ QVariant KonqListWidgetItem::data(int role) const
         if (!title.isEmpty()) {
             pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
         } else if (text().indexOf(QLatin1String("://")) == -1) {
-            title = titleOfURL("http://" + text());
+            title = titleOfURL(QLatin1Literal("http://") + text());
             if (!title.isEmpty()) {
-                pixmap = provider->pixmapFor("http://" + text(), KIconLoader::SizeSmall);
+                pixmap = provider->pixmapFor(QLatin1Literal("http://") + text(), KIconLoader::SizeSmall);
             } else {
                 pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
             }
