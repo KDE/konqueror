@@ -984,7 +984,7 @@ void KonqComboCompletionBox::setItems(const QStringList &items)
     }
 
     if (isVisible() && size().height() != sizeHint().height()) {
-        sizeAndPosition();
+        resizeAndReposition();
     }
 
     blockSignals(block);
