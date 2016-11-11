@@ -45,7 +45,6 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <QMenu>
-#include <kdeversion.h>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QStandardPaths>

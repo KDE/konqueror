@@ -69,7 +69,4 @@ install(FILES
     COMPONENT Devel
 )
 
-# TODO Remove the if/endif lines if LibKonq is split.
-if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-endif()
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

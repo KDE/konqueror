@@ -1,19 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
-project(konq-plugins)
 
-find_package(ECM 5.27.0 CONFIG REQUIRED)
-
-include(FeatureSummary)
-
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
-
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
-include(ECMInstallIcons)
-include(ECMMarkAsTest)
-
-find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} QUIET)
 set_package_properties(Qt5TextToSpeech PROPERTIES
       PURPOSE "Gives Konqueror a plugin to speak portions or all of a website")
