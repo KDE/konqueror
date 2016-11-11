@@ -17,37 +17,39 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef __kfmclient_h
-#define __kfmclient_h
+#ifndef KFMCLIENT_H
+#define KFMCLIENT_H
 
-#include <QApplication>
+#include <QObject>
 class KJob;
+class QUrl;
+class QString;
+class QCommandLineParser;
 
-class ClientApp : public QApplication
+class ClientApp : public QObject
 {
     Q_OBJECT
 public:
-    ClientApp(int &argc, char **argv);
+    ClientApp();
 
     /** Parse command-line arguments and "do it" */
-    static bool doIt();
+    bool doIt(const QCommandLineParser &parser);
 
     /** Make konqueror open a window for @p url */
-    static bool createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype = QString());
+    bool createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype = QString());
 
-    /** Make konqueror open a window for @p profile, @p url and @p mimetype */
-    static bool openProfile(const QString &profile, const QUrl &url, const QString &mimetype = QString());
+    /** Make konqueror open a window for @p profile, @p url and @p mimetype, deprecated */
+    bool openProfile(const QString &profile, const QUrl &url, const QString &mimetype = QString());
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void slotResult(KJob *);
     void delayedQuit();
-    void slotDialogCanceled();
 
 private:
-    static void sendASNChange();
-    static bool m_ok;
-    static QByteArray startup_id_str;
+    void sendASNChange();
 
+    QByteArray startup_id_str;
+    bool m_interactive = true;
 };
 
 #endif

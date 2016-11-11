@@ -22,7 +22,7 @@
 #include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
-#include <kcmdlineargs.h>
+
 #include <KLocalizedString>
 #include <kprocess.h>
 #include "../src/config-konqueror.h"
@@ -30,7 +30,6 @@
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kmimetype.h>
-#include <kdebug.h>
 #include <kservice.h>
 #include <krun.h>
 #include <kcomponentdata.h>
@@ -46,10 +45,13 @@
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
 
+#include <QApplication>
 #include <QDir>
 #include <QMimeDatabase>
 #include <QUrl>
 #include <QStandardPaths>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #if KONQ_HAVE_X11
 #include <QX11Info>
@@ -60,33 +62,37 @@ static const char programName[] = I18N_NOOP("kfmclient");
 static const char description[] = I18N_NOOP("KDE tool for opening URLs from the command line");
 static const char version[] = "2.0";
 
-QByteArray ClientApp::startup_id_str;
-bool ClientApp::m_ok = true;
-static bool s_interactive = true;
-
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
-    KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description));
+    QApplication app(argc, argv);
+
+    KAboutData aboutData(appName, i18n(programName), QLatin1String(version));
+    aboutData.setShortDescription(i18n(description));
+    KAboutData::setApplicationData(aboutData);
+
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
 
     //qDebug() << "kfmclient starting" << QTime::currentTime();
 
-    KCmdLineOptions options;
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("noninteractive"), i18n("Non interactive use: no message boxes")));
 
-    options.add("noninteractive", ki18n("Non interactive use: no message boxes"));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("commands"), i18n("Show available commands")));
 
-    options.add("commands", ki18n("Show available commands"));
+    parser.addPositionalArgument(QLatin1String("command"), i18n("Command (see --commands)"));
 
-    options.add("+command", ki18n("Command (see --commands)"));
+    parser.addPositionalArgument(QLatin1String("[URL(s)]"), i18n("Arguments for command"));
 
-    options.add("+[URL(s)]", ki18n("Arguments for command"));
+    parser.addOption(QCommandLineOption(QStringList{"tempfile"}, i18n("The files/URLs opened by the application will be deleted after use")));
 
-    KCmdLineArgs::addCmdLineOptions(options);
-    KCmdLineArgs::addTempFileOption();
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    const QStringList args = parser.positionalArguments();
 
-    if (argc == 1 || args->isSet("commands")) {
-        KCmdLineArgs::enable_i18n();
+    if (args.isEmpty() || parser.isSet("commands")) {
         puts(i18n("\nSyntax:\n").toLocal8Bit());
         puts(i18n("  kfmclient openURL 'url' ['mimetype']\n"
                   "            # Opens a window showing 'url'.\n"
@@ -101,23 +107,15 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
                   "            # Same as above but opens a new tab with 'url' in an existing Konqueror\n"
                   "            #   window on the current active desktop if possible.\n\n").toLocal8Bit());
 
-        puts(i18n("  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
-                  "            # See kioclient exec for more information.\n").toLocal8Bit());
-
         return 0;
     }
 
     // Use kfmclient from the session KDE version
-    if ((args->arg(0) == QLatin1String("openURL") || args->arg(0) == QLatin1String("newTab"))
+    if ((args.at(0) == QLatin1String("openURL") || args.at(0) == QLatin1String("newTab"))
             && qEnvironmentVariableIsSet("KDE_FULL_SESSION")) {
-        int version = KCOREADDONS_VERSION_MAJOR;
-        if (!qEnvironmentVariableIsSet("KDE_SESSION_VERSION")) {  // this is KDE3
-            version = 3;
-        } else {
-            version = atoi(getenv("KDE_SESSION_VERSION"));
-        }
+        const int version = atoi(getenv("KDE_SESSION_VERSION"));
         if (version != 0 && version != KCOREADDONS_VERSION_MAJOR) {
-            kDebug() << "Forwarding to kfmclient from KDE version " << version;
+            qDebug() << "Forwarding to kfmclient from KDE version " << version;
             char wrapper[ 10 ];
             sprintf(wrapper, "kde%d", version);
             char **newargv = new char *[ argc + 2 ];
@@ -133,7 +131,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         }
     }
 
-    return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
+    ClientApp client;
+    return client.doIt(parser) ? 0 /*no error*/ : 1 /*error*/;
 }
 
 static bool s_dbus_initialized = false;
@@ -143,7 +142,7 @@ static void needDBus()
         extern void qDBusBindToApplication();
         qDBusBindToApplication();
         if (!QDBusConnection::sessionBus().isConnected()) {
-            kFatal(101) << "Session bus not found";
+            qFatal("Session bus not found");
         }
         s_dbus_initialized = true;
     }
@@ -152,23 +151,20 @@ static void needDBus()
 // keep in sync with konqpreloadinghandler.cpp
 static const char s_preloadDBusName[] = "org.kde.konqueror.preloaded";
 
-static QUrl filteredUrl(KCmdLineArgs *args)
+static QUrl filteredUrl(const QString &url)
 {
-    if (args) {
-        KUriFilterData data;
-        data.setData(args->arg(1));
-        data.setAbsolutePath(args->cwd());
-        data.setCheckForExecutables(false);
+    KUriFilterData data;
+    data.setData(url);
+    data.setAbsolutePath(QDir::currentPath());
+    data.setCheckForExecutables(false);
 
-        if (KUriFilter::self()->filterUri(data) && data.uriType() != KUriFilterData::Error) {
-            return data.uri();
-        }
+    if (KUriFilter::self()->filterUri(data) && data.uriType() != KUriFilterData::Error) {
+        return data.uri();
     }
     return QUrl();
 }
 
-ClientApp::ClientApp(int &argc, char **argv)
-    : QApplication(argc, argv)
+ClientApp::ClientApp()
 {
 }
 
@@ -186,12 +182,9 @@ void ClientApp::sendASNChange()
 #endif
 }
 
-static bool krun_has_error = false;
-
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
     qDebug() << url << "mimetype=" << mimetype;
-    Q_ASSERT(qApp);
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
         KConfig config(QStringLiteral("kfmclientrc"));
@@ -205,10 +198,9 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
             KRun *run = new KRun(url, 0, false /* no progress window */);
-            QObject::connect(run, SIGNAL(finished()), qApp, SLOT(delayedQuit()));
-            QObject::connect(run, SIGNAL(error()), qApp, SLOT(delayedQuit()));
-            qApp->exec();
-            return !krun_has_error;
+            QObject::connect(run, &KRun::finished, this, &ClientApp::delayedQuit);
+            QObject::connect(run, &KRun::error, this, [](){ qApp->exit(1); });
+            return qApp->exec();
         }
     }
 
@@ -292,10 +284,6 @@ void ClientApp::delayedQuit()
     // Quit in 2 seconds. This leaves time for KRun to pop up
     // "app not found" in KProcessRunner, if that was the case.
     QTimer::singleShot(2000, qApp, SLOT(quit()));
-    // don't access the KRun instance later, it will be deleted after calling slots
-    if (static_cast< const KRun * >(sender())->hasError()) {
-        krun_has_error = true;
-    }
 }
 
 static void checkArgumentCount(int count, int min, int max)
@@ -310,53 +298,48 @@ static void checkArgumentCount(int count, int min, int max)
     }
 }
 
-bool ClientApp::doIt()
+bool ClientApp::doIt(const QCommandLineParser &parser)
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    int argc = args->count();
+    const QStringList args = parser.positionalArguments();
+    int argc = args.count();
     checkArgumentCount(argc, 1, 0);
 
-    if (!args->isSet("ninteractive")) {
-        s_interactive = false;
+    if (!parser.isSet("noninteractive")) {
+        m_interactive = false;
     }
-    QString command = args->arg(0);
+    QString command = args.at(0);
 
     // read ASN env. variable
     startup_id_str = KStartupInfo::currentStartupIdEnv().id();
 
-    kDebug() << "Creating ClientApp";
-    int fake_argc = 1;
-    char *(fake_argv[]) = {"kfmclient"};
-    ClientApp app(fake_argc, fake_argv);
-
     if (command == QLatin1String("openURL") || command == QLatin1String("newTab")) {
         checkArgumentCount(argc, 1, 3);
-        bool tempFile = KCmdLineArgs::isTempFileSet();
+        const bool tempFile = parser.isSet("tempfile");
         if (argc == 1) {
             return createNewWindow(QUrl::fromLocalFile(QDir::homePath()), command == QLatin1String("newTab"), tempFile);
         }
         if (argc == 2) {
-            return createNewWindow(filteredUrl(args), command == QLatin1String("newTab"), tempFile);
+            return createNewWindow(filteredUrl(args.at(1)), command == QLatin1String("newTab"), tempFile);
         }
         if (argc == 3) {
-            return createNewWindow(filteredUrl(args), command == QLatin1String("newTab"), tempFile, args->arg(2));
+            return createNewWindow(filteredUrl(args.at(1)), command == QLatin1String("newTab"), tempFile, args.at(2));
         }
     } else if (command == QLatin1String("openProfile")) { // deprecated command, kept for compat
         checkArgumentCount(argc, 2, 3);
         QUrl url;
         if (argc == 3) {
-            url = args->url(2);
+            url = QUrl::fromUserInput(args.at(2), QDir::currentPath());
         }
-        return openProfile(args->arg(1), url);
+        return openProfile(args.at(1), url);
     } else if (command == QLatin1String("exec") && argc >= 2) {
         // compatibility with KDE 3 and xdg-open
         QStringList kioclientArgs;
-        if (!s_interactive) {
+        if (!m_interactive) {
             kioclientArgs << QStringLiteral("--noninteractive");
         }
-        kioclientArgs << QStringLiteral("exec") << args->arg(1);
+        kioclientArgs << QStringLiteral("exec") << args.at(1);
         if (argc == 3) {
-            kioclientArgs << args->arg(2);
+            kioclientArgs << args.at(2);
         }
 
         int ret = KProcess::execute(QStringLiteral("kioclient5"), kioclientArgs);
@@ -370,17 +353,11 @@ bool ClientApp::doIt()
 
 void ClientApp::slotResult(KJob *job)
 {
-    if (job->error() && s_interactive) {
+    if (job->error() && m_interactive) {
         KJobWidgets::setWindow(job, 0);
         static_cast<KIO::Job *>(job)->ui()->showErrorMessage();
     }
-    m_ok = !job->error();
-    quit();
-}
-
-void ClientApp::slotDialogCanceled()
-{
-    m_ok = false;
-    quit();
+    const bool ok = !job->error();
+    qApp->exit(ok ? 0 : 1);
 }
 
