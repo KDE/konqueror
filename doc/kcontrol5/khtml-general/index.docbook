@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
-"dtd/kdex.dtd" [
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-11-22</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 
 </articleinfo>
 <para>On this page you find settings for home and start page and the behavior 
@@ -42,16 +42,6 @@ changes to take effect.</para>
 <para>When &konqueror; is used in file manager mode, the <guilabel>Home Page</guilabel> 
 button in the toolbar is replaced by a <guilabel>Home Folder</guilabel> button 
 which makes it jump to your local home folder instead.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><guilabel>Default web browser engine</guilabel></term>
-<listitem><para>
-This option provides an easy way to select the preferred web engine in &konqueror;, either 
-<guilabel>KHTML</guilabel> or <guilabel>Webkit</guilabel>, if installed.
-Using the <menuchoice><guimenu>View</guimenu><guimenuitem>View Mode</guimenuitem></menuchoice> 
-menu allows you to change the web engine temporarily on the fly.
-</para>
 </listitem>
 </varlistentry>
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
-"dtd/kdex.dtd" [
-<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -14,8 +13,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-11-22</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 </articleinfo>
 
 <para>&konqueror; AdBlocK can be configured to replace or remove
@@ -36,9 +35,6 @@ image is used in place of filtered images.</para>
 URLs that will be compared against image and frame names to decide
 on fitlering actions. The wildcards can be given as filename style
 regular expressions.</para>
-
-<para>Use the <guilabel>Search</guilabel> edit box above the list box 
-to filter matching entries an the fly.</para>
 
 <para>Each filter can either be expressed as a file style wildcard
 string (e.g. http://www.site.com/ads/*) or as a full regular expression

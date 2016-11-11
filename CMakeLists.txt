@@ -23,7 +23,7 @@ set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
 
-find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities) # Optional
+find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
 find_package(KDED REQUIRED)
 
@@ -51,6 +51,10 @@ add_subdirectory( pics )
 #add_subdirectory( sidebar )
 add_subdirectory( settings )
 add_subdirectory( plugins )
+
+if (KF5DocTools_FOUND)
+    add_subdirectory( doc )
+endif()
 
 ########### install files ###############
 install( PROGRAMS

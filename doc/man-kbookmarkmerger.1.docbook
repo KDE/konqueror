@@ -12,8 +12,9 @@
 		&Frerich.Raabe;
 		&Frerich.Raabe.mail;
 	</author>
-	<date>February 1st, 2005</date>
-	<productname>kbookmarkmerger</productname>
+	<date>2016-11-07</date>
+	<releaseinfo>Applications 16.12</releaseinfo>
+	<productname>KDE Applications</productname>
 </refentryinfo>
 
 <refmeta>
@@ -30,8 +31,6 @@
 <refsynopsisdiv>
 <cmdsynopsis>
 	&kbookmarkmerger;
-	<arg choice="opt" rep="repeat">Qt Options</arg>
-	<arg choice="opt" rep="repeat">KDE Options</arg>
 	<arg choice="req">directory</arg>
 </cmdsynopsis>
 </refsynopsisdiv>
@@ -72,7 +71,10 @@ files.</para>
 
 <refsect1>
 <title>See Also</title>
-<para><ulink url="help:/konqueror/index.html">&konqueror; manual</ulink></para>
+<simplelist>
+<member><ulink url="help:/konqueror/index.html">&konqueror; manual</ulink></member>
+<member>kf5options(7)</member>
+</simplelist>
 </refsect1>
 
 <refsect1>

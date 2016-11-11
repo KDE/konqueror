@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
-"dtd/kdex.dtd" [
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -13,8 +13,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-12-01</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -161,7 +161,7 @@ vision.</para>
 <para>Your choices here affect every &kde; application that renders HTML
 with &kde;'s own renderer, which is called khtml.  These include
 &kmail;, &khelpcenter; and of course &konqueror;.  Choices here do not
-affect other browsers such as &Netscape;.</para>
+affect other browsers such as &firefox;.</para>
 
 </sect3>
 
