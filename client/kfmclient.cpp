@@ -29,15 +29,15 @@
 
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
-#include <kmimetype.h>
 #include <kservice.h>
 #include <krun.h>
-#include <kcomponentdata.h>
-#include <KStartupInfoId>
+#include <KStartupInfo>
 #include <kurifilter.h>
+#include <KConfig>
 #include <KConfigGroup>
 #include <KJobWidgets>
 #include <KService>
+#include <KAboutData>
 #include <KWindowSystem>
 
 #include <kcoreaddons_version.h>

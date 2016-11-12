@@ -12,13 +12,22 @@ add_definitions(-DQT_NO_CAST_ASCII)
 
 kde4_add_app_icon(kfmclient_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/system-file-manager.png")
 
+set(kfmclient_LIBS
+   KF5::CoreAddons
+   KF5::KIOCore
+   KF5::KIOWidgets
+   KF5::I18n
+   KF5::WindowSystem
+   Qt5::DBus
+)
+
 if (WIN32)
     add_definitions(-Dkdemain=main)
     add_executable(kfmclient ${kfmclient_SRCS})
-    target_link_libraries(kfmclient  KF5::KIOCore )
+    target_link_libraries(kfmclient ${kfmclient_LIBS})
 else (WIN32)
     kf5_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
-    target_link_libraries(kdeinit_kfmclient KF5::KIOCore KF5::KIOWidgets KF5::KDELibs4Support)
+    target_link_libraries(kdeinit_kfmclient ${kfmclient_LIBS})
     if(X11_FOUND)
       target_link_libraries(kdeinit_kfmclient Qt5::X11Extras)
     endif(X11_FOUND)
