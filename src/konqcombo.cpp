@@ -473,7 +473,7 @@ void KonqCombo::keyPressEvent(QKeyEvent *e)
     KHistoryComboBox::keyPressEvent(e);
     // we have to set it as temporary, otherwise we wouldn't get our nice
     // pixmap. Yes, QComboBox still sucks.
-    QList<QKeySequence> key{(e->key() | e->modifiers())};
+    QList<QKeySequence> key{QKeySequence(e->key() | e->modifiers())};
     if (key == KStandardShortcut::rotateUp() ||
             key == KStandardShortcut::rotateDown()) {
         setTemporary(currentText());

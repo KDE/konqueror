@@ -86,8 +86,6 @@ public:
     static void getOffers(const QString &serviceType,
                           KService::List *partServiceOffers = 0,
                           KService::List *appServiceOffers = 0);
-
-    static const K4AboutData *aboutData();
 };
 
 #endif

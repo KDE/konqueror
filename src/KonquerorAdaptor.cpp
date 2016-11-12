@@ -97,7 +97,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection(const QString &ur
 {
     setStartupId(startup_id);
     KonqOpenURLRequest req;
-    req.filesToSelect = filesToSelect;
+    req.filesToSelect = QUrl::fromStringList(filesToSelect);
     KonqMainWindow *res = KonqMainWindowFactory::createNewWindow(QUrl::fromUserInput(url), req);
     if (!res) {
         return QDBusObjectPath("/");

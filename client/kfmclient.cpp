@@ -25,7 +25,7 @@
 
 #include <KLocalizedString>
 #include <kprocess.h>
-#include "../src/config-konqueror.h"
+#include <config-konqueror.h>
 
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>

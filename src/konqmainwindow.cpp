@@ -926,7 +926,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         }
 
         // see dolphinpart
-        childView->part()->setProperty("filesToSelect", QVariant(req.filesToSelect));
+        childView->part()->setProperty("filesToSelect", QVariant::fromValue(req.filesToSelect));
 
         if (!url.isEmpty()) {
             childView->openUrl(url, originalURL, req.nameFilter, req.tempFile);

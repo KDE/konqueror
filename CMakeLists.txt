@@ -37,8 +37,16 @@ endif(X11_FOUND)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
+include (CheckSymbolExists)
+check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
+check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)
+# TODO KDE_MALLINFO_FIELD_hblkhd
+# TODO KDE_MALLINFO_FIELD_uordblks
+# TODO KDE_MALLINFO_FIELD_usmblks
+
 configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 configure_file (konqueror-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/konqueror-version.h)
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory( libkonq )
 add_subdirectory( src )

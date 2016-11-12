@@ -29,9 +29,10 @@
 #include "konqsettingsxt.h"
 
 #include <KLocalizedString>
-#include <kcmdlineargs.h>
+#include <KAboutData>
 
 #include <config-konqueror.h>
+#include <konqueror-version.h>
 
 #include <QDebug>
 #include <QFile>
@@ -40,6 +41,8 @@
 #include <QStandardPaths>
 
 #include <KDBusAddons/KDBusService>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 static void listSessions()
 {
@@ -55,36 +58,78 @@ static KonqPreloadingHandler s_preloadingHandler;
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
-    KCmdLineArgs::init(argc, argv, KonqFactory::aboutData());
-
-    KCmdLineOptions options;
-
-    options.add("silent", ki18n("Start without a default window, when called without URLs"));
-
-    options.add("preload", ki18n("Preload for later use. This mode does not support URLs on the command line"));
-
-    options.add("profile <profile>", ki18n("Profile to open (DEPRECATED, IGNORED)"));
-
-    options.add("sessions", ki18n("List available sessions"));
-
-    options.add("open-session <session>", ki18n("Session to open"));
-
-    options.add("mimetype <mimetype>", ki18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"));
-    options.add("part <service>", ki18n("Part to use (e.g. khtml or kwebkitpart)"));
-
-    options.add("select", ki18n("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file"));
-
-    options.add("+[URL]", ki18n("Location to open"));
-
-    KCmdLineArgs::addCmdLineOptions(options); // Add our own options.
-    KCmdLineArgs::addTempFileOption();
-
-    KonquerorApplication app(argc, argv);
+    KonquerorApplication app(argc, argv);    
     KLocalizedString::setApplicationDomain("konqueror");
 
-    KDBusService dbusService(KDBusService::Multiple);
+    KAboutData aboutData("konqueror", i18n("Konqueror"), KONQUEROR_VERSION);
+    aboutData.setShortDescription(i18n("Web browser, file manager and document viewer."));
+    aboutData.addLicense(KAboutLicense::GPL_V2);
+    aboutData.setCopyrightStatement(i18n("(C) 1999-2016, The Konqueror developers"));
+    aboutData.setHomepage("http://konqueror.kde.org");
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and maintainer"), "faure@kde.org");
+    aboutData.addAuthor(i18n("Simon Hausmann"), i18n("Developer (framework, parts)"), "hausmann@kde.org");
+    aboutData.addAuthor(i18n("Michael Reiher"), i18n("Developer (framework)"), "michael.reiher@gmx.de");
+    aboutData.addAuthor(i18n("Matthias Welk"), i18n("Developer"), "welk@fokus.gmd.de");
+    aboutData.addAuthor(i18n("Alexander Neundorf"), i18n("Developer (List views)"), "neundorf@kde.org");
+    aboutData.addAuthor(i18n("Michael Brade"), i18n("Developer (List views, I/O library)"), "brade@kde.org");
+    aboutData.addAuthor(i18n("Lars Knoll"), i18n("Developer (HTML rendering engine)"), "knoll@kde.org");
+    aboutData.addAuthor(i18n("Dirk Mueller"), i18n("Developer (HTML rendering engine)"), "mueller@kde.org");
+    aboutData.addAuthor(i18n("Peter Kelly"), i18n("Developer (HTML rendering engine)"), "pmk@post.com");
+    aboutData.addAuthor(i18n("Waldo Bastian"), i18n("Developer (HTML rendering engine, I/O library)"), "bastian@kde.org");
+    aboutData.addAuthor(i18n("Germain Garand"), i18n("Developer (HTML rendering engine)"), "germain@ebooksfrance.org");
+    aboutData.addAuthor(i18n("Leo Savernik"), i18n("Developer (HTML rendering engine)"), "l.savernik@aon.at");
+    aboutData.addAuthor(i18n("Stephan Kulow"), i18n("Developer (HTML rendering engine, I/O library, regression test framework)"), "coolo@kde.org");
+    aboutData.addAuthor(i18n("Antti Koivisto"), i18n("Developer (HTML rendering engine)"), "koivisto@kde.org");
+    aboutData.addAuthor(i18n("Zack Rusin"),  i18n("Developer (HTML rendering engine)"), "zack@kde.org");
+    aboutData.addAuthor(i18n("Tobias Anton"), i18n("Developer (HTML rendering engine)"), "anton@stud.fbi.fh-darmstadt.de");
+    aboutData.addAuthor(i18n("Lubos Lunak"), i18n("Developer (HTML rendering engine)"), "l.lunak@kde.org");
+    aboutData.addAuthor(i18n("Maks Orlovich"), i18n("Developer (HTML rendering engine, JavaScript)"), "maksim@kde.org");
+    aboutData.addAuthor(i18n("Allan Sandfeld Jensen"), i18n("Developer (HTML rendering engine)"), "kde@carewolf.com");
+    aboutData.addAuthor(i18n("Apple Safari Developers"), i18n("Developer (HTML rendering engine, JavaScript)"));
+    aboutData.addAuthor(i18n("Harri Porten"), i18n("Developer (JavaScript)"), "porten@kde.org");
+    aboutData.addAuthor(i18n("Koos Vriezen"), i18n("Developer (Java applets and other embedded objects)"), "koos.vriezen@xs4all.nl");
+    aboutData.addAuthor(i18n("Matt Koss"), i18n("Developer (I/O library)"), "koss@miesto.sk");
+    aboutData.addAuthor(i18n("Alex Zepeda"), i18n("Developer (I/O library)"), "zipzippy@sonic.net");
+    aboutData.addAuthor(i18n("Richard Moore"), i18n("Developer (Java applet support)"), "rich@kde.org");
+    aboutData.addAuthor(i18n("Dima Rogozin"), i18n("Developer (Java applet support)"), "dima@mercury.co.il");
+    aboutData.addAuthor(i18n("Wynn Wilkes"), i18n("Developer (Java 2 security manager support,\n and other major improvements to applet support)"), "wynnw@calderasystems.com");
+    aboutData.addAuthor(i18n("Stefan Schimanski"), i18n("Developer (Netscape plugin support)"), "schimmi@kde.org");
+    aboutData.addAuthor(i18n("George Staikos"), i18n("Developer (SSL, Netscape plugins)"), "staikos@kde.org");
+    aboutData.addAuthor(i18n("Dawit Alemayehu"), i18n("Developer (I/O library, Authentication support)"), "adawit@kde.org");
+    aboutData.addAuthor(i18n("Carsten Pfeiffer"), i18n("Developer (framework)"), "pfeiffer@kde.org");
+    aboutData.addAuthor(i18n("Torsten Rahn"), i18n("Graphics/icons"), "torsten@kde.org");
+    aboutData.addAuthor(i18n("Torben Weis"), i18n("KFM author"), "weis@kde.org");
+    aboutData.addAuthor(i18n("Joseph Wenninger"), i18n("Developer (navigation panel framework)"), "jowenn@kde.org");
+    aboutData.addAuthor(i18n("Stephan Binner"), i18n("Developer (misc stuff)"), "binner@kde.org");
+    aboutData.addAuthor(i18n("Ivor Hewitt"), i18n("Developer (AdBlock filter)"), "ivor@ivor.org");
+    aboutData.addAuthor(i18n("Eduardo Robles Elvira"), i18n("Developer (framework)"), "edulix@gmail.com");
+
+    KAboutData::setApplicationData(aboutData);
+
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("silent")}, i18n("Start without a default window, when called without URLs")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("preload")}, i18n("Preload for later use. This mode does not support URLs on the command line")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("profile")}, i18n("Profile to open (DEPRECATED, IGNORED)"), i18n("profile")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("sessions")}, i18n("List available sessions")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("open-session")}, i18n("Session to open"), i18n("session")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("mimetype")}, i18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"), i18n("mimetype")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("part")}, i18n("Part to use (e.g. khtml or kwebkitpart)"), i18n("service")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("select")}, i18n("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file")));
+    parser.addOption(QCommandLineOption(QStringList{QStringLiteral("tempfile")}, i18n("The files/URLs opened by the application will be deleted after use")));
+
+    parser.addPositionalArgument(QStringLiteral("[URL]"), i18n("Location to open"));
+
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
+
+    const QStringList args = parser.positionalArguments();
+
+    KDBusService dbusService(KDBusService::Multiple);
 
     if (app.isSessionRestored()) {
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
@@ -101,15 +146,15 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         }
     } else {
         // First the invocations that do not take urls.
-        if (args->isSet("preload")) {
+        if (parser.isSet("preload")) {
             if (!s_preloadingHandler.registerAsPreloaded()) {
                 return 0;    // no preloading
             }
-        } else if (args->isSet("sessions")) {
+        } else if (parser.isSet("sessions")) {
             listSessions();
             return 0;
-        } else if (args->isSet("open-session")) {
-            const QString session = args->getOption("open-session");
+        } else if (parser.isSet("open-session")) {
+            const QString session = parser.value("open-session");
             QString sessionPath = session;
             if (!session.startsWith('/')) {
                 sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
@@ -122,56 +167,53 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             }
 
             KonqSessionManager::self()->restoreSessions(sessionPath);
-        } else if (args->count() == 0) {
+        } else if (args.isEmpty()) {
             // No args. If --silent, do nothing, otherwise create a default window.
-            if (!args->isSet("silent")) {
+            if (!parser.isSet("silent")) {
                 KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
                 mainWin->show();
             }
         } else {
             // Now is a good time to parse each argument as a URL.
             QList<QUrl> urlList;
-            for (int i = 0; i < args->count(); i++) {
+            for (int i = 0; i < args.count(); i++) {
                 // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below
-                const QUrl url = args->url(i);
+                const QUrl url = QUrl::fromUserInput(args.at(i), QDir::currentPath());
                 if (url.isLocalFile() && QFile::exists(url.toLocalFile())) { // "konqueror index.html"
                     urlList += url;
                 } else {
-                    urlList += KonqMisc::konqFilteredURL(0L, args->arg(i));    // "konqueror slashdot.org"
+                    urlList += KonqMisc::konqFilteredURL(Q_NULLPTR, args.at(i));    // "konqueror slashdot.org"
                 }
             }
 
-            QStringList filesToSelect;
+            QList<QUrl> filesToSelect;
 
-            if (args->isSet("select")) {
+            if (parser.isSet("select")) {
                 // Get all distinct directories from 'files' and open a tab
                 // for each directory.
                 QList<QUrl> dirs;
                 Q_FOREACH (const QUrl &url, urlList) {
-                    const QUrl dir(url.adjusted(QUrl::RemoveFilename).path());
+                    const QUrl dir(url.adjusted(QUrl::RemoveFilename));
                     if (!dirs.contains(dir)) {
                         dirs.append(dir);
                     }
                 }
-                foreach (const QUrl &url, urlList) {
-                    filesToSelect << url.url();
-                }
-
+                filesToSelect = urlList;
                 urlList = dirs;
             }
 
             QUrl firstUrl = urlList.takeFirst();
 
             KParts::OpenUrlArguments urlargs;
-            if (args->isSet("mimetype")) {
-                urlargs.setMimeType(args->getOption("mimetype"));
+            if (parser.isSet("mimetype")) {
+                urlargs.setMimeType(parser.value("mimetype"));
             }
 
             KonqOpenURLRequest req;
             req.args = urlargs;
             req.filesToSelect = filesToSelect;
-            req.tempFile = KCmdLineArgs::isTempFileSet();
-            req.serviceName = args->getOption("part");
+            req.tempFile = parser.isSet("tempfile");
+            req.serviceName = parser.value("part");
 
             KonqMainWindow *mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
             mainwin->show();
@@ -181,7 +223,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             }
         }
     }
-    args->clear();
+    
 
     // In case there is no `konqueror --preload` running, start one
     // (not this process, it might exit before the preloading is used)

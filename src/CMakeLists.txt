@@ -7,14 +7,6 @@ add_subdirectory( tests )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 
-include (CheckSymbolExists)
-check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
-check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)
-# TODO KDE_MALLINFO_FIELD_hblkhd
-# TODO KDE_MALLINFO_FIELD_uordblks
-# TODO KDE_MALLINFO_FIELD_usmblks
-configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
-
 if (KActivities_FOUND)
   include_directories(${KACTIVITIES_INCLUDE_DIRS})
 endif (KActivities_FOUND)

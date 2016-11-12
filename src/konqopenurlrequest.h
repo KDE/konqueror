@@ -92,7 +92,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     bool userRequestedReload; // args.reload because the user requested it, not a website
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments browserArgs;
-    QStringList filesToSelect; // files to select in a konqdirpart
+    QList<QUrl> filesToSelect; // files to select in a konqdirpart
 
     static KonqOpenURLRequest null;
 };
