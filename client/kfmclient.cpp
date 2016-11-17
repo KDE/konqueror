@@ -256,7 +256,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         QStringList args;
         args << QStringLiteral("konqueror");
         if (!mimetype.isEmpty()) {
-            args << QStringLiteral("-mimetype") << mimetype;
+            args << QStringLiteral("--mimetype") << mimetype;
         }
         if (tempFile) {
             args << QStringLiteral("-tempfile");
