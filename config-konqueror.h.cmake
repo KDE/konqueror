@@ -2,3 +2,7 @@
 
 /* Define to 1 if you have the KActivities library. */
 #cmakedefine KActivities_FOUND 1
+
+/* compiling for X11 */
+#cmakedefine01 KONQ_HAVE_X11
+

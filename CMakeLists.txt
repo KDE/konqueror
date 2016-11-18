@@ -14,6 +14,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+include(ECMPackageConfigHelpers)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 
@@ -24,8 +25,6 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWid
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
-
-find_package(KDED REQUIRED)
 
 find_package(X11)
 set(KONQ_HAVE_X11 ${X11_FOUND})

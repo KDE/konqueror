@@ -3,19 +3,7 @@ cmake_minimum_required(VERSION 2.8.12)
 project(LibKonq)
 add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
-# ECM setup
-find_package(ECM 5.27.0 CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
-
 set(LIBKONQ_VERSION "5.97.0")
-
-include(ECMSetupVersion)
-include(GenerateExportHeader)
-include(ECMPackageConfigHelpers)
-include(FeatureSummary)
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
 ecm_setup_version(${LIBKONQ_VERSION} VARIABLE_PREFIX KONQ
                   VERSION_HEADER "${LibKonq_BINARY_DIR}/konq_version.h"
