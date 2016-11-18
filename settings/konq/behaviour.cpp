@@ -61,7 +61,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     cbNewWin->setWhatsThis(i18n("If this option is checked, Konqueror will open a new window when "
                                 "you open a folder, rather than showing that folder's contents in the current window."));
     connect(cbNewWin, SIGNAL(toggled(bool)), this, SLOT(changed()));
-    connect(cbNewWin, SIGNAL(toggled(bool)), SLOT(updateWinPixmap(bool)));
+    connect(cbNewWin, &QAbstractButton::toggled, this, &KBehaviourOptions::updateWinPixmap);
 
     miscLayout->addWidget(cbNewWin);
 

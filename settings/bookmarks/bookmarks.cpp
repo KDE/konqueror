@@ -33,7 +33,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
 BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList &)
-    : KCModule(/*KioConfigFactory::componentData(),*/ parent)
+    : KCModule(parent)
 {
     ui.setupUi(this);
 }
