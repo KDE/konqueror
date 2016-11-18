@@ -28,7 +28,6 @@
 // KDE
 #include <kprocess.h>
 #include <QIcon>
-#include <kdebug.h>
 #include <kfiledialog.h>
 #include <kiconloader.h>
 #include <KLocalizedString>
@@ -336,7 +335,7 @@ void KPluginOptions::scan()
     nspluginscan->setOutputChannelMode(KProcess::SeparateChannels);
     QString scanExe = KStandardDirs::findExe(QStringLiteral("nspluginscan"));
     if (scanExe.isEmpty()) {
-        kDebug() << "can't find nspluginviewer";
+        qDebug() << "can't find nspluginviewer";
 
         KMessageBox::sorry(this,
                            i18n("The nspluginscan executable cannot be found. "
@@ -351,7 +350,7 @@ void KPluginOptions::scan()
 
     // start nspluginscan
     *nspluginscan << scanExe << QStringLiteral("--verbose");
-    kDebug() << "Running nspluginscan";
+    qDebug() << "Running nspluginscan";
     connect(nspluginscan, SIGNAL(readyReadStandardOutput()),
             this, SLOT(progress()));
     connect(nspluginscan, SIGNAL(finished(int,QProcess::ExitStatus)),
@@ -539,14 +538,14 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
 {
     m_widget.pluginList->setRootIsDecorated(false);
     m_widget.pluginList->setColumnWidth(0, 200);
-    kDebug() << "-> KPluginOptions::fillPluginList";
+    qDebug() << "-> KPluginOptions::fillPluginList";
     m_widget.pluginList->clear();
     QRegExp version(";version=[^:]*:");
 
     // open the cache file
     QFile cachef(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("nsplugins/cache")));
     if (!cachef.exists() || !cachef.open(QIODevice::ReadOnly)) {
-        kDebug() << "Could not load plugin cache file!";
+        qDebug() << "Could not load plugin cache file!";
         return;
     }
 
@@ -565,7 +564,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
     while (!cache.atEnd()) {
 
         line = cache.readLine();
-        //kDebug() << line;
+        //qDebug() << line;
         if (line.isEmpty() || (line.left(1) == QLatin1String("#"))) {
             continue;
         }
@@ -573,7 +572,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
         if (line.left(1) == QLatin1String("[")) {
 
             plugin = line.mid(1, line.length() - 2);
-            //kDebug() << "plugin=" << plugin;
+            //qDebug() << "plugin=" << plugin;
 
             // add plugin root item
             next = new QTreeWidgetItem(root, QStringList() << i18n("Plugin") << plugin);
@@ -601,7 +600,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
         }
 
         if (!mime.isEmpty() && next) {
-            //kDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes;
+            //qDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes;
             lastMIME = new QTreeWidgetItem(next, QStringList() << i18n("MIME type") << mime);
             lastMIME->setFlags(Qt::ItemIsEnabled);
 
@@ -613,7 +612,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
         }
     }
 
-    //kDebug() << "<- KPluginOptions::fillPluginList";
+    //qDebug() << "<- KPluginOptions::fillPluginList";
 }
 
 void KPluginOptions::pluginSave(KSharedConfig::Ptr /*config*/)
