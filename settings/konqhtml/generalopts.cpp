@@ -48,7 +48,7 @@ enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPa
 //-----------------------------------------------------------------------------
 
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
-    : KCModule(/*KcmKonqHtmlFactory::componentData(),*/ parent)
+    : KCModule(parent)
 {
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);

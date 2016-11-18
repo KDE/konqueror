@@ -134,20 +134,20 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
     buttonBoxHBoxLayout->addWidget(mInsertButton);
-    connect(mInsertButton, SIGNAL(clicked()), SLOT(insertFilter()));
+    connect(mInsertButton, &QAbstractButton::clicked, this, &KCMFilter::insertFilter);
     mUpdateButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Update"), buttonBox);
     buttonBoxHBoxLayout->addWidget(mUpdateButton);
-    connect(mUpdateButton, SIGNAL(clicked()), SLOT(updateFilter()));
+    connect(mUpdateButton, &QAbstractButton::clicked, this, &KCMFilter::updateFilter);
     mRemoveButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-remove")), i18n("Remove"), buttonBox);
     buttonBoxHBoxLayout->addWidget(mRemoveButton);
-    connect(mRemoveButton, SIGNAL(clicked()), SLOT(removeFilter()));
+    connect(mRemoveButton, &QAbstractButton::clicked, this, &KCMFilter::removeFilter);
 
     mImportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-import")), i18n("Import..."), buttonBox);
     buttonBoxHBoxLayout->addWidget(mImportButton);
-    connect(mImportButton, SIGNAL(clicked()), SLOT(importFilters()));
+    connect(mImportButton, &QAbstractButton::clicked, this, &KCMFilter::importFilters);
     mExportButton = new QPushButton(QIcon::fromTheme(QStringLiteral("document-export")), i18n("Export..."), buttonBox);
     buttonBoxHBoxLayout->addWidget(mExportButton);
-    connect(mExportButton, SIGNAL(clicked()), SLOT(exportFilters()));
+    connect(mExportButton, &QAbstractButton::clicked, this, &KCMFilter::exportFilters);
 
     QWidget *impexpBox = new QWidget;
     QHBoxLayout *impexpBoxHBoxLayout = new QHBoxLayout(impexpBox);
@@ -160,7 +160,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     vbox->addWidget(impexpBox, 0, Qt::AlignRight);
 
     connect(mEnableCheck, SIGNAL(toggled(bool)), this, SLOT(slotEnableChecked()));
-    connect(mKillCheck, SIGNAL(clicked()), this, SLOT(slotKillChecked()));
+    connect(mKillCheck, &QAbstractButton::clicked, this, &KCMFilter::slotKillChecked);
     connect(mListBox, SIGNAL(itemSelectionChanged()), this, SLOT(slotItemSelected()));
     connect(mString, SIGNAL(textChanged(QString)), this, SLOT(updateButton()));
     /*
@@ -586,4 +586,3 @@ Qt::ItemFlags AutomaticFilterModel::flags(const QModelIndex &index) const
 }
 
 #include "filteropts.moc"
-

@@ -29,7 +29,6 @@
 
 // KDE
 #include <kurlrequester.h>
-#include <kdebug.h>
 #include <klineedit.h>
 #include <KLocalizedString>
 #include <knuminput.h>
