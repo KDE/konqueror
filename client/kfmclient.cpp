@@ -248,7 +248,6 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
     if (reply.isValid()) {
         sendASNChange();
     } else {
-        QString error;
         // pass kfmclient's startup id to konqueror using kshell
         KStartupInfoId id;
         id.initId(startup_id_str);
