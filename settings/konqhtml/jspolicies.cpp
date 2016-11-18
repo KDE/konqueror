@@ -31,7 +31,6 @@
 // KDE
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kdebug.h>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
