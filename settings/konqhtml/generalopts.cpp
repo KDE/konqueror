@@ -22,18 +22,12 @@
 #include <QLabel>
 #include <QStandardPaths>
 #include <QUrl>
-#include <QVBoxLayout>
 
 // KDE
-#include <kconfig.h>
 #include <kbuildsycocaprogressdialog.h>
-#include <kmimetype.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
 #include <KConfigGroup>
-#include <KGlobal>
-#include <KPluginFactory>
-#include <KPluginLoader>
 #include <KSharedConfig>
 
 // Local
@@ -138,10 +132,6 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     formLayout->addRow(webLabel, m_webEngineCombo);
     webLabel->setBuddy(m_webEngineCombo);
     connect(m_webEngineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
-
-    // TODO PORT QT5/KF5
-    webLabel->hide();
-    m_webEngineCombo->hide();
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
@@ -199,7 +189,8 @@ void KKonqGeneralOptions::load()
         // We want only the HTML-capable parts, not any text/plain part (via inheritance)
         // This is a small "private inheritance" hack, pending a more general solution
         if (!partService->hasMimeType(QStringLiteral("text/plain"))) {
-            m_webEngineCombo->addItem(partService->name(), QVariant(partService->storageId()));
+            m_webEngineCombo->addItem(QIcon::fromTheme(partService->icon()), partService->name(),
+                                      QVariant(partService->storageId()));
         }
     }
 
@@ -243,37 +234,24 @@ void KKonqGeneralOptions::save()
     userSettings.writeEntry("StartURL", startUrl);
     userSettings.writeEntry("HomeURL", homeURL->text());
 
-    const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
-    QString engineEntryName = preferredWebEngine;
-    if (engineEntryName.endsWith(QLatin1String(".desktop"))) { // turn the storageId into a desktopEntryName: remove .desktop
-        engineEntryName.truncate(engineEntryName.length() - 8);
-    }
-    //qDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
-
-#if 0 //PORT QT5
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
-        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
+        const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
+        //qDebug() << "preferredWebEngine=" << preferredWebEngine;
+
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");
-        KConfigGroup removedServices(profile, "Added KDE Service Associations");
         Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
             QStringList services = addedServices.readXdgListEntry(mimeType);
             services.removeAll(preferredWebEngine);
             services.prepend(preferredWebEngine); // make it the preferred one
             addedServices.writeXdgListEntry(mimeType, services);
-
-            // Not needed since the part wouldn't be in the available choices if it was removed-by-the-user, anyway.
-            //QStringList unwantedServices = removedServices.readXdgListEntry(mimeType);
-            //if (unwantedServices.removeAll(preferredWebEngine)) {
-            //    removedServices.writeXdgListEntry(mimeType, unwantedServices);
-            //}
         }
         profile->sync();
 
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
         KBuildSycocaProgressDialog::rebuildKSycoca(this);
     }
-#endif
 
     KConfigGroup cg(m_pConfig, "FMSettings");
     cg.writeEntry("MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked());
