@@ -119,7 +119,6 @@ private Q_SLOTS:
     void slotLoadStarted();
     void slotLoadAborted(const QUrl &);
     void slotLoadFinished(bool);
-    void slotMainFrameLoadFinished(bool);
 
     void slotSearchForText(const QString &text, bool backward);
     void slotLinkHovered(const QString &);

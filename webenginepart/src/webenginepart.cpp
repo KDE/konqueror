@@ -305,10 +305,6 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
 //    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
 //            page, SLOT(downloadUrl(QUrl)));
 
-//    connect(page->mainFrame(), SIGNAL(loadFinished(bool)),
-//            this, SLOT(slotMainFrameLoadFinished(bool)));
-
-
     connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
         if (WebEngineSettings::self()->favIconsEnabled()
             && !page->profile()->isOffTheRecord()){
@@ -415,18 +411,30 @@ void WebEnginePart::slotLoadStarted()
         emit started(0);
     }
     updateActions();
+
+    // If "NoEmitOpenUrlNotification" property is set to true, do not
+    // emit the open url notification. Property is set by this part's
+    // extension to prevent openUrl notification being sent when
+    // handling history navigation requests (back/forward).
+    const bool doNotEmitOpenUrl = property("NoEmitOpenUrlNotification").toBool();
+    if (doNotEmitOpenUrl) {
+        setProperty("NoEmitOpenUrlNotification", QVariant());
+    } else {
+        if (m_emitOpenUrlNotify) {
+            emit m_browserExtension->openUrlNotify();
+        }
+    }
+    // Unless we go via openUrl again, the next time we are here we emit (e.g. after clicking on a link)
+    m_emitOpenUrlNotify = true;
 }
 
-void WebEnginePart::slotMainFrameLoadFinished (bool ok)
+void WebEnginePart::slotLoadFinished (bool ok)
 {
     if (!ok || !m_doLoadFinishedActions)
         return;
 
+    slotWalletClosed();
     m_doLoadFinishedActions = false;
-
-    if (!m_emitOpenUrlNotify) {
-        m_emitOpenUrlNotify = true; // Save history once page loading is done.
-    }
 
     // If the document contains no <title> tag, then set it to the current url.
     if (m_webView->title().trimmed().isEmpty()) {
@@ -454,14 +462,8 @@ void WebEnginePart::slotMainFrameLoadFinished (bool ok)
 //          }
         }
     }
-}
 
-void WebEnginePart::slotLoadFinished(bool ok)
-{
     bool pending = false;
-
-    if (m_doLoadFinishedActions) {
-        updateActions();
        // QWebFrame* frame = (page() ? page()->currentFrame() : 0);
        // if (ok &&
        //     frame == page()->mainFrame() &&
@@ -472,9 +474,9 @@ void WebEnginePart::slotLoadFinished(bool ok)
        //         frame->page()->triggerAction(QWebEnginePage::Stop);
        //     }
        // }
-    }
-
     emit completed ((ok && pending));
+
+    updateActions();
 }
 
 void WebEnginePart::slotLoadAborted(const QUrl & url)
@@ -494,7 +496,7 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
         return;
 
     // Ignore if error url
-    if (url.scheme().compare(QL1S("error"), Qt::CaseInsensitive) == 0)
+    if (url.scheme() == QL1S("error"))
         return;
 
     const QUrl u (url);
@@ -548,22 +550,6 @@ void WebEnginePart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 
     // Handle actions that apply only to the mainframe...
     if (frame == view()->page()->mainFrame()) {
-        slotWalletClosed();
-
-        // If "NoEmitOpenUrlNotification" property is set to true, do not
-        // emit the open url notification. Property is set by this part's
-        // extension to prevent openUrl notification being sent when
-        // handling history navigation requests.
-        const bool doNotEmitOpenUrl = property("NoEmitOpenUrlNotification").toBool();
-        if (doNotEmitOpenUrl) {
-            setProperty("NoEmitOpenUrlNotification", QVariant());
-        }
-
-        // Only emit open url notify for the main frame. Do not
-        if (m_emitOpenUrlNotify && !doNotEmitOpenUrl) {
-            // kDebug() << "***** EMITTING openUrlNotify" << item->url();
-            emit m_browserExtension->openUrlNotify();
-        }
     }
 
     // For some reason, QtWebEngine PORTING_TODO does not restore scroll position when
