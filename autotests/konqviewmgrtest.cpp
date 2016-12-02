@@ -47,7 +47,7 @@
 #else
 #include <webenginepart.h>
 #include <webengineview.h>
-#include "util.h"
+#include "../webenginepart/autotests/webengine_testutils.h"
 #endif
 
 #include <QStandardPaths>
@@ -94,27 +94,6 @@ static QWidget *partWidget(KonqView *view)
     }
     return widget;
 }
-
-#ifndef TEST_KHTML
-// Taken from QtWebEngine's tst_qwebenginepage.cpp
-static QPoint elementCenter(QWebEnginePage *page, const QString &id)
-{
-    QVariantList rectList = evaluateJavaScriptSync(page,
-            "(function(){"
-            "var elem = document.getElementById('" + id + "');"
-            "var rect = elem.getBoundingClientRect();"
-            "return [(rect.left + rect.right) / 2, (rect.top + rect.bottom) / 2];"
-            "})()").toList();
-
-    if (rectList.count() != 2) {
-        qWarning("elementCenter failed.");
-        return QPoint();
-    }
-
-    const QPoint ret(rectList.at(0).toInt(), rectList.at(1).toInt());
-    return ret;
-}
-#endif
 
 void ViewMgrTest::sendAllPendingResizeEvents(QWidget *mainWindow)
 {
