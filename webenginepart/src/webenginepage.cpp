@@ -604,7 +604,7 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
 
 bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
 {
-    if (QString::compare(url.scheme(), QL1S("mailto"), Qt::CaseInsensitive) == 0) {
+    if (url.scheme() == QL1S("mailto")) {
         QStringList files;
         QUrl mailtoUrl (sanitizeMailToUrl(url, files));
 
