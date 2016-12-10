@@ -25,6 +25,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QFormLayout>
+#include <QDialogButtonBox>
 
 #include <KGlobalSettings>
 
@@ -68,19 +69,10 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     m_wsLineEdit->setFont(smallFont);
     formLayout->addRow(shortcutsLabel, m_wsLineEdit);
 
-    QHBoxLayout *buttonLayout = new QHBoxLayout();
-    mainLayout->addLayout(buttonLayout);
-    buttonLayout->addStretch();
-    QPushButton *okButton = new QPushButton(this);
-    KGuiItem::assign(okButton, KStandardGuiItem::ok());
-    okButton->setDefault(true);
-    buttonLayout->addWidget(okButton);
-    connect(okButton, &QAbstractButton::clicked, this, &WebShortcutWidget::okClicked);
-
-    QPushButton *cancelButton = new QPushButton(i18n("Cancel"), this);
-    KGuiItem::assign(cancelButton, KStandardGuiItem::cancel());
-    buttonLayout->addWidget(cancelButton);
-    connect(cancelButton, &QAbstractButton::clicked, this, &WebShortcutWidget::cancelClicked);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    mainLayout->addWidget(buttonBox);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &WebShortcutWidget::okClicked);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &WebShortcutWidget::cancelClicked);
 
     resize(minimumSizeHint());
 
