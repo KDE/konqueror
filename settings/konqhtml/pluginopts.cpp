@@ -24,6 +24,7 @@
 #include <QLabel>
 #include <QSlider>
 #include <QTreeWidget>
+#include <QDialogButtonBox>
 
 // KDE
 #include <kprocess.h>
@@ -635,15 +636,9 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
     thisLayout->addWidget(hrule);
     thisLayout->addSpacing(6);
 
-    QBoxLayout *hl = new QHBoxLayout(this);
-    hl->setMargin(0);
-    hl->addStretch(10);
-
-    QPushButton *closePB = new QPushButton;
-    KGuiItem::assign(closePB, KStandardGuiItem::close());
-    connect(closePB, SIGNAL(clicked()), SLOT(slotClose()));
-    hl->addWidget(closePB);
-    thisLayout->addLayout(hl);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+    connect(buttonBox, SIGNAL(rejected()), SLOT(slotClose()));
+    thisLayout->addWidget(buttonBox);
 }
 
 PluginDomainDialog::~PluginDomainDialog()
