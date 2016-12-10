@@ -585,7 +585,7 @@ void DOMTreeView::slotSaveClicked()
         if (file.exists()) {
             const QString title = i18nc("@title:window", "File Exists");
             const QString text = i18n("Do you really want to overwrite: \n%1?", url.url());
-            if (KMessageBox::Continue != KMessageBox::warningContinueCancel(this, text, title, i18n("Overwrite"))) {
+            if (KMessageBox::Continue != KMessageBox::warningContinueCancel(this, text, title, KStandardGuiItem::overwrite())) {
                 return;
             }
         }

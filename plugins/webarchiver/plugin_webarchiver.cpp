@@ -45,6 +45,7 @@
 #include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kactioncollection.h>
+#include <kstandardguiitem.h>
 #include <QStandardPaths>
 #include "plugin_webarchiver.h"
 #include "archivedialog.h"
@@ -119,7 +120,7 @@ void PluginWebArchiver::slotSaveToArchive()
     if (file.exists()) {
         const QString title = i18nc("@title:window", "File Exists");
         const QString text = i18n("Do you really want to overwrite:\n%1?", url.toDisplayString());
-        if (KMessageBox::Continue != KMessageBox::warningContinueCancel(part->widget(), text, title, KGuiItem(i18n("Overwrite")))) {
+        if (KMessageBox::Continue != KMessageBox::warningContinueCancel(part->widget(), text, title, KStandardGuiItem::overwrite())) {
             return;
         }
     }
