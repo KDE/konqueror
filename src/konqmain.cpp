@@ -58,7 +58,8 @@ static KonqPreloadingHandler s_preloadingHandler;
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
-    KonquerorApplication app(argc, argv);    
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // says QtWebEngine
+    KonquerorApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("konqueror");
 
     KAboutData aboutData("konqueror", i18n("Konqueror"), KONQUEROR_VERSION);
