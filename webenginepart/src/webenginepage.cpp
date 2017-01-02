@@ -37,14 +37,22 @@
 #include <KStringHandler>
 #include <KUrlAuthorized>
 #include <KSharedConfig>
+#include <KIO/AuthInfo>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
 #include <KParts/HtmlExtension>
+#include <KUserTimestamp>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
+#include <KPasswdServerClient>
+#endif
+
 #include <QStandardPaths>
 #include <QDesktopWidget>
 
 #include <QFile>
+#include <QAuthenticator>
 #include <QApplication>
 #include <QTextDocument> // Qt::escape
 #include <QNetworkReply>
@@ -61,7 +69,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
          m_kioErrorCode(0),
          m_ignoreError(false),
-         m_part(part)
+         m_part(part),
+         m_passwdServerClient(new KPasswdServerClient)
 {
     if (view())
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -76,6 +85,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
             this, &WebEnginePage::slotFeaturePermissionRequested);
     connect(this, &QWebEnginePage::loadFinished,
             this, &WebEnginePage::slotLoadFinished);
+    connect(this, &QWebEnginePage::authenticationRequired,
+            this, &WebEnginePage::slotAuthenticationRequired);
     connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePage::downloadRequest);
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
@@ -659,7 +670,30 @@ void WebEnginePage::setPageJScriptPolicy(const QUrl &url)
                               policy != KParts::HtmlSettingsInterface::JSWindowOpenSmart));
 }
 
+void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth)
+{
+    KIO::AuthInfo info;
+    info.url = requestUrl;
+    info.username = auth->user();
+    info.realmValue = auth->realm();
+    // If no realm metadata, then make sure path matching is turned on.
+    info.verifyPath = info.realmValue.isEmpty();
 
+    const QString errorMsg = i18n("");
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
+    const int ret = m_passwdServerClient->queryAuthInfo(&info, errorMsg, view()->window()->winId(), KUserTimestamp::userTimestamp());
+#else
+    const int ret = 1; // no KPasswdServerClient until 5.30
+#endif
+    if (ret == KJob::NoError) {
+        auth->setUser(info.username);
+        auth->setPassword(info.password);
+    } else {
+        // Set authenticator null if dialog is cancelled
+        // or if we couldn't communicate with kpasswdserver
+        *auth = QAuthenticator();
+    }
+}
 
 
 

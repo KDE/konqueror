@@ -22,7 +22,11 @@ add_library(kwebenginepartlib ${kwebenginepartlib_LIB_SRCS})
 
 generate_export_header(kwebenginepartlib)
 
-target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport KF5::Parts KF5::SonnetCore)
+target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport
+    KF5::Parts
+    KF5::SonnetCore
+    KF5::WindowSystem  # for KUserTimestamp
+)
 
 target_include_directories(kwebenginepartlib PUBLIC
    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>"

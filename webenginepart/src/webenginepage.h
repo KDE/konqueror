@@ -32,12 +32,14 @@
 #include <QDebug>
 #include <QMultiHash>
 #include <QPointer>
+#include <QScopedPointer>
 
+class QAuthenticator;
 class QUrl;
 class WebSslInfo;
 class WebEnginePart;
 class QWebEngineDownloadItem;
-
+class KPasswdServerClient;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -105,6 +107,7 @@ protected Q_SLOTS:
     void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
+    void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
@@ -120,6 +123,9 @@ private:
 
     WebSslInfo m_sslInfo;
     QPointer<WebEnginePart> m_part;
+
+    QScopedPointer<KPasswdServerClient> m_passwdServerClient;
+
 };
 
 
