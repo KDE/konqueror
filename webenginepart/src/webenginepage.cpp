@@ -679,7 +679,7 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
     // If no realm metadata, then make sure path matching is turned on.
     info.verifyPath = info.realmValue.isEmpty();
 
-    const QString errorMsg = i18n("");
+    const QString errorMsg = KLocalizedString();
 #if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
     const int ret = m_passwdServerClient->queryAuthInfo(&info, errorMsg, view()->window()->winId(), KUserTimestamp::userTimestamp());
 #else
