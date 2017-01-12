@@ -1775,12 +1775,11 @@ void KonqMainWindow::slotConfigure()
                 const char *const webModules[] = {
                     "khtml_appearance",
                     "khtml_filter",
-                    "ebrowsing",
+                    "webshortcuts",
                     "cache",
                     "proxy",
                     "kcmhistory",
                     "cookies",
-                    "crypto",
                     "useragent",
                     "khtml_java_js",
                     "khtml_plugins"
@@ -3548,11 +3547,11 @@ void KonqMainWindow::initActions()
     configureModules << QStringLiteral("khtml_general") << QStringLiteral("bookmarks") <<
                      QStringLiteral("filebehavior") << QStringLiteral("filetypes") << QStringLiteral("kcmtrash") <<
                      QStringLiteral("khtml_appearance") << QStringLiteral("khtml_behavior") << QStringLiteral("khtml_java_js") <<
-                     QStringLiteral("khtml_filter") << QStringLiteral("ebrowsing") <<
+                     QStringLiteral("khtml_filter") << QStringLiteral("webshortcuts") <<
                      QStringLiteral("kcmhistory") << QStringLiteral("cookies") <<
                      QStringLiteral("cache") << QStringLiteral("proxy") <<
-                     QStringLiteral("crypto") << QStringLiteral("useragent") <<
-                     QStringLiteral("khtml_plugins") << QStringLiteral("kcmkonqyperformance");
+                     QStringLiteral("useragent") << QStringLiteral("khtml_plugins") <<
+                     QStringLiteral("kcmkonqyperformance");
 
     if (!KAuthorized::authorizeControlModules(configureModules).isEmpty()) {
         actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
