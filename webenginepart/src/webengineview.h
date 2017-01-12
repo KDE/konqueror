@@ -108,6 +108,7 @@ protected:
     void wheelEvent(QWheelEvent*) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
+    void slotConfigureWebShortcuts();
     void slotStopAutoScroll();
 
 private:

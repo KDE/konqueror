@@ -36,6 +36,7 @@
 #include <KIO/AccessManager>
 #include <KStringHandler>
 #include <KLocalizedString>
+#include <KToolInvocation>
 
 #include <QTimer>
 #include <QMimeData>
@@ -536,6 +537,12 @@ void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGr
 #endif
 }
 
+void WebEngineView::slotConfigureWebShortcuts()
+{
+    KToolInvocation::kdeinitExec(QStringLiteral("kcmshell5"),
+                                 QStringList() << QStringLiteral("webshortcuts"));
+}
+
 void WebEngineView::slotStopAutoScroll()
 {
     if (m_autoScrollTimerId == -1) {
@@ -587,6 +594,12 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
 
                 providerList->addAction(action);
             }
+
+            QAction *action = new QAction(i18n("Configure Web Shortcuts..."), view);
+            action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+            connect(action, &QAction::triggered, this, &WebEngineView::slotConfigureWebShortcuts);
+            providerList->addAction(action);
+
             m_actionCollection->addAction(QL1S("searchProviderList"), providerList);
             selectActions.append(providerList);
         }
