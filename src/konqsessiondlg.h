@@ -27,6 +27,7 @@
 #include <QUrl>
 
 class KonqViewManager;
+class KonqMainWindow;
 
 /**
  * This is the konqueror sesions administration dialog, which allows the user
@@ -57,7 +58,8 @@ class KonqNewSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    explicit KonqNewSessionDlg(QWidget *parent = Q_NULLPTR, QString sessionName = QString());
+    enum Mode { NewFile, ReplaceFile };
+    explicit KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow, QString sessionName = QString(), Mode mode = NewFile);
     ~KonqNewSessionDlg();
 
 protected Q_SLOTS:

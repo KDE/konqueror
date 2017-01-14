@@ -152,8 +152,9 @@ public:
 
     /**
      * Save current session in a given path (absolute path to a file)
+     * @param mainWindow if 0, all windows will be saved, else only the given one
      */
-    void saveCurrentSessionToFile(const QString &sessionConfig);
+    void saveCurrentSessionToFile(const QString &sessionConfigPath, KonqMainWindow *mainWindow = Q_NULLPTR);
 
     /**
      * Returns the autosave directory
@@ -204,7 +205,7 @@ private:
         return m_autosaveDir + "/owned_by" + m_baseService;
     }
 
-    void saveCurrentSessionToFile(KConfig *);
+    void saveCurrentSessionToFile(KConfig *config, const QList<KonqMainWindow *> &mainWindows = QList<KonqMainWindow *>());
 private:
     QTimer m_autoSaveTimer;
     QString m_autosaveDir;

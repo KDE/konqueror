@@ -2867,7 +2867,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
 
 void KonqMainWindow::saveCurrentSession()
 {
-    KonqNewSessionDlg dlg(this);
+    KonqNewSessionDlg dlg(this, this);
     dlg.exec();
 }
 

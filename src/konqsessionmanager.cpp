@@ -487,23 +487,33 @@ void KonqSessionManager::slotSaveCurrentSession(const QString &path)
     saveCurrentSessionToFile(filename);
 }
 
-void KonqSessionManager::saveCurrentSessionToFile(const QString &sessionConfigPath)
+void KonqSessionManager::saveCurrentSessionToFile(const QString &sessionConfigPath, KonqMainWindow *mainWindow)
 {
     QFile::remove(sessionConfigPath);
     KConfig config(sessionConfigPath, KConfig::SimpleConfig);
-    saveCurrentSessionToFile(&config);
+
+    QList<KonqMainWindow *> mainWindows;
+    if (mainWindow) {
+        mainWindows << mainWindow;
+    }
+    saveCurrentSessionToFile(&config, mainWindows);
 }
 
-void KonqSessionManager::saveCurrentSessionToFile(KConfig *config)
+void KonqSessionManager::saveCurrentSessionToFile(KConfig *config, const QList<KonqMainWindow *> &theMainWindows)
 {
-    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    QList<KonqMainWindow *> mainWindows = theMainWindows;
+
+    if (mainWindows.isEmpty() && KonqMainWindow::mainWindowList()) {
+        mainWindows = *KonqMainWindow::mainWindowList();
+    }
+
     unsigned int counter = 0;
 
-    if (!mainWindows || mainWindows->isEmpty()) {
+    if (mainWindows.isEmpty()) {
         return;
     }
 
-    foreach (KonqMainWindow *window, *mainWindows) {
+    foreach (KonqMainWindow *window, mainWindows) {
         KConfigGroup configGroup(config, "Window" + QString::number(counter));
         window->saveProperties(configGroup);
         counter++;

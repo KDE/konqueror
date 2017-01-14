@@ -21,6 +21,7 @@
 #include "konqsettingsxt.h"
 #include "konqviewmanager.h"
 #include "konqsessionmanager.h"
+#include "konqmainwindow.h"
 #include "ui_konqsessiondlg_base.h"
 #include "ui_konqnewsessiondlg_base.h"
 
@@ -128,7 +129,7 @@ void KonqSessionDlg::slotOpen()
     KonqSessionManager::self()->restoreSessions(d->m_pModel->itemForIndex(
                 d->m_pListView->currentIndex()).url().path(),
             d->m_pOpenTabsInsideCurrentWindow->isChecked(),
-            reinterpret_cast<KonqMainWindow *>(parent()));
+            d->m_pViewManager->mainWindow());
     close();
 }
 
@@ -140,15 +141,16 @@ void KonqSessionDlg::slotSave()
 
     QFileInfo fileInfo(
         d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
-    QString dirpath = "sessions/" + KIO::encodeFileName(fileInfo.fileName());
 
-    slotDelete();
-    KonqSessionManager::self()->saveCurrentSessions(dirpath);
+    KonqNewSessionDlg newDialog(this, d->m_pViewManager->mainWindow(),
+        KIO::encodeFileName(fileInfo.fileName()), KonqNewSessionDlg::ReplaceFile);
+
+    newDialog.exec();
 }
 
 void KonqSessionDlg::slotNew()
 {
-    KonqNewSessionDlg newDialog(this);
+    KonqNewSessionDlg newDialog(this, d->m_pViewManager->mainWindow());
     newDialog.exec();
 }
 
@@ -205,17 +207,20 @@ class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
 {
 public:
-    KonqNewSessionDlgPrivate(QWidget *parent = Q_NULLPTR)
-        : QWidget(parent), m_pParent(parent)
+    KonqNewSessionDlgPrivate(QWidget *parent = Q_NULLPTR, KonqMainWindow *mainWindow = Q_NULLPTR,
+                             KonqNewSessionDlg::Mode m = KonqNewSessionDlg::NewFile)
+        : QWidget(parent), m_pParent(parent), m_mainWindow(mainWindow), m_mode(m)
     {
         setupUi(this);
     }
     QWidget *m_pParent;
+    KonqMainWindow *m_mainWindow;
+    KonqNewSessionDlg::Mode m_mode;
 };
 
-KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, QString sessionName)
+KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow, QString sessionName, Mode mode)
     : KDialog(parent)
-    , d(new KonqNewSessionDlgPrivate(this))
+    , d(new KonqNewSessionDlgPrivate(this, mainWindow, mode))
 {
     d->layout()->setMargin(0);
     setMainWidget(d);
@@ -229,6 +234,7 @@ KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, QString sessionName)
 
     if (!sessionName.isEmpty()) {
         d->m_pSessionName->setText(sessionName);
+        enableButton(Ok, true);
     }
 
     d->m_pSessionName->setFocus();
@@ -247,17 +253,21 @@ void KonqNewSessionDlg::slotAddSession()
 
     QDir dir(dirpath);
     if (dir.exists()) {
-        if (KMessageBox::questionYesNo(this,
+        if ((d->m_mode == ReplaceFile) ||
+            KMessageBox::questionYesNo(this,
                                        i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
                                        i18nc("@title:window", "Session exists. Overwrite?")) == KMessageBox::Yes) {
             KTempDir::removeDir(dirpath);
         } else {
-            KonqNewSessionDlg newDialog(d->m_pParent,
-                                        d->m_pSessionName->text());
-            newDialog.exec();
+            return;
         }
     }
-    KonqSessionManager::self()->saveCurrentSessions(dirpath);
+
+    if (d->m_pAllWindows->isChecked()) {
+        KonqSessionManager::self()->saveCurrentSessions(dirpath);
+    } else {
+        KonqSessionManager::self()->saveCurrentSessionToFile(dirpath + QLatin1String("/1"), d->m_mainWindow);
+    }
 }
 
 void KonqNewSessionDlg::slotTextChanged(const QString &text)
