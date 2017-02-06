@@ -65,7 +65,7 @@ endif()
 
 ########### install files ###############
 install( PROGRAMS
-   kfmclient.desktop kfmclient_html.desktop kfmclient_war.desktop
+   kfmclient.desktop kfmclient_html.desktop kfmclient_war.desktop kfmclient_dir.desktop
    konqbrowser.desktop
    DESTINATION  ${KDE_INSTALL_APPDIR} )
 install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
