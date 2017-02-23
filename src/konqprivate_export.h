@@ -23,7 +23,7 @@
 #include "konquerorprivate_export.h"
 
 /* Classes from the Konqueror application, which are exported only for unit tests */
-#ifdef COMPILING_TESTS
+#ifdef BUILD_TESTING
 # ifndef KONQ_TESTS_EXPORT
 #  define KONQ_TESTS_EXPORT KONQUERORPRIVATE_EXPORT
 # endif
