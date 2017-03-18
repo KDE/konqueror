@@ -2045,7 +2045,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         actHomeFolder->setText(i18n("Home Folder"));
         actHomeFolder->setStatusTip(i18n("Navigate to your 'Home Folder'"));
         actHomeFolder->setWhatsThis(i18n("Navigate to your local 'Home Folder'"));
-        actHomeFolder->setData(QDir::homePath());
+        actHomeFolder->setData(QUrl::fromLocalFile(QDir::homePath()));
         actHomePage->setIcon(QIcon::fromTheme(QStringLiteral("go-home")));
         actHomePage->setText(i18n("Home Page"));
 
