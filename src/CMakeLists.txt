@@ -1,6 +1,6 @@
 if(BUILD_TESTING)
     # only with this definition will the KONQ_TESTS_EXPORT macro do something
-    add_definitions(-DCOMPILING_TESTS)
+    add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
 add_subdirectory( tests )
