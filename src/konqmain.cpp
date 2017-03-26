@@ -111,6 +111,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
+    parser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsLongOptions);
     aboutData.setupCommandLine(&parser);
 
     parser.addOption(QCommandLineOption(QStringList{QStringLiteral("silent")}, i18n("Start without a default window, when called without URLs")));
