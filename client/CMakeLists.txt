@@ -10,8 +10,6 @@ qt5_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.MainWindow.xml k
 
 add_definitions(-DQT_NO_CAST_ASCII)
 
-kde4_add_app_icon(kfmclient_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/system-file-manager.png")
-
 set(kfmclient_LIBS
    KF5::CoreAddons
    KF5::KIOCore

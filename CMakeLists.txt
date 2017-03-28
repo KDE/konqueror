@@ -17,6 +17,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMPackageConfigHelpers)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
+include(ECMAddAppIcon)
 
 set(KONQUEROR_LIB_VERSION "5.0.97")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
