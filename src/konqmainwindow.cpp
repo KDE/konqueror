@@ -300,6 +300,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     }
 
     resize(700, 480);
+    setAutoSaveSettings();
 
     //qDebug() << this << "created";
 
