@@ -2,11 +2,13 @@
 include(ECMMarkNonGuiExecutable)
 find_package(KF5 REQUIRED Init)
 
-set(kfmclient_SRCS kfmclient.cpp )
+set(kfmclient_SRCS
+   kfmclient.cpp
+   konqclientrequest.cpp
+)
 
 qt5_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.Main.xml konq_main_interface )
 qt5_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.MainWindow.xml konq_mainwindow_interface )
-
 
 add_definitions(-DQT_NO_CAST_ASCII)
 

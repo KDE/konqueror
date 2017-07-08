@@ -19,6 +19,8 @@
 
 #include "kfmclient.h"
 
+#include <konqclientrequest.h>
+
 #include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -42,16 +44,16 @@
 
 #include <kcoreaddons_version.h>
 
-#include <konq_mainwindow_interface.h>
-#include <konq_main_interface.h>
-
 #include <QApplication>
+#include <QDebug>
+#include <QDBusConnection>
 #include <QDir>
 #include <QMimeDatabase>
 #include <QUrl>
 #include <QStandardPaths>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QTimer>
 
 #if KONQ_HAVE_X11
 #include <QX11Info>
@@ -148,9 +150,6 @@ static void needDBus()
     }
 }
 
-// keep in sync with konqpreloadinghandler.cpp
-static const char s_preloadDBusName[] = "org.kde.konqueror.preloaded";
-
 static QUrl filteredUrl(const QString &url)
 {
     KUriFilterData data;
@@ -166,20 +165,6 @@ static QUrl filteredUrl(const QString &url)
 
 ClientApp::ClientApp()
 {
-}
-
-void ClientApp::sendASNChange()
-{
-#if KONQ_HAVE_X11
-    if (KWindowSystem::platform() == KWindowSystem::Platform::X11) {
-        KStartupInfoId id;
-        id.initId(startup_id_str);
-        KStartupInfoData data;
-        data.addPid(0);     // say there's another process for this ASN with unknown PID
-        data.setHostname(); // ( no need to bother to get this konqy's PID )
-        KStartupInfo::sendChangeXcb(QX11Info::connection(), QX11Info::appScreen(), id, data);
-    }
-#endif
 }
 
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
@@ -205,71 +190,13 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
     }
 
     needDBus();
-    QDBusConnection dbus = QDBusConnection::sessionBus();
-    KConfig cfg(QStringLiteral("konquerorrc"));
-    KConfigGroup fmSettings = cfg.group("FMSettings");
-    if (newTab || fmSettings.readEntry("KonquerorTabforExternalURL", false)) {
 
-        QString foundApp;
-        QDBusObjectPath foundObj;
-        QDBusReply<QStringList> reply = dbus.interface()->registeredServiceNames();
-        if (reply.isValid()) {
-            const QStringList allServices = reply;
-            for (QStringList::const_iterator it = allServices.begin(), end = allServices.end(); it != end; ++it) {
-                const QString service = *it;
-                if (service.startsWith(QLatin1String("org.kde.konqueror"))) {
-                    org::kde::Konqueror::Main konq(service, QStringLiteral("/KonqMain"), dbus);
-                    QDBusReply<QDBusObjectPath> windowReply = konq.windowForTab();
-                    if (windowReply.isValid()) {
-                        QDBusObjectPath path = windowReply;
-                        // "/" is the indicator for "no object found", since we can't use an empty path
-                        if (path.path() != QLatin1String("/")) {
-                            foundApp = service;
-                            foundObj = path;
-                        }
-                    }
-                }
-            }
-        }
-
-        if (!foundApp.isEmpty()) {
-            org::kde::Konqueror::MainWindow konqWindow(foundApp, foundObj.path(), dbus);
-            QDBusReply<void> newTabReply = konqWindow.newTabASNWithMimeType(url.url(), mimetype, startup_id_str, tempFile);
-            if (newTabReply.isValid()) {
-                sendASNChange();
-                return true;
-            }
-        }
-    }
-
-    const QString appId = QString::fromLatin1(s_preloadDBusName);
-    org::kde::Konqueror::Main konq(appId, QStringLiteral("/KonqMain"), dbus);
-    QDBusReply<QDBusObjectPath> reply = konq.createNewWindow(url.url(), mimetype, startup_id_str, tempFile);
-    if (reply.isValid()) {
-        sendASNChange();
-    } else {
-        // pass kfmclient's startup id to konqueror using kshell
-        KStartupInfoId id;
-        id.initId(startup_id_str);
-        id.setupStartupEnv();
-        QStringList args;
-        args << QStringLiteral("konqueror");
-        if (!mimetype.isEmpty()) {
-            args << QStringLiteral("--mimetype") << mimetype;
-        }
-        if (tempFile) {
-            args << QStringLiteral("-tempfile");
-        }
-        args << url.url();
-#ifdef Q_OS_WIN
-        const int pid = KProcess::startDetached(QLatin1String("kwrapper5"), args);
-#else
-        const int pid = KProcess::startDetached(QStringLiteral("kshell5"), args);
-#endif
-        KStartupInfo::resetStartupEnv();
-        qDebug() << "ClientApp::createNewWindow KProcess started, pid=" << pid;
-    }
-    return true;
+    KonqClientRequest req;
+    req.setUrl(url);
+    req.setNewTab(newTab);
+    req.setTempFile(tempFile);
+    req.setMimeType(mimetype);
+    return req.openUrl();
 }
 
 bool ClientApp::openProfile(const QString &profileName, const QUrl &url, const QString &mimetype)
@@ -307,9 +234,6 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         m_interactive = false;
     }
     QString command = args.at(0);
-
-    // read ASN env. variable
-    startup_id_str = KStartupInfo::currentStartupIdEnv().id();
 
     if (command == QLatin1String("openURL") || command == QLatin1String("newTab")) {
         checkArgumentCount(argc, 1, 3);
@@ -354,7 +278,7 @@ void ClientApp::slotResult(KJob *job)
 {
     if (job->error() && m_interactive) {
         KJobWidgets::setWindow(job, 0);
-        static_cast<KIO::Job *>(job)->ui()->showErrorMessage();
+        job->uiDelegate()->showErrorMessage();
     }
     const bool ok = !job->error();
     qApp->exit(ok ? 0 : 1);

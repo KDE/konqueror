@@ -46,9 +46,6 @@ private Q_SLOTS:
     void delayedQuit();
 
 private:
-    void sendASNChange();
-
-    QByteArray startup_id_str;
     bool m_interactive = true;
 };
 
