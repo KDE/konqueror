@@ -31,7 +31,6 @@
 
 #include <kactioncollection.h>
 #include <QMenu>
-#include <kcomponentdata.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>
 #include <kconfig.h>
@@ -39,10 +38,8 @@
 #include <kaboutdata.h>
 
 #include <KConfigGroup>
-#include <KDebug>
 
-//KDELibs4Support
-#include <kurl.h>
+#include <QDebug>
 
 static const KAboutData aboutdata(QStringLiteral("babelfish"), i18n("Translate Web Page"), QStringLiteral("1.0"));
 K_PLUGIN_FACTORY(BabelFishFactory, registerPlugin<PluginBabelFish>();)
@@ -180,7 +177,7 @@ void PluginBabelFish::slotAboutToShow()
             a->setText(i18n(translations[i]));
             actionMenu->addAction(a);
         } else {
-            kWarning() << "No menu found for" << srcLang;
+            qWarning() << "No menu found for" << srcLang;
         }
     }
 
@@ -222,14 +219,17 @@ void PluginBabelFish::slotEnableMenu()
     //if (part)
     //    kDebug() << part->url();
 
-    // Babelfish wants http URLs only. No https.
-    if (part && textExt &&
-            part->url().scheme().compare(QLatin1String("http"), Qt::CaseInsensitive) == 0 &&
-            (part->inherits("KHTMLPart") || part->inherits("KWebKitPart"))) {
-        m_menu->setEnabled(true);
-    } else {
-        m_menu->setEnabled(false);
+    if (part && textExt) {
+        const QString scheme = part->url().scheme();	// always lower case
+        if ((scheme == "http") || (scheme == "https")) {
+            if (KParts::BrowserExtension::childObject(part)) {
+                m_menu->setEnabled(true);
+                return;
+            }
+        }
     }
+
+    m_menu->setEnabled(false);
 }
 
 void PluginBabelFish::translateURL(QAction *action)
@@ -254,7 +254,7 @@ void PluginBabelFish::translateURL(QAction *action)
     // we check if we have text selected.  if so, we translate that. If
     // not, we translate the url
     QString textForQuery;
-    KUrl url = part->url();
+    QUrl url = part->url();
     const bool hasSelection = textExt->hasSelection();
 
     if (hasSelection) {
@@ -266,14 +266,28 @@ void PluginBabelFish::translateURL(QAction *action)
             QString title = i18nc("@title:window", "Malformed URL");
             QString text = i18n("The URL you entered is not valid, please "
                                 "correct it and try again.");
-            KMessageBox::sorry(0L, text, title);
+            KMessageBox::sorry(part->widget(), text, title);
             return;
         }
     }
     const QString urlForQuery = QLatin1String(QUrl::toPercentEncoding(url.url()));
 
+    if (url.scheme() == "https") {
+        if (KMessageBox::warningContinueCancel(part->widget(),
+                                               xi18nc("@info", "\
+You are viewing this page over a secure connection.<nl/><nl/>\
+The URL of the page will sent to the online translation service, \
+which may fetch the insecure version of the page."),
+                                               i18nc("@title:window", "Security Warning"),
+                                               KStandardGuiItem::cont(),
+                                               KStandardGuiItem::cancel(),
+                                               QLatin1String("insecureTranslate")) != KMessageBox::Continue) {
+            return;
+        }
+    }
+
     // Create URL
-    KUrl result;
+    QUrl result;
     QString query;
 
     if (engine == QLatin1String("freetranslation")) {
@@ -311,17 +325,17 @@ void PluginBabelFish::translateURL(QAction *action)
         }
         if (hasSelection) {
             // ## does not work
-            result = KUrl("http://ets.freetranslation.com");
+            result = QUrl("http://ets.freetranslation.com");
             query += QLatin1String("&mode=html&template=results_en-us.htm&srctext=");
             query += textForQuery;
         } else {
-            result = KUrl("http://www.freetranslation.com/web.asp");
+            result = QUrl("http://www.freetranslation.com/web.asp");
             query += QLatin1String("&url=");
             query += urlForQuery;
         }
     } else if (engine == QLatin1String("parsit")) {
         // Does only English -> Thai
-        result = KUrl("http://c3po.links.nectec.or.th/cgi-bin/Parsitcgi.exe");
+        result = QUrl("http://c3po.links.nectec.or.th/cgi-bin/Parsitcgi.exe");
         query = QStringLiteral("mode=test&inputtype=");
         if (hasSelection) {
             query += QLatin1String("text&TxtEng=");
@@ -331,7 +345,7 @@ void PluginBabelFish::translateURL(QAction *action)
             query += urlForQuery;
         }
     } else if (engine == QLatin1String("reverso")) {
-        result = KUrl("http://www.reverso.net/url/frame.asp");
+        result = QUrl("http://www.reverso.net/url/frame.asp");
         query = QStringLiteral("autotranslate=on&templates=0&x=0&y=0&directions=");
         if (language == QStringLiteral("de_fr")) {
             query += QLatin1String("524292");
@@ -355,7 +369,7 @@ void PluginBabelFish::translateURL(QAction *action)
         query += QLatin1String("&url=");
         query += urlForQuery;
     } else if (engine == QLatin1String("tsail")) {
-        result = KUrl("http://www.t-mail.com/cgi-bin/tsail");
+        result = QUrl("http://www.t-mail.com/cgi-bin/tsail");
         query = QStringLiteral("sail=full&lp=");
         if (language == QStringLiteral("zhTW_en")) {
             query += QLatin1String("tw-en");
@@ -367,7 +381,7 @@ void PluginBabelFish::translateURL(QAction *action)
         }
         query += urlForQuery;
     } else if (engine == QLatin1String("voila")) {
-        result = KUrl("http://tr.voila.fr/traduire-une-page-web-frame.php");
+        result = QUrl("http://tr.voila.fr/traduire-une-page-web-frame.php");
         const QStringList parts = language.split('_');
         if (parts.count() == 2) {
             // The translation direction is "first letter of source, first letter of dest"
@@ -392,9 +406,9 @@ void PluginBabelFish::translateURL(QAction *action)
                 query += parts[0] + "|" + parts[1];
             }
             query += "|" + textForQuery;
-            result = KUrl(query);
+            result = QUrl(query);
         } else { //http://translate.google.com/translate?hl=en&sl=en&tl=de&u=http%3A%2F%2Fkde.org%2F%2F
-            result = KUrl("http://translate.google.com/translate");
+            result = QUrl("http://translate.google.com/translate");
             query = QStringLiteral("ie=UTF-8");
             if (parts.count() == 2) {
                 query += "&sl=" + parts[0] + "&tl=" + parts[1];

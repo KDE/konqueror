@@ -6,7 +6,7 @@ set(babelfishplugin_PART_SRCS plugin_babelfish.cpp )
 
 add_library(babelfishplugin MODULE ${babelfishplugin_PART_SRCS})
 
-target_link_libraries(babelfishplugin KF5::Parts KF5::KDELibs4Support)
+target_link_libraries(babelfishplugin KF5::Parts)
 
 install(TARGETS babelfishplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

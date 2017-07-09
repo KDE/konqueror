@@ -20,7 +20,6 @@
 #define __plugin_babelfish_h
 
 #include <kparts/plugin.h>
-#include <klibloader.h>
 #include <kactionmenu.h>
 #include <QActionGroup>
 
