@@ -952,15 +952,13 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
     }
 
     // Window size
-    if (!m_pMainWindow->initialGeometrySet()) {
-        if (profileGroup.readEntry("FullScreen", false)) {
-            // Full screen on
-            m_pMainWindow->setWindowState(m_pMainWindow->windowState() | Qt::WindowFullScreen);
-        } else {
-            // Full screen off
-            m_pMainWindow->setWindowState(m_pMainWindow->windowState() & ~Qt::WindowFullScreen);
-            applyWindowSize(profileGroup);
-        }
+    if (profileGroup.readEntry("FullScreen", false)) {
+        // Full screen on
+        m_pMainWindow->setWindowState(m_pMainWindow->windowState() | Qt::WindowFullScreen);
+    } else {
+        // Full screen off
+        m_pMainWindow->setWindowState(m_pMainWindow->windowState() & ~Qt::WindowFullScreen);
+        applyWindowSize(profileGroup);
     }
 
     //qDebug() << "done";

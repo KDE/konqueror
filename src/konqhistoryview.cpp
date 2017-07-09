@@ -108,7 +108,7 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     connect(sortGroup, &QActionGroup::triggered, this, &KonqHistoryView::slotSortChange);
 
     m_searchLineEdit = new KLineEdit(this);
-    m_searchLineEdit->setClickMessage(i18n("Search in history"));
+    m_searchLineEdit->setPlaceholderText(i18n("Search in history"));
     m_searchLineEdit->setClearButtonShown(true);
 
     connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);

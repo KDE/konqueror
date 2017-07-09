@@ -614,14 +614,14 @@ KonqFrameBase *KonqFrameTabs::currentTab() const
 bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
 {
     if (KonqSettings::mouseMiddleClickClosesTab()) {
-        KTabBar *bar = qobject_cast<KTabBar *>(tabBar());
+        QTabBar *bar = tabBar();
         if (watched == bar &&
                 (event->type() == QEvent::MouseButtonPress ||
                  event->type() == QEvent::MouseButtonRelease)) {
             QMouseEvent *e = static_cast<QMouseEvent *>(event);
             if (e->button() == Qt::MidButton) {
                 if (event->type() == QEvent::MouseButtonRelease) {
-                    const int index = bar->selectTab(e->pos());
+                    const int index = bar->tabAt(e->pos());
                     slotCloseRequest(widget(index));
                 }
                 e->accept();

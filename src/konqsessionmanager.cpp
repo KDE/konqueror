@@ -242,13 +242,6 @@ void SessionRestoreDialog::slotClicked(bool checked)
     m_dontShowChecked = checked;
 }
 
-static void setCheckState(QTreeWidgetItem *item, int column, Qt::CheckState state)
-{
-    const bool blocked = item->treeWidget()->blockSignals(true);
-    item->setCheckState(column, state);
-    item->treeWidget()->blockSignals(blocked);
-}
-
 void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
 {
     Q_ASSERT(item);
