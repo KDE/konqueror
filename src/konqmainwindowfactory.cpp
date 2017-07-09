@@ -19,6 +19,7 @@
 
 #include "konqmainwindowfactory.h"
 #include "konqmainwindow.h"
+#include "konqview.h"
 #include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include <KWindowInfo>
@@ -40,6 +41,14 @@ static void abortFullScreenMode()
     }
 }
 
+// Prepare another preloaded window for next time
+static void ensurePreloadedWindow()
+{
+    if (KonqSettings::alwaysHavePreloaded()) {
+        QTimer::singleShot(500, nullptr, []() { new KonqMainWindow(QUrl(QStringLiteral("about:blank"))); });
+    }
+}
+
 KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
 {
     abortFullScreenMode();
@@ -52,14 +61,20 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
             return new KonqMainWindow;
         }
     }
-#if 0
-    else if (KonqMainWindow *mainWindow = KonqPreloadingHandler::self()->takePreloadedWindow()) {
-        qDebug() << "Using preloaded window";
-        KStartupInfo::setWindowStartupId(mainWindow->winId(), KStartupInfo::startupId());
-        mainWindow->reparseConfiguration();
-        return mainWindow;
+
+    // Let's see if we can reuse a preloaded window
+    QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
+    if (mainWindowList) {
+        for (KonqMainWindow *win : *mainWindowList) {
+            if (!win->isVisible() && win->viewCount() == 1 && win->currentView()->url().toString() == "about:blank") {
+                qDebug() << "Reusing preloaded window" << win;
+                KStartupInfo::setWindowStartupId(win->winId(), KStartupInfo::startupId());
+                ensurePreloadedWindow();
+                return win;
+            }
+        }
     }
-#endif
+    ensurePreloadedWindow();
     return new KonqMainWindow;
 }
 
