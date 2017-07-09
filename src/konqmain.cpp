@@ -23,7 +23,6 @@
 #include "konqfactory.h"
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
-#include "konqpreloadinghandler.h"
 #include "konqsessionmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
@@ -43,6 +42,8 @@
 #include <KDBusAddons/KDBusService>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <KStartupInfo>
+#include <KWindowSystem>
 
 static void listSessions()
 {
@@ -54,7 +55,90 @@ static void listSessions()
     }
 }
 
-static KonqPreloadingHandler s_preloadingHandler;
+static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QString &workingDirectory, int *ret)
+{
+    *ret = 0;
+    const QStringList args = parser.positionalArguments();
+    qDebug() << "args=" << args;
+    // First the invocations that do not take urls.
+    if (parser.isSet("sessions")) {
+        listSessions();
+        return nullptr;
+    } else if (parser.isSet("open-session")) {
+        const QString session = parser.value("open-session");
+        QString sessionPath = session;
+        if (!session.startsWith('/')) {
+            sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
+        }
+
+        QDirIterator it(sessionPath, QDir::Readable | QDir::Files);
+        if (!it.hasNext()) {
+            qWarning() << "session" << session << "not found or empty";
+            *ret = 1;
+            return nullptr;
+        }
+
+        KonqSessionManager::self()->restoreSessions(sessionPath);
+            return nullptr;
+    } else if (args.isEmpty()) {
+        // No args. If --silent, do nothing, otherwise create a default window.
+        if (!parser.isSet("silent")) {
+            KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
+            mainWin->show();
+            return mainWin;
+        }
+    } else {
+        // Now is a good time to parse each argument as a URL.
+        QList<QUrl> urlList;
+        for (int i = 0; i < args.count(); i++) {
+            // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below
+            const QUrl url = QUrl::fromUserInput(args.at(i), workingDirectory);
+            if (url.isLocalFile() && QFile::exists(url.toLocalFile())) { // "konqueror index.html"
+                urlList += url;
+            } else {
+                urlList += KonqMisc::konqFilteredURL(Q_NULLPTR, args.at(i));    // "konqueror slashdot.org"
+            }
+        }
+
+        QList<QUrl> filesToSelect;
+
+        if (parser.isSet("select")) {
+            // Get all distinct directories from 'files' and open a tab
+            // for each directory.
+            QList<QUrl> dirs;
+            Q_FOREACH (const QUrl &url, urlList) {
+                const QUrl dir(url.adjusted(QUrl::RemoveFilename));
+                if (!dirs.contains(dir)) {
+                    dirs.append(dir);
+                }
+            }
+            filesToSelect = urlList;
+            urlList = dirs;
+        }
+
+        QUrl firstUrl = urlList.takeFirst();
+
+        KParts::OpenUrlArguments urlargs;
+        if (parser.isSet("mimetype")) {
+            urlargs.setMimeType(parser.value("mimetype"));
+        }
+
+        KonqOpenURLRequest req;
+        req.args = urlargs;
+        req.filesToSelect = filesToSelect;
+        req.tempFile = parser.isSet("tempfile");
+        req.serviceName = parser.value("part");
+
+        KonqMainWindow *mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
+        mainwin->show();
+        if (!urlList.isEmpty()) {
+            // Open the other urls as tabs in that window
+            mainwin->openMultiURL(urlList);
+        }
+        return mainwin;
+    }
+    return nullptr;
+}
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
@@ -129,9 +213,17 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    const QStringList args = parser.positionalArguments();
-
-    KDBusService dbusService(KDBusService::Multiple);
+    KDBusService dbusService(KDBusService::Unique);
+    QObject::connect(&dbusService, &KDBusService::activateRequested, [&parser](const QStringList &arguments, const QString &workingDirectory) {
+        parser.parse(arguments);
+        int ret;
+        KonqMainWindow *mainWindow = handleCommandLine(parser, workingDirectory, &ret);
+        if (mainWindow) {
+            // terminate startup notification and activate the mainwindow:
+            KStartupInfo::setNewStartupId(mainWindow, KStartupInfo::startupId());
+            KWindowSystem::forceActiveWindow(mainWindow->winId());
+        }
+    });
 
     if (app.isSessionRestored()) {
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
@@ -146,90 +238,15 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             }
             ++n;
         }
+    } else if (parser.isSet("preload")) {
+        new KonqMainWindow(QUrl(QStringLiteral("about:blank"))); // prepare an empty window, with the web renderer preloaded
     } else {
-        // First the invocations that do not take urls.
-        if (parser.isSet("preload")) {
-            if (!s_preloadingHandler.registerAsPreloaded()) {
-                return 0;    // no preloading
-            }
-        } else if (parser.isSet("sessions")) {
-            listSessions();
-            return 0;
-        } else if (parser.isSet("open-session")) {
-            const QString session = parser.value("open-session");
-            QString sessionPath = session;
-            if (!session.startsWith('/')) {
-                sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
-            }
-
-            QDirIterator it(sessionPath, QDir::Readable | QDir::Files);
-            if (!it.hasNext()) {
-                qWarning() << "session" << session << "not found or empty";
-                return -1;
-            }
-
-            KonqSessionManager::self()->restoreSessions(sessionPath);
-        } else if (args.isEmpty()) {
-            // No args. If --silent, do nothing, otherwise create a default window.
-            if (!parser.isSet("silent")) {
-                KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
-                mainWin->show();
-            }
-        } else {
-            // Now is a good time to parse each argument as a URL.
-            QList<QUrl> urlList;
-            for (int i = 0; i < args.count(); i++) {
-                // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below
-                const QUrl url = QUrl::fromUserInput(args.at(i), QDir::currentPath());
-                if (url.isLocalFile() && QFile::exists(url.toLocalFile())) { // "konqueror index.html"
-                    urlList += url;
-                } else {
-                    urlList += KonqMisc::konqFilteredURL(Q_NULLPTR, args.at(i));    // "konqueror slashdot.org"
-                }
-            }
-
-            QList<QUrl> filesToSelect;
-
-            if (parser.isSet("select")) {
-                // Get all distinct directories from 'files' and open a tab
-                // for each directory.
-                QList<QUrl> dirs;
-                Q_FOREACH (const QUrl &url, urlList) {
-                    const QUrl dir(url.adjusted(QUrl::RemoveFilename));
-                    if (!dirs.contains(dir)) {
-                        dirs.append(dir);
-                    }
-                }
-                filesToSelect = urlList;
-                urlList = dirs;
-            }
-
-            QUrl firstUrl = urlList.takeFirst();
-
-            KParts::OpenUrlArguments urlargs;
-            if (parser.isSet("mimetype")) {
-                urlargs.setMimeType(parser.value("mimetype"));
-            }
-
-            KonqOpenURLRequest req;
-            req.args = urlargs;
-            req.filesToSelect = filesToSelect;
-            req.tempFile = parser.isSet("tempfile");
-            req.serviceName = parser.value("part");
-
-            KonqMainWindow *mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
-            mainwin->show();
-            if (!urlList.isEmpty()) {
-                // Open the other urls as tabs in that window
-                mainwin->openMultiURL(urlList);
-            }
+        int ret = 0;
+        KonqMainWindow *mainWindow = handleCommandLine(parser, QDir::currentPath(), &ret);
+        if (!mainWindow) {
+            return ret;
         }
     }
-    
-
-    // In case there is no `konqueror --preload` running, start one
-    // (not this process, it might exit before the preloading is used)
-    s_preloadingHandler.ensurePreloadedProcessExists();
 
     const int ret = app.exec();
 

@@ -19,9 +19,6 @@
 #include <KStartupInfo>
 #include <KWindowSystem>
 
-// keep in sync with konqpreloadinghandler.cpp
-static const char s_preloadDBusName[] = "org.kde.konqueror.preloaded";
-
 class KonqClientRequestPrivate
 {
 public:
@@ -82,44 +79,30 @@ void KonqClientRequestPrivate::sendASNChange()
 bool KonqClientRequest::openUrl()
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    KConfig cfg(QStringLiteral("konquerorrc"));
-    KConfigGroup fmSettings = cfg.group("FMSettings");
-    if (d->newTab || fmSettings.readEntry("KonquerorTabforExternalURL", false)) {
+    const QString appId = QStringLiteral("org.kde.konqueror");
+    org::kde::Konqueror::Main konq(appId, QStringLiteral("/KonqMain"), dbus);
 
-        QString foundApp;
+    if (!d->newTab) {
+        KConfig cfg(QStringLiteral("konquerorrc"));
+        d->newTab = cfg.group("FMSettings").readEntry("KonquerorTabforExternalURL", false);
+    }
+    if (d->newTab) {
         QDBusObjectPath foundObj;
-        QDBusReply<QStringList> reply = dbus.interface()->registeredServiceNames();
-        if (reply.isValid()) {
-            const QStringList allServices = reply;
-            for (QStringList::const_iterator it = allServices.begin(), end = allServices.end(); it != end; ++it) {
-                const QString service = *it;
-                if (service.startsWith(QLatin1String("org.kde.konqueror"))) {
-                    org::kde::Konqueror::Main konq(service, QStringLiteral("/KonqMain"), dbus);
-                    QDBusReply<QDBusObjectPath> windowReply = konq.windowForTab();
-                    if (windowReply.isValid()) {
-                        QDBusObjectPath path = windowReply;
-                        // "/" is the indicator for "no object found", since we can't use an empty path
-                        if (path.path() != QLatin1String("/")) {
-                            foundApp = service;
-                            foundObj = path;
-                        }
-                    }
+        QDBusReply<QDBusObjectPath> windowReply = konq.windowForTab();
+        if (windowReply.isValid()) {
+            QDBusObjectPath path = windowReply;
+            // "/" is the indicator for "no object found", since we can't use an empty path
+            if (path.path() != QLatin1String("/")) {
+                org::kde::Konqueror::MainWindow konqWindow(appId, path.path(), dbus);
+                QDBusReply<void> newTabReply = konqWindow.newTabASNWithMimeType(d->url.toString(), d->mimeType, d->startup_id_str, d->tempFile);
+                if (newTabReply.isValid()) {
+                    d->sendASNChange();
+                    return true;
                 }
-            }
-        }
-
-        if (!foundApp.isEmpty()) {
-            org::kde::Konqueror::MainWindow konqWindow(foundApp, foundObj.path(), dbus);
-            QDBusReply<void> newTabReply = konqWindow.newTabASNWithMimeType(d->url.toString(), d->mimeType, d->startup_id_str, d->tempFile);
-            if (newTabReply.isValid()) {
-                d->sendASNChange();
-                return true;
             }
         }
     }
 
-    const QString appId = QString::fromLatin1(s_preloadDBusName);
-    org::kde::Konqueror::Main konq(appId, QStringLiteral("/KonqMain"), dbus);
     QDBusReply<QDBusObjectPath> reply = konq.createNewWindow(d->url.toString(), d->mimeType, d->startup_id_str, d->tempFile);
     if (reply.isValid()) {
         d->sendASNChange();
