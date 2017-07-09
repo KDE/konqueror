@@ -133,9 +133,6 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     connect(this, SIGNAL(initiateDrag(QWidget*)),
             SLOT(slotInitiateDrag(QWidget*)));
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#pragma message("KF5: revert the commit that introduced this line")
-#endif
     tabBar()->installEventFilter(this);
     initPopupMenu();
 }
