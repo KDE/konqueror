@@ -49,6 +49,7 @@
 #include <QDesktopWidget>
 #include <QStandardPaths>
 #include <KSharedConfig>
+#include <KWindowConfig>
 
 //#define DEBUG_VIEWMGR
 
@@ -958,7 +959,7 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
         } else {
             // Full screen off
             m_pMainWindow->setWindowState(m_pMainWindow->windowState() & ~Qt::WindowFullScreen);
-            m_pMainWindow->applyWindowSizeFromProfile(profileGroup);
+            applyWindowSize(profileGroup);
         }
     }
 
@@ -1034,7 +1035,8 @@ void KonqViewManager::emitActivePartChanged()
     m_pMainWindow->slotPartActivated(activePart());
 }
 
-QSize KonqViewManager::readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
+// Read default size from profile (e.g. Width=80%)
+static QSize readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
 {
     QString widthStr = cfg.readEntry("Width");
     QString heightStr = cfg.readEntry("Height");
@@ -1070,6 +1072,15 @@ QSize KonqViewManager::readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
     }
 
     return QSize(width, height);
+}
+
+void KonqViewManager::applyWindowSize(const KConfigGroup &profileGroup)
+{
+    const QSize size = readDefaultSize(profileGroup, m_pMainWindow); // example: "Width=80%"
+    if (size.isValid()) {
+        m_pMainWindow->resize(size);
+    }
+    KWindowConfig::restoreWindowSize(m_pMainWindow->windowHandle(), profileGroup); // example: "Width 1400=1120"
 }
 
 void KonqViewManager::loadRootItem(const KConfigGroup &cfg, KonqFrameContainerBase *parent,

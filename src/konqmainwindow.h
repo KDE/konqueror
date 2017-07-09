@@ -305,7 +305,6 @@ public:
     // Not used by konqueror itself; only exists for the Q_PROPERTY,
     // which I guess is used by scripts and plugins...
     QString currentURL() const;
-    void applyWindowSizeFromProfile(const KConfigGroup &profileGroup);
 
     void updateHistoryActions();
 

@@ -243,10 +243,7 @@ public:
 
     void doSetActivePart(KParts::ReadOnlyPart *part);
 
-    /**
-     * Read default size from profile (e.g. Width=80%)
-     */
-    static QSize readDefaultSize(const KConfigGroup &cfg, QWidget *window);
+    void applyWindowSize(const KConfigGroup &profileGroup);
 
 #ifndef NDEBUG
     void printFullHierarchy();

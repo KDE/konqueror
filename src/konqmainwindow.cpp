@@ -2643,7 +2643,7 @@ void KonqMainWindow::slotCopyFiles()
     KIO::CopyJob *job = KIO::copy(currentURLs(), dest);
     KIO::FileUndoManager::self()->recordCopyJob(job);
     KJobWidgets::setWindow(job, this);
-    job->ui()->setAutoErrorHandlingEnabled(true);
+    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 
 void KonqMainWindow::slotMoveFiles()
@@ -2656,7 +2656,7 @@ void KonqMainWindow::slotMoveFiles()
     KIO::CopyJob *job = KIO::move(currentURLs(), dest);
     KIO::FileUndoManager::self()->recordCopyJob(job);
     KJobWidgets::setWindow(job, this);
-    job->ui()->setAutoErrorHandlingEnabled(true);
+    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 
 QList<QUrl> KonqMainWindow::currentURLs() const
@@ -4922,6 +4922,8 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
                 case KMessageBox::Cancel :
                     e->ignore();
                     return;
+                default:
+                    Q_UNREACHABLE();
                 }
             }
         }
@@ -5509,16 +5511,6 @@ bool KonqMainWindow::accept(KonqFrameVisitor *visitor)
     return visitor->visit(this)
            && (!m_pChildFrame || m_pChildFrame->accept(visitor))
            && visitor->endVisit(this);
-}
-
-void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup &profileGroup)
-{
-    // KMainWindow::restoreWindowSize is protected so this logic can't move to KonqViewManager
-    const QSize size = KonqViewManager::readDefaultSize(profileGroup, this); // example: "Width=80%"
-    if (size.isValid()) {
-        resize(size);
-    }
-    restoreWindowSize(profileGroup); // example: "Width 1400=1120"
 }
 
 QLineEdit *KonqMainWindow::comboEdit()
