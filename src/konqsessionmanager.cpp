@@ -507,9 +507,11 @@ void KonqSessionManager::saveCurrentSessionToFile(KConfig *config, const QList<K
     }
 
     foreach (KonqMainWindow *window, mainWindows) {
-        KConfigGroup configGroup(config, "Window" + QString::number(counter));
-        window->saveProperties(configGroup);
-        counter++;
+        if (!window->isPreloaded()) {
+            KConfigGroup configGroup(config, "Window" + QString::number(counter));
+            window->saveProperties(configGroup);
+            counter++;
+        }
     }
 
     KConfigGroup configGroup(config, "General");

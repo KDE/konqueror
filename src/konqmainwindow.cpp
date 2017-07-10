@@ -3911,6 +3911,11 @@ void KonqMainWindow::updateHistoryActions()
     }
 }
 
+bool KonqMainWindow::isPreloaded() const
+{
+    return !isVisible() && m_mapViews.count() == 1 && m_currentView->url().toString() == "about:blank";
+}
+
 void KonqMainWindow::updateToolBarActions(bool pendingAction /*=false*/)
 {
     if (!m_currentView) {

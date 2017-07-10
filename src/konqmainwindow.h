@@ -308,6 +308,8 @@ public:
 
     void updateHistoryActions();
 
+    bool isPreloaded() const;
+
     // Public for unit tests
     void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
 

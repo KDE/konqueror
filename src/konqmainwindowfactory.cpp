@@ -66,7 +66,7 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
     QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
     if (mainWindowList) {
         for (KonqMainWindow *win : *mainWindowList) {
-            if (!win->isVisible() && win->viewCount() == 1 && win->currentView()->url().toString() == "about:blank") {
+            if (win->isPreloaded()) {
                 qDebug() << "Reusing preloaded window" << win;
                 KStartupInfo::setWindowStartupId(win->winId(), KStartupInfo::startupId());
                 ensurePreloadedWindow();
