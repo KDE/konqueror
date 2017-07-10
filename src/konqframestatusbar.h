@@ -21,7 +21,7 @@
 #define KONQ_FRAMESTATUSBAR_H
 
 #include <KStatusBar>
-#include "konq_statusbarmessagelabel.h"
+#include "konqstatusbarmessagelabel.h"
 class QLabel;
 class QProgressBar;
 class QCheckBox;

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA          *
  ***************************************************************************/
 
-#include "konq_statusbarmessagelabel.h"
+#include "konqstatusbarmessagelabel.h"
 #include <QStyle>
 #include <QTextDocument>
 

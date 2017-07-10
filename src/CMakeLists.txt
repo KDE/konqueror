@@ -80,7 +80,7 @@ set(konqueror_KDEINIT_SRCS
    konqsessionmanager.cpp
    konqcloseditem.cpp
    konqhistorydialog.cpp
-   konq_statusbarmessagelabel.cpp
+   konqstatusbarmessagelabel.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
