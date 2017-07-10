@@ -137,84 +137,80 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     hLayout->addSpacing(KDialog::spacingHint());
     hLayout->addWidget(messageLabel, 5);
 
-    QTreeWidget *treeWidget = 0;
-    if (!sessionFilePaths.isEmpty()) {
-        treeWidget = new QTreeWidget(mainWidget);
-        treeWidget->setHeader(0);
-        treeWidget->setHeaderHidden(true);
-        treeWidget->setToolTip(i18nc("@tooltip:session list", "Uncheck the sessions you do not want to be restored"));
+    Q_ASSERT(!sessionFilePaths.isEmpty());
+    m_treeWidget = new QTreeWidget(mainWidget);
+    m_treeWidget->setHeader(0);
+    m_treeWidget->setHeaderHidden(true);
+    m_treeWidget->setToolTip(i18nc("@tooltip:session list", "Uncheck the sessions you do not want to be restored"));
 
-        QStyleOptionViewItem styleOption;
-        styleOption.initFrom(treeWidget);
-        QFontMetrics fm(styleOption.font);
-        int w = treeWidget->width();
-        const QRect desktop = QApplication::desktop()->screenGeometry(this);
+    QStyleOptionViewItem styleOption;
+    styleOption.initFrom(m_treeWidget);
+    QFontMetrics fm(styleOption.font);
+    int w = m_treeWidget->width();
+    const QRect desktop = QApplication::desktop()->screenGeometry(this);
 
-        // Collect info from the sessions to restore
-        Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
-            qDebug() << sessionFile;
-            QTreeWidgetItem *windowItem = 0;
-            KConfig config(sessionFile, KConfig::SimpleConfig);
-            const QList<KConfigGroup> groups = windowConfigGroups(config);
-            Q_FOREACH (const KConfigGroup &group, groups) {
-                // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
-                Q_FOREACH (const QString &key, group.keyList()) {
-                    if (key.endsWith(QLatin1String("_CurrentHistoryItem"))) {
-                        const QString viewId = key.left(key.length() - qstrlen("_CurrentHistoryItem"));
-                        const QString historyIndex = group.readEntry(key, QString());
-                        const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
-                        // Ignore the sidebar views
-                        if (group.readEntry(prefix + "StrServiceName", QString()).startsWith(QLatin1String("konq_sidebar"))) {
-                            continue;
+    // Collect info from the sessions to restore
+    Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
+        qDebug() << sessionFile;
+        QTreeWidgetItem *windowItem = 0;
+        KConfig config(sessionFile, KConfig::SimpleConfig);
+        const QList<KConfigGroup> groups = windowConfigGroups(config);
+        Q_FOREACH (const KConfigGroup &group, groups) {
+            // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
+            Q_FOREACH (const QString &key, group.keyList()) {
+                if (key.endsWith(QLatin1String("_CurrentHistoryItem"))) {
+                    const QString viewId = key.left(key.length() - qstrlen("_CurrentHistoryItem"));
+                    const QString historyIndex = group.readEntry(key, QString());
+                    const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
+                    // Ignore the sidebar views
+                    if (group.readEntry(prefix + "StrServiceName", QString()).startsWith(QLatin1String("konq_sidebar"))) {
+                        continue;
+                    }
+                    const QString url = group.readEntry(prefix + "Url", QString());
+                    const QString title = group.readEntry(prefix + "Title", QString());
+                    qDebug() << viewId << url << title;
+                    const QString displayText = (title.trimmed().isEmpty() ? url : title);
+                    if (!displayText.isEmpty()) {
+                        if (!windowItem) {
+                            windowItem = new QTreeWidgetItem(m_treeWidget);
+                            const int index = sessionFilePaths.indexOf(sessionFile) + 1;
+                            windowItem->setText(0, i18nc("@item:treewidget", "Window %1", index));
+                            windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+                            windowItem->setCheckState(0, Qt::Checked);
+                            windowItem->setExpanded(true);
                         }
-                        const QString url = group.readEntry(prefix + "Url", QString());
-                        const QString title = group.readEntry(prefix + "Title", QString());
-                        qDebug() << viewId << url << title;
-                        const QString displayText = (title.trimmed().isEmpty() ? url : title);
-                        if (!displayText.isEmpty()) {
-                            if (!windowItem) {
-                                windowItem = new QTreeWidgetItem(treeWidget);
-                                const int index = sessionFilePaths.indexOf(sessionFile) + 1;
-                                windowItem->setText(0, i18nc("@item:treewidget", "Window %1", index));
-                                windowItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-                                windowItem->setCheckState(0, Qt::Checked);
-                                windowItem->setExpanded(true);
-                            }
-                            QTreeWidgetItem *item = new QTreeWidgetItem(windowItem);
-                            item->setText(0, displayText);
-                            item->setData(0, Qt::UserRole, viewIdFor(sessionFile, viewId));
-                            item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-                            item->setCheckState(0, Qt::Checked);
-                            w = qMax(w, fm.width(displayText));
-                            m_sessionItemsCount++;
-                        }
+                        QTreeWidgetItem *item = new QTreeWidgetItem(windowItem);
+                        item->setText(0, displayText);
+                        item->setData(0, Qt::UserRole, viewIdFor(sessionFile, viewId));
+                        item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+                        item->setCheckState(0, Qt::Checked);
+                        w = qMax(w, fm.width(displayText));
+                        m_sessionItemsCount++;
                     }
                 }
             }
-
-            if (windowItem) {
-                m_checkedSessionItems.insert(windowItem, windowItem->childCount());
-            }
         }
 
-        const int borderWidth = treeWidget->width() - treeWidget->viewport()->width() + treeWidget->verticalScrollBar()->height();
-        w += borderWidth;
-        if (w > desktop.width() * 0.85) { // limit treeWidget size to 85% of screen width
-            w = qRound(desktop.width() * 0.85);
+        if (windowItem) {
+            m_checkedSessionItems.insert(windowItem, windowItem->childCount());
         }
-        treeWidget->setMinimumWidth(w);
-        mainLayout->addWidget(treeWidget, 50);
-        treeWidget->setSelectionMode(QTreeWidget::NoSelection);
-        messageLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
     }
+
+    const int borderWidth = m_treeWidget->width() - m_treeWidget->viewport()->width() + m_treeWidget->verticalScrollBar()->height();
+    w += borderWidth;
+    if (w > desktop.width() * 0.85) { // limit treeWidget size to 85% of screen width
+        w = qRound(desktop.width() * 0.85);
+    }
+    m_treeWidget->setMinimumWidth(w);
+    mainLayout->addWidget(m_treeWidget, 50);
+    m_treeWidget->setSelectionMode(QTreeWidget::NoSelection);
+    messageLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
 
     // Do not connect the itemChanged signal until after the treewidget
     // is completely populated to prevent the firing of the itemChanged
     // signal while in the process of adding the original session items.
-    if (treeWidget && treeWidget->topLevelItemCount() > 0) {
-        connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),
-                this, SLOT(slotItemChanged(QTreeWidgetItem*,int)));
-    }
+    connect(m_treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),
+            this, SLOT(slotItemChanged(QTreeWidgetItem*,int)));
 
     QCheckBox *checkbox = new QCheckBox(i18n("Do not ask again"), mainWidget);
     connect(checkbox, &QCheckBox::clicked, this, &SessionRestoreDialog::slotClicked);
@@ -225,6 +221,11 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
 
 SessionRestoreDialog::~SessionRestoreDialog()
 {
+}
+
+bool SessionRestoreDialog::isEmpty() const
+{
+    return m_treeWidget->topLevelItemCount() == 0;
 }
 
 QStringList SessionRestoreDialog::discardedSessionList() const
@@ -651,10 +652,14 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
 
     if (SessionRestoreDialog::shouldBeShown(dontAskAgainName, &result)) {
         SessionRestoreDialog *restoreDlg = new SessionRestoreDialog(sessionFilePaths);
-        result = restoreDlg->exec();
-        discardedSessionList = restoreDlg->discardedSessionList();
-        if (restoreDlg->isDontShowChecked()) {
-            SessionRestoreDialog::saveDontShow(dontAskAgainName, result);
+        if (restoreDlg->isEmpty()) {
+            result = KDialog::No;
+        } else {
+            result = restoreDlg->exec();
+            discardedSessionList = restoreDlg->discardedSessionList();
+            if (restoreDlg->isDontShowChecked()) {
+                SessionRestoreDialog::saveDontShow(dontAskAgainName, result);
+            }
         }
         delete restoreDlg;
     }

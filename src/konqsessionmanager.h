@@ -31,6 +31,7 @@
 #include <konqprivate_export.h>
 
 class KonqMainWindow;
+class QTreeWidget;
 class QTreeWidgetItem;
 class QSessionManager;
 
@@ -40,6 +41,8 @@ class SessionRestoreDialog : public KDialog
 public:
     explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = Q_NULLPTR);
     virtual ~SessionRestoreDialog();
+
+    bool isEmpty() const;
 
     /**
      * Returns the list of session discarded/unselected by the user.
@@ -76,6 +79,7 @@ private Q_SLOTS:
     void slotItemChanged(QTreeWidgetItem *, int);
 
 private:
+    QTreeWidget *m_treeWidget;
     QStringList m_discardedSessionList;
     QHash<QTreeWidgetItem *, int> m_checkedSessionItems;
     int m_sessionItemsCount;
