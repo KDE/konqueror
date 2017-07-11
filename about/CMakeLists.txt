@@ -11,9 +11,7 @@ target_link_libraries(konq_aboutpage
 install(TARGETS konq_aboutpage DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 install(FILES
-    box-centre-konqueror.png
     top-left-konqueror.png
-    lightning.png
     launch.html
     intro.html
     specs.html
