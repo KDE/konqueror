@@ -158,7 +158,7 @@ template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
 
 static KBookmarkManager *s_bookmarkManager = 0;
-QList<KonqMainWindow *> *KonqMainWindow::s_lstViews = 0;
+QList<KonqMainWindow *> *KonqMainWindow::s_lstMainWindows = 0;
 KConfig *KonqMainWindow::s_comboConfig = 0;
 KCompletion *KonqMainWindow::s_pCompletion = 0;
 
@@ -198,11 +198,11 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_pURLCompletion(0)
     , m_isPopupWithProxyWindow(false)
 {
-    if (!s_lstViews) {
-        s_lstViews = new QList<KonqMainWindow *>;
+    if (!s_lstMainWindows) {
+        s_lstMainWindows = new QList<KonqMainWindow *>;
     }
 
-    s_lstViews->append(this);
+    s_lstMainWindows->append(this);
 
     KonqMouseEventFilter::self(); // create it
 
@@ -315,11 +315,11 @@ KonqMainWindow::~KonqMainWindow()
     delete m_pViewManager;
     m_pViewManager = 0;
 
-    if (s_lstViews) {
-        s_lstViews->removeAll(this);
-        if (s_lstViews->isEmpty()) {
-            delete s_lstViews;
-            s_lstViews = 0;
+    if (s_lstMainWindows) {
+        s_lstMainWindows->removeAll(this);
+        if (s_lstMainWindows->isEmpty()) {
+            delete s_lstMainWindows;
+            s_lstMainWindows = 0;
         }
     }
 
@@ -332,7 +332,7 @@ KonqMainWindow::~KonqMainWindow()
     delete m_pURLCompletion;
     delete m_paClosedItems;
 
-    if (s_lstViews == 0) {
+    if (s_lstMainWindows == 0) {
         delete s_comboConfig;
         s_comboConfig = 0;
     }
@@ -2993,7 +2993,7 @@ void KonqMainWindow::slotCompletionModeChanged(KCompletion::CompletionMode m)
     KonqSettings::self()->save();
 
     // tell the other windows too (only this instance currently)
-    foreach (KonqMainWindow *window, *s_lstViews) {
+    foreach (KonqMainWindow *window, *s_lstMainWindows) {
         if (window && window->m_combo) {
             window->m_combo->setCompletionMode(m);
             window->m_pURLCompletion->setCompletionMode(m);
@@ -3353,12 +3353,12 @@ void KonqMainWindow::showPageSecurity()
 // Called via DBUS from KonquerorApplication
 void KonqMainWindow::comboAction(int action, const QString &url, const QString &senderId)
 {
-    if (!s_lstViews) { // this happens in "konqueror --silent"
+    if (!s_lstMainWindows) { // this happens in "konqueror --silent"
         return;
     }
 
     KonqCombo *combo = 0;
-    foreach (KonqMainWindow *window, *s_lstViews) {
+    foreach (KonqMainWindow *window, *s_lstMainWindows) {
         if (window && window->m_combo) {
             combo = window->m_combo;
 

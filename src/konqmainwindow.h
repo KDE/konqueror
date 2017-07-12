@@ -246,7 +246,7 @@ public:
 
     static QList<KonqMainWindow *> *mainWindowList()
     {
-        return s_lstViews;
+        return s_lstMainWindows;
     }
 
     void linkableViewCountChanged();
@@ -692,7 +692,7 @@ private: // members
     QActionGroup *m_closedItemsGroup;
     QActionGroup *m_sessionsGroup;
 
-    static QList<KonqMainWindow *> *s_lstViews;
+    static QList<KonqMainWindow *> *s_lstMainWindows;
 
     QUrl m_currentDir; // stores current dir for relative URLs whenever applicable
 
