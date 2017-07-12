@@ -47,6 +47,7 @@ generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_N
 ########### konqueror ###############
 
 set(konqueror_KDEINIT_SRCS
+   konqaboutpage.cpp
    konqapplication.cpp
    konqguiclients.cpp
    konqrun.cpp

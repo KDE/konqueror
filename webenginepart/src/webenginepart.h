@@ -113,6 +113,25 @@ protected:
      */
     bool openFile() Q_DECL_OVERRIDE;
 
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::doOpenStream
+     */
+    bool doOpenStream(const QString &mimeType) Q_DECL_OVERRIDE;
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::doWriteStream
+     */
+    bool doWriteStream(const QByteArray &data) Q_DECL_OVERRIDE;
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::doCloseStream
+     */
+    bool doCloseStream() Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
     void slotShowSecurity();
     void slotShowSearchBar();
@@ -160,6 +179,7 @@ private:
     WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
+    QByteArray m_streamData;
 };
 
 #endif // WEBENGINEPART_H

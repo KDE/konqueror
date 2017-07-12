@@ -18,6 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "konqaboutpage.h"
 #include "konqview.h"
 
 #include "KonqViewAdaptor.h"
@@ -223,9 +224,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
     }
 
     aboutToOpenURL(url, args);
-
-    m_pPart->openUrl(url);
-
+    doOpenUrl(url);
     updateHistoryEntry(false /* don't save location bar URL yet */);
     // add pending history entry
     KonqHistoryManager::kself()->addPending(url, locationBarURL, QString());
@@ -670,9 +669,12 @@ void KonqView::setTabIcon(const QUrl &url)
 
 void KonqView::setCaption(const QString &caption)
 {
-    if (caption.isEmpty()) {
+    if (caption.isEmpty() || m_caption == caption) {
         return;
     }
+
+    if (caption.startsWith("data:text/html"))
+        return;
 
     QString adjustedCaption = caption;
     // For local URLs we prefer to use only the directory name
@@ -824,13 +826,31 @@ void KonqView::go(int steps)
     restoreHistory();
 }
 
+void KonqView::doOpenUrl(const QUrl &url)
+{
+    qDebug() << url;
+    if (url.scheme() == QLatin1String("about")) {
+        KonqAboutPage about;
+        const QByteArray data = about.pageForUrl(url.toString()).toUtf8();
+        //QFile hack("/tmp/about.html"); hack.open(QIODevice::WriteOnly); hack.write(data); hack.close();
+        if (m_pPart->openStream("text/html", url)) {
+            m_pPart->writeStream(data);
+            m_pPart->closeStream();
+        } else {
+            qWarning() << m_pPart->metaObject()->className() << "doesn't support openStream()!";
+        }
+    } else {
+        m_pPart->openUrl(url);
+    }
+}
+
 void KonqView::restoreHistory()
 {
     HistoryEntry h(*currentHistoryEntry());   // make a copy of the current history entry, as the data
     // the pointer points to will change with the following calls
 
 #ifdef DEBUG_HISTORY
-    qDebug() << "Restoring servicetype/name, and location bar URL from history:" << h.locationBarURL;
+    qDebug() << "Restoring from history: servicetype" << h.strServiceType << "with service" << h.strServiceName << "url" << h.url << "locationBarURL:" << h.locationBarURL;
 #endif
     setLocationBarURL(h.locationBarURL);
     setPageSecurity(h.pageSecurity);
@@ -845,7 +865,7 @@ void KonqView::restoreHistory()
 
     aboutToOpenURL(h.url);
 
-    if (h.reload == false && browserExtension()) {
+    if (h.reload == false && browserExtension() && h.url.scheme() != "about") {
         //qDebug() << "Restoring view from stream";
         QDataStream stream(h.buffer);
 
@@ -856,7 +876,7 @@ void KonqView::restoreHistory()
         m_postData = h.postData;
         m_pageReferrer = h.pageReferrer;
     } else {
-        m_pPart->openUrl(h.url);
+        doOpenUrl(h.url);
     }
 
     if (m_pMainWindow->currentView() == this) {

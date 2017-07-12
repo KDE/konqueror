@@ -428,7 +428,7 @@ void WebEnginePart::slotLoadStarted()
     m_emitOpenUrlNotify = true;
 }
 
-void WebEnginePart::slotLoadFinished (bool ok)
+void WebEnginePart::slotLoadFinished(bool ok)
 {
     if (!ok || !m_doLoadFinishedActions)
         return;
@@ -437,9 +437,9 @@ void WebEnginePart::slotLoadFinished (bool ok)
     m_doLoadFinishedActions = false;
 
     // If the document contains no <title> tag, then set it to the current url.
-    if (m_webView->title().trimmed().isEmpty()) {
+    if (m_webView->title().trimmed().isEmpty() && m_webView->url().scheme() != QL1S("data")) {
         // If the document title is empty, then set it to the current url
-        const QUrl url (m_webView->url());
+        const QUrl url(m_webView->url());
         const QString caption (url.toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
         emit setWindowCaption(caption);
 
@@ -497,6 +497,10 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
 
     // Ignore if error url
     if (url.scheme() == QL1S("error"))
+        return;
+
+    // Ignore if data URL used to implement about
+    if (this->url().scheme() == QL1S("about") && url.scheme() == QL1S("data"))
         return;
 
     const QUrl u (url);
@@ -922,5 +926,27 @@ void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
     if ((m_hasCachedFormData = ok))
         addWalletStatusBarIcon();
+}
+
+// Called for about:konqueror, for instance
+bool WebEnginePart::doOpenStream(const QString &mimeType)
+{
+    m_streamData.clear();
+    return mimeType == "text/html";
+}
+
+// Called for about:konqueror, for instance
+bool WebEnginePart::doWriteStream(const QByteArray &data)
+{
+    m_streamData += data;
+    return true;
+}
+
+// Called for about:konqueror, for instance
+bool WebEnginePart::doCloseStream()
+{
+    m_webView->page()->setContent(m_streamData, "text/html", url() /* TODO we might want another URL here */);
+    m_streamData.clear();
+    return true;
 }
 

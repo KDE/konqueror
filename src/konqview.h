@@ -601,6 +601,8 @@ private:
 
     bool eventFilter(QObject *obj, QEvent *e) Q_DECL_OVERRIDE;
 
+    void doOpenUrl(const QUrl &url);
+
 ////////////////// private members ///////////////
 
     KParts::ReadOnlyPart *m_pPart;

@@ -526,7 +526,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         }
     }
 
-    if (url.url() == QLatin1String("about:blank") || url.scheme() == QLatin1String("error")) {
+    if (url.scheme() == QLatin1String("about") || url.scheme() == QLatin1String("error")) {
         mimeType = QStringLiteral("text/html");
     }
 
@@ -645,7 +645,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     }
 
     //qDebug() << "trying openView for" << url << "( mimeType" << mimeType << ")";
-    if (hasMimeType || url.url() == QLatin1String("about:") || url.url().startsWith(QLatin1String("about:konqueror")) || url.url() == QLatin1String("about:plugins")) {
+    if (hasMimeType) {
 
         // Built-in view ?
         if (!openView(mimeType, url, view /* can be 0 */, req)) {
@@ -800,11 +800,9 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         originalURL += req.nameFilter;
     }
 
-    QString serviceName = req.serviceName; // default: none provided
     const QString urlStr = url.url();
     if (urlStr == QLatin1String("about:") || urlStr.startsWith(QLatin1String("about:konqueror")) || urlStr == QLatin1String("about:plugins")) {
-        mimeType = QStringLiteral("KonqAboutPage"); // not KParts/ReadOnlyPart, it fills the Location menu ! :)
-        serviceName = QStringLiteral("konq_aboutpage");
+        mimeType = QStringLiteral("text/html");
         originalURL = req.typedUrl.isEmpty() ? QString() : req.typedUrl;
     } else if (urlStr == QLatin1String("about:blank") && req.typedUrl.isEmpty()) {
         originalURL.clear();
@@ -862,7 +860,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         if (req.browserArgs.newTab()) {
             KonqFrameTabs *tabContainer = m_pViewManager->tabContainer();
             int index = tabContainer->currentIndex();
-            childView = m_pViewManager->addTab(mimeType, serviceName, false, req.openAfterCurrentPage);
+            childView = m_pViewManager->addTab(mimeType, req.serviceName, false, req.openAfterCurrentPage);
 
             if (req.newTabInFront && childView) {
                 if (req.openAfterCurrentPage) {
@@ -878,7 +876,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
             // createFirstView always uses force auto-embed even if user setting is "separate viewer",
             // since this window has no view yet - we don't want to keep an empty mainwindow.
             // This can happen with e.g. application/pdf from a target="_blank" link, or window.open.
-            childView = m_pViewManager->createFirstView(mimeType, serviceName);
+            childView = m_pViewManager->createFirstView(mimeType, req.serviceName);
 
             if (childView) {
                 enableAllActions(true);
@@ -901,11 +899,11 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
                 // This fixes the "get katepart and then type a website URL -> loaded into katepart" problem
                 // (first fixed in r168902 from 2002!, see also unittest KonqHtmlTest::textThenHtml())
 
-                if (!req.typedUrl.isEmpty() || !serviceName.isEmpty()) {
+                if (!req.typedUrl.isEmpty() || !req.serviceName.isEmpty()) {
                     if (childView->isLoading()) { // Stop the view first, #282641.
                         childView->stop();
                     }
-                    ok = childView->changePart(mimeType, serviceName, forceAutoEmbed);
+                    ok = childView->changePart(mimeType, req.serviceName, forceAutoEmbed);
                 } else {
                     ok = childView->ensureViewSupports(mimeType, forceAutoEmbed);
                 }
@@ -4231,8 +4229,8 @@ void KonqMainWindow::setCaption(const QString &caption)
     // We can't change it there (in case of apps removing all parts altogether)
     // but here we never do that.
     if (!caption.isEmpty() && m_currentView) {
-        //qDebug() << caption;
-
+        if (caption.startsWith("data:text/html"))
+            return;
         // Keep an unmodified copy of the caption (before squeezing and KComponentData::makeStdCaption are applied)
         m_currentView->setCaption(caption);
         KParts::MainWindow::setCaption(KStringHandler::csqueeze(m_currentView->caption(), 128));
