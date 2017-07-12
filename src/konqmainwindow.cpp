@@ -955,9 +955,20 @@ static KonqView *findChildView(KParts::ReadOnlyPart *callingPart, const QString 
 
 void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
 {
-    //qDebug() << "frameName=" << browserArgs.frameName;
-
     KParts::ReadOnlyPart *callingPart = static_cast<KParts::ReadOnlyPart *>(sender()->parent());
+    //qDebug() << url << "from" << callingPart->url() << "frameName=" << browserArgs.frameName;
+
+    if (callingPart->url().scheme() == "about" && url.scheme() == "exec") {
+        QStringList execArgs = url.path().mid(1).split(QChar(' '), QString::SkipEmptyParts);
+        const QString executable = execArgs.takeFirst();
+        if (executable == "khelpcenter" || executable.startsWith("kcmshell")) {
+            QProcess::startDetached(executable, execArgs);
+        } else {
+            qWarning() << "Refused for security reasons: executing" << executable;
+        }
+        return;
+    }
+
     QString frameName = browserArgs.frameName;
 
     if (!frameName.isEmpty()) {
