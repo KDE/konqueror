@@ -54,6 +54,7 @@
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
+// A functor that calls a member function
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     R *receiver;
@@ -67,8 +68,7 @@ struct InvokeWrapper {
 template<typename Arg, typename R, typename C>
 InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 {
-    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
-    return wrapper;
+    return InvokeWrapper<Arg, R, C>{receiver, memberFun};
 }
 
 WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
@@ -165,7 +165,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
                     QDataStream stream (&buffer);
                     view()->page()->setProperty("HistoryNavigationLocked", true);
                     stream >> *history;
-                    QWebEngineHistoryItem currentItem (history->currentItem());
+                    QWebEngineHistoryItem currentItem(history->currentItem());
                     if (currentItem.isValid()) {
                         if (currentItem.isValid() && (xOfs != -1 || yOfs != -1)) {
                             const QPoint scrollPos (xOfs, yOfs);
@@ -174,7 +174,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
                         // NOTE 1: The following Konqueror specific workaround is necessary
                         // because Konqueror only preserves information for the last visited
                         // page. However, we save the entire history content in saveState and
-                        // and hence need to elimiate all but the current item here.
+                        // and hence need to eliminate all but the current item here.
                         // NOTE 2: This condition only applies when Konqueror is restored from
                         // abnormal termination ; a crash and/or a session restoration.
                         if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
@@ -211,7 +211,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
 
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
-    qDebug() << "Normal history navgation logic failed! Falling back to opening url directly.";
+    qDebug() << "Normal history navigation logic failed! Falling back to opening url directly.";
     m_part->openUrl(u);
 }
 
@@ -687,61 +687,52 @@ void WebEngineBrowserExtension::slotTextDirectionChanged()
     }
 }
 
-static QVariant execJScript(WebEngineView* view, const QString& script)
-{
-#if 0
-    QWebElement element (view->contextMenuResult().element());
-    if (element.isNull())
-        return QVariant();
-    return element.evaluateJavaScript(script);
-#endif
-    return QVariant();
-}
-
 void WebEngineBrowserExtension::slotCheckSpelling()
 {
-    const QString text (execJScript(view(), QL1S("this.value")).toString());
+    view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
+        const QString text = value.toString();
+        if (!text.isEmpty()) {
+            m_spellTextSelectionStart = 0;
+            m_spellTextSelectionEnd = 0;
 
-    if ( text.isEmpty() ) {
-        return;
-    }
-
-    m_spellTextSelectionStart = 0;
-    m_spellTextSelectionEnd = 0;
-
-    Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
-    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
-    backgroundSpellCheck->setParent(spellDialog);
-    spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
-    spellDialog->showSpellCheckCompletionMessage(true);
-    connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
-    connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-    spellDialog->setBuffer(text);
-    spellDialog->show();
+            Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+            Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
+            backgroundSpellCheck->setParent(spellDialog);
+            spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+            spellDialog->showSpellCheckCompletionMessage(true);
+            connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
+            connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
+            spellDialog->setBuffer(text);
+            spellDialog->show();
+        }
+    });
 }
 
 void WebEngineBrowserExtension::slotSpellCheckSelection()
 {
-    QString text (execJScript(view(), QL1S("this.value")).toString());
+    view()->page()->runJavaScript(QL1S("this.value"), [this](const QVariant &value) {
+        const QString text = value.toString();
+        if (!text.isEmpty()) {
+            view()->page()->runJavaScript(QL1S("this.selectionStart + ' ' + this.selectionEnd"), [this, text](const QVariant &value) {
+                const QString values = value.toString();
+                const int pos = values.indexOf(' ');
+                m_spellTextSelectionStart = qMax(0, values.left(pos).toInt());
+                m_spellTextSelectionEnd = qMax(0, values.mid(pos + 1).toInt());
+                // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
-    if ( text.isEmpty() ) {
-        return;
-    }
-
-    m_spellTextSelectionStart = qMax(0, execJScript(view(), QL1S("this.selectionStart")).toInt());
-    m_spellTextSelectionEnd = qMax(0, execJScript(view(), QL1S("this.selectionEnd")).toInt());
-    // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
-
-    Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
-    Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
-    backgroundSpellCheck->setParent(spellDialog);
-    spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
-    spellDialog->showSpellCheckCompletionMessage(true);
-    connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
-    connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
-    spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, (m_spellTextSelectionEnd - m_spellTextSelectionStart)));
-    spellDialog->show();
+                Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+                Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
+                backgroundSpellCheck->setParent(spellDialog);
+                spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+                spellDialog->showSpellCheckCompletionMessage(true);
+                connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
+                connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
+                connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
+                spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, (m_spellTextSelectionEnd - m_spellTextSelectionStart)));
+                spellDialog->show();
+            });
+        }
+    });
 }
 
 void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, int pos, const QString& replacement)
@@ -761,7 +752,7 @@ void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, i
     script += QL1S(")");
 
     //kDebug() << "**** script:" << script;
-    execJScript(view(), script);
+    view()->page()->runJavaScript(script);
 }
 
 void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
@@ -772,7 +763,7 @@ void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int
     selectionScript += QL1C(',');
     selectionScript += QString::number(pos + text.length() + m_spellTextSelectionStart);
     selectionScript += QL1C(')');
-    execJScript(view(), selectionScript);
+    view()->page()->runJavaScript(selectionScript);
 }
 
 void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
@@ -785,10 +776,9 @@ void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
         script += QL1C(',');
         script += QString::number(m_spellTextSelectionEnd);
         script += QL1C(')');
-        execJScript(view(), script);
+        view()->page()->runJavaScript(script);
     }
 }
-
 
 void WebEngineBrowserExtension::saveHistory()
 {
