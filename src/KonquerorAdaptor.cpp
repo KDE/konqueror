@@ -117,6 +117,22 @@ QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
     return lst;
 }
 
+QStringList KonquerorAdaptor::urls() const
+{
+    QStringList lst;
+    QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();
+    if (mainWindows) {
+        for (KonqMainWindow *window : *mainWindows) {
+            if (!window->isPreloaded()) {
+                for (KonqView *view : window->viewMap()) {
+                    lst.append(view->url().toString());
+                }
+            }
+        }
+    }
+    return lst;
+}
+
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
     QList<KonqMainWindow *> *mainWindows = KonqMainWindow::mainWindowList();

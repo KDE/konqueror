@@ -73,6 +73,12 @@ public slots:
     QList<QDBusObjectPath> getWindows();
 
     /**
+     * @return a list of all URLs currently opened in this process
+     * Convenience function to avoid iterating over windows by hand.
+     */
+    QStringList urls() const;
+
+    /**
      * Find a window which can be used for a new tab. Called by kfmclient.
      */
     QDBusObjectPath windowForTab();
