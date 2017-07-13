@@ -25,8 +25,6 @@
 // Own
 #include "main.h"
 
-// std
-//#include <unistd.h>
 
 // Qt
 #include <QTabWidget>

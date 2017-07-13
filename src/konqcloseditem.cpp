@@ -32,7 +32,6 @@
 #include <konqpixmapprovider.h>
 #include <kcolorscheme.h>
 
-//#include <unistd.h>
 #include <QFontDatabase>
 
 class KonqIcon
