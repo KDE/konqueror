@@ -70,11 +70,12 @@ protected:
 
     KIO::Job *startDownload(const KUrl &url, KHTMLPart *part);
 
-private:
+public:
 
     // Frame handling
 
     typedef QHash<QString, KHTMLPart *> Name2Part;
+private:
     typedef QHash<KUrl,    KHTMLPart *> URL2Part;
 
     struct PartFrameData {
