@@ -19,7 +19,7 @@
 /* Test Directory Scanning. Usually not build. */
 
 #include <stdio.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 #include "scan.h"
 

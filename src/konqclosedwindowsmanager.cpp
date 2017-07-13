@@ -32,7 +32,6 @@
 #include <KLocalizedString>
 
 #include <kconfig.h>
-#include <unistd.h> // getpid
 #include <QStandardPaths>
 #include <KSharedConfig>
 

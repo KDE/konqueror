@@ -45,7 +45,6 @@
 #include <QNetworkRequest>
 #include <QToolTip>
 #include <QCoreApplication>
-#include <unistd.h>
 #include <QMimeType>
 #include <QMimeDatabase>
 
