@@ -58,6 +58,9 @@
 #if KONQ_HAVE_X11
 #include <QX11Info>
 #endif
+#ifdef WIN32
+#include <process.h>
+#endif
 
 static const char appName[] = "kfmclient";
 static const char programName[] = I18N_NOOP("kfmclient");
@@ -128,7 +131,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
                 newargv[ i + 1 ] = argv[ i ];
             }
             newargv[ argc + 1 ] = NULL;
+#ifdef WIN32
+            _execvp(wrapper, newargv);
+#else
             execvp(wrapper, newargv);
+#endif
             // just continue if failed
         }
     }
