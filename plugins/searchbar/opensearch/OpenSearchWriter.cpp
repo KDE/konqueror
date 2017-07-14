@@ -23,8 +23,6 @@
 
 #include <QtCore/QIODevice>
 
-#include <KDebug>
-
 OpenSearchWriter::OpenSearchWriter()
     : QXmlStreamWriter()
 {
