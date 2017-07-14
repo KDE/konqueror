@@ -32,7 +32,7 @@
 #include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
-#include <KDebug>
+#include <QDebug>
 #include <KIO/AccessManager>
 #include <KUriFilter>
 #include <KInputDialog>
@@ -185,7 +185,7 @@ protected slots:
 
     void dumpHtml() {
         view->view()->page()->toHtml([](const QString& text) {
-            kDebug() << "HTML: " << text;
+            qDebug() << "HTML: " << text;
         });
     }
 
@@ -357,7 +357,7 @@ private:
                 m_urls.append(line);
             }
         } else {
-            kDebug() << "Can't open list file";
+            qDebug() << "Can't open list file";
             exit(0);
         }
         m_index = 0;
@@ -409,7 +409,7 @@ int main(int argc, char **argv)
         // robotized
         QString listFile = args.at(2);
         if (!(args.count() == 3) && QFile::exists(listFile)) {
-            kDebug() << "Usage: KDELauncher -r listfile";
+            qDebug() << "Usage: KDELauncher -r listfile";
             exit(0);
         }
         MainWindow window;

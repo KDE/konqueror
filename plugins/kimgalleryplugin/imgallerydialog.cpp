@@ -35,7 +35,6 @@ Boston, MA 02110-1301, USA.
 #include <kurl.h>
 #include <kfontdialog.h>
 #include <kiconloader.h>
-#include <kdebug.h>
 #include <klineedit.h>
 #include <knuminput.h>
 #include <kcolorbutton.h>

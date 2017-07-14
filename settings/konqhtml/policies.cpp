@@ -25,7 +25,6 @@
 // KDE
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <kdebug.h>
 
 // == class Policies ==
 

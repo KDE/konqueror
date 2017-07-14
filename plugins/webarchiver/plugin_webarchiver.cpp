@@ -42,7 +42,6 @@
 #include <KLocalizedString>
 #include <khtmlview.h>
 #include <khtml_part.h>
-#include <kdebug.h>
 #include <kpluginfactory.h>
 #include <kactioncollection.h>
 #include <kstandardguiitem.h>

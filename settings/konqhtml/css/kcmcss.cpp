@@ -15,7 +15,6 @@
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 #include <kmimetypetrader.h>
-#include <kdebug.h>
 #include <kparts/part.h>
 #include <kparts/openurlarguments.h>
 
