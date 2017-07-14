@@ -22,6 +22,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QIcon>
+#include <QDebug>
 
 #include <KIO/FavIconRequestJob>
 #include <kio/global.h>
@@ -63,7 +64,7 @@ void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
                 // For host default-icons still query the favicon manager to get
                 // the correct icon for pages that have an own one.
                 const QString icon = KIO::favIconForUrl(url);
-                if (!icon.isEmpty()) {
+                if (!icon.isEmpty() && *it != icon) {
                     *it = icon;
                     modified = true;
                 }
@@ -87,7 +88,7 @@ void KonqPixmapProvider::setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl)
             const QUrl url(it.key());
             if (url.host() == _hostUrl.host() && url.path() == _hostUrl.path()) {
                 const QString icon = job->iconFile();
-                if (!icon.isEmpty()) {
+                if (!icon.isEmpty() && *it != icon) {
                     *it = icon;
                     modified = true;
                 }
