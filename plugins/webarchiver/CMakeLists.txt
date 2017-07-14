@@ -6,6 +6,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABLE_EXCEPTIONS}")
 
 set(webarchiverplugin_PART_SRCS plugin_webarchiver.cpp archivedialog.cpp )
 
+ecm_qt_declare_logging_category(webarchiverplugin_PART_SRCS HEADER webarchiverdebug.h IDENTIFIER WEBARCHIVERPLUGIN_LOG CATEGORY_NAME org.kde.konqueror.webarchiver)
 ki18n_wrap_ui(webarchiverplugin_PART_SRCS archiveviewbase.ui )
 
 add_library(webarchiverplugin MODULE ${webarchiverplugin_PART_SRCS})

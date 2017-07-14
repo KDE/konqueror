@@ -72,10 +72,10 @@
 #include <dom/css_value.h>
 
 #include "archivedialog.h"
+#include "webarchiverdebug.h"
 
 //KDELibs4Support
 #include <kurl.h>
-#include <kdebug.h>
 #include <kglobal.h>
 
 // Set to true if you have a patched http-io-slave that has
@@ -194,7 +194,7 @@ ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart
 ArchiveDialog::~ArchiveDialog()
 {
     // TODO cancel outstanding download jobs?
-    kDebug(90110) << "destroying";
+    qCDebug(WEBARCHIVERPLUGIN_LOG) << "destroying";
     if (m_job) {
         m_job->kill();
         m_job = NULL;
@@ -285,17 +285,17 @@ void ArchiveDialog::slotObjectFinished(KJob *_job)
         QByteArray data(job->data());
         const QString &tarName = info.tarName;
 
-//         kDebug(90110) << "downloaded " << url.prettyUrl() << "size=" << data.size() << "mimetype" << mimetype;
+//         qCDebug(WEBARCHIVERPLUGIN_LOG) << "downloaded " << url.prettyUrl() << "size=" << data.size() << "mimetype" << mimetype;
         error = ! m_tarBall->writeFile(tarName, data, archivePerms, QString::null, QString::null,
                                        m_archiveTime, m_archiveTime, m_archiveTime);
         if (error) {
-            kDebug(90110) << "Error writing to archive file";
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "Error writing to archive file";
             finishedArchiving(true);
             return;
         }
     } else {
         info.tarName.clear();
-        kDebug(90110) << "download error for url='" << url;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "download error for url='" << url;
     }
 
     endProgressInfo(error);
@@ -343,7 +343,7 @@ void ArchiveDialog::slotStyleSheetFinished(KJob *_job)
         QString cssCharSet(ds.string());
         bool ok;
         QTextCodec *codec = KCharsets::charsets()->codecForName(cssCharSet, ok);
-        kDebug(90110) << "translating URLs in CSS" << url << "charset=" << cssCharSet << " found=" << ok;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "translating URLs in CSS" << url << "charset=" << cssCharSet << " found=" << ok;
         assert(codec);
         QString css_text = codec->toUnicode(data);
         data.clear();
@@ -356,13 +356,13 @@ void ArchiveDialog::slotStyleSheetFinished(KJob *_job)
         error = ! m_tarBall->writeFile(tarName, data, archivePerms, QString::null, QString::null,
                                        m_archiveTime, m_archiveTime, m_archiveTime);
         if (error) {
-            kDebug(90110) << "Error writing to archive file";
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "Error writing to archive file";
             finishedArchiving(true);
             return;
         }
     } else {
         info.tarName.clear();
-        kDebug(90110) << "download error for css url='" << url;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "download error for css url='" << url;
     }
 
     endProgressInfo(error);
@@ -404,7 +404,7 @@ void ArchiveDialog::saveWebpages()
 {
     bool error = saveTopFrame();
     if (error) {
-        kDebug(90110) << "Error writing to archive file";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "Error writing to archive file";
         finishedArchiving(true);
         return;
     }
@@ -492,7 +492,7 @@ static void filterFrameMappings(KHTMLPart *part, Id2Part &result)
         }
     }
     FOR_ITER_TEMPLATE(IdRemoveList, beRemoved, rem_it) {
-        kDebug(90110) << "removing insecure(?) frame='" << (*rem_it).key();
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "removing insecure(?) frame='" << (*rem_it).key();
         result.erase((*rem_it));
     }
 }
@@ -529,18 +529,18 @@ void ArchiveDialog::obtainURLs()
     assert(! m_framesInPart.empty());
 #if 0
     FOR_ITER(CSSURLSet, m_cssURLs, it) {
-        kDebug(90110) << "to be downloaded stylesheet='" << it.key();
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "to be downloaded stylesheet='" << it.key();
     }
     FOR_ITER(URLsInStyleSheet, m_URLsInStyleSheet, ss2u_it) {
-        kDebug(90110) << "raw URLs in sheet='" << ss2u_it.key().href();
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "raw URLs in sheet='" << ss2u_it.key().href();
         FOR_ITER(RawHRef2FullURL, ss2u_it.data(), c2f_it) {
-            kDebug(90110) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
         }
     }
     FOR_ITER(URLsInStyleElement, m_URLsInStyleElement, e2u_it) {
-        kDebug(90110) << "raw URLs in style-element:";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "raw URLs in style-element:";
         FOR_ITER(RawHRef2FullURL, e2u_it.data(), c2f_it) {
-            kDebug(90110) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
         }
     }
 #endif
@@ -549,7 +549,7 @@ void ArchiveDialog::obtainURLs()
 void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseData &data)
 {
 
-    //kDebug(90110) << "stylesheet title='" << styleSheet.title().string() << "' "
+    //qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet title='" << styleSheet.title().string() << "' "
     //                "type='" << styleSheet.type().string();
 
     RawHRef2FullURL &raw2full = m_URLsInStyleSheet.insert(css, RawHRef2FullURL()).value();
@@ -563,7 +563,7 @@ void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseDat
         case DOM::CSSRule::STYLE_RULE: {
             const DOM::CSSStyleRule &csr = static_cast<DOM::CSSStyleRule &>(cr);
 
-            //kDebug(90110) << "found selector '" << csr.selectorText();
+            //qCDebug(WEBARCHIVERPLUGIN_LOG) << "found selector '" << csr.selectorText();
             parseStyleDeclaration(css.baseUrl(), csr.style(), raw2full, data);
         } break;
 
@@ -575,13 +575,13 @@ void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseDat
 
                 // Given stylesheet was not downloaded / parsed by KHTML
                 // Remove that URL from the stylesheet
-                kDebug(90110) << "stylesheet: invalid @import url('" << cir.href() << "')";
+                qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: invalid @import url('" << cir.href() << "')";
 
                 raw2full.insert(cir.href().string(), KUrl());
 
             } else {
 
-                kDebug(90110) << "stylesheet: @import url('" << cir.href() << "') found";
+                qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: @import url('" << cir.href() << "') found";
 
                 QString href = cir.href().string();
                 Q_ASSERT(!href.isNull());
@@ -596,7 +596,7 @@ void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseDat
         } break;
 
         default:
-            kDebug(90110) << " unknown/unsupported rule=" << cr.type();
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << " unknown/unsupported rule=" << cr.type();
         }
     }
 }
@@ -635,7 +635,7 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
     }
 
     DOM::StyleSheetList styleSheetList = data.document.styleSheets();
-    //kDebug(90110) << "# of stylesheets=" << styleSheetList.length();
+    //qCDebug(WEBARCHIVERPLUGIN_LOG) << "# of stylesheets=" << styleSheetList.length();
     for (int i = 0; i != static_cast<int>(styleSheetList.length()); ++i) {
         DOM::StyleSheet ss = styleSheetList.item(i);
         if (ss.isCSSStyleSheet()) {
@@ -645,7 +645,7 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
             if (! href.isNull()) {
                 QString href  = css.href().string();
                 KUrl fullUrl  = css.baseUrl();
-                kDebug(90110) << "top-level stylesheet='" << href;
+                qCDebug(WEBARCHIVERPLUGIN_LOG) << "top-level stylesheet='" << href;
                 bool inserted = insertTranslateURL(fullUrl, data);
                 if (inserted) {
                     m_cssURLs.insert(fullUrl, css);
@@ -654,13 +654,13 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
                 DOM::Node node = css.ownerNode();
                 if (! node.isNull()) {
                     assert(! m_topStyleSheets.contains(node));
-                    kDebug(90110) << "top-level inline stylesheet '" << node.nodeName();
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "top-level inline stylesheet '" << node.nodeName();
                     // TODO I think there can be more than one <style> area...
                     assert(href.isNull());
                     m_topStyleSheets.insert(node, css);
 
                 } else {
-                    kDebug(90110) << "found loose style sheet '" << node.nodeName();
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "found loose style sheet '" << node.nodeName();
                     assert(0); // FIXME for testing only
                 }
             }
@@ -735,11 +735,11 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
 bool ArchiveDialog::insertTranslateURL(const KUrl &fullURL, RecurseData &data)
 {
     if (!urlCheckFailed(data.part, fullURL)) {
-//         kDebug(90110) << "adding '" << fullURL << "' to to-be-downloaded URLs";
+//         qCDebug(WEBARCHIVERPLUGIN_LOG) << "adding '" << fullURL << "' to to-be-downloaded URLs";
         m_url2tar.insert(fullURL, DownloadInfo(QString::null, data.part));
         return true;
     } else {
-        kDebug(90110) << "URL check failed on '" << fullURL << "' -- skipping";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "URL check failed on '" << fullURL << "' -- skipping";
         return false;
     }
 }
@@ -751,10 +751,10 @@ bool ArchiveDialog::insertHRefFromStyleSheet(const QString &hrefRaw, RawHRef2Ful
 
 #if 0
     if (inserted) {
-        kDebug(90110) << "stylesheet: found url='"
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: found url='"
                       << fullURL.prettyUrl() << "' hrefRaw='" << hrefRaw;
     } else {
-        kDebug(90110) << "stylesheet: killing insecure/invalid url='"
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: killing insecure/invalid url='"
                       << fullURL.prettyUrl() << "' hrefRaw='" << hrefRaw;
     }
 #endif
@@ -771,17 +771,17 @@ void ArchiveDialog::parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDecl
         DOM::DOMString val   = decl.getPropertyValue(item);
         //DOM::CSSValue  csval = decl.getPropertyCSSValue(item);
 
-//         kDebug(90110) << "style declaration " << item << ":" << val << ";";
+//         qCDebug(WEBARCHIVERPLUGIN_LOG) << "style declaration " << item << ":" << val << ";";
 
         QString href = extractCSSURL(val.string());
         if (href != QString::null) {
 
-//             kDebug(90110) << "URL in CSS " << item << ":" << val << ";";
+//             qCDebug(WEBARCHIVERPLUGIN_LOG) << "URL in CSS " << item << ":" << val << ";";
 
             // TODO Would like to use khtml::parseURL to remove \r, \n and similar
             QString parsedURL = parseURL(href);
 
-//             kDebug(90110) << "found URL='" << val << "' extracted='" << parsedURL << "'";
+//             qCDebug(WEBARCHIVERPLUGIN_LOG) << "found URL='" << val << "' extracted='" << parsedURL << "'";
             insertHRefFromStyleSheet(href, raw2full, KUrl(baseURL, parsedURL), data);
         }
     }
@@ -828,7 +828,7 @@ bool ArchiveDialog::saveFrame(KHTMLPart *part, int level)
     assert(p2tn_it != m_part2tarName.end());
     const QString &tarName = p2tn_it.value();
 
-    kDebug(90110) << "writing part='" << part->url() << "' to tarfile='" << tarName
+    qCDebug(WEBARCHIVERPLUGIN_LOG) << "writing part='" << part->url() << "' to tarfile='" << tarName
                   << "' size=" << rawtext.size();
     bool error = ! m_tarBall->writeFile(tarName, rawtext, archivePerms, QString::null, QString::null,
                                         m_archiveTime, m_archiveTime, m_archiveTime);
@@ -880,7 +880,7 @@ void ArchiveDialog::saveHTMLPart(RecurseData &data)
     try {
         saveHTMLPartLower(data.document.documentElement(), 1, data);
     } catch (...) {
-        kDebug(90110) << "exception";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "exception";
         Q_ASSERT(0);
     }
 }
@@ -899,7 +899,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
     bool isElement = !pNode.isNull() && (pNode.nodeType() == DOM::Node::ELEMENT_NODE);
 
-    //kDebug(90110) << indent << "nodeName=" << nodeName << " toString()='" << pNode.toString() << "'";
+    //qCDebug(WEBARCHIVERPLUGIN_LOG) << indent << "nodeName=" << nodeName << " toString()='" << pNode.toString() << "'";
     if (isElement) {
         const DOM::Element &element = static_cast<const DOM::Element &>(pNode);
         URLsInStyleElement::Iterator style_it = m_URLsInStyleElement.find(element);
@@ -926,7 +926,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 KUrl newurl = KUrl(baseurl, parseURL((*eurls.absURL).value));
                 if (urlCheckFailed(data.part, newurl)) {
                     (*eurls.absURL).value = QLatin1String("");
-                    kDebug(90110) << "removing invalid/insecure href='" << newurl << "'";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "removing invalid/insecure href='" << newurl << "'";
                 } else {
                     //
                     // KUrl::htmlRef() calls internally fragment()->toPercent()->toLatin1()->fromLatin1()->fromPercent()
@@ -952,7 +952,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 if (it == m_url2tar.end()) {
 
                     (*eurls.transURL).value = QLatin1String("");
-                    kDebug(90110) << "removing invalid/insecure link='" << fullURL << "'";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "removing invalid/insecure link='" << fullURL << "'";
 
                 } else {
 //                     assert( !it.value().tarName.isNull() );
@@ -968,7 +968,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
                 if (it == m_url2tar.end()) {
 
-                    kDebug(90110) << "removing invalid/insecure CSS link='" << fullURL << "'";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "removing invalid/insecure CSS link='" << fullURL << "'";
                     (*eurls.cssURL).value = QLatin1String("");
 
                 } else {
@@ -988,7 +988,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     filterOut1 = eurls.frameName;
                     filterOut2 = eurls.frameURL;
 
-                    kDebug(90110) << "emptying frame=" << (*eurls.frameName).value;
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "emptying frame=" << (*eurls.frameName).value;
 
                 } else {
 
@@ -1003,7 +1003,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     Q_ASSERT(p2tn_it != m_part2tarName.end());
                     (*eurls.frameURL).value = p2tn_it.value();
 
-                    kDebug(90110) << "setting frame='" << (*eurls.frameName).value << "' to src='"
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "setting frame='" << (*eurls.frameName).value << "' to src='"
                                   << (*eurls.frameURL).value;
                 }
 
@@ -1018,7 +1018,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     // KHTML ignores this frame tag, so remove it here
                     filterOut1 = eurls.frameURL;
 
-                    kDebug(90110) << "emptying frame='" << (*eurls.frameURL).value << "'";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "emptying frame='" << (*eurls.frameURL).value << "'";
 
                 } else {
 
@@ -1026,7 +1026,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     Q_ASSERT(p2tn_it != m_part2tarName.end());
                     (*eurls.frameURL).value = p2tn_it.value();
 
-                    kDebug(90110) << "setting frame='" << fullURL << "' to src='"
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "setting frame='" << fullURL << "' to src='"
                                   << (*eurls.frameURL).value;
                 }
             }
@@ -1057,10 +1057,10 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 QString value = (*i).value;
                 if ((i != filterOut1) && (i != filterOut2)) {
                     if (hasStyle && (attr == QLatin1String("style"))) {
-//                         kDebug(90110) << "translating URLs in element:";
-//                         kDebug(90110) << "value=" << value;
+//                         qCDebug(WEBARCHIVERPLUGIN_LOG) << "translating URLs in element:";
+//                         qCDebug(WEBARCHIVERPLUGIN_LOG) << "value=" << value;
                         changeCSSURLs(value, style_it.value());
-//                         kDebug(90110) << "value=" << value;
+//                         qCDebug(WEBARCHIVERPLUGIN_LOG) << "value=" << value;
                     }
                     if (non_cdata_attr.find(attr) == non_cdata_attr.end()) {
                         value = escapeHTML(value);
@@ -1095,11 +1095,11 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     m_topStyleSheets.erase(topcss_it);  // for safety
                     assert(uss_it != m_URLsInStyleSheet.constEnd());
 
-                    kDebug(90110) << "translating URLs in <style> area.";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "translating URLs in <style> area.";
                     changeCSSURLs(text, uss_it.value());
 
                 } else {
-                    kDebug(90110) << "found style area '" << nodeName << "', but KHMTL didn't feel like parsing it";
+                    qCDebug(WEBARCHIVERPLUGIN_LOG) << "found style area '" << nodeName << "', but KHMTL didn't feel like parsing it";
                 }
 
             } else if (parentNodeName == QLatin1String("SCRIPT")) {
@@ -1156,14 +1156,14 @@ QString &ArchiveDialog::changeCSSURLs(QString &text, const RawHRef2FullURL &raw2
                 const QString &tarName = utm_it.value().tarName;
 //                 assert(! tarName.isNull());
 
-                kDebug(90110) << "changeCSSURLs: url=" << raw << " -> " << tarName;
+                qCDebug(WEBARCHIVERPLUGIN_LOG) << "changeCSSURLs: url=" << raw << " -> " << tarName;
                 text.replace(raw, tarName);
             } else {
-                kDebug(90110) << "changeCSSURLs: raw URL not found in tar map";
+                qCDebug(WEBARCHIVERPLUGIN_LOG) << "changeCSSURLs: raw URL not found in tar map";
                 text.replace(raw, QLatin1String(""));
             }
         } else {
-            kDebug(90110) << "changeCSSURLs: emptying invalid raw URL";
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "changeCSSURLs: emptying invalid raw URL";
             text.replace(raw, QLatin1String(""));
         }
     }
@@ -1231,7 +1231,7 @@ ArchiveDialog::ExtractURLs::ExtractURLs(const QString &nodeName, const DOM::Elem
         transURL = src;
     } else if ((nodeName == QLatin1String("BODY") || nodeName == QLatin1String("TABLE") || nodeName == QLatin1String("TH") || nodeName == QLatin1String("TD")) &&
                (background != invalid)) {
-        kDebug() << "found background URL " << (*background).value;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "found background URL " << (*background).value;
         transURL = background;
     }
 }
@@ -1345,7 +1345,7 @@ QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mim
 {
     KMimeType::Ptr mimeType = KMimeType::mimeType(mimetype, KMimeType::ResolveAliases);
     if (mimeType.isNull() || (mimeType == KMimeType::defaultMimeTypePtr())) {
-        kDebug(90110) << "mimetype" << mimetype << "unknown here, returning unchanged";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "mimetype" << mimetype << "unknown here, returning unchanged";
         return filename;
     }
     const QStringList &patterns = mimeType->patterns();
@@ -1354,13 +1354,13 @@ QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mim
         QString suffix(*pat_it);
         int pos = suffix.lastIndexOf('*');
         if (pos < 0) {
-            kDebug(90110) << "Illegal mime pattern '" << suffix << "for" << mimeType;
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "Illegal mime pattern '" << suffix << "for" << mimeType;
             Q_ASSERT(0);
             continue;
         }
         suffix = suffix.mid(pos + 1);
         if (filename.endsWith(suffix, Qt::CaseInsensitive)) {
-//             kDebug(90110) << filename << "has already good suffix" << suffix;
+//             qCDebug(WEBARCHIVERPLUGIN_LOG) << filename << "has already good suffix" << suffix;
             return filename;    // already has good suffix
         }
     }
@@ -1371,9 +1371,9 @@ QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mim
         QString suffix(*patterns.constBegin());
         suffix.replace('*', QString::null);
         filename += suffix;
-        kDebug(90110) << "appended missing mimetype suffix, returning" << filename;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "appended missing mimetype suffix, returning" << filename;
     } else {
-        kDebug(90110) << "mimetype" << mimetype << " has no pattern list, this is bad";
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "mimetype" << mimetype << " has no pattern list, this is bad";
         Q_ASSERT(0);
     }
     return filename;
