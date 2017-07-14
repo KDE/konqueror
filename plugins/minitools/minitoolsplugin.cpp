@@ -20,7 +20,7 @@
 
 #include <qfile.h>
 
-#include <kdebug.h>
+#include "minitoolsplugindebug.h"
 
 #include <kglobal.h>
 #include <kconfig.h>
@@ -127,13 +127,13 @@ void MinitoolsPlugin::newBookmarkCallback(
     const QString &text, const QString &url, const QString &
 )
 {
-    kDebug(90150) << "MinitoolsPlugin::newBookmarkCallback" << text << url;
+    qCDebug(MINITOOLSPLUGIN_LOG) << "MinitoolsPlugin::newBookmarkCallback" << text << url;
     m_minitoolsList.prepend(qMakePair(text, url));
 }
 
 void MinitoolsPlugin::endFolderCallback()
 {
-    kDebug(90150) << "MinitoolsPlugin::endFolderCallback";
+    qCDebug(MINITOOLSPLUGIN_LOG) << "MinitoolsPlugin::endFolderCallback";
     m_minitoolsList.prepend(qMakePair(QStringLiteral("-"), QStringLiteral("-")));
 }
 

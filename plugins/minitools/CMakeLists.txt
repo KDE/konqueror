@@ -9,6 +9,8 @@ find_package(KF5 REQUIRED KHtml)
 
 set(minitoolsplugin_PART_SRCS minitoolsplugin.cpp )
 
+ecm_qt_declare_logging_category(minitoolsplugin_PART_SRCS HEADER minitoolsplugindebug.h IDENTIFIER MINITOOLSPLUGIN_LOG CATEGORY_NAME org.kde.konqueror.minitools)
+
 add_library(minitoolsplugin MODULE ${minitoolsplugin_PART_SRCS})
 
 
