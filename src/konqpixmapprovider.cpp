@@ -53,12 +53,9 @@ KonqPixmapProvider::~KonqPixmapProvider()
 void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
 {
     KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
-    // I don't dare capturing a ref into the lambda, so storing a property in the job instead.
-    // TODO once KF 5.20 can be required, just use job->hostUrl() in the slot
-    job->setProperty("_hostUrl", QVariant::fromValue(hostUrl));
     connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
         bool modified = false;
-        const QUrl _hostUrl = job->property("_hostUrl").value<QUrl>();
+        const QUrl _hostUrl = job->hostUrl();
         QMap<QUrl, QString>::iterator itEnd = iconMap.end();
         for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
             const QUrl url(it.key());
@@ -82,12 +79,9 @@ void KonqPixmapProvider::setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl)
 {
     KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
     job->setIconUrl(iconUrl);
-    // I don't dare capturing a ref into the lambda, so storing a property in the job instead.
-    // TODO once KF 5.20 can be required, just use job->hostUrl() in the slot
-    job->setProperty("_hostUrl", QVariant::fromValue(hostUrl));
     connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
         bool modified = false;
-        const QUrl _hostUrl = job->property("_hostUrl").value<QUrl>();
+        const QUrl _hostUrl = job->hostUrl();
         QMap<QUrl, QString>::iterator itEnd = iconMap.end();
         for (QMap<QUrl, QString>::iterator it = iconMap.begin(); it != itEnd; ++it) {
             const QUrl url(it.key());
