@@ -676,37 +676,6 @@ void KonqCombo::setPageSecurity(int pageSecurity)
     }
 }
 
-bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
-{
-    // Taken from khtml/misc/helper.cc
-#define HUE_DISTANCE 40
-#define CONTRAST_DISTANCE 10
-
-    int h1, s1, v1, h2, s2, v2;
-    int hdist = -CONTRAST_DISTANCE;
-    c1.getHsv(&h1, &s1, &v1);
-    c2.getHsv(&h2, &s2, &v2);
-    if (h1 != -1 && h2 != -1) { // grey values have no hue
-        hdist = qAbs(h1 - h2);
-        if (hdist > 180) {
-            hdist = 360 - hdist;
-        }
-        if (hdist < HUE_DISTANCE) {
-            hdist -= HUE_DISTANCE;
-            // see if they are high key or low key colours
-            bool hk1 = h1 >= 45 && h1 <= 225;
-            bool hk2 = h2 >= 45 && h2 <= 225;
-            if (hk1 && hk2) {
-                hdist = (5 * hdist) / 3;
-            } else if (!hk1 && !hk2) {
-                hdist = (7 * hdist) / 4;
-            }
-        }
-        hdist = qMin(hdist, HUE_DISTANCE * 2);
-    }
-    return hdist + (qAbs(s1 - s2) * 128) / (160 + qMin(s1, s2)) + qAbs(v1 - v2) > CONTRAST_DISTANCE;
-}
-
 void KonqCombo::slotReturnPressed()
 {
     slotActivated(currentText());

@@ -103,7 +103,6 @@ private:
         return itemText(temporary);
     }
     void removeDuplicates(int index);
-    bool hasSufficientContrast(const QColor &c1, const QColor &c2);
 
     bool m_returnPressed;
     bool m_permanent;
