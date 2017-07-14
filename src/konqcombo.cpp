@@ -58,15 +58,15 @@ const int KonqCombo::temporary = 0;
 static QString titleOfURL(const QString &urlStr)
 {
     QUrl url(QUrl::fromUserInput(urlStr));
-    KonqHistoryList historylist = KonqHistoryManager::kself()->entries();
-    KonqHistoryList::iterator historyentry = historylist.findEntry(url);
-    if (historyentry == historylist.end() && !url.url().endsWith('/')) {
+    const KonqHistoryList &historylist = KonqHistoryManager::kself()->entries();
+    KonqHistoryList::const_iterator historyentry = historylist.constFindEntry(url);
+    if (historyentry == historylist.constEnd() && !url.url().endsWith('/')) {
         if (!url.path().endsWith('/')) {
             url.setPath(url.path() + '/');
         }
-        historyentry = historylist.findEntry(url);
+        historyentry = historylist.constFindEntry(url);
     }
-    return (historyentry != historylist.end() ? (*historyentry).title : QString());
+    return historyentry != historylist.end() ? (*historyentry).title : QString();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -74,7 +74,7 @@ static QString titleOfURL(const QString &urlStr)
 class KonqListWidgetItem : public QListWidgetItem
 {
 public:
-    enum ItemType { KonqItemType = 0x1845D5CC };
+    enum { KonqItemType = 0x1845D5CC };
 
     KonqListWidgetItem(QListWidget *parent = Q_NULLPTR);
     KonqListWidgetItem(const QString &text, QListWidget *parent = Q_NULLPTR);
@@ -114,7 +114,6 @@ class KonqComboCompletionBox : public KCompletionBox
 public:
     KonqComboCompletionBox(QWidget *parent);
     void setItems(const QStringList &items);
-    void insertStringList(const QStringList &list, int index = -1);
 };
 
 KonqCombo::KonqCombo(QWidget *parent)
@@ -367,15 +366,11 @@ void KonqCombo::loadItems()
 
     KConfigGroup locationBarGroup(s_config, "Location Bar");
     const QStringList items = locationBarGroup.readPathEntry("ComboContents", QStringList());
-    QStringList::ConstIterator it = items.begin();
-    QString item;
-    while (it != items.end()) {
-        item = *it;
+    for (const QString &item : items) {
         if (!item.isEmpty()) {   // only insert non-empty items
             insertItem(KonqPixmapProvider::self()->pixmapFor(item, KIconLoader::SizeSmall),
                        item, i++, titleOfURL(item));
         }
-        ++it;
     }
 
     if (count() > 0) {
@@ -712,7 +707,7 @@ QVariant KonqListWidgetItem::data(int role) const
 
         if (!title.isEmpty()) {
             pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
-        } else if (text().indexOf(QLatin1String("://")) == -1) {
+        } else if (!text().contains(QLatin1String("://"))) {
             title = titleOfURL(QLatin1Literal("http://") + text());
             if (!title.isEmpty()) {
                 pixmap = provider->pixmapFor(QLatin1Literal("http://") + text(), KIconLoader::SizeSmall);
@@ -868,24 +863,23 @@ void KonqComboCompletionBox::setItems(const QStringList &items)
     int rowIndex = 0;
 
     if (count() == 0) {
-        insertStringList(items);
+        for (const QString &text : items) {
+            insertItem(rowIndex++, new KonqListWidgetItem(text));
+        }
     } else {
         //Keep track of whether we need to change anything,
         //so we can avoid a repaint for identical updates,
         //to reduce flicker
         bool dirty = false;
 
-        QStringList::ConstIterator it = items.constBegin();
-        const QStringList::ConstIterator itEnd = items.constEnd();
-
-        for (; it != itEnd; ++it) {
+        for (const QString &text : items) {
             if (rowIndex < count()) {
-                const bool changed = (static_cast<KonqListWidgetItem *>(item(rowIndex)))->reuse(*it);
+                const bool changed = (static_cast<KonqListWidgetItem *>(item(rowIndex)))->reuse(text);
                 dirty = dirty || changed;
             } else {
                 dirty = true;
                 //Inserting an item is a way of making this dirty
-                addItem(new KonqListWidgetItem(*it));
+                addItem(new KonqListWidgetItem(text));
             }
             rowIndex++;
         }
@@ -909,15 +903,4 @@ void KonqComboCompletionBox::setItems(const QStringList &items)
     }
 
     blockSignals(block);
-}
-
-void KonqComboCompletionBox::insertStringList(const QStringList &list, int index)
-{
-    if (index < 0) {
-        index = count();
-    }
-
-    foreach (const QString &text, list) {
-        insertItem(index++, new KonqListWidgetItem(text));
-    }
 }
