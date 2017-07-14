@@ -50,6 +50,7 @@
 
 #include <QStandardPaths>
 #include <QDesktopWidget>
+#include <QFileDialog>
 
 #include <QFile>
 #include <QAuthenticator>
@@ -144,8 +145,21 @@ void WebEnginePage::downloadRequest(QWebEngineDownloadItem* request)
             return;
         }
     }
-    request->accept();
 
+    // Ask the user where to save. We don't have a GUI like Firefox or Chrome to
+    // notify of something being saved to the Downloads directory.
+    QPointer<QFileDialog> dlg(new QFileDialog(view()));
+    dlg->setAcceptMode(QFileDialog::AcceptSave);
+    dlg->setWindowTitle(i18n("Save As"));
+    dlg->setConfirmOverwrite(true);
+    dlg->selectFile(request->path());
+    if (dlg->exec()) {
+        request->setPath(dlg->selectedFiles().at(0));
+        request->accept();
+    } else {
+        request->cancel();
+    }
+    delete dlg;
 }
 
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
