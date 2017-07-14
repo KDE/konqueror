@@ -3,11 +3,12 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <include>konqaboutpage.h</include>
   <kcfgfile name="konquerorrc" />
 
   <group name="UserSettings">
     <entry key="StartURL" type="Path">
-      <default>about:konqueror</default>
+      <default code="true">KonqAboutPage::aboutProtocol() + ":konqueror"</default>
       <label>Start Page</label>
       <whatsthis>This is the URL of the web page where Konqueror will start from.</whatsthis>
     </entry>

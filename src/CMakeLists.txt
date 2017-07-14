@@ -14,6 +14,7 @@ endif (KActivities_FOUND)
 ########### libkonquerorprivate, shared with unit tests and sidebar modules ###############
 
 set(konquerorprivate_SRCS
+   konqaboutpage.cpp
    konqhistorymanager.cpp # for unit tests
    konqpixmapprovider.cpp # needed ?!?
 
@@ -47,7 +48,6 @@ generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_N
 ########### konqueror ###############
 
 set(konqueror_KDEINIT_SRCS
-   konqaboutpage.cpp
    konqapplication.cpp
    konqguiclients.cpp
    konqrun.cpp

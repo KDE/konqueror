@@ -829,9 +829,9 @@ void KonqView::go(int steps)
 void KonqView::doOpenUrl(const QUrl &url)
 {
     qDebug() << url;
-    if (url.scheme() == QLatin1String("about")) {
+    if (url.scheme() == KonqAboutPage::aboutProtocol()) {
         KonqAboutPage about;
-        const QByteArray data = about.pageForUrl(url.toString()).toUtf8();
+        const QByteArray data = about.pageContents(url.path()).toUtf8();
         //QFile hack("/tmp/about.html"); hack.open(QIODevice::WriteOnly); hack.write(data); hack.close();
         if (m_pPart->openStream("text/html", url)) {
             m_pPart->writeStream(data);
@@ -865,7 +865,7 @@ void KonqView::restoreHistory()
 
     aboutToOpenURL(h.url);
 
-    if (h.reload == false && browserExtension() && h.url.scheme() != "about") {
+    if (h.reload == false && browserExtension() && h.url.scheme() != KonqAboutPage::aboutProtocol()) {
         //qDebug() << "Restoring view from stream";
         QDataStream stream(h.buffer);
 

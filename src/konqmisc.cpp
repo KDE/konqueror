@@ -23,6 +23,7 @@
 #include "konqviewmanager.h"
 #include "konqview.h"
 #include "konqmainwindowfactory.h"
+#include "konqaboutpage.h"
 
 #include <QDebug>
 #include <kurifilter.h>
@@ -70,7 +71,7 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
 {
     Q_UNUSED(parent); // Useful if we want to change the error handling again
 
-    if (!_url.startsWith(QLatin1String("about:"))) {     // Don't filter "about:" URLs
+    if (!_url.startsWith(KonqAboutPage::aboutProtocol() + QLatin1Char(':'))) {     // Don't filter "about:" URLs
         KUriFilterData data(_url);
 
         if (currentDirectory.isLocalFile()) {
@@ -98,11 +99,7 @@ QUrl KonqMisc::konqFilteredURL(KonqMainWindow *parent, const QString &_url, cons
         return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, QUrl(_url));
     }
 
-    const bool isKnownAbout = (_url == QLatin1String("about:blank")
-                               || _url == QLatin1String("about:plugins")
-                               || _url.startsWith(QLatin1String("about:konqueror")));
-
-    return isKnownAbout ? QUrl(_url) : QUrl(QStringLiteral("about:"));
+    return QUrl(_url);
 }
 
 QString KonqMisc::encodeFilename(QString filename)
@@ -114,4 +111,3 @@ QString KonqMisc::decodeFilename(QString filename)
 {
     return filename.replace('_', ':');
 }
-

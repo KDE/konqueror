@@ -49,6 +49,7 @@
 #include "konqbookmarkbar.h"
 #include "konqundomanager.h"
 #include "konqhistorydialog.h"
+#include "konqaboutpage.h"
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 
@@ -514,7 +515,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         mimeType = req.args.mimeType();
     }
 
-    if (url.scheme() != QLatin1String("error") && url.scheme() != QLatin1String("about")) {
+    if (url.scheme() != QLatin1String("error") && url.scheme() != KonqAboutPage::aboutProtocol()) {
         if (!url.isValid()) {
             // I think we can't really get here anymore; I tried and didn't succeed.
             // URL filtering catches this case before hand, and in cases without filtering
@@ -526,7 +527,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         }
     }
 
-    if (url.scheme() == QLatin1String("about") || url.scheme() == QLatin1String("error")) {
+    if (url.scheme() == KonqAboutPage::aboutProtocol() || url.scheme() == QLatin1String("error")) {
         mimeType = QStringLiteral("text/html");
     }
 
@@ -800,19 +801,18 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         originalURL += req.nameFilter;
     }
 
-    const QString urlStr = url.url();
-    if (urlStr == QLatin1String("about:") || urlStr.startsWith(QLatin1String("about:konqueror")) || urlStr == QLatin1String("about:plugins")) {
+    if (url.toString() == QLatin1String("about:blank") && req.typedUrl.isEmpty()) {
+        originalURL.clear();
+    } else if (url.scheme() == KonqAboutPage::aboutProtocol()) {
         mimeType = QStringLiteral("text/html");
         originalURL = req.typedUrl.isEmpty() ? QString() : req.typedUrl;
-    } else if (urlStr == QLatin1String("about:blank") && req.typedUrl.isEmpty()) {
-        originalURL.clear();
     }
 
     bool forceAutoEmbed = req.forceAutoEmbed || req.userRequestedReload;
     if (!req.typedUrl.isEmpty()) { // the user _typed_ the URL, he wants it in Konq.
         forceAutoEmbed = true;
     }
-    if (url.scheme() == QLatin1String("about") || url.scheme() == QLatin1String("error")) {
+    if (url.scheme() == KonqAboutPage::aboutProtocol() || url.scheme() == QLatin1String("error")) {
         forceAutoEmbed = true;
     }
     // Related to KonqFactory::createView
@@ -958,7 +958,7 @@ void KonqMainWindow::slotOpenURLRequest(const QUrl &url, const KParts::OpenUrlAr
     KParts::ReadOnlyPart *callingPart = static_cast<KParts::ReadOnlyPart *>(sender()->parent());
     //qDebug() << url << "from" << callingPart->url() << "frameName=" << browserArgs.frameName;
 
-    if (callingPart->url().scheme() == "about" && url.scheme() == "exec") {
+    if (callingPart->url().scheme() == KonqAboutPage::aboutProtocol() && url.scheme() == "exec") {
         QStringList execArgs = url.path().mid(1).split(QChar(' '), QString::SkipEmptyParts);
         const QString executable = execArgs.takeFirst();
         if (executable == "khelpcenter" || executable.startsWith("kcmshell")) {
@@ -5017,7 +5017,7 @@ void KonqMainWindow::updateWindowIcon()
 
 void KonqMainWindow::slotIntro()
 {
-    openUrl(0, QUrl(QStringLiteral("about:")));
+    openUrl(0, QUrl(KonqAboutPage::aboutProtocol() + QChar(':')));
 }
 
 void KonqMainWindow::goURL()

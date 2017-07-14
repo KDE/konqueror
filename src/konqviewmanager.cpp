@@ -28,6 +28,7 @@
 #include "konqtabs.h"
 #include "konqsettingsxt.h"
 #include "konqframevisitor.h"
+#include "konqaboutpage.h"
 #include <konq_events.h>
 
 #include <QtCore/QFileInfo>
@@ -1133,7 +1134,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
             serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
             if (serviceName == QLatin1String("konq_aboutpage")) {
-                if ((!forcedUrl.isEmpty() && forcedUrl.scheme() != QLatin1String("about")) ||
+                if ((!forcedUrl.isEmpty() && forcedUrl.scheme() != KonqAboutPage::aboutProtocol()) ||
                         (forcedUrl.isEmpty() && openUrl == false)) { // e.g. window.open
                     // No point in loading the about page if we're going to replace it with a KHTML part right away
                     serviceType = QStringLiteral("text/html");
@@ -1197,7 +1198,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                     //childView->openUrl( url, url.toDisplayString() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
-                    if (url.scheme() != QLatin1String("about")) {
+                    if (url.scheme() != KonqAboutPage::aboutProtocol()) {
                         req.typedUrl = url.toDisplayString();
                     }
                     m_pMainWindow->openView(serviceType, url, childView, req);

@@ -37,15 +37,20 @@ KonqAboutPage::~KonqAboutPage()
 {
 }
 
-QString KonqAboutPage::pageForUrl(const QString &url) const
+QString KonqAboutPage::aboutProtocol()
 {
-    if (url == QLatin1String("about:plugins")) {
+    return QStringLiteral("about");
+}
+
+QString KonqAboutPage::pageContents(const QString &path) const
+{
+    if (path == QLatin1String("plugins")) {
         return plugins();
-    } else if (url == QLatin1String("about:konqueror/intro")) {
+    } else if (path == QLatin1String("konqueror/intro")) {
         return intro();
-    } else if (url == QLatin1String("about:konqueror/specs")) {
+    } else if (path == QLatin1String("konqueror/specs")) {
         return specs();
-    } else if (url == QLatin1String("about:konqueror/tips")) {
+    } else if (path == QLatin1String("konqueror/tips")) {
         return tips();
     } else {
         return launch();
@@ -222,7 +227,7 @@ QString KonqAboutPage::specs() const
             .arg(i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // TODO Maybe test if Java is enabled ?
             .arg(i18n("NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)",
                       QStringLiteral("https://get.adobe.com/flashplayer/"),
-                      QStringLiteral("about:plugins")))
+                      aboutProtocol() + QStringLiteral(":plugins")))
             .arg(i18n("built-in"))
             .arg(i18n("Secure Sockets Layer"))
             .arg(i18n("(TLS/SSL v2/3) for secure communications up to 168bit"))
@@ -245,7 +250,7 @@ QString KonqAboutPage::specs() const
             .arg(i18n("Popup"))
             .arg(i18n("(Short-) Automatic"))
             .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
-            .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("about:konqueror")))
+            .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", aboutProtocol() + QStringLiteral(":konqueror")))
             ;
     return res;
 }

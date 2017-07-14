@@ -20,17 +20,20 @@
 #ifndef KONQ_ABOUTPAGE_H
 #define KONQ_ABOUTPAGE_H
 
+#include <konqprivate_export.h>
 #include <QString>
 
 class QUrl;
 
-class KonqAboutPage
+class KONQUERORPRIVATE_EXPORT KonqAboutPage
 {
 public:
     KonqAboutPage();
     ~KonqAboutPage();
 
-    QString pageForUrl(const QString &url) const;
+    static QString aboutProtocol();
+
+    QString pageContents(const QString &path) const;
 
 private:
     QString launch() const;
