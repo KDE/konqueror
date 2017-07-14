@@ -43,6 +43,7 @@
 #include <kjobuidelegate.h>
 #include <KUrlMimeData>
 #include <KComponentData>
+#include <KProtocolManager>
 
 #include <QApplication>
 #include <QtCore/QArgument>
@@ -838,6 +839,15 @@ void KonqView::doOpenUrl(const QUrl &url)
             m_pPart->closeStream();
         } else {
             qWarning() << m_pPart->metaObject()->className() << "doesn't support openStream()!";
+        }
+    } else if (KProtocolManager::defaultMimetype(url) == "text/html") { // man:, info:, etc.
+        if (m_pPart->openStream("text/html", url)) {
+            KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+            connect(job, &KIO::TransferJob::data, this, [this](KIO::Job *, const QByteArray &data) {
+                m_pPart->writeStream(data);
+            });
+            connect(job, &KIO::Job::result, this, [this]() { m_pPart->closeStream(); });
+            connect(m_pPart, &KParts::ReadOnlyPart::canceled, job, [job]() { job->kill(); });
         }
     } else {
         m_pPart->openUrl(url);

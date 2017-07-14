@@ -42,6 +42,7 @@
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
 #include <KParts/HtmlExtension>
+#include <KProtocolManager>
 #include <KUserTimestamp>
 #include <kio_version.h>
 #if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
@@ -63,7 +64,6 @@
 #include <KConfigGroup>
 //#include <QWebSecurityOrigin>
 #include "utils.h"
-
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
@@ -188,6 +188,11 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     if (handleMailToUrl(reqUrl, type))
         return false;
 
+    if (KProtocolManager::defaultMimetype(url) == "text/html") { // man:, info:, etc.
+        emit m_part->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+        return false;
+    }
+
     const bool isTypedUrl = property("NavigationTypeUrlEntered").toBool();
 
     /*
@@ -257,8 +262,8 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
 
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
-    // Insert the request into the queue...
-    return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
+
+    return true;
 }
 
 #if 0

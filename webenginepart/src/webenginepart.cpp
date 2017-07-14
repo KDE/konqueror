@@ -326,9 +326,12 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
 
 bool WebEnginePart::openUrl(const QUrl &_u)
 {
-    QUrl u (_u);
+    QUrl u(_u);
 
-    qDebug() << u;
+    if (u.scheme() == QL1S("data"))
+        qDebug() << "data:[...]";
+    else
+        qDebug() << u;
 
     // Ignore empty requests...
     if (u.isEmpty())
