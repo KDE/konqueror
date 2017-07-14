@@ -20,7 +20,6 @@
  */
 
 #include <kparts/part.h>
-#include <kdebug.h>
 #include "autorefresh.h"
 
 #include <kcomponentdata.h>
