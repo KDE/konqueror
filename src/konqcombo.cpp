@@ -103,7 +103,7 @@ class KonqComboLineEdit : public KLineEdit
 {
 public:
     KonqComboLineEdit(QWidget *parent = Q_NULLPTR);
-    void setCompletedItems(const QStringList &items, bool) Q_DECL_OVERRIDE;
+    KCompletionBox *completionBox(bool create) Q_DECL_OVERRIDE;
 
 protected:
     void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
@@ -838,66 +838,18 @@ void KonqComboLineEdit::mouseDoubleClickEvent(QMouseEvent *e)
     KLineEdit::mouseDoubleClickEvent(e);
 }
 
-// KDE5 TODO: get rid of this duplicated code, and just reimplement completionBox()
-
-void KonqComboLineEdit::setCompletedItems(const QStringList &items, bool)
+KCompletionBox *KonqComboLineEdit::completionBox(bool create)
 {
-    QString txt;
-    KonqComboCompletionBox *completionbox = static_cast<KonqComboCompletionBox *>(completionBox());
-
-    if (completionbox && completionbox->isVisible())
-        // The popup is visible already - do the matching on the initial string,
-        // not on the currently selected one.
-    {
-        txt = completionbox->cancelledText();
-    } else {
-        txt = text();
+    KCompletionBox *box = KLineEdit::completionBox(false);
+    if (create && !box) {
+        KonqComboCompletionBox *konqBox = new KonqComboCompletionBox(this);
+        setCompletionBox(konqBox);
+        konqBox->setObjectName(QStringLiteral("completion box"));
+        konqBox->setFont(font());
+        return konqBox;
     }
 
-    if (!items.isEmpty() && !(items.count() == 1 && txt == items.first())) {
-        if (!completionBox(false)) {
-            setCompletionBox(new KonqComboCompletionBox(this));
-            completionbox = static_cast<KonqComboCompletionBox *>(completionBox());
-        }
-
-        if (completionbox->isVisible()) {
-
-            // This code is copied from KLineEdit::setCompletedItems
-            QListWidgetItem *currentItem = completionbox->currentItem();
-
-            QString currentSelection;
-            if (currentItem != 0) {
-                currentSelection = currentItem->text();
-            }
-
-            completionbox->setItems(items);
-            const QList<QListWidgetItem *> matchedItems = completionbox->findItems(currentSelection, Qt::MatchExactly);
-            QListWidgetItem *matchedItem = matchedItems.isEmpty() ? 0 : matchedItems.first();
-
-            if (matchedItem) {
-                const bool blocked = completionbox->blockSignals(true);
-                completionbox->setCurrentItem(matchedItem);
-                completionbox->blockSignals(blocked);
-            } else {
-                completionbox->setCurrentRow(-1);
-            }
-        } else { // completion box not visible yet -> show it
-            if (!txt.isEmpty()) {
-                completionbox->setCancelledText(txt);
-            }
-            completionbox->setItems(items);
-            completionbox->popup();
-        }
-
-        if (autoSuggest()) {
-            int index = items.first().indexOf(txt);
-            QString newText = items.first().mid(index);
-            setUserSelection(false);
-            setCompletedText(newText, true);
-        }
-    } else if (completionbox && completionbox->isVisible()) {
-        completionbox->hide();
-    }
+    return box;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
