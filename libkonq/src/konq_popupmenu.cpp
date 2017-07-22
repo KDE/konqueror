@@ -497,7 +497,7 @@ void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
     if (uiDelegate.askDeleteConfirmation(QList<QUrl>(), KIO::JobUiDelegate::EmptyTrash, KIO::JobUiDelegate::DefaultConfirmation)) {
         KIO::Job *job = KIO::emptyTrash();
         KJobWidgets::setWindow(job, m_parentWidget);
-        job->ui()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
+        job->uiDelegate()->setAutoErrorHandlingEnabled(true); // or connect to the result signal
     }
 }
 
@@ -556,5 +556,5 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
 
     // Now destUrl points to the target file, let's go up to parent dir
     destUrl = destUrl.adjusted(QUrl::RemoveFilename);
-    KRun::runUrl(destUrl, QStringLiteral("inode/directory"), m_parentWidget);
+    KRun::runUrl(destUrl, QStringLiteral("inode/directory"), m_parentWidget, KRun::RunFlags());
 }
