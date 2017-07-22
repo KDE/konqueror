@@ -36,7 +36,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kcompletionbox.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kiconloader.h>
 #include <kicontheme.h>
 #include <klineedit.h>
@@ -200,7 +200,7 @@ void KonqCombo::slotTextEdited(const QString &text)
 
 void KonqCombo::setURL(const QString &url)
 {
-    //qDebug() << url << "returnPressed=" << m_returnPressed;
+    //qCDebug(KONQUEROR_LOG) << url << "returnPressed=" << m_returnPressed;
     setTemporary(url);
 
     if (m_returnPressed) {   // Really insert...
@@ -221,7 +221,7 @@ void KonqCombo::setTemporary(const QString &text)
 
 void KonqCombo::setTemporary(const QString &url, const QPixmap &pix)
 {
-    //qDebug() << url << "temporary=" << temporary;
+    //qCDebug(KONQUEROR_LOG) << url << "temporary=" << temporary;
 
     // Insert a temporary item when we don't have one yet
     if (count() == 0) {
@@ -239,7 +239,7 @@ void KonqCombo::setTemporary(const QString &url, const QPixmap &pix)
 
 void KonqCombo::removeDuplicates(int index)
 {
-    //qDebug() << "starting index= " << index;
+    //qCDebug(KONQUEROR_LOG) << "starting index= " << index;
 
     QString url(temporaryItem());
     if (url.endsWith('/')) {
@@ -262,7 +262,7 @@ void KonqCombo::removeDuplicates(int index)
 // called via DBUS in all instances
 void KonqCombo::insertPermanent(const QString &url)
 {
-    //qDebug() << "url=" << url;
+    //qCDebug(KONQUEROR_LOG) << "url=" << url;
     saveState();
     setTemporary(url);
     m_permanent = true;
@@ -283,7 +283,7 @@ void KonqCombo::applyPermanent()
 
         QString item = temporaryItem();
         insertItem(KonqPixmapProvider::self()->pixmapFor(item, KIconLoader::SizeSmall), item, 1, titleOfURL(item));
-        //qDebug() << url;
+        //qCDebug(KONQUEROR_LOG) << url;
 
         // Remove all duplicates starting from index = 2
         removeDuplicates(2);
@@ -309,7 +309,7 @@ void KonqCombo::updateItem(const QPixmap &pix, const QString &t, int index, cons
         return;
     }
 
-    // qDebug() << "item=" << t << "index=" << index;
+    // qCDebug(KONQUEROR_LOG) << "item=" << t << "index=" << index;
 
     setItemText(index, t);
     setItemIcon(index, pix);

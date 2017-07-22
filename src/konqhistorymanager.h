@@ -37,7 +37,7 @@ class KCompletion;
 /**
  * This class maintains and manages a history of all URLs visited by one
  * Konqueror instance. Additionally it synchronizes the history with other
- * Konqueror instances via DBUS to keep one global and persistant history.
+ * Konqueror instances via DBUS to keep one global and persistent history.
  *
  * It keeps the history in sync with one KCompletion object
  */

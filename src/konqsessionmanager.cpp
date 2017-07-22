@@ -27,7 +27,7 @@
 #include "konqsettingsxt.h"
 
 #include <kglobal.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kio/deletejob.h>
 #include <kstandarddirs.h>
 #include <KLocalizedString>
@@ -151,7 +151,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
 
     // Collect info from the sessions to restore
     Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
-        qDebug() << sessionFile;
+        qCDebug(KONQUEROR_LOG) << sessionFile;
         QTreeWidgetItem *windowItem = 0;
         KConfig config(sessionFile, KConfig::SimpleConfig);
         const QList<KConfigGroup> groups = windowConfigGroups(config);
@@ -168,7 +168,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
                     }
                     const QString url = group.readEntry(prefix + "Url", QString());
                     const QString title = group.readEntry(prefix + "Title", QString());
-                    qDebug() << viewId << url << title;
+                    qCDebug(KONQUEROR_LOG) << viewId << url << title;
                     const QString displayText = (title.trimmed().isEmpty() ? url : title);
                     if (!displayText.isEmpty()) {
                         if (!windowItem) {
@@ -423,7 +423,7 @@ void KonqSessionManager::enableAutosave()
 
     delete m_sessionConfig;
     m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig);
-    //qDebug() << "config filename:" << m_sessionConfig->name();
+    //qCDebug(KONQUEROR_LOG) << "config filename:" << m_sessionConfig->name();
 
     m_autosaveEnabled = true;
     m_autoSaveTimer.start();

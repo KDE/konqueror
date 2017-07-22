@@ -35,7 +35,7 @@
 
 // KDE
 #include <kactioncollection.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <ksqueezedtextlabel.h>
@@ -89,7 +89,7 @@ KonqFrameBase::FrameType frameTypeFromString(const QString &str)
 KonqFrame::KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer)
     : QWidget(parent)
 {
-    //qDebug() << "KonqFrame::KonqFrame()";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrame::KonqFrame()";
 
     m_pLayout = 0L;
     m_pView = 0L;
@@ -105,7 +105,7 @@ KonqFrame::KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer)
 
 KonqFrame::~KonqFrame()
 {
-    //qDebug() << this;
+    //qCDebug(KONQUEROR_LOG) << this;
 }
 
 bool KonqFrame::isActivePart()
@@ -144,11 +144,11 @@ KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
     m_pPart = factory.create(this, 0);
 
     if (!m_pPart) {
-        qWarning() << "No part was created!";
+        qCWarning(KONQUEROR_LOG) << "No part was created!";
         return 0;
     }
     if (!m_pPart->widget()) {
-        qWarning() << "The part" << m_pPart << "didn't create a widget!";
+        qCWarning(KONQUEROR_LOG) << "The part" << m_pPart << "didn't create a widget!";
         delete m_pPart;
         m_pPart = 0;
         return 0;
@@ -163,7 +163,7 @@ KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
 
 void KonqFrame::attachWidget(QWidget *widget)
 {
-    //qDebug() << "KonqFrame::attachInternal()";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrame::attachInternal()";
     delete m_pLayout;
 
     m_pLayout = new QVBoxLayout(this);
@@ -199,7 +199,7 @@ void KonqFrame::setView(KonqView *child)
 
 void KonqFrame::setTitle(const QString &title, QWidget * /*sender*/)
 {
-    //qDebug() << "KonqFrame::setTitle( " << title << " )";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrame::setTitle( " << title << " )";
     m_title = title;
     if (m_pParentContainer) {
         m_pParentContainer->setTitle(title, this);
@@ -208,7 +208,7 @@ void KonqFrame::setTitle(const QString &title, QWidget * /*sender*/)
 
 void KonqFrame::setTabIcon(const QUrl &url, QWidget * /*sender*/)
 {
-    //qDebug() << "KonqFrame::setTabIcon( " << url << " )";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrame::setTabIcon( " << url << " )";
     if (m_pParentContainer) {
         m_pParentContainer->setTabIcon(url, this);
     }
@@ -241,7 +241,7 @@ void KonqFrame::activateChild()
         m_pView->mainWindow()->viewManager()->setActivePart(part());
 
         if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl(QStringLiteral("about:blank")))) {
-            //qDebug() << "SET FOCUS on the location bar";
+            //qCDebug(KONQUEROR_LOG) << "SET FOCUS on the location bar";
             m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
         }
     }

@@ -32,7 +32,7 @@
 
 // KDE
 #include <k4aboutdata.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
@@ -64,7 +64,7 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
     KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, QString(), m_args);
 
     if (!part) {
-        qWarning() << "No KParts::ReadOnlyPart created from" << m_libName;
+        qCWarning(KONQUEROR_LOG) << "No KParts::ReadOnlyPart created from" << m_libName;
     } else {
         QFrame *frame = qobject_cast<QFrame *>(part->widget());
         if (frame) {
@@ -96,7 +96,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
                                         KService::List *appServiceOffers,
                                         bool forceAutoEmbed)
 {
-    qDebug() << "Trying to create view for" << serviceType << serviceName;
+    qCDebug(KONQUEROR_LOG) << "Trying to create view for" << serviceType << serviceName;
 
     // We need to get those in any case
     KService::List offers, appOffers;
@@ -123,7 +123,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     if (! forceAutoEmbed) {
         if (! KonqFMSettings::settings()->shouldEmbed(serviceType)) {
-            qDebug() << "KonqFMSettings says: don't embed this servicetype";
+            qCDebug(KONQUEROR_LOG) << "KonqFMSettings says: don't embed this servicetype";
             return KonqViewFactory();
         }
     }
@@ -135,7 +135,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         KService::List::const_iterator it = offers.constBegin();
         for (; it != offers.constEnd() && !service; ++it) {
             if ((*it)->desktopEntryName() == serviceName) {
-                qDebug() << "Found requested service" << serviceName;
+                qCDebug(KONQUEROR_LOG) << "Found requested service" << serviceName;
                 service = *it;
             }
         }
@@ -143,7 +143,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     KonqViewFactory viewFactory;
     if (service) {
-        qDebug() << "Trying to open lib for requested service " << service->desktopEntryName();
+        qCDebug(KONQUEROR_LOG) << "Trying to open lib for requested service " << service->desktopEntryName();
         viewFactory = tryLoadingService(service);
         // If this fails, then return an error.
         // When looking for konq_sidebartng or konq_aboutpage, we don't want to end up
@@ -154,13 +154,13 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
             service = (*it);
             // Allowed as default ?
             QVariant prop = service->property(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"));
-            qDebug() << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
+            qCDebug(KONQUEROR_LOG) << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
             if (!prop.isValid() || prop.toBool()) {   // defaults to true
-                //qDebug() << "Trying to open lib for service " << service->name();
+                //qCDebug(KONQUEROR_LOG) << "Trying to open lib for service " << service->name();
                 viewFactory = tryLoadingService(service);
                 // If this works, we exit the loop.
             } else {
-                qDebug() << "Not allowed as default " << service->desktopEntryName();
+                qCDebug(KONQUEROR_LOG) << "Not allowed as default " << service->desktopEntryName();
             }
         }
     }
@@ -171,9 +171,9 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     if (viewFactory.isNull()) {
         if (offers.isEmpty()) {
-            qWarning() << "no part was associated with" << serviceType;
+            qCWarning(KONQUEROR_LOG) << "no part was associated with" << serviceType;
         } else {
-            qWarning() << "no part could be loaded";    // full error was shown to user already
+            qCWarning(KONQUEROR_LOG) << "no part could be loaded";    // full error was shown to user already
         }
         return viewFactory;
     }

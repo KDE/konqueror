@@ -24,7 +24,7 @@
 #include <QFontMetrics>
 #include <QPainter>
 #include <kconfig.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kglobal.h>
 #include <QIcon>
 #include <kiconeffect.h>
@@ -55,20 +55,20 @@ KonqClosedItem::KonqClosedItem(const QString &title, const QString &group, quint
 
 KonqClosedItem::~KonqClosedItem()
 {
-    //qDebug() << "deleting group" << m_configGroup.name();
+    //qCDebug(KONQUEROR_LOG) << "deleting group" << m_configGroup.name();
     m_configGroup.deleteGroup();
 }
 
 KonqClosedTabItem::KonqClosedTabItem(const QString &url, const QString &title, int pos, quint64 serialNumber)
     :  KonqClosedItem(title, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
 {
-    qDebug() << m_configGroup.name();
+    qCDebug(KONQUEROR_LOG) << m_configGroup.name();
 }
 
 KonqClosedTabItem::~KonqClosedTabItem()
 {
     m_configGroup.deleteGroup();
-    qDebug() << "deleted group" << m_configGroup.name();
+    qCDebug(KONQUEROR_LOG) << "deleted group" << m_configGroup.name();
 }
 
 QPixmap KonqClosedTabItem::icon() const
@@ -79,7 +79,7 @@ QPixmap KonqClosedTabItem::icon() const
 KonqClosedWindowItem::KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs)
     :  KonqClosedItem(title, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
 {
-    qDebug() << m_configGroup.name();
+    qCDebug(KONQUEROR_LOG) << m_configGroup.name();
 }
 
 KonqClosedWindowItem::~KonqClosedWindowItem()
@@ -125,7 +125,7 @@ KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString &title,
       m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
       m_dbusService(dbusService), m_remoteConfigGroup(0L), m_remoteConfig(0L)
 {
-    qDebug();
+    qCDebug(KONQUEROR_LOG);
 }
 
 KonqClosedRemoteWindowItem::~KonqClosedRemoteWindowItem()
@@ -143,7 +143,7 @@ void KonqClosedRemoteWindowItem::readConfig() const
 
     m_remoteConfig = new KConfig(m_remoteConfigFileName, KConfig::SimpleConfig);
     m_remoteConfigGroup = new KConfigGroup(m_remoteConfig, m_remoteGroupName);
-    qDebug();
+    qCDebug(KONQUEROR_LOG);
 }
 
 const KConfigGroup &KonqClosedRemoteWindowItem::configGroup() const

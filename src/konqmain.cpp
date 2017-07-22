@@ -33,7 +33,7 @@
 #include <config-konqueror.h>
 #include <konqueror-version.h>
 
-#include <QDebug>
+#include "konqdebug.h"
 #include <QFile>
 #include <QDir>
 #include <QDirIterator>
@@ -59,7 +59,7 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
 {
     *ret = 0;
     const QStringList args = parser.positionalArguments();
-    qDebug() << "args=" << args;
+    qCDebug(KONQUEROR_LOG) << "args=" << args;
     // First the invocations that do not take urls.
     if (parser.isSet("sessions")) {
         listSessions();
@@ -73,7 +73,7 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
 
         QDirIterator it(sessionPath, QDir::Readable | QDir::Files);
         if (!it.hasNext()) {
-            qWarning() << "session" << session << "not found or empty";
+            qCWarning(KONQUEROR_LOG) << "session" << session << "not found or empty";
             *ret = 1;
             return nullptr;
         }
@@ -234,7 +234,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             if (className == QLatin1String("KonqMainWindow")) {
                 (new KonqMainWindow())->restore(n);
             } else {
-                qWarning() << "Unknown class" << className << "in session saved data!";
+                qCWarning(KONQUEROR_LOG) << "Unknown class" << className << "in session saved data!";
             }
             ++n;
         }

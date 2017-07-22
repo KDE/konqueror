@@ -30,7 +30,7 @@
 #include <QtCore/QDirIterator>
 #include <QPushButton>
 
-#include <QDebug>
+#include "konqdebug.h"
 #include <kio/copyjob.h>
 #include <ktempdir.h>
 #include <kio/renamedialog.h>

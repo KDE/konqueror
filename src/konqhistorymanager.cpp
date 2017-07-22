@@ -23,7 +23,7 @@
 
 #include <QtDBus/QtDBus>
 #include <QTimer>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kconfig.h>
 #include <kcompletion.h>
 
@@ -89,7 +89,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
                                       const QString &typedUrl,
                                       const QString &title)
 {
-    //qDebug() << _url << "Typed URL:" << typedUrl << ", Title:" << title;
+    //qCDebug(KONQUEROR_LOG) << _url << "Typed URL:" << typedUrl << ", Title:" << title;
 
     if (filterOut(_url)) {   // we only want remote URLs
         return;
@@ -152,7 +152,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
 // Usually, we only record the history for non-local URLs (i.e. filterOut()
 // returns false). But when using the HistoryProvider interface, we record
 // exactly those filtered-out urls.
-// Moreover, we  don't get any pending/confirming entries, just one insert()
+// Moreover, we don't get any pending/confirming entries, just one insert()
 void KonqHistoryManager::insert(const QString &url)
 {
     QUrl u(url);
@@ -169,7 +169,7 @@ void KonqHistoryManager::insert(const QString &url)
 
 void KonqHistoryManager::removePending(const QUrl &url)
 {
-    // qDebug() << "Removing pending..." << url;
+    // qCDebug(KONQUEROR_LOG) << "Removing pending..." << url;
 
     if (url.isLocalFile()) {
         return;

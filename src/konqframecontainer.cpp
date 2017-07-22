@@ -18,7 +18,7 @@
 */
 
 #include "konqframecontainer.h"
-#include <QDebug>
+#include "konqdebug.h"
 #include <kglobalsettings.h>
 #include <kconfig.h>
 #include <math.h> // pow()
@@ -142,7 +142,7 @@ void KonqFrameContainer::swapChildren()
 
 void KonqFrameContainer::setTitle(const QString &title, QWidget *sender)
 {
-    //qDebug() << title << sender;
+    //qCDebug(KONQUEROR_LOG) << title << sender;
     if (m_pParentContainer && activeChild() && (sender == activeChild()->asQWidget())) {
         m_pParentContainer->setTitle(title, this);
     }
@@ -150,7 +150,7 @@ void KonqFrameContainer::setTitle(const QString &title, QWidget *sender)
 
 void KonqFrameContainer::setTabIcon(const QUrl &url, QWidget *sender)
 {
-    //qDebug() << url << sender;
+    //qCDebug(KONQUEROR_LOG) << url << sender;
     if (m_pParentContainer && activeChild() && (sender == activeChild()->asQWidget())) {
         m_pParentContainer->setTabIcon(url, this);
     }
@@ -158,7 +158,7 @@ void KonqFrameContainer::setTabIcon(const QUrl &url, QWidget *sender)
 
 void KonqFrameContainer::insertChildFrame(KonqFrameBase *frame, int index)
 {
-    //qDebug() << this << frame;
+    //qCDebug(KONQUEROR_LOG) << this << frame;
     if (frame) {
         QSplitter::insertWidget(index, frame->asQWidget());
         // Insert before existing child? Move first to second.
@@ -168,23 +168,23 @@ void KonqFrameContainer::insertChildFrame(KonqFrameBase *frame, int index)
         if (!m_pFirstChild) {
             m_pFirstChild = frame;
             frame->setParentContainer(this);
-            //qDebug() << "Setting as first child";
+            //qCDebug(KONQUEROR_LOG) << "Setting as first child";
         } else if (!m_pSecondChild) {
             m_pSecondChild = frame;
             frame->setParentContainer(this);
-            //qDebug() << "Setting as second child";
+            //qCDebug(KONQUEROR_LOG) << "Setting as second child";
         } else {
-            qWarning() << this << "already has two children..."
+            qCWarning(KONQUEROR_LOG) << this << "already has two children..."
                        << m_pFirstChild << "and" << m_pSecondChild;
         }
     } else {
-        qWarning() << "KonqFrameContainer" << this << ": insertChildFrame(NULL)!";
+        qCWarning(KONQUEROR_LOG) << "KonqFrameContainer" << this << ": insertChildFrame(NULL)!";
     }
 }
 
 void KonqFrameContainer::childFrameRemoved(KonqFrameBase *frame)
 {
-    //qDebug() << this << "Child" << frame << "removed";
+    //qCDebug(KONQUEROR_LOG) << this << "Child" << frame << "removed";
 
     if (m_pFirstChild == frame) {
         m_pFirstChild = m_pSecondChild;
@@ -192,7 +192,7 @@ void KonqFrameContainer::childFrameRemoved(KonqFrameBase *frame)
     } else if (m_pSecondChild == frame) {
         m_pSecondChild = 0;
     } else {
-        qWarning() << this << "Can't find this child:" << frame;
+        qCWarning(KONQUEROR_LOG) << this << "Can't find this child:" << frame;
     }
 }
 

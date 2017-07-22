@@ -22,6 +22,7 @@
 #include "konqview.h"
 #include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
+#include "konqdebug.h"
 #include <KWindowInfo>
 #include <KStartupInfo>
 
@@ -67,7 +68,7 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
     if (mainWindowList) {
         for (KonqMainWindow *win : *mainWindowList) {
             if (win->isPreloaded()) {
-                qDebug() << "Reusing preloaded window" << win;
+                qCDebug(KONQUEROR_LOG) << "Reusing preloaded window" << win;
                 KStartupInfo::setWindowStartupId(win->winId(), KStartupInfo::startupId());
                 ensurePreloadedWindow();
                 return win;

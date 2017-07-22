@@ -30,7 +30,7 @@
 #include <QMimeData>
 
 #include <kcolorscheme.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <kstringhandler.h>
@@ -67,7 +67,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
                                 "navigate through tabs. The text on the tab shows the content "
                                 "currently open in it; place your mouse over the tab to see the full title, in "
                                 "case it has been shortened to fit the tab width."));
-    //qDebug() << "KonqFrameTabs::KonqFrameTabs()";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::KonqFrameTabs()";
 
     m_pParentContainer = parentContainer;
     m_pActiveChild = 0L;
@@ -139,7 +139,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
 
 KonqFrameTabs::~KonqFrameTabs()
 {
-    //qDebug() << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
     qDeleteAll(m_childFrameList);
     m_childFrameList.clear();
 }
@@ -169,12 +169,12 @@ void KonqFrameTabs::copyHistory(KonqFrameBase *other)
 {
 
     if (!other) {
-        qDebug() << "The Frame does not exist";
+        qCDebug(KONQUEROR_LOG) << "The Frame does not exist";
         return;
     }
 
     if (other->frameType() != KonqFrameBase::Tabs) {
-        qDebug() << "Frame types are not the same";
+        qCDebug(KONQUEROR_LOG) << "Frame types are not the same";
         return;
     }
 
@@ -185,7 +185,7 @@ void KonqFrameTabs::copyHistory(KonqFrameBase *other)
 
 void KonqFrameTabs::setTitle(const QString &title, QWidget *sender)
 {
-    // qDebug() << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
+    // qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
     // Make sure that '&' is displayed correctly
     QString tabText(title);
     setTabText(indexOf(sender), tabText.replace('&', QLatin1String("&&")));
@@ -193,7 +193,7 @@ void KonqFrameTabs::setTitle(const QString &title, QWidget *sender)
 
 void KonqFrameTabs::setTabIcon(const QUrl &url, QWidget *sender)
 {
-    //qDebug() << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
     QIcon iconSet = QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(url));
     const int pos = indexOf(sender);
     if (tabIcon(pos).pixmap(iconSize()).serialNumber() != iconSet.pixmap(iconSize()).serialNumber()) {
@@ -211,14 +211,14 @@ void KonqFrameTabs::activateChild()
 
 void KonqFrameTabs::insertChildFrame(KonqFrameBase *frame, int index)
 {
-    //qDebug() << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
 
     if (!frame) {
-        qWarning() << "KonqFrameTabs " << this << ": insertChildFrame(0) !";
+        qCWarning(KONQUEROR_LOG) << "KonqFrameTabs " << this << ": insertChildFrame(0) !";
         return;
     }
 
-    //qDebug() << "Adding frame";
+    //qCDebug(KONQUEROR_LOG) << "Adding frame";
 
     //QTabWidget docs say that inserting tabs while already shown causes
     //flicker...
@@ -252,7 +252,7 @@ void KonqFrameTabs::insertChildFrame(KonqFrameBase *frame, int index)
 
 void KonqFrameTabs::childFrameRemoved(KonqFrameBase *frame)
 {
-    //qDebug() << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed";
     if (frame) {
         removeTab(indexOf(frame->asQWidget()));
         m_childFrameList.removeAll(frame);
@@ -260,10 +260,10 @@ void KonqFrameTabs::childFrameRemoved(KonqFrameBase *frame)
             updateTabBarVisibility();
         }
     } else {
-        qWarning() << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !";
+        qCWarning(KONQUEROR_LOG) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !";
     }
 
-    //qDebug() << "KonqFrameTabs::RemoveChildFrame finished";
+    //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::RemoveChildFrame finished";
 }
 
 void KonqFrameTabs::moveTabBackward(int index)

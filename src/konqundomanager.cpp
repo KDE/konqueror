@@ -24,7 +24,7 @@
 #include "konqclosedwindowsmanager.h"
 #include <QAction>
 #include <kio/fileundomanager.h>
-#include <QDebug>
+#include "konqdebug.h"
 #include <KLocalizedString>
 
 KonqUndoManager::KonqUndoManager(QWidget *parent)

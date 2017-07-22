@@ -25,6 +25,8 @@ set(konquerorprivate_SRCS
    konqhistorysettings.cpp
 )
 
+ecm_qt_declare_logging_category(konquerorprivate_SRCS HEADER konqdebug.h IDENTIFIER KONQUEROR_LOG CATEGORY_NAME org.kde.konqueror)
+
 add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate
    KF5::IconThemes
@@ -48,6 +50,7 @@ generate_export_header(konquerorprivate BASE_NAME konquerorprivate EXPORT_FILE_N
 
 set(konqueror_KDEINIT_SRCS
    konqapplication.cpp
+   konqdebug.cpp
    konqguiclients.cpp
    konqrun.cpp
    konqview.cpp

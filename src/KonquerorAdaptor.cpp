@@ -28,7 +28,7 @@
 #include "konqsettingsxt.h"
 #include "konqsettings.h"
 
-#include <QDebug>
+#include "konqdebug.h"
 #include <kwindowsystem.h>
 #include <KStartupInfo>
 

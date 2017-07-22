@@ -22,7 +22,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QIcon>
-#include <QDebug>
+#include "konqdebug.h"
 
 #include <KIO/FavIconRequestJob>
 #include <kio/global.h>
