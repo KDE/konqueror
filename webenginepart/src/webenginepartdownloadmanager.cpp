@@ -27,7 +27,8 @@
 #include <QWebEngineProfile>
 #include <QDebug>
 
-WebEnginePartDownloadManager::WebEnginePartDownloadManager(): QObject()
+WebEnginePartDownloadManager::WebEnginePartDownloadManager()
+    : QObject()
 {
     connect(QWebEngineProfile::defaultProfile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePartDownloadManager::performDownload);
 }
@@ -45,7 +46,9 @@ WebEnginePartDownloadManager * WebEnginePartDownloadManager::instance()
 
 void WebEnginePartDownloadManager::addPage(WebEnginePage* page)
 {
-    if (!m_pages.contains(page)) m_pages.append(page);
+    if (!m_pages.contains(page)) {
+        m_pages.append(page);
+    }
     connect(page, &WebEnginePage::navigationRequested, this, &WebEnginePartDownloadManager::recordNavigationRequest);
     connect(page, &QObject::destroyed, this, &WebEnginePartDownloadManager::removePage);
 }
@@ -65,8 +68,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
         qDebug() << "downloading" << it->url() << "in new window or tab";
         page = m_pages.first();
         forceNew = true;
-    }
-    else if (!page){
+    } else if (!page) {
         qDebug() << "Couldn't find a part wanting to download" << it->url();
         return;
     }
@@ -75,14 +77,15 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::recordNavigationRequest(WebEnginePage *page, const QUrl& url)
 {
-    qDebug() << "recordNavigatioRequest for" << url;
+    qDebug() << url;
     m_requests.insert(url, page);
 }
-
 
 WebEnginePage* WebEnginePartDownloadManager::pageForDownload(QWebEngineDownloadItem* it)
 {
     WebEnginePage *page = m_requests.value(it->url());
-    if(!page && !m_pages.isEmpty()) page = m_pages.first();
+    if (!page && !m_pages.isEmpty()) {
+        page = m_pages.first();
+    }
     return page;
 }

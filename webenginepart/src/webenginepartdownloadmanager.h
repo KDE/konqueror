@@ -33,7 +33,6 @@ class WebEnginePartDownloadManager : public QObject
     Q_OBJECT
 
 public:
-
     static WebEnginePartDownloadManager* instance();
 
     ~WebEnginePartDownloadManager();
@@ -43,12 +42,10 @@ public Q_SLOTS:
     void removePage(QObject *page);
 
 private:
-
     WebEnginePartDownloadManager();
     WebEnginePage* pageForDownload(QWebEngineDownloadItem *it);
 
 private Q_SLOTS:
-
     void performDownload(QWebEngineDownloadItem *it);
     void recordNavigationRequest(WebEnginePage* page, const QUrl& url);
 
