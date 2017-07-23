@@ -7,6 +7,7 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepage.cpp
     websslinfo.cpp
     webhistoryinterface.cpp
+    webenginepartdownloadmanager.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp

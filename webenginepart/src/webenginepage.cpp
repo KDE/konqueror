@@ -26,6 +26,7 @@
 #include "websslinfo.h"
 #include "webengineview.h"
 #include "settings/webenginesettings.h"
+#include "webenginepartdownloadmanager.h"
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
@@ -88,11 +89,11 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
             this, &WebEnginePage::slotLoadFinished);
     connect(this, &QWebEnginePage::authenticationRequired,
             this, &WebEnginePage::slotAuthenticationRequired);
-    connect(this->profile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePage::downloadRequest);
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
+    WebEnginePartDownloadManager::instance()->addPage(this);
 }
 
 WebEnginePage::~WebEnginePage()
@@ -131,10 +132,8 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebEnginePage::downloadRequest(QWebEngineDownloadItem* request)
+void WebEnginePage::download(const QUrl& url, bool newWindow)
 {
-    const QUrl url(request->url());
-
     // Integration with a download manager...
     if (!url.isLocalFile()) {
         QString managerExe;
@@ -145,21 +144,9 @@ void WebEnginePage::downloadRequest(QWebEngineDownloadItem* request)
             return;
         }
     }
-
-    // Ask the user where to save. We don't have a GUI like Firefox or Chrome to
-    // notify of something being saved to the Downloads directory.
-    QPointer<QFileDialog> dlg(new QFileDialog(view()));
-    dlg->setAcceptMode(QFileDialog::AcceptSave);
-    dlg->setWindowTitle(i18n("Save As"));
-    dlg->setConfirmOverwrite(true);
-    dlg->selectFile(request->path());
-    if (dlg->exec()) {
-        request->setPath(dlg->selectedFiles().at(0));
-        request->accept();
-    } else {
-        request->cancel();
-    }
-    delete dlg;
+    KParts::BrowserArguments bArgs;
+    bArgs.setForcesNewWindow(newWindow);
+    emit part()->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), bArgs);
 }
 
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
@@ -271,7 +258,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
 
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
-    // Insert the request into the queue...
+    emit navigationRequested(this, url);
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
@@ -839,8 +826,9 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         webenginePart->connectWebEnginePageSignals(this);
         //Set the create new window flag to false...
         m_createNewWindow = false;
-    }
 
+    }
+    emit navigationRequested(this, url);
     return WebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
