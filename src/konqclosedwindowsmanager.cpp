@@ -204,7 +204,7 @@ void KonqClosedWindowsManager::emitNotifyRemove(
 }
 
 void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
-    const QString &title, const int &numTabs, const QString &configFileName,
+    const QString &title, int numTabs, const QString &configFileName,
     const QString &configGroup, const QString &service)
 {
     if (isSenderOfSignal(service)) {
@@ -223,7 +223,7 @@ void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
 }
 
 void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
-    const QString &title, const int &numTabs, const QString &configFileName,
+    const QString &title, int numTabs, const QString &configFileName,
     const QString &configGroup, const QDBusMessage &msg)
 {
     slotNotifyClosedWindowItem(title, numTabs, configFileName, configGroup,
