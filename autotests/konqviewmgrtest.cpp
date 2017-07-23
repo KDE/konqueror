@@ -191,6 +191,7 @@ void ViewMgrTest::initTestCase()
     KonqSessionManager::self()->disableAutosave();
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
     QCOMPARE(KonqSettings::popupsWithinTabs(), false);
+    KonqSettings::setAlwaysHavePreloaded(false); // it would confuse the mainwindow counting
 
     // Ensure the tests use webenginepart (not khtml or webkit)
     // This code is inspired by settings/konqhtml/generalopts.cpp
