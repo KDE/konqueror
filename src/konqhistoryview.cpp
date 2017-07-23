@@ -241,7 +241,7 @@ QUrl KonqHistoryView::urlForIndex(const QModelIndex &index) const
         return QUrl();
     }
 
-    return index.data(KonqHistory::UrlRole).value<QUrl>();
+    return index.data(KonqHistory::UrlRole).toUrl();
 }
 
 // Code taken from KHTMLPopupGUIClient::slotCopyLinkLocation

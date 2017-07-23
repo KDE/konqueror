@@ -1336,7 +1336,7 @@ bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL)
     return false;
 }
 
-QString ArchiveDialog::escapeHTML(QString in)
+QString ArchiveDialog::escapeHTML(const QString &in)
 {
     return in.toHtmlEscaped().replace('"', QLatin1String("&quot;"));
 }

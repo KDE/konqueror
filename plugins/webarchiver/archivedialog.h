@@ -224,7 +224,7 @@ private:
     /**
      * Escapes HTML characters. Does not forget " as @ref Qt::escape() does.
      */
-    QString escapeHTML(QString in);
+    QString escapeHTML(const QString &in);
 
     /**
      * Adds a suffix that hints at the mimetypes if such a suffix is not

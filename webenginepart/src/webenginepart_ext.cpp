@@ -716,8 +716,8 @@ void WebEngineBrowserExtension::slotSpellCheckSelection()
             view()->page()->runJavaScript(QL1S("this.selectionStart + ' ' + this.selectionEnd"), [this, text](const QVariant &value) {
                 const QString values = value.toString();
                 const int pos = values.indexOf(' ');
-                m_spellTextSelectionStart = qMax(0, values.left(pos).toInt());
-                m_spellTextSelectionEnd = qMax(0, values.mid(pos + 1).toInt());
+                m_spellTextSelectionStart = qMax(0, values.leftRef(pos).toInt());
+                m_spellTextSelectionEnd = qMax(0, values.midRef(pos + 1).toInt());
                 // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
                 Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;

@@ -199,7 +199,7 @@ public:
     void setCaption(const QString &caption, bool modified) Q_DECL_OVERRIDE
     {
         Q_UNUSED(modified);
-        return setCaption(caption);
+        setCaption(caption);
     }
 
     /**

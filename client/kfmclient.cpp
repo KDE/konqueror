@@ -82,13 +82,13 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     //qDebug() << "kfmclient starting" << QTime::currentTime();
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("noninteractive"), i18n("Non interactive use: no message boxes")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("noninteractive"), i18n("Non interactive use: no message boxes")));
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("commands"), i18n("Show available commands")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("commands"), i18n("Show available commands")));
 
-    parser.addPositionalArgument(QLatin1String("command"), i18n("Command (see --commands)"));
+    parser.addPositionalArgument(QStringLiteral("command"), i18n("Command (see --commands)"));
 
-    parser.addPositionalArgument(QLatin1String("[URL(s)]"), i18n("Arguments for command"));
+    parser.addPositionalArgument(QStringLiteral("[URL(s)]"), i18n("Arguments for command"));
 
     parser.addOption(QCommandLineOption(QStringList{"tempfile"}, i18n("The files/URLs opened by the application will be deleted after use")));
 
@@ -97,7 +97,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     const QStringList args = parser.positionalArguments();
 
-    if (args.isEmpty() || parser.isSet("commands")) {
+    if (args.isEmpty() || parser.isSet(QStringLiteral("commands"))) {
         puts(i18n("\nSyntax:\n").toLocal8Bit());
         puts(i18n("  kfmclient openURL 'url' ['mimetype']\n"
                   "            # Opens a window showing 'url'.\n"
@@ -237,14 +237,14 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
     int argc = args.count();
     checkArgumentCount(argc, 1, 0);
 
-    if (!parser.isSet("noninteractive")) {
+    if (!parser.isSet(QStringLiteral("noninteractive"))) {
         m_interactive = false;
     }
     QString command = args.at(0);
 
     if (command == QLatin1String("openURL") || command == QLatin1String("newTab")) {
         checkArgumentCount(argc, 1, 3);
-        const bool tempFile = parser.isSet("tempfile");
+        const bool tempFile = parser.isSet(QStringLiteral("tempfile"));
         if (argc == 1) {
             return createNewWindow(QUrl::fromLocalFile(QDir::homePath()), command == QLatin1String("newTab"), tempFile);
         }

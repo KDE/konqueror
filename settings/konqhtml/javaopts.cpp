@@ -43,7 +43,7 @@
 
 // == class JavaPolicies =====
 
-JavaPolicies::JavaPolicies(KSharedConfig::Ptr config, const QString &group, bool global,
+JavaPolicies::JavaPolicies(const KSharedConfig::Ptr &config, const QString &group, bool global,
                            const QString &domain) :
     Policies(config, group, global, domain, QStringLiteral("java."), QStringLiteral("EnableJava"))
 {
@@ -61,7 +61,7 @@ JavaPolicies::~JavaPolicies()
 
 // == class KJavaOptions =====
 
-KJavaOptions::KJavaOptions(KSharedConfig::Ptr config, const QString &group,
+KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &group,
                            QWidget *parent)
     : KCModule(parent),
       _removeJavaScriptDomainAdvice(false),

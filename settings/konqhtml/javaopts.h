@@ -40,7 +40,7 @@ public:
      * @param domain name of the domain this instance is used to configure the
      *    policies for (case insensitive, ignored if global == true)
      */
-    JavaPolicies(KSharedConfig::Ptr config, const QString &group, bool global,
+    JavaPolicies(const KSharedConfig::Ptr &config, const QString &group, bool global,
                  const QString &domain = QString());
 
     /** empty constructur to make QMap happy
@@ -82,7 +82,7 @@ class KJavaOptions : public KCModule
     Q_OBJECT
 
 public:
-    KJavaOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent);
+    KJavaOptions(const KSharedConfig::Ptr &config, const QString &group, QWidget *parent);
 
     void load() Q_DECL_OVERRIDE;
     void save() Q_DECL_OVERRIDE;
