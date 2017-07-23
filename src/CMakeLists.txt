@@ -89,6 +89,7 @@ set(konqueror_KDEINIT_SRCS
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
 ki18n_wrap_ui(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
+qt5_add_resources(konqueror_KDEINIT_SRCS konqueror.qrc)
 
 qt5_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 qt5_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
@@ -125,5 +126,4 @@ install(TARGETS konqueror ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 install( FILES konqueror.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
-install( FILES konqueror.rc DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/konqueror )
 install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR} )
