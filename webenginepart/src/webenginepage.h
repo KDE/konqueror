@@ -62,13 +62,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    /**
-     * Reimplemented for internal reasons. The API is not affected.
-     *
-     * @internal
-     * @see KWebEnginePage::downloadRequest.
-     */
-    void downloadRequest(QWebEngineDownloadItem* request);
+    void download(const QUrl &url, bool newWindow = false);
 
 Q_SIGNALS:
     /**
@@ -76,6 +70,8 @@ Q_SIGNALS:
      * request.
      */
     void loadAborted(const QUrl &url);
+
+    void navigationRequested(WebEnginePage* page, const QUrl& url);
 
 protected:
     /**
@@ -125,7 +121,6 @@ private:
     QPointer<WebEnginePart> m_part;
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
-
 };
 
 
