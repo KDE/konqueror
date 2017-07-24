@@ -42,7 +42,7 @@ class HistorySidebarConfig : public KCModule
     Q_OBJECT
 
 public:
-    explicit HistorySidebarConfig(QWidget *parent = 0, const QVariantList &list = QVariantList());
+    explicit HistorySidebarConfig(QWidget *parent = nullptr, const QVariantList &list = QVariantList());
 
     void load();
     void save();

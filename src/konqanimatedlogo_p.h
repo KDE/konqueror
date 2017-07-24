@@ -34,7 +34,7 @@ public:
     /**
      * Creates an animated logo button which follows the toolbar icon size
      */
-    KonqAnimatedLogo(QWidget *parent = 0);
+    KonqAnimatedLogo(QWidget *parent = nullptr);
 
 protected:
     void changeEvent(QEvent *event) Q_DECL_OVERRIDE;
