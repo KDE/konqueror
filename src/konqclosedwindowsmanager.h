@@ -146,11 +146,11 @@ Q_SIGNALS: // DBUS signals
                       const QString &configGroup);
 
 private Q_SLOTS:// connected to DBUS signals
-    void slotNotifyClosedWindowItem(const QString &title, const int &numTabs,
+    void slotNotifyClosedWindowItem(const QString &title, int numTabs,
                                     const QString &configFileName, const QString &configGroup,
                                     const QString &service);
 
-    void slotNotifyClosedWindowItem(const QString &title, const int &numTabs,
+    void slotNotifyClosedWindowItem(const QString &title, int numTabs,
                                     const QString &configFileName, const QString &configGroup,
                                     const QDBusMessage &msg);
 

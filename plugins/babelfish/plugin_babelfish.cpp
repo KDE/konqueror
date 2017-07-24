@@ -221,7 +221,7 @@ void PluginBabelFish::slotEnableMenu()
 
     if (part && textExt) {
         const QString scheme = part->url().scheme();	// always lower case
-        if ((scheme == "http") || (scheme == "https")) {
+        if ((scheme == QLatin1String("http")) || (scheme == QLatin1String("https"))) {
             if (KParts::BrowserExtension::childObject(part)) {
                 m_menu->setEnabled(true);
                 return;
@@ -272,7 +272,7 @@ void PluginBabelFish::translateURL(QAction *action)
     }
     const QString urlForQuery = QLatin1String(QUrl::toPercentEncoding(url.url()));
 
-    if (url.scheme() == "https") {
+    if (url.scheme() == QLatin1String("https")) {
         if (KMessageBox::warningContinueCancel(part->widget(),
                                                xi18nc("@info", "\
 You are viewing this page over a secure connection.<nl/><nl/>\
@@ -281,7 +281,7 @@ which may fetch the insecure version of the page."),
                                                i18nc("@title:window", "Security Warning"),
                                                KStandardGuiItem::cont(),
                                                KStandardGuiItem::cancel(),
-                                               QLatin1String("insecureTranslate")) != KMessageBox::Continue) {
+                                               QStringLiteral("insecureTranslate")) != KMessageBox::Continue) {
             return;
         }
     }
@@ -325,17 +325,17 @@ which may fetch the insecure version of the page."),
         }
         if (hasSelection) {
             // ## does not work
-            result = QUrl("http://ets.freetranslation.com");
+            result = QUrl(QStringLiteral("http://ets.freetranslation.com"));
             query += QLatin1String("&mode=html&template=results_en-us.htm&srctext=");
             query += textForQuery;
         } else {
-            result = QUrl("http://www.freetranslation.com/web.asp");
+            result = QUrl(QStringLiteral("http://www.freetranslation.com/web.asp"));
             query += QLatin1String("&url=");
             query += urlForQuery;
         }
     } else if (engine == QLatin1String("parsit")) {
         // Does only English -> Thai
-        result = QUrl("http://c3po.links.nectec.or.th/cgi-bin/Parsitcgi.exe");
+        result = QUrl(QStringLiteral("http://c3po.links.nectec.or.th/cgi-bin/Parsitcgi.exe"));
         query = QStringLiteral("mode=test&inputtype=");
         if (hasSelection) {
             query += QLatin1String("text&TxtEng=");
@@ -345,7 +345,7 @@ which may fetch the insecure version of the page."),
             query += urlForQuery;
         }
     } else if (engine == QLatin1String("reverso")) {
-        result = QUrl("http://www.reverso.net/url/frame.asp");
+        result = QUrl(QStringLiteral("http://www.reverso.net/url/frame.asp"));
         query = QStringLiteral("autotranslate=on&templates=0&x=0&y=0&directions=");
         if (language == QStringLiteral("de_fr")) {
             query += QLatin1String("524292");
@@ -369,7 +369,7 @@ which may fetch the insecure version of the page."),
         query += QLatin1String("&url=");
         query += urlForQuery;
     } else if (engine == QLatin1String("tsail")) {
-        result = QUrl("http://www.t-mail.com/cgi-bin/tsail");
+        result = QUrl(QStringLiteral("http://www.t-mail.com/cgi-bin/tsail"));
         query = QStringLiteral("sail=full&lp=");
         if (language == QStringLiteral("zhTW_en")) {
             query += QLatin1String("tw-en");
@@ -381,7 +381,7 @@ which may fetch the insecure version of the page."),
         }
         query += urlForQuery;
     } else if (engine == QLatin1String("voila")) {
-        result = QUrl("http://tr.voila.fr/traduire-une-page-web-frame.php");
+        result = QUrl(QStringLiteral("http://tr.voila.fr/traduire-une-page-web-frame.php"));
         const QStringList parts = language.split('_');
         if (parts.count() == 2) {
             // The translation direction is "first letter of source, first letter of dest"
@@ -408,7 +408,7 @@ which may fetch the insecure version of the page."),
             query += "|" + textForQuery;
             result = QUrl(query);
         } else { //http://translate.google.com/translate?hl=en&sl=en&tl=de&u=http%3A%2F%2Fkde.org%2F%2F
-            result = QUrl("http://translate.google.com/translate");
+            result = QUrl(QStringLiteral("http://translate.google.com/translate"));
             query = QStringLiteral("ie=UTF-8");
             if (parts.count() == 2) {
                 query += "&sl=" + parts[0] + "&tl=" + parts[1];

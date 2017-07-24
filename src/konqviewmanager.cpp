@@ -1187,7 +1187,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                 if (cfg.hasKey(urlKey)) {
                     url = QUrl(cfg.readPathEntry(urlKey, QStringLiteral("about:blank")));
                 } else if (urlKey == QLatin1String("empty_URL")) { // old stuff, not in use anymore
-                    url = QUrl(QLatin1String("about:blank"));
+                    url = QUrl(QStringLiteral("about:blank"));
                 } else {
                     url = defaultURL;
                 }
