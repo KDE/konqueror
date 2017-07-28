@@ -48,7 +48,7 @@ class AdBlock : public KParts::Plugin
     Q_OBJECT
 
 public:
-    AdBlock(QObject *parent = 0, const QVariantList &args = QVariantList());
+    AdBlock(QObject *parent = nullptr, const QVariantList &args = QVariantList());
     ~AdBlock();
 
 private:

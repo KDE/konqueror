@@ -20,11 +20,11 @@
 #include "konqmainwindowfactory.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
-#include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include "konqdebug.h"
 #include <KWindowInfo>
 #include <KStartupInfo>
+#include <QTimer>
 
 // Terminates fullscreen-mode for any full-screen window on the current desktop
 static void abortFullScreenMode()
@@ -53,15 +53,6 @@ static void ensurePreloadedWindow()
 KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
 {
     abortFullScreenMode();
-    // Ask the user to recover session if applicable
-    if (KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions()) {
-        QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
-        if (mainWindowList && !mainWindowList->isEmpty()) {
-            return mainWindowList->first();
-        } else { // This should never happen but just to be sure
-            return new KonqMainWindow;
-        }
-    }
 
     // Let's see if we can reuse a preloaded window
     QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();

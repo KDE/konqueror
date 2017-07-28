@@ -79,10 +79,21 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
         }
 
         KonqSessionManager::self()->restoreSessions(sessionPath);
-            return nullptr;
-    } else if (args.isEmpty()) {
+        return nullptr;
+    }
+
+    // Ask the user to recover session if applicable
+    KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
+
+    if (args.isEmpty()) {
         // No args. If --silent, do nothing, otherwise create a default window.
         if (!parser.isSet("silent")) {
+            // If session recovery created some windows, no need for an empty window here.
+            QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
+            if (mainWindowList && !mainWindowList->isEmpty()) {
+                return mainWindowList->at(0);
+            }
+
             KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
             mainWin->show();
             return mainWin;

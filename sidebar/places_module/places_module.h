@@ -32,7 +32,7 @@ class KonqPlacesCustomPlacesView : public KFilePlacesView
     Q_OBJECT
 
 public:
-    explicit KonqPlacesCustomPlacesView(QWidget *parent = 0);
+    explicit KonqPlacesCustomPlacesView(QWidget *parent = nullptr);
     virtual ~KonqPlacesCustomPlacesView();
 
 signals:

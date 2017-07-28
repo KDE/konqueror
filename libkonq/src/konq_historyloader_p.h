@@ -37,7 +37,7 @@ class KonqHistoryLoader : public QObject
     Q_OBJECT
 
 public:
-    explicit KonqHistoryLoader(QObject *parent = 0);
+    explicit KonqHistoryLoader(QObject *parent = nullptr);
     virtual ~KonqHistoryLoader();
 
     /**
