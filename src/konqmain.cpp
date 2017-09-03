@@ -163,7 +163,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     aboutData.setCopyrightStatement(i18n("(C) 1999-2016, The Konqueror developers"));
     aboutData.setHomepage("http://konqueror.kde.org");
 
-    aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and maintainer"), "faure@kde.org");
+    aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
+    aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and former maintainer"), "faure@kde.org");
     aboutData.addAuthor(i18n("Simon Hausmann"), i18n("Developer (framework, parts)"), "hausmann@kde.org");
     aboutData.addAuthor(i18n("Michael Reiher"), i18n("Developer (framework)"), "michael.reiher@gmx.de");
     aboutData.addAuthor(i18n("Matthias Welk"), i18n("Developer"), "welk@fokus.gmd.de");
