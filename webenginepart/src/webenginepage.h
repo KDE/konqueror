@@ -40,6 +40,7 @@ class WebSslInfo;
 class WebEnginePart;
 class QWebEngineDownloadItem;
 class KPasswdServerClient;
+class WebEngineWallet;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -63,6 +64,8 @@ public:
     void setSslInfo (const WebSslInfo &other);
 
     void download(const QUrl &url, bool newWindow = false);
+
+    WebEngineWallet* wallet() const {return m_wallet;}
 
 Q_SIGNALS:
     /**
@@ -107,7 +110,7 @@ protected Q_SLOTS:
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
-    bool checkFormData(const QNetworkRequest& req) const;
+    bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
 
@@ -121,6 +124,7 @@ private:
     QPointer<WebEnginePart> m_part;
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
+    WebEngineWallet *m_wallet;
 };
 
 
@@ -158,6 +162,7 @@ private:
     KParts::WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
+    WebEngineWallet* m_wallet; 
 };
 
 #endif // WEBENGINEPAGE_H

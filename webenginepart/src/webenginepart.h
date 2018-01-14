@@ -42,6 +42,7 @@ class PasswordBar;
 class FeaturePermissionBar;
 class KUrlLabel;
 class WebEngineBrowserExtension;
+class WebEngineWallet;
 
 /**
  * A KPart wrapper for the QtWebEngine's browser rendering engine.
@@ -98,6 +99,9 @@ public:
     void connectWebEnginePageSignals(WebEnginePage* page);
 
     void slotShowFeaturePermissionBar(QWebEnginePage::Feature);
+
+    void setWallet(WebEngineWallet* wallet);
+
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -160,6 +164,7 @@ private:
     WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
+    WebEngineWallet* m_wallet;
 };
 
 #endif // WEBENGINEPART_H

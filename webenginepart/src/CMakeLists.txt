@@ -1,3 +1,5 @@
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(kwebenginepartlib_LIB_SRCS
@@ -8,6 +10,7 @@ set(kwebenginepartlib_LIB_SRCS
     websslinfo.cpp
     webhistoryinterface.cpp
     webenginepartdownloadmanager.cpp
+    webenginewallet.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp
@@ -27,6 +30,7 @@ target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widget
     KF5::Parts
     KF5::SonnetCore
     KF5::WindowSystem  # for KUserTimestamp
+    KF5::Wallet
 )
 
 target_include_directories(kwebenginepartlib PUBLIC

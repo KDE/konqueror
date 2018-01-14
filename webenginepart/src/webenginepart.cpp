@@ -34,6 +34,7 @@
 #include "webenginepage.h"
 #include "websslinfo.h"
 #include "webhistoryinterface.h"
+#include "webenginewallet.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -80,7 +81,8 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_statusBarWalletLabel(0),
              m_searchBar(0),
              m_passwordBar(0),
-             m_featurePermissionBar(0)
+             m_featurePermissionBar(0),
+             m_wallet(Q_NULLPTR)
 {
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
@@ -168,6 +170,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
 
     // Load plugins once we are fully ready
     loadPlugins();
+    setWallet(page()->wallet());
 }
 
 WebEnginePart::~WebEnginePart()
@@ -311,17 +314,25 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
                 m_browserExtension->setIconUrl(url);
         }
     });
+}
 
-#if 0
-    KWebWallet *wallet = page->wallet();
-    if (wallet) {
-        connect(wallet, SIGNAL(saveFormDataRequested(QString,QUrl)),
-                this, SLOT(slotSaveFormDataRequested(QString,QUrl)));
-        connect(wallet, SIGNAL(fillFormRequestCompleted(bool)),
-                this, SLOT(slotFillFormRequestCompleted(bool)));
-        connect(wallet, SIGNAL(walletClosed()), this, SLOT(slotWalletClosed()));
+void WebEnginePart::setWallet(WebEngineWallet* wallet)
+{
+    if(m_wallet){
+        disconnect(m_wallet, &WebEngineWallet::saveFormDataRequested,
+                this, &WebEnginePart::slotSaveFormDataRequested);
+        disconnect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
+                this, &WebEnginePart::slotFillFormRequestCompleted);
+        disconnect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
     }
-#endif
+    m_wallet = wallet;
+    if (m_wallet) {
+        connect(m_wallet, &WebEngineWallet::saveFormDataRequested,
+                this, &WebEnginePart::slotSaveFormDataRequested);
+        connect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
+                this, &WebEnginePart::slotFillFormRequestCompleted);
+        connect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
+    }
 }
 
 bool WebEnginePart::openUrl(const QUrl &_u)
@@ -451,15 +462,15 @@ void WebEnginePart::slotLoadFinished (bool ok)
     }
     if (!Utils::isBlankUrl(url())) {
         m_hasCachedFormData = false;
-
         if (WebEngineSettings::self()->isNonPasswordStorableSite(url().host())) {
             addWalletStatusBarIcon();
-        } else {
+        } 
+        else {
 // Attempt to fill the web form...
-//          KWebWallet *webWallet = page() ? page()->wallet() : 0;
-//          if (webWallet) {
-//              webWallet->fillFormData(frame, false);
-//          }
+            WebEngineWallet *wallet = page() ? page()->wallet() : 0;
+            if (wallet){
+                wallet->fillFormData(page());
+            }
         }
     }
 
@@ -766,10 +777,10 @@ void WebEnginePart::slotDeleteNonPasswordStorableSite()
 
 void WebEnginePart::slotRemoveCachedPasswords()
 {
-    if (!page()) // || !page()->wallet())
+    if (!page() || !page()->wallet())
         return;
 
-//    page()->wallet()->removeFormData(page()->mainFrame(), true);
+    page()->wallet()->removeFormData(page());
     m_hasCachedFormData = false;
 }
 
@@ -822,8 +833,8 @@ void WebEnginePart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature
                 this, SLOT(slotFeaturePermissionGranted(QWebEnginePage::Feature)));
         connect(m_featurePermissionBar, SIGNAL(permissionDenied(QWebEnginePage::Feature)),
                 this, SLOT(slotFeaturePermissionDenied(QWebEnginePage::Feature)));
-//         connect(m_passwordBar, SIGNAL(done()),
-//                 this, SLOT(slotSaveFormDataDone()));
+        connect(m_passwordBar, SIGNAL(done()),
+                this, SLOT(slotSaveFormDataDone()));
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
         if (lay)
             lay->insertWidget(0, m_featurePermissionBar);
@@ -862,19 +873,16 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
 
     if (!m_passwordBar) {
         m_passwordBar = new PasswordBar(widget());
-#if 0
-        KWebWallet* wallet = page()->wallet();
-        if (!wallet) {
-            kWarning() << "No wallet instance found! This should never happen!";
+        if (!m_wallet) {
+            qDebug() << "No m_wallet instance found! This should never happen!";
             return;
         }
         connect(m_passwordBar, SIGNAL(saveFormDataAccepted(QString)),
-                wallet, SLOT(acceptSaveFormDataRequest(QString)));
+                m_wallet, SLOT(acceptSaveFormDataRequest(QString)));
         connect(m_passwordBar, SIGNAL(saveFormDataRejected(QString)),
-                wallet, SLOT(rejectSaveFormDataRequest(QString)));
+                m_wallet, SLOT(rejectSaveFormDataRequest(QString)));
         connect(m_passwordBar, SIGNAL(done()),
                 this, SLOT(slotSaveFormDataDone()));
-#endif
     }
 
     Q_ASSERT(m_passwordBar);

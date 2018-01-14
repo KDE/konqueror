@@ -27,6 +27,7 @@
 #include "webengineview.h"
 #include "settings/webenginesettings.h"
 #include "webenginepartdownloadmanager.h"
+#include "webenginewallet.h"
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
@@ -72,7 +73,8 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_part(part),
-         m_passwdServerClient(new KPasswdServerClient)
+         m_passwdServerClient(new KPasswdServerClient),
+         m_wallet(Q_NULLPTR)
 {
     if (view())
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -94,6 +96,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
     WebEnginePartDownloadManager::instance()->addPage(this);
+    m_wallet = new WebEngineWallet(this, parent ? parent->window()->winId() : 0);
 }
 
 WebEnginePage::~WebEnginePage()
@@ -204,8 +207,9 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     bool inPageRequest = true;
     switch (type) {
         case QWebEnginePage::NavigationTypeFormSubmitted:
-            //if (!checkFormData(request))
-            //    return false;
+            if (!checkFormData(url))
+               return false;
+            m_wallet->saveFormData(this);
             break;
 #if 0
         case QWebEnginePage::NavigationTypeFormResubmitted:
@@ -548,9 +552,9 @@ bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType
     return true;
 }
 
-bool WebEnginePage::checkFormData(const QNetworkRequest &req) const
+bool WebEnginePage::checkFormData(const QUrl &url) const
 {
-    const QString scheme (req.url().scheme());
+    const QString scheme (url.scheme());
 
     if (m_sslInfo.isValid() &&
         !scheme.compare(QL1S("https")) && !scheme.compare(QL1S("mailto")) &&
