@@ -242,7 +242,7 @@ void ArchiveDialog::archive()
 
     } else {
         const QString title = i18nc("@title:window", "Unable to Open Web-Archive");
-        const QString text = i18n("Unable to open \n %1 \n for writing.").arg(m_tarBall->fileName());
+        const QString text = i18n("Unable to open \n %1 \n for writing.", m_tarBall->fileName());
         KMessageBox::sorry(NULL, text, title);
     }
 }
