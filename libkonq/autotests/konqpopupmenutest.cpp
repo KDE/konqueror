@@ -182,7 +182,7 @@ void KonqPopupMenuTest::testFile()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
-                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash")
                     << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
@@ -224,7 +224,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
-                    << QStringLiteral("copy") << QStringLiteral("separator")
+                    << QStringLiteral("copy")
                     << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
@@ -259,7 +259,7 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
-                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash")
                     << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
@@ -293,8 +293,7 @@ void KonqPopupMenuTest::testSubDirectory()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
-                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("pasteto") << QStringLiteral("rename") << QStringLiteral("trash") << QStringLiteral("separator")
-                    << QStringLiteral("openwith")
+                    << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("pasteto") << QStringLiteral("rename") << QStringLiteral("trash")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu");
@@ -327,8 +326,7 @@ void KonqPopupMenuTest::testViewDirectory()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("newmenu") << QStringLiteral("separator")
-                    << QStringLiteral("paste") << QStringLiteral("separator")
-                    << QStringLiteral("openwith")
+                    << QStringLiteral("paste")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu");
@@ -363,7 +361,6 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     QStringList expectedActions;
     expectedActions // << "paste" // no paste since readonly
                     << QStringLiteral("openwith")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu");
     expectedActions << QStringLiteral("separator");
@@ -397,7 +394,6 @@ void KonqPopupMenuTest::testHtmlLink()
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
                     << QStringLiteral("bookmark_add") << QStringLiteral("savelinkas") << QStringLiteral("copylinklocation")
-                    << QStringLiteral("separator")
                     << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
@@ -438,7 +434,6 @@ void KonqPopupMenuTest::testHtmlPage()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("bookmark_add")
-                    << QStringLiteral("separator")
                     << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
