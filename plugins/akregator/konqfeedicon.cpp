@@ -101,9 +101,14 @@ KonqFeedIcon::~KonqFeedIcon()
 
 bool KonqFeedIcon::feedFound()
 {
+    // Ensure that it is safe to use the URL, before doing anything else with it
+    const KUrl partUrl(m_part->url());
+    if (!partUrl.isValid()) {
+        return false;
+    }
     // Since attempting to determine feed info for about:blank crashes khtml,
     // lets prevent such look up for local urls (about, file, man, etc...)
-    if (KProtocolInfo::protocolClass(m_part->url().scheme()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0) {
+    if (KProtocolInfo::protocolClass(partUrl.scheme()).compare(QLatin1String(":local"), Qt::CaseInsensitive) == 0) {
         return false;
     }
 
