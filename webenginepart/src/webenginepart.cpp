@@ -35,6 +35,7 @@
 #include "websslinfo.h"
 #include "webhistoryinterface.h"
 #include "webenginewallet.h"
+#include "webengineparterrorschemehandler.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -71,6 +72,7 @@
 #include <QMenu>
 #include <QStatusBar>
 #include "utils.h"
+#include <QWebEngineProfile>
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
@@ -84,6 +86,10 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_featurePermissionBar(0),
              m_wallet(Q_NULLPTR)
 {
+    QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
+    if (!prof->urlSchemeHandler("error")) {
+        prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
+    }
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
                                   /*version*/ QStringLiteral("1.3.0"),

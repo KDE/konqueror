@@ -43,6 +43,7 @@ class FeaturePermissionBar;
 class KUrlLabel;
 class WebEngineBrowserExtension;
 class WebEngineWallet;
+class WebEngineErrorSchemeHandler;
 
 /**
  * A KPart wrapper for the QtWebEngine's browser rendering engine.

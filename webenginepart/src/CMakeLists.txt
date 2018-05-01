@@ -13,6 +13,7 @@ set(kwebenginepartlib_LIB_SRCS
     webhistoryinterface.cpp
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
+    webengineparterrorschemehandler.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp
@@ -33,6 +34,7 @@ target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widget
     KF5::SonnetCore
     KF5::WindowSystem  # for KUserTimestamp
     KF5::Wallet
+    KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
 )
 
 target_include_directories(kwebenginepartlib PUBLIC
@@ -50,3 +52,5 @@ install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 install(FILES webenginepart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 
 install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
+
+install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
