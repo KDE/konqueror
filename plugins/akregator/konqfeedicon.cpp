@@ -25,8 +25,8 @@
 #include "konqfeedicon.h"
 #include "feeddetector.h"
 #include "pluginbase.h"
+#include "akregatorplugindebug.h"
 
-#include <kdebug.h>
 #include <kpluginfactory.h>
 #include <KLocalizedString>
 #include <kiconloader.h>
@@ -36,29 +36,18 @@
 #include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
 #include <kprocess.h>
-#include <kstandarddirs.h>
-#include <kstatusbar.h>
 #include <kurllabel.h>
-
 #include <kprotocolinfo.h>
 
-#include <qcursor.h>
-#include <qobject.h>
-#include <qpixmap.h>
-#include <qstringlist.h>
-#include <QTextDocument>
-#include <KLocalizedString>
-
-//KDELibs4Support
-#include <kurl.h>
+#include <qstatusbar.h>
 
 using namespace Akregator;
 
 K_PLUGIN_FACTORY(KonqFeedIconFactory, registerPlugin<KonqFeedIcon>();)
 
-static KUrl baseUrl(KParts::ReadOnlyPart *part)
+static QUrl baseUrl(KParts::ReadOnlyPart *part)
 {
-    KUrl url;
+    QUrl url;
     KParts::HtmlExtension *ext = KParts::HtmlExtension::childObject(part);
     if (ext) {
         url = ext->baseUrl();
@@ -102,7 +91,7 @@ KonqFeedIcon::~KonqFeedIcon()
 bool KonqFeedIcon::feedFound()
 {
     // Ensure that it is safe to use the URL, before doing anything else with it
-    const KUrl partUrl(m_part->url());
+    const QUrl partUrl(m_part->url());
     if (!partUrl.isValid()) {
         return false;
     }
@@ -117,7 +106,6 @@ bool KonqFeedIcon::feedFound()
     QString doc;
     if (selectorInterface) {
         QList<KParts::SelectorInterface::Element> linkNodes = selectorInterface->querySelectorAll(QStringLiteral("head > link[rel=\"alternate\"]"), KParts::SelectorInterface::EntireContent);
-        //kDebug() << linkNodes.length() << "links";
         for (int i = 0; i < linkNodes.count(); i++) {
             const KParts::SelectorInterface::Element element = linkNodes.at(i);
 
@@ -131,7 +119,7 @@ bool KonqFeedIcon::feedFound()
             }
             doc += QLatin1String("/>");
         }
-        kDebug() << doc;
+        qCDebug(AKREGATORPLUGIN_LOG) << doc;
     }
 
     m_feedList = FeedDetector::extractFromLinkTags(doc);
@@ -225,7 +213,7 @@ void KonqFeedIcon::addFeeds()
         }
         addFeedsViaDBUS(list);
     } else {
-        kDebug() << "KonqFeedIcon::addFeeds(): use command line";
+        qCDebug(AKREGATORPLUGIN_LOG) << "use command line";
         KProcess proc;
         proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
 

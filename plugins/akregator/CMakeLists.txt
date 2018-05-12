@@ -4,7 +4,7 @@ MESSAGE(STATUS "akregator popupmenu plugin disabled. Doable via servicemenu or s
 
 #set(akregatorkonqplugin_PART_SRCS akregatorplugin.cpp pluginbase.cpp )
 #
-#kde4_add_plugin(akregatorkonqplugin ${akregatorkonqplugin_PART_SRCS})
+#kde4_add_plugin(akregatorkonqplugin ${akregatorkonqplugin_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 #
 #target_link_libraries(akregatorkonqplugin  ${KDE4_KDE3SUPPORT_LIBS} Qt5::Xml konq
 #    KF5::KHtml )
@@ -12,15 +12,17 @@ MESSAGE(STATUS "akregator popupmenu plugin disabled. Doable via servicemenu or s
 #install(TARGETS akregatorkonqplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 
+ecm_qt_declare_logging_category(akregatorplugin_DEBUG_SRCS HEADER akregatorplugindebug.h IDENTIFIER AKREGATORPLUGIN_LOG CATEGORY_NAME org.kde.konqueror.akregatorplugin)
+
 ########### next target ###############
 
 set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginbase.cpp )
 
-add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS})
+add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
 target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
 
-target_link_libraries(akregatorkonqfeedicon KF5::Parts KF5::KDELibs4Support)
+target_link_libraries(akregatorkonqfeedicon KF5::Parts KF5::IconThemes)
 
 install(TARGETS akregatorkonqfeedicon DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
@@ -32,3 +34,6 @@ install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINA
 install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
 
 install( FILES feed.png DESTINATION ${KDE_INSTALL_DATADIR}/akregator/pics )
+
+# contains list of debug categories, for kdebugsettings
+install(FILES akregatorplugin.categories DESTINATION ${KDE_INSTALL_CONFDIR})

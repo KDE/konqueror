@@ -22,16 +22,21 @@
     without including the source code for Qt in the source distribution.
 */
 
-#include <kurl.h>
 #include <kprocess.h>
 #include <KLocalizedString>
+#include <KMessageBox>
 
 #include "feeddetector.h"
 #include "pluginbase.h"
+#include "akregatorplugindebug.h"
+
 #include <qstringlist.h>
-#include <QtDBus>
-#include <kdebug.h>
-#include <KMessageBox>
+#include <qurl.h>
+#include <qdbusconnection.h>
+#include <qdbusconnectioninterface.h>
+#include <qdbusinterface.h>
+#include <qdbusreply.h>
+
 using namespace Akregator;
 
 PluginBase::PluginBase()
@@ -48,7 +53,7 @@ bool PluginBase::akregatorRunning()
 
 void PluginBase::addFeedsViaDBUS(const QStringList &urls)
 {
-    kDebug() << "PluginBase::addFeedsViaDBUS";
+    qCDebug(AKREGATORPLUGIN_LOG);
     QDBusInterface akregator(QStringLiteral("org.kde.akregator"), QStringLiteral("/Akregator"), QStringLiteral("org.kde.akregator.part"));
     QDBusReply<void> reply  = akregator.call(QStringLiteral("addFeedsToGroup"), urls, i18n("Imported Feeds"));
     if (!reply.isValid()) {
@@ -65,28 +70,27 @@ void PluginBase::addFeedViaCmdLine(const QString &url)
     proc.startDetached();
 }
 
-// handle all the wild stuff that KUrl doesn't handle
-QString PluginBase::fixRelativeURL(const QString &s, const KUrl &baseurl)
+// handle all the wild stuff that QUrl doesn't handle
+QString PluginBase::fixRelativeURL(const QString &s, const QUrl &baseurl)
 {
     QString s2 = s;
-    KUrl u;
-    if (KUrl::isRelativeUrl(s2)) {
+    QUrl u;
+    if (QUrl(s2).isRelative()) {
         if (s2.startsWith(QLatin1String("//"))) {
-            s2 = s2.prepend(baseurl.protocol() + ':');
-            u = s2;
+            s2.prepend(baseurl.scheme() + ':');
+            u.setUrl(s2);
         } else if (s2.startsWith(QLatin1String("/"))) {
-            KUrl b2(baseurl);
-            b2.setPath(QString()); // delete path and query, so that only protocol://host remains
-            b2.setQuery(QString());
-            u = KUrl(b2, s2.remove(0, 1)); // remove leading "/"
+            // delete path/query/fragment, so that only protocol://host remains
+            QUrl b2(baseurl.adjusted(QUrl::RemovePath|QUrl::RemoveQuery|QUrl::RemoveFragment));
+            u = b2.resolved(QUrl(s2.mid(1)));		// remove leading "/"
         } else {
-            u = KUrl(baseurl, s2);
+            u = baseurl.resolved(QUrl(s2));
         }
     } else {
-        u = s2;
+        u.setUrl(s2);
     }
 
-    u.cleanPath();
-    //kDebug() << "AKREGATOR_PLUGIN_FIXURL: " << "url=" << s << " baseurl=" << baseurl.url() << " fixed=" << u.url();
+    u = u.adjusted(QUrl::NormalizePathSegments);
+    //qCDebug(AKREGATORPLUGIN_LOG) << "url=" << s << " baseurl=" << baseurl << "fixed=" << u;
     return u.url();
 }

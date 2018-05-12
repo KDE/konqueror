@@ -25,10 +25,11 @@
 #include <qregexp.h>
 #include <qstring.h>
 #include <qstringlist.h>
+
 #include <kcharsets.h>
 
 #include "feeddetector.h"
-#include <kdebug.h>
+#include "akregatorplugindebug.h"
 
 using namespace Akregator;
 
@@ -98,7 +99,7 @@ FeedDetectorEntryList FeedDetector::extractFromLinkTags(const QString &s)
         }
 
         if (!url.isEmpty()) {
-            kDebug() << "found feed:" << url << title;
+            qCDebug(AKREGATORPLUGIN_LOG) << "found feed:" << url << title;
             list.append(FeedDetectorEntry(url, title));
         }
     }

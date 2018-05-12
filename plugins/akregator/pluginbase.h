@@ -27,7 +27,7 @@
 
 class QString;
 class QStringList;
-class KUrl;
+class QUrl;
 
 namespace Akregator
 {
@@ -52,7 +52,7 @@ public:
      * Adds feed to aKregator via command line.
      */
     void addFeedViaCmdLine(const QString &url);
-    QString fixRelativeURL(const QString &s, const KUrl &baseurl);
+    QString fixRelativeURL(const QString &s, const QUrl &baseurl);
 };
 
 }
