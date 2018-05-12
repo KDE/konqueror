@@ -21,35 +21,26 @@
 
 #include "akregatorplugin.h"
 #include "pluginbase.h"
+#include "akregatorplugindebug.h"
 
-#include <kapplication.h>
-#include <kmimetype.h>
-#include <kdebug.h>
-#include <kaction.h>
-#include <kcomponentdata.h>
-#include <klocale.h>
-#include <konq_popupmenu.h>
-#include <kmenu.h>
-#include <kgenericfactory.h>
-#include <kurl.h>
-#include <khtml_part.h>
-#include <khtmlview.h>
-#include <kmessagebox.h>
+#include <klocalizedstring.h>
+#include <kpluginfactory.h>
+#include <kfileitem.h>
+#include <kfileitemlistproperties.h>
 
-#include <qdir.h>
-#include <qobject.h>
-#include <qstringlist.h>
-#include <kauthorized.h>
+#include <qdebug.h>
+#include <qaction.h>
 
 using namespace Akregator;
 
-typedef KGenericFactory<AkregatorMenu, KonqPopupMenu> AkregatorMenuFactory;
-K_EXPORT_PLUGIN(AkregatorMenuFactory("akregatorkonqplugin"))
+K_PLUGIN_FACTORY_WITH_JSON(AkregatorMenuFactory, "akregator_konqplugin.json", registerPlugin<AkregatorMenu>();)
 
-AkregatorMenu::AkregatorMenu(KonqPopupMenu *popupmenu, const QStringList & /* list */)
-    : KonqPopupMenuPlugin(popupmenu), PluginBase(), /*m_conf(0),*/ m_part(0)
+AkregatorMenu::AkregatorMenu(QObject *parent, const QVariantList &args)
+  : KAbstractFileItemActionPlugin(parent),
+    PluginBase()
 {
-    kDebug() << "AkregatorMenu::AkregatorMenu()";
+    Q_UNUSED(args);
+
 #if 0
     if (QByteArray(kapp->name()) == "kdesktop" && !KAuthorized::authorizeKAction("editable_desktop_icons")) {
         return;
@@ -64,77 +55,66 @@ AkregatorMenu::AkregatorMenu(KonqPopupMenu *popupmenu, const QStringList & /* li
     if ( !m_conf->readEntry( "Enable", true ) )
         return;
     */
-    KHTMLView *view = 0L;
 
-    if (popupmenu && popupmenu->parent() && popupmenu->parent()->inherits("KHTMLView")) {
-        view = static_cast<KHTMLView *>(popupmenu->parent());
-    }
-
-    if (view) {
-        m_part = view->part();
-    }
-
-    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
-//KLocale::global()->insertCatalog("akregator_konqplugin");
     m_feedMimeTypes << "application/rss+xml" << "text/rdf" << "application/xml";
-    // Get the list of URLs clicked on from Konqi.
-    //KFileItemList m_list = popupmenu->fileItemList();
-    // See if any are RSS feeds.
+}
 
-    KFileItemList list = popupmenu->fileItemList();
-    foreach (const KFileItem &it, list) {
-        if (isFeedUrl(it)) {
-            kDebug() << "AkregatorMenu: found feed URL " << it.url().prettyUrl();
-            QAction *action = actionCollection()->addAction("akregatorkonqplugin_mnu");
-            action->setText(i18n("Add Feed to Akregator"));
-            action->setIcon(KIcon("akregator"));
+
+QList<QAction *> AkregatorMenu::actions(const KFileItemListProperties &fileItemInfos, QWidget *parent)
+{
+    Q_UNUSED(parent);
+
+    QList<QAction *> acts;
+    const KFileItemList items = fileItemInfos.items();
+    foreach (const KFileItem &item, items) {
+        if (isFeedUrl(item)) {
+            qCDebug(AKREGATORPLUGIN_LOG) << "found feed" << item.url();
+
+            QAction *action = new QAction(this);
+            action->setText(i18nc("@action:inmenu", "Add Feed to Akregator"));
+            action->setIcon(QIcon::fromTheme("akregator"));
+            action->setData(item.url());
             connect(action, SIGNAL(triggered()), this, SLOT(slotAddFeed()));
-            //addAction( action );
-            addSeparator();
-            m_feedURL = it.url().url();
-            break;
+            acts.append(action);
         }
     }
+
+    return acts;
 }
 
-AkregatorMenu::~AkregatorMenu()
-{
-    KLocale::global()->removeCatalog("akregator_konqplugin");
-    //delete m_conf;
-}
 
-bool AkregatorMenu::isFeedUrl(const QString &url)
+static bool isFeedUrl(const QString &urlPath)
 {
-    if (url.contains(".htm", false) != 0) {
+    // If URL ends in .htm or .html, it is not a feed url.
+    if (urlPath.endsWith(".htm", Qt::CaseInsensitive) || urlPath.endsWith(".html", Qt::CaseInsensitive)) {
         return false;
     }
-    if (url.contains("rss", false) != 0) {
+    if (urlPath.contains("rss", Qt::CaseInsensitive)) {
         return true;
     }
-    if (url.contains("rdf", false) != 0) {
-        return true;
-    }
-    if (url.contains("xml", false) != 0) {
+    if (urlPath.contains("rdf", Qt::CaseInsensitive)) {
         return true;
     }
     return false;
 }
 
-bool AkregatorMenu::isFeedUrl(const KFileItem &item)
+bool AkregatorMenu::isFeedUrl(const KFileItem &item) const
 {
     if (m_feedMimeTypes.contains(item.mimetype())) {
         return true;
     } else {
-        QString url = item.url().url();
-        // If URL ends in .htm or .html, it is not a feed url.
-        return isFeedUrl(url);
+        return ::isFeedUrl(item.url().path());
     }
     return false;
 }
 
 void AkregatorMenu::slotAddFeed()
 {
-    QString url = m_part ? fixRelativeURL(m_feedURL, m_part->baseURL()) : m_feedURL;
+    QAction *action = qobject_cast<QAction *>(sender());
+    Q_ASSERT(action!=nullptr);
+
+    QString url = action->data().toUrl().url();
+    qCDebug(AKREGATORPLUGIN_LOG) << "for feed url" << url;
 
     if (akregatorRunning()) {
         addFeedsViaDBUS(QStringList(url));
@@ -143,3 +123,5 @@ void AkregatorMenu::slotAddFeed()
     }
 }
 
+
+#include "akregatorplugin.moc"

@@ -1,6 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Service
+X-KDE-ServiceTypes=KFileItemAction/Plugin
+X-KDE-Library=akregatorplugin
+MimeType=application/octet-stream
+Icon=akregator
 Name=Add Feed to Akregator
 Name[ar]=أضف التغذية إلى Akregator
 Name[be]=Дадаць стужку ў Akregator
@@ -126,5 +129,3 @@ Comment[wa]=Radjoute floû tchoezi a Akgregator
 Comment[x-test]=xxAdds selected feed to Akregatorxx
 Comment[zh_CN]=向 Akregator 添加选中的 RSS 种子
 Comment[zh_TW]=將所選取的 RSS feed 加到 Akregator
-X-KDE-Library=akregatorkonqplugin
-ServiceTypes=KonqPopupMenu/Plugin,all/all

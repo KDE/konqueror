@@ -19,39 +19,36 @@
 #ifndef _AKREGATORPLUGIN_H_
 #define _AKREGATORPLUGIN_H_
 
-#include <konq_popupmenu.h>
-#include <kfileitem.h>
-#include <kconfig.h>
+#include <kabstractfileitemactionplugin.h>
 
 #include "pluginbase.h"
 
-class KHTMLPart;
+class KFileItem;
+class KFileItemListProperties;
 
 namespace Akregator
 {
 
-class AkregatorMenu : public KonqPopupMenuPlugin, PluginBase
+class AkregatorMenu : public KAbstractFileItemActionPlugin, PluginBase
 {
     Q_OBJECT
+
 public:
-    AkregatorMenu(KonqPopupMenu *, const QStringList &list);
-    virtual ~AkregatorMenu();
+    AkregatorMenu(QObject *parent, const QVariantList &args);
+    virtual ~AkregatorMenu() = default;
+
+    QList<QAction *> actions(const KFileItemListProperties &fileItemInfos, QWidget *parent) override;
 
 public slots:
     void slotAddFeed();
 
-protected:
-    bool isFeedUrl(const QString &s);
-    bool isFeedUrl(const KFileItem &item);
+private:
+    bool isFeedUrl(const KFileItem &item) const;
 
 private:
     QStringList m_feedMimeTypes;
-//    KConfig *m_conf;
-    KHTMLPart *m_part;
-    QString m_feedURL;
 };
 
 }
 
 #endif
-
