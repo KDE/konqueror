@@ -36,6 +36,7 @@
 #include <KParts/ReadOnlyPart>
 #include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
+#include <kio/job.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
 
@@ -73,9 +74,9 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
         KParts::SelectorInterface *selectorInterface = qobject_cast<KParts::SelectorInterface *>(ext);
         if (selectorInterface) {
             m_part = part;
-            connect(m_part, SIGNAL(completed()), this, SLOT(addFeedIcon()));
-            connect(m_part, SIGNAL(completed(bool)), this, SLOT(addFeedIcon()));
-            connect(m_part, SIGNAL(started(KIO::Job*)), this, SLOT(removeFeedIcon()));
+            connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &KonqFeedIcon::addFeedIcon);
+            connect(m_part, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, &KonqFeedIcon::addFeedIcon);
+            connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
         }
     }
 }
@@ -177,7 +178,7 @@ void KonqFeedIcon::addFeedIcon()
 
     m_statusBarEx->addStatusBarItem(m_feedIcon, 0, true);
 
-    connect(m_feedIcon, SIGNAL(leftClickedUrl()), this, SLOT(contextMenu()));
+    connect(m_feedIcon, QOverload<>::of(&KUrlLabel::leftClickedUrl), this, &KonqFeedIcon::contextMenu);
 }
 
 void KonqFeedIcon::removeFeedIcon()

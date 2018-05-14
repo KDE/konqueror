@@ -74,7 +74,7 @@ QList<QAction *> AkregatorMenu::actions(const KFileItemListProperties &fileItemI
             action->setText(i18nc("@action:inmenu", "Add Feed to Akregator"));
             action->setIcon(QIcon::fromTheme("akregator"));
             action->setData(item.url());
-            connect(action, SIGNAL(triggered()), this, SLOT(slotAddFeed()));
+            connect(action, &QAction::triggered, this, &AkregatorMenu::slotAddFeed);
             acts.append(action);
         }
     }
