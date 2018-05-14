@@ -22,12 +22,13 @@
     without including the source code for Qt in the source distribution.
 */
 
+#include "pluginutil.h"
+
 #include <kprocess.h>
 #include <KLocalizedString>
 #include <KMessageBox>
 
 #include "feeddetector.h"
-#include "pluginbase.h"
 #include "akregatorplugindebug.h"
 
 #include <qstringlist.h>
@@ -39,39 +40,45 @@
 
 using namespace Akregator;
 
-PluginBase::PluginBase()
-{}
-
-PluginBase::~PluginBase()
-{}
-
-bool PluginBase::akregatorRunning()
+static bool isAkregatorRunning()
 {
     //Laurent if akregator is registered into dbus so akregator is running
     return QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.akregator"));
 }
 
-void PluginBase::addFeedsViaDBUS(const QStringList &urls)
+static void addFeedsViaDBUS(const QStringList &urls)
 {
-    qCDebug(AKREGATORPLUGIN_LOG);
     QDBusInterface akregator(QStringLiteral("org.kde.akregator"), QStringLiteral("/Akregator"), QStringLiteral("org.kde.akregator.part"));
     QDBusReply<void> reply  = akregator.call(QStringLiteral("addFeedsToGroup"), urls, i18n("Imported Feeds"));
     if (!reply.isValid()) {
-        KMessageBox::error(0, i18n("Akregator feed icon - DBus Call failed"),
-                           i18nc("@title:window", "The DBus call addFeedToGroup failed"));
+        KMessageBox::error(nullptr, i18n("Unable to contact Akregator via DBus"),
+                                    i18nc("@title:window", "DBus call failed"));
     }
 }
 
-void PluginBase::addFeedViaCmdLine(const QString &url)
+static void addFeedsViaCmdLine(const QStringList &urls)
 {
     KProcess proc;
     proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
-    proc << QStringLiteral("-a") << url;
+    foreach (const QString &url, urls) {
+        proc << QStringLiteral("-a") << url;
+    }
     proc.startDetached();
 }
 
+void PluginUtil::addFeeds(const QStringList &urls)
+{
+    if (isAkregatorRunning()) {
+        qCDebug(AKREGATORPLUGIN_LOG) << "adding" << urls.count() << "feeds via DBus";
+        addFeedsViaDBUS(urls);
+    } else {
+        qCDebug(AKREGATORPLUGIN_LOG) << "adding" << urls.count() << "feeds via command line";
+        addFeedsViaCmdLine(urls);
+    }
+}
+
 // handle all the wild stuff that QUrl doesn't handle
-QString PluginBase::fixRelativeURL(const QString &s, const QUrl &baseurl)
+QString PluginUtil::fixRelativeURL(const QString &s, const QUrl &baseurl)
 {
     QString s2 = s;
     QUrl u;

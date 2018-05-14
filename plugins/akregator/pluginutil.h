@@ -22,8 +22,8 @@
     without including the source code for Qt in the source distribution.
 */
 
-#ifndef PLUGINBASE_H
-#define PLUGINBASE_H
+#ifndef PLUGINUTIL_H
+#define PLUGINUTIL_H
 
 class QString;
 class QStringList;
@@ -31,29 +31,26 @@ class QUrl;
 
 namespace Akregator
 {
-
-class PluginBase
+namespace PluginUtil
 {
-public:
-    PluginBase();
-    ~PluginBase();
+    /**
+     * Add a list of feeds to aKregator.
+     *
+     * This will be done via a DBus call if the application is running,
+     * or by running it with a command line option if it is not.
+     *
+     * @param urls List of feed URLs to add
+     */
+    void addFeeds(const QStringList &urls);
 
-public:
     /**
-    * Tells you if aKregator is running.
-    * @return true when aKregator is running
+     * Fix up a URL relative to a base URL.
+     *
+     * @param s The URL in string form
+     * @param baseurl The base URL
+     * @return The absolute resolved URL
      */
-    bool akregatorRunning();
-    /**
-     * Adds feed to aKregator via DBUS.
-     */
-    void addFeedsViaDBUS(const QStringList &urls);
-    /**
-     * Adds feed to aKregator via command line.
-     */
-    void addFeedViaCmdLine(const QString &url);
     QString fixRelativeURL(const QString &s, const QUrl &baseurl);
-};
-
+}
 }
 #endif

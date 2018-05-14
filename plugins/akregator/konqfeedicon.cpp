@@ -23,8 +23,9 @@
 */
 
 #include "konqfeedicon.h"
+
 #include "feeddetector.h"
-#include "pluginbase.h"
+#include "pluginutil.h"
 #include "akregatorplugindebug.h"
 
 #include <kpluginfactory.h>
@@ -35,7 +36,6 @@
 #include <KParts/ReadOnlyPart>
 #include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
-#include <kprocess.h>
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
 
@@ -55,9 +55,15 @@ static QUrl baseUrl(KParts::ReadOnlyPart *part)
     return url;
 }
 
-KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &)
-    : KParts::Plugin(parent), PluginBase(), m_part(0), m_feedIcon(0), m_statusBarEx(0), m_menu(0)
+KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
+    : KParts::Plugin(parent),
+      m_part(nullptr),
+      m_feedIcon(nullptr),
+      m_statusBarEx(nullptr),
+      m_menu(nullptr)
 {
+    Q_UNUSED(args);
+
     // make our icon foundable by the KIconLoader
     KIconLoader::global()->addAppDir(QStringLiteral("akregator"));
 
@@ -132,7 +138,7 @@ void KonqFeedIcon::contextMenu()
     m_menu = new QMenu(m_part->widget());
     if (m_feedList.count() == 1) {
         m_menu->setTitle(m_feedList.first().title());
-        m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addFeeds()));
+        m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addAllFeeds()));
     } else {
         m_menu->setTitle(i18n("Add Feeds to Akregator"));
         int id = 0;
@@ -143,7 +149,7 @@ void KonqFeedIcon::contextMenu()
         }
         //disconnect(m_menu, SIGNAL(activated(int)), this, SLOT(addFeed(int)));
         m_menu->addSeparator();
-        m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), i18n("Add All Found Feeds to Akregator"), this, SLOT(addFeeds()));
+        m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), i18n("Add All Found Feeds to Akregator"), this, SLOT(addAllFeeds()));
     }
     m_menu->popup(QCursor::pos());
 }
@@ -167,7 +173,6 @@ void KonqFeedIcon::addFeedIcon()
     m_feedIcon->setUseCursor(false);
 
     m_feedIcon->setPixmap(KIconLoader::global()->loadIcon(QStringLiteral("feed"), KIconLoader::User));
-
     m_feedIcon->setToolTip(i18n("Subscribe to site updates (using news feed)"));
 
     m_statusBarEx->addStatusBarItem(m_feedIcon, 0, true);
@@ -196,34 +201,17 @@ void KonqFeedIcon::addFeed()
     if (!ok || id == -1) {
         return;
     }
-    if (akregatorRunning()) {
-        addFeedsViaDBUS(QStringList(fixRelativeURL(m_feedList[id].url(), baseUrl(m_part))));
-    } else {
-        addFeedViaCmdLine(fixRelativeURL(m_feedList[id].url(), baseUrl(m_part)));
-    }
+    PluginUtil::addFeeds(QStringList(PluginUtil::fixRelativeURL(m_feedList[id].url(), baseUrl(m_part))));
 }
 
 // from akregatorplugin.cpp
-void KonqFeedIcon::addFeeds()
+void KonqFeedIcon::addAllFeeds()
 {
-    if (akregatorRunning()) {
-        QStringList list;
-        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
-            list.append(fixRelativeURL((*it).url(), baseUrl(m_part)));
-        }
-        addFeedsViaDBUS(list);
-    } else {
-        qCDebug(AKREGATORPLUGIN_LOG) << "use command line";
-        KProcess proc;
-        proc << QStringLiteral("akregator") << QStringLiteral("-g") << i18n("Imported Feeds");
-
-        for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
-            proc << QStringLiteral("-a") << fixRelativeURL((*it).url(), baseUrl(m_part));
-        }
-
-        proc.startDetached();
-
+    QStringList list;
+    foreach (const FeedDetectorEntry &it, m_feedList) {
+        list.append(PluginUtil::fixRelativeURL(it.url(), baseUrl(m_part)));
     }
+    PluginUtil::addFeeds(list);
 }
 
 #include "konqfeedicon.moc"

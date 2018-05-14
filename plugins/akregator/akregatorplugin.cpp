@@ -20,7 +20,8 @@
 */
 
 #include "akregatorplugin.h"
-#include "pluginbase.h"
+
+#include "pluginutil.h"
 #include "akregatorplugindebug.h"
 
 #include <klocalizedstring.h>
@@ -36,8 +37,7 @@ using namespace Akregator;
 K_PLUGIN_FACTORY_WITH_JSON(AkregatorMenuFactory, "akregator_konqplugin.json", registerPlugin<AkregatorMenu>();)
 
 AkregatorMenu::AkregatorMenu(QObject *parent, const QVariantList &args)
-  : KAbstractFileItemActionPlugin(parent),
-    PluginBase()
+  : KAbstractFileItemActionPlugin(parent)
 {
     Q_UNUSED(args);
 
@@ -115,13 +115,7 @@ void AkregatorMenu::slotAddFeed()
 
     QString url = action->data().toUrl().url();
     qCDebug(AKREGATORPLUGIN_LOG) << "for feed url" << url;
-
-    if (akregatorRunning()) {
-        addFeedsViaDBUS(QStringList(url));
-    } else {
-        addFeedViaCmdLine(url);
-    }
+    PluginUtil::addFeeds(QStringList(url));
 }
-
 
 #include "akregatorplugin.moc"

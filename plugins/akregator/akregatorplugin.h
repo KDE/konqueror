@@ -21,15 +21,13 @@
 
 #include <kabstractfileitemactionplugin.h>
 
-#include "pluginbase.h"
-
 class KFileItem;
 class KFileItemListProperties;
 
 namespace Akregator
 {
 
-class AkregatorMenu : public KAbstractFileItemActionPlugin, PluginBase
+class AkregatorMenu : public KAbstractFileItemActionPlugin
 {
     Q_OBJECT
 

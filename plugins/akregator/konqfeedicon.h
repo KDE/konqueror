@@ -29,7 +29,6 @@
 #include <kparts/plugin.h>
 #include <QMenu>
 #include "feeddetector.h"
-#include "pluginbase.h"
 
 /**
 @author Teemu Rytilahti
@@ -44,13 +43,13 @@ class ReadOnlyPart;
 
 namespace Akregator
 {
-class KonqFeedIcon : public KParts::Plugin, PluginBase
+class KonqFeedIcon : public KParts::Plugin
 {
     Q_OBJECT
-public:
-    KonqFeedIcon(QObject *parent, const QVariantList &);
 
-    ~KonqFeedIcon();
+public:
+    KonqFeedIcon(QObject *parent, const QVariantList &args);
+    virtual ~KonqFeedIcon();
 
 private:
     /**
@@ -69,7 +68,8 @@ private slots:
     void contextMenu();
     void addFeedIcon();
     void removeFeedIcon();
-    void addFeeds();
+
+    void addAllFeeds();
     void addFeed();
 };
 
