@@ -76,8 +76,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    parser.addVersionOption();
-    parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
     //qDebug() << "kfmclient starting" << QTime::currentTime();

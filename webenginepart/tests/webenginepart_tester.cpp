@@ -387,9 +387,6 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(about);
-    parser.addVersionOption();
-    parser.addHelpOption();
-    //PORTING SCRIPT: adapt aboutdata variable if necessary
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
