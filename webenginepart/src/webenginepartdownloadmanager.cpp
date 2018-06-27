@@ -77,7 +77,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::recordNavigationRequest(WebEnginePage *page, const QUrl& url)
 {
-    qDebug() << url;
+//     qDebug() << url;
     m_requests.insert(url, page);
 }
 

@@ -24,7 +24,6 @@
 
 #include <QWidget>
 
-
 WebEngineFactory::~WebEngineFactory()
 {
     // kDebug() << this;

@@ -37,6 +37,7 @@
 #include "webhistoryinterface.h"
 #include "webenginewallet.h"
 #include "webengineparterrorschemehandler.h"
+#include "webenginepartcookiejar.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -93,6 +94,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
         prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
     }
+    static WebEnginePartCookieJar s_cookieJar(prof, prof);
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
                                   /*version*/ QStringLiteral("1.3.0"),

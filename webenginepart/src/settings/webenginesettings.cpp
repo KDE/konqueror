@@ -103,6 +103,7 @@ public:
     bool m_accessKeysEnabled : 1;
     bool m_zoomTextOnly : 1;
     bool m_useCookieJar : 1;
+    bool m_acceptCrossDomainCookies : 1;
     bool m_bAutoRefreshPage: 1;
     bool m_bEnableFavicon:1;
     bool m_disableInternalPluginHandling:1;
@@ -1175,6 +1176,12 @@ bool WebEngineSettings::isCookieJarEnabled() const
     return d->m_useCookieJar;
 }
 
+bool WebEngineSettings::acceptCrossDomainCookies() const
+{
+    return d->m_acceptCrossDomainCookies;
+}
+
+
 // Password storage...
 static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
 {
@@ -1257,6 +1264,7 @@ void WebEngineSettings::initCookieJarSettings()
     KSharedConfig::Ptr cookieCfgPtr = KSharedConfig::openConfig(QStringLiteral("kcookiejarrc"), KConfig::NoGlobals);
     KConfigGroup cookieCfg ( cookieCfgPtr, "Cookie Policy");
     d->m_useCookieJar = cookieCfg.readEntry("Cookies", false);
+    d->m_acceptCrossDomainCookies = !cookieCfg.readEntry("RejectCrossDomainCookies", true);
 }
 
 void WebEngineSettings::initNSPluginSettings()

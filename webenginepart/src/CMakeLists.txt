@@ -17,6 +17,7 @@ set(kwebenginepartlib_LIB_SRCS
     webengineparterrorschemehandler.cpp
     webengineparthtmlembedder.cpp
     webenginepartkiohandler.cpp
+    webenginepartcookiejar.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp

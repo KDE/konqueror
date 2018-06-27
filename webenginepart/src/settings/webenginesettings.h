@@ -111,6 +111,9 @@ public:
 
     // CookieJar...
     bool isCookieJarEnabled() const;
+    
+    // Cross domain cookies
+    bool acceptCrossDomainCookies() const;
 
     // Password storage...
     bool isNonPasswordStorableSite(const QString &host) const;

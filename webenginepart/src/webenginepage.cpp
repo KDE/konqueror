@@ -185,7 +185,7 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    qDebug() << url << "type=" << type;
+//     qDebug() << url << "type=" << type;
     QUrl reqUrl(url);
 
     // Handle "mailto:" url here...
