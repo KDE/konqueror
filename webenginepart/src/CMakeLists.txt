@@ -1,4 +1,5 @@
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
+find_package(Qt5Xml ${QT5_MIN_VERSION} REQUIRED COMPONENTS)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 
@@ -14,6 +15,7 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
     webengineparterrorschemehandler.cpp
+    webengineparthtmlmimetypehandler.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp

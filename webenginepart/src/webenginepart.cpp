@@ -23,6 +23,7 @@
  */
 
 #include "webenginepart.h"
+#include "webengineparthtmlmimetypehandler.h"
 
 //#include <QWebHistoryItem>
 #include <QWebEngineSettings>
@@ -62,6 +63,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KSslInfoDialog>
+#include <KProtocolManager>
 
 #include <QUrl>
 #include <QFile>
@@ -341,6 +343,18 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
     }
 }
 
+void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
+{
+     if (KProtocolManager::defaultMimetype(url) == "text/html") { // man:, info:, etc.
+        QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
+        QByteArray scheme = url.scheme().toUtf8();
+        if (!prof->urlSchemeHandler(scheme)) {
+            prof->installUrlSchemeHandler(scheme, new WebEnginePartHtmlMimetypeHandler(prof));
+        }
+    }
+
+}
+
 bool WebEnginePart::openUrl(const QUrl &_u)
 {
     QUrl u (_u);
@@ -379,6 +393,8 @@ bool WebEnginePart::openUrl(const QUrl &_u)
             p->setSslInfo(sslInfo);
         }
     }
+    
+    attemptInstallKIOSchemeHandler(u);
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);

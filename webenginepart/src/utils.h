@@ -1,6 +1,8 @@
 #ifndef WEBENGINEPART_UTILS_H
 #define WEBENGINEPART_UTILS_H
 
+#include <QUrl>
+
 namespace Utils
 {
 

@@ -151,6 +151,9 @@ private Q_SLOTS:
 private:
     WebEnginePage* page();
     const WebEnginePage* page() const;
+    
+    void attemptInstallKIOSchemeHandler(const QUrl &url);
+    
     void initActions();
     void updateActions();
     void addWalletStatusBarIcon();
