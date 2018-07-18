@@ -23,7 +23,7 @@
  */
 
 #include "webenginepart.h"
-#include "webengineparthtmlmimetypehandler.h"
+#include "webenginepartkiohandler.h"
 
 //#include <QWebHistoryItem>
 #include <QWebEngineSettings>
@@ -91,6 +91,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
     if (!prof->urlSchemeHandler("error")) {
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
+        prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
     }
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
@@ -349,7 +350,7 @@ void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
         QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
         QByteArray scheme = url.scheme().toUtf8();
         if (!prof->urlSchemeHandler(scheme)) {
-            prof->installUrlSchemeHandler(scheme, new WebEnginePartHtmlMimetypeHandler(prof));
+            prof->installUrlSchemeHandler(scheme, new WebEnginePartKIOHandler(prof));
         }
     }
 

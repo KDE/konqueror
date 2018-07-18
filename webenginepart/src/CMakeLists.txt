@@ -15,7 +15,8 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
     webengineparterrorschemehandler.cpp
-    webengineparthtmlmimetypehandler.cpp
+    webengineparthtmlembedder.cpp
+    webenginepartkiohandler.cpp
     settings/webenginesettings.cpp
     settings/webengine_filter.cpp
     ui/searchbar.cpp
