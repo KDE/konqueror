@@ -64,18 +64,21 @@ WebEnginePartHtmlEmbedder::WebEnginePartHtmlEmbedder(QObject* parent) :
         m_profile(new QWebEngineProfile(this)),
         m_page(new QWebEnginePage(m_profile, this))
 {
-    connect(m_page, &QWebEnginePage::loadFinished, this, &WebEnginePartHtmlEmbedder::startExtractingUrls);
     connect(this, &WebEnginePartHtmlEmbedder::urlsExtracted, this, &WebEnginePartHtmlEmbedder::startReplacingUrls);
     connect(this, &WebEnginePartHtmlEmbedder::urlsReplaced, this, &WebEnginePartHtmlEmbedder::startRetrievingHtml);
 }
 
 void WebEnginePartHtmlEmbedder::startEmbedding(const QByteArray& html, const QString& mimeType)
 {
+    //Try avoiding problems with redirection (see documentation for this class)
+    connect(m_page, &QWebEnginePage::loadFinished, this, &WebEnginePartHtmlEmbedder::startExtractingUrls);
     m_page->setContent(html, mimeType, QUrl::fromLocalFile("/"));
 }
 
 void WebEnginePartHtmlEmbedder::startExtractingUrls()
 {
+    //Try avoiding problems with redirection (see documentation for this class) 
+    disconnect(m_page, &QWebEnginePage::loadFinished, this, &WebEnginePartHtmlEmbedder::startExtractingUrls);
     auto lambda = [this](const QVariant &res){emit urlsExtracted(res.toStringList());};
     m_page->runJavaScript(s_extractUrlsJs, lambda);
 }
@@ -99,7 +102,8 @@ void WebEnginePartHtmlEmbedder::startReplacingUrls(const QStringList& urls)
 
 void WebEnginePartHtmlEmbedder::startRetrievingHtml()
 {
-    m_page->toHtml([this](const QString &html){emit finished(html);});
+    auto callback = [this](const QString &html){emit finished(html);};
+    m_page->toHtml(callback);
 }
 
 QString WebEnginePartHtmlEmbedder::dataUrl(const QUrl& url) const

@@ -51,6 +51,12 @@ class QWebEngineProfile;
  * 
  * `QWebEnginePage::setHtml` -> `QWebEnginePage::loadFinished` -> startExtractingUrls() -> urlsExtracted() ->
  * startReplacingUrls() -> urlsReplaced() -> startRetrievingHtml() -> htmlRetrieved() -> sendReply()
+ * 
+ * A problem can arise if the (X)HTML code contains a `<meta>` element with attribute `http-equiv="refresh"`.
+ * Since QWebEnginePage is not just a parser, it honours this refresh request and, after emitting the `loadFinished`
+ * signal, it refreshes the page, which means that `loadFinished` is emitted again and again. To avoid
+ * doing the embeddding every time, the `loadFinished` signal is disconnected after the first time it's
+ * emitted and the connection is remade the next time startEmbedding() is called. 
  *
  * @note This class uses and internal `QWebEnginePage` and an associated, off the record, `QWebEngineProfile`
  * so as not interfere with the rest of the part

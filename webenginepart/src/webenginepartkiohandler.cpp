@@ -29,7 +29,6 @@
 #include <QWebEngineUrlRequestJob>
 #include <QDebug>
 #include <QBuffer>
-#include <QEventLoop>
 
 #include <KIO/StoredTransferJob>
 
