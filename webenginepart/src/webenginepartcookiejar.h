@@ -35,6 +35,7 @@
 #include <QDebug>
 #include <QDBusInterface>
 #include <QSet>
+#include <QtWebEngine/QtWebEngineVersion>
 
 class QWidget;
 class QWebEngineProfile;
@@ -232,6 +233,7 @@ private:
     */
     static QNetworkCookie parseKIOCookie(const QStringList &data, int start);
     
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     /**
     * @brief Function used to filter cookies
     * 
@@ -249,6 +251,7 @@ private:
     * @sa addCookie()
     */
     bool filterCookie(const QWebEngineCookieStore::FilterRequest &req);
+#endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     
     /**
     * @brief Adds a dot in front of a domain if it's not already there

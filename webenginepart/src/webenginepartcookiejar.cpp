@@ -25,7 +25,6 @@
 #include "webenginepartcookiejar.h"
 #include "settings/webenginesettings.h"
 
-#include <QtWebEngine/QtWebEngineVersion>
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>
 #include <QStringList>
@@ -83,10 +82,12 @@ WebEnginePartCookieJar::~WebEnginePartCookieJar()
 {
 }
 
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
 bool WebEnginePartCookieJar::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
 {
     return WebEngineSettings::self()->acceptCrossDomainCookies() || !req.thirdParty;
 }
+#endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
 
 void WebEnginePartCookieJar::deleteSessionCookies()
 {
