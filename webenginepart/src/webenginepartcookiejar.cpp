@@ -35,6 +35,7 @@
 #include <QDateTime>
 #include <QTimeZone>
 #include <QApplication>
+#include <kio_version.h>
 
 const QVariant WebEnginePartCookieJar::s_findCookieFields = QVariant::fromValue(QList<int>{
         static_cast<int>(CookieDetails::domain),
@@ -151,8 +152,10 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     //There's a bug in KCookieJar which causes the expiration date to be interpreted as local time
     //instead of GMT as it should. The bug is fixed in KIO 5.50
 #if KIO_VERSION < QT_VERSION_CHECK(5,50,0)
+        QTimeZone local = QTimeZone::systemTimeZone();
+        int offset = local.offsetFromUtc(QDateTime::currentDateTime());
         QDateTime dt = cookie.expirationDate();
-        dt.setTimeZone(QTimeZone("GMT"));
+        dt.setTime(dt.time().addSecs(offset));
         cookie.setExpirationDate(dt);
 #endif
     }
