@@ -27,7 +27,6 @@
 #include <qfileinfo.h>
 #include <qstring.h>
 
-#include <kurl.h>
 #include <kmimetype.h>
 #include <kconfiggroup.h>
 
@@ -115,7 +114,7 @@ public:
     // for color mode
     void addColorItems(QMenu *, int);
 
-    KUrl::List selectedUrls();
+    QList<QUrl> selectedUrls();
 
 public slots:
     void selected(TreeMapItem *);

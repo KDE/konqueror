@@ -32,10 +32,6 @@
 #include <kpluginfactory.h>
 #include <KParts/ReadOnlyPart>
 
-//KDELibs4Support
-
-#include <kurl.h>
-
 AutoRefresh::AutoRefresh(QObject *parent, const QVariantList & /*args*/)
     : Plugin(parent)
 {
@@ -121,7 +117,7 @@ void AutoRefresh::slotRefresh()
         KMessageBox::error(0, text, title);
     } else {
         // Get URL
-        KUrl url = part->url();
+        QUrl url = part->url();
         part->openUrl(url);
     }
 }

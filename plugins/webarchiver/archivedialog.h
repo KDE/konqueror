@@ -34,7 +34,7 @@
 class QWidget;
 class KHTMLPart;
 class ArchiveViewBase;
-class KUrl;
+class QUrl;
 class KTar;
 class QTextStream;
 
@@ -68,7 +68,7 @@ protected:
 
     static NonCDataAttr non_cdata_attr;
 
-    KIO::Job *startDownload(const KUrl &url, KHTMLPart *part);
+    KIO::Job *startDownload(const QUrl &url, KHTMLPart *part);
 
 public:
 
@@ -76,7 +76,7 @@ public:
 
     typedef QHash<QString, KHTMLPart *> Name2Part;
 private:
-    typedef QHash<KUrl,    KHTMLPart *> URL2Part;
+    typedef QHash<QUrl,    KHTMLPart *> URL2Part;
 
     struct PartFrameData {
         Name2Part framesWithName;
@@ -89,8 +89,8 @@ private:
 
     // Stylesheets
 
-    typedef QHash< KUrl, DOM::CSSStyleSheet >            CSSURLSet;
-    typedef QHash< QString, KUrl >                       RawHRef2FullURL;
+    typedef QHash< QUrl, DOM::CSSStyleSheet >            CSSURLSet;
+    typedef QHash< QString, QUrl >                       RawHRef2FullURL;
     typedef QHash< DOM::CSSStyleSheet, RawHRef2FullURL > URLsInStyleSheet;
     typedef QHash< DOM::Element, RawHRef2FullURL >       URLsInStyleElement;
     typedef QHash< DOM::Node, DOM::CSSStyleSheet >       Node2StyleSheet;
@@ -116,7 +116,7 @@ private:
             : tarName(_tarName), part(_part) { }
     };
 
-    typedef QMap< KUrl, DownloadInfo >     UrlTarMap;
+    typedef QMap< QUrl, DownloadInfo >     UrlTarMap;
     typedef QList< UrlTarMap::Iterator > DownloadList;
 
     struct AttrElem {
@@ -155,10 +155,10 @@ private:
     void obtainPartURLsLower(const DOM::Node &pNode, int level, RecurseData &data);
     void obtainStyleSheetURLsLower(DOM::CSSStyleSheet styleSheet, RecurseData &data);
 
-    bool insertTranslateURL(const KUrl &fullURL, RecurseData &data);
+    bool insertTranslateURL(const QUrl &fullURL, RecurseData &data);
     bool insertHRefFromStyleSheet(const QString &hrefRaw, RawHRef2FullURL &raw2full,
-                                  const KUrl &fullURL, RecurseData &data);
-    void parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDeclaration decl,
+                                  const QUrl &fullURL, RecurseData &data);
+    void parseStyleDeclaration(const QUrl &baseURL, DOM::CSSStyleDeclaration decl,
                                RawHRef2FullURL &urls, RecurseData &data /*, bool verbose = false*/);
 
     bool saveTopFrame();
@@ -172,6 +172,8 @@ private:
     static bool hasAttrWithValue(const DOM::Element &elem, const QString &attrName, const QString &attrValue);
     static bool hasChildNode(const DOM::Node &pNode, const QString &nodeName);
     static AttrList::Iterator getAttribute(AttrList &attrList, const QString &attr);
+    
+    static bool hasSubUrl(const QUrl &url);
 
     /**
      * completes a potentially partial URL in a HTML document (like &lt;img href="...")
@@ -196,7 +198,7 @@ private:
      *
      * @return fully qualified URL of @p partURL relative to the HTML document in @c data.part
      */
-    static KUrl absoluteURL(const QString &partURL, RecurseData &data);
+    static QUrl absoluteURL(const QString &partURL, RecurseData &data);
 
     /**
      * TODO KDE4 is this in KHTML function available now?
@@ -219,7 +221,7 @@ private:
      *
      * Checks if an embedded link like &lt;img src=&quot;...&quot; should be loaded
      */
-    static bool urlCheckFailed(KHTMLPart *part, const KUrl &fullURL);
+    static bool urlCheckFailed(KHTMLPart *part, const QUrl &fullURL);
 
     /**
      * Escapes HTML characters. Does not forget " as @ref Qt::escape() does.

@@ -23,7 +23,6 @@
 
 #include <kpagedialog.h>
 
-class KUrl;
 class KIntNumInput;
 class QCheckBox;
 class QLineEdit;
@@ -58,7 +57,7 @@ public:
     int getColorDepth() const;
 
     const QString getTitle() const;
-    const KUrl getImageUrl() const;
+    const QUrl getImageUrl() const;
     const QString getCommentFile() const;
     const QString getFontName() const;
     const QString getFontSize() const;

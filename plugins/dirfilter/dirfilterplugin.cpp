@@ -46,31 +46,31 @@
 
 K_GLOBAL_STATIC(SessionManager, globalSessionManager)
 
-static void generateKey(const KUrl &url, QString *key)
+static void generateKey(const QUrl &url, QString *key)
 {
     if (url.isValid()) {
-        *key = url.protocol();
+        *key = url.scheme();
         *key += QLatin1Char(':');
 
-        if (url.hasHost()) {
+        if (!url.host().isEmpty()) {
             *key += url.host();
             *key += QLatin1Char(':');
         }
 
-        if (url.hasPath()) {
+        if (!url.path().isEmpty()) {
             *key += url.path();
         }
     }
 }
 
-static void saveNameFilter(const KUrl &url, const QString &filter)
+static void saveNameFilter(const QUrl &url, const QString &filter)
 {
     SessionManager::Filters f = globalSessionManager->restore(url);
     f.nameFilter = filter;
     globalSessionManager->save(url, f);
 }
 
-static void saveTypeFilters(const KUrl &url, const QStringList &filters)
+static void saveTypeFilters(const QUrl &url, const QStringList &filters)
 {
     SessionManager::Filters f = globalSessionManager->restore(url);
     f.typeFilters = filters;
@@ -88,14 +88,14 @@ SessionManager::~SessionManager()
     saveSettings();
 }
 
-SessionManager::Filters SessionManager::restore(const KUrl &url)
+SessionManager::Filters SessionManager::restore(const QUrl &url)
 {
     QString key;
     generateKey(url, &key);
     return m_filters.value(key);
 }
 
-void SessionManager::save(const KUrl &url, const Filters &filters)
+void SessionManager::save(const QUrl &url, const Filters &filters)
 {
     QString key;
     generateKey(url, &key);

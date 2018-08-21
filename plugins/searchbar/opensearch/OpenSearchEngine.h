@@ -24,7 +24,7 @@
 #include <QtCore/QPair>
 #include <QImage>
 
-#include <KUrl>
+#include <QUrl>
 
 class QScriptEngine;
 
@@ -44,13 +44,13 @@ public:
 
     QString searchUrlTemplate() const;
     void setSearchUrlTemplate(const QString &searchUrl);
-    KUrl searchUrl(const QString &searchTerm) const;
+    QUrl searchUrl(const QString &searchTerm) const;
 
     bool providesSuggestions() const;
 
     QString suggestionsUrlTemplate() const;
     void setSuggestionsUrlTemplate(const QString &suggestionsUrl);
-    KUrl suggestionsUrl(const QString &searchTerm) const;
+    QUrl suggestionsUrl(const QString &searchTerm) const;
 
     QList<Parameter> searchParameters() const;
     void setSearchParameters(const QList<Parameter> &searchParameters);

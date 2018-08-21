@@ -26,7 +26,6 @@ Boston, MA 02110-1301, USA.
 #include <QDir>
 
 class QProgressDialog;
-class KUrl;
 class KIGPDialog;
 class QTextStream;
 
@@ -66,12 +65,12 @@ private:
 
     void createHead(QTextStream &stream);
     void createCSSSection(QTextStream &stream);
-    void createBody(QTextStream &stream, const QString &sourceDirName, const QStringList &subDirList, const QDir &imageDir, const KUrl &url, const QString &imageFormat);
+    void createBody(QTextStream &stream, const QString &sourceDirName, const QStringList &subDirList, const QDir &imageDir, const QUrl &url, const QString &imageFormat);
 
     bool createThumb(const QString &imgName, const QString &sourceDirName, const QString &imgGalleryDir, const QString &imageFormat);
 
-    bool createHtml(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
-    void deleteCancelledGallery(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
+    bool createHtml(const QUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
+    void deleteCancelledGallery(const QUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat);
     void loadCommentFile();
 
     static QString extension(const QString &imageFormat);

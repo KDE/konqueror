@@ -31,9 +31,6 @@
 #include <QAbstractEventDispatcher>
 #include <khtml_part.h>
 
-// KDELibs4Support
-#include  <kurl.h>
-
 #include "webarchivecreator.moc"
 
 extern "C"
@@ -63,10 +60,9 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
         m_html->setJavaEnabled(false);
         m_html->setPluginsEnabled(false);
     }
-    KUrl url;
-    url.setProtocol(QStringLiteral("tar"));
-    url.setPath(path);
-    url.addPath(QStringLiteral("index.html"));
+    QUrl url;
+    url.setScheme(QStringLiteral("tar"));
+    url.setPath(path + '/' + QStringLiteral("index.html"));
     m_html->openUrl(url);
     m_completed = false;
     int timerId = startTimer(5000);

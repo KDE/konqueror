@@ -41,7 +41,6 @@
 #include <KLocalizedString>
 #include <QMenu>
 #include <ktoolbar.h>
-#include <kurl.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
 // local includes
@@ -51,6 +50,10 @@
 /** Rellinks factory */
 K_PLUGIN_FACTORY(RelLinksFactory, registerPlugin<RelLinksPlugin>();)
 #include <kaboutdata.h>
+
+static QUrl resolvedUrl(const QUrl &base, const QString& rel) {
+    return QUrl(base).resolved(QUrl(rel));
+}
 
 Q_DECLARE_METATYPE(DOM::Element);
 
@@ -382,9 +385,9 @@ void RelLinksPlugin::updateToolbar()
         QString title = e.getAttribute("title").string();
         QString hreflang = e.getAttribute("hreflang").string();
 
-        KUrl ref(m_part->url(), href);
+        QUrl ref(resolvedUrl(m_part->url(), href));
         if (title.isEmpty()) {
-            title = ref.prettyUrl();
+            title = ref.toDisplayString();
         }
 
         // escape ampersand before settings as action title, otherwise the menu entry will interpret it as an
@@ -473,8 +476,8 @@ void RelLinksPlugin::guessRelations()
         }
 
         QString href = rx.cap(1) + nval_str + rx.cap(3);
-        KUrl ref(m_part->url(), href);
-        QString title = i18n("[Autodetected] %1", ref.prettyUrl());
+        QUrl ref(resolvedUrl(m_part->url(), href));
+        QString title = i18n("[Autodetected] %1", ref.toDisplayString());
         DOM::Element e = m_part->document().createElement("link");
         e.setAttribute("href", href);
         QAction *a = actionCollection()->action(QStringLiteral("rellinks_next"));
@@ -488,8 +491,8 @@ void RelLinksPlugin::guessRelations()
                 nval_str.prepend(zeros.left(lenval - nval_str.length()));
             }
             QString href = rx.cap(1) + nval_str + rx.cap(3);
-            KUrl ref(m_part->url(), href);
-            QString title = i18n("[Autodetected] %1", ref.prettyUrl());
+            QUrl ref(resolvedUrl(m_part->url(), href));
+            QString title = i18n("[Autodetected] %1", ref.toDisplayString());
             e = m_part->document().createElement("link");
             e.setAttribute("href", href);
             QAction *a = actionCollection()->action(QStringLiteral("rellinks_prev"));
@@ -508,7 +511,7 @@ void RelLinksPlugin::goToLink(DOM::Element e)
         return;
     }
     QString href = e.getAttribute("href").string();
-    KUrl url(part->url(), href);
+    QUrl url(resolvedUrl(part->url(), href));
     QString target = e.getAttribute("target").string();
 
     // URL arguments
@@ -520,9 +523,9 @@ void RelLinksPlugin::goToLink(DOM::Element e)
     if (url.isValid()) {
         part->browserExtension()->openUrlRequest(url, arguments, browserArguments);
     } else {
-        KUrl baseURL = part->baseURL();
-        QString endURL = url.prettyUrl();
-        KUrl realURL = KUrl(baseURL, endURL);
+        QUrl baseURL = part->baseURL();
+        QString endURL = url.toDisplayString();
+        QUrl realURL = resolvedUrl(baseURL, endURL);
         part->browserExtension()->openUrlRequest(realURL, arguments, browserArguments);
     }
 

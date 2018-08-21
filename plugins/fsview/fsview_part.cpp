@@ -344,11 +344,10 @@ void FSViewPart::setNonStandardActionEnabled(const char *actionName, bool enable
 void FSViewPart::updateActions()
 {
     int canDel = 0, canCopy = 0, canMove = 0;
-    KUrl::List urls;
+    QList<QUrl> urls;
 
     foreach (TreeMapItem *i, _view->selection()) {
-        KUrl u;
-        u.setPath(((Inode *)i)->path());
+        QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
         urls.append(u);
         canCopy++;
         if (KProtocolManager::supportsDeleting(u)) {
@@ -386,8 +385,7 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
     KFileItemList items;
 
     foreach (TreeMapItem *i, _view->selection()) {
-        KUrl u;
-        u.setPath(((Inode *)i)->path());
+        QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
         QString mimetype = ((Inode *)i)->mimeType().name();
         const QFileInfo &info = ((Inode *)i)->fileInfo();
         mode_t mode =
@@ -449,7 +447,7 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
 
 void FSViewPart::slotProperties()
 {
-    KUrl::List urlList;
+    QList<QUrl> urlList;
     if (view()) {
         urlList = view()->selectedUrls();
     }
@@ -472,7 +470,7 @@ FSViewBrowserExtension::~FSViewBrowserExtension()
 
 void FSViewBrowserExtension::del()
 {
-    const KUrl::List urls = _view->selectedUrls();
+    const QList<QUrl> urls = _view->selectedUrls();
     KIO::JobUiDelegate uiDelegate;
     uiDelegate.setWindow(_view);
     if (uiDelegate.askDeleteConfirmation(urls,
@@ -497,7 +495,7 @@ void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modif
         if (uiDelegate.askDeleteConfirmation(urls,
                                              KIO::JobUiDelegate::Trash, KIO::JobUiDelegate::DefaultConfirmation)) {
             KIO::Job *job = KIO::trash(urls);
-            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, KUrl("trash:/"), job);
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);
             KJobWidgets::setWindow(job, _view);
             job->ui()->setAutoErrorHandlingEnabled(true);
             connect(job, SIGNAL(result(KJob*)),
@@ -551,8 +549,7 @@ void FSViewBrowserExtension::selected(TreeMapItem *i)
         return;
     }
 
-    KUrl url;
-    url.setPath(((Inode *)i)->path());
+    QUrl url = QUrl::fromLocalFile(((Inode *)i)->path());
     emit openUrlRequest(url);
 }
 

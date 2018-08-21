@@ -28,7 +28,6 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
-#include <kurl.h>
 
 #include <kio/job.h>
 #include <kauthorized.h>
@@ -142,10 +141,10 @@ void FSView::setPath(const QString &p)
     _path = QDir::cleanPath(_path);
     _pathDepth = _path.count('/');
 
-    KUrl u;
+    QUrl u;
     u.setPath(_path);
-    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), KUrl(), u)) {
-        QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.prettyUrl());
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), QUrl(), u)) {
+        QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.toDisplayString());
         KMessageBox::sorry(this, msg);
     }
 
@@ -157,13 +156,12 @@ void FSView::setPath(const QString &p)
     requestUpdate(b);
 }
 
-KUrl::List FSView::selectedUrls()
+QList<QUrl> FSView::selectedUrls()
 {
-    KUrl::List urls;
+    QList<QUrl> urls;
 
     foreach (TreeMapItem *i, selection()) {
-        KUrl u;
-        u.setPath(((Inode *)i)->path());
+        QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
         urls.append(u);
     }
     return urls;

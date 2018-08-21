@@ -32,7 +32,6 @@ Boston, MA 02110-1301, USA.
 #include <QGridLayout>
 
 #include <KLocalizedString>
-#include <kurl.h>
 #include <kfontdialog.h>
 #include <kiconloader.h>
 #include <klineedit.h>
@@ -450,14 +449,14 @@ const QString KIGPDialog::getTitle() const
     return m_title->text();
 }
 
-const KUrl KIGPDialog::getImageUrl() const
+const QUrl KIGPDialog::getImageUrl() const
 {
     return m_imageNameReq->url();
 }
 
 const QString KIGPDialog::getCommentFile() const
 {
-    return m_commentFileReq->url().path();
+    return m_commentFileReq->url().toLocalFile();
 }
 
 const QString KIGPDialog::getFontName() const

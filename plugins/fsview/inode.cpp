@@ -20,8 +20,6 @@
  * FSView specialisaton of TreeMapItem class.
  */
 
-#include <kurl.h>
-
 #include <kdebug.h>
 #include <kglobal.h>
 #include <kiconloader.h>
@@ -423,7 +421,7 @@ QPixmap Inode::pixmap(int i) const
     }
 
     if (!_mimePixmapSet) {
-        KUrl u(path());
+        QUrl u = QUrl::fromLocalFile(path());
         _mimePixmap = KIconLoader::global()->loadMimeTypeIcon(KIO::iconNameForUrl(u), KIconLoader::Small);
         _mimePixmapSet = true;
     }

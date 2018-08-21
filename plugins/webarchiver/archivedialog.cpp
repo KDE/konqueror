@@ -32,7 +32,7 @@
 // * use QHash instead of QMap; get rid of Ordered<> class
 // * fixed crash / assertion on Konqueror exit after a webpage was archived
 //   See comment about KHTMLView parent widget in plugin_webarchiver.cpp
-// * Using KDE4/Qt4 KUrl::equals() and QUrl::fragment() to compare Urls
+// * Using KDE4/Qt4 QUrl::equals() and QUrl::fragment() to compare Urls
 // * KHTML stores comment with a trailing '-'. Looks like some off-by-one bug.
 // * Add mimetype indicating suffix to downloaded files.
 
@@ -75,7 +75,6 @@
 #include "webarchiverdebug.h"
 
 //KDELibs4Support
-#include <kurl.h>
 #include <kglobal.h>
 
 // Set to true if you have a patched http-io-slave that has
@@ -176,9 +175,9 @@ ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart
     }
     setMainWidget(m_widget);
 
-    KUrl srcURL = part->url();
+    QUrl srcURL = part->url();
     m_widget->urlLabel->setText(QStringLiteral("<a href=\"") + srcURL.url() + "\">" +
-                                KStringHandler::csqueeze(srcURL.prettyUrl(), 80) + "</a>");
+                                KStringHandler::csqueeze(srcURL.toDisplayString(), 80) + "</a>");
     m_widget->targetLabel->setText(QStringLiteral("<a href=\"") + filename + "\">" +
                                    KStringHandler::csqueeze(filename, 80) + "</a>");
 
@@ -215,7 +214,7 @@ void ArchiveDialog::archive()
 //         m_objects.reserve(m_url2tar.size() - m_cssURLs.size());
 
         FOR_ITER(UrlTarMap, m_url2tar, u2t_it) {
-            const KUrl &url = u2t_it.key();
+            const QUrl &url = u2t_it.key();
             DownloadInfo &info = u2t_it.value();
 
             assert(info.tarName.isNull());
@@ -258,7 +257,7 @@ void ArchiveDialog::downloadObjects()
     } else {
 
         m_dlurl2tar_it = (*m_objects_it);
-        const KUrl &url    = m_dlurl2tar_it.key();
+        const QUrl &url    = m_dlurl2tar_it.key();
         DownloadInfo &info = m_dlurl2tar_it.value();
         assert(m_dlurl2tar_it != m_url2tar.end());
 
@@ -273,7 +272,7 @@ void ArchiveDialog::slotObjectFinished(KJob *_job)
     KIO::StoredTransferJob *job = qobject_cast<KIO::StoredTransferJob *>(_job);
     Q_ASSERT(job == m_job);
     m_job = NULL;
-    const KUrl &url    = m_dlurl2tar_it.key();
+    const QUrl &url    = m_dlurl2tar_it.key();
     DownloadInfo &info = m_dlurl2tar_it.value();
 
     assert(info.tarName.isNull());
@@ -285,7 +284,7 @@ void ArchiveDialog::slotObjectFinished(KJob *_job)
         QByteArray data(job->data());
         const QString &tarName = info.tarName;
 
-//         qCDebug(WEBARCHIVERPLUGIN_LOG) << "downloaded " << url.prettyUrl() << "size=" << data.size() << "mimetype" << mimetype;
+//         qCDebug(WEBARCHIVERPLUGIN_LOG) << "downloaded " << url.toDisplayString() << "size=" << data.size() << "mimetype" << mimetype;
         error = ! m_tarBall->writeFile(tarName, data, archivePerms, QString::null, QString::null,
                                        m_archiveTime, m_archiveTime, m_archiveTime);
         if (error) {
@@ -312,7 +311,7 @@ void ArchiveDialog::downloadStyleSheets()
     } else {
 
 //         QTimer::singleShot(3000, this, SLOT(slotDownloadStyleSheetsDelay()));
-        const KUrl &url = m_styleSheets_it.key();
+        const QUrl &url = m_styleSheets_it.key();
         m_dlurl2tar_it = m_url2tar.find(url);
         assert(m_dlurl2tar_it != m_url2tar.end());
         DownloadInfo &info = m_dlurl2tar_it.value();
@@ -328,7 +327,7 @@ void ArchiveDialog::slotStyleSheetFinished(KJob *_job)
     KIO::StoredTransferJob *job = qobject_cast<KIO::StoredTransferJob *>(_job);
     Q_ASSERT(job == m_job);
     m_job = NULL;
-    const KUrl &url    = m_dlurl2tar_it.key();
+    const QUrl &url    = m_dlurl2tar_it.key();
     DownloadInfo &info = m_dlurl2tar_it.value();
 
     bool error = job->error();
@@ -370,11 +369,11 @@ void ArchiveDialog::slotStyleSheetFinished(KJob *_job)
     downloadStyleSheets();
 }
 
-KIO::Job *ArchiveDialog::startDownload(const KUrl &url, KHTMLPart *part)
+KIO::Job *ArchiveDialog::startDownload(const QUrl &url, KHTMLPart *part)
 {
     QTreeWidgetItem *twi = new QTreeWidgetItem;
     twi->setText(0, i18n("Downloading"));
-    twi->setText(1, url.prettyUrl());
+    twi->setText(1, url.toDisplayString());
     QTreeWidget *tw = m_widget->progressView;
     tw->insertTopLevelItem(0, twi);
 
@@ -458,7 +457,7 @@ struct GetName : public GetFromPart {
 struct GetURL : public GetFromPart {
     GetURL(const KHTMLPart *child) : GetFromPart(child) { }
 
-    operator KUrl()
+    operator QUrl()
     {
         return child->url();
     }
@@ -534,13 +533,13 @@ void ArchiveDialog::obtainURLs()
     FOR_ITER(URLsInStyleSheet, m_URLsInStyleSheet, ss2u_it) {
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "raw URLs in sheet='" << ss2u_it.key().href();
         FOR_ITER(RawHRef2FullURL, ss2u_it.data(), c2f_it) {
-            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().toDisplayString();
         }
     }
     FOR_ITER(URLsInStyleElement, m_URLsInStyleElement, e2u_it) {
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "raw URLs in style-element:";
         FOR_ITER(RawHRef2FullURL, e2u_it.data(), c2f_it) {
-            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().prettyUrl();
+            qCDebug(WEBARCHIVERPLUGIN_LOG) << "   url='" << c2f_it.key() << "' -> '" << c2f_it.data().toDisplayString();
         }
     }
 #endif
@@ -577,7 +576,7 @@ void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseDat
                 // Remove that URL from the stylesheet
                 qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: invalid @import url('" << cir.href() << "')";
 
-                raw2full.insert(cir.href().string(), KUrl());
+                raw2full.insert(cir.href().string(), QUrl());
 
             } else {
 
@@ -586,7 +585,7 @@ void ArchiveDialog::obtainStyleSheetURLsLower(DOM::CSSStyleSheet css, RecurseDat
                 QString href = cir.href().string();
                 Q_ASSERT(!href.isNull());
 
-                KUrl fullURL  = importSheet.baseUrl();
+                QUrl fullURL  = importSheet.baseUrl();
                 bool inserted = insertHRefFromStyleSheet(href, raw2full, fullURL, data);
                 if (inserted) {
                     m_cssURLs.insert(fullURL, importSheet);
@@ -644,7 +643,7 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
             QString href = css.href().string();
             if (! href.isNull()) {
                 QString href  = css.href().string();
-                KUrl fullUrl  = css.baseUrl();
+                QUrl fullUrl  = css.baseUrl();
                 qCDebug(WEBARCHIVERPLUGIN_LOG) << "top-level stylesheet='" << href;
                 bool inserted = insertTranslateURL(fullUrl, data);
                 if (inserted) {
@@ -703,9 +702,9 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
 
             // URL has no 'name' attribute.  This frame cannot(?) change, so 'src' should
             // identify it unambigously
-            KUrl _frameURL = absoluteURL((*eurls.frameURL).value, data);
+            QUrl _frameURL = absoluteURL((*eurls.frameURL).value, data);
             if (!urlCheckFailed(data.part, _frameURL)) {
-                data.partFrameData->framesWithURLOnly.insert(_frameURL.url(), 0);
+                data.partFrameData->framesWithURLOnly.insert(QUrl(_frameURL.url()), 0);
             }
 
         } else {
@@ -732,7 +731,7 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
 
 // Kill insecure/invalid links. Frames are treated separately.
 
-bool ArchiveDialog::insertTranslateURL(const KUrl &fullURL, RecurseData &data)
+bool ArchiveDialog::insertTranslateURL(const QUrl &fullURL, RecurseData &data)
 {
     if (!urlCheckFailed(data.part, fullURL)) {
 //         qCDebug(WEBARCHIVERPLUGIN_LOG) << "adding '" << fullURL << "' to to-be-downloaded URLs";
@@ -745,25 +744,25 @@ bool ArchiveDialog::insertTranslateURL(const KUrl &fullURL, RecurseData &data)
 }
 
 bool ArchiveDialog::insertHRefFromStyleSheet(const QString &hrefRaw, RawHRef2FullURL &raw2full,
-        const KUrl &fullURL, RecurseData &data)
+        const QUrl &fullURL, RecurseData &data)
 {
     bool inserted = insertTranslateURL(fullURL, data);
 
 #if 0
     if (inserted) {
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: found url='"
-                      << fullURL.prettyUrl() << "' hrefRaw='" << hrefRaw;
+                      << fullURL.toDisplayString() << "' hrefRaw='" << hrefRaw;
     } else {
         qCDebug(WEBARCHIVERPLUGIN_LOG) << "stylesheet: killing insecure/invalid url='"
-                      << fullURL.prettyUrl() << "' hrefRaw='" << hrefRaw;
+                      << fullURL.toDisplayString() << "' hrefRaw='" << hrefRaw;
     }
 #endif
 
-    raw2full.insert(hrefRaw, inserted ? fullURL : KUrl());
+    raw2full.insert(hrefRaw, inserted ? fullURL : QUrl());
     return inserted;
 }
 
-void ArchiveDialog::parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDeclaration decl,
+void ArchiveDialog::parseStyleDeclaration(const QUrl &baseURL, DOM::CSSStyleDeclaration decl,
         RawHRef2FullURL &raw2full, RecurseData &data /*, bool verbose*/)
 {
     for (int k = 0; k != static_cast<int>(decl.length()); ++k) {
@@ -782,7 +781,7 @@ void ArchiveDialog::parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDecl
             QString parsedURL = parseURL(href);
 
 //             qCDebug(WEBARCHIVERPLUGIN_LOG) << "found URL='" << val << "' extracted='" << parsedURL << "'";
-            insertHRefFromStyleSheet(href, raw2full, KUrl(baseURL, parsedURL), data);
+            insertHRefFromStyleSheet(href, raw2full, QUrl(baseURL).resolved(QUrl(parsedURL)), data);
         }
     }
 }
@@ -922,8 +921,8 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
 
             // make URLs in hyperref links absolute
             if (eurls.absURL != invalid) {
-                KUrl baseurl = absoluteURL(QLatin1String(""), data);
-                KUrl newurl = KUrl(baseurl, parseURL((*eurls.absURL).value));
+                QUrl baseurl = absoluteURL(QLatin1String(""), data);
+                QUrl newurl = QUrl(baseurl).resolved(QUrl(parseURL((*eurls.absURL).value)));
                 if (urlCheckFailed(data.part, newurl)) {
                     (*eurls.absURL).value = QLatin1String("");
                     qCDebug(WEBARCHIVERPLUGIN_LOG) << "removing invalid/insecure href='" << newurl << "'";
@@ -933,8 +932,8 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     // This is slow of course and there would be only a difference if there is some suburl.
                     // Since we discard any urls with suburls for security reasons QUrl::fragment() is sufficient.
                     //
-                    assert(! newurl.hasSubUrl());   // @see urlCheckFailed()
-                    if (newurl.hasFragment() && baseurl.equals(newurl, KUrl::CompareWithoutFragment)) {
+                    assert(! hasSubUrl(newurl));   // @see urlCheckFailed()
+                    if (newurl.hasFragment() && baseurl.matches(newurl, QUrl::RemoveFragment)) {
                         (*eurls.absURL).value = QStringLiteral("#") + newurl.fragment();
                     } else {
                         (*eurls.absURL).value = newurl.url();
@@ -947,7 +946,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                 // NOTE This is a bit inefficient, because the URL is computed twice, here and when obtaining all
                 // URLs first. However it is necessary, because two URLs that look different in the HTML frames (for
                 // example absolute and relative) may resolve to the same absolute URL
-                KUrl fullURL = absoluteURL(parseURL((*eurls.transURL).value), data);
+                QUrl fullURL = absoluteURL(parseURL((*eurls.transURL).value), data);
                 UrlTarMap::Iterator it = m_url2tar.find(fullURL);
                 if (it == m_url2tar.end()) {
 
@@ -963,7 +962,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             // Check stylesheet <link>s
             if (eurls.cssURL != invalid) {
 
-                KUrl fullURL = absoluteURL((*eurls.cssURL).value, data);
+                QUrl fullURL = absoluteURL((*eurls.cssURL).value, data);
                 UrlTarMap::Iterator it = m_url2tar.find(fullURL);
 
                 if (it == m_url2tar.end()) {
@@ -1010,7 +1009,7 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
             } else if (eurls.frameURL != invalid) {
 
                 URL2Part &u2f = data.partFrameData->framesWithURLOnly;
-                KUrl fullURL = absoluteURL((*eurls.frameURL).value, data);
+                QUrl fullURL = absoluteURL((*eurls.frameURL).value, data);
                 URL2Part::Iterator u2f_part = u2f.find(fullURL);
 
                 if (u2f_part == u2f.end()) {
@@ -1149,7 +1148,7 @@ QString &ArchiveDialog::changeCSSURLs(QString &text, const RawHRef2FullURL &raw2
 {
     FOR_CONST_ITER(RawHRef2FullURL, raw2full, r2f_it) {
         const QString &raw  = r2f_it.key();
-        const KUrl &fullURL = r2f_it.value();
+        const QUrl &fullURL = r2f_it.value();
         if (fullURL.isValid()) {
             UrlTarMap::Iterator utm_it = m_url2tar.find(fullURL);
             if (utm_it != m_url2tar.end()) {
@@ -1277,12 +1276,12 @@ ArchiveDialog::AttrList::Iterator ArchiveDialog::getAttribute(AttrList &attrList
     return attrList.end();
 }
 
-KUrl ArchiveDialog::absoluteURL(const QString &partURL, RecurseData &data)
+QUrl ArchiveDialog::absoluteURL(const QString &partURL, RecurseData &data)
 {
     if (data.baseSeen) {
-        return KUrl(data.document.completeURL(partURL).string());
+        return QUrl(data.document.completeURL(partURL).string());
     } else {
-        return KUrl(data.part->url(), partURL);
+        return QUrl(data.part->url()).resolved(QUrl(partURL));
     }
 }
 
@@ -1307,17 +1306,13 @@ QString ArchiveDialog::uniqTarName(const QString &suggestion, KHTMLPart *part)
     return result;
 }
 
-bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const KUrl &fullURL)
+bool ArchiveDialog::urlCheckFailed(KHTMLPart *part, const QUrl &fullURL)
 {
     if (!fullURL.isValid()) {
         return true;
     }
-//     kDebug() << fullURL.prettyUrl() << " hasSubURL()=" << fullURL.hasSubUrl();
-    if (fullURL.hasSubUrl()) {
-        return true;
-    }
 
-    QString prot = fullURL.protocol();
+    QString prot = fullURL.scheme();
     bool protFile = (prot == QLatin1String("file"));
     if (part->onlyLocalReferences() && !protFile) {
         return true;
@@ -1378,4 +1373,3 @@ QString ArchiveDialog::appendMimeTypeSuffix(QString filename, const QString &mim
     }
     return filename;
 }
-

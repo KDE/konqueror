@@ -31,10 +31,6 @@
 #include <KParts/ReadOnlyPart>
 #include <QAction>
 
-//KDELibs4Support
-#include <kurl.h>
-
-
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
 {
@@ -57,7 +53,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
         return;
     }
 
-    KUrl url = KIO::NetAccess::mostLocalUrl(part->url(), NULL);
+    QUrl url = KIO::NetAccess::mostLocalUrl(part->url(), NULL);
     if (!url.isLocalFile()) {
         KMessageBox::sorry(part->widget(), i18n("Executing shell commands works only on local directories."));
         return;

@@ -31,14 +31,13 @@
 #include "validatorsdialog.h"
 
 #include <qpointer.h>
+#include <QUrl>
 
 #include <kparts/plugin.h>
 
-//KDELibs4Support
-#include <kurl.h>
 
 class KActionMenu;
-class KUrl;
+
 namespace KIO
 {
 class Job;
@@ -84,9 +83,9 @@ private:
     // +-> Order dependency.
     KParts::ReadOnlyPart *m_part;                // |
 
-    KUrl m_WWWValidatorUrl, m_WWWValidatorUploadUrl;
-    KUrl m_CSSValidatorUrl, m_CSSValidatorUploadUrl;
-    KUrl m_linkValidatorUrl;
+    QUrl m_WWWValidatorUrl, m_WWWValidatorUploadUrl;
+    QUrl m_CSSValidatorUrl, m_CSSValidatorUploadUrl;
+    QUrl m_linkValidatorUrl;
 
     QAction *m_validateHtmlUri, *m_validateHtmlUpload;
     QAction *m_validateCssUri, *m_validateCssUpload;
@@ -101,8 +100,8 @@ private:
     bool canValidateByUpload() const;
     bool canValidateLocally() const;
     QString documentSource() const;
-    void validateByUri(const KUrl &url);
-    void validateByUpload(const KUrl &url, const QList<QPair<QByteArray, QByteArray> > &formData);
+    void validateByUri(const QUrl &url);
+    void validateByUpload(const QUrl &url, const QList<QPair<QByteArray, QByteArray> > &formData);
     bool doExternalValidationChecks();
     void addStatusBarIcon();
     void removeStatusBarIcon();

@@ -24,13 +24,12 @@
 #include <QStringList>
 #include <QWidget>
 #include <QMenu>
+#include <QUrl>
 
-#include <kurl.h>
 #include <kparts/plugin.h>
 #include <kparts/listingextension.h>
 
 class QPushButton;
-class KUrl;
 class KFileItemList;
 class KLineEdit;
 namespace KParts
@@ -81,8 +80,8 @@ public:
 
     SessionManager();
     ~SessionManager();
-    Filters restore(const KUrl &url);
-    void save(const KUrl &url, const Filters &filters);
+    Filters restore(const QUrl &url);
+    void save(const QUrl &url, const Filters &filters);
 
     bool showCount;
     bool useMultipleFilters;

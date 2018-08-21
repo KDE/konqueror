@@ -32,7 +32,6 @@ Boston, MA 02110-1301, USA.
 #include <KLocalizedString>
 #include <kcharsets.h>
 #include <kmessagebox.h>
-#include <kurl.h>
 #include <kimageio.h>
 
 #include <kdebug.h>
@@ -52,6 +51,10 @@ Boston, MA 02110-1301, USA.
 #include <kdeversion.h>
 
 K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
+
+static QString directory(const QUrl &url) {
+    return url.adjusted(QUrl::StripTrailingSlash).adjusted(QUrl::RemoveFilename).toLocalFile();
+}
 
 KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent), m_commentMap(0)
@@ -88,7 +91,7 @@ void KImGalleryPlugin::slotExecute()
         m_useCommentFile = m_configDlg->useCommentFile();
         m_imagesPerRow = m_configDlg->getImagesPerRow();
 
-        KUrl url(m_configDlg->getImageUrl());
+        QUrl url(m_configDlg->getImageUrl());
         if (!url.isEmpty() && url.isValid()) {
             m_progressDlg = new QProgressDialog(m_part->widget());
             QObject::connect(m_progressDlg, SIGNAL(canceled()), this, SLOT(slotCancelled()));
@@ -171,10 +174,10 @@ QString KImGalleryPlugin::extension(const QString &imageFormat)
 }
 
 void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirName, const QStringList &subDirList,
-                                  const QDir &imageDir, const KUrl &url, const QString &imageFormat)
+                                  const QDir &imageDir, const QUrl &url, const QString &imageFormat)
 {
     int numOfImages = imageDir.count();
-    const QString imgGalleryDir = url.directory();
+    const QString imgGalleryDir = directory(url);
     const QString today(KLocale::global()->formatDate(QDate::currentDate()));
 
     stream << "<body>\n<h1>" << m_configDlg->getTitle().toHtmlEscaped() << "</h1><p>" << endl;
@@ -258,7 +261,7 @@ void KImGalleryPlugin::createBody(QTextStream &stream, const QString &sourceDirN
     stream << "</table>\n</body>\n</html>" << endl;
 }
 
-bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
+bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
 {
     if (m_cancelled) {
         return false;
@@ -279,17 +282,17 @@ bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName,
             if (currentDir == QLatin1String(".") || currentDir == QLatin1String("..")) {
                 continue;   //disregard the "." and ".." directories
             }
-            QDir subDir = QDir(url.directory() + '/' + currentDir);
+            QDir subDir = QDir(directory(url) + '/' + currentDir);
             if (!subDir.exists()) {
-                subDir.setPath(url.directory());
+                subDir.setPath(directory(url));
                 if (!(subDir.mkdir(currentDir/*, false*/))) {
                     KMessageBox::sorry(m_part->widget(), i18n("Could not create folder: %1", subDir.path()));
                     continue;
                 } else {
-                    subDir.setPath(url.directory() + '/' + currentDir);
+                    subDir.setPath(directory(url) + '/' + currentDir);
                 }
             }
-            if (!createHtml(KUrl(subDir.path() + '/' + url.fileName()), sourceDirName + '/' + currentDir,
+            if (!createHtml(QUrl::fromLocalFile(subDir.path() + '/' + url.fileName()), sourceDirName + '/' + currentDir,
                             recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat)) {
                 return false;
             }
@@ -308,7 +311,7 @@ bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName,
     QDir imageDir(sourceDirName, filter.toLatin1(),
                   QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::Readable);
 
-    const QString imgGalleryDir = url.directory();
+    const QString imgGalleryDir = directory(url);
     kDebug(90170) << "imgGalleryDir: " << imgGalleryDir;
 
     // Create the "thumbs" subdirectory if necessary
@@ -341,12 +344,16 @@ bool KImGalleryPlugin::createHtml(const KUrl &url, const QString &sourceDirName,
         return !m_cancelled;
 
     } else {
-        KMessageBox::sorry(m_part->widget(), i18n("Could not open file: %1", url.path(KUrl::AddTrailingSlash)));
+        QString path = url.toLocalFile();
+        if (!path.endsWith("/")) {
+            path += '/';
+        }
+        KMessageBox::sorry(m_part->widget(), i18n("Could not open file: %1", path));
         return false;
     }
 }
 
-void KImGalleryPlugin::deleteCancelledGallery(const KUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
+void KImGalleryPlugin::deleteCancelledGallery(const QUrl &url, const QString &sourceDirName, int recursionLevel, const QString &imageFormat)
 {
     if (m_recurseSubDirectories && (recursionLevel >= 0)) {
         QStringList subDirList;
@@ -358,13 +365,13 @@ void KImGalleryPlugin::deleteCancelledGallery(const KUrl &url, const QString &so
             if (*it == QLatin1String(".") || *it == QLatin1String("..") || *it == QLatin1String("thumbs") || (m_copyFiles && *it == QLatin1String("images"))) {
                 continue; //disregard the "." and ".." directories
             }
-            deleteCancelledGallery(KUrl(url.directory() + '/' + *it + '/' + url.fileName()),
+            deleteCancelledGallery(QUrl::fromLocalFile(directory(url) + '/' + *it + '/' + url.fileName()),
                                    sourceDirName + '/' + *it,
                                    recursionLevel > 1 ? recursionLevel - 1 : 0, imageFormat);
         }
     }
 
-    const QString imgGalleryDir = url.directory();
+    const QString imgGalleryDir = directory(url);
     QDir thumb_dir(imgGalleryDir + QLatin1String("/thumbs/"));
     QDir images_dir(imgGalleryDir + QLatin1String("/images/"));
     QDir imageDir(sourceDirName, QStringLiteral("*.png *.PNG *.gif *.GIF *.jpg *.JPG *.jpeg *.JPEG *.bmp *.BMP"),
@@ -448,9 +455,9 @@ bool KImGalleryPlugin::createThumb(const QString &imgName, const QString &source
     const QString pixPath = sourceDirName + QLatin1String("/") + imgName;
 
     if (m_copyFiles) {
-        KUrl srcURL = KUrl(pixPath);
+        QUrl srcURL = QUrl::fromLocalFile(pixPath);
         //kDebug(90170) << "srcURL: " << srcURL;
-        KUrl destURL = KUrl(imgGalleryDir + QLatin1String("/images/") + imgName);
+        QUrl destURL = QUrl::fromLocalFile(imgGalleryDir + QLatin1String("/images/") + imgName);
         //kDebug(90170) << "destURL: " << destURL;
         KIO::NetAccess::file_copy(srcURL, destURL, static_cast<KParts::Part *>(parent())->widget());
     }

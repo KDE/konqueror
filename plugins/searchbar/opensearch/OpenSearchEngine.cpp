@@ -82,13 +82,13 @@ void OpenSearchEngine::setSearchUrlTemplate(const QString &searchUrlTemplate)
     m_searchUrlTemplate = searchUrlTemplate;
 }
 
-KUrl OpenSearchEngine::searchUrl(const QString &searchTerm) const
+QUrl OpenSearchEngine::searchUrl(const QString &searchTerm) const
 {
     if (m_searchUrlTemplate.isEmpty()) {
-        return KUrl();
+        return QUrl();
     }
 
-    KUrl retVal = KUrl::fromEncoded(parseTemplate(searchTerm, m_searchUrlTemplate).toUtf8());
+    QUrl retVal = QUrl::fromEncoded(parseTemplate(searchTerm, m_searchUrlTemplate).toUtf8());
 
     QList<Parameter>::const_iterator end = m_searchParameters.constEnd();
     QList<Parameter>::const_iterator i = m_searchParameters.constBegin();
@@ -114,13 +114,13 @@ void OpenSearchEngine::setSuggestionsUrlTemplate(const QString &suggestionsUrlTe
     m_suggestionsUrlTemplate = suggestionsUrlTemplate;
 }
 
-KUrl OpenSearchEngine::suggestionsUrl(const QString &searchTerm) const
+QUrl OpenSearchEngine::suggestionsUrl(const QString &searchTerm) const
 {
     if (m_suggestionsUrlTemplate.isEmpty()) {
-        return KUrl();
+        return QUrl();
     }
 
-    KUrl retVal = KUrl::fromEncoded(parseTemplate(searchTerm, m_suggestionsUrlTemplate).toUtf8());
+    QUrl retVal = QUrl::fromEncoded(parseTemplate(searchTerm, m_suggestionsUrlTemplate).toUtf8());
 
     QList<Parameter>::const_iterator end = m_suggestionsParameters.constEnd();
     QList<Parameter>::const_iterator i = m_suggestionsParameters.constBegin();

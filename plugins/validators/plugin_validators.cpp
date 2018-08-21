@@ -226,11 +226,11 @@ QString getLinkValidatorUrl()
 
 void PluginValidators::setURLs()
 {
-    m_WWWValidatorUrl = KUrl(getWWWValidatorUrl());
-    m_CSSValidatorUrl = KUrl(getCSSValidatorUrl());
-    m_WWWValidatorUploadUrl = KUrl(getWWWValidatorUploadUrl());
-    m_CSSValidatorUploadUrl = KUrl(getCSSValidatorUploadUrl());
-    m_linkValidatorUrl = KUrl(getLinkValidatorUrl());
+    m_WWWValidatorUrl = QUrl(getWWWValidatorUrl());
+    m_CSSValidatorUrl = QUrl(getCSSValidatorUrl());
+    m_WWWValidatorUploadUrl = QUrl(getWWWValidatorUploadUrl());
+    m_CSSValidatorUploadUrl = QUrl(getCSSValidatorUploadUrl());
+    m_linkValidatorUrl = QUrl(getLinkValidatorUrl());
 }
 
 void PluginValidators::slotStarted(KIO::Job *)
@@ -433,15 +433,15 @@ void PluginValidators::slotConfigure()
     m_configDialog->show();
 }
 
-void PluginValidators::validateByUri(const KUrl &url)
+void PluginValidators::validateByUri(const QUrl &url)
 {
     if (!doExternalValidationChecks()) {
         return;
     }
 
-    KUrl partUrl = m_part->url();
-    KUrl validatorUrl(url);
-    if (partUrl.hasPass()) {
+    QUrl partUrl = m_part->url();
+    QUrl validatorUrl(url);
+    if (!partUrl.password().isEmpty()) {
         KMessageBox::sorry(
             m_part->widget(),
             i18n("<qt>The selected URL cannot be verified because it contains "
@@ -460,7 +460,7 @@ void PluginValidators::validateByUri(const KUrl &url)
     emit ext->openUrlRequest(validatorUrl, urlArgs, browserArgs);
 }
 
-void PluginValidators::validateByUpload(const KUrl &validatorUrl, const QList<QPair<QByteArray, QByteArray> > &formData)
+void PluginValidators::validateByUpload(const QUrl &validatorUrl, const QList<QPair<QByteArray, QByteArray> > &formData)
 {
     KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(m_part);
     KParts::OpenUrlArguments urlArgs;
@@ -525,7 +525,7 @@ bool PluginValidators::doExternalValidationChecks()
     }
 
     // Get URL
-    KUrl partUrl = m_part->url();
+    QUrl partUrl = m_part->url();
     if (!partUrl.isValid()) { // Just in case ;)
         const QString title = i18nc("@title:window", "Malformed URL");
         const QString text = i18n("The URL you entered is not valid, please "

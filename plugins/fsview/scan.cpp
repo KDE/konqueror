@@ -22,7 +22,6 @@
 #include <qplatformdefs.h>
 
 #include <kdebug.h>
-#include <kurl.h>
 #include <kauthorized.h>
 #include <kurlauthorized.h>
 
@@ -269,9 +268,8 @@ int ScanDir::scan(ScanItem *si, ScanItemList &list, int data)
         return 0;
     }
 
-    KUrl u;
-    u.setPath(si->absPath);
-    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), KUrl(), u)) {
+    QUrl u = QUrl::fromLocalFile(si->absPath);
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), QUrl(), u)) {
         if (_parent) {
             _parent->subScanFinished();
         }
