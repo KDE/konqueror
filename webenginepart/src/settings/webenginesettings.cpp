@@ -708,7 +708,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
   QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::CursiveFont, cursiveFontName());
   QWebEngineSettings::globalSettings()->setFontFamily(QWebEngineSettings::FantasyFont, fantasyFontName());
 
-  // TODO: Create a webengine config module that gets embeded into Konqueror's kcm.
+  // TODO: Create a webengine config module that gets embedded into Konqueror's kcm.
   // Turn on WebGL support
 //  QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::WebGLEnabled, d->m_enableWebGL);
   // Turn on HTML 5 local and offline storage capabilities...

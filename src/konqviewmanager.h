@@ -173,7 +173,7 @@ public:
 
     /**
      * Brings the tab specified by @p view to the front of the stack
-     * Deprecated, used the other one; this one breaks too easily with splitted views
+     * Deprecated, used the other one; this one breaks too easily with split views
      * (if passing the current view to @p view)
      */
     void showTab(KonqView *view);

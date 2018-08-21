@@ -48,7 +48,6 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
-#include <QInputDialog>
 #include <QWebEngineHistory>
 #include <QMimeData>
 #define QL1S(x)     QLatin1String(x)

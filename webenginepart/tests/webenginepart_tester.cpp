@@ -68,7 +68,6 @@
 #include <QVector>
 #include <QTextStream>
 #include <QApplication>
-#include <KAboutData>
 #include <KLocalizedString>
 #include <QCommandLineParser>
 

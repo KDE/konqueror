@@ -539,7 +539,7 @@ bool PluginValidators::doExternalValidationChecks()
 
 void PluginValidators::addStatusBarIcon()
 {
-    // alread an icon placed
+    // already an icon placed
     if (m_icon) {
         return;
     }

@@ -257,7 +257,7 @@ private:
     * @brief Adds a dot in front of a domain if it's not already there
     * 
     * @param dom the domain
-    * @return `dom` if it already starts with a dot and `dom` preceeded by a dot otherwise
+    * @return `dom` if it already starts with a dot and `dom` preceded by a dot otherwise
     * 
     * @internal
     * This function is needed because KCookieJar prepends a dot to all domains not starting with one (according

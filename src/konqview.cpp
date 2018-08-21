@@ -63,7 +63,6 @@
 #include <KParts/OpenUrlArguments>
 #include <KParts/BrowserExtension>
 #include <KParts/WindowArgs>
-#include <KComponentData>
 
 //#define DEBUG_HISTORY
 

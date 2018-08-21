@@ -12,7 +12,7 @@
  *     New configuration scheme for JavaScript
  *
  * Copyright (c) Daniel Molkentin 2000
- *     Major cleanup & Java/JS settings splitted
+ *     Major cleanup & Java/JS settings split
  *
  * Copyright (c) Leo Savernik 2002-2003
  *     Big changes to accommodate per-domain settings

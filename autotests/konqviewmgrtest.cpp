@@ -835,7 +835,7 @@ void ViewMgrTest::testCloseOtherTabs()
     // Switching to an empty tab -> focus goes to location bar (#84867)
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), "KonqCombo");
 
-    // Check that removeOtherTabs deals with splitted views correctly
+    // Check that removeOtherTabs deals with split views correctly
     mainWindow.viewManager()->removeOtherTabs(2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, first tab = splitter with two frames
 }

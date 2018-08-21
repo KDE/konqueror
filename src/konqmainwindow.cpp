@@ -1282,7 +1282,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
 
     // Make the window open properties configurable. This is equivalent to
     // Firefox's "dom.disable_window_open_feature.*" properties. For now
-    // only LocationBar visiblity is configurable.
+    // only LocationBar visibility is configurable.
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup cfg(config, "DisableWindowOpenFeatures");
 
