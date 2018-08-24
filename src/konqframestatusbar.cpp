@@ -93,7 +93,7 @@ void KonqCheckBox::paintEvent(QPaintEvent *)
 }
 
 KonqFrameStatusBar::KonqFrameStatusBar(KonqFrame *_parent)
-    : KStatusBar(_parent),
+    : QStatusBar(_parent),
       m_pParentKonqFrame(_parent),
       m_pStatusLabel(Q_NULLPTR)
 {
@@ -199,7 +199,7 @@ bool KonqFrameStatusBar::eventFilter(QObject *o, QEvent *e)
         return true;
     }
 
-    return KStatusBar::eventFilter(o, e);
+    return QStatusBar::eventFilter(o, e);
 }
 
 void KonqFrameStatusBar::message(const QString &msg)

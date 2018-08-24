@@ -20,7 +20,7 @@
 #ifndef KONQ_FRAMESTATUSBAR_H
 #define KONQ_FRAMESTATUSBAR_H
 
-#include <KStatusBar>
+#include <QStatusBar>
 #include "konqstatusbarmessagelabel.h"
 class QLabel;
 class QProgressBar;
@@ -36,7 +36,7 @@ class ReadOnlyPart;
  * The KonqFrameStatusBar is the statusbar under each konqueror view.
  * It indicates in particular whether a view is active or not.
  */
-class KonqFrameStatusBar : public KStatusBar
+class KonqFrameStatusBar : public QStatusBar
 {
     Q_OBJECT
 
