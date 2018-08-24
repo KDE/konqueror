@@ -25,8 +25,7 @@
 
 #include <klocale.h>
 
-//KDELibs4Support
-#include <kicon.h>
+#include <QIcon>
 
 static const int FrameNumberRole = Qt::UserRole + 1;
 
@@ -77,21 +76,21 @@ ReportDialog::ReportDialog(const QList<ValidationResult *> &results, QWidget *pa
     QList<QTreeWidgetItem *> items;
     int i = 0;
     Q_FOREACH (ValidationResult *res, results) {
-        const KIcon errorIcon("dialog-error");
+        const QIcon errorIcon = QIcon::fromTheme("dialog-error");
         const QString errorStatus = i18nc("Validation status", "Error");
         Q_FOREACH (const TidyReport &r, res->errors) {
             QTreeWidgetItem *item = createItemFromReport(
                                         r, errorIcon, errorStatus, res->frameName, i);
             items.append(item);
         }
-        const KIcon warningIcon("dialog-warning");
+        const QIcon warningIcon = QIcon::fromTheme("dialog-warning");
         const QString warningStatus = i18nc("Validation status", "Warning");
         Q_FOREACH (const TidyReport &r, res->warnings) {
             QTreeWidgetItem *item = createItemFromReport(
                                         r, warningIcon, warningStatus, res->frameName, i);
             items.append(item);
         }
-        const KIcon a11yWarningIcon("preferences-desktop-accessibility");
+        const QIcon a11yWarningIcon = QIcon::fromTheme("preferences-desktop-accessibility");
         const QString a11yWarningStatus = i18nc("Validation status", "Accessibility warning");
         Q_FOREACH (const TidyReport &r, res->accesswarns) {
             QTreeWidgetItem *item = createItemFromReport(

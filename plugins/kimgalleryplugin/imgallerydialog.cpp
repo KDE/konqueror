@@ -39,7 +39,6 @@ Boston, MA 02110-1301, USA.
 #include <kcolorbutton.h>
 #include <kurlrequester.h>
 #include <kconfig.h>
-#include <KIcon>
 
 #include <QFontDatabase>
 #include "imgallerydialog.h"
@@ -94,7 +93,7 @@ void KIGPDialog::setupLookPage(const QString &path)
     QFrame *page = new QFrame();
     KPageWidgetItem *pageItem = new KPageWidgetItem(page, i18n("Look"));
     pageItem->setHeader(i18n("Page Look"));
-    pageItem->setIcon(KIcon(BarIcon("fill-color", KIconLoader::SizeMedium)));
+    pageItem->setIcon(QIcon::fromTheme("fill-color"));
     addPage(pageItem);
 
     KConfigGroup look = m_config->group("Look");
@@ -193,7 +192,7 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
     QFrame *page = new QFrame();
     KPageWidgetItem *pageItem = new KPageWidgetItem(page, i18n("Folders"));
     pageItem->setHeader(i18n("Folders"));
-    pageItem->setIcon(KIcon(BarIcon("folder", KIconLoader::SizeMedium)));
+    pageItem->setIcon(QIcon("folder"));
     addPage(pageItem);
 
     KConfigGroup group =  m_config->group("Directory");
@@ -296,7 +295,7 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
     QFrame *page = new QFrame();
     KPageWidgetItem *pageItem = new KPageWidgetItem(page, i18n("Thumbnails"));
     pageItem->setHeader(i18n("Thumbnails"));
-    pageItem->setIcon(KIcon(BarIcon("view-preview", KIconLoader::SizeMedium)));
+    pageItem->setIcon(QIcon::fromTheme("view-preview"));
     addPage(pageItem);
 
     KConfigGroup group =  m_config->group("Thumbnails");
