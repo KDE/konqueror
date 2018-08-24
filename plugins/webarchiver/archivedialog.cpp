@@ -932,7 +932,6 @@ void ArchiveDialog::saveHTMLPartLower(const DOM::Node &pNode, int level, Recurse
                     // This is slow of course and there would be only a difference if there is some suburl.
                     // Since we discard any urls with suburls for security reasons QUrl::fragment() is sufficient.
                     //
-                    assert(! hasSubUrl(newurl));   // @see urlCheckFailed()
                     if (newurl.hasFragment() && baseurl.matches(newurl, QUrl::RemoveFragment)) {
                         (*eurls.absURL).value = QStringLiteral("#") + newurl.fragment();
                     } else {
