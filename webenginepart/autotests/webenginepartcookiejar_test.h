@@ -58,6 +58,8 @@ private Q_SLOTS:
     void cleanup();
     void testCookieAddedToStoreAreAddedToKCookieServer_data();
     void testCookieAddedToStoreAreAddedToKCookieServer();
+    void testCookieRemovedFromStoreAreRemovedFromKCookieServer_data();
+    void testCookieRemovedFromStoreAreRemovedFromKCookieServer();
     
 private:
     

@@ -259,11 +259,18 @@ void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& cookie)
     
     //Add leading dot to domain, if necessary
     id.domain = prependDotToDomain(id.domain);
-    
-    m_cookieServer.call(QDBus::NoBlock, "deleteCookie", cookie.domain(), url.host().toLower(), cookie.path(), cookie.name());
-    if (m_cookieServer.lastError().isValid()) {
-        qDebug() << m_cookieServer.lastError();
+    QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", id.domain, constructUrlForCookie(cookie).toString(), cookie.path(), QString(cookie.name()));
+    QDBusPendingCallWatcher *w = new QDBusPendingCallWatcher(pcall, this);
+    connect(w, &QDBusPendingCallWatcher::finished, this, &WebEnginePartCookieJar::cookieRemovalFailed);
+}
+
+void WebEnginePartCookieJar::cookieRemovalFailed(QDBusPendingCallWatcher *watcher)
+{
+    QDBusPendingReply<> r = *watcher;
+    if (r.isError()){
+        qDebug() << "DBus error:" << r.error().message();
     }
+    watcher->deleteLater();
 }
 
 void WebEnginePartCookieJar::loadKIOCookies()

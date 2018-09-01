@@ -41,6 +41,7 @@
 
 class QWidget;
 class QWebEngineProfile;
+class QDBusPendingCallWatcher;
 
 /**
  * @brief Class which takes care of synchronizing Chromium cookies from `QWebEngineCookieStore` with KIO
@@ -105,6 +106,15 @@ private slots:
     * 
     */
     void deleteSessionCookies();
+    
+    /**
+     * @brief Slot called when the DBus call to `KCookieServer::deleteCookie` fails
+     * 
+     * It displays the error message on standard error
+     * 
+     * @param watcher the object describing the result of the DBus call
+     */
+    void cookieRemovalFailed(QDBusPendingCallWatcher *watcher);
     
 private:
     
@@ -267,6 +277,15 @@ private:
     */
     static inline QString prependDotToDomain(const QString &dom) {return dom.startsWith(".") ? dom : "." + dom;}
     
+    /**
+    * @brief Tries to construct an Url for the given cookie
+    * 
+    * The URL is meant to be passed to functions like `KCookieServer::addCookies` and is constructed from the cookie's domain
+    * if it's not empty. If the domain is empty or it's only a dot, an empty URL is returned
+    * 
+    * @param cookie the cookie to create the URL for
+    * @return the URL for the cookie or an empty URL if the cookie's domain is empty or it's only a dot
+    */
     QUrl constructUrlForCookie(const QNetworkCookie &cookie) const;
     
     /**
