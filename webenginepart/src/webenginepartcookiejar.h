@@ -37,13 +37,15 @@
 #include <QSet>
 #include <QtWebEngine/QtWebEngineVersion>
 
+#include "kwebenginepartlib_export.h"
+
 class QWidget;
 class QWebEngineProfile;
 
 /**
  * @brief Class which takes care of synchronizing Chromium cookies from `QWebEngineCookieStore` with KIO
  */
-class WebEnginePartCookieJar : public QObject
+class KWEBENGINEPARTLIB_EXPORT WebEnginePartCookieJar : public QObject
 {
     Q_OBJECT
 

@@ -11,4 +11,7 @@ endmacro(webenginepart_unit_tests)
 
 webenginepart_unit_tests(
   webengine_partapi_test
+  webenginepartcookiejar_test
 )
+
+target_link_libraries(webenginepartcookiejar_test Qt5::DBus)
