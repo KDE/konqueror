@@ -48,6 +48,7 @@
 
 #include <QLineEdit>
 #include <QApplication>
+#include <QDir>
 #include <QTimer>
 #include <QMenu>
 #include <QStyle>
