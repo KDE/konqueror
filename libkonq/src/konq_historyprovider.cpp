@@ -31,6 +31,7 @@
 #include <QDBusMessage>
 #include <QDataStream>
 #include <QDir>
+#include <QDebug>
 #include <QSaveFile>
 #include <QStandardPaths>
 
