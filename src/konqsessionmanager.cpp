@@ -40,10 +40,11 @@
 #include <QPushButton>
 #include <QCheckBox>
 #include <QFileInfo>
-#include <QtDBus/QtDBus>
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #include <QtAlgorithms>
 #include <QDirIterator>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QFile>
 #include <QSize>
 #include <QVBoxLayout>

@@ -29,7 +29,7 @@
 
 // Qt
 #include <QApplication>
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QVBoxLayout>
 #include <QUrl>
 

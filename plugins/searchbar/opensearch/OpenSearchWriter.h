@@ -20,7 +20,7 @@
 #ifndef OPENSEARCHWRITER_H
 #define OPENSEARCHWRITER_H
 
-#include <QtCore/QXmlStreamWriter>
+#include <QXmlStreamWriter>
 
 class QIODevice;
 

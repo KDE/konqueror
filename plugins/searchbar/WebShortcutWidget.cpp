@@ -19,7 +19,7 @@
 
 #include "WebShortcutWidget.h"
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QBoxLayout>
 #include <QLabel>
 #include <QLineEdit>

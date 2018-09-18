@@ -20,7 +20,7 @@
 #ifndef KONQ_HISTORYMODEL_H
 #define KONQ_HISTORYMODEL_H
 
-#include <QtCore/QAbstractItemModel>
+#include <QAbstractItemModel>
 
 #include "konq_historyentry.h"
 

@@ -27,8 +27,8 @@
 
 // Qt
 #include <QWidget>
-#include <QtCore/QFile>
-#include <QtCore/QCoreApplication>
+#include <QFile>
+#include <QCoreApplication>
 
 // KDE
 #include <k4aboutdata.h>

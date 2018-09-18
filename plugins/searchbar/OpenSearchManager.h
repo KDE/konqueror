@@ -20,7 +20,7 @@
 #ifndef OPENSEARCHMANAGER_H
 #define OPENSEARCHMANAGER_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <kio/jobclasses.h>
 
 class OpenSearchEngine;

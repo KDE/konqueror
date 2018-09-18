@@ -85,10 +85,10 @@
 #if KONQ_HAVE_X11
 #include <QX11Info>
 #endif
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QKeyEvent>
-#include <QtCore/QByteRef>
-#include <QtCore/QList>
+#include <QByteRef>
+#include <QList>
 #include <QPixmap>
 #include <QLineEdit>
 
@@ -144,7 +144,8 @@
 #include <sonnet/configdialog.h>
 
 #include <kauthorized.h>
-#include <QtDBus/QtDBus>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <kconfiggroup.h>
 #include <kglobalsettings.h>
 #include <kurlauthorized.h>

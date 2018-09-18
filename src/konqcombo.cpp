@@ -29,7 +29,7 @@
 #include <QKeyEvent>
 #include <QItemDelegate>
 #include <QListWidgetItem>
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QMimeData>
 
 // KDE

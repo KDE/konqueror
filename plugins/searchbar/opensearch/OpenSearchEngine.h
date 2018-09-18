@@ -21,7 +21,7 @@
 #ifndef OPENSEARCHENGINE_H
 #define OPENSEARCHENGINE_H
 
-#include <QtCore/QPair>
+#include <QPair>
 #include <QImage>
 
 #include <QUrl>

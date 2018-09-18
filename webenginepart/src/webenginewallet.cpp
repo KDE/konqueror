@@ -27,11 +27,11 @@
 #include <KWallet>
 #include <QDebug>
 
-#include <QtCore/QSet>
-#include <QtCore/QHash>
-#include <QtCore/QFile>
-#include <QtCore/QPointer>
-#include <QtCore/QScopedPointer>
+#include <QSet>
+#include <QHash>
+#include <QFile>
+#include <QPointer>
+#include <QScopedPointer>
 #include <QJsonDocument>
 #include <qwindowdefs.h>
 

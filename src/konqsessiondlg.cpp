@@ -25,9 +25,9 @@
 #include "ui_konqsessiondlg_base.h"
 #include "ui_konqnewsessiondlg_base.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QDirIterator>
+#include <QDir>
+#include <QFileInfo>
+#include <QDirIterator>
 #include <QPushButton>
 
 #include "konqdebug.h"

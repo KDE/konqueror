@@ -23,7 +23,7 @@
 #define DOMAINLISTVIEW_H
 
 #include <QGroupBox>
-#include <QtCore/QMap>
+#include <QMap>
 
 #include <kconfig.h>
 #include <ksharedconfig.h>

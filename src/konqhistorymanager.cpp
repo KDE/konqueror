@@ -21,7 +21,6 @@
 #include "konqhistorymanager.h"
 #include <kbookmarkmanager.h>
 
-#include <QtDBus/QtDBus>
 #include <QTimer>
 #include "konqdebug.h"
 #include <kconfig.h>

@@ -24,14 +24,14 @@
 
 #include <QClipboard>
 #include <QCursor>
-#include <QtCore/QDir>
+#include <QDir>
 #include <Qt3Support/Q3Header>
 #include <QMenu>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QApplication>
 #include <QPixmap>
 #include <QKeyEvent>
-#include <QtCore/QEvent>
+#include <QEvent>
 
 #include <QAction>
 #include <kactioncollection.h>

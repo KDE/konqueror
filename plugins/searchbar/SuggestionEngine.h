@@ -20,7 +20,7 @@
 #ifndef SUGGESTIONENGINE_H
 #define SUGGESTIONENGINE_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 /**
  * Parent class for all suggestion engines. Each suggestion engine is responsible for

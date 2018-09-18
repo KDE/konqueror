@@ -27,7 +27,9 @@
 #include <kio/fileundomanager.h>
 #include <QDirIterator>
 #include <QMetaType>
-#include <QtDBus/QtDBus>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusReply>
 #include <kglobal.h>
 #include <KLocalizedString>
 

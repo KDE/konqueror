@@ -25,7 +25,7 @@
 #include <KUriFilter>
 #include <KParts/Plugin>
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QItemDelegate>
 #include <QPixmap>
 

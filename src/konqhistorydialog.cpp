@@ -24,7 +24,7 @@
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QMenu>
 #include <QToolBar>
 #include <QToolButton>

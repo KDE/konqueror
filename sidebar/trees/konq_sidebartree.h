@@ -23,16 +23,16 @@
 #include <k3listview.h>
 #include <kparts/browserextension.h>
 #include "konq_sidebartreetoplevelitem.h"
-#include <QtCore/QMap>
-#include <QtCore/QPoint>
+#include <QMap>
+#include <QPoint>
 #include <Qt3Support/Q3StrList>
 
 //Added by qt3to4:
 #include <QPixmap>
-#include <QtCore/QByteRef>
+#include <QByteRef>
 #include <QKeyEvent>
 #include <Qt3Support/Q3PtrList>
-#include <QtCore/QEvent>
+#include <QEvent>
 
 class KonqSidebarOldTreeModule;
 class KonqSidebarTreeModule;

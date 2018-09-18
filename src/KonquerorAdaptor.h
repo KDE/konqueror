@@ -21,8 +21,8 @@
 #ifndef KONQUERORADAPTOR_H
 #define KONQUERORADAPTOR_H
 
-#include <QtCore/QStringList>
-#include <QtDBus/QtDBus>
+#include <QStringList>
+#include <QtDBus>
 
 #define KONQ_MAIN_PATH "/KonqMain"
 

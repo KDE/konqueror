@@ -27,7 +27,7 @@
 
 #include <ktabwidget.h>
 #include <QKeyEvent>
-#include <QtCore/QList>
+#include <QList>
 
 class QMenu;
 class QToolButton;

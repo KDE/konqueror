@@ -20,7 +20,7 @@
 #ifndef KONQ_HISTORY_H
 #define KONQ_HISTORY_H
 
-#include <QtCore/qglobal.h>
+#include <QtGlobal>
 
 namespace KonqHistory
 {

@@ -16,10 +16,10 @@
 #include <stdlib.h>
 
 // Qt
-#include <QtCore/QRegExp>
-#include <QtCore/QTextStream>
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusMessage>
+#include <QRegExp>
+#include <QTextStream>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QLabel>
 #include <QSlider>
 #include <QTreeWidget>

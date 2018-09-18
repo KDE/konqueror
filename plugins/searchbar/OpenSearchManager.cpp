@@ -19,7 +19,7 @@
 
 #include "OpenSearchManager.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 #include <QUrl>
 #include <QStandardPaths>
 

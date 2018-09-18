@@ -23,13 +23,13 @@
 #ifndef WEBENGINEWALLET_H
 #define WEBENGINEWALLET_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QList>
-#include <QtCore/QPair>
+#include <QObject>
+#include <QString>
+#include <QList>
+#include <QPair>
 #include <QUrl>
 #include <QWidget>
-#include <QtCore/QtGlobal>
+#include <QtGlobal>
 
 class WebEnginePage;
 

@@ -22,12 +22,12 @@
 #include "konqfactory.h"
 #include <KParts/ReadOnlyPart> // for the inline QPointer usage
 
-#include <QtCore/QPointer>
+#include <QPointer>
 #include <QWidget>
 #include <QCheckBox>
 #include <QPixmap>
-#include <QtCore/QEvent>
-#include <QtCore/QList>
+#include <QEvent>
+#include <QList>
 
 #include <KConfig>
 

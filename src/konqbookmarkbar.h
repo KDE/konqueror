@@ -20,9 +20,9 @@
 #ifndef KONQBOOKMARKBAR_H
 #define KONQBOOKMARKBAR_H
 
-#include <QtCore/QObject>
-#include <QtCore/QPointer>
-#include <QtCore/QList>
+#include <QObject>
+#include <QPointer>
+#include <QList>
 #include <kbookmark.h>
 #include <kactioncollection.h>
 

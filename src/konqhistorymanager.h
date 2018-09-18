@@ -21,9 +21,9 @@
 #ifndef KONQ_HISTORYMANAGER_H
 #define KONQ_HISTORYMANAGER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QMap>
-#include <QtCore/QStringList>
+#include <QObject>
+#include <QMap>
+#include <QStringList>
 
 #include <konqprivate_export.h>
 

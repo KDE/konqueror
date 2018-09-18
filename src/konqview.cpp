@@ -44,11 +44,11 @@
 #include <KComponentData>
 
 #include <QApplication>
-#include <QtCore/QArgument>
-#include <QtCore/QObject>
-#include <QtCore/QByteRef>
-#include <QtCore/QEvent>
-#include <QtCore/QFile>
+#include <QArgument>
+#include <QObject>
+#include <QByteRef>
+#include <QEvent>
+#include <QFile>
 #include <QDropEvent>
 #ifdef KActivities_FOUND
 #endif

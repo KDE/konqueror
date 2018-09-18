@@ -23,7 +23,7 @@
 #include <ktoolbarpopupaction.h>
 #include <konqhistorymanager.h>
 #include <kactionmenu.h>
-#include <QtCore/QList>
+#include <QList>
 
 struct HistoryEntry;
 class QMenu;

@@ -21,7 +21,7 @@
 #include "bookmark_item.h"
 
 // Qt
-#include <QtCore/QList>
+#include <QList>
 #include <QClipboard>
 #include <QCursor>
 #include <QGridLayout>

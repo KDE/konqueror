@@ -19,7 +19,7 @@
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
-#include <QtCore/QPointer>
+#include <QPointer>
 #include "sidebar_widget.h"
 
 class KonqSidebarPart;

@@ -24,10 +24,10 @@
 #include <limits.h>
 
 // Qt
-#include <QtCore/QDir>
+#include <QDir>
 #include <QPushButton>
 #include <QSplitter>
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QMenu>
 #include <QMouseEvent>
 

@@ -24,7 +24,7 @@
 #include <signal.h>
 #include <stdlib.h>
 
-#include <QtCore/QSocketNotifier>
+#include <QSocketNotifier>
 
 #include <kinputdialog.h>
 #include <kdesu/process.h>

@@ -21,7 +21,7 @@
 
 #include "OpenSearchEngine.h"
 
-#include <QtCore/QIODevice>
+#include <QIODevice>
 
 OpenSearchWriter::OpenSearchWriter()
     : QXmlStreamWriter()

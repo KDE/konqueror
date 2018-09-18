@@ -32,7 +32,7 @@
 #include <kwindowsystem.h>
 #include <KStartupInfo>
 
-#include <QtCore/QFile>
+#include <QFile>
 #if KONQ_HAVE_X11
 #include <QX11Info>
 #endif

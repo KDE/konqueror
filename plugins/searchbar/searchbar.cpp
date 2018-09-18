@@ -48,13 +48,14 @@
 
 #include <QLineEdit>
 #include <QApplication>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QMenu>
 #include <QStyle>
 #include <QPixmap>
 #include <QPainter>
 #include <QMouseEvent>
-#include <QtDBus/QtDBus>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QWidgetAction>
 #include <QStandardPaths>
 

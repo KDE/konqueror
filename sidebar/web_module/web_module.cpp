@@ -20,8 +20,8 @@
 #include <QAction>
 #include <KIO/FavIconRequestJob>
 
-#include <QtCore/QFileInfo>
-#include <QtCore/QTimer>
+#include <QFileInfo>
+#include <QTimer>
 
 #include <dom/html_inline.h>
 #include <kdebug.h>

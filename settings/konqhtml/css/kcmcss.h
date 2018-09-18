@@ -18,7 +18,7 @@
 #ifndef KCMCSS_H
 #define KCMCSS_H
 
-#include <QtCore/QMap>
+#include <QMap>
 
 #include <KParts/ReadOnlyPart>
 

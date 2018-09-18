@@ -1,8 +1,8 @@
 #include "kcmcss.h"
 
 #include <QFormLayout>
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusConnection>
 #include <QGroupBox>
 
 #include <kcharsets.h>

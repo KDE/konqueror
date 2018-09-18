@@ -22,8 +22,8 @@
 
 #include <kactioncollection.h>
 #include <konq_popupmenu.h>
-#include <QtCore/QObject>
-#include <QtCore/QHash>
+#include <QObject>
+#include <QHash>
 
 #include <kxmlguiclient.h>
 #include <kservice.h>

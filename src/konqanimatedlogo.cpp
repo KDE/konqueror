@@ -23,7 +23,7 @@
 
 #include <KIconLoader>
 
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QToolBar>
 
 KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)

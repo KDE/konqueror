@@ -18,7 +18,7 @@
 #include "konqextensionmanager.h"
 
 // Qt
-#include <QtCore/QTimer>
+#include <QTimer>
 
 // KDE
 #include <kxmlguifactory.h>

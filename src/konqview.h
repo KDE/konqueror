@@ -27,12 +27,12 @@
 #include <kservice.h>
 #include <kmimetype.h>
 
-#include <QtCore/QList>
+#include <QList>
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QPointer>
-#include <QtCore/QEvent>
+#include <QObject>
+#include <QStringList>
+#include <QPointer>
+#include <QEvent>
 
 #include <config-konqueror.h>
 

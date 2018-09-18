@@ -18,9 +18,9 @@
 */
 
 #include "delayedinitializer.h"
-#include <QtCore/QTimer>
+#include <QTimer>
 #include "konqdebug.h"
-#include <QtCore/QEvent>
+#include <QEvent>
 
 DelayedInitializer::DelayedInitializer(int eventType, QObject *parent)
     : QObject(parent), m_eventType(eventType), m_signalEmitted(false)

@@ -21,7 +21,7 @@
 #define KONQRUN_H
 
 #include <kparts/browserrun.h>
-#include <QtCore/QPointer>
+#include <QPointer>
 #include <kservice.h>
 #include "konqopenurlrequest.h"
 #include <QUrl>

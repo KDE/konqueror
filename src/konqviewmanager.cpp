@@ -30,9 +30,9 @@
 #include "konqframevisitor.h"
 #include <konq_events.h>
 
-#include <QtCore/QFileInfo>
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusConnection>
+#include <QFileInfo>
+#include <QDBusMessage>
+#include <QDBusConnection>
 
 #include <KParts/PartActivateEvent>
 

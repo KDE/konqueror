@@ -23,7 +23,7 @@
 
 #include "konqprivate_export.h"
 #include <kconfiggroup.h>
-#include <QtDBus/QtDBus>
+#include <QtDBus>
 #include <QString>
 
 class KConfig;

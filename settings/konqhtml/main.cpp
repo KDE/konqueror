@@ -28,7 +28,8 @@
 
 // Qt
 #include <QTabWidget>
-#include <QtDBus/QtDBus>
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 // KDE
 #include <kaboutdata.h>

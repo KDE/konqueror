@@ -22,7 +22,7 @@
 
 #include "konqprivate_export.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <kparts/browserextension.h>
 

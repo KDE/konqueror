@@ -20,7 +20,7 @@
 #ifndef KONQ_SIDEBARTREEITEM_H
 #define KONQ_SIDEBARTREEITEM_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <Qt3Support/Q3ListView>
 #include <Qt3Support/Q3UriDrag>
 #include <QUrl>

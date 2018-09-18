@@ -26,7 +26,9 @@
 #include "konq_historyloader_p.h"
 #include <KSharedConfig>
 
-#include <QtDBus>
+#include <QDBusConnection>
+#include <QDBusContext>
+#include <QDBusMessage>
 #include <QSaveFile>
 #include <QStandardPaths>
 

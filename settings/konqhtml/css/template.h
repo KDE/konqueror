@@ -1,9 +1,9 @@
 #ifndef __TEMPLATE_H__
 #define __TEMPLATE_H__
 
-#include <QtCore/QString>
-#include <QtCore/QTextStream>
-#include <QtCore/QMap>
+#include <QString>
+#include <QTextStream>
+#include <QMap>
 
 class CSSTemplate
 {

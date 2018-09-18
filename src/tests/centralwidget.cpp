@@ -19,7 +19,7 @@
 
 #include <QApplication>
 #include <QLabel>
-#include <QtCore/QTimer>
+#include <QTimer>
 
 SCWMainWindow::SCWMainWindow(QWidget *parent)
     : QMainWindow(parent)

@@ -19,7 +19,7 @@
 
 #include <QActionGroup>
 #include <kconfiggroup.h>
-#include <QtCore/QTimer>
+#include <QTimer>
 
 #include <QPointer>
 #include <QUrl>

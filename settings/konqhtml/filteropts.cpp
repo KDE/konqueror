@@ -20,9 +20,10 @@
 #include "filteropts.h"
 
 // Qt
-#include <QtCore/QRegExp>
-#include <QtCore/QTextStream>
-#include <QtDBus/QtDBus>
+#include <QRegExp>
+#include <QTextStream>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QCheckBox>
 #include <QLabel>
 #include <QTreeView>

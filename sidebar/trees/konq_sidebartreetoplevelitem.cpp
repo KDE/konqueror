@@ -30,7 +30,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QCursor>
-#include <QtCore/QMimeData>
+#include <QMimeData>
 #include <kdesktopfile.h>
 
 void KonqSidebarTreeTopLevelItem::init()

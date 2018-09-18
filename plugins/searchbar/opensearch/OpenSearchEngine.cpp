@@ -24,10 +24,10 @@
 #include <KGlobal>
 #include <KLocale>
 
-#include <QtCore/QRegExp>
-#include <QtCore/QStringList>
-#include <QtScript/QScriptEngine>
-#include <QtScript/QScriptValue>
+#include <QRegExp>
+#include <QStringList>
+#include <QScriptEngine>
+#include <QScriptValue>
 
 OpenSearchEngine::OpenSearchEngine(QObject *)
     : m_scriptEngine(0)

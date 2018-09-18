@@ -22,7 +22,7 @@
 
 #include "OpenSearchEngine.h"
 
-#include <QtCore/QIODevice>
+#include <QIODevice>
 
 #include <KLocalizedString>
 

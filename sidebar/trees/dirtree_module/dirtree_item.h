@@ -25,7 +25,7 @@
 #include <QUrl>
 #include <konq_operations.h>
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 class QDropEvent;
 

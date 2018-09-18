@@ -19,8 +19,8 @@
 #ifndef bookmark_module_h
 #define bookmark_module_h
 
-#include <QtCore/QMap>
-#include <QtCore/QObject>
+#include <QMap>
+#include <QObject>
 
 #include <konq_sidebartreemodule.h>
 #include <kdialog.h>

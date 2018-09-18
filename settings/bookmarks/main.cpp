@@ -21,7 +21,7 @@
  */
 
 // Qt
-#include <QtCore/QFile>
+#include <QFile>
 
 // KDE
 #include <kcmoduleloader.h>

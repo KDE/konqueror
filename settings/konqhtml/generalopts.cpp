@@ -12,8 +12,8 @@
 #include "generalopts.h"
 
 // Qt
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusMessage>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QComboBox>
 #include <QDebug>
 #include <QFormLayout>

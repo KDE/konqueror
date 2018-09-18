@@ -19,7 +19,7 @@
 #ifndef KONQ_SIDEBARTREEMODULE_H
 #define KONQ_SIDEBARTREEMODULE_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include "konq_sidebartree.h"
 
 class KonqSidebarTreeTopLevelItem;

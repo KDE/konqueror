@@ -33,8 +33,8 @@
 #include <kiconloader.h>
 #include <kde_file.h>
 
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
+#include <QFile>
+#include <QFileInfo>
 #include <QPainter>
 #include <QApplication>
 #include <QClipboard>

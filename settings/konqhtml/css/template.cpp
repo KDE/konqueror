@@ -3,8 +3,8 @@
 #include "template.h"
 
 // Qt
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
+#include <QFile>
+#include <QTextStream>
 
 bool CSSTemplate::expandToFile(const QString &outputFilename, const QMap<QString, QString> &dict)
 {

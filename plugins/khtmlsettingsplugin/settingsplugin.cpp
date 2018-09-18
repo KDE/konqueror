@@ -40,7 +40,10 @@
 #include <kparts/htmlsettingsinterface.h>
 #include <KConfigGroup>
 
-#include <QtDBus>
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusMessage>
+#include <QDBusReply>
 
 K_PLUGIN_FACTORY(SettingsPluginFactory, registerPlugin<SettingsPlugin>();)
 

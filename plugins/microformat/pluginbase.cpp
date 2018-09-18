@@ -20,7 +20,7 @@
     with any edition of Qt, and distribute the resulting executable,
     without including the source code for Qt in the source distribution.
 */
-#include <QtDBus>
+#include <QDBusInterface>
 #include <klocale.h>
 
 #include "pluginbase.h"

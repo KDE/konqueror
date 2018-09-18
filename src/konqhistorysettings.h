@@ -21,8 +21,8 @@
 #define KONQ_HISTORYSETTINGS_H
 
 #include <QFont>
-#include <QtCore/QObject>
-#include <QtDBus/QtDBus>
+#include <QObject>
+#include <QtDBus>
 
 /**
  * Object containing the settings used by the history views

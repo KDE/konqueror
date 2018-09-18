@@ -11,7 +11,7 @@
 #include <kdialog.h>
 
 #include <QLineEdit>
-#include <QtCore/QStringList>
+#include <QStringList>
 
 class QLabel;
 class QComboBox;
