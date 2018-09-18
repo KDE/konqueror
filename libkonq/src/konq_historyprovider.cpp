@@ -29,6 +29,8 @@
 #include <QDBusConnection>
 #include <QDBusContext>
 #include <QDBusMessage>
+#include <QDataStream>
+#include <QDir>
 #include <QSaveFile>
 #include <QStandardPaths>
 
