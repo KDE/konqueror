@@ -18,14 +18,14 @@
  *
  */
 
-#include <QtWebEngine/QtWebEngineVersion>
 #include "webenginepart_ext.h"
+#include <QtWebEngine/QtWebEngineVersion>
 
 #include "webenginepart.h"
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "settings/webenginesettings.h"
-#include <QtWebEngineWidgets/QWebEngineSettings>
+#include <QWebEngineSettings>
 
 #include <KDesktopFile>
 #include <KConfigGroup>

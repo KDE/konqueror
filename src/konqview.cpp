@@ -50,6 +50,8 @@
 #include <QEvent>
 #include <QFile>
 #include <QDropEvent>
+#include <QDBusConnection>
+#include <QMimeData>
 #ifdef KActivities_FOUND
 #endif
 

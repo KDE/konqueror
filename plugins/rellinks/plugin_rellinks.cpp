@@ -20,9 +20,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.             *
  ***************************************************************************/
 
+// local includes
+#include "plugin_rellinks.h"
+
 // Qt includes
-#include <qapplication.h>
-#include <qtimer.h>
+#include <QApplication>
+#include <QTimer>
 #include <QKeySequence>
 #include <QActionGroup>
 
@@ -43,9 +46,6 @@
 #include <ktoolbar.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
-// local includes
-#include "plugin_rellinks.h"
-
 
 /** Rellinks factory */
 K_PLUGIN_FACTORY(RelLinksFactory, registerPlugin<RelLinksPlugin>();)

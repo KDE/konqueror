@@ -17,11 +17,13 @@
 */
 
 /*
- * FSView specialisaton of TreeMap classes.
+ * FSView specialization of TreeMap classes.
  */
 
-#include <qdir.h>
-#include <qtimer.h>
+#include "fsview.h"
+
+#include <QDir>
+#include <QTimer>
 #include <QApplication>
 
 #include <KLocalizedString>
@@ -33,8 +35,6 @@
 #include <kauthorized.h>
 #include <kconfiggroup.h>
 #include <kurlauthorized.h>
-
-#include "fsview.h"
 
 // FSView
 

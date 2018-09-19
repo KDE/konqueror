@@ -18,13 +18,15 @@ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 Boston, MA 02110-1301, USA.
 */
 
-#include <qdir.h>
-#include <qtextstream.h>
-#include <qfile.h>
-#include <qdatetime.h>
-#include <qpixmap.h>
-#include <qimage.h>
-#include <qtextcodec.h>
+#include "imgalleryplugin.h"
+
+#include <QDir>
+#include <QTextStream>
+#include <QFile>
+#include <QDateTime>
+#include <QPixmap>
+#include <QImage>
+#include <QTextCodec>
 #include <QApplication>
 
 
@@ -45,7 +47,6 @@ Boston, MA 02110-1301, USA.
 #include <kparts/part.h>
 
 #include "imgallerydialog.h"
-#include "imgalleryplugin.h"
 
 //KDELibs4Support
 #include <kdeversion.h>

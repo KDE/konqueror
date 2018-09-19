@@ -49,10 +49,12 @@
 // TODO KDE4 check what KHTMLPart is doing on job->addMetaData()
 // TODO KDE4 use HTMLScriptElementImpl::charset() to get charset="" attribute of <link> elements
 
+#include "archivedialog.h"
+
 #include <cassert>
 
-#include <qtextcodec.h>
-#include <qtextdocument.h>
+#include <QTextCodec>
+#include <QTextDocument>
 
 #include <ktar.h>
 #include <kauthorized.h>
@@ -71,7 +73,6 @@
 #include <dom/css_stylesheet.h>
 #include <dom/css_value.h>
 
-#include "archivedialog.h"
 #include "webarchiverdebug.h"
 
 //KDELibs4Support

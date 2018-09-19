@@ -18,9 +18,10 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <qfile.h>
-
+#include "minitoolsplugin.h"
 #include "minitoolsplugindebug.h"
+
+#include <QFile>
 
 #include <kglobal.h>
 #include <kconfig.h>
@@ -30,14 +31,12 @@
 
 #include <kstandarddirs.h>
 
-#include <krun.h>
 #include <kservice.h>
 #include <kactionmenu.h>
 #include <QMenu>
 #include <kbookmarkimporter.h>
 #include <kbookmarkmanager.h>
 #include <kactioncollection.h>
-#include "minitoolsplugin.h"
 
 K_PLUGIN_FACTORY(MinitoolsPluginFactory, registerPlugin<MinitoolsPlugin>();)
 

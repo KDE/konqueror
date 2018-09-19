@@ -22,8 +22,11 @@
  * The KPart embedding the FSView widget
  */
 
-#include <qclipboard.h>
-#include <qtimer.h>
+#include "fsview_part.h"
+
+#include <QClipboard>
+#include <QTimer>
+#include <QStyle>
 
 #include <kfileitem.h>
 #include <kpluginfactory.h>
@@ -50,8 +53,6 @@
 
 #include <QApplication>
 #include <QMimeData>
-
-#include "fsview_part.h"
 
 K_PLUGIN_FACTORY(FSViewPartFactory, registerPlugin<FSViewPart>();)
 K_EXPORT_PLUGIN(FSViewPartFactory(KAboutData(
@@ -229,7 +230,7 @@ void FSViewPart::slotSettingsChanged(int category)
     QObject::disconnect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
                         _ext, SLOT(selected(TreeMapItem*)));
 
-    if (KGlobalSettings::singleClick())
+    if (_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
         QObject::connect(_view, SIGNAL(clicked(TreeMapItem*)),
                          _ext, SLOT(selected(TreeMapItem*)));
     else

@@ -18,9 +18,11 @@
     Boston, MA 02110-1301, USA.
 */
 
+#include "uachangerplugin.h"
+
 #include <sys/utsname.h>
 
-#include <qregexp.h>
+#include <QRegExp>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <kicon.h>
@@ -43,7 +45,6 @@
 #include <kprotocolmanager.h>
 #include <kaboutdata.h>
 #include <kactioncollection.h>
-#include "uachangerplugin.h"
 
 static const KAboutData aboutdata("uachangerplugin", 0, ki18n("Change Browser Identification"), "1.0");
 K_PLUGIN_FACTORY(UAChangerPluginFactory, registerPlugin<UAChangerPlugin>();)

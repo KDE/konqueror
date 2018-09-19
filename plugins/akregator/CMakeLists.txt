@@ -9,7 +9,7 @@ kcoreaddons_add_plugin(akregatorplugin SOURCES ${akregatorplugin_PART_SRCS} ${ak
 kcoreaddons_desktop_to_json(akregatorplugin akregator_konqplugin.desktop)
 
 target_compile_definitions(akregatorplugin PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
-target_link_libraries(akregatorplugin KF5::I18n KF5::KIOWidgets)
+target_link_libraries(akregatorplugin KF5::I18n KF5::KIOWidgets Qt5::DBus)
 
 ########### next target ###############
 

@@ -24,7 +24,7 @@
 
 #include "kwebenginepartlib_export.h"
 
-#include <QtWebEngineWidgets/QWebEnginePage>
+#include <QWebEnginePage>
 
 #include <KParts/ReadOnlyPart>
 #include <QUrl>

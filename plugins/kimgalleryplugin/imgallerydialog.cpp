@@ -18,18 +18,19 @@ the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 Boston, MA 02110-1301, USA.
 */
 
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qcombobox.h>
+#include "imgallerydialog.h"
 
-#include <qcheckbox.h>
-#include <qlineedit.h>
-#include <qspinbox.h>
-//Added by qt3to4:
+#include <QLabel>
+#include <QLayout>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLineEdit>
+#include <QSpinBox>
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QGridLayout>
+#include <QFontDatabase>
 
 #include <KLocalizedString>
 #include <kfontdialog.h>
@@ -39,9 +40,6 @@ Boston, MA 02110-1301, USA.
 #include <kcolorbutton.h>
 #include <kurlrequester.h>
 #include <kconfig.h>
-
-#include <QFontDatabase>
-#include "imgallerydialog.h"
 
 KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
     : KPageDialog(parent)

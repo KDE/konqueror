@@ -22,7 +22,8 @@
 #define KONQUERORADAPTOR_H
 
 #include <QStringList>
-#include <QtDBus>
+#include <QDBusObjectPath>
+#include <QDBusMessage>
 
 #define KONQ_MAIN_PATH "/KonqMain"
 

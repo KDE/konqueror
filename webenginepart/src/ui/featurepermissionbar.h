@@ -24,7 +24,7 @@
 
 #include <KMessageWidget>
 
-#include <QtWebEngineWidgets/QWebEnginePage>
+#include <QWebEnginePage>
 
 
 class FeaturePermissionBar : public KMessageWidget

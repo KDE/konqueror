@@ -40,6 +40,7 @@
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KMenu>
+#include <KIcon>
 #include <dom/html_document.h>
 #include <dom/html_image.h>
 #include <dom/html_inline.h>

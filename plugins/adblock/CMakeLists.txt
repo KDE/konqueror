@@ -8,7 +8,7 @@ add_library(adblock MODULE ${adblock_PART_SRCS})
 
 
 
-target_link_libraries(adblock  KF5::Parts KF5::KHtml KF5::KCMUtils)
+target_link_libraries(adblock  KF5::Parts KF5::KHtml KF5::KCMUtils KF5::KDELibs4Support)
 
 install(TARGETS adblock  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

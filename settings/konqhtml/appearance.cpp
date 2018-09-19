@@ -1,3 +1,5 @@
+#include "appearance.h"
+
 #include "kcmcss.h"
 
 #include <QFormLayout>
@@ -19,8 +21,6 @@
 #include <KTabWidget>
 #include <QFontDatabase>
 #include <QSpinBox>
-
-#include "appearance.h"
 
 static const char *const animationValues[] = {"Enabled", "Disabled", "LoopOnce"};
 enum AnimationsType { AnimationsAlways = 0, AnimationsNever = 1, AnimationsLoopOnce = 2 };

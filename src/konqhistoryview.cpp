@@ -28,6 +28,8 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QMenu>
+#include <QMimeData>
+#include <QTimer>
 #include <QTreeView>
 #include <QVBoxLayout>
 

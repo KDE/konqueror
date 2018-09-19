@@ -25,6 +25,8 @@
   ** $QT_END_LICENSE$
   **
   ****************************************************************************/
+#ifndef WEBENGINE_TESTUTILS_H
+#define WEBENGINE_TESTUTILS_H
 
 #include <QEventLoop>
 #include <QTimer>
@@ -105,4 +107,4 @@ static QPoint elementCenter(QWebEnginePage *page, const QString &id)
                      rectList.at(2).toInt(), rectList.at(3).toInt());
     return rect.center();
 }
-
+#endif

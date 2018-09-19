@@ -20,13 +20,13 @@
  * FSView specialisaton of TreeMapItem class.
  */
 
+#include "inode.h"
 #include <kdebug.h>
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <KLocalizedString>
 #include <QMimeDatabase>
 #include <QMimeType>
-#include "inode.h"
 #include "scan.h"
 #include "fsview.h"
 

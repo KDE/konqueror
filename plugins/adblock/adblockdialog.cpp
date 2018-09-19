@@ -17,22 +17,23 @@
   Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "adblock.h"
 #include "adblockdialog.h"
+#include "adblock.h"
 
-#include <kdebug.h>
-#include <kmenu.h>
-#include <klocale.h>
+#include <KDebug>
+#include <KMenu>
+#include <KLocalizedString>
+#include <KIcon>
 #include <KTreeWidgetSearchLine>
 #include <KRun>
 #include <KStandardGuiItem>
 
-#include <qcursor.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <qcolor.h>
-#include <qfont.h>
-#include <qpainter.h>
+#include <QCursor>
+#include <QLabel>
+#include <QLineEdit>
+#include <QColor>
+#include <QFont>
+#include <QPainter>
 #include <QTreeWidget>
 #include <QApplication>
 #include <QClipboard>

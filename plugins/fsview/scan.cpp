@@ -16,16 +16,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <qdir.h>
-#include <qstringlist.h>
-#include <qset.h>
+#include "scan.h"
+
+#include <QDir>
+#include <QStringList>
+#include <QSet>
 #include <qplatformdefs.h>
 
 #include <kdebug.h>
 #include <kauthorized.h>
 #include <kurlauthorized.h>
 
-#include "scan.h"
 #include "inode.h"
 
 // ScanManager

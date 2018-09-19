@@ -29,6 +29,8 @@
 
 //#define DEBUG_WAR
 
+#include "plugin_webarchiver.h"
+
 #include <QDir>
 #include <QFile>
 #include <QIcon>
@@ -46,7 +48,6 @@
 #include <kactioncollection.h>
 #include <kstandardguiitem.h>
 #include <QStandardPaths>
-#include "plugin_webarchiver.h"
 #include "archivedialog.h"
 
 K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)

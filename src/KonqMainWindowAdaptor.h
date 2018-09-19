@@ -25,7 +25,9 @@
 // Use qdbuscpp2xml KonqMainWindowAdaptor.h > org.kde.Konqueror.MainWindow.xml
 // if you change the API.
 
-#include <QtDBus>
+#include <QDBusAbstractAdaptor>
+#include <QDBusObjectPath>
+#include <QDBusConnection>
 
 class KonqMainWindow;
 

@@ -29,7 +29,7 @@
 #include <KIO/Job>
 #include <KMessageBox>
 
-#include <QtWebEngineWidgets/QWebEngineSettings>
+#include <QWebEngineSettings>
 #include <QFontDatabase>
 #include <QFileInfo>
 

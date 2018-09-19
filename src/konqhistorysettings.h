@@ -22,7 +22,8 @@
 
 #include <QFont>
 #include <QObject>
-#include <QtDBus>
+#include <QDBusAbstractAdaptor>
+#include <QDBusConnection>
 
 /**
  * Object containing the settings used by the history views

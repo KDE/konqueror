@@ -22,13 +22,13 @@
     without including the source code for Qt in the source distribution.
 */
 
-#include <qregexp.h>
-#include <qstring.h>
-#include <qstringlist.h>
-
-#include <kcharsets.h>
-
 #include "feeddetector.h"
+#include <QRegExp>
+#include <QString>
+#include <QStringList>
+
+#include <KCharsets>
+
 #include "akregatorplugindebug.h"
 
 using namespace Akregator;

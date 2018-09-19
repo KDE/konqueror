@@ -19,8 +19,8 @@
   02110-1301, USA.
  */
 
-#include <kparts/part.h>
 #include "autorefresh.h"
+#include <kparts/part.h>
 
 #include <kcomponentdata.h>
 #include <kiconloader.h>

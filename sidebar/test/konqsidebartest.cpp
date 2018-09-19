@@ -14,8 +14,8 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <kcomponentdata.h>
 #include "konqsidebartest.h"
+#include <kcomponentdata.h>
 
 extern "C"
 {

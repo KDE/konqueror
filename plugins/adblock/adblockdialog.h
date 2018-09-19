@@ -17,9 +17,10 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#ifndef KONQ_ADBLOCKDLG_H
-#define KONQ_ADBLOCKDLG_H
+#ifndef KONQ_ADBLOCKDIALOG_H
+#define KONQ_ADBLOCKDIALOG_H
 
+#include "adblock.h"
 #include <kdialog.h>
 #include <QTreeWidgetItem>
 #include <khtml_part.h>
