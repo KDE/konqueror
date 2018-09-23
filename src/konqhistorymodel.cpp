@@ -151,7 +151,7 @@ void HistoryEntry::update(const KonqHistoryEntry &_entry)
     if (parent->hasFavIcon && (path.isNull() || path == QLatin1String("/"))) {
         icon = parent->icon;
     } else {
-        icon = QIcon(KProtocolInfo::icon(entry.url.scheme()));
+        icon = QIcon::fromTheme(KProtocolInfo::icon(entry.url.scheme()));
     }
 }
 

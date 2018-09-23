@@ -190,7 +190,7 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
     QFrame *page = new QFrame();
     KPageWidgetItem *pageItem = new KPageWidgetItem(page, i18n("Folders"));
     pageItem->setHeader(i18n("Folders"));
-    pageItem->setIcon(QIcon("folder"));
+    pageItem->setIcon(QIcon::fromTheme("folder"));
     addPage(pageItem);
 
     KConfigGroup group =  m_config->group("Directory");
