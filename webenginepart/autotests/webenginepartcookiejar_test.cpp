@@ -25,6 +25,7 @@
 #include <webenginepartcookiejar.h>
 
 #include <QTest>
+
 #include <QNetworkCookie>
 #include <QWebEngineCookieStore>
 #include <QWebEngineProfile>
@@ -133,14 +134,15 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer()
     QVERIFY2(!m_server->lastError().isValid(), m_server->lastError().message().toLatin1());
     QStringList resFields = res.value();
     
-    QEXPECT_FAIL("persistent cookie with path and no domain", "Handling of cookies without domain is currently broken", Abort);
     QVERIFY(!resFields.isEmpty());
     QCOMPARE(fields.count(), resFields.count());
     
     QCOMPARE(resFields.at(0), domain);
     QCOMPARE(resFields.at(1), path);
     QCOMPARE(resFields.at(2), name);
-    QEXPECT_FAIL("", "The value returned by KCookieServer strips the leftmost part of the fqdn. Why?", Continue);
+    if (!domain.isEmpty()){
+        QEXPECT_FAIL("", "The value returned by KCookieServer strips the leftmost part of the fqdn. Why?", Continue);
+    }
     QCOMPARE(resFields.at(3), host);
     QCOMPARE(resFields.at(4), value);
     const int secsSinceEpoch = resFields.at(5).toInt();
@@ -245,17 +247,24 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QFETCH(const QString, host);
     
     const QString url = "https://" + host;
-    const QByteArray setCookie = "Set-Cookie: " + cookie.toRawForm();
+    
+    //cookie is in the "format" used by QWebEngineCookieStore, which means that, if the domain should be empty,
+    //it is stored as a domain not starting with a dot. KCookieServer, instead, wants cookies without domains
+    //to actually have no domain, so we have to change it
+    QNetworkCookie kcookieServerCookie(cookie);
+    if (!kcookieServerCookie.domain().startsWith('.')) {
+        kcookieServerCookie.setDomain(QString());
+    }
+    const QByteArray setCookie = "Set-Cookie: " + kcookieServerCookie.toRawForm();
     
     //Add cookie to KCookieServer
     QDBusMessage rep = m_server->call(QDBus::Block, "addCookies", url, setCookie, static_cast<qlonglong>(0));
     QVERIFY2(!m_server->lastError().isValid(), qPrintable(m_server->lastError().message()));
     
     //Ensure cookie has been added to KCookieServer
-    QDBusReply<QStringList> reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, "", "", "");
+    QDBusReply<QStringList> reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, host, "", "");
     QVERIFY2(reply.isValid(), qPrintable(reply.error().message()));
     QStringList cookies = reply.value();
-    QEXPECT_FAIL("remove persistent cookie with path and no domain", "Handling of cookies without domain is currently broken", Abort);
     QVERIFY2(cookies.contains(name), "Cookie wasn't added to server");
     
     //Emit QWebEngineCookieStore::cookieRemoved signal and check that cookie has indeed been removed

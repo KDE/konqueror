@@ -130,6 +130,13 @@ qlonglong WebEnginePartCookieJar::findWinID()
     return 0;
 }
 
+void WebEnginePartCookieJar::removeCookieDomain(QNetworkCookie& cookie)
+{
+    if (!cookie.domain().startsWith('.')) {
+        cookie.setDomain(QString());
+    }
+}
+
 void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
 {   
     //If the added cookie is in m_cookiesLoadedFromKCookieServer, it means
@@ -163,6 +170,9 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     if (url.isEmpty()) {
         return;
     }
+    //NOTE: the removal of the domain (when not starting with a dot) must be done *after* creating
+    //the URL, as constructUrlForCookie needs the domain
+    removeCookieDomain(cookie);
     QByteArray header("Set-Cookie: ");
     header += cookie.toRawForm();
     header += "\n";
@@ -211,12 +221,11 @@ QString WebEnginePartCookieJar::askAdvice(const QUrl& url)
     }
 }
 
-bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::CookieIdentifier& _id, const QUrl& url)
+bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::CookieIdentifier& id, const QUrl& url)
 {
     if (!m_cookieServer.isValid()) {
         return false;
     }
-    CookieIdentifier id(_id.name, prependDotToDomain(_id.domain), _id.path);
     QList<int> fields = { 
         static_cast<int>(CookieDetails::name),
         static_cast<int>(CookieDetails::domain),
@@ -236,11 +245,10 @@ bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::Co
     return false;
 }
 
-void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& cookie)
+void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& _cookie)
 {
-    CookieIdentifier id(cookie);
     
-    int pos = m_pendingRejectedCookies.indexOf(id);
+    int pos = m_pendingRejectedCookies.indexOf(CookieIdentifier(_cookie));
     //Ignore pending cookies
     if (pos >= 0) {
         m_pendingRejectedCookies.takeAt(pos);
@@ -251,15 +259,15 @@ void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& cookie)
         return;
     }
     
+    QNetworkCookie cookie(_cookie);
     QUrl url = constructUrlForCookie(cookie);
     if(url.isEmpty()){
         qDebug() << "Can't remove cookie" << cookie.name() << "because its URL isn't known";
         return;
     }
+    removeCookieDomain(cookie);
     
-    //Add leading dot to domain, if necessary
-    id.domain = prependDotToDomain(id.domain);
-    QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", id.domain, constructUrlForCookie(cookie).toString(), cookie.path(), QString(cookie.name()));
+    QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", cookie.domain(), url.toString(), cookie.path(), QString(cookie.name()));
     QDBusPendingCallWatcher *w = new QDBusPendingCallWatcher(pcall, this);
     connect(w, &QDBusPendingCallWatcher::finished, this, &WebEnginePartCookieJar::cookieRemovalFailed);
 }
@@ -324,6 +332,13 @@ QNetworkCookie WebEnginePartCookieJar::parseKIOCookie(const QStringList& data, i
     c.setPath(extractField(CookieDetails::path).toUtf8());
     c.setSecure(extractField(CookieDetails::secure).toInt()); //1 for true, 0 for false
     c.setValue(extractField(CookieDetails::value).toUtf8());
+    if (c.domain().isEmpty()) {
+        QString host = extractField(CookieDetails::host);
+        QUrl url;
+        url.setScheme(c.isSecure() ? "https" : "http");
+        url.setHost(host);
+        c.normalize(url);
+    }
     return c;
 }
 

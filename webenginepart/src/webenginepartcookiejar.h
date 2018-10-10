@@ -266,16 +266,17 @@ private:
 #endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     
     /**
-    * @brief Adds a dot in front of a domain if it's not already there
+    * @brief Removes the domain from the cookie if the domain doesn't start with a dot
     * 
-    * @param dom the domain
-    * @return `dom` if it already starts with a dot and `dom` preceded by a dot otherwise
+    * The cookies managed by QWebEngine never have an empty domain; instead, their domain starts with a dot if it was explicitly given and doesn't start
+    * with a dot in case it wasn't explicitly given. `KCookieServer::addCookies` and `KCookieServer::deleteCookie`, instead, require an empty domain if the
+    * domain wasn't explicitly given. This function transforms a cookie of the first form to one of the second form.
     * 
-    * @internal
-    * This function is needed because KCookieJar prepends a dot to all domains not starting with one (according
-    * to `KCookieJar::makeCookies` in `kcookiejar.cpp`)
+    * If the cookie's domain starts with a dot, this function does nothing.
+    * 
+    * @param cookie the cookie to remove the domain from. This cookie is modified in place
     */
-    static inline QString prependDotToDomain(const QString &dom) {return dom.startsWith(".") ? dom : "." + dom;}
+    static void removeCookieDomain(QNetworkCookie &cookie);
     
     /**
     * @brief Tries to construct an Url for the given cookie
