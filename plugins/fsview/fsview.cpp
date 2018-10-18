@@ -141,8 +141,7 @@ void FSView::setPath(const QString &p)
     _path = QDir::cleanPath(_path);
     _pathDepth = _path.count('/');
 
-    QUrl u;
-    u.setPath(_path);
+    QUrl u = QUrl::fromLocalFile(_path);
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), QUrl(), u)) {
         QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.toDisplayString());
         KMessageBox::sorry(this, msg);
