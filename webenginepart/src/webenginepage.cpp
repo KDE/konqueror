@@ -185,6 +185,9 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
+    if (m_urlLoadedByPart != url) {
+        m_urlLoadedByPart = QUrl();
+    }
 //     qDebug() << url << "type=" << type;
     QUrl reqUrl(url);
 
@@ -308,6 +311,22 @@ static int errorCodeFromReply(QNetworkReply* reply)
     return 0;
 }
 #endif
+
+bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
+{
+    if (m_urlLoadedByPart == ce.url()) {
+        m_urlLoadedByPart = QUrl();
+        return true;
+    } else if (ce.isOverridable()) {
+        QString translatedDesc = i18n(ce.errorDescription().toUtf8());
+        QString text = i18n("<p>The server failed the authenticity check (%1). The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
+                            ce.url().host(), translatedDesc);
+        KMessageBox::ButtonCode ans = KMessageBox::questionYesNo(view(), text, i18n("Authentication error"));
+        return ans == KMessageBox::Yes;
+    } else {
+        return false;
+    }
+}
 
 WebEnginePart* WebEnginePage::part() const
 {

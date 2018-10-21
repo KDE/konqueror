@@ -66,6 +66,15 @@ public:
     void download(const QUrl &url, bool newWindow = false);
 
     WebEngineWallet* wallet() const {return m_wallet;}
+    
+    /**
+    * @brief Tells the page that the part has requested to load the given URL
+    * 
+    * @note Calling this function doesn't cause the page to be loaded: you still need to call load() to do so.
+    * @see m_urlLoadedByPart
+    * @param url the requested URL
+    */
+    void setLoadUrlCalledByPart(const QUrl &url){m_urlLoadedByPart = url;}
 
 Q_SIGNALS:
     /**
@@ -100,6 +109,25 @@ protected:
      * @internal
      */
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
+    
+    /**
+    * @brief Override of `QWebEnginePage::certificateError`
+    * 
+    * If the error is overridable, asks the user whether to ignore the error or not and returns `true` or `false` accordingly. 
+    * If the error is not overridable, it always returns `false`.
+    * 
+    * @internal
+    * A problem arises if the certificate error happens while loading a page requested by WebEnginePart::load() (rather than from the
+    * user's interaction with the WebEnginePage itself). The problem is that when WebEnginePart::load() is called, any certificate error
+    * will have already been caught by the `KParts` mechanism and the user will already have been asked about it. so it doesn't make sense
+    * to ask him again. To avoid doing so, this function checks m_urlLoadedByPart: if it is the same url as the one the certificate
+    * refers to, `true` is returned (and m_urlLoadedByPart is reset).
+    * @endinternal
+    * 
+    * @param ce the certificate error
+    * @return `true` if the error can be ignored and `false` otherwise
+    */
+    bool certificateError(const QWebEngineCertificateError &ce) Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
@@ -125,6 +153,17 @@ private:
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
     WebEngineWallet *m_wallet;
+    
+    /**
+    * @brief The last URL that the part requested to be loaded
+    * 
+    * Before calling `load()`, the part needs to call setLoadUrlCalledByPart() passing the URL which will be loaded. This variable
+    * will be reset either the first time acceptNavigationRequest() is called with a different URL or when certificateError() is called.
+    * 
+    * This variable is needed to implement certificateError().
+    * 
+    */
+    QUrl m_urlLoadedByPart;
 };
 
 
