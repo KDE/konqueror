@@ -328,6 +328,11 @@ private:
     */
     CookieList m_cookiesLoadedFromKCookieServer;
     
+#ifdef BUILD_TESTING
+    QList<QNetworkCookie> m_testCookies;
+    friend class TestWebEnginePartCookieJar;
+#endif
+    
 };
 
 /**

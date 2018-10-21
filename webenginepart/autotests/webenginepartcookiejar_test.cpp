@@ -32,6 +32,26 @@
 #include <QDBusInterface>
 #include <QDBusReply>
 
+#include <algorithm>
+    
+//Cookie expiration dates returned by KCookieServer always have msecs set to 0
+static QDateTime currentDateTime(){return QDateTime::fromSecsSinceEpoch(QDateTime::currentMSecsSinceEpoch()/1000);}
+
+namespace QTest {
+    template <>
+    char *toString(const QNetworkCookie &cookie){
+        QByteArray ba = "QNetworkCookie{";
+        ba += "\nname: " + cookie.name();
+        ba += "\ndomain: " + (cookie.domain().isEmpty() ? "<EMPTY>" : cookie.domain());
+        ba += "\npath: " + (cookie.path().isEmpty() ? "<EMPTY>" : cookie.path());
+        ba += "\nvalue: " + cookie.value();
+        ba += "\nexpiration: " + (cookie.expirationDate().isValid() ? QString::number(cookie.expirationDate().toMSecsSinceEpoch()) : "<INVALID>");
+        ba += "\nsecure: " + QString::number(cookie.isSecure());
+        ba += "\nhttp: only" + QString::number(cookie.isHttpOnly());
+        return qstrdup(ba.data());
+    }
+}
+
 QTEST_MAIN(TestWebEnginePartCookieJar);
 
 void TestWebEnginePartCookieJar::initTestCase()
@@ -246,20 +266,9 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QFETCH(const QString, domain);
     QFETCH(const QString, host);
     
-    const QString url = "https://" + host;
-    
-    //cookie is in the "format" used by QWebEngineCookieStore, which means that, if the domain should be empty,
-    //it is stored as a domain not starting with a dot. KCookieServer, instead, wants cookies without domains
-    //to actually have no domain, so we have to change it
-    QNetworkCookie kcookieServerCookie(cookie);
-    if (!kcookieServerCookie.domain().startsWith('.')) {
-        kcookieServerCookie.setDomain(QString());
-    }
-    const QByteArray setCookie = "Set-Cookie: " + kcookieServerCookie.toRawForm();
-    
     //Add cookie to KCookieServer
-    QDBusMessage rep = m_server->call(QDBus::Block, "addCookies", url, setCookie, static_cast<qlonglong>(0));
-    QVERIFY2(!m_server->lastError().isValid(), qPrintable(m_server->lastError().message()));
+    QDBusError e = addCookieToKCookieServer(cookie, host);
+    QVERIFY2(!e.isValid(), qPrintable(m_server->lastError().message()));
     
     //Ensure cookie has been added to KCookieServer
     QDBusReply<QStringList> reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, host, "", "");
@@ -274,3 +283,76 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     cookies = reply.value();
     QVERIFY2(!cookies.contains(name), "Cookie wasn't removed from server");
 }
+
+QDBusError TestWebEnginePartCookieJar::addCookieToKCookieServer(const QNetworkCookie& _cookie, const QString& host)
+{
+    QNetworkCookie cookie(_cookie);
+    QUrl url;
+    url.setHost(host);
+    url.setScheme(cookie.isSecure() ? "https" : "http");
+    if (!cookie.domain().startsWith('.')) {
+        cookie.setDomain(QString());
+    }
+    const QByteArray setCookie = "Set-Cookie: " + cookie.toRawForm();
+    m_server->call(QDBus::Block, "addCookies", url.toString(), setCookie, static_cast<qlonglong>(0));
+    return m_server->lastError();
+}
+
+void TestWebEnginePartCookieJar::testPersistentCookiesAreAddedToStoreOnCreation()
+{
+    delete m_jar;
+    QDateTime exp = QDateTime::currentDateTime().addYears(1);
+    QString baseCookieName = m_cookieName + "-startup";
+    QList<CookieData> data {
+        {baseCookieName + "-persistent", "test-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", currentDateTime().addYears(1), true},
+        {baseCookieName + "-no-path", "test-value", ".yyy.xxx.com", "", "zzz.yyy.xxx.com", currentDateTime().addYears(1), true},
+        {baseCookieName + "-no-domain", "test-value", "", "/abc/def/", "zzz.yyy.xxx.com", currentDateTime().addYears(1), true},
+        {baseCookieName + "-no-secure", "test-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", currentDateTime().addYears(1), false}
+    };
+    QList<QNetworkCookie> expected;
+    for(const CookieData &d: data){
+        QNetworkCookie c = d.cookie();
+        QDBusError e = addCookieToKCookieServer(c, d.host);
+        QVERIFY2(!e.isValid(), qPrintable(e.message()));
+        //In case of an empty domain, WebEnginePartCookieJar will use QNetworkCookie::normalize on the cookie
+        if (c.domain().isEmpty()) {
+            c.setDomain(d.host);
+        }
+        expected << c;
+    }
+    m_jar = new WebEnginePartCookieJar(m_profile, this);
+    QList<QNetworkCookie> cookiesInsertedIntoJar;
+    for(const QNetworkCookie &c: qAsConst(m_jar->m_testCookies)){
+        if(QString(c.name()).startsWith(baseCookieName)) {
+            cookiesInsertedIntoJar << c;
+        }
+    }
+    
+    //Ensure that cookies in the two lists are in the same order before comparing them
+    //(the order in cookiesInsertedIntoJar depends on the order KCookieServer::findCookies
+    //returns them)
+    auto sortLambda = [](const QNetworkCookie &c1, const QNetworkCookie &c2){
+        return c1.name() < c2.name();
+    };
+    std::sort(cookiesInsertedIntoJar.begin(), cookiesInsertedIntoJar.end(), sortLambda);
+    std::sort(expected.begin(), expected.end(), sortLambda);
+    
+    QCOMPARE(cookiesInsertedIntoJar, expected);
+}
+
+void TestWebEnginePartCookieJar::testSessionCookiesAreNotAddedToStoreOnCreation()
+{
+    delete m_jar;
+    CookieData data{m_cookieName + "-startup-session", "test-value", ".yyy.xxx.com", "/abc/def", "zzz.yyy.xxx.com", QDateTime(), true};
+    QDBusError e = addCookieToKCookieServer(data.cookie(), data.host);
+    QVERIFY2(!e.isValid(), qPrintable(e.message()));
+    m_jar = new WebEnginePartCookieJar(m_profile, this);
+    QList<QNetworkCookie> cookiesInsertedIntoJar;
+    for(const QNetworkCookie &c: qAsConst(m_jar->m_testCookies)) {
+        if (c.name() == data.name) {
+            cookiesInsertedIntoJar << c;
+        }
+    }
+    QVERIFY2(cookiesInsertedIntoJar.isEmpty(), "Session cookies inserted into cookie store");
+}
+

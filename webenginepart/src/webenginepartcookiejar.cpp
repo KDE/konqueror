@@ -67,6 +67,7 @@ WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject 
     if(!m_cookieServer.isValid()){
         qCDebug(WEBENGINEPART_LOG) << "Couldn't connect to KCookieServer";
     }
+    
     loadKIOCookies();
     
     //QWebEngineCookieStore::setCookieFilter only exists from Qt 5.11.0
@@ -144,6 +145,10 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     if (m_cookiesLoadedFromKCookieServer.removeOne(_cookie)) {
         return;
     } 
+    
+#ifdef BUILD_TESTING
+        m_testCookies.clear();
+#endif
     
     QNetworkCookie cookie(_cookie);
     CookieIdentifier id(cookie);
@@ -288,6 +293,9 @@ void WebEnginePartCookieJar::loadKIOCookies()
             continue;
         }
         m_cookiesLoadedFromKCookieServer << cookie;
+#ifdef BUILD_TESTING
+        m_testCookies << cookie;
+#endif
         m_cookieStore->setCookie(cookie);
     }
 }

@@ -2,6 +2,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 
+if(BUILD_TESTING)
+  add_definitions(-DBUILD_TESTING)
+endif(BUILD_TESTING)
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(kwebenginepartlib_LIB_SRCS

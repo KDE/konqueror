@@ -1,3 +1,5 @@
+add_definitions(-DBUILD_TESTING)
+
 include(ECMAddTests)
 
 find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
