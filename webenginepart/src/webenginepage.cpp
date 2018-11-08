@@ -28,6 +28,7 @@
 #include "settings/webenginesettings.h"
 #include "webenginepartdownloadmanager.h"
 #include "webenginewallet.h"
+#include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 
