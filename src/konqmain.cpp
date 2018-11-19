@@ -27,8 +27,9 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 
-#include <KLocalizedString>
 #include <KAboutData>
+#include <KCrash>
+#include <KLocalizedString>
 
 #include <config-konqueror.h>
 #include <konqueror-version.h>
@@ -203,6 +204,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     aboutData.addAuthor(i18n("Eduardo Robles Elvira"), i18n("Developer (framework)"), "edulix@gmail.com");
 
     KAboutData::setApplicationData(aboutData);
+
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.addVersionOption();
