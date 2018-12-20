@@ -203,7 +203,7 @@ void HistorySidebarConfig::slotExpireChanged()
 
 // change hour to days, minute to minutes and the other way round,
 // depending on the value of the spinbox, and synchronize the two spinBoxes
-// to enfore newer <= older.
+// to enforce newer <= older.
 void HistorySidebarConfig::slotNewerChanged(int value)
 {
     dialog->comboNewer->setItemText(KonqHistorySettings::DAYS,

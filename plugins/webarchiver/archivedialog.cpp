@@ -814,7 +814,7 @@ bool ArchiveDialog::saveFrame(KHTMLPart *part, int level)
         PartFrameData *pfd = &(fip_it.value());
 
         //
-        // Overloading madness: Note the @c &rawtext : If you accidently write @c rawtext
+        // Overloading madness: Note the @c &rawtext : If you accidentally write @c rawtext
         // it still compiles but it uses a different ctor that does not write to @c rawtext
         // but initializes @c textStream with @c rawtext
         //

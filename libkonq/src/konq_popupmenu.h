@@ -89,7 +89,6 @@ public:
      * @param items the list of file items the popupmenu should be shown for
      * @param viewURL the URL shown in the view, to test for RMB click on view background
      * @param actions list of actions the caller wants to see in the menu
-     * @param newMenu "New" menu, shared with the File menu, in konqueror
      * @param flags flags which control which items to show in the popupmenu
      * @param parentWidget the widget we're showing this popup for. Helps destroying
      * the popup if the widget is destroyed before the popup.

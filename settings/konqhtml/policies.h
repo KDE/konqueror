@@ -106,14 +106,14 @@ public:
     /**
      * (re)loads settings from configuration file given in the constructor.
      *
-     * Implicitely sets the group given in the constructor. Don't forget to
+     * Implicitly sets the group given in the constructor. Don't forget to
      * call this method from derived methods.
      */
     virtual void load();
     /**
      * saves current settings to the configuration file given in the constructor
      *
-     * Implicitely sets the group given in the constructor. Don't forget to
+     * Implicitly sets the group given in the constructor. Don't forget to
      * call this method from derived methods.
      */
     virtual void save();

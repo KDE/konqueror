@@ -98,7 +98,7 @@ public:
     void setSuggestionItems(const QStringList &suggestions);
 
     /**
-     * Clear all presviously set suggestion items for this ComboBox
+     * Clear all previously set suggestion items for this ComboBox
      */
     void clearSuggestions();
 

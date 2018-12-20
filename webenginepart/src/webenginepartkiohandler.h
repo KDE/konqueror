@@ -160,7 +160,7 @@ protected:
      * This function can be called by derived classes from their implementation of
      * processSlaveOutput().
      * 
-     * @param messsage the new error message. If error() is not `QWebEngineUrlRequestJob::NoError`, this
+     * @param message the new error message. If error() is not `QWebEngineUrlRequestJob::NoError`, this
      *  should not be empty
      */
     inline void setErrorMessage(const QString &message) {m_errorMessage = message;}
@@ -187,7 +187,7 @@ protected:
     /**
      * @brief The mime type of the data
      * 
-     * This value (actually, it's `name`) will be passed to `QWebEngineUrlRequestJob::reply
+     * This value (actually, it's `name`) will be passed to QWebEngineUrlRequestJob::reply
      * @return The mime type of the data
      */
     inline QMimeType mimeType() const {return m_mimeType;}

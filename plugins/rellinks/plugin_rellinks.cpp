@@ -357,7 +357,7 @@ void RelLinksPlugin::updateToolbar()
         QString rel = e.getAttribute("rel").string();
         rel = rel.simplified();
         if (rel.isEmpty()) {
-            // If the "rel" attribut is null then use the "rev" attribute...
+            // If the "rel" attribute is null then use the "rev" attribute...
             QString rev = e.getAttribute("rev").string();
             rev = rev.simplified();
             if (rev.isEmpty()) {
@@ -367,7 +367,7 @@ void RelLinksPlugin::updateToolbar()
             // Determine the "rel" equivalent of "rev" type
             rel =  transformRevToRel(rev);
         }
-        // Determin the name used internally
+        // Determine the name used internally
         QString lrel = getLinkType(rel.toLower());
         // relation to ignore
         if (lrel.isEmpty()) {
@@ -458,10 +458,10 @@ void RelLinksPlugin::guessRelations()
         return;
     }
 
-    // - The number of didgit may not be more of 3, or this is certenly an id.
+    // - The number of digits may not be more of 3, or this is certainly an id.
     // - We make sure that the number is followed by a dot, a &, or the end, we
     //   don't want to match stuff like that:   page.html?id=A14E12FD
-    // - We make also sure the number is not preceded dirrectly by others number
+    // - We make also sure the number is not preceded directly by others number
     QRegExp rx("^(.*[=/?&][^=/?&.\\-0-9]*)([\\d]{1,3})([.&][^/0-9]{0,15})?$");
 
     const QString zeros(QStringLiteral("0000"));

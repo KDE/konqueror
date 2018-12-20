@@ -540,7 +540,7 @@ void FSView::doUpdate()
 
                 /* Goal: Keep percentage equal from phase 2 to 3 */
                 double percent = (double)_progress / _progressSize;
-                /* We scale by factor 2/3 aferwards */
+                /* We scale by factor 2/3 afterwards */
                 percent = percent * 3 / 2;
 
                 int todo = _chunkSize2 + (_progressSize / 3 - _progress);

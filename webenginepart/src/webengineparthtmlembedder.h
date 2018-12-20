@@ -55,7 +55,7 @@ class QWebEngineProfile;
  * A problem can arise if the (X)HTML code contains a `<meta>` element with attribute `http-equiv="refresh"`.
  * Since QWebEnginePage is not just a parser, it honors this refresh request and, after emitting the `loadFinished`
  * signal, it refreshes the page, which means that `loadFinished` is emitted again and again. To avoid
- * doing the embeddding every time, the `loadFinished` signal is disconnected after the first time it's
+ * doing the embedding every time, the `loadFinished` signal is disconnected after the first time it's
  * emitted and the connection is remade the next time startEmbedding() is called. 
  *
  * @note This class uses and internal `QWebEnginePage` and an associated, off the record, `QWebEngineProfile`
@@ -146,7 +146,7 @@ private slots:
 private:
     
     /**
-    * @brief Converts an url to a `data` URL embeddding its contents
+    * @brief Converts an url to a `data` URL embedding its contents
     * 
     * The conversion is performed only for URLs satisfying the following conditions:
     * 

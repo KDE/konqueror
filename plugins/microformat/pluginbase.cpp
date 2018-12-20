@@ -37,7 +37,7 @@ PluginBase::~PluginBase()
 
 void PluginBase::addVCardViaDCOP(const QString &card)
 {
-    QDBusInterface kaddressbook("org.kde.kaddressbook", "/AddressBookService", "org.kde.adressbook.service");
+    QDBusInterface kaddressbook("org.kde.kaddressbook", "/AddressBookService", "org.kde.addressbook.service");
     kaddressbook.call("importVCardFromData", card);
 }
 

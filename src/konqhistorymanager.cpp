@@ -262,7 +262,7 @@ void KonqHistoryManager::finishAddingEntry(const KonqHistoryEntry &entry, bool i
 
     // note, no need to do the updateBookmarkMetadata for every
     // history object, only need to for the broadcast sender as
-    // the history object itself keeps the data consistant.
+    // the history object itself keeps the data consistent.
     // ### why does the comment do exactly the opposite from the code?
     const bool updated = m_bookmarkManager ? m_bookmarkManager->updateAccessMetadata(urlString) : false;
 

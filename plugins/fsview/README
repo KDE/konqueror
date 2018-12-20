@@ -7,7 +7,7 @@ Josef.Weidendorfer@gmx.de
 FSView is a tool for showing disc utilization in a graphical form, much
 like the UNIX command 'du'. The visualisation type choosen is a treemap.
 Treemaps allow for showing metrics of objects in nested structures, like
-sizes of files and directories on your hard disc, where the the size of
+sizes of files and directories on your hard disc, where the size of
 directories is defined to be the sum of the size of its children.
 Each object is represented by a rectangle which area is proportional to
 its metric. The metric must have the property that the sum of the

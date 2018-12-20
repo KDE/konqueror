@@ -161,7 +161,7 @@ Q_SIGNALS:
     /**
      * This signal is emitted whenever a save form data request is received.
      *
-     * Unless you connect to this signal and and call @ref acceptSaveFormDataRequest
+     * Unless you connect to this signal and call @ref acceptSaveFormDataRequest
      * or @ref rejectSaveFormDataRequest slots, the save form data requested through
      * @ref saveFormData will simply be ignored.
      *

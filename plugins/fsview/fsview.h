@@ -17,7 +17,7 @@
 */
 
 /*
- * FSView specialisaton of TreeMap classes.
+ * FSView specialization of TreeMap classes.
  */
 
 #ifndef FSVIEW_H

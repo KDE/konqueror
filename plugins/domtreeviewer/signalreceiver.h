@@ -40,7 +40,7 @@
  *
  * It is not possible to discriminate between different signals. Hence,
  * use different signal receiver instances for different signals.
- * @autor Leo Savernik
+ * @author Leo Savernik
  */
 class SignalReceiver : public QObject
 {

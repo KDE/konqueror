@@ -43,7 +43,7 @@ public:
     JavaPolicies(const KSharedConfig::Ptr &config, const QString &group, bool global,
                  const QString &domain = QString());
 
-    /** empty constructur to make QMap happy
+    /** empty constructor to make QMap happy
      * don't use for constructing a policies instance.
      * @internal
      */

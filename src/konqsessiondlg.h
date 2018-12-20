@@ -30,7 +30,7 @@ class KonqViewManager;
 class KonqMainWindow;
 
 /**
- * This is the konqueror sesions administration dialog, which allows the user
+ * This is the konqueror sessions administration dialog, which allows the user
  * to add, modify, rename and delete konqueror sessions.
  */
 class KonqSessionDlg : public KDialog

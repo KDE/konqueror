@@ -17,7 +17,7 @@
 */
 
 /*
- * FSView specialisaton of TreeMapItem class.
+ * FSView specialization of TreeMapItem class.
  */
 
 #ifndef INODE_H

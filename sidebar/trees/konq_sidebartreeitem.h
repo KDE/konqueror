@@ -51,7 +51,7 @@ public:
         return false;
     }
 
-    // Handle a drop on this item. If you didn't want it, you shouln't
+    // Handle a drop on this item. If you didn't want it, you shouldn't
     // have return true in acceptsDrops :)
     virtual void drop(QDropEvent *) {}
 

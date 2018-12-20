@@ -55,8 +55,7 @@ public:
     /**
     * @brief Constructor
     * 
-    * @param [in,out] prof the profile containig the store to synchronize with
-    * @param view the view associated with the store. Its only purpose is to obtain the `WinID` for the DBus call to `addCookies`
+    * @param [in,out] prof the profile containing the store to synchronize with
     * @param parent the parent object
     * @note The `PersistentCookiePolicy` of the given profile will be set to `NoPersistentCookies` so that, on application startup, 
     * only cookies from KIO will be inside the store
@@ -101,7 +100,7 @@ private slots:
     * @brief Removes all session cookies from `KCookieJar`
     * 
     * This function doesn't remove cookies from the `QWebEngineCookieStore`, because it's meant to be called
-    * when the application is closing, so those cookies will be destroied automatically (because they're only stored
+    * when the application is closing, so those cookies will be destroyed automatically (because they're only stored
     * in memory)
     * 
     */
@@ -236,7 +235,7 @@ private:
     /**
     * @brief Parses the value returned by `KCookieServer::findCookies` for a single cookie
     * 
-    * This function assumes that all possible data for the cookie is availlable (that is, that the list returned by 
+    * This function assumes that all possible data for the cookie is available (that is, that the list returned by 
     * `KCookieServer::findCookies` contains an entry for each value in #CookieDetails)
     * 
     * @param data: the data returned by `KCookieServer::findCookies`. It can contain data for more than one cookie, but only one will be parsed
@@ -250,7 +249,7 @@ private:
     * @brief Function used to filter cookies
     * 
     * In theory, this function should use the configuration chosen by the user in the Cookies KCM. However, this can't be done for several reasons:
-    * - this function doesn't have the cookies details availlable and they're needed for the "Ask" policy
+    * - this function doesn't have the cookies details  and they're needed for the "Ask" policy
     * - this function doesn't know the URL of the cookie (even if `QWebEngineCookieStore::FilterRequest::origin` could be used as a substitute
     * - if the policy is "Ask" and the question was asked here, it would be asked again when adding the cookie to `KCookieJar`.
     * Because of these reasons, the only setting from the KCM which is applied here is whether to accept and reject cross domain cookies. Other settings
@@ -314,7 +313,7 @@ private:
     friend uint qHash(const CookieIdentifier &id, uint seed){return qHash(QStringList{id.name, id.domain, id.path}, seed);};
     
     /**
-    * @brief A list of cookies which were added to to the `QWebEngineCookieStore` but were rejected by KCookieJar and must
+    * @brief A list of cookies which were added to the `QWebEngineCookieStore` but were rejected by KCookieJar and must
     *   be removed from the store 
     * 
     * When cookieRemoved() is called with one of those cookies, the cookie is removed from this list and no attempt is made to remove

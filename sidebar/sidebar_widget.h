@@ -114,7 +114,7 @@ protected Q_SLOTS:
 Q_SIGNALS:
     void started(KIO::Job *);
     void completed();
-    void fileSelection(const KFileItemList &iems);
+    void fileSelection(const KFileItemList &items);
     void fileMouseOver(const KFileItem &item);
 
     /* The following public slots are wrappers for browserextension signals */

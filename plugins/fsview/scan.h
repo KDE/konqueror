@@ -101,7 +101,7 @@ public:
     /**
      * Starts the scan. Stop previous scan if running.
      * For the actual scan to happen, you have to call
-     * scan() peridically.
+     * scan() periodically.
      *
      * If from !=0, restart scan at given position; from must
      * be from the previous scan of this manager.

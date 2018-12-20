@@ -126,7 +126,7 @@ private:
     /**
      * This bool var is used internally to allow delayed initialization of the
      * closed items list. When active, this flag prevents addClosedWindowItem()
-     * from emiting addWindowInOtherInstances() as the windows are already
+     * from emitting addWindowInOtherInstances() as the windows are already
      * being dealt with inside KonqUndoManager::populate().
      */
     bool m_blockClosedItems;
