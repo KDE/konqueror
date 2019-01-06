@@ -32,12 +32,20 @@ add_library(kwebenginepartlib ${kwebenginepartlib_LIB_SRCS})
 
 generate_export_header(kwebenginepartlib)
 
-target_link_libraries(kwebenginepartlib Qt5::Core Qt5::DBus Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport
-    KF5::Parts
-    KF5::SonnetCore
-    KF5::WindowSystem  # for KUserTimestamp
-    KF5::Wallet
-    KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
+target_link_libraries(kwebenginepartlib
+    PUBLIC
+        Qt5::Core
+        Qt5::DBus
+        Qt5::Gui
+        Qt5::Widgets
+        Qt5::WebEngineWidgets
+        KF5::Parts
+        KF5::Wallet
+    PRIVATE
+        Qt5::PrintSupport
+        KF5::SonnetCore
+        KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
+        KF5::WindowSystem  # for KUserTimestamp
 )
 
 target_include_directories(kwebenginepartlib PUBLIC
