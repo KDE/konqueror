@@ -1,10 +1,10 @@
-<!DOCTYPE kpartgui> 
-	<kpartgui library="autorefresh" name="autorefresh" version="3" translationDomain="autorefresh">
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui library="autorefresh" name="autorefresh" version="3" translationDomain="autorefresh">
 	<MenuBar> 
 		<Menu name="tools">
 			<text>&amp;Tools</text> 
 			<Action name="autorefresh"/> 
 		</Menu> 
 	</MenuBar> 
-</kpartgui>
+</gui>
 

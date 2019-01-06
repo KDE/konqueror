@@ -59,5 +59,6 @@ install(TARGETS validatorsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 
 install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES plugin_validators.rc plugin_validators.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 
 install(FILES validators.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

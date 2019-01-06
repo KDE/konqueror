@@ -20,3 +20,4 @@ install(TARGETS autorefresh  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES autorefresh.rc autorefresh.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )

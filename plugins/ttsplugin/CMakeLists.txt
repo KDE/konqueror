@@ -13,4 +13,5 @@ install(TARGETS khtmlttsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES khtmltts.rc khtmltts.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES khtmltts.rc khtmltts.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES khtmltts.rc khtmltts.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 
