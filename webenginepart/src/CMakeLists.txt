@@ -51,8 +51,10 @@ target_link_libraries(kwebenginepartlib
 target_include_directories(kwebenginepartlib PUBLIC
    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>"
 )
+set_target_properties(kwebenginepartlib PROPERTIES OUTPUT_NAME kwebenginepart)
 
-install(TARGETS kwebenginepartlib ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kwebenginepartlib ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
 
 add_library(webenginepart MODULE webenginepartfactory.cpp)
 
