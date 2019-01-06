@@ -1,5 +1,6 @@
 @PACKAGE_INIT@
 
+​include(CMakeFindDependencyMacro)
 find_dependency(KF5XmlGui)
 find_dependency(KF5Config)
 find_dependency(KF5KIO)
