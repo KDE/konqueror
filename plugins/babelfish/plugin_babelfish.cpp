@@ -163,7 +163,7 @@ void PluginBabelFish::slotAboutToShow()
         I18N_NOOP("&French"), "nl_fr",
         I18N_NOOP("&English"), "ru_en",
         I18N_NOOP("&French"), "ru_fr", // only on voila
-        0, 0
+        nullptr, nullptr
     };
 
     for (int i = 0; translations[i]; i += 2) {

@@ -101,7 +101,7 @@ public:
                   const QUrl &viewURL,
                   KActionCollection &actions,
                   Flags flags,
-                  QWidget *parentWidget = 0);
+                  QWidget *parentWidget = nullptr);
 
     /**
      * Don't forget to destroy the object

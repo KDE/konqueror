@@ -40,7 +40,7 @@ void UndoManagerTest::initTestCase()
     // Make sure we start clean
     QStandardPaths::setTestModeEnabled(true);
     KonqSessionManager::self()->disableAutosave();
-    KonqUndoManager manager(0);
+    KonqUndoManager manager(nullptr);
     QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)));
     QVERIFY(spyUndoAvailable.isValid());
     manager.clearClosedItemsList();
@@ -51,7 +51,7 @@ void UndoManagerTest::initTestCase()
 
 void UndoManagerTest::testAddClosedTabItem()
 {
-    KonqUndoManager manager(0);
+    KonqUndoManager manager(nullptr);
     QVERIFY(!manager.undoAvailable());
     KonqClosedTabItem *item = new KonqClosedTabItem(QStringLiteral("url"), QStringLiteral("title"), 0, manager.newCommandSerialNumber());
     QCOMPARE(item->url(), QString("url"));

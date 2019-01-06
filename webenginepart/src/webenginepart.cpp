@@ -82,11 +82,11 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_emitOpenUrlNotify(true),
              m_hasCachedFormData(false),
              m_doLoadFinishedActions(false),
-             m_statusBarWalletLabel(0),
-             m_searchBar(0),
-             m_passwordBar(0),
-             m_featurePermissionBar(0),
-             m_wallet(Q_NULLPTR)
+             m_statusBarWalletLabel(nullptr),
+             m_searchBar(nullptr),
+             m_passwordBar(nullptr),
+             m_featurePermissionBar(nullptr),
+             m_wallet(nullptr)
 {
     QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
     if (!prof->urlSchemeHandler("error")) {
@@ -191,14 +191,14 @@ WebEnginePage* WebEnginePart::page()
 {
     if (m_webView)
         return qobject_cast<WebEnginePage*>(m_webView->page());
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 const WebEnginePage* WebEnginePart::page() const
 {
     if (m_webView)
         return qobject_cast<const WebEnginePage*>(m_webView->page());
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 void WebEnginePart::initActions()
@@ -444,7 +444,7 @@ void WebEnginePart::slotLoadStarted()
 {
     if(!Utils::isBlankUrl(url()))
     {
-        emit started(0);
+        emit started(nullptr);
     }
     updateActions();
 
@@ -492,7 +492,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
         } 
         else {
 // Attempt to fill the web form...
-            WebEngineWallet *wallet = page() ? page()->wallet() : 0;
+            WebEngineWallet *wallet = page() ? page()->wallet() : nullptr;
             if (wallet){
                 wallet->fillFormData(page());
             }
@@ -558,7 +558,7 @@ void WebEnginePart::slotShowSecurity()
 
     const WebSslInfo& sslInfo = page()->sslInfo();
     if (!sslInfo.isValid()) {
-        KMessageBox::information(0, i18n("The SSL information for this site "
+        KMessageBox::information(nullptr, i18n("The SSL information for this site "
                                     "appears to be corrupt."),
                             i18nc("Secure Sockets Layer", "SSL"));
         return;
@@ -764,13 +764,13 @@ void WebEnginePart::slotWalletClosed()
 
     m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
     delete m_statusBarWalletLabel;
-    m_statusBarWalletLabel = 0;
+    m_statusBarWalletLabel = nullptr;
     m_hasCachedFormData = false;
 }
 
 void WebEnginePart::slotShowWalletMenu()
 {
-    QMenu *menu = new QMenu(0);
+    QMenu *menu = new QMenu(nullptr);
 
     if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
       menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));

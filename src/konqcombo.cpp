@@ -52,7 +52,7 @@
 #include "konqueror_interface.h"
 #include "konqhistorymanager.h"
 
-KConfig *KonqCombo::s_config = 0L;
+KConfig *KonqCombo::s_config = nullptr;
 const int KonqCombo::temporary = 0;
 
 static QString titleOfURL(const QString &urlStr)
@@ -76,8 +76,8 @@ class KonqListWidgetItem : public QListWidgetItem
 public:
     enum { KonqItemType = 0x1845D5CC };
 
-    KonqListWidgetItem(QListWidget *parent = Q_NULLPTR);
-    KonqListWidgetItem(const QString &text, QListWidget *parent = Q_NULLPTR);
+    KonqListWidgetItem(QListWidget *parent = nullptr);
+    KonqListWidgetItem(const QString &text, QListWidget *parent = nullptr);
 
     QVariant data(int role) const Q_DECL_OVERRIDE;
 
@@ -102,7 +102,7 @@ public:
 class KonqComboLineEdit : public KLineEdit
 {
 public:
-    KonqComboLineEdit(QWidget *parent = Q_NULLPTR);
+    KonqComboLineEdit(QWidget *parent = nullptr);
     KCompletionBox *completionBox(bool create) Q_DECL_OVERRIDE;
 
 protected:

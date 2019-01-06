@@ -39,7 +39,7 @@ class SessionRestoreDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = Q_NULLPTR);
+    explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = nullptr);
     virtual ~SessionRestoreDialog();
 
     bool isEmpty() const;
@@ -110,7 +110,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QStringList &sessionFilePathsList, bool
-                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = nullptr);
 
     /**
      * Restore saved session(s).
@@ -123,7 +123,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSessions(const QString &sessionsDir, bool
-                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
+                         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = nullptr);
 
     /**
      * Restore saved session.
@@ -134,7 +134,7 @@ public:
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
     void restoreSession(const QString &sessionFilePath, bool
-                        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = Q_NULLPTR);
+                        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = nullptr);
 
     /**
      * Disable the autosave feature. It's called when a konqueror instance is
@@ -158,7 +158,7 @@ public:
      * Save current session in a given path (absolute path to a file)
      * @param mainWindow if 0, all windows will be saved, else only the given one
      */
-    void saveCurrentSessionToFile(const QString &sessionConfigPath, KonqMainWindow *mainWindow = Q_NULLPTR);
+    void saveCurrentSessionToFile(const QString &sessionConfigPath, KonqMainWindow *mainWindow = nullptr);
 
     /**
      * Returns the autosave directory

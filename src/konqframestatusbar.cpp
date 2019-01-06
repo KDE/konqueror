@@ -50,7 +50,7 @@ class KonqCheckBox : public QCheckBox
 {
     //Q_OBJECT // for classname. not used, and needs a moc
 public:
-    explicit KonqCheckBox(QWidget *parent = Q_NULLPTR)
+    explicit KonqCheckBox(QWidget *parent = nullptr)
         : QCheckBox(parent) {}
 protected:
     void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
@@ -95,7 +95,7 @@ void KonqCheckBox::paintEvent(QPaintEvent *)
 KonqFrameStatusBar::KonqFrameStatusBar(KonqFrame *_parent)
     : QStatusBar(_parent),
       m_pParentKonqFrame(_parent),
-      m_pStatusLabel(Q_NULLPTR)
+      m_pStatusLabel(nullptr)
 {
     setSizeGripEnabled(false);
 
@@ -163,7 +163,7 @@ void KonqFrameStatusBar::splitFrameMenu()
 
     // We have to ship the remove view action ourselves,
     // since this may not be the active view (passive view)
-    QAction actRemoveView(QIcon::fromTheme(QStringLiteral("view-close")), i18n("Close View"), 0);
+    QAction actRemoveView(QIcon::fromTheme(QStringLiteral("view-close")), i18n("Close View"), nullptr);
     actRemoveView.setObjectName(QStringLiteral("removethisview"));
     connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
     actRemoveView.setEnabled(mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode());

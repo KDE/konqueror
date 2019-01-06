@@ -83,7 +83,7 @@ public:
         if (m_pActiveChild) {
             return m_pActiveChild->activeChildView();
         } else {
-            return 0;
+            return nullptr;
         }
     }
 

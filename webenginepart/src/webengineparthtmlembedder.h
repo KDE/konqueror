@@ -72,7 +72,7 @@ public:
      *
      * @param parent the parent object
      */
-    WebEnginePartHtmlEmbedder(QObject* parent = Q_NULLPTR);
+    WebEnginePartHtmlEmbedder(QObject* parent = nullptr);
     
     /**
     * @brief Destructor

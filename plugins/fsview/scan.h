@@ -106,7 +106,7 @@ public:
      * If from !=0, restart scan at given position; from must
      * be from the previous scan of this manager.
      */
-    void startScan(ScanDir *from = 0);
+    void startScan(ScanDir *from = nullptr);
 
     /** Stop a current running scan.
      * Make all directories to finish their scan.
@@ -178,7 +178,7 @@ class ScanDir
 public:
     ScanDir();
     ScanDir(const QString &n, ScanManager *m,
-            ScanDir *p = 0, int data = 0);
+            ScanDir *p = nullptr, int data = 0);
     ~ScanDir();
 
     /* Get items of this directory

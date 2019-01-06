@@ -43,7 +43,7 @@
 #include <kconfiggroup.h>
 
 KonqFrameBase::KonqFrameBase()
-    : m_pParentContainer(0)
+    : m_pParentContainer(nullptr)
 {
 }
 
@@ -91,15 +91,15 @@ KonqFrame::KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer)
 {
     //qCDebug(KONQUEROR_LOG) << "KonqFrame::KonqFrame()";
 
-    m_pLayout = 0L;
-    m_pView = 0L;
+    m_pLayout = nullptr;
+    m_pView = nullptr;
 
     // the frame statusbar
     m_pStatusBar = new KonqFrameStatusBar(this);
     m_pStatusBar->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
     connect(m_pStatusBar, &KonqFrameStatusBar::clicked, this, &KonqFrame::slotStatusBarClicked);
     connect(m_pStatusBar, &KonqFrameStatusBar::linkedViewClicked, this, &KonqFrame::slotLinkedViewClicked);
-    m_separator = 0;
+    m_separator = nullptr;
     m_pParentContainer = parentContainer;
 }
 
@@ -141,22 +141,22 @@ KParts::ReadOnlyPart *KonqFrame::attach(const KonqViewFactory &viewFactory)
     // We don't want that deleting the widget deletes the part automatically
     // because we already have that taken care of in KParts...
 
-    m_pPart = factory.create(this, 0);
+    m_pPart = factory.create(this, nullptr);
 
     if (!m_pPart) {
         qCWarning(KONQUEROR_LOG) << "No part was created!";
-        return 0;
+        return nullptr;
     }
     if (!m_pPart->widget()) {
         qCWarning(KONQUEROR_LOG) << "The part" << m_pPart << "didn't create a widget!";
         delete m_pPart;
-        m_pPart = 0;
-        return 0;
+        m_pPart = nullptr;
+        return nullptr;
     }
 
     attachWidget(m_pPart->widget());
 
-    m_pStatusBar->slotConnectToNewView(0, 0, m_pPart);
+    m_pStatusBar->slotConnectToNewView(nullptr, nullptr, m_pPart);
 
     return m_pPart;
 }

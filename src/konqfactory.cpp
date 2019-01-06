@@ -58,7 +58,7 @@ void KonqViewFactory::setArgs(const QVariantList &args)
 KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *parent)
 {
     if (!m_factory) {
-        return 0;
+        return nullptr;
     }
 
     KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, QString(), m_args);
@@ -80,7 +80,7 @@ static KonqViewFactory tryLoadingService(KService::Ptr service)
     pluginLoader.setLoadHints(QLibrary::ExportExternalSymbolsHint); // #110947
     KPluginFactory *factory = pluginLoader.factory();
     if (!factory) {
-        KMessageBox::error(0,
+        KMessageBox::error(nullptr,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",
                                 service->name(), pluginLoader.errorString()));
         return KonqViewFactory();

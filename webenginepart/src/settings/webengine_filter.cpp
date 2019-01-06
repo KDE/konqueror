@@ -74,13 +74,13 @@ public:
 
 
     // check if string match at least one string from matching set
-    bool isMatched(const QString& str, QString *by = 0) const
+    bool isMatched(const QString& str, QString *by = nullptr) const
     {
         // check short strings first
         for (int i = 0; i < shortStringFilters.size(); ++i) {
             if (str.contains(shortStringFilters[i]))
             {
-                if (by != 0) *by = shortStringFilters[i];
+                if (by != nullptr) *by = shortStringFilters[i];
                 return true;
             }
         }
@@ -117,7 +117,7 @@ public:
                         int flen = stringFilters[index].length();
                         if (k - flen + 1 >= 0 && stringFilters[index] == str.midRef(k - flen + 1 , flen))
                         {
-                            if (by != 0) *by = stringFilters[index];
+                            if (by != nullptr) *by = stringFilters[index];
                             return true;
                         }
                     } else {
@@ -129,7 +129,7 @@ public:
                             QString remainder = QString::fromRawData(str.unicode() + remStart,
                                                                     str.length() - remStart);
                             if (reFilters[index].exactMatch(remainder)) {
-                                if (by != 0) *by = rePrefixes[index]+reFilters[index].pattern();
+                                if (by != nullptr) *by = rePrefixes[index]+reFilters[index].pattern();
                                 return true;
                             }
                         }

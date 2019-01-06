@@ -118,7 +118,7 @@ class KONQ_TESTS_EXPORT KonqFrame : public QWidget, public KonqFrameBase
     Q_OBJECT
 
 public:
-    explicit KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer = 0);
+    explicit KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer = nullptr);
     virtual ~KonqFrame();
 
     bool isContainer() const Q_DECL_OVERRIDE

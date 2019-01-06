@@ -53,12 +53,12 @@ void TestWebEnginePartCookieJar::cleanup()
         deleteCookies(findTestCookies());
     }
     delete m_server;
-    m_server = Q_NULLPTR;
+    m_server = nullptr;
     delete m_jar;
-    m_jar = Q_NULLPTR;
-    m_store = Q_NULLPTR;
+    m_jar = nullptr;
+    m_store = nullptr;
     delete m_profile;
-    m_profile = Q_NULLPTR;
+    m_profile = nullptr;
 }
 
 QNetworkCookie TestWebEnginePartCookieJar::CookieData::cookie() const

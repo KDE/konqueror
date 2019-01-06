@@ -22,7 +22,7 @@
 #include <QDataStream>
 
 KonqHistoryEntry::KonqHistoryEntry()
-    : numberOfTimesVisited(1), d(0)
+    : numberOfTimesVisited(1), d(nullptr)
 {
 }
 
@@ -43,7 +43,7 @@ KonqHistoryEntry &KonqHistoryEntry::operator=(const KonqHistoryEntry &other)
     numberOfTimesVisited = other.numberOfTimesVisited;
     firstVisited = other.firstVisited;
     lastVisited = other.lastVisited;
-    d = 0;
+    d = nullptr;
     return *this;
 }
 

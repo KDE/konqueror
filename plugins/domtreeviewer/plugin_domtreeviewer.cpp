@@ -18,7 +18,7 @@ K_PLUGIN_FACTORY(DomtreeviewerFactory, registerPlugin<PluginDomtreeviewer>();)
 
 PluginDomtreeviewer::PluginDomtreeviewer(QObject *parent,
         const QVariantList &)
-    : Plugin(parent), m_dialog(0)
+    : Plugin(parent), m_dialog(nullptr)
 {
     QAction *a = actionCollection()->addAction(QStringLiteral("viewdomtree"));
 
@@ -37,7 +37,7 @@ void PluginDomtreeviewer::slotShowDOMTree()
 {
     if (m_dialog) {
         delete m_dialog;
-        Q_ASSERT((DOMTreeWindow *)m_dialog == (DOMTreeWindow *)0);
+        Q_ASSERT((DOMTreeWindow *)m_dialog == (DOMTreeWindow *)nullptr);
     }
     if (KHTMLPart *part = qobject_cast<KHTMLPart *>(parent())) {
         m_dialog = new DOMTreeWindow(this);
@@ -50,7 +50,7 @@ void PluginDomtreeviewer::slotShowDOMTree()
 void PluginDomtreeviewer::slotDestroyed()
 {
     kDebug(90180);
-    m_dialog = 0;
+    m_dialog = nullptr;
 }
 
 #include <plugin_domtreeviewer.moc>

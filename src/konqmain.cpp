@@ -108,7 +108,7 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
             if (url.isLocalFile() && QFile::exists(url.toLocalFile())) { // "konqueror index.html"
                 urlList += url;
             } else {
-                urlList += KonqMisc::konqFilteredURL(Q_NULLPTR, args.at(i));    // "konqueror slashdot.org"
+                urlList += KonqMisc::konqFilteredURL(nullptr, args.at(i));    // "konqueror slashdot.org"
             }
         }
 
@@ -268,7 +268,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     // Delete all KonqMainWindows, so that we don't have
     // any parts loaded when KLibLoader::cleanUp is called.
     // (and Qt doesn't delete WA_DeleteOnClose widgets on exit anyway :()
-    while (KonqMainWindow::mainWindowList() != NULL) {
+    while (KonqMainWindow::mainWindowList() != nullptr) {
         // the list will be deleted by last KonqMainWindow
         delete KonqMainWindow::mainWindowList()->first();
     }

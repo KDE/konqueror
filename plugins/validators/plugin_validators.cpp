@@ -118,9 +118,9 @@ static void recursiveKHTMLValidation(KHTMLPart *part, QList<ValidationResult *> 
 
 PluginValidators::PluginValidators(QObject *parent,
                                    const QVariantList &)
-    : Plugin(parent), m_configDialog(0), m_part(0)
-    , m_localValidation(0), m_localValidationReport(0)
-    , m_icon(0), m_statusBarExt(0)
+    : Plugin(parent), m_configDialog(nullptr), m_part(nullptr)
+    , m_localValidation(nullptr), m_localValidationReport(nullptr)
+    , m_icon(nullptr), m_statusBarExt(nullptr)
 {
 
     m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("validators")), i18n("&Validate Web Page"),
@@ -422,7 +422,7 @@ void PluginValidators::slotTidyValidation()
 void PluginValidators::slotShowTidyValidationReport()
 {
 #ifdef HAVE_TIDY
-    ReportDialog *reportDialog = new ReportDialog(m_lastResults, 0);
+    ReportDialog *reportDialog = new ReportDialog(m_lastResults, nullptr);
     reportDialog->setAttribute(Qt::WA_DeleteOnClose);
     reportDialog->show();
 #endif
@@ -493,7 +493,7 @@ bool PluginValidators::canValidateLocally() const
     static const char *exclude_protocols[] = {
         "about",
         "bookmarks",
-        0 // keep it as last!
+        nullptr // keep it as last!
     };
     const QByteArray proto = m_part->url().scheme().toAscii();
     for (const char **protoIt = exclude_protocols; *protoIt; ++protoIt) {
@@ -520,7 +520,7 @@ bool PluginValidators::doExternalValidationChecks()
         const QString text = i18n("You cannot validate anything except web pages with "
                                   "this plugin.");
 
-        KMessageBox::sorry(0, text, title);
+        KMessageBox::sorry(nullptr, text, title);
         return false;
     }
 
@@ -530,7 +530,7 @@ bool PluginValidators::doExternalValidationChecks()
         const QString title = i18nc("@title:window", "Malformed URL");
         const QString text = i18n("The URL you entered is not valid, please "
                                   "correct it and try again.");
-        KMessageBox::sorry(0, text, title);
+        KMessageBox::sorry(nullptr, text, title);
         return false;
     }
 
@@ -576,7 +576,7 @@ void PluginValidators::removeStatusBarIcon()
 
     m_statusBarExt->removeStatusBarItem(m_icon);
     delete m_icon;
-    m_icon = 0;
+    m_icon = nullptr;
 }
 
 #include <plugin_validators.moc>

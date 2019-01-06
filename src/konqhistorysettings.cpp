@@ -37,7 +37,7 @@ KonqHistorySettings *KonqHistorySettings::self()
 }
 
 KonqHistorySettings::KonqHistorySettings()
-    : QObject(0)
+    : QObject(nullptr)
 {
     m_fontOlderThan.setItalic(true);   // default
 

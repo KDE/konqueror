@@ -369,27 +369,27 @@ void JSPoliciesFrame::refresh()
     QRadioButton *button;
     button = static_cast<QRadioButton *>(js_popup->button(
             policies->window_open));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setChecked(true);
     }
     button = static_cast<QRadioButton *>(js_resize->button(
             policies->window_resize));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setChecked(true);
     }
     button = static_cast<QRadioButton *>(js_move->button(
             policies->window_move));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setChecked(true);
     }
     button = static_cast<QRadioButton *>(js_focus->button(
             policies->window_focus));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setChecked(true);
     }
     button = static_cast<QRadioButton *>(js_statusbar->button(
             policies->window_status));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setChecked(true);
     }
 }

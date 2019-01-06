@@ -89,5 +89,5 @@ void KonqDraggableLabel::dropEvent(QDropEvent *ev)
 
 void KonqDraggableLabel::delayedOpenURL()
 {
-    m_mw->openUrl(0L, _savedLst.first());
+    m_mw->openUrl(nullptr, _savedLst.first());
 }

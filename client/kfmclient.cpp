@@ -128,7 +128,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
                     ++i) {
                 newargv[ i + 1 ] = argv[ i ];
             }
-            newargv[ argc + 1 ] = NULL;
+            newargv[ argc + 1 ] = nullptr;
 #ifdef WIN32
             _execvp(wrapper, newargv);
 #else
@@ -187,7 +187,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
 
             // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
             // so we should sleep and delete it ourselves....
-            KRun *run = new KRun(url, 0, false /* no progress window */);
+            KRun *run = new KRun(url, nullptr, false /* no progress window */);
             QObject::connect(run, &KRun::finished, this, &ClientApp::delayedQuit);
             QObject::connect(run, &KRun::error, this, [](){ qApp->exit(1); });
             return qApp->exec();
@@ -282,7 +282,7 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
 void ClientApp::slotResult(KJob *job)
 {
     if (job->error() && m_interactive) {
-        KJobWidgets::setWindow(job, 0);
+        KJobWidgets::setWindow(job, nullptr);
         job->uiDelegate()->showErrorMessage();
     }
     const bool ok = !job->error();

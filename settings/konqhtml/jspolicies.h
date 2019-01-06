@@ -213,7 +213,7 @@ public:
      * @param title title for group box
      * @param parent parent widget
      */
-    JSPoliciesFrame(JSPolicies *policies, const QString &title, QWidget *parent = Q_NULLPTR);
+    JSPoliciesFrame(JSPolicies *policies, const QString &title, QWidget *parent = nullptr);
 
     virtual ~JSPoliciesFrame();
 

@@ -53,7 +53,7 @@ class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
 {
 public:
-    KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = Q_NULLPTR)
+    KonqSessionDlgPrivate(KonqViewManager *manager, QWidget *parent = nullptr)
         : QWidget(parent), m_pViewManager(manager), m_pParent(parent)
     {
         setupUi(this);
@@ -178,7 +178,7 @@ void KonqSessionDlg::slotRename(QUrl dirpathTo)
     dirpathTo = (dirpathTo == QUrl()) ? dirpathFrom : dirpathTo;
 
     KIO::RenameDialog dlg(this, i18nc("@title:window", "Rename Session"), dirpathFrom,
-                          dirpathTo, KIO::RenameDialog_Options(0));
+                          dirpathTo, KIO::RenameDialog_Options(nullptr));
 
     if (dlg.exec() == KIO::R_RENAME) {
         dirpathTo = dlg.newDestUrl();
@@ -207,7 +207,7 @@ class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
 {
 public:
-    KonqNewSessionDlgPrivate(QWidget *parent = Q_NULLPTR, KonqMainWindow *mainWindow = Q_NULLPTR,
+    KonqNewSessionDlgPrivate(QWidget *parent = nullptr, KonqMainWindow *mainWindow = nullptr,
                              KonqNewSessionDlg::Mode m = KonqNewSessionDlg::NewFile)
         : QWidget(parent), m_pParent(parent), m_mainWindow(mainWindow), m_mode(m)
     {

@@ -49,7 +49,7 @@ K_PLUGIN_FACTORY(SettingsPluginFactory, registerPlugin<SettingsPlugin>();)
 
 SettingsPlugin::SettingsPlugin(QObject *parent,
                                const QVariantList &)
-    : KParts::Plugin(parent), mConfig(0)
+    : KParts::Plugin(parent), mConfig(nullptr)
 {
     setComponentData(KAboutData(QStringLiteral("khtmlsettingsplugin"), i18n("HTML Settings"), QStringLiteral("1.0")));
     KActionMenu *menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("configure")), i18n("HTML Settings"), actionCollection());

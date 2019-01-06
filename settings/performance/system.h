@@ -40,7 +40,7 @@ class SystemWidget
 {
     Q_OBJECT
 public:
-    SystemWidget(QWidget *parent_P = NULL);
+    SystemWidget(QWidget *parent_P = nullptr);
     void load();
     void save();
     void defaults();

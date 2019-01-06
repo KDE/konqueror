@@ -48,9 +48,9 @@ KonqFrameContainer::KonqFrameContainer(Qt::Orientation o,
     : QSplitter(o, parent), m_bAboutToBeDeleted(false)
 {
     m_pParentContainer = parentContainer;
-    m_pFirstChild = 0L;
-    m_pSecondChild = 0L;
-    m_pActiveChild = 0L;
+    m_pFirstChild = nullptr;
+    m_pSecondChild = nullptr;
+    m_pActiveChild = nullptr;
     setOpaqueResize(KGlobalSettings::opaqueResize());
     connect(this, &KonqFrameContainer::splitterMoved, this, &KonqFrameContainer::setRubberbandCalled);
 //### CHECKME
@@ -132,7 +132,7 @@ KonqFrameBase *KonqFrameContainer::otherChild(KonqFrameBase *child)
     } else if (m_pSecondChild == child) {
         return m_pFirstChild;
     }
-    return 0;
+    return nullptr;
 }
 
 void KonqFrameContainer::swapChildren()
@@ -188,9 +188,9 @@ void KonqFrameContainer::childFrameRemoved(KonqFrameBase *frame)
 
     if (m_pFirstChild == frame) {
         m_pFirstChild = m_pSecondChild;
-        m_pSecondChild = 0;
+        m_pSecondChild = nullptr;
     } else if (m_pSecondChild == frame) {
-        m_pSecondChild = 0;
+        m_pSecondChild = nullptr;
     } else {
         qCWarning(KONQUEROR_LOG) << this << "Can't find this child:" << frame;
     }

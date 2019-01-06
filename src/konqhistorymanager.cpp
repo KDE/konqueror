@@ -140,7 +140,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
         // If there is no entry for the url yet, we just store the url.
         KonqHistoryList::const_iterator oldEntry = constFindEntry(url);
         m_pending.insert(u, (oldEntry != entries().constEnd()) ?
-                         new KonqHistoryEntry(*oldEntry) : 0);
+                         new KonqHistoryEntry(*oldEntry) : nullptr);
     }
 
     // notify all konqueror instances about the entry

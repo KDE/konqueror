@@ -81,9 +81,9 @@ public:
         : q(qq),
           m_parentWidget(parentWidget),
           m_popupFlags(KonqPopupMenu::DefaultPopupItems),
-          m_pMenuNew(0),
+          m_pMenuNew(nullptr),
           m_copyToMenu(parentWidget),
-          m_bookmarkManager(0),
+          m_bookmarkManager(nullptr),
           m_actions(actions)
     {
     }
@@ -226,7 +226,7 @@ void KonqPopupMenuPrivate::populate()
 
     QAction *act;
 
-    QAction *actNewWindow = 0;
+    QAction *actNewWindow = nullptr;
 
 #if 0 // TODO in the desktop code itself.
     if ((flags & KonqPopupMenu::ShowProperties) && isOnDesktop &&

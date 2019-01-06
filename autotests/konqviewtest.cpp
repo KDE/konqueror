@@ -38,7 +38,7 @@ private Q_SLOTS:
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
         KonqOpenURLRequest req; req.forceAutoEmbed = true;
-        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/plain, Hello World")), QStringLiteral("text/plain"), req);
+        mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/plain, Hello World")), QStringLiteral("text/plain"), req);
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
         // Now open HTML, as if we typed a URL in the location bar.
         KonqOpenURLRequest req2; req2.typedUrl = QStringLiteral("http://www.kde.org");
-        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"), req2);
+        mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"), req2);
         qDebug() << view->service()->entryPath();
         QVERIFY(view->service()->entryPath() != firstService);
     }

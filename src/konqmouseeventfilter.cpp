@@ -43,7 +43,7 @@ KonqMouseEventFilter *KonqMouseEventFilter::self()
 }
 
 KonqMouseEventFilter::KonqMouseEventFilter()
-    : QObject(0)
+    : QObject(nullptr)
 {
     reparseConfiguration();
     qApp->installEventFilter(this);

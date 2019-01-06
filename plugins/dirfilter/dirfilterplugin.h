@@ -42,7 +42,7 @@ class FilterBar : public QWidget
     Q_OBJECT
 
 public:
-    explicit FilterBar(QWidget *parent = Q_NULLPTR);
+    explicit FilterBar(QWidget *parent = nullptr);
     virtual ~FilterBar();
     void selectAll();
 
@@ -121,7 +121,7 @@ private:
     void setFilterBar();
 
     struct MimeInfo {
-        MimeInfo() : action(0), useAsFilter(false) {}
+        MimeInfo() : action(nullptr), useAsFilter(false) {}
 
         QAction *action;
         bool useAsFilter;

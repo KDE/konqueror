@@ -121,7 +121,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     setWidget(_view);
 
     _ext = new FSViewBrowserExtension(this);
-    _job = 0;
+    _job = nullptr;
 
     _areaMenu = new KActionMenu(i18n("Stop at Area"),
                                 actionCollection());
@@ -267,7 +267,7 @@ void FSViewPart::completedSlot(int dirs)
     if (_job) {
         _job->progressSlot(100, dirs, QString());
         delete _job;
-        _job = 0;
+        _job = nullptr;
     }
 
     KConfigGroup cconfig(_view->config(), "MetricCache");
@@ -285,13 +285,13 @@ void FSViewPart::slotShowVisMenu()
 void FSViewPart::slotShowAreaMenu()
 {
     _areaMenu->menu()->clear();
-    _view->addAreaStopItems(_areaMenu->menu(), 1001, 0);
+    _view->addAreaStopItems(_areaMenu->menu(), 1001, nullptr);
 }
 
 void FSViewPart::slotShowDepthMenu()
 {
     _depthMenu->menu()->clear();
-    _view->addDepthStopItems(_depthMenu->menu(), 1501, 0);
+    _view->addDepthStopItems(_depthMenu->menu(), 1501, nullptr);
 }
 
 void FSViewPart::slotShowColorMenu()

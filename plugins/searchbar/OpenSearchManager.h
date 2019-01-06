@@ -42,7 +42,7 @@ public:
     /**
      * Constructor
      */
-    explicit OpenSearchManager(QObject *parent = Q_NULLPTR);
+    explicit OpenSearchManager(QObject *parent = nullptr);
 
     virtual ~OpenSearchManager();
 

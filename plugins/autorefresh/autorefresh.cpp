@@ -114,7 +114,7 @@ void AutoRefresh::slotRefresh()
         QString title = i18nc("@title:window", "Cannot Refresh Source");
         QString text = i18n("<qt>This plugin cannot auto-refresh the current part.</qt>");
 
-        KMessageBox::error(0, text, title);
+        KMessageBox::error(nullptr, text, title);
     } else {
         // Get URL
         QUrl url = part->url();

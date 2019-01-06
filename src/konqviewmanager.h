@@ -239,7 +239,7 @@ public:
     /**
      * Reimplemented from PartManager
      */
-    void setActivePart(KParts::Part *part, QWidget *widget = 0) Q_DECL_OVERRIDE;
+    void setActivePart(KParts::Part *part, QWidget *widget = nullptr) Q_DECL_OVERRIDE;
 
     void doSetActivePart(KParts::ReadOnlyPart *part);
 

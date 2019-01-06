@@ -128,7 +128,7 @@ QString PolicyDialog::featureEnabledPolicyText() const
 void PolicyDialog::accept()
 {
     if (le_domain->text().isEmpty()) {
-        KMessageBox::information(0, i18n("You must first enter a domain name."));
+        KMessageBox::information(nullptr, i18n("You must first enter a domain name."));
         return;
     }
 

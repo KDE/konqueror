@@ -43,7 +43,7 @@ K_PLUGIN_FACTORY(MinitoolsPluginFactory, registerPlugin<MinitoolsPlugin>();)
 MinitoolsPlugin::MinitoolsPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
 {
-    m_part = (parent && parent->inherits("KHTMLPart")) ? static_cast<KHTMLPart *>(parent) : 0L;
+    m_part = (parent && parent->inherits("KHTMLPart")) ? static_cast<KHTMLPart *>(parent) : nullptr;
 
     m_pMinitoolsMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("minitools")), i18n("&Minitools"), actionCollection());
     actionCollection()->addAction(QStringLiteral("minitools"), m_pMinitoolsMenu);
@@ -163,7 +163,7 @@ void MinitoolsPlugin::slotItemSelected()
     connect(this, SIGNAL(executeScript(QString)),
             m_part, SLOT(executeScript(QString)));
     emit executeScript(script);
-    disconnect(this, SIGNAL(executeScript(QString)), 0, 0);
+    disconnect(this, SIGNAL(executeScript(QString)), nullptr, nullptr);
 }
 
 #include "minitoolsplugin.moc"

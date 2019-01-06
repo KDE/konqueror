@@ -80,7 +80,7 @@ private Q_SLOTS:
     {
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+        mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -95,7 +95,7 @@ private Q_SLOTS:
     {
         KonqMainWindow mainWindow;
         const QUrl url = QUrl::fromLocalFile(QDir::homePath());
-        mainWindow.openUrl(0, url, QStringLiteral("text/html"));
+        mainWindow.openUrl(nullptr, url, QStringLiteral("text/html"));
         KonqView *view = mainWindow.currentView();
         qDebug() << "Waiting for first completed signal";
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -115,7 +115,7 @@ private Q_SLOTS:
     {
         QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow->openUrl(0, QUrl(
+        mainWindow->openUrl(nullptr, QUrl(
                                 "data:text/html, <script type=\"text/javascript\">"
                                 "function closeMe() { window.close(); } "
                                 "document.onmousedown = closeMe; "
@@ -194,7 +194,7 @@ private Q_SLOTS:
         // would lead to double deletion (#228255)
         QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow->openUrl(0, QUrl(QStringLiteral("data:text/html, <script>window.foo=bar</script><p>Hello World</p>")), QStringLiteral("text/html"));
+        mainWindow->openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <script>window.foo=bar</script><p>Hello World</p>")), QStringLiteral("text/html"));
         KonqView *view = mainWindow->currentView();
         QVERIFY(view);
         QVERIFY(view->part());

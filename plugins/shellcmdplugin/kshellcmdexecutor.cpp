@@ -35,10 +35,10 @@ using namespace KDESu;
 
 KShellCommandExecutor::KShellCommandExecutor(const QString &command, QWidget *parent)
     : QTextEdit(parent)
-    , m_shellProcess(0)
+    , m_shellProcess(nullptr)
     , m_command(command)
-    , m_readNotifier(0)
-    , m_writeNotifier(0)
+    , m_readNotifier(nullptr)
+    , m_writeNotifier(nullptr)
 {
     setAcceptRichText(false);
     setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
@@ -47,7 +47,7 @@ KShellCommandExecutor::KShellCommandExecutor(const QString &command, QWidget *pa
 
 KShellCommandExecutor::~KShellCommandExecutor()
 {
-    if (m_shellProcess != 0) {
+    if (m_shellProcess != nullptr) {
         ::kill(m_shellProcess->pid() + 1, SIGTERM);
         delete m_shellProcess;
     };
@@ -57,7 +57,7 @@ int KShellCommandExecutor::exec()
 {
     //kDebug()<<"---------- KShellCommandExecutor::exec()";
     setText(QLatin1String(""));
-    if (m_shellProcess != 0) {
+    if (m_shellProcess != nullptr) {
         ::kill(m_shellProcess->pid(), SIGTERM);
         delete m_shellProcess;
     };
@@ -81,7 +81,7 @@ int KShellCommandExecutor::exec()
     if (ret < 0) {
         //kDebug()<<"could not execute";
         delete m_shellProcess;
-        m_shellProcess = 0L;
+        m_shellProcess = nullptr;
         return 0;
     }
 
@@ -133,18 +133,18 @@ void KShellCommandExecutor::writeDataToShell()
 void KShellCommandExecutor::slotFinished()
 {
     setAcceptRichText(false);
-    if (m_shellProcess != 0) {
+    if (m_shellProcess != nullptr) {
         delete m_readNotifier;
-        m_readNotifier = 0;
+        m_readNotifier = nullptr;
         delete m_writeNotifier;
-        m_writeNotifier = 0;
+        m_writeNotifier = nullptr;
 
         //kDebug()<<"slotFinished: pid: "<<m_shellProcess->pid();
         ::kill(m_shellProcess->pid() + 1, SIGTERM);
         ::kill(m_shellProcess->pid(), SIGTERM);
     };
     delete m_shellProcess;
-    m_shellProcess = 0;
+    m_shellProcess = nullptr;
     emit finished();
 }
 

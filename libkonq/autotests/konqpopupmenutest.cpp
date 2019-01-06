@@ -97,13 +97,13 @@ void KonqPopupMenuTest::initTestCase()
     m_fileItem = KFileItem(QUrl::fromLocalFile(makefile), QStringLiteral("text/x-makefile"), S_IFREG + 0660);
     m_linkItem = KFileItem(QUrl::fromLocalFile(QStringLiteral("http://www.kde.org/foo")), QStringLiteral("text/html"), S_IFREG + 0660);
     m_subDirItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath() + "/CMakeFiles"), QStringLiteral("inode/directory"), S_IFDIR + 0755);
-    m_cut = KStandardAction::cut(0, 0, this);
+    m_cut = KStandardAction::cut(nullptr, nullptr, this);
     m_actionCollection.addAction(QStringLiteral("cut"), m_cut);
-    m_copy = KStandardAction::copy(0, 0, this);
+    m_copy = KStandardAction::copy(nullptr, nullptr, this);
     m_actionCollection.addAction(QStringLiteral("copy"), m_copy);
-    m_paste = KStandardAction::paste(0, 0, this);
+    m_paste = KStandardAction::paste(nullptr, nullptr, this);
     m_actionCollection.addAction(QStringLiteral("paste"), m_paste);
-    m_pasteTo = KStandardAction::paste(0, 0, this);
+    m_pasteTo = KStandardAction::paste(nullptr, nullptr, this);
     m_actionCollection.addAction(QStringLiteral("pasteto"), m_pasteTo);
     m_properties = new QAction(this);
     m_actionCollection.addAction(QStringLiteral("properties"), m_properties);
@@ -146,7 +146,7 @@ void KonqPopupMenuTest::initTestCase()
     QAction *viewDocumentSource = new QAction(m_partActions);
     m_actionCollection.addAction(QStringLiteral("viewDocumentSource"), viewDocumentSource);
 
-    m_newMenu = new KNewFileMenu(&m_actionCollection, QStringLiteral("newmenu"), 0);
+    m_newMenu = new KNewFileMenu(&m_actionCollection, QStringLiteral("newmenu"), nullptr);
 
     // Check if extractActionNames works
     QMenu popup;
@@ -173,7 +173,7 @@ void KonqPopupMenuTest::testFile()
     actionGroups.insert(KonqPopupMenu::PreviewActions, QList<QAction *>() << m_preview1);
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, flags,
-                        0 /*parent*/);
+                        nullptr /*parent*/);
     popup.setNewFileMenu(m_newMenu);
     popup.setActionGroups(actionGroups);
 

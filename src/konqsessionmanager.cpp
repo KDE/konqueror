@@ -61,7 +61,7 @@ class KonqSessionManagerPrivate
 {
 public:
     KonqSessionManagerPrivate()
-        : instance(0)
+        : instance(nullptr)
     {
     }
 
@@ -92,7 +92,7 @@ static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use write
 }
 
 SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent)
-    : KDialog(parent, 0)
+    : KDialog(parent, nullptr)
     , m_sessionItemsCount(0)
     , m_dontShowChecked(false)
 {
@@ -140,7 +140,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
 
     Q_ASSERT(!sessionFilePaths.isEmpty());
     m_treeWidget = new QTreeWidget(mainWidget);
-    m_treeWidget->setHeader(0);
+    m_treeWidget->setHeader(nullptr);
     m_treeWidget->setHeaderHidden(true);
     m_treeWidget->setToolTip(i18nc("@tooltip:session list", "Uncheck the sessions you do not want to be restored"));
 
@@ -153,7 +153,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     // Collect info from the sessions to restore
     Q_FOREACH (const QString &sessionFile, sessionFilePaths) {
         qCDebug(KONQUEROR_LOG) << sessionFile;
-        QTreeWidgetItem *windowItem = 0;
+        QTreeWidgetItem *windowItem = nullptr;
         KConfig config(sessionFile, KConfig::SimpleConfig);
         const QList<KConfigGroup> groups = windowConfigGroups(config);
         Q_FOREACH (const KConfigGroup &group, groups) {
@@ -249,7 +249,7 @@ void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
     Q_ASSERT(item);
 
     const int itemChildCount = item->childCount();
-    QTreeWidgetItem *parentItem = 0;
+    QTreeWidgetItem *parentItem = nullptr;
 
     const bool blocked = item->treeWidget()->blockSignals(true);
     if (itemChildCount > 0) {
@@ -356,7 +356,7 @@ KonqSessionManager::KonqSessionManager()
     : m_autosaveDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "autosave")
     , m_autosaveEnabled(false) // so that enableAutosave works
     , m_createdOwnedByDir(false)
-    , m_sessionConfig(0)
+    , m_sessionConfig(nullptr)
 {
     // Initialize dbus interfaces
     new KonqSessionManagerAdaptor(this);
@@ -408,7 +408,7 @@ void KonqSessionManager::disableAutosave()
     if (m_sessionConfig) {
         QFile::remove(m_sessionConfig->name());
         delete m_sessionConfig;
-        m_sessionConfig = 0;
+        m_sessionConfig = nullptr;
     }
 }
 

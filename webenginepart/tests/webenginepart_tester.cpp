@@ -339,7 +339,7 @@ public slots:
             } else
                 loadNext();
         } else
-            disconnect(m_view, 0, this, 0);
+            disconnect(m_view, nullptr, this, nullptr);
     }
 
 private:

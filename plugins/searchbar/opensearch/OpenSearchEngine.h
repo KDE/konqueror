@@ -33,7 +33,7 @@ class OpenSearchEngine
 public:
     typedef QPair<QString, QString> Parameter;
 
-    OpenSearchEngine(QObject *parent = Q_NULLPTR);
+    OpenSearchEngine(QObject *parent = nullptr);
     ~OpenSearchEngine();
 
     QString name() const;

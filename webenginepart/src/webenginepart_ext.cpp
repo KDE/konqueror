@@ -73,7 +73,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData)
                        :KParts::BrowserExtension(parent),
                         m_part(parent),
-                        mCurrentPrinter(Q_NULLPTR)
+                        mCurrentPrinter(nullptr)
 {
     enableAction("cut", false);
     enableAction("copy", false);
@@ -135,7 +135,7 @@ int WebEngineBrowserExtension::yOffset()
 void WebEngineBrowserExtension::saveState(QDataStream &stream)
 {
     // TODO: Save information such as form data from the current page.
-    QWebEngineHistory* history = (view() ? view()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->history() : nullptr);
     const int historyIndex = (history ? history->currentItemIndex() : -1);
     const QUrl historyUrl = (history && historyIndex > -1) ? QUrl(history->currentItem().url()) : m_part->url();
 
@@ -153,7 +153,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
     qint32 xOfs = -1, yOfs = -1, historyItemIndex = -1;
     stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyData;
 
-    QWebEngineHistory* history = (view() ? view()->page()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->page()->history() : nullptr);
     if (history) {
         bool success = false;
         if (history->count() == 0) {   // Handle restoration: crash recovery, tab close undo, session restore
@@ -250,7 +250,7 @@ void WebEngineBrowserExtension::print()
 #if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     if (view()) {
         mCurrentPrinter = new QPrinter();
-        QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, Q_NULLPTR);
+        QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, nullptr);
         dialog->setWindowTitle(i18n("Print Document"));
         if (dialog->exec() != QDialog::Accepted) {
             slotHandlePagePrinted(false);
@@ -267,7 +267,7 @@ void WebEngineBrowserExtension::slotHandlePagePrinted(bool result)
 {
     Q_UNUSED(result);
     delete mCurrentPrinter;
-    mCurrentPrinter = Q_NULLPTR;
+    mCurrentPrinter = nullptr;
 }
 
 
@@ -323,7 +323,7 @@ void WebEngineBrowserExtension::reparseConfiguration()
 void WebEngineBrowserExtension::disableScrolling()
 {
     QWebEngineView* currentView = view();
-    QWebEnginePage* page = currentView ? currentView->page() : 0;
+    QWebEnginePage* page = currentView ? currentView->page() : nullptr;
 
     if (!page)
         return;
@@ -781,7 +781,7 @@ void WebEngineBrowserExtension::slotSpellCheckDone(const QString&)
 
 void WebEngineBrowserExtension::saveHistory()
 {
-    QWebEngineHistory* history = (view() ? view()->history() : 0);
+    QWebEngineHistory* history = (view() ? view()->history() : nullptr);
 
     if (history && history->count() > 0) {
         //kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
@@ -793,8 +793,8 @@ void WebEngineBrowserExtension::saveHistory()
             stream << *history;
             m_historyData = qCompress(histData, 9);
         }
-        QWidget* mainWidget = m_part ? m_part->widget() : 0;
-        QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : 0;
+        QWidget* mainWidget = m_part ? m_part->widget() : nullptr;
+        QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : nullptr;
         if (frameWidget) {
             emit saveHistory(frameWidget, m_historyData);
             // kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
@@ -1044,9 +1044,9 @@ QList<KParts::SelectorInterface::Element> WebEngineHtmlExtension::querySelectorA
 
 QVariant WebEngineHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type) const
 {
-    QWebEngineView* view = part() ? part()->view() : 0;
-    QWebEnginePage* page = view ? view->page() : 0;
-    QWebEngineSettings* settings = page ? page->settings() : 0;
+    QWebEngineView* view = part() ? part()->view() : nullptr;
+    QWebEnginePage* page = view ? view->page() : nullptr;
+    QWebEngineSettings* settings = page ? page->settings() : nullptr;
 
     if (settings) {
         switch (type) {
@@ -1082,9 +1082,9 @@ QVariant WebEngineHtmlExtension::htmlSettingsProperty(KParts::HtmlSettingsInterf
 
 bool WebEngineHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterface::HtmlSettingsType type, const QVariant& value)
 {
-    QWebEngineView* view = part() ? part()->view() : 0;
-    QWebEnginePage* page = view ? view->page() : 0;
-    QWebEngineSettings* settings = page ? page->settings() : 0;
+    QWebEngineView* view = part() ? part()->view() : nullptr;
+    QWebEnginePage* page = view ? view->page() : nullptr;
+    QWebEngineSettings* settings = page ? page->settings() : nullptr;
 
     if (settings) {
         switch (type) {
@@ -1153,7 +1153,7 @@ bool WebEngineScriptableExtension::setException (KParts::ScriptableExtension* ca
 QVariant WebEngineScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
 {
     //kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
-    return callerPrincipal->get (0, objId, propName);
+    return callerPrincipal->get (nullptr, objId, propName);
 }
 
 bool WebEngineScriptableExtension::put (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value)
@@ -1180,7 +1180,7 @@ QVariant WebEngineScriptableExtension::evaluateScript (KParts::ScriptableExtensi
         return exception("unsupported language");
 
 
-    KParts::ReadOnlyPart* part = callerPrincipal ? qobject_cast<KParts::ReadOnlyPart*>(callerPrincipal->parent()) : 0;
+    KParts::ReadOnlyPart* part = callerPrincipal ? qobject_cast<KParts::ReadOnlyPart*>(callerPrincipal->parent()) : nullptr;
    // QWebFrame* frame = part ? qobject_cast<QWebFrame*>(part->parent()) : 0;
    // if (!frame)
         return exception("failed to resolve principal");

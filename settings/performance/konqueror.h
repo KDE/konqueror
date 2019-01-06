@@ -39,7 +39,7 @@ class Konqueror
 {
     Q_OBJECT
 public:
-    Konqueror(QWidget *parent_P = NULL);
+    Konqueror(QWidget *parent_P = nullptr);
     void load();
     void save();
     void defaults();

@@ -33,7 +33,7 @@ class WebEnginePartErrorSchemeHandler : public QWebEngineUrlSchemeHandler{
     
 public:
     
-    WebEnginePartErrorSchemeHandler(QObject *parent = Q_NULLPTR);
+    WebEnginePartErrorSchemeHandler(QObject *parent = nullptr);
     
     ~WebEnginePartErrorSchemeHandler(){}
     

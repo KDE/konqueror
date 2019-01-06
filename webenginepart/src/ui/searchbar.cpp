@@ -39,8 +39,8 @@ SearchBar::SearchBar(QWidget *parent)
 
     // Get the widget that currently has the focus so we can properly
     // restore it when the filter bar is closed.
-    QWidget* widgetWindow = (parent ? parent->window() : 0);
-    m_focusWidget = (widgetWindow ? widgetWindow->focusWidget() : 0);
+    QWidget* widgetWindow = (parent ? parent->window() : nullptr);
+    m_focusWidget = (widgetWindow ? widgetWindow->focusWidget() : nullptr);
 
     // Initialize the user interface...
     m_ui.setupUi(this);
@@ -183,7 +183,7 @@ bool SearchBar::event(QEvent* e)
             close();
             if (m_focusWidget) {
                 m_focusWidget->setFocus();
-                m_focusWidget = 0;
+                m_focusWidget = nullptr;
             }
             return true;
         }

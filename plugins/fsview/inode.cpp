@@ -34,8 +34,8 @@
 
 Inode::Inode()
 {
-    _dirPeer = 0;
-    _filePeer = 0;
+    _dirPeer = nullptr;
+    _filePeer = nullptr;
     init(QString());
 }
 
@@ -52,7 +52,7 @@ Inode::Inode(ScanDir *d, Inode *parent)
     absPath += d->name();
 
     _dirPeer = d;
-    _filePeer = 0;
+    _filePeer = nullptr;
 
     init(absPath);
 }
@@ -66,7 +66,7 @@ Inode::Inode(ScanFile *f, Inode *parent)
     }
     absPath += f->name();
 
-    _dirPeer = 0;
+    _dirPeer = nullptr;
     _filePeer = f;
 
     init(absPath);
@@ -79,10 +79,10 @@ Inode::~Inode()
 
     /* reset Listener of old Peer */
     if (_dirPeer) {
-        _dirPeer->setListener(0);
+        _dirPeer->setListener(nullptr);
     }
     if (_filePeer) {
-        _filePeer->setListener(0);
+        _filePeer->setListener(nullptr);
     }
 }
 
@@ -90,14 +90,14 @@ void Inode::setPeer(ScanDir *d)
 {
     /* reset Listener of old Peer */
     if (_dirPeer) {
-        _dirPeer->setListener(0);
+        _dirPeer->setListener(nullptr);
     }
     if (_filePeer) {
-        _filePeer->setListener(0);
+        _filePeer->setListener(nullptr);
     }
 
     _dirPeer = d;
-    _filePeer = 0;
+    _filePeer = nullptr;
     init(d->name());
 }
 
@@ -178,7 +178,7 @@ void Inode::scanFinished(ScanDir *d)
 void Inode::destroyed(ScanDir *d)
 {
     if (_dirPeer == d) {
-        _dirPeer = 0;
+        _dirPeer = nullptr;
     }
 
     // remove children
@@ -188,19 +188,19 @@ void Inode::destroyed(ScanDir *d)
 void Inode::destroyed(ScanFile *f)
 {
     if (_filePeer == f) {
-        _filePeer = 0;
+        _filePeer = nullptr;
     }
 }
 
 TreeMapItemList *Inode::children()
 {
     if (!_dirPeer) {
-        return 0;
+        return nullptr;
     }
 
     if (!_children) {
         if (!_dirPeer->scanStarted()) {
-            return 0;
+            return nullptr;
         }
 
         _children = new TreeMapItemList;

@@ -85,7 +85,7 @@ public:
     bool isAdFilterEnabled() const;
     bool isHideAdsEnabled() const;
     void addAdFilter( const QString &url );
-    QString adFilteredBy( const QString &url, bool *isWhiteListed = 0 ) const;
+    QString adFilteredBy( const QString &url, bool *isWhiteListed = nullptr ) const;
 
     // Access Keys
     bool accessKeysEnabled() const;

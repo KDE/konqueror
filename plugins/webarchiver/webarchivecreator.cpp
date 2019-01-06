@@ -40,7 +40,7 @@ extern "C"
 }
 
 WebArchiveCreator::WebArchiveCreator()
-    : m_html(0)
+    : m_html(nullptr)
 {
 }
 

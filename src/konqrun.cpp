@@ -34,7 +34,7 @@
 
 KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
                  const QUrl &_url, const KonqOpenURLRequest &req, bool trustedSource)
-    : KParts::BrowserRun(_url, req.args, req.browserArgs, _childView ? _childView->part() : 0L, mainWindow,
+    : KParts::BrowserRun(_url, req.args, req.browserArgs, _childView ? _childView->part() : nullptr, mainWindow,
                          //remove referrer if request was typed in manually.
                          // ### TODO: turn this off optionally.
                          !req.typedUrl.isEmpty(), trustedSource,
@@ -54,7 +54,7 @@ KonqRun::~KonqRun()
 {
     //qCDebug(KONQUEROR_LOG) << "KonqRun::~KonqRun() " << this;
     if (m_pView && m_pView->run() == this) {
-        m_pView->setRun(0);
+        m_pView->setRun(nullptr);
     }
 }
 
@@ -168,7 +168,7 @@ bool KonqRun::tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror
 void KonqRun::handleError(KJob *job)
 {
     if (!m_mailto.isEmpty()) {
-        setJob(0);
+        setJob(nullptr);
         setFinished(true);
         return;
     }

@@ -79,7 +79,7 @@ void KonqUndoManager::populate()
     // elements to the list, so if we do it forwards the we would get an inverse
     // order of closed windows
     for (i.toBack(); i.hasPrevious();) {
-        slotAddClosedWindowItem(0L, i.previous());
+        slotAddClosedWindowItem(nullptr, i.previous());
     }
 }
 

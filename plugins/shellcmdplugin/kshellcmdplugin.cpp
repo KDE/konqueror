@@ -49,11 +49,11 @@ void KShellCmdPlugin::slotExecuteShellCommand()
 {
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
     if (!part)  {
-        KMessageBox::sorry(0L, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
+        KMessageBox::sorry(nullptr, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
         return;
     }
 
-    QUrl url = KIO::NetAccess::mostLocalUrl(part->url(), NULL);
+    QUrl url = KIO::NetAccess::mostLocalUrl(part->url(), nullptr);
     if (!url.isLocalFile()) {
         KMessageBox::sorry(part->widget(), i18n("Executing shell commands works only on local directories."));
         return;

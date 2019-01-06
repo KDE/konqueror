@@ -382,7 +382,7 @@ KonqAboutPage::~KonqAboutPage()
 
 bool KonqAboutPage::openUrl(const QUrl &u)
 {
-    emit started(0);
+    emit started(nullptr);
     if (u.url() == QLatin1String("about:plugins")) {
         serve(s_staticData->plugins(), QStringLiteral("plugins"));
     } else if (u.url() == QLatin1String("about:konqueror/intro")) {

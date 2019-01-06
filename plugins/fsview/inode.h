@@ -78,7 +78,7 @@ public:
     }
     bool isDir()
     {
-        return (_dirPeer != 0);
+        return (_dirPeer != nullptr);
     }
 
     void sizeChanged(ScanDir *) Q_DECL_OVERRIDE;

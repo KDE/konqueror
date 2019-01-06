@@ -112,7 +112,7 @@ private:
         QString tarName;
         KHTMLPart *part;
 
-        DownloadInfo(const QString &_tarName = QString::null, KHTMLPart *_part = 0)
+        DownloadInfo(const QString &_tarName = QString::null, KHTMLPart *_part = nullptr)
             : tarName(_tarName), part(_part) { }
     };
 

@@ -39,7 +39,7 @@ class SearchBar : public QWidget
     Q_OBJECT
 
 public:
-    SearchBar(QWidget *parent = Q_NULLPTR);
+    SearchBar(QWidget *parent = nullptr);
     ~SearchBar();
 
     QString searchText() const;

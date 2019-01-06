@@ -41,7 +41,7 @@ class KonqFrameStatusBar : public QStatusBar
     Q_OBJECT
 
 public:
-    explicit KonqFrameStatusBar(KonqFrame *_parent = Q_NULLPTR);
+    explicit KonqFrameStatusBar(KonqFrame *_parent = nullptr);
     virtual ~KonqFrameStatusBar();
 
     void setMessage(const QString &msg, KonqStatusBarMessageLabel::Type type);

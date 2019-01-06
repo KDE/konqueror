@@ -337,7 +337,7 @@ public Q_SLOTS:
 
     void slotCreateNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
                              const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),
-                             KParts::ReadOnlyPart **part = 0);
+                             KParts::ReadOnlyPart **part = nullptr);
 
     void slotNewWindow();
     void slotDuplicateWindow();
@@ -352,7 +352,7 @@ public Q_SLOTS:
     void slotViewModeTriggered(QAction *action);
     void slotLockView();
     void slotLinkView();
-    void slotReload(KonqView *view = 0L, bool softReload = true);
+    void slotReload(KonqView *view = nullptr, bool softReload = true);
     void slotForceReload();
     void slotStop();
 

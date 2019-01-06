@@ -180,14 +180,14 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
                     m_toolBar->addSeparator();
                 }
             } else {
-                QAction *action = new KBookmarkAction(bm, m_pOwner, 0);
+                QAction *action = new KBookmarkAction(bm, m_pOwner, nullptr);
                 if (m_toolBar) {
                     m_toolBar->addAction(action);
                 }
                 d->m_actions.append(action);
             }
         } else {
-            KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, 0);
+            KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, nullptr);
             action->setDelayed(false);
             if (m_toolBar) {
                 m_toolBar->addAction(action);

@@ -60,7 +60,7 @@ Q_DECLARE_METATYPE(DOM::Element);
 /** Constructor of the plugin. */
 RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent),
-      m_part(0),
+      m_part(nullptr),
       m_viewVisible(false),
       m_linksFound(false)
 {
@@ -264,11 +264,11 @@ RelLinksPlugin::~RelLinksPlugin()
 
 bool RelLinksPlugin::eventFilter(QObject *watched, QEvent *event)
 {
-    if (m_part == 0) {
+    if (m_part == nullptr) {
         return false;
     }
 
-    if (watched == 0 || event == 0) {
+    if (watched == nullptr || event == nullptr) {
         return false;
     }
 
@@ -300,7 +300,7 @@ bool RelLinksPlugin::eventFilter(QObject *watched, QEvent *event)
 
 void RelLinksPlugin::delayedSetup()
 {
-    if (m_part == 0) {
+    if (m_part == nullptr) {
         return;
     }
 

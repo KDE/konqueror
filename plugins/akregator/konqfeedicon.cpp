@@ -90,9 +90,9 @@ KonqFeedIcon::~KonqFeedIcon()
         delete m_feedIcon;
     }
     // the icon is deleted in every case
-    m_feedIcon = 0;
+    m_feedIcon = nullptr;
     delete m_menu;
-    m_menu = 0;
+    m_menu = nullptr;
 }
 
 bool KonqFeedIcon::feedFound()
@@ -187,12 +187,12 @@ void KonqFeedIcon::removeFeedIcon()
     if (m_feedIcon && m_statusBarEx) {
         m_statusBarEx->removeStatusBarItem(m_feedIcon);
         delete m_feedIcon;
-        m_feedIcon = 0;
+        m_feedIcon = nullptr;
     }
 
     // Close the popup if it's open, otherwise we crash
     delete m_menu;
-    m_menu = 0;
+    m_menu = nullptr;
 }
 
 void KonqFeedIcon::addFeed()

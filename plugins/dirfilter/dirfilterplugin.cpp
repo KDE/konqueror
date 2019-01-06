@@ -224,8 +224,8 @@ void FilterBar::keyReleaseEvent(QKeyEvent *event)
 
 DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
-    , m_filterBar(0)
-    , m_focusWidget(0)
+    , m_filterBar(nullptr)
+    , m_focusWidget(nullptr)
 {
     m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
     if (m_part) {
@@ -271,7 +271,7 @@ void DirFilterPlugin::slotOpenURLCompleted()
 
 void DirFilterPlugin::slotShowPopup()
 {
-    QMenu *filterMenu = (m_filterBar ? m_filterBar->typeFilterMenu() : 0);
+    QMenu *filterMenu = (m_filterBar ? m_filterBar->typeFilterMenu() : nullptr);
     if (!filterMenu) {
         return;
     }
@@ -410,7 +410,7 @@ void DirFilterPlugin::slotCloseRequest()
         m_filterBar->hide();
         if (m_focusWidget) {
             m_focusWidget->setFocus();
-            m_focusWidget = 0;
+            m_focusWidget = nullptr;
         }
     }
 }
@@ -498,7 +498,7 @@ void DirFilterPlugin::slotMultipleFilters()
 
 void DirFilterPlugin::slotShowFilterBar()
 {
-    QWidget *partWidget = (m_part ? m_part->widget() : 0);
+    QWidget *partWidget = (m_part ? m_part->widget() : nullptr);
 
     if (!m_filterBar && partWidget) {
         m_filterBar = new FilterBar(partWidget);
@@ -519,8 +519,8 @@ void DirFilterPlugin::slotShowFilterBar()
 
     // Get the widget that currently has the focus so we can properly
     // restore it when the filter bar is closed.
-    QWidget *window = (partWidget ? partWidget->window() : 0);
-    m_focusWidget = (window ? window->focusWidget() : 0);
+    QWidget *window = (partWidget ? partWidget->window() : nullptr);
+    m_focusWidget = (window ? window->focusWidget() : nullptr);
 
     if (m_filterBar) {
         setFilterBar();

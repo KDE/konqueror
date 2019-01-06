@@ -422,7 +422,7 @@ static void openHtmlWithLink(KonqMainWindow &mainWindow)
 {
     // Much like KonqHtmlTest::loadSimpleHtml.
     // We use text/plain as the linked file, in order to test #67956 (switching parts in new tab)
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <a href=\"data:text/plain, Link target\" id=\"linkid\">Click me</a>")), QStringLiteral("text/html"));
     KonqView *view = mainWindow.currentView();
     QVERIFY(view);
     QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
@@ -543,7 +543,7 @@ void ViewMgrTest::testCtrlClickOnLink()
     qDebug() << "CLICKING NOW";
     QTest::mouseClick(partWidget(view), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
     QTest::qWait(100);
-    KonqView *newView = Q_NULLPTR;
+    KonqView *newView = nullptr;
     // Expected behavior for Ctrl+click:
     //  new tab, if mmbOpensTab
     //  new window, if !mmbOpensTab
@@ -754,7 +754,7 @@ void ViewMgrTest::testDeletePartInTab()
     delete view->part();
     QVERIFY(view.isNull());
     QVERIFY(partWidget.isNull());
-    qApp->sendPostedEvents(0, QEvent::DeferredDelete);
+    qApp->sendPostedEvents(nullptr, QEvent::DeferredDelete);
     QVERIFY(mainWindow.isNull());
 }
 
@@ -762,7 +762,7 @@ void ViewMgrTest::testSaveProfile()
 {
     MyKonqMainWindow mainWindow;
     const QUrl url(QStringLiteral("data:text/html, <p>Hello World</p>"));
-    mainWindow.openUrl(0, url, QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, url, QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view2 = viewManager->addTab(QStringLiteral("text/html"));
     const QUrl url2(QStringLiteral("data:text/html, <p>view2</p>"));
@@ -803,7 +803,7 @@ void ViewMgrTest::testSaveProfile()
 void ViewMgrTest::testDuplicateWindow()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *viewTab2 = viewManager->addTab(QStringLiteral("text/html"));
     KonqView *splitted = viewManager->splitView(viewTab2, Qt::Horizontal);
@@ -816,7 +816,7 @@ void ViewMgrTest::testDuplicateWindow()
 void ViewMgrTest::testCloseOtherTabs()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     QTabWidget *tabWidget = mainWindow.findChild<QTabWidget *>();
     QVERIFY(tabWidget);
@@ -843,7 +843,7 @@ void ViewMgrTest::testCloseOtherTabs()
 void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     viewManager->addTab(QStringLiteral("text/html"));
     viewManager->addTab(QStringLiteral("text/html"));
@@ -861,7 +861,7 @@ void ViewMgrTest::testCloseTabsFast() // #210551/#150162
 void ViewMgrTest::testBrowserArgumentsNewTab()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KParts::OpenUrlArguments urlArgs;
     KParts::BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
@@ -921,7 +921,7 @@ void ViewMgrTest::testBreakOffTab()
 void ViewMgrTest::moveTabLeft()
 {
     MyKonqMainWindow mainWindow;
-    mainWindow.openUrl(0, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
+    mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"));
     KonqViewManager *viewManager = mainWindow.viewManager();
     KonqView *view1 = viewManager->addTab(QStringLiteral("text/html"));
     view1->openUrl(QUrl(QStringLiteral("data:text/html, <p>view1</p>")), QStringLiteral("1"));

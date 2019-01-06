@@ -35,7 +35,7 @@ public:
      * Constructor.
      * @param engineName the engine name
      */
-    SuggestionEngine(const QString &engineName, QObject *parent = Q_NULLPTR);
+    SuggestionEngine(const QString &engineName, QObject *parent = nullptr);
 
     /**
      * Get the request URL for the suggestion service

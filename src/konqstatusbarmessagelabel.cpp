@@ -45,8 +45,8 @@ public:
         m_state(DefaultState),
         m_illumination(0),
         m_minTextHeight(-1),
-        m_timer(0),
-        m_closeButton(0)
+        m_timer(nullptr),
+        m_closeButton(nullptr)
     {}
 
     bool isRichText() const
@@ -125,7 +125,7 @@ void KonqStatusBarMessageLabel::setMessage(const QString &text,
     d->m_illumination = 0;
     d->m_state = DefaultState;
 
-    const char *iconName = 0;
+    const char *iconName = nullptr;
     QPixmap pixmap;
     switch (type) {
     case OperationCompleted:
@@ -155,7 +155,7 @@ void KonqStatusBarMessageLabel::setMessage(const QString &text,
         break;
     }
 
-    d->m_pixmap = (iconName == 0) ? QPixmap() : SmallIcon(iconName);
+    d->m_pixmap = (iconName == nullptr) ? QPixmap() : SmallIcon(iconName);
     QTimer::singleShot(GeometryTimeout, this, SLOT(assureVisibleText()));
 
     if (type == Error) {

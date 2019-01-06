@@ -30,7 +30,7 @@
 #include <QScriptValue>
 
 OpenSearchEngine::OpenSearchEngine(QObject *)
-    : m_scriptEngine(0)
+    : m_scriptEngine(nullptr)
 {
 }
 

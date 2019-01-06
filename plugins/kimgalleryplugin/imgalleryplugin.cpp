@@ -58,7 +58,7 @@ static QString directory(const QUrl &url) {
 }
 
 KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
-    : KParts::Plugin(parent), m_commentMap(0)
+    : KParts::Plugin(parent), m_commentMap(nullptr)
 {
     QAction *a = actionCollection()->addAction(QStringLiteral("create_img_gallery"));
     a->setText(i18n("&Create Image Gallery..."));
@@ -69,9 +69,9 @@ KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
 
 void KImGalleryPlugin::slotExecute()
 {
-    m_progressDlg = 0L;
+    m_progressDlg = nullptr;
     if (!parent()) {
-        KMessageBox::sorry(0L, i18n("Could not create the plugin, please report a bug."));
+        KMessageBox::sorry(nullptr, i18n("Could not create the plugin, please report a bug."));
         return;
     }
     m_part = qobject_cast<KParts::ReadOnlyPart *>(parent());

@@ -55,7 +55,7 @@ WebSslInfo::WebSslInfo(const WebSslInfo& other)
 WebSslInfo::~WebSslInfo()
 {
   delete d;
-  d = 0;
+  d = nullptr;
 }
 
 bool WebSslInfo::isValid() const

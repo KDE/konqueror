@@ -70,14 +70,14 @@ K_EXPORT_PLUGIN(SearchBarPluginFactory("searchbarplugin"))
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :
     KParts::Plugin(parent),
-    m_popupMenu(0),
-    m_addWSWidget(0),
+    m_popupMenu(nullptr),
+    m_addWSWidget(nullptr),
     m_searchMode(UseSearchProvider),
     m_urlEnterLock(false),
     m_openSearchManager(new OpenSearchManager(this)),
     m_reloadConfiguration(false)
 {
-    m_searchCombo = new SearchBarCombo(0);
+    m_searchCombo = new SearchBarCombo(nullptr);
     m_searchCombo->lineEdit()->installEventFilter(this);
     connect(m_searchCombo, SIGNAL(activated(QString)),
             SLOT(startSearch(QString)));
@@ -126,7 +126,7 @@ SearchBarPlugin::~SearchBarPlugin()
     config.writeEntry("SuggestionEnabled", m_suggestionEnabled);
 
     delete m_searchCombo;
-    m_searchCombo = 0;
+    m_searchCombo = nullptr;
 }
 
 bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
@@ -143,7 +143,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
             // ######## TODO: This loses the opensearch entries for the old part!!!
             if (m_popupMenu) {
                 delete m_popupMenu;
-                m_popupMenu = 0;
+                m_popupMenu = nullptr;
                 m_addSearchActions.clear(); // the actions had the menu as parent, so they're deleted now
             }
 
@@ -227,7 +227,7 @@ void SearchBarPlugin::startSearch(const QString &search)
     if (m_searchMode == FindInThisPage) {
         KParts::TextExtension *textExt = KParts::TextExtension::childObject(m_part.data());
         if (textExt) {
-            textExt->findText(search, 0);
+            textExt->findText(search, nullptr);
         }
     } else if (m_searchMode == UseSearchProvider) {
         m_urlEnterLock = true;
@@ -333,7 +333,7 @@ void SearchBarPlugin::showSelectionMenu()
     }
 
     QList<QAction *> actions = m_popupMenu->actions();
-    QAction *before = 0;
+    QAction *before = nullptr;
     if (actions.size() > 1) {
         before = actions[actions.size() - 2];
     }
@@ -391,13 +391,13 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KRun::runCommand(QStringLiteral("kcmshell5 webshortcuts"), (m_part ? m_part.data()->widget() : 0));
+    KRun::runCommand(QStringLiteral("kcmshell5 webshortcuts"), (m_part ? m_part.data()->widget() : nullptr));
 }
 
 void SearchBarPlugin::configurationChanged()
 {
     delete m_popupMenu;
-    m_popupMenu = 0;
+    m_popupMenu = nullptr;
     m_addSearchActions.clear();
     m_searchEngines.clear();
     m_searchProviders.clear();
@@ -620,7 +620,7 @@ void SearchBarCombo::setIcon(const QPixmap &icon)
     m_icon = icon;
     const QString editText = currentText();
     if (count() == 0) {
-        insertItem(0, m_icon, 0);
+        insertItem(0, m_icon, nullptr);
     } else {
         for (int i = 0; i < count(); i++) {
             setItemIcon(i, m_icon);

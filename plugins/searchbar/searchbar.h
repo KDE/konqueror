@@ -234,7 +234,7 @@ private:
 class SearchBarItemDelegate : public QItemDelegate
 {
 public:
-    SearchBarItemDelegate(QObject *parent = Q_NULLPTR);
+    SearchBarItemDelegate(QObject *parent = nullptr);
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 };
 

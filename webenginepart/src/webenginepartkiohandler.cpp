@@ -39,7 +39,7 @@ void WebEnginePartKIOHandler::requestStarted(QWebEngineUrlRequestJob *req)
 }
 
 WebEnginePartKIOHandler::WebEnginePartKIOHandler(QObject* parent):
-    QWebEngineUrlSchemeHandler(parent), m_embedder(Q_NULLPTR)
+    QWebEngineUrlSchemeHandler(parent), m_embedder(nullptr)
 {
     connect(this, &WebEnginePartKIOHandler::ready, this, &WebEnginePartKIOHandler::sendReply);
 }

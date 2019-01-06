@@ -73,7 +73,7 @@ FSView::FSView(Inode *base, QWidget *parent)
     _progressSize = 0;
     _progress = 0;
     _dirsFinished = 0;
-    _lastDir = 0;
+    _lastDir = nullptr;
 
     _config = new KConfig(QStringLiteral("fsviewrc"));
 
@@ -228,7 +228,7 @@ void FSView::requestUpdate(Inode *i)
         _progressSize = 0;
         _progress = 0;
         _dirsFinished = 0;
-        _lastDir = 0;
+        _lastDir = nullptr;
         emit started();
     }
 
@@ -307,7 +307,7 @@ void FSView::contextMenu(TreeMapItem *i, const QPoint &p)
     QAction *actionRefresh = popup.addAction(i18n("Refresh"));
     actionRefresh->setEnabled(!_sm.scanRunning());
 
-    QAction *actionRefreshSelected = 0;
+    QAction *actionRefreshSelected = nullptr;
     if (i) {
         actionRefreshSelected = popup.addAction(i18n("Refresh '%1'", i->text(0)));
     }

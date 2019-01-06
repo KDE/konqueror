@@ -76,7 +76,7 @@ struct GroupEntry : public Entry {
     }
 
     QVariant data(int role, int column) const Q_DECL_OVERRIDE;
-    HistoryEntry *findChild(const KonqHistoryEntry &entry, int *index = 0) const;
+    HistoryEntry *findChild(const KonqHistoryEntry &entry, int *index = nullptr) const;
     QList<QUrl> urls() const;
 
     QList<HistoryEntry *> entries;
@@ -194,7 +194,7 @@ QVariant GroupEntry::data(int role, int /*column*/) const
 
 HistoryEntry *GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) const
 {
-    HistoryEntry *item = 0;
+    HistoryEntry *item = nullptr;
     QList<HistoryEntry *>::const_iterator it = entries.constBegin(), itEnd = entries.constEnd();
     int i = 0;
     for (; it != itEnd; ++it, ++i) {
@@ -429,7 +429,7 @@ KHM::Entry *KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool retu
     if (index.isValid()) {
         return reinterpret_cast<KHM::Entry *>(index.internalPointer());
     }
-    return returnRootIfNull ? m_root : 0;
+    return returnRootIfNull ? m_root : nullptr;
 }
 
 KHM::GroupEntry *KonqHistoryModel::getGroupItem(const QUrl &url, SignalEmission se)

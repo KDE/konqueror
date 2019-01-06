@@ -75,7 +75,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
          m_ignoreError(false),
          m_part(part),
          m_passwdServerClient(new KPasswdServerClient),
-         m_wallet(Q_NULLPTR)
+         m_wallet(nullptr)
 {
     if (view())
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -465,7 +465,7 @@ void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePa
         setFeaturePermission(url, feature, QWebEnginePage::PermissionGrantedByUser);
         break;
     case QWebEnginePage::Geolocation:
-        if (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
+        if (KMessageBox::warningContinueCancel(nullptr, i18n("This site is attempting to "
                                                        "access information about your "
                                                        "physical location.\n"
                                                        "Do you want to allow it access?"),
@@ -556,10 +556,10 @@ bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType
         }
 
         if (buttonText.isEmpty()) {
-            KMessageBox::error( 0, message, title);
+            KMessageBox::error( nullptr, message, title);
         } else {
             // Dangerous flag makes the Cancel button the default
-            response = KMessageBox::warningContinueCancel(0, message, title,
+            response = KMessageBox::warningContinueCancel(nullptr, message, title,
                                                           KGuiItem(buttonText),
                                                           KStandardGuiItem::cancel(),
                                                           QString(), // no don't ask again info
@@ -578,7 +578,7 @@ bool WebEnginePage::checkFormData(const QUrl &url) const
 
     if (m_sslInfo.isValid() &&
         !scheme.compare(QL1S("https")) && !scheme.compare(QL1S("mailto")) &&
-        (KMessageBox::warningContinueCancel(0,
+        (KMessageBox::warningContinueCancel(nullptr,
                                            i18n("Warning: This is a secure form "
                                                 "but it is attempting to send "
                                                 "your data back unencrypted.\n"
@@ -594,7 +594,7 @@ bool WebEnginePage::checkFormData(const QUrl &url) const
 
 
     if (scheme.compare(QL1S("mailto")) == 0 &&
-        (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
+        (KMessageBox::warningContinueCancel(nullptr, i18n("This site is attempting to "
                                                     "submit form data via email.\n"
                                                     "Do you want to continue?"),
                                             i18n("Network Transmission"),
@@ -646,7 +646,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
 
         switch (type) {
             case QWebEnginePage::NavigationTypeLinkClicked:
-                if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
+                if (!files.isEmpty() && KMessageBox::warningContinueCancelList(nullptr,
                                                                                i18n("<qt>Do you want to allow this site to attach "
                                                                                     "the following files to the email message?</qt>"),
                                                                                files, i18n("Email Attachment Confirmation"),
@@ -665,7 +665,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
             case QWebEnginePage::NavigationTypeFormSubmitted:
             //case QWebEnginePage::NavigationTypeFormResubmitted:
                 if (!files.isEmpty()) {
-                    KMessageBox::information(0, i18n("This site attempted to attach a file from your "
+                    KMessageBox::information(nullptr, i18n("This site attempted to attach a file from your "
                                                      "computer in the form submission. The attachment "
                                                      "was removed for your protection."),
                                              i18n("Attachment Removed"), QStringLiteral("InfoTriedAttach"));
@@ -817,7 +817,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         // Window args...
         KParts::WindowArgs wargs (m_windowArgs);
 
-        KParts::ReadOnlyPart* newWindowPart =0;
+        KParts::ReadOnlyPart* newWindowPart =nullptr;
         part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
         qDebug() << "Created new window" << newWindowPart;
 
@@ -831,7 +831,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // Get the webview...
         WebEnginePart* webenginePart = qobject_cast<WebEnginePart*>(newWindowPart);
-        WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : 0;
+        WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : nullptr;
 
         // If the newly created window is NOT a webenginepart...
         if (!webView) {
@@ -914,14 +914,14 @@ void NewWindowPage::slotLoadFinished(bool ok)
     // Window args...
     KParts::WindowArgs wargs (m_windowArgs);
 
-    KParts::ReadOnlyPart* newWindowPart =0;
+    KParts::ReadOnlyPart* newWindowPart =nullptr;
     part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
     qDebug() << "Created new window or tab" << newWindowPart;
 
     // Get the webview...
-    WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : 0;
-    WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : 0;
+    WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : nullptr;
+    WebEngineView* webView = webenginePart ? qobject_cast<WebEngineView*>(webenginePart->view()) : nullptr;
 
     if (webView) {
         // if a new window is created, set a new window meta-data flag.

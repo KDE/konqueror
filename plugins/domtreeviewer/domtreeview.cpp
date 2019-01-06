@@ -116,11 +116,11 @@ public:
 DOMTreeView::DOMTreeView(QWidget *parent, bool /*allowSaving*/)
     : QWidget(parent), m_expansionDepth(5), m_maxDepth(0),
       m_bPure(true), m_bShowAttributes(true), m_bHighlightHTML(true),
-      m_findDialog(0), focused_child(0)
+      m_findDialog(nullptr), focused_child(nullptr)
 {
     setupUi(this);
 
-    part = 0;
+    part = nullptr;
 
     const QFont font(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     m_listView->setFont(font);
@@ -188,7 +188,7 @@ bool DOMTreeView::eventFilter(QObject *o, QEvent *e)
 
         kDebug(90180) << " focusout o " << o->objectName();
         if (o != this) {
-            focused_child = 0;
+            focused_child = nullptr;
         }
 
     }
@@ -205,7 +205,7 @@ void DOMTreeView::activateNode(const DOM::Node &node)
 void DOMTreeView::slotShowNode(const DOM::Node &pNode)
 {
 
-    if (QTreeWidgetItem *item = m_itemdict.value(pNode.handle(), 0)) {
+    if (QTreeWidgetItem *item = m_itemdict.value(pNode.handle(), nullptr)) {
         m_listView->setCurrentItem(item);
         m_listView->scrollToItem(item);
     }
@@ -225,7 +225,7 @@ void DOMTreeView::slotShowTree(const DOM::Node &pNode)
     }
 
     while (!child.isNull()) {
-        showRecursive(0, child, 0);
+        showRecursive(nullptr, child, 0);
         child = child.nextSibling();
     }
 
@@ -236,7 +236,7 @@ void DOMTreeView::slotShowTree(const DOM::Node &pNode)
 void DOMTreeView::showRecursive(const DOM::Node &pNode, const DOM::Node &node, uint depth)
 {
     DOMListViewItem *cur_item;
-    DOMListViewItem *parent_item = m_itemdict.value(pNode.handle(), 0);
+    DOMListViewItem *parent_item = m_itemdict.value(pNode.handle(), nullptr);
 
     if (depth > m_maxDepth) {
         m_maxDepth = depth;
@@ -469,7 +469,7 @@ void DOMTreeView::slotItemClicked(QTreeWidgetItem *cur_item)
 
 void DOMTreeView::slotFindClicked()
 {
-    if (m_findDialog == 0) {
+    if (m_findDialog == nullptr) {
         m_findDialog = new KFindDialog(this);
         m_findDialog->setSupportsWholeWordsFind(false);
         m_findDialog->setHasCursor(false);
@@ -483,7 +483,7 @@ void DOMTreeView::slotFindClicked()
 
 void DOMTreeView::slotRefreshNode(const DOM::Node &pNode)
 {
-    DOMListViewItem *cur = static_cast<DOMListViewItem *>(m_itemdict.value(pNode.handle(), 0));
+    DOMListViewItem *cur = static_cast<DOMListViewItem *>(m_itemdict.value(pNode.handle(), nullptr));
     if (!cur) {
         return;
     }
@@ -743,7 +743,7 @@ void DOMTreeView::decreaseExpansionDepth()
 void DOMTreeView::adjustDepth()
 {
     // get current item in a hypersmart way
-    DOMListViewItem *cur_node_item = m_itemdict.value(infoNode.handle(), 0);
+    DOMListViewItem *cur_node_item = m_itemdict.value(infoNode.handle(), nullptr);
     if (!cur_node_item) {
         cur_node_item = static_cast<DOMListViewItem *>(m_listView->currentItem());
     }
@@ -994,7 +994,7 @@ void DOMTreeView::slotAddElementDlg()
 
     try {
         DOM::Node parent = addBefore() ? curNode.parentNode() : curNode;
-        DOM::Node after = addBefore() ? curNode : 0;
+        DOM::Node after = addBefore() ? curNode : nullptr;
 
         // ### take namespace into account
         DOM::Node newNode = curNode.ownerDocument().createElement(qname);
@@ -1037,7 +1037,7 @@ void DOMTreeView::slotAddTextDlg()
 
     try {
         DOM::Node parent = addBefore() ? curNode.parentNode() : curNode;
-        DOM::Node after = addBefore() ? curNode : 0;
+        DOM::Node after = addBefore() ? curNode : nullptr;
 
         DOM::Node newNode = curNode.ownerDocument().createTextNode(text);
 
@@ -1188,7 +1188,7 @@ void DOMTreeView::initializeOptionsFromElement(const DOM::Element &element)
 
 void DOMTreeView::initializeDOMInfoFromElement(const DOM::Element &element)
 {
-    QTreeWidgetItem *last = 0;
+    QTreeWidgetItem *last = nullptr;
     nodeAttributes->clear();
 
     DOM::NamedNodeMap attrs = element.attributes();
@@ -1228,7 +1228,7 @@ void DOMTreeView::initializeCSSInfoFromElement(const DOM::Element &element)
         QStringList values;
         values.append(name.string());
         values.append(value.string());
-        items.append(new QTreeWidgetItem(static_cast<QTreeWidget *>(0), values));
+        items.append(new QTreeWidgetItem(static_cast<QTreeWidget *>(nullptr), values));
     }
 
     cssProperties->insertTopLevelItems(0, items);

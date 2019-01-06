@@ -149,17 +149,17 @@ static KHTMLPart *isArchivablePart(KParts::ReadOnlyPart *part)
 {
     KHTMLPart *cp = qobject_cast<KHTMLPart *>(part);
     if (! cp) {
-        return NULL;
+        return nullptr;
     }
     DOM::HTMLDocument domdoc(cp->htmlDocument());
     if (domdoc.isNull()) {
-        return NULL;
+        return nullptr;
     }
     return cp;
 }
 
 ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart *part)
-    : KDialog(parent), m_top(part), m_job(NULL), m_uniqId(2), m_tarBall(NULL), m_filename(filename), m_widget(NULL)
+    : KDialog(parent), m_top(part), m_job(nullptr), m_uniqId(2), m_tarBall(nullptr), m_filename(filename), m_widget(nullptr)
 {
     setCaption(i18nc("@title:window", "Web Archiver"));
     setButtons(KDialog::Ok | KDialog::Cancel);
@@ -197,9 +197,9 @@ ArchiveDialog::~ArchiveDialog()
     qCDebug(WEBARCHIVERPLUGIN_LOG) << "destroying";
     if (m_job) {
         m_job->kill();
-        m_job = NULL;
+        m_job = nullptr;
     }
-    delete m_tarBall; m_tarBall = NULL;
+    delete m_tarBall; m_tarBall = nullptr;
 }
 
 void ArchiveDialog::archive()
@@ -229,7 +229,7 @@ void ArchiveDialog::archive()
             if (m_cssURLs.find(url) == m_cssURLs.end()) {
                 m_objects.append(u2t_it);
             } else {
-                info.tarName = uniqTarName(url.fileName(), 0);
+                info.tarName = uniqTarName(url.fileName(), nullptr);
             }
         }
 
@@ -243,7 +243,7 @@ void ArchiveDialog::archive()
     } else {
         const QString title = i18nc("@title:window", "Unable to Open Web-Archive");
         const QString text = i18n("Unable to open \n %1 \n for writing.", m_tarBall->fileName());
-        KMessageBox::sorry(NULL, text, title);
+        KMessageBox::sorry(nullptr, text, title);
     }
 }
 
@@ -262,7 +262,7 @@ void ArchiveDialog::downloadObjects()
         DownloadInfo &info = m_dlurl2tar_it.value();
         assert(m_dlurl2tar_it != m_url2tar.end());
 
-        Q_ASSERT(m_job == NULL);
+        Q_ASSERT(m_job == nullptr);
         m_job = startDownload(url, info.part);
         connect(m_job, SIGNAL(result(KJob*)), SLOT(slotObjectFinished(KJob*)));
     }
@@ -272,7 +272,7 @@ void ArchiveDialog::slotObjectFinished(KJob *_job)
 {
     KIO::StoredTransferJob *job = qobject_cast<KIO::StoredTransferJob *>(_job);
     Q_ASSERT(job == m_job);
-    m_job = NULL;
+    m_job = nullptr;
     const QUrl &url    = m_dlurl2tar_it.key();
     DownloadInfo &info = m_dlurl2tar_it.value();
 
@@ -280,7 +280,7 @@ void ArchiveDialog::slotObjectFinished(KJob *_job)
     bool error = job->error();
     if (!error) {
         const QString &mimetype(job->mimetype());
-        info.tarName = uniqTarName(appendMimeTypeSuffix(url.fileName(), mimetype), 0);
+        info.tarName = uniqTarName(appendMimeTypeSuffix(url.fileName(), mimetype), nullptr);
 
         QByteArray data(job->data());
         const QString &tarName = info.tarName;
@@ -317,7 +317,7 @@ void ArchiveDialog::downloadStyleSheets()
         assert(m_dlurl2tar_it != m_url2tar.end());
         DownloadInfo &info = m_dlurl2tar_it.value();
 
-        Q_ASSERT(m_job == NULL);
+        Q_ASSERT(m_job == nullptr);
         m_job = startDownload(url, info.part);
         connect(m_job, SIGNAL(result(KJob*)), SLOT(slotStyleSheetFinished(KJob*)));
     }
@@ -327,7 +327,7 @@ void ArchiveDialog::slotStyleSheetFinished(KJob *_job)
 {
     KIO::StoredTransferJob *job = qobject_cast<KIO::StoredTransferJob *>(_job);
     Q_ASSERT(job == m_job);
-    m_job = NULL;
+    m_job = nullptr;
     const QUrl &url    = m_dlurl2tar_it.key();
     DownloadInfo &info = m_dlurl2tar_it.value();
 
@@ -620,7 +620,7 @@ void ArchiveDialog::obtainURLsLower(KHTMLPart *part, int level)
     assert(m_framesInPart.find(part) == m_framesInPart.end());
     FramesInPart::Iterator fip_it = m_framesInPart.insert(part, PartFrameData());
 
-    RecurseData data(part, 0, &(fip_it.value()));
+    RecurseData data(part, nullptr, &(fip_it.value()));
     data.document.documentElement();
     obtainPartURLsLower(data.document.documentElement(), 1, data);
     {
@@ -697,7 +697,7 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
             // If a frame tag has a name tag, the src attribute will be overwritten
             // This ensures the current selected frame is saved and not the default
             // frame given by the original 'src' attribute
-            data.partFrameData->framesWithName.insert((*eurls.frameName).value, 0);
+            data.partFrameData->framesWithName.insert((*eurls.frameName).value, nullptr);
 
         } else if (eurls.frameURL != invalid) {
 
@@ -705,7 +705,7 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
             // identify it unambigously
             QUrl _frameURL = absoluteURL((*eurls.frameURL).value, data);
             if (!urlCheckFailed(data.part, _frameURL)) {
-                data.partFrameData->framesWithURLOnly.insert(QUrl(_frameURL.url()), 0);
+                data.partFrameData->framesWithURLOnly.insert(QUrl(_frameURL.url()), nullptr);
             }
 
         } else {
@@ -794,7 +794,7 @@ bool ArchiveDialog::saveTopFrame()
     m_part2tarName.clear();
 
     FOR_ITER(TarName2Part, m_tarName2part, t2p_it) {
-        if (t2p_it.value() != 0) {
+        if (t2p_it.value() != nullptr) {
             m_part2tarName.insert(t2p_it.value(), t2p_it.key());
         }
     }

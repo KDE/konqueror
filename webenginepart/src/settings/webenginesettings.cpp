@@ -849,7 +849,7 @@ QString WebEngineSettings::adFilteredBy( const QString &url, bool *isWhiteListed
     QString m = d->adWhiteList.urlMatchedBy(url);
 
     if (!m.isEmpty()) {
-        if (isWhiteListed != 0)
+        if (isWhiteListed != nullptr)
             *isWhiteListed = true;
         return m;
     }
@@ -858,7 +858,7 @@ QString WebEngineSettings::adFilteredBy( const QString &url, bool *isWhiteListed
     if (m.isEmpty())
         return QString();
 
-    if (isWhiteListed != 0)
+    if (isWhiteListed != nullptr)
         *isWhiteListed = false;
     return m;
 }
@@ -897,7 +897,7 @@ void WebEngineSettings::addAdFilter( const QString &url )
     }
     else
     {
-        KMessageBox::error(0,
+        KMessageBox::error(nullptr,
                            rx.errorString(),
                            i18n("Filter error"));
     }

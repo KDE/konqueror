@@ -71,7 +71,7 @@ class FSView : public TreeMapWidget, public ScanListener
 public:
     enum ColorMode { None = 0, Depth, Name, Owner, Group, Mime };
 
-    explicit FSView(Inode *, QWidget *parent = Q_NULLPTR);
+    explicit FSView(Inode *, QWidget *parent = nullptr);
     ~FSView();
 
     KConfig *config()

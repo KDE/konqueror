@@ -39,7 +39,7 @@ public:
     /**
      * Create null factory
      */
-    KonqViewFactory() : m_factory(0), m_args() {}
+    KonqViewFactory() : m_factory(nullptr), m_args() {}
 
     KonqViewFactory(const QString &libName, KPluginFactory *factory);
 
@@ -78,14 +78,14 @@ public:
      */
     KonqViewFactory createView(const QString &serviceType,
                                const QString &serviceName = QString(),
-                               KService::Ptr *serviceImpl = 0,
-                               KService::List *partServiceOffers = 0,
-                               KService::List *appServiceOffers = 0,
+                               KService::Ptr *serviceImpl = nullptr,
+                               KService::List *partServiceOffers = nullptr,
+                               KService::List *appServiceOffers = nullptr,
                                bool forceAutoEmbed = false);
 
     static void getOffers(const QString &serviceType,
-                          KService::List *partServiceOffers = 0,
-                          KService::List *appServiceOffers = 0);
+                          KService::List *partServiceOffers = nullptr,
+                          KService::List *appServiceOffers = nullptr);
 };
 
 #endif

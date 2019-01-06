@@ -46,7 +46,7 @@ class WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    explicit WebEnginePage(WebEnginePart *wpart, QWidget *parent = Q_NULLPTR);
+    explicit WebEnginePage(WebEnginePart *wpart, QWidget *parent = nullptr);
     ~WebEnginePage();
 
     /**
@@ -184,7 +184,7 @@ class NewWindowPage : public WebEnginePage
     Q_OBJECT
 public:
     NewWindowPage(WebWindowType windowType, WebEnginePart* part,
-                  QWidget* parent = Q_NULLPTR);
+                  QWidget* parent = nullptr);
     virtual ~NewWindowPage();
 
 protected:

@@ -102,7 +102,7 @@ DomainListView::~DomainListView()
 void DomainListView::updateButton()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    bool enable = (index != 0);
+    bool enable = (index != nullptr);
     changeDomainPB->setEnabled(enable);
     deleteDomainPB->setEnabled(enable);
 
@@ -131,8 +131,8 @@ void DomainListView::addPressed()
 void DomainListView::changePressed()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    if (index == 0) {
-        KMessageBox::information(0, i18n("You must first select a policy to be changed."));
+    if (index == nullptr) {
+        KMessageBox::information(nullptr, i18n("You must first select a policy to be changed."));
         return;
     }
 
@@ -158,8 +158,8 @@ void DomainListView::changePressed()
 void DomainListView::deletePressed()
 {
     QTreeWidgetItem *index = domainSpecificLV->currentItem();
-    if (index == 0) {
-        KMessageBox::information(0, i18n("You must first select a policy to delete."));
+    if (index == nullptr) {
+        KMessageBox::information(nullptr, i18n("You must first select a policy to delete."));
         return;
     }
 

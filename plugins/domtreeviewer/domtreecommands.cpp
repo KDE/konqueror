@@ -105,7 +105,7 @@ class ChangedNodeSet : public QMap<DOM::Node, bool>
 
 // == ManipulationCommand ===========================================
 
-ManipulationCommand::ManipulationCommand() : _exception(0), changedNodes(0)
+ManipulationCommand::ManipulationCommand() : _exception(0), changedNodes(nullptr)
     , _reapplied(false), allow_signals(true)
 {
 }

@@ -75,10 +75,10 @@ KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,
 {
     KonqMainWindow *mainWindow = KonqMainWindowFactory::createEmptyWindow();
     if (!url.isEmpty()) {
-        mainWindow->openUrl(Q_NULLPTR, url, QString(), req);
+        mainWindow->openUrl(nullptr, url, QString(), req);
         mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
-        mainWindow->openUrl(Q_NULLPTR, QUrl(KonqSettings::startURL()));
+        mainWindow->openUrl(nullptr, QUrl(KonqSettings::startURL()));
         mainWindow->focusLocationBar();
     }
     return mainWindow;

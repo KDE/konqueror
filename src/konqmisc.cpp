@@ -46,17 +46,17 @@ KonqMainWindow *KonqMisc::newWindowFromHistory(KonqView *view, int steps)
 
     const HistoryEntry *he = view->historyAt(newPos);
     if (!he) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     KonqMainWindow *mainwindow = KonqMainWindowFactory::createEmptyWindow();
     if (!mainwindow) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     KonqView *newView = mainwindow->currentView();
 
     if (!newView) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     newView->copyHistory(view);

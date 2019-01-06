@@ -411,7 +411,7 @@ void KCMFilter::insertFilter()
         // So we search again to locate the just-added item.
         //int id = mListBox->count()-1;
         QListWidgetItem *newItem = mListBox->findItems(newFilter, Qt::MatchCaseSensitive | Qt::MatchExactly).first();
-        if (newItem != 0) {
+        if (newItem != nullptr) {
             int id = mListBox->row(newItem);
 
             mListBox->item(id)->setSelected(true);
@@ -509,7 +509,7 @@ void AutomaticFilterModel::defaults()
 
 QModelIndex AutomaticFilterModel::index(int row, int column, const QModelIndex & /*parent*/) const
 {
-    return createIndex(row, column, (void *)NULL);
+    return createIndex(row, column, (void *)nullptr);
 }
 
 QModelIndex AutomaticFilterModel::parent(const QModelIndex & /*index*/) const

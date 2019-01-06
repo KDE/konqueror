@@ -60,7 +60,7 @@ public:
     * @note The `PersistentCookiePolicy` of the given profile will be set to `NoPersistentCookies` so that, on application startup, 
     * only cookies from KIO will be inside the store
     */
-    WebEnginePartCookieJar(QWebEngineProfile* prof, QObject* parent = Q_NULLPTR);
+    WebEnginePartCookieJar(QWebEngineProfile* prof, QObject* parent = nullptr);
 
     /**
      * @brief Destructor

@@ -296,7 +296,7 @@ public:
      */
     void partDeleted()
     {
-        m_pPart = 0L;
+        m_pPart = nullptr;
     }
 
     /**

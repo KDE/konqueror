@@ -33,7 +33,7 @@
 
 OpenSearchManager::OpenSearchManager(QObject *parent)
     : QObject(parent)
-    , m_activeEngine(Q_NULLPTR)
+    , m_activeEngine(nullptr)
 {
     m_state = IDLE;
 }
@@ -46,7 +46,7 @@ OpenSearchManager::~OpenSearchManager()
 
 void OpenSearchManager::setSearchProvider(const QString &searchProvider)
 {
-    m_activeEngine = 0;
+    m_activeEngine = nullptr;
 
     if (!m_enginesMap.contains(searchProvider)) {
         const QString fileName = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "konqueror/opensearch/" + searchProvider + ".xml");
@@ -75,7 +75,7 @@ void OpenSearchManager::setSearchProvider(const QString &searchProvider)
 
 bool OpenSearchManager::isSuggestionAvailable()
 {
-    return m_activeEngine != 0;
+    return m_activeEngine != nullptr;
 }
 
 void OpenSearchManager::addOpenSearchEngine(const QUrl &url, const QString &title)

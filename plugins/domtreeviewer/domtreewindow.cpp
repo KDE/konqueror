@@ -83,11 +83,11 @@ public:
 using domtreeviewer::ManipulationCommand;
 
 DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
-    : KXmlGuiWindow(0),
+    : KXmlGuiWindow(nullptr),
       m_plugin(plugin), m_view(new DOMTreeView(this))
 {
     setObjectName(QStringLiteral("DOMTreeWindow"));
-    part_manager = 0;
+    part_manager = nullptr;
 
     // set configuration object
     _config = new KConfig(QStringLiteral("domtreeviewerrc"));
@@ -99,7 +99,7 @@ DOMTreeWindow::DOMTreeWindow(PluginDomtreeviewer *plugin)
     setCentralWidget(m_view);
 
     // message window dialog
-    msgdlg = new MessageDialog(0);
+    msgdlg = new MessageDialog(nullptr);
 // msgdlg->show();
 
     // then, setup our actions
@@ -419,7 +419,7 @@ void DOMTreeWindow::saveProperties(KConfigGroup &config)
 
         m_commandHistory->clear();
         view()->disconnectFromTornDownPart();
-        view()->setHtmlPart(0);
+        view()->setHtmlPart(nullptr);
     }
 
     void DOMTreeWindow::slotClosePart() {

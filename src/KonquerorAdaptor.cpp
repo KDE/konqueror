@@ -80,7 +80,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow(const QString &url, const QStr
     KParts::OpenUrlArguments args;
     args.setMimeType(mimetype);
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
-    QUrl finalURL = KonqMisc::konqFilteredURL(0, url);
+    QUrl finalURL = KonqMisc::konqFilteredURL(nullptr, url);
     KonqOpenURLRequest req;
     req.args = args;
     req.tempFile = tempFile;

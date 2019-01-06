@@ -380,7 +380,7 @@ void KPluginOptions::scanDone()
         m_progress->progressBar()->setValue(100);
         load();
         m_progress->deleteLater();
-        m_progress = 0;
+        m_progress = nullptr;
     }
     m_widget.scanButton->setEnabled(true);
 }
@@ -460,13 +460,13 @@ void KPluginOptions::dirSave(KSharedConfig::Ptr config)
 
 void KPluginOptions::dirSelect(QListWidgetItem *item)
 {
-    m_widget.dirEdit->setEnabled(item != 0);
-    m_widget.dirRemove->setEnabled(item != 0);
+    m_widget.dirEdit->setEnabled(item != nullptr);
+    m_widget.dirRemove->setEnabled(item != nullptr);
 
     int cur = m_widget.dirList->currentRow();
-    m_widget.dirDown->setEnabled(item != 0 && cur < m_widget.dirList->count() - 1);
-    m_widget.dirUp->setEnabled(item != 0 && cur > 0);
-    m_widget.dirEdit->setUrl(item != 0 ? QUrl::fromUserInput(item->text()) : QUrl());
+    m_widget.dirDown->setEnabled(item != nullptr && cur < m_widget.dirList->count() - 1);
+    m_widget.dirUp->setEnabled(item != nullptr && cur > 0);
+    m_widget.dirEdit->setUrl(item != nullptr ? QUrl::fromUserInput(item->text()) : QUrl());
 }
 
 void KPluginOptions::dirNew()
@@ -559,8 +559,8 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
 
     // read in cache
     QString line, plugin;
-    QTreeWidgetItem *next = 0;
-    QTreeWidgetItem *lastMIME = 0;
+    QTreeWidgetItem *next = nullptr;
+    QTreeWidgetItem *lastMIME = nullptr;
     while (!cache.atEnd()) {
 
         line = cache.readLine();
@@ -578,7 +578,7 @@ void KPluginOptions::pluginLoad(KSharedConfig::Ptr /*config*/)
             next = new QTreeWidgetItem(root, QStringList() << i18n("Plugin") << plugin);
             next->setFlags(Qt::ItemIsEnabled);
 
-            lastMIME = 0;
+            lastMIME = nullptr;
 
             continue;
         }

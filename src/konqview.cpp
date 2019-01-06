@@ -86,8 +86,8 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_bLockHistory = false;
     m_doPost = false;
     m_pMainWindow = mainWindow;
-    m_pRun = NULL;
-    m_pPart = NULL;
+    m_pRun = nullptr;
+    m_pPart = nullptr;
 
     m_randID = KRandom::random();
 
@@ -125,7 +125,7 @@ KonqView::~KonqView()
     //qCDebug(KONQUEROR_LOG) << "part=" << m_pPart;
 
     // We did so ourselves for passive views
-    if (m_pPart != 0L) {
+    if (m_pPart != nullptr) {
         finishedWithCurrentURL();
         if (isPassiveMode()) {
             disconnect(m_pPart, SIGNAL(destroyed()), m_pMainWindow->viewManager(), SLOT(slotObjectDestroyed()));
@@ -141,7 +141,7 @@ KonqView::~KonqView()
     qDeleteAll(m_lstHistory);
     m_lstHistory.clear();
 
-    setRun(0L);
+    setRun(nullptr);
     //qCDebug(KONQUEROR_LOG) << this << "done";
 }
 
@@ -539,7 +539,7 @@ void KonqView::setLoading(bool loading, bool hasPending /*= false*/)
         // Make sure the focus is restored on the part's widget and not the combo
         // box if it starts loading a request. See #304933.
         if (loading) {
-            QWidget *partWidget = (m_pPart ? m_pPart->widget() : 0);
+            QWidget *partWidget = (m_pPart ? m_pPart->widget() : nullptr);
             if (partWidget && !partWidget->hasFocus()) {
                 //qCDebug(KONQUEROR_LOG) << "SET FOCUS on the widget";
                 partWidget->setFocus();
@@ -665,7 +665,7 @@ void KonqView::setPageSecurity(int pageSecurity)
 void KonqView::setTabIcon(const QUrl &url)
 {
     if (!m_bPassiveMode && url.isValid()) {
-        frame()->setTabIcon(url, 0L);
+        frame()->setTabIcon(url, nullptr);
     }
 }
 
@@ -690,7 +690,7 @@ void KonqView::setCaption(const QString &caption)
 
     m_caption = adjustedCaption;
     if (!m_bPassiveMode) {
-        frame()->setTitle(adjustedCaption, 0L);
+        frame()->setTitle(adjustedCaption, nullptr);
     }
 }
 
@@ -949,7 +949,7 @@ void KonqView::stop()
             setPageSecurity(currentHistoryEntry()->pageSecurity);
         }
 
-        setRun(0L);
+        setRun(nullptr);
         m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
     }
     if (!m_bLockHistory && m_lstHistory.count() > 0) {
@@ -1045,7 +1045,7 @@ KParts::BrowserHostExtension *KonqView::hostExtension(KParts::ReadOnlyPart *part
     KParts::BrowserHostExtension *ext = KParts::BrowserHostExtension::childObject(part);
 
     if (!ext) {
-        return 0;
+        return nullptr;
     }
 
     if (ext->frameNames().contains(name)) {
@@ -1061,7 +1061,7 @@ KParts::BrowserHostExtension *KonqView::hostExtension(KParts::ReadOnlyPart *part
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 bool KonqView::callExtensionMethod(const char *methodName)
@@ -1246,7 +1246,7 @@ bool KonqView::prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArgu
 
     // Repost form data if this URL is the result of a POST HTML form.
     if (m_doPost && !browserArgs.redirectedRequest()) {
-        if (KMessageBox::warningContinueCancel(0, i18n(
+        if (KMessageBox::warningContinueCancel(nullptr, i18n(
                 "The page you are trying to view is the result of posted form data. "
                 "If you resend the data, any action the form carried out (such as search or online purchase) will be repeated. "),
                                                i18nc("@title:window", "Warning"), KGuiItem(i18n("Resend"))) == KMessageBox::Continue) {

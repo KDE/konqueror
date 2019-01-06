@@ -74,7 +74,7 @@ KShellCommandDialog::KShellCommandDialog(const QString &title, const QString &co
 KShellCommandDialog::~KShellCommandDialog()
 {
     delete m_shell;
-    m_shell = 0;
+    m_shell = nullptr;
 }
 
 void KShellCommandDialog::disableStopButton()
@@ -85,14 +85,14 @@ void KShellCommandDialog::disableStopButton()
 void KShellCommandDialog::slotClose()
 {
     delete m_shell;
-    m_shell = 0;
+    m_shell = nullptr;
     accept();
 }
 
 //blocking
 int KShellCommandDialog::executeCommand()
 {
-    if (m_shell == 0) {
+    if (m_shell == nullptr) {
         return 0;
     }
     //kDebug()<<"---------- KShellCommandDialog::executeCommand()";

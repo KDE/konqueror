@@ -37,7 +37,7 @@ class KonqSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    explicit KonqSessionDlg(KonqViewManager *manager, QWidget *parent = Q_NULLPTR);
+    explicit KonqSessionDlg(KonqViewManager *manager, QWidget *parent = nullptr);
     ~KonqSessionDlg();
 
 protected Q_SLOTS:

@@ -123,7 +123,7 @@ KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString &title,
         int numTabs, const QString &dbusService)
     : KonqClosedWindowItem(title, serialNumber, numTabs),
       m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
-      m_dbusService(dbusService), m_remoteConfigGroup(0L), m_remoteConfig(0L)
+      m_dbusService(dbusService), m_remoteConfigGroup(nullptr), m_remoteConfig(nullptr)
 {
     qCDebug(KONQUEROR_LOG);
 }

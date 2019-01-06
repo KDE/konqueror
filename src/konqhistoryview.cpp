@@ -44,7 +44,7 @@
 
 KonqHistoryView::KonqHistoryView(QWidget *parent)
     : QWidget(parent)
-    , m_searchTimer(0)
+    , m_searchTimer(nullptr)
 {
     m_treeView = new QTreeView(this);
     m_treeView->setContextMenuPolicy(Qt::CustomContextMenu);

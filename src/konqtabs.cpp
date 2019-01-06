@@ -52,9 +52,9 @@
 KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentContainer,
                              KonqViewManager *viewManager)
     : KTabWidget(parent),
-      m_pPopupMenu(0),
-      m_pSubPopupMenuTab(0),
-      m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false)
+      m_pPopupMenu(nullptr),
+      m_pSubPopupMenuTab(nullptr),
+      m_rightWidget(nullptr), m_leftWidget(nullptr), m_alwaysTabBar(false)
 {
     // Set an object name so the widget style can identify this widget.
     setObjectName(QStringLiteral("kde_konq_tabwidget"));
@@ -70,7 +70,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::KonqFrameTabs()";
 
     m_pParentContainer = parentContainer;
-    m_pActiveChild = 0L;
+    m_pActiveChild = nullptr;
     m_pViewManager = viewManager;
 
     m_permanentCloseButtons = KonqSettings::permanentCloseButton();
@@ -373,7 +373,7 @@ void KonqFrameTabs::slotMouseMiddleClick()
     QUrl filteredURL(KonqMisc::konqFilteredURL(mainWindow, QApplication::clipboard()->text(QClipboard::Selection)));
     if (filteredURL.isValid() && filteredURL.scheme() != QLatin1String("error")) {
         KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"), QString(), false, false);
-        if (newView == 0L) {
+        if (newView == nullptr) {
             return;
         }
         mainWindow->openUrl(newView, filteredURL, QString());
@@ -403,7 +403,7 @@ void KonqFrameTabs::slotReceivedDropEvent(QDropEvent *e)
     QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(e->mimeData());
     if (!lstDragURLs.isEmpty()) {
         KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"), QString(), false, false);
-        if (newView == 0L) {
+        if (newView == nullptr) {
             return;
         }
         m_pViewManager->mainWindow()->openUrl(newView, lstDragURLs.first(), QString());
@@ -558,7 +558,7 @@ int KonqFrameTabs::tabWhereActive(KonqFrameBase *frame) const
     for (int i = 0; i < m_childFrameList.count(); i++) {
         KonqFrameBase *f = m_childFrameList.at(i);
         while (f && f != frame) {
-            f = f->isContainer() ? static_cast<KonqFrameContainerBase *>(f)->activeChild() : 0;
+            f = f->isContainer() ? static_cast<KonqFrameContainerBase *>(f)->activeChild() : nullptr;
         }
         if (f == frame) {
             return i;
