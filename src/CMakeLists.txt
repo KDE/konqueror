@@ -7,10 +7,6 @@ endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 
-if (KActivities_FOUND)
-  include_directories(${KACTIVITIES_INCLUDE_DIRS})
-endif (KActivities_FOUND)
-
 ########### libkonquerorprivate, shared with unit tests and sidebar modules ###############
 
 set(konquerorprivate_SRCS
@@ -116,7 +112,7 @@ if (X11_FOUND)
 endif ()
 
 if (KActivities_FOUND)
-  target_link_libraries(kdeinit_konqueror ${KACTIVITIES_LIBRARY})
+  target_link_libraries(kdeinit_konqueror KF5::Activities)
 endif (KActivities_FOUND)
 
 if (NOT WIN32)
