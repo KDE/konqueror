@@ -885,14 +885,16 @@ QString WebEngineTextExtension::completeText(Format format) const
             str = data;
             ev.quit();
         });
+        break;
     case HTML:
         part()->view()->page()->toHtml([&ev,&str](const QString& data) {
             str = data;
             ev.quit();
         });
+        break;
     }
     ev.exec();
-    return QString();
+    return str;
 }
 
 ////
