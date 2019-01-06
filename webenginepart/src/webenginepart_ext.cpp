@@ -538,7 +538,7 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
 
     const QUrl pageUrl (view()->url());
     if (pageUrl.isLocalFile()) {
-        KRun::runUrl(pageUrl, QL1S("text/plain"), view(), false);
+        KRun::runUrl(pageUrl, QL1S("text/plain"), view(), KRun::RunFlags());
     } else {
         view()->page()->toHtml([this](const QString& html) {
             QTemporaryFile tempFile;
@@ -546,7 +546,7 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
             tempFile.setAutoRemove(false);
             if (tempFile.open()) {
                 tempFile.write(html.toUtf8());
-                KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), true, false);
+                KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), KRun::RunFlags(KRun::DeleteTemporaryFiles));
             }
         });
     }
