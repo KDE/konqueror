@@ -162,7 +162,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     aboutData.setShortDescription(i18n("Web browser, file manager and document viewer."));
     aboutData.addLicense(KAboutLicense::GPL_V2);
     aboutData.setCopyrightStatement(i18n("(C) 1999-2016, The Konqueror developers"));
-    aboutData.setHomepage("http://konqueror.kde.org");
+    aboutData.setHomepage("https://konqueror.org/");
 
     aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
     aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and former maintainer"), "faure@kde.org");
@@ -208,8 +208,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KCrash::initialize();
 
     QCommandLineParser parser;
-    parser.addVersionOption();
-    parser.addHelpOption();
     parser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsLongOptions);
     aboutData.setupCommandLine(&parser);
 
