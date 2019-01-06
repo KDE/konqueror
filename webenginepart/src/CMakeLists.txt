@@ -1,5 +1,4 @@
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
-find_package(Qt5Xml ${QT5_MIN_VERSION} REQUIRED COMPONENTS)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 

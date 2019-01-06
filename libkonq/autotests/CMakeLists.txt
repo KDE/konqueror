@@ -1,8 +1,10 @@
+include(ECMAddTests)
+
+find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+
+
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
-find_package(Qt5Test CONFIG REQUIRED)
-
-include(ECMAddTests)
 
 ########### konqpopupmenutest ###############
 

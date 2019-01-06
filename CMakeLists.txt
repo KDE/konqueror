@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(Konqueror)
 
 set(QT_MIN_VERSION "5.5.0")
-set(KF5_MIN_VERSION "5.27.0")  # needs KIO 5.27 for KFileItemActions::addPluginActionsTo
+set(KF5_MIN_VERSION "5.31.0")  # needs KIO 5.31 for KRun::runUrl overload with RunFlags
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
@@ -52,7 +52,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_subdirectory( libkonq )
 add_subdirectory( src )
 add_subdirectory( client )
-add_subdirectory( autotests )
+if(BUILD_TESTING)
+    add_subdirectory( autotests )
+endif()
 add_subdirectory( webenginepart )
 
 add_subdirectory( about )

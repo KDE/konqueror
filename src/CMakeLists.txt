@@ -1,9 +1,9 @@
 if(BUILD_TESTING)
     # only with this definition will the KONQ_TESTS_EXPORT macro do something
     add_definitions(-DBUILD_TESTING)
-endif(BUILD_TESTING)
 
-add_subdirectory( tests )
+    add_subdirectory( tests )
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"konqueror\")
 
