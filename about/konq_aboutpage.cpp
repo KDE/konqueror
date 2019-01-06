@@ -15,7 +15,6 @@
 #include <ktoolinvocation.h>
 
 K_PLUGIN_FACTORY(KonqAboutPageFactory, registerPlugin<KonqAboutPage>();)
-K_EXPORT_PLUGIN(KonqAboutPageFactory("konqaboutpage"))
 
 Q_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 

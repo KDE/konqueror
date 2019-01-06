@@ -51,7 +51,6 @@
 #include "archivedialog.h"
 
 K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
-K_EXPORT_PLUGIN(PluginWebArchiverFactory("webarchiver"))
 
 PluginWebArchiver::PluginWebArchiver(QObject *parent,
                                      const QVariantList &)

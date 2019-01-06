@@ -29,5 +29,4 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
                             //registerPlugin<KonqFontOptions>("appearance");
                             //registerPlugin<KonqFontOptionsDesktop>("dappearance");
                            )
-K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))
 #include "moc_konqkcmfactory.cpp"

@@ -65,7 +65,6 @@
 #include <kcomponentdata.h>
 
 K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
-K_EXPORT_PLUGIN(SearchBarPluginFactory("searchbarplugin"))
 
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :

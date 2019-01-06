@@ -55,14 +55,6 @@
 #include <QMimeData>
 
 K_PLUGIN_FACTORY(FSViewPartFactory, registerPlugin<FSViewPart>();)
-K_EXPORT_PLUGIN(FSViewPartFactory(KAboutData(
-                                      "fsview",
-                                      0,
-                                      ki18n("FSView"),
-                                      "0.1.1",
-                                      ki18n("Filesystem Utilization Viewer"),
-                                      KAboutData::License_GPL,
-                                      ki18n("(c) 2003-2005, Josef Weidendorfer"))))
 
 // FSJob, for progress
 

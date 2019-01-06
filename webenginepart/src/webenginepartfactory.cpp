@@ -61,5 +61,3 @@ void WebEngineFactory::slotDestroyed(QObject* object)
     // kDebug() << "Removing cached history data of" << object;
     m_historyBufContainer.remove(object);
 }
-
-K_EXPORT_PLUGIN(WebEngineFactory)

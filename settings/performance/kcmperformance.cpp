@@ -33,7 +33,6 @@ K_PLUGIN_FACTORY(KCMPerformanceConfigFactory,
                  registerPlugin<KCMPerformance::Config>("performance");
                  registerPlugin<KCMPerformance::KonquerorConfig>("konqueror");
                 )
-K_EXPORT_PLUGIN(KCMPerformanceConfigFactory("kcmperformance"))
 
 namespace KCMPerformance
 {

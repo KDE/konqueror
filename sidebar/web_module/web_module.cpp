@@ -315,7 +315,6 @@ public:
 };
 
 K_PLUGIN_FACTORY(KonqSidebarWebPluginFactory, registerPlugin<KonqSidebarWebPlugin>();)
-K_EXPORT_PLUGIN(KonqSidebarWebPluginFactory())
 
 #include "web_module.moc"
 

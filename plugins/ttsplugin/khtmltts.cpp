@@ -60,6 +60,5 @@ void KHTMLPluginTTS::slotReadOut()
 }
 
 K_PLUGIN_FACTORY(KHTMLPluginTTSFactory, registerPlugin<KHTMLPluginTTS>();)
-K_EXPORT_PLUGIN(KHTMLPluginTTSFactory("khtmltts"))
 
 #include "khtmltts.moc"
