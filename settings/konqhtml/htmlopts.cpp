@@ -226,6 +226,3 @@ void KMiscHTMLOptions::save()
 
     emit changed(false);
 }
-
-#include "htmlopts.moc"
-

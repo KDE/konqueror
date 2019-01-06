@@ -190,5 +190,3 @@ bool SearchBar::event(QEvent* e)
     }
     return QWidget::event(e);
 }
-
-#include "searchbar.moc"

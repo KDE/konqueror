@@ -407,8 +407,8 @@ which may fetch the insecure version of the page."),
             }
             query += "|" + textForQuery;
             result = QUrl(query);
-        } else { //http://translate.google.com/translate?hl=en&sl=en&tl=de&u=http%3A%2F%2Fkde.org%2F%2F
-            result = QUrl(QStringLiteral("http://translate.google.com/translate"));
+        } else { //https://translate.google.com/translate?hl=en&sl=en&tl=de&u=http%3A%2F%2Fkde.org%2F%2F
+            result = QUrl(QStringLiteral("https://translate.google.com/translate"));
             query = QStringLiteral("ie=UTF-8");
             if (parts.count() == 2) {
                 query += "&sl=" + parts[0] + "&tl=" + parts[1];

@@ -585,5 +585,3 @@ Qt::ItemFlags AutomaticFilterModel::flags(const QModelIndex &index) const
     }
     return rc;
 }
-
-#include "filteropts.moc"

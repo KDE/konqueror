@@ -31,8 +31,6 @@
 #include <QAbstractEventDispatcher>
 #include <khtml_part.h>
 
-#include "webarchivecreator.moc"
-
 extern "C"
 {
     Q_DECL_EXPORT ThumbCreator *new_creator()

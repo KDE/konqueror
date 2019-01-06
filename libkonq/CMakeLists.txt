@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
-
 project(LibKonq)
 add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
@@ -17,7 +15,7 @@ find_package(KF5 REQUIRED COMPONENTS Bookmarks Parts)
 
 find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES DESCRIPTION "Support for gzip compressed files and data streams"
-                       URL "http://www.zlib.net"
+                       URL "https://www.zlib.net"
                        TYPE REQUIRED
                        PURPOSE "Required for building LibKonq"
                       )
@@ -56,5 +54,3 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
     COMPONENT Devel
 )
-
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
