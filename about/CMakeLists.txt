@@ -1,5 +1,3 @@
-find_package(KF5 REQUIRED COMPONENTS KHtml)
-
 add_library(konq_aboutpage MODULE konq_aboutpage.cpp)
 
 target_link_libraries(konq_aboutpage
