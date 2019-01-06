@@ -16,6 +16,7 @@ install(TARGETS babelfishplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES translaterc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 
 set(babelfish_ICONS 16-actions-babelfish.png 22-actions-babelfish.png)
 

@@ -22,4 +22,5 @@ install(TARGETS khtmlsettingsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES khtmlsettingsplugin.rc khtmlsettingsplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES khtmlsettingsplugin.rc khtmlsettingsplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES khtmlsettingsplugin.rc khtmlsettingsplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 

@@ -27,6 +27,7 @@ install(TARGETS akregatorkonqfeedicon DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 install( FILES akregator_konqplugin.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 
 install( FILES feed.png DESTINATION ${KDE_INSTALL_DATADIR}/akregator/pics )
 
