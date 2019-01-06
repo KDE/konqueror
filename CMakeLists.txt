@@ -5,7 +5,7 @@ project(Konqueror)
 set(QT_MIN_VERSION "5.5.0")
 set(KF5_MIN_VERSION "5.27.0")  # needs KIO 5.27 for KFileItemActions::addPluginActionsTo
 
-find_package(ECM 5.27.0 CONFIG REQUIRED)
+find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 include(FeatureSummary)
 
