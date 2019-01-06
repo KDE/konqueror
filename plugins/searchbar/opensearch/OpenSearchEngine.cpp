@@ -21,7 +21,6 @@
 
 #include "OpenSearchEngine.h"
 
-#include <KGlobal>
 #include <KLocale>
 
 #include <QRegExp>

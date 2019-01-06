@@ -27,24 +27,19 @@
 #include <KCompletionBox>
 #include <KConfigGroup>
 #include <KSharedConfig>
-#include <KDebug>
 #include <KDesktopFile>
 #include <KPluginFactory>
-#include <KGlobal>
 #include <KIconLoader>
-#include <KLocale>
 #include <KActionCollection>
 #include <KRun>
 #include <KMainWindow>
-#include <KStandardDirs>
 #include <KParts/Part>
 #include <KParts/BrowserExtension>
 #include <KParts/TextExtension>
 #include <KParts/HtmlExtension>
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
-
-//#include <kparts/mainwindow.h>
+#include <KLocalizedString>
 
 #include <QLineEdit>
 #include <QApplication>
@@ -59,10 +54,7 @@
 #include <QDBusMessage>
 #include <QWidgetAction>
 #include <QStandardPaths>
-
-//KDELibs4Support
-
-#include <kcomponentdata.h>
+#include <QDebug>
 
 K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
 
@@ -235,7 +227,7 @@ void SearchBarPlugin::startSearch(const QString &search)
         data.setData(provider.defaultKey() + m_delimiter + search);
         //kDebug() << "Query:" << (provider.defaultKey() + m_delimiter + search);
         if (!KUriFilter::self()->filterSearchUri(data, KUriFilter::WebShortcutFilter)) {
-            kWarning() << "Failed to filter using web shortcut:" << provider.defaultKey();
+            qWarning() << "Failed to filter using web shortcut:" << provider.defaultKey();
             return;
         }
 

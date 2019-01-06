@@ -27,7 +27,6 @@
 #include <qfileinfo.h>
 #include <qstring.h>
 
-#include <kmimetype.h>
 #include <kconfiggroup.h>
 
 #include "treemap.h"

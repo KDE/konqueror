@@ -19,6 +19,7 @@
 
 #include "WebShortcutWidget.h"
 
+#include <QFontDatabase>
 #include <QTimer>
 #include <QBoxLayout>
 #include <QLabel>
@@ -27,10 +28,8 @@
 #include <QFormLayout>
 #include <QDialogButtonBox>
 
-#include <KGlobalSettings>
-
 #include <KGuiItem>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KStandardGuiItem>
 #include <QFontDatabase>
 
@@ -54,7 +53,7 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
     QFormLayout *formLayout = new QFormLayout();
     mainLayout->addLayout(formLayout);
 
-    QFont smallFont = KGlobalSettings::smallestReadableFont();
+    QFont smallFont = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
     m_nameLineEdit = new QLineEdit(this);
     m_nameLineEdit->setEnabled(false);
     m_nameLineEdit->setFont(smallFont);
