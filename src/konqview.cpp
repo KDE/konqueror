@@ -55,7 +55,7 @@
 #ifdef KActivities_FOUND
 #endif
 
-#include <KJobWidgets/KJobWidgets>
+#include <KJobWidgets>
 #include <KParts/Part>
 #include <KParts/StatusBarExtension>
 #include <KParts/ReadOnlyPart>

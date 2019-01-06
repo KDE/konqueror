@@ -40,7 +40,7 @@
 #include <QDirIterator>
 #include <QStandardPaths>
 
-#include <KDBusAddons/KDBusService>
+#include <KDBusService>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <KStartupInfo>
