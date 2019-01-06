@@ -478,7 +478,7 @@ void FSViewBrowserExtension::del()
                                          KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::DefaultConfirmation)) {
         KIO::Job *job = KIO::del(urls);
         KJobWidgets::setWindow(job, _view);
-        job->ui()->setAutoErrorHandlingEnabled(true);
+        job->uiDelegate()->setAutoErrorHandlingEnabled(true);
         connect(job, SIGNAL(result(KJob*)),
                 this, SLOT(refresh()));
     }
@@ -498,7 +498,7 @@ void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modif
             KIO::Job *job = KIO::trash(urls);
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);
             KJobWidgets::setWindow(job, _view);
-            job->ui()->setAutoErrorHandlingEnabled(true);
+            job->uiDelegate()->setAutoErrorHandlingEnabled(true);
             connect(job, SIGNAL(result(KJob*)),
                     this, SLOT(refresh()));
         }

@@ -830,7 +830,7 @@ void Sidebar_Widget::slotStatResult(KJob *job)
 {
     KIO::StatJob *statJob = static_cast<KIO::StatJob *>(job);
     if (statJob->error()) {
-        statJob->ui()->showErrorMessage();
+        statJob->uiDelegate()->showErrorMessage();
     } else {
         const QUrl url = statJob->url();
         KFileItem item(statJob->statResult(), url);
