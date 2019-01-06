@@ -37,12 +37,12 @@ class KonqHistoryProxyModel : public KSortFilterProxyModel
 
 public:
     explicit KonqHistoryProxyModel(KonqHistorySettings *settings, QObject *parent = nullptr);
-    ~KonqHistoryProxyModel();
+    ~KonqHistoryProxyModel() override;
 
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 protected:
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private Q_SLOTS:
     void slotSettingsChanged();

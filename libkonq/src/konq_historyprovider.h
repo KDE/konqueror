@@ -54,7 +54,7 @@ public:
     }
 
     explicit KonqHistoryProvider(QObject *parent = nullptr);
-    virtual ~KonqHistoryProvider();
+    ~KonqHistoryProvider() override;
 
     /**
      * @returns the list of all history entries, sorted by date

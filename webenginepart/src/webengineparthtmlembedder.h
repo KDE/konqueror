@@ -77,7 +77,7 @@ public:
     /**
     * @brief Destructor
     */
-    ~WebEnginePartHtmlEmbedder(){}
+    ~WebEnginePartHtmlEmbedder() override {}
     
     /**
     * @brief Starts the embedding process asynchronously

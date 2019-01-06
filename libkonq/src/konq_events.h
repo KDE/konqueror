@@ -37,7 +37,7 @@ class LIBKONQ_EXPORT KonqFileSelectionEvent : public KParts::Event
 {
 public:
     KonqFileSelectionEvent(const KFileItemList &selection, KParts::ReadOnlyPart *part);
-    ~KonqFileSelectionEvent();
+    ~KonqFileSelectionEvent() override;
 
     KFileItemList selection() const
     {
@@ -65,7 +65,7 @@ class LIBKONQ_EXPORT KonqFileMouseOverEvent : public KParts::Event
 {
 public:
     KonqFileMouseOverEvent(const KFileItem &item, KParts::ReadOnlyPart *part);
-    ~KonqFileMouseOverEvent();
+    ~KonqFileMouseOverEvent() override;
 
     const KFileItem &item() const
     {

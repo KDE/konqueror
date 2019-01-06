@@ -32,7 +32,7 @@ class ReportDialog : public KDialog
 public:
     ReportDialog(const QList<ValidationResult *> &results, QWidget *parent);
 
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 private:
     Ui::ReportWidget m_ui;

@@ -106,7 +106,7 @@ public:
     /**
      * Don't forget to destroy the object
      */
-    ~KonqPopupMenu();
+    ~KonqPopupMenu() override;
 
     /**
      * Sets the "New file" menu instance. This allows to share it with the menubar.

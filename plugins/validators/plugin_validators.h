@@ -56,7 +56,7 @@ class PluginValidators : public KParts::Plugin
 public:
     PluginValidators(QObject *parent,
                      const QVariantList &);
-    virtual ~PluginValidators();
+    ~PluginValidators() override;
 
     static const char s_boundary[];
     static const char s_CRLF[];

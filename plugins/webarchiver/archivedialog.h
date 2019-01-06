@@ -54,7 +54,7 @@ class ArchiveDialog : public KDialog
     Q_OBJECT
 public:
     ArchiveDialog(QWidget *parent, const QString &targetFilename, KHTMLPart *part);
-    ~ArchiveDialog();
+    ~ArchiveDialog() override;
 
     void archive();
 
@@ -268,7 +268,7 @@ private:
 private slots:
     void slotObjectFinished(KJob *job);
     void slotStyleSheetFinished(KJob *job);
-    void slotButtonClicked(int button) Q_DECL_OVERRIDE;
+    void slotButtonClicked(int button) override;
 };
 
 #endif // _ARCHIVEDIALOG_H_

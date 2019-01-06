@@ -40,7 +40,7 @@ class KIGPDialog : public KPageDialog
 
 public:
     explicit KIGPDialog(QWidget *parent, const QString &path);
-    ~KIGPDialog();
+    ~KIGPDialog() override;
 
     bool isDialogOk() const;
     bool printImageName() const;

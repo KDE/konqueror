@@ -42,7 +42,7 @@ public:
     /*! Constructs a sorting filter model with the given parent. */
     KSortFilterProxyModel(QObject *parent = nullptr);
     /*! Destroys this sorting filter model. */
-    ~KSortFilterProxyModel();
+    ~KSortFilterProxyModel() override;
 
     /*! Whether to show the children of a matching parent.
      *  This is false by default. */
@@ -53,7 +53,7 @@ public:
 
 protected:
     /*! \reimp */
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const Q_DECL_OVERRIDE;
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     KSortFilterProxyModelPrivate *const d_ptr;
 
     Q_DISABLE_COPY(KSortFilterProxyModel)

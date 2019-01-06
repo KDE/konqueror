@@ -27,14 +27,14 @@ class KonqExtendedBookmarkOwner : public KBookmarkOwner
 {
 public:
     KonqExtendedBookmarkOwner(KonqMainWindow *);
-    virtual QString currentTitle() const Q_DECL_OVERRIDE;
-    virtual QUrl currentUrl() const Q_DECL_OVERRIDE;
-    virtual bool supportsTabs() const Q_DECL_OVERRIDE;
-    virtual QList<FutureBookmark> currentBookmarkList() const Q_DECL_OVERRIDE;
-    virtual void openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km) Q_DECL_OVERRIDE;
-    virtual void openInNewTab(const KBookmark &bm) Q_DECL_OVERRIDE;
-    virtual void openInNewWindow(const KBookmark &bm) Q_DECL_OVERRIDE;
-    virtual void openFolderinTabs(const KBookmarkGroup &grp) Q_DECL_OVERRIDE;
+    QString currentTitle() const override;
+    QUrl currentUrl() const override;
+    bool supportsTabs() const override;
+    QList<FutureBookmark> currentBookmarkList() const override;
+    void openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km) override;
+    void openInNewTab(const KBookmark &bm) override;
+    void openInNewWindow(const KBookmark &bm) override;
+    void openFolderinTabs(const KBookmarkGroup &grp) override;
 
 private:
     KonqMainWindow *m_pKonqMainWindow;

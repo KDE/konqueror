@@ -41,7 +41,7 @@ public:
             const QUrl &url, const KonqOpenURLRequest &req = KonqOpenURLRequest(),
             bool trustedSource = false);
 
-    virtual ~KonqRun();
+    ~KonqRun() override;
 
     /**
      * Returns true if we found the mimetype for the given url.
@@ -64,10 +64,10 @@ public:
     }
 
 protected:
-    void foundMimeType(const QString &_type) Q_DECL_OVERRIDE;
-    void handleError(KJob *job) Q_DECL_OVERRIDE;
-    void init() Q_DECL_OVERRIDE;
-    void scanFile() Q_DECL_OVERRIDE;
+    void foundMimeType(const QString &_type) override;
+    void handleError(KJob *job) override;
+    void init() override;
+    void scanFile() override;
 
 protected Q_SLOTS:
     void slotRedirection(KIO::Job *, const QUrl &);

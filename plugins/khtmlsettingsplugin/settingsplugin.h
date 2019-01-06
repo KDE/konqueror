@@ -31,7 +31,7 @@ class SettingsPlugin : public KParts::Plugin
 public:
     SettingsPlugin(QObject *parent,
                    const QVariantList &);
-    virtual ~SettingsPlugin();
+    ~SettingsPlugin() override;
 
 private:
     bool cookiesEnabled(const QString &url);

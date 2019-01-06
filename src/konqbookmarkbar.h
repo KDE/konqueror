@@ -56,7 +56,7 @@ public:
                  KBookmarkOwner *owner, KToolBar *toolBar,
                  QObject *parent = nullptr);
 
-    virtual ~KBookmarkBar();
+    ~KBookmarkBar() override;
 
     QString parentAddress();
 
@@ -69,7 +69,7 @@ public Q_SLOTS:
 
 protected:
     void fillBookmarkBar(const KBookmarkGroup &parent);
-    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *o, QEvent *e) override;
 
 private:
     KBookmarkGroup getToolbar();

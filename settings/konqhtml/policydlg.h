@@ -52,7 +52,7 @@ public:
      */
     explicit PolicyDialog(Policies *policies, QWidget *parent = nullptr, const char *name = nullptr);
 
-    virtual ~PolicyDialog() {}
+    ~PolicyDialog() override {}
 
     /*
     * @return whether this feature should be activated, deactivated or
@@ -118,7 +118,7 @@ public:
 
 protected Q_SLOTS:
 
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
     void slotTextChanged(const QString &text);
 
 private:

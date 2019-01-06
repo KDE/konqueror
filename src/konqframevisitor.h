@@ -82,16 +82,16 @@ class KONQ_TESTS_EXPORT KonqViewCollector : public KonqFrameVisitor
 {
 public:
     static QList<KonqView *> collect(KonqFrameBase *topLevel);
-    bool visit(KonqFrame *frame) Q_DECL_OVERRIDE;
-    bool visit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    bool visit(KonqFrame *frame) override;
+    bool visit(KonqFrameContainer *) override
     {
         return true;
     }
-    bool visit(KonqFrameTabs *) Q_DECL_OVERRIDE
+    bool visit(KonqFrameTabs *) override
     {
         return true;
     }
-    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
+    bool visit(KonqMainWindow *) override
     {
         return true;
     }
@@ -106,16 +106,16 @@ class KonqLinkableViewsCollector : public KonqFrameVisitor
 {
 public:
     static QList<KonqView *> collect(KonqFrameBase *topLevel);
-    bool visit(KonqFrame *frame) Q_DECL_OVERRIDE;
-    bool visit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    bool visit(KonqFrame *frame) override;
+    bool visit(KonqFrameContainer *) override
     {
         return true;
     }
-    bool visit(KonqFrameTabs *) Q_DECL_OVERRIDE
+    bool visit(KonqFrameTabs *) override
     {
         return true;
     }
-    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
+    bool visit(KonqMainWindow *) override
     {
         return true;
     }
@@ -132,16 +132,16 @@ class KonqModifiedViewsCollector : public KonqFrameVisitor
 {
 public:
     static QList<KonqView *> collect(KonqFrameBase *topLevel);
-    bool visit(KonqFrame *frame) Q_DECL_OVERRIDE;
-    bool visit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    bool visit(KonqFrame *frame) override;
+    bool visit(KonqFrameContainer *) override
     {
         return true;
     }
-    bool visit(KonqFrameTabs *) Q_DECL_OVERRIDE
+    bool visit(KonqFrameTabs *) override
     {
         return true;
     }
-    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
+    bool visit(KonqMainWindow *) override
     {
         return true;
     }

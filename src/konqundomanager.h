@@ -44,7 +44,7 @@ public:
      * @param parent the parent QObject, also used as the parent widget for KonqFileUndoManager::UiInterface.
      */
     explicit KonqUndoManager(QWidget *parent);
-    ~KonqUndoManager();
+    ~KonqUndoManager() override;
 
     bool undoAvailable() const;
     QString undoText() const;

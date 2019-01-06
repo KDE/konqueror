@@ -44,7 +44,7 @@ public:
      */
     explicit OpenSearchManager(QObject *parent = nullptr);
 
-    virtual ~OpenSearchManager();
+    ~OpenSearchManager() override;
 
     void setSearchProvider(const QString &searchProvider);
 

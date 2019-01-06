@@ -33,7 +33,7 @@ class KShellCommandExecutor: public QTextEdit
     Q_OBJECT
 public:
     explicit KShellCommandExecutor(const QString &command, QWidget *parent = nullptr);
-    virtual ~KShellCommandExecutor();
+    ~KShellCommandExecutor() override;
     int exec();
 Q_SIGNALS:
     void finished();

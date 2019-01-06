@@ -25,12 +25,12 @@
 class MyListener: public ScanListener
 {
 public:
-    void scanStarted(ScanDir *d) Q_DECL_OVERRIDE
+    void scanStarted(ScanDir *d) override
     {
         printf("Started Scan on %s\n", qPrintable(d->name()));
     };
 
-    void sizeChanged(ScanDir *d) Q_DECL_OVERRIDE
+    void sizeChanged(ScanDir *d) override
     {
         printf("Change in %s: Dirs %d, Files %d",
                qPrintable(d->name()),
@@ -38,7 +38,7 @@ public:
         printf("Size %llu\n", (unsigned long long int)d->size());
     }
 
-    void scanFinished(ScanDir *d) Q_DECL_OVERRIDE
+    void scanFinished(ScanDir *d) override
     {
         printf("Finished Scan on %s\n", qPrintable(d->name()));
     }

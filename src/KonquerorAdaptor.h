@@ -38,7 +38,7 @@ class KonquerorAdaptor : public QObject
 public:
 
     KonquerorAdaptor();
-    ~KonquerorAdaptor();
+    ~KonquerorAdaptor() override;
 
 public slots:
 

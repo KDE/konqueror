@@ -30,11 +30,11 @@ public:
     KonqDraggableLabel(KonqMainWindow *mw, const QString &text);
 
 protected:
-    void mousePressEvent(QMouseEvent *ev) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *ev) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *ev) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *ev) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *ev) override;
+    void mouseMoveEvent(QMouseEvent *ev) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void dragEnterEvent(QDragEnterEvent *ev) override;
+    void dropEvent(QDropEvent *ev) override;
 
 private Q_SLOTS:
     void delayedOpenURL();

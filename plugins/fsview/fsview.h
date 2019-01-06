@@ -72,7 +72,7 @@ public:
     enum ColorMode { None = 0, Depth, Name, Owner, Group, Mime };
 
     explicit FSView(Inode *, QWidget *parent = nullptr);
-    ~FSView();
+    ~FSView() override;
 
     KConfig *config()
     {
@@ -102,7 +102,7 @@ public:
 
     /* Implementation of listener interface of ScanManager.
      * Used to calculate progress info */
-    void scanFinished(ScanDir *) Q_DECL_OVERRIDE;
+    void scanFinished(ScanDir *) override;
 
     void stop();
 
@@ -130,7 +130,7 @@ signals:
     void completed(int dirs);
 
 protected:
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *) override;
 
 private:
     KConfig *_config;

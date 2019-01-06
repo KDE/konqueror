@@ -40,7 +40,7 @@ class KonqStatusBarMessageLabel : public QWidget
 
 public:
     explicit KonqStatusBarMessageLabel(QWidget *parent);
-    virtual ~KonqStatusBarMessageLabel();
+    ~KonqStatusBarMessageLabel() override;
 
     /**
      * Describes the type of the message text. Dependent
@@ -68,16 +68,16 @@ public:
     int minimumTextHeight() const;
 
     /** @see QWidget::sizeHint */
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
     /** @see QWidget::minimumSizeHint */
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize minimumSizeHint() const override;
 
 protected:
     /** @see QWidget::paintEvent() */
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event) override;
 
     /** @see QWidget::resizeEvent() */
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *event) override;
 
 private Q_SLOTS:
     void timerDone();

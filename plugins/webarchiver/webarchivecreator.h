@@ -36,12 +36,12 @@ class WebArchiveCreator : public QObject, public ThumbCreator
     Q_OBJECT
 public:
     WebArchiveCreator();
-    virtual ~WebArchiveCreator();
-    bool create(const QString &path, int width, int height, QImage &img) Q_DECL_OVERRIDE;
-    Flags flags() const Q_DECL_OVERRIDE;
+    ~WebArchiveCreator() override;
+    bool create(const QString &path, int width, int height, QImage &img) override;
+    Flags flags() const override;
 
 protected:
-    void timerEvent(QTimerEvent *) Q_DECL_OVERRIDE;
+    void timerEvent(QTimerEvent *) override;
 
 private slots:
     void slotCompleted();

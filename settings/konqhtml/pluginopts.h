@@ -53,7 +53,7 @@ public:
     PluginPolicies(KSharedConfig::Ptr config, const QString &group, bool global,
                    const QString &domain = QString());
 
-    virtual ~PluginPolicies();
+    ~PluginPolicies() override;
 };
 
 /** Plugin-specific enhancements to the domain list view
@@ -64,13 +64,13 @@ class PluginDomainListView : public DomainListView
 public:
     PluginDomainListView(KSharedConfig::Ptr config, const QString &group, KPluginOptions *opt,
                          QWidget *parent);
-    virtual ~PluginDomainListView();
+    ~PluginDomainListView() override;
 
 protected:
-    PluginPolicies *createPolicies() Q_DECL_OVERRIDE;
-    PluginPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    PluginPolicies *createPolicies() override;
+    PluginPolicies *copyPolicies(Policies *pol) override;
     void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy) Q_DECL_OVERRIDE;
+                                Policies *copy) override;
 
 private:
     QString group;
@@ -86,7 +86,7 @@ class PluginDomainDialog : public QWidget
 public:
 
     PluginDomainDialog(QWidget *parent);
-    virtual ~PluginDomainDialog();
+    ~PluginDomainDialog() override;
 
     void setMainWidget(QWidget *widget);
 
@@ -105,10 +105,10 @@ class KPluginOptions : public KCModule
 public:
     KPluginOptions(QWidget *parent, const QVariantList &);
 
-    virtual void load() Q_DECL_OVERRIDE;
-    virtual void save() Q_DECL_OVERRIDE;
-    virtual void defaults() Q_DECL_OVERRIDE;
-    QString quickHelp() const Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
+    QString quickHelp() const override;
 
 private Q_SLOTS:
     void slotChanged();

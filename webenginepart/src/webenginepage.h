@@ -47,7 +47,7 @@ class WebEnginePage : public QWebEnginePage
     Q_OBJECT
 public:
     explicit WebEnginePage(WebEnginePart *wpart, QWidget *parent = nullptr);
-    ~WebEnginePage();
+    ~WebEnginePage() override;
 
     /**
      * Returns the SSL information for the current page.
@@ -102,13 +102,13 @@ protected:
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    QWebEnginePage* createWindow(WebWindowType type) Q_DECL_OVERRIDE;
+    QWebEnginePage* createWindow(WebWindowType type) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
+    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
     
     /**
     * @brief Override of `QWebEnginePage::certificateError`
@@ -127,7 +127,7 @@ protected:
     * @param ce the certificate error
     * @return `true` if the error can be ignored and `false` otherwise
     */
-    bool certificateError(const QWebEngineCertificateError &ce) Q_DECL_OVERRIDE;
+    bool certificateError(const QWebEngineCertificateError &ce) override;
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
@@ -185,10 +185,10 @@ class NewWindowPage : public WebEnginePage
 public:
     NewWindowPage(WebWindowType windowType, WebEnginePart* part,
                   QWidget* parent = nullptr);
-    virtual ~NewWindowPage();
+    ~NewWindowPage() override;
 
 protected:
-    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame)  Q_DECL_OVERRIDE;
+    bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
 
 private Q_SLOTS:
     void slotGeometryChangeRequested(const QRect& rect) override;

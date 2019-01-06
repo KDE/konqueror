@@ -104,7 +104,7 @@ Q_SIGNALS:
 private:
     KonqClosedWindowsManager();
 
-    virtual ~KonqClosedWindowsManager();
+    ~KonqClosedWindowsManager() override;
 
     KonqClosedRemoteWindowItem *findClosedRemoteWindowItem(const QString &configFileName,
             const QString &configGroup);

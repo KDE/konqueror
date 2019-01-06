@@ -29,7 +29,7 @@ class PluginBabelFish : public KParts::Plugin
 public:
     explicit PluginBabelFish(QObject *parent,
                              const QVariantList &);
-    virtual ~PluginBabelFish();
+    ~PluginBabelFish() override;
 
 private slots:
     void translateURL(QAction *);

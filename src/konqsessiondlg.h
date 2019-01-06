@@ -38,7 +38,7 @@ class KonqSessionDlg : public KDialog
     Q_OBJECT
 public:
     explicit KonqSessionDlg(KonqViewManager *manager, QWidget *parent = nullptr);
-    ~KonqSessionDlg();
+    ~KonqSessionDlg() override;
 
 protected Q_SLOTS:
     void slotOpen();
@@ -60,7 +60,7 @@ class KonqNewSessionDlg : public KDialog
 public:
     enum Mode { NewFile, ReplaceFile };
     explicit KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow, QString sessionName = QString(), Mode mode = NewFile);
-    ~KonqNewSessionDlg();
+    ~KonqNewSessionDlg() override;
 
 protected Q_SLOTS:
     void slotAddSession();

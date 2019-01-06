@@ -42,12 +42,12 @@ class KWEBENGINEPARTLIB_EXPORT WebEngineBrowserExtension : public KParts::Browse
 
 public:
     WebEngineBrowserExtension(WebEnginePart *parent, const QByteArray& cachedHistoryData);
-    ~WebEngineBrowserExtension();
+    ~WebEngineBrowserExtension() override;
 
-    virtual int xOffset() override;
-    virtual int yOffset() override;
-    virtual void saveState(QDataStream &) override;
-    virtual void restoreState(QDataStream &) override;
+    int xOffset() override;
+    int yOffset() override;
+    void saveState(QDataStream &) override;
+    void restoreState(QDataStream &) override;
     void saveHistory();
 
 Q_SIGNALS:
@@ -131,9 +131,9 @@ class WebEngineTextExtension : public KParts::TextExtension
 public:
     WebEngineTextExtension(WebEnginePart* part);
 
-    bool hasSelection() const Q_DECL_OVERRIDE;
-    QString selectedText(Format format) const Q_DECL_OVERRIDE;
-    QString completeText(Format format) const Q_DECL_OVERRIDE;
+    bool hasSelection() const override;
+    QString selectedText(Format format) const override;
+    QString completeText(Format format) const override;
 
 private:
     WebEnginePart* part() const;
@@ -155,17 +155,17 @@ public:
     WebEngineHtmlExtension(WebEnginePart* part);
 
     // HtmlExtension
-    QUrl baseUrl() const Q_DECL_OVERRIDE;
-    bool hasSelection() const Q_DECL_OVERRIDE;
+    QUrl baseUrl() const override;
+    bool hasSelection() const override;
 
     // SelectorInterface
-    QueryMethods supportedQueryMethods() const Q_DECL_OVERRIDE;
-    Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const Q_DECL_OVERRIDE;
-    QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const Q_DECL_OVERRIDE;
+    QueryMethods supportedQueryMethods() const override;
+    Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const override;
+    QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const override;
 
     // HtmlSettingsInterface
-    QVariant htmlSettingsProperty(HtmlSettingsType type) const Q_DECL_OVERRIDE;
-    bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value) Q_DECL_OVERRIDE;
+    QVariant htmlSettingsProperty(HtmlSettingsType type) const override;
+    bool setHtmlSettingsProperty(HtmlSettingsType type, const QVariant& value) override;
 
 private:
     WebEnginePart* part() const;
@@ -178,23 +178,23 @@ class WebEngineScriptableExtension : public KParts::ScriptableExtension
 public:
     WebEngineScriptableExtension(WebEnginePart* part);
 
-    QVariant rootObject() Q_DECL_OVERRIDE;
+    QVariant rootObject() override;
 
-    QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName) Q_DECL_OVERRIDE;
+    QVariant get(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName) override;
 
-    bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value) Q_DECL_OVERRIDE;
+    bool put(ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName, const QVariant& value) override;
 
-    bool setException(ScriptableExtension* callerPrincipal, const QString& message) Q_DECL_OVERRIDE;
+    bool setException(ScriptableExtension* callerPrincipal, const QString& message) override;
 
     QVariant evaluateScript(ScriptableExtension* callerPrincipal,
                                     quint64 contextObjectId,
                                     const QString& code,
-                                    ScriptLanguage language = ECMAScript) Q_DECL_OVERRIDE;
+                                    ScriptLanguage language = ECMAScript) override;
 
-    bool isScriptLanguageSupported(ScriptLanguage lang) const Q_DECL_OVERRIDE;
+    bool isScriptLanguageSupported(ScriptLanguage lang) const override;
 
 private:
-     QVariant encloserForKid(KParts::ScriptableExtension* kid) Q_DECL_OVERRIDE;
+     QVariant encloserForKid(KParts::ScriptableExtension* kid) override;
      WebEnginePart* part();
 };
 

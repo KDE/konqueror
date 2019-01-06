@@ -119,14 +119,14 @@ class KONQ_TESTS_EXPORT KonqFrame : public QWidget, public KonqFrameBase
 
 public:
     explicit KonqFrame(QWidget *parent, KonqFrameContainerBase *parentContainer = nullptr);
-    virtual ~KonqFrame();
+    ~KonqFrame() override;
 
-    bool isContainer() const Q_DECL_OVERRIDE
+    bool isContainer() const override
     {
         return false;
     }
 
-    bool accept(KonqFrameVisitor *visitor) Q_DECL_OVERRIDE;
+    bool accept(KonqFrameVisitor *visitor) override;
 
     /**
      * Attach a view to the KonqFrame.
@@ -161,17 +161,17 @@ public:
 
     void setView(KonqView *child);
 
-    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) Q_DECL_OVERRIDE;
-    void copyHistory(KonqFrameBase *other) Q_DECL_OVERRIDE;
+    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) override;
+    void copyHistory(KonqFrameBase *other) override;
 
-    void setTitle(const QString &title, QWidget *sender) Q_DECL_OVERRIDE;
-    void setTabIcon(const QUrl &url, QWidget *sender) Q_DECL_OVERRIDE;
+    void setTitle(const QString &title, QWidget *sender) override;
+    void setTabIcon(const QUrl &url, QWidget *sender) override;
 
-    QWidget *asQWidget() Q_DECL_OVERRIDE
+    QWidget *asQWidget() override
     {
         return this;
     }
-    KonqFrameBase::FrameType frameType() const Q_DECL_OVERRIDE
+    KonqFrameBase::FrameType frameType() const override
     {
         return KonqFrameBase::View;
     }
@@ -186,9 +186,9 @@ public:
         return m_pStatusBar;
     }
 
-    void activateChild() Q_DECL_OVERRIDE;
+    void activateChild() override;
 
-    KonqView *activeChildView() const Q_DECL_OVERRIDE;
+    KonqView *activeChildView() const override;
 
     QString title() const
     {

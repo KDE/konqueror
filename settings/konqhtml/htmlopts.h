@@ -29,10 +29,10 @@ class KMiscHTMLOptions : public KCModule
 
 public:
     KMiscHTMLOptions(QWidget *parent, const QVariantList &);
-    ~KMiscHTMLOptions();
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    ~KMiscHTMLOptions() override;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
 private:
     KSharedConfig::Ptr m_pConfig;

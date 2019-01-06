@@ -37,7 +37,7 @@ class MinitoolsPlugin : public KParts::Plugin
 
 public:
     MinitoolsPlugin(QObject *parent, const QVariantList &);
-    ~MinitoolsPlugin();
+    ~MinitoolsPlugin() override;
 
 protected slots:
     void slotAboutToShow();

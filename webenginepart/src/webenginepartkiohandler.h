@@ -74,7 +74,7 @@ public:
      *
      * @param  req: the request job
      */
-    void requestStarted(QWebEngineUrlRequestJob* req) Q_DECL_OVERRIDE;
+    void requestStarted(QWebEngineUrlRequestJob* req) override;
     
 protected slots:
     

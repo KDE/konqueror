@@ -41,7 +41,7 @@ class KonqExtensionManager
 
 public:
     KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart *activePart);
-    ~KonqExtensionManager();
+    ~KonqExtensionManager() override;
 
     void apply();
 
@@ -54,7 +54,7 @@ public Q_SLOTS:
     void slotUser1();
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
 
 private:
     KonqExtensionManagerPrivate *d;

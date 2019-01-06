@@ -26,7 +26,7 @@ class KShellCmdPlugin : public KParts::Plugin
     Q_OBJECT
 public:
     KShellCmdPlugin(QObject *parent, const QVariantList &);
-    ~KShellCmdPlugin() {}
+    ~KShellCmdPlugin() override {}
 
 public Q_SLOTS:
     void slotExecuteShellCommand();

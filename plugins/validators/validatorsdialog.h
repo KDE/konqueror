@@ -37,7 +37,7 @@ class ValidatorsDialog : public KPageDialog
 
 public:
     explicit ValidatorsDialog(QWidget *parent = nullptr);
-    ~ValidatorsDialog();
+    ~ValidatorsDialog() override;
 
 signals:
     void configChanged();

@@ -65,7 +65,7 @@ public:
      */
     JSPolicies();
 
-    virtual ~JSPolicies();
+    ~JSPolicies() override;
 
     /**
      * Returns whether the WindowOpen policy is inherited.
@@ -160,15 +160,15 @@ public:
     /**
      * (re)loads settings from configuration file given in the constructor.
      */
-    void load() Q_DECL_OVERRIDE;
+    void load() override;
     /**
      * saves current settings to the configuration file given in the constructor
      */
-    void save() Q_DECL_OVERRIDE;
+    void save() override;
     /**
      * restores the default settings
      */
-    void defaults() Q_DECL_OVERRIDE;
+    void defaults() override;
 
 private:
     // one of KParts::HtmlSettingsInterface::JSWindowOpenPolicy or INHERIT_POLICY
@@ -215,7 +215,7 @@ public:
      */
     JSPoliciesFrame(JSPolicies *policies, const QString &title, QWidget *parent = nullptr);
 
-    virtual ~JSPoliciesFrame();
+    ~JSPoliciesFrame() override;
 
     /**
      * updates the controls to resemble the status of the underlying

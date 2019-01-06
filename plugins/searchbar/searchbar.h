@@ -62,7 +62,7 @@ public:
     /**
      * Destructor.
      */
-    ~SearchBarCombo();
+    ~SearchBarCombo() override;
 
     /**
      * Returns the icon currently displayed in the combo box.
@@ -118,7 +118,7 @@ protected:
      * Captures mouse clicks and emits iconClicked() if the icon
      * was clicked.
      */
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *e) override;
 
 private Q_SLOTS:
     void historyCleared();
@@ -148,10 +148,10 @@ public:
 
     SearchBarPlugin(QObject *parent,
                     const QVariantList &);
-    virtual ~SearchBarPlugin();
+    ~SearchBarPlugin() override;
 
 protected:
-    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *o, QEvent *e) override;
 
 private Q_SLOTS:
     /**
@@ -235,7 +235,7 @@ class SearchBarItemDelegate : public QItemDelegate
 {
 public:
     SearchBarItemDelegate(QObject *parent = nullptr);
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif // SEARCHBAR_PLUGIN

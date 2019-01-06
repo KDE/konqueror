@@ -55,7 +55,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~AutoRefresh();
+    ~AutoRefresh() override;
 
 public slots:
     void slotRefresh();

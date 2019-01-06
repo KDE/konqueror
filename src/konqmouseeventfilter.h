@@ -34,7 +34,7 @@ public:
     void reparseConfiguration();
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *e) override;
 
 private:
     explicit KonqMouseEventFilter();

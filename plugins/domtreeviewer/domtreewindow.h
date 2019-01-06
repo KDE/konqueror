@@ -66,7 +66,7 @@ public:
     /**
      * Default Destructor
      */
-    virtual ~DOMTreeWindow();
+    ~DOMTreeWindow() override;
 
     /**
      * returns the dom tree view
@@ -153,21 +153,21 @@ protected:
     /**
      * Overridden virtuals for Qt drag 'n drop (XDND)
      */
-    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 protected:
     /**
      * This function is called when it is time for the app to save its
      * properties for session management purposes.
      */
-    void saveProperties(KConfigGroup &) Q_DECL_OVERRIDE;
+    void saveProperties(KConfigGroup &) override;
 
     /**
      * This function is called when this app is restored.  The KConfig
      * object points to the session management config file that was saved
      * with @ref saveProperties
      */
-    void readProperties(const KConfigGroup &) Q_DECL_OVERRIDE;
+    void readProperties(const KConfigGroup &) override;
 
 private slots:
     void slotCut();

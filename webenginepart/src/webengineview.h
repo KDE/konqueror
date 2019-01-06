@@ -43,7 +43,7 @@ class WebEngineView : public QWebEngineView
     Q_OBJECT
 public:
     WebEngineView(WebEnginePart* part, QWidget* parent);
-    ~WebEngineView();
+    ~WebEngineView() override;
 
     /**
      * Same as QWebEnginePage::load, but with KParts style arguments instead.
@@ -65,7 +65,7 @@ protected:
      * @see QWidget::contextMenuEvent
      * @internal
      */
-    void contextMenuEvent(QContextMenuEvent*) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent*) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -73,7 +73,7 @@ protected:
      * @see QWidget::keyPressEvent
      * @internal
      */
-    void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent*) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -81,7 +81,7 @@ protected:
      * @see QWidget::keyReleaseEvent
      * @internal
      */
-    void keyReleaseEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+    void keyReleaseEvent(QKeyEvent*) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -89,7 +89,7 @@ protected:
      * @see QWidget::mouseReleaseEvent
      * @internal
      */
-    void mouseReleaseEvent(QMouseEvent*) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent*) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -97,7 +97,7 @@ protected:
      * @see QObject::timerEvent
      * @internal
      */
-    void timerEvent(QTimerEvent*) Q_DECL_OVERRIDE;
+    void timerEvent(QTimerEvent*) override;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -105,7 +105,7 @@ protected:
      * @see QWidget::wheelEvent
      * @internal
      */
-    void wheelEvent(QWheelEvent*) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent*) override;
 
 private Q_SLOTS:
     void slotConfigureWebShortcuts();

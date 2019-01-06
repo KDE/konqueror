@@ -44,7 +44,7 @@ class DOMTreeView : public QWidget, public Ui::DOMTreeViewBase
 
 public:
     explicit DOMTreeView(QWidget *parent, bool allowSaving = true);
-    ~DOMTreeView();
+    ~DOMTreeView() override;
 
     KHTMLPart *htmlPart() const
     {
@@ -59,7 +59,7 @@ protected:
     /*
     void saveTreeAsHTML(const DOM::Node &pNode);
     */
-    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *o, QEvent *e) override;
 
 signals:
     /** emitted when the part has been changed. */

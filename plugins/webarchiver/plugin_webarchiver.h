@@ -32,7 +32,7 @@ class PluginWebArchiver : public KParts::Plugin
 public:
     PluginWebArchiver(QObject *parent,
                       const QVariantList &);
-    virtual ~PluginWebArchiver();
+    ~PluginWebArchiver() override;
 
 public slots:
     void slotSaveToArchive();

@@ -33,9 +33,9 @@ class KonqHistoryDialog : public KDialog
 
 public:
     KonqHistoryDialog(KonqMainWindow *parent = nullptr);
-    ~KonqHistoryDialog();
+    ~KonqHistoryDialog() override;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 private Q_SLOTS:
     void slotOpenWindow(const QUrl &url);

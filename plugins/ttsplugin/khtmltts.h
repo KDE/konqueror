@@ -34,7 +34,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KHTMLPluginTTS();
+    ~KHTMLPluginTTS() override;
 public Q_SLOTS:
     void slotReadOut();
 };

@@ -28,19 +28,19 @@ class KonqAboutPage : public KHTMLPart
     Q_OBJECT
 public:
     KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList &args);
-    ~KonqAboutPage();
+    ~KonqAboutPage() override;
 
-    bool openUrl(const QUrl &url) Q_DECL_OVERRIDE;
+    bool openUrl(const QUrl &url) override;
 
-    bool openFile() Q_DECL_OVERRIDE;
+    bool openFile() override;
 
-    void saveState(QDataStream &stream) Q_DECL_OVERRIDE;
-    void restoreState(QDataStream &stream) Q_DECL_OVERRIDE;
+    void saveState(QDataStream &stream) override;
+    void restoreState(QDataStream &stream) override;
 
 protected:
     bool urlSelected(const QString &url, int button, int state, const QString &target,
                      const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                     const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments()) Q_DECL_OVERRIDE;
+                     const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments()) override;
 
 private:
     void serve(const QString &, const QString &);

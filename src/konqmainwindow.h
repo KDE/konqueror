@@ -95,7 +95,7 @@ public:
     enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
     explicit KonqMainWindow(const QUrl &initialURL = QUrl());
-    ~KonqMainWindow();
+    ~KonqMainWindow() override;
 
     /**
      * Filters the URL and calls the main openUrl method.
@@ -144,12 +144,12 @@ public:
     }
 
     /// KXMLGUIBuilder methods, reimplemented for delayed bookmark-toolbar initialization
-    QWidget *createContainer(QWidget *parent, int index, const QDomElement &element, QAction *&containerAction) Q_DECL_OVERRIDE;
-    void removeContainer(QWidget *container, QWidget *parent, QDomElement &element, QAction *containerAction) Q_DECL_OVERRIDE;
+    QWidget *createContainer(QWidget *parent, int index, const QDomElement &element, QAction *&containerAction) override;
+    void removeContainer(QWidget *container, QWidget *parent, QDomElement &element, QAction *containerAction) override;
 
     /// KMainWindow methods, for session management
-    void saveProperties(KConfigGroup &config) Q_DECL_OVERRIDE;
-    void readProperties(const KConfigGroup &config) Q_DECL_OVERRIDE;
+    void saveProperties(KConfigGroup &config) override;
+    void readProperties(const KConfigGroup &config) override;
 
     void setInitialFrameName(const QString &name);
 
@@ -194,9 +194,9 @@ public:
     KonqView *otherView(KonqView *view) const;
 
     /// Overloaded of KMainWindow
-    void setCaption(const QString &caption) Q_DECL_OVERRIDE;
+    void setCaption(const QString &caption) override;
     /// Overloaded of KMainWindow -- should never be called, or if it is, we ignore "modified" anyway
-    void setCaption(const QString &caption, bool modified) Q_DECL_OVERRIDE
+    void setCaption(const QString &caption, bool modified) override
     {
         Q_UNUSED(modified);
         setCaption(caption);
@@ -263,31 +263,31 @@ public:
 
     // KonqFrameContainerBase implementation BEGIN
 
-    bool accept(KonqFrameVisitor *visitor) Q_DECL_OVERRIDE;
+    bool accept(KonqFrameVisitor *visitor) override;
 
     /**
      * Insert a new frame as the mainwindow's child
      */
-    void insertChildFrame(KonqFrameBase *frame, int index = -1) Q_DECL_OVERRIDE;
+    void insertChildFrame(KonqFrameBase *frame, int index = -1) override;
     /**
      * Call this before deleting one of our children.
      */
-    void childFrameRemoved(KonqFrameBase *frame) Q_DECL_OVERRIDE;
+    void childFrameRemoved(KonqFrameBase *frame) override;
 
-    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) Q_DECL_OVERRIDE;
+    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) override;
 
-    void copyHistory(KonqFrameBase *other) Q_DECL_OVERRIDE;
+    void copyHistory(KonqFrameBase *other) override;
 
-    void setTitle(const QString &title, QWidget *sender) Q_DECL_OVERRIDE;
-    void setTabIcon(const QUrl &url, QWidget *sender) Q_DECL_OVERRIDE;
+    void setTitle(const QString &title, QWidget *sender) override;
+    void setTabIcon(const QUrl &url, QWidget *sender) override;
 
-    QWidget *asQWidget() Q_DECL_OVERRIDE;
+    QWidget *asQWidget() override;
 
-    KonqFrameBase::FrameType frameType() const Q_DECL_OVERRIDE;
+    KonqFrameBase::FrameType frameType() const override;
 
     KonqFrameBase *childFrame()const;
 
-    void setActiveChild(KonqFrameBase *activeChild) Q_DECL_OVERRIDE;
+    void setActiveChild(KonqFrameBase *activeChild) override;
 
     // KonqFrameContainerBase implementation END
 
@@ -380,7 +380,7 @@ public Q_SLOTS:
     void slotClearLocationBar();
 
     // reimplement from KParts::MainWindow
-    void slotSetStatusBarText(const QString &text) Q_DECL_OVERRIDE;
+    void slotSetStatusBarText(const QString &text) override;
 
     // public for KonqViewManager
     void slotPartActivated(KParts::Part *part);
@@ -475,7 +475,7 @@ private Q_SLOTS:
 
     void slotIconsChanged();
 
-    bool event(QEvent *) Q_DECL_OVERRIDE;
+    bool event(QEvent *) override;
 
     void slotMoveTabLeft();
     void slotMoveTabRight();
@@ -485,12 +485,12 @@ private Q_SLOTS:
     void slotUpdateFullScreen(bool set);   // do not call directly
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *ev) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *ev) override;
 
     /**
     * Reimplemented for internal reasons. The API is not affected.
     */
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
 
     bool makeViewsFollow(const QUrl &url,
                          const KParts::OpenUrlArguments &args,
@@ -503,7 +503,7 @@ protected:
 
     void updateLocalPropsActions();
 
-    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
+    void closeEvent(QCloseEvent *) override;
 
     bool askForTarget(const KLocalizedString &text, QUrl &url);
 

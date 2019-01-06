@@ -30,7 +30,7 @@ class KShellCommandDialog: public KDialog
     Q_OBJECT
 public:
     KShellCommandDialog(const QString &title, const QString &command, QWidget *parent = nullptr, bool modal = false);
-    virtual ~KShellCommandDialog();
+    ~KShellCommandDialog() override;
     //blocking
     int executeCommand();
 protected:

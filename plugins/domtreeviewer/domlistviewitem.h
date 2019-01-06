@@ -34,7 +34,7 @@ public:
     DOMListViewItem(const DOM::Node &, QTreeWidgetItem *parent);
     DOMListViewItem(const DOM::Node &, QTreeWidgetItem *parent,
                     QTreeWidgetItem *preceding);
-    virtual ~DOMListViewItem();
+    ~DOMListViewItem() override;
 
     void setColor(const QColor &color)
     {

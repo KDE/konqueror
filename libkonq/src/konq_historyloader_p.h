@@ -38,7 +38,7 @@ class KonqHistoryLoader : public QObject
 
 public:
     explicit KonqHistoryLoader(QObject *parent = nullptr);
-    virtual ~KonqHistoryLoader();
+    ~KonqHistoryLoader() override;
 
     /**
      * Load the history. No need to call this more than once...

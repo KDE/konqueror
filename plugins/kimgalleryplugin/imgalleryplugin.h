@@ -37,7 +37,7 @@ class KImGalleryPlugin : public KParts::Plugin
 public:
     KImGalleryPlugin(QObject *parent,
                      const QVariantList &);
-    ~KImGalleryPlugin() {}
+    ~KImGalleryPlugin() override {}
 
 public slots:
     void slotExecute();

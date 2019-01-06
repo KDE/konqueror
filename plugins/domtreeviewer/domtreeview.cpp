@@ -1097,7 +1097,7 @@ public:
         _new = s;
     }
 
-    bool operator<(const QTreeWidgetItem &other) const Q_DECL_OVERRIDE
+    bool operator<(const QTreeWidgetItem &other) const override
     {
         // Keep the "Add" item at the end
         if (_new) {

@@ -49,7 +49,7 @@ public:
      */
     //JavaPolicies();
 
-    virtual ~JavaPolicies();
+    ~JavaPolicies() override;
 };
 
 /** Java-specific enhancements to the domain list view
@@ -60,17 +60,17 @@ class JavaDomainListView : public DomainListView
 public:
     JavaDomainListView(KSharedConfig::Ptr config, const QString &group, KJavaOptions *opt,
                        QWidget *parent);
-    virtual ~JavaDomainListView();
+    ~JavaDomainListView() override;
 
     /** remnant for importing pre KDE 3.2 settings
       */
     void updateDomainListLegacy(const QStringList &domainConfig);
 
 protected:
-    JavaPolicies *createPolicies() Q_DECL_OVERRIDE;
-    JavaPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    JavaPolicies *createPolicies() override;
+    JavaPolicies *copyPolicies(Policies *pol) override;
     void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy) Q_DECL_OVERRIDE;
+                                Policies *copy) override;
 
 private:
     QString group;
@@ -84,9 +84,9 @@ class KJavaOptions : public KCModule
 public:
     KJavaOptions(const KSharedConfig::Ptr &config, const QString &group, QWidget *parent);
 
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
     bool _removeJavaScriptDomainAdvice;
 

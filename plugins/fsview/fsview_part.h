@@ -39,7 +39,7 @@ class FSViewBrowserExtension : public KParts::BrowserExtension
 
 public:
     explicit FSViewBrowserExtension(FSViewPart *viewPart);
-    ~FSViewBrowserExtension();
+    ~FSViewBrowserExtension() override;
 
 protected slots:
     void selected(TreeMapItem *);
@@ -87,7 +87,7 @@ public:
     FSViewPart(QWidget *parentWidget,
                QObject *parent, const QList<QVariant> &args);
 
-    virtual ~FSViewPart();
+    ~FSViewPart() override;
 
     bool supportsUndo() const
     {
@@ -117,9 +117,9 @@ protected:
     /**
      * This must be implemented by each part
      */
-    bool openFile() Q_DECL_OVERRIDE;
-    bool openUrl(const QUrl &url) Q_DECL_OVERRIDE;
-    bool closeUrl() Q_DECL_OVERRIDE;
+    bool openFile() override;
+    bool openUrl(const QUrl &url) override;
+    bool closeUrl() override;
 
 private:
     FSView *_view;

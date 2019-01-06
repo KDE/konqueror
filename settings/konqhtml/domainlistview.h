@@ -72,7 +72,7 @@ public:
      */
     DomainListView(KSharedConfig::Ptr config, const QString &title, QWidget *parent);
 
-    virtual ~DomainListView();
+    ~DomainListView() override;
 
     /**
      * clears the list view.

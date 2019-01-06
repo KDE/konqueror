@@ -57,7 +57,7 @@ class KONQ_TESTS_EXPORT KonqViewManager : public KParts::PartManager
     Q_OBJECT
 public:
     explicit KonqViewManager(KonqMainWindow *mainWindow);
-    ~KonqViewManager();
+    ~KonqViewManager() override;
 
     KonqView *createFirstView(const QString &mimeType, const QString &serviceName);
 
@@ -234,12 +234,12 @@ public:
     /**
      * Reimplemented from PartManager
      */
-    void removePart(KParts::Part *part) Q_DECL_OVERRIDE;
+    void removePart(KParts::Part *part) override;
 
     /**
      * Reimplemented from PartManager
      */
-    void setActivePart(KParts::Part *part, QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+    void setActivePart(KParts::Part *part, QWidget *widget = nullptr) override;
 
     void doSetActivePart(KParts::ReadOnlyPart *part);
 

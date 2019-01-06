@@ -37,7 +37,7 @@ class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject, public KPixma
 public:
     static KonqPixmapProvider *self();
 
-    virtual ~KonqPixmapProvider();
+    ~KonqPixmapProvider() override;
 
     /**
      * Trigger a download of a default favicon
@@ -51,7 +51,7 @@ public:
     /**
      * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
      */
-    QPixmap pixmapFor(const QString &url, int size) Q_DECL_OVERRIDE;
+    QPixmap pixmapFor(const QString &url, int size) override;
 
     /**
      * Loads the cache to @p kc from key @p key.

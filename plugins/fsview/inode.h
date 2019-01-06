@@ -47,21 +47,21 @@ public:
     Inode();
     Inode(ScanDir *, Inode *);
     Inode(ScanFile *, Inode *);
-    ~Inode();
+    ~Inode() override;
     void init(const QString &);
 
     void setPeer(ScanDir *);
 
-    TreeMapItemList *children() Q_DECL_OVERRIDE;
+    TreeMapItemList *children() override;
 
-    double value() const Q_DECL_OVERRIDE;
+    double value() const override;
     double size() const;
     unsigned int fileCount() const;
     unsigned int dirCount() const;
     QString path() const;
-    QString text(int i) const Q_DECL_OVERRIDE;
-    QPixmap pixmap(int i) const Q_DECL_OVERRIDE;
-    QColor backColor() const Q_DECL_OVERRIDE;
+    QString text(int i) const override;
+    QPixmap pixmap(int i) const override;
+    QColor backColor() const override;
     QMimeType mimeType() const;
 
     const QFileInfo &fileInfo() const
@@ -81,10 +81,10 @@ public:
         return (_dirPeer != nullptr);
     }
 
-    void sizeChanged(ScanDir *) Q_DECL_OVERRIDE;
-    void scanFinished(ScanDir *) Q_DECL_OVERRIDE;
-    void destroyed(ScanDir *) Q_DECL_OVERRIDE;
-    void destroyed(ScanFile *) Q_DECL_OVERRIDE;
+    void sizeChanged(ScanDir *) override;
+    void scanFinished(ScanDir *) override;
+    void destroyed(ScanDir *) override;
+    void destroyed(ScanFile *) override;
 
 private:
     void setMetrics(double, unsigned int);

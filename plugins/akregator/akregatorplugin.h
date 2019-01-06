@@ -33,7 +33,7 @@ class AkregatorMenu : public KAbstractFileItemActionPlugin
 
 public:
     AkregatorMenu(QObject *parent, const QVariantList &args);
-    virtual ~AkregatorMenu() = default;
+    ~AkregatorMenu() override = default;
 
     QList<QAction *> actions(const KFileItemListProperties &fileItemInfos, QWidget *parent) override;
 

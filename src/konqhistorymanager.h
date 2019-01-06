@@ -58,7 +58,7 @@ public:
     }
 
     explicit KonqHistoryManager(KBookmarkManager *bookmarkManager, QObject *parent = nullptr);
-    ~KonqHistoryManager();
+    ~KonqHistoryManager() override;
 
     /**
      * Adds a pending entry to the history. Pending means, that the entry is
@@ -108,9 +108,9 @@ public:
      * By default, file:/ urls will be filtered out, but if they come thru
      * the HistoryProvider interface, they are added to the history.
      */
-    void insert(const QString &) Q_DECL_OVERRIDE;
-    void remove(const QString &) Q_DECL_OVERRIDE {}
-    void clear() Q_DECL_OVERRIDE {}
+    void insert(const QString &) override;
+    void remove(const QString &) override {}
+    void clear() override {}
 
 private:
     /**
@@ -160,7 +160,7 @@ private Q_SLOTS:
     void slotEntryRemoved(const KonqHistoryEntry &entry);
 
 private:
-    void finishAddingEntry(const KonqHistoryEntry &entry, bool isSender) Q_DECL_OVERRIDE;
+    void finishAddingEntry(const KonqHistoryEntry &entry, bool isSender) override;
     void clearPending();
 
     void addToCompletion(const QString &url, const QString &typedUrl, int numberOfTimesVisited = 1);

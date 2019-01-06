@@ -44,7 +44,7 @@ public:
     PopupMenuGUIClient(const KService::List &embeddingServices,
                        KonqPopupMenu::ActionGroupMap &actionGroups,
                        QAction *showMenuBar, QAction *stopFullScreen);
-    virtual ~PopupMenuGUIClient();
+    ~PopupMenuGUIClient() override;
 
     KActionCollection *actionCollection()
     {
@@ -69,7 +69,7 @@ class ToggleViewGUIClient : public QObject
     Q_OBJECT
 public:
     explicit ToggleViewGUIClient(KonqMainWindow *mainWindow);
-    virtual ~ToggleViewGUIClient();
+    ~ToggleViewGUIClient() override;
 
     bool empty() const
     {

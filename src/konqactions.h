@@ -72,7 +72,7 @@ class KonqMostOftenURLSAction : public KActionMenu
 
 public:
     KonqMostOftenURLSAction(const QString &text, QObject *parent);
-    virtual ~KonqMostOftenURLSAction();
+    ~KonqMostOftenURLSAction() override;
 
     static bool numberOfVisitOrder(const KonqHistoryEntry &lhs, const KonqHistoryEntry &rhs)
     {
@@ -105,7 +105,7 @@ class KonqHistoryAction : public KActionMenu
 
 public:
     KonqHistoryAction(const QString &text, QObject *parent);
-    virtual ~KonqHistoryAction();
+    ~KonqHistoryAction() override;
 
 Q_SIGNALS:
     void activated(const QUrl &);

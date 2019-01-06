@@ -102,7 +102,7 @@ public:
              const QString &serviceType,
              bool passiveMode);
 
-    ~KonqView();
+    ~KonqView() override;
 
     /**
      * Displays another URL, but without changing the view mode (caller has to
@@ -599,7 +599,7 @@ private:
 
     void finishedWithCurrentURL();
 
-    bool eventFilter(QObject *obj, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *e) override;
 
 ////////////////// private members ///////////////
 

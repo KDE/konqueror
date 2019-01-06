@@ -12,7 +12,7 @@ class PluginDomtreeviewer : public KParts::Plugin
 public:
     PluginDomtreeviewer(QObject *parent,
                         const QVariantList &);
-    virtual ~PluginDomtreeviewer();
+    ~PluginDomtreeviewer() override;
 
 public slots:
     void slotShowDOMTree();

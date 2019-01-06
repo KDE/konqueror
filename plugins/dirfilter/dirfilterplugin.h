@@ -43,7 +43,7 @@ class FilterBar : public QWidget
 
 public:
     explicit FilterBar(QWidget *parent = nullptr);
-    virtual ~FilterBar();
+    ~FilterBar() override;
     void selectAll();
 
     QMenu *typeFilterMenu();
@@ -62,8 +62,8 @@ Q_SIGNALS:
     void closeRequest();
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
 
 private:
     KLineEdit *m_filterInput;
@@ -102,7 +102,7 @@ class DirFilterPlugin : public KParts::Plugin
 public:
 
     DirFilterPlugin(QObject *parent, const QVariantList &);
-    ~DirFilterPlugin();
+    ~DirFilterPlugin() override;
 
 private Q_SLOTS:
     void slotReset();

@@ -134,37 +134,37 @@ public:
     {
         return m_output;
     }
-    bool visit(KonqFrame *) Q_DECL_OVERRIDE
+    bool visit(KonqFrame *) override
     {
         m_output += 'F';
         return true;
     }
-    bool visit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    bool visit(KonqFrameContainer *) override
     {
         m_output += QLatin1String("C(");
         return true;
     }
-    bool visit(KonqFrameTabs *) Q_DECL_OVERRIDE
+    bool visit(KonqFrameTabs *) override
     {
         m_output += QLatin1String("T[");
         return true;
     }
-    bool visit(KonqMainWindow *) Q_DECL_OVERRIDE
+    bool visit(KonqMainWindow *) override
     {
         m_output += 'M';
         return true;
     }
-    bool endVisit(KonqFrameContainer *) Q_DECL_OVERRIDE
+    bool endVisit(KonqFrameContainer *) override
     {
         m_output += ')';
         return true;
     }
-    bool endVisit(KonqFrameTabs *) Q_DECL_OVERRIDE
+    bool endVisit(KonqFrameTabs *) override
     {
         m_output += ']';
         return true;
     }
-    bool endVisit(KonqMainWindow *) Q_DECL_OVERRIDE
+    bool endVisit(KonqMainWindow *) override
     {
         m_output += '.';
         return true;

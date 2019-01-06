@@ -35,7 +35,7 @@ class WebEnginePartDownloadManager : public QObject
 public:
     static WebEnginePartDownloadManager* instance();
 
-    ~WebEnginePartDownloadManager();
+    ~WebEnginePartDownloadManager() override;
 
 public Q_SLOTS:
     void addPage(WebEnginePage *page);

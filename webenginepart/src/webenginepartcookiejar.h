@@ -65,7 +65,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~WebEnginePartCookieJar();
+    ~WebEnginePartCookieJar() override;
 
 private slots:
     

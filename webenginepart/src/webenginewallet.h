@@ -86,7 +86,7 @@ public:
     /**
      * Destructor
      */
-    virtual ~WebEngineWallet();
+    ~WebEngineWallet() override;
 
     /**
      * Attempts to save the form data from @p page and its children frames.

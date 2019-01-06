@@ -48,7 +48,7 @@ class SignalReceiver : public QObject
 
 public:
     explicit SignalReceiver(QObject *parent = nullptr);
-    virtual ~SignalReceiver();
+    ~SignalReceiver() override;
 
     /** returns true if any signal has been received */
     bool signalReceived() const

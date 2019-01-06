@@ -27,9 +27,9 @@ class KHTTPOptions : public KCModule
 public:
     KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KAboutData *aboutData, QWidget *parent);
 
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
 private:
 

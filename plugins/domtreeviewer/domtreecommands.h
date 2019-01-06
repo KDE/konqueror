@@ -49,7 +49,7 @@ class ManipulationCommandSignalEmitter : public QObject
     Q_OBJECT
 public:
     ManipulationCommandSignalEmitter();
-    virtual ~ManipulationCommandSignalEmitter();
+    ~ManipulationCommandSignalEmitter() override;
 
 // public signals:
 signals:
@@ -75,7 +75,7 @@ class ManipulationCommand : public QUndoCommand
 {
 public:
     ManipulationCommand();
-    virtual ~ManipulationCommand();
+    ~ManipulationCommand() override;
 
     /** returns whether this command is still valid and can be executed */
     bool isValid() const
@@ -102,9 +102,9 @@ public:
     static void connect(const char *signal, QObject *recv, const char *slot);
 
     /** does grunt work and calls apply()/reapply() */
-    void redo() Q_DECL_OVERRIDE;
+    void redo() override;
     /** does grunt work and calls unapply() */
-    void undo() Q_DECL_OVERRIDE;
+    void undo() override;
 
 protected:
     virtual void apply() = 0;
@@ -139,7 +139,7 @@ class MultiCommand : public ManipulationCommand
 {
 public:
     MultiCommand(const QString &name);
-    virtual ~MultiCommand();
+    ~MultiCommand() override;
 
     /** Adds a new command. Will take ownership of \c cmd */
     void addCommand(ManipulationCommand *cmd);
@@ -147,8 +147,8 @@ public:
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
     void mergeChangedNodesFrom(ManipulationCommand *cmd);
 
@@ -165,13 +165,13 @@ class AddAttributeCommand : public ManipulationCommand
 {
 public:
     AddAttributeCommand(const DOM::Element &element, const QString &attrName, const QString &attrValue);
-    virtual ~AddAttributeCommand();
+    ~AddAttributeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::Element _element;
@@ -187,13 +187,13 @@ class ChangeAttributeValueCommand : public ManipulationCommand
 {
 public:
     ChangeAttributeValueCommand(const DOM::Element &element, const QString &attr, const QString &value);
-    virtual ~ChangeAttributeValueCommand();
+    ~ChangeAttributeValueCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::Element _element;
@@ -210,13 +210,13 @@ class RemoveAttributeCommand : public ManipulationCommand
 {
 public:
     RemoveAttributeCommand(const DOM::Element &element, const QString &attrName);
-    virtual ~RemoveAttributeCommand();
+    ~RemoveAttributeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::Element _element;
@@ -232,13 +232,13 @@ class RenameAttributeCommand : public ManipulationCommand
 {
 public:
     RenameAttributeCommand(const DOM::Element &element, const QString &attrOldName, const QString &attrNewName);
-    virtual ~RenameAttributeCommand();
+    ~RenameAttributeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::Element _element;
@@ -255,13 +255,13 @@ class ChangeCDataCommand : public ManipulationCommand
 {
 public:
     ChangeCDataCommand(const DOM::CharacterData &, const QString &value);
-    virtual ~ChangeCDataCommand();
+    ~ChangeCDataCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::CharacterData cdata;
@@ -282,7 +282,7 @@ public:
      * before \c after. If \c after is 0, it is appended at the end.
      */
     ManipulateNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-    virtual ~ManipulateNodeCommand();
+    ~ManipulateNodeCommand() override;
 
 protected:
     void insert();
@@ -309,13 +309,13 @@ public:
      * before \c after. If \c after is 0, append it to the list of children.
      */
     InsertNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-    virtual ~InsertNodeCommand();
+    ~InsertNodeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
 };
@@ -335,13 +335,13 @@ public:
      * before \c after. If \c after is 0, append it to the list of children.
      */
     RemoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-    virtual ~RemoveNodeCommand();
+    ~RemoveNodeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
 };
@@ -358,13 +358,13 @@ public:
      * Appends if \c after is 0.
      */
     MoveNodeCommand(const DOM::Node &node, const DOM::Node &parent, const DOM::Node &after);
-    virtual ~MoveNodeCommand();
+    ~MoveNodeCommand() override;
 
     virtual QString name() const;
 
 protected:
-    void apply() Q_DECL_OVERRIDE;
-    void unapply() Q_DECL_OVERRIDE;
+    void apply() override;
+    void unapply() override;
 
 protected:
     DOM::Node _node;

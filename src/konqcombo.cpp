@@ -79,7 +79,7 @@ public:
     KonqListWidgetItem(QListWidget *parent = nullptr);
     KonqListWidgetItem(const QString &text, QListWidget *parent = nullptr);
 
-    QVariant data(int role) const Q_DECL_OVERRIDE;
+    QVariant data(int role) const override;
 
     bool reuse(const QString &newText);
 
@@ -93,8 +93,8 @@ class KonqComboItemDelegate : public QItemDelegate
 {
 public:
     KonqComboItemDelegate(QObject *parent) : QItemDelegate(parent) {}
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -103,10 +103,10 @@ class KonqComboLineEdit : public KLineEdit
 {
 public:
     KonqComboLineEdit(QWidget *parent = nullptr);
-    KCompletionBox *completionBox(bool create) Q_DECL_OVERRIDE;
+    KCompletionBox *completionBox(bool create) override;
 
 protected:
-    void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *e) override;
 };
 
 class KonqComboCompletionBox : public KCompletionBox

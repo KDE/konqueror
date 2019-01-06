@@ -63,21 +63,21 @@ public:
     explicit WebEnginePart(QWidget* parentWidget = nullptr, QObject* parent = nullptr,
                          const QByteArray& cachedHistory = QByteArray(),
                          const QStringList& = QStringList());
-    ~WebEnginePart();
+    ~WebEnginePart() override;
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
      *
      * @see KParts::ReadOnlyPart::openUrl
      */
-    bool openUrl(const QUrl &) Q_DECL_OVERRIDE;
+    bool openUrl(const QUrl &) override;
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
      *
      * @see KParts::ReadOnlyPart::closeUrl
      */
-    bool closeUrl() Q_DECL_OVERRIDE;
+    bool closeUrl() override;
 
     /**
      * Returns a pointer to the render widget used to display a web page.
@@ -109,14 +109,14 @@ protected:
      *
      * @see KParts::ReadOnlyPart::guiActivateEvent
      */
-    void guiActivateEvent(KParts::GUIActivateEvent *) Q_DECL_OVERRIDE;
+    void guiActivateEvent(KParts::GUIActivateEvent *) override;
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
      *
      * @see KParts::ReadOnlyPart::openFile
      */
-    bool openFile() Q_DECL_OVERRIDE;
+    bool openFile() override;
 
 private Q_SLOTS:
     void slotShowSecurity();

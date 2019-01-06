@@ -33,8 +33,8 @@ class WebEngineFactory : public KPluginFactory
     Q_PLUGIN_METADATA(IID "org.kde.KPluginFactory")
     Q_INTERFACES(KPluginFactory)
 public:
-    virtual ~WebEngineFactory();
-    QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword) Q_DECL_OVERRIDE;
+    ~WebEngineFactory() override;
+    QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword) override;
 
 private Q_SLOTS:
     void slotDestroyed(QObject* object);

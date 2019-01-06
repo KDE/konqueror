@@ -36,7 +36,7 @@ class KonqCombo : public KHistoryComboBox
 
 public:
     explicit KonqCombo(QWidget *parent);
-    ~KonqCombo();
+    ~KonqCombo() override;
 
     // initializes with the completion object and calls loadItems()
     void init(KCompletion *);
@@ -66,11 +66,11 @@ public:
     void insertItem(const QPixmap &pixmap, const QString &text, int index = -1, const QString &title = QString());
 
 protected:
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
-    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *) override;
+    bool eventFilter(QObject *, QEvent *) override;
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseMoveEvent(QMouseEvent *) override;
+    void paintEvent(QPaintEvent *) override;
     void selectWord(QKeyEvent *e);
 
 Q_SIGNALS:

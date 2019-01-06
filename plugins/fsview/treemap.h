@@ -124,41 +124,41 @@ public:
                               bool selected = false, bool current = false);
 
     // getters
-    QString  text(int) const Q_DECL_OVERRIDE;
-    QPixmap  pixmap(int) const Q_DECL_OVERRIDE;
-    Position position(int) const Q_DECL_OVERRIDE;
-    int      maxLines(int) const Q_DECL_OVERRIDE;
-    int      fieldCount() const Q_DECL_OVERRIDE
+    QString  text(int) const override;
+    QPixmap  pixmap(int) const override;
+    Position position(int) const override;
+    int      maxLines(int) const override;
+    int      fieldCount() const override
     {
         return _field.size();
     }
 
-    QColor   backColor() const Q_DECL_OVERRIDE
+    QColor   backColor() const override
     {
         return _backColor;
     }
-    bool selected() const Q_DECL_OVERRIDE
+    bool selected() const override
     {
         return _selected;
     }
-    bool current() const Q_DECL_OVERRIDE
+    bool current() const override
     {
         return _current;
     }
-    bool shaded() const Q_DECL_OVERRIDE
+    bool shaded() const override
     {
         return _shaded;
     }
-    bool rotated() const Q_DECL_OVERRIDE
+    bool rotated() const override
     {
         return _rotated;
     }
-    bool drawFrame() const Q_DECL_OVERRIDE
+    bool drawFrame() const override
     {
         return _drawFrame;
     }
 
-    const QFont &font() const Q_DECL_OVERRIDE;
+    const QFont &font() const override;
 
     // attribute setters
     void setField(int f, const QString &t, const QPixmap &pm = QPixmap(),
@@ -302,7 +302,7 @@ public:
     TreeMapItem(TreeMapItem *parent, double value,
                 const QString &text1, const QString &text2 = QString(),
                 const QString &text3 = QString(), const QString &text4 = QString());
-    virtual ~TreeMapItem();
+    ~TreeMapItem() override;
 
     bool isChildOf(TreeMapItem *);
 
@@ -418,8 +418,8 @@ public:
     virtual double sum() const;
     virtual double value() const;
     // replace "Default" position with setting from TreeMapWidget
-    Position position(int) const Q_DECL_OVERRIDE;
-    const QFont &font() const Q_DECL_OVERRIDE;
+    Position position(int) const override;
+    const QFont &font() const override;
     virtual bool isMarked(int) const;
 
     virtual int borderWidth() const;
@@ -497,7 +497,7 @@ public:
 
     /* The widget gets owner of the base item */
     explicit TreeMapWidget(TreeMapItem *base, QWidget *parent = nullptr);
-    ~TreeMapWidget();
+    ~TreeMapWidget() override;
 
     /**
      * Returns the TreeMapItem filling out the widget space
@@ -825,15 +825,15 @@ signals:
     void contextMenuRequested(TreeMapItem *, const QPoint &);
 
 protected:
-    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void contextMenuEvent(QContextMenuEvent *) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseDoubleClickEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *) override;
+    void contextMenuEvent(QContextMenuEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void mouseMoveEvent(QMouseEvent *) override;
+    void mouseDoubleClickEvent(QMouseEvent *) override;
+    void keyPressEvent(QKeyEvent *) override;
+    void paintEvent(QPaintEvent *) override;
     void fontChange(const QFont &);
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
     // For "Esc deselects all" functionality implemented in FSView.
     TreeMapItem *_pressed;
     // add a checkable popup item

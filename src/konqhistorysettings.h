@@ -40,7 +40,7 @@ public:
     enum { MINUTES, DAYS };
 
     static KonqHistorySettings *self();
-    virtual ~KonqHistorySettings();
+    ~KonqHistorySettings() override;
 
     void applySettings();
 

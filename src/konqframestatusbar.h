@@ -42,7 +42,7 @@ class KonqFrameStatusBar : public QStatusBar
 
 public:
     explicit KonqFrameStatusBar(KonqFrame *_parent = nullptr);
-    virtual ~KonqFrameStatusBar();
+    ~KonqFrameStatusBar() override;
 
     void setMessage(const QString &msg, KonqStatusBarMessageLabel::Type type);
 
@@ -84,8 +84,8 @@ Q_SIGNALS:
     void linkedViewClicked(bool mode);
 
 protected:
-    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *, QEvent *) override;
+    void mousePressEvent(QMouseEvent *) override;
     /**
      * Brings up the context menu for this frame
      */

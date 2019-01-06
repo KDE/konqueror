@@ -35,9 +35,9 @@ public:
     
     WebEnginePartErrorSchemeHandler(QObject *parent = nullptr);
     
-    ~WebEnginePartErrorSchemeHandler(){}
+    ~WebEnginePartErrorSchemeHandler() override {}
     
-    void requestStarted(QWebEngineUrlRequestJob * job) Q_DECL_OVERRIDE;
+    void requestStarted(QWebEngineUrlRequestJob * job) override;
     
 private:
     

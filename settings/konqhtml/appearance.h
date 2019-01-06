@@ -34,11 +34,11 @@ class KAppearanceOptions : public KCModule
     Q_OBJECT
 public:
     KAppearanceOptions(QWidget *parent, const QVariantList &);
-    ~KAppearanceOptions();
+    ~KAppearanceOptions() override;
 
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
 public Q_SLOTS:
     void slotFontSize(int);

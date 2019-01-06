@@ -31,12 +31,12 @@ class BookmarksConfigModule : public KCModule
 
 public:
     BookmarksConfigModule(QWidget *parent, const QVariantList &args);
-    ~BookmarksConfigModule();
+    ~BookmarksConfigModule() override;
 
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
-    QString quickHelp() const Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
+    QString quickHelp() const override;
 
 private Q_SLOTS:
     void clearCache();

@@ -49,7 +49,7 @@ class KonqFeedIcon : public KParts::Plugin
 
 public:
     KonqFeedIcon(QObject *parent, const QVariantList &args);
-    virtual ~KonqFeedIcon();
+    ~KonqFeedIcon() override;
 
 private:
     /**

@@ -30,7 +30,7 @@
 class KONQ_TESTS_EXPORT KonqFrameContainerBase : public KonqFrameBase
 {
 public:
-    virtual ~KonqFrameContainerBase() {}
+    ~KonqFrameContainerBase() override {}
 
     /**
      * Insert a new frame into the container.
@@ -50,12 +50,12 @@ public:
      */
     virtual void childFrameRemoved(KonqFrameBase *frame) = 0;
 
-    bool isContainer() const Q_DECL_OVERRIDE
+    bool isContainer() const override
     {
         return true;
     }
 
-    KonqFrameBase::FrameType frameType() const Q_DECL_OVERRIDE
+    KonqFrameBase::FrameType frameType() const override
     {
         return KonqFrameBase::ContainerBase;
     }
@@ -71,14 +71,14 @@ public:
         m_pParentContainer->setActiveChild(this);
     }
 
-    void activateChild() Q_DECL_OVERRIDE
+    void activateChild() override
     {
         if (m_pActiveChild) {
             m_pActiveChild->activateChild();
         }
     }
 
-    KonqView *activeChildView() const Q_DECL_OVERRIDE
+    KonqView *activeChildView() const override
     {
         if (m_pActiveChild) {
             return m_pActiveChild->activeChildView();
@@ -108,12 +108,12 @@ public:
     KonqFrameContainer(Qt::Orientation o,
                        QWidget *parent,
                        KonqFrameContainerBase *parentContainer);
-    virtual ~KonqFrameContainer();
+    ~KonqFrameContainer() override;
 
-    bool accept(KonqFrameVisitor *visitor) Q_DECL_OVERRIDE;
+    bool accept(KonqFrameVisitor *visitor) override;
 
-    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) Q_DECL_OVERRIDE;
-    void copyHistory(KonqFrameBase *other) Q_DECL_OVERRIDE;
+    void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase *docContainer, int id = 0, int depth = 0) override;
+    void copyHistory(KonqFrameBase *other) override;
 
     KonqFrameBase *firstChild()
     {
@@ -127,14 +127,14 @@ public:
 
     void swapChildren();
 
-    void setTitle(const QString &title, QWidget *sender) Q_DECL_OVERRIDE;
-    void setTabIcon(const QUrl &url, QWidget *sender) Q_DECL_OVERRIDE;
+    void setTitle(const QString &title, QWidget *sender) override;
+    void setTabIcon(const QUrl &url, QWidget *sender) override;
 
-    QWidget *asQWidget() Q_DECL_OVERRIDE
+    QWidget *asQWidget() override
     {
         return this;
     }
-    KonqFrameBase::FrameType frameType() const Q_DECL_OVERRIDE
+    KonqFrameBase::FrameType frameType() const override
     {
         return KonqFrameBase::Container;
     }
@@ -142,13 +142,13 @@ public:
     /**
      * Insert a new frame into the splitter.
      */
-    void insertChildFrame(KonqFrameBase *frame, int index = -1) Q_DECL_OVERRIDE;
+    void insertChildFrame(KonqFrameBase *frame, int index = -1) override;
     /**
      * Call this before deleting one of our children.
      */
-    void childFrameRemoved(KonqFrameBase *frame) Q_DECL_OVERRIDE;
+    void childFrameRemoved(KonqFrameBase *frame) override;
 
-    void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame) Q_DECL_OVERRIDE;
+    void replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame) override;
 
     void setAboutToBeDeleted()
     {
@@ -156,7 +156,7 @@ public:
     }
 
 protected:
-    void childEvent(QChildEvent *) Q_DECL_OVERRIDE;
+    void childEvent(QChildEvent *) override;
 
 Q_SIGNALS:
     void setRubberbandCalled();

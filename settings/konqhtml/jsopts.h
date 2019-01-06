@@ -30,17 +30,17 @@ class JSDomainListView : public DomainListView
 public:
     JSDomainListView(KSharedConfig::Ptr config, const QString &group, KJavaScriptOptions *opt,
                      QWidget *parent);
-    virtual ~JSDomainListView();
+    ~JSDomainListView() override;
 
     /** remnant for importing pre KDE 3.2 settings
       */
     void updateDomainListLegacy(const QStringList &domainConfig);
 
 protected:
-    JSPolicies *createPolicies() Q_DECL_OVERRIDE;
-    JSPolicies *copyPolicies(Policies *pol) Q_DECL_OVERRIDE;
+    JSPolicies *createPolicies() override;
+    JSPolicies *copyPolicies(Policies *pol) override;
     void setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
-                                Policies *copy) Q_DECL_OVERRIDE;
+                                Policies *copy) override;
 
 private:
     QString group;
@@ -53,9 +53,9 @@ class KJavaScriptOptions : public KCModule
 public:
     KJavaScriptOptions(KSharedConfig::Ptr config, const QString &group, QWidget *parent);
 
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
     bool _removeJavaScriptDomainAdvice;
 

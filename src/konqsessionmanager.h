@@ -40,7 +40,7 @@ class SessionRestoreDialog : public KDialog
     Q_OBJECT
 public:
     explicit SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent = nullptr);
-    virtual ~SessionRestoreDialog();
+    ~SessionRestoreDialog() override;
 
     bool isEmpty() const;
 
@@ -195,7 +195,7 @@ private Q_SLOTS:
 private:
     KonqSessionManager();
 
-    ~KonqSessionManager();
+    ~KonqSessionManager() override;
 
     /**
      * Creates the owned_by directory with files inside referencing the owned
