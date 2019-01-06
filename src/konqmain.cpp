@@ -208,8 +208,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KCrash::initialize();
 
     QCommandLineParser parser;
-    parser.addVersionOption();
-    parser.addHelpOption();
     parser.setSingleDashWordOptionMode(QCommandLineParser::ParseAsLongOptions);
     aboutData.setupCommandLine(&parser);
 
