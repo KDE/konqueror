@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 project(Konqueror)
 
 set(QT_MIN_VERSION "5.5.0")
-set(KF5_MIN_VERSION "5.27.0")  # needs KIO 5.27 for KFileItemActions::addPluginActionsTo
+set(KF5_MIN_VERSION "5.31.0")  # needs KIO 5.31 for KRun::runUrl overload with RunFlags
 
 find_package(ECM 5.27.0 CONFIG REQUIRED)
 
