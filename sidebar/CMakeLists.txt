@@ -10,7 +10,9 @@ add_subdirectory( web_module )
 add_subdirectory( history_module )
 add_subdirectory( places_module )
 add_subdirectory( default_entries )
-add_subdirectory( test )
+if(BUILD_TESTING)
+    add_subdirectory( test )
+endif()
 
 ########### konqsidebarplugin lib: contains the base class for plugins ###############
 
