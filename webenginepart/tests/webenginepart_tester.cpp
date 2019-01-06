@@ -29,13 +29,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <KApplication>
 #include <KAboutData>
-#include <KCmdLineArgs>
 #include <QDebug>
 #include <KIO/AccessManager>
 #include <KUriFilter>
-#include <KInputDialog>
 #include <KLineEdit>
 #include <webenginepart.h>
 

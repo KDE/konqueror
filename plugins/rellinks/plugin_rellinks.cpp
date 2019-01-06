@@ -35,12 +35,10 @@
 #include <dom/dom_string.h>
 #include <dom/html_document.h>
 
-#include <kdebug.h>
 #include <kpluginfactory.h>
 #include <khtml_part.h>
 #include <khtmlview.h>
 #include <kiconloader.h>
-#include <kcomponentdata.h>
 #include <KLocalizedString>
 #include <QMenu>
 #include <ktoolbar.h>

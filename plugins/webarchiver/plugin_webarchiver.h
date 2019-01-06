@@ -23,7 +23,6 @@
 #define plugin_webarchiver_h
 
 #include <kparts/plugin.h>
-#include <klibloader.h>
 
 class PluginWebArchiver : public KParts::Plugin
 {

@@ -22,7 +22,6 @@
 #include "autorefresh.h"
 #include <kparts/part.h>
 
-#include <kcomponentdata.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>

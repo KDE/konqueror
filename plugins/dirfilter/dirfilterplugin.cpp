@@ -25,26 +25,23 @@
 #include <QHBoxLayout>
 #include <QBoxLayout>
 #include <QShowEvent>
-
+#include <QGlobalStatic>
 
 #include <QMenu>
 
 #include <KLocalizedString>
 #include <kfileitem.h>
-#include <kmimetype.h>
 #include <klineedit.h>
 #include <kactionmenu.h>
 #include <kconfiggroup.h>
-#include <kcomponentdata.h>
 #include <kpluginfactory.h>
 #include <kactioncollection.h>
-
+#include <KConfigGroup>
+#include <KConfig>
 #include <kparts/browserextension.h>
 
-//KDELibs4Support
-#include <kglobal.h>
 
-K_GLOBAL_STATIC(SessionManager, globalSessionManager)
+Q_GLOBAL_STATIC(SessionManager, globalSessionManager)
 
 static void generateKey(const QUrl &url, QString *key)
 {

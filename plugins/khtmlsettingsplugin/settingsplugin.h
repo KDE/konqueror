@@ -21,7 +21,6 @@
 #define SETTINGS_PLUGIN
 
 #include <kparts/plugin.h>
-#include <klibloader.h>
 
 class KConfig;
 

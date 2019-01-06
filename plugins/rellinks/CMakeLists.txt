@@ -11,7 +11,7 @@ add_library(rellinksplugin MODULE ${rellinksplugin_PART_SRCS})
 
 
 
-target_link_libraries(rellinksplugin  KF5::KHtml KF5::KDELibs4Support)
+target_link_libraries(rellinksplugin  KF5::KHtml KF5::IconThemes)
 
 install(TARGETS rellinksplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

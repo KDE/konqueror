@@ -13,7 +13,7 @@ add_library(khtmlsettingsplugin MODULE ${khtmlsettingsplugin_PART_SRCS})
 
 
 
-target_link_libraries(khtmlsettingsplugin  KF5::Parts KF5::KHtml KF5::KDELibs4Support)
+target_link_libraries(khtmlsettingsplugin  KF5::Parts KF5::KHtml)
 
 install(TARGETS khtmlsettingsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

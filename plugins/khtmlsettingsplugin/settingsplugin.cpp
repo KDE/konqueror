@@ -21,9 +21,7 @@
 
 
 #include <kconfig.h>
-#include <kglobal.h>
 #include <khtml_part.h>
-#include <kcomponentdata.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <QMenu>

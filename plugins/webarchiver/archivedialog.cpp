@@ -75,9 +75,6 @@
 
 #include "webarchiverdebug.h"
 
-//KDELibs4Support
-#include <kglobal.h>
-
 // Set to true if you have a patched http-io-slave that has
 // improved offline-browsing functionality.
 static const bool patchedHttpSlave = false;

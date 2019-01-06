@@ -27,7 +27,8 @@
 #include <QUrl>
 
 #include <kparts/plugin.h>
-#include <kparts/listingextension.h>
+#include <KParts/ListingFilterExtension>
+#include <KParts/ListingNotificationExtension>
 
 class QPushButton;
 class KFileItemList;
