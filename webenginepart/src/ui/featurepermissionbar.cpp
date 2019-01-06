@@ -71,5 +71,3 @@ void FeaturePermissionBar::onGrantedButtonClicked()
     emit permissionGranted(m_feature);
     emit done();
 }
-
-#include "featurepermissionbar.moc"
