@@ -11,10 +11,7 @@ set(validators_hi_ICONS
   22-actions-htmlvalidator.png
   32-actions-validators.png
   64-actions-htmlvalidator.png
-)
-set(validators_ox_ICONS
   sc-actions-htmlvalidator.svgz
   sc-actions-validators.svgz
 )
 ecm_install_icons(ICONS ${validators_hi_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
-ecm_install_icons(ICONS ${validators_ox_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME oxygen)

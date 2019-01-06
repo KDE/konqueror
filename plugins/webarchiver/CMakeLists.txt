@@ -31,5 +31,11 @@ install(TARGETS webarchivethumbnail  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 install( FILES plugin_webarchiver.rc plugin_webarchiver.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES webarchivethumbnail.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 
-ecm_install_icons( ${KDE_INSTALL_ICONDIR}   )
+ecm_install_icons(
+    ICONS
+        16-actions-webarchiver.png
+        22-actions-webarchiver.png
+    DESTINATION ${KDE_INSTALL_ICONDIR}
+    THEME hicolor
+)
 
