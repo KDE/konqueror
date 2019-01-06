@@ -35,7 +35,7 @@
 
 // Keep in sync with konqueror.kcfg
 static const char DEFAULT_STARTPAGE[] = "about:konqueror";
-static const char DEFAULT_HOMEPAGE[] = "http://www.kde.org";
+static const char DEFAULT_HOMEPAGE[] = "https://www.kde.org/";
 // Keep in sync with the order in the combo
 enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
 
