@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
-
 project(LibKonq)
 add_definitions(-DTRANSLATION_DOMAIN="libkonq")
 
@@ -56,5 +54,3 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
     COMPONENT Devel
 )
-
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
