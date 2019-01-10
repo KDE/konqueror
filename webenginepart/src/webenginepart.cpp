@@ -413,7 +413,7 @@ bool WebEnginePart::closeUrl()
     return true;
 }
 
-QWebEngineView* WebEnginePart::view()
+QWebEngineView* WebEnginePart::view() const
 {
     return m_webView;
 }

@@ -84,7 +84,7 @@ public:
      *
      * @see QWebEngineView.
      */
-    virtual QWebEngineView *view();
+    QWebEngineView *view() const;
 
     /**
      * Checks whether the page contains unsubmitted form changes.
