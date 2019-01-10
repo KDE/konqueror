@@ -21,7 +21,7 @@
 #ifndef WEBENGINEPARTFACTORY
 #define WEBENGINEPARTFACTORY
 
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 
 #include <QHash>
 
@@ -30,7 +30,7 @@ class QWidget;
 class WebEngineFactory : public KPluginFactory
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.kde.KPluginFactory")
+    Q_PLUGIN_METADATA(IID KPluginFactory_iid FILE "webenginepart.json")
     Q_INTERFACES(KPluginFactory)
 public:
     ~WebEngineFactory() override;

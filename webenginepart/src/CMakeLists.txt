@@ -57,6 +57,7 @@ install(TARGETS kwebenginepartlib ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 add_library(webenginepart MODULE webenginepartfactory.cpp)
+kcoreaddons_desktop_to_json(webenginepart webenginepart.desktop)
 
 target_link_libraries(webenginepart kwebenginepartlib)
 
