@@ -4,7 +4,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 find_package(LibTidy)
 find_package(KF5 REQUIRED KHtml WidgetsAddons IconThemes)
 set_package_properties(LibTidy PROPERTIES DESCRIPTION "HTML Tidy"
-                       URL "http://tidy.sourceforge.net"
+                       URL "http://www.html-tidy.org/"
                        TYPE OPTIONAL
                        PURPOSE "Gives the Konqueror validators plugin the ability to validate HTML"
                       )

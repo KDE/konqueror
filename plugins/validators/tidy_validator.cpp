@@ -25,7 +25,7 @@
 
 #include <kdebug.h>
 
-#include <buffio.h>
+#include <tidybuffio.h>
 #include <tidy.h>
 
 #include <config-konq-validator.h>
