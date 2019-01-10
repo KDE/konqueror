@@ -20,6 +20,7 @@
 #include "webenginesettings.h"
 
 #include "webengine_filter.h"
+#include <webenginepart_debug.h>
 
 #include <KConfig>
 #include <KSharedConfig>
@@ -187,14 +188,14 @@ public Q_SLOTS:
                 if ( success )
                     adblockFilterLoadList(localFileName);
                 else
-                    qWarning() << "Could not write" << byteArray.size() << "to file" << localFileName;
+                    qCWarning(WEBENGINEPART_LOG) << "Could not write" << byteArray.size() << "to file" << localFileName;
                 file.close();
             }
             else
-                qDebug() << "Cannot open file" << localFileName << "for filter list";
+                qCDebug(WEBENGINEPART_LOG) << "Cannot open file" << localFileName << "for filter list";
         }
         else
-            qDebug() << "Downloading" << tJob->url() << "failed with message:" << job->errorText();
+            qCDebug(WEBENGINEPART_LOG) << "Downloading" << tJob->url() << "failed with message:" << job->errorText();
     }
 };
 
@@ -205,7 +206,7 @@ public Q_SLOTS:
 static KPerDomainSettings &setup_per_domain_policy(WebEngineSettingsPrivate* const d, const QString &domain)
 {
   if (domain.isEmpty())
-    qWarning() << "setup_per_domain_policy: domain is empty";
+    qCWarning(WEBENGINEPART_LOG) << "setup_per_domain_policy: domain is empty";
 
   const QString ldomain = domain.toLower();
   PolicyMap::iterator it = d->domainPolicy.find(ldomain);

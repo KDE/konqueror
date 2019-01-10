@@ -29,7 +29,6 @@
 #include <QWebEnginePage>
 
 #include <QUrl>
-#include <QDebug>
 #include <QMultiHash>
 #include <QPointer>
 #include <QScopedPointer>

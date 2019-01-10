@@ -256,7 +256,7 @@ void FilterSet::addFilter(const QString& filterStr)
         QString inside = filter.mid(1, filter.length()-2);
         QRegExp rx(inside);
         reFilters.append(rx);
-//         qDebug() << "R:" << inside;
+//         qCDebug(WEBENGINEPART_LOG) << "R:" << inside;
     }
     else
     {

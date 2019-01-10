@@ -27,7 +27,11 @@ set(kwebenginepartlib_LIB_SRCS
 qt5_wrap_ui(kwebenginepartlib_LIB_SRCS
                   ui/searchbar.ui
 )
-
+ecm_qt_declare_logging_category(kwebenginepartlib_LIB_SRCS
+    HEADER webenginepart_debug.h
+    IDENTIFIER WEBENGINEPART_LOG
+    CATEGORY_NAME org.kde.webenginepart
+)
 add_library(kwebenginepartlib ${kwebenginepartlib_LIB_SRCS})
 
 generate_export_header(kwebenginepartlib)

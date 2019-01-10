@@ -28,7 +28,6 @@
 #include <QDataStream>
 #include <QApplication>
 #include <QLocale>
-#include <QDebug>
 #include <QMimeType>
 #include <QMimeDatabase>
 

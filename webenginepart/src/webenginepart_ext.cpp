@@ -25,6 +25,8 @@
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "settings/webenginesettings.h"
+#include <webenginepart_debug.h>
+
 #include <QWebEngineSettings>
 
 #include <KDesktopFile>
@@ -210,7 +212,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
 
     // As a last resort, in case the history restoration logic above fails,
     // attempt to open the requested URL directly.
-    qDebug() << "Normal history navigation logic failed! Falling back to opening url directly.";
+    qCDebug(WEBENGINEPART_LOG) << "Normal history navigation logic failed! Falling back to opening url directly.";
     m_part->openUrl(u);
 }
 
@@ -1165,7 +1167,7 @@ bool WebEngineScriptableExtension::put (KParts::ScriptableExtension* callerPrinc
 
 static QVariant exception(const char* msg)
 {
-    qWarning() << msg;
+    qCWarning(WEBENGINEPART_LOG) << msg;
     return QVariant::fromValue(KParts::ScriptableExtension::Exception(QString::fromLatin1(msg)));
 }
 

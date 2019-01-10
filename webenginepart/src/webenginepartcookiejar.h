@@ -32,13 +32,14 @@
 #include <QWebEngineCookieStore>
 #include <QStringList>
 #include <QVariant>
-#include <QDebug>
+#include <QVector>
 #include <QDBusInterface>
 #include <QSet>
 #include <QtWebEngine/QtWebEngineVersion>
 
 #include "kwebenginepartlib_export.h"
 
+class QDebug;
 class QWidget;
 class QWebEngineProfile;
 class QDBusPendingCallWatcher;

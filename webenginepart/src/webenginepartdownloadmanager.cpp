@@ -21,11 +21,11 @@
 #include "webenginepartdownloadmanager.h"
 
 #include "webenginepage.h"
+#include <webenginepart_debug.h>
 
 #include <QWebEngineDownloadItem>
 #include <QWebEngineView>
 #include <QWebEngineProfile>
-#include <QDebug>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject()
@@ -65,11 +65,11 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
     WebEnginePage *page = m_requests.take(it->url());
     bool forceNew = false;
     if (!page && !m_pages.isEmpty()) {
-        qDebug() << "downloading" << it->url() << "in new window or tab";
+        qCDebug(WEBENGINEPART_LOG) << "downloading" << it->url() << "in new window or tab";
         page = m_pages.first();
         forceNew = true;
     } else if (!page) {
-        qDebug() << "Couldn't find a part wanting to download" << it->url();
+        qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << it->url();
         return;
     }
     page->download(it->url(), forceNew);
@@ -77,7 +77,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::recordNavigationRequest(WebEnginePage *page, const QUrl& url)
 {
-//     qDebug() << url;
+//     qCDebug(WEBENGINEPART_LOG) << url;
     m_requests.insert(url, page);
 }
 

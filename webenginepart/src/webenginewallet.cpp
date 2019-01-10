@@ -23,9 +23,9 @@
 
 #include "webenginewallet.h"
 #include "webenginepage.h"
+#include <webenginepart_debug.h>
 
 #include <KWallet>
-#include <QDebug>
 
 #include <QSet>
 #include <QHash>
@@ -222,7 +222,7 @@ void WebEngineWallet::WebEngineWalletPrivate::withFormData(WebEnginePage* page, 
 void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet::WebFormList &formList)
 {
     if (!wallet) {
-        qWarning() << "Unable to retrieve form data from wallet";
+        qCWarning(WEBENGINEPART_LOG) << "Unable to retrieve form data from wallet";
         return;
     }
 
@@ -234,7 +234,7 @@ void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet:
         WebEngineWallet::WebForm &form = formIt.next();
         const QString key(walletKey(form));
         if (key != lastKey && wallet->readMap(key, cachedValues) != 0) {
-            qWarning() << "Unable to read form data for key:" << key;
+            qCWarning(WEBENGINEPART_LOG) << "Unable to read form data for key:" << key;
             continue;
         }
 
@@ -293,7 +293,7 @@ void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
             if (wallet->writeMap(accessKey, values) == 0) {
                 count++;
             } else {
-                qWarning() << "Unable to write form data to wallet";
+                qCWarning(WEBENGINEPART_LOG) << "Unable to write form data to wallet";
             }
         }
 
@@ -303,7 +303,7 @@ void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
 
         pendingSaveRequests.remove(key);
     } else {
-        qWarning() << "NULL Wallet instance!";
+        qCWarning(WEBENGINEPART_LOG) << "NULL Wallet instance!";
     }
 
     emit q->saveFormDataCompleted(url, success);
@@ -329,7 +329,7 @@ void WebEngineWallet::WebEngineWalletPrivate::openWallet()
 void WebEngineWallet::WebEngineWalletPrivate::removeDataFromCache(const WebFormList &formList)
 {
     if (!wallet) {
-        qWarning() << "NULL Wallet instance!";
+        qCWarning(WEBENGINEPART_LOG) << "NULL Wallet instance!";
         return;
     }
 
@@ -408,7 +408,7 @@ void WebEngineWallet::fillFormDataCallback(WebEnginePage* page, const WebEngineW
     if (!formsList.isEmpty()) {
         const QUrl url(page->url());
         if (d->pendingFillRequests.contains(url)) {
-            qWarning() << "Duplicate request rejected!";
+            qCWarning(WEBENGINEPART_LOG) << "Duplicate request rejected!";
         } else {
             WebEngineWalletPrivate::FormsData data;
             data.page = QPointer<WebEnginePage>(page);

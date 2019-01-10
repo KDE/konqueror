@@ -27,7 +27,6 @@
 
 #include <QMimeDatabase>
 #include <QWebEngineUrlRequestJob>
-#include <QDebug>
 #include <QBuffer>
 
 #include <KIO/StoredTransferJob>

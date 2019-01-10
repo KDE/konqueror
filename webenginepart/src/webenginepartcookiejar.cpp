@@ -24,6 +24,7 @@
 
 #include "webenginepartcookiejar.h"
 #include "settings/webenginesettings.h"
+#include <webenginepart_debug.h>
 
 #include <QWebEngineProfile>
 #include <QWebEngineCookieStore>
@@ -68,7 +69,7 @@ WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject 
     connect(m_cookieStore, &QWebEngineCookieStore::cookieAdded, this, &WebEnginePartCookieJar::addCookie);
     connect(m_cookieStore, &QWebEngineCookieStore::cookieRemoved, this, &WebEnginePartCookieJar::removeCookie);
     if(!m_cookieServer.isValid()){
-        qDebug() << "Couldn't connect to KCookieServer";
+        qCDebug(WEBENGINEPART_LOG) << "Couldn't connect to KCookieServer";
     }
     loadKIOCookies();
     
@@ -109,7 +110,7 @@ QUrl WebEnginePartCookieJar::constructUrlForCookie(const QNetworkCookie& cookie)
         url.setHost(domain);
         url.setPath(cookie.path());
     } else {
-        qDebug() << "EMPTY COOKIE DOMAIN for" << cookie.name();
+        qCDebug(WEBENGINEPART_LOG) << "EMPTY COOKIE DOMAIN for" << cookie.name();
     }
     return url;
 }
@@ -180,7 +181,7 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     if (!cookie.expirationDate().isValid()) {
         m_windowsWithSessionCookies.insert(winId);
     }
-//     qDebug() << url;
+//     qCDebug(WEBENGINEPART_LOG) << url;
     QString advice = askAdvice(url);
     if (advice == "Reject"){
         m_pendingRejectedCookies << CookieIdentifier(_cookie);
@@ -197,7 +198,7 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
         m_cookieServer.call(QDBus::Block, "addCookies", url.toString(), header, winId);
         m_cookieServer.setTimeout(oldTimeout);
         if (m_cookieServer.lastError().isValid()) {
-            qDebug() << m_cookieServer.lastError();
+            qCDebug(WEBENGINEPART_LOG) << m_cookieServer.lastError();
             return;
         }
         if (!advice.startsWith("Accept") && !cookieInKCookieJar(id, url)) {
@@ -216,7 +217,7 @@ QString WebEnginePartCookieJar::askAdvice(const QUrl& url)
     if (rep.isValid()) {
         return rep.value();
     } else {
-        qDebug() << rep.error().message();
+        qCDebug(WEBENGINEPART_LOG) << rep.error().message();
         return QString();
     }
 }
@@ -233,7 +234,7 @@ bool WebEnginePartCookieJar::cookieInKCookieJar(const WebEnginePartCookieJar::Co
     };
     QDBusReply<QStringList> rep = m_cookieServer.call(QDBus::Block, "findCookies", QVariant::fromValue(fields), id.domain, url.toString(QUrl::FullyEncoded), id.path, id.name);
     if (!rep.isValid()) {
-        qDebug() << rep.error().message();
+        qCDebug(WEBENGINEPART_LOG) << rep.error().message();
         return false;
     }
     QStringList cookies = rep.value();
@@ -262,7 +263,7 @@ void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& _cookie)
     QNetworkCookie cookie(_cookie);
     QUrl url = constructUrlForCookie(cookie);
     if(url.isEmpty()){
-        qDebug() << "Can't remove cookie" << cookie.name() << "because its URL isn't known";
+        qCDebug(WEBENGINEPART_LOG) << "Can't remove cookie" << cookie.name() << "because its URL isn't known";
         return;
     }
     removeCookieDomain(cookie);
@@ -276,7 +277,7 @@ void WebEnginePartCookieJar::cookieRemovalFailed(QDBusPendingCallWatcher *watche
 {
     QDBusPendingReply<> r = *watcher;
     if (r.isError()){
-        qDebug() << "DBus error:" << r.error().message();
+        qCDebug(WEBENGINEPART_LOG) << "DBus error:" << r.error().message();
     }
     watcher->deleteLater();
 }
@@ -303,7 +304,7 @@ WebEnginePartCookieJar::CookieList WebEnginePartCookieJar::findKIOCookies()
     }
     QDBusReply<QStringList> rep = m_cookieServer.call(QDBus::Block, "findDomains");
     if(!rep.isValid()){
-        qDebug() << rep.error().message();
+        qCDebug(WEBENGINEPART_LOG) << rep.error().message();
         return res;
     }
     QStringList domains = rep.value();
@@ -311,7 +312,7 @@ WebEnginePartCookieJar::CookieList WebEnginePartCookieJar::findKIOCookies()
     foreach( const QString &d, domains){
     QDBusReply<QStringList> rep = m_cookieServer.call(QDBus::Block, "findCookies", s_findCookieFields, d, "", "", "");
         if (!rep.isValid()) {
-            qDebug() << rep.error().message();
+            qCDebug(WEBENGINEPART_LOG) << rep.error().message();
             return res;
         }
         QStringList data = rep.value();

@@ -28,6 +28,8 @@
 #include "settings/webenginesettings.h"
 #include "webenginepartdownloadmanager.h"
 #include "webenginewallet.h"
+#include <webenginepart_debug.h>
+
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
@@ -152,7 +154,7 @@ void WebEnginePage::download(const QUrl& url, bool newWindow)
 
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
-    //qDebug() << "window type:" << type;
+    //qCDebug(WEBENGINEPART_LOG) << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
@@ -186,7 +188,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     if (m_urlLoadedByPart != url) {
         m_urlLoadedByPart = QUrl();
     }
-//     qDebug() << url << "type=" << type;
+//     qCDebug(WEBENGINEPART_LOG) << url << "type=" << type;
     QUrl reqUrl(url);
 
     // Handle "mailto:" url here...
@@ -233,7 +235,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
             // If history navigation is locked, ignore all such requests...
             if (property("HistoryNavigationLocked").toBool()) {
                 setProperty("HistoryNavigationLocked", QVariant());
-                qDebug() << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
+                qCDebug(WEBENGINEPART_LOG) << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
                 return false;
             }
             //kDebug() << "Navigating to item (" << history()->currentItemIndex()
@@ -245,7 +247,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
             inPageRequest = false;
             break;
         case QWebEnginePage::NavigationTypeOther: // triggered by javascript
-            qDebug() << "Triggered by javascript";
+            qCDebug(WEBENGINEPART_LOG) << "Triggered by javascript";
             inPageRequest = !isTypedUrl;
             break;
         default:
@@ -500,14 +502,14 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     // parts of following code are based on kjs_window.cpp
     // Security check: within desktop limits and bigger than 100x100 (per spec)
     if (width < 100 || height < 100) {
-        qWarning() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        qCWarning(WEBENGINEPART_LOG) << "Window resize refused, window would be too small (" << width << "," << height << ")";
         return;
     }
 
     QRect sg = QApplication::desktop()->screenGeometry(view());
 
     if (width > sg.width() || height > sg.height()) {
-        qWarning() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        qCWarning(WEBENGINEPART_LOG) << "Window resize refused, window would be too big (" << width << "," << height << ")";
         return;
     }
 
@@ -761,7 +763,7 @@ static KParts::BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
 
 bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    //qDebug() << "url:" << url << ", type:" << type << ", isMainFrame:" << isMainFrame << "m_createNewWindow=" << m_createNewWindow;
+    //qCDebug(WEBENGINEPART_LOG) << "url:" << url << ", type:" << type << ", isMainFrame:" << isMainFrame << "m_createNewWindow=" << m_createNewWindow;
     if (m_createNewWindow) {
         const QUrl reqUrl (url);
 
@@ -812,7 +814,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         KParts::ReadOnlyPart* newWindowPart =nullptr;
         part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
-        qDebug() << "Created new window" << newWindowPart;
+        qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
             return false;
@@ -828,7 +830,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
         // If the newly created window is NOT a webenginepart...
         if (!webView) {
-            qDebug() << "Opening URL on" << newWindowPart;
+            qCDebug(WEBENGINEPART_LOG) << "Opening URL on" << newWindowPart;
             newWindowPart->openUrl(reqUrl);
             this->deleteLater();
             return false;
@@ -889,7 +891,6 @@ void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
 void NewWindowPage::slotLoadFinished(bool ok)
 {
     Q_UNUSED(ok)
-    qDebug() << ok;
     if (!m_createNewWindow)
         return;
 
@@ -910,7 +911,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     KParts::ReadOnlyPart* newWindowPart =nullptr;
     part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
-    qDebug() << "Created new window or tab" << newWindowPart;
+    qCDebug(WEBENGINEPART_LOG) << "Created new window or tab" << newWindowPart;
 
     // Get the webview...
     WebEnginePart* webenginePart = newWindowPart ? qobject_cast<WebEnginePart*>(newWindowPart) : nullptr;

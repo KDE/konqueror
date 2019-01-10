@@ -35,7 +35,6 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     Q_UNUSED(keyword);
     Q_UNUSED(args);
 
-    qDebug() << parentWidget << parent;
     connect(parentWidget, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
 
     // NOTE: The code below is what makes it possible to properly integrate QtWebEngine's PORTING_TODO

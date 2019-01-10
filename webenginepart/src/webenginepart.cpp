@@ -25,6 +25,8 @@
 #include "webenginepart.h"
 #include "webenginepartkiohandler.h"
 
+#include <webenginepart_debug.h>
+
 //#include <QWebHistoryItem>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
@@ -360,8 +362,6 @@ void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
 bool WebEnginePart::openUrl(const QUrl &_u)
 {
     QUrl u (_u);
-
-    qDebug() << u;
 
     // Ignore empty requests...
     if (u.isEmpty())
@@ -819,7 +819,7 @@ void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
     if (!localSettings)
         return;
 
-    qDebug() << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
+    qCDebug(WEBENGINEPART_LOG) << "Encoding: new=>" << localSettings->defaultTextEncoding() << ", old=>" << codec->name();
 
     localSettings->setDefaultTextEncoding(codec->name());
     page()->triggerAction(QWebEnginePage::Reload);
@@ -899,7 +899,7 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
     if (!m_passwordBar) {
         m_passwordBar = new PasswordBar(widget());
         if (!m_wallet) {
-            qDebug() << "No m_wallet instance found! This should never happen!";
+            qCWarning(WEBENGINEPART_LOG) << "No m_wallet instance found! This should never happen!";
             return;
         }
         connect(m_passwordBar, SIGNAL(saveFormDataAccepted(QString)),
