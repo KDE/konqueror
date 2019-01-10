@@ -178,7 +178,7 @@ protected:
      * 
      * @param data: the new data
      */
-    inline void setData(const QByteArray data) {m_data = data;}
+    inline void setData(const QByteArray& data) {m_data = data;}
     
     /**
      * @brief The mime type of the data

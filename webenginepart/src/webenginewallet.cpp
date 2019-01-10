@@ -111,7 +111,7 @@ static const char s_javascriptFillInputFragment[] = "var frm = window;"
  * Creates key used to store and retrieve form data.
  *
  */
-static QString walletKey(WebEngineWallet::WebForm form)
+static QString walletKey(const WebEngineWallet::WebForm &form)
 {
     QString key = form.url.toString(QUrl::RemoveQuery | QUrl::RemoveFragment);
     key += QL1C('#');
@@ -136,7 +136,7 @@ public:
 
     WebEngineWalletPrivate(WebEngineWallet *parent);
 
-    void withFormData(WebEnginePage *page, WebWalletCallback callback, bool fillform = true, bool ignorepasswd = false);
+    void withFormData(WebEnginePage *page, const WebWalletCallback &callback, bool fillform = true, bool ignorepasswd = false);
     WebFormList parseFormData(const QVariant &result, const QUrl &url, bool fillform = true, bool ignorepasswd = false);
     void performFormDataParsing(const QVariant &result, const QUrl &url, WebWalletCallback callback, bool fillform, bool ignorepasswd);
     void fillDataFromCache(WebEngineWallet::WebFormList &formList);
@@ -208,7 +208,7 @@ WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::parseFormD
     return list;
 }
 
-void WebEngineWallet::WebEngineWalletPrivate::withFormData(WebEnginePage* page, WebWalletCallback callback, bool fillform, bool ignorepasswd)
+void WebEngineWallet::WebEngineWalletPrivate::withFormData(WebEnginePage* page, const WebWalletCallback &callback, bool fillform, bool ignorepasswd)
 {
     Q_ASSERT(page);
     QUrl url = page->url();
