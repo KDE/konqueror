@@ -46,10 +46,7 @@
 #include <KIO/Scheduler>
 #include <KParts/HtmlExtension>
 #include <KUserTimestamp>
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
 #include <KPasswdServerClient>
-#endif
 
 #include <QStandardPaths>
 #include <QDesktopWidget>
@@ -705,11 +702,7 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
     info.verifyPath = info.realmValue.isEmpty();
 
     const QString errorMsg = QString();
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 30, 0)
     const int ret = m_passwdServerClient->queryAuthInfo(&info, errorMsg, view()->window()->winId(), KUserTimestamp::userTimestamp());
-#else
-    const int ret = 1; // no KPasswdServerClient until 5.30
-#endif
     if (ret == KJob::NoError) {
         auth->setUser(info.username);
         auth->setPassword(info.password);
