@@ -323,7 +323,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
         if (WebEngineSettings::self()->favIconsEnabled()
             && !page->profile()->isOffTheRecord()){
-                m_browserExtension->setIconUrl(url);
+                emit m_browserExtension->setIconUrl(url);
         }
     });
 }

@@ -77,10 +77,10 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
                         m_part(parent),
                         mCurrentPrinter(nullptr)
 {
-    enableAction("cut", false);
-    enableAction("copy", false);
-    enableAction("paste", false);
-    enableAction("print", true);
+    emit enableAction("cut", false);
+    emit enableAction("copy", false);
+    emit enableAction("paste", false);
+    emit enableAction("print", true);
 
     if (cachedHistoryData.isEmpty()) {
         return;
@@ -278,16 +278,16 @@ void WebEngineBrowserExtension::updateEditActions()
     if (!view())
         return;
 
-    enableAction("cut", view()->pageAction(QWebEnginePage::Cut)->isEnabled());
-    enableAction("copy", view()->pageAction(QWebEnginePage::Copy)->isEnabled());
-    enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
+    emit enableAction("cut", view()->pageAction(QWebEnginePage::Cut)->isEnabled());
+    emit enableAction("copy", view()->pageAction(QWebEnginePage::Copy)->isEnabled());
+    emit enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
 }
 
 void WebEngineBrowserExtension::updateActions()
 {
     const QString protocol (m_part->url().scheme());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
-    enableAction("print", isValidDocument);
+    emit enableAction("print", isValidDocument);
 }
 
 void WebEngineBrowserExtension::searchProvider()
