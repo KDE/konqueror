@@ -44,8 +44,8 @@
 #include "ui/featurepermissionbar.h"
 #include "settings/webenginesettings.h"
 
-#include <kcodecaction.h>
-#include <kio/global.h>
+#include <KCodecAction>
+#include <KIO/Global>
 
 #include <KActionCollection>
 #include <KAboutData>

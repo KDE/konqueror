@@ -26,7 +26,7 @@
 #include "webenginepart.h"
 #include "settings/webenginesettings.h"
 
-#include <kio/global.h>
+#include <KIO/Global>
 #include <KAboutData>
 #include <KActionCollection>
 #include <KConfigGroup>
