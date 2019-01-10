@@ -350,7 +350,6 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
 
         // Do pending fill requests...
         if (!pendingFillRequests.isEmpty()) {
-            QList<QUrl> urlList;
             QMutableHashIterator<QUrl, FormsData> requestIt(pendingFillRequests);
             while (requestIt.hasNext()) {
                 requestIt.next();
