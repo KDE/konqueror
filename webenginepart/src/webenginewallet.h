@@ -97,8 +97,8 @@ public:
      * be ignored.
      *
      * Note that this function is asynchronous, as it requires running javascript code
-     * on the page using @ref QWebEnginePage::runJavaScript. This function only requests
-     * for the form data to be saved when @ref QWebEnginePage::runJavaScript finishes.
+     * on the page using QWebEnginePage::runJavaScript. This function only requests
+     * for the form data to be saved when QWebEnginePage::runJavaScript finishes.
      * The actual saving is done by @ref saveFormDataCallback
      */
     void saveFormData(WebEnginePage *page, bool ignorePasswordFields = false);
@@ -107,9 +107,9 @@ public:
      * Attempts to fill forms contained in @p page with cached data.
      *
      * Note that this function is asynchronous, as it requires running javascript code
-     * on the page using @ref QWebEnginePage::runJavaScript. This function only requests
-     * for the form data to be filled when @ref QWebEnginePage::runJavaScript finishes.
-     * The actual filling is done by @ref fillFormDataCallback
+     * on the page using QWebEnginePage::runJavaScript. This function only requests
+     * for the form data to be filled when QWebEnginePage::runJavaScript finishes.
+     * The actual filling is done by fillFormDataCallback
      */
     void fillFormData(WebEnginePage *page);
 
@@ -119,9 +119,9 @@ public:
      * Note that this function will remove all cached data for forms found in @p page.
      *
      * Note that this function is asynchronous, as it requires running javascript code
-     * on the page using @ref QWebEnginePage::runJavaScript. This function only requests
-     * for the form data to be removed when @ref QWebEnginePage::runJavaScript finishes.
-     * The actual removing is done by @ref removeFormDataCallback
+     * on the page using QWebEnginePage::runJavaScript. This function only requests
+     * for the form data to be removed when QWebEnginePage::runJavaScript finishes.
+     * The actual removing is done by removeFormDataCallback
      */
     void removeFormData(WebEnginePage *page);
 

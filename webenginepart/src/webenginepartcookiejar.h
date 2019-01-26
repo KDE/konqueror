@@ -301,7 +301,7 @@ private:
     static const QVariant s_findCookieFields;
     
     /**
-    * @brief Overload of `qHash` for a #CookieIdentifier
+    * @brief Overload of `qHash` for a CookieIdentifier
     * 
     * @param id: the other identifier
     * @param seed: the seed
