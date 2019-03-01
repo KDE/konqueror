@@ -136,7 +136,7 @@ void KonqSideBarWebModule::setAutoReload()
 
     QWidget *hbox = new QWidget(&dlg);
     QHBoxLayout *hboxHBoxLayout = new QHBoxLayout(hbox);
-    hboxHBoxLayout->setMargin(0);
+    hboxHBoxLayout->setContentsMargins(0, 0, 0, 0);
     dlg.setMainWidget(hbox);
 
     KIntNumInput *mins = new KIntNumInput(hbox);

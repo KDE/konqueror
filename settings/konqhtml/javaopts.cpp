@@ -107,7 +107,7 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     connect(enableShutdownCB, &QAbstractButton::clicked, this, &KJavaOptions::toggleJavaControls);
     QWidget *secondsHB = new QWidget(javartGB);
     QHBoxLayout *secondsHBHBoxLayout = new QHBoxLayout(secondsHB);
-    secondsHBHBoxLayout->setMargin(0);
+    secondsHBHBoxLayout->setContentsMargins(0, 0, 0, 0);
     laygroup1->addWidget(secondsHB);
     serverTimeoutSB = new KIntNumInput(secondsHB);
     secondsHBHBoxLayout->addWidget(serverTimeoutSB);

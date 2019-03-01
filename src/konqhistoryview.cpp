@@ -116,7 +116,7 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addWidget(m_searchLineEdit);
     mainLayout->addWidget(m_treeView);
 }

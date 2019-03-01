@@ -35,13 +35,13 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
 
     widget = new QWidget(parent);
     QVBoxLayout *widgetVBoxLayout = new QVBoxLayout(widget);
-    widgetVBoxLayout->setMargin(0);
+    widgetVBoxLayout->setContentsMargins(0, 0, 0, 0);
     // TODO use QVBoxLayout
 
     if (configGroup.readEntry("X-KDE-SearchableTreeModule", false)) {
         QWidget *searchLine = new QWidget(widget);
         QVBoxLayout *searchLineVBoxLayout = new QVBoxLayout(searchLine);
-        searchLineVBoxLayout->setMargin(0);
+        searchLineVBoxLayout->setContentsMargins(0, 0, 0, 0);
         widgetVBoxLayout->addWidget(searchLine);
         tree = new KonqSidebarTree(this, widget, virt, path);
         new K3ListViewSearchLineWidget(tree, searchLine);

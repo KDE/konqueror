@@ -68,7 +68,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     connect(customDialog,                 SIGNAL(changed()),      SIGNAL(changed()));
 
     QVBoxLayout *vbox = new QVBoxLayout(this);
-    vbox->setMargin(0);
+    vbox->setContentsMargins(0, 0, 0, 0);
     vbox->addWidget(configWidget);
 }
 

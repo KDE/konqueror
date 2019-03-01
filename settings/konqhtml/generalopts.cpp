@@ -46,7 +46,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
 {
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
 
     addHomeUrlWidgets(lay);
 
@@ -80,7 +80,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 
     QWidget *containerWidget = new QWidget(this);
     QHBoxLayout *hboxLayout = new QHBoxLayout(containerWidget);
-    hboxLayout->setMargin(0);
+    hboxLayout->setContentsMargins(0, 0, 0, 0);
     formLayout->addRow(startLabel, containerWidget);
 
     m_startCombo = new QComboBox(this);

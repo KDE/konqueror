@@ -96,7 +96,7 @@ void KIGPDialog::setupLookPage(const QString &path)
 
     KConfigGroup look = m_config->group("Look");
     QVBoxLayout *vlay = new QVBoxLayout(page);
-    vlay->setMargin(0);
+    vlay->setContentsMargins(0, 0, 0, 0);
 
     QLabel *label = new QLabel(i18n("&Page title:"), page);
     vlay->addWidget(label);
@@ -195,7 +195,7 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
 
     KConfigGroup group =  m_config->group("Directory");
     QVBoxLayout *dvlay = new QVBoxLayout(page);
-    dvlay->setMargin(0);
+    dvlay->setContentsMargins(0, 0, 0, 0);
 
     QLabel *label;
     label = new QLabel(i18n("&Save to HTML file:"), page);
@@ -300,7 +300,7 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
     QLabel *label;
 
     QVBoxLayout *vlay = new QVBoxLayout(page);
-    vlay->setMargin(0);
+    vlay->setContentsMargins(0, 0, 0, 0);
 
     QHBoxLayout *hlay3 = new QHBoxLayout();
     vlay->addLayout(hlay3);

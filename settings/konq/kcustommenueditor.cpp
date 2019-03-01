@@ -97,7 +97,7 @@ KCustomMenuEditor::KCustomMenuEditor(QWidget *parent)
     setDefaultButton(Ok);
     QWidget *page = new QWidget(this);
     QHBoxLayout *pageHBoxLayout = new QHBoxLayout(page);
-    pageHBoxLayout->setMargin(0);
+    pageHBoxLayout->setContentsMargins(0, 0, 0, 0);
     setMainWidget(page);
     m_listView = new K3ListView(page);
     pageHBoxLayout->addWidget(m_listView);

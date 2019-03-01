@@ -168,7 +168,7 @@ void KonqFrame::attachWidget(QWidget *widget)
 
     m_pLayout = new QVBoxLayout(this);
     m_pLayout->setObjectName(QStringLiteral("KonqFrame's QVBoxLayout"));
-    m_pLayout->setMargin(0);
+    m_pLayout->setContentsMargins(0, 0, 0, 0);
     m_pLayout->setSpacing(0);
 
     m_pLayout->addWidget(widget, 1);

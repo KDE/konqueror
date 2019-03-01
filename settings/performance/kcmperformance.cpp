@@ -81,7 +81,7 @@ KonquerorConfig::KonquerorConfig(QWidget *parent_P, const QVariantList &)
                       " and for keeping instances preloaded."));
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
     widget = new Konqueror(this);
     connect(widget, SIGNAL(changed()), SLOT(changed()));
     topLayout->addWidget(widget);

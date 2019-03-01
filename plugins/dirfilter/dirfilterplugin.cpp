@@ -151,7 +151,7 @@ FilterBar::FilterBar(QWidget *parent)
 
     // Apply layout
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(closeButton);
     layout->addWidget(filterLabel);
     layout->addWidget(m_filterInput);

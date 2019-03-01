@@ -67,7 +67,7 @@ ReportDialog::ReportDialog(const QList<ValidationResult *> &results, QWidget *pa
     setCaption(i18nc("@title:window", "Validation Report"));
 
     m_ui.setupUi(mainWidget());
-    mainWidget()->layout()->setMargin(0);
+    mainWidget()->layout()->setContentsMargins(0, 0, 0, 0);
     QHeaderView *header = m_ui.reportsView->header();
     header->setResizeMode(0, QHeaderView::ResizeToContents);
     header->setResizeMode(1, QHeaderView::ResizeToContents);

@@ -109,10 +109,10 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     QWidget *mainWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
     mainLayout->setSpacing(KDialog::spacingHint() * 2); // provide extra spacing
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
     QHBoxLayout *hLayout = new QHBoxLayout();
-    hLayout->setMargin(0);
+    hLayout->setContentsMargins(0, 0, 0, 0);
     hLayout->setSpacing(-1); // use default spacing
     mainLayout->addLayout(hLayout, 5);
 

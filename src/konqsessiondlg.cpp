@@ -69,7 +69,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     : KDialog(parent)
     , d(new KonqSessionDlgPrivate(manager, this))
 {
-    d->layout()->setMargin(0);
+    d->layout()->setContentsMargins(0, 0, 0, 0);
     setMainWidget(d);
 
     setObjectName(QStringLiteral("konq_session_dialog"));
@@ -222,7 +222,7 @@ KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow
     : KDialog(parent)
     , d(new KonqNewSessionDlgPrivate(this, mainWindow, mode))
 {
-    d->layout()->setMargin(0);
+    d->layout()->setContentsMargins(0, 0, 0, 0);
     setMainWidget(d);
 
     setObjectName(QStringLiteral("konq_new_session_dialog"));

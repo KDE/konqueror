@@ -74,7 +74,7 @@ private:
 void ListViewItem::setBlocked(bool blocked)
 {
     m_blocked = blocked;
-    setData(0, Qt::TextColorRole, (blocked ? Qt::red : Qt::black));
+    setData(0, Qt::ForegroundRole, (blocked ? Qt::red : Qt::black));
     QFont itemFont =  font(0);
     itemFont.setItalic(blocked);
     itemFont.setBold(blocked);
@@ -109,7 +109,7 @@ AdBlockDlg::AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart
     setMainWidget(page);
 
     QVBoxLayout *layout = new QVBoxLayout(page);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     QLabel *l = new QLabel(i18n("Search:"), page);
     layout->addWidget(l);

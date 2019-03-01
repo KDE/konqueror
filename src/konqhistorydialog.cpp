@@ -48,7 +48,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     setButtons(KDialog::Close);
 
     QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget());
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
     m_historyView = new KonqHistoryView(mainWidget());
     connect(m_historyView->treeView(), SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));

@@ -27,7 +27,7 @@ ClickIconLabel::ClickIconLabel(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     lay->setSpacing(3);
     m_pixmap = new QLabel(this);
     lay->addWidget(m_pixmap);

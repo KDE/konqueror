@@ -33,7 +33,7 @@ PolicyDialog::PolicyDialog(Policies *policies, QWidget *parent, const char *name
 
     insertIdx = 1;    // index where to insert additional panels
     topl = new QVBoxLayout(main);
-    topl->setMargin(0);
+    topl->setContentsMargins(0, 0, 0, 0);
 
     QGridLayout *grid = new QGridLayout();
     topl->addLayout(grid);

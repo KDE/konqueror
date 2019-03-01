@@ -38,14 +38,14 @@ ValidatorsDialog::ValidatorsDialog(QWidget *parent)
 #ifdef HAVE_TIDY
     QWidget *internalConfiguration = new QWidget();
     m_internalUi.setupUi(internalConfiguration);
-    internalConfiguration->layout()->setMargin(0);
+    internalConfiguration->layout()->setContentsMargins(0, 0, 0, 0);
     KPageWidgetItem *internalConfigurationItem = addPage(internalConfiguration, i18n("Internal Validation"));
     internalConfigurationItem->setIcon(QIcon::fromTheme("validators"));
 #endif
 
     QWidget *remoteConfiguration = new QWidget();
     m_remoteUi.setupUi(remoteConfiguration);
-    remoteConfiguration->layout()->setMargin(0);
+    remoteConfiguration->layout()->setContentsMargins(0, 0, 0, 0);
     KPageWidgetItem *remoteConfigurationItem = addPage(remoteConfiguration, i18n("Remote Validation"));
     remoteConfigurationItem->setIcon(QIcon::fromTheme(QStringLiteral("validators")));
 

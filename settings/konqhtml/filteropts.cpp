@@ -87,7 +87,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     QWidget *searchBox = new QWidget;
     QHBoxLayout *searchBoxHBoxLayout = new QHBoxLayout(searchBox);
-    searchBoxHBoxLayout->setMargin(0);
+    searchBoxHBoxLayout->setContentsMargins(0, 0, 0, 0);
     searchBoxHBoxLayout->setSpacing(-1);
     new QLabel(i18n("Search:"), searchBox);
 
@@ -106,7 +106,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     QWidget *buttonBox = new QWidget;
     QHBoxLayout *buttonBoxHBoxLayout = new QHBoxLayout(buttonBox);
-    buttonBoxHBoxLayout->setMargin(0);
+    buttonBoxHBoxLayout->setContentsMargins(0, 0, 0, 0);
     vbox->addWidget(buttonBox);
 
     container->setLayout(vbox);
@@ -152,7 +152,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     QWidget *impexpBox = new QWidget;
     QHBoxLayout *impexpBoxHBoxLayout = new QHBoxLayout(impexpBox);
-    impexpBoxHBoxLayout->setMargin(0);
+    impexpBoxHBoxLayout->setContentsMargins(0, 0, 0, 0);
     QLabel *impexpLabel = new QLabel(i18n("<qt>More information on "
                                           "<a href=\"importhelp\">import format</a>, "
                                           "<a href=\"exporthelp\">export format</a>"), impexpBox);

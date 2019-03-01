@@ -30,7 +30,7 @@ public:
     Konqueror_ui(QWidget *parent) : QWidget(parent)
     {
         setupUi(this);
-        layout()->setMargin(0);
+        layout()->setContentsMargins(0, 0, 0, 0);
     }
 };
 
