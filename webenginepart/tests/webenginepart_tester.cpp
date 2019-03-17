@@ -389,12 +389,12 @@ int main(int argc, char **argv)
 
     QString url = QStringLiteral("%1/%2").arg(QDir::homePath()).arg(QStringLiteral("index.html"));
 
-//    QWebEngineSettings::globalSettings()->setMaximumPagesInCache(4);
+//    QWebEngineSettings::defaultSettings()->setMaximumPagesInCache(4);
 
 //    QWebEngineSettings::setObjectCacheCapacities((16*1024*1024) / 8, (16*1024*1024) / 8, 16*1024*1024);
 
-    QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
-//    QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
+    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
+//    QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::DeveloperExtrasEnabled, true);
 
     const QStringList args = app.arguments();
 

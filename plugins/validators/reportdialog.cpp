@@ -99,7 +99,7 @@ ReportDialog::ReportDialog(const QList<ValidationResult *> &results, QWidget *pa
         }
         ++i;
     }
-    qStableSort(items.begin(), items.end(), compare_report_items);
+    std::stable_sort(items.begin(), items.end(), compare_report_items);
     m_ui.reportsView->addTopLevelItems(items);
     if (results.count() == 1) {
         header->setSectionHidden(1, true);

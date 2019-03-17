@@ -112,7 +112,7 @@ void KIGPDialog::setupLookPage(const QString &path)
     vlay->addWidget(m_imagesPerRow);
 
     QGridLayout *grid = new QGridLayout();
-    grid->setMargin(2);
+    grid->setContentsMargins(2, 2, 2, 2);
     grid->setSpacing(2);
     vlay->addLayout(grid);
 
@@ -324,7 +324,7 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
     vlay->addWidget(m_thumbnailSize);
 
     QGridLayout *grid = new QGridLayout();
-    grid->setMargin(2);
+    grid->setContentsMargins(2, 2, 2, 2);
     grid->setSpacing(2);
     vlay->addLayout(grid);
 

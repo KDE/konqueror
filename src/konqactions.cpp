@@ -133,7 +133,7 @@ void KonqMostOftenURLSAction::parseHistory() // only ever called once
     for (int i = 0; it != end && i < s_maxEntries; ++i, ++it) {
         s_mostEntries->append(*it);
     }
-    qSort(s_mostEntries->begin(), s_mostEntries->end(), numberOfVisitOrder);
+    std::sort(s_mostEntries->begin(), s_mostEntries->end(), numberOfVisitOrder);
 
     while (it != end) {
         const KonqHistoryEntry &leastOften = s_mostEntries->first();
