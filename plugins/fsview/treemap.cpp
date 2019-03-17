@@ -282,14 +282,14 @@ void RectDrawing::drawBack(QPainter *p, DrawParams *dp)
     QRect r = _rect;
     QColor normal = dp->backColor();
     if (dp->selected()) {
-        normal = normal.light();
+        normal = normal.lighter();
     }
     bool isCurrent = dp->current();
 
     if (dp->drawFrame() || isCurrent) {
         // 3D raised/sunken frame effect...
-        QColor high = normal.light();
-        QColor low = normal.dark();
+        QColor high = normal.lighter();
+        QColor low = normal.darker();
         p->setPen(isCurrent ? low : high);
         p->drawLine(r.left(), r.top(), r.right(), r.top());
         p->drawLine(r.left(), r.top(), r.left(), r.bottom());
