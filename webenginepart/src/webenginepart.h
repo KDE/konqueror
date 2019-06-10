@@ -151,6 +151,7 @@ private Q_SLOTS:
 private:
     WebEnginePage* page();
     const WebEnginePage* page() const;
+    static void initWebEngineUrlSchemes();
     
     void attemptInstallKIOSchemeHandler(const QUrl &url);
     

@@ -19,11 +19,15 @@
 */
 
 #include "webenginepartkiohandler.h"
+
+#ifndef USE_QWEBENGINE_URL_SCHEME
 #include "webengineparthtmlembedder.h"
+#endif
 
 #include <QMimeDatabase>
 #include <QWebEngineUrlRequestJob>
 #include <QBuffer>
+#include <QtWebEngine/QtWebEngineVersion>
 
 #include <KIO/StoredTransferJob>
 
@@ -34,7 +38,10 @@ void WebEnginePartKIOHandler::requestStarted(QWebEngineUrlRequestJob *req)
 }
 
 WebEnginePartKIOHandler::WebEnginePartKIOHandler(QObject* parent):
-    QWebEngineUrlSchemeHandler(parent), m_embedder(nullptr)
+    QWebEngineUrlSchemeHandler(parent)
+#ifndef USE_QWEBENGINE_URL_SCHEME
+    , m_embedder(nullptr)
+#endif
 {
     connect(this, &WebEnginePartKIOHandler::ready, this, &WebEnginePartKIOHandler::sendReply);
 }
@@ -82,11 +89,15 @@ void WebEnginePartKIOHandler::embedderFinished(const QString& html)
 
 void WebEnginePartKIOHandler::processSlaveOutput()
 {
+#ifdef USE_QWEBENGINE_URL_SCHEME
+    emit ready();
+#else
     if (m_mimeType.inherits("text/html") || m_mimeType.inherits("application/xhtml+xml")) {
         htmlEmbedder()->startEmbedding(m_data, m_mimeType.name());
     } else {
         emit ready();
     }
+#endif
 }
 
 void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
@@ -98,6 +109,7 @@ void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
     processSlaveOutput();
 }
 
+#ifndef USE_QWEBENGINE_URL_SCHEME
 WebEnginePartHtmlEmbedder * WebEnginePartKIOHandler::htmlEmbedder()
 {
     if (!m_embedder) {
@@ -106,3 +118,4 @@ WebEnginePartHtmlEmbedder * WebEnginePartKIOHandler::htmlEmbedder()
     }
     return m_embedder;
 }
+#endif

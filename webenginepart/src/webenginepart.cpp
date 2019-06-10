@@ -67,6 +67,7 @@
 #include <KSharedConfig>
 #include <KSslInfoDialog>
 #include <KProtocolManager>
+#include <KProtocolInfo>
 
 #include <QUrl>
 #include <QFile>
@@ -76,7 +77,43 @@
 #include <QDBusInterface>
 #include <QMenu>
 #include <QStatusBar>
+#ifdef USE_QWEBENGINE_URL_SCHEME
+#include <QWebEngineUrlScheme>
+#endif
 #include "utils.h"
+#include <kio_version.h>
+
+void WebEnginePart::initWebEngineUrlSchemes()
+{
+#ifdef USE_QWEBENGINE_URL_SCHEME
+    static bool needToInitUrlSchemes = true;
+    if (needToInitUrlSchemes) {
+        needToInitUrlSchemes = false;
+        QVector<QByteArray> localSchemes = {"error"};
+        const QStringList protocols = KProtocolInfo::protocols();
+        for(const QString &prot : protocols){
+#if KIO_VERSION >= QT_VERSION_CHECK(5,60,0)
+            if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
+                localSchemes.append(QByteArray(prot.toLatin1()));
+            }
+#else
+            QUrl fakeUrl;
+            fakeUrl.setScheme(prot);
+            fakeUrl.setPath("fake");
+            if (KProtocolManager::defaultMimetype(fakeUrl) == "text/html"){
+                localSchemes.append(QByteArray(prot.toLatin1()));
+            }
+#endif
+        }
+        for (const QByteArray &name : qAsConst(localSchemes)){
+            QWebEngineUrlScheme scheme(name);
+            scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
+            scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+            QWebEngineUrlScheme::registerScheme(scheme);
+        }
+    }
+#endif
+}
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
@@ -90,6 +127,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_featurePermissionBar(nullptr),
              m_wallet(nullptr)
 {
+    initWebEngineUrlSchemes();
     QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
     if (!prof->urlSchemeHandler("error")) {
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));

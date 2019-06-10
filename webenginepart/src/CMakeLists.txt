@@ -18,7 +18,6 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepartdownloadmanager.cpp
     webenginewallet.cpp
     webengineparterrorschemehandler.cpp
-    webengineparthtmlembedder.cpp
     webenginepartkiohandler.cpp
     webenginepartcookiejar.cpp
     settings/webenginesettings.cpp
@@ -27,6 +26,12 @@ set(kwebenginepartlib_LIB_SRCS
     ui/passwordbar.cpp
     ui/featurepermissionbar.cpp
 )
+
+if(Qt5WebEngineWidgets_VERSION VERSION_GREATER_EQUAL "5.12.0")
+  add_definitions(-DUSE_QWEBENGINE_URL_SCHEME)
+else()
+  list(APPEND kwebenginepartlib_LIB_SRCS, webengineparthtmlembedder.cpp)
+endif()
 
 qt5_wrap_ui(kwebenginepartlib_LIB_SRCS
                   ui/searchbar.ui
