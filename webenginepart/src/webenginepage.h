@@ -82,7 +82,9 @@ Q_SIGNALS:
      */
     void loadAborted(const QUrl &url);
 
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     void navigationRequested(WebEnginePage* page, const QUrl& url);
+#endif
 
 protected:
     /**

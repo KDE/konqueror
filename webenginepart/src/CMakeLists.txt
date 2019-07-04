@@ -29,6 +29,7 @@ set(kwebenginepartlib_LIB_SRCS
 
 if(Qt5WebEngineWidgets_VERSION VERSION_GREATER_EQUAL "5.12.0")
   add_definitions(-DUSE_QWEBENGINE_URL_SCHEME)
+  add_definitions(-DDOWNLOADITEM_KNOWS_PAGE)
 else()
   list(APPEND kwebenginepartlib_LIB_SRCS, webengineparthtmlembedder.cpp)
 endif()

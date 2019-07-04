@@ -37,21 +37,29 @@ public:
 
     ~WebEnginePartDownloadManager() override;
 
+private:
+    WebEnginePartDownloadManager();
+
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
     void removePage(QObject *page);
 
+private Q_SLOTS:
+    void performDownload(QWebEngineDownloadItem *it);
+
+#ifndef DOWNLOADITEM_KNOWS_PAGE
 private:
-    WebEnginePartDownloadManager();
     WebEnginePage* pageForDownload(QWebEngineDownloadItem *it);
 
 private Q_SLOTS:
-    void performDownload(QWebEngineDownloadItem *it);
     void recordNavigationRequest(WebEnginePage* page, const QUrl& url);
+#endif
 
 private:
     QVector<WebEnginePage*> m_pages;
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     QHash<QUrl, WebEnginePage*> m_requests;
+#endif
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

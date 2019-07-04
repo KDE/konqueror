@@ -35,7 +35,9 @@ WebEnginePartDownloadManager::WebEnginePartDownloadManager()
 
 WebEnginePartDownloadManager::~WebEnginePartDownloadManager()
 {
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     m_requests.clear();
+#endif
 }
 
 WebEnginePartDownloadManager * WebEnginePartDownloadManager::instance()
@@ -49,21 +51,30 @@ void WebEnginePartDownloadManager::addPage(WebEnginePage* page)
     if (!m_pages.contains(page)) {
         m_pages.append(page);
     }
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     connect(page, &WebEnginePage::navigationRequested, this, &WebEnginePartDownloadManager::recordNavigationRequest);
+#endif
     connect(page, &QObject::destroyed, this, &WebEnginePartDownloadManager::removePage);
 }
 
 void WebEnginePartDownloadManager::removePage(QObject* page)
 {
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     const QUrl url = m_requests.key(static_cast<WebEnginePage *>(page));
     m_requests.remove(url);
+#endif
     m_pages.removeOne(static_cast<WebEnginePage*>(page));
 }
 
 void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 {
+#ifdef DOWNLOADITEM_KNOWS_PAGE
+    WebEnginePage *page = qobject_cast<WebEnginePage*>(it->page());
+#else
     WebEnginePage *page = m_requests.take(it->url());
+#endif
     bool forceNew = false;
+    //According to the documentation, QWebEngineDownloadItem::page() can return nullptr "if the download was not triggered by content in a page"
     if (!page && !m_pages.isEmpty()) {
         qCDebug(WEBENGINEPART_LOG) << "downloading" << it->url() << "in new window or tab";
         page = m_pages.first();
@@ -74,6 +85,8 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
     }
     page->download(it->url(), forceNew);
 }
+
+#ifndef DOWNLOADITEM_KNOWS_PAGE
 
 void WebEnginePartDownloadManager::recordNavigationRequest(WebEnginePage *page, const QUrl& url)
 {
@@ -89,3 +102,4 @@ WebEnginePage* WebEnginePartDownloadManager::pageForDownload(QWebEngineDownloadI
     }
     return page;
 }
+#endif

@@ -95,7 +95,9 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
+
     WebEnginePartDownloadManager::instance()->addPage(this);
+
     m_wallet = new WebEngineWallet(this, parent ? parent->window()->winId() : 0);
 }
 
@@ -265,7 +267,9 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
 
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     emit navigationRequested(this, url);
+#endif
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
@@ -847,7 +851,10 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         m_createNewWindow = false;
 
     }
+
+#ifndef DOWNLOADITEM_KNOWS_PAGE
     emit navigationRequested(this, url);
+#endif
     return WebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
