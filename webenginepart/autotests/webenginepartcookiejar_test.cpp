@@ -108,6 +108,7 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer_d
         "persistent cookie with domain and path",
         "session cookie with domain and path",
         "persistent cookie with domain and no path",
+        "persistent cookie with domain and / as path",
         "persistent cookie with path and no domain",
         "persistent cookie without secure",
     };
@@ -116,6 +117,7 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer_d
         {m_cookieName + "-persistent", "test-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
         {m_cookieName + "-session", "test-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime(), true},
         {m_cookieName + "-no-path", "test-value", ".yyy.xxx.com", "", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
+        {m_cookieName + "-slash-as-path", "test-value", ".yyy.xxx.com", "", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
         {m_cookieName + "-no-domain", "test-value", "", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
         {m_cookieName + "-no-secure", "test-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), false}
     };
@@ -229,22 +231,25 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QTest::addColumn<QNetworkCookie>("cookie");
     QTest::addColumn<QString>("name");
     QTest::addColumn<QString>("domain");
+    QTest::addColumn<QString>("path");
     QTest::addColumn<QString>("host");
     
     const QStringList labels{
         "remove persistent cookie with domain and path",
         "remove session cookie with domain and path",
         "remove persistent cookie with domain and no path",
+        "remove persistent cookie with domain and / as path",
         "remove persistent cookie with path and no domain",
-        "remove persistent cookie without secure",
+        "remove persistent cookie without secure"
     };
     
     const QList<CookieData> input{
         {m_cookieName + "-persistent-remove", "test-remove-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
         {m_cookieName + "-session-remove", "test-remove-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime(), true},
         {m_cookieName + "-no-path-remove", "test-remove-value", ".yyy.xxx.com", "", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
+        {m_cookieName + "-slash-as-path-remove", "test-remove-value", ".yyy.xxx.com", "/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
         {m_cookieName + "-no-domain-remove", "test-remove-value", "", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), true},
-        {m_cookieName + "-no-secure-remove", "test-remove-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), false}
+        {m_cookieName + "-no-secure-remove", "test-remove-value", ".yyy.xxx.com", "/abc/def/", "zzz.yyy.xxx.com", QDateTime::currentDateTime().addYears(1), false},
     };
     
     QList<CookieData> expected(input);
@@ -256,7 +261,7 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
         if (in.domain.isEmpty()) {
             c.normalize(QUrl("https://" + in.host));
         }
-        QTest::newRow(labels.at(i).toLatin1()) << c << ex.name << ex.domain << ex.host;
+        QTest::newRow(labels.at(i).toLatin1()) << c << ex.name << ex.domain << ex.path << ex.host;
     }}
 
 void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookieServer()
@@ -264,24 +269,30 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QFETCH(const QNetworkCookie, cookie);
     QFETCH(const QString, name);
     QFETCH(const QString, domain);
+    QFETCH(const QString, path);
     QFETCH(const QString, host);
     
     //Add cookie to KCookieServer
     QDBusError e = addCookieToKCookieServer(cookie, host);
     QVERIFY2(!e.isValid(), qPrintable(m_server->lastError().message()));
     
+    auto findCookies=[this, &domain, &host, &path, &name](){
+        QDBusReply<QStringList> reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, host, path, name);
+        return reply;
+    };
+
     //Ensure cookie has been added to KCookieServer
-    QDBusReply<QStringList> reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, host, "", "");
+    QDBusReply<QStringList> reply = findCookies();
     QVERIFY2(reply.isValid(), qPrintable(reply.error().message()));
-    QStringList cookies = reply.value();
-    QVERIFY2(cookies.contains(name), "Cookie wasn't added to server");
-    
+    QVERIFY2(reply.value().contains(name), "Cookie wasn't added to server");
+
     //Emit QWebEngineCookieStore::cookieRemoved signal and check that cookie has indeed been removed
     emit m_store->cookieRemoved(cookie);
-    reply = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(QList<int>{2}), domain, "", "", "");
+
+    //Check that cookie is no longer in KCookieServer
+    reply = findCookies();
     QVERIFY2(reply.isValid(), qPrintable(reply.error().message()));
-    cookies = reply.value();
-    QVERIFY2(!cookies.contains(name), "Cookie wasn't removed from server");
+    QVERIFY2(!reply.value().contains(name), "Cookie wasn't removed from server");
 }
 
 QDBusError TestWebEnginePartCookieJar::addCookieToKCookieServer(const QNetworkCookie& _cookie, const QString& host)

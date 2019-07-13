@@ -269,7 +269,7 @@ void WebEnginePartCookieJar::removeCookie(const QNetworkCookie& _cookie)
     }
     removeCookieDomain(cookie);
     
-    QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", cookie.domain(), url.toString(), cookie.path(), QString(cookie.name()));
+    QDBusPendingCall pcall = m_cookieServer.asyncCall("deleteCookie", cookie.domain(), url.host(), cookie.path(), QString(cookie.name()));
     QDBusPendingCallWatcher *w = new QDBusPendingCallWatcher(pcall, this);
     connect(w, &QDBusPendingCallWatcher::finished, this, &WebEnginePartCookieJar::cookieRemovalFailed);
 }
@@ -331,7 +331,7 @@ QNetworkCookie WebEnginePartCookieJar::parseKIOCookie(const QStringList& data, i
 {
     QNetworkCookie c;
     auto extractField = [data, start](CookieDetails field){return data.at(start + static_cast<int>(field));};
-    c.setDomain(data.at(start+static_cast<int>(CookieDetails::domain)).toUtf8());
+    c.setDomain(extractField(CookieDetails::domain).toUtf8());
     c.setExpirationDate(QDateTime::fromSecsSinceEpoch(extractField(CookieDetails::expirationDate).toInt()));
     c.setName(extractField(CookieDetails::name).toUtf8());
     c.setPath(extractField(CookieDetails::path).toUtf8());
