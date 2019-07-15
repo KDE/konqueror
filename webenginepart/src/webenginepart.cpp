@@ -133,7 +133,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
         prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
     }
-    static WebEnginePartCookieJar s_cookieJar(prof, prof);
+    static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
                                   /*version*/ QStringLiteral("1.3.0"),

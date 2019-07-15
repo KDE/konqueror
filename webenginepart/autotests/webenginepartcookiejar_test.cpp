@@ -42,12 +42,12 @@ namespace QTest {
     char *toString(const QNetworkCookie &cookie){
         QByteArray ba = "QNetworkCookie{";
         ba += "\nname: " + cookie.name();
-        ba += "\ndomain: " + (cookie.domain().isEmpty() ? "<EMPTY>" : cookie.domain());
-        ba += "\npath: " + (cookie.path().isEmpty() ? "<EMPTY>" : cookie.path());
+        ba += "\ndomain: " + (cookie.domain().isEmpty() ? "<EMPTY>" : cookie.domain().toUtf8());
+        ba += "\npath: " + (cookie.path().isEmpty() ? "<EMPTY>" : cookie.path().toUtf8());
         ba += "\nvalue: " + cookie.value();
-        ba += "\nexpiration: " + (cookie.expirationDate().isValid() ? QString::number(cookie.expirationDate().toMSecsSinceEpoch()) : "<INVALID>");
-        ba += "\nsecure: " + QString::number(cookie.isSecure());
-        ba += "\nhttp: only" + QString::number(cookie.isHttpOnly());
+        ba += "\nexpiration: " + (cookie.expirationDate().isValid() ? QByteArray::number(cookie.expirationDate().toMSecsSinceEpoch()) : "<INVALID>");
+        ba += "\nsecure: " + QByteArray::number(cookie.isSecure());
+        ba += "\nhttp: only" + QByteArray::number(cookie.isHttpOnly());
         return qstrdup(ba.data());
     }
 }
