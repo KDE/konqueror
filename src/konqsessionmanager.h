@@ -167,7 +167,7 @@ public:
 
 public Q_SLOTS:
     /**
-     * Ask the user with a KPassivePopup ballon if session should be restored
+     * Ask the user with a dialog if session should be restored
      */
     bool askUserToRestoreAutosavedAbandonedSessions();
 
