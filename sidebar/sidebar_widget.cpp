@@ -53,6 +53,7 @@
 #include <KJobWidgets>
 #include <QStandardPaths>
 #include <KSharedConfig>
+#include <QHBoxLayout>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {

@@ -58,9 +58,9 @@ QStringList ModuleManager::modules() const
     const QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
     const QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
 
-    const QStringList entries_dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, relativeDataPath());
+    const QStringList entries_dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, relativeDataPath(), QStandardPaths::LocateDirectory);
     if (entries_dirs.isEmpty()) { // Ooops
-        kWarning() << "No global directory found for apps/konqsidebartng/entries. Installation problem!";
+        qWarning() << "No global directory found for" << relativeDataPath() << "Installation problem!";
         return QStringList();
     }
     // We only list the most-global dir. Other levels use AddedModules.
