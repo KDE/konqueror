@@ -31,7 +31,7 @@ if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.12.0")
   add_definitions(-DUSE_QWEBENGINE_URL_SCHEME)
   add_definitions(-DDOWNLOADITEM_KNOWS_PAGE)
 else()
-  list(APPEND kwebenginepartlib_LIB_SRCS, webengineparthtmlembedder.cpp)
+  list(APPEND kwebenginepartlib_LIB_SRCS webengineparthtmlembedder.cpp)
 endif()
 
 qt5_wrap_ui(kwebenginepartlib_LIB_SRCS
