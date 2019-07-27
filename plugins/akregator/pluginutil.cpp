@@ -51,8 +51,8 @@ static void addFeedsViaDBUS(const QStringList &urls)
     QDBusInterface akregator(QStringLiteral("org.kde.akregator"), QStringLiteral("/Akregator"), QStringLiteral("org.kde.akregator.part"));
     QDBusReply<void> reply  = akregator.call(QStringLiteral("addFeedsToGroup"), urls, i18n("Imported Feeds"));
     if (!reply.isValid()) {
-        KMessageBox::error(nullptr, i18n("Unable to contact Akregator via DBus"),
-                                    i18nc("@title:window", "DBus call failed"));
+        KMessageBox::error(nullptr, i18n("Unable to contact Akregator via D-Bus"),
+                                    i18nc("@title:window", "D-Bus call failed"));
     }
 }
 
