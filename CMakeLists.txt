@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(Konqueror)
 
 set(QT_MIN_VERSION "5.5.0")
-set(KF5_MIN_VERSION "5.31.0")  # needs KIO 5.31 for KRun::runUrl overload with RunFlags
+set(KF5_MIN_VERSION "5.38.0")  # get new ECM layout
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
