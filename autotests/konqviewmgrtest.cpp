@@ -505,7 +505,7 @@ static void checkSecondWindowHasOneTab(bool fromPopup) // and delete it.
     QTRY_COMPARE(KMainWindow::memberList().count(), 2);
     QScopedPointer<KonqMainWindow> newWindow(qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last()));
     QVERIFY(newWindow.data());
-    QCOMPARE(DebugFrameVisitor::inspect(newWindow.data()), QString("MT[F].")); // mainWindow, tab widget, one tab
+    QTRY_COMPARE(DebugFrameVisitor::inspect(newWindow.data()), QString("MT[F].")); // mainWindow, tab widget, one tab
     QTabWidget *tabWidget = newWindow->findChild<QTabWidget *>();
     QVERIFY(tabWidget);
     // The location bar shouldn't get focus (#208821)
@@ -527,8 +527,7 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
     KFileItem item(QUrl(QStringLiteral("data:text/html, hello")), QStringLiteral("text/html"), S_IFREG);
     mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
-    QTest::qWait(100);
-    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    QTRY_COMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
     QVERIFY(KMainWindow::memberList().last() != &mainWindow);
     checkSecondWindowHasOneTab(true);
 }
