@@ -1,4 +1,4 @@
-org.kde.webenginepart webenginepart
-org.kde.konqueror konqueror
-org.kde.konqueror.minitools minitools (konqueror plugin)
-org.kde.konqueror.webarchiver webarchiver (konqueror plugin)
+org.kde.webenginepart webenginepart IDENTIFIER [WEBENGINEPART_LOG]
+org.kde.konqueror konqueror IDENTIFIER [KONQUEROR_LOG]
+org.kde.konqueror.minitools minitools (konqueror plugin) IDENTIFIER [MINITOOLSPLUGIN_LOG]
+org.kde.konqueror.webarchiver webarchiver (konqueror plugin) IDENTIFIER [WEBARCHIVERPLUGIN_LOG]
