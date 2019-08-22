@@ -115,12 +115,12 @@ QUrl WebEnginePartCookieJar::constructUrlForCookie(const QNetworkCookie& cookie)
 qlonglong WebEnginePartCookieJar::findWinID()
 {
     QWidget *mainWindow = qApp->activeWindow();
-    if (mainWindow && !(mainWindow->windowFlags() & Qt::Dialog)) {
+    if (mainWindow && !mainWindow->windowFlags().testFlag(Qt::Dialog)) {
         return mainWindow->winId();
     } else {
         QWidgetList windows = qApp->topLevelWidgets();
         foreach(QWidget *w, windows){
-            if (w->isWindow() && !(w->windowFlags() & Qt::Dialog)) {
+            if (!w->windowFlags().testFlag(Qt::Dialog)) {
                 return w->winId();
             }
         }
