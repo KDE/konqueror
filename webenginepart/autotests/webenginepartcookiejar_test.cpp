@@ -325,10 +325,6 @@ void TestWebEnginePartCookieJar::testPersistentCookiesAreAddedToStoreOnCreation(
         QNetworkCookie c = d.cookie();
         QDBusError e = addCookieToKCookieServer(c, d.host);
         QVERIFY2(!e.isValid(), qPrintable(e.message()));
-        //In case of an empty domain, WebEnginePartCookieJar will use QNetworkCookie::normalize on the cookie
-        if (c.domain().isEmpty()) {
-            c.setDomain(d.host);
-        }
         expected << c;
     }
     m_jar = new WebEnginePartCookieJar(m_profile, this);
