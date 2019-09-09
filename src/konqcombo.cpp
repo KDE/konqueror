@@ -708,9 +708,9 @@ QVariant KonqListWidgetItem::data(int role) const
         if (!title.isEmpty()) {
             pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
         } else if (!text().contains(QLatin1String("://"))) {
-            title = titleOfURL(QLatin1Literal("http://") + text());
+            title = titleOfURL(QLatin1String("http://") + text());
             if (!title.isEmpty()) {
-                pixmap = provider->pixmapFor(QLatin1Literal("http://") + text(), KIconLoader::SizeSmall);
+                pixmap = provider->pixmapFor(QLatin1String("http://") + text(), KIconLoader::SizeSmall);
             } else {
                 pixmap = provider->pixmapFor(text(), KIconLoader::SizeSmall);
             }
