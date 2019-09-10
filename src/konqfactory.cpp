@@ -31,7 +31,6 @@
 #include <QCoreApplication>
 
 // KDE
-#include <k4aboutdata.h>
 #include "konqdebug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>

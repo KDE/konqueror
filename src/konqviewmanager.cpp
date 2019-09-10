@@ -50,6 +50,8 @@
 #include <QStandardPaths>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 //#define DEBUG_VIEWMGR
 
@@ -231,8 +233,8 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
         // Don't use supportsMimeType("text/html"), it's true for katepart too.
         // (Testcase: view text file, ctrl+shift+n, was showing about page in katepart)
         if (currentView) {
-            KMimeType::Ptr mime = currentView->mimeType();
-            if (mime && mime->is(serviceType)) {
+            QMimeType mime = currentView->mimeType();
+            if (mime.isValid() && mime.inherits(serviceType)) {
                 actualServiceName = currentView->service()->desktopEntryName();
             }
         }

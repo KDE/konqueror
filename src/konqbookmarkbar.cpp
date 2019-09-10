@@ -29,7 +29,6 @@
 #include <ktoolbar.h>
 #include <kactionmenu.h>
 #include <kconfig.h>
-#include <kglobal.h>
 #include "konqdebug.h"
 #include <kconfiggroup.h>
 #include <kio/global.h>

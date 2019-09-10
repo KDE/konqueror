@@ -30,7 +30,6 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusReply>
-#include <kglobal.h>
 #include <KLocalizedString>
 
 #include <kconfig.h>
@@ -46,7 +45,7 @@ public:
     int m_maxNumClosedItems;
 };
 
-K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate)
+Q_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate)
 
 KonqClosedWindowsManager::KonqClosedWindowsManager()
 {

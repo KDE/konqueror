@@ -24,7 +24,6 @@
 #include "konqview.h"
 #include "konqmainwindow.h"
 #include "konqsettingsxt.h"
-#include <kglobal.h>
 
 #include <QApplication>
 #include <QMouseEvent>
@@ -35,7 +34,7 @@ public:
     KonqMouseEventFilter self;
 };
 
-K_GLOBAL_STATIC(KonqMouseEventFilterSingleton, globalMouseEventFilter)
+Q_GLOBAL_STATIC(KonqMouseEventFilterSingleton, globalMouseEventFilter)
 
 KonqMouseEventFilter *KonqMouseEventFilter::self()
 {

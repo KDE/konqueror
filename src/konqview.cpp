@@ -65,6 +65,8 @@
 #include <KParts/OpenUrlArguments>
 #include <KParts/BrowserExtension>
 #include <KParts/WindowArgs>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 //#define DEBUG_HISTORY
 
@@ -1273,20 +1275,22 @@ KParts::StatusBarExtension *KonqView::statusBarExtension() const
     return KParts::StatusBarExtension::childObject(m_pPart);
 }
 
-KMimeType::Ptr KonqView::mimeType() const
+QMimeType KonqView::mimeType() const
 {
-    return KMimeType::mimeType(serviceType()); // can be null
+    QMimeDatabase db;
+    return db.mimeTypeForName(serviceType());
 }
 
 bool KonqView::supportsMimeType(const QString &mimeType) const
 {
-    KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
-    if (!mime) {
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForName(mimeType);
+    if (!mime.isValid()) {
         return false;
     }
     const QStringList lst = serviceTypes();
     for (QStringList::ConstIterator it = lst.begin(); it != lst.end(); ++it) {
-        if (mime->is(*it)) { // same as mime == *it, but also respect inheritance, mimeType can be a subclass
+        if (mime.inherits(*it)) { // same as mime == *it, but also respect inheritance, mimeType can be a subclass
             return true;
         }
     }

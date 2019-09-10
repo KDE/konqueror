@@ -25,6 +25,8 @@
 #include <kmessagebox.h>
 #include <KLocalizedString>
 #include <kio/job.h>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 // Local
 #include "konqview.h"
@@ -144,7 +146,8 @@ void KonqRun::foundMimeType(const QString &_type)
 
 bool KonqRun::tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror)
 {
-    KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForName(mimeType);
     if (associatedAppIsKonqueror) {
         m_req.forceAutoEmbed = true;
     }
@@ -153,9 +156,9 @@ bool KonqRun::tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror
     // we need to find out if we should keep browsing the web in konq,
     // or if we are clicking on an html file in a directory view (which should
     // then open the other browser)
-    else if (mime &&
-             (mime->is(QStringLiteral("text/html"))
-              || mime->name().startsWith(QLatin1String("image/"))) // #83513
+    else if (mime.isValid() &&
+             (mime.inherits(QStringLiteral("text/html"))
+              || mime.name().startsWith(QLatin1String("image/"))) // #83513
              && (m_pView && !m_pView->showsDirectory())) {
         m_req.forceAutoEmbed = true;
     }

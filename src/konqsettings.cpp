@@ -20,18 +20,19 @@
 #include "konqsettings.h"
 #include <kprotocolmanager.h>
 #include <ksharedconfig.h>
-#include <kglobal.h>
-#include <kmimetype.h>
+
 #include <kdesktopfile.h>
 #include "konqdebug.h"
 #include <kconfiggroup.h>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 class KonqEmbedSettingsSingleton
 {
 public:
     KonqFMSettings self;
 };
-K_GLOBAL_STATIC(KonqEmbedSettingsSingleton, globalEmbedSettings)
+Q_GLOBAL_STATIC(KonqEmbedSettingsSingleton, globalEmbedSettings)
 
 KonqFMSettings *KonqFMSettings::settings()
 {
@@ -80,12 +81,13 @@ static bool alwaysEmbedMimeTypeGroup(const QString &mimeType)
 
 bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
 {
-    KMimeType::Ptr mime = KMimeType::mimeType(_mimeType, KMimeType::ResolveAliases);
-    if (!mime) {
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForName(_mimeType);
+    if (!mime.isValid()) {
         qCWarning(KONQUEROR_LOG) << "Unknown mimetype" << _mimeType;
         return false; // unknown mimetype!
     }
-    const QString mimeType = mime->name();
+    const QString mimeType = mime.name();
 
     // First check in user's settings whether to embed or not
     // 1 - in the filetypesrc config file (written by the configuration module)
@@ -113,10 +115,10 @@ bool KonqFMSettings::shouldEmbed(const QString &_mimeType) const
             if (alwaysEmbedMimeTypeGroup(parent)) {
                 return true;
             }
-            KMimeType::Ptr mime = KMimeType::mimeType(parent);
-            Q_ASSERT(mime); // how could the -parent- be null?
-            if (mime) {
-                parents += mime->parentMimeTypes();
+            QMimeType mime = db.mimeTypeForName(parent);
+            Q_ASSERT(mime.isValid()); // how could the -parent- be invalid?
+            if (mime.isValid()) {
+                parents += mime.parentMimeTypes();
             }
         }
     }

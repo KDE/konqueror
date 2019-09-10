@@ -31,7 +31,6 @@
 #include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
-#include <kglobal.h>
 #include <KSharedConfig>
 
 // Local

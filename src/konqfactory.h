@@ -26,7 +26,6 @@
 
 #include <kservice.h>
 
-class K4AboutData;
 class KPluginFactory;
 namespace KParts
 {

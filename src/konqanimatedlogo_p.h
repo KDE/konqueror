@@ -22,7 +22,7 @@
 #ifndef KONQANIMATEDLOGO_P_H
 #define KONQANIMATEDLOGO_P_H
 
-#include <KDE/KAnimatedButton>
+#include <KAnimatedButton>
 
 class QToolBar;
 

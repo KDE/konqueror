@@ -25,7 +25,6 @@
 #include <QPainter>
 #include <kconfig.h>
 #include "konqdebug.h"
-#include <kglobal.h>
 #include <QIcon>
 #include <kiconeffect.h>
 #include <kiconloader.h>
@@ -46,7 +45,7 @@ public:
     QImage image;
 };
 
-K_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
+Q_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
 KonqClosedItem::KonqClosedItem(const QString &title, const QString &group, quint64 serialNumber)
     : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->memoryStore(), group), m_serialNumber(serialNumber)

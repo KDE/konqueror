@@ -26,7 +26,6 @@
 #include "konqdebug.h"
 #include <QIcon>
 #include <QMenu>
-#include <kglobal.h>
 #include <QAction>
 
 #include <algorithm>
@@ -106,7 +105,7 @@ void KonqMostOftenURLSAction::init()
     setEnabled(!mgr->entries().isEmpty() && s_maxEntries > 0);
 }
 
-K_GLOBAL_STATIC(KonqHistoryList, s_mostEntries)
+Q_GLOBAL_STATIC(KonqHistoryList, s_mostEntries)
 
 void KonqMostOftenURLSAction::inSort(const KonqHistoryEntry &entry)
 {

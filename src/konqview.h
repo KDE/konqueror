@@ -25,7 +25,7 @@
 #include "konqframe.h"
 
 #include <kservice.h>
-#include <kmimetype.h>
+#include <QMimeType>
 
 #include <QList>
 
@@ -332,9 +332,9 @@ public:
 
     /**
      * The mimetype this view is currently displaying.
-     * Can be null, if serviceType() is not a mimetype.
+     * Can be invalid, if serviceType() is not a mimetype.
      */
-    KMimeType::Ptr mimeType() const;
+    QMimeType mimeType() const;
 
     /**
      * @return the servicetypes this view is capable to display

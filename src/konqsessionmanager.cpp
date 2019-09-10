@@ -26,7 +26,6 @@
 #include "konqviewmanager.h"
 #include "konqsettingsxt.h"
 
-#include <kglobal.h>
 #include "konqdebug.h"
 #include <kio/deletejob.h>
 #include <kstandarddirs.h>
@@ -73,7 +72,7 @@ public:
     KonqSessionManager *instance;
 };
 
-K_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
+Q_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
 static QString viewIdFor(const QString &sessionFile, const QString &viewId)
 {
