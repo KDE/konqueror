@@ -18,7 +18,10 @@
 #include "konqextensionmanager.h"
 
 // Qt
+#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QTimer>
+#include <QVBoxLayout>
 
 // KDE
 #include <kxmlguifactory.h>
@@ -32,6 +35,7 @@
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
 #include <KSharedConfig>
+#include <KConfigGroup>
 
 // Local
 #include "konqview.h"
@@ -43,25 +47,24 @@ public:
     KPluginSelector *pluginSelector;
     KonqMainWindow *mainWindow;
     KParts::ReadOnlyPart *activePart;
-    bool isChanged;
+    QDialogButtonBox *buttonBox;
+    bool isChanged = false;
 };
 
 KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart *activePart)
-    : KDialog(parent)
+    : QDialog(parent)
 {
-    setCaption(i18nc("@title:window", "Configure"));
-    setButtons(Default | Cancel | Apply | Ok | User1);
-    setButtonGuiItem(User1, KStandardGuiItem::reset());
     setObjectName(QStringLiteral("extensionmanager"));
+    setWindowTitle(i18nc("@title:window", "Configure"));
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     d = new KonqExtensionManagerPrivate;
-    showButton(User1, false);
-    setChanged(false);
 
-    setInitialSize(QSize(640, 480)); // FIXME: hard-coded values ?
+    resize(QSize(640, 480)); // FIXME: hard-coded values ?
 
     d->pluginSelector = new KPluginSelector(this);
-    setMainWidget(d->pluginSelector);
+    mainLayout->addWidget(d->pluginSelector);
     connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));
     connect(d->pluginSelector, SIGNAL(configCommitted(QByteArray)),
             this, SLOT(reparseConfiguration(QByteArray)));
@@ -76,10 +79,18 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), QStringLiteral("Statusbar"));
     }
 
-    connect(this, SIGNAL(okClicked()), SLOT(slotOk()));
-    connect(this, SIGNAL(applyClicked()), SLOT(slotApply()));
-    connect(this, SIGNAL(defaultClicked()), SLOT(slotDefault()));
-    connect(this, SIGNAL(user1Clicked()), SLOT(slotUser1()));
+    d->buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Apply);
+    QPushButton *okButton = d->buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setDefault(true);
+    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(d->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(d->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    mainLayout->addWidget(d->buttonBox);
+    connect(okButton, SIGNAL(clicked()), SLOT(slotOk()));
+    connect(d->buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), SLOT(slotApply()));
+    connect(d->buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), SLOT(slotDefault()));
+
+    d->pluginSelector->load();
 }
 
 KonqExtensionManager::~KonqExtensionManager()
@@ -95,7 +106,7 @@ void KonqExtensionManager::reparseConfiguration(const QByteArray &conf)
 void KonqExtensionManager::setChanged(bool c)
 {
     d->isChanged = c;
-    enableButton(Apply, c);
+    d->buttonBox->button(QDialogButtonBox::Apply)->setEnabled(c);
 }
 
 void KonqExtensionManager::apply()
@@ -140,15 +151,8 @@ void KonqExtensionManager::slotDefault()
     d->pluginSelector->defaults();
 }
 
-void KonqExtensionManager::slotUser1()
-{
-    d->pluginSelector->load();
-    setChanged(false);
-}
-
 void KonqExtensionManager::showEvent(QShowEvent *event)
 {
-    d->pluginSelector->load();
-    KDialog::showEvent(event);
+    QDialog::showEvent(event);
 }
 

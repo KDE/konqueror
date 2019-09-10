@@ -18,7 +18,7 @@
 #ifndef KONQEXTENSIONMANAGER_H
 #define KONQEXTENSIONMANAGER_H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class KonqExtensionManagerPrivate;
 class KonqMainWindow;
@@ -35,7 +35,7 @@ class ReadOnlyPart;
  * @author Arend van Beelen jr. <arend@auton.nl>
  */
 class KonqExtensionManager
-    : public KDialog
+    : public QDialog
 {
     Q_OBJECT
 
@@ -51,7 +51,6 @@ public Q_SLOTS:
     void slotOk();
     void slotApply();
     void slotDefault();
-    void slotUser1();
 
 protected:
     void showEvent(QShowEvent *event) override;
