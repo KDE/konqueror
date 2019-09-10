@@ -67,7 +67,7 @@ QVariant KonqHistoryProxyModel::data(const QModelIndex &index, int role) const
             }
 
             if (entryDate > dt) {
-                res = qVariantFromValue(m_settings->m_fontYoungerThan);
+                res = QVariant::fromValue(m_settings->m_fontYoungerThan);
             } else {
                 if (m_settings->m_metricOlderThan == KonqHistorySettings::DAYS) {
                     dt = current.addDays(-int(m_settings->m_valueOlderThan));
@@ -75,7 +75,7 @@ QVariant KonqHistoryProxyModel::data(const QModelIndex &index, int role) const
                     dt = current.addSecs(-(int(m_settings->m_valueOlderThan) * 60));
                 }
                 if (entryDate < dt) {
-                    res = qVariantFromValue(m_settings->m_fontOlderThan);
+                    res = QVariant::fromValue(m_settings->m_fontOlderThan);
                 }
             }
             break;
@@ -114,6 +114,7 @@ bool KonqHistoryProxyModel::lessThan(const QModelIndex &left, const QModelIndex 
 
 void KonqHistoryProxyModel::slotSettingsChanged()
 {
-    reset();
+    beginResetModel();
+    endResetModel();
 }
 

@@ -96,13 +96,13 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     action = m_collection->addAction(QStringLiteral("byName"));
     action->setText(i18n("By &Name"));
     action->setCheckable(true);
-    action->setData(qVariantFromValue(0));
+    action->setData(QVariant::fromValue(0));
     sortGroup->addAction(action);
 
     action = m_collection->addAction(QStringLiteral("byDate"));
     action->setText(i18n("By &Date"));
     action->setCheckable(true);
-    action->setData(qVariantFromValue(1));
+    action->setData(QVariant::fromValue(1));
     sortGroup->addAction(action);
 
     KonqHistorySettings *settings = KonqHistorySettings::self();

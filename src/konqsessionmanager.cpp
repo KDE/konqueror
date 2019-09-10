@@ -28,7 +28,6 @@
 
 #include "konqdebug.h"
 #include <kio/deletejob.h>
-#include <kstandarddirs.h>
 #include <KLocalizedString>
 #include <kdialog.h>
 #include <QUrl>

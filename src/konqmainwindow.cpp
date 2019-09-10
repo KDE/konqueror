@@ -110,7 +110,6 @@
 #include <kprotocolmanager.h>
 #include <kstandardshortcut.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
 #include <ksycoca.h>
 #include <QTemporaryFile>
 #include <ktogglefullscreenaction.h>
@@ -384,7 +383,7 @@ QWidget *KonqMainWindow::createContainer(QWidget *parent, int index, const QDomE
 
 void KonqMainWindow::initBookmarkBar()
 {
-    KToolBar *bar = qFindChild<KToolBar *>(this, QStringLiteral("bookmarkToolBar"));
+    KToolBar *bar = this->findChild<KToolBar *>(QStringLiteral("bookmarkToolBar"));
 
     if (!bar) {
         return;
@@ -4882,7 +4881,7 @@ void KonqMainWindow::unplugViewModeActions()
 
 void KonqMainWindow::updateBookmarkBar()
 {
-    KToolBar *bar = qFindChild<KToolBar *>(this, QStringLiteral("bookmarkToolBar"));
+    KToolBar *bar = this->findChild<KToolBar *>(QStringLiteral("bookmarkToolBar"));
     if (!bar) {
         return;
     }
