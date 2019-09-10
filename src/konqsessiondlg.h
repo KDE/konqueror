@@ -20,7 +20,7 @@
 #ifndef __konq_sessiondlg_h__
 #define __konq_sessiondlg_h__
 
-#include <kdialog.h>
+#include <QDialog>
 
 #include <QMap>
 #include <QString>
@@ -33,7 +33,7 @@ class KonqMainWindow;
  * This is the konqueror sessions administration dialog, which allows the user
  * to add, modify, rename and delete konqueror sessions.
  */
-class KonqSessionDlg : public KDialog
+class KonqSessionDlg : public QDialog
 {
     Q_OBJECT
 public:
@@ -54,7 +54,7 @@ private:
     void loadAllSessions(const QString & = QString());
 };
 
-class KonqNewSessionDlg : public KDialog
+class KonqNewSessionDlg : public QDialog
 {
     Q_OBJECT
 public:
