@@ -24,6 +24,7 @@
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
 
+#include <QAction>
 #include <QTimer>
 #include <QMenu>
 #include <QToolBar>
@@ -32,7 +33,7 @@
 #include <QModelIndex>
 #include <QTreeView>
 
-#include <QAction>
+#include <KWindowConfig>
 #include <kactioncollection.h>
 #include <kguiitem.h>
 #include <QIcon>
@@ -40,6 +41,10 @@
 #include <klineedit.h>
 #include <ktoggleaction.h>
 #include <KSharedConfig>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <KWindowConfig>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     : KDialog(parent), m_mainWindow(parent)
@@ -75,7 +80,8 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_historyView);
 
-    restoreDialogSize(KSharedConfig::openConfig()->group("History Dialog"));
+    create();
+    KWindowConfig::restoreWindowSize(windowHandle(), KSharedConfig::openConfig()->group("History Dialog"));
 
     // give focus to the search line edit when opening the dialog (#240513)
     m_historyView->lineEdit()->setFocus();
@@ -84,7 +90,7 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
 KonqHistoryDialog::~KonqHistoryDialog()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "History Dialog");
-    saveDialogSize(group);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 QSize KonqHistoryDialog::sizeHint() const
