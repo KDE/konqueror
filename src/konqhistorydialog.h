@@ -20,14 +20,14 @@
 #ifndef KONQ_HISTORYDIALOG_H
 #define KONQ_HISTORYDIALOG_H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class KonqMainWindow;
 class KonqHistoryView;
 class QModelIndex;
 class QUrl;
 
-class KonqHistoryDialog : public KDialog
+class KonqHistoryDialog : public QDialog
 {
     Q_OBJECT
 

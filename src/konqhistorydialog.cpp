@@ -44,25 +44,22 @@
 #include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <KWindowConfig>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
-    : KDialog(parent), m_mainWindow(parent)
+    : QDialog(parent), m_mainWindow(parent)
 {
-    setCaption(i18nc("@title:window", "History"));
-    setButtons(KDialog::Close);
+    setWindowTitle(i18nc("@title:window", "History"));
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget());
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    m_historyView = new KonqHistoryView(mainWidget());
+    m_historyView = new KonqHistoryView(this);
     connect(m_historyView->treeView(), SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));
     connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqHistoryDialog::slotOpenWindow);
     connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqHistoryDialog::slotOpenTab);
 
     KActionCollection *collection = m_historyView->actionCollection();
 
-    QToolBar *toolBar = new QToolBar(mainWidget());
+    QToolBar *toolBar = new QToolBar(this);
     toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     QToolButton *sortButton = new QToolButton(toolBar);
     sortButton->setText(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
@@ -80,7 +77,12 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_historyView);
 
-    create();
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    mainLayout->addWidget(buttonBox);
+
+    create(); // required by windowHandle()
     KWindowConfig::restoreWindowSize(windowHandle(), KSharedConfig::openConfig()->group("History Dialog"));
 
     // give focus to the search line edit when opening the dialog (#240513)
