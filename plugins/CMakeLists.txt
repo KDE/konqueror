@@ -9,7 +9,6 @@ add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( validators )
-add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
 if (Qt5TextToSpeech_FOUND)
