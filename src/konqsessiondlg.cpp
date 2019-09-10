@@ -26,28 +26,27 @@
 #include "ui_konqnewsessiondlg_base.h"
 
 #include <QDir>
-#include <QFileInfo>
 #include <QDirIterator>
+#include <QFileInfo>
+#include <QIcon>
 #include <QPushButton>
+#include <QStandardPaths>
 
 #include "konqdebug.h"
 #include <kio/copyjob.h>
 #include <ktempdir.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
-#include <QIcon>
 #include <kdirlister.h>
 #include <kdirmodel.h>
 #include <kstandardguiitem.h>
 #include <kio/global.h>
-#include <kstandarddirs.h>
 #include <KLocalizedString>
 #include <kconfig.h>
 #include <kseparator.h>
 #include <kmessagebox.h>
 #include <kdialog.h>
 #include <klistwidget.h>
-#include <QStandardPaths>
 
 class KonqSessionDlg::KonqSessionDlgPrivate : public QWidget,
     public Ui::KonqSessionDlgBase
@@ -84,7 +83,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->m_pDeleteButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     d->m_pNewButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
-    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + QLatin1String("sessions/");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/");
     QDir().mkpath(dir);
 
     d->m_pModel = new KDirModel(d->m_pListView);
@@ -186,7 +185,7 @@ void KonqSessionDlg::slotRename(QUrl dirpathTo)
         if (dir.exists()) {
             slotRename(dirpathTo);
         } else {
-            QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/");
+            QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/"));
             dir.rename(dirpathFrom.fileName(), dlg.newDestUrl().fileName());
         }
     }
@@ -248,8 +247,7 @@ KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow
 
 void KonqNewSessionDlg::slotAddSession()
 {
-    QString dirpath = KStandardDirs::locateLocal("appdata", "sessions/" +
-                      KIO::encodeFileName(d->m_pSessionName->text()));
+    QString dirpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/") + KIO::encodeFileName(d->m_pSessionName->text());
 
     QDir dir(dirpath);
     if (dir.exists()) {
