@@ -364,9 +364,10 @@ void KonqHistoryModel::clear()
         return;
     }
 
+    beginResetModel();
     delete m_root;
     m_root = new KHM::RootEntry();
-    reset();
+    endResetModel();
 }
 
 void KonqHistoryModel::slotEntryAdded(const KonqHistoryEntry &entry)

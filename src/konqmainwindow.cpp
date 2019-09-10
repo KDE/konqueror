@@ -2929,9 +2929,9 @@ void KonqMainWindow::checkDisableClearButton()
             break;
         }
     }
-    KLineEdit *lineEdit = qobject_cast<KLineEdit *>(comboEdit());
+    QLineEdit *lineEdit = comboEdit();
     if (lineEdit) {
-        lineEdit->setClearButtonShown(enable);
+        lineEdit->setClearButtonEnabled(enable);
     }
 }
 
@@ -3622,9 +3622,8 @@ void KonqMainWindow::initActions()
     connect(m_paActivatePrevTab, &QAction::triggered, this, &KonqMainWindow::slotActivatePrevTab);
     actionCollection()->setDefaultShortcuts(m_paActivatePrevTab, QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
 
-    QString actionname;
     for (int i = 1; i < 13; i++) {
-        actionname.sprintf("activate_tab_%02d", i);
+        const QString actionname = QString::asprintf("activate_tab_%02d", i);
         QAction *action = actionCollection()->addAction(actionname);
         action->setText(i18n("Activate Tab %1", i));
         connect(action, &QAction::triggered, this, &KonqMainWindow::slotActivateTab);

@@ -96,7 +96,7 @@ QPixmap KonqClosedWindowItem::icon() const
 
     float pointSize = f.pointSizeF();
     QFontMetrics fm(f);
-    int w = fm.width(countStr);
+    int w = fm.boundingRect(countStr).width();
     if (w > (oldWidth)) {
         pointSize *= float(oldWidth) / float(w);
         f.setPointSizeF(pointSize);

@@ -27,7 +27,7 @@ class QUrl;
 class QModelIndex;
 class QTreeView;
 class QTimer;
-class KLineEdit;
+class QLineEdit;
 class KonqHistoryProxyModel;
 class KonqHistoryModel;
 class KActionCollection;
@@ -51,7 +51,7 @@ public:
         return m_collection;
     }
     QTreeView *treeView() const;
-    KLineEdit *lineEdit() const;
+    QLineEdit *lineEdit() const;
     QUrl urlForIndex(const QModelIndex &index) const;
 
 Q_SIGNALS:
@@ -75,7 +75,7 @@ private:
     KActionCollection *m_collection;
     KonqHistoryModel *m_historyModel;
     KonqHistoryProxyModel *m_historyProxyModel;
-    KLineEdit *m_searchLineEdit;
+    QLineEdit *m_searchLineEdit;
     QTimer *m_searchTimer;
 };
 

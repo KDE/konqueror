@@ -196,9 +196,7 @@ void KonqFrameTabs::setTabIcon(const QUrl &url, QWidget *sender)
     //qCDebug(KONQUEROR_LOG) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
     QIcon iconSet = QIcon::fromTheme(KonqPixmapProvider::self()->iconNameFor(url));
     const int pos = indexOf(sender);
-    if (tabIcon(pos).pixmap(iconSize()).serialNumber() != iconSet.pixmap(iconSize()).serialNumber()) {
-        KTabWidget::setTabIcon(pos, iconSet);
-    }
+    KTabWidget::setTabIcon(pos, iconSet);
 }
 
 void KonqFrameTabs::activateChild()
@@ -434,7 +432,7 @@ void KonqFrameTabs::slotInitiateDrag(QWidget *w)
         d->setMimeData(md);
         QString iconName = KIO::iconNameForUrl(frame->activeChildView()->url());
         d->setPixmap(KIconLoader::global()->loadIcon(iconName, KIconLoader::Small, 0));
-        d->start();
+        d->exec();
     }
 }
 

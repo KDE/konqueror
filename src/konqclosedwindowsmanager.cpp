@@ -134,8 +134,7 @@ void KonqClosedWindowsManager::removeClosedWindowItem(KonqUndoManager
         *real_sender, const KonqClosedWindowItem *closedWindowItem, bool propagate)
 {
     readConfig();
-    QList<KonqClosedWindowItem *>::iterator it = qFind(m_closedWindowItemList.begin(),
-            m_closedWindowItemList.end(), closedWindowItem);
+    auto it = std::find(m_closedWindowItemList.begin(), m_closedWindowItemList.end(), closedWindowItem);
 
     // If the item was found, remove it from the list
     if (it != m_closedWindowItemList.end()) {

@@ -61,7 +61,7 @@ void KonqDraggableLabel::mouseMoveEvent(QMouseEvent *ev)
 
             drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
 
-            drag->start();
+            drag->exec();
         }
     }
 }

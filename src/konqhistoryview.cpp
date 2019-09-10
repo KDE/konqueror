@@ -25,8 +25,11 @@
 #include "konqhistoryproxymodel.h"
 #include "konqhistorysettings.h"
 
-#include <QClipboard>
+#include <QAction>
 #include <QApplication>
+#include <QClipboard>
+#include <QIcon>
+#include <QLineEdit>
 #include <QMenu>
 #include <QMimeData>
 #include <QTimer>
@@ -34,10 +37,7 @@
 #include <QVBoxLayout>
 
 #include <kactioncollection.h>
-#include <QAction>
 #include "konqdebug.h"
-#include <QIcon>
-#include <klineedit.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <krun.h>
@@ -109,11 +109,11 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     sortGroup->actions().at(settings->m_sortsByName ? 0 : 1)->setChecked(true);
     connect(sortGroup, &QActionGroup::triggered, this, &KonqHistoryView::slotSortChange);
 
-    m_searchLineEdit = new KLineEdit(this);
+    m_searchLineEdit = new QLineEdit(this);
     m_searchLineEdit->setPlaceholderText(i18n("Search in history"));
-    m_searchLineEdit->setClearButtonShown(true);
+    m_searchLineEdit->setClearButtonEnabled(true);
 
-    connect(m_searchLineEdit, &KLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
+    connect(m_searchLineEdit, &QLineEdit::textChanged, this, &KonqHistoryView::slotFilterTextChanged);
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -216,7 +216,7 @@ QTreeView *KonqHistoryView::treeView() const
     return m_treeView;
 }
 
-KLineEdit *KonqHistoryView::lineEdit() const
+QLineEdit *KonqHistoryView::lineEdit() const
 {
     return m_searchLineEdit;
 }
