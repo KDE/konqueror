@@ -27,15 +27,16 @@
 #include <QString>
 
 #include <kconfig.h>
-#include <kdialog.h>
+#include <QDialog>
 #include <konqprivate_export.h>
 
 class KonqMainWindow;
+class QDialogButtonBox;
 class QTreeWidget;
 class QTreeWidgetItem;
 class QSessionManager;
 
-class SessionRestoreDialog : public KDialog
+class SessionRestoreDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -83,6 +84,7 @@ private:
     QStringList m_discardedSessionList;
     QHash<QTreeWidgetItem *, int> m_checkedSessionItems;
     int m_sessionItemsCount;
+    QDialogButtonBox *m_buttonBox;
     bool m_dontShowChecked;
 };
 

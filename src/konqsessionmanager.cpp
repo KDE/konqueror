@@ -29,7 +29,7 @@
 #include "konqdebug.h"
 #include <kio/deletejob.h>
 #include <KLocalizedString>
-#include <kdialog.h>
+#include <QDialog>
 #include <QUrl>
 #include <QIcon>
 #include <ktempdir.h>
@@ -54,6 +54,9 @@
 #include <QStandardPaths>
 #include <QSessionManager>
 #include <KSharedConfig>
+#include <KConfigGroup>
+#include <QDialogButtonBox>
+#include <KGuiItem>
 
 class KonqSessionManagerPrivate
 {
@@ -90,54 +93,44 @@ static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use write
 }
 
 SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent)
-    : KDialog(parent, nullptr)
+    : QDialog(parent, nullptr)
     , m_sessionItemsCount(0)
     , m_dontShowChecked(false)
 {
-    setCaption(i18nc("@title:window", "Restore Session?"));
-    setButtons(KDialog::Yes | KDialog::No | KDialog::Cancel);
     setObjectName(QStringLiteral("restoresession"));
-    setButtonGuiItem(KDialog::Yes, KGuiItem(i18nc("@action:button yes", "Restore Session"), QStringLiteral("window-new")));
-    setButtonGuiItem(KDialog::No, KGuiItem(i18nc("@action:button no", "Do Not Restore"), QStringLiteral("dialog-close")));
-    setButtonGuiItem(KDialog::Cancel, KGuiItem(i18nc("@action:button ask later", "Ask Me Later"), QStringLiteral("chronometer")));
-    setDefaultButton(KDialog::Yes);
-    setButtonFocus(KDialog::Yes);
+    setWindowTitle(i18nc("@title:window", "Restore Session?"));
     setModal(true);
 
-    QWidget *mainWidget = new QWidget(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
-    mainLayout->setSpacing(KDialog::spacingHint() * 2); // provide extra spacing
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     QHBoxLayout *hLayout = new QHBoxLayout();
     hLayout->setContentsMargins(0, 0, 0, 0);
-    hLayout->setSpacing(-1); // use default spacing
     mainLayout->addLayout(hLayout, 5);
 
     QIcon icon(QLatin1String("dialog-warning"));
     if (!icon.isNull()) {
-        QLabel *iconLabel = new QLabel(mainWidget);
+        QLabel *iconLabel = new QLabel(this);
         QStyleOption option;
-        option.initFrom(mainWidget);
-        iconLabel->setPixmap(icon.pixmap(mainWidget->style()->pixelMetric(QStyle::PM_MessageBoxIconSize, &option, mainWidget)));
+        option.initFrom(this);
+        iconLabel->setPixmap(icon.pixmap(this->style()->pixelMetric(QStyle::PM_MessageBoxIconSize, &option, this)));
         QVBoxLayout *iconLayout = new QVBoxLayout();
         iconLayout->addStretch(1);
         iconLayout->addWidget(iconLabel);
         iconLayout->addStretch(5);
         hLayout->addLayout(iconLayout, 0);
+        hLayout->addSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     }
 
     const QString text(i18n("Konqueror did not close correctly. Would you like to restore these previous sessions?"));
-    QLabel *messageLabel = new QLabel(text, mainWidget);
+    QLabel *messageLabel = new QLabel(text, this);
     Qt::TextInteractionFlags flags = (Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     messageLabel->setTextInteractionFlags(flags);
     messageLabel->setWordWrap(true);
 
-    hLayout->addSpacing(KDialog::spacingHint());
     hLayout->addWidget(messageLabel, 5);
 
     Q_ASSERT(!sessionFilePaths.isEmpty());
-    m_treeWidget = new QTreeWidget(mainWidget);
+    m_treeWidget = new QTreeWidget(this);
     m_treeWidget->setHeader(nullptr);
     m_treeWidget->setHeaderHidden(true);
     m_treeWidget->setToolTip(i18nc("@tooltip:session list", "Uncheck the sessions you do not want to be restored"));
@@ -183,7 +176,7 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
                         item->setData(0, Qt::UserRole, viewIdFor(sessionFile, viewId));
                         item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
                         item->setCheckState(0, Qt::Checked);
-                        w = qMax(w, fm.width(displayText));
+                        w = qMax(w, fm.horizontalAdvance(displayText));
                         m_sessionItemsCount++;
                     }
                 }
@@ -211,11 +204,26 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     connect(m_treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),
             this, SLOT(slotItemChanged(QTreeWidgetItem*,int)));
 
-    QCheckBox *checkbox = new QCheckBox(i18n("Do not ask again"), mainWidget);
+    QCheckBox *checkbox = new QCheckBox(i18n("Do not ask again"), this);
     connect(checkbox, &QCheckBox::clicked, this, &SessionRestoreDialog::slotClicked);
     mainLayout->addWidget(checkbox);
 
-    setMainWidget(mainWidget);
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::No|QDialogButtonBox::Yes);
+    mainLayout->addWidget(m_buttonBox);
+    QPushButton *yesButton = m_buttonBox->button(QDialogButtonBox::Yes);
+    QPushButton *noButton = m_buttonBox->button(QDialogButtonBox::No);
+    QPushButton *cancelButton = m_buttonBox->button(QDialogButtonBox::Cancel);
+
+    connect(yesButton, &QPushButton::clicked, this, [this]() { setResult(QDialogButtonBox::Yes); accept(); });
+    connect(noButton, &QPushButton::clicked, this, [this]() { setResult(QDialogButtonBox::No); accept(); });
+    connect(cancelButton, &QPushButton::clicked, this, [this]() { reject(); });
+
+    KGuiItem::assign(yesButton, KGuiItem(i18nc("@action:button yes", "Restore Session"), QStringLiteral("window-new")));
+    KGuiItem::assign(noButton, KGuiItem(i18nc("@action:button no", "Do Not Restore"), QStringLiteral("dialog-close")));
+    KGuiItem::assign(cancelButton, KGuiItem(i18nc("@action:button ask later", "Ask Me Later"), QStringLiteral("chronometer")));
+
+    yesButton->setDefault(true);
+    yesButton->setFocus();
 }
 
 SessionRestoreDialog::~SessionRestoreDialog()
@@ -296,6 +304,7 @@ void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
         if (numCheckSessions == 0) {
             parentItem->setCheckState(column, Qt::Unchecked);
         }
+        break;
     case Qt::Unchecked:
         if (numCheckSessions > 0) {
             parentItem->setCheckState(column, Qt::Checked);
@@ -304,7 +313,7 @@ void SessionRestoreDialog::slotItemChanged(QTreeWidgetItem *item, int column)
         break;
     }
 
-    enableButton(KDialog::Yes, m_sessionItemsCount > 0);
+    m_buttonBox->button(QDialogButtonBox::Yes)->setEnabled(m_sessionItemsCount>0);
     item->treeWidget()->blockSignals(blocked);
 }
 
@@ -320,7 +329,7 @@ void SessionRestoreDialog::saveDontShow(const QString &dontShowAgainName, int re
     }
 
     KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
-    cg.writeEntry(dontShowAgainName, result == Yes, flags);
+    cg.writeEntry(dontShowAgainName, result == QDialogButtonBox::Yes, flags);
     cg.sync();
 }
 
@@ -335,14 +344,14 @@ bool SessionRestoreDialog::shouldBeShown(const QString &dontShowAgainName, int *
 
     if (dontAsk == QLatin1String("yes") || dontAsk == QLatin1String("true")) {
         if (result) {
-            *result = Yes;
+            *result = QDialogButtonBox::Yes;
         }
         return false;
     }
 
     if (dontAsk == QLatin1String("no") || dontAsk == QLatin1String("false")) {
         if (result) {
-            *result = No;
+            *result = QDialogButtonBox::No;
         }
         return false;
     }
@@ -652,7 +661,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     if (SessionRestoreDialog::shouldBeShown(dontAskAgainName, &result)) {
         SessionRestoreDialog *restoreDlg = new SessionRestoreDialog(sessionFilePaths);
         if (restoreDlg->isEmpty()) {
-            result = KDialog::No;
+            result = QDialogButtonBox::No;
         } else {
             result = restoreDlg->exec();
             discardedSessionList = restoreDlg->discardedSessionList();
@@ -664,13 +673,13 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     }
 
     switch (result) {
-    case KDialog::Yes:
+    case QDialogButtonBox::Yes:
         // Remove the discarded session list files.
         removeDiscardedSessions(sessionFilePaths, discardedSessionList);
         restoreSessions(sessionFilePaths);
         enableAutosave();
         return true;
-    case KDialog::No:
+    case QDialogButtonBox::No:
         deleteOwnedSessions();
         enableAutosave();
         return false;
