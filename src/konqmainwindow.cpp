@@ -2922,7 +2922,8 @@ void KonqMainWindow::checkDisableClearButton()
     KToolBar *ltb = toolBar(QStringLiteral("locationToolBar"));
     QAction *clearAction = action("clear_location");
     bool enable = true;
-    foreach (QToolButton *atb, qFindChildren<QToolButton *>(ltb)) {
+    const auto toolbuttons = ltb->findChildren<QToolButton *>();
+    for (QToolButton *atb : toolbuttons) {
         if (atb->defaultAction() == clearAction) {
             enable = false;
             break;

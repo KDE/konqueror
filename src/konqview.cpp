@@ -1190,7 +1190,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         if (mimeData->hasUrls()) {
             QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
 
-            QList<QObject *> children = qFindChildren<QObject *>(m_pPart->widget());   // ### slow, better write a isChildOf with a loop...
+            const QList<QObject *> children = m_pPart->widget()->findChildren<QObject *>();   // ### slow, better write a isChildOf with a loop...
 
             if (!lstDragURLs.isEmpty()
                     && !lstDragURLs.first().url().startsWith(QLatin1String("javascript:"), Qt::CaseInsensitive) &&   // ### this looks like a hack to me
