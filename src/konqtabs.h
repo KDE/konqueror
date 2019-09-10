@@ -25,7 +25,7 @@
 #include "konqframe.h"
 #include "konqframecontainer.h"
 
-#include <ktabwidget.h>
+#include "ktabwidget.h"
 #include <QKeyEvent>
 #include <QList>
 

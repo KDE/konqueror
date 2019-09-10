@@ -45,7 +45,7 @@
 #include <kacceleratormanager.h>
 #include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
-#include <ktabbar.h>
+#include "ktabbar.h"
 
 //###################################################################
 
@@ -526,7 +526,7 @@ bool KonqFrameTabs::accept(KonqFrameVisitor *visitor)
 void KonqFrameTabs::slotCurrentChanged(int index)
 {
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
-    setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText).color());
+    tabBar()->setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText).color());
 
     KonqFrameBase *currentFrame = tabAt(index);
     if (currentFrame && !m_pViewManager->isLoadingProfile()) {
@@ -584,7 +584,7 @@ void KonqFrameTabs::setLoading(KonqFrameBase *frame, bool loading)
             color = colorScheme.foreground(KColorScheme::NormalText).color();
         }
     }
-    setTabTextColor(pos, color);
+    tabBar()->setTabTextColor(pos, color);
 }
 
 void KonqFrameTabs::replaceChildFrame(KonqFrameBase *oldFrame, KonqFrameBase *newFrame)

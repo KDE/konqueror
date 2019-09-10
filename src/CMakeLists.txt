@@ -58,6 +58,8 @@ set(konqueror_KDEINIT_SRCS
    konqframevisitor.cpp
    konqframestatusbar.cpp
    konqframecontainer.cpp
+   ktabbar.cpp
+   ktabwidget.cpp
    konqtabs.cpp
    konqactions.cpp
    konqsessiondlg.cpp
