@@ -21,7 +21,6 @@
 
 
 #include <kconfig.h>
-#include <khtml_part.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <QMenu>
@@ -36,6 +35,7 @@
 #include <kparts/part.h>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
+#include <kparts/readonlypart.h>
 #include <KConfigGroup>
 
 #include <QDBusConnection>
