@@ -2251,7 +2251,7 @@ are listed in the dialog.</para>
 <title>Browser Mode</title>
 <!-- 
 FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), DOM Tree Viewer, Document Relations, Web Archiver, Website Validators, Search Bar
+KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), Document Relations, Web Archiver, Search Bar
 kwebkitpart for kf5 in extragear/base in branch frameworks
 WebKit only HTML Settings and Translate (disabled)
 WebEngine -> no extensions
@@ -2281,61 +2281,6 @@ to the Google site itself, where you are able to paste in text for
 translation.</para>
 </note>
 </listitem>
-</varlistentry>
-
-<varlistentry>
-<term>DOM Tree Viewer (KHTML view only)</term>
-<listitem>
-<para>The <acronym>DOM</acronym> Tree Viewer allows a developer to view 
-the styles, attributes and elements of a web document.</para>
-<para>Selecting <menuchoice><guimenu>Tools</guimenu><guisubmenu>Show
-DOM Tree</guisubmenu></menuchoice> opens a new window which displays the
-document object model (DOM) of the current <acronym>HTML</acronym>
-page.</para>
-<para>By default the display starts at the root node of the document, example: <quote>documentElement</quote>, all other nodes that you will see are children or descendants of the root node.</para>
-<para>If you wish to manipulate the <acronym>DOM</acronym> tree in any way you will have to use an external script to do so.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term>Web Page Validator (KHTML view only)</term>
-<listitem>
-<para>This plugin uses the W3C HTML validator to validate the current page, very useful when
-creating web pages.</para>
-
-<variablelist>
-<varlistentry>
-<term><guimenuitem>Validate &HTML; (by URI)</guimenuitem> / <guimenuitem>Validate &HTML; (by Upload)</guimenuitem></term>
-<listitem><para>The validate &HTML; option allows you to compare your &HTML; document to the defined syntax of &HTML; and reports any errors found.  Validating your &HTML; will ensure that your pages display properly on all browsers.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Validate CSS (by URI)</guimenuitem></term>
-<listitem><para>Allows you to validate your &CSS; style sheet that is embedded in an &HTML; or &XHTML; 
-document. Having valid &CSS; is critical to ensuring that your web site maintains a consistent look regardless of the browser that is being used.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Validate Links</guimenuitem></term>
-<listitem><para>Allows you to confirm that the links on your site contain no redirects or broken links. This tool recursively checks all links on a site.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Validate Page</guimenuitem></term>
-<listitem><para>Validates the current page but does not show the result in another window or tab as the previous actions. 
-Using this item enables the action <guimenuitem>View Validator Report</guimenuitem> to display a summary of the validation.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Configure Validator</guimenuitem></term>
-<listitem><para>The configure validator item allows you to view the preset validators you can use
-to validate your &HTML; and &CSS;.</para></listitem>
-</varlistentry>
-</variablelist>
-</listitem>
-<!--FIXME icon W3 right in statusbar
-&LBM; click context menu with items above but no Configure Validator
- -->
 </varlistentry>
 
 <varlistentry>
