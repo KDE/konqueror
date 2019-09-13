@@ -20,7 +20,6 @@ endif(UNIX)
 
 # TODO add_subdirectory( imagerotation )
 add_subdirectory( minitools )
-#add_subdirectory( microformat )
 add_subdirectory( autorefresh )
 if(UNIX)
    add_subdirectory( fsview )
