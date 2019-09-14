@@ -27,7 +27,5 @@ endif()
 add_subdirectory( searchbar )
 add_subdirectory( rellinks )
 
-# TODO add_subdirectory( adblock )
-
 add_subdirectory( akregator )
 
