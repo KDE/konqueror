@@ -1710,14 +1710,6 @@ e-mail to a friend telling her about this wonderful new site.</para>
 <guimenuitem>Copy Image</guimenuitem> copies the &URL; of the picture 
 to the clipboard.</para>
 
-<para>To save a complete web page, including images, select <guimenuitem>
-Archive Web Page...</guimenuitem> from the <guimenu>Tools</guimenu> menu. 
-Note that this feature is provided by a <link linkend="konq-plugin">plugin 
-</link> and may not have been installed on your system. The web page will be 
-saved as a single file with a <literal role="extension">.war</literal> 
-extension and can be opened by <mousebutton>left</mousebutton> clicking 
-on the filename in &konqueror; running in File Manager mode.</para>
-
 <para>Printing a copy of the page you are viewing is easily done with the
 Menubar <menuchoice><guimenu>File</guimenu>
 <guimenuitem>Print...</guimenuitem></menuchoice> or <guimenuitem>Print
@@ -2251,7 +2243,7 @@ are listed in the dialog.</para>
 <title>Browser Mode</title>
 <!-- 
 FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), Document Relations, Web Archiver, Search Bar
+KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), Document Relations, Search Bar
 kwebkitpart for kf5 in extragear/base in branch frameworks
 WebKit only HTML Settings and Translate (disabled)
 WebEngine -> no extensions
@@ -2382,15 +2374,6 @@ The following menu items show a list of popular browsers such as <guimenuitem>Fi
 </listitem>
 </varlistentry>
 -->
-<varlistentry>
-<term>Archive Web Page (KHTML view only)</term>
-<listitem><para>Invoked with <menuchoice><guimenu>Tools</guimenu><guisubmenu>
-Archive Web Page</guisubmenu></menuchoice>, this tool creates an archive 
-(<literal role="extension">.war</literal> ) file containing the web page being 
-viewed including the images. <mousebutton>Left</mousebutton> click on the 
-archive file name to view the saved page.
-</para></listitem>
-</varlistentry>
 
 <varlistentry>
 <term>Auto Refresh (KHTML view only)</term>

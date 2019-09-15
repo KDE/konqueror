@@ -8,7 +8,6 @@ add_subdirectory( kimgalleryplugin )
 add_subdirectory( dirfilter )
 # TODO add_subdirectory( uachanger )
 add_subdirectory( babelfish )
-add_subdirectory( webarchiver )
 
 if (Qt5TextToSpeech_FOUND)
    add_subdirectory(ttsplugin)
