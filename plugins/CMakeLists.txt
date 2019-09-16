@@ -24,7 +24,6 @@ if(UNIX)
    add_subdirectory( fsview )
 endif()
 add_subdirectory( searchbar )
-add_subdirectory( rellinks )
 
 add_subdirectory( akregator )
 
