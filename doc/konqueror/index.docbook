@@ -2243,7 +2243,7 @@ are listed in the dialog.</para>
 <title>Browser Mode</title>
 <!-- 
 FIXME 16.12
-KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), Document Relations, Search Bar
+KHTML:  Auto Refresh, HTML Settings, Translate (disabled), Document Relations, Search Bar
 kwebkitpart for kf5 in extragear/base in branch frameworks
 WebKit only HTML Settings and Translate (disabled)
 WebEngine -> no extensions
@@ -2381,23 +2381,6 @@ The following menu items show a list of popular browsers such as <guimenuitem>Fi
 khtmlpart). It lets you tell &konqueror; to refresh a page automatically
 after a specific period. This is useful for things like news pages,
 and should be very nice for people using Kiosk mode
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term>Minitools (KHTML view only)</term>
-<listitem><para>
-This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
-Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
-they are simple <quote>one-click</quote> tools that can add substantial functionality to the browser.
-<!--http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/-->
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term>Document Relations (KHTML view only)</term>
-<listitem><para>
-Displays the document relations of a document
 </para></listitem>
 </varlistentry>
 

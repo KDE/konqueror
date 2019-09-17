@@ -13,11 +13,6 @@ dirfilter
 This works on dolphin part.  This allows you to filter the current
 directory in a variety of ways.
 
-validators
--------------------
-This works on KHTMLPart/KWebKitPart.  It uses the w3c HTML validator to validate
-the current page or stylesheet.  This is very handy when creating web pages.
-
 khtmlsettingsplugin
 -------------------
 This works on KHTMLPart.  This allows you to enable or disable a bunch
@@ -48,8 +43,3 @@ akregator
 -------------------
 This works on KHTMLPart/KWebKitPart and allows you to add feeds to Akregator directly from Konqueror.
 
-minitools
--------------------
-This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
-Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
-they are simple "one-click" tools that can add substantial functionality to the browser.
