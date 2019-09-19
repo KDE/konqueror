@@ -1,4 +1,5 @@
 #include "appearance.h"
+#include "../../src/htmldefaults.h"
 
 #include "kcmcss.h"
 
@@ -12,7 +13,6 @@
 #include <kdebug.h>
 #include <kdialog.h>
 #include <kglobal.h>
-#include <khtmldefaults.h>
 #include <KLocalizedString>
 #include <knuminput.h>
 #include <KPluginFactory>
