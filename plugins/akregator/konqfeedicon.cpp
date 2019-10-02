@@ -145,7 +145,7 @@ void KonqFeedIcon::contextMenu()
         int id = 0;
         for (FeedDetectorEntryList::Iterator it = m_feedList.begin(); it != m_feedList.end(); ++it) {
             QAction *action = m_menu->addAction(QIcon::fromTheme(QStringLiteral("bookmark-new")), (*it).title(), this, SLOT(addFeed()));
-            action->setData(qVariantFromValue(id));
+            action->setData(QVariant::fromValue(id));
             id++;
         }
         //disconnect(m_menu, SIGNAL(activated(int)), this, SLOT(addFeed(int)));
