@@ -107,12 +107,10 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     hLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addLayout(hLayout, 5);
 
-    QIcon icon(QLatin1String("dialog-warning"));
+    QIcon icon = QIcon::fromTheme(QLatin1String("dialog-warning"));
     if (!icon.isNull()) {
         QLabel *iconLabel = new QLabel(this);
-        QStyleOption option;
-        option.initFrom(this);
-        iconLabel->setPixmap(icon.pixmap(this->style()->pixelMetric(QStyle::PM_MessageBoxIconSize, &option, this)));
+        iconLabel->setPixmap(icon.pixmap(style()->pixelMetric(QStyle::PM_MessageBoxIconSize)));
         QVBoxLayout *iconLayout = new QVBoxLayout();
         iconLayout->addStretch(1);
         iconLayout->addWidget(iconLabel);
