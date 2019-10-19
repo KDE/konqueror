@@ -41,7 +41,6 @@
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>
 #include <KUrlMimeData>
-#include <KComponentData>
 
 #include <QApplication>
 #include <QArgument>

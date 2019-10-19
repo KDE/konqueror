@@ -19,7 +19,6 @@
 
 #include "konqframecontainer.h"
 #include "konqdebug.h"
-#include <kglobalsettings.h>
 #include <kconfig.h>
 #include <math.h> // pow()
 #include <kconfiggroup.h>
@@ -51,7 +50,6 @@ KonqFrameContainer::KonqFrameContainer(Qt::Orientation o,
     m_pFirstChild = nullptr;
     m_pSecondChild = nullptr;
     m_pActiveChild = nullptr;
-    setOpaqueResize(KGlobalSettings::opaqueResize());
     connect(this, &KonqFrameContainer::splitterMoved, this, &KonqFrameContainer::setRubberbandCalled);
 //### CHECKME
 }

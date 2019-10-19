@@ -36,7 +36,6 @@
 
 #include <KParts/PartActivateEvent>
 
-#include <kaccelgen.h>
 #include <kactionmenu.h>
 
 #include <kstringhandler.h>

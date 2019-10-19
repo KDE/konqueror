@@ -55,8 +55,6 @@
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
 #include <kbookmarkmanager.h>
-#include <kinputdialog.h>
-#include <kcomponentdata.h>
 #include <klineedit.h>
 #include <kzip.h>
 #include <pwd.h>
@@ -73,7 +71,6 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>
-#include <kde_file.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -101,7 +98,6 @@
 #include <kedittoolbar.h>
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
-#include <kmessagebox_queued.h>
 #include <knewfilemenu.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
@@ -118,16 +114,13 @@
 #include <kurlrequesterdialog.h>
 #include <kurlrequester.h>
 #include <kmimetypetrader.h>
-#include <kwindowsystem.h>
 #include <KJobWidgets>
-#include <kfiledialog.h>
 #include <KLocalizedString>
 #include <QIcon>
 #include <kiconloader.h>
 #include <QMenu>
 #include <kprocess.h>
 #include <kio/scheduler.h>
-#include <kio/netaccess.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/CopyJob>
 #include <KIO/Job>
@@ -139,14 +132,14 @@
 #include <kacceleratormanager.h>
 #include <kuser.h>
 #include <kxmlguifactory.h>
-#include <netwm.h>
 #include <sonnet/configdialog.h>
+#include <kwindowsystem.h>
+#include <netwm.h>
 
 #include <kauthorized.h>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <kconfiggroup.h>
-#include <kglobalsettings.h>
 #include <kurlauthorized.h>
 #include <QFontDatabase>
 #include <QMenuBar>
@@ -218,7 +211,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
             Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
 
     // This has to be called before any action is created for this mainwindow
-    setComponentData(KComponentData::mainComponent(), false /*don't load plugins yet*/);
+    setComponentData(KAboutData::applicationData(), false /*don't load plugins yet*/);
 
     m_pViewManager = new KonqViewManager(this);
 
@@ -266,8 +259,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     initCombo();
     initActions();
 
-    connect(KGlobalSettings::self(), &KGlobalSettings::kdisplayFontChanged, this, &KonqMainWindow::slotReconfigure);
-
     setXMLFile(QStringLiteral("konqueror.rc"));
 
     setStandardToolBarMenuEnabled(true);
@@ -275,7 +266,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     createGUI(nullptr);
 
     m_combo->setParent(toolBar(QStringLiteral("locationToolBar")));
-    m_combo->setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     m_combo->show();
 
     checkDisableClearButton();
@@ -436,9 +426,17 @@ QString KonqMainWindow::detectNameFilter(QUrl &url)
         QString fileName = path.mid(lastSlash + 1);
         if (fileName.indexOf('*') != -1 || fileName.indexOf('[') != -1 || fileName.indexOf('?') != -1) {
             // Check that a file or dir with all the special chars in the filename doesn't exist
-            // (NetAccess::exists has a fast path for local files)
-            if (!KIO::NetAccess::exists(url, KIO::NetAccess::DestinationSide, this)) {
-                nameFilter = fileName;
+            if (url.isLocalFile()) {
+                if (!QFile(url.toLocalFile()).exists()) {
+                    nameFilter = fileName;
+                }
+            } else { // not a local file
+                KIO::StatJob *job = KIO::stat(url, KIO::StatJob::DestinationSide, 0, KIO::HideProgressInfo);
+                // if there's an error stat'ing url, then assume it doesn't exist
+                nameFilter = !job->exec() ? fileName : QString();
+            }
+
+            if (!nameFilter.isEmpty()) {
                 url = url.adjusted(QUrl::RemoveFilename | QUrl::RemoveQuery);
                 qCDebug(KONQUEROR_LOG) << "Found wildcard. nameFilter=" << nameFilter << "  New url=" << url;
             }
@@ -1520,7 +1518,7 @@ void KonqMainWindow::slotOpenFile()
         currentUrl = QUrl::fromLocalFile(QDir::homePath());
     }
 
-    QUrl url = KFileDialog::getOpenUrl(currentUrl, QString(), this);
+    QUrl url = QFileDialog::getOpenFileUrl(this, i18n("Open File"), currentUrl, QString());
     if (!url.isEmpty()) {
         openFilteredUrl(url.url().trimmed());
     }
@@ -4676,10 +4674,6 @@ void KonqMainWindow::reparseConfiguration()
     KonqSettings::self()->load();
     m_pViewManager->applyConfiguration();
     KonqMouseEventFilter::self()->reparseConfiguration();
-
-    if (m_combo) {
-        m_combo->setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
-    }
 
     MapViews::ConstIterator it = m_mapViews.constBegin();
     MapViews::ConstIterator end = m_mapViews.constEnd();

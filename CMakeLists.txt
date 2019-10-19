@@ -24,7 +24,8 @@ set(KONQUEROR_LIB_VERSION "5.0.97")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml KDELibs4Support Archive Crash)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils KHtml Archive Crash WindowSystem Init IconThemes DBusAddons)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KDELibs4Support)
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 

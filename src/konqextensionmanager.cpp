@@ -27,8 +27,8 @@
 #include <kxmlguifactory.h>
 #include <kconfig.h>
 #include "konqdebug.h"
+#include <KAboutData>
 #include <KLocalizedString>
-#include <kcomponentdata.h>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>
 #include <kpluginselector.h>

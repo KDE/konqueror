@@ -36,7 +36,6 @@
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kservicetypetrader.h>
-#include <kdeversion.h>
 #include <KParts/ReadOnlyPart>
 
 // Local

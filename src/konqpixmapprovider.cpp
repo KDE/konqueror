@@ -28,7 +28,7 @@
 #include <kio/global.h>
 #include <kprotocolinfo.h>
 #include <kconfiggroup.h>
-#include <kiconloader.h>
+#include <KIconLoader>
 
 class KonqPixmapProviderSingleton
 {
