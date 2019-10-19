@@ -19,6 +19,7 @@
 #define FILTEROPTS_H
 
 #include <QAbstractItemModel>
+#include <QTabWidget>
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>
@@ -27,7 +28,6 @@ class QListWidget;
 class QPushButton;
 class QLineEdit;
 class QCheckBox;
-class KTabWidget;
 class KListWidgetSearchLine;
 class QTreeView;
 class KIntSpinBox;
@@ -108,7 +108,7 @@ private:
     QPushButton *mRemoveButton;
     QPushButton *mImportButton;
     QPushButton *mExportButton;
-    KTabWidget *mFilterWidget;
+    QTabWidget *mFilterWidget;
     QTreeView *mAutomaticFilterList;
     KIntSpinBox *mRefreshFreqSpinBox;
 

@@ -44,7 +44,6 @@
 #include <klineedit.h>
 #include <QPushButton>
 #include <knuminput.h>
-#include <KTabWidget>
 #include <KConfigGroup>
 
 #include <QUrl>
@@ -67,7 +66,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     mKillCheck = new QCheckBox(i18n("Hide filtered images"), this);
     topLayout->addWidget(mKillCheck);
 
-    mFilterWidget = new KTabWidget(this);
+    mFilterWidget = new QTabWidget(this);
     topLayout->addWidget(mFilterWidget);
 
     QWidget *container = new QWidget(mFilterWidget);

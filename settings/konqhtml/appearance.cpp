@@ -18,9 +18,9 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <QFontComboBox>
-#include <KTabWidget>
 #include <QFontDatabase>
 #include <QSpinBox>
+#include <QTabWidget>
 
 static const char *const animationValues[] = {"Enabled", "Disabled", "LoopOnce"};
 enum AnimationsType { AnimationsAlways = 0, AnimationsNever = 1, AnimationsLoopOnce = 2 };
@@ -36,14 +36,14 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
 
 {
     QVBoxLayout *l = new QVBoxLayout(this);
-    KTabWidget *tab = new KTabWidget(this);
-    l->addWidget(tab);
+    QTabWidget *tabWidget = new QTabWidget(this);
+    l->addWidget(tabWidget);
     QWidget *mainTab = new QWidget(this);
     QWidget *fontsTab = new QWidget(this);
     cssConfig = new CSSConfig(this);
-    tab->addTab(mainTab, i18nc("@title:tab", "General"));
-    tab->addTab(fontsTab, i18nc("@title:tab", "Fonts"));
-    tab->addTab(cssConfig, i18nc("@title:tab", "Stylesheets"));
+    tabWidget->addTab(mainTab, i18nc("@title:tab", "General"));
+    tabWidget->addTab(fontsTab, i18nc("@title:tab", "Fonts"));
+    tabWidget->addTab(cssConfig, i18nc("@title:tab", "Stylesheets"));
 
     connect(cssConfig, SIGNAL(changed()), this, SLOT(changed()));
     connect(cssConfig, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
