@@ -305,7 +305,7 @@ void KonqCombo::updateItem(const QPixmap &pix, const QString &t, int index, cons
 {
     // No need to flicker
     if (itemText(index) == t &&
-            (!itemIcon(index).isNull() && itemIcon(index).pixmap(iconSize()).serialNumber() == pix.serialNumber())) {
+            (!itemIcon(index).isNull() && itemIcon(index).pixmap(iconSize()).cacheKey() == pix.cacheKey())) {
         return;
     }
 
