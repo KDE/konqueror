@@ -216,8 +216,8 @@ SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, 
     QPushButton *noButton = m_buttonBox->button(QDialogButtonBox::No);
     QPushButton *cancelButton = m_buttonBox->button(QDialogButtonBox::Cancel);
 
-    connect(yesButton, &QPushButton::clicked, this, [this]() { setResult(QDialogButtonBox::Yes); accept(); });
-    connect(noButton, &QPushButton::clicked, this, [this]() { setResult(QDialogButtonBox::No); accept(); });
+    connect(yesButton, &QPushButton::clicked, this, [this]() { done(QDialogButtonBox::Yes); });
+    connect(noButton, &QPushButton::clicked, this, [this]() { done(QDialogButtonBox::No); });
     connect(cancelButton, &QPushButton::clicked, this, [this]() { reject(); });
 
     KGuiItem::assign(yesButton, KGuiItem(i18nc("@action:button yes", "Restore Session"), QStringLiteral("window-new")));
