@@ -32,7 +32,6 @@
 #include <QDialog>
 #include <QUrl>
 #include <QIcon>
-#include <ktempdir.h>
 #include <ksqueezedtextlabel.h>
 
 #include <QPushButton>
@@ -442,7 +441,7 @@ void KonqSessionManager::enableAutosave()
 void KonqSessionManager::deleteOwnedSessions()
 {
     // Not dealing with the sessions about to remove anymore
-    if (m_createdOwnedByDir && KTempDir::removeDir(dirForMyOwnedSessionFiles())) {
+    if (m_createdOwnedByDir && QDir(dirForMyOwnedSessionFiles()).removeRecursively()) {
         m_createdOwnedByDir = false;
     }
 }
@@ -569,7 +568,7 @@ QStringList KonqSessionManager::takeSessionsOwnership()
                     sessionFilePaths.append(newFileName);
                 }
                 // Remove the old directory
-                KTempDir::removeDir(it.filePath());
+                QDir(it.filePath()).removeRecursively();
             }
         } else { // it's a file
             if (!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName()))) {
@@ -696,7 +695,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
             QFile::rename(it.filePath(), m_autosaveDir + '/' + it.fileName());
         }
         // Remove the owned_by directory
-        KTempDir::removeDir(dirForMyOwnedSessionFiles());
+        QDir(dirForMyOwnedSessionFiles()).removeRecursively();
         enableAutosave();
         return false;
     }

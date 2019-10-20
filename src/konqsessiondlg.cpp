@@ -34,7 +34,6 @@
 
 #include "konqdebug.h"
 #include <kio/copyjob.h>
-#include <ktempdir.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
 #include <kdirlister.h>
@@ -165,7 +164,7 @@ void KonqSessionDlg::slotDelete()
     }
 
     const QString dir = d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().toLocalFile();
-    if (!KTempDir::removeDir(dir)) {
+    if (!QDir(dir).removeRecursively()) {
         // TODO show error msg box
     }
 }
@@ -266,7 +265,7 @@ void KonqNewSessionDlg::slotAddSession()
             KMessageBox::questionYesNo(this,
                                        i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
                                        i18nc("@title:window", "Session exists. Overwrite?")) == KMessageBox::Yes) {
-            KTempDir::removeDir(dirpath);
+            QDir(dirpath).removeRecursively();
         } else {
             return;
         }
