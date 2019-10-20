@@ -27,7 +27,6 @@
 #include <webengineview.h>
 
 #include <KSharedConfig>
-#include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <ksycoca.h>
 
@@ -68,7 +67,7 @@ private Q_SLOTS:
         if (needsUpdate) {
             profile->sync();
             // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-            QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+            QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
         }
     }
     void cleanupTestCase()

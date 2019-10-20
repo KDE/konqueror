@@ -33,9 +33,7 @@
 #include <konqtabs.h>
 #include <konqframevisitor.h>
 #include <konqsessionmanager.h>
-#include <kstandarddirs.h>
 #include <kconfiggroup.h>
-#include <ktempdir.h>
 #include <kio/job.h>
 #include <ksycoca.h>
 
@@ -215,7 +213,7 @@ void ViewMgrTest::initTestCase()
     if (needsUpdate) {
         profile->sync();
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-        QProcess::execute(KStandardDirs::findExe(KBUILDSYCOCA_EXENAME));
+        QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
     }
 }
 
