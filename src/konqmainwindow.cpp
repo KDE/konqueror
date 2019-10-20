@@ -2084,8 +2084,6 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     m_currentView->setLocationBarURL(m_currentView->locationBarURL());
 
     updateToolBarActions();
-
-    m_currentView->setActiveComponent();
 }
 
 void KonqMainWindow::insertChildView(KonqView *childView)

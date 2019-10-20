@@ -1194,33 +1194,17 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         }
     }
 
+#ifdef KActivities_FOUND
     if (e->type() == QEvent::FocusIn) {
-        setActiveComponent();
+        m_activityResourceInstance->notifyFocusedIn();
     }
 
-#ifdef KActivities_FOUND
     if (e->type() == QEvent::FocusOut) {
         m_activityResourceInstance->notifyFocusedOut();
     }
 #endif
 
     return false;
-}
-
-void KonqView::setActiveComponent()
-{
-#if 0 // Removed with the port to KF5. The concept no longer exists, the about dialog and bug report
-    // dialog just use the application information rather than the one of the current part.
-    if (m_bBuiltinView) {
-        KComponentData::setActiveComponent(KGlobal::mainComponent());
-    } else {
-        KComponentData::setActiveComponent(KComponentData(m_pPart->componentData()));
-    }
-#endif
-
-#ifdef KActivities_FOUND
-    m_activityResourceInstance->notifyFocusedIn();
-#endif
 }
 
 bool KonqView::prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArguments &browserArgs, bool softReload)
