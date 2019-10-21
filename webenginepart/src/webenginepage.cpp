@@ -772,8 +772,10 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         const QUrl reqUrl (url);
 
         const bool actionRequestedByUser = type != QWebEnginePage::NavigationTypeOther;
+        const bool actionRequestsNewTab = m_type == QWebEnginePage::WebBrowserBackgroundTab ||
+                                          m_type == QWebEnginePage::WebBrowserTab;
 
-        if (actionRequestedByUser) {
+        if (actionRequestedByUser && !actionRequestsNewTab) {
             if (!part() && !isMainFrame) {
                 return false;
             }
