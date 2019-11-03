@@ -83,7 +83,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     if (KonqSettings::tabPosition() == QLatin1String("Bottom")) {
         setTabPosition(QTabWidget::South);
     }
-    connect(this, SIGNAL(closeRequest(QWidget*)), SLOT(slotCloseRequest(QWidget*)));
+    connect(this, &KonqFrameTabs::tabCloseRequested, this, &KonqFrameTabs::slotCloseRequest);
     connect(this, SIGNAL(removeTabPopup()),
             m_pViewManager->mainWindow(), SLOT(slotRemoveTabPopup()));
 
@@ -352,9 +352,9 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
                                       m_pViewManager->mainWindow()->action("removeothertabs")->shortcut());
 }
 
-void KonqFrameTabs::slotCloseRequest(QWidget *w)
+void KonqFrameTabs::slotCloseRequest(int idx)
 {
-    m_pViewManager->mainWindow()->setWorkingTab(indexOf(w));
+    m_pViewManager->mainWindow()->setWorkingTab(idx);
     emit removeTabPopup();
 }
 
@@ -614,7 +614,7 @@ bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
             if (e->button() == Qt::MidButton) {
                 if (event->type() == QEvent::MouseButtonRelease) {
                     const int index = bar->tabAt(e->pos());
-                    slotCloseRequest(widget(index));
+                    slotCloseRequest(index);
                 }
                 e->accept();
                 return true;

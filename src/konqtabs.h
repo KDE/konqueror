@@ -138,7 +138,7 @@ private:
 private Q_SLOTS:
     void slotContextMenu(const QPoint &);
     void slotContextMenu(QWidget *, const QPoint &);
-    void slotCloseRequest(QWidget *);
+    void slotCloseRequest(int);
     void slotMovedTab(int, int);
     void slotMouseMiddleClick();
     void slotMouseMiddleClick(QWidget *);
