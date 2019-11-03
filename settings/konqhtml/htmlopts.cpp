@@ -138,6 +138,13 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     connect(m_pOfferToSaveWebsitePassword, SIGNAL(toggled(bool)), SLOT(changed()));
     fl->addRow(m_pOfferToSaveWebsitePassword);
 
+#ifdef WEBENGINE_PDF_VIEWER
+    m_pdfViewer = new QCheckBox(i18n("Display online PDF files using WebEngine"));
+    m_pdfViewer->setWhatsThis(i18n("Uncheck this box to display online PDF files as configured in System Settings"));
+    fl->addRow(m_pdfViewer);
+    connect(m_pdfViewer, &QCheckBox::toggled, this, QOverload<>::of(&KMiscHTMLOptions::changed));
+#endif
+
     lay->addWidget(bgMisc);
     lay->addStretch(5);
 
@@ -167,6 +174,10 @@ void KMiscHTMLOptions::load()
     m_pMaxFormCompletionItems->setEnabled(m_pFormCompletionCheckBox->isChecked());
     m_pOfferToSaveWebsitePassword->setChecked(cg.readEntry("OfferToSaveWebsitePassword", true));
 
+#ifdef WEBENGINE_PDF_VIEWER
+    m_pdfViewer->setChecked(cg.readEntry("InternalPdfViewer", false));
+#endif
+
     cg2 = KConfigGroup(khtmlrcConfig, "Access Keys");
     m_pAccessKeys->setChecked(cg2.readEntry("Enabled", true));
 
@@ -188,6 +199,10 @@ void KMiscHTMLOptions::defaults()
     m_pOnlyMarkedBookmarksCheckBox->setChecked(false);
     m_pDoNotTrack->setChecked(false);
     m_pOfferToSaveWebsitePassword->setChecked(true);
+
+#ifdef WEBENGINE_PDF_VIEWER
+    m_pdfViewer->setChecked(false);
+#endif
 }
 
 void KMiscHTMLOptions::save()
@@ -202,6 +217,9 @@ void KMiscHTMLOptions::save()
     cg.writeEntry("FormCompletion", m_pFormCompletionCheckBox->isChecked());
     cg.writeEntry("MaxFormCompletionItems", m_pMaxFormCompletionItems->value());
     cg.writeEntry("OfferToSaveWebsitePassword", m_pOfferToSaveWebsitePassword->isChecked());
+#ifdef WEBENGINE_PDF_VIEWER
+    cg.writeEntry("InternalPdfViewer", m_pdfViewer->isChecked());
+#endif
     cg.sync();
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML

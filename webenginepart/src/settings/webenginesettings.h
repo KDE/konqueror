@@ -125,6 +125,9 @@ public:
     bool alowActiveMixedContent() const;
     bool allowMixedContentDisplay() const;
 
+    //Internal PDF viewer
+    bool internalPdfViewer() const;
+
     // Global config object stuff.
     static WebEngineSettings* self();
 

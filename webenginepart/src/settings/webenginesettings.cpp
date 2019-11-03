@@ -131,6 +131,7 @@ public:
     QList< QPair< QString, QChar > > m_fallbackAccessKeysAssignments;
 
     KSharedConfig::Ptr nonPasswordStorableSites;
+    bool m_internalPdfViewer;
 };
 
 class WebEngineSettingsPrivate : public QObject, public WebEngineSettingsData
@@ -296,6 +297,11 @@ bool WebEngineSettings::underlineLink() const
 bool WebEngineSettings::hoverLink() const
 {
   return d->m_hoverLink;
+}
+
+bool WebEngineSettings::internalPdfViewer() const
+{
+    return d->m_internalPdfViewer;
 }
 
 void WebEngineSettings::init()
@@ -483,6 +489,10 @@ void WebEngineSettings::init( KConfig * config, bool reset )
             d->m_userSheet = cgHtml.readEntry("UserStyleSheet", QString());
     } else {
         d->m_userSheet.clear();
+    }
+
+    if (reset || cgHtml.hasKey("InternalPdfViewer")) {
+        d->m_internalPdfViewer = cgHtml.readEntry("InternalPdfViewer", false);
     }
 
     d->m_formCompletionEnabled = cgHtml.readEntry("FormCompletion", true);
@@ -705,6 +715,10 @@ void WebEngineSettings::init( KConfig * config, bool reset )
   QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, d->m_enableLocalStorage);
 
   QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
+
+#ifdef WEBENGINE_PDF_VIEWER
+  QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, internalPdfViewer());
+#endif
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);

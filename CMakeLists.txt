@@ -29,6 +29,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KDELibs4Support)
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
+if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.13.0")
+  add_definitions(-DWEBENGINE_PDF_VIEWER)
+endif()
+
 find_package(X11)
 set(KONQ_HAVE_X11 ${X11_FOUND})
 
