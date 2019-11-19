@@ -821,7 +821,7 @@ void KonqComboItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
 KonqComboLineEdit::KonqComboLineEdit(QWidget *parent)
     : KLineEdit(parent)
 {
-    setClearButtonShown(true);
+    setClearButtonEnabled(true);
 }
 
 void KonqComboLineEdit::mouseDoubleClickEvent(QMouseEvent *e)

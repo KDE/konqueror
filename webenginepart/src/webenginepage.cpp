@@ -284,7 +284,7 @@ static int errorCodeFromReply(QNetworkReply* reply)
 
     switch (reply->error()) {
         case QNetworkReply::ConnectionRefusedError:
-            return KIO::ERR_COULD_NOT_CONNECT;
+            return KIO::ERR_CANNOT_CONNECT;
         case QNetworkReply::HostNotFoundError:
             return KIO::ERR_UNKNOWN_HOST;
         case QNetworkReply::TimeoutError:
@@ -300,7 +300,7 @@ static int errorCodeFromReply(QNetworkReply* reply)
         case QNetworkReply::ContentNotFoundError:
             return KIO::ERR_NO_CONTENT;
         case QNetworkReply::AuthenticationRequiredError:
-            return KIO::ERR_COULD_NOT_AUTHENTICATE;
+            return KIO::ERR_CANNOT_AUTHENTICATE;
         case QNetworkReply::ProtocolUnknownError:
             return KIO::ERR_UNSUPPORTED_PROTOCOL;
         case QNetworkReply::ProtocolInvalidOperationError:

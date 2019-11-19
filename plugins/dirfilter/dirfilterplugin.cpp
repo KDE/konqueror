@@ -139,7 +139,7 @@ FilterBar::FilterBar(QWidget *parent)
     // Create filter editor
     m_filterInput = new KLineEdit(this);
     m_filterInput->setLayoutDirection(Qt::LeftToRight);
-    m_filterInput->setClearButtonShown(true);
+    m_filterInput->setClearButtonEnabled(true);
     connect(m_filterInput, SIGNAL(textChanged(QString)),
             this, SIGNAL(filterChanged(QString)));
     setFocusProxy(m_filterInput);

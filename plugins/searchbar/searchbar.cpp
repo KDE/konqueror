@@ -308,7 +308,7 @@ void SearchBarPlugin::showSelectionMenu()
         for (int i = 0, count = m_searchEngines.count(); i != count; ++i) {
             const KUriFilterSearchProvider &provider = m_searchProviders.value(m_searchEngines.at(i));
             QAction *action = m_popupMenu->addAction(QIcon::fromTheme(provider.iconName()), provider.name());
-            action->setData(qVariantFromValue(i));
+            action->setData(QVariant::fromValue(i));
         }
 
         m_popupMenu->addSeparator();

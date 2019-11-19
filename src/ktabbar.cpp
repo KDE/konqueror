@@ -187,13 +187,13 @@ void KTabBar::wheelEvent(QWheelEvent *event)
 {
     if (!(event->orientation() == Qt::Horizontal)) {
         if (receivers(SIGNAL(wheelDelta(int)))) {
-            emit(wheelDelta(event->delta()));
+            emit(wheelDelta(event->angleDelta().y()));
             return;
         }
         int lastIndex = count() - 1;
         //Set an invalid index as base case
         int targetIndex = -1;
-        bool forward = event->delta() < 0;
+        bool forward = event->angleDelta().y() < 0;
         if (forward && lastIndex == currentIndex()) {
             targetIndex = 0;
         } else if (!forward && 0 == currentIndex()) {

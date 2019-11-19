@@ -182,7 +182,7 @@ void KonqSessionDlg::slotRename(QUrl dirpathTo)
     KIO::RenameDialog dlg(this, i18nc("@title:window", "Rename Session"), dirpathFrom,
                           dirpathTo, KIO::RenameDialog_Options(nullptr));
 
-    if (dlg.exec() == KIO::R_RENAME) {
+    if (dlg.exec() == KIO::Result_Rename) {
         dirpathTo = dlg.newDestUrl();
         QDir dir(dirpathTo.path());
         if (dir.exists()) {
