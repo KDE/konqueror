@@ -192,7 +192,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
                 m_toolBar->addAction(action);
             }
             d->m_actions.append(action);
-            KBookmarkMenu *menu = new KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
+            KBookmarkMenu *menu = new Konqueror::KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
             m_lstSubMenus.append(menu);
         }
     }
@@ -291,7 +291,7 @@ void KBookmarkBar::contextMenu(const QPoint &pos)
         //Reassign custom context menu
         m_toolBar->setContextMenuPolicy(Qt::CustomContextMenu);
     } else {
-        QMenu *menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
+        QMenu *menu = new Konqueror::KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
         menu->setAttribute(Qt::WA_DeleteOnClose);
         menu->popup(m_toolBar->mapToGlobal(pos));
     }
