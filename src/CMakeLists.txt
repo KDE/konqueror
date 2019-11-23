@@ -66,7 +66,6 @@ set(konqueror_KDEINIT_SRCS
    konqsessiondlg.cpp
    konqfactory.cpp
    konqcombo.cpp
-   konqbrowseriface.cpp
    delayedinitializer.cpp
    konqanimatedlogo.cpp
    konqmainwindow.cpp

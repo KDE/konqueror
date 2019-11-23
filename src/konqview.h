@@ -38,7 +38,6 @@
 
 class KonqRun;
 class KonqFrame;
-class KonqBrowserInterface;
 namespace KParts
 {
 class BrowserExtension;
@@ -475,8 +474,6 @@ public:
     QString dbusObjectPath();
     QString partObjectPath();
 
-    void goHistory(int steps);
-
     // Set the KGlobal active componentData(the one used by KBugReport)
     void setActiveComponent();
 
@@ -659,7 +656,6 @@ private:
     QString m_caption;
     QString m_tempFile;
     QString m_dbusObjectPath;
-    KonqBrowserInterface *m_browserIface;
     int m_randID;
 
 #ifdef KActivities_FOUND

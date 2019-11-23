@@ -27,7 +27,6 @@
 #include <konq_events.h>
 #include "konqviewmanager.h"
 #include "konqtabs.h"
-#include "konqbrowseriface.h"
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 
@@ -108,7 +107,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_bDisableScrolling = false;
     m_bGotIconURL = false;
     m_bPopupMenuEnabled = true;
-    m_browserIface = new KonqBrowserInterface(this);
     m_bFollowActive = false;
     m_bBuiltinView = false;
     m_bURLDropHandling = false;
@@ -388,8 +386,6 @@ void KonqView::connectPart()
     KParts::BrowserExtension *ext = browserExtension();
 
     if (ext) {
-        ext->setBrowserInterface(m_browserIface);
-
         connect(ext, SIGNAL(openUrlRequestDelayed(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
                 m_pMainWindow, SLOT(slotOpenURLRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
@@ -780,17 +776,6 @@ void KonqView::updateHistoryEntry(bool saveLocationBarURL)
     current->postData = m_doPost ? m_postData : QByteArray();
     current->postContentType = m_doPost ? m_postContentType : QString();
     current->pageReferrer = m_pageReferrer;
-}
-
-void KonqView::goHistory(int steps)
-{
-    // This is called by KonqBrowserInterface
-    if (m_pMainWindow->currentView() == this) {
-        m_pMainWindow->viewManager()->setActivePart(part());
-    }
-
-    // Delay the go() call (we need to return to the caller first)
-    m_pMainWindow->slotGoHistoryActivated(steps);
 }
 
 void KonqView::go(int steps)
