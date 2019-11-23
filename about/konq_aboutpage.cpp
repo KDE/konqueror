@@ -18,15 +18,7 @@ K_PLUGIN_FACTORY(KonqAboutPageFactory, registerPlugin<KonqAboutPage>();)
 
 Q_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 
-KonqAboutPageSingleton::KonqAboutPageSingleton()
-{
-}
-
-KonqAboutPageSingleton::~KonqAboutPageSingleton()
-{
-}
-
-QString KonqAboutPageSingleton::loadFile(const QString &file)
+static QString loadFile(const QString &file)
 {
     QString res;
     if (file.isEmpty()) {
@@ -360,19 +352,6 @@ KonqAboutPage::KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVari
     : KHTMLPart(parentWidget, parent, BrowserViewGUI)
 {
     Q_UNUSED(args)
-#if 0
-    QTextCodec *codec = KGlobal::locale()->codecForEncoding();
-    if (codec) {
-        setEncoding(codec->name(), true);
-    } else {
-        setEncoding("iso-8859-1", true);
-    }
-    // about:blah isn't a kioslave -> disable View source
-    QAction *act = actionCollection()->action("viewDocumentSource");
-    if (act) {
-        act->setEnabled(false);
-    }
-#endif
 }
 
 KonqAboutPage::~KonqAboutPage()

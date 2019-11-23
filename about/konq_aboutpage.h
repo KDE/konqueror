@@ -8,9 +8,6 @@ class QUrl;
 class KonqAboutPageSingleton
 {
 public:
-    KonqAboutPageSingleton();
-    ~KonqAboutPageSingleton();
-
     QString launch();
     QString intro();
     QString specs();
@@ -18,8 +15,6 @@ public:
     QString plugins();
 
 private:
-    static QString loadFile(const QString &file);
-
     QString m_launch_html, m_intro_html, m_specs_html, m_tips_html, m_plugins_html;
 };
 
@@ -45,7 +40,6 @@ protected:
 private:
     void serve(const QString &, const QString &);
 
-    KHTMLPart *m_doc;
     QString m_htmlDoc;
     QString m_what;
 };
