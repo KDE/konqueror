@@ -71,12 +71,6 @@ public:
 
 public Q_SLOTS:
     /**
-     * Move a widget's tab from first to second specified index and emit
-     * signal movedTab( int, int ) afterwards.
-     */
-    virtual void moveTab(int, int);
-
-    /**
      * Removes the widget, reimplemented for
      * internal reasons (keeping labels in sync).
      */

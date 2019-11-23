@@ -115,8 +115,6 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
 
     connect(tabBar(), SIGNAL(tabMoved(int,int)),
             SLOT(slotMovedTab(int,int)));
-    connect(this, SIGNAL(movedTab(int,int)),
-            SLOT(slotMovedTab(int,int)));
     connect(this, SIGNAL(mouseMiddleClick()),
             SLOT(slotMouseMiddleClick()));
     connect(this, SIGNAL(mouseMiddleClick(QWidget*)),
@@ -269,7 +267,7 @@ void KonqFrameTabs::moveTabBackward(int index)
     if (index == 0) {
         return;
     }
-    moveTab(index, index - 1);
+    tabBar()->moveTab(index, index - 1);
 }
 
 void KonqFrameTabs::moveTabForward(int index)
@@ -277,7 +275,7 @@ void KonqFrameTabs::moveTabForward(int index)
     if (index == count() - 1) {
         return;
     }
-    moveTab(index, index + 1);
+    tabBar()->moveTab(index, index + 1);
 }
 
 void KonqFrameTabs::slotMovedTab(int from, int to)
