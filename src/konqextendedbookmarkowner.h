@@ -22,6 +22,7 @@
 #define KONQEXTENDEDBOOKMARKOWNER_H
 
 #include <konqbookmarkmenu.h>
+#include <kbookmarkowner.h>
 
 class KonqExtendedBookmarkOwner : public KBookmarkOwner
 {

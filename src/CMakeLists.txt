@@ -48,6 +48,7 @@ set(konqueror_KDEINIT_SRCS
    konqapplication.cpp
    konqdebug.cpp
    konqguiclients.cpp
+   konqbookmarkmenu.cpp
    konqrun.cpp
    konqview.cpp
    konqviewmanager.cpp

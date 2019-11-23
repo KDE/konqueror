@@ -3748,7 +3748,7 @@ void KonqMainWindow::initActions()
     // don't appear in kedittoolbar
     m_bookmarksActionCollection = new KActionCollection(static_cast<QWidget *>(this));
 
-    m_pBookmarkMenu = new KonqBookmarkMenu(s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection);
+    m_pBookmarkMenu = new Konqueror::KonqBookmarkMenu(s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection);
 
     QAction *addBookmark = m_bookmarksActionCollection->action(QStringLiteral("add_bookmark"));
     if (addBookmark) {
