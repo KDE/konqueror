@@ -34,9 +34,9 @@
 #include <ksharedconfig.h>
 #include <kiconloader.h>
 #include <kstringhandler.h>
-#include <kdebug.h>
 
 #include "ktabbar.h"
+#include "konqdebug.h"
 
 #include <kconfiggroup.h>
 
@@ -321,7 +321,7 @@ void KTabWidget::setTabText(int index, const QString &text)
 
         if (index != -1) {
             if (index >= d->m_tabNames.count()) {
-                kWarning(240) << "setTabText(" << index << ") called but d->m_tabNames has only" << d->m_tabNames.count() << "entries";
+                qCWarning(KONQUEROR_LOG) << "setTabText(" << index << ") called but d->m_tabNames has only" << d->m_tabNames.count() << "entries";
                 while (index >= d->m_tabNames.count()) {
                     d->m_tabNames.append(QString());
                 }

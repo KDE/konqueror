@@ -141,12 +141,6 @@ Q_SIGNALS:
      */
     void mouseMiddleClick(QWidget *);
 
-    /**
-     * The close button of a widget's tab was clicked. This signal is
-     * only possible after you have called setCloseButtonEnabled( true ).
-     */
-    void closeRequest(QWidget *);
-
 protected:
     void mouseDoubleClickEvent(QMouseEvent *) override;
     void mousePressEvent(QMouseEvent *) override;
@@ -167,7 +161,6 @@ protected Q_SLOTS:
     virtual void contextMenu(int, const QPoint &);
     virtual void mouseDoubleClick(int);
     virtual void mouseMiddleClick(int);
-    virtual void closeRequest(int);
 #ifndef QT_NO_WHEELEVENT
     virtual void wheelDelta(int);
 #endif
