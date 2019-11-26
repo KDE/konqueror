@@ -23,7 +23,6 @@
 #include <QTextDocument>
 
 #include <kcolorscheme.h>
-#include <kiconloader.h>
 #include <QIcon>
 #include <KLocalizedString>
 #include "konqdebug.h"
@@ -155,7 +154,7 @@ void KonqStatusBarMessageLabel::setMessage(const QString &text,
         break;
     }
 
-    d->m_pixmap = (iconName == nullptr) ? QPixmap() : SmallIcon(iconName);
+    d->m_pixmap = (iconName == nullptr) ? QPixmap() : QIcon::fromTheme(iconName).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
     QTimer::singleShot(GeometryTimeout, this, SLOT(assureVisibleText()));
 
     if (type == Error) {

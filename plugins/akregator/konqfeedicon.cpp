@@ -40,7 +40,9 @@
 #include <kurllabel.h>
 #include <kprotocolinfo.h>
 
+#include <QApplication>
 #include <qstatusbar.h>
+#include <QStyle>
 
 using namespace Akregator;
 
@@ -139,7 +141,7 @@ void KonqFeedIcon::contextMenu()
     m_menu = new QMenu(m_part->widget());
     if (m_feedList.count() == 1) {
         m_menu->setTitle(m_feedList.first().title());
-        m_menu->addAction(SmallIcon("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addAllFeeds()));
+        m_menu->addAction(QIcon::fromTheme("bookmark-new"), i18n("Add Feed to Akregator"), this, SLOT(addAllFeeds()));
     } else {
         m_menu->setTitle(i18n("Add Feeds to Akregator"));
         int id = 0;
@@ -169,7 +171,7 @@ void KonqFeedIcon::addFeedIcon()
     m_feedIcon = new KUrlLabel(m_statusBarEx->statusBar());
 
     // from khtmlpart's ualabel
-    m_feedIcon->setFixedHeight(KIconLoader::global()->currentSize(KIconLoader::Small));
+    m_feedIcon->setFixedHeight(qApp->style()->pixelMetric(QStyle::PM_SmallIconSize));
     m_feedIcon->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     m_feedIcon->setUseCursor(false);
 

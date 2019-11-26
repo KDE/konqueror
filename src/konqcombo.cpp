@@ -643,7 +643,8 @@ void KonqCombo::paintEvent(QPaintEvent *pe)
         QPainter p(this);
         p.setClipRect(re);
 
-        QPixmap pix = SmallIcon(QLatin1String(m_pageSecurity == KonqMainWindow::Encrypted ? "security-high" : "security-medium"));
+        const auto icon = QIcon::fromTheme(QLatin1String(m_pageSecurity == KonqMainWindow::Encrypted ? "security-high" : "security-medium"));
+        QPixmap pix = icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
 
         QRect r = edit->geometry();
         r.setRight(re.right() - pix.width() - 2);

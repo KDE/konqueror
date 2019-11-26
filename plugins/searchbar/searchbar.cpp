@@ -29,7 +29,6 @@
 #include <KSharedConfig>
 #include <KDesktopFile>
 #include <KPluginFactory>
-#include <KIconLoader>
 #include <KActionCollection>
 #include <KRun>
 #include <KMainWindow>
@@ -258,7 +257,7 @@ void SearchBarPlugin::startSearch(const QString &search)
 void SearchBarPlugin::setIcon()
 {
     if (m_searchMode == FindInThisPage) {
-        m_searchIcon = SmallIcon(QStringLiteral("edit-find"));
+        m_searchIcon = QIcon::fromTheme(QStringLiteral("edit-find")).pixmap(qApp->style()->pixelMetric(QStyle::PM_SmallIconSize));
     } else {
         const QString engine = (m_currentEngine.isEmpty() ? m_searchEngines.first() : m_currentEngine);
         //kDebug() << "Icon Name:" << m_searchProviders.value(engine).iconName();
@@ -266,7 +265,7 @@ void SearchBarPlugin::setIcon()
         if (iconName.startsWith(QLatin1Char('/'))) {
             m_searchIcon = QPixmap(iconName);
         } else {
-            m_searchIcon = SmallIcon(iconName);
+            m_searchIcon = QIcon::fromTheme(iconName).pixmap(qApp->style()->pixelMetric(QStyle::PM_SmallIconSize));
         }
     }
 
