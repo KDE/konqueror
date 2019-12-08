@@ -43,7 +43,7 @@ KonqPixmapProvider *KonqPixmapProvider::self()
 }
 
 KonqPixmapProvider::KonqPixmapProvider()
-    : KPixmapProvider()
+    : QObject()
 {
 }
 

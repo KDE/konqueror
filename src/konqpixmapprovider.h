@@ -22,8 +22,6 @@
 
 #include "konqprivate_export.h"
 
-#include <kpixmapprovider.h>
-
 #include <QMap>
 #include <QPixmap>
 #include <QUrl>
@@ -31,13 +29,13 @@
 class KConfigGroup;
 class KConfig;
 
-class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject, public KPixmapProvider
+class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject
 {
     Q_OBJECT
 public:
     static KonqPixmapProvider *self();
 
-    ~KonqPixmapProvider() override;
+    ~KonqPixmapProvider();
 
     /**
      * Trigger a download of a default favicon
@@ -51,7 +49,7 @@ public:
     /**
      * Looks up a pixmap for @p url. Uses a cache for the iconname of url.
      */
-    QPixmap pixmapFor(const QString &url, int size) override;
+    QPixmap pixmapFor(const QString &url, int size);
 
     /**
      * Loads the cache to @p kc from key @p key.
