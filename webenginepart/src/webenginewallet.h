@@ -99,7 +99,7 @@ public:
      * Note that this function is asynchronous, as it requires running javascript code
      * on the page using QWebEnginePage::runJavaScript. This function only requests
      * for the form data to be saved when QWebEnginePage::runJavaScript finishes.
-     * The actual saving is done by @ref saveFormDataCallback
+     * The actual saving is done by saveFormDataCallback
      */
     void saveFormData(WebEnginePage *page, bool ignorePasswordFields = false);
 

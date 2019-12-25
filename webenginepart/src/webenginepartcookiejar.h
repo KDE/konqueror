@@ -344,8 +344,8 @@ private:
 /**
 * @brief Overload of operator `<<` to allow a WebEnginePartCookieJar::CookieIdentifier to be written to a `QDebug`
 * 
-* @param deb: the debug object
-* @param id: the identifier to write
+* @param deb the debug object
+* @param id the identifier to write
 * @return the debug object
 */
 QDebug operator<<(QDebug deb, const WebEnginePartCookieJar::CookieIdentifier &id);
