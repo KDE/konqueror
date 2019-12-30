@@ -26,6 +26,7 @@
 #include "webenginepart.h"
 #include "webenginepart_ext.h"
 #include "settings/webenginesettings.h"
+#include "webenginepart_ext.h"
 
 #include <KIO/Global>
 #include <KAboutData>
@@ -485,7 +486,8 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 
         action = new QAction(i18n("&Save Link As..."), this);
         m_actionCollection->addAction(QL1S("savelinkas"), action);
-        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotSaveLinkAs);
+        auto saveLinkAsLambda = [this, url](bool){qobject_cast<WebEngineBrowserExtension*>(m_part->browserExtension())->slotSaveLinkAs(url);};
+        connect(action, &QAction::triggered, m_part->browserExtension(), saveLinkAsLambda);
         linkActions.append(action);
     }
 

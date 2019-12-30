@@ -74,6 +74,8 @@ protected Q_SLOTS:
 
 private:
     bool tryOpenView(const QString &mimeType, bool associatedAppIsKonqueror);
+    bool usingWebEngine() const;
+
     QPointer<KonqMainWindow> m_pMainWindow;
     QPointer<KonqView> m_pView;
     bool m_bFoundMimeType;

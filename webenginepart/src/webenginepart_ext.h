@@ -83,7 +83,7 @@ public Q_SLOTS:
 
     void slotCopyLinkURL();
     void slotCopyLinkText();
-    void slotSaveLinkAs();
+    void slotSaveLinkAs(const QUrl &url);
     void slotCopyEmailAddress();
 
     void slotViewDocumentSource();

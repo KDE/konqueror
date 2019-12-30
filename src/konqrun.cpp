@@ -30,6 +30,9 @@
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegate>
 
+#include <KService>
+#include <KMimeTypeTrader>
+
 // Local
 #include "konqview.h"
 #include "konqframestatusbar.h"
@@ -197,8 +200,37 @@ void KonqRun::init()
     }
 }
 
+bool KonqRun::usingWebEngine() const
+{
+    if (m_pView) {
+        return m_pView->part()->componentName() == "webenginepart";
+    } else {
+        KService::Ptr  service = KMimeTypeTrader::self()->preferredService("text/html", "KParts/ReadOnlyPart");
+        Q_ASSERT(service);
+        return service->desktopEntryName() == "webenginepart";
+    }
+}
+
+
 void KonqRun::scanFile()
 {
+    //Since QtWebEngine can't use the KIO framework, attempting to determine the mimetype here when
+    //using QtWebEngine will lead to a double GET request. To avoid it, when using QtWebEngine, any URL with
+    //http or https protocol will be treated as if it were text/html: this means it'll be opened with WebEnginePart,
+    //which will determine its mimetype and proceed accordingly. However, this can lead to an endless loop when an http(s) URL
+    //is of type application/octet-stream:
+    // - WebEnginePart (indirectly) calls KonqMainWindow::openUrl with application/octet-stram as mimetype
+    // - KonqMainWindow needs to know a more specific mimetype, so it creates a KonqRun
+    // - KonqRun calls scanFile
+    // - Since the protocol is http(s), scanFile delegates finding out the mimetype to WebEnginePart,
+    //   which finds application/octet-stream starting an endless loop
+    // To avoid this we assume that the creator of the KonqRun has set m_alreadyProcessedByWebEngine if the URL has
+    // already been passed to WebEnginePart: it means that it couldn't find a suitable mimetype and we need to do it
+    // by ourselves, even if it means doing a double GET request.
+    if (m_req.args.mimeType().isEmpty() && (url().scheme() == "http" || url().scheme() == "https") && usingWebEngine()) {
+        mimeTypeDetermined("text/html");
+        return;
+    }
     KParts::BrowserRun::scanFile();
     // could be a static cast as of now, but who would notify when
     // BrowserRun changes

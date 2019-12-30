@@ -42,6 +42,7 @@
 #include <sonnet/backgroundchecker.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KParts/BrowserRun>
 
 #include <QBuffer>
 #include <QVariant>
@@ -528,10 +529,15 @@ void WebEngineBrowserExtension::slotCopyEmailAddress()
 #endif
 }
 
-void WebEngineBrowserExtension::slotSaveLinkAs()
+void WebEngineBrowserExtension::slotSaveLinkAs(const QUrl &url)
 {
-    if (view())
-        view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
+    if (view()) {
+        if (!url.isEmpty()) {
+            KParts::BrowserRun::saveUrl(url, url.path(), view(), KParts::OpenUrlArguments());
+        } else {
+            view()->triggerPageAction(QWebEnginePage::DownloadLinkToDisk);
+        }
+    }
 }
 
 void WebEngineBrowserExtension::slotViewDocumentSource()

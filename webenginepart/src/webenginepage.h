@@ -64,7 +64,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void download(const QUrl &url, bool newWindow = false);
+    void download(const QUrl &url, const QString &mimetype, bool newWindow = false);
 
     void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false);
 

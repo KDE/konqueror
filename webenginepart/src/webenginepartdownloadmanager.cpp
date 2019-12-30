@@ -99,7 +99,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
         return;
     }
     if (it->url().scheme() != "blob") {
-        page->download(it->url(), forceNew);
+        page->download(it->url(), it->mimeType(), forceNew);
     } else {
         downloadBlob(it);
     }

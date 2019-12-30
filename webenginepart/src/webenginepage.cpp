@@ -140,7 +140,7 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebEnginePage::download(const QUrl& url, bool newWindow)
+void WebEnginePage::download(const QUrl& url, const QString& mimetype, bool newWindow)
 {
     // Integration with a download manager...
     if (!url.isLocalFile()) {
@@ -156,7 +156,9 @@ void WebEnginePage::download(const QUrl& url, bool newWindow)
     }
     KParts::BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
-    emit part()->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), bArgs);
+    KParts::OpenUrlArguments urlArgs;
+    urlArgs.setMimeType(mimetype);
+    emit part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
 }
 
 void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
@@ -341,10 +343,7 @@ static int errorCodeFromReply(QNetworkReply* reply)
 
 bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
 {
-    if (m_urlLoadedByPart == ce.url()) {
-        m_urlLoadedByPart = QUrl();
-        return true;
-    } else if (ce.isOverridable()) {
+    if (ce.isOverridable()) {
         QString translatedDesc = i18n(ce.errorDescription().toUtf8());
         QString text = i18n("<p>The server failed the authenticity check (%1). The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
                             ce.url().host(), translatedDesc);
