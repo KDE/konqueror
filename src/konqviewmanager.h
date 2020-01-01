@@ -187,7 +187,7 @@ public:
     /**
      * Saves the current view layout to a group in a config file.
      * This is shared between saveViewProfileToFile and saveProperties (session management)
-     * Remove config file before saving, especially if saveURLs is false.
+     * Remove config file before saving, especially if SaveUrls is false.
      * @param cfg the config file
      * @param options whether to save nothing, the URLs or the complete history of each view in the profile
      */

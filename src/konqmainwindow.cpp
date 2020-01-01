@@ -4688,7 +4688,7 @@ void KonqMainWindow::saveProperties(KConfigGroup &config)
     // This can happen via ToggleViewGUIClient -> KServiceTypeTrader::query
     // -> KSycoca running kbuildsycoca -> nested event loop.
     if (m_fullyConstructed) {
-        KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+        KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
         m_pViewManager->saveViewConfigToGroup(config, flags);
     }
 }
@@ -5051,7 +5051,7 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     QString prefix = KonqFrameBase::frameTypeToString(tab->frameType()) + QString::number(0);
     closedTabItem->configGroup().writeEntry("RootItem", prefix);
     prefix.append(QLatin1Char('_'));
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+    KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
     tab->saveConfig(closedTabItem->configGroup(), prefix, flags, nullptr, 0, 1);
 
     m_paClosedItems->setEnabled(true);

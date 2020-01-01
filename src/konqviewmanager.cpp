@@ -297,7 +297,7 @@ void KonqViewManager::duplicateTab(int tabIndex, bool openAfterCurrentPage)
     QString prefix = KonqFrameBase::frameTypeToString(tab->frameType()) + QString::number(0); // always T0
     profileGroup.writeEntry("RootItem", prefix);
     prefix.append(QLatin1Char('_'));
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+    KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
     tab->saveConfig(profileGroup, prefix, flags, nullptr, 0, 1);
 
     loadRootItem(profileGroup, tabContainer(), QUrl(), true, QUrl(), QString(), openAfterCurrentPage);
@@ -331,7 +331,7 @@ KonqMainWindow *KonqViewManager::breakOffTab(int tab, const QSize &windowSize)
     QString prefix = KonqFrameBase::frameTypeToString(tabFrame->frameType()) + QString::number(0); // always T0
     profileGroup.writeEntry("RootItem", prefix);
     prefix.append(QLatin1Char('_'));
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+    KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
     tabFrame->saveConfig(profileGroup, prefix, flags, nullptr, 0, 1);
 
     KonqMainWindow *mainWindow = new KonqMainWindow;
@@ -1441,7 +1441,7 @@ KonqMainWindow *KonqViewManager::duplicateWindow()
     tempFile.open();
     KConfig config(tempFile.fileName());
     KConfigGroup group(&config, "Profile");
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+    KonqFrameBase::Options flags = KonqFrameBase::SaveHistoryItems;
     saveViewConfigToGroup(group, flags);
 
     KonqMainWindow *mainWindow = openSavedWindow(group);
