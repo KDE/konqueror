@@ -1306,20 +1306,17 @@ void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const
 
 void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-    if (options & KonqFrameBase::saveURLs) {
+    if (options & (KonqFrameBase::saveURLs|KonqFrameBase::saveHistoryItems)) { // either one
         url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
         locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
         title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
         strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
         strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
+    }
+    if (options & KonqFrameBase::saveURLs) {
         reload = true;
     } else if (options & KonqFrameBase::saveHistoryItems) {
-        url = QUrl(config.readEntry(QStringLiteral("Url").prepend(prefix), ""));
-        locationBarURL = config.readEntry(QStringLiteral("LocationBarURL").prepend(prefix), "");
-        title = config.readEntry(QStringLiteral("Title").prepend(prefix), "");
         buffer = config.readEntry(QStringLiteral("Buffer").prepend(prefix), QByteArray());
-        strServiceType = config.readEntry(QStringLiteral("StrServiceType").prepend(prefix), "");
-        strServiceName = config.readEntry(QStringLiteral("StrServiceName").prepend(prefix), "");
         postData = config.readEntry(QStringLiteral("PostData").prepend(prefix), QByteArray());
         postContentType = config.readEntry(QStringLiteral("PostContentType").prepend(prefix), "");
         doPost = config.readEntry(QStringLiteral("DoPost").prepend(prefix), false);
