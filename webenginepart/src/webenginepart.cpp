@@ -24,6 +24,7 @@
 
 #include "webenginepart.h"
 #include "webenginepartkiohandler.h"
+#include "about/konq_aboutpage.h"
 
 #include <webenginepart_debug.h>
 
@@ -89,7 +90,7 @@ void WebEnginePart::initWebEngineUrlSchemes()
     static bool needToInitUrlSchemes = true;
     if (needToInitUrlSchemes) {
         needToInitUrlSchemes = false;
-        QVector<QByteArray> localSchemes = {"error"};
+        QVector<QByteArray> localSchemes = {"error", "konq"};
         const QStringList protocols = KProtocolInfo::protocols();
         for(const QString &prot : protocols){
 #if KIO_VERSION >= QT_VERSION_CHECK(5,60,0)
@@ -131,6 +132,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
     if (!prof->urlSchemeHandler("error")) {
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
+        prof->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(prof));
         prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
     }
     static WebEnginePartCookieJar s_cookieJar(prof, nullptr);

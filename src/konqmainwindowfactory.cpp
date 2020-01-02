@@ -22,6 +22,8 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 #include "konqdebug.h"
+#include "konqurl.h"
+
 #include <KWindowInfo>
 #include <KStartupInfo>
 #include <QTimer>
@@ -46,7 +48,7 @@ static void abortFullScreenMode()
 static void ensurePreloadedWindow()
 {
     if (KonqSettings::alwaysHavePreloaded()) {
-        QTimer::singleShot(500, nullptr, []() { new KonqMainWindow(QUrl(QStringLiteral("about:blank"))); });
+        QTimer::singleShot(500, nullptr, []() { new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank)); });
     }
 }
 

@@ -20,6 +20,7 @@
 
 #include "konqhistorymanager.h"
 #include <kbookmarkmanager.h>
+#include "konqurl.h"
 
 #include <QTimer>
 #include "konqdebug.h"
@@ -155,7 +156,7 @@ void KonqHistoryManager::addToHistory(bool pending, const QUrl &_url,
 void KonqHistoryManager::insert(const QString &url)
 {
     QUrl u(url);
-    if (!filterOut(u) || u.scheme() == QLatin1String("about")) {     // remote URL
+    if (!filterOut(u) || KonqUrl::hasKonqScheme(u)) {     // remote URL
         return;
     }
     // Local URL -> add to history

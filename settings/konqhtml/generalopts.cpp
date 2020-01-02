@@ -34,7 +34,7 @@
 #include "ui_advancedTabOptions.h"
 
 // Keep in sync with konqueror.kcfg
-static const char DEFAULT_STARTPAGE[] = "about:konqueror";
+static const char DEFAULT_STARTPAGE[] = "konq:konqueror";
 static const char DEFAULT_HOMEPAGE[] = "https://www.kde.org/";
 // Keep in sync with the order in the combo
 enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPage };
@@ -141,10 +141,10 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 
 static StartPage urlToStartPageEnum(const QString &startUrl)
 {
-    if (startUrl == QLatin1String("about:blank")) {
+    if (startUrl == QLatin1String("konq:blank")) {
         return ShowBlankPage;
     }
-    if (startUrl == QLatin1String("about:") || startUrl == QLatin1String("about:konqueror")) {
+    if (startUrl == QLatin1String("konq:") || startUrl == QLatin1String("konq:konqueror")) {
         return ShowAboutPage;
     }
     if (startUrl == QLatin1String("bookmarks:") || startUrl == QLatin1String("bookmarks:/")) {
@@ -157,9 +157,9 @@ static QString startPageEnumToUrl(StartPage startPage)
 {
     switch (startPage) {
         case ShowBlankPage:
-            return QStringLiteral("about:blank");
+            return QStringLiteral("konq:blank");
         case ShowAboutPage:
-            return QStringLiteral("about:konqueror");
+            return QStringLiteral("konq:konqueror");
         case ShowBookmarksPage:
             return QStringLiteral("bookmarks:/");
         case ShowStartUrlPage:

@@ -29,6 +29,7 @@
 #include "konqsettingsxt.h"
 #include "konqframevisitor.h"
 #include <konq_events.h>
+#include "konqurl.h"
 
 #include <QFileInfo>
 #include <QDBusMessage>
@@ -911,7 +912,7 @@ void KonqViewManager::loadViewConfigFromGroup(const KConfigGroup &profileGroup, 
 
     clear();
 
-    if (forcedUrl.url() != QLatin1String("about:blank")) {
+    if (!KonqUrl::isKonqBlank(forcedUrl)) {
         loadRootItem(profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl, req.serviceName);
     } else {
         // ## in this case we won't resize the window, so bool resetWindow could be useful after all?
@@ -1134,7 +1135,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
             serviceType = cfg.readEntry(QStringLiteral("ServiceType").prepend(prefix), QStringLiteral("inode/directory"));
             serviceName = cfg.readEntry(QStringLiteral("ServiceName").prepend(prefix), QString());
             if (serviceName == QLatin1String("konq_aboutpage")) {
-                if ((!forcedUrl.isEmpty() && forcedUrl.scheme() != QLatin1String("about")) ||
+                if ((!forcedUrl.isEmpty() && !KonqUrl::hasKonqScheme(forcedUrl)) ||
                         (forcedUrl.isEmpty() && openUrl == false)) { // e.g. window.open
                     // No point in loading the about page if we're going to replace it with a KHTML part right away
                     serviceType = QStringLiteral("text/html");
@@ -1186,9 +1187,9 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                 const QString urlKey = QStringLiteral("URL").prepend(prefix);
                 QUrl url;
                 if (cfg.hasKey(urlKey)) {
-                    url = QUrl(cfg.readPathEntry(urlKey, QStringLiteral("about:blank")));
+                    url = QUrl(cfg.readPathEntry(urlKey, KonqUrl::string(KonqUrl::Type::Blank)));
                 } else if (urlKey == QLatin1String("empty_URL")) { // old stuff, not in use anymore
-                    url = QUrl(QStringLiteral("about:blank"));
+                    url = KonqUrl::url(KonqUrl::Type::Blank);
                 } else {
                     url = defaultURL;
                 }
@@ -1198,7 +1199,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
                     //childView->openUrl( url, url.toDisplayString() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
-                    if (url.scheme() != QLatin1String("about")) {
+                    if (!KonqUrl::hasKonqScheme(url)) {
                         req.typedUrl = url.toDisplayString();
                     }
                     m_pMainWindow->openView(serviceType, url, childView, req);

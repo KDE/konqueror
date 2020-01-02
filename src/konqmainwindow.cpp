@@ -51,6 +51,7 @@
 #include "konqhistorydialog.h"
 #include <config-konqueror.h>
 #include <kstringhandler.h>
+#include "konqurl.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -501,7 +502,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     qCDebug(KONQUEROR_LOG) << "url=" << _url << "mimeType=" << _mimeType
              << "_req=" << _req.debug() << "view=" << _view;
 #endif
-
     // We like modifying args in this method :)
     QUrl url(_url);
     QString mimeType(_mimeType);
@@ -510,18 +510,17 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     if (mimeType.isEmpty()) {
         mimeType = req.args.mimeType();
     }
-
     if (!url.isValid()) {
         // I think we can't really get here anymore; I tried and didn't succeed.
         // URL filtering catches this case before hand, and in cases without filtering
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
-    } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && url.scheme() != QLatin1String("about") && url.scheme() != QLatin1String("mailto")) {
+    } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && !KonqUrl::hasKonqScheme(url) && url.scheme() != QLatin1String("mailto")) {
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
     }
 
-    if (url.url() == QLatin1String("about:blank") || url.scheme() == QLatin1String("error")) {
+    if (KonqUrl::isKonqBlank(url) || url.scheme() == QLatin1String("error")) {
         mimeType = QStringLiteral("text/html");
     }
 
@@ -640,7 +639,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     }
 
     //qCDebug(KONQUEROR_LOG) << "trying openView for" << url << "( mimeType" << mimeType << ")";
-    if (hasMimeType || url.url() == QLatin1String("about:") || url.url().startsWith(QLatin1String("about:konqueror")) || url.url() == QLatin1String("about:plugins")) {
+    if (hasMimeType || KonqUrl::isValidNotBlank(url)) {
 
         // Built-in view ?
         if (!openView(mimeType, url, view /* can be 0 */, req)) {
@@ -797,11 +796,10 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
 
     QString serviceName = req.serviceName; // default: none provided
     const QString urlStr = url.url();
-    if (urlStr == QLatin1String("about:") || urlStr.startsWith(QLatin1String("about:konqueror")) || urlStr == QLatin1String("about:plugins")) {
-        mimeType = QStringLiteral("KonqAboutPage"); // not KParts/ReadOnlyPart, it fills the Location menu ! :)
-        serviceName = QStringLiteral("konq_aboutpage");
+    if (KonqUrl::isValidNotBlank(urlStr)) {
+        mimeType = QStringLiteral("text/html");
         originalURL = req.typedUrl.isEmpty() ? QString() : req.typedUrl;
-    } else if (urlStr == QLatin1String("about:blank") && req.typedUrl.isEmpty()) {
+    } else if (KonqUrl::isKonqBlank(urlStr) && req.typedUrl.isEmpty()) {
         originalURL.clear();
     }
 
@@ -809,7 +807,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     if (!req.typedUrl.isEmpty()) { // the user _typed_ the URL, he wants it in Konq.
         forceAutoEmbed = true;
     }
-    if (url.scheme() == QLatin1String("about") || url.scheme() == QLatin1String("error")) {
+    if (KonqUrl::hasKonqScheme(url) || url.scheme() == QLatin1String("error")) {
         forceAutoEmbed = true;
     }
     // Related to KonqFactory::createView
@@ -1200,7 +1198,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
                 m_pViewManager->showTab(newView);
             }
 
-            openUrl(newView, url.isEmpty() ? QUrl(QStringLiteral("about:blank")) : url, QString(), req);
+            openUrl(newView, url.isEmpty() ? KonqUrl::url(KonqUrl::Type::Blank) : url, QString(), req);
             newView->setViewName(browserArgs.frameName);
 
             *part = newView->part();
@@ -2318,7 +2316,7 @@ void KonqMainWindow::slotSplitViewVertical()
 
 void KonqMainWindow::slotAddTab()
 {
-    // we can hardcode text/html because this is what about:blank will use anyway
+    // we can hardcode text/html because this is what konq:blank will use anyway
     KonqView *newView = m_pViewManager->addTab(QStringLiteral("text/html"),
                         QString(),
                         false,
@@ -2327,7 +2325,7 @@ void KonqMainWindow::slotAddTab()
         return;
     }
 
-    openUrl(newView, QUrl(QStringLiteral("about:blank")), QString());
+    openUrl(newView, KonqUrl::url(KonqUrl::Type::Blank), QString());
 
     //HACK!! QTabBar likes to steal focus when changing widgets.  This can result
     //in a flicker since we don't want it to get focus we want the combo to get
@@ -3908,7 +3906,7 @@ void KonqMainWindow::updateHistoryActions()
 
 bool KonqMainWindow::isPreloaded() const
 {
-    return !isVisible() && m_mapViews.count() == 1 && m_currentView->url().toString() == "about:blank";
+    return !isVisible() && m_mapViews.count() == 1 && KonqUrl::isKonqBlank(m_currentView->url().toString());
 }
 
 void KonqMainWindow::updateToolBarActions(bool pendingAction /*=false*/)
@@ -4999,7 +4997,7 @@ void KonqMainWindow::updateWindowIcon()
 
 void KonqMainWindow::slotIntro()
 {
-    openUrl(nullptr, QUrl(QStringLiteral("about:")));
+    openUrl(nullptr, KonqUrl::url(KonqUrl::Type::NoPath));
 }
 
 void KonqMainWindow::goURL()
@@ -5020,7 +5018,7 @@ void KonqMainWindow::goURL()
 void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
 {
     qCDebug(KONQUEROR_LOG);
-    QString title(i18n("no name")), url(QStringLiteral("about:blank"));
+    QString title(i18n("no name")), url(KonqUrl::string(KonqUrl::Type::Blank));
 
     // Did the tab contain a single frame, or a splitter?
     KonqFrame *frame = dynamic_cast<KonqFrame *>(tab);

@@ -25,6 +25,7 @@ set(kwebenginepartlib_LIB_SRCS
     ui/searchbar.cpp
     ui/passwordbar.cpp
     ui/featurepermissionbar.cpp
+    about/konq_aboutpage.cpp
 )
 
 if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.12.0")
@@ -82,3 +83,5 @@ install(FILES webenginepart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
 
 install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
+
+add_subdirectory(about)

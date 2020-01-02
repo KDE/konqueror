@@ -276,7 +276,7 @@ void ViewMgrTest::testCreateFirstView()
 void ViewMgrTest::testEmptyWindow()
 {
     QScopedPointer<KonqMainWindow> emptyWindow(KonqMainWindowFactory::createNewWindow());
-    QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
+    QCOMPARE(emptyWindow->currentView()->url().url(), QString("konq:konqueror"));
     QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
 }
 

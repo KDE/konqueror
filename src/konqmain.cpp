@@ -26,6 +26,7 @@
 #include "konqsessionmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
+#include "konqurl.h"
 
 #include <KAboutData>
 #include <KCrash>
@@ -157,6 +158,15 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
     return nullptr;
 }
 
+static void fixOldStartUrl() {
+    QUrl startUrl(KonqSettings::startURL());
+    if (startUrl.scheme() == "about") {
+        startUrl.setScheme(KonqUrl::scheme());
+        KonqSettings::setStartURL(startUrl.url());
+        KonqSettings::self()->save();
+    }
+}
+
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // says QtWebEngine
@@ -247,6 +257,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             KWindowSystem::forceActiveWindow(mainWindow->winId());
         }
     });
+    
+    fixOldStartUrl();
 
     if (app.isSessionRestored()) {
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
@@ -262,7 +274,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             ++n;
         }
     } else if (parser.isSet("preload")) {
-        new KonqMainWindow(QUrl(QStringLiteral("about:blank"))); // prepare an empty window, with the web renderer preloaded
+        new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank)); // prepare an empty window, with the web renderer preloaded
     } else {
         int ret = 0;
         KonqMainWindow *mainWindow = handleCommandLine(parser, QDir::currentPath(), &ret);

@@ -19,6 +19,7 @@
 
 // Own
 #include "konqframe.h"
+#include "konqurl.h"
 
 // Local
 #include "konqtabs.h"
@@ -240,7 +241,7 @@ void KonqFrame::activateChild()
     if (m_pView && !m_pView->isPassiveMode()) {
         m_pView->mainWindow()->viewManager()->setActivePart(part());
 
-        if (!m_pView->isLoading() && (m_pView->url().isEmpty() || m_pView->url() == QUrl(QStringLiteral("about:blank")))) {
+        if (!m_pView->isLoading() && (m_pView->url().isEmpty() ||  KonqUrl::isKonqBlank(m_pView->url()))) {
             //qCDebug(KONQUEROR_LOG) << "SET FOCUS on the location bar";
             m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
         }

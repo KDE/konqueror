@@ -19,6 +19,7 @@ set(konquerorprivate_SRCS
    konqhistoryproxymodel.cpp
    konqhistoryview.cpp
    konqhistorysettings.cpp
+   konqurl.cpp
 )
 
 ecm_qt_declare_logging_category(konquerorprivate_SRCS HEADER konqdebug.h IDENTIFIER KONQUEROR_LOG CATEGORY_NAME org.kde.konqueror)
@@ -82,6 +83,7 @@ set(konqueror_KDEINIT_SRCS
    konqcloseditem.cpp
    konqhistorydialog.cpp
    konqstatusbarmessagelabel.cpp
+   konqurl.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

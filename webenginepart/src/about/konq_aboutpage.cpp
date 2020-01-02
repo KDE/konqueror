@@ -5,16 +5,14 @@
 #include <QSaveFile>
 #include <QStandardPaths>
 #include <QTextCodec>
+#include <QTextStream>
+#include <QUrl>
+#include <QDebug>
+#include <QBuffer>
+#include <QWebEngineUrlRequestJob>
 
-#include <kaboutdata.h>
-#include <kactioncollection.h>
 #include <kiconloader.h>
-#include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kpluginfactory.h>
-#include <ktoolinvocation.h>
-
-K_PLUGIN_FACTORY(KonqAboutPageFactory, registerPlugin<KonqAboutPage>();)
+#include <KI18n/KLocalizedString>
 
 Q_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 
@@ -35,7 +33,7 @@ static QString loadFile(const QString &file)
 
     res = t.readAll();
 
-    // otherwise all embedded objects are referenced as about:/...
+    // otherwise all embedded objects are referenced as konq/...
     QString basehref = QLatin1String("<BASE HREF=\"file:") +
                        file.left(file.lastIndexOf('/')) +
                        QLatin1String("/\">\n");
@@ -216,7 +214,7 @@ QString KonqAboutPageSingleton::specs()
           .arg(i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QStringLiteral("exec:/kcmshell5 khtml_java_js")))   // TODO Maybe test if Java is enabled ?
           .arg(i18n("NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)",
                     QStringLiteral("https://get.adobe.com/flashplayer/"),
-                    QStringLiteral("about:plugins")))
+                    QStringLiteral("konq:plugins")))
           .arg(i18n("built-in"))
           .arg(i18n("Secure Sockets Layer"))
           .arg(i18n("(TLS/SSL v2/3) for secure communications up to 168bit"))
@@ -239,7 +237,7 @@ QString KonqAboutPageSingleton::specs()
           .arg(i18n("Popup"))
           .arg(i18n("(Short-) Automatic"))
           .arg(QStringLiteral("<img width='16' height='16' src=\"%1\">")).arg(continue_icon_path)
-          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("about:konqueror")))
+          .arg(i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QStringLiteral("konq:konqueror")))
 
           ;
 
@@ -348,93 +346,33 @@ QString KonqAboutPageSingleton::plugins()
     return res;
 }
 
-KonqAboutPage::KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList &args)
-    : KHTMLPart(parentWidget, parent, BrowserViewGUI)
-{
-    Q_UNUSED(args)
-}
-
-KonqAboutPage::~KonqAboutPage()
+KonqUrlSchemeHandler::KonqUrlSchemeHandler(QObject *parent) : QWebEngineUrlSchemeHandler(parent)
 {
 }
 
-bool KonqAboutPage::openUrl(const QUrl &u)
+KonqUrlSchemeHandler::~KonqUrlSchemeHandler()
 {
-    emit started(nullptr);
-    if (u.url() == QLatin1String("about:plugins")) {
-        serve(s_staticData->plugins(), QStringLiteral("plugins"));
-    } else if (u.url() == QLatin1String("about:konqueror/intro")) {
-        serve(s_staticData->intro(), QStringLiteral("konqueror/intro"));
-    } else if (u.url() == QLatin1String("about:konqueror/specs")) {
-        serve(s_staticData->specs(), QStringLiteral("konqueror/specs"));
-    } else if (u.url() == QLatin1String("about:konqueror/tips")) {
-        serve(s_staticData->tips(), QStringLiteral("konqueror/tips"));
-    } else {
-        serve(s_staticData->launch(), QStringLiteral("konqueror"));
-    }
-    emit completed();
-    return true;
 }
 
-bool KonqAboutPage::openFile()
+void KonqUrlSchemeHandler::requestStarted(QWebEngineUrlRequestJob *req)
 {
-    return true;
+  QBuffer* buf = new QBuffer(this);
+  buf->open(QBuffer::ReadWrite);
+  connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
+  QString data;
+  QString path = req->requestUrl().path();
+  if (path.endsWith("specs")) {
+    data = s_staticData->specs();
+  } else if (path.endsWith("intro")) {
+    data = s_staticData->intro();
+  } else if (path.endsWith("tips")) {
+    data = s_staticData->tips();
+  } else if (path.endsWith("plugins")) {
+    data = s_staticData->plugins();
+  } else {
+    data = s_staticData->launch();
+  }
+  buf->write(data.toUtf8());
+  buf->seek(0);
+  req->reply("text/html", buf);
 }
-
-void KonqAboutPage::saveState(QDataStream &stream)
-{
-    stream << m_htmlDoc;
-    stream << m_what;
-}
-
-void KonqAboutPage::restoreState(QDataStream &stream)
-{
-    stream >> m_htmlDoc;
-    stream >> m_what;
-    serve(m_htmlDoc, m_what);
-}
-
-void KonqAboutPage::serve(const QString &html, const QString &what)
-{
-    m_what = what;
-    begin(QUrl(QStringLiteral("about:%1").arg(what)));
-    write(html);
-    end();
-    m_htmlDoc = html;
-}
-
-bool KonqAboutPage::urlSelected(const QString &url, int button, int state, const QString &target,
-                                const KParts::OpenUrlArguments &args,
-                                const KParts::BrowserArguments &browserArgs)
-{
-    QUrl u(url);
-    if (u.scheme() == QLatin1String("exec")) {
-        QStringList execArgs = url.mid(6).split(QChar(' '), QString::SkipEmptyParts);
-        QString executable = execArgs.first();
-        execArgs.erase(execArgs.begin());
-        KToolInvocation::kdeinitExec(executable, execArgs);
-        return true;
-    }
-
-    if (url == QLatin1String("about:konqueror")) {
-        emit browserExtension()->openUrlNotify();
-        serve(s_staticData->launch(), QStringLiteral("konqueror"));
-        return true;
-    } else if (url == QLatin1String("about:konqueror/intro")) {
-        emit browserExtension()->openUrlNotify();
-        serve(s_staticData->intro(), QStringLiteral("konqueror/intro"));
-        return true;
-    } else if (url == QLatin1String("about:konqueror/specs")) {
-        emit browserExtension()->openUrlNotify();
-        serve(s_staticData->specs(), QStringLiteral("konqueror/specs"));
-        return true;
-    } else if (url == QLatin1String("about:konqueror/tips")) {
-        emit browserExtension()->openUrlNotify();
-        serve(s_staticData->tips(), QStringLiteral("konqueror/tips"));
-        return true;
-    }
-
-    return KHTMLPart::urlSelected(url, button, state, target, args, browserArgs);
-}
-
-#include "konq_aboutpage.moc"

@@ -11,7 +11,7 @@ namespace Utils
 
 inline bool isBlankUrl(const QUrl& url)
 {
-    return (url.isEmpty() || url.url() == QL1S("about:blank"));
+    return (url.isEmpty() || url.url() == QL1S("konq:blank"));
 }
 
 }

@@ -62,7 +62,6 @@ if(BUILD_TESTING)
 endif()
 add_subdirectory( webenginepart )
 
-add_subdirectory( about )
 add_subdirectory( pics )
 #add_subdirectory( sidebar )
 add_subdirectory( settings )
