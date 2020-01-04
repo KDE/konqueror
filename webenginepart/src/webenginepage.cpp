@@ -189,6 +189,14 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
 {
     if (m_urlLoadedByPart != url) {
         m_urlLoadedByPart = QUrl();
+        
+        //Don't open local files using WebEnginePart except if configured to do so by the user. For example
+        //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part 
+        //(or whichever part the user has chosen to open directories instead of WebEnginePart
+        if (url.isLocalFile()) {
+            emit m_part->browserExtension()->openUrlRequest(url);
+            return false;
+        }
     }
 //     qCDebug(WEBENGINEPART_LOG) << url << "type=" << type;
     QUrl reqUrl(url);
