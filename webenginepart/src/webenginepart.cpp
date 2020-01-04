@@ -483,7 +483,7 @@ bool WebEnginePart::openFile()
 
 void WebEnginePart::slotLoadStarted()
 {
-    if(!Utils::isBlankUrl(url()))
+    if(!Utils::isBlankUrl(url()) && url() != QUrl("konq:konqueror"))
     {
         emit started(nullptr);
     }
