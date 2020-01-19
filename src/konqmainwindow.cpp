@@ -4981,16 +4981,7 @@ void KonqMainWindow::addClosedWindowToUndoList()
 
 void KonqMainWindow::updateWindowIcon()
 {
-    const QString url = m_combo->currentText();
-    const QPixmap pix = KonqPixmapProvider::self()->pixmapFor(url, KIconLoader::SizeSmall);
-    KParts::MainWindow::setWindowIcon(pix);
-
-    QPixmap big = pix;
-    if (!url.isEmpty()) {
-        big = KonqPixmapProvider::self()->pixmapFor(url, KIconLoader::SizeMedium);
-    }
-
-    KWindowSystem::setIcons(winId(), big, pix);
+    KParts::MainWindow::setWindowIcon(KonqPixmapProvider::self()->iconForUrl(m_combo->currentText()));
 }
 
 void KonqMainWindow::slotIntro()

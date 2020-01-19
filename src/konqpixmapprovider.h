@@ -70,6 +70,8 @@ public:
      * Looks up an iconname for @p url. Uses a cache for the iconname of url.
      */
     QString iconNameFor(const QUrl &url);
+    QIcon iconForUrl(const QUrl &url);
+    QIcon iconForUrl(const QString &url_str);
 
 Q_SIGNALS:
     void changed();

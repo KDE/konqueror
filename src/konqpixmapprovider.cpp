@@ -184,3 +184,13 @@ QPixmap KonqPixmapProvider::loadIcon(const QString &icon, int size)
     return QIcon::fromTheme(icon).pixmap(size);
 }
 
+QIcon KonqPixmapProvider::iconForUrl(const QUrl &url)
+{
+    return QIcon::fromTheme(iconNameFor(url));
+}
+
+QIcon KonqPixmapProvider::iconForUrl(const QString &url_str)
+{
+    return iconForUrl(QUrl::fromUserInput(url_str));
+}
+
