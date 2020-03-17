@@ -111,8 +111,6 @@ target_link_libraries(kdeinit_konqueror
    KF5::WindowSystem
 )
 
-target_link_libraries(kdeinit_konqueror KF5::KDELibs4Support)
-
 if (X11_FOUND)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
 endif ()

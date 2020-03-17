@@ -23,6 +23,7 @@
 #define KTABWIDGET_H
 
 #include <QTabWidget>
+#include <konqprivate_export.h>
 
 class QTab;
 
@@ -33,7 +34,7 @@ class QTab;
  *
  * See also the QTabWidget documentation.
  */
-class KTabWidget : public QTabWidget
+class KONQ_TESTS_EXPORT KTabWidget : public QTabWidget
 {
     Q_OBJECT
     Q_PROPERTY(bool automaticResizeTabs READ automaticResizeTabs WRITE setAutomaticResizeTabs)
