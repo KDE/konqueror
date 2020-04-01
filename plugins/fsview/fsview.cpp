@@ -25,16 +25,18 @@
 #include <QDir>
 #include <QTimer>
 #include <QApplication>
+#include <QDebug>
 
 #include <KLocalizedString>
 #include <kconfig.h>
-#include <kdebug.h>
 #include <kmessagebox.h>
 
 #include <kio/job.h>
 #include <kauthorized.h>
 #include <kconfiggroup.h>
 #include <kurlauthorized.h>
+
+#include "fsviewdebug.h"
 
 // FSView
 
@@ -128,7 +130,7 @@ void FSView::setPath(const QString &p)
         return;
     }
 
-    //kDebug(90100) << "FSView::setPath " << p;
+    //qCDebug(FSVIEWLOG) << "FSView::setPath " << p;
 
     // stop any previous updating
     stop();
@@ -181,10 +183,10 @@ bool FSView::getDirMetric(const QString &k,
     d = (*it).dirCount;
 
     if (0) {
-        kDebug(90100) << "getDirMetric " << k;
+        qCDebug(FSVIEWLOG) << "getDirMetric " << k;
     }
     if (0) {
-        kDebug(90100) << " - got size " << s << ", files " << f;
+        qCDebug(FSVIEWLOG) << " - got size " << s << ", files " << f;
     }
 
     return true;
@@ -193,15 +195,15 @@ bool FSView::getDirMetric(const QString &k,
 void FSView::setDirMetric(const QString &k,
                           double s, unsigned int f, unsigned int d)
 {
-    if (0) kDebug(90100) << "setDirMetric '" << k << "': size "
-                             << s << ", files " << f << ", dirs " << d << endl;
+    if (0) qCDebug(FSVIEWLOG) << "setDirMetric '" << k << "': size "
+                              << s << ", files " << f << ", dirs " << d << endl;
     _dirMetric.insert(k, MetricEntry(s, f, d));
 }
 
 void FSView::requestUpdate(Inode *i)
 {
-    if (0) kDebug(90100) << "FSView::requestUpdate(" << i->path()
-                             << ")" << endl;
+    if (0) qCDebug(FSVIEWLOG) << "FSView::requestUpdate(" << i->path()
+                              << ")" << endl;
 
     ScanDir *peer = i->dirPeer();
     if (!peer) {
@@ -276,10 +278,10 @@ void FSView::scanFinished(ScanDir *d)
     _lastDir = d;
     _dirsFinished++;
 
-    if (0) kDebug(90100) << "FSFiew::scanFinished: " << d->path()
-                             << ", Data " << data
-                             << ", Progress " << _progress << "/"
-                             << _progressSize << endl;
+    if (0) qCDebug(FSVIEWLOG) << "FSFiew::scanFinished: " << d->path()
+                              << ", Data " << data
+                              << ", Progress " << _progress << "/"
+                              << _progressSize << endl;
 }
 
 void FSView::selected(TreeMapItem *i)
@@ -490,17 +492,17 @@ void FSView::doRedraw()
 
     if ((_progress > 0) && (_progressSize > 0) && _lastDir) {
         int percent = _progress * 100 / _progressSize;
-        if (0) kDebug(90100) << "FSView::progress "
-                                 << _progress << "/" << _progressSize
-                                 << "= " << percent << "%, "
-                                 << _dirsFinished << " dirs read, in "
-                                 << _lastDir->path() << endl;
+        if (0) qCDebug(FSVIEWLOG) << "FSView::progress "
+                                  << _progress << "/" << _progressSize
+                                  << "= " << percent << "%, "
+                                  << _dirsFinished << " dirs read, in "
+                                  << _lastDir->path() << endl;
         emit progress(percent, _dirsFinished, _lastDir->path());
     }
 
     if (_allowRefresh && ((redrawCounter % 4) == 0)) {
         if (0) {
-            kDebug(90100) << "doRedraw " << _sm.scanLength();
+            qCDebug(FSVIEWLOG) << "doRedraw " << _sm.scanLength();
         }
         redraw();
     } else {
@@ -526,7 +528,7 @@ void FSView::doUpdate()
                 _progressSize = 3 * _chunkSize1;
 
                 if (1) {
-                    kDebug(90100) << "Phase 2: CSize " << _chunkSize1;
+                    qCDebug(FSVIEWLOG) << "Phase 2: CSize " << _chunkSize1;
                 }
             }
             break;
@@ -550,10 +552,10 @@ void FSView::doUpdate()
                 /* Go to maximally 66% by scaling with 1.5 */
                 _progressSize = _progressSize * 3 / 2;
 
-                if (1) kDebug(90100) << "Phase 3: CSize " << _chunkSize2
-                                         << ", Todo " << todo
-                                         << ", Progress " << _progress
-                                         << "/" << _progressSize << endl;
+                if (1) qCDebug(FSVIEWLOG) << "Phase 3: CSize " << _chunkSize2
+                                          << ", Todo " << todo
+                                          << ", Progress " << _progress
+                                          << "/" << _progressSize << endl;
             }
             break;
 
@@ -570,10 +572,10 @@ void FSView::doUpdate()
                 _progressSize = (int)((double)todo / (1.0 - percent) + .5);
                 _progress = _progressSize - todo;
 
-                if (1) kDebug(90100) << "Phase 4: CSize " << _chunkSize3
-                                         << ", Todo " << todo
-                                         << ", Progress " << _progress
-                                         << "/" << _progressSize << endl;
+                if (1) qCDebug(FSVIEWLOG) << "Phase 4: CSize " << _chunkSize3
+                                          << ", Todo " << todo
+                                          << ", Progress " << _progress
+                                          << "/" << _progressSize << endl;
             }
 
         default:

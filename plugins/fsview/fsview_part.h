@@ -53,9 +53,12 @@ protected slots:
     {
         copySelection(true);
     }
-    void trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers);
+    void trash();
     void del();
     void editMimeType();
+
+    void itemSingleClicked(TreeMapItem *i);
+    void itemDoubleClicked(TreeMapItem *i);
 
 private:
     void copySelection(bool move);
@@ -110,7 +113,6 @@ public slots:
     void slotShowAreaMenu();
     void slotShowDepthMenu();
     void slotShowColorMenu();
-    void slotSettingsChanged(int);
     void slotProperties();
 
 protected:

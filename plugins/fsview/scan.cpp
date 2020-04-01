@@ -23,11 +23,11 @@
 #include <QSet>
 #include <qplatformdefs.h>
 
-#include <kdebug.h>
 #include <kauthorized.h>
 #include <kurlauthorized.h>
 
 #include "inode.h"
+#include "fsviewdebug.h"
 
 // ScanManager
 
@@ -104,8 +104,8 @@ void ScanManager::stopScan()
         return;
     }
 
-    if (0) kDebug(90100) << "ScanManager::stopScan, scanLength "
-                             << _list.count() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "ScanManager::stopScan, scanLength "
+                              << _list.count() << endl;
 
     while (!_list.isEmpty()) {
         ScanItem *si = _list.takeFirst();
@@ -336,8 +336,8 @@ void ScanDir::subScanFinished()
     _dirsFinished++;
     callSizeChanged();
 
-    if (0) kDebug(90100) << "ScanDir::subScanFinished [" << path()
-                             << "]: " << _dirsFinished << "/" << _dirs.count() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "ScanDir::subScanFinished [" << path()
+                              << "]: " << _dirsFinished << "/" << _dirs.count() << endl;
 
     if (_dirsFinished < _dirs.count()) {
         return;
@@ -386,8 +386,8 @@ void ScanDir::setupChildRescan()
 
 void ScanDir::callScanStarted()
 {
-    if (0) kDebug(90100) << "ScanDir:Started [" << path()
-                             << "]: size " << size() << ", files " << fileCount() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "ScanDir:Started [" << path()
+                              << "]: size " << size() << ", files " << fileCount() << endl;
 
     ScanListener *mListener = _manager ? _manager->listener() : nullptr;
 
@@ -401,8 +401,8 @@ void ScanDir::callScanStarted()
 
 void ScanDir::callSizeChanged()
 {
-    if (0) kDebug(90100) << ". [" << path()
-                             << "]: size " << size() << ", files " << fileCount() << endl;
+    if (0) qCDebug(FSVIEWLOG) << ". [" << path()
+                              << "]: size " << size() << ", files " << fileCount() << endl;
 
     _dirty = true;
 
@@ -422,8 +422,8 @@ void ScanDir::callSizeChanged()
 
 void ScanDir::callScanFinished()
 {
-    if (0) kDebug(90100) << "ScanDir:Finished [" << path()
-                             << "]: size " << size() << ", files " << fileCount() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "ScanDir:Finished [" << path()
+                              << "]: size " << size() << ", files " << fileCount() << endl;
 
     ScanListener *mListener = _manager ? _manager->listener() : nullptr;
 

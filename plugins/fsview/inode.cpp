@@ -21,14 +21,16 @@
  */
 
 #include "inode.h"
-#include <kdebug.h>
-#include <kglobal.h>
+
 #include <kiconloader.h>
 #include <KLocalizedString>
+
 #include <QMimeDatabase>
 #include <QMimeType>
+
 #include "scan.h"
 #include "fsview.h"
+#include "fsviewdebug.h"
 
 // Inode
 
@@ -74,8 +76,8 @@ Inode::Inode(ScanFile *f, Inode *parent)
 
 Inode::~Inode()
 {
-    if (0) kDebug(90100) << "~Inode [" << path()
-                             << "]" << endl;
+    if (0) qCDebug(FSVIEWLOG) << "~Inode [" << path()
+                              << "]" << endl;
 
     /* reset Listener of old Peer */
     if (_dirPeer) {
@@ -108,8 +110,8 @@ QString Inode::path() const
 
 void Inode::init(const QString &path)
 {
-    if (0) kDebug(90100) << "Inode::init [" << path
-                             << "]" << endl;
+    if (0) qCDebug(FSVIEWLOG) << "Inode::init [" << path
+                              << "]" << endl;
 
     _info = QFileInfo(path);
 
@@ -143,16 +145,16 @@ void Inode::init(const QString &path)
 /* ScanListener interface */
 void Inode::sizeChanged(ScanDir *d)
 {
-    if (0) kDebug(90100) << "Inode::sizeChanged [" << path() << "] in "
-                             << d->name() << ": size " << d->size() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "Inode::sizeChanged [" << path() << "] in "
+                              << d->name() << ": size " << d->size() << endl;
 
     _resortNeeded = true;
 }
 
 void Inode::scanFinished(ScanDir *d)
 {
-    if (0) kDebug(90100) << "Inode::scanFinished [" << path() << "] in "
-                             << d->name() << ": size " << d->size() << endl;
+    if (0) qCDebug(FSVIEWLOG) << "Inode::scanFinished [" << path() << "] in "
+                              << d->name() << ": size " << d->size() << endl;
 
     _resortNeeded = true;
 
@@ -350,27 +352,7 @@ QString Inode::text(int i) const
         return name;
     }
     if (i == 1) {
-        QString text;
-        double s = size();
-
-        if (s < 1000) {
-            text = QStringLiteral("%1 B").arg((int)(s + .5));
-        } else if (s < 10 * 1024) {
-            text = QStringLiteral("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .005, 2));
-        } else if (s < 100 * 1024) {
-            text = QStringLiteral("%1 kB").arg(KGlobal::locale()->formatNumber(s / 1024 + .05, 1));
-        } else if (s < 1000 * 1024) {
-            text = QStringLiteral("%1 kB").arg((int)(s / 1024 + .5));
-        } else if (s < 10 * 1024 * 1024) {
-            text = QStringLiteral("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .005, 2));
-        } else if (s < 100 * 1024 * 1024) {
-            text = QStringLiteral("%1 MB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 + .05, 1));
-        } else if (s < 1000 * 1024 * 1024) {
-            text = QStringLiteral("%1 MB").arg((int)(s / 1024 / 1024 + .5));
-        } else {
-            text =  QStringLiteral("%1 GB").arg(KGlobal::locale()->formatNumber(s / 1024 / 1024 / 1024 + .005, 2));
-        }
-
+        QString text = KIO::convertSize(static_cast<KIO::filesize_t>(size()+0.5));
         if (_sizeEstimation > 0) {
             text += '+';
         }

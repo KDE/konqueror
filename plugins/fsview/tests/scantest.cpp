@@ -20,6 +20,8 @@
 
 #include <stdio.h>
 
+#include <qapplication.h>
+
 #include "scan.h"
 
 class MyListener: public ScanListener
@@ -32,7 +34,7 @@ public:
 
     void sizeChanged(ScanDir *d) override
     {
-        printf("Change in %s: Dirs %d, Files %d",
+        printf("Change in %s: Dirs %d, Files %d ",
                qPrintable(d->name()),
                d->dirCount(), d->fileCount());
         printf("Size %llu\n", (unsigned long long int)d->size());
@@ -46,6 +48,8 @@ public:
 
 int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
+
     ScanManager m(QStringLiteral("/opt"));
     if (argc > 1) {
         m.setTop(argv[1]);

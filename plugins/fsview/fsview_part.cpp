@@ -32,7 +32,6 @@
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
 
-#include <kglobalsettings.h>
 #include <kprotocolmanager.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
@@ -46,13 +45,15 @@
 #include <KIO/FileUndoManager>
 #include <KJobWidgets>
 #include <ktoolinvocation.h>
+#include <kconfig.h>
 #include <kconfiggroup.h>
-#include <KDebug>
-
+#include <ksharedconfig.h>
 #include <KLocalizedString>
 
 #include <QApplication>
 #include <QMimeData>
+
+#include "fsviewdebug.h"
 
 K_PLUGIN_FACTORY(FSViewPartFactory, registerPlugin<FSViewPart>();)
 
@@ -147,9 +148,13 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     QObject::connect(_colorMenu->menu(), SIGNAL(aboutToShow()),
                      SLOT(slotShowColorMenu()));
 
-    slotSettingsChanged(KGlobalSettings::SETTINGS_MOUSE);
-    connect(KGlobalSettings::self(), SIGNAL(settingsChanged(int)),
-            SLOT(slotSettingsChanged(int)));
+    // Both of these click signals are connected.  Whether a single or
+    // double click activates an item is checked against the current
+    // style setting when the click happens.
+    QObject::connect(_view, SIGNAL(clicked(TreeMapItem*)),
+                     _ext, SLOT(itemSingleClicked(TreeMapItem*)));
+    QObject::connect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
+                     _ext, SLOT(itemDoubleClicked(TreeMapItem*)));
 
     QObject::connect(_view, SIGNAL(returnPressed(TreeMapItem*)),
                      _ext, SLOT(selected(TreeMapItem*)));
@@ -177,8 +182,7 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
     actionCollection()->setDefaultShortcut(moveToTrashAction, QKeySequence(QKeySequence::Delete));
-    connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
-            _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
+    connect(moveToTrashAction, SIGNAL(triggered()), _ext, SLOT(trash()));
 
     QAction *deleteAction = actionCollection()->addAction(QStringLiteral("delete"));
     deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
@@ -205,29 +209,10 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 
 FSViewPart::~FSViewPart()
 {
-    kDebug(90100) << "FSViewPart Destructor";
+    qCDebug(FSVIEWLOG);
 
     delete _job;
     _view->saveFSOptions();
-}
-
-void FSViewPart::slotSettingsChanged(int category)
-{
-    if (category != KGlobalSettings::SETTINGS_MOUSE) {
-        return;
-    }
-
-    QObject::disconnect(_view, SIGNAL(clicked(TreeMapItem*)),
-                        _ext, SLOT(selected(TreeMapItem*)));
-    QObject::disconnect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
-                        _ext, SLOT(selected(TreeMapItem*)));
-
-    if (_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
-        QObject::connect(_view, SIGNAL(clicked(TreeMapItem*)),
-                         _ext, SLOT(selected(TreeMapItem*)));
-    else
-        QObject::connect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
-                         _ext, SLOT(selected(TreeMapItem*)));
 }
 
 void FSViewPart::showInfo()
@@ -262,7 +247,7 @@ void FSViewPart::completedSlot(int dirs)
         _job = nullptr;
     }
 
-    KConfigGroup cconfig(_view->config(), "MetricCache");
+    KConfigGroup cconfig = _view->config()->group("MetricCache");
     _view->saveMetric(&cconfig);
 
     emit completed();
@@ -294,7 +279,7 @@ void FSViewPart::slotShowColorMenu()
 
 bool FSViewPart::openFile() // never called since openUrl is reimplemented
 {
-    kDebug(90100) << "FSViewPart::openFile " << localFilePath();
+    qCDebug(FSVIEWLOG) << localFilePath();
     _view->setPath(localFilePath());
 
     return true;
@@ -302,7 +287,7 @@ bool FSViewPart::openFile() // never called since openUrl is reimplemented
 
 bool FSViewPart::openUrl(const QUrl &url)
 {
-    kDebug(90100) << "FSViewPart::openUrl " << url.path();
+    qCDebug(FSVIEWLOG) << url.path();
 
     if (!url.isValid()) {
         return false;
@@ -321,7 +306,7 @@ bool FSViewPart::openUrl(const QUrl &url)
 
 bool FSViewPart::closeUrl()
 {
-    kDebug(90100) << "FSViewPart::closeUrl ";
+    qCDebug(FSVIEWLOG);
 
     _view->stop();
 
@@ -369,7 +354,7 @@ void FSViewPart::updateActions()
         stateChanged(QStringLiteral("has_no_selection"));
     }
 
-    kDebug(90100) << "FSViewPart::updateActions, deletable " << canDel;
+    qCDebug(FSVIEWLOG) << "deletable" << canDel;
 }
 
 void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
@@ -476,9 +461,9 @@ void FSViewBrowserExtension::del()
     }
 }
 
-void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modifiers)
+void FSViewBrowserExtension::trash()
 {
-    bool deleteNotTrash = ((modifiers & Qt::ShiftModifier) != 0);
+    bool deleteNotTrash = ((QGuiApplication::keyboardModifiers() & Qt::ShiftModifier) != 0);
     if (deleteNotTrash) {
         del();
     } else {
@@ -530,10 +515,25 @@ void FSViewBrowserExtension::refresh()
         }
     }
 
-    kDebug(90100) << "FSViewPart::refreshing "
-                  << ((Inode *)commonParent)->path() << endl;
+    qCDebug(FSVIEWLOG) << "refreshing"
+                       << ((Inode *)commonParent)->path() << endl;
 
     _view->requestUpdate((Inode *)commonParent);
+}
+
+void FSViewBrowserExtension::itemSingleClicked(TreeMapItem *i)
+{
+    if (_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)) {
+        selected(i);
+    }
+}
+
+
+void FSViewBrowserExtension::itemDoubleClicked(TreeMapItem *i)
+{
+    if (!_view->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)) {
+        selected(i);
+    }
 }
 
 void FSViewBrowserExtension::selected(TreeMapItem *i)
