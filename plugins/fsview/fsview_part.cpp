@@ -63,8 +63,7 @@ FSJob::FSJob(FSView *v)
     : KIO::Job()
 {
     _view = v;
-    QObject::connect(v, SIGNAL(progress(int,int,QString)),
-                     this, SLOT(progressSlot(int,int,QString)));
+    connect(v, &FSView::progress, this, &FSJob::progressSlot);
 }
 
 void FSJob::kill(bool /*quietly*/)
@@ -137,37 +136,25 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     action->setToolTip(i18n("Show FSView manual"));
     action->setWhatsThis(i18n("Opens the help browser with the "
                               "FSView documentation"));
-    connect(action, SIGNAL(triggered()), this, SLOT(showHelp()));
+    connect(action, &QAction::triggered, this, &FSViewPart::showHelp);
 
-    QObject::connect(_visMenu->menu(), SIGNAL(aboutToShow()),
-                     SLOT(slotShowVisMenu()));
-    QObject::connect(_areaMenu->menu(), SIGNAL(aboutToShow()),
-                     SLOT(slotShowAreaMenu()));
-    QObject::connect(_depthMenu->menu(), SIGNAL(aboutToShow()),
-                     SLOT(slotShowDepthMenu()));
-    QObject::connect(_colorMenu->menu(), SIGNAL(aboutToShow()),
-                     SLOT(slotShowColorMenu()));
+    connect(_visMenu->menu(), &QMenu::aboutToShow,this, &FSViewPart::slotShowVisMenu);
+    connect(_areaMenu->menu(), &QMenu::aboutToShow, this, &FSViewPart::slotShowAreaMenu);
+    connect(_depthMenu->menu(), &QMenu::aboutToShow, this, &FSViewPart::slotShowDepthMenu);
+    connect(_colorMenu->menu(), &QMenu::aboutToShow, this, &FSViewPart::slotShowColorMenu);
 
     // Both of these click signals are connected.  Whether a single or
     // double click activates an item is checked against the current
     // style setting when the click happens.
-    QObject::connect(_view, SIGNAL(clicked(TreeMapItem*)),
-                     _ext, SLOT(itemSingleClicked(TreeMapItem*)));
-    QObject::connect(_view, SIGNAL(doubleClicked(TreeMapItem*)),
-                     _ext, SLOT(itemDoubleClicked(TreeMapItem*)));
+    connect(_view, &FSView::clicked, _ext, &FSViewBrowserExtension::itemSingleClicked);
+    connect(_view, &FSView::doubleClicked, _ext, &FSViewBrowserExtension::itemDoubleClicked);
 
-    QObject::connect(_view, SIGNAL(returnPressed(TreeMapItem*)),
-                     _ext, SLOT(selected(TreeMapItem*)));
-    QObject::connect(_view, SIGNAL(selectionChanged()),
-                     this, SLOT(updateActions()));
-    QObject::connect(_view,
-                     SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
-                     this,
-                     SLOT(contextMenu(TreeMapItem*,QPoint)));
+    connect(_view, &TreeMapWidget::returnPressed, _ext, &FSViewBrowserExtension::selected);
+    connect(_view, QOverload<>::of(&TreeMapWidget::selectionChanged), this, &FSViewPart::updateActions);
+    connect(_view, &TreeMapWidget::contextMenuRequested, this, &FSViewPart::contextMenu);
 
-    QObject::connect(_view, SIGNAL(started()), this, SLOT(startedSlot()));
-    QObject::connect(_view, SIGNAL(completed(int)),
-                     this, SLOT(completedSlot(int)));
+    connect(_view, &FSView::started, this, &FSViewPart::startedSlot);
+    connect(_view, &FSView::completed, this, &FSViewPart::completedSlot);
 
     // Create common file management actions - this is necessary in KDE4
     // as these common actions are no longer automatically part of KParts.
@@ -182,23 +169,23 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
     actionCollection()->setDefaultShortcut(moveToTrashAction, QKeySequence(QKeySequence::Delete));
-    connect(moveToTrashAction, SIGNAL(triggered()), _ext, SLOT(trash()));
+    connect(moveToTrashAction, &QAction::triggered, _ext, &FSViewBrowserExtension::trash);
 
     QAction *deleteAction = actionCollection()->addAction(QStringLiteral("delete"));
     deleteAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     deleteAction->setText(i18nc("@action:inmenu File", "Delete"));
     actionCollection()->setDefaultShortcut(deleteAction, QKeySequence(Qt::SHIFT | Qt::Key_Delete));
-    connect(deleteAction, SIGNAL(triggered()), _ext, SLOT(del()));
+    connect(deleteAction, &QAction::triggered, _ext, &FSViewBrowserExtension::del);
 
     QAction *editMimeTypeAction = actionCollection()->addAction(QStringLiteral("editMimeType"));
     editMimeTypeAction->setText(i18nc("@action:inmenu Edit", "&Edit File Type..."));
-    connect(editMimeTypeAction, SIGNAL(triggered()), _ext, SLOT(editMimeType()));
+    connect(editMimeTypeAction, &QAction::triggered, _ext, &FSViewBrowserExtension::editMimeType);
 
     QAction *propertiesAction = actionCollection()->addAction(QStringLiteral("properties"));
     propertiesAction->setText(i18nc("@action:inmenu File", "Properties"));
     propertiesAction->setIcon(QIcon::fromTheme(QStringLiteral("document-properties")));
     propertiesAction->setShortcut(Qt::ALT | Qt::Key_Return);
-    connect(propertiesAction, SIGNAL(triggered()), SLOT(slotProperties()));
+    connect(propertiesAction, &QAction::triggered, this, &FSViewPart::slotProperties);
 
     QTimer::singleShot(1, this, SLOT(showInfo()));
 
@@ -456,8 +443,7 @@ void FSViewBrowserExtension::del()
         KIO::Job *job = KIO::del(urls);
         KJobWidgets::setWindow(job, _view);
         job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-        connect(job, SIGNAL(result(KJob*)),
-                this, SLOT(refresh()));
+        connect(job, &KJob::result, this, &FSViewBrowserExtension::refresh);
     }
 }
 
@@ -476,8 +462,7 @@ void FSViewBrowserExtension::trash()
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl("trash:/"), job);
             KJobWidgets::setWindow(job, _view);
             job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-            connect(job, SIGNAL(result(KJob*)),
-                    this, SLOT(refresh()));
+            connect(job, &KJob::result, this, &FSViewBrowserExtension::refresh);
         }
     }
 }

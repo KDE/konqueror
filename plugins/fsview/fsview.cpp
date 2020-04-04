@@ -419,8 +419,7 @@ void FSView::addColorItems(QMenu *popup, int id)
 {
     _colorID = id;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(colorActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &FSView::colorActivated);
 
     addPopupItem(popup, i18n("None"),      colorMode() == None,  id++);
     addPopupItem(popup, i18n("Depth"),     colorMode() == Depth, id++);

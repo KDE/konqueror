@@ -41,8 +41,17 @@ public:
     explicit FSViewBrowserExtension(FSViewPart *viewPart);
     ~FSViewBrowserExtension() override;
 
-protected slots:
+public slots:
     void selected(TreeMapItem *);
+
+    void itemSingleClicked(TreeMapItem *i);
+    void itemDoubleClicked(TreeMapItem *i);
+
+    void trash();
+    void del();
+    void editMimeType();
+
+protected slots:
     void refresh();
 
     void copy()
@@ -53,13 +62,6 @@ protected slots:
     {
         copySelection(true);
     }
-    void trash();
-    void del();
-    void editMimeType();
-
-    void itemSingleClicked(TreeMapItem *i);
-    void itemDoubleClicked(TreeMapItem *i);
-
 private:
     void copySelection(bool move);
 

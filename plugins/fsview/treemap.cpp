@@ -3176,8 +3176,7 @@ void TreeMapWidget::addSplitDirectionItems(QMenu *popup, int id)
 {
     _splitID = id;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(splitActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::splitActivated);
 
     addPopupItem(popup, i18n("Recursive Bisection"),
                  splitMode() == TreeMapItem::Bisection, id++);
@@ -3245,8 +3244,7 @@ void TreeMapWidget::addVisualizationItems(QMenu *popup, int id)
 {
     _visID = id;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(visualizationActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::visualizationActivated);
 
     QMenu *spopup = new QMenu(i18n("Nesting"));
     addSplitDirectionItems(spopup, id + 100);
@@ -3323,8 +3321,7 @@ void TreeMapWidget::addSelectionItems(QMenu *popup,
     _selectionID = id;
     _menuItem = i;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(selectionActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::selectionActivated);
 
     while (i) {
         QString name = i->text(0);
@@ -3359,8 +3356,7 @@ void TreeMapWidget::addFieldStopItems(QMenu *popup,
 {
     _fieldStopID = id;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(fieldStopActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::fieldStopActivated);
 
     addPopupItem(popup, i18n("No %1 Limit", fieldType(0)), fieldStop(0).isEmpty(), id);
 
@@ -3417,8 +3413,7 @@ void TreeMapWidget::addAreaStopItems(QMenu *popup,
     _areaStopID = id;
     _menuItem = i;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(areaStopActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::areaStopActivated);
 
     bool foundArea = false;
 
@@ -3491,8 +3486,7 @@ void TreeMapWidget::addDepthStopItems(QMenu *popup,
     _depthStopID = id;
     _menuItem = i;
 
-    connect(popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(depthStopActivated(QAction*)));
+    connect(popup, &QMenu::triggered, this, &TreeMapWidget::depthStopActivated);
 
     bool foundDepth = false;
 
