@@ -165,7 +165,7 @@ void KonqFrameStatusBar::splitFrameMenu()
     // since this may not be the active view (passive view)
     QAction actRemoveView(QIcon::fromTheme(QStringLiteral("view-close")), i18n("Close View"), nullptr);
     actRemoveView.setObjectName(QStringLiteral("removethisview"));
-    connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView);
+    connect(&actRemoveView, &QAction::triggered, m_pParentKonqFrame, &KonqFrame::slotRemoveView, Qt::QueuedConnection);
     actRemoveView.setEnabled(mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode());
 
     // For the rest, we borrow them from the main window
