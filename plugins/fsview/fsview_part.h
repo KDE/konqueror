@@ -51,7 +51,6 @@ public slots:
     void del();
     void editMimeType();
 
-protected slots:
     void refresh();
 
     void copy()
