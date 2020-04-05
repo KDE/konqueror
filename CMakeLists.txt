@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(Konqueror)
 
 set(QT_MIN_VERSION "5.9.0")
-set(KF5_MIN_VERSION "5.38.0")  # get new ECM layout
+set(KF5_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
