@@ -25,6 +25,8 @@
 #include "kbookmarkactionmenu.h"
 #include "kbookmarkcontextmenu.h"
 
+#include <KActionCollection>
+
 namespace Konqueror { // to avoid clashing with KF5::Bookmarks which had a KonqBookmarkMenu class. Remove once using KF6.
 
 class KonqBookmarkMenu : public KBookmarkMenu
@@ -45,8 +47,9 @@ public:
      * @param collec parent collection for the KActions.
      */
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, KActionCollection *collec)
-        : KBookmarkMenu(mgr, owner, parentMenu->menu(), collec)
+        : KBookmarkMenu(mgr, owner, parentMenu->menu())
     {
+        m_actionCollection = collec;
     }
     ~KonqBookmarkMenu() override
     {}
@@ -58,6 +61,7 @@ public:
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
     {
+        m_actionCollection = new KActionCollection(this);
     }
 
 protected:
