@@ -32,8 +32,9 @@ KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const Q
     : KParts::ReadOnlyPart(parent)
 {
     KAboutData aboutData("konqsidebartng", i18n("Extended Sidebar"), "0.2");
-    aboutData.addAuthor(i18n("Joseph Wenninger"), "", "jowenn@bigfoot.com");
+    aboutData.addAuthor(i18n("Joseph Wenninger"), "", "jowenn@kde.org");
     aboutData.addAuthor(i18n("David Faure"), "", "faure@kde.org");
+    aboutData.addAuthor(i18n("Raphael Rosch"), "", "kde-dev@insaner.com");
     setComponentData(aboutData);
 
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
@@ -69,7 +70,8 @@ bool KonqSidebarPart::openUrl(const QUrl &url)
 void KonqSidebarPart::customEvent(QEvent *ev)
 {
     if (KonqFileSelectionEvent::test(ev) ||
-            KonqFileMouseOverEvent::test(ev)) {
+            KonqFileMouseOverEvent::test(ev) ||
+            KParts::PartActivateEvent::test(ev)) {
         // Forward the event to the widget
         QApplication::sendEvent(widget(), ev);
     }

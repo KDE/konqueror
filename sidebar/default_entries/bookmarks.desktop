@@ -1,7 +1,14 @@
 [Desktop Entry]
 Type=Link
-URL=
-Icon=bookmarks
+URL=bookmarks:
+Icon=bookmark
+Open=true
+#X-KDE-TreeModule=Bookmarks
+X-KDE-TreeModule=Virtual
+X-KDE-RelURL=bookmarks
+X-KDE-KonqSidebarModule=konqsidebar_bookmarks
+#X-KDE-SearchableTreeModule=true
+X-KDE-Weight=1
 Name=Bookmarks
 Name[af]=Boekmerke
 Name[ar]=العلامات
@@ -185,8 +192,3 @@ Comment[xh]=Olu luluhlu lwamanqaku encwadi yakho, yonikezelo olukhawulezayo
 Comment[x-test]=xxThis is the list of your bookmarks, for a faster accessxx
 Comment[zh_CN]=这是您的书签列表，以便使得访问更加快速
 Comment[zh_TW]=快速存取網站的書籤列表
-Open=false
-X-KDE-TreeModule=Bookmarks
-X-KDE-SearchableTreeModule=true
-X-KDE-KonqSidebarModule=konqsidebar_tree
-X-KDE-Weight=1

@@ -4,6 +4,7 @@
     begin                : Sat June 2 16:25:27 CEST 2001
     copyright            : (C) 2001 Joseph Wenninger
     email                : jowenn@kde.org
+    Copyright (c) 2019   : Raphael Rosch <kde-dev@insaner.com>
  ***************************************************************************/
 
 /***************************************************************************
@@ -25,6 +26,7 @@
 #include <QUrl>
 
 #include <kparts/part.h>
+#include <KParts/PartActivateEvent>
 #include <KSharedConfig>
 
 #include "konqsidebarplugin.h"
@@ -46,12 +48,14 @@ public:
     }
     ButtonInfo(const KSharedConfig::Ptr &configFile_,
                const QString &file_,
-               const QUrl &url_, const QString &lib,
-               const QString &dispName_, const QString &iconName_)
+               const QUrl &url_,
+               const QString &lib,
+               const QString &dispName_,
+               const QString &iconName_)
         : configFile(configFile_),
           file(file_), dock(NULL),
           module(NULL), m_plugin(NULL),
-          URL(url_), libName(lib), displayName(dispName_), iconName(iconName_)
+          initURL(url_), libName(lib), displayName(dispName_), iconName(iconName_)
     {
     }
 
@@ -62,10 +66,13 @@ public:
     QPointer<QWidget> dock;
     KonqSidebarModule *module;
     KonqSidebarPlugin *m_plugin;
-    QUrl URL; // TODO remove (after removing the place where it's used)
+
     QString libName;
     QString displayName;
     QString iconName;
+    bool configOpen;
+    QUrl initURL;
+
 };
 
 class Sidebar_Widget: public QWidget
@@ -87,7 +94,7 @@ public Q_SLOTS:
     void addWebSideBar(const QUrl &url, const QString &name);
 
 protected:
-    void customEvent(QEvent *ev);
+    void customEvent(QEvent *ev) override;
     //void resizeEvent(QResizeEvent* ev);
     virtual bool eventFilter(QObject *, QEvent *);
     virtual void mousePressEvent(QMouseEvent *);
@@ -131,6 +138,8 @@ public Q_SLOTS:
 
 private:
 
+    QUrl cleanupURL(const QString &url);
+    QUrl cleanupURL(const QUrl &url);
     bool addButton(const QString &desktopFileName, int pos = -1);
     bool createView(ButtonInfo &buttonInfo);
     KonqSidebarModule *loadModule(QWidget *par, const QString &desktopName,
@@ -188,11 +197,12 @@ private:
     KConfigGroup *m_config;
     QTimer m_configTimer;
 
-    QUrl m_storedUrl;
+    QUrl m_storedCurViewUrl;
+    QUrl m_origURL;
+
     int m_savedWidth;
     int m_latestViewed;
 
-    bool m_hasStoredUrl;
     bool m_singleWidgetMode;
     bool m_showTabsLeft;
     bool m_hideTabs;
@@ -207,6 +217,8 @@ private:
     QStringList m_openViews; // The views that should be opened
 
     ModuleManager m_moduleManager;
+
+    bool m_urlBeforeInstanceFlag = false;
 
 Q_SIGNALS:
     void panelHasBeenExpanded(bool);

@@ -63,7 +63,7 @@ endif()
 add_subdirectory( webenginepart )
 
 add_subdirectory( pics )
-#add_subdirectory( sidebar )
+add_subdirectory( sidebar )
 add_subdirectory( settings )
 add_subdirectory( plugins )
 

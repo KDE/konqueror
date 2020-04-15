@@ -33,6 +33,7 @@
 
 #include <kfileitem.h>
 #include <kparts/mainwindow.h>
+#include <KParts/PartActivateEvent>
 #include <kservice.h>
 
 #include "konqcombo.h"

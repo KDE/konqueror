@@ -1,6 +1,12 @@
 [Desktop Entry]
-URL=
+Type=Link
+URL=applications:/
 Icon=services
+Open=true
+X-KDE-TreeModule=Virtual
+X-KDE-RelURL=services
+X-KDE-KonqSidebarModule=konqsidebar_tree
+X-KDE-Weight=14
 Name=Services
 Name[af]=Dienste
 Name[ar]=الخدمات
@@ -93,8 +99,3 @@ Name[xh]=Iinkonzo
 Name[x-test]=xxServicesxx
 Name[zh_CN]=服务
 Name[zh_TW]=服務
-Open=false
-X-KDE-TreeModule=Virtual
-X-KDE-RelURL=services
-X-KDE-KonqSidebarModule=konqsidebar_tree
-X-KDE-Weight=12

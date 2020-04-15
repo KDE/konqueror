@@ -1,6 +1,11 @@
 [Desktop Entry]
 Type=Link
-Icon=folder-favorites
+#Icon=folder-favorite
+#Icon=folder-favorites
+Icon=folder-templates
+Open=false
+X-KDE-KonqSidebarModule=konqsidebar_places
+X-KDE-Weight=5
 Name=Places
 Name[ar]=الأماكن
 Name[ast]=Llugares
@@ -142,5 +147,3 @@ Comment[wa]=Çouchal est l' djivêye des eplaeçmints.
 Comment[x-test]=xxThis is the list of places.xx
 Comment[zh_CN]=这是位置列表。
 Comment[zh_TW]=這是地方列表。
-X-KDE-KonqSidebarModule=konqsidebar_places
-X-KDE-Weight=5

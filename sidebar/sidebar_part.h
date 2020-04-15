@@ -68,7 +68,7 @@ protected Q_SLOTS:
  * application.
  *
  * @short Main Part
- * @author Joseph WENNINGER <jowenn@bigfoot.com>
+ * @author Joseph WENNINGER <jowenn@kde.org>
  * @version 0.1
  */
 class KonqSidebarPart : public KParts::ReadOnlyPart

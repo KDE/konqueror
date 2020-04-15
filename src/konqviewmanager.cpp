@@ -1014,7 +1014,7 @@ void KonqViewManager::slotActivePartChanged(KParts::Part *newPart)
     // Send event to mainwindow - this is useful for plugins (like searchbar)
     KParts::PartActivateEvent ev(true, newPart, newPart->widget());
     QApplication::sendEvent(m_pMainWindow, &ev);
-
+    
     KonqView *view = m_pMainWindow->childView(static_cast<KParts::ReadOnlyPart *>(newPart));
     if (view == nullptr) {
         qCDebug(KONQUEROR_LOG) << "No view associated with this part";

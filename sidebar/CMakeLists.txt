@@ -1,12 +1,13 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 find_package(KF5 REQUIRED COMPONENTS JobWidgets)
 
-# TODO: rewrite to KDirModel
 if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
 endif()
 
-add_subdirectory( web_module )
+add_subdirectory( bookmarks_module )
+add_subdirectory( tree_module )
+# add_subdirectory( web_module ) # requires refactoring away from KHtml
 add_subdirectory( history_module )
 add_subdirectory( places_module )
 add_subdirectory( default_entries )

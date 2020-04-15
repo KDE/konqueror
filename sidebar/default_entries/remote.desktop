@@ -1,5 +1,14 @@
 [Desktop Entry]
-Name=Network
+Type=Link
+URL=remote:/
+Icon=folder-remote
+Open=true
+X-KDE-TreeModule=Virtual
+X-KDE-RelURL=remote
+X-KDE-KonqSidebarModule=konqsidebar_tree
+X-KDE-Weight=12
+# NOTE: this will include other "remote" connections, not just "network" ones, translations should be updated
+Name=Remote
 Name[af]=Netwerk
 Name[ar]=الشبكة
 Name[as]=নে'টৱৰ্ক
@@ -91,9 +100,3 @@ Name[xh]=Umsebenzi womnatha
 Name[x-test]=xxNetworkxx
 Name[zh_CN]=网络
 Name[zh_TW]=網路
-Icon=folder-remote
-Open=false
-X-KDE-TreeModule=Virtual
-X-KDE-RelURL=remote
-X-KDE-KonqSidebarModule=konqsidebar_tree
-X-KDE-Weight=14

@@ -5453,7 +5453,8 @@ bool KonqMainWindow::event(QEvent *e)
     }
 
     if (KonqFileSelectionEvent::test(e) ||
-            KonqFileMouseOverEvent::test(e)) {
+            KonqFileMouseOverEvent::test(e) ||
+            KParts::PartActivateEvent::test(e)) {
         // Forward the event to all views
         MapViews::ConstIterator it = m_mapViews.constBegin();
         MapViews::ConstIterator end = m_mapViews.constEnd();
@@ -5462,6 +5463,7 @@ bool KonqMainWindow::event(QEvent *e)
         }
         return true;
     }
+    
     if (KParts::OpenUrlEvent::test(e)) {
         KParts::OpenUrlEvent *ev = static_cast<KParts::OpenUrlEvent *>(e);
 

@@ -83,7 +83,7 @@ void ModuleManagerTest::initTestCase()
     QFile::remove(m_globalDir + "testModule.desktop");
 
     //PORTING TODO setter for global dir
-    //KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
+    KGlobal::dirs()->addResourceDir("data", QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "sidebartest_global/"), true;
 
     // Create a fake pre-installed plugin there.
     KDesktopFile testModule(m_globalDir + "testModule.desktop");
