@@ -91,6 +91,7 @@
 #include <QList>
 #include <QPixmap>
 #include <QLineEdit>
+#include <QNetworkProxy>
 
 #include <kaboutdata.h>
 #include <ktoolbar.h>
@@ -148,6 +149,8 @@
 #include <QMenuBar>
 #include <QStandardPaths>
 #include <KSharedConfig>
+
+#include <KProtocolManager>
 
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
@@ -292,6 +295,10 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     }
 
     resize(700, 480);
+
+    updateProxyForWebEngine(false);
+    QDBusConnection::sessionBus().connect("", QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"),
+                                          QStringLiteral("reparseSlaveConfiguration"), this, SLOT(updateProxyForWebEngine()));
     setAutoSaveSettings();
 
     //qCDebug(KONQUEROR_LOG) << this << "created";
@@ -1725,8 +1732,9 @@ void KonqMainWindow::slotConfigureExtensions()
     extensionManager.exec();
 }
 
-void KonqMainWindow::slotConfigure()
+void KonqMainWindow::slotConfigure(const QString startingModule)
 {
+    KPageWidgetItem *startingItem = nullptr;
     if (!m_configureDialog) {
         m_configureDialog = new KCMultiDialog(this);
         m_configureDialog->setObjectName(QStringLiteral("configureDialog"));
@@ -1759,7 +1767,10 @@ void KonqMainWindow::slotConfigure()
                 };
                 for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i)
                     if (KAuthorized::authorizeControlModule(fmModules[i])) {
-                        m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i]) + ".desktop"), fileManagementGroup);
+                        KPageWidgetItem *it = m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i]) + ".desktop"), fileManagementGroup);
+                        if (!startingItem && startingModule == fmModules[i]) {
+                            startingItem = it;
+                        }
                     }
             } else {
                 qCWarning(KONQUEROR_LOG) << "Unable to load the \"File Management\" configuration module";
@@ -1785,7 +1796,10 @@ void KonqMainWindow::slotConfigure()
                 };
                 for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i)
                     if (KAuthorized::authorizeControlModule(webModules[i])) {
-                        m_configureDialog->addModule(KCModuleInfo(QString(webModules[i]) + ".desktop"), webGroup);
+                        KPageWidgetItem *it= m_configureDialog->addModule(KCModuleInfo(QString(webModules[i]) + ".desktop"), webGroup);
+                        if (!startingItem && startingModule == webModules[i]) {
+                            startingItem = it;
+                        }
                     }
             } else {
                 qCWarning(KONQUEROR_LOG) << "Unable to load the \"Web Browsing\" configuration module";
@@ -1795,7 +1809,9 @@ void KonqMainWindow::slotConfigure()
         //END SYNC with initActions()
 
     }
-
+    if (startingItem) {
+        m_configureDialog->setCurrentPage(startingItem);
+    }
     m_configureDialog->show();
 
 }
@@ -5470,7 +5486,7 @@ bool KonqMainWindow::event(QEvent *e)
         }
         return true;
     }
-    
+
     if (KParts::OpenUrlEvent::test(e)) {
         KParts::OpenUrlEvent *ev = static_cast<KParts::OpenUrlEvent *>(e);
 
@@ -5510,3 +5526,56 @@ QLineEdit *KonqMainWindow::comboEdit()
     return m_combo ? m_combo->lineEdit() : nullptr;
 }
 
+void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
+{
+    if (updateProtocolManager) {
+        KProtocolManager::reparseConfiguration();
+    }
+
+    KService::Ptr service = KMimeTypeTrader::self()->preferredService("text/html", "KParts/ReadOnlyPart");
+    Q_ASSERT(service);
+    bool webengineIsDefault = service->desktopEntryName() == "webenginepart";
+
+    KProtocolManager::ProxyType proxyType = KProtocolManager::proxyType();
+    if (proxyType == KProtocolManager::WPADProxy || proxyType == KProtocolManager::PACProxy) {
+        if (webengineIsDefault) {
+            QString msg = i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine. "
+                "No proxy will be used\n\n QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+                "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
+                "the system proxy configuration or specify a proxy URL manually in the settings dialog. Do you want to "
+                "change proxy settings now?");
+            KMessageBox::ButtonCode ans = KMessageBox::warningYesNo(this, msg, i18n("Unsupported proxy configuration"), KGuiItem(i18n("Don't use a proxy")),
+                                                                    KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
+            QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+            if (ans == KMessageBox::No) {
+                slotConfigure("proxy");
+            }
+        } else {
+            QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+        }
+        return;
+    }
+    QString httpProxy = KProtocolManager::proxyForUrl(QUrl("http://fakeurl.test.com"));
+    QString httpsProxy = KProtocolManager::proxyForUrl(QUrl("https://fakeurl.test.com"));
+    if (httpProxy == "DIRECT" && httpsProxy == "DIRECT") {
+        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+    } else if (webengineIsDefault) {
+        QUrl url(httpsProxy);
+        if (httpProxy != httpsProxy) {
+            QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
+            "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
+            "What do you want to do?", httpProxy, httpsProxy);
+            KMessageBox::ButtonCode ans = KMessageBox::questionYesNoCancel(this, msg, i18n("Conflicting proxy configuration"),
+                KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
+            if (ans == KMessageBox::Yes) {
+                url = QUrl(httpProxy);
+            } else if (ans == KMessageBox::Cancel) {
+                slotConfigure("proxy");
+                return;
+            }
+        }
+        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, url.host(), url.port(), url.userName(), url.password()));
+    } else {
+        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+    }
+}

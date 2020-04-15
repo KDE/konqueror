@@ -366,7 +366,7 @@ public Q_SLOTS:
 
     void slotAddClosedUrl(KonqFrameBase *tab);
 
-    void slotConfigure();
+    void slotConfigure(QString startingModule = QString());
     void slotConfigureDone();
     void slotConfigureToolbars();
     void slotConfigureExtensions();
@@ -436,6 +436,8 @@ private Q_SLOTS:
     void slotForceSaveMainWindowSettings();
 
     void slotOpenWith();
+
+    void updateProxyForWebEngine(bool updateProtocolManager = true);
 
 #if 0
     void slotGoMenuAboutToShow();
