@@ -44,9 +44,13 @@ SearchBar::SearchBar(QWidget *parent)
 
     // Initialize the user interface...
     m_ui.setupUi(this);
-    m_ui.optionsButton->addAction(m_ui.actionMatchCase);
-    m_ui.optionsButton->addAction(m_ui.actionHighlightMatch);
-    m_ui.optionsButton->addAction(m_ui.actionSearchAutomatically);
+    m_optionsMenu = new QMenu();
+    m_optionsMenu->addAction(m_ui.actionMatchCase);
+    m_optionsMenu->addAction(m_ui.actionHighlightMatch);
+    m_optionsMenu->addAction(m_ui.actionSearchAutomatically);
+    m_ui.optionsButton->setMenu(m_optionsMenu);
+    m_ui.searchComboBox->lineEdit()->setPlaceholderText(i18n("Find..."));
+    m_ui.searchComboBox->lineEdit()->setClearButtonEnabled(true);
 
     setFocusProxy(m_ui.searchComboBox);
     

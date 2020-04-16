@@ -26,6 +26,7 @@
 #define SEARCHBAR_P_H
 
 #include <QWidget>
+#include <QMenu>
 
 #include "ui_searchbar.h"
 
@@ -63,6 +64,7 @@ Q_SIGNALS:
 private:
     Ui::SearchBar m_ui;
     QPointer<QWidget> m_focusWidget;
+    QMenu *m_optionsMenu;
 };
 
 #endif // SEARCHBAR_P_H

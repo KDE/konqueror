@@ -31,20 +31,10 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="searchInfo">
-     <property name="text">
-      <string comment="label for input line to find text">&amp;Find:</string>
-     </property>
-     <property name="buddy">
-      <cstring>searchComboBox</cstring>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="KHistoryComboBox" name="searchComboBox">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>10</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
@@ -89,15 +79,15 @@
     </widget>
    </item>
    <item>
-    <widget class="QToolButton" name="optionsButton">
+    <widget class="QPushButton" name="optionsButton">
      <property name="toolTip">
       <string>Find the previous match for the current search phrase</string>
      </property>
      <property name="text">
       <string>&amp;Options</string>
      </property>
-     <property name="popupMode">
-      <enum>QToolButton::InstantPopup</enum>
+     <property name="icon">
+      <iconset theme="settings-configure" />
      </property>
     </widget>
    </item>
