@@ -42,7 +42,7 @@
 #include "konqsettings.h"
 #include "konqmainwindow.h"
 
-KonqViewFactory::KonqViewFactory(const QString &libName, KLibFactory *factory)
+KonqViewFactory::KonqViewFactory(const QString &libName, KPluginFactory *factory)
     : m_libName(libName), m_factory(factory),
       m_args()
 {
