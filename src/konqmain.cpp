@@ -89,16 +89,21 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
         }
     }
 
+    const bool firstStart = !KonqMainWindow::mainWindowList();
+
     // Ask the user to recover session if applicable
     KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
 
     if (args.isEmpty()) {
         // No args. If --silent, do nothing, otherwise create a default window.
         if (!parser.isSet("silent")) {
-            // If session recovery created some windows, no need for an empty window here.
-            QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
-            if (mainWindowList && !mainWindowList->isEmpty()) {
-                return mainWindowList->at(0);
+            // #388333
+            if (firstStart) {
+                // If session recovery created some windows, no need for an empty window here.
+                QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
+                if (mainWindowList && !mainWindowList->isEmpty()) {
+                    return mainWindowList->at(0);
+                }
             }
 
             KonqMainWindow *mainWin = KonqMainWindowFactory::createNewWindow();
@@ -257,7 +262,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             KWindowSystem::forceActiveWindow(mainWindow->winId());
         }
     });
-    
+
     fixOldStartUrl();
 
     if (app.isSessionRestored()) {
