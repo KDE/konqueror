@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
 
+# KDE Application Version, managed by release script
+set (RELEASE_SERVICE_VERSION_MAJOR "20")
+set (RELEASE_SERVICE_VERSION_MINOR "07")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+
 project(Konqueror)
 
 set(QT_MIN_VERSION "5.9.0")
@@ -20,7 +26,7 @@ include(ECMAddAppIcon)
 include(ECMQtDeclareLoggingCategory)
 include(CMakePackageConfigHelpers)
 
-set(KONQUEROR_LIB_VERSION "5.0.97")
+set(KONQUEROR_LIB_VERSION "${RELEASE_SERVICE_VERSION}")
 set(KONQUEROR_VERSION "${KONQUEROR_LIB_VERSION}")
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
