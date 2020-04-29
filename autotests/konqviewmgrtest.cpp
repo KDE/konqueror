@@ -727,7 +727,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QCOMPARE(mainWindow.linkableViewsCount(), 2);
 }
 
-// Like in http://bugs.kde.org/show_bug.cgi?id=153533,
+// Like in https://bugs.kde.org/show_bug.cgi?id=153533,
 // where the part deletes itself.
 void ViewMgrTest::testDeletePartInTab()
 {
