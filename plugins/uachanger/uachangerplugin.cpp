@@ -22,33 +22,26 @@
 
 #include <sys/utsname.h>
 
+#include <QMenu>
 #include <QRegExp>
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <kicon.h>
+
 #include <kactionmenu.h>
 #include <kservicetypetrader.h>
 #include <krun.h>
-#include <kdebug.h>
-#include <kaction.h>
-#include <klocale.h>
-#include <kglobal.h>
-#include <kconfig.h>
-#include <kio/job.h>
-#include <kio/scheduler.h>
+#include <klocalizedstring.h>
 #include <kservice.h>
-#include <kcomponentdata.h>
-#include <kmenu.h>
-#include <KConfigGroup>
-#include <kparts/part.h>
+#include <kconfiggroup.h>
 #include <kpluginfactory.h>
 #include <kprotocolmanager.h>
-#include <kaboutdata.h>
 #include <kactioncollection.h>
+#include <ksharedconfig.h>
 
-static const KAboutData aboutdata("uachangerplugin", 0, ki18n("Change Browser Identification"), "1.0");
+#include <kparts/openurlarguments.h>
+
+#include <kio/job.h>
+#include <kio/scheduler.h>
+
 K_PLUGIN_FACTORY(UAChangerPluginFactory, registerPlugin<UAChangerPlugin>();)
-K_EXPORT_PLUGIN(UAChangerPluginFactory(aboutdata))
 
 #define UA_PTOS(x) (*it)->property(x).toString()
 #define QFL1(x) QLatin1String(x)
@@ -58,23 +51,18 @@ UAChangerPlugin::UAChangerPlugin(QObject *parent,
     : KParts::Plugin(parent),
       m_bSettingsLoaded(false), m_part(0L), m_config(0L)
 {
-    setComponentData(UAChangerPlugin::componentData());
-
-    m_pUAMenu = new KActionMenu(KIcon("preferences-web-browser-identification"), i18n("Change Browser &Identification"),
+    m_pUAMenu = new KActionMenu(QIcon::fromTheme("preferences-web-browser-identification"),
+                                i18n("Change Browser Identification"),
                                 actionCollection());
     actionCollection()->addAction("changeuseragent", m_pUAMenu);
     m_pUAMenu->setDelayed(false);
-    connect(m_pUAMenu->menu(), SIGNAL(aboutToShow()),
-            this, SLOT(slotAboutToShow()));
+    connect(m_pUAMenu->menu(), &QMenu::aboutToShow, this, &UAChangerPlugin::slotAboutToShow);
 
-    if (parent) {
+    if (parent!=nullptr) {
         m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
-        connect(m_part, SIGNAL(started(KIO::Job*)), this,
-                SLOT(slotEnableMenu()));
-        connect(m_part, SIGNAL(completed()), this,
-                SLOT(slotEnableMenu()));
-        connect(m_part, SIGNAL(completed(bool)), this,
-                SLOT(slotEnableMenu()));
+        connect(m_part, &KParts::ReadOnlyPart::started, this, &UAChangerPlugin::slotEnableMenu);
+        connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &UAChangerPlugin::slotEnableMenu);
+        connect(m_part, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, &UAChangerPlugin::slotEnableMenu);
     }
 }
 
@@ -104,7 +92,7 @@ void UAChangerPlugin::parseDescFiles()
     struct utsname utsn;
     uname(&utsn);
 
-    QStringList languageList = KLocale::global()->languageList();
+    QStringList languageList = KLocalizedString::languages();
     if (!languageList.isEmpty()) {
         const int index = languageList.indexOf(QFL1("C"));
         if (index > -1) {
@@ -197,7 +185,7 @@ void UAChangerPlugin::slotEnableMenu()
     m_currentURL = m_part->url();
 
     // This plugin works on local files, http[s], and webdav[s].
-    QString proto = m_currentURL.protocol();
+    const QString proto = m_currentURL.scheme();
     if (m_currentURL.isLocalFile() ||
             proto.startsWith("http") || proto.startsWith("webdav")) {
         if (!m_pUAMenu->isEnabled()) {
@@ -220,11 +208,9 @@ void UAChangerPlugin::slotAboutToShow()
     }
 
     if (m_pUAMenu->menu()->actions().isEmpty()) { // need to create the actions
-        m_pUAMenu->menu()->addTitle(i18n("Identify As")); // imho title doesn't need colon..
-
         m_defaultAction = new QAction(i18n("Default Identification"), this);
         m_defaultAction->setCheckable(true);
-        connect(m_defaultAction, SIGNAL(triggered()), this, SLOT(slotDefault()));
+        connect(m_defaultAction, &QAction::triggered, this, &UAChangerPlugin::slotDefault);
         m_pUAMenu->menu()->addAction(m_defaultAction);
 
         m_pUAMenu->menu()->addSeparator();
@@ -241,7 +227,7 @@ void UAChangerPlugin::slotAboutToShow()
                 browserMenu->addAction(action);
             }
         }
-        connect(m_actionGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotItemSelected(QAction*)));
+        connect(m_actionGroup, &QActionGroup::triggered, this, &UAChangerPlugin::slotItemSelected);
 
         m_pUAMenu->menu()->addSeparator();
 
@@ -252,18 +238,18 @@ void UAChangerPlugin::slotAboutToShow()
 
         m_applyEntireSiteAction = new QAction(i18n("Apply to Entire Site"), this);
         m_applyEntireSiteAction->setCheckable(true);
-        connect(m_applyEntireSiteAction, SIGNAL(triggered()), this, SLOT(slotApplyToDomain()));
-        m_pUAMenu->menu()->addAction(i18n("Apply to Entire Site"));
+        m_applyEntireSiteAction->setChecked(m_bApplyToDomain);
+        connect(m_applyEntireSiteAction, &QAction::triggered, this, &UAChangerPlugin::slotApplyToDomain);
+        m_pUAMenu->menu()->addAction(m_applyEntireSiteAction);
 
-        m_pUAMenu->menu()->addAction(i18n("Configure..."), this,
-                                     SLOT(slotConfigure()));
+        m_pUAMenu->menu()->addAction(i18n("Configure..."), this, &UAChangerPlugin::slotConfigure);
     }
 
     // Reflect current settings in the actions
 
     QString host = m_currentURL.isLocalFile() ? QFL1("localhost") : m_currentURL.host();
     m_currentUserAgent = KProtocolManager::userAgentForHost(host);
-    //kDebug(90130) << "User Agent: " << m_currentUserAgent;
+    //qDebug() << "User Agent: " << m_currentUserAgent;
     m_defaultAction->setChecked(m_currentUserAgent == KProtocolManager::defaultUserAgent());
 
     m_applyEntireSiteAction->setChecked(m_bApplyToDomain);
@@ -294,7 +280,7 @@ void UAChangerPlugin::slotItemSelected(QAction *action)
 
     KConfigGroup grp = m_config->group(host.toLower());
     grp.writeEntry("UserAgent", m_currentUserAgent);
-    //kDebug(90130) << "Writing out UserAgent=" << m_currentUserAgent << "for host=" << host;
+    //qDebug() << "Writing out UserAgent=" << m_currentUserAgent << "for host=" << host;
     grp.sync();
 
     // Reload the page with the new user-agent string
@@ -308,7 +294,12 @@ void UAChangerPlugin::slotDefault()
     }
     // We have no choice but delete all higher domain level settings here since it
     // affects what will be matched.
-    QStringList partList = m_currentURL.host().split(' ', QString::SkipEmptyParts);
+    QStringList partList = m_currentURL.host().split(QLatin1Char(' '),
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+                                                     Qt::SkipEmptyParts);
+#else
+                                                     QString::SkipEmptyParts);
+#endif
     if (!partList.isEmpty()) {
         partList.removeFirst();
 
@@ -332,7 +323,7 @@ void UAChangerPlugin::slotDefault()
 
         KConfigGroup grp(m_config, QString());
         for (QStringList::Iterator it = domains.begin(); it != domains.end(); it++) {
-            //kDebug () << "Domain to remove: " << *it;
+            //qDebug () << "Domain to remove: " << *it;
             if (grp.hasGroup(*it)) {
                 grp.deleteGroup(*it);
             } else if (grp.hasKey(*it)) {
@@ -385,53 +376,23 @@ QString UAChangerPlugin::filterHost(const QString &hostname)
 
 QString UAChangerPlugin::findTLD(const QString &hostname)
 {
-    QStringList domains;
-    QStringList partList =  hostname.split(' ', QString::SkipEmptyParts);
+    // As per the documentation for QUrl::topLevelDomain(), the "entire site"
+    // for a hostname is considered to be the TLD suffix as returned by that
+    // function, prefixed by the hostname component immediately before it.
+    // For example, QUrl::topLevelDomain("http://www.kde.org") gives ".org"
+    // so the returned result is "kde.org".
 
-    if (partList.count()) {
-        partList.removeFirst();    // Remove hostname
-    }
+    QUrl u;
+    u.setScheme("http");
+    u.setHost(hostname);					// gives http://hostname/
 
-    while (partList.count()) {
-        // We only have a TLD left.
-        if (partList.count() == 1) {
-            break;
-        }
+    const QString tld = u.topLevelDomain(QUrl::EncodeUnicode);
+    if (tld.isEmpty()) return hostname;				// name has no valid TLD
 
-        if (partList.count() == 2) {
-            // The .name domain uses <name>.<surname>.name
-            // Although the TLD is striclty speaking .name, for our purpose
-            // it should be <surname>.name since people should not be able
-            // to set cookies for everyone with the same surname.
-            // Matches <surname>.name
-            if (partList[1].toLower() == QFL1("name")) {
-                break;
-            } else if (partList[1].length() == 2) {
-                // If this is a TLD, we should stop. (e.g. co.uk)
-                // We assume this is a TLD if it ends with .xx.yy or .x.yy
-                if (partList[0].length() <= 2) {
-                    break;    // This is a TLD.
-                }
-
-                // Catch some TLDs that we miss with the previous check
-                // e.g. com.au, org.uk, mil.co
-                QByteArray t = partList[0].toLower().toUtf8();
-                if ((t == "com") || (t == "net") || (t == "org") || (t == "gov") ||
-                        (t == "edu") || (t == "mil") || (t == "int")) {
-                    break;
-                }
-            }
-        }
-
-        domains.append(partList.join(QFL1(".")));
-        partList.removeFirst(); // Remove part
-    }
-
-    if (domains.isEmpty()) {
-        return hostname;
-    }
-
-    return domains[0];
+    const QString prefix = hostname.chopped(tld.length());	// remaining prefix of name
+    const int idx = prefix.lastIndexOf(QLatin1Char('.'));
+    const QString prev = prefix.mid(idx+1);			// works even if no '.'
+    return prev+tld;
 }
 
 void UAChangerPlugin::saveSettings()

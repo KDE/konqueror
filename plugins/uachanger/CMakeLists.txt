@@ -12,3 +12,4 @@ install(TARGETS uachangerplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
 install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
+install( FILES uachangerplugin.rc uachangerplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )

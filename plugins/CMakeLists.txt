@@ -6,7 +6,7 @@ set_package_properties(Qt5TextToSpeech PROPERTIES
 add_subdirectory( khtmlsettingsplugin )
 add_subdirectory( kimgalleryplugin )
 add_subdirectory( dirfilter )
-# TODO add_subdirectory( uachanger )
+add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 
 if (Qt5TextToSpeech_FOUND)

@@ -23,10 +23,10 @@
 
 #include <qmap.h>
 #include <qstringlist.h>
+#include <qurl.h>
 
-#include <kurl.h>
-#include <klibloader.h>
 #include <kparts/plugin.h>
+#include <kparts/readonlypart.h>
 
 class KActionMenu;
 class QAction;
@@ -42,9 +42,8 @@ class UAChangerPlugin : public KParts::Plugin
     Q_OBJECT
 
 public:
-    explicit UAChangerPlugin(QObject *parent,
-                             const QVariantList &);
-    ~UAChangerPlugin();
+    explicit UAChangerPlugin(QObject *parent, const QVariantList &args);
+    virtual ~UAChangerPlugin();
 
 protected slots:
     void slotDefault();
@@ -77,7 +76,7 @@ private:
     QAction *m_defaultAction;
     QActionGroup *m_actionGroup;
 
-    KUrl m_currentURL;
+    QUrl m_currentURL;
     QString m_currentUserAgent;
 
     QStringList m_lstAlias;    // menu entry names
