@@ -27,7 +27,6 @@
 
 #include <kactionmenu.h>
 #include <kservicetypetrader.h>
-#include <krun.h>
 #include <klocalizedstring.h>
 #include <kservice.h>
 #include <kconfiggroup.h>
@@ -36,6 +35,8 @@
 #include <kactioncollection.h>
 #include <ksharedconfig.h>
 
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegate>
 #include <kparts/openurlarguments.h>
 
 #include <kio/job.h>
@@ -264,7 +265,9 @@ void UAChangerPlugin::slotConfigure()
 {
     KService::Ptr service = KService::serviceByDesktopName("useragent");
     if (service) {
-        KRun::runCommand(service->exec(), m_part->widget());
+        KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_part->widget()));
+        job->start();
     }
 }
 

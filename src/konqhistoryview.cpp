@@ -25,6 +25,7 @@
 #include "konqhistoryproxymodel.h"
 #include "konqhistorysettings.h"
 
+#include <KDialogJobUiDelegate>
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
@@ -40,7 +41,8 @@
 #include "konqdebug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>
-#include <krun.h>
+
+#include <KIO/CommandLauncherJob>
 
 KonqHistoryView::KonqHistoryView(QWidget *parent)
     : QWidget(parent)
@@ -180,7 +182,9 @@ void KonqHistoryView::slotClearHistory()
 void KonqHistoryView::slotPreferences()
 {
     // Run the history sidebar settings.
-    KRun::run(QStringLiteral("kcmshell5 kcmhistory"), QList<QUrl>(), this);
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 kcmhistory"));
+    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
 }
 
 void KonqHistoryView::slotSortChange(QAction *action)

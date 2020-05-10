@@ -28,9 +28,10 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KDesktopFile>
+#include <KDialogJobUiDelegate>
 #include <KPluginFactory>
 #include <KActionCollection>
-#include <KRun>
+#include <KIO/CommandLauncherJob>
 #include <KMainWindow>
 #include <KParts/Part>
 #include <KParts/BrowserExtension>
@@ -381,7 +382,9 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
 
 void SearchBarPlugin::selectSearchEngines()
 {
-    KRun::runCommand(QStringLiteral("kcmshell5 webshortcuts"), (m_part ? m_part.data()->widget() : nullptr));
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 webshortcuts"));
+    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_part ? m_part.data()->widget() : nullptr));
+    job->start();
 }
 
 void SearchBarPlugin::configurationChanged()

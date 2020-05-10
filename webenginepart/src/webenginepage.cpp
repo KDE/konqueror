@@ -33,9 +33,9 @@
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <KDialogJobUiDelegate>
 
 #include <KMessageBox>
-#include <KRun>
 #include <KLocalizedString>
 #include <KShell>
 #include <KAuthorized>
@@ -46,6 +46,7 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 #include <KIO/Scheduler>
+#include <KIO/CommandLauncherJob>
 #include <KParts/HtmlExtension>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
@@ -144,8 +145,10 @@ void WebEnginePage::download(const QUrl& url, bool newWindow)
         QString managerExe;
         checkForDownloadManager(view(), managerExe);
         if (!managerExe.isEmpty()) {
-            //kDebug() << "Calling command" << cmd;
-            KRun::runCommand((managerExe + QLatin1Char(' ') + KShell::quoteArg(url.url())), view());
+            //qDebug() << "Calling command" << cmd;
+            KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
+            job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+            job->start();
             return;
         }
     }

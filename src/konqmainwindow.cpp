@@ -74,6 +74,7 @@
 #include <time.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <KIO/ApplicationLauncherJob>
 
 #include <QDesktopServices>
 #include <QFile>
@@ -432,7 +433,7 @@ QString KonqMainWindow::detectNameFilter(QUrl &url)
                     nameFilter = fileName;
                 }
             } else { // not a local file
-                KIO::StatJob *job = KIO::stat(url, KIO::StatJob::DestinationSide, 0, KIO::HideProgressInfo);
+                KIO::StatJob *job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic, KIO::HideProgressInfo);
                 // if there's an error stat'ing url, then assume it doesn't exist
                 nameFilter = !job->exec() ? fileName : QString();
             }
@@ -683,9 +684,14 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                         // Open with no offer means the user clicked on "Open With..." button.
                         if (!offer && !isExecutable) {
                             (void) KRun::displayOpenWithDialog(lst, this);
-                        } else if (isExecutable || !KRun::runApplication(*offer, lst, this)) {
+                        } else if (isExecutable) {
                             setLocationBarURL(oldLocationBarURL);   // Revert to previous locationbar URL
                             (void)new KRun(url, this);
+                        } else {
+                            KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
+                            job->setUrls(lst);
+                            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                            job->start();
                         }
                     }
                 }
@@ -1538,14 +1544,14 @@ void KonqMainWindow::slotOpenWith()
         return;
     }
 
-    const QList<QUrl> lst{ m_currentView->url() };
     const QString serviceName = sender()->objectName();
     const KService::List offers = m_currentView->appServiceOffers();
-    KService::List::ConstIterator it = offers.begin();
-    const KService::List::ConstIterator end = offers.end();
-    for (; it != end; ++it) {
-        if ((*it)->desktopEntryName() == serviceName) {
-            KRun::runApplication(**it, lst, this);
+    for (const KService::Ptr &service : offers) {
+        if (service->desktopEntryName() == serviceName) {
+            KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
+            job->setUrls({ m_currentView->url() });
+            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+            job->start();
             return;
         }
     }
