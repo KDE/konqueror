@@ -92,7 +92,7 @@ void KonqPopupMenuTest::initTestCase()
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
     m_thisDirectoryItem = KFileItem(QUrl::fromLocalFile(QDir::currentPath()), QStringLiteral("inode/directory"), S_IFDIR + 0777);
-    const QString makefile = QDir::currentPath() + "/Makefile";
+    const QString makefile = QCoreApplication::applicationDirPath() + "/../Makefile";
     QVERIFY2(QFile::exists(makefile), qPrintable(makefile));
     m_fileItem = KFileItem(QUrl::fromLocalFile(makefile), QStringLiteral("text/x-makefile"), S_IFREG + 0660);
     m_linkItem = KFileItem(QUrl::fromLocalFile(QStringLiteral("http://www.kde.org/foo")), QStringLiteral("text/html"), S_IFREG + 0660);
@@ -179,11 +179,15 @@ void KonqPopupMenuTest::testFile()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
+
+    // Be tolerant with openwith, it could be there once or twice
+    if (actions.count(QStringLiteral("openwith")) == 2) {
+        actions.removeOne(QStringLiteral("openwith"));
+    }
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
                     << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview1");
@@ -221,11 +225,14 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
+    // Be tolerant with openwith, it could be there once or twice
+    if (actions.count(QStringLiteral("openwith")) == 2) {
+        actions.removeOne(QStringLiteral("openwith"));
+    }
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
                     << QStringLiteral("copy")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview1");
@@ -256,11 +263,14 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
 
     QStringList actions = extractActionNames(popup);
     actions.removeAll(QStringLiteral("services_submenu"));
+    // Be tolerant with openwith, it could be there once or twice
+    if (actions.count(QStringLiteral("openwith")) == 2) {
+        actions.removeOne(QStringLiteral("openwith"));
+    }
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
                     << QStringLiteral("cut") << QStringLiteral("copy") << QStringLiteral("rename") << QStringLiteral("trash")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu");
@@ -395,7 +405,6 @@ void KonqPopupMenuTest::testHtmlLink()
     expectedActions << QStringLiteral("openInNewWindow") << QStringLiteral("openInNewTab") << QStringLiteral("separator")
                     << QStringLiteral("bookmark_add") << QStringLiteral("savelinkas") << QStringLiteral("copylinklocation")
                     << QStringLiteral("openwith")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu")
                     << QStringLiteral("separator")
@@ -434,7 +443,6 @@ void KonqPopupMenuTest::testHtmlPage()
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << QStringLiteral("bookmark_add")
-                    << QStringLiteral("openwith")
                     << QStringLiteral("openwith")
                     << QStringLiteral("separator")
                     << QStringLiteral("preview_submenu")
