@@ -33,7 +33,6 @@
 #include <KConfigGroup>
 #include <KToolInvocation>
 #include <KSharedConfig>
-#include <KRun>
 #include <KProtocolInfo>
 #include <QInputDialog>
 #include <KLocalizedString>
@@ -41,6 +40,8 @@
 #include <KUriFilter>
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
 
 #include <QBuffer>
 #include <QVariant>
@@ -540,7 +541,9 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
 
     const QUrl pageUrl (view()->url());
     if (pageUrl.isLocalFile()) {
-        KRun::runUrl(pageUrl, QL1S("text/plain"), view(), KRun::RunFlags());
+        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(pageUrl, QL1S("text/plain"));
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+        job->start();
     } else {
         view()->page()->toHtml([this](const QString& html) {
             QTemporaryFile tempFile;
@@ -548,7 +551,11 @@ void WebEngineBrowserExtension::slotViewDocumentSource()
             tempFile.setAutoRemove(false);
             if (tempFile.open()) {
                 tempFile.write(html.toUtf8());
-                KRun::runUrl(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"), view(), KRun::RunFlags(KRun::DeleteTemporaryFiles));
+                tempFile.close();
+                KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile.fileName()), QL1S("text/plain"));
+                job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
+                job->setDeleteTemporaryFile(true);
+                job->start();
             }
         });
     }

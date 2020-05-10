@@ -42,6 +42,8 @@
 #include <KIO/EmptyTrashJob>
 #include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>
+#include <KIO/CommandLauncherJob>
+#include <KIO/OpenUrlJob>
 #include <KFileCopyToMenu>
 #include <KJobWidgets>
 #include <KJobUiDelegate>
@@ -503,7 +505,9 @@ void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 
 void KonqPopupMenuPrivate::slotConfigTrashBin()
 {
-    KRun::run(QStringLiteral("kcmshell5 kcmtrash"), QList<QUrl>(), m_parentWidget);
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5 kcmtrash"));
+    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
+    job->start();
 }
 
 void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
@@ -556,5 +560,8 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
 
     // Now destUrl points to the target file, let's go up to parent dir
     destUrl = destUrl.adjusted(QUrl::RemoveFilename);
-    KRun::runUrl(destUrl, QStringLiteral("inode/directory"), m_parentWidget, KRun::RunFlags());
+
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(destUrl, QStringLiteral("inode/directory"));
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
+    job->start();
 }
