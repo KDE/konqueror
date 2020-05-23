@@ -586,7 +586,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         }
     }
 
-    // Fast mode for local files: do the stat ourselves instead of letting KRun do it.
+    // Fast mode for local files: do the stat ourselves instead of letting OpenUrlJob do it.
     if (mimeType.isEmpty() && url.isLocalFile()) {
         QMimeDatabase db;
         mimeType = db.mimeTypeForFile(url.toLocalFile()).name();
@@ -5434,7 +5434,7 @@ bool KonqMainWindow::isMimeTypeAssociatedWithSelf(const QString &/*mimeType*/, c
     // Prevention against user stupidity : if the associated app for this mimetype
     // is konqueror/kfmclient, then we'll loop forever. So we have to
     // 1) force embedding first, if that works we're ok
-    // 2) check what KRun is going to do before calling it.
+    // 2) check what OpenUrlJob is going to do before calling it.
     return (offer && (offer->desktopEntryName() == QLatin1String("konqueror") ||
                       offer->exec().trimmed().startsWith(QLatin1String("kfmclient"))));
 }

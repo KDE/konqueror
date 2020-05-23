@@ -24,7 +24,6 @@
 
 #include <QUrl>
 
-#include <krun.h>
 #include <kparts/browserextension.h>
 
 class KonqMainWindow;
