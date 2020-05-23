@@ -129,13 +129,13 @@ void WebEnginePartErrorSchemeHandler::writeErrorPage(QBuffer* buf, const WebEngi
     doc += i18n("Details of the Request:");
     doc += QL1S("</h3><ul><li>");
     // escape URL twice: once for i18n, and once for HTML.
-    doc += i18n("URL: %1", Qt::escape(Qt::escape(info.requestUrl.toDisplayString())));
+    doc += i18n("URL: %1", info.requestUrl.toDisplayString().toHtmlEscaped().toHtmlEscaped());
     doc += QL1S("</li><li>");
 
     const QString protocol(info.requestUrl.scheme());
     if (!protocol.isEmpty()) {
         // escape protocol twice: once for i18n, and once for HTML.
-        doc += i18n("Protocol: %1", Qt::escape(Qt::escape(protocol)));
+        doc += i18n("Protocol: %1", protocol.toHtmlEscaped().toHtmlEscaped());
         doc += QL1S("</li><li>");
     }
 
@@ -143,7 +143,7 @@ void WebEnginePartErrorSchemeHandler::writeErrorPage(QBuffer* buf, const WebEngi
                  QLocale().toString(QDateTime::currentDateTime(), QLocale::LongFormat));
     doc += QL1S("</li><li>");
     // escape info.text twice: once for i18n, and once for HTML.
-    doc += i18n("Additional Information: %1", Qt::escape(Qt::escape(info.text)));
+    doc += i18n("Additional Information: %1", info.text.toHtmlEscaped().toHtmlEscaped());
     doc += QL1S("</li></ul><h3>");
     doc += i18n("Description:");
     doc += QL1S("</h3><p>");

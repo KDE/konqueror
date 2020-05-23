@@ -58,7 +58,6 @@
 #include <QFile>
 #include <QAuthenticator>
 #include <QApplication>
-#include <QTextDocument> // Qt::escape
 #include <QNetworkReply>
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
