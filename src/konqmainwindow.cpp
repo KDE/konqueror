@@ -75,6 +75,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <KIO/ApplicationLauncherJob>
+#include <KIO/OpenUrlJob>
 
 #include <QDesktopServices>
 #include <QFile>
@@ -675,21 +676,19 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                     if (associatedAppIsKonqueror && refuseExecutingKonqueror(mimeType)) {
                         return;
                     }
-                    QList<QUrl> lst;
-                    lst.append(url);
                     //qCDebug(KONQUEROR_LOG) << "Got offer" << (offer ? offer->name() : QString("0"));
                     const bool allowExecution = trustedSource || KParts::BrowserRun::allowExecution(mimeType, url);
                     if (allowExecution) {
                         const bool isExecutable = KonqRun::isExecutable(mimeType);
-                        // Open with no offer means the user clicked on "Open With..." button.
-                        if (!offer && !isExecutable) {
-                            (void) KRun::displayOpenWithDialog(lst, this);
-                        } else if (isExecutable) {
+                        if (isExecutable) {
                             setLocationBarURL(oldLocationBarURL);   // Revert to previous locationbar URL
-                            (void)new KRun(url, this);
+                            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+                            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                            job->start();
                         } else {
+                            // If offer is null, it means the user clicked on "Open With..." button.
                             KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
-                            job->setUrls(lst);
+                            job->setUrls({url});
                             job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
                             job->start();
                         }
