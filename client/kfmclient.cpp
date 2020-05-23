@@ -32,7 +32,8 @@
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
-#include <krun.h>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegate>
 #include <KStartupInfo>
 #include <kurifilter.h>
 #include <KConfig>
@@ -185,11 +186,19 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
             qDebug() << "Using external browser" << browserApp;
             KStartupInfo::appStarted();
 
-            // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
-            // so we should sleep and delete it ourselves....
-            KRun *run = new KRun(url, nullptr, false /* no progress window */);
-            QObject::connect(run, &KRun::finished, this, &ClientApp::delayedQuit);
-            QObject::connect(run, &KRun::error, this, [](){ qApp->exit(1); });
+            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+            //job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, window));
+            job->setDeleteTemporaryFile(tempFile);
+            job->setUiDelegate(nullptr);
+            job->start();
+
+            QObject::connect(job, &KJob::result, this, [this](KJob *job) {
+                if (job->error()) {
+                    qApp->exit(1);
+                } else {
+                    ClientApp::delayedQuit();
+                }
+            });
             return qApp->exec();
         }
     }
@@ -212,7 +221,7 @@ bool ClientApp::openProfile(const QString &profileName, const QUrl &url, const Q
 
 void ClientApp::delayedQuit()
 {
-    // Quit in 2 seconds. This leaves time for KRun to pop up
+    // Quit in 2 seconds. This leaves time for OpenUrlJob to pop up
     // "app not found" in KProcessRunner, if that was the case.
     QTimer::singleShot(2000, qApp, SLOT(quit()));
 }
