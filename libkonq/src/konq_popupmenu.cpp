@@ -30,7 +30,8 @@
 #include <klocalizedstring.h>
 #include <kbookmarkmanager.h>
 #include <kbookmarkdialog.h>
-#include <krun.h>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegate>
 #include <kprotocolmanager.h>
 #include <knewfilemenu.h>
 #include <kmimetypetrader.h>
@@ -483,7 +484,9 @@ void KonqPopupMenu::setURLTitle(const QString &urlTitle)
 void KonqPopupMenuPrivate::slotPopupNewView()
 {
     Q_FOREACH (const QUrl &url, m_popupItemProperties.urlList()) {
-        (void) new KRun(url, m_parentWidget);
+        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_parentWidget));
+        job->start();
     }
 }
 
