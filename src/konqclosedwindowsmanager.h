@@ -50,6 +50,7 @@ public:
     ~KonqClosedWindowsManager() override;
 
     static KonqClosedWindowsManager *self();
+    static void destroy();
 
     const QList<KonqClosedWindowItem *> &closedWindowItemList();
 

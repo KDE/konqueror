@@ -45,7 +45,7 @@ public:
     int m_maxNumClosedItems;
 };
 
-Q_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate)
+static KonqClosedWindowsManagerPrivate *myKonqClosedWindowsManagerPrivate = nullptr;
 
 KonqClosedWindowsManager::KonqClosedWindowsManager()
 {
@@ -88,7 +88,16 @@ KConfig *KonqClosedWindowsManager::memoryStore()
 
 KonqClosedWindowsManager *KonqClosedWindowsManager::self()
 {
+    if (!myKonqClosedWindowsManagerPrivate) {
+        myKonqClosedWindowsManagerPrivate = new KonqClosedWindowsManagerPrivate;
+    }
     return &myKonqClosedWindowsManagerPrivate->instance;
+}
+
+void KonqClosedWindowsManager::destroy()
+{
+    delete myKonqClosedWindowsManagerPrivate;
+    myKonqClosedWindowsManagerPrivate = nullptr;
 }
 
 void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager

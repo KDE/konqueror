@@ -27,6 +27,7 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 #include "konqurl.h"
+#include "konqclosedwindowsmanager.h"
 
 #include <KAboutData>
 #include <KCrash>
@@ -301,6 +302,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     // Notify the session manager that the instance was closed without errors, and normally.
     KonqSessionManager::self()->disableAutosave();
     KonqSessionManager::self()->deleteOwnedSessions();
+
+    KonqClosedWindowsManager::destroy();
 
     return ret;
 }
