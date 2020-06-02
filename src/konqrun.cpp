@@ -27,6 +27,8 @@
 #include <kio/job.h>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegate>
 
 // Local
 #include "konqview.h"
@@ -122,7 +124,12 @@ void KonqRun::foundMimeType(const QString &_type)
             if (selectedService) {
                 KRun::setPreferredService(selectedService->desktopEntryName());
             } else {
-                KRun::displayOpenWithDialog(QList<QUrl>() << url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
+                // Open-with dialog
+                KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob();
+                job->setUrls({url()});
+                job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_pMainWindow));
+                job->setSuggestedFileName(suggestedFileName());
+                job->start();
                 setFinished(true);
             }
         }
