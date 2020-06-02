@@ -255,7 +255,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     connect(prov, SIGNAL(changed()), SLOT(slotIconsChanged()));
 
-    m_pUndoManager = new KonqUndoManager(this);
+    m_pUndoManager = new KonqUndoManager(KonqClosedWindowsManager::self(), this);
     connect(m_pUndoManager, SIGNAL(undoAvailable(bool)),
             this, SLOT(slotUndoAvailable(bool)));
 
@@ -4974,7 +4974,8 @@ void KonqMainWindow::addClosedWindowToUndoList()
     }
 
     // 2. Create the KonqClosedWindowItem and  save its config
-    KonqClosedWindowItem *closedWindowItem = new KonqClosedWindowItem(title, m_pUndoManager->newCommandSerialNumber(), numTabs);
+    KonqClosedWindowItem *closedWindowItem = new KonqClosedWindowItem(title, KonqClosedWindowsManager::self()->memoryStore(),
+                                                                      m_pUndoManager->newCommandSerialNumber(), numTabs);
     saveProperties(closedWindowItem->configGroup());
 
     // 3. Add the KonqClosedWindowItem to the undo list
@@ -5038,7 +5039,8 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     // Now we get the position of the tab
     const int index =  m_pViewManager->tabContainer()->childFrameList().indexOf(tab);
 
-    KonqClosedTabItem *closedTabItem = new KonqClosedTabItem(url, title, index, m_pUndoManager->newCommandSerialNumber());
+    KonqClosedTabItem *closedTabItem = new KonqClosedTabItem(url, KonqClosedWindowsManager::self()->memoryStore(),
+                                                             title, index, m_pUndoManager->newCommandSerialNumber());
 
     QString prefix = KonqFrameBase::frameTypeToString(tab->frameType()) + QString::number(0);
     closedTabItem->configGroup().writeEntry("RootItem", prefix);

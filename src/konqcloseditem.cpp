@@ -47,8 +47,8 @@ public:
 
 Q_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
-KonqClosedItem::KonqClosedItem(const QString &title, const QString &group, quint64 serialNumber)
-    : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->memoryStore(), group), m_serialNumber(serialNumber)
+KonqClosedItem::KonqClosedItem(const QString &title, KConfig *config, const QString &group, quint64 serialNumber)
+    : m_title(title), m_configGroup(config, group), m_serialNumber(serialNumber)
 {
 }
 
@@ -58,8 +58,8 @@ KonqClosedItem::~KonqClosedItem()
     m_configGroup.deleteGroup();
 }
 
-KonqClosedTabItem::KonqClosedTabItem(const QString &url, const QString &title, int pos, quint64 serialNumber)
-    :  KonqClosedItem(title, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
+KonqClosedTabItem::KonqClosedTabItem(const QString &url, KConfig *config, const QString &title, int pos, quint64 serialNumber)
+    :  KonqClosedItem(title, config, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
 {
     qCDebug(KONQUEROR_LOG) << m_configGroup.name();
 }
@@ -75,8 +75,8 @@ QPixmap KonqClosedTabItem::icon() const
     return KonqPixmapProvider::self()->pixmapFor(m_url, KIconLoader::SizeSmall);
 }
 
-KonqClosedWindowItem::KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs)
-    :  KonqClosedItem(title, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
+KonqClosedWindowItem::KonqClosedWindowItem(const QString &title, KConfig *config, quint64 serialNumber, int numTabs)
+    :  KonqClosedItem(title, config, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
 {
     qCDebug(KONQUEROR_LOG) << m_configGroup.name();
 }
@@ -117,10 +117,10 @@ int KonqClosedWindowItem::numTabs() const
     return m_numTabs;
 }
 
-KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString &title,
+KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString &title, KConfig *config,
         const QString &groupName, const QString &configFileName, quint64 serialNumber,
         int numTabs, const QString &dbusService)
-    : KonqClosedWindowItem(title, serialNumber, numTabs),
+    : KonqClosedWindowItem(title, config, serialNumber, numTabs),
       m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
       m_dbusService(dbusService), m_remoteConfigGroup(nullptr), m_remoteConfig(nullptr)
 {

@@ -22,6 +22,7 @@
 #include <QSignalSpy>
 #include <konqundomanager.h>
 #include <konqsessionmanager.h>
+#include <konqclosedwindowsmanager.h>
 
 class UndoManagerTest : public QObject
 {
@@ -31,6 +32,9 @@ private Q_SLOTS:
     void initTestCase();
     void testAddClosedTabItem();
     void testUndoLastClosedTab();
+
+private:
+    KonqClosedWindowsManager m_cwManager;
 };
 
 QTEST_MAIN(UndoManagerTest)
@@ -40,7 +44,7 @@ void UndoManagerTest::initTestCase()
     // Make sure we start clean
     QStandardPaths::setTestModeEnabled(true);
     KonqSessionManager::self()->disableAutosave();
-    KonqUndoManager manager(nullptr);
+    KonqUndoManager manager(&m_cwManager, nullptr);
     QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)));
     QVERIFY(spyUndoAvailable.isValid());
     manager.clearClosedItemsList();
@@ -51,9 +55,10 @@ void UndoManagerTest::initTestCase()
 
 void UndoManagerTest::testAddClosedTabItem()
 {
-    KonqUndoManager manager(nullptr);
+    KonqUndoManager manager(&m_cwManager, nullptr);
     QVERIFY(!manager.undoAvailable());
-    KonqClosedTabItem *item = new KonqClosedTabItem(QStringLiteral("url"), QStringLiteral("title"), 0, manager.newCommandSerialNumber());
+    KonqClosedTabItem *item = new KonqClosedTabItem(QStringLiteral("url"), m_cwManager.memoryStore(),
+                                                    QStringLiteral("title"), 0, manager.newCommandSerialNumber());
     QCOMPARE(item->url(), QString("url"));
     QCOMPARE(item->serialNumber(), quint64(1001));
     QCOMPARE(item->pos(), 0);

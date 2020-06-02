@@ -213,7 +213,7 @@ void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
 
     // Create a new ClosedWindowItem and add it to the list
     KonqClosedWindowItem *closedWindowItem = new KonqClosedRemoteWindowItem(
-        title, configGroup, configFileName,
+        title, memoryStore(), configGroup, configFileName,
         KIO::FileUndoManager::self()->newCommandSerialNumber(), numTabs,
         service);
 
@@ -415,7 +415,7 @@ void KonqClosedWindowsManager ::readConfig()
         int numTabs = configGroup.readEntry("numTabs", 0);
 
         KonqClosedWindowItem *closedWindowItem = new KonqClosedWindowItem(
-            title,  i, numTabs);
+            title, memoryStore(), i, numTabs);
         configGroup.copyTo(&closedWindowItem->configGroup());
         configGroup.writeEntry("foo", 0);
 

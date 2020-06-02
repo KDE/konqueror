@@ -46,6 +46,9 @@ class KONQ_TESTS_EXPORT KonqClosedWindowsManager : public QObject
 public:
     friend class KonqClosedWindowsManagerPrivate;
 
+    KonqClosedWindowsManager();
+    ~KonqClosedWindowsManager() override;
+
     static KonqClosedWindowsManager *self();
 
     const QList<KonqClosedWindowItem *> &closedWindowItemList();
@@ -102,9 +105,6 @@ Q_SIGNALS:
     void removeWindowInOtherInstances(KonqUndoManager *real_sender, const
                                       KonqClosedWindowItem *closedWindowItem);
 private:
-    KonqClosedWindowsManager();
-
-    ~KonqClosedWindowsManager() override;
 
     KonqClosedRemoteWindowItem *findClosedRemoteWindowItem(const QString &configFileName,
             const QString &configGroup);

@@ -28,6 +28,7 @@
 class KonqClosedWindowItem;
 class KonqClosedTabItem;
 class KonqClosedItem;
+class KonqClosedWindowsManager;
 class QAction;
 
 /**
@@ -43,7 +44,7 @@ public:
      * Constructor
      * @param parent the parent QObject, also used as the parent widget for KonqFileUndoManager::UiInterface.
      */
-    explicit KonqUndoManager(QWidget *parent);
+    explicit KonqUndoManager(KonqClosedWindowsManager *cwManager, QWidget *parent);
     ~KonqUndoManager() override;
 
     bool undoAvailable() const;
@@ -108,8 +109,9 @@ private:
     void populate();
 
     QList<KonqClosedItem *> m_closedItemList;
-    bool m_supportsFileUndo;
-    bool m_populated;
+    KonqClosedWindowsManager *m_cwManager;
+    bool m_supportsFileUndo = false;
+    bool m_populated = false;
 };
 
 #endif /* KONQUNDOMANAGER_H */

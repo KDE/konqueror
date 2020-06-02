@@ -50,7 +50,7 @@ public:
     virtual QPixmap icon() const = 0;
 
 protected:
-    KonqClosedItem(const QString &title, const QString &group, quint64 serialNumber);
+    KonqClosedItem(const QString &title, KConfig *config, const QString &group, quint64 serialNumber);
     QString m_title;
     KConfigGroup m_configGroup;
     quint64 m_serialNumber;
@@ -63,7 +63,7 @@ protected:
 class KONQ_TESTS_EXPORT KonqClosedTabItem : public KonqClosedItem
 {
 public:
-    KonqClosedTabItem(const QString &url, const QString &title, int index, quint64 serialNumber);
+    KonqClosedTabItem(const QString &url, KConfig *config, const QString &title, int index, quint64 serialNumber);
     ~KonqClosedTabItem() override;
     QPixmap icon() const override;
     QString url() const
@@ -88,7 +88,7 @@ protected:
 class KONQ_TESTS_EXPORT KonqClosedWindowItem : public KonqClosedItem
 {
 public:
-    KonqClosedWindowItem(const QString &title, quint64 serialNumber, int numTabs);
+    KonqClosedWindowItem(const QString &title, KConfig *config, quint64 serialNumber, int numTabs);
     ~KonqClosedWindowItem() override;
     QPixmap icon() const override;
     int numTabs() const;
@@ -100,7 +100,7 @@ protected:
 class KONQ_TESTS_EXPORT KonqClosedRemoteWindowItem : public KonqClosedWindowItem
 {
 public:
-    KonqClosedRemoteWindowItem(const QString &title, const QString &groupName, const QString &configFileName, quint64 serialNumber, int numTabs, const QString &dbusService);
+    KonqClosedRemoteWindowItem(const QString &title, KConfig *config, const QString &groupName, const QString &configFileName, quint64 serialNumber, int numTabs, const QString &dbusService);
     ~KonqClosedRemoteWindowItem() override;
     KConfigGroup &configGroup() override;
     const KConfigGroup &configGroup() const override;
