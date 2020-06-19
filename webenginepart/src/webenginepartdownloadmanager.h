@@ -39,6 +39,7 @@ public:
 
 private:
     WebEnginePartDownloadManager();
+    void downloadBlob(QWebEngineDownloadItem *it);
 
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
