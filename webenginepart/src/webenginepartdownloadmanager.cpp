@@ -26,6 +26,13 @@
 #include <QWebEngineDownloadItem>
 #include <QWebEngineView>
 #include <QWebEngineProfile>
+#include <QFileDialog>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QMimeDatabase>
+#include <QMimeType>
+
+#include <KLocalizedString>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject()
@@ -83,8 +90,31 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
         qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << it->url();
         return;
     }
-    page->download(it->url(), forceNew);
+    if (it->url().scheme() != "blob") {
+        page->download(it->url(), forceNew);
+    } else {
+        downloadBlob(it);
+    }
 }
+
+void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
+{
+    QWidget *w =it->page() ? it->page()->view() : nullptr;
+    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    QMimeDatabase db;
+    QMimeType type = db.mimeTypeForName(it->mimeType());
+    QString filters = i18nc("Filter in file dialog", "%1 (*.%2);;All files", type.comment(), type.preferredSuffix());
+    QString file = QFileDialog::getSaveFileName(w, QString(), downloadDir, filters);
+    if (file.isEmpty()) {
+        it->cancel();
+        return;
+    }
+    QFileInfo info(file);
+    it->setDownloadFileName(info.fileName());
+    it->setDownloadDirectory(info.path());
+    it->accept();
+}
+
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 
