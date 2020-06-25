@@ -5534,32 +5534,31 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
 
     KService::Ptr service = KMimeTypeTrader::self()->preferredService("text/html", "KParts/ReadOnlyPart");
     Q_ASSERT(service);
-    bool webengineIsDefault = service->desktopEntryName() == "webenginepart";
+    const bool webengineIsDefault = service->desktopEntryName() == "webenginepart";
+    if (!webengineIsDefault) {
+        return;
+    }
 
     KProtocolManager::ProxyType proxyType = KProtocolManager::proxyType();
     if (proxyType == KProtocolManager::WPADProxy || proxyType == KProtocolManager::PACProxy) {
-        if (webengineIsDefault) {
-            QString msg = i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine. "
-                "No proxy will be used\n\n QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
-                "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
-                "the system proxy configuration or specify a proxy URL manually in the settings dialog. Do you want to "
-                "change proxy settings now?");
-            KMessageBox::ButtonCode ans = KMessageBox::warningYesNo(this, msg, i18n("Unsupported proxy configuration"), KGuiItem(i18n("Don't use a proxy")),
-                                                                    KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
-            QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-            if (ans == KMessageBox::No) {
-                slotConfigure("proxy");
-            }
-        } else {
-            QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+        QString msg = i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine. "
+                           "No proxy will be used\n\n QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+                           "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
+                           "the system proxy configuration or specify a proxy URL manually in the settings dialog. Do you want to "
+                           "change proxy settings now?");
+        KMessageBox::ButtonCode ans = KMessageBox::warningYesNo(this, msg, i18n("Unsupported proxy configuration"), KGuiItem(i18n("Don't use a proxy")),
+                                                                KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
+        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+        if (ans == KMessageBox::No) {
+            slotConfigure("proxy");
+            return;
         }
-        return;
     }
     QString httpProxy = KProtocolManager::proxyForUrl(QUrl("http://fakeurl.test.com"));
     QString httpsProxy = KProtocolManager::proxyForUrl(QUrl("https://fakeurl.test.com"));
     if (httpProxy == "DIRECT" && httpsProxy == "DIRECT") {
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-    } else if (webengineIsDefault) {
+    } else {
         QUrl url(httpsProxy);
         if (httpProxy != httpsProxy) {
             QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
@@ -5575,7 +5574,5 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
             }
         }
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, url.host(), url.port(), url.userName(), url.password()));
-    } else {
-        QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
     }
 }
