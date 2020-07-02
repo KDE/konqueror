@@ -20,26 +20,21 @@ Boston, MA 02110-1301, USA.
 
 #include "imgallerydialog.h"
 
-#include <QLabel>
-#include <QLayout>
 #include <QComboBox>
 #include <QCheckBox>
 #include <QLineEdit>
 #include <QSpinBox>
-#include <QVBoxLayout>
-#include <QFrame>
-#include <QHBoxLayout>
-#include <QGridLayout>
+#include <QFormLayout>
 #include <QFontDatabase>
+#include <QSpinBox>
 
-#include <KLocalizedString>
-#include <kfontdialog.h>
-#include <kiconloader.h>
-#include <klineedit.h>
-#include <knuminput.h>
+#include <klocalizedstring.h>
 #include <kcolorbutton.h>
 #include <kurlrequester.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
+#include <kguiitem.h>
+#include <kfontchooser.h>
 
 KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
     : KPageDialog(parent)
@@ -56,7 +51,7 @@ KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
     setupLookPage(path);
     setupDirectoryPage(path);
     setupThumbnailPage(path);
-    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), this, SLOT(slotDefault()));
+    connect(buttonBox()->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, &KIGPDialog::slotDefault);
 }
 
 void KIGPDialog::slotDefault()
@@ -95,94 +90,54 @@ void KIGPDialog::setupLookPage(const QString &path)
     addPage(pageItem);
 
     KConfigGroup look = m_config->group("Look");
-    QVBoxLayout *vlay = new QVBoxLayout(page);
-    vlay->setContentsMargins(0, 0, 0, 0);
-
-    QLabel *label = new QLabel(i18n("&Page title:"), page);
-    vlay->addWidget(label);
+    QFormLayout *form = new QFormLayout(page);
 
     m_title = new QLineEdit(i18n("Image Gallery for %1", path), page);
-    vlay->addWidget(m_title);
-    label->setBuddy(m_title);
+    form->addRow(i18n("&Page title:"), m_title);
 
-    m_imagesPerRow = new KIntNumInput(look.readEntry("ImagesPerRow", 4), page);
-    m_imagesPerRow->setRange(1, 8, 1);
-    m_imagesPerRow->setSliderEnabled(true);
-    m_imagesPerRow->setLabel(i18n("I&mages per row:"));
-    vlay->addWidget(m_imagesPerRow);
-
-    QGridLayout *grid = new QGridLayout();
-    grid->setContentsMargins(2, 2, 2, 2);
-    grid->setSpacing(2);
-    vlay->addLayout(grid);
+    m_imagesPerRow = new QSpinBox(page);
+    m_imagesPerRow->setMinimumWidth(100);
+    m_imagesPerRow->setRange(1, 8);
+    m_imagesPerRow->setSingleStep(1);
+    m_imagesPerRow->setValue(look.readEntry("ImagesPerRow", 4));
+    //m_imagesPerRow->setSliderEnabled(true);
+    form->addRow(i18n("I&mages per row:"), m_imagesPerRow);
 
     m_imageName = new QCheckBox(i18n("Show image file &name"), page);
     m_imageName->setChecked(look.readEntry("ImageName", true));
-    grid->addWidget(m_imageName, 0, 0);
+    form->addRow(QString(), m_imageName);
 
     m_imageSize = new QCheckBox(i18n("Show image file &size"), page);
     m_imageSize->setChecked(look.readEntry("ImageSize", false));
-    grid->addWidget(m_imageSize, 0, 1);
+    form->addRow(QString(), m_imageSize);
 
     m_imageProperty = new QCheckBox(i18n("Show image &dimensions"), page);
     m_imageProperty->setChecked(look.readEntry("ImageProperty", false));
-    grid->addWidget(m_imageProperty, 1, 0);
-
-    QHBoxLayout *hlay11  = new QHBoxLayout();
-    vlay->addLayout(hlay11);
+    form->addRow(QString(), m_imageProperty);
 
     m_fontName = new QComboBox(page);
+    m_fontName->setSizePolicy(QSizePolicy::MinimumExpanding, m_fontName->sizePolicy().verticalPolicy());
     QStringList standardFonts;
     KFontChooser::getFontList(standardFonts, 0);
     m_fontName->addItems(standardFonts);
     m_fontName->setItemText(m_fontName->currentIndex(), look.readEntry("FontName", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family()));
-
-    label = new QLabel(i18n("Fon&t name:"), page);
-    label->setBuddy(m_fontName);
-    hlay11->addWidget(label);
-    hlay11->addStretch(1);
-    hlay11->addWidget(m_fontName);
-
-    QHBoxLayout *hlay12  = new QHBoxLayout();
-    vlay->addLayout(hlay12);
+    form->addRow(i18n("Fon&t name:"), m_fontName);
 
     m_fontSize = new QSpinBox(page);
+    m_fontSize->setMinimumWidth(100);
     m_fontSize->setMinimum(6);
     m_fontSize->setMaximum(15);
     m_fontSize->setSingleStep(1);
     m_fontSize->setValue(look.readEntry("FontSize", 14));
-
-    label = new QLabel(i18n("Font si&ze:"), page);
-    label->setBuddy(m_fontSize);
-    hlay12->addWidget(label);
-    hlay12->addStretch(1);
-    hlay12->addWidget(m_fontSize);
-
-    QHBoxLayout *hlay1  = new QHBoxLayout();
-    vlay->addLayout(hlay1);
+    form->addRow(i18n("Font si&ze:"), m_fontSize);
 
     m_foregroundColor = new KColorButton(page);
     m_foregroundColor->setColor(QColor(look.readEntry("ForegroundColor", "#d0ffd0")));
-
-    label = new QLabel(i18n("&Foreground color:"), page);
-    label->setBuddy(m_foregroundColor);
-    hlay1->addWidget(label);
-    hlay1->addStretch(1);
-    hlay1->addWidget(m_foregroundColor);
-
-    QHBoxLayout *hlay2 = new QHBoxLayout();
-    vlay->addLayout(hlay2);
+    form->addRow(i18n("&Foreground color:"), m_foregroundColor);
 
     m_backgroundColor = new KColorButton(page);
     m_backgroundColor->setColor(QColor(look.readEntry("BackgroundColor", "#333333")));
-
-    label = new QLabel(i18n("&Background color:"), page);
-    hlay2->addWidget(label);
-    label->setBuddy(m_backgroundColor);
-    hlay2->addStretch(1);
-    hlay2->addWidget(m_backgroundColor);
-
-    vlay->addStretch(1);
+    form->addRow(i18n("&Background color:"), m_backgroundColor);
 }
 
 void KIGPDialog::setupDirectoryPage(const QString &path)
@@ -194,96 +149,67 @@ void KIGPDialog::setupDirectoryPage(const QString &path)
     addPage(pageItem);
 
     KConfigGroup group =  m_config->group("Directory");
-    QVBoxLayout *dvlay = new QVBoxLayout(page);
-    dvlay->setContentsMargins(0, 0, 0, 0);
-
-    QLabel *label;
-    label = new QLabel(i18n("&Save to HTML file:"), page);
-    dvlay->addWidget(label);
-    QString whatsThis;
-    whatsThis = i18n("<p>The name of the HTML file this gallery will be saved to.</p>");
-    label->setWhatsThis(whatsThis);
+    QFormLayout *form = new QFormLayout(page);
 
     m_imageNameReq = new KUrlRequester(QUrl::fromLocalFile(QString(path + "images.html")), page);
-    label->setBuddy(m_imageNameReq);
-    dvlay->addWidget(m_imageNameReq);
-    connect(m_imageNameReq, SIGNAL(textChanged(QString)),
-            this, SLOT(imageUrlChanged(QString)));
-    m_imageNameReq->setWhatsThis(whatsThis);
+    form->addRow(i18n("&Save to HTML file:"), m_imageNameReq);
+    connect(m_imageNameReq, &KUrlRequester::textChanged, this, &KIGPDialog::imageUrlChanged);
+    m_imageNameReq->setToolTip(i18n("<p>The name of the HTML file this gallery will be saved to.</p>"));
 
     const bool recurseSubDir = group.readEntry("RecurseSubDirectories", false);
     m_recurseSubDir = new QCheckBox(i18n("&Recurse subfolders"), page);
     m_recurseSubDir->setChecked(recurseSubDir);
-    whatsThis = i18n("<p>Whether subfolders should be included for the "
-                     "image gallery creation or not.</p>");
-    m_recurseSubDir->setWhatsThis(whatsThis);
+    m_recurseSubDir->setToolTip(i18n("<p>Whether subfolders should be included for the "
+                                       "image gallery creation or not.</p>"));
+    form->addRow(QString(), m_recurseSubDir);
 
     const int recursionLevel = group.readEntry("RecursionLevel", 0);
-    m_recursionLevel = new KIntNumInput(recursionLevel, page);
-    m_recursionLevel->setRange(0, 99, 1);
-    m_recursionLevel->setSliderEnabled(true);
-    m_recursionLevel->setLabel(i18n("Rec&ursion depth:"));
-    if (recursionLevel == 0) {
-        m_recursionLevel->setSpecialValueText(i18n("Endless"));
-    }
+    m_recursionLevel = new QSpinBox(page);
+    m_recursionLevel->setMinimumWidth(100);
+    m_recursionLevel->setRange(0, 99);
+    m_recursionLevel->setSingleStep(1);
+    m_recursionLevel->setValue(recursionLevel);
+    //m_recursionLevel->setSliderEnabled(true);
+    m_recursionLevel->setSpecialValueText(i18n("Endless"));
     m_recursionLevel->setEnabled(recurseSubDir);
-    whatsThis = i18n("<p>You can limit the number of folders the "
-                     "image gallery creator will traverse to by setting an "
-                     "upper bound for the recursion depth.</p>");
-    m_recursionLevel->setWhatsThis(whatsThis);
+    m_recursionLevel->setToolTip(i18n("<p>You can limit the number of folders the "
+                                        "image gallery creator will traverse to by setting an "
+                                        "upper bound for the recursion depth.</p>"));
+    form->addRow(i18n("Rec&ursion depth:"), m_recursionLevel);
 
-    connect(m_recurseSubDir, SIGNAL(toggled(bool)),
-            m_recursionLevel, SLOT(setEnabled(bool)));
-
-    dvlay->addWidget(m_recurseSubDir);
-    dvlay->addWidget(m_recursionLevel);
+    connect(m_recurseSubDir, &QAbstractButton::toggled, m_recursionLevel, &QWidget::setEnabled);
 
     m_copyOriginalFiles = new QCheckBox(i18n("Copy or&iginal files"), page);
     m_copyOriginalFiles->setChecked(group.readEntry("CopyOriginalFiles", false));
-    dvlay->addWidget(m_copyOriginalFiles);
-    whatsThis = i18n("<p>This makes a copy of all images and the gallery will refer "
-                     "to these copies instead of the original images.</p>");
-    m_copyOriginalFiles->setWhatsThis(whatsThis);
+    m_copyOriginalFiles->setToolTip(i18n("<p>This makes a copy of all images and the gallery will refer "
+                                           "to these copies instead of the original images.</p>"));
+    form->addRow(QString(), m_copyOriginalFiles);
 
     const bool useCommentFile = group.readEntry("UseCommentFile", false);
     m_useCommentFile = new QCheckBox(i18n("Use &comment file"), page);
     m_useCommentFile->setChecked(useCommentFile);
-    dvlay->addWidget(m_useCommentFile);
-
-    whatsThis = i18n("<p>If you enable this option you can specify "
-                     "a comment file which will be used for generating "
-                     "subtitles for the images.</p>"
-                     "<p>For details about the file format please see "
-                     "the \"What's This?\" help below.</p>");
-    m_useCommentFile->setWhatsThis(whatsThis);
-
-    label = new QLabel(i18n("Comments &file:"), page);
-    label->setEnabled(useCommentFile);
-    dvlay->addWidget(label);
-    whatsThis = i18n("<p>You can specify the name of the comment file here. "
-                     "The comment file contains the subtitles for the images. "
-                     "The format of this file is:</p>"
-                     "<p>FILENAME1:"
-                     "<br />Description"
-                     "<br />"
-                     "<br />FILENAME2:"
-                     "<br />Description"
-                     "<br />"
-                     "<br />and so on</p>");
-    label->setWhatsThis(whatsThis);
+    m_useCommentFile->setToolTip(i18n("<p>If you enable this option you can specify "
+                                        "a comment file which will be used for generating "
+                                        "subtitles for the images.</p>"
+                                        "<p>For details about the file format please see "
+                                        "the \"What's This?\" help below.</p>"));
+    form->addRow(QString(), m_useCommentFile);
 
     m_commentFileReq = new KUrlRequester(QUrl::fromLocalFile(QString(path + "comments")), page);
     m_commentFileReq->setEnabled(useCommentFile);
-    label->setBuddy(m_commentFileReq);
-    dvlay->addWidget(m_commentFileReq);
-    m_commentFileReq->setWhatsThis(whatsThis);
+    m_commentFileReq->setToolTip(i18n("<p>You can specify the name of the comment file here. "
+                                        "The comment file contains the subtitles for the images. "
+                                        "The format of this file is:</p>"
+                                        "<p>FILENAME1:"
+                                        "<br />Description"
+                                        "<br />"
+                                        "<br />FILENAME2:"
+                                        "<br />Description"
+                                        "<br />"
+                                        "<br />and so on</p>"));
+    form->addRow(i18n("Comments &file:"), m_commentFileReq);
 
-    connect(m_useCommentFile, SIGNAL(toggled(bool)),
-            label, SLOT(setEnabled(bool)));
-    connect(m_useCommentFile, SIGNAL(toggled(bool)),
-            m_commentFileReq, SLOT(setEnabled(bool)));
-
-    dvlay->addStretch(1);
+    connect(m_useCommentFile, &QAbstractButton::toggled, m_commentFileReq, &QWidget::setEnabled);
 }
 
 void KIGPDialog::setupThumbnailPage(const QString &path)
@@ -297,57 +223,39 @@ void KIGPDialog::setupThumbnailPage(const QString &path)
     addPage(pageItem);
 
     KConfigGroup group =  m_config->group("Thumbnails");
-    QLabel *label;
-
-    QVBoxLayout *vlay = new QVBoxLayout(page);
-    vlay->setContentsMargins(0, 0, 0, 0);
-
-    QHBoxLayout *hlay3 = new QHBoxLayout();
-    vlay->addLayout(hlay3);
+    QFormLayout *form = new QFormLayout(page);
 
     m_imageFormat = new QComboBox(page);
+    m_imageFormat->setSizePolicy(QSizePolicy::MinimumExpanding, m_imageFormat->sizePolicy().verticalPolicy());
     QStringList lstImgageFormat;
     lstImgageFormat << QStringLiteral("JPEG") << QStringLiteral("PNG");
     m_imageFormat->addItems(lstImgageFormat);
     m_imageFormat->setItemText(m_imageFormat->currentIndex(), group.readEntry("ImageFormat", "JPEG"));
+    form->addRow(i18n("Image f&ormat:"), m_imageFormat);
 
-    label = new QLabel(i18n("Image format f&or the thumbnails:"), page);
-    hlay3->addWidget(label);
-    label->setBuddy(m_imageFormat);
-    hlay3->addStretch(1);
-    hlay3->addWidget(m_imageFormat);
+    m_thumbnailSize = new QSpinBox(page);
+    m_thumbnailSize->setMinimumWidth(100);
+    m_thumbnailSize->setRange(10, 1000);
+    m_thumbnailSize->setSingleStep(1);
+    m_thumbnailSize->setValue(group.readEntry("ThumbnailSize", 140));
+    //m_thumbnailSize->setSliderEnabled(true);
+    form->addRow(i18n("Thumbnail size:"), m_thumbnailSize);
 
-    m_thumbnailSize = new KIntNumInput(group.readEntry("ThumbnailSize", 140), page);
-    m_thumbnailSize->setRange(10, 1000, 1);
-    m_thumbnailSize->setLabel(i18n("Thumbnail size:"));
-    m_thumbnailSize->setSliderEnabled(true);
-    vlay->addWidget(m_thumbnailSize);
-
-    QGridLayout *grid = new QGridLayout();
-    grid->setContentsMargins(2, 2, 2, 2);
-    grid->setSpacing(2);
-    vlay->addLayout(grid);
-
-    QHBoxLayout *hlay4 = new QHBoxLayout();
-    vlay->addLayout(hlay4);
     const bool colorDepthSet = group.readEntry("ColorDepthSet", false);
     m_colorDepthSet = new QCheckBox(i18n("&Set different color depth:"), page);
     m_colorDepthSet->setChecked(colorDepthSet);
-    hlay4->addWidget(m_colorDepthSet);
+    form->addRow(QString(), m_colorDepthSet);
 
     m_colorDepth = new QComboBox(page);
+    m_colorDepth->setSizePolicy(QSizePolicy::MinimumExpanding, m_colorDepth->sizePolicy().verticalPolicy());
     QStringList lst;
     lst << QStringLiteral("1") << QStringLiteral("8") << QStringLiteral("16") << QStringLiteral("32");
     m_colorDepth->addItems(lst);
-    m_colorDepth->setItemText(m_colorDepth->currentIndex(), group.readEntry("ColorDepth", "8"));
+    m_colorDepth->setCurrentIndex(m_colorDepth->findText(group.readEntry("ColorDepth", "8")));
     m_colorDepth->setEnabled(colorDepthSet);
-    hlay4->addWidget(m_colorDepth);
+    form->addRow(i18n("Color depth:"), m_colorDepth);
 
-    connect(m_colorDepthSet, SIGNAL(toggled(bool)),
-            m_colorDepth, SLOT(setEnabled(bool)));
-
-    vlay->addStretch(1);
-
+    connect(m_colorDepthSet, &QAbstractButton::toggled, m_colorDepth, &QWidget::setEnabled);
 }
 
 void KIGPDialog::writeConfig()

@@ -23,7 +23,7 @@
 
 #include <kpagedialog.h>
 
-class KIntNumInput;
+class QSpinBox;
 class QCheckBox;
 class QLineEdit;
 class KUrlRequester;
@@ -79,9 +79,9 @@ private:
     QLineEdit *m_title;
     QString m_path;
 
-    KIntNumInput *m_imagesPerRow;
-    KIntNumInput *m_thumbnailSize;
-    KIntNumInput *m_recursionLevel;
+    QSpinBox *m_imagesPerRow;
+    QSpinBox *m_thumbnailSize;
+    QSpinBox *m_recursionLevel;
     QSpinBox *m_fontSize;
 
     QCheckBox *m_copyOriginalFiles;
