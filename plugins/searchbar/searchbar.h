@@ -29,8 +29,6 @@
 #include <QItemDelegate>
 #include <QPixmap>
 
-//KDELibs4Support
-
 
 namespace KParts
 {
@@ -204,7 +202,7 @@ private:
     void nextSearchEntry();
     void previousSearchEntry();
 
-    QWeakPointer<KParts::ReadOnlyPart> m_part;
+    QPointer<KParts::ReadOnlyPart> m_part;
     SearchBarCombo *m_searchCombo;
     QWidgetAction *m_searchComboAction;
     QList<QAction *> m_addSearchActions;

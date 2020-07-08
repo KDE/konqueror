@@ -15,10 +15,11 @@ set(searchbarplugin_PART_SRCS
     opensearch/OpenSearchEngine.cpp
     opensearch/OpenSearchReader.cpp
     opensearch/OpenSearchWriter.cpp)
+ecm_qt_declare_logging_category(searchbarplugin_PART_SRCS HEADER searchbar_debug.h IDENTIFIER SEARCHBAR_LOG CATEGORY_NAME org.kde.konqueror.searchbar)
 
 add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
-target_link_libraries(searchbarplugin KF5::Parts Qt5::Script KF5::KDELibs4Support)
+target_link_libraries(searchbarplugin KF5::Parts Qt5::Script)
 
 install(TARGETS searchbarplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

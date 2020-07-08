@@ -21,12 +21,12 @@
 
 #include "OpenSearchEngine.h"
 
-#include <KLocale>
-
 #include <QRegExp>
 #include <QStringList>
 #include <QScriptEngine>
 #include <QScriptValue>
+#include <QLocale>
+#include <QUrlQuery>
 
 OpenSearchEngine::OpenSearchEngine(QObject *)
     : m_scriptEngine(nullptr)
@@ -44,7 +44,7 @@ QString OpenSearchEngine::parseTemplate(const QString &searchTerm, const QString
     result.replace(QLatin1String("{count}"), QLatin1String("20"));
     result.replace(QLatin1String("{startIndex}"), QLatin1String("0"));
     result.replace(QLatin1String("{startPage}"), QLatin1String("0"));
-    result.replace(QLatin1String("{language}"), KLocale::global()->language());
+    result.replace(QLatin1String("{language}"), QLocale::languageToString(QLocale().language()));
     result.replace(QLatin1String("{inputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{outputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{searchTerms}"), searchTerm);
@@ -88,13 +88,15 @@ QUrl OpenSearchEngine::searchUrl(const QString &searchTerm) const
     }
 
     QUrl retVal = QUrl::fromEncoded(parseTemplate(searchTerm, m_searchUrlTemplate).toUtf8());
+    QUrlQuery query(retVal);
 
     QList<Parameter>::const_iterator end = m_searchParameters.constEnd();
     QList<Parameter>::const_iterator i = m_searchParameters.constBegin();
     for (; i != end; ++i) {
-        retVal.addQueryItem(i->first, parseTemplate(searchTerm, i->second));
+        query.addQueryItem(i->first, parseTemplate(searchTerm, i->second));
     }
 
+    retVal.setQuery(query);
     return retVal;
 }
 
@@ -120,13 +122,15 @@ QUrl OpenSearchEngine::suggestionsUrl(const QString &searchTerm) const
     }
 
     QUrl retVal = QUrl::fromEncoded(parseTemplate(searchTerm, m_suggestionsUrlTemplate).toUtf8());
+    QUrlQuery query(retVal);
 
     QList<Parameter>::const_iterator end = m_suggestionsParameters.constEnd();
     QList<Parameter>::const_iterator i = m_suggestionsParameters.constBegin();
     for (; i != end; ++i) {
-        retVal.addQueryItem(i->first, parseTemplate(searchTerm, i->second));
+        query.addQueryItem(i->first, parseTemplate(searchTerm, i->second));
     }
 
+    retVal.setQuery(query);
     return retVal;
 }
 
@@ -202,6 +206,10 @@ QStringList OpenSearchEngine::parseSuggestion(const QByteArray &resp)
     if (!response.startsWith(QLatin1Char('[')) || !response.endsWith(QLatin1Char(']'))) {
         return QStringList();
     }
+
+#ifdef __GNUC__
+#warning "QScriptEngine is deprecated, port to QJsonDocument"
+#endif
 
     if (!m_scriptEngine) {
         m_scriptEngine = new QScriptEngine();

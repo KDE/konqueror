@@ -19,10 +19,9 @@
 
 #include "SuggestionEngine.h"
 
-#include <QDebug>
 #include <kservice.h>
 
-#include <QXmlStreamReader>
+#include "searchbar_debug.h"
 
 SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
     : QObject(parent),
@@ -36,7 +35,7 @@ SuggestionEngine::SuggestionEngine(const QString &engineName, QObject *parent)
         if (!suggestionURL.isNull() && !suggestionURL.isEmpty()) {
             m_requestURL = suggestionURL;
         } else {
-            qWarning() << "Missing property [Suggest] for suggestion engine: " + m_engineName;
+            qCWarning(SEARCHBAR_LOG) << "Missing property [Suggest] for suggestion engine: " + m_engineName;
         }
     }
 }

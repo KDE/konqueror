@@ -75,7 +75,7 @@ WebShortcutWidget::WebShortcutWidget(QWidget *parent)
 
     resize(minimumSizeHint());
 
-    QTimer::singleShot(0, m_wsLineEdit, SLOT(setFocus()));
+    QTimer::singleShot(0, m_wsLineEdit, QOverload<>::of(&QWidget::setFocus));
 }
 
 void WebShortcutWidget::show(const QString &openSearchName, const QString &fileName)

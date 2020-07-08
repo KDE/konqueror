@@ -23,13 +23,11 @@
 #include <QUrl>
 #include <QStandardPaths>
 
-#include <KDebug>
-#include <KStandardDirs>
-#include <kio/scheduler.h>
-
 #include "opensearch/OpenSearchEngine.h"
 #include "opensearch/OpenSearchReader.h"
 #include "opensearch/OpenSearchWriter.h"
+
+#include "searchbar_debug.h"
 
 OpenSearchManager::OpenSearchManager(QObject *parent)
     : QObject(parent)
@@ -56,7 +54,7 @@ void OpenSearchManager::setSearchProvider(const QString &searchProvider)
         QFile file(fileName);
 
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            kWarning(1202) << "Cannot open opensearch description file: " + fileName;
+            qCWarning(SEARCHBAR_LOG) << "Cannot open opensearch description file: " + fileName;
             return;
         }
 
@@ -90,9 +88,8 @@ void OpenSearchManager::addOpenSearchEngine(const QUrl &url, const QString &titl
 
     m_state = REQ_DESCRIPTION;
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-            this, SLOT(dataReceived(KIO::Job*,QByteArray)));
-    connect(job, SIGNAL(result(KJob*)), SLOT(jobFinished(KJob*)));
+    connect(job, &KIO::TransferJob::data, this, &OpenSearchManager::dataReceived);
+    connect(job, &KJob::result, this, &OpenSearchManager::jobFinished);
 }
 
 void OpenSearchManager::requestSuggestion(const QString &searchText)
@@ -107,12 +104,11 @@ void OpenSearchManager::requestSuggestion(const QString &searchText)
     m_state = REQ_SUGGESTION;
 
     QUrl url = m_activeEngine->suggestionsUrl(searchText);
-    kDebug(1202) << "Requesting for suggestions: " << url.url();
+    qCDebug(SEARCHBAR_LOG) << "Requesting for suggestions: " << url.url();
     m_jobData.clear();
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-            this, SLOT(dataReceived(KIO::Job*,QByteArray)));
-    connect(job, SIGNAL(result(KJob*)), SLOT(jobFinished(KJob*)));
+    connect(job, &KIO::TransferJob::data, this, &OpenSearchManager::dataReceived);
+    connect(job, &KJob::result, this, &OpenSearchManager::jobFinished);
 }
 
 void OpenSearchManager::dataReceived(KIO::Job *job, const QByteArray &data)
@@ -129,7 +125,7 @@ void OpenSearchManager::jobFinished(KJob *job)
 
     if (m_state == REQ_SUGGESTION) {
         const QStringList suggestionsList = m_activeEngine->parseSuggestion(m_jobData);
-        kDebug(1202) << "Received suggestion from " << m_activeEngine->name() << ": " << suggestionsList;
+        qCDebug(SEARCHBAR_LOG) << "Received suggestion from " << m_activeEngine->name() << ": " << suggestionsList;
 
         emit suggestionReceived(suggestionsList);
     } else if (m_state == REQ_DESCRIPTION) {
@@ -146,7 +142,7 @@ void OpenSearchManager::jobFinished(KJob *job)
             QString searchUrl = OpenSearchEngine::parseTemplate(QStringLiteral("\\{@}"), engine->searchUrlTemplate());
             emit openSearchEngineAdded(engine->name(), searchUrl, fileName);
         } else {
-            kFatal() << "Error while adding new open search engine";
+            qCCritical(SEARCHBAR_LOG) << "Error while adding new open search engine";
         }
     }
 }
