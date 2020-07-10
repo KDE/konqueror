@@ -7,12 +7,13 @@
 #include <QTextCodec>
 #include <QTextStream>
 #include <QUrl>
-#include <QDebug>
 #include <QBuffer>
 #include <QWebEngineUrlRequestJob>
 
 #include <kiconloader.h>
 #include <KI18n/KLocalizedString>
+
+#include <webenginepart_debug.h>
 
 Q_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 
@@ -101,7 +102,7 @@ QString KonqAboutPageSingleton::launch()
     i18n("Search the Web");//i18n for possible future use
 
     m_launch_html = res;
-    qDebug()<<" HTML : "<<res;
+    qCDebug(WEBENGINEPART_LOG) << " HTML : "<<res;
     return res;
 }
 

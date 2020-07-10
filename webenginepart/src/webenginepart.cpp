@@ -245,8 +245,8 @@ const WebEnginePage* WebEnginePart::page() const
 
 void WebEnginePart::initActions()
 {
-    actionCollection()->addAction(KStandardAction::SaveAs, QStringLiteral("saveDocument"),
-                                  m_browserExtension, SLOT(slotSaveDocument()));
+    KStandardAction::create(KStandardAction::SaveAs, m_browserExtension, &WebEngineBrowserExtension::slotSaveDocument,
+                            actionCollection());
 
     QAction* action = new QAction(i18n("Save &Frame As..."), this);
     actionCollection()->addAction(QStringLiteral("saveFrame"), action);
@@ -286,14 +286,15 @@ void WebEnginePart::initActions()
     actionCollection()->addAction(QStringLiteral("zoomToDPI"), action);
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::toogleZoomToDPI);
 
-    action = actionCollection()->addAction(KStandardAction::SelectAll, QStringLiteral("selectAll"),
-                                           m_browserExtension, SLOT(slotSelectAll()));
+
+    action = KStandardAction::create(KStandardAction::SelectAll, m_browserExtension, &WebEngineBrowserExtension::slotSelectAll,
+                                     actionCollection());
     action->setShortcutContext(Qt::WidgetShortcut);
     m_webView->addAction(action);
 
     KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme(QStringLiteral("character-set")), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( QStringLiteral("setEncoding"), codecAction );
-    connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
+    connect(codecAction, QOverload<QTextCodec *>::of(&KCodecAction::triggered), this, &WebEnginePart::slotSetTextEncoding);
 
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
@@ -304,7 +305,8 @@ void WebEnginePart::initActions()
     actionCollection()->addAction(QStringLiteral("security"), action);
     connect(action, &QAction::triggered, this, &WebEnginePart::slotShowSecurity);
 
-    action = actionCollection()->addAction(KStandardAction::Find, QStringLiteral("find"), this, SLOT(slotShowSearchBar()));
+    action = KStandardAction::create(KStandardAction::Find, this,
+                                     &WebEnginePart::slotShowSearchBar, actionCollection());
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
 }
@@ -331,20 +333,16 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     if (!page)
         return;
 
-    connect(page, SIGNAL(loadStarted()),
-            this, SLOT(slotLoadStarted()));
-    connect(page, SIGNAL(loadAborted(QUrl)),
-            this, SLOT(slotLoadAborted(QUrl)));
-    connect(page, &QWebEnginePage::linkHovered,
-            this, &WebEnginePart::slotLinkHovered);
+    connect(page, &QWebEnginePage::loadStarted, this, &WebEnginePart::slotLoadStarted);
+    connect(page, &WebEnginePage::loadAborted, this, &WebEnginePart::slotLoadAborted);
+    connect(page, &QWebEnginePage::linkHovered, this, &WebEnginePart::slotLinkHovered);
 //    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
 //            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
 //    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
 //            this, SLOT(slotRestoreFrameState(QWebFrame*)));
 //    connect(page, SIGNAL(statusBarMessage(QString)),
 //            this, SLOT(slotSetStatusBarText(QString)));
-    connect(page, SIGNAL(windowCloseRequested()),
-            this, SLOT(slotWindowCloseRequested()));
+    connect(page, &QWebEnginePage::windowCloseRequested, this, &WebEnginePart::slotWindowCloseRequested);
 //    connect(page, SIGNAL(printRequested(QWebFrame*)),
 //            m_browserExtension, SLOT(slotPrintRequested(QWebFrame*)));
  //   connect(page, SIGNAL(frameCreated(QWebFrame*)),
@@ -353,10 +351,8 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
 //    connect(m_webView, SIGNAL(linkShiftClicked(QUrl)),
 //            page, SLOT(downloadUrl(QUrl)));
 
-    connect(page, SIGNAL(loadProgress(int)),
-            m_browserExtension, SIGNAL(loadingProgress(int)));
-    connect(page, SIGNAL(selectionChanged()),
-            m_browserExtension, SLOT(updateEditActions()));
+    connect(page, &QWebEnginePage::loadProgress, m_browserExtension, &KParts::BrowserExtension::loadingProgress);
+    connect(page, &QWebEnginePage::selectionChanged, m_browserExtension, &WebEngineBrowserExtension::updateEditActions);
 //    connect(m_browserExtension, SIGNAL(saveUrl(QUrl)),
 //            page, SLOT(downloadUrl(QUrl)));
 
@@ -587,7 +583,7 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
 
     // Do not update the location bar with about:blank
     if (!Utils::isBlankUrl(url)) {
-        //kDebug() << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
+        //qCDebug(WEBENGINEPART_LOG) << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
         emit m_browserExtension->setLocationBarUrl(u.toDisplayString());
     }
 }
@@ -613,7 +609,7 @@ void WebEnginePart::slotShowSecurity()
                     sslInfo.ciphers(),
                     sslInfo.usedChiperBits(),
                     sslInfo.supportedChiperBits(),
-                    KSslInfoDialog::errorsFromString(sslInfo.certificateErrors()));
+                    KSslInfoDialog::certificateErrorsFromString(sslInfo.certificateErrors()));
 
     dlg->open();
 }
@@ -635,7 +631,7 @@ void WebEnginePart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     // slotRestoreFrameState.
     const QPoint scrollPos (frame->scrollPosition());
     if (!scrollPos.isNull()) {
-        // kDebug() << "Saving scroll position:" << scrollPos;
+        // qCDebug(WEBENGINEPART_LOG) << "Saving scroll position:" << scrollPos;
         item->setUserData(scrollPos);
     }
 }
@@ -693,7 +689,7 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
 
             for(int i = 0; i < count; ++i) {
                 const QPair<QString, QString> queryItem (queryItems.at(i));
-                //kDebug() << "query: " << queryItem.first << queryItem.second;
+                //qCDebug(WEBENGINEPART_LOG) << "query: " << queryItem.first << queryItem.second;
                 if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty())
                     fields[QStringLiteral("to")] << queryItem.first;
                 if (QString::compare(queryItem.first, QL1S("to"), Qt::CaseInsensitive) == 0)
@@ -750,7 +746,7 @@ void WebEnginePart::slotSearchForText(const QString &text, bool backward)
     if (m_searchBar->caseSensitive())
         flags |= QWebEnginePage::FindCaseSensitively;
 
-    //kDebug() << "search for text:" << text << ", backward ?" << backward;
+    //qCDebug(WEBENGINEPART_LOG) << "search for text:" << text << ", backward ?" << backward;
     page()->findText(text, flags, [this](bool found) {
         m_searchBar->setFoundMatch(found);
     });
@@ -761,13 +757,13 @@ void WebEnginePart::slotShowSearchBar()
     if (!m_searchBar) {
         // Create the search bar...
         m_searchBar = new SearchBar(widget());
-        connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
-                this, SLOT(slotSearchForText(QString,bool)));
+        connect(m_searchBar, &SearchBar::searchTextChanged, this, &WebEnginePart::slotSearchForText);
 
-        actionCollection()->addAction(KStandardAction::FindNext, QStringLiteral("findnext"),
-                                      m_searchBar, SLOT(findNext()));
-        actionCollection()->addAction(KStandardAction::FindPrev, QStringLiteral("findprev"),
-                                      m_searchBar, SLOT(findPrevious()));
+        // This essentially duplicates the use of
+        // KActionCollection::addAction(KStandardAction::StandardAction actionType, const QObject *receiver, const char *member)
+        // with the Qt5 connect syntax.
+        KStandardAction::create(KStandardAction::FindNext, m_searchBar, &SearchBar::findNext, actionCollection());
+        KStandardAction::create(KStandardAction::FindPrev, m_searchBar, &SearchBar::findPrevious, actionCollection());
 
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
         if (lay) {
@@ -814,13 +810,13 @@ void WebEnginePart::slotShowWalletMenu()
     QMenu *menu = new QMenu(nullptr);
 
     if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
-      menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
+        menu->addAction(i18n("&Allow password caching for this site"), this, &WebEnginePart::slotDeleteNonPasswordStorableSite);
 
     if (m_hasCachedFormData)
-      menu->addAction(i18n("Remove all cached passwords for this site"), this, SLOT(slotRemoveCachedPasswords()));
+        menu->addAction(i18n("Remove all cached passwords for this site"), this, &WebEnginePart::slotRemoveCachedPasswords);
 
     menu->addSeparator();
-    menu->addAction(i18n("&Close Wallet"), this, SLOT(slotWalletClosed()));
+    menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::slotWalletClosed);
 
     KAcceleratorManager::manage(menu);
     menu->popup(QCursor::pos());
@@ -895,12 +891,12 @@ void WebEnginePart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature
     if (!m_featurePermissionBar) {
         m_featurePermissionBar = new FeaturePermissionBar(widget());
 
-        connect(m_featurePermissionBar, SIGNAL(permissionGranted(QWebEnginePage::Feature)),
-                this, SLOT(slotFeaturePermissionGranted(QWebEnginePage::Feature)));
-        connect(m_featurePermissionBar, SIGNAL(permissionDenied(QWebEnginePage::Feature)),
-                this, SLOT(slotFeaturePermissionDenied(QWebEnginePage::Feature)));
-        connect(m_passwordBar, SIGNAL(done()),
-                this, SLOT(slotSaveFormDataDone()));
+        connect(m_featurePermissionBar, &FeaturePermissionBar::permissionGranted,
+                this, &WebEnginePart::slotFeaturePermissionGranted);
+        connect(m_featurePermissionBar, &FeaturePermissionBar::permissionDenied,
+                this, &WebEnginePart::slotFeaturePermissionDenied);
+        connect(m_passwordBar, &PasswordBar::done,
+                this, &WebEnginePart::slotSaveFormDataDone);
         QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
         if (lay)
             lay->insertWidget(0, m_featurePermissionBar);
@@ -943,12 +939,11 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
             qCWarning(WEBENGINEPART_LOG) << "No m_wallet instance found! This should never happen!";
             return;
         }
-        connect(m_passwordBar, SIGNAL(saveFormDataAccepted(QString)),
-                m_wallet, SLOT(acceptSaveFormDataRequest(QString)));
-        connect(m_passwordBar, SIGNAL(saveFormDataRejected(QString)),
-                m_wallet, SLOT(rejectSaveFormDataRequest(QString)));
-        connect(m_passwordBar, SIGNAL(done()),
-                this, SLOT(slotSaveFormDataDone()));
+        connect(m_passwordBar, &PasswordBar::saveFormDataAccepted,
+                m_wallet, &WebEngineWallet::acceptSaveFormDataRequest);
+        connect(m_passwordBar, &PasswordBar::saveFormDataRejected,
+                m_wallet, &WebEngineWallet::rejectSaveFormDataRequest);
+        connect(m_passwordBar, &PasswordBar::done, this, &WebEnginePart::slotSaveFormDataDone);
     }
 
     Q_ASSERT(m_passwordBar);
@@ -986,8 +981,8 @@ void WebEnginePart::addWalletStatusBarIcon ()
         m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
         m_statusBarWalletLabel->setUseCursor(false);
         m_statusBarWalletLabel->setPixmap(QIcon::fromTheme(QStringLiteral("wallet-open")).pixmap(QSize(16,16)));
-        connect(m_statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
-        connect(m_statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+        connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::leftClickedUrl), this, &WebEnginePart::slotLaunchWalletManager);
+        connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::rightClickedUrl), this, &WebEnginePart::slotShowWalletMenu);
     }
     m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
 }

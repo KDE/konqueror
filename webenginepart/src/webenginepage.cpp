@@ -103,7 +103,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
 
 WebEnginePage::~WebEnginePage()
 {
-    //kDebug() << this;
+    //qCDebug(WEBENGINEPART_LOG) << this;
 }
 
 const WebSslInfo& WebEnginePage::sslInfo() const
@@ -144,7 +144,7 @@ void WebEnginePage::download(const QUrl& url, bool newWindow)
         QString managerExe;
         checkForDownloadManager(view(), managerExe);
         if (!managerExe.isEmpty()) {
-            //qDebug() << "Calling command" << cmd;
+            //qCDebug(WEBENGINEPART_LOG) << "Calling command" << cmd;
             KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(managerExe, {url.toString()});
             job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, view()));
             job->start();
@@ -250,7 +250,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
                 qCDebug(WEBENGINEPART_LOG) << "Rejected history navigation because 'HistoryNavigationLocked' property is set!";
                 return false;
             }
-            //kDebug() << "Navigating to item (" << history()->currentItemIndex()
+            //qCDebug(WEBENGINEPART_LOG) << "Navigating to item (" << history()->currentItemIndex()
             //         << "of" << history()->count() << "):" << history()->currentItem().url();
             inPageRequest = false;
             break;
@@ -356,8 +356,8 @@ void WebEnginePage::slotLoadFinished(bool ok)
 {
     QUrl requestUrl = url();
     requestUrl.setUserInfo(QString());
-    const bool shouldResetSslInfo = (m_sslInfo.isValid() && !domainSchemeMatch(requestUrl, m_sslInfo.url()));
 #if 0
+    const bool shouldResetSslInfo = (m_sslInfo.isValid() && !domainSchemeMatch(requestUrl, m_sslInfo.url()));
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
         return;
@@ -378,7 +378,7 @@ void WebEnginePage::slotLoadFinished(bool ok)
     }
 
     const int errCode = errorCodeFromReply(reply);
-    kDebug() << frame << "is main frame request?" << isMainFrameRequest << requestUrl;
+    qCDebug(WEBENGINEPART_LOG) << frame << "is main frame request?" << isMainFrameRequest << requestUrl;
 #endif
 
     if (ok) {
@@ -398,7 +398,7 @@ void WebEnginePage::slotLoadFinished(bool ok)
             break;
         case KIO::ERR_ABORTED:
         case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
-            //kDebug() << "User aborted request!";
+            //qCDebug(WEBENGINEPART_LOG) << "User aborted request!";
             m_ignoreError = true;
             emit loadAborted(QUrl());
             return;
@@ -429,7 +429,7 @@ void WebEnginePage::slotLoadFinished(bool ok)
 void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
 {
 #if 0
-    //kDebug() << reply->url();
+    //qCDebug(WEBENGINEPART_LOG) << reply->url();
     QString mimeType;
     KIO::MetaData metaData;
 
@@ -453,7 +453,7 @@ void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
         return;
     }
 
-    //kDebug() << "mimetype=" << mimeType << "metadata:" << metaData;
+    //qCDebug(WEBENGINEPART_LOG) << "mimetype=" << mimeType << "metadata:" << metaData;
 
     if (reply->request().originatingObject() == this->mainFrame()) {
         KParts::OpenUrlArguments args;
@@ -528,7 +528,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     }
 
     if (WebEngineSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
-        //kDebug() << "resizing to " << width << "x" << height;
+        //qCDebug(WEBENGINEPART_LOG) << "resizing to " << width << "x" << height;
         emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
     }
 
@@ -551,7 +551,7 @@ bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType
     // Check whether the request is authorized or not...
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("redirect"), url(), req.url())) {
 
-        //kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
+        //qCDebug(WEBENGINEPART_LOG) << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
 
         int response = KMessageBox::Cancel;
@@ -688,7 +688,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
                  break;
         }
 
-        //kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
+        //qCDebug(WEBENGINEPART_LOG) << "Emitting openUrlRequest with " << mailtoUrl;
         emit m_part->browserExtension()->openUrlRequest(mailtoUrl);
         return true;
     }
@@ -738,13 +738,14 @@ NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, QWidget* p
 {
     Q_ASSERT_X (part, "NewWindowPage", "Must specify a valid KPart");
 
+    // FIXME: are these 3 signals actually defined or used?
     connect(this, SIGNAL(menuBarVisibilityChangeRequested(bool)),
             this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(toolBarVisibilityChangeRequested(bool)),
             this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
-    connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
+    connect(this, &QWebEnginePage::loadFinished, this, &NewWindowPage::slotLoadFinished);
 #if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (m_type == WebBrowserBackgroundTab) {
         m_windowArgs.setLowerWindow(true);
@@ -888,19 +889,19 @@ void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
 
 void NewWindowPage::slotMenuBarVisibilityChangeRequested(bool visible)
 {
-    //kDebug() << visible;
+    //qCDebug(WEBENGINEPART_LOG) << visible;
     m_windowArgs.setMenuBarVisible(visible);
 }
 
 void NewWindowPage::slotStatusBarVisibilityChangeRequested(bool visible)
 {
-    //kDebug() << visible;
+    //qCDebug(WEBENGINEPART_LOG) << visible;
     m_windowArgs.setStatusBarVisible(visible);
 }
 
 void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
 {
-    //kDebug() << visible;
+    //qCDebug(WEBENGINEPART_LOG) << visible;
     m_windowArgs.setToolBarsVisible(visible);
 }
 

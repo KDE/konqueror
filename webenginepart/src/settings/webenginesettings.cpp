@@ -52,15 +52,15 @@ struct KPerDomainSettings {
 
 #ifdef DEBUG_SETTINGS
     void dump(const QString &infix = QString()) const {
-      kDebug() << "KPerDomainSettings " << infix << " @" << this << ":";
-      kDebug() << "  m_bEnableJava: " << m_bEnableJava;
-      kDebug() << "  m_bEnableJavaScript: " << m_bEnableJavaScript;
-      kDebug() << "  m_bEnablePlugins: " << m_bEnablePlugins;
-      kDebug() << "  m_windowOpenPolicy: " << m_windowOpenPolicy;
-      kDebug() << "  m_windowStatusPolicy: " << m_windowStatusPolicy;
-      kDebug() << "  m_windowFocusPolicy: " << m_windowFocusPolicy;
-      kDebug() << "  m_windowMovePolicy: " << m_windowMovePolicy;
-      kDebug() << "  m_windowResizePolicy: " << m_windowResizePolicy;
+      qCDebug(WEBENGINEPART_LOG) << "KPerDomainSettings " << infix << " @" << this << ":";
+      qCDebug(WEBENGINEPART_LOG) << "  m_bEnableJava: " << m_bEnableJava;
+      qCDebug(WEBENGINEPART_LOG) << "  m_bEnableJavaScript: " << m_bEnableJavaScript;
+      qCDebug(WEBENGINEPART_LOG) << "  m_bEnablePlugins: " << m_bEnablePlugins;
+      qCDebug(WEBENGINEPART_LOG) << "  m_windowOpenPolicy: " << m_windowOpenPolicy;
+      qCDebug(WEBENGINEPART_LOG) << "  m_windowStatusPolicy: " << m_windowStatusPolicy;
+      qCDebug(WEBENGINEPART_LOG) << "  m_windowFocusPolicy: " << m_windowFocusPolicy;
+      qCDebug(WEBENGINEPART_LOG) << "  m_windowMovePolicy: " << m_windowMovePolicy;
+      qCDebug(WEBENGINEPART_LOG) << "  m_windowResizePolicy: " << m_windowResizePolicy;
     }
 #endif
 };
@@ -146,7 +146,7 @@ public:
             QTextStream ts(&file);
             QString line = ts.readLine();
             while (!line.isEmpty()) {
-                //kDebug() << "Adding filter:" << line;
+                //qCDebug(WEBENGINEPART_LOG) << "Adding filter:" << line;
                 /** white list lines start with "@@" */
                 if (line.startsWith(QLatin1String("@@")))
                     adWhiteList.addFilter(line);
@@ -387,9 +387,9 @@ void WebEngineSettings::init( KConfig * config, bool reset )
                   if (!fileInfo.exists() || fileInfo.lastModified().daysTo(QDateTime::currentDateTime()) > htmlFilterListMaxAgeDays)
                   {
                       /** ... in this case, refetch list asynchronously */
-                      // kDebug() << "Fetching filter list from" << url << "to" << localFile;
+                      // qCDebug(WEBENGINEPART_LOG) << "Fetching filter list from" << url << "to" << localFile;
                       KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
-                      QObject::connect( job, SIGNAL(result(KJob*)), d, SLOT(adblockFilterResult(KJob*)) );
+                      QObject::connect( job, &KJob::result, d, &WebEngineSettingsPrivate::adblockFilterResult);
                       /** for later reference, store name of cache file */
                       job->setProperty("webenginesettings_adBlock_filename", localFile);
                   }
@@ -761,7 +761,7 @@ static const KPerDomainSettings& lookup_hostname_policy(const WebEngineSettingsP
                                                         const QString& hostname)
 {
 #ifdef DEBUG_SETTINGS
-  kDebug() << "lookup_hostname_policy(" << hostname << ")";
+  qCDebug(WEBENGINEPART_LOG) << "lookup_hostname_policy(" << hostname << ")";
 #endif
   if (hostname.isEmpty()) {
 #ifdef DEBUG_SETTINGS
@@ -776,7 +776,7 @@ static const KPerDomainSettings& lookup_hostname_policy(const WebEngineSettingsP
   PolicyMap::const_iterator it = d->domainPolicy.find(hostname);
   if( it != notfound ) {
 #ifdef DEBUG_SETTINGS
-    kDebug() << "perfect match";
+    qCDebug(WEBENGINEPART_LOG) << "perfect match";
     (*it).dump(hostname);
 #endif
     // yes, use it (unless dunno)
@@ -793,7 +793,7 @@ static const KPerDomainSettings& lookup_hostname_policy(const WebEngineSettingsP
     Q_ASSERT(notfound == d->domainPolicy.end());
     if( it != notfound ) {
 #ifdef DEBUG_SETTINGS
-      kDebug() << "partial match";
+      qCDebug(WEBENGINEPART_LOG) << "partial match";
       (*it).dump(host_part);
 #endif
       return *it;
@@ -804,7 +804,7 @@ static const KPerDomainSettings& lookup_hostname_policy(const WebEngineSettingsP
 
   // No domain-specific entry: use global domain
 #ifdef DEBUG_SETTINGS
-  kDebug() << "no match";
+  qCDebug(WEBENGINEPART_LOG) << "no match";
   d->global.dump("global");
 #endif
   return d->global;

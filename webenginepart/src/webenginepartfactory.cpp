@@ -26,7 +26,7 @@
 
 WebEngineFactory::~WebEngineFactory()
 {
-    // kDebug() << this;
+    // qCDebug(WEBENGINEPART_LOG) << this;
 }
 
 QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList &args, const QString& keyword)
@@ -35,7 +35,7 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     Q_UNUSED(keyword);
     Q_UNUSED(args);
 
-    connect(parentWidget, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
+    connect(parentWidget, &QObject::destroyed, this, &WebEngineFactory::slotDestroyed);
 
     // NOTE: The code below is what makes it possible to properly integrate QtWebEngine's PORTING_TODO
     // history management with any KParts based application.
@@ -44,19 +44,20 @@ QObject *WebEngineFactory::create(const char* iface, QWidget *parentWidget, QObj
     WebEnginePart* part = new WebEnginePart(parentWidget, parent, histData);
     WebEngineBrowserExtension* ext = qobject_cast<WebEngineBrowserExtension*>(part->browserExtension());
     if (ext) {
-        connect(ext, SIGNAL(saveHistory(QObject*,QByteArray)), this, SLOT(slotSaveHistory(QObject*,QByteArray)));
+        connect(ext, QOverload<QObject *, const QByteArray &>::of(&WebEngineBrowserExtension::saveHistory),
+                this, &WebEngineFactory::slotSaveHistory);
     }
     return part;
 }
 
 void WebEngineFactory::slotSaveHistory(QObject* widget, const QByteArray& buffer)
 {
-    // kDebug() << "Caching history data from" << widget;
+    // qCDebug(WEBENGINEPART_LOG) << "Caching history data from" << widget;
     m_historyBufContainer.insert(widget, buffer);
 }
 
 void WebEngineFactory::slotDestroyed(QObject* object)
 {
-    // kDebug() << "Removing cached history data of" << object;
+    // qCDebug(WEBENGINEPART_LOG) << "Removing cached history data of" << object;
     m_historyBufContainer.remove(object);
 }

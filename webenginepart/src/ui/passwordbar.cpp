@@ -38,15 +38,15 @@ PasswordBar::PasswordBar(QWidget *parent)
     setMessageType(KMessageWidget::Information);
 
     QAction* action = new QAction(i18nc("@action:remember password", "&Remember"), this);
-    connect(action, SIGNAL(triggered()), this, SLOT(onRememberButtonClicked()));
+    connect(action, &QAction::triggered, this, &PasswordBar::onRememberButtonClicked);
     addAction(action);
 
     action = new QAction(i18nc("@action:never for this site", "Ne&ver for this site"), this);
-    connect(action, SIGNAL(triggered()), this, SLOT(onNeverButtonClicked()));
+    connect(action, &QAction::triggered, this, &PasswordBar::onNeverButtonClicked);
     addAction(action);
 
     action = new QAction(i18nc("@action:not now", "N&ot now"), this);
-    connect(action, SIGNAL(triggered()), this, SLOT(onNotNowButtonClicked()));
+    connect(action, &QAction::triggered, this, &PasswordBar::onNotNowButtonClicked);
     addAction(action);
 }
 

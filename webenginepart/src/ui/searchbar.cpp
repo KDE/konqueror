@@ -54,14 +54,10 @@ SearchBar::SearchBar(QWidget *parent)
 
     setFocusProxy(m_ui.searchComboBox);
     
-    connect(m_ui.nextButton, SIGNAL(clicked()),
-            this, SLOT(findNext()));
-    connect(m_ui.previousButton, SIGNAL(clicked()),
-            this, SLOT(findPrevious()));
-    connect(m_ui.searchComboBox, SIGNAL(returnPressed()),
-            this, SLOT(findNext()));
-    connect(m_ui.searchComboBox, SIGNAL(editTextChanged(QString)),
-            this, SLOT(textChanged(QString)));
+    connect(m_ui.nextButton, &QAbstractButton::clicked, this, &SearchBar::findNext);
+    connect(m_ui.previousButton, &QAbstractButton::clicked, this, &SearchBar::findPrevious);
+    connect(m_ui.searchComboBox, QOverload<>::of(&KComboBox::returnPressed), this, &SearchBar::findNext);
+    connect(m_ui.searchComboBox, &QComboBox::editTextChanged, this, &SearchBar::textChanged);
 
     // Start off hidden by default...
     setVisible(false);
@@ -115,7 +111,7 @@ void SearchBar::setSearchText(const QString& text)
 
 void SearchBar::setFoundMatch(bool match)
 {
-    //kDebug() << match;
+    //qCDebug(WEBENGINEPART_LOG) << match;
     if (m_ui.searchComboBox->currentText().isEmpty()) {
         m_ui.searchComboBox->setPalette(QPalette());
         return;

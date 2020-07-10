@@ -34,11 +34,11 @@ FeaturePermissionBar::FeaturePermissionBar(QWidget *parent)
     setMessageType(KMessageWidget::Information);
 
     QAction* action = new QAction(i18nc("@action:deny access", "&Deny access"), this);
-    connect(action, SIGNAL(triggered()), this, SLOT(onDeniedButtonClicked()));
+    connect(action, &QAction::triggered, this, &FeaturePermissionBar::onDeniedButtonClicked);
     addAction(action);
 
     action = new QAction(i18nc("@action:grant access", "&Grant access"), this);
-    connect(action, SIGNAL(triggered()), this, SLOT(onGrantedButtonClicked()));
+    connect(action, &QAction::triggered, this, &FeaturePermissionBar::onGrantedButtonClicked);
     addAction(action);
 
     // FIXME: Add option to allow and remember for this site.

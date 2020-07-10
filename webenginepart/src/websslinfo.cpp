@@ -178,13 +178,13 @@ void WebSslInfo::setUrl (const QUrl &url)
 void WebSslInfo::setPeerAddress(const QString& address)
 {
   if (d)
-    d->peerAddress = address;
+    d->peerAddress = QHostAddress(address);
 }
 
 void WebSslInfo::setParentAddress(const QString& address)
 {
   if (d)  
-    d->parentAddress = address;
+    d->parentAddress = QHostAddress(address);
 }
 
 void WebSslInfo::setProtocol(const QString& protocol)

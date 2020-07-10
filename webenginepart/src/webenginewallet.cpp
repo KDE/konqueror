@@ -322,6 +322,7 @@ void WebEngineWallet::WebEngineWalletPrivate::openWallet()
         return;
     }
 
+    // FIXME: See if possible to use new Qt5 connect syntax
     connect(wallet.data(), SIGNAL(walletOpened(bool)), q, SLOT(_k_openWalletDone(bool)));
     connect(wallet.data(), SIGNAL(walletClosed()), q, SLOT(_k_walletClosed()));
 }

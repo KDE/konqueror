@@ -182,7 +182,7 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
                         if (QCoreApplication::applicationName() == QLatin1String("konqueror")) {
                             history->clear();
                         }
-                        //kDebug() << "Restoring URL:" << currentItem.url();
+                        //qCDebug(WEBENGINEPART_LOG) << "Restoring URL:" << currentItem.url();
                         m_part->setProperty("NoEmitOpenUrlNotification", true);
                         history->goToItem(currentItem);
                     }
@@ -190,10 +190,10 @@ void WebEngineBrowserExtension::restoreState(QDataStream &stream)
             }
             success = (history->count() > 0);
         } else {        // Handle navigation: back and forward button navigation.
-            //kDebug() << "history count:" << history->count() << "request index:" << historyItemIndex;
+            //qCDebug(WEBENGINEPART_LOG) << "history count:" << history->count() << "request index:" << historyItemIndex;
             if (history->count() > historyItemIndex && historyItemIndex > -1) {
                 QWebEngineHistoryItem item (history->itemAt(historyItemIndex));
-                //kDebug() << "URL:" << u << "Item URL:" << item.url();
+                //qCDebug(WEBENGINEPART_LOG) << "URL:" << u << "Item URL:" << item.url();
                 if (u == item.url()) {
                     if (item.isValid() && (xOfs != -1 || yOfs != -1)) {
                         const QPoint scrollPos (xOfs, yOfs);
@@ -708,8 +708,8 @@ void WebEngineBrowserExtension::slotCheckSpelling()
             backgroundSpellCheck->setParent(spellDialog);
             spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
             spellDialog->showSpellCheckCompletionMessage(true);
-            connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
-            connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
+            connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineBrowserExtension::spellCheckerCorrected);
+            connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineBrowserExtension::spellCheckerMisspelling);
             spellDialog->setBuffer(text);
             spellDialog->show();
         }
@@ -726,16 +726,16 @@ void WebEngineBrowserExtension::slotSpellCheckSelection()
                 const int pos = values.indexOf(' ');
                 m_spellTextSelectionStart = qMax(0, values.leftRef(pos).toInt());
                 m_spellTextSelectionEnd = qMax(0, values.midRef(pos + 1).toInt());
-                // kDebug() << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
+                // qCDebug(WEBENGINEPART_LOG) << "selection start:" << m_spellTextSelectionStart << "end:" << m_spellTextSelectionEnd;
 
                 Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
                 Sonnet::Dialog* spellDialog = new Sonnet::Dialog(backgroundSpellCheck, view());
                 backgroundSpellCheck->setParent(spellDialog);
                 spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
                 spellDialog->showSpellCheckCompletionMessage(true);
-                connect(spellDialog, SIGNAL(replace(QString,int,QString)), this, SLOT(spellCheckerCorrected(QString,int,QString)));
-                connect(spellDialog, SIGNAL(misspelling(QString,int)), this, SLOT(spellCheckerMisspelling(QString,int)));
-                connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckDone(QString)));
+                connect(spellDialog, &Sonnet::Dialog::replace, this, &WebEngineBrowserExtension::spellCheckerCorrected);
+                connect(spellDialog, &Sonnet::Dialog::misspelling, this, &WebEngineBrowserExtension::spellCheckerMisspelling);
+                connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &WebEngineBrowserExtension::slotSpellCheckDone);
                 spellDialog->setBuffer(text.mid(m_spellTextSelectionStart, (m_spellTextSelectionEnd - m_spellTextSelectionStart)));
                 spellDialog->show();
             });
@@ -759,13 +759,13 @@ void WebEngineBrowserExtension::spellCheckerCorrected(const QString& original, i
     script += QString::number(index + original.length());
     script += QL1S(")");
 
-    //kDebug() << "**** script:" << script;
+    //qCDebug(WEBENGINEPART_LOG) << "**** script:" << script;
     view()->page()->runJavaScript(script);
 }
 
 void WebEngineBrowserExtension::spellCheckerMisspelling(const QString& text, int pos)
 {
-    // kDebug() << text << pos;
+    // qCDebug(WEBENGINEPART_LOG) << text << pos;
     QString selectionScript (QL1S("this.setSelectionRange("));
     selectionScript += QString::number(pos + m_spellTextSelectionStart);
     selectionScript += QL1C(',');
@@ -793,7 +793,7 @@ void WebEngineBrowserExtension::saveHistory()
     QWebEngineHistory* history = (view() ? view()->history() : nullptr);
 
     if (history && history->count() > 0) {
-        //kDebug() << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
+        //qCDebug(WEBENGINEPART_LOG) << "Current history: index=" << history->currentItemIndex() << "url=" << history->currentItem().url();
         QByteArray histData;
         QBuffer buff (&histData);
         m_historyData.clear();
@@ -806,7 +806,7 @@ void WebEngineBrowserExtension::saveHistory()
         QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : nullptr;
         if (frameWidget) {
             emit saveHistory(frameWidget, m_historyData);
-            // kDebug() << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
+            // qCDebug(WEBENGINEPART_LOG) << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         }
     } else {
         Q_ASSERT(false); // should never happen!!!
@@ -858,7 +858,7 @@ void WebEngineBrowserExtension::slotLinkInTop()
 WebEngineTextExtension::WebEngineTextExtension(WebEnginePart* part)
     : KParts::TextExtension(part)
 {
-    connect(part->view(), SIGNAL(selectionChanged()), this, SIGNAL(selectionChanged()));
+    connect(part->view(), &QWebEngineView::selectionChanged, this, &KParts::TextExtension::selectionChanged);
 }
 
 WebEnginePart* WebEngineTextExtension::part() const
@@ -940,7 +940,6 @@ static KParts::SelectorInterface::Element convertWebElement(const QWebElement& w
     }
     return element;
 }
-#endif
 
 static QString queryOne(const QString& query)
 {
@@ -987,6 +986,7 @@ static QList<KParts::SelectorInterface::Element> convertSelectionElements(const 
     }
     return elements;
 }
+#endif
 
 KParts::SelectorInterface::Element WebEngineHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
@@ -1130,7 +1130,7 @@ bool WebEngineHtmlExtension::setHtmlSettingsProperty(KParts::HtmlSettingsInterfa
             //settings->setAttribute(QWebEnngineSettings::PrivateBrowsingEnabled, value.toBool());
             return false;
         case KParts::HtmlSettingsInterface::UserDefinedStyleSheetURL:
-            //kDebug() << "Setting user style sheet for" << page << "to" << value.toUrl();
+            //qCDebug(WEBENGINEPART_LOG) << "Setting user style sheet for" << page << "to" << value.toUrl();
           //  settings->setUserStyleSheetUrl(value.toUrl());
             return false;
         default:
@@ -1163,7 +1163,7 @@ bool WebEngineScriptableExtension::setException (KParts::ScriptableExtension* ca
 
 QVariant WebEngineScriptableExtension::get (KParts::ScriptableExtension* callerPrincipal, quint64 objId, const QString& propName)
 {
-    //kDebug() << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
+    //qCDebug(WEBENGINEPART_LOG) << "caller:" << callerPrincipal << "id:" << objId << "propName:" << propName;
     return callerPrincipal->get (nullptr, objId, propName);
 }
 
@@ -1185,7 +1185,7 @@ QVariant WebEngineScriptableExtension::evaluateScript (KParts::ScriptableExtensi
 {
     Q_UNUSED(contextObjectId);
     Q_UNUSED(code)
-    //kDebug() << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
+    //qCDebug(WEBENGINEPART_LOG) << "principal:" << callerPrincipal << "id:" << contextObjectId << "language:" << lang << "code:" << code;
 
     if (lang != ECMAScript)
         return exception("unsupported language");

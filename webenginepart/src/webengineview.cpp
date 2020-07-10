@@ -24,6 +24,7 @@
 #include "webengineview.h"
 #include "webenginepage.h"
 #include "webenginepart.h"
+#include "webenginepart_ext.h"
 #include "settings/webenginesettings.h"
 
 #include <KIO/Global>
@@ -67,7 +68,7 @@ WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
     // Create the custom page...
     setPage(new WebEnginePage(part, this));
 
-    connect(this, SIGNAL(loadStarted()), this, SLOT(slotStopAutoScroll()));
+    connect(this, &QWebEngineView::loadStarted, this, &WebEngineView::slotStopAutoScroll);
     
     if (WebEngineSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
@@ -79,7 +80,7 @@ WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
 
 WebEngineView::~WebEngineView()
 {
-    //kDebug();
+    //qCDebug(WEBENGINEPART_LOG);
 }
 
 void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
@@ -242,7 +243,7 @@ void WebEngineView::keyPressEvent(QKeyEvent* e)
                 break;
             }
         } else if (m_autoScrollTimerId != -1) {
-            // kDebug() << "scroll timer id:" << m_autoScrollTimerId;
+            // qCDebug(WEBENGINEPART_LOG) << "scroll timer id:" << m_autoScrollTimerId;
             slotStopAutoScroll();
             e->accept();
             return;
@@ -309,15 +310,18 @@ void WebEngineView::editableContentActionPopupMenu(KParts::BrowserExtension::Act
     action->setSeparator(true);
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
+
+    action = KStandardAction::create(KStandardAction::Copy, ext, &WebEngineBrowserExtension::copy, m_actionCollection);
     action->setEnabled(pageAction(QWebEnginePage::Copy)->isEnabled());
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Cut, QL1S("cut"),  m_part->browserExtension(), SLOT(cut()));
+    action = KStandardAction::create(KStandardAction::Cut, ext, &WebEngineBrowserExtension::cut, m_actionCollection);
     action->setEnabled(pageAction(QWebEnginePage::Cut)->isEnabled());
     editableContentActions.append(action);
 
-    action = m_actionCollection->addAction(KStandardAction::Paste, QL1S("paste"),  m_part->browserExtension(), SLOT(paste()));
+    action = KStandardAction::create(KStandardAction::Paste, ext, &WebEngineBrowserExtension::paste, m_actionCollection);
     action->setEnabled(pageAction(QWebEnginePage::Paste)->isEnabled());
     editableContentActions.append(action);
 
@@ -337,40 +341,42 @@ void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     QList<QAction*> partActions;
 
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
     if (m_result.mediaUrl().isValid()) {
         QAction *action;
         action = new QAction(i18n("Save Image As..."), this);
         m_actionCollection->addAction(QL1S("saveimageas"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveImageAs()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotSaveImageAs);
         partActions.append(action);
 
         action = new QAction(i18n("Send Image..."), this);
         m_actionCollection->addAction(QL1S("sendimage"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSendImage()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotSendImage);
         partActions.append(action);
 
         action = new QAction(i18n("Copy Image URL"), this);
         m_actionCollection->addAction(QL1S("copyimageurl"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyImageURL()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyImageURL);
         partActions.append(action);
 
 #if 0
         action = new QAction(i18n("Copy Image"), this);
         m_actionCollection->addAction(QL1S("copyimage"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyImage()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyImage);
         action->setEnabled(!m_result.pixmap().isNull());
         partActions.append(action);
 #endif
 
         action = new QAction(i18n("View Image (%1)", QUrl(m_result.mediaUrl()).fileName()), this);
         m_actionCollection->addAction(QL1S("viewimage"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewImage()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotViewImage);
         partActions.append(action);
 
         if (WebEngineSettings::self()->isAdFilterEnabled()) {
             action = new QAction(i18n("Block Image..."), this);
             m_actionCollection->addAction(QL1S("blockimage"), action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockImage()));
+            connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotBlockImage);
             partActions.append(action);
 
             if (!m_result.mediaUrl().host().isEmpty() &&
@@ -378,7 +384,7 @@ void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
             {
                 action = new QAction(i18n("Block Images From %1" , m_result.mediaUrl().host()), this);
                 m_actionCollection->addAction(QL1S("blockhost"), action);
-                connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockHost()));
+                connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotBlockHost);
                 partActions.append(action);
             }
         }
@@ -402,9 +408,13 @@ void WebEngineView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupM
 {
     QList<QAction*> selectActions;
 
-    QAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
+
+    QAction* copyAction = KStandardAction::create(KStandardAction::Copy,
+                                                  ext, &WebEngineBrowserExtension::copy, m_actionCollection);
     copyAction->setText(i18n("&Copy Text"));
-    copyAction->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
+    copyAction->setEnabled(ext->isActionEnabled("copy"));
     selectActions.append(copyAction);
 
     addSearchActions(selectActions, this);
@@ -417,7 +427,7 @@ void WebEngineView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupM
                                             KStringHandler::rsqueeze(data.uri().url(), 18)), this);
         m_actionCollection->addAction(QL1S("openSelection"), action);
         action->setData(QUrl(data.uri()));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotOpenSelection()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotOpenSelection);
         selectActions.append(action);
     }
 
@@ -438,11 +448,15 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 
     QAction* action;
 
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
+
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
     if (!m_result.selectedText().isEmpty()) {
-        action = m_actionCollection->addAction(KStandardAction::Copy, QL1S("copy"),  m_part->browserExtension(), SLOT(copy()));
+        action = KStandardAction::create(KStandardAction::Copy, ext, &WebEngineBrowserExtension::copy,
+                                         m_actionCollection);
         action->setText(i18n("&Copy Text"));
-        action->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
+        action->setEnabled(ext->isActionEnabled("copy"));
         linkActions.append(action);
     }
 #endif
@@ -451,7 +465,7 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 #ifdef HAVE_WEBENGINECONTEXTMENUDATA
         action = new QAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction(QL1S("copylinklocation"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyEmailAddress()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyEmailAddress);
         linkActions.append(action);
 #endif
     } else {
@@ -459,19 +473,19 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
         if (!m_result.linkText().isEmpty()) {
             action = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkText()));
+            connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyLinkText);
             linkActions.append(action);
         }
 #endif
 
         action = new QAction(i18n("Copy Link &URL"), this);
         m_actionCollection->addAction(QL1S("copylinkurl"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkURL()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyLinkURL);
         linkActions.append(action);
 
         action = new QAction(i18n("&Save Link As..."), this);
         m_actionCollection->addAction(QL1S("savelinkas"), action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveLinkAs()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotSaveLinkAs);
         linkActions.append(action);
     }
 
@@ -486,24 +500,27 @@ void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGr
     const bool isVideoElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeVideo;
     const bool isAudioElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeAudio;
 
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
+
     QAction* action = new QAction(i18n("&Play/Pause"), this);
     m_actionCollection->addAction(QL1S("playmultimedia"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotPlayMedia()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotPlayMedia);
     multimediaActions.append(action);
 
     action = new QAction(i18n("Un&mute/&Mute"), this);
     m_actionCollection->addAction(QL1S("mutemultimedia"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotMuteMedia()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotMuteMedia);
     multimediaActions.append(action);
 
     action = new QAction(i18n("Toggle &Loop"), this);
     m_actionCollection->addAction(QL1S("loopmultimedia"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotLoopMedia()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotLoopMedia);
     multimediaActions.append(action);
 
     action = new QAction(i18n("Toggle &Controls"), this);
     m_actionCollection->addAction(QL1S("showmultimediacontrols"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotShowMediaControls()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotShowMediaControls);
     multimediaActions.append(action);
 
     action = new QAction(m_actionCollection);
@@ -524,12 +541,12 @@ void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGr
 
     action = new QAction(saveMediaText, this);
     m_actionCollection->addAction(QL1S("savemultimedia"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotSaveMedia()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotSaveMedia);
     multimediaActions.append(action);
 
     action = new QAction(copyMediaText, this);
     m_actionCollection->addAction(QL1S("copymultimediaurl"), action);
-    connect(action, SIGNAL(triggered()), m_part->browserExtension(), SLOT(slotCopyMedia()));
+    connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyMedia);
     multimediaActions.append(action);
 
     mmGroupMap.insert(QStringLiteral("partactions"), multimediaActions);
@@ -562,6 +579,9 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
     if (selectedText.isEmpty())
         return;
 
+    WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
+    Q_ASSERT(ext!=nullptr);
+
     KUriFilterData data;
     data.setData(selectedText);
     data.setAlternateDefaultSearchProvider(ALTERNATE_DEFAULT_WEB_SHORTCUT);
@@ -573,7 +593,7 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
                                       i18nc("Search \"search provider\" for \"text\"", "Search %1 for '%2'",
                                             data.searchProvider(), squeezedText), view);
         action->setData(QUrl(data.uri()));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(searchProvider()));
+        connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::searchProvider);
         m_actionCollection->addAction(QL1S("defaultSearchProvider"), action);
         selectActions.append(action);
 
@@ -589,7 +609,7 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
                 QAction *action = new QAction(QIcon::fromTheme(data.iconNameForPreferredSearchProvider(searchProvider)), searchProvider, view);
                 action->setData(data.queryForPreferredSearchProvider(searchProvider));
                 m_actionCollection->addAction(searchProvider, action);
-                connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(searchProvider()));
+                connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::searchProvider);
 
                 providerList->addAction(action);
             }
