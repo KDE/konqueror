@@ -24,6 +24,7 @@
 #include <QLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QDialogButtonBox>
 
 // KDE
 #include <KLocalizedString>
@@ -33,36 +34,26 @@
 #include "kshellcmdexecutor.h"
 
 KShellCommandDialog::KShellCommandDialog(const QString &title, const QString &command, QWidget *parent, bool modal)
-    : KDialog(parent)
+    : QDialog(parent)
 {
     setModal(modal);
-    setButtons(KDialog::None);
-    QWidget *w = new QWidget(this);
-    QVBoxLayout *box = new QVBoxLayout;
-    w->setLayout(box);
-    setMainWidget(w);
 
     QLabel *label = new QLabel(title, this);
     m_shell = new KShellCommandExecutor(command, this);
 
-    cancelButton = new QPushButton(this);
-    KGuiItem::assign(cancelButton, KStandardGuiItem::cancel());
-    closeButton = new QPushButton(this);
-    KGuiItem::assign(closeButton, KStandardGuiItem::close());
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close|QDialogButtonBox::Cancel, this);
+    cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
+    closeButton = buttonBox->button(QDialogButtonBox::Close);
     closeButton->setDefault(true);
 
     label->resize(label->sizeHint());
     m_shell->resize(m_shell->sizeHint());
-    closeButton->setFixedSize(closeButton->sizeHint());
-    cancelButton->setFixedSize(cancelButton->sizeHint());
 
-    box->addWidget(label, 0);
-    box->addWidget(m_shell, 1);
-
-    QHBoxLayout *hlayout = new QHBoxLayout();
-    box->addLayout(hlayout);
-    hlayout->addWidget(cancelButton);
-    hlayout->addWidget(closeButton);
+    QVBoxLayout *box = new QVBoxLayout(this);
+    box->addWidget(label);
+    box->addWidget(m_shell);
+    box->setStretchFactor(m_shell, 1);
+    box->addWidget(buttonBox);
 
     m_shell->setFocus();
 
@@ -95,7 +86,7 @@ int KShellCommandDialog::executeCommand()
     if (m_shell == nullptr) {
         return 0;
     }
-    //kDebug()<<"---------- KShellCommandDialog::executeCommand()";
+
     m_shell->exec();
     return exec();
 }

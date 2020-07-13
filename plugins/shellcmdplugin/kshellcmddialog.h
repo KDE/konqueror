@@ -20,12 +20,12 @@
 #ifndef KSHELLCMDDIALOG_H
 #define KSHELLCMDDIALOG_H
 
-#include <kdialog.h>
+#include <qdialog.h>
 
 class KShellCommandExecutor;
 class QPushButton;
 
-class KShellCommandDialog: public KDialog
+class KShellCommandDialog: public QDialog
 {
     Q_OBJECT
 public:

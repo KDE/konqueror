@@ -25,13 +25,12 @@
 #include <stdlib.h>
 
 #include <QSocketNotifier>
-
-#include <kinputdialog.h>
-#include <kdesu/process.h>
-#include <KLocalizedString>
+#include <QInputDialog>
 #include <QFontDatabase>
 
-using namespace KDESu;
+#include <kdesu/process.h>
+#include <KLocalizedString>
+
 
 KShellCommandExecutor::KShellCommandExecutor(const QString &command, QWidget *parent)
     : QTextEdit(parent)
@@ -55,7 +54,7 @@ KShellCommandExecutor::~KShellCommandExecutor()
 
 int KShellCommandExecutor::exec()
 {
-    //kDebug()<<"---------- KShellCommandExecutor::exec()";
+    //qCDebug(KONQUEROR_LOG)<<"---------- KShellCommandExecutor::exec()";
     setText(QLatin1String(""));
     if (m_shellProcess != nullptr) {
         ::kill(m_shellProcess->pid(), SIGTERM);
@@ -64,13 +63,13 @@ int KShellCommandExecutor::exec()
     delete m_readNotifier;
     delete m_writeNotifier;
 
-    m_shellProcess = new PtyProcess();
+    m_shellProcess = new KDESu::PtyProcess();
     m_shellProcess->setTerminal(true);
 
     QList<QByteArray> args;
     args += "-c";
     args += m_command.toLocal8Bit();
-    //kDebug()<<"------- executing: "<<m_command.toLocal8Bit();
+    //qCDebug(KONQUEROR_LOG)<<"------- executing: "<<m_command.toLocal8Bit();
 
     QByteArray shell(getenv("SHELL"));
     if (shell.isEmpty()) {
@@ -79,7 +78,7 @@ int KShellCommandExecutor::exec()
 
     int ret = m_shellProcess->exec(shell, args);
     if (ret < 0) {
-        //kDebug()<<"could not execute";
+        //qCDebug(KONQUEROR_LOG)<<"could not execute";
         delete m_shellProcess;
         m_shellProcess = nullptr;
         return 0;
@@ -88,15 +87,15 @@ int KShellCommandExecutor::exec()
     m_readNotifier = new QSocketNotifier(m_shellProcess->fd(), QSocketNotifier::Read, this);
     m_writeNotifier = new QSocketNotifier(m_shellProcess->fd(), QSocketNotifier::Write, this);
     m_writeNotifier->setEnabled(false);
-    connect(m_readNotifier, SIGNAL(activated(int)), this, SLOT(readDataFromShell()));
-    connect(m_writeNotifier, SIGNAL(activated(int)), this, SLOT(writeDataToShell()));
+    connect(m_readNotifier, &QSocketNotifier::activated, this, &KShellCommandExecutor::readDataFromShell);
+    connect(m_writeNotifier, &QSocketNotifier::activated, this, &KShellCommandExecutor::writeDataToShell);
 
     return 1;
 }
 
 void KShellCommandExecutor::readDataFromShell()
 {
-    //kDebug()<<"--------- reading ------------";
+    //qCDebug(KONQUEROR_LOG)<<"--------- reading ------------";
     char buffer[16 * 1024];
     int bytesRead =::read(m_shellProcess->fd(), buffer, 16 * 1024 - 1);
     //0-terminate the buffer
@@ -104,7 +103,7 @@ void KShellCommandExecutor::readDataFromShell()
     if (bytesRead <= 0) {
         slotFinished();
     } else if (bytesRead > 0) {
-        //kDebug()<<"***********************\n"<<buffer<<"###################\n";
+        //qCDebug(KONQUEROR_LOG)<<"***********************\n"<<buffer<<"###################\n";
         buffer[bytesRead] = '\0';
         this->append(QString::fromLocal8Bit(buffer));
         setAcceptRichText(false);
@@ -113,10 +112,14 @@ void KShellCommandExecutor::readDataFromShell()
 
 void KShellCommandExecutor::writeDataToShell()
 {
-    //kDebug()<<"--------- writing ------------";
+    //qCDebug(KONQUEROR_LOG)<<"--------- writing ------------";
     bool ok;
-    QString str = KInputDialog::getText(QString(),
-                                        i18n("Input Required:"), QString(), &ok, this);
+    QString str = QInputDialog::getText(this,
+                                        QString(),
+                                        i18n("Input Required:"),
+                                        QLineEdit::Normal,
+                                        QString(),
+                                        &ok);
     if (ok) {
         QByteArray input = str.toLocal8Bit();
         ::write(m_shellProcess->fd(), input, input.length());
@@ -139,7 +142,7 @@ void KShellCommandExecutor::slotFinished()
         delete m_writeNotifier;
         m_writeNotifier = nullptr;
 
-        //kDebug()<<"slotFinished: pid: "<<m_shellProcess->pid();
+        //qCDebug(KONQUEROR_LOG)<<"slotFinished: pid: "<<m_shellProcess->pid();
         ::kill(m_shellProcess->pid() + 1, SIGTERM);
         ::kill(m_shellProcess->pid(), SIGTERM);
     };

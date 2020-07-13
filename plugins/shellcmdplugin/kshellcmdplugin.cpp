@@ -20,16 +20,17 @@
 #include "kshellcmddialog.h"
 #include <kparts/part.h>
 #include <kactioncollection.h>
-#include <kinputdialog.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kshell.h>
 #include <kpluginfactory.h>
 #include <kauthorized.h>
-#include <kio/netaccess.h>
 #include <kparts/fileinfoextension.h>
 #include <KParts/ReadOnlyPart>
+#include <kio/statjob.h>
+
 #include <QAction>
+#include <QInputDialog>
 
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
     : KParts::Plugin(parent)
@@ -53,7 +54,11 @@ void KShellCmdPlugin::slotExecuteShellCommand()
         return;
     }
 
-    QUrl url = KIO::NetAccess::mostLocalUrl(part->url(), nullptr);
+    QUrl url;
+    KIO::StatJob *statJob = KIO::mostLocalUrl(part->url());
+    if (statJob->exec()) {
+        url = statJob->mostLocalUrl();
+    }
     if (!url.isLocalFile()) {
         KMessageBox::sorry(part->widget(), i18n("Executing shell commands works only on local directories."));
         return;
@@ -76,9 +81,12 @@ void KShellCmdPlugin::slotExecuteShellCommand()
     }
 
     bool ok;
-    QString cmd = KInputDialog::getText(i18nc("@title:window", "Execute Shell Command"),
+    QString cmd = QInputDialog::getText(part->widget(),
+                                        i18nc("@title:window", "Execute Shell Command"),
                                         i18n("Execute shell command in current directory:"),
-                                        path, &ok, part->widget());
+                                        QLineEdit::Normal,
+                                        path,
+                                        &ok);
     if (ok) {
         QString exeCmd;
         exeCmd = QStringLiteral("cd ");
