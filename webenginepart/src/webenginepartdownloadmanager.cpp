@@ -103,7 +103,7 @@ void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
     const QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
-    QString filters = i18nc("Filter in file dialog", "%1 (*.%2);;All files", type.comment(), type.preferredSuffix());
+    const QString filters = i18nc("Filter in file dialog", "%1 (*.%2);;All files", type.comment(), type.preferredSuffix());
     QString file = QFileDialog::getSaveFileName(w, QString(), downloadDir, filters);
     if (file.isEmpty()) {
         it->cancel();
