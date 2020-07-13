@@ -100,7 +100,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
 {
     QWidget *w =it->page() ? it->page()->view() : nullptr;
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    const QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
     QString filters = i18nc("Filter in file dialog", "%1 (*.%2);;All files", type.comment(), type.preferredSuffix());
