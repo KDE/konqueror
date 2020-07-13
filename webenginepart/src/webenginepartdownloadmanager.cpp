@@ -99,7 +99,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
 {
-    QWidget *w =it->page() ? it->page()->view() : nullptr;
+    QWidget *w = it->page() ? it->page()->view() : nullptr;
     const QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
