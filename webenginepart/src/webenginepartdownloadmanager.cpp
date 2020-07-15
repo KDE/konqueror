@@ -31,8 +31,10 @@
 #include <QFileInfo>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QTimer>
 
 #include <KLocalizedString>
+#include <KNotificationJobUiDelegate>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject()
@@ -103,16 +105,30 @@ void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
-    QString filters = i18nc("Filter in file dialog", "%1 (*.%2);;All files", type.comment(), type.preferredSuffix());
-    QString file = QFileDialog::getSaveFileName(w, QString(), downloadDir, filters);
-    if (file.isEmpty()) {
+    QFileDialog dlg(w, QString(), downloadDir);
+    dlg.setAcceptMode(QFileDialog::AcceptSave);
+    dlg.setMimeTypeFilters(QStringList{type.name(), "application/octet-stream"});
+    dlg.setSupportedSchemes(QStringList{"file"});
+    QDialog::DialogCode exitCode = static_cast<QDialog::DialogCode>(dlg.exec());
+    if (exitCode == QDialog::Rejected) {
         it->cancel();
         return;
     }
+    QString file = dlg.selectedFiles().at(0);
     QFileInfo info(file);
     it->setDownloadFileName(info.fileName());
     it->setDownloadDirectory(info.path());
     it->accept();
+    it->pause();
+    WebEngineBlobDownloadJob *j = new WebEngineBlobDownloadJob(it, this);
+    KNotificationJobUiDelegate *d = new KNotificationJobUiDelegate;
+    d->setAutoErrorHandlingEnabled(true);
+    d->setAutoWarningHandlingEnabled(true);
+    j->setUiDelegate(d);
+    emit j->description(j, i18nc("Notification about downloading a file", "Downloading"),
+                        QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), it->url().toString()),
+                        QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), it->downloadFileName()));
+    j->start();
 }
 
 
@@ -133,3 +149,60 @@ WebEnginePage* WebEnginePartDownloadManager::pageForDownload(QWebEngineDownloadI
     return page;
 }
 #endif
+
+WebEngineBlobDownloadJob::WebEngineBlobDownloadJob(QWebEngineDownloadItem* it, QObject* parent) : KJob(parent), m_downloadItem(it)
+{
+    setCapabilities(KJob::Killable|KJob::Suspendable);
+    setTotalAmount(KJob::Bytes, m_downloadItem->totalBytes());
+    connect(m_downloadItem, &QWebEngineDownloadItem::downloadProgress, this, &WebEngineBlobDownloadJob::downloadProgressed);
+    connect(m_downloadItem, &QWebEngineDownloadItem::finished, this, [this](){emitResult();});
+    connect(m_downloadItem, &QWebEngineDownloadItem::stateChanged, this, &WebEngineBlobDownloadJob::stateChanged);
+}
+
+void WebEngineBlobDownloadJob::start()
+{
+    QTimer::singleShot(0, m_downloadItem, &QWebEngineDownloadItem::resume);
+}
+
+bool WebEngineBlobDownloadJob::doKill()
+{
+    delete m_downloadItem;
+    m_downloadItem = nullptr;
+    return true;
+}
+
+bool WebEngineBlobDownloadJob::doResume()
+{
+    if (m_downloadItem) {
+        m_downloadItem->resume();
+    }
+    return true;
+}
+
+bool WebEngineBlobDownloadJob::doSuspend()
+{
+    if (m_downloadItem) {
+        m_downloadItem->pause();
+    }
+    return true;
+}
+
+void WebEngineBlobDownloadJob::downloadProgressed(quint64 received, quint64 total)
+{
+    setPercent(received*100.0/total);
+    emit infoMessage(this, i18nc("Download progress", "Downloading: %1", received));
+}
+
+void WebEngineBlobDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadState state)
+{
+    if (state != QWebEngineDownloadItem::DownloadInterrupted) {
+        return;
+    }
+    setError(m_downloadItem->interruptReason() + UserDefinedError);
+    setErrorText(m_downloadItem->interruptReasonString());
+}
+
+QString WebEngineBlobDownloadJob::errorString() const
+{
+    return i18n("An error occurred while saving the file: %1", errorText());
+}

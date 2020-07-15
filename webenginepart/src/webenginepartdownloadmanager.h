@@ -24,9 +24,11 @@
 #include <QObject>
 #include <QHash>
 #include <QVector>
+#include <QWebEngineDownloadItem>
+
+#include <KJob>
 
 class WebEnginePage;
-class QWebEngineDownloadItem;
 
 class WebEnginePartDownloadManager : public QObject
 {
@@ -61,6 +63,33 @@ private:
 #ifndef DOWNLOADITEM_KNOWS_PAGE
     QHash<QUrl, WebEnginePage*> m_requests;
 #endif
+};
+
+class WebEngineBlobDownloadJob : public KJob
+{
+    Q_OBJECT
+
+public:
+    WebEngineBlobDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+    ~WebEngineBlobDownloadJob(){}
+
+    void start() override;
+
+    QString errorString() const override;
+
+protected:
+    bool doKill() override;
+    bool doResume() override;
+    bool doSuspend() override;
+
+private slots:
+    void downloadProgressed(quint64 received, quint64 total);
+    void stateChanged(QWebEngineDownloadItem::DownloadState state);
+
+private:
+
+    QWebEngineDownloadItem *m_downloadItem;
+
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H
