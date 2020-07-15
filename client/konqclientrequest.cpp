@@ -38,6 +38,8 @@
 #include <KStartupInfo>
 #include <KWindowSystem>
 
+#include "kfmclient_debug.h"
+
 class KonqClientRequestPrivate
 {
 public:
@@ -148,9 +150,9 @@ bool KonqClientRequest::openUrl()
 #endif
         KStartupInfo::resetStartupEnv();
         if (ok) {
-            qDebug() << "Konqueror started, pid=" << pid;
+            qCDebug(KFMCLIENT_LOG) << "Konqueror started, pid=" << pid;
         } else {
-            qWarning() << "Error starting konqueror";
+            qCWarning(KFMCLIENT_LOG) << "Error starting konqueror";
         }
         return ok;
     }

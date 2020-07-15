@@ -610,7 +610,7 @@ void KonqCombo::mouseMoveEvent(QMouseEvent *e)
             if (!pix.isNull()) {
                 drag->setPixmap(pix);
             }
-            drag->start();
+            drag->exec(Qt::CopyAction);
         }
     }
 }

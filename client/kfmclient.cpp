@@ -19,8 +19,6 @@
 
 #include "kfmclient.h"
 
-#include <konqclientrequest.h>
-
 #include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -46,7 +44,6 @@
 #include <kcoreaddons_version.h>
 
 #include <QApplication>
-#include <QDebug>
 #include <QDBusConnection>
 #include <QDir>
 #include <QMimeDatabase>
@@ -62,6 +59,9 @@
 #ifdef WIN32
 #include <process.h>
 #endif
+
+#include "konqclientrequest.h"
+#include "kfmclient_debug.h"
 
 static const char appName[] = "kfmclient";
 static const char programName[] = I18N_NOOP("kfmclient");
@@ -79,7 +79,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
 
-    //qDebug() << "kfmclient starting" << QTime::currentTime();
+    //qCDebug(KFMCLIENT_LOG) << "kfmclient starting" << QTime::currentTime();
 
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("noninteractive"), i18n("Non interactive use: no message boxes")));
 
@@ -119,7 +119,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
             && qEnvironmentVariableIsSet("KDE_FULL_SESSION")) {
         const int version = atoi(getenv("KDE_SESSION_VERSION"));
         if (version != 0 && version != KCOREADDONS_VERSION_MAJOR) {
-            qDebug() << "Forwarding to kfmclient from KDE version " << version;
+            qCDebug(KFMCLIENT_LOG) << "Forwarding to kfmclient from KDE version " << version;
             char wrapper[ 10 ];
             sprintf(wrapper, "kde%d", version);
             char **newargv = new char *[ argc + 2 ];
@@ -175,7 +175,7 @@ ClientApp::ClientApp()
 
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
-    qDebug() << url << "mimetype=" << mimetype;
+    qCDebug(KFMCLIENT_LOG) << url << "mimetype=" << mimetype;
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
         KConfig config(QStringLiteral("kfmclientrc"));
@@ -183,7 +183,7 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
         if (!browserApp.isEmpty() && !browserApp.startsWith(QLatin1String("!kfmclient"))
                 && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp))) {
-            qDebug() << "Using external browser" << browserApp;
+            qCDebug(KFMCLIENT_LOG) << "Using external browser" << browserApp;
             KStartupInfo::appStarted();
 
             KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);

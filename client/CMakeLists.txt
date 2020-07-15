@@ -7,6 +7,8 @@ set(kfmclient_SRCS
    konqclientrequest.cpp
 )
 
+ecm_qt_declare_logging_category(kfmclient_SRCS HEADER kfmclient_debug.h IDENTIFIER KFMCLIENT_LOG CATEGORY_NAME org.kde.kfmclient)
+
 qt5_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.Main.xml konq_main_interface )
 qt5_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.MainWindow.xml konq_mainwindow_interface )
 

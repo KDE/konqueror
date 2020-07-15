@@ -21,12 +21,13 @@
 #include "konq_historyloader_p.h"
 #include "konq_historyentry.h"
 
-#include <QDebug>
 #include <QDataStream>
 #include <QFile>
 #include <QStandardPaths>
 
 #include <zlib.h> // for crc32
+
+#include "libkonq_debug.h"
 
 class KonqHistoryLoaderPrivate
 {
@@ -62,7 +63,7 @@ bool KonqHistoryLoader::loadHistory()
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly)) {
         if (file.exists()) {
-            qWarning() << "Can't open" << filename;
+            qCWarning(LIBKONQ_LOG) << "Can't open" << filename;
         }
         return false;
     }
@@ -115,7 +116,7 @@ bool KonqHistoryLoader::loadHistory()
 #endif
 
         if (historyVersion() != int(version) || (crcChecked && !crcOk)) {
-            qWarning() << "The history version doesn't match, aborting loading";
+            qCWarning(LIBKONQ_LOG) << "The history version doesn't match, aborting loading";
             file.close();
             return false;
         }
@@ -123,11 +124,11 @@ bool KonqHistoryLoader::loadHistory()
         while (!stream->atEnd()) {
             KonqHistoryEntry entry;
             entry.load(*stream, flags);
-            // kDebug(1202) << "loaded entry:" << entry.url << ", Title:" << entry.title;
+            // qCDebug(LIBKONQ_LOG) << "loaded entry:" << entry.url << ", Title:" << entry.title;
             d->m_history.append(entry);
         }
 
-        //kDebug(1202) << "loaded:" << m_history.count() << "entries.";
+        //qCDebug(LIBKONQ_LOG) << "loaded:" << m_history.count() << "entries.";
 
         std::sort(d->m_history.begin(), d->m_history.end(), lastVisitedOrder);
     }

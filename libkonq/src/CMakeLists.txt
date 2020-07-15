@@ -10,9 +10,10 @@ set(konq_LIB_SRCS
    konq_historyprovider.cpp   # konqueror and konqueror/sidebar
 )
 
+ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)
+
 add_library(KF5Konq ${konq_LIB_SRCS})
 
-include(GenerateExportHeader)
 generate_export_header(KF5Konq BASE_NAME libkonq EXPORT_FILE_NAME libkonq_export.h)
 
 add_library(KF5::Konq ALIAS KF5Konq)

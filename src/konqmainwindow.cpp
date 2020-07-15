@@ -3575,6 +3575,7 @@ void KonqMainWindow::initActions()
     actionCollection()->addAction(KStandardAction::ConfigureToolbars, this, SLOT(slotConfigureToolbars()));
 
     m_paConfigureExtensions = actionCollection()->addAction(QStringLiteral("options_configure_extensions"));
+    m_paConfigureExtensions->setIcon(QIcon::fromTheme(QStringLiteral("plugins")));
     m_paConfigureExtensions->setText(i18n("Configure Extensions..."));
     connect(m_paConfigureExtensions, &QAction::triggered, this, &KonqMainWindow::slotConfigureExtensions);
     m_paConfigureSpellChecking = actionCollection()->addAction(QStringLiteral("configurespellcheck"));

@@ -31,11 +31,12 @@
 #include <QDBusMessage>
 #include <QDataStream>
 #include <QDir>
-#include <QDebug>
 #include <QSaveFile>
 #include <QStandardPaths>
 
 #include <zlib.h> // for crc32
+
+#include "libkonq_debug.h"
 
 class KonqHistoryProviderPrivate : public QObject, QDBusContext
 {
@@ -272,7 +273,7 @@ void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray &data)
     //some "old" copies may still running, we use the old format for the DBUS transfers.
     //This doesn't make that much difference performance-wise for single entries anyway.
     e.load(stream, KonqHistoryEntry::MarshalUrlAsStrings);
-    //kDebug(1202) << "Got new entry from Broadcast:" << e.url;
+    //qCDebug(LIBKONQ_LOG) << "Got new entry from Broadcast:" << e.url;
 
     KonqHistoryList::iterator existingEntry = q->findEntry(e.url);
     QString urlString = e.url.url();
@@ -411,7 +412,7 @@ bool KonqHistoryProviderPrivate::saveHistory()
     const QString filename = dir + QLatin1String("/konq_history");
     QSaveFile file(filename);
     if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Can't open" << file.fileName() << "for saving history";
+        qCWarning(LIBKONQ_LOG) << "Can't open" << file.fileName() << "for saving history";
         return false;
     }
 

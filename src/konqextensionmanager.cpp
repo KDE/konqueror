@@ -55,7 +55,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     : QDialog(parent)
 {
     setObjectName(QStringLiteral("extensionmanager"));
-    setWindowTitle(i18nc("@title:window", "Configure"));
+    setWindowTitle(i18nc("@title:window", "Configure Extensions"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

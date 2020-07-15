@@ -198,8 +198,8 @@ void KonqPopupMenuPrivate::populate()
             isSymLinkInSameDir = !firstPopupItem.linkDest().contains(QLatin1Char('/'));
         }
         QUrl firstPopupURL(firstPopupItem.url().adjusted(QUrl::NormalizePathSegments));
-        //kDebug(1203) << "View path is " << url.url();
-        //kDebug(1203) << "First popup path is " << firstPopupURL.url();
+        //qCDebug(LIBKONQ_LOG) << "View path is " << url.url();
+        //qCDebug(LIBKONQ_LOG) << "First popup path is " << firstPopupURL.url();
         currentDir = (firstPopupURL.matches(url, QUrl::StripTrailingSlash));
         if (firstPopupItem.isDesktopFile()) {
             KDesktopFile desktopFile(firstPopupItem.localPath());
@@ -221,7 +221,7 @@ void KonqPopupMenuPrivate::populate()
 
     const bool bIsLink  = (m_popupFlags & KonqPopupMenu::IsLink);
 
-    //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
+    //qCDebug(LIBKONQ_LOG) << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
 
     //////////////////////////////////////////////////////////////////////////
 
@@ -458,7 +458,7 @@ void KonqPopupMenuPrivate::populate()
 KonqPopupMenu::~KonqPopupMenu()
 {
     delete d;
-    //kDebug(1203) << "~KonqPopupMenu leave";
+    //qCDebug(LIBKONQ_LOG) << "~KonqPopupMenu leave";
 }
 
 void KonqPopupMenu::setNewFileMenu(KNewFileMenu *newMenu)

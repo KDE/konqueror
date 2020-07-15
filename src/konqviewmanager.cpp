@@ -1309,8 +1309,7 @@ void KonqViewManager::printSizeInfo(KonqFrameBase *frame,
                                     const char *msg)
 {
     const QRect r = frame->asQWidget()->geometry();
-    qDebug("Child size %s : x: %d, y: %d, w: %d, h: %d", msg, r.x(), r.y(), r.width(), r.height());
-
+    qCDebug(KONQUEROR_LOG) << "Child size" << msg << r;
     if (parent->frameType() == KonqFrameBase::Container) {
         const QList<int> sizes = static_cast<KonqFrameContainer *>(parent)->sizes();
         printf("Parent sizes %s :", msg);
