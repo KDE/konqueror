@@ -189,7 +189,6 @@ bool WebEngineBlobDownloadJob::doSuspend()
 void WebEngineBlobDownloadJob::downloadProgressed(quint64 received, quint64 total)
 {
     setPercent(received*100.0/total);
-    emit infoMessage(this, i18nc("Download progress", "Downloading: %1", received));
 }
 
 void WebEngineBlobDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadState state)
