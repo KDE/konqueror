@@ -101,7 +101,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
 {
-    QWidget *w =it->page() ? it->page()->view() : nullptr;
+    QWidget *w = it->page() ? it->page()->view() : nullptr;
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
@@ -130,7 +130,6 @@ void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
                         QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), it->downloadFileName()));
     j->start();
 }
-
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 
