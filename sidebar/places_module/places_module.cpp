@@ -20,52 +20,20 @@
 
 #include "places_module.h"
 
-#include <kfileplacesmodel.h>
 #include <QIcon>
+#include <QAction>
+#include <QGuiApplication>
+
+#include <kfileplacesmodel.h>
 #include <KLocalizedString>
 #include <kpluginfactory.h>
 
-#include <QAction>
-#include <QKeyEvent>
-
-
-// #include <QAbstractScrollArea>
-
-KonqPlacesCustomPlacesView::KonqPlacesCustomPlacesView(QWidget *parent)
-    : KFilePlacesView(parent)
-    , m_mouseButtons(Qt::NoButton)
-    , m_keyModifiers(Qt::NoModifier)
-{
-    connect(this, SIGNAL(urlChanged(QUrl)),
-            this, SLOT(emitUrlChanged(QUrl)));
-}
-
-KonqPlacesCustomPlacesView::~KonqPlacesCustomPlacesView()
-{
-}
-
-void KonqPlacesCustomPlacesView::keyPressEvent(QKeyEvent *event)
-{
-    m_keyModifiers = event->modifiers();
-    KFilePlacesView::keyPressEvent(event);
-}
-
-void KonqPlacesCustomPlacesView::mousePressEvent(QMouseEvent *event)
-{
-    m_mouseButtons = event->buttons();
-    KFilePlacesView::mousePressEvent(event);
-}
-
-void KonqPlacesCustomPlacesView::emitUrlChanged(const QUrl &url)
-{
-    emit urlChanged(url, m_mouseButtons, m_keyModifiers);
-}
 
 KonqSideBarPlacesModule::KonqSideBarPlacesModule(QWidget *parent,
         const KConfigGroup &configGroup)
     : KonqSidebarModule(parent, configGroup)
 {
-    m_placesView = new KonqPlacesCustomPlacesView(parent);
+    m_placesView = new KFilePlacesView(parent);
     m_placesView->setModel(new KFilePlacesModel(m_placesView));
     m_placesView->setShowAll(true);
     m_placesView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -75,12 +43,7 @@ KonqSideBarPlacesModule::KonqSideBarPlacesModule(QWidget *parent,
     // m_placesView->setIconSize(QSize(16,16));
     m_placesView->style()->pixelMetric(QStyle::PM_SmallIconSize); // this would best be done by detecting the size of icons for other widgets
         
-    connect(m_placesView, SIGNAL(urlChanged(QUrl,Qt::MouseButtons,Qt::KeyboardModifiers)),
-            this, SLOT(slotPlaceUrlChanged(QUrl,Qt::MouseButtons,Qt::KeyboardModifiers)));
-}
-
-KonqSideBarPlacesModule::~KonqSideBarPlacesModule()
-{
+    connect(m_placesView, &KFilePlacesView::urlChanged, this, &KonqSideBarPlacesModule::slotPlaceUrlChanged);
 }
 
 QWidget *KonqSideBarPlacesModule::getWidget()
@@ -88,8 +51,11 @@ QWidget *KonqSideBarPlacesModule::getWidget()
     return m_placesView;
 }
 
-void KonqSideBarPlacesModule::slotPlaceUrlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
+void KonqSideBarPlacesModule::slotPlaceUrlChanged(const QUrl &url)
 {
+    const Qt::MouseButtons buttons = QGuiApplication::mouseButtons();
+    const Qt::KeyboardModifiers modifiers = QGuiApplication::keyboardModifiers();
+
     if ((buttons & Qt::MidButton) != 0 || (modifiers & Qt::ControlModifier) != 0) {
         emit createNewWindow(url);
     } else {
@@ -107,7 +73,7 @@ public:
     virtual KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,
                                             const QString &desktopname,
-                                            const QVariant &unused)
+                                            const QVariant &unused) override
     {
         Q_UNUSED(desktopname);
         Q_UNUSED(unused);
@@ -116,7 +82,7 @@ public:
 
     virtual QList<QAction *> addNewActions(QObject *parent,
                                            const QList<KConfigGroup> &existingModules,
-                                           const QVariant &unused)
+                                           const QVariant &unused) override
     {
         Q_UNUSED(existingModules);
         Q_UNUSED(unused);
@@ -127,7 +93,7 @@ public:
     }
 
     virtual QString templateNameForNewModule(const QVariant &actionData,
-            const QVariant &unused) const
+            const QVariant &unused) const override
     {
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
@@ -137,7 +103,7 @@ public:
     virtual bool createNewModule(const QVariant &actionData,
                                  KConfigGroup &configGroup,
                                  QWidget *parentWidget,
-                                 const QVariant &unused)
+                                 const QVariant &unused) override
     {
         Q_UNUSED(actionData);
         Q_UNUSED(parentWidget);
@@ -151,6 +117,5 @@ public:
 };
 
 K_PLUGIN_FACTORY(KonqSidebarPlacesPluginFactory, registerPlugin<KonqSidebarPlacesPlugin>();)
-// K_EXPORT_PLUGIN(KonqSidebarPlacesPluginFactory())
 
 #include "places_module.moc"

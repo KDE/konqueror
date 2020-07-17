@@ -22,7 +22,6 @@
 #include "dirtree_item.h"
 
 #include <kconfiggroup.h>
-#include <kdebug.h>
 #include <kprotocolmanager.h>
 #include <kdesktopfile.h>
 #include <kmessagebox.h>
@@ -99,7 +98,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem(KonqSidebarTreeTopLevelItem *item
     }
 
     bool bListable = KProtocolManager::supportsListing(targetURL);
-    //kDebug(1201) << targetURL.toDisplayString() << " listable : " << bListable;
+    //qCDebug(SIDEBAR_LOG) << targetURL.toDisplayString() << " listable : " << bListable;
 
     if (!bListable) {
         item->setExpandable(false);
@@ -122,7 +121,7 @@ void KonqSidebarDirTreeModule::openTopLevelItem(KonqSidebarTreeTopLevelItem *ite
 void KonqSidebarDirTreeModule::addSubDir(KonqSidebarTreeItem *item)
 {
     QString id = item->externalURL().adjusted(QUrl::StripTrailingSlash).toString();
-    kDebug(1201) << this << id;
+    qCDebug(SIDEBAR_LOG) << this << id;
     m_dictSubDirs.insert(id, item);
 
     KonqSidebarDirTreeItem *ditem = dynamic_cast<KonqSidebarDirTreeItem *>(item);
@@ -253,7 +252,7 @@ static void lookupItems(QHash<KFileItem, KonqSidebarTreeItem *> &dict, const KFi
 
 void KonqSidebarDirTreeModule::removeSubDir(KonqSidebarTreeItem *item, bool childrenOnly)
 {
-    kDebug(1201) << this << "item=" << item;
+    qCDebug(SIDEBAR_LOG) << this << "item=" << item;
     if (item->firstChild()) {
         KonqSidebarTreeItem *it = static_cast<KonqSidebarTreeItem *>(item->firstChild());
         KonqSidebarTreeItem *next = 0L;
@@ -282,7 +281,7 @@ void KonqSidebarDirTreeModule::removeSubDir(KonqSidebarTreeItem *item, bool chil
 
 void KonqSidebarDirTreeModule::openSubFolder(KonqSidebarTreeItem *item)
 {
-    kDebug(1201) << this << "openSubFolder(" << item->externalURL().prettyUrl() << ")";
+    qCDebug(SIDEBAR_LOG) << this << "openSubFolder(" << item->externalURL().prettyUrl() << ")";
 
     if (!m_dirLister) { // created on demand
         m_dirLister = new KDirLister();
@@ -352,7 +351,7 @@ void KonqSidebarDirTreeModule::listDirectory(KonqSidebarTreeItem *item)
                 KMimeType::Ptr ptr = fileItem.determineMimeType();
                 if (ptr && (ptr->is("inode/directory") || m_showArchivesAsFolders)
                         && ((!ptr->property("X-KDE-LocalProtocol").toString().isEmpty()))) {
-                    kDebug() << "Something not really a directory";
+                    qCDebug(SIDEBAR_LOG) << "Something not really a directory";
                 } else {
 //                kError() << "Item " << fileItem->url().prettyUrl() << " is not a directory!" << endl;
                     continue;
@@ -383,7 +382,7 @@ void KonqSidebarDirTreeModule::listDirectory(KonqSidebarTreeItem *item)
 
 void KonqSidebarDirTreeModule::slotNewItems(const KFileItemList &entries)
 {
-    kDebug(1201) << this << entries.count();
+    qCDebug(SIDEBAR_LOG) << this << entries.count();
 
     Q_ASSERT(entries.count());
     const KFileItem firstItem = entries.first();
@@ -392,7 +391,7 @@ void KonqSidebarDirTreeModule::slotNewItems(const KFileItemList &entries)
     QUrl dir(firstItem.url().adjusted(QUrl::StripTrailingSlash).toString());
     dir = dir.adjusted(QUrl::RemoveFilename);
     dir.setPath(dir.path() + "");
-    kDebug(1201) << this << "dir=" << dir.adjusted(QUrl::StripTrailingSlash).toString();
+    qCDebug(SIDEBAR_LOG) << this << "dir=" << dir.adjusted(QUrl::StripTrailingSlash).toString();
 
     Q3PtrList<KonqSidebarTreeItem> *parentItemList;
     KonqSidebarTreeItem *parentItem;
@@ -408,10 +407,10 @@ void KonqSidebarDirTreeModule::slotNewItems(const KFileItemList &entries)
         return;
     }
 
-    kDebug() << "number of additional parent items:" << (parentItemList ? parentItemList->count() : 0);
+    qCDebug(SIDEBAR_LOG) << "number of additional parent items:" << (parentItemList ? parentItemList->count() : 0);
     int size = KIconLoader::global()->currentSize(KIconLoader::Small);
     do {
-        kDebug() << "Parent Item URL:" << parentItem->externalURL();
+        qCDebug(SIDEBAR_LOG) << "Parent Item URL:" << parentItem->externalURL();
         KFileItemList::const_iterator kit = entries.begin();
         const KFileItemList::const_iterator kend = entries.end();
         for (; kit != kend; ++kit) {
@@ -425,7 +424,7 @@ void KonqSidebarDirTreeModule::slotNewItems(const KFileItemList &entries)
 
                 if (ptr && (ptr->is("inode/directory") || m_showArchivesAsFolders)
                         && ((!ptr->property("X-KDE-LocalProtocol").toString().isEmpty()))) {
-                    kDebug() << "Something really a directory";
+                    qCDebug(SIDEBAR_LOG) << "Something really a directory";
                 } else {
                     //kError() << "Item " << fileItem->url().prettyUrl() << " is not a directory!" << endl;
                     continue;
@@ -445,7 +444,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems(const QList<QPair<KFileItem, KFi
 {
     int size = KIconLoader::global()->currentSize(KIconLoader::Small);
 
-    kDebug(1201) << "# of items to refresh:" << entries.count();
+    qCDebug(SIDEBAR_LOG) << "# of items to refresh:" << entries.count();
 
     for (int i = 0; i < entries.count(); ++i) {
         const KFileItem fileItem(entries.at(i).second);
@@ -469,7 +468,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems(const QList<QPair<KFileItem, KFi
             KonqSidebarDirTreeItem *dirTreeItem = static_cast<KonqSidebarDirTreeItem *>(item);
             // Item renamed ?
             if (dirTreeItem->id != fileItem.url().adjusted(QUrl::StripTrailingSlash).toString()) {
-                kDebug(1201) << "renaming" << oldFileItem << "->" << fileItem;
+                qCDebug(SIDEBAR_LOG) << "renaming" << oldFileItem << "->" << fileItem;
                 // We need to update the URL in m_dictSubDirs, and to get rid of the child items, so remove and add.
                 // Then remove + delete
                 removeSubDir(dirTreeItem, true /*children only*/);
@@ -498,7 +497,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems(const QList<QPair<KFileItem, KFi
 
 void KonqSidebarDirTreeModule::slotDeleteItem(const KFileItem &fileItem)
 {
-    kDebug(1201) << fileItem.url().adjusted(QUrl::StripTrailingSlash).toString();
+    qCDebug(SIDEBAR_LOG) << fileItem.url().adjusted(QUrl::StripTrailingSlash).toString();
 
     // All items are in m_ptrdictSubDirs, so look it up fast
     Q3PtrList<KonqSidebarTreeItem> *itemList;
@@ -515,7 +514,7 @@ void KonqSidebarDirTreeModule::slotDeleteItem(const KFileItem &fileItem)
 
 void KonqSidebarDirTreeModule::slotRedirection(const QUrl &oldUrl, const QUrl &newUrl)
 {
-    kDebug(1201) << newUrl;
+    qCDebug(SIDEBAR_LOG) << newUrl;
 
     QString oldUrlStr = oldUrl.adjusted(QUrl::StripTrailingSlash).toString();
     QString newUrlStr = newUrl.adjusted(QUrl::StripTrailingSlash).toString();
@@ -533,12 +532,12 @@ void KonqSidebarDirTreeModule::slotRedirection(const QUrl &oldUrl, const QUrl &n
         if (item->alias.contains(newUrlStr)) {
             continue;
         }
-        kDebug() << "Redirectiong element";
+        qCDebug(SIDEBAR_LOG) << "Redirectiong element";
         // We need to update the URL in m_dictSubDirs
         m_dictSubDirs.insert(newUrlStr, item);
         item->alias << newUrlStr;
 
-        kDebug(1201) << "Updating url of " << item << " to " << newUrlStr;
+        qCDebug(SIDEBAR_LOG) << "Updating url of " << item << " to " << newUrlStr;
 
     } while ((item = itemList ? itemList->take(0) : 0));
     delete itemList;
@@ -546,7 +545,7 @@ void KonqSidebarDirTreeModule::slotRedirection(const QUrl &oldUrl, const QUrl &n
 
 void KonqSidebarDirTreeModule::slotListingStopped(const QUrl &url)
 {
-    //kDebug(1201) << url;
+    //qCDebug(SIDEBAR_LOG) << url;
 
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem *item;
@@ -563,7 +562,7 @@ void KonqSidebarDirTreeModule::slotListingStopped(const QUrl &url)
     }
     delete itemList;
 
-    //kDebug(1201) << "m_selectAfterOpening " << m_selectAfterOpening.prettyUrl();
+    //qCDebug(SIDEBAR_LOG) << "m_selectAfterOpening " << m_selectAfterOpening.prettyUrl();
     if (!m_selectAfterOpening.isEmpty() && url.isParentOf(m_selectAfterOpening)) {
         QUrl theURL(m_selectAfterOpening);
         m_selectAfterOpening = QUrl();
@@ -591,10 +590,10 @@ void KonqSidebarDirTreeModule::followURL(const QUrl &url)
 
     // Not found !?!
     if (!parentItem) {
-        kDebug() << "No parent found for url " << url.toDisplayString();
+        qCDebug(SIDEBAR_LOG) << "No parent found for url " << url.toDisplayString();
         return;
     }
-    kDebug() << "Found parent " << uParent.toDisplayString();
+    qCDebug(SIDEBAR_LOG) << "Found parent " << uParent.toDisplayString();
 
     // That's the parent directory we found. Open if not open...
     if (!parentItem->isOpen()) {
@@ -604,7 +603,7 @@ void KonqSidebarDirTreeModule::followURL(const QUrl &url)
             followURL(url);   // equivalent to a goto-beginning-of-method
         } else {
             m_selectAfterOpening = url;
-            //kDebug() << "m_selectAfterOpening=" << m_selectAfterOpening.url();
+            //qCDebug(SIDEBAR_LOG) << "m_selectAfterOpening=" << m_selectAfterOpening.url();
         }
     }
 }

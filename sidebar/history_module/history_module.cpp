@@ -19,14 +19,13 @@
 */
 
 #include "history_module.h"
-#include <kdebug.h>
 #include <konqhistoryview.h>
 
 #include <QAction>
 #include <QApplication>
 #include <QTreeView>
-
 #include <QIcon>
+
 #include <KLocalizedString>
 #include <kpluginfactory.h>
 
@@ -35,11 +34,11 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
     : KonqSidebarModule(parent, configGroup)
 {
     m_historyView = new KonqHistoryView(parent);
-    connect(m_historyView->treeView(), SIGNAL(activated(QModelIndex)), this, SLOT(slotActivated(QModelIndex)));
-    connect(m_historyView->treeView(), SIGNAL(pressed(QModelIndex)), this, SLOT(slotPressed(QModelIndex)));
-    connect(m_historyView->treeView(), SIGNAL(clicked(QModelIndex)), this, SLOT(slotClicked(QModelIndex)));
-    connect(m_historyView, SIGNAL(openUrlInNewWindow(QUrl)), this, SLOT(slotOpenWindow(QUrl)));
-    connect(m_historyView, SIGNAL(openUrlInNewTab(QUrl)), this, SLOT(slotOpenTab(QUrl)));
+    connect(m_historyView->treeView(), &QAbstractItemView::activated, this, &KonqSidebarHistoryModule::slotActivated);
+    connect(m_historyView->treeView(), &QAbstractItemView::pressed, this, &KonqSidebarHistoryModule::slotPressed);
+    connect(m_historyView->treeView(), &QAbstractItemView::clicked, this, &KonqSidebarHistoryModule::slotClicked);
+    connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqSidebarHistoryModule::slotOpenWindow);
+    connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqSidebarHistoryModule::slotOpenTab);
 }
 
 KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
@@ -109,7 +108,7 @@ public:
     virtual KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,
                                             const QString &desktopname,
-                                            const QVariant &unused)
+                                            const QVariant &unused) override
     {
         Q_UNUSED(unused);
         Q_UNUSED(desktopname);
@@ -118,7 +117,7 @@ public:
 
     virtual QList<QAction *> addNewActions(QObject *parent,
                                            const QList<KConfigGroup> &existingModules,
-                                           const QVariant &unused)
+                                           const QVariant &unused) override
     {
         Q_UNUSED(unused);
         Q_UNUSED(existingModules);
@@ -129,7 +128,7 @@ public:
     }
 
     virtual QString templateNameForNewModule(const QVariant &actionData,
-            const QVariant &unused) const
+            const QVariant &unused) const override
     {
         Q_UNUSED(actionData);
         Q_UNUSED(unused);
@@ -138,7 +137,7 @@ public:
 
     virtual bool createNewModule(const QVariant &actionData, KConfigGroup &configGroup,
                                  QWidget *parentWidget,
-                                 const QVariant &unused)
+                                 const QVariant &unused) override
     {
         Q_UNUSED(parentWidget);
         Q_UNUSED(actionData);
@@ -153,6 +152,5 @@ public:
 };
 
 K_PLUGIN_FACTORY(KonqSidebarHistoryPluginFactory, registerPlugin<KonqSidebarHistoryPlugin>();)
-// K_EXPORT_PLUGIN(KonqSidebarHistoryPluginFactory())
 
 #include "history_module.moc"

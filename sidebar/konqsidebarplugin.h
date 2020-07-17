@@ -28,7 +28,6 @@
 #include <kparts/browserextension.h>
 #include <kio/job.h>
 #include <kfileitem.h>
-#include <kcomponentdata.h>
 
 #ifndef KONQSIDEBARPLUGIN_EXPORT
 # if defined(MAKE_KONQSIDEBARPLUGIN_LIB)

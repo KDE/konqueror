@@ -85,16 +85,16 @@ public:
      */
     virtual ~KonqSidebarPart();
 
-    virtual bool openUrl(const QUrl &url);
+    virtual bool openUrl(const QUrl &url) override;
 
 protected:
     /**
      * This must be implemented by each part
      */
     KonqSidebarBrowserExtension *m_extension;
-    virtual bool openFile();
+    virtual bool openFile() override;
 
-    virtual void customEvent(QEvent *ev);
+    virtual void customEvent(QEvent *ev) override;
 
 private:
     Sidebar_Widget *m_widget;

@@ -27,16 +27,15 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QMenu>
+#include <QIcon>
+#include <QAction>
 
 // KDE
 #include <k3bookmarkdrag.h>
-#include <QAction>
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
-#include <kdebug.h>
-#include <QIcon>
 #include <kiconloader.h>
 #include <klineedit.h>
 #include <kmessagebox.h>

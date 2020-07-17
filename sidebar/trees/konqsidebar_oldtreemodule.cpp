@@ -2,7 +2,6 @@
 #include <kdesktopfile.h>
 #include "konq_sidebartree.h"
 #include <QVBoxLayout>
-#include <kdebug.h>
 #include <kstandarddirs.h>
 #include <KLocalizedString>
 #include <kconfig.h>
@@ -89,10 +88,10 @@ void KonqSidebarOldTreeModule::cut()
 
 void KonqSidebarOldTreeModule::copy()
 {
-    kDebug();
+    qCDebug(SIDEBAR_LOG);
     QMimeData *mimeData = new QMimeData;
     if (static_cast<KonqSidebarTreeItem *>(tree->selectedItem())->populateMimeData(mimeData, false)) {
-        kDebug() << "setting" << mimeData->formats();
+        qCDebug(SIDEBAR_LOG) << "setting" << mimeData->formats();
         QApplication::clipboard()->setMimeData(mimeData);
     } else {
         delete mimeData;
@@ -102,7 +101,7 @@ void KonqSidebarOldTreeModule::copy()
 void KonqSidebarOldTreeModule::paste()
 {
     // Not implemented. Would be for pasting into the toplevel.
-    kDebug() << "not implemented. Didn't think it would be called - tell me (David Faure)";
+    qCDebug(SIDEBAR_LOG) << "not implemented. Didn't think it would be called - tell me (David Faure)";
 }
 
 void KonqSidebarOldTreeModule::pasteToSelection()

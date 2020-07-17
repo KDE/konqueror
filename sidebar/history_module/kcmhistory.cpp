@@ -36,7 +36,6 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KPluginFactory>
-#include <KPluginLoader>
 
 #include <konq_historyprovider.h>
 #include <konqhistorysettings.h>
@@ -51,9 +50,6 @@ K_EXPORT_PLUGIN(KCMHistoryFactory("kcmhistory"))
 HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &)
     : KCModule(parent, QVariantList())
 {
-    //KF5 port: remove this line and define TRANSLATION_DOMAIN in CMakeLists.txt instead
-//KLocale::global()->insertCatalog("konqueror");
-
     m_settings = KonqHistorySettings::self();
 
     if (!KParts::HistoryProvider::exists()) {
@@ -80,33 +76,21 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
     dialog->comboOlder->insertItem(KonqHistorySettings::DAYS,
                                    i18np("Day", "Days", 0));
 
-    connect(dialog->cbExpire, SIGNAL(toggled(bool)),
-            dialog->spinExpire, SLOT(setEnabled(bool)));
-    connect(dialog->spinExpire, SIGNAL(valueChanged(int)),
-            this, SLOT(slotExpireChanged()));
+    connect(dialog->cbExpire, &QAbstractButton::toggled, dialog->spinExpire, &QWidget::setEnabled);
+    connect(dialog->spinExpire, QOverload<int>::of(&QSpinBox::valueChanged), this, &HistorySidebarConfig::slotExpireChanged);
 
-    connect(dialog->spinNewer, SIGNAL(valueChanged(int)),
-            SLOT(slotNewerChanged(int)));
-    connect(dialog->spinOlder, SIGNAL(valueChanged(int)),
-            SLOT(slotOlderChanged(int)));
+    connect(dialog->spinNewer, QOverload<int>::of(&QSpinBox::valueChanged), this, &HistorySidebarConfig::slotNewerChanged);
+    connect(dialog->spinOlder, QOverload<int>::of(&QSpinBox::valueChanged), this, &HistorySidebarConfig::slotOlderChanged);
 
-    connect(dialog->btnFontNewer, SIGNAL(clicked()),
-            SLOT(slotGetFontNewer()));
-    connect(dialog->btnFontOlder, SIGNAL(clicked()),
-            SLOT(slotGetFontOlder()));
-    connect(dialog->btnClearHistory, SIGNAL(clicked()),
-            SLOT(slotClearHistory()));
+    connect(dialog->btnFontNewer, &QAbstractButton::clicked, this, &HistorySidebarConfig::slotGetFontNewer);
+    connect(dialog->btnFontOlder, &QAbstractButton::clicked, this, &HistorySidebarConfig::slotGetFontOlder);
+    connect(dialog->btnClearHistory, &QAbstractButton::clicked, this, &HistorySidebarConfig::slotClearHistory);
 
-    connect(dialog->cbDetailedTips, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-    connect(dialog->cbExpire, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-    connect(dialog->spinEntries, SIGNAL(valueChanged(int)),
-            SLOT(configChanged()));
-    connect(dialog->comboNewer, SIGNAL(currentIndexChanged(int)),
-            SLOT(configChanged()));
-    connect(dialog->comboOlder, SIGNAL(currentIndexChanged(int)),
-            SLOT(configChanged()));
+    connect(dialog->cbDetailedTips, &QAbstractButton::toggled, this, &HistorySidebarConfig::configChanged);
+    connect(dialog->cbExpire, &QAbstractButton::toggled, this, &HistorySidebarConfig::configChanged);
+    connect(dialog->spinEntries, QOverload<int>::of(&QSpinBox::valueChanged), this, &HistorySidebarConfig::configChanged);
+    connect(dialog->comboNewer, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &HistorySidebarConfig::configChanged);
+    connect(dialog->comboOlder, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &HistorySidebarConfig::configChanged);
 
     dialog->show();
     topLayout->addWidget(dialog);

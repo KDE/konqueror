@@ -20,6 +20,7 @@
 // Own
 #include "sidebar_widget.h"
 #include "konqmultitabbar.h"
+#include "sidebar_debug.h"
 
 // std
 #include <limits.h>
@@ -32,30 +33,25 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QApplication>
+#include <QInputDialog>
+#include <QIcon>
+#include <QHBoxLayout>
 
 // KDE
 #include <KLocalizedString>
 #include <kconfig.h>
 
-#include <kdebug.h>
 #include <kdesktopfile.h>
-#include <kiconloader.h>
 #include <kicondialog.h>
-#include <QIcon>
 #include <kmessagebox.h>
-#include <kinputdialog.h>
 #include <konq_events.h>
 #include <kfileitem.h>
-#include <kio/netaccess.h>
-#include <kmenu.h>
 #include <kurlrequesterdialog.h>
-#include <kfiledialog.h>
 #include <KUrlRequester>
 #include <KJobUiDelegate>
 #include <KJobWidgets>
 #include <QStandardPaths>
 #include <KSharedConfig>
-#include <QHBoxLayout>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -79,11 +75,11 @@ void Sidebar_Widget::aboutToShowAddMenu()
         KPluginLoader loader(*service);
         KPluginFactory *factory = loader.factory();
         if (!factory) {
-            kWarning() << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
+            qCWarning(SIDEBAR_LOG) << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
         } else {
             KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(this);
             if (!plugin) {
-                kWarning() << "Error creating KonqSidebarPlugin from" << service->desktopEntryName();
+                qCWarning(SIDEBAR_LOG) << "Error creating KonqSidebarPlugin from" << service->desktopEntryName();
             } else {
                 const QList<QAction *> actions = plugin->addNewActions(&m_addMenuActionGroup,
                                                  existingGroups,
@@ -98,7 +94,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
         }
     }
     m_addMenu->addSeparator();
-    m_addMenu->addAction(i18n("Rollback to System Default"), this, SLOT(slotRollback()));
+    m_addMenu->addAction(KStandardGuiItem::defaults().icon(), i18n("Rollback to System Default"), this, &Sidebar_Widget::slotRollback);
 }
 
 void Sidebar_Widget::triggeredAddMenu(QAction *action)
@@ -116,7 +112,7 @@ void Sidebar_Widget::triggeredAddMenu(QAction *action)
         return;
     }
 
-    kDebug() << myFile << "filename=" << templ;
+    qCDebug(SIDEBAR_LOG) << myFile << "filename=" << templ;
     KDesktopFile df(myFile);
     KConfigGroup configGroup = df.desktopGroup();
     const bool ok = plugin->createNewModule(action->data(), configGroup, this, QVariant());
@@ -124,7 +120,7 @@ void Sidebar_Widget::triggeredAddMenu(QAction *action)
     if (ok) {
         m_moduleManager.moduleAdded(templ /*contains the final filename*/);
         // TODO only add the new button
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     } else {
         QFile::remove(myFile);
     }
@@ -152,38 +148,34 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_area->setMinimumWidth(0);
 
     m_buttonBar = new KonqMultiTabBar(this);
-    connect(m_buttonBar, SIGNAL(urlsDropped(QList<QUrl>)),
-            this, SLOT(slotUrlsDropped(QList<QUrl>)));
+    connect(m_buttonBar, &KonqMultiTabBar::urlsDropped, this, &Sidebar_Widget::slotUrlsDropped);
 
     m_menu = new QMenu(this);
     m_menu->setIcon(QIcon::fromTheme("configure"));
     m_menu->setTitle(i18n("Configure Sidebar"));
 
-    m_addMenu = m_menu->addMenu(i18n("Add New"));
-    connect(m_addMenu, SIGNAL(aboutToShow()), this, SLOT(aboutToShowAddMenu()));
-    connect(&m_addMenuActionGroup, SIGNAL(triggered(QAction*)), this, SLOT(triggeredAddMenu(QAction*)));
+    m_addMenu = m_menu->addMenu(KStandardGuiItem::add().icon(), i18n("Add New"));
+    connect(m_addMenu, &QMenu::aboutToShow, this, &Sidebar_Widget::aboutToShowAddMenu);
+    connect(&m_addMenuActionGroup, &QActionGroup::triggered, this, &Sidebar_Widget::triggeredAddMenu);
     m_menu->addSeparator();
-    m_multiViews = m_menu->addAction(i18n("Multiple Views"), this, SLOT(slotMultipleViews()));
+    m_multiViews = m_menu->addAction(i18n("Multiple Views"), this, &Sidebar_Widget::slotMultipleViews);
     m_multiViews->setCheckable(true);
-    m_showTabLeft = m_menu->addAction(i18n("Show Tabs Left"), this, SLOT(slotShowTabsLeft()));
-    m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
+    m_showTabLeft = m_menu->addAction(i18n("Show Tabs on Left"), this, &Sidebar_Widget::slotShowTabsLeft);
+    m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, &Sidebar_Widget::slotShowConfigurationButton);
     m_showConfigButton->setCheckable(true);
     m_menu->addSeparator();
-    m_menu->addAction(QIcon::fromTheme("window-close"), i18n("Close Sidebar"),
-                      par, SLOT(deleteLater()));
+    m_menu->addAction(KStandardGuiItem::close().icon(), i18n("Close Sidebar"), par, &QObject::deleteLater);
 
-    connect(m_menu, SIGNAL(aboutToShow()),
-            this, SLOT(aboutToShowConfigMenu()));
+    connect(m_menu, &QMenu::aboutToShow, this, &Sidebar_Widget::aboutToShowConfigMenu);
 
     m_configTimer.setSingleShot(true);
-    connect(&m_configTimer, SIGNAL(timeout()),
-            this, SLOT(saveConfig()));
+    connect(&m_configTimer, &QTimer::timeout, this, &Sidebar_Widget::saveConfig);
     readConfig();
     m_openViews = m_config->readEntry("OpenViews", QStringList());
     m_savedWidth = m_config->readEntry("SavedWidth", 200);
     m_somethingVisible = !m_openViews.isEmpty();
     doLayout();
-    QTimer::singleShot(0, this, SLOT(createButtons()));
+    QTimer::singleShot(0, this, &Sidebar_Widget::createButtons);
 }
 
 bool Sidebar_Widget::createDirectModule(const QString &templ,
@@ -196,7 +188,7 @@ bool Sidebar_Widget::createDirectModule(const QString &templ,
     QString filename = templ;
     const QString myFile = m_moduleManager.addModuleFromTemplate(filename);
     if (!myFile.isEmpty()) {
-        kDebug() << "Writing" << myFile;
+        qCDebug(SIDEBAR_LOG) << "Writing" << myFile;
         KDesktopFile df(myFile);
         KConfigGroup scf = df.desktopGroup();
         scf.writeEntry("Type", "Link");
@@ -209,7 +201,7 @@ bool Sidebar_Widget::createDirectModule(const QString &templ,
         }
         scf.sync();
         m_moduleManager.moduleAdded(filename);
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
         return true;
     }
     return false;
@@ -217,7 +209,7 @@ bool Sidebar_Widget::createDirectModule(const QString &templ,
 
 void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
 {
-    //kDebug() << "Web sidebar entry to be added: " << url << name << endl;
+    //qCDebug(SIDEBAR_LOG) << "Web sidebar entry to be added: " << url << name << endl;
 
     // Look for existing ones with this URL
     const QStringList files = m_moduleManager.localModulePaths("websidebarplugin*.desktop");
@@ -235,9 +227,9 @@ void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
 
 void Sidebar_Widget::slotRollback()
 {
-    if (KMessageBox::warningContinueCancel(this, i18n("<qt>This removes all your entries from the sidebar and adds the system default ones.<br /><b>This procedure is irreversible</b><br />Do you want to proceed?</qt>")) == KMessageBox::Continue) {
+    if (KMessageBox::warningContinueCancel(this, i18n("<qt>This removes all your entries from the sidebar and adds the system default ones.<br /><b>This procedure is irreversible.</b><br />Do you want to proceed?</qt>")) == KMessageBox::Continue) {
         m_moduleManager.rollbackToDefault();
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     }
 }
 
@@ -277,7 +269,7 @@ void Sidebar_Widget::doLayout()
 void Sidebar_Widget::aboutToShowConfigMenu()
 {
     m_multiViews->setChecked(!m_singleWidgetMode);
-    m_showTabLeft->setText(m_showTabsLeft ? i18n("Show Tabs Right") : i18n("Show Tabs Left"));
+    m_showTabLeft->setText(m_showTabsLeft ? i18n("Show Tabs on Right") : i18n("Show Tabs on Left"));
     m_showConfigButton->setChecked(m_showExtraButtons);
 }
 
@@ -287,16 +279,19 @@ void Sidebar_Widget::slotSetName()
     bool ok;
 
     // Pop up the dialog asking the user for name.
-    const QString name = KInputDialog::getText(i18nc("@title:window", "Set Name"), i18n("Enter the name:"),
-                         currentButtonInfo().displayName, &ok, this);
-
+    const QString name = QInputDialog::getText(this,
+                                               i18nc("@title:window", "Set Name"),
+                                               i18n("Enter the name:"),
+                                               QLineEdit::Normal,
+                                               currentButtonInfo().displayName,
+                                               &ok);
     if (ok) {
         m_moduleManager.setModuleName(currentButtonInfo().file, name);
 
         // Update the buttons with a QTimer (why?)
         // Because we're in the RMB of a button that updateButtons deletes...
         // TODO: update THAT button only.
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     }
 }
 
@@ -309,7 +304,7 @@ void Sidebar_Widget::slotSetURL()
     if (dlg.exec()) {
         m_moduleManager.setModuleUrl(currentButtonInfo().file, dlg.selectedUrl());
         // TODO: update THAT button only.
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     }
 }
 
@@ -320,7 +315,7 @@ void Sidebar_Widget::slotSetIcon()
     if (!iconname.isEmpty()) {
         m_moduleManager.setModuleIcon(currentButtonInfo().file, iconname);
         // TODO: update THAT button only.
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     }
 }
 
@@ -329,7 +324,7 @@ void Sidebar_Widget::slotRemove()
     if (KMessageBox::warningContinueCancel(this, i18n("<qt>Do you really want to remove the <b>%1</b> tab?</qt>", currentButtonInfo().displayName),
                                            QString(), KStandardGuiItem::del()) == KMessageBox::Continue) {
         m_moduleManager.removeModule(currentButtonInfo().file);
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
     }
 }
 
@@ -385,7 +380,7 @@ void Sidebar_Widget::stdAction(const char *handlestd)
 {
     // ### problem: what about multi mode? We could have multiple modules shown,
     // and if we use Edit/Copy, which one should be used? Need to care about focus...
-    kDebug() << handlestd << "m_activeModule=" << m_activeModule;
+    qCDebug(SIDEBAR_LOG) << handlestd << "m_activeModule=" << m_activeModule;
     if (m_activeModule) {
         QMetaObject::invokeMethod(m_activeModule, handlestd);
     }
@@ -424,7 +419,7 @@ void Sidebar_Widget::createButtons()
     }
 
     if (!m_buttonBar->button(-1)) {
-        m_buttonBar->appendButton(SmallIcon("configure"), -1, m_menu,
+        m_buttonBar->appendButton(QIcon::fromTheme("configure"), -1, m_menu,
                                   i18n("Configure Sidebar"));
     }
 
@@ -507,7 +502,7 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 {
     int lastbtn = m_buttons.count();
 
-    kDebug() << "addButton:" << desktopFileName;
+    qCDebug(SIDEBAR_LOG) << "addButton:" << desktopFileName;
 
     const QString moduleDataPath = m_moduleManager.moduleDataPath(desktopFileName);
     // Check the desktop file still exists
@@ -527,13 +522,13 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
     const QString configOpenStr = configGroup.readEntry("Open", QString()); // NOTE: is this redundant?
 
     if (pos == -1) { // TODO handle insertion
-        m_buttonBar->appendTab(SmallIcon(icon), lastbtn, name);
+        m_buttonBar->appendTab(QIcon::fromTheme(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, cleanupURL(url), lib, name, icon);
         buttonInfo.configOpen = configGroup.readEntry("Open", false);
         m_buttons.insert(lastbtn, buttonInfo);
         KMultiTabBarTab *tab = m_buttonBar->tab(lastbtn);
         tab->installEventFilter(this);
-        connect(tab, SIGNAL(clicked(int)), this, SLOT(showHidePage(int)));
+        connect(tab, &KMultiTabBarTab::clicked, this, &Sidebar_Widget::showHidePage);
 
         // Set Whats This help
         // This uses the comments in the .desktop files
@@ -548,7 +543,7 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
     if (ev->type() == QEvent::MouseButtonPress && ((QMouseEvent *)ev)->button() == Qt::RightButton) {
         KMultiTabBarTab *bt = dynamic_cast<KMultiTabBarTab *>(obj);
         if (bt) {
-            kDebug() << "Request for popup";
+            qCDebug(SIDEBAR_LOG) << "Request for popup";
             m_currentButtonIndex = -1;
             for (int i = 0; i < m_buttons.count(); i++) {
                 if (bt == m_buttonBar->tab(i)) {
@@ -558,13 +553,14 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
             }
 
             if (m_currentButtonIndex > -1) {
-                KMenu *buttonPopup = new KMenu(this);
-                buttonPopup->addTitle(SmallIcon(currentButtonInfo().iconName), currentButtonInfo().displayName);
-                buttonPopup->addAction(QIcon::fromTheme("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
-                buttonPopup->addAction(QIcon::fromTheme("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
-                buttonPopup->addAction(QIcon::fromTheme("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
+                QMenu *buttonPopup = new QMenu(this);
+                buttonPopup->setTitle(currentButtonInfo().displayName);
+                buttonPopup->setIcon(QIcon::fromTheme(currentButtonInfo().iconName));
+                buttonPopup->addAction(QIcon::fromTheme("edit-rename"), i18n("Set Name..."), this, &Sidebar_Widget::slotSetName); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
+                buttonPopup->addAction(QIcon::fromTheme("internet-web-browser"), i18n("Set URL..."), this, &Sidebar_Widget::slotSetURL);
+                buttonPopup->addAction(QIcon::fromTheme("preferences-desktop-icons"), i18n("Set Icon..."), this, &Sidebar_Widget::slotSetIcon);
                 buttonPopup->addSeparator();
-                buttonPopup->addAction(QIcon::fromTheme("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
+                buttonPopup->addAction(QIcon::fromTheme("edit-delete"), i18n("Remove"), this, &Sidebar_Widget::slotRemove);
                 buttonPopup->addSeparator();
                 buttonPopup->addMenu(m_menu);
                 buttonPopup->exec(QCursor::pos());
@@ -612,10 +608,8 @@ bool Sidebar_Widget::createView(ButtonInfo &buttonInfo)
 
     buttonInfo.dock = buttonInfo.module->getWidget();
     connectModule(buttonInfo.module);
-    connect(this, SIGNAL(fileSelection(KFileItemList)),
-            buttonInfo.module, SLOT(openPreview(KFileItemList)));
-    connect(this, SIGNAL(fileMouseOver(KFileItem)),
-            buttonInfo.module, SLOT(openPreviewOnMouseOver(KFileItem)));
+    connect(this, &Sidebar_Widget::fileSelection, buttonInfo.module, &KonqSidebarModule::openPreview);
+    connect(this, &Sidebar_Widget::fileMouseOver, buttonInfo.module, &KonqSidebarModule::openPreviewOnMouseOver);
 
     return true;
 }
@@ -651,11 +645,11 @@ void Sidebar_Widget::showHidePage(int page)
 
             m_buttonBar->setTab(page, true);
 
-            connect(buttonInfo.module, SIGNAL(setIcon(QString)),
-                    m_buttonBar->tab(page), SLOT(setIcon(QString)));
-
-            connect(buttonInfo.module, SIGNAL(setCaption(QString)),
-                    m_buttonBar->tab(page), SLOT(setText(QString)));
+            connect(buttonInfo.module, &KonqSidebarModule::setIcon,
+                    [this,page](const QString &iconName)
+                    { m_buttonBar->tab(page)->setIcon(QIcon::fromTheme(iconName)); });
+            connect(buttonInfo.module, &KonqSidebarModule::setCaption,
+                    m_buttonBar->tab(page), &KMultiTabBarTab::setText);
 
             m_area->addWidget(buttonInfo.dock);
             buttonInfoHandleURL();
@@ -764,27 +758,20 @@ void Sidebar_Widget::doEnableActions()
 
 void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
 {
-    connect(mod, SIGNAL(started(KIO::Job*)), this, SIGNAL(started(KIO::Job*)));
-    connect(mod, SIGNAL(completed()), this, SIGNAL(completed()));
+    connect(mod, &KonqSidebarModule::started, this, &Sidebar_Widget::started);
+    connect(mod, &KonqSidebarModule::completed, this, &Sidebar_Widget::completed);
 
-    connect(mod, SIGNAL(popupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-            this, SLOT(slotPopupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
+    connect(mod, &KonqSidebarModule::popupMenu, this, &Sidebar_Widget::slotPopupMenu);
 
-    connect(mod, SIGNAL(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-            this, SLOT(openUrlRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
-    connect(mod, SIGNAL(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
-            this, SLOT(createNewWindow(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
+    connect(mod, &KonqSidebarModule::openUrlRequest, this, &Sidebar_Widget::openUrlRequest);
+    connect(mod, &KonqSidebarModule::createNewWindow, this, &Sidebar_Widget::createNewWindow);
 
     // TODO define in base class
     if (mod->metaObject()->indexOfSignal("submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)") != -1) {
-        connect(mod,
-                SIGNAL(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)),
-                this,
-                SLOT(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)));
+        connect(mod, &KonqSidebarModule::submitFormRequest, this, &Sidebar_Widget::submitFormRequest);
     }
 
-    connect(mod, SIGNAL(enableAction(KonqSidebarModule*,const char*,bool)),
-            this, SLOT(slotEnableAction(KonqSidebarModule*,const char*,bool)));
+    connect(mod, &KonqSidebarModule::enableAction, this, &Sidebar_Widget::slotEnableAction);
 }
 
 Sidebar_Widget::~Sidebar_Widget()
@@ -838,12 +825,12 @@ KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
         KPluginLoader loader(libName);
         KPluginFactory *factory = loader.factory();
         if (!factory) {
-            kWarning() << "error loading" << libName << loader.errorString();
+            qCWarning(SIDEBAR_LOG) << "error loading" << libName << loader.errorString();
             return 0;
         }
         KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(parent);
         if (!plugin) {
-            kWarning() << "error creating object from" << libName;
+            qCWarning(SIDEBAR_LOG) << "error creating object from" << libName;
             return 0;
         }
         m_plugin = plugin;
@@ -887,7 +874,7 @@ void Sidebar_Widget::slotStatResult(KJob *job)
             createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
         } else {
             // What to do about other kinds of files?
-            kWarning() << "The dropped URL" << url << "is" << item.mimetype() << ", which is not a directory nor an HTML page, what should we do with it?";
+            qCWarning(SIDEBAR_LOG) << "The dropped URL" << url << "is" << item.mimetype() << ", which is not a directory nor an HTML page, what should we do with it?";
         }
     }
 }

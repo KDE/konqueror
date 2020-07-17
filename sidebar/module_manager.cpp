@@ -23,13 +23,12 @@
 #include <kio/deletejob.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kdebug.h>
-#include <kglobal.h>
-#include <kstandarddirs.h>
 #include <QDir>
 #include <QUrl>
 #include <QStandardPaths>
 #include <KSharedConfig>
+
+#include "sidebar_debug.h"
 
 // Input data:
 // Global dir: list of desktop files.
@@ -60,21 +59,21 @@ QStringList ModuleManager::modules() const
 
     const QStringList entries_dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, relativeDataPath(), QStandardPaths::LocateDirectory);
     if (entries_dirs.isEmpty()) { // Ooops
-        qWarning() << "No global directory found for" << relativeDataPath() << "Installation problem!";
+        qCWarning(SIDEBAR_LOG) << "No global directory found for" << relativeDataPath() << "Installation problem!";
         return QStringList();
     }
     // We only list the most-global dir. Other levels use AddedModules.
     QDir globalDir(entries_dirs.last());
-    //kDebug() << "Listing" << entries_dirs.last();
+    //qCDebug(SIDEBAR_LOG) << "Listing" << entries_dirs.last();
     const QStringList globalDirEntries = globalDir.entryList(QDir::Files | QDir::NoDotAndDotDot);
     Q_FOREACH (const QString &globalEntry, globalDirEntries) {
-        //kDebug() << " found" << globalEntry;
+        //qCDebug(SIDEBAR_LOG) << " found" << globalEntry;
         if (!deletedModules.contains(globalEntry)) {
             fileNames.append(globalEntry);
         }
     }
     sortGlobalEntries(fileNames);
-    //kDebug() << "Adding local modules:" << addedModules;
+    //qCDebug(SIDEBAR_LOG) << "Adding local modules:" << addedModules;
     Q_FOREACH (const QString &module, addedModules) {
         if (!fileNames.contains(module)) {
             fileNames.append(module);
@@ -88,11 +87,17 @@ KService::List ModuleManager::availablePlugins() const
 {
     // For the "add" menu, we need all available plugins.
     // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
-    const QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/plugins/*.desktop");
+
     KService::List services;
-    Q_FOREACH (const QString &path, files) {
-        KDesktopFile df(path); // no merging. KService warns, and we don't need it.
-        services.append(KService::Ptr(new KService(&df)));
+    const QStringList pluginDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "konqsidebartng/plugins", QStandardPaths::LocateDirectory);
+    for (const QString &pluginDir : pluginDirs) {
+        QDir dir(pluginDir);
+        QStringList files = dir.entryList((QStringList() << "*.desktop"), QDir::Files);
+
+        for (const QString &file : files) {
+            KDesktopFile df(dir.absoluteFilePath(file)); // no merging. KService warns, and we don't need it.
+            services.append(KService::Ptr(new KService(&df)));
+        }
     }
     return services;
 }
@@ -114,7 +119,7 @@ void ModuleManager::rollbackToDefault()
     const QStringList dirEntries = dir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     Q_FOREACH (const QString &subdir, dirEntries) {
         if (subdir != "add") {
-            kDebug() << "Deleting" << (loc + subdir);
+            qCDebug(SIDEBAR_LOG) << "Deleting" << (loc + subdir);
             KIO::Job *job = KIO::del(QUrl::fromLocalFile(loc + subdir), KIO::HideProgressInfo);
             job->exec();
         }
@@ -168,7 +173,7 @@ void ModuleManager::removeModule(const QString &fileName)
 
 void ModuleManager::moduleAdded(const QString &fileName)
 {
-    kDebug() << fileName;
+    qCDebug(SIDEBAR_LOG) << fileName;
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
     if (!addedModules.contains(fileName)) {
@@ -182,7 +187,7 @@ void ModuleManager::moduleAdded(const QString &fileName)
 QString ModuleManager::addModuleFromTemplate(QString &templ)
 {
     if (!templ.contains("%1")) {
-        kWarning() << "Template filename should contain %1";
+        qCWarning(SIDEBAR_LOG) << "Template filename should contain %1";
     }
 
     QString filename = templ.arg(QString());
@@ -216,7 +221,7 @@ void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
         const QString path = moduleDataPath(fileName);
         if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, path).isEmpty()) {
             // doesn't exist anymore, skip it
-            kDebug() << "Skipping" << path;
+            qCDebug(SIDEBAR_LOG) << "Skipping" << path;
         } else {
             KSharedConfig::Ptr config = KSharedConfig::openConfig(path,
                                         KConfig::NoGlobals,
@@ -230,10 +235,10 @@ void ModuleManager::sortGlobalEntries(QStringList &fileNames) const
                 // Old local file still there; remove it
                 const QString localFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + path;
                 QFile::rename(localFile, localFile + ".orig");
-                kDebug() << "Migration: moving" << localFile << "out of the way";
+                qCDebug(SIDEBAR_LOG) << "Migration: moving" << localFile << "out of the way";
             }
         }
     }
     fileNames = sorter.values();
-    kDebug() << fileNames;
+    qCDebug(SIDEBAR_LOG) << fileNames;
 }

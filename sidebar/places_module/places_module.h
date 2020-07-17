@@ -25,30 +25,6 @@
 
 #include <kfileplacesview.h>
 
-// A custom file places view to know which mouse buttons and keyboard modifiers
-// were pressed when activating an URL.
-class KonqPlacesCustomPlacesView : public KFilePlacesView
-{
-    Q_OBJECT
-
-public:
-    explicit KonqPlacesCustomPlacesView(QWidget *parent = nullptr);
-    virtual ~KonqPlacesCustomPlacesView();
-
-signals:
-    void urlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers);
-
-protected:
-    virtual void keyPressEvent(QKeyEvent *event);
-    virtual void mousePressEvent(QMouseEvent *event);
-
-private slots:
-    void emitUrlChanged(const QUrl &url);
-
-private:
-    Qt::MouseButtons m_mouseButtons;
-    Qt::KeyboardModifiers m_keyModifiers;
-};
 
 class KonqSideBarPlacesModule : public KonqSidebarModule
 {
@@ -57,12 +33,12 @@ class KonqSideBarPlacesModule : public KonqSidebarModule
 public:
     KonqSideBarPlacesModule(QWidget *parent,
                             const KConfigGroup &configGroup);
-    virtual ~KonqSideBarPlacesModule();
+    virtual ~KonqSideBarPlacesModule() = default;
 
-    virtual QWidget *getWidget();
+    virtual QWidget *getWidget() override;
 
 private slots:
-    void slotPlaceUrlChanged(const QUrl &url, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
+    void slotPlaceUrlChanged(const QUrl &url);
 
 private:
     KFilePlacesView *m_placesView;

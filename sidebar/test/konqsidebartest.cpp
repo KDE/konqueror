@@ -15,7 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 #include "konqsidebartest.h"
-#include <kcomponentdata.h>
 
 extern "C"
 {

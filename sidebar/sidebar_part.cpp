@@ -17,10 +17,10 @@
 #include "sidebar_part.h"
 #include <kaboutdata.h>
 
+#include <QApplication>
+
 #include <kparts/part.h>
 #include <konq_events.h>
-#include <kdebug.h>
-#include <QApplication>
 #include <kacceleratormanager.h>
 #include <KLocalizedString>
 
@@ -43,12 +43,9 @@ KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const Q
     }
     m_widget = new Sidebar_Widget(parentWidget, this, currentProfile);
     m_extension = new KonqSidebarBrowserExtension(this, m_widget);
-    connect(m_widget, SIGNAL(started(KIO::Job*)),
-            this, SIGNAL(started(KIO::Job*)));
-    connect(m_widget, SIGNAL(completed()),
-            this, SIGNAL(completed()));
-    connect(m_extension, SIGNAL(addWebSideBar(QUrl,QString)),
-            m_widget, SLOT(addWebSideBar(QUrl,QString)));
+    connect(m_widget, &Sidebar_Widget::started, this, &KParts::ReadOnlyPart::started);
+    connect(m_widget, &Sidebar_Widget::completed, this, QOverload<>::of(&KParts::ReadOnlyPart::completed));
+    connect(m_extension, &KonqSidebarBrowserExtension::addWebSideBar, m_widget, &Sidebar_Widget::addWebSideBar);
     KAcceleratorManager::setNoAccel(m_widget);
     setWidget(m_widget);
 }

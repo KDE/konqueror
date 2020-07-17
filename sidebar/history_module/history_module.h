@@ -32,7 +32,7 @@ class KonqSidebarHistoryModule : public KonqSidebarModule
 public:
     KonqSidebarHistoryModule(QWidget *parent, const KConfigGroup &configGroup);
     virtual ~KonqSidebarHistoryModule();
-    virtual QWidget *getWidget();
+    virtual QWidget *getWidget() override;
 
 private Q_SLOTS:
     void slotActivated(const QModelIndex &index);

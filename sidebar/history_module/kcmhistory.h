@@ -44,11 +44,11 @@ class HistorySidebarConfig : public KCModule
 public:
     explicit HistorySidebarConfig(QWidget *parent = nullptr, const QVariantList &list = QVariantList());
 
-    void load();
-    void save();
-    void defaults();
+    void load() override;
+    void save() override;
+    void defaults() override;
 
-    QString quickHelp() const;
+    QString quickHelp() const override;
 
 private Q_SLOTS:
     void configChanged();

@@ -18,7 +18,6 @@
 
 //#include "konq_treepart.h"
 #include "konq_sidebartreemodule.h"
-#include <kdebug.h>
 #include <kdirnotify.h>
 #include <kio/paste.h>
 #include <konq_operations.h>
@@ -53,7 +52,7 @@ void KonqSidebarTreeTopLevelItem::setOpen(bool open)
 
 void KonqSidebarTreeTopLevelItem::itemSelected()
 {
-    kDebug() << "KonqSidebarTreeTopLevelItem::itemSelected";
+    qCDebug(SIDEBAR_LOG) << "KonqSidebarTreeTopLevelItem::itemSelected";
     const QMimeData *data = QApplication::clipboard()->mimeData();
     const bool paste = m_bTopLevelGroup && data->hasUrls();
     tree()->enableActions(true, true, paste);
@@ -152,7 +151,7 @@ void KonqSidebarTreeTopLevelItem::paste()
     const QMimeData *data = QApplication::clipboard()->mimeData();
     if (data->hasFormat("application/x-kde-cutselection")) {
         move = KonqMimeData::decodeIsCutSelection(data);
-        kDebug(1201) << "move (from clipboard data) = " << move;
+        qCDebug(SIDEBAR_LOG) << "move (from clipboard data) = " << move;
     }
 
     QUrl destURL;

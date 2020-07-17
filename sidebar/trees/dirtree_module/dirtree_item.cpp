@@ -25,7 +25,6 @@
 #include <kfileitemlistproperties.h>
 #include <kactioncollection.h>
 #include <konq_operations.h>
-#include <kdebug.h>
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
 #include <kio/paste.h>
@@ -74,7 +73,7 @@ void KonqSidebarDirTreeItem::reset()
         if (url.isLocalFile()) {
             struct stat buff;
             if (KDE::stat(url.toLocalFile(), &buff) != -1) {
-                //kDebug() << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink;
+                //qCDebug(SIDEBAR_LOG) << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink;
                 // The link count for a directory is generally subdir_count + 2.
                 // One exception is if there are hard links to the directory, in this case
                 // the link count can be > 2 even if no subdirs exist.
@@ -94,7 +93,7 @@ void KonqSidebarDirTreeItem::reset()
 
 void KonqSidebarDirTreeItem::setOpen(bool open)
 {
-    kDebug(1201) << "KonqSidebarDirTreeItem::setOpen " << open;
+    qCDebug(SIDEBAR_LOG) << "KonqSidebarDirTreeItem::setOpen " << open;
     if (open && !childCount() && m_bListable) {
         MYMODULE->openSubFolder(this);
     } else if (hasStandardIcon()) {
@@ -175,7 +174,7 @@ bool KonqSidebarDirTreeItem::populateMimeData(QMimeData *mimeData, bool move)
 {
     QList<QUrl> lst;
     lst.append(m_fileItem.url());
-    kDebug() << lst;
+    qCDebug(SIDEBAR_LOG) << lst;
 
     mimeData->setUrls(lst);
     KIO::setClipboardDataCut(mimeData, move);
@@ -197,10 +196,10 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
     // to open a window :-)
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(m_fileItem.mimetype(), "Application");
     if (offer) {
-        kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
+        qCDebug(SIDEBAR_LOG) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
     }
     if (offer && offer->desktopEntryName().startsWith("kfmclient")) {
-        kDebug(1201) << "Emitting createNewWindow";
+        qCDebug(SIDEBAR_LOG) << "Emitting createNewWindow";
         KParts::OpenUrlArguments args;
         args.setMimeType(m_fileItem.mimetype());
         emit tree()->createNewWindow(m_fileItem.url(), args);
@@ -279,7 +278,7 @@ void KonqSidebarDirTreeItem::paste()
     const QMimeData *data = QApplication::clipboard()->mimeData();
     if (data->hasFormat("application/x-kde-cutselection")) {
         move = KonqMimeData::decodeIsCutSelection(data);
-        kDebug(1201) << "move (from clipboard data) = " << move;
+        qCDebug(SIDEBAR_LOG) << "move (from clipboard data) = " << move;
     }
 
     KIO::pasteClipboard(m_fileItem.url(), listView(), move);

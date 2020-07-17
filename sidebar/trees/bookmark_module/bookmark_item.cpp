@@ -18,7 +18,6 @@
 
 #include "bookmark_item.h"
 #include <konq_sidebartree.h>
-#include <kdebug.h>
 #include <kiconloader.h>
 
 #include "bookmark_module.h"

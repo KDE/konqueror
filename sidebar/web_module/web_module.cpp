@@ -24,7 +24,6 @@
 #include <QTimer>
 
 #include <dom/html_inline.h>
-#include <kdebug.h>
 #include <kdialog.h>
 #include <kglobal.h>
 #include <KLocalizedString>
@@ -210,7 +209,7 @@ void KonqSideBarWebModule::reload()
 
 void KonqSideBarWebModule::setTitle(const QString &title)
 {
-    kDebug() << title;
+    qCDebug(SIDEBAR_LOG) << title;
     if (!title.isEmpty()) {
         emit setCaption(title);
 

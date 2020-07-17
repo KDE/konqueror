@@ -1,5 +1,5 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
-find_package(KF5 REQUIRED COMPONENTS JobWidgets)
+find_package(KF5 REQUIRED COMPONENTS JobWidgets IconThemes)
 
 if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
@@ -15,13 +15,15 @@ if(BUILD_TESTING)
     add_subdirectory( test )
 endif()
 
+ecm_qt_declare_logging_category(sidebar_DEBUG_SRCS HEADER sidebar_debug.h IDENTIFIER SIDEBAR_LOG CATEGORY_NAME org.kde.konqueror.sidebar)
+
 ########### konqsidebarplugin lib: contains the base class for plugins ###############
 
 set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
-add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
+add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS} ${sidebar_DEBUG_SRCS})
 
-target_link_libraries(konqsidebarplugin KF5::Parts KF5::KDELibs4Support KF5::KIOFileWidgets)
+target_link_libraries(konqsidebarplugin KF5::Parts KF5::KIOFileWidgets)
 set_target_properties(konqsidebarplugin PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )
 install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -34,9 +36,9 @@ set(konq_sidebar_PART_SRCS
  konqmultitabbar.cpp
 )
 
-add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS})
+add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS} ${sidebar_DEBUG_SRCS})
 
-target_link_libraries(konq_sidebar KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::KDELibs4Support )
+target_link_libraries(konq_sidebar KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::IconThemes)
 
 install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

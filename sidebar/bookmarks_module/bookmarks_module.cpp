@@ -122,7 +122,7 @@ public:
         Q_UNUSED(unused);
         QAction *action = new QAction(parent);
         action->setText(i18nc("@action:inmenu Add", "Bookmarks Sidebar Module"));
-        action->setIcon(QIcon::fromTheme("bookmark"));
+        action->setIcon(QIcon::fromTheme("bookmarks"));
         return QList<QAction *>() << action;
     }
 
@@ -143,7 +143,7 @@ public:
         Q_UNUSED(parentWidget);
         Q_UNUSED(unused);
         configGroup.writeEntry("Type", "Link");
-        configGroup.writeEntry("Icon", "bookmark");
+        configGroup.writeEntry("Icon", "bookmarks");
         configGroup.writeEntry("Name", i18nc("@title:tab", "Bookmarks"));
         configGroup.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_bookmarks");
         return true;
