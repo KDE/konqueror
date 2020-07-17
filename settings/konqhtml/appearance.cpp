@@ -7,20 +7,15 @@
 #include <QDBusMessage>
 #include <QDBusConnection>
 #include <QGroupBox>
-
-#include <kcharsets.h>
-#include <ksharedconfig.h>
-#include <kdebug.h>
-#include <kdialog.h>
-#include <kglobal.h>
-#include <KLocalizedString>
-#include <knuminput.h>
-#include <KPluginFactory>
-#include <KPluginLoader>
 #include <QFontComboBox>
 #include <QFontDatabase>
 #include <QSpinBox>
 #include <QTabWidget>
+
+#include <kcharsets.h>
+#include <ksharedconfig.h>
+#include <KLocalizedString>
+#include <KConfigGroup>
 
 static const char *const animationValues[] = {"Enabled", "Disabled", "LoopOnce"};
 enum AnimationsType { AnimationsAlways = 0, AnimationsNever = 1, AnimationsLoopOnce = 2 };
@@ -45,8 +40,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     tabWidget->addTab(fontsTab, i18nc("@title:tab", "Fonts"));
     tabWidget->addTab(cssConfig, i18nc("@title:tab", "Stylesheets"));
 
-    connect(cssConfig, SIGNAL(changed()), this, SLOT(changed()));
-    connect(cssConfig, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+    connect(cssConfig, &CSSConfig::changed, this, &KAppearanceOptions::markAsChanged);
 
     l = new QVBoxLayout(mainTab);
 
@@ -56,23 +50,23 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     QFormLayout *fl = new QFormLayout(box);
 
     m_pAutoLoadImagesCheckBox = new QCheckBox(i18n("A&utomatically load images"), this);
-    m_pAutoLoadImagesCheckBox->setWhatsThis(i18n("<html>If this box is checked, Konqueror will"
-                                            " automatically load any images that are embedded in a web page."
-                                            " Otherwise, it will display placeholders for the images, and"
-                                            " you can then manually load the images by clicking on the image"
-                                            " button.<br />Unless you have a very slow network connection, you"
-                                            " will probably want to check this box to enhance your browsing"
-                                            " experience.</html>"));
-    connect(m_pAutoLoadImagesCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    m_pAutoLoadImagesCheckBox->setToolTip(i18n("<html>If this box is checked, Konqueror will"
+                                               " automatically load any images that are embedded in a web page."
+                                               " Otherwise, it will display placeholders for the images, and"
+                                               " you can then manually load the images by clicking on the image"
+                                               " button.<br />Unless you have a very slow network connection, you"
+                                               " will probably want to check this box to enhance your browsing"
+                                               " experience.</html>"));
+    connect(m_pAutoLoadImagesCheckBox, &QAbstractButton::toggled, this, &KAppearanceOptions::markAsChanged);
     fl->addRow(m_pAutoLoadImagesCheckBox);
 
     m_pUnfinishedImageFrameCheckBox = new QCheckBox(i18n("Dra&w frame around not completely loaded images"), this);
-    m_pUnfinishedImageFrameCheckBox->setWhatsThis(i18n("<html>If this box is checked, Konqueror will draw"
-            " a frame as a placeholder around images embedded in a web page that are"
-            " not yet fully loaded.<br />You will probably want to check this box to"
-            " enhance your browsing experience, especially if have a slow network"
-            " connection.</html>"));
-    connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    m_pUnfinishedImageFrameCheckBox->setToolTip(i18n("<html>If this box is checked, Konqueror will draw"
+                                                     " a frame as a placeholder around images embedded in a web page that are"
+                                                     " not yet fully loaded.<br />You will probably want to check this box to"
+                                                     " enhance your browsing experience, especially if have a slow network"
+                                                     " connection.</html>"));
+    connect(m_pUnfinishedImageFrameCheckBox, &QAbstractButton::toggled, this, &KAppearanceOptions::markAsChanged);
     fl->addRow(m_pUnfinishedImageFrameCheckBox);
 
     m_pAnimationsCombo = new QComboBox(this);
@@ -80,11 +74,11 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     m_pAnimationsCombo->insertItem(AnimationsAlways, i18nc("animations", "Enabled"));
     m_pAnimationsCombo->insertItem(AnimationsNever, i18nc("animations", "Disabled"));
     m_pAnimationsCombo->insertItem(AnimationsLoopOnce, i18n("Show Only Once"));
-    m_pAnimationsCombo->setWhatsThis(i18n("<html>Controls how Konqueror shows animated images:<br />"
-                                          "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
-                                          "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
-                                          "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>"));
-    connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(changed()));
+    m_pAnimationsCombo->setToolTip(i18n("<html>Controls how Konqueror shows animated images:<br />"
+                                        "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
+                                        "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
+                                        "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>"));
+    connect(m_pAnimationsCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KAppearanceOptions::markAsChanged);
     fl->addRow(i18n("A&nimations:"), m_pAnimationsCombo);
 
     //Other
@@ -98,13 +92,13 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     m_pUnderlineCombo->insertItem(UnderlineHover, i18n("Only on Hover"));
     fl->addRow(i18n("Und&erline links:"), m_pUnderlineCombo);
 
-    m_pUnderlineCombo->setWhatsThis(i18n(
-                                        "<html>Controls how Konqueror handles underlining hyperlinks:<br />"
-                                        "<ul><li><b>Enabled</b>: Always underline links</li>"
-                                        "<li><b>Disabled</b>: Never underline links</li>"
-                                        "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
-                                        "</ul><br /><i>Note: The site's CSS definitions can override this value.</i></html>"));
-    connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(changed()));
+    m_pUnderlineCombo->setToolTip(i18n(
+                                      "<html>Controls how Konqueror handles underlining hyperlinks:<br />"
+                                      "<ul><li><b>Enabled</b>: Always underline links</li>"
+                                      "<li><b>Disabled</b>: Never underline links</li>"
+                                      "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
+                                      "</ul><br /><i>Note: The site's CSS definitions can override this value.</i></html>"));
+    connect(m_pUnderlineCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KAppearanceOptions::markAsChanged);
 
     m_pSmoothScrollingCombo = new QComboBox(this);
     m_pSmoothScrollingCombo->setEditable(false);
@@ -112,12 +106,12 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     m_pSmoothScrollingCombo->insertItem(SmoothScrollingAlways, i18nc("smooth scrolling", "Always"));
     m_pSmoothScrollingCombo->insertItem(SmoothScrollingNever, i18nc("soft scrolling", "Never"));
     fl->addRow(i18n("S&mooth scrolling:"), m_pSmoothScrollingCombo);
-    m_pSmoothScrollingCombo->setWhatsThis(i18n(
-            "<html>Determines whether Konqueror should use smooth steps to scroll HTML pages, or whole steps:<br />"
-            "<ul><li><b>Always</b>: Always use smooth steps when scrolling.</li>"
-            "<li><b>Never</b>: Never use smooth scrolling, scroll with whole steps instead.</li>"
-            "<li><b>When Efficient</b>: Only use smooth scrolling on pages where it can be achieved with moderate usage of system resources.</li></ul></html>"));
-    connect(m_pSmoothScrollingCombo, SIGNAL(currentIndexChanged(int)), SLOT(changed()));
+    m_pSmoothScrollingCombo->setToolTip(i18n(
+                                            "<html>Determines whether Konqueror should use smooth steps to scroll HTML pages, or whole steps:<br />"
+                                            "<ul><li><b>Always</b>: Always use smooth steps when scrolling.</li>"
+                                            "<li><b>Never</b>: Never use smooth scrolling, scroll with whole steps instead.</li>"
+                                            "<li><b>When Efficient</b>: Only use smooth scrolling on pages where it can be achieved with moderate usage of system resources.</li></ul></html>"));
+    connect(m_pSmoothScrollingCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KAppearanceOptions::markAsChanged);
 
     l->addStretch(5);
 
@@ -137,24 +131,24 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     QGroupBox *gb = new QGroupBox(i18n("Font Si&ze"));
     lay->addWidget(gb);
     fl = new QFormLayout(gb);
-    gb->setWhatsThis(i18n("This is the relative font size Konqueror uses to display web sites."));
+    gb->setToolTip(i18n("This is the relative font size Konqueror uses to display web sites."));
 
     m_minSize = new QSpinBox;
     m_minSize->setValue(fMinSize);
     fl->addRow(i18n("M&inimum font size:"), m_minSize);
     m_minSize->setRange(2, 30);
-    connect(m_minSize, SIGNAL(valueChanged(int)), this, SLOT(slotMinimumFontSize(int)));
-    connect(m_minSize, SIGNAL(valueChanged(int)), this, SLOT(changed()));
-    m_minSize->setWhatsThis("<qt>" + i18n("Konqueror will never display text smaller than "
-                                          "this size,<br />overriding any other settings.") + "</qt>");
+    connect(m_minSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::slotMinimumFontSize);
+    connect(m_minSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::markAsChanged);
+    m_minSize->setToolTip("<qt>" + i18n("Konqueror will never display text smaller than "
+                                        "this size,<br />overriding any other settings.") + "</qt>");
 
     m_MedSize = new QSpinBox(m_minSize);
     m_MedSize->setValue(fSize);
     fl->addRow(i18n("&Medium font size:"), m_MedSize);
     m_MedSize->setRange(2, 30);
-    connect(m_MedSize, SIGNAL(valueChanged(int)), this, SLOT(slotFontSize(int)));
-    connect(m_MedSize, SIGNAL(valueChanged(int)), this, SLOT(changed()));
-    m_MedSize->setWhatsThis(
+    connect(m_MedSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::slotFontSize);
+    connect(m_MedSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::markAsChanged);
+    m_MedSize->setToolTip(
         i18n("This is the relative font size Konqueror uses "
              "to display web sites."));
 
@@ -164,54 +158,44 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
 
     m_pFonts[0] = new QFontComboBox(fontsTab);
     fl->addRow(i18n("S&tandard font:"), m_pFonts[0]);
-    m_pFonts[0]->setWhatsThis(i18n("This is the font used to display normal text in a web page."));
-    connect(m_pFonts[0], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotStandardFont(QFont)));
+    m_pFonts[0]->setToolTip(i18n("This is the font used to display normal text in a web page."));
+    connect(m_pFonts[0], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotStandardFont);
 
     m_pFonts[1] = new QFontComboBox(fontsTab);
     fl->addRow(i18n("&Fixed font:"), m_pFonts[1]);
-    m_pFonts[1]->setWhatsThis(i18n("This is the font used to display fixed-width (i.e. non-proportional) text."));
-    connect(m_pFonts[1], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotFixedFont(QFont)));
+    m_pFonts[1]->setToolTip(i18n("This is the font used to display fixed-width (i.e. non-proportional) text."));
+    connect(m_pFonts[1], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotFixedFont);
 
     m_pFonts[2] = new QFontComboBox(this);
     fl->addRow(i18n("S&erif font:"),  m_pFonts[2]);
-    m_pFonts[2]->setWhatsThis(i18n("This is the font used to display text that is marked up as serif."));
-
-    connect(m_pFonts[2], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotSerifFont(QFont)));
+    m_pFonts[2]->setToolTip(i18n("This is the font used to display text that is marked up as serif."));
+    connect(m_pFonts[2], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotSerifFont);
 
     m_pFonts[3] = new QFontComboBox(this);
     fl->addRow(i18n("Sa&ns serif font:"),  m_pFonts[3]);
-    m_pFonts[3]->setWhatsThis(i18n("This is the font used to display text that is marked up as sans-serif."));
-    connect(m_pFonts[3], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotSansSerifFont(QFont)));
+    m_pFonts[3]->setToolTip(i18n("This is the font used to display text that is marked up as sans-serif."));
+    connect(m_pFonts[3], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotSansSerifFont);
 
     m_pFonts[4] = new QFontComboBox(this);
     fl->addRow(i18n("C&ursive font:"),  m_pFonts[4]);
-    m_pFonts[4]->setWhatsThis(i18n("This is the font used to display text that is marked up as italic."));
-    connect(m_pFonts[4], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotCursiveFont(QFont)));
+    m_pFonts[4]->setToolTip(i18n("This is the font used to display text that is marked up as italic."));
+    connect(m_pFonts[4], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotCursiveFont);
 
     m_pFonts[5] = new QFontComboBox(this);
     fl->addRow(i18n("Fantas&y font:"), m_pFonts[5]);
-    m_pFonts[5]->setWhatsThis(i18n("This is the font used to display text that is marked up as a fantasy font."));
-    connect(m_pFonts[5], SIGNAL(currentFontChanged(QFont)),
-            SLOT(slotFantasyFont(QFont)));
+    m_pFonts[5]->setToolTip(i18n("This is the font used to display text that is marked up as a fantasy font."));
+    connect(m_pFonts[5], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::slotFantasyFont);
 
     for (int i = 0; i < 6; ++i)
-        connect(m_pFonts[i], SIGNAL(currentFontChanged(QFont)),
-                SLOT(changed()));
+        connect(m_pFonts[i], &QFontComboBox::currentFontChanged, this, &KAppearanceOptions::markAsChanged);
 
     m_pFontSizeAdjust = new QSpinBox(this);
     m_pFontSizeAdjust->setRange(-5, 5);
     m_pFontSizeAdjust->setSingleStep(1);
     fl->addRow(i18n("Font &size adjustment for this encoding:"), m_pFontSizeAdjust);
 
-    connect(m_pFontSizeAdjust, SIGNAL(valueChanged(int)),
-            SLOT(slotFontSizeAdjust(int)));
-    connect(m_pFontSizeAdjust, SIGNAL(valueChanged(int)),
-            SLOT(changed()));
+    connect(m_pFontSizeAdjust, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::slotFontSizeAdjust);
+    connect(m_pFontSizeAdjust, QOverload<int>::of(&QSpinBox::valueChanged), this, &KAppearanceOptions::markAsChanged);
 
     m_pEncoding = new QComboBox(this);
     m_pEncoding->setEditable(false);
@@ -220,13 +204,11 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
     m_pEncoding->addItems(encodings);
     fl->addRow(i18n("Default encoding:"), m_pEncoding);
 
-    m_pEncoding->setWhatsThis(i18n("Select the default encoding to be used; normally, you will be fine with 'Use language encoding' "
-                                   "and should not have to change this."));
+    m_pEncoding->setToolTip(i18n("Select the default encoding to be used; normally, you will be fine with 'Use language encoding' "
+                                 "and should not have to change this."));
 
-    connect(m_pEncoding, SIGNAL(activated(QString)),
-            SLOT(slotEncoding(QString)));
-    connect(m_pEncoding, SIGNAL(activated(QString)),
-            SLOT(changed()));
+    connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::slotEncoding);
+    connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::markAsChanged);
 
     lay->addStretch(5);
 }
@@ -342,7 +324,6 @@ void KAppearanceOptions::load()
     }
 
     encodingName = READ_ENTRYNODEFAULT("DefaultEncoding"); //TODO move
-    //kDebug(0) << "encoding = " << encodingName;
 
     m_pAutoLoadImagesCheckBox->setChecked(READ_BOOL("AutoLoadImages", true));
     m_pUnfinishedImageFrameCheckBox->setChecked(READ_BOOL("UnfinishedImageFrame", true));
@@ -377,7 +358,7 @@ void KAppearanceOptions::defaults()
 
 void KAppearanceOptions::updateGUI()
 {
-    //kDebug() << "KAppearanceOptions::updateGUI " << charset;
+    //qCDebug(KONQUEROR_LOG) << "KAppearanceOptions::updateGUI " << charset;
     for (int f = 0; f < 6; f++) {
         QString ff = fonts[f];
         if (ff.isEmpty()) {

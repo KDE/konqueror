@@ -2,7 +2,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcmkonq\")
 set(kcm_konq_PART_SRCS
    behaviour.cpp
    konqkcmfactory.cpp
-#    kcustommenueditor.cpp
 )
 
 add_library(kcm_konq MODULE ${kcm_konq_PART_SRCS})

@@ -28,9 +28,9 @@ class QListWidget;
 class QPushButton;
 class QLineEdit;
 class QCheckBox;
-class KListWidgetSearchLine;
 class QTreeView;
-class KIntSpinBox;
+class KListWidgetSearchLine;
+class KPluralHandlingSpinBox;
 
 class AutomaticFilterModel : public QAbstractItemModel
 {
@@ -80,8 +80,6 @@ public:
     void defaults() override;
     QString quickHelp() const override;
 
-public Q_SLOTS:
-
 protected Q_SLOTS:
     void insertFilter();
     void updateFilter();
@@ -110,7 +108,7 @@ private:
     QPushButton *mExportButton;
     QTabWidget *mFilterWidget;
     QTreeView *mAutomaticFilterList;
-    KIntSpinBox *mRefreshFreqSpinBox;
+    KPluralHandlingSpinBox *mRefreshFreqSpinBox;
 
     KSharedConfig::Ptr mConfig;
     QString mGroupname;

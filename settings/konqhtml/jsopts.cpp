@@ -28,6 +28,7 @@
 #include <QVBoxLayout>
 // KDE
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <KSharedConfig>
 #include <kurlrequester.h>
 #include <KLocalizedString>
@@ -48,11 +49,11 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     QVBoxLayout *toplevel = new QVBoxLayout(this);
 
     enableJavaScriptGloballyCB = new QCheckBox(i18n("Ena&ble JavaScript globally"));
-    enableJavaScriptGloballyCB->setWhatsThis(i18n("Enables the execution of scripts written in ECMA-Script "
+    enableJavaScriptGloballyCB->setToolTip(i18n("Enables the execution of scripts written in ECMA-Script "
             "(also known as JavaScript) that can be contained in HTML pages. "
             "Note that, as with any browser, enabling scripting languages can be a security problem."));
-    connect(enableJavaScriptGloballyCB, SIGNAL(clicked()), SLOT(changed()));
-    connect(enableJavaScriptGloballyCB, SIGNAL(clicked()), this, SLOT(slotChangeJSEnabled()));
+    connect(enableJavaScriptGloballyCB, &QAbstractButton::clicked, this, &KJavaScriptOptions::markAsChanged);
+    connect(enableJavaScriptGloballyCB, &QAbstractButton::clicked, this, &KJavaScriptOptions::slotChangeJSEnabled);
     toplevel->addWidget(enableJavaScriptGloballyCB);
 
     // the global checkbox
@@ -61,22 +62,22 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     toplevel->addWidget(globalGB);
 
     jsDebugWindow = new QCheckBox(i18n("Enable debu&gger"));
-    jsDebugWindow->setWhatsThis(i18n("Enables builtin JavaScript debugger."));
-    connect(jsDebugWindow, SIGNAL(clicked()), SLOT(changed()));
+    jsDebugWindow->setToolTip(i18n("Enables builtin JavaScript debugger."));
+    connect(jsDebugWindow, &QAbstractButton::clicked, this, &KJavaScriptOptions::markAsChanged);
     hbox->addWidget(jsDebugWindow);
 
     reportErrorsCB = new QCheckBox(i18n("Report &errors"));
-    reportErrorsCB->setWhatsThis(i18n("Enables the reporting of errors that occur when JavaScript "
+    reportErrorsCB->setToolTip(i18n("Enables the reporting of errors that occur when JavaScript "
                                       "code is executed."));
-    connect(reportErrorsCB, SIGNAL(clicked()), SLOT(changed()));
+    connect(reportErrorsCB, &QAbstractButton::clicked, this, &KJavaScriptOptions::markAsChanged);
     hbox->addWidget(reportErrorsCB);
 
     // the domain-specific listview
     domainSpecific = new JSDomainListView(m_pConfig, m_groupname, this, this);
-    connect(domainSpecific, SIGNAL(changed(bool)), SLOT(changed()));
+    connect(domainSpecific, &DomainListView::changed, this, &KJavaScriptOptions::markAsChanged);
     toplevel->addWidget(domainSpecific, 2);
 
-    domainSpecific->setWhatsThis(i18n("Here you can set specific JavaScript policies for any particular "
+    domainSpecific->setToolTip(i18n("Here you can set specific JavaScript policies for any particular "
                                       "host or domain. To add a new policy, simply click the <i>New...</i> "
                                       "button and supply the necessary information requested by the "
                                       "dialog box. To change an existing policy, click on the <i>Change...</i> "
@@ -91,12 +92,12 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
                          "instead of the default policy for enabling or disabling JavaScript on pages sent by these "
                          "domains or hosts.</p><p>Select a policy and use the controls on "
                          "the right to modify it.</p>");
-    domainSpecific->listView()->setWhatsThis(wtstr);
+    domainSpecific->listView()->setToolTip(wtstr);
 
-    domainSpecific->importButton()->setWhatsThis(i18n("Click this button to choose the file that contains "
+    domainSpecific->importButton()->setToolTip(i18n("Click this button to choose the file that contains "
             "the JavaScript policies. These policies will be merged "
             "with the existing ones. Duplicate entries are ignored."));
-    domainSpecific->exportButton()->setWhatsThis(i18n("Click this button to save the JavaScript policy to a zipped "
+    domainSpecific->exportButton()->setToolTip(i18n("Click this button to save the JavaScript policy to a zipped "
             "file. The file, named <b>javascript_policy.tgz</b>, will be "
             "saved to a location of your choice."));
 
@@ -104,7 +105,7 @@ KJavaScriptOptions::KJavaScriptOptions(KSharedConfig::Ptr config, const QString 
     js_policies_frame = new JSPoliciesFrame(&js_global_policies,
                                             i18n("Global JavaScript Policies"), this);
     toplevel->addWidget(js_policies_frame);
-    connect(js_policies_frame, SIGNAL(changed()), SLOT(changed()));
+    connect(js_policies_frame, &JSPoliciesFrame::changed, this, &KJavaScriptOptions::markAsChanged);
 
 }
 
@@ -215,12 +216,12 @@ void JSDomainListView::setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
     case ChangeButton: caption = i18nc("@title:window", "Change JavaScript Policy"); break;
     default:; // inhibit gcc warning
     }/*end switch*/
-    pDlg.setCaption(caption);
+    pDlg.setWindowTitle(caption);
     pDlg.setFeatureEnabledLabel(i18n("JavaScript policy:"));
     pDlg.setFeatureEnabledWhatsThis(i18n("Select a JavaScript policy for "
                                          "the above host or domain."));
     JSPoliciesFrame *panel = new JSPoliciesFrame(jspol, i18n("Domain-Specific "
-            "JavaScript Policies"), pDlg.mainWidget());
+            "JavaScript Policies"), &pDlg);
     panel->refresh();
     pDlg.addPolicyPanel(panel);
     pDlg.refresh();

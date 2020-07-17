@@ -15,7 +15,6 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QComboBox>
-#include <QDebug>
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QLineEdit>
@@ -55,16 +54,16 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
     tabOptions = new Ui_advancedTabOptions;
     tabOptions->setupUi(tabsGroup);
 
-    connect(tabOptions->m_pShowMMBInTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pDynamicTabbarHide, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pNewTabsInBackground, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pOpenAfterCurrentPage, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pTabConfirm, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pTabCloseActivatePrevious, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pPermanentCloseButton, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    connect(tabOptions->m_pMiddleClickClose, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pShowMMBInTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pDynamicTabbarHide, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pNewTabsInBackground, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pOpenAfterCurrentPage, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pTabConfirm, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pTabCloseActivatePrevious, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pPermanentCloseButton, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pKonquerorTabforExternalURL, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pPopupsWithinTabs, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
+    connect(tabOptions->m_pMiddleClickClose, &QAbstractButton::toggled, this, &KKonqGeneralOptions::slotChanged);
 
     lay->addWidget(tabsGroup);
 
@@ -90,18 +89,18 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Blank Page"), ShowBlankPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Bookmarks"), ShowBookmarksPage);
     startLabel->setBuddy(m_startCombo);
-    connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+    connect(m_startCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
     hboxLayout->addWidget(m_startCombo);
 
     startURL = new QLineEdit(this);
     startURL->setWindowTitle(i18nc("@title:window", "Select Start Page"));
     hboxLayout->addWidget(startURL);
-    connect(startURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
+    connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::slotChanged);
 
     QString startstr = i18n("This is the URL of the web page "
                            "Konqueror will show when starting.");
-    startURL->setWhatsThis(startstr);
-    connect(m_startCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this](int idx) {
+    startURL->setToolTip(startstr);
+    connect(m_startCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int idx) {
             startURL->setEnabled(idx == ShowStartUrlPage);
             });
     startURL->setEnabled(false);
@@ -113,14 +112,14 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     homeURL = new QLineEdit(this);
     homeURL->setWindowTitle(i18nc("@title:window", "Select Home Page"));
     formLayout->addRow(label, homeURL);
-    connect(homeURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
+    connect(homeURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::slotChanged);
     label->setBuddy(homeURL);
 
     QString homestr = i18n("This is the URL of the web page where "
                            "Konqueror will jump to when "
                            "the \"Home\" button is pressed.");
-    label->setWhatsThis(homestr);
-    homeURL->setWhatsThis(homestr);
+    label->setToolTip(homestr);
+    homeURL->setToolTip(homestr);
 
     ////
 
@@ -131,7 +130,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_webEngineCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     formLayout->addRow(webLabel, m_webEngineCombo);
     webLabel->setBuddy(m_webEngineCombo);
-    connect(m_webEngineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+    connect(m_webEngineCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
@@ -237,7 +236,7 @@ void KKonqGeneralOptions::save()
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
         const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
-        //qDebug() << "preferredWebEngine=" << preferredWebEngine;
+        //qCDebug(KONQUEROR_LOG) << "preferredWebEngine=" << preferredWebEngine;
 
         KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         KConfigGroup addedServices(profile, "Added KDE Service Associations");

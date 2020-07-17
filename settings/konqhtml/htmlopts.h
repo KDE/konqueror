@@ -20,7 +20,7 @@
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>
-class KIntNumInput;
+class QSpinBox;
 class QGroupBox;
 
 class KMiscHTMLOptions : public KCModule
@@ -48,7 +48,7 @@ private:
     QCheckBox *m_pAccessKeys;
     QCheckBox *m_pDoNotTrack;
     QCheckBox *m_pOfferToSaveWebsitePassword;
-    KIntNumInput *m_pMaxFormCompletionItems;
+    QSpinBox *m_pMaxFormCompletionItems;
 #ifdef WEBENGINE_PDF_VIEWER
     QCheckBox *m_pdfViewer;
 #endif

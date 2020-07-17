@@ -29,24 +29,22 @@
 #include <QTreeView>
 #include <QWhatsThis>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QPushButton>
+#include <QUrl>
+#include <QFileDialog>
 
 // KDE
 #include <kaboutdata.h>
 #include <kconfig.h>
-#include <kfiledialog.h>
-#include <kglobal.h>
-#include <QHBoxLayout>
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
-#include <QListWidget>
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
-#include <QPushButton>
-#include <knuminput.h>
+#include <kpluralhandlingspinbox.h>
 #include <KConfigGroup>
-
-#include <QUrl>
 #include <KSharedConfig>
 
 KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
@@ -97,7 +95,7 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     vbox->addWidget(mListBox);
 
     QLabel *exprLabel = new QLabel(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"), this);
-    connect(exprLabel, SIGNAL(linkActivated(QString)), SLOT(slotInfoLinkActivated(QString)));
+    connect(exprLabel, &QLabel::linkActivated, this, &KCMFilter::slotInfoLinkActivated);
     vbox->addWidget(exprLabel);
 
     mString = new KLineEdit;
@@ -123,14 +121,14 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
 
     QLabel *label = new QLabel(i18n("Automatic update interval:"), container);
     grid->addWidget(label, 1, 0);
-    mRefreshFreqSpinBox = new KIntSpinBox(container);
+    mRefreshFreqSpinBox = new KPluralHandlingSpinBox(container);
     grid->addWidget(mRefreshFreqSpinBox, 1, 1);
     mRefreshFreqSpinBox->setRange(1, 365);
     mRefreshFreqSpinBox->setSuffix(ki18np(" day", " days"));
 
     /** connect signals and slots */
-    connect(&mAutomaticFilterModel, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-    connect(mRefreshFreqSpinBox, SIGNAL(valueChanged(int)), this, SLOT(spinBoxChanged(int)));
+    connect(&mAutomaticFilterModel, &AutomaticFilterModel::changed, this, QOverload<bool>::of(&KCModule::changed));
+    connect(mRefreshFreqSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &KCMFilter::spinBoxChanged);
 
     mInsertButton = new QPushButton(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Insert"), buttonBox);
     buttonBoxHBoxLayout->addWidget(mInsertButton);
@@ -155,31 +153,31 @@ KCMFilter::KCMFilter(QWidget *parent, const QVariantList &)
     QLabel *impexpLabel = new QLabel(i18n("<qt>More information on "
                                           "<a href=\"importhelp\">import format</a>, "
                                           "<a href=\"exporthelp\">export format</a>"), impexpBox);
-    connect(impexpLabel, SIGNAL(linkActivated(QString)), SLOT(slotInfoLinkActivated(QString)));
-
+    connect(impexpLabel, &QLabel::linkActivated, this, &KCMFilter::slotInfoLinkActivated);
+    impexpBoxHBoxLayout->addWidget(impexpLabel);
     vbox->addWidget(impexpBox, 0, Qt::AlignRight);
 
-    connect(mEnableCheck, SIGNAL(toggled(bool)), this, SLOT(slotEnableChecked()));
+    connect(mEnableCheck, &QAbstractButton::toggled, this, &KCMFilter::slotEnableChecked);
     connect(mKillCheck, &QAbstractButton::clicked, this, &KCMFilter::slotKillChecked);
-    connect(mListBox, SIGNAL(itemSelectionChanged()), this, SLOT(slotItemSelected()));
-    connect(mString, SIGNAL(textChanged(QString)), this, SLOT(updateButton()));
+    connect(mListBox, &QListWidget::itemSelectionChanged, this, &KCMFilter::slotItemSelected);
+    connect(mString, &QLineEdit::textChanged, this, &KCMFilter::updateButton);
     /*
      * Whats this items
      */
-    mEnableCheck->setWhatsThis(i18n("Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+    mEnableCheck->setToolTip(i18n("Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
                                     "should be defined in the filter list for blocking to take effect."));
-    mKillCheck->setWhatsThis(i18n("When enabled blocked images will be removed from the page completely, "
+    mKillCheck->setToolTip(i18n("When enabled blocked images will be removed from the page completely, "
                                   "otherwise a placeholder 'blocked' image will be used."));
 
     // The list is no longer sensitive to order, because of the new hashed
     // matching.  So this tooltip doesn't imply that.
     //
     // FIXME: blocking of frames is not currently implemented by KHTML
-    mListBox->setWhatsThis(i18n("This is the list of URL filters that will be applied to all embedded "
+    mListBox->setToolTip(i18n("This is the list of URL filters that will be applied to all embedded "
                                 "images and media objects."));
     //                              "images, objects and frames.") );
 
-    mString->setWhatsThis(i18n("<qt><p>Enter an expression to filter. Filters can be defined as either:"
+    mString->setToolTip(i18n("<qt><p>Enter an expression to filter. Filters can be defined as either:"
                                "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, the wildcards <tt>*?[]</tt> may be used</li>"
                                "<li>a full regular expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></li></ul>"
                                "<p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist (allow) any matching URL, "
@@ -268,7 +266,7 @@ void KCMFilter::updateButton()
 
 void KCMFilter::importFilters()
 {
-    QString inFile = KFileDialog::getOpenFileName(QUrl(), QString(), this);
+    QString inFile = QFileDialog::getOpenFileName(this, i18n("Import Filters"));
     if (!inFile.isEmpty()) {
         QFile f(inFile);
         if (f.open(QIODevice::ReadOnly)) {
@@ -313,7 +311,7 @@ void KCMFilter::importFilters()
 
 void KCMFilter::exportFilters()
 {
-    QString outFile = KFileDialog::getSaveFileName(QUrl(), QString(), this);
+    QString outFile = QFileDialog::getSaveFileName(this, i18n("Export Filters"));
     if (!outFile.isEmpty()) {
 
         QFile f(outFile);

@@ -32,20 +32,20 @@ Konqueror::Konqueror(QWidget *parent_P)
     : Konqueror_ui(parent_P)
 {
     // TODO move these strings to konqueror.kcfg and use that from here
-    cb_preload_on_startup->setWhatsThis(
+    cb_preload_on_startup->setToolTip(
         i18n("<p>If enabled, an instance of Konqueror will be preloaded after the ordinary Plasma "
              "startup sequence.</p>"
              "<p>This will make the first Konqueror window open faster, but "
              "at the expense of longer Plasma startup times (but you will be able to work "
              "while it is loading, so you may not even notice that it is taking longer).</p>"));
-    cb_always_have_preloaded->setWhatsThis(
+    cb_always_have_preloaded->setToolTip(
         i18n("<p>If enabled, Konqueror will always try to have one preloaded instance ready; "
              "preloading a new instance in the background whenever there is not one available, "
              "so that windows will always open quickly.</p>"
              "<p><b>Warning:</b> In some cases, it is actually possible that this will "
              "reduce perceived performance.</p>"));
-    connect(cb_preload_on_startup, SIGNAL(toggled(bool)), SIGNAL(changed()));
-    connect(cb_always_have_preloaded, SIGNAL(toggled(bool)), SIGNAL(changed()));
+    connect(cb_preload_on_startup, &QAbstractButton::toggled, this, &Konqueror::changed);
+    connect(cb_always_have_preloaded, &QAbstractButton::toggled, this, &Konqueror::changed);
     defaults();
 }
 

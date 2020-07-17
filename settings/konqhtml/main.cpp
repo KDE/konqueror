@@ -28,6 +28,7 @@
 
 // Qt
 #include <QTabWidget>
+#include <QVBoxLayout>
 #include <QDBusConnection>
 #include <QDBusMessage>
 
@@ -36,11 +37,12 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KSharedConfig>
+#include <KConfigGroup>
+#include <KLocalizedString>
 
 // Local
 #include "jsopts.h"
 #include "javaopts.h"
-#include "pluginopts.h"
 #include "appearance.h"
 #include "htmlopts.h"
 #include "filteropts.h"
@@ -48,7 +50,6 @@
 
 K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
                  registerPlugin<KJSParts>("khtml_java_js");
-                 registerPlugin<KPluginOptions>("khtml_plugins");
                  registerPlugin<KMiscHTMLOptions>("khtml_behavior");
                  registerPlugin<KKonqGeneralOptions>("khtml_general");
                  registerPlugin<KCMFilter>("khtml_filter");
@@ -85,11 +86,11 @@ KJSParts::KJSParts(QWidget *parent, const QVariantList &)
     // ### the groupname is duplicated in KJSParts::save
     java = new KJavaOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), this);
     tab->addTab(java, i18n("&Java"));
-    connect(java, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+    connect(java, QOverload<bool>::of(&KJavaOptions::changed), this, &KJSParts::markAsChanged);
 
     javascript = new KJavaScriptOptions(mConfig, QStringLiteral("Java/JavaScript Settings"), this);
     tab->addTab(javascript, i18n("Java&Script"));
-    connect(javascript, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+    connect(javascript, QOverload<bool>::of(&KJavaScriptOptions::changed), this, &KJSParts::markAsChanged);
 }
 
 void KJSParts::load()

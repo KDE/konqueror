@@ -45,9 +45,9 @@ SystemWidget::SystemWidget(QWidget *parent_P)
              "<p>Changes of system configuration mostly happen by (un)installing applications."
              " It is therefore recommended to turn this option temporarily off while"
              " (un)installing applications.</p>");
-    cb_disable_kbuildsycoca->setWhatsThis(tmp);
-    label_kbuildsycoca->setWhatsThis(tmp);
-    connect(cb_disable_kbuildsycoca, SIGNAL(clicked()), SIGNAL(changed()));
+    cb_disable_kbuildsycoca->setToolTip(tmp);
+    label_kbuildsycoca->setToolTip(tmp);
+    connect(cb_disable_kbuildsycoca, &QAbstractButton::clicked, this, &SystemWidget::changed);
     defaults();
 }
 

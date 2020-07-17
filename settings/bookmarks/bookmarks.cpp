@@ -60,14 +60,14 @@ void BookmarksConfigModule::load()
     ui.sbCacheSize->setValue(group.readEntry("CacheSize", 5 * 1024));
 
     // Config changed notifications...
-    connect(ui.sbColumns, SIGNAL(valueChanged(int)), SLOT(configChanged()));
-    connect(ui.cbShowBackgrounds, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    connect(ui.cbShowRoot, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    connect(ui.cbFlattenTree, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    connect(ui.cbShowPlaces, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    connect(ui.sbCacheSize, SIGNAL(valueChanged(int)), SLOT(configChanged()));
+    connect(ui.sbColumns, QOverload<int>::of(&QSpinBox::valueChanged), this, &BookmarksConfigModule::configChanged);
+    connect(ui.cbShowBackgrounds, &QAbstractButton::toggled, this, &BookmarksConfigModule::configChanged);
+    connect(ui.cbShowRoot, &QAbstractButton::toggled, this, &BookmarksConfigModule::configChanged);
+    connect(ui.cbFlattenTree, &QAbstractButton::toggled, this, &BookmarksConfigModule::configChanged);
+    connect(ui.cbShowPlaces, &QAbstractButton::toggled, this, &BookmarksConfigModule::configChanged);
+    connect(ui.sbCacheSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &BookmarksConfigModule::configChanged);
 
-    connect(ui.clearCacheButton, SIGNAL(clicked(bool)), SLOT(clearCache()));
+    connect(ui.clearCacheButton, &QAbstractButton::clicked, this, &BookmarksConfigModule::clearCache);
 
     delete c;
     emit changed(false);

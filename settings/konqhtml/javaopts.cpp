@@ -31,11 +31,12 @@
 #include <kurlrequester.h>
 #include <klineedit.h>
 #include <KLocalizedString>
-#include <knuminput.h>
 #include <QHBoxLayout>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
 #include <KSharedConfig>
+#include <kconfiggroup.h>
+#include <kpluralhandlingspinbox.h>
 
 // Local
 #include "htmlopts.h"
@@ -109,11 +110,13 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     QHBoxLayout *secondsHBHBoxLayout = new QHBoxLayout(secondsHB);
     secondsHBHBoxLayout->setContentsMargins(0, 0, 0, 0);
     laygroup1->addWidget(secondsHB);
-    serverTimeoutSB = new KIntNumInput(secondsHB);
+    serverTimeoutSB = new KPluralHandlingSpinBox(secondsHB);
+    serverTimeoutSB->setSizePolicy(QSizePolicy::MinimumExpanding, serverTimeoutSB->sizePolicy().verticalPolicy());
     secondsHBHBoxLayout->addWidget(serverTimeoutSB);
-    serverTimeoutSB->setRange(0, 1000, 5);
+    serverTimeoutSB->setSingleStep(5);
+    serverTimeoutSB->setRange(0, 1000);
     serverTimeoutSB->setSuffix(ki18np(" second", " seconds"));
-    connect(serverTimeoutSB, &KIntNumInput::valueChanged, this, &KJavaOptions::slotChanged);
+    connect(serverTimeoutSB, QOverload<int>::of(&QSpinBox::valueChanged), this, [this](){ slotChanged(); });
     laygroup1->addRow(enableShutdownCB, serverTimeoutSB);
 
     pathED = new  KUrlRequester(this);
@@ -127,7 +130,7 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     /***************************************************************************
      ********************** WhatsThis? items ***********************************
      **************************************************************************/
-    enableJavaGloballyCB->setWhatsThis(i18n("Enables the execution of scripts written in Java "
+    enableJavaGloballyCB->setToolTip(i18n("Enables the execution of scripts written in Java "
                                             "that can be contained in HTML pages. "
                                             "Note that, as with any browser, enabling active contents can be a security problem."));
     QString wtstr = i18n("<p>This box contains the domains and hosts you have set "
@@ -135,16 +138,16 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
                          "instead of the default policy for enabling or disabling Java applets on pages sent by these "
                          "domains or hosts.</p><p>Select a policy and use the controls on "
                          "the right to modify it.</p>");
-    domainSpecific->listView()->setWhatsThis(wtstr);
+    domainSpecific->listView()->setToolTip(wtstr);
 #if 0
-    domainSpecific->importButton()->setWhatsThis(i18n("Click this button to choose the file that contains "
+    domainSpecific->importButton()->setToolTip(i18n("Click this button to choose the file that contains "
             "the Java policies. These policies will be merged "
             "with the existing ones. Duplicate entries are ignored."));
-    domainSpecific->exportButton()->setWhatsThis(i18n("Click this button to save the Java policy to a zipped "
+    domainSpecific->exportButton()->setToolTip(i18n("Click this button to save the Java policy to a zipped "
             "file. The file, named <b>java_policy.tgz</b>, will be "
             "saved to a location of your choice."));
 #endif
-    domainSpecific->setWhatsThis(i18n("Here you can set specific Java policies for any particular "
+    domainSpecific->setToolTip(i18n("Here you can set specific Java policies for any particular "
                                       "host or domain. To add a new policy, simply click the <i>New...</i> "
                                       "button and supply the necessary information requested by the "
                                       "dialog box. To change an existing policy, click on the <i>Change...</i> "
@@ -157,7 +160,7 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
     "you to save and retrieve them from a zipped file."));
 #endif
 
-    javaSecurityManagerCB->setWhatsThis(i18n("Enabling the security manager will cause the jvm to run with a Security "
+    javaSecurityManagerCB->setToolTip(i18n("Enabling the security manager will cause the jvm to run with a Security "
                                         "Manager in place. This will keep applets from being able to read and "
                                         "write to your file system, creating arbitrary sockets, and other actions "
                                         "which could be used to compromise your system. Disable this option at your "
@@ -165,14 +168,14 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
                                         "policytool utility to give code downloaded from certain sites more "
                                         "permissions."));
 
-    useKioCB->setWhatsThis(i18n("Enabling this will cause the jvm to use KIO for network transport "));
+    useKioCB->setToolTip(i18n("Enabling this will cause the jvm to use KIO for network transport "));
 
-    pathED->setWhatsThis(i18n("Enter the path to the java executable. If you want to use the jre in "
+    pathED->setToolTip(i18n("Enter the path to the java executable. If you want to use the jre in "
                               "your path, simply leave it as 'java'. If you need to use a different jre, "
                               "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), "
                               "or the path to the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."));
 
-    addArgED->setWhatsThis(i18n("If you want special arguments to be passed to the virtual machine, enter them here."));
+    addArgED->setToolTip(i18n("If you want special arguments to be passed to the virtual machine, enter them here."));
 
     QString shutdown = i18n("When all the applets have been destroyed, the applet server should shut down. "
                             "However, starting the jvm takes a lot of time. If you would like to "
@@ -180,8 +183,8 @@ KJavaOptions::KJavaOptions(const KSharedConfig::Ptr &config, const QString &grou
                             "browsing, you can set the timeout value to whatever you like. To keep "
                             "the java process running for the whole time that the konqueror process is, "
                             "leave the Shutdown Applet Server checkbox unchecked.");
-    serverTimeoutSB->setWhatsThis(shutdown);
-    enableShutdownCB->setWhatsThis(shutdown);
+    serverTimeoutSB->setToolTip(shutdown);
+    enableShutdownCB->setToolTip(shutdown);
 }
 
 void KJavaOptions::load()
@@ -324,7 +327,7 @@ void JavaDomainListView::setupPolicyDlg(PushButton trigger, PolicyDialog &pDlg,
     case ChangeButton: caption = i18nc("@title:window", "Change Java Policy"); break;
     default:; // inhibit gcc warning
     }/*end switch*/
-    pDlg.setCaption(caption);
+    pDlg.setWindowTitle(caption);
     pDlg.setFeatureEnabledLabel(i18n("&Java policy:"));
     pDlg.setFeatureEnabledWhatsThis(i18n("Select a Java policy for "
                                          "the above host or domain."));

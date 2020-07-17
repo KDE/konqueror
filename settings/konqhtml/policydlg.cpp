@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
 // KDE
 #include <KLocalizedString>
 #include <kmessagebox.h>
@@ -21,15 +22,19 @@
 #include "policies.h"
 
 PolicyDialog::PolicyDialog(Policies *policies, QWidget *parent, const char *name)
-    : KDialog(parent),
+    : QDialog(parent),
       policies(policies)
 {
     setObjectName(name);
     setModal(true);
-    setButtons(Ok | Cancel);
+    setWindowTitle(i18nc("@title:window", "Domain-Specific Policies"));
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, this);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &PolicyDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &PolicyDialog::reject);
+    okButton = buttonBox->button(QDialogButtonBox::Ok);
 
     QFrame *main = new QFrame(this);
-    setMainWidget(main);
 
     insertIdx = 1;    // index where to insert additional panels
     topl = new QVBoxLayout(main);
@@ -45,10 +50,9 @@ PolicyDialog::PolicyDialog(Policies *policies, QWidget *parent, const char *name
     le_domain = new QLineEdit(main);
     l->setBuddy(le_domain);
     grid->addWidget(le_domain, 0, 1);
-    connect(le_domain, SIGNAL(textChanged(QString)),
-            SLOT(slotTextChanged(QString)));
+    connect(le_domain, &QLineEdit::textChanged, this, &PolicyDialog::slotTextChanged);
 
-    le_domain->setWhatsThis(i18n("Enter the name of a host (like www.kde.org) "
+    le_domain->setToolTip(i18n("Enter the name of a host (like www.kde.org) "
                                  "or a domain, starting with a dot (like .kde.org or .org)"));
 
     l_feature_policy = new QLabel(main);
@@ -60,9 +64,13 @@ PolicyDialog::PolicyDialog(Policies *policies, QWidget *parent, const char *name
     cb_feature_policy->addItems(policy_values);
     grid->addWidget(cb_feature_policy, 1, 1);
 
-    le_domain->setFocus();
+    QVBoxLayout *vLayout = new QVBoxLayout(this);
+    vLayout->addWidget(main);
+    vLayout->addStretch(1);
+    vLayout->addWidget(buttonBox);
 
-    enableButtonOk(!le_domain->text().isEmpty());
+    le_domain->setFocus();
+    okButton->setEnabled(!le_domain->text().isEmpty());
 }
 
 PolicyDialog::FeatureEnabledPolicy PolicyDialog::featureEnabledPolicy() const
@@ -72,7 +80,7 @@ PolicyDialog::FeatureEnabledPolicy PolicyDialog::featureEnabledPolicy() const
 
 void PolicyDialog::slotTextChanged(const QString &text)
 {
-    enableButtonOk(!text.isEmpty());
+    okButton->setEnabled(!text.isEmpty());
 }
 
 void PolicyDialog::setDisableEdit(bool state, const QString &text)
@@ -107,7 +115,7 @@ void PolicyDialog::setFeatureEnabledLabel(const QString &text)
 
 void PolicyDialog::setFeatureEnabledWhatsThis(const QString &text)
 {
-    cb_feature_policy->setWhatsThis(text);
+    cb_feature_policy->setToolTip(text);
 }
 
 void PolicyDialog::addPolicyPanel(QWidget *panel)
@@ -141,6 +149,6 @@ void PolicyDialog::accept()
     } else {
         policies->setFeatureEnabled(true);
     }
-    KDialog::accept();
+    QDialog::accept();
 }
 

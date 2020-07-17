@@ -10,9 +10,7 @@ set(kcm_konqhtml_PART_SRCS
    htmlopts.cpp 
    jsopts.cpp 
    javaopts.cpp 
-   pluginopts.cpp 
    appearance.cpp 
-   khttpoptdlg.cpp 
    policydlg.cpp 
    main.cpp 
    jspolicies.cpp 
@@ -24,7 +22,6 @@ set(kcm_konqhtml_PART_SRCS
    )
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
-    nsconfigwidget.ui
     advancedTabOptions.ui
     css/csscustom.ui
     css/cssconfig.ui
@@ -32,10 +29,7 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
 
 add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
-target_link_libraries(kcm_konqhtml
-   KF5::Parts
-   KF5::KDELibs4Support
-)
+target_link_libraries(kcm_konqhtml KF5::Parts KF5::ItemViews)
 
 install(TARGETS kcm_konqhtml  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 

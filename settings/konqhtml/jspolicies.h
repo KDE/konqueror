@@ -65,7 +65,7 @@ public:
      */
     JSPolicies();
 
-    ~JSPolicies() override;
+    ~JSPolicies() override = default;
 
     /**
      * Returns whether the WindowOpen policy is inherited.
@@ -215,7 +215,7 @@ public:
      */
     JSPoliciesFrame(JSPolicies *policies, const QString &title, QWidget *parent = nullptr);
 
-    ~JSPoliciesFrame() override;
+    ~JSPoliciesFrame() override = default;
 
     /**
      * updates the controls to resemble the status of the underlying

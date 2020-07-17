@@ -59,9 +59,9 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     winPixmap->setFixedSize(winPixmap->sizeHint());
 
     cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
-    cbNewWin->setWhatsThis(i18n("If this option is checked, Konqueror will open a new window when "
+    cbNewWin->setToolTip(i18n("If this option is checked, Konqueror will open a new window when "
                                 "you open a folder, rather than showing that folder's contents in the current window."));
-    connect(cbNewWin, SIGNAL(toggled(bool)), this, SLOT(changed()));
+    connect(cbNewWin, &QAbstractButton::toggled, this, &KBehaviourOptions::markAsChanged);
     connect(cbNewWin, &QAbstractButton::toggled, this, &KBehaviourOptions::updateWinPixmap);
 
     miscLayout->addWidget(cbNewWin);
@@ -84,9 +84,9 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' me&nu entries which bypass the trashcan"), this);
     mainLayout->addWidget(cbShowDeleteCommand);
-    connect(cbShowDeleteCommand, SIGNAL(toggled(bool)), this, SLOT(changed()));
+    connect(cbShowDeleteCommand, &QAbstractButton::toggled, this, &KBehaviourOptions::markAsChanged);
 
-    cbShowDeleteCommand->setWhatsThis(i18n("Check this if you want 'Delete' menu commands to be displayed "
+    cbShowDeleteCommand->setToolTip(i18n("Check this if you want 'Delete' menu commands to be displayed "
                                            "on the desktop and in the file manager's menus and context menus. "
                                            "You can always delete files by holding the Shift key "
                                            "while calling 'Move to Trash'."));

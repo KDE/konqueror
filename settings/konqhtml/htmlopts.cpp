@@ -17,15 +17,11 @@
 #include <QPushButton>
 #include <QDBusMessage>
 #include <QDBusConnection>
+#include <QSpinBox>
 
 // KDE
-#include <kglobalsettings.h> // get default for DEFAULT_CHANGECURSOR
 #include <KLocalizedString>
-#include <kdialog.h>
-#include <knuminput.h>
-#include <kseparator.h>
-
-// Local
+#include <KConfigGroup>
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KSharedConfig>
@@ -53,17 +49,17 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     m_pAdvancedAddBookmarkCheckBox = new QCheckBox(i18n("Ask for name and folder when adding bookmarks"));
     laygroup1->addWidget(m_pAdvancedAddBookmarkCheckBox);
 
-    m_pAdvancedAddBookmarkCheckBox->setWhatsThis(i18n("If this box is checked, Konqueror will allow you to"
+    m_pAdvancedAddBookmarkCheckBox->setToolTip(i18n("If this box is checked, Konqueror will allow you to"
             " change the title of the bookmark and choose a folder"
             " in which to store it when you add a new bookmark."));
-    connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pAdvancedAddBookmarkCheckBox, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     bgBookmarks->setLayout(laygroup1);
 
     m_pOnlyMarkedBookmarksCheckBox = new QCheckBox(i18n("Show only marked bookmarks in bookmark toolbar"), bgBookmarks);
     laygroup1->addWidget(m_pOnlyMarkedBookmarksCheckBox);
-    m_pOnlyMarkedBookmarksCheckBox->setWhatsThis(i18n("If this box is checked, Konqueror will show only those"
+    m_pOnlyMarkedBookmarksCheckBox->setToolTip(i18n("If this box is checked, Konqueror will show only those"
             " bookmarks in the bookmark toolbar which you have marked to do so in the bookmark editor."));
-    connect(m_pOnlyMarkedBookmarksCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pOnlyMarkedBookmarksCheckBox, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
 
     lay->addWidget(bgBookmarks);
 
@@ -72,17 +68,17 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     m_pFormCompletionCheckBox->setCheckable(true);
     QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
 
-    m_pFormCompletionCheckBox->setWhatsThis(i18n("If this box is checked, Konqueror will remember"
+    m_pFormCompletionCheckBox->setToolTip(i18n("If this box is checked, Konqueror will remember"
                                             " the data you enter in web forms and suggest it in similar fields for all forms."));
-    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pFormCompletionCheckBox, &QGroupBox::toggled, this, &KMiscHTMLOptions::markAsChanged);
 
-    m_pMaxFormCompletionItems = new KIntNumInput(this);
+    m_pMaxFormCompletionItems = new QSpinBox(this);
     m_pMaxFormCompletionItems->setRange(0, 100);
     laygroup2->addRow(i18n("&Maximum completions:"), m_pMaxFormCompletionItems);
-    m_pMaxFormCompletionItems->setWhatsThis(
+    m_pMaxFormCompletionItems->setToolTip(
         i18n("Here you can select how many values Konqueror will remember for a form field."));
-    connect(m_pMaxFormCompletionItems, SIGNAL(valueChanged(int)), SLOT(changed()));
-    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), m_pMaxFormCompletionItems, SLOT(setEnabled(bool)));
+    connect(m_pMaxFormCompletionItems, QOverload<int>::of(&QSpinBox::valueChanged), this, &KMiscHTMLOptions::markAsChanged);
+    connect(m_pFormCompletionCheckBox, &QGroupBox::toggled, m_pMaxFormCompletionItems, &QWidget::setEnabled);
 
     lay->addWidget(m_pFormCompletionCheckBox);
 
@@ -92,23 +88,23 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
 
     m_cbCursor = new QCheckBox(i18n("Chan&ge cursor over links"));
     laygroup3->addWidget(m_cbCursor);
-    m_cbCursor->setWhatsThis(i18n("If this option is set, the shape of the cursor will change "
+    m_cbCursor->setToolTip(i18n("If this option is set, the shape of the cursor will change "
                                   "(usually to a hand) if it is moved over a hyperlink."));
-    connect(m_cbCursor, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_cbCursor, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
 
     m_pOpenMiddleClick = new QCheckBox(i18n("M&iddle click opens URL in selection"), bgMouse);
     laygroup3->addWidget(m_pOpenMiddleClick);
-    m_pOpenMiddleClick->setWhatsThis(i18n(
+    m_pOpenMiddleClick->setToolTip(i18n(
                                          "If this box is checked, you can open the URL in the selection by middle clicking on a "
                                          "Konqueror view."));
-    connect(m_pOpenMiddleClick, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pOpenMiddleClick, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
 
     m_pBackRightClick = new QCheckBox(i18n("Right click goes &back in history"), bgMouse);
     laygroup3->addWidget(m_pBackRightClick);
-    m_pBackRightClick->setWhatsThis(i18n(
+    m_pBackRightClick->setToolTip(i18n(
                                         "If this box is checked, you can go back in history by right clicking on a Konqueror view. "
                                         "To access the context menu, press the right mouse button and move."));
-    connect(m_pBackRightClick, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pBackRightClick, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
 
     lay->addWidget(bgMouse);
 
@@ -117,32 +113,32 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     QFormLayout *fl = new QFormLayout(bgMisc);
 
     m_pAutoRedirectCheckBox = new QCheckBox(i18n("Allow automatic delayed &reloading/redirecting"), this);
-    m_pAutoRedirectCheckBox->setWhatsThis(i18n("Some web pages request an automatic reload or redirection after"
+    m_pAutoRedirectCheckBox->setToolTip(i18n("Some web pages request an automatic reload or redirection after"
                                           " a certain period of time. By unchecking this box Konqueror will ignore these requests."));
-    connect(m_pAutoRedirectCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    connect(m_pAutoRedirectCheckBox, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pAutoRedirectCheckBox);
 
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
     m_pAccessKeys = new QCheckBox(i18n("Enable Access Ke&y activation with Ctrl key"), this);
-    m_pAccessKeys->setWhatsThis(i18n("Pressing the Ctrl key when viewing webpages activates Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for this change to take effect.)"));
-    connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(changed()));
+    m_pAccessKeys->setToolTip(i18n("Pressing the Ctrl key when viewing webpages activates Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for this change to take effect.)"));
+    connect(m_pAccessKeys, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pAccessKeys);
 
     m_pDoNotTrack = new QCheckBox(i18n("Send the DNT header to tell web sites you do not want to be tracked"), this);
-    m_pDoNotTrack->setWhatsThis(i18n("Check this box if you want to inform a web site that you do not want your web browsing habits tracked."));
-    connect(m_pDoNotTrack, SIGNAL(toggled(bool)), SLOT(changed()));
+    m_pDoNotTrack->setToolTip(i18n("Check this box if you want to inform a web site that you do not want your web browsing habits tracked."));
+    connect(m_pDoNotTrack, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pDoNotTrack);
 
     m_pOfferToSaveWebsitePassword = new QCheckBox(i18n("Offer to save website passwords"), this);
-    m_pOfferToSaveWebsitePassword->setWhatsThis(i18n("Uncheck this box to prevent being prompted to save website passwords"));
-    connect(m_pOfferToSaveWebsitePassword, SIGNAL(toggled(bool)), SLOT(changed()));
+    m_pOfferToSaveWebsitePassword->setToolTip(i18n("Uncheck this box to prevent being prompted to save website passwords"));
+    connect(m_pOfferToSaveWebsitePassword, QOverload<bool>::of(&QAbstractButton::toggled), this, &KMiscHTMLOptions::markAsChanged);
     fl->addRow(m_pOfferToSaveWebsitePassword);
 
 #ifdef WEBENGINE_PDF_VIEWER
     m_pdfViewer = new QCheckBox(i18n("Display online PDF files using WebEngine"));
-    m_pdfViewer->setWhatsThis(i18n("Uncheck this box to display online PDF files as configured in System Settings"));
+    m_pdfViewer->setToolTip(i18n("Uncheck this box to display online PDF files as configured in System Settings"));
     fl->addRow(m_pdfViewer);
-    connect(m_pdfViewer, &QCheckBox::toggled, this, QOverload<>::of(&KMiscHTMLOptions::changed));
+    connect(m_pdfViewer, &QCheckBox::toggled, this, &KMiscHTMLOptions::markAsChanged);
 #endif
 
     lay->addWidget(bgMisc);
@@ -167,7 +163,7 @@ void KMiscHTMLOptions::load()
 
     cg = KConfigGroup(m_pConfig, "HTML Settings");
     cg2 = KConfigGroup(khtmlrcConfig, "HTML Settings");
-    m_cbCursor->setChecked(cg.readEntry("ChangeCursor", cg2.readEntry("ChangeCursor", KDE_DEFAULT_CHANGECURSOR)));
+    m_cbCursor->setChecked(cg.readEntry("ChangeCursor", cg2.readEntry("ChangeCursor", true)));
     m_pAutoRedirectCheckBox->setChecked(cg.readEntry("AutoDelayedActions", true));
     m_pFormCompletionCheckBox->setChecked(cg.readEntry("FormCompletion", true));
     m_pMaxFormCompletionItems->setValue(cg.readEntry("MaxFormCompletionItems", 10));

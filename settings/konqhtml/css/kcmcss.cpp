@@ -4,22 +4,18 @@
 
 // Qt
 #include <QCheckBox>
+#include <QDialogButtonBox>
+#include <QUrl>
+#include <QStandardPaths>
 
 // KDE
 #include <kcolorbutton.h>
 #include <kconfig.h>
-#include <kdialog.h>
-#include <kfontdialog.h>
-
+#include <kconfiggroup.h>
 #include <kurlrequester.h>
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
 #include <kmimetypetrader.h>
 #include <kparts/part.h>
 #include <kparts/openurlarguments.h>
-
-#include <QUrl>
-#include <QStandardPaths>
 
 // Local
 #include "template.h"
@@ -38,18 +34,21 @@ public:
 CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
     : QWidget(parent)
     , configWidget(new CSSConfigWidget(this))
-    , customDialogBase(new KDialog(this))
+    , customDialogBase(new QDialog(this))
     , customDialog(new CSSCustomDialog(customDialogBase))
 {
     customDialogBase->setObjectName(QStringLiteral("customCSSDialog"));
     customDialogBase->setModal(true);
-    customDialogBase->setButtons(KDialog::Close);
-    customDialogBase->setDefaultButton(KDialog::Close);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, customDialogBase);
+    buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
+    connect(buttonBox, &QDialogButtonBox::rejected, customDialogBase, &QDialog::reject);
 
-    customDialogBase->setMainWidget(customDialog);
+    QVBoxLayout *vLayout = new QVBoxLayout(customDialogBase);
+    vLayout->addWidget(customDialog);
+    vLayout->addStretch(1);
+    vLayout->addWidget(buttonBox);
 
-//   setQuickHelp( i18n("<h1>Konqueror Stylesheets</h1> This module allows you to apply your own color"
-    setWhatsThis(i18n("<h1>Konqueror Stylesheets</h1> This module allows you to apply your own color"
+    setToolTip(i18n("<h1>Konqueror Stylesheets</h1> This module allows you to apply your own color"
                       " and font settings to Konqueror by using"
                       " stylesheets (CSS). You can either specify"
                       " options or apply your own self-written"
@@ -60,12 +59,12 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
                       " visually impaired people or for web pages"
                       " that are unreadable due to bad design."));
 
-    connect(configWidget->useDefault,     SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(configWidget->useAccess,      SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(configWidget->useUser,        SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(configWidget->urlRequester, SIGNAL(textChanged(QString)), SIGNAL(changed()));
-    connect(configWidget->customize,      SIGNAL(clicked()),      SLOT(slotCustomize()));
-    connect(customDialog,                 SIGNAL(changed()),      SIGNAL(changed()));
+    connect(configWidget->useDefault,    &QAbstractButton::clicked,    this, &CSSConfig::changed);
+    connect(configWidget->useAccess,     &QAbstractButton::clicked,    this, &CSSConfig::changed);
+    connect(configWidget->useUser,       &QAbstractButton::clicked,    this, &CSSConfig::changed);
+    connect(configWidget->urlRequester,  &KUrlRequester::textChanged,  this, &CSSConfig::changed);
+    connect(configWidget->customize,     &QAbstractButton::clicked,    this, &CSSConfig::slotCustomize);
+    connect(customDialog,                &CSSCustomDialog::changed,    this, &CSSConfig::changed);
 
     QVBoxLayout *vbox = new QVBoxLayout(this);
     vbox->setContentsMargins(0, 0, 0, 0);
@@ -74,7 +73,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
 
 void CSSConfig::load()
 {
-    const bool signalsBlocked = customDialog->blockSignals(true);
+    QSignalBlocker block(customDialog);
 
     KConfig *c = new KConfig(QStringLiteral("kcmcssrc"), KConfig::NoGlobals);
     KConfigGroup group = c->group("Stylesheet");
@@ -115,7 +114,6 @@ void CSSConfig::load()
     customDialog->hideImages->setChecked(group.readEntry("Hide", false));
     customDialog->hideBackground->setChecked(group.readEntry("HideBackground", true));
 
-    customDialog->blockSignals(signalsBlocked);
     delete c;
 }
 
@@ -291,22 +289,22 @@ CSSCustomDialog::CSSCustomDialog(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-    connect(this, SIGNAL(changed()), SLOT(slotPreview()));
+    connect(this,                   &CSSCustomDialog::changed,                  this, &CSSCustomDialog::slotPreview);
 
-    connect(basefontsize, SIGNAL(activated(int)), SIGNAL(changed()));
-    connect(basefontsize, SIGNAL(editTextChanged(QString)), SIGNAL(changed()));
-    connect(dontScale,      SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(blackOnWhite,   SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(whiteOnBlack,   SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(customColor,    SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(foregroundColorButton, SIGNAL(changed(QColor)), SIGNAL(changed()));
-    connect(backgroundColorButton, SIGNAL(changed(QColor)), SIGNAL(changed()));
-    connect(fontFamily, SIGNAL(activated(int)),   SIGNAL(changed()));
-    connect(fontFamily, SIGNAL(editTextChanged(QString)), SIGNAL(changed()));
-    connect(sameFamily,     SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(sameColor,      SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(hideImages,     SIGNAL(clicked()),      SIGNAL(changed()));
-    connect(hideBackground, SIGNAL(clicked()),      SIGNAL(changed()));
+    connect(basefontsize,           QOverload<int>::of(&QComboBox::activated),  this, &CSSCustomDialog::changed);
+    connect(basefontsize,           &QComboBox::editTextChanged,                this, &CSSCustomDialog::changed);
+    connect(dontScale,              &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(blackOnWhite,           &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(whiteOnBlack,           &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(customColor,            &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(foregroundColorButton,  &KColorButton::changed,                     this, &CSSCustomDialog::changed);
+    connect(backgroundColorButton,  &KColorButton::changed,                     this, &CSSCustomDialog::changed);
+    connect(fontFamily,             QOverload<int>::of(&QComboBox::activated),  this, &CSSCustomDialog::changed);
+    connect(fontFamily,             &QComboBox::editTextChanged,                this, &CSSCustomDialog::changed);
+    connect(sameFamily,             &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(sameColor,              &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(hideImages,             &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
+    connect(hideBackground,         &QAbstractButton::clicked,                  this, &CSSCustomDialog::changed);
 
     //QStringList fonts;
     //KFontChooser::getFontList(fonts, 0);

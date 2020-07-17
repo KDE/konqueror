@@ -11,7 +11,6 @@
 #define JSOPTS_H
 
 #include <kcmodule.h>
-#include <KComponentData>
 #include <KSharedConfig>
 #include "domainlistview.h"
 #include "jspolicies.h"

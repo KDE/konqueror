@@ -24,7 +24,7 @@
 
 #include "ui_csscustom.h"
 
-class KDialog;
+class QDialog;
 class CSSConfigWidget;
 
 class CSSCustomDialog: public QWidget, public Ui::CSSCustomDialog
@@ -61,13 +61,12 @@ public Q_SLOTS:
     void slotCustomize();
 
 Q_SIGNALS:
-    void changed(bool);//connected to KCModule signal
     void changed();//connected to KCModule slot
 
 private:
 
     CSSConfigWidget *configWidget;
-    KDialog *customDialogBase;
+    QDialog *customDialogBase;
     CSSCustomDialog *customDialog;
 };
 

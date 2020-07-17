@@ -15,13 +15,13 @@
 
 #include "domainlistview.h"
 #include "policies.h"
-#include <KComponentData>
 #include <KSharedConfig>
+
 class KUrlRequester;
-class KIntNumInput;
 
 class QCheckBox;
 class QLineEdit;
+class KPluralHandlingSpinBox;
 
 class KJavaOptions;
 
@@ -104,7 +104,7 @@ private:
     QCheckBox     *javaSecurityManagerCB;
     QCheckBox     *useKioCB;
     QCheckBox     *enableShutdownCB;
-    KIntNumInput  *serverTimeoutSB;
+    KPluralHandlingSpinBox *serverTimeoutSB;
     QLineEdit     *addArgED;
     KUrlRequester *pathED;
     bool           _removeJavaDomainSettings;

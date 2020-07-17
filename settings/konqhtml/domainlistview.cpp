@@ -33,6 +33,7 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KSharedConfig>
+#include <kconfiggroup.h>
 
 // Local
 #include "policies.h"
@@ -49,8 +50,8 @@ DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &title,
     domainSpecificLV->setSortingEnabled(true);
     domainSpecificLV->setHeaderLabels(QStringList() << i18n("Host/Domain") << i18n("Policy"));
     domainSpecificLV->setColumnWidth(0, 100);
-    connect(domainSpecificLV, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), SLOT(changePressed()));
-    connect(domainSpecificLV, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), SLOT(updateButton()));
+    connect(domainSpecificLV, &QTreeWidget::itemDoubleClicked, this, &DomainListView::changePressed);
+    connect(domainSpecificLV, &QTreeWidget::currentItemChanged, this, &DomainListView::updateButton);
     thisLayout->addWidget(domainSpecificLV);
 
     QVBoxLayout *btnsLayout = new QVBoxLayout;
@@ -81,11 +82,11 @@ DomainListView::DomainListView(KSharedConfig::Ptr config, const QString &title,
 
     btnsLayout->addStretch();
 
-    addDomainPB->setWhatsThis(i18n("Click on this button to manually add a host or domain "
+    addDomainPB->setToolTip(i18n("Click on this button to manually add a host or domain "
                                    "specific policy."));
-    changeDomainPB->setWhatsThis(i18n("Click on this button to change the policy for the "
+    changeDomainPB->setToolTip(i18n("Click on this button to change the policy for the "
                                       "host or domain selected in the list box."));
-    deleteDomainPB->setWhatsThis(i18n("Click on this button to delete the policy for the "
+    deleteDomainPB->setToolTip(i18n("Click on this button to delete the policy for the "
                                       "host or domain selected in the list box."));
     updateButton();
 }
