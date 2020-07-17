@@ -35,6 +35,8 @@
 
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
+#include <KParts/BrowserOpenOrSaveQuestion>
+#include <KIO/OpenUrlJob>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject()
@@ -102,6 +104,28 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
 {
     QWidget *w = it->page() ? it->page()->view() : nullptr;
+    KParts::BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
+    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave();
+    qDebug() << "ANSWER:" << ans;
+    switch (ans) { 
+        case KParts::BrowserOpenOrSaveQuestion::Cancel:
+            qDebug() << "CANCEL";
+            it->cancel();
+            return;
+        case KParts::BrowserOpenOrSaveQuestion::Save:
+            qDebug() << "SAVE";
+            saveBlob(it);
+            break;
+        case KParts::BrowserOpenOrSaveQuestion::Embed:
+        case KParts::BrowserOpenOrSaveQuestion::Open:
+            openBlob(it);
+            break;
+    }
+}
+
+void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
+{
+    QWidget *w = it->page() ? it->page()->view() : nullptr;
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
@@ -130,6 +154,46 @@ void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
                         QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), it->downloadFileName()));
     j->start();
 }
+
+void WebEnginePartDownloadManager::embedBlob(QWebEngineDownloadItem* it)
+{
+    //TODO: implement me
+}
+
+void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it)
+{
+    qDebug() << "OPEN BLOB";
+    QMimeDatabase db;
+    QMimeType type = db.mimeTypeForName(it->mimeType());
+    int i = 0;
+    QDir tmpDir(QStandardPaths::writableLocation(QStandardPaths::TempLocation));
+    QString nameTemplate = "konqueror-%1-%2.%3";
+    QString fileName;
+    bool validName = false;
+    while (!validName) {
+        ++i;
+        fileName = nameTemplate.arg(QTime::currentTime().msecsSinceStartOfDay()).arg(i).arg(type.preferredSuffix());
+        validName = !tmpDir.exists(fileName);
+    }
+    qDebug() << "TEMP FILE NAME" << fileName;
+    it->setDownloadDirectory(tmpDir.path());
+    it->setDownloadFileName(fileName);
+    connect(it, &QWebEngineDownloadItem::finished, this, [this, it](){blobDownloadedToFile(it);});
+    qDebug() << "ACCEPTING DOWNLOAD";
+    it->accept();
+}
+
+void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it)
+{
+    qDebug() << "DOWNLOAD FINISHED. ABOUT TO START JOB";
+    QString file = QDir(it->downloadDirectory()).filePath(it->downloadFileName());
+    KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
+    j->start();
+    j->setDeleteTemporaryFile(true);
+    qDebug() << "JOB STARTED";
+}
+
+
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 

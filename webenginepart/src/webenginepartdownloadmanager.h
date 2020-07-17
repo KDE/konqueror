@@ -29,6 +29,7 @@
 #include <KJob>
 
 class WebEnginePage;
+class QFile;
 
 class WebEnginePartDownloadManager : public QObject
 {
@@ -49,6 +50,10 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void performDownload(QWebEngineDownloadItem *it);
+    void saveBlob(QWebEngineDownloadItem *it);
+    void embedBlob(QWebEngineDownloadItem *it);
+    void openBlob(QWebEngineDownloadItem *it);
+    void blobDownloadedToFile(QWebEngineDownloadItem *it);
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 private:
