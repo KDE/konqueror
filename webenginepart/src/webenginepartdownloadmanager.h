@@ -25,6 +25,7 @@
 #include <QHash>
 #include <QVector>
 #include <QWebEngineDownloadItem>
+#include <QTemporaryDir>
 
 #include <KJob>
 
@@ -51,9 +52,8 @@ public Q_SLOTS:
 private Q_SLOTS:
     void performDownload(QWebEngineDownloadItem *it);
     void saveBlob(QWebEngineDownloadItem *it);
-    void embedBlob(QWebEngineDownloadItem *it);
-    void openBlob(QWebEngineDownloadItem *it);
-    void blobDownloadedToFile(QWebEngineDownloadItem *it);
+    void openBlob(QWebEngineDownloadItem *it, WebEnginePage *page);
+    void blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page);
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 private:
@@ -68,6 +68,7 @@ private:
 #ifndef DOWNLOADITEM_KNOWS_PAGE
     QHash<QUrl, WebEnginePage*> m_requests;
 #endif
+    QTemporaryDir m_tempDownloadDir;
 };
 
 class WebEngineBlobDownloadJob : public KJob
@@ -94,7 +95,6 @@ private slots:
 private:
 
     QWebEngineDownloadItem *m_downloadItem;
-
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

@@ -39,7 +39,7 @@
 #include <KIO/OpenUrlJob>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
-    : QObject()
+    : QObject(), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
 {
     connect(QWebEngineProfile::defaultProfile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePartDownloadManager::performDownload);
 }
@@ -103,22 +103,21 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 
 void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
 {
-    QWidget *w = it->page() ? it->page()->view() : nullptr;
+    WebEnginePage *p = qobject_cast<WebEnginePage*>(it->page());
+    QWidget *w = p ? p->view() : nullptr;
     KParts::BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
-    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave();
-    qDebug() << "ANSWER:" << ans;
+    askDlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
+    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
     switch (ans) { 
         case KParts::BrowserOpenOrSaveQuestion::Cancel:
-            qDebug() << "CANCEL";
             it->cancel();
             return;
         case KParts::BrowserOpenOrSaveQuestion::Save:
-            qDebug() << "SAVE";
             saveBlob(it);
             break;
         case KParts::BrowserOpenOrSaveQuestion::Embed:
         case KParts::BrowserOpenOrSaveQuestion::Open:
-            openBlob(it);
+            openBlob(it, p);
             break;
     }
 }
@@ -155,45 +154,36 @@ void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
     j->start();
 }
 
-void WebEnginePartDownloadManager::embedBlob(QWebEngineDownloadItem* it)
+void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEnginePage *page)
 {
-    //TODO: implement me
-}
-
-void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it)
-{
-    qDebug() << "OPEN BLOB";
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
     int i = 0;
-    QDir tmpDir(QStandardPaths::writableLocation(QStandardPaths::TempLocation));
     QString nameTemplate = "konqueror-%1-%2.%3";
     QString fileName;
     bool validName = false;
+    QDir tempDir(m_tempDownloadDir.path());
     while (!validName) {
         ++i;
         fileName = nameTemplate.arg(QTime::currentTime().msecsSinceStartOfDay()).arg(i).arg(type.preferredSuffix());
-        validName = !tmpDir.exists(fileName);
+        validName = !tempDir.exists(fileName);
     }
-    qDebug() << "TEMP FILE NAME" << fileName;
-    it->setDownloadDirectory(tmpDir.path());
+    it->setDownloadDirectory(m_tempDownloadDir.path());
     it->setDownloadFileName(fileName);
-    connect(it, &QWebEngineDownloadItem::finished, this, [this, it](){blobDownloadedToFile(it);});
-    qDebug() << "ACCEPTING DOWNLOAD";
+    connect(it, &QWebEngineDownloadItem::finished, this, [this, it, page](){blobDownloadedToFile(it, page);});
     it->accept();
 }
 
-void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it)
+void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page)
 {
-    qDebug() << "DOWNLOAD FINISHED. ABOUT TO START JOB";
     QString file = QDir(it->downloadDirectory()).filePath(it->downloadFileName());
-    KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
-    j->start();
-    j->setDeleteTemporaryFile(true);
-    qDebug() << "JOB STARTED";
+    if (page) {
+        page->download(QUrl::fromLocalFile(file), false);
+    } else {
+        KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
+        j->start();
+    }
 }
-
-
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 
