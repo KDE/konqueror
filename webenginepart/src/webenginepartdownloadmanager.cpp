@@ -167,25 +167,27 @@ void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEngin
 QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& suggestedName, const QString& ext) const
 {
     QDir tmpDir(m_tempDownloadDir.path());
-    QString fileName;
-    QString actualExt = ext;
-    if (!suggestedName.isEmpty()) {
-        fileName = tmpDir.filePath(suggestedName);
-        QString givenExt = QFileInfo(fileName).completeSuffix();
+    QString baseName(suggestedName);
+    QString actualExt(ext);
+    if (!baseName.isEmpty()) {
+        QString givenExt = QFileInfo(baseName).completeSuffix();
         if (!givenExt.isEmpty()) {
             actualExt = givenExt;
-            //Remove the extension from fileName. The -1 is needed to also remove the dot
-            fileName = fileName.left(fileName.length() - givenExt.length() - 1);
+            //The +1 is for the dot
+            int extLength = givenExt.length() + 1;
+            //Remove the extension from baseName
+            baseName.remove(baseName.length() - extLength, extLength);
         }
     } else {
-        fileName = tmpDir.filePath(QString::number(QTime::currentTime().msecsSinceStartOfDay()));
+        baseName = QString::number(QTime::currentTime().msecsSinceStartOfDay());
     }
-    QString completeName = fileName + "." + actualExt;
+    baseName = tmpDir.filePath(baseName);
+    QString completeName = QString("%1.%2").arg(baseName, actualExt);
     QString nameTemplate = "%1-%2.%3";
     int i = 0;
-    while (tmpDir.exists(completeName)) {
+    while (QFileInfo::exists(completeName)) {
         ++i;
-        completeName = nameTemplate.arg(fileName).arg(i).arg(actualExt);
+        completeName = nameTemplate.arg(baseName).arg(i).arg(actualExt);
     }
     return completeName;
 }
