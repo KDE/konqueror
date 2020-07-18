@@ -106,7 +106,6 @@ void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
     WebEnginePage *p = qobject_cast<WebEnginePage*>(it->page());
     QWidget *w = p ? p->view() : nullptr;
     KParts::BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
-    askDlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
     KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
     switch (ans) { 
         case KParts::BrowserOpenOrSaveQuestion::Cancel:
@@ -158,21 +157,39 @@ void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEngin
 {
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
-    int i = 0;
-    QString nameTemplate = "konqueror-%1-%2.%3";
-    QString fileName;
-    bool validName = false;
-    QDir tempDir(m_tempDownloadDir.path());
-    while (!validName) {
-        ++i;
-        fileName = nameTemplate.arg(QTime::currentTime().msecsSinceStartOfDay()).arg(i).arg(type.preferredSuffix());
-        validName = !tempDir.exists(fileName);
-    }
+    QString fileName = generateBlobTempFileName(it->suggestedFileName(), type.preferredSuffix());
     it->setDownloadDirectory(m_tempDownloadDir.path());
     it->setDownloadFileName(fileName);
     connect(it, &QWebEngineDownloadItem::finished, this, [this, it, page](){blobDownloadedToFile(it, page);});
     it->accept();
 }
+
+QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& suggestedName, const QString& ext) const
+{
+    QDir tmpDir(m_tempDownloadDir.path());
+    QString fileName;
+    QString actualExt = ext;
+    if (!suggestedName.isEmpty()) {
+        fileName = tmpDir.filePath(suggestedName);
+        QString givenExt = QFileInfo(fileName).completeSuffix();
+        if (!givenExt.isEmpty()) {
+            actualExt = givenExt;
+            //Remove the extension from fileName. The -1 is needed to also remove the dot
+            fileName = fileName.left(fileName.length() - givenExt.length() - 1);
+        }
+    } else {
+        fileName = tmpDir.filePath(QString::number(QTime::currentTime().msecsSinceStartOfDay()));
+    }
+    QString completeName = fileName + "." + actualExt;
+    QString nameTemplate = "%1-%2.%3";
+    int i = 0;
+    while (tmpDir.exists(completeName)) {
+        ++i;
+        completeName = nameTemplate.arg(fileName).arg(i).arg(actualExt);
+    }
+    return completeName;
+}
+
 
 void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page)
 {

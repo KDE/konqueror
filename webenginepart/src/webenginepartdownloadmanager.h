@@ -44,6 +44,7 @@ public:
 private:
     WebEnginePartDownloadManager();
     void downloadBlob(QWebEngineDownloadItem *it);
+    QString generateBlobTempFileName(QString const &suggestedName, const QString &ext) const;
 
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
