@@ -92,6 +92,8 @@ protected:
 private slots:
     void downloadProgressed(quint64 received, quint64 total);
     void stateChanged(QWebEngineDownloadItem::DownloadState state);
+    void startDownloading();
+    void downloadFinished();
 
 private:
 

@@ -36,6 +36,8 @@
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
 #include <KParts/BrowserOpenOrSaveQuestion>
+#include <KJobTrackerInterface>
+#include <KIO/JobTracker>
 #include <KIO/OpenUrlJob>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
@@ -143,13 +145,10 @@ void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
     it->accept();
     it->pause();
     WebEngineBlobDownloadJob *j = new WebEngineBlobDownloadJob(it, this);
-    KNotificationJobUiDelegate *d = new KNotificationJobUiDelegate;
-    d->setAutoErrorHandlingEnabled(true);
-    d->setAutoWarningHandlingEnabled(true);
-    j->setUiDelegate(d);
-    emit j->description(j, i18nc("Notification about downloading a file", "Downloading"),
-                        QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), it->url().toString()),
-                        QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), it->downloadFileName()));
+    KJobTrackerInterface *t = KIO::getJobTracker();
+    if (t) {
+        t->registerJob(j);
+    }
     j->start();
 }
 
@@ -227,13 +226,13 @@ WebEngineBlobDownloadJob::WebEngineBlobDownloadJob(QWebEngineDownloadItem* it, Q
     setCapabilities(KJob::Killable|KJob::Suspendable);
     setTotalAmount(KJob::Bytes, m_downloadItem->totalBytes());
     connect(m_downloadItem, &QWebEngineDownloadItem::downloadProgress, this, &WebEngineBlobDownloadJob::downloadProgressed);
-    connect(m_downloadItem, &QWebEngineDownloadItem::finished, this, [this](){emitResult();});
+    connect(m_downloadItem, &QWebEngineDownloadItem::finished, this, &WebEngineBlobDownloadJob::downloadFinished);
     connect(m_downloadItem, &QWebEngineDownloadItem::stateChanged, this, &WebEngineBlobDownloadJob::stateChanged);
 }
 
 void WebEngineBlobDownloadJob::start()
 {
-    QTimer::singleShot(0, m_downloadItem, &QWebEngineDownloadItem::resume);
+    QTimer::singleShot(0, this, &WebEngineBlobDownloadJob::startDownloading);
 }
 
 bool WebEngineBlobDownloadJob::doKill()
@@ -276,4 +275,21 @@ void WebEngineBlobDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadStat
 QString WebEngineBlobDownloadJob::errorString() const
 {
     return i18n("An error occurred while saving the file: %1", errorText());
+}
+
+void WebEngineBlobDownloadJob::startDownloading()
+{
+    if (m_downloadItem) {
+        emit description(this, i18nc("Notification about downloading a file", "Downloading"),
+                        QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
+                        QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), m_downloadItem->downloadFileName()));
+        m_downloadItem->resume();
+    }
+}
+
+void WebEngineBlobDownloadJob::downloadFinished()
+{
+    emitResult();
+    delete m_downloadItem;
+    m_downloadItem = nullptr;
 }
