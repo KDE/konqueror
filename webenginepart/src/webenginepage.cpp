@@ -156,6 +156,16 @@ void WebEnginePage::download(const QUrl& url, bool newWindow)
     emit part()->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), bArgs);
 }
 
+void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
+{
+    KParts::BrowserArguments bArgs;
+    bArgs.setForcesNewWindow(newWindow);
+    KParts::OpenUrlArguments oArgs;
+    oArgs.setMimeType(mimeType);
+    oArgs.metaData().insert("konq-temp-file", "1");
+    emit part()->browserExtension()->openUrlRequest(url, oArgs, bArgs);
+}
+
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
     //qCDebug(WEBENGINEPART_LOG) << "window type:" << type;

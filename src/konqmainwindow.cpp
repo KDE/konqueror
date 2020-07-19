@@ -1023,6 +1023,9 @@ void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, 
     //qCDebug(KONQUEROR_LOG) << "url=" << url;
     KonqOpenURLRequest req;
     req.args = args;
+    if (args.metaData().value("konq-temp-file") == "1") {
+        req.tempFile = true;
+    }
     req.browserArgs = browserArgs;
     openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }

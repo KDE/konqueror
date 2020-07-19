@@ -196,7 +196,7 @@ void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *
 {
     QString file = QDir(it->downloadDirectory()).filePath(it->downloadFileName());
     if (page) {
-        page->download(QUrl::fromLocalFile(file), false);
+        page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType());
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
         j->start();
