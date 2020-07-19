@@ -119,6 +119,7 @@ public:
 public Q_SLOTS:
     void slotCurrentChanged(int index);
     void setAlwaysTabbedMode(bool);
+    void forceHideTabBar(bool force);
 
 Q_SIGNALS:
     void removeTabPopup();
@@ -159,6 +160,7 @@ private:
     NewTabToolButton *m_leftWidget;
     bool m_permanentCloseButtons;
     bool m_alwaysTabBar;
+    bool m_forceHideTabBar;
     QMap<QString, QAction *> m_popupActions;
 };
 

@@ -509,6 +509,25 @@ protected:
     void closeEvent(QCloseEvent *) override;
 
     bool askForTarget(const KLocalizedString &text, QUrl &url);
+    
+private:
+    
+    enum class FullScreenState {
+        NoFullScreen,
+        OrdinaryFullScreen,
+        CompleteFullScreen
+    };
+    
+    struct FullScreenData {
+        FullScreenState previousState;
+        FullScreenState currentState;
+        bool wasMenuBarVisible;
+        bool wasStatusBarVisible;
+        bool wasSidebarVisible;
+        
+        void switchToState(FullScreenState newState);
+    };
+
 
 private Q_SLOTS:
     void slotUndoTextChanged(const QString &newText);
@@ -526,7 +545,9 @@ private Q_SLOTS:
     void initBookmarkBar();
 
     void showPageSecurity();
-
+    
+    void toggleCompleteFullScreen(bool on);
+    
 private:
     void updateWindowIcon();
 
@@ -576,7 +597,7 @@ private:
     QObject *lastFrame(KonqView *view);
 
     QLineEdit *comboEdit();
-
+    
 private: // members
     KonqUndoManager *m_pUndoManager;
 
@@ -645,8 +666,9 @@ private: // members
     // Set in constructor, used in slotRunFinished
     bool m_bNeedApplyKonqMainWindowSettings: 1;
     bool m_urlCompletionStarted: 1;
-    bool m_prevMenuBarVisible: 1;
 
+    FullScreenData m_fullScreenData;
+    
     int m_goBuffer;
     Qt::MouseButtons m_goMouseState;
     Qt::KeyboardModifiers m_goKeyboardState;
@@ -709,6 +731,8 @@ private: // members
     */
     bool m_isPopupWithProxyWindow;
     QPointer<KonqMainWindow> m_popupProxyWindow;
+    
+    friend class KonqBrowserInterface;
 };
 
 #endif // KONQMAINWINDOW_H

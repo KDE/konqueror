@@ -29,6 +29,7 @@
 #include "konqtabs.h"
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
+#include "konqbrowserinterface.h"
 
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -251,6 +252,7 @@ void KonqView::switchView(KonqViewFactory &viewFactory)
     if (!part) {
         return;
     }
+    
     m_pPart = part;
 
     // Set the statusbar in the BE asap to avoid a KMainWindow statusbar being created.
@@ -386,6 +388,10 @@ void KonqView::connectPart()
     KParts::BrowserExtension *ext = browserExtension();
 
     if (ext) {
+        
+        KonqBrowserInterface *bi = new KonqBrowserInterface(mainWindow(), m_pPart);
+        ext->setBrowserInterface(bi);
+        
         connect(ext, SIGNAL(openUrlRequestDelayed(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
                 m_pMainWindow, SLOT(slotOpenURLRequest(QUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 
@@ -1235,7 +1241,7 @@ bool KonqView::prepareReload(KParts::OpenUrlArguments &args, KParts::BrowserArgu
 
 KParts::BrowserExtension *KonqView::browserExtension() const
 {
-    return KParts::BrowserExtension::childObject(m_pPart);
+    return m_pPart ? KParts::BrowserExtension::childObject(m_pPart) : nullptr;
 }
 
 KParts::StatusBarExtension *KonqView::statusBarExtension() const

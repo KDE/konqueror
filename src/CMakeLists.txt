@@ -83,6 +83,7 @@ set(konqueror_KDEINIT_SRCS
    konqhistorydialog.cpp
    konqstatusbarmessagelabel.cpp
    konqurl.cpp
+   konqbrowserinterface.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

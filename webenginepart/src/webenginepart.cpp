@@ -69,6 +69,8 @@
 #include <KSslInfoDialog>
 #include <KProtocolManager>
 #include <KProtocolInfo>
+#include <KParts/PartActivateEvent>
+#include <KParts/BrowserInterface>
 
 #include <QUrl>
 #include <QFile>
@@ -432,7 +434,7 @@ bool WebEnginePart::openUrl(const QUrl &_u)
             p->setSslInfo(sslInfo);
         }
     }
-    
+
     attemptInstallKIOSchemeHandler(u);
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
@@ -526,7 +528,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
         m_hasCachedFormData = false;
         if (WebEngineSettings::self()->isNonPasswordStorableSite(url().host())) {
             addWalletStatusBarIcon();
-        } 
+        }
         else {
 // Attempt to fill the web form...
             WebEngineWallet *wallet = page() ? page()->wallet() : nullptr;
@@ -991,5 +993,10 @@ void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
     if ((m_hasCachedFormData = ok))
         addWalletStatusBarIcon();
+}
+
+void WebEnginePart::exitFullScreen()
+{
+    page()->triggerAction(QWebEnginePage::ExitFullScreen);
 }
 

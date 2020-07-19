@@ -189,7 +189,7 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
     , m_bLocationBarConnected(false)
     , m_bURLEnterLock(false)
     , m_urlCompletionStarted(false)
-    , m_prevMenuBarVisible(true)
+    , m_fullScreenData{FullScreenState::NoFullScreen, FullScreenState::NoFullScreen, true, true, false}
     , m_goBuffer(0)
     , m_pBookmarkMenu(nullptr)
     , m_configureDialog(nullptr)
@@ -1974,6 +1974,15 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     KonqView *newView = nullptr;
     KonqView *oldView = m_currentView;
 
+    //Exit full screen when a new part is activated
+    if (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen) {
+        if (oldView && oldView->part()) {
+            QMetaObject::invokeMethod(oldView->part(), "exitFullScreen");
+        } else { //This should never happen
+            toggleCompleteFullScreen(false);
+        }
+    }
+
     if (part) {
         newView = m_mapViews.value(static_cast<KParts::ReadOnlyPart *>(part));
         Q_ASSERT(newView);
@@ -3293,6 +3302,13 @@ void KonqMainWindow::slotShowStatusBar()
 
 void KonqMainWindow::slotUpdateFullScreen(bool set)
 {
+    if (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen) {
+        if (m_currentView && m_currentView->part()) {
+            QMetaObject::invokeMethod(m_currentView->part(), "exitFullScreen");
+        }
+        return;
+    }
+
     KToggleFullScreenAction::setFullScreen(this, set);
     if (set) {
         // Create toolbar button for exiting from full-screen mode
@@ -3316,17 +3332,18 @@ void KonqMainWindow::slotUpdateFullScreen(bool set)
             plugActionList(QStringLiteral("fullscreen"), lst);
         }
 
-        m_prevMenuBarVisible = menuBar()->isVisible();
+        m_fullScreenData.wasMenuBarVisible = menuBar()->isVisible();
         menuBar()->hide();
         m_paShowMenuBar->setChecked(false);
     } else {
         unplugActionList(QStringLiteral("fullscreen"));
 
-        if (m_prevMenuBarVisible) {
+        if (m_fullScreenData.wasMenuBarVisible) {
             menuBar()->show();
             m_paShowMenuBar->setChecked(true);
         }
     }
+    m_fullScreenData.switchToState(set ? FullScreenState::OrdinaryFullScreen : FullScreenState::NoFullScreen);
 }
 
 void KonqMainWindow::setLocationBarURL(const QUrl &url)
@@ -5575,5 +5592,86 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
             }
         }
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, url.host(), url.port(), url.userName(), url.password()));
+    }
+}
+
+void KonqMainWindow::toggleCompleteFullScreen(bool on)
+{
+    //Do nothing if already in complete full screen mode and on is true or not in complete full screen mode and on is false
+    if (on == (m_fullScreenData.currentState == FullScreenState::CompleteFullScreen)) {
+        return;
+    }
+    if (on) {
+        slotForceSaveMainWindowSettings();
+        resetAutoSaveSettings();
+
+        //Hide the menu bar
+        menuBar()->setVisible(false);
+
+        //Hide the side bar
+        QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
+        if (a) {
+            KToggleAction *ta = static_cast<KToggleAction*>(a);
+            if (ta){
+                m_fullScreenData.wasSidebarVisible = ta->isChecked();
+                a->setChecked(false);
+            }
+        }
+
+        //Hide the tool bars
+        const QList<QAction*> actions = toolBarMenuAction()->menu()->actions();
+        for (QAction *a : actions) {
+            a->setChecked(false);
+        }
+    } else {
+        setAutoSaveSettings();
+    }
+
+    //Status bar and side bar are not managed by autoSaveSettings
+
+    //Hide or show the sidebar
+    QAction *a = m_toggleViewGUIClient->action(QStringLiteral("konq_sidebartng"));
+    KToggleAction *sideBarAction = qobject_cast<KToggleAction*>(a);
+    if (sideBarAction) {
+        if (on) {
+            m_fullScreenData.wasSidebarVisible = sideBarAction ->isChecked();
+            sideBarAction ->setChecked(false);
+        } else if (m_fullScreenData.wasSidebarVisible) {
+            sideBarAction->setChecked(true);
+        }
+    }
+
+    //Hide or show the status bar
+    if (m_currentView) {
+        QStatusBar *statusBar = m_currentView->frame()->statusbar();
+        if (on) {
+            m_fullScreenData.wasStatusBarVisible = statusBar->isVisible();
+            statusBar->setVisible(false);
+        } else if (m_fullScreenData.wasStatusBarVisible) {
+            statusBar->setVisible(true);
+        }
+    }
+
+    if (on || m_fullScreenData.previousState == FullScreenState::NoFullScreen) {
+        disconnect(m_ptaFullScreen, &KToggleAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
+        KToggleFullScreenAction::setFullScreen(this, on);
+        connect(m_ptaFullScreen, &KToggleAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
+    }
+    m_pViewManager->forceHideTabBar(on);
+
+    if (on) {
+    QString msg = i18n("You have entered Complete Full Screen mode (the user interface is completely hidden)."
+    " You can exit it by pressing the keyboard shortcut for Full Screen Mode (%1)", m_ptaFullScreen->shortcut().toString());
+        KMessageBox::information(this, msg, QString(), "Complete Full Screen Warning");
+    }
+
+    m_fullScreenData.switchToState(on ? FullScreenState::CompleteFullScreen : m_fullScreenData.previousState);
+}
+
+void KonqMainWindow::FullScreenData::switchToState(KonqMainWindow::FullScreenState newState)
+{
+    if (newState != currentState) {
+        previousState = currentState;
+        currentState = newState;
     }
 }

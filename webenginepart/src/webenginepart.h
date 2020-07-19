@@ -103,6 +103,9 @@ public:
 
     void setWallet(WebEngineWallet* wallet);
 
+public Q_SLOTS:
+    void exitFullScreen();
+
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -152,9 +155,9 @@ private:
     WebEnginePage* page();
     const WebEnginePage* page() const;
     static void initWebEngineUrlSchemes();
-    
+
     void attemptInstallKIOSchemeHandler(const QUrl &url);
-    
+
     void initActions();
     void updateActions();
     void addWalletStatusBarIcon();

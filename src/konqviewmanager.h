@@ -162,6 +162,13 @@ public:
      * Returns true if the tabwidget exists and the tabbar is visible
      */
     bool isTabBarVisible() const;
+    
+    /**
+     * Forces hiding the tab bar, regardless of settings or number of tabs
+     * 
+     * This is used to provide movie full screen
+     */
+    void forceHideTabBar(bool force);
 
     // Apply configuration that applies to us, like alwaysTabbedMode.
     void applyConfiguration();

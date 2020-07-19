@@ -1416,6 +1416,14 @@ bool KonqViewManager::isTabBarVisible() const
     return !m_tabContainer->tabBar()->isHidden();
 }
 
+void KonqViewManager::forceHideTabBar(bool force)
+{
+    if (m_tabContainer) {
+        m_tabContainer->forceHideTabBar(force);
+    }
+}
+
+
 void KonqViewManager::createTabContainer(QWidget *parent, KonqFrameContainerBase *parentContainer)
 {
 #ifdef DEBUG_VIEWMGR

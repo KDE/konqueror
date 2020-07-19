@@ -32,6 +32,7 @@
 #include <QMultiHash>
 #include <QPointer>
 #include <QScopedPointer>
+#include <QWebEngineFullScreenRequest>
 
 class QAuthenticator;
 class QUrl;
@@ -40,6 +41,7 @@ class WebEnginePart;
 class QWebEngineDownloadItem;
 class KPasswdServerClient;
 class WebEngineWallet;
+class QWebEngineFullScreenRequest;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -136,6 +138,7 @@ protected Q_SLOTS:
     virtual void slotGeometryChangeRequested(const QRect& rect);
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
+    void changeFullScreenMode(QWebEngineFullScreenRequest req);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;

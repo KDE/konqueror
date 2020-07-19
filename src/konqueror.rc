@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="70">
+<gui name="Konqueror" version="71">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -97,6 +97,7 @@
  <Action name="reload"/>
  <Action name="stop"/>
  <Action name="go_home_popup"/>
+ <ActionList name="fullscreen"/>
  <WeakSeparator/>
  <Merge/>
 </ToolBar>

@@ -54,7 +54,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget *parent, KonqFrameContainerBase *parentCont
     : KTabWidget(parent),
       m_pPopupMenu(nullptr),
       m_pSubPopupMenuTab(nullptr),
-      m_rightWidget(nullptr), m_leftWidget(nullptr), m_alwaysTabBar(false)
+      m_rightWidget(nullptr), m_leftWidget(nullptr), m_alwaysTabBar(false), m_forceHideTabBar(false)
 {
     // Set an object name so the widget style can identify this widget.
     setObjectName(QStringLiteral("kde_konq_tabwidget"));
@@ -436,7 +436,9 @@ void KonqFrameTabs::slotInitiateDrag(QWidget *w)
 
 void KonqFrameTabs::updateTabBarVisibility()
 {
-    if (m_alwaysTabBar) {
+    if (m_forceHideTabBar) {
+        tabBar()->hide();
+    } else if (m_alwaysTabBar) {
         tabBar()->show();
     } else {
         tabBar()->setVisible(count() > 1);
@@ -451,6 +453,15 @@ void KonqFrameTabs::setAlwaysTabbedMode(bool enable)
         updateTabBarVisibility();
     }
 }
+
+void KonqFrameTabs::forceHideTabBar(bool force)
+{
+    if (m_forceHideTabBar != force) {
+        m_forceHideTabBar = force;
+        updateTabBarVisibility();
+    }
+}
+
 
 void KonqFrameTabs::initPopupMenu()
 {

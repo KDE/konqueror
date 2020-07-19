@@ -50,6 +50,7 @@
 #include <KParts/HtmlExtension>
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
+#include <KParts/BrowserInterface>
 
 #include <QStandardPaths>
 #include <QDesktopWidget>
@@ -64,6 +65,7 @@
 #include <QWebEngineDownloadItem>
 #include <QUrlQuery>
 #include <KConfigGroup>
+#include <KToggleFullScreenAction>
 //#include <QWebSecurityOrigin>
 #include "utils.h"
 
@@ -91,6 +93,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
             this, &WebEnginePage::slotLoadFinished);
     connect(this, &QWebEnginePage::authenticationRequired,
             this, &WebEnginePage::slotAuthenticationRequired);
+    connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
@@ -728,6 +731,18 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
         *auth = QAuthenticator();
     }
 }
+
+void WebEnginePage::changeFullScreenMode(QWebEngineFullScreenRequest req)
+{
+        KParts::BrowserInterface *iface = part()->browserExtension()->browserInterface();
+        if (iface) {
+            req.accept();
+            iface->callMethod("toggleCompleteFullScreen", req.toggleOn());
+        } else {
+            req.reject();
+        }
+}
+
 
 
 
