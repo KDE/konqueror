@@ -697,6 +697,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                             KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
                             job->setUrls({url});
                             job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                            if (req.tempFile) {
+                                job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+                            }
                             job->start();
                         }
                     }
