@@ -32,8 +32,4 @@ install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINA
 install( FILES feed.png DESTINATION ${KDE_INSTALL_DATADIR}/akregator/pics )
 
 # contains list of debug categories, for kdebugsettings
-if (${ECM_VERSION} STRGREATER "5.58.0")
-    install(FILES akregatorplugin.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else()
-    install(FILES akregatorplugin.categories DESTINATION ${KDE_INSTALL_CONFDIR})
-endif()
+install(FILES akregatorplugin.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})

@@ -101,9 +101,7 @@ protected:
     * 
     * @return the html embedder
     */
-#ifndef USE_QWEBENGINE_URL_SCHEME
-    WebEnginePartHtmlEmbedder* htmlEmbedder();
-#endif
+    
     /**
      * @brief The request object
      * 
@@ -303,14 +301,6 @@ private:
      */ 
     QMimeType m_mimeType;
     
-#ifndef USE_QWEBENGINE_URL_SCHEME
-    /**
-     * @brief The object to use for embedding `file` URLs in (X)HTML code
-     * 
-     * This empty until the first time htmlEmbedder() is called
-     */
-    WebEnginePartHtmlEmbedder *m_embedder;
-#endif
 };
 
 #endif // WEBENGINEPARTKIOHANDLER_H

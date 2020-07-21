@@ -247,7 +247,6 @@ private:
     */
     static CookieWithUrl parseKIOCookie(const QStringList &data, int start);
     
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     /**
     * @brief Function used to filter cookies
     * 
@@ -265,7 +264,6 @@ private:
     * @sa addCookie()
     */
     bool filterCookie(const QWebEngineCookieStore::FilterRequest &req);
-#endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     
     /**
     * @brief Removes the domain from the cookie if the domain doesn't start with a dot

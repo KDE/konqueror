@@ -22,7 +22,6 @@
 #define WEBENGINEPARTDOWNLOADMANAGER_H
 
 #include <QObject>
-#include <QHash>
 #include <QVector>
 #include <QWebEngineDownloadItem>
 #include <QTemporaryDir>
@@ -57,19 +56,8 @@ private Q_SLOTS:
     void openBlob(QWebEngineDownloadItem *it, WebEnginePage *page);
     void blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page);
 
-#ifndef DOWNLOADITEM_KNOWS_PAGE
-private:
-    WebEnginePage* pageForDownload(QWebEngineDownloadItem *it);
-
-private Q_SLOTS:
-    void recordNavigationRequest(WebEnginePage* page, const QUrl& url);
-#endif
-
 private:
     QVector<WebEnginePage*> m_pages;
-#ifndef DOWNLOADITEM_KNOWS_PAGE
-    QHash<QUrl, WebEnginePage*> m_requests;
-#endif
     QTemporaryDir m_tempDownloadDir;
 };
 

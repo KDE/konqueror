@@ -295,10 +295,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
 
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
-    
-#ifndef DOWNLOADITEM_KNOWS_PAGE
-    emit navigationRequested(this, url);
-#endif
+
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
@@ -779,11 +776,9 @@ NewWindowPage::NewWindowPage(WebWindowType type, WebEnginePart* part, QWidget* p
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
     connect(this, &QWebEnginePage::loadFinished, this, &NewWindowPage::slotLoadFinished);
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     if (m_type == WebBrowserBackgroundTab) {
         m_windowArgs.setLowerWindow(true);
     }
-#endif
 }
 
 NewWindowPage::~NewWindowPage()
@@ -799,9 +794,7 @@ static KParts::BrowserArguments browserArgs(WebEnginePage::WebWindowType type)
             bargs.setForcesNewWindow(true);
             break;
         case WebEnginePage::WebBrowserTab:
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
         case WebEnginePage::WebBrowserBackgroundTab:
-#endif
             // let konq decide, based on user configuration
             //bargs.setNewTab(true);
             break;
@@ -898,9 +891,6 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
     }
 
-#ifndef DOWNLOADITEM_KNOWS_PAGE
-    emit navigationRequested(this, url);
-#endif
     return WebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 

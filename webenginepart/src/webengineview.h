@@ -28,12 +28,7 @@
 
 #include <QWebEngineView>
 #include <QtWebEngine/QtWebEngineVersion>
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-#define HAVE_WEBENGINECONTEXTMENUDATA
 #include <QWebEngineContextMenuData>
-#else
-typedef void* QWebEngineContextMenuData;
-#endif
 
 class QUrl;
 class WebEnginePart;

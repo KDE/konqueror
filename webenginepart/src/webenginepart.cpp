@@ -81,33 +81,21 @@
 #include <QMenu>
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
-#ifdef USE_QWEBENGINE_URL_SCHEME
 #include <QWebEngineUrlScheme>
-#endif
 #include "utils.h"
 #include <kio_version.h>
 
 void WebEnginePart::initWebEngineUrlSchemes()
 {
-#ifdef USE_QWEBENGINE_URL_SCHEME
     static bool needToInitUrlSchemes = true;
     if (needToInitUrlSchemes) {
         needToInitUrlSchemes = false;
         QVector<QByteArray> localSchemes = {"error", "konq"};
         const QStringList protocols = KProtocolInfo::protocols();
         for(const QString &prot : protocols){
-#if KIO_VERSION >= QT_VERSION_CHECK(5,60,0)
             if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
                 localSchemes.append(QByteArray(prot.toLatin1()));
             }
-#else
-            QUrl fakeUrl;
-            fakeUrl.setScheme(prot);
-            fakeUrl.setPath("fake");
-            if (KProtocolManager::defaultMimetype(fakeUrl) == "text/html"){
-                localSchemes.append(QByteArray(prot.toLatin1()));
-            }
-#endif
         }
         for (const QByteArray &name : qAsConst(localSchemes)){
             QWebEngineUrlScheme scheme(name);
@@ -116,7 +104,6 @@ void WebEnginePart::initWebEngineUrlSchemes()
             QWebEngineUrlScheme::registerScheme(scheme);
         }
     }
-#endif
 }
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,

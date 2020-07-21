@@ -90,10 +90,6 @@ Q_SIGNALS:
     
     void leavingPage(QWebEnginePage::NavigationType type);
 
-#ifndef DOWNLOADITEM_KNOWS_PAGE
-    void navigationRequested(WebEnginePage* page, const QUrl& url);
-#endif
-
 protected:
     /**
      * Returns the webengine part in use by this object.

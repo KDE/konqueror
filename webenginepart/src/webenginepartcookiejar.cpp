@@ -70,23 +70,18 @@ WebEnginePartCookieJar::WebEnginePartCookieJar(QWebEngineProfile *prof, QObject 
     
     loadKIOCookies();
     
-    //QWebEngineCookieStore::setCookieFilter only exists from Qt 5.11.0
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
     auto filter = [this](const QWebEngineCookieStore::FilterRequest &req){return filterCookie(req);};
     m_cookieStore->setCookieFilter(filter);
-#endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
 }
 
 WebEnginePartCookieJar::~WebEnginePartCookieJar()
 {
 }
 
-#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
 bool WebEnginePartCookieJar::filterCookie(const QWebEngineCookieStore::FilterRequest& req)
 {
     return WebEngineSettings::self()->acceptCrossDomainCookies() || !req.thirdParty;
 }
-#endif //QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5,11,0)
 
 void WebEnginePartCookieJar::deleteSessionCookies()
 {
@@ -160,13 +155,6 @@ void WebEnginePartCookieJar::addCookie(const QNetworkCookie& _cookie)
     if (cookie.expirationDate().isValid()) {
     //There's a bug in KCookieJar which causes the expiration date to be interpreted as local time
     //instead of GMT as it should. The bug is fixed in KIO 5.50
-#if KIO_VERSION < QT_VERSION_CHECK(5,50,0)
-        QTimeZone local = QTimeZone::systemTimeZone();
-        int offset = local.offsetFromUtc(QDateTime::currentDateTime());
-        QDateTime dt = cookie.expirationDate();
-        dt.setTime(dt.time().addSecs(offset));
-        cookie.setExpirationDate(dt);
-#endif
     }
     QUrl url = constructUrlForCookie(cookie);
     if (url.isEmpty()) {

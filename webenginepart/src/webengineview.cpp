@@ -73,10 +73,6 @@ WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
     
     if (WebEngineSettings::self()->zoomToDPI())
         setZoomFactor(logicalDpiY() / 96.0f);
-
-#ifndef HAVE_WEBENGINECONTEXTMENUDATA
-    m_result = 0;
-#endif
 }
 
 WebEngineView::~WebEngineView()
@@ -137,7 +133,6 @@ static void extractMimeTypeFor(const QUrl& url, QString& mimeType)
 
 void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
 {
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     m_result = page()->contextMenuData();
 
     // Clear the previous collection entries first...
@@ -194,7 +189,6 @@ void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
         return;
     }
 
-#endif
     QWebEngineView::contextMenuEvent(e);
 }
 
@@ -341,7 +335,6 @@ void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 {
     QList<QAction*> partActions;
 
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
     Q_ASSERT(ext!=nullptr);
     if (m_result.mediaUrl().isValid()) {
@@ -390,7 +383,6 @@ void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
             }
         }
     }
-#endif
 
     {
         QAction *separatorAction = new QAction(m_actionCollection);
@@ -437,13 +429,9 @@ void WebEngineView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupM
 
 void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
 {
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     Q_ASSERT(!m_result.linkUrl().isEmpty());
 
     const QUrl url(m_result.linkUrl());
-#else
-    const QUrl url;
-#endif
 
     QList<QAction*> linkActions;
 
@@ -452,7 +440,6 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
     WebEngineBrowserExtension *ext = qobject_cast<WebEngineBrowserExtension *>(m_part->browserExtension());
     Q_ASSERT(ext!=nullptr);
 
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     if (!m_result.selectedText().isEmpty()) {
         action = KStandardAction::create(KStandardAction::Copy, ext, &WebEngineBrowserExtension::copy,
                                          m_actionCollection);
@@ -460,24 +447,19 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
         action->setEnabled(ext->isActionEnabled("copy"));
         linkActions.append(action);
     }
-#endif
 
     if (url.scheme() == QLatin1String("mailto")) {
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
         action = new QAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction(QL1S("copylinklocation"), action);
         connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyEmailAddress);
         linkActions.append(action);
-#endif
     } else {
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
         if (!m_result.linkText().isEmpty()) {
             action = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Link &Text"), this);
             m_actionCollection->addAction(QL1S("copylinktext"), action);
             connect(action, &QAction::triggered, ext, &WebEngineBrowserExtension::slotCopyLinkText);
             linkActions.append(action);
         }
-#endif
 
         action = new QAction(i18n("Copy Link &URL"), this);
         m_actionCollection->addAction(QL1S("copylinkurl"), action);
@@ -496,7 +478,6 @@ void WebEngineView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap
 
 void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
 {
-#ifdef HAVE_WEBENGINECONTEXTMENUDATA
     QList<QAction*> multimediaActions;
 
     const bool isVideoElement = m_result.mediaType() == QWebEngineContextMenuData::MediaTypeVideo;
@@ -552,7 +533,6 @@ void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGr
     multimediaActions.append(action);
 
     mmGroupMap.insert(QStringLiteral("partactions"), multimediaActions);
-#endif
 }
 
 void WebEngineView::slotConfigureWebShortcuts()
