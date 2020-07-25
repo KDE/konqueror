@@ -40,6 +40,7 @@
 #include <KIO/JobTracker>
 #include <KIO/OpenUrlJob>
 #include <KFileUtils>
+#include <KIO/JobUiDelegate>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject(), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
@@ -188,6 +189,8 @@ void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *
         page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType());
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
+        QWidget *w = page->view();
+        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, w ? w->window() : nullptr));
         j->start();
     }
 }
