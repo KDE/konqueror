@@ -739,6 +739,12 @@ void WebEnginePage::slotAuthenticationRequired(const QUrl &requestUrl, QAuthenti
     }
 }
 
+    void WebEnginePage::setStatusBarText(const QString& text)
+    {
+        if (m_part) {
+            emit m_part->setStatusBarText(text);
+        }
+    }
 
 
 /************************************* Begin NewWindowPage ******************************************/

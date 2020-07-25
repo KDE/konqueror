@@ -26,6 +26,7 @@
 #include <QVector>
 #include <QWebEngineDownloadItem>
 #include <QTemporaryDir>
+#include <QDateTime>
 
 #include <KJob>
 
@@ -98,6 +99,7 @@ private slots:
 private:
 
     QWebEngineDownloadItem *m_downloadItem;
+    QDateTime m_startTime;
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

@@ -280,6 +280,7 @@ QString WebEngineBlobDownloadJob::errorString() const
 void WebEngineBlobDownloadJob::startDownloading()
 {
     if (m_downloadItem) {
+        m_startTime = QDateTime::currentDateTime();
         emit description(this, i18nc("Notification about downloading a file", "Downloading"),
                         QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
                         QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), m_downloadItem->downloadFileName()));
@@ -290,6 +291,14 @@ void WebEngineBlobDownloadJob::startDownloading()
 void WebEngineBlobDownloadJob::downloadFinished()
 {
     emitResult();
+    QDateTime now = QDateTime::currentDateTime();
+    if (m_startTime.msecsTo(now) < 500) {
+        if (m_downloadItem && m_downloadItem->page()) {
+            WebEnginePage *page = qobject_cast<WebEnginePage*>(m_downloadItem->page());
+            QString filePath = QDir(m_downloadItem->downloadDirectory()).filePath(m_downloadItem->downloadFileName());
+            emit page->setStatusBarText(i18nc("Finished saving BLOB URL", "Finished saving %1 as %2", m_downloadItem->url().toString(), filePath));
+        }
+    }
     delete m_downloadItem;
     m_downloadItem = nullptr;
 }

@@ -66,6 +66,8 @@ public:
 
     void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false);
 
+    void setStatusBarText(const QString &text);
+
     WebEngineWallet* wallet() const {return m_wallet;}
 
     /**
