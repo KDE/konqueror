@@ -24,9 +24,14 @@
 #include <QObject>
 #include <QHash>
 #include <QVector>
+#include <QWebEngineDownloadItem>
+#include <QTemporaryDir>
+#include <QDateTime>
+
+#include <KJob>
 
 class WebEnginePage;
-class QWebEngineDownloadItem;
+class QFile;
 
 class WebEnginePartDownloadManager : public QObject
 {
@@ -39,6 +44,8 @@ public:
 
 private:
     WebEnginePartDownloadManager();
+    void downloadBlob(QWebEngineDownloadItem *it);
+    QString generateBlobTempFileName(QString const &suggestedName, const QString &ext) const;
 
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
@@ -46,6 +53,9 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void performDownload(QWebEngineDownloadItem *it);
+    void saveBlob(QWebEngineDownloadItem *it);
+    void openBlob(QWebEngineDownloadItem *it, WebEnginePage *page);
+    void blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page);
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
 private:
@@ -60,6 +70,36 @@ private:
 #ifndef DOWNLOADITEM_KNOWS_PAGE
     QHash<QUrl, WebEnginePage*> m_requests;
 #endif
+    QTemporaryDir m_tempDownloadDir;
+};
+
+class WebEngineBlobDownloadJob : public KJob
+{
+    Q_OBJECT
+
+public:
+    WebEngineBlobDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+    ~WebEngineBlobDownloadJob(){}
+
+    void start() override;
+
+    QString errorString() const override;
+
+protected:
+    bool doKill() override;
+    bool doResume() override;
+    bool doSuspend() override;
+
+private slots:
+    void downloadProgressed(quint64 received, quint64 total);
+    void stateChanged(QWebEngineDownloadItem::DownloadState state);
+    void startDownloading();
+    void downloadFinished();
+
+private:
+
+    QWebEngineDownloadItem *m_downloadItem;
+    QDateTime m_startTime;
 };
 
 #endif // WEBENGINEPARTDOWNLOADMANAGER_H

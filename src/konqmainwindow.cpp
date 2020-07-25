@@ -697,6 +697,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                             KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
                             job->setUrls({url});
                             job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                            if (req.tempFile) {
+                                job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+                            }
                             job->start();
                         }
                     }
@@ -1023,6 +1026,9 @@ void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, 
     //qCDebug(KONQUEROR_LOG) << "url=" << url;
     KonqOpenURLRequest req;
     req.args = args;
+    if (args.metaData().value("konq-temp-file") == "1") {
+        req.tempFile = true;
+    }
     req.browserArgs = browserArgs;
     openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }

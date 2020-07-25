@@ -1,4 +1,5 @@
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Notifications )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 
@@ -56,6 +57,7 @@ target_link_libraries(kwebenginepartlib
         Qt5::WebEngineWidgets
         KF5::Parts
         KF5::Wallet
+        KF5::Notifications
     PRIVATE
         Qt5::PrintSupport
         KF5::SonnetCore

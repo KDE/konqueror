@@ -66,8 +66,12 @@ public:
 
     void download(const QUrl &url, bool newWindow = false);
 
+    void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false);
+
+    void setStatusBarText(const QString &text);
+
     WebEngineWallet* wallet() const {return m_wallet;}
-    
+
     /**
     * @brief Tells the page that the part has requested to load the given URL
     * 
@@ -112,7 +116,7 @@ protected:
      * @internal
      */
     bool acceptNavigationRequest(const QUrl& request, NavigationType type, bool isMainFrame) override;
-    
+
     /**
     * @brief Override of `QWebEnginePage::certificateError`
     * 
@@ -157,7 +161,7 @@ private:
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
     WebEngineWallet *m_wallet;
-    
+
     /**
     * @brief The last URL that the part requested to be loaded
     * 
