@@ -39,6 +39,7 @@
 #include <KJobTrackerInterface>
 #include <KIO/JobTracker>
 #include <KIO/OpenUrlJob>
+#include <KFileUtils>
 
 WebEnginePartDownloadManager::WebEnginePartDownloadManager()
     : QObject(), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
@@ -165,28 +166,16 @@ void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEngin
 
 QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& suggestedName, const QString& ext) const
 {
-    QDir tmpDir(m_tempDownloadDir.path());
     QString baseName(suggestedName);
-    QString actualExt(ext);
-    if (!baseName.isEmpty()) {
-        QString givenExt = QFileInfo(baseName).completeSuffix();
-        if (!givenExt.isEmpty()) {
-            actualExt = givenExt;
-            //The +1 is for the dot
-            int extLength = givenExt.length() + 1;
-            //Remove the extension from baseName
-            baseName.remove(baseName.length() - extLength, extLength);
-        }
-    } else {
+    if (baseName.isEmpty()) {
         baseName = QString::number(QTime::currentTime().msecsSinceStartOfDay());
     }
-    baseName = tmpDir.filePath(baseName);
-    QString completeName = QString("%1.%2").arg(baseName, actualExt);
-    QString nameTemplate = "%1-%2.%3";
-    int i = 0;
-    while (QFileInfo::exists(completeName)) {
-        ++i;
-        completeName = nameTemplate.arg(baseName).arg(i).arg(actualExt);
+    if (QFileInfo(baseName).completeSuffix().isEmpty() && !ext.isEmpty()) {
+        baseName.append("."+ext);
+    }
+    QString completeName = QDir(m_tempDownloadDir.path()).filePath(baseName);
+    if (QFileInfo::exists(completeName)) {
+        completeName = KFileUtils::suggestName(QUrl::fromLocalFile(m_tempDownloadDir.path()), baseName);
     }
     return completeName;
 }
