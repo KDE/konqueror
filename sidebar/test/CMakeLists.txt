@@ -12,8 +12,15 @@ target_link_libraries(konq_sidebartest KF5::Parts konqsidebarplugin )
 
 ########### Unit tests ###############
 
-ecm_add_test(modulemanagertest.cpp ../module_manager.cpp ../sidebar_debug.cpp
-  LINK_LIBRARIES KF5::KIOCore Qt5::Core Qt5::Test
-  TEST_NAME sidebar-modulemanagertest
+ecm_add_test(
+        modulemanagertest.cpp
+        ../module_manager.cpp
+        ../sidebar_debug.cpp
+    LINK_LIBRARIES
+        KF5::KIOCore
+        Qt5::Core
+        Qt5::Test
+    TEST_NAME sidebar-modulemanagertest
 )
 target_include_directories(sidebar-modulemanagertest PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/..)
+
