@@ -122,6 +122,7 @@ Q_SIGNALS:
     void completed();
     void fileSelection(const KFileItemList &items);
     void fileMouseOver(const KFileItem &item);
+    void curViewUrlChanged(const QUrl &url);
 
     /* The following public slots are wrappers for browserextension signals */
 public Q_SLOTS:
@@ -141,6 +142,9 @@ private:
     QUrl cleanupURL(const QUrl &url);
     bool addButton(const QString &desktopFileName, int pos = -1);
     bool createView(ButtonInfo &buttonInfo);
+
+    //Changes m_storedCurViewUrl and emits the curViewUrlChanged signal
+    void setStoredCurViewUrl(const QUrl &url);
     KonqSidebarModule *loadModule(QWidget *par, const QString &desktopName,
                                   ButtonInfo &buttonInfo, const KSharedConfig::Ptr &config);
     void readConfig();

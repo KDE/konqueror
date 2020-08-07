@@ -71,6 +71,11 @@ KonqHistoryView::KonqHistoryView(QWidget *parent)
     action->setText(i18n("Open in New Tab"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotNewTab);
 
+    action = m_collection->addAction(QStringLiteral("open_current_tab"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("window")));
+    action->setText(i18n("Open in Current Tab"));
+    connect(action, &QAction::triggered, this, &KonqHistoryView::slotCurrentTab);
+
     action = m_collection->addAction(QStringLiteral("copylinklocation"));
     action->setText(i18n("&Copy Link Address"));
     connect(action, &QAction::triggered, this, &KonqHistoryView::slotCopyLinkLocation);
@@ -137,6 +142,7 @@ void KonqHistoryView::slotContextMenu(const QPoint &pos)
     if (nodeType == KonqHistory::HistoryType) {
         menu->addAction(m_collection->action(QStringLiteral("open_new")));
         menu->addAction(m_collection->action(QStringLiteral("open_tab")));
+        menu->addAction(m_collection->action(QStringLiteral("open_current_tab")));
         menu->addAction(m_collection->action(QStringLiteral("copylinklocation")));
         menu->addSeparator();
     }
@@ -238,6 +244,14 @@ void KonqHistoryView::slotNewTab()
     const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid()) {
         emit openUrlInNewTab(url);
+    }
+}
+
+void KonqHistoryView::slotCurrentTab()
+{
+    const QUrl url = urlForIndex(m_treeView->currentIndex());
+    if (url.isValid()) {
+        emit openUrlInCurrentTab(url);
     }
 }
 

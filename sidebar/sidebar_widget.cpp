@@ -463,7 +463,7 @@ bool Sidebar_Widget::openUrl(const QUrl &url)
     if (m_buttons.isEmpty()) { // special case, since KonqMainWindow uses openURL to launch sidebar before buttons exist
         m_urlBeforeInstanceFlag = true;
     }
-    m_storedCurViewUrl = cleanupURL(url);
+    setStoredCurViewUrl(cleanupURL(url));
     m_origURL = m_storedCurViewUrl;
 
     for (int i = 0; i < m_buttons.count(); i++) {
@@ -476,6 +476,12 @@ bool Sidebar_Widget::openUrl(const QUrl &url)
         }
     }
     return ret;
+}
+
+void Sidebar_Widget::setStoredCurViewUrl(const QUrl& url)
+{
+    m_storedCurViewUrl = url;
+    emit curViewUrlChanged(url);
 }
 
 QUrl Sidebar_Widget::cleanupURL(const QString &dirtyURL)
@@ -610,6 +616,7 @@ bool Sidebar_Widget::createView(ButtonInfo &buttonInfo)
     connectModule(buttonInfo.module);
     connect(this, &Sidebar_Widget::fileSelection, buttonInfo.module, &KonqSidebarModule::openPreview);
     connect(this, &Sidebar_Widget::fileMouseOver, buttonInfo.module, &KonqSidebarModule::openPreviewOnMouseOver);
+    connect(this, &Sidebar_Widget::curViewUrlChanged, buttonInfo.module, &KonqSidebarModule::slotCurViewUrlChanged);
 
     return true;
 }
@@ -731,7 +738,7 @@ void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArgume
         return;
     }
     getExtension()->openUrlRequest(url, args, browserArgs);
-    m_storedCurViewUrl = url;
+    setStoredCurViewUrl(url);
 }
 
 void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs,
@@ -795,7 +802,7 @@ void Sidebar_Widget::customEvent(QEvent *ev)
         KParts::ReadOnlyPart* rpart = static_cast<KParts::ReadOnlyPart *>( static_cast<KParts::PartActivateEvent *>(ev)->part() );
 	
         if (! rpart->url().isEmpty()) {
-             m_storedCurViewUrl  =  cleanupURL(rpart->url());
+             setStoredCurViewUrl(cleanupURL(rpart->url()));
         }
 	
         if (m_buttons.isEmpty()) { // special case when the event is received but the buttons have not been created yet

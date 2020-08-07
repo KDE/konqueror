@@ -22,6 +22,8 @@
 
 #include <QDialog>
 
+#include "konqhistorysettings.h"
+
 class KonqMainWindow;
 class KonqHistoryView;
 class QModelIndex;
@@ -40,11 +42,18 @@ public:
 private Q_SLOTS:
     void slotOpenWindow(const QUrl &url);
     void slotOpenTab(const QUrl &url);
-    void slotOpenWindowForIndex(const QModelIndex &index);
+    void slotOpenCurrentTab(const QUrl &url);
+    void slotOpenCurrentOrNewTab(const QUrl &url);
+    void slotOpenIndex(const QModelIndex &index);
+    void reparseConfiguration();
 
 private:
+
     KonqHistoryView *m_historyView;
     KonqMainWindow *m_mainWindow;
+
+    KonqHistorySettings *m_settings;
+    KonqHistorySettings::Action m_defaultAction;
 };
 
 #endif // KONQ_HISTORYDIALOG_H

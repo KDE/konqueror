@@ -20,6 +20,8 @@
 #ifndef KONQ_HISTORYSETTINGS_H
 #define KONQ_HISTORYSETTINGS_H
 
+#include <konqprivate_export.h>
+
 #include <QFont>
 #include <QObject>
 #include <QDBusAbstractAdaptor>
@@ -32,17 +34,21 @@
  * The instances of KonqHistorySettings in all konqueror processes
  * synchronize themselves using DBus.
  */
-class KonqHistorySettings : public QObject
+class KONQUERORPRIVATE_EXPORT KonqHistorySettings : public QObject
 {
     Q_OBJECT
 
 public:
     enum { MINUTES, DAYS };
 
+    enum class Action {Auto = 0, OpenNewTab = 1, OpenCurrentTab = 2 , OpenNewWindow = 3};
+
     static KonqHistorySettings *self();
     ~KonqHistorySettings() override;
 
     void applySettings();
+
+    Action m_defaultAction;
 
     uint m_valueYoungerThan;
     uint m_valueOlderThan;

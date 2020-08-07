@@ -96,6 +96,8 @@ public Q_SLOTS:
 
     void openPreviewOnMouseOver(const KFileItem &item); // not used yet
 
+    virtual void slotCurViewUrlChanged(const QUrl &url){Q_UNUSED(url);}
+
 Q_SIGNALS:
     void started(KIO::Job *);
     void completed();

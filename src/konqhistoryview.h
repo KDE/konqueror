@@ -57,6 +57,7 @@ public:
 Q_SIGNALS:
     void openUrlInNewWindow(const QUrl &url);
     void openUrlInNewTab(const QUrl &url);
+    void openUrlInCurrentTab(const QUrl &url);
 
 private Q_SLOTS:
     void slotContextMenu(const QPoint &pos);
@@ -68,6 +69,7 @@ private Q_SLOTS:
     void slotTimerTimeout();
     void slotNewWindow();
     void slotNewTab();
+    void slotCurrentTab();
     void slotCopyLinkLocation();
 
 private:

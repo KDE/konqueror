@@ -19,10 +19,12 @@
 
 #include "konqhistorydialog.h"
 #include "konqhistoryview.h"
+#include "konqhistorysettings.h"
 
 #include "konqhistory.h"
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
+#include "konqurl.h"
 
 #include <QAction>
 #include <QTimer>
@@ -46,16 +48,18 @@
 #include <QPushButton>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
-    : QDialog(parent), m_mainWindow(parent)
+    : QDialog(parent), m_mainWindow(parent), m_settings(KonqHistorySettings::self())
 {
     setWindowTitle(i18nc("@title:window", "History"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     m_historyView = new KonqHistoryView(this);
-    connect(m_historyView->treeView(), SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));
+    connect(m_historyView->treeView(), &QTreeView::activated, this, &KonqHistoryDialog::slotOpenIndex);
     connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqHistoryDialog::slotOpenWindow);
     connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqHistoryDialog::slotOpenTab);
+    connect(m_historyView, &KonqHistoryView::openUrlInCurrentTab, this, &KonqHistoryDialog::slotOpenCurrentTab);
+    connect(m_settings, &KonqHistorySettings::settingsChanged, this, &KonqHistoryDialog::reparseConfiguration);
 
     KActionCollection *collection = m_historyView->actionCollection();
 
@@ -85,6 +89,8 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     create(); // required by windowHandle()
     KWindowConfig::restoreWindowSize(windowHandle(), KSharedConfig::openConfig()->group("History Dialog"));
 
+    reparseConfiguration();
+
     // give focus to the search line edit when opening the dialog (#240513)
     m_historyView->lineEdit()->setFocus();
 }
@@ -111,12 +117,45 @@ void KonqHistoryDialog::slotOpenTab(const QUrl &url)
     m_mainWindow->openMultiURL(QList<QUrl>() << url);
 }
 
-// Called when double-clicking on a row
-void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex &index)
+void KonqHistoryDialog::slotOpenCurrentTab(const QUrl& url)
 {
-    const QUrl url = m_historyView->urlForIndex(index);
-    if (url.isValid()) {
-        slotOpenWindow(url); // should we call slotOpenTab instead?
+    m_mainWindow->openFilteredUrl(url.toString());
+}
+
+void KonqHistoryDialog::slotOpenCurrentOrNewTab(const QUrl& url)
+{
+    QUrl currentUrl(m_mainWindow->currentURL());
+    if (KonqUrl::hasKonqScheme(currentUrl) || currentUrl.isEmpty()) {
+        slotOpenCurrentTab(url);
+    } else {
+        slotOpenTab(url);
     }
 }
 
+// Called when activating a row
+void KonqHistoryDialog::slotOpenIndex(const QModelIndex &index)
+{
+    const QUrl url = m_historyView->urlForIndex(index);
+    if (!url.isValid()) {
+        return;
+    }
+    switch (m_defaultAction) {
+        case KonqHistorySettings::Action::Auto:
+            slotOpenCurrentOrNewTab(url);
+            break;
+        case KonqHistorySettings::Action::OpenNewTab:
+            slotOpenTab(url);
+            break;
+        case KonqHistorySettings::Action::OpenCurrentTab:
+            slotOpenCurrentTab(url);
+            break;
+        case KonqHistorySettings::Action::OpenNewWindow:
+            slotOpenWindow(url);
+            break;
+    }
+}
+
+void KonqHistoryDialog::reparseConfiguration()
+{
+    m_defaultAction = m_settings->m_defaultAction;
+}

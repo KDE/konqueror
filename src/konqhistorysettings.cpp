@@ -64,6 +64,10 @@ void KonqHistorySettings::readSettings(bool reparse)
     }
 
     const KConfigGroup cg(config, "HistorySettings");
+
+    int defaultAction = cg.readEntry("Default Action", 0);
+    m_defaultAction = defaultAction <= static_cast<int>(Action::OpenNewWindow) ? static_cast<Action>(defaultAction) : Action::Auto;
+
     m_valueYoungerThan = cg.readEntry("Value youngerThan", 1);
     m_valueOlderThan = cg.readEntry("Value olderThan", 2);
 
@@ -83,6 +87,8 @@ void KonqHistorySettings::readSettings(bool reparse)
 void KonqHistorySettings::applySettings()
 {
     KConfigGroup config(KSharedConfig::openConfig(), "HistorySettings"); // write to konquerorrc
+
+    config.writeEntry("Default Action", static_cast<int>(m_defaultAction));
 
     config.writeEntry("Value youngerThan", m_valueYoungerThan);
     config.writeEntry("Value olderThan", m_valueOlderThan);

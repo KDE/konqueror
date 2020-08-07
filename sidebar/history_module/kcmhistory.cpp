@@ -59,6 +59,20 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     dialog = new KonqSidebarHistoryDlg(this);
 
+    dialog->comboDefaultAction->addItem(i18nc("Automatically decide which action to perform", "Auto"));
+    dialog->comboDefaultAction->addItem(i18nc("Open URL in new tab", "Open in new tab"));
+    dialog->comboDefaultAction->addItem(i18nc("Open URL in current tab", "Open in current tab"));
+    dialog->comboDefaultAction->addItem(i18nc("Open URL in new window", "Open in new window"));
+
+    QString defaultActionToolTip = i18n("Action to carry out when opening an URL from history:<dl>"
+        "<dl><dt>Auto:</dt><dd>opens the URL in a new tab unless the current tab is empty or an intro page</dd>"
+        "<dt>Open URL in a new tab:</dt><dd>always opens the URL in a new tab</dd>"
+        "<dt>Open URL in current tab:</dt><dd>always opens the URL in the current tab</dd>"
+        "<dt>Open URL in new window:</dt><dd>always opens the URL in a new window</dd>"
+        "</dl>"
+    );
+    dialog->setToolTip(defaultActionToolTip);
+
     dialog->spinEntries->setRange(0, INT_MAX);
     dialog->spinExpire->setRange(0, INT_MAX);
     dialog->spinExpire->setSuffix(i18n("days"));
@@ -75,6 +89,8 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
                                    i18np("Minute", "Minutes", 0));
     dialog->comboOlder->insertItem(KonqHistorySettings::DAYS,
                                    i18np("Day", "Days", 0));
+
+    connect(dialog->comboDefaultAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &HistorySidebarConfig::configChanged);
 
     connect(dialog->cbExpire, &QAbstractButton::toggled, dialog->spinExpire, &QWidget::setEnabled);
     connect(dialog->spinExpire, QOverload<int>::of(&QSpinBox::valueChanged), this, &HistorySidebarConfig::slotExpireChanged);
@@ -106,6 +122,9 @@ void HistorySidebarConfig::load()
 {
     KConfig _config("konquerorrc");
     KConfigGroup config(&_config, "HistorySettings");
+
+    dialog->comboDefaultAction->setCurrentIndex(config.readEntry("Default Action", 0));
+
     dialog->spinExpire->setValue(config.readEntry("Maximum age of History entries", 90));
     dialog->spinEntries->setValue(config.readEntry("Maximum of History entries", 500));
     dialog->cbExpire->setChecked(dialog->spinExpire->value() > 0);
@@ -139,6 +158,8 @@ void HistorySidebarConfig::save()
     KonqHistoryProvider::self()->emitSetMaxAge(age);
     KonqHistoryProvider::self()->emitSetMaxCount(count);
 
+    m_settings->m_defaultAction = static_cast<KonqHistorySettings::Action>(dialog->comboDefaultAction->currentIndex());
+
     m_settings->m_valueYoungerThan = dialog->spinNewer->value();
     m_settings->m_valueOlderThan   = dialog->spinOlder->value();
 
@@ -157,6 +178,8 @@ void HistorySidebarConfig::save()
 
 void HistorySidebarConfig::defaults()
 {
+    dialog->comboDefaultAction->setCurrentIndex(0);
+
     dialog->spinEntries->setValue(500);
     dialog->cbExpire->setChecked(true);
     dialog->spinExpire->setValue(90);

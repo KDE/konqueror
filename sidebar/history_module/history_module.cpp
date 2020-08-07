@@ -31,7 +31,7 @@
 
 KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
         const KConfigGroup &configGroup)
-    : KonqSidebarModule(parent, configGroup)
+    : KonqSidebarModule(parent, configGroup), m_settings(KonqHistorySettings::self())
 {
     m_historyView = new KonqHistoryView(parent);
     connect(m_historyView->treeView(), &QAbstractItemView::activated, this, &KonqSidebarHistoryModule::slotActivated);
@@ -39,16 +39,30 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule(QWidget *parent,
     connect(m_historyView->treeView(), &QAbstractItemView::clicked, this, &KonqSidebarHistoryModule::slotClicked);
     connect(m_historyView, &KonqHistoryView::openUrlInNewWindow, this, &KonqSidebarHistoryModule::slotOpenWindow);
     connect(m_historyView, &KonqHistoryView::openUrlInNewTab, this, &KonqSidebarHistoryModule::slotOpenTab);
+    connect(m_settings, &KonqHistorySettings::settingsChanged, this, &KonqSidebarHistoryModule::reparseConfiguration);
+    reparseConfiguration();
 }
 
 KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
 {
 }
 
+void KonqSidebarHistoryModule::reparseConfiguration()
+{
+    m_defaultAction = m_settings->m_defaultAction;
+}
+
+
 QWidget *KonqSidebarHistoryModule::getWidget()
 {
     return m_historyView;
 }
+
+void KonqSidebarHistoryModule::slotCurViewUrlChanged(const QUrl& url)
+{
+    m_currentUrl = url;
+}
+
 
 // LMB activation (single or double click) handling
 void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
@@ -57,9 +71,23 @@ void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
         return;
     }
     const QUrl url = m_historyView->urlForIndex(index);
-    if (url.isValid()) {
-        emit openUrlRequest(url);
+    if (!url.isValid()) {
+        return;
     }
+    if (m_defaultAction == KonqHistorySettings::Action::OpenNewWindow) {
+        slotOpenWindow(url);
+        return;
+    }
+    KParts::BrowserArguments bargs;
+    //Ideally, if m_defaultAction is Auto, the current tab should only be created if the current tab
+    //has a konq: or an empty URL. However, it seems you can't get this information from here, so always
+    //open a new tab unless the default action is OpenCurrentTab
+    if (m_defaultAction == KonqHistorySettings::Action::OpenCurrentTab) {
+        bargs.setNewTab(true);
+    } else if (m_defaultAction == KonqHistorySettings::Action::Auto && !(m_currentUrl.isEmpty() || m_currentUrl.scheme() == "konq")) {
+        bargs.setNewTab(true);
+    }
+    emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
 }
 
 // Needed for MMB handling; no convenient API in QAbstractItemView
