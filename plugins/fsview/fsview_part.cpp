@@ -44,11 +44,11 @@
 #include <kio/jobuidelegate.h>
 #include <KIO/FileUndoManager>
 #include <KJobWidgets>
-#include <ktoolinvocation.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include <KLocalizedString>
+#include <KIO/ApplicationLauncherJob>
 
 #include <QApplication>
 #include <QMimeData>
@@ -215,8 +215,10 @@ void FSViewPart::showInfo()
 
 void FSViewPart::showHelp()
 {
-    KToolInvocation::startServiceByDesktopName(QStringLiteral("khelpcenter"),
-            QStringLiteral("help:/konqueror/index.html#fsview"));
+    const KService::Ptr helpCenter = KService::serviceByDesktopName(QStringLiteral("org.kde.help"));
+    auto job = new KIO::ApplicationLauncherJob(helpCenter);
+    job->setUrls({QUrl(QStringLiteral("help:/konqueror/index.html#fsview"))});
+    job->start();
 }
 
 void FSViewPart::startedSlot()

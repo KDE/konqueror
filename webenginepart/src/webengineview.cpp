@@ -37,7 +37,7 @@
 #include <KIO/AccessManager>
 #include <KStringHandler>
 #include <KLocalizedString>
-#include <KToolInvocation>
+#include <KIO/CommandLauncherJob>
 
 #include <QTimer>
 #include <QMimeData>
@@ -555,8 +555,8 @@ void WebEngineView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGr
 
 void WebEngineView::slotConfigureWebShortcuts()
 {
-    KToolInvocation::kdeinitExec(QStringLiteral("kcmshell5"),
-                                 QStringList() << QStringLiteral("webshortcuts"));
+    auto job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {QStringLiteral("webshortcuts")});
+    job->start();
 }
 
 void WebEngineView::slotStopAutoScroll()
