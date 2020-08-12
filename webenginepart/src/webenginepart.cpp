@@ -55,7 +55,6 @@
 #include <KUrlLabel>
 #include <KMessageBox>
 #include <KStringHandler>
-#include <KToolInvocation>
 #include <KAcceleratorManager>
 #include <KFileItem>
 #include <KMessageWidget>
@@ -71,6 +70,7 @@
 #include <KProtocolInfo>
 #include <KParts/PartActivateEvent>
 #include <KParts/BrowserInterface>
+#include <KIO/ApplicationLauncherJob>
 
 #include <QUrl>
 #include <QFile>
@@ -826,11 +826,9 @@ void WebEnginePart::slotShowWalletMenu()
 
 void WebEnginePart::slotLaunchWalletManager()
 {
-    QDBusInterface r(QStringLiteral("org.kde.kwalletmanager"), QStringLiteral("/kwalletmanager/MainWindow_1"));
-    if (r.isValid())
-        r.call(QDBus::NoBlock, QStringLiteral("show"));
-    else
-        KToolInvocation::startServiceByDesktopName(QStringLiteral("kwalletmanager_show"));
+    const KService::Ptr kwalletManager = KService::serviceByDesktopName(QStringLiteral("org.kde.kwalletmanager5"));
+    auto job = new KIO::ApplicationLauncherJob(kwalletManager);
+    job->start();
 }
 
 void WebEnginePart::slotDeleteNonPasswordStorableSite()
