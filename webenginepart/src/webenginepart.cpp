@@ -677,7 +677,7 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
         linkUrl.setUserName(QString());
         const QString link (linkUrl.toString());
 
-        if (QString::compare(scheme, QL1S("mailto"), Qt::CaseInsensitive) == 0) {
+        if (scheme == QL1S("mailto")) {
             message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", "Email: ");
 
             // Workaround: for QUrl's parsing deficiencies of "mailto:foo@bar.com".
