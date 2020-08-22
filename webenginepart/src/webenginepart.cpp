@@ -80,6 +80,7 @@
 #include <QDBusInterface>
 #include <QMenu>
 #include <QStatusBar>
+#include <QWebEngineScriptCollection>
 #ifdef USE_QWEBENGINE_URL_SCHEME
 #include <QWebEngineUrlScheme>
 #endif
@@ -122,7 +123,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
-             m_hasCachedFormData(false),
+             m_walletData{false, false, false},
              m_doLoadFinishedActions(false),
              m_statusBarWalletLabel(nullptr),
              m_searchBar(nullptr),
@@ -225,6 +226,9 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     // Load plugins once we are fully ready
     loadPlugins();
     setWallet(page()->wallet());
+    if (m_wallet) {
+        page()->scripts().insert(WebEngineWallet::formDetectorFunctionsScript());
+    }
 }
 
 WebEnginePart::~WebEnginePart()
@@ -374,6 +378,9 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         disconnect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
                 this, &WebEnginePart::slotFillFormRequestCompleted);
         disconnect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
+        disconnect(m_wallet, &WebEngineWallet::displayWalletStatusBarIconRequest, this, &WebEnginePart::addWalletStatusBarIcon);
+        disconnect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
+        disconnect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
     }
     m_wallet = wallet;
     if (m_wallet) {
@@ -382,6 +389,9 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         connect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
                 this, &WebEnginePart::slotFillFormRequestCompleted);
         connect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
+        connect(m_wallet, &WebEngineWallet::displayWalletStatusBarIconRequest, this, &WebEnginePart::addWalletStatusBarIcon);
+        connect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
+        connect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
     }
 }
 
@@ -523,19 +533,6 @@ void WebEnginePart::slotLoadFinished (bool ok)
         // work around here for pages that do not contain it, such as text
         // documents...
         slotUrlChanged(url);
-    }
-    if (!Utils::isBlankUrl(url())) {
-        m_hasCachedFormData = false;
-        if (WebEngineSettings::self()->isNonPasswordStorableSite(url().host())) {
-            addWalletStatusBarIcon();
-        }
-        else {
-// Attempt to fill the web form...
-            WebEngineWallet *wallet = page() ? page()->wallet() : nullptr;
-            if (wallet){
-                wallet->fillFormData(page());
-            }
-        }
     }
 
     bool pending = false;
@@ -804,19 +801,33 @@ void WebEnginePart::slotWalletClosed()
     m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
     delete m_statusBarWalletLabel;
     m_statusBarWalletLabel = nullptr;
-    m_hasCachedFormData = false;
+    m_walletData = {false, false, false};
 }
 
 void WebEnginePart::slotShowWalletMenu()
 {
     QMenu *menu = new QMenu(nullptr);
-
-    if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host()))
+    bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
+    if ((m_wallet && m_walletData.hasAutoFillableForms) || hasCustomForms) {
+        menu->addAction(i18n("Memorize passwords in this page &now"), [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
+    }
+    if (m_wallet && (m_walletData.hasForms ||hasCustomForms)) {
+        menu->addSeparator();
+        if (m_walletData.hasForms) {
+            menu->addAction(i18n("&Customize fields to memorize for this page..."), this, [this](){if (m_wallet){m_wallet->customizeFieldsToCache(page(), view());}});
+        }
+        if (hasCustomForms) {
+            menu->addAction(i18n("Remove customized memorization settings for this page"), m_wallet, [this](){m_wallet->removeCustomizationForPage(url());});
+        }
+    }
+    menu->addSeparator();
+    if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host())) {
         menu->addAction(i18n("&Allow password caching for this site"), this, &WebEnginePart::slotDeleteNonPasswordStorableSite);
-
-    if (m_hasCachedFormData)
-        menu->addAction(i18n("Remove all cached passwords for this site"), this, &WebEnginePart::slotRemoveCachedPasswords);
-
+    }
+    if (m_walletData.hasCachedData) {
+        menu->addAction(i18n("Remove all memorized passwords for this site"), this, &WebEnginePart::slotRemoveCachedPasswords);
+    }
+    
     menu->addSeparator();
     menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::slotWalletClosed);
 
@@ -843,7 +854,7 @@ void WebEnginePart::slotRemoveCachedPasswords()
         return;
 
     page()->wallet()->removeFormData(page());
-    m_hasCachedFormData = false;
+    m_walletData.hasCachedData = false;
 }
 
 void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
@@ -989,8 +1000,7 @@ void WebEnginePart::addWalletStatusBarIcon ()
 
 void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
-    if ((m_hasCachedFormData = ok))
-        addWalletStatusBarIcon();
+    m_walletData.hasCachedData = ok;
 }
 
 void WebEnginePart::exitFullScreen()
@@ -998,3 +1008,17 @@ void WebEnginePart::exitFullScreen()
     page()->triggerAction(QWebEnginePage::ExitFullScreen);
 }
 
+void WebEnginePart::walletFinishedFormDetection(const QUrl& url, bool found, bool autoFillableFound)
+{
+    if (page() && page()->url() == url) {
+        m_walletData.hasForms = found;
+        m_walletData.hasAutoFillableForms = autoFillableFound;
+    }
+}
+
+void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
+{
+    if (success && url == this->url()) {
+        m_walletData.hasCachedData = true;
+    }
+}

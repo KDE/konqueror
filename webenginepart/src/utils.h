@@ -14,5 +14,9 @@ inline bool isBlankUrl(const QUrl& url)
     return (url.isEmpty() || url.url() == QL1S("konq:blank"));
 }
 
+inline bool isKonqUrl(const QUrl &url){
+    return (url.scheme()) == QL1S("konq");
+}
+
 }
 #endif // WEBENGINEPART_UTILS_H

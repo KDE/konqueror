@@ -1,0 +1,348 @@
+/*
+ * This file is part of the KDE project.
+ *
+ * Copyright (C) 2020 Dawit Alemayehu <adawit@kde.org> Stefano Crocco <stefano.crocco@alice.it>
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ *
+ */
+
+#include "webenginewallet.h"
+#include "webenginepage.h"
+
+#include <KWallet>
+
+#include <QSet>
+#include <QHash>
+#include <QScopedPointer>
+#include <QWebEngineScript>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+
+#include <QMessageBox>
+
+#include <algorithm>
+
+class WebEngineWallet::WebEngineWalletPrivate
+{
+public:
+    struct FormsData {
+        QPointer<WebEnginePage> page;
+        WebEngineWallet::WebFormList forms;
+    };
+
+    typedef std::function<void(const WebEngineWallet::WebFormList &)> WebWalletCallback;
+
+    WebEngineWalletPrivate(WebEngineWallet *parent);
+
+    static WebFormList parseFormDetectionResult(const QVariant &jsForms, const QUrl &pageUrl);
+
+    WebFormList formsToFill(const WebFormList &allForms) const;
+    WebFormList formsToSave(const WebFormList &allForms) const;
+    bool hasAutoFillableFields(const WebFormList &forms) const;
+
+    void fillDataFromCache(WebEngineWallet::WebFormList &formList, bool custom);
+    void saveDataToCache(const QString &key);
+    void removeDataFromCache(const WebFormList &formList);
+    void openWallet();
+
+    static bool containsCustomForms(const QMap<QString, QString>& map);
+    static void detectFormsInPage(WebEnginePage *page, WebWalletCallback callback, bool findLabels=false);
+
+    // Private slots...
+    void _k_openWalletDone(bool);
+    void _k_walletClosed();
+
+    WId wid;
+    WebEngineWallet *q;
+    QScopedPointer<KWallet::Wallet> wallet;
+    WebEngineWallet::WebFormList pendingRemoveRequests;
+    QHash<QUrl, FormsData> pendingFillRequests;
+    QHash<QString, WebFormList> pendingSaveRequests;
+    QSet<QUrl> confirmSaveRequestOverwrites;
+
+    static QString customFieldsKey;
+};
+
+/**
+ * Creates key used to store and retrieve form data.
+ *
+ */
+static QString walletKey(const WebEngineWallet::WebForm &form)
+{
+    QString key = form.url.toString(QUrl::RemoveQuery | QUrl::RemoveFragment);
+    key += QL1C('#');
+    key += form.name;
+    return key;
+}
+
+static QUrl urlForFrame(const QUrl &frameUrl, const QUrl &pageUrl)
+{
+    return (frameUrl.isEmpty() || frameUrl.isRelative() ? pageUrl.resolved(frameUrl) : frameUrl);
+}
+
+WebEngineWallet::WebEngineWalletPrivate::WebEngineWalletPrivate(WebEngineWallet *parent)
+    : wid(0), q(parent)
+{
+}
+
+WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::parseFormDetectionResult(const QVariant& jsForms, const QUrl& pageUrl)
+{
+    const QVariantList variantForms(jsForms.toList());
+    WebEngineWallet::WebFormList list;
+    for (const QVariant &v : variantForms) {
+        QJsonObject formMap = QJsonDocument::fromJson(v.toString().toUtf8()).object();
+        WebEngineWallet::WebForm form;
+        form.url = urlForFrame(QUrl(formMap[QL1S("url")].toString()), pageUrl);
+        form.name = formMap[QL1S("name")].toString();
+        form.index = formMap[QL1S("index")].toString();
+        form.framePath = QVariant(formMap[QL1S("framePath")].toArray().toVariantList()).toStringList().join(",");
+        const QVariantList elements = formMap[QL1S("elements")].toArray().toVariantList();
+        for(const QVariant &e : elements) {
+           QVariantMap elementMap(e.toMap());
+           WebForm::WebField field;
+           field.type = WebForm::fieldTypeFromTypeName(elementMap[QL1S("type")].toString().toLower());
+           if (field.type == WebForm::WebFieldType::Other) {
+               continue;
+           } 
+           field.id = elementMap[QL1S("id")].toString();
+           field.name = elementMap[QL1S("name")].toString();
+           field.readOnly = elementMap[QL1S("readonly")].toBool();
+           field.disabled = elementMap[QL1S("disabled")].toBool();
+           field.autocompleteAllowed = elementMap[QL1S("autocompleteAllowed")].toBool();
+           field.value = elementMap[QL1S("value")].toString();
+           field.label = elementMap[QL1S("label")].toString();
+           form.fields.append(field);
+        }
+        if (!form.fields.isEmpty()) {
+            list.append(form);
+        }
+    }
+    return list;
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::detectFormsInPage(WebEnginePage* page, WebEngineWallet::WebEngineWalletPrivate::WebWalletCallback callback, bool findLabels)
+{
+    if (!page) {
+        return;
+    }
+    QUrl url = page->url();
+    auto realCallBack = [callback, url](const QVariant &jsForms) {
+        WebFormList forms = parseFormDetectionResult(jsForms, url);
+        callback(forms);
+    };
+    page->runJavaScript(QL1S("findFormsInWindow(%1)").arg(findLabels ? "true" : ""), QWebEngineScript::ApplicationWorld, realCallBack);
+}
+
+WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::formsToFill(const WebFormList &allForms) const
+{
+    WebEngineWallet::WebFormList list;
+    for (const WebEngineWallet::WebForm &form : allForms) {
+        if (q->hasCachedFormData(form)) {
+            WebEngineWallet::WebForm f(form.withAutoFillableFieldsOnly());
+            if (!f.fields.isEmpty()) {
+                list.append(f);
+            }
+        }
+    }
+    return list;
+}
+
+WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::formsToSave(const WebEngineWallet::WebFormList& allForms) const
+{
+    WebEngineWallet::WebFormList list;
+    std::copy_if(allForms.constBegin(), allForms.constEnd(), std::back_inserter(list), [](const WebForm &f){return f.hasPasswords();});
+    return list;
+}
+
+bool WebEngineWallet::WebEngineWalletPrivate::hasAutoFillableFields(const WebEngineWallet::WebFormList& forms) const
+{
+    return std::any_of(forms.constBegin(), forms.constEnd(), [](const WebForm &f){return f.hasAutoFillableFields();});
+}
+
+
+void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet::WebFormList &formList, bool custom)
+{
+    if (!wallet) {
+        qCWarning(WEBENGINEPART_LOG) << "Unable to retrieve form data from wallet";
+        return;
+    }
+
+    QString lastKey;
+    QMap<QString, QString> cachedValues;
+    QMutableVectorIterator <WebForm> formIt(formList);
+
+    while (formIt.hasNext()) {
+        WebEngineWallet::WebForm &form = formIt.next();
+        const QString key(walletKey(form));
+        if (key != lastKey && wallet->readMap(key, cachedValues) != 0) {
+            qCWarning(WEBENGINEPART_LOG) << "Unable to read form data for key:" << key;
+            continue;
+        }
+        if (!custom) {
+            form = form.withAutoFillableFieldsOnly();
+        }
+        for (int i = 0, count = form.fields.count(); i < count; ++i) {
+            form.fields[i].value = cachedValues.value(form.fields[i].name);
+        }
+        lastKey = key;
+    }
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key)
+{
+    // Make sure the specified keys exists before acting on it. See BR# 270209.
+    if (!pendingSaveRequests.contains(key)) {
+        return;
+    }
+
+    if (!wallet) {
+        qCWarning(WEBENGINEPART_LOG) << "NULL Wallet instance!";
+        return;
+    }
+
+    bool success = false;
+
+    int count = 0;
+    const WebEngineWallet::WebFormList list = pendingSaveRequests.value(key);
+    const QUrl url = list.first().url;
+    QVectorIterator<WebEngineWallet::WebForm> formIt(list);
+
+    while (formIt.hasNext()) {
+        QMap<QString, QString> values, storedValues;
+        WebEngineWallet::WebForm form = formIt.next();
+        const QString accessKey = walletKey(form);
+        const int status = wallet->readMap(accessKey, storedValues);
+        if (status == 0 && !storedValues.isEmpty()) {
+            if (confirmSaveRequestOverwrites.contains(url)) {
+                confirmSaveRequestOverwrites.remove(url);
+                if (!storedValues.isEmpty()) {
+                    auto fieldChanged = [&storedValues](const WebForm::WebField field){
+                        return storedValues.contains(field.name) && storedValues.value(field.name) != field.value;
+                    };
+                    if (std::any_of(form.fields.constBegin(), form.fields.constEnd(), fieldChanged)) {
+                        emit q->saveFormDataRequested(key, url);
+                        return;
+                    }
+                    // If we got here it means the new credential is exactly
+                    // the same as the one already cached ; so skip the
+                    // re-saving part...
+                    success = true;
+                    continue;
+                }
+            }
+        }
+        QVectorIterator<WebEngineWallet::WebForm::WebField> fieldIt(form.fields);
+        while (fieldIt.hasNext()) {
+            const WebEngineWallet::WebForm::WebField field = fieldIt.next();
+            values.insert(field.name, field.value);
+        }
+
+        if (wallet->writeMap(accessKey, values) == 0) {
+            count++;
+        } else {
+            qCWarning(WEBENGINEPART_LOG) << "Unable to write form data to wallet";
+        }
+    }
+
+    if (list.isEmpty() || count > 0) {
+        success = true;
+    }
+
+    emit q->saveFormDataCompleted(url, success);
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::openWallet()
+{
+    if (!wallet.isNull()) {
+        return;
+    }
+
+    wallet.reset(KWallet::Wallet::openWallet(KWallet::Wallet::NetworkWallet(),
+                 wid, KWallet::Wallet::Asynchronous));
+
+    if (wallet.isNull()) {
+        return;
+    }
+
+    // FIXME: See if possible to use new Qt5 connect syntax
+    connect(wallet.data(), SIGNAL(walletOpened(bool)), q, SLOT(_k_openWalletDone(bool)));
+    connect(wallet.data(), SIGNAL(walletClosed()), q, SLOT(_k_walletClosed()));
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::removeDataFromCache(const WebFormList &formList)
+{
+    if (!wallet) {
+        qCWarning(WEBENGINEPART_LOG) << "NULL Wallet instance!";
+        return;
+    }
+
+    QVectorIterator<WebForm> formIt(formList);
+    while (formIt.hasNext()) {
+        wallet->removeEntry(walletKey(formIt.next()));
+    }
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
+{
+    Q_ASSERT(wallet);
+
+    if (ok &&
+            (wallet->hasFolder(KWallet::Wallet::FormDataFolder()) ||
+             wallet->createFolder(KWallet::Wallet::FormDataFolder())) &&
+            wallet->setFolder(KWallet::Wallet::FormDataFolder())) {
+
+        // Do pending fill requests...
+        if (!pendingFillRequests.isEmpty()) {
+            QMutableHashIterator<QUrl, FormsData> requestIt(pendingFillRequests);
+            while (requestIt.hasNext()) {
+                requestIt.next();
+                WebEngineWallet::WebFormList list = requestIt.value().forms;
+                fillDataFromCache(list, WebEngineSettings::self()->hasPageCustomizedCacheableFields(customFormsKey(requestIt.key())));
+                q->fillWebForm(requestIt.key(), list);
+            }
+
+            pendingFillRequests.clear();
+        }
+
+        // Do pending save requests...
+        for (QHash<QString, WebFormList>::key_iterator it = pendingSaveRequests.keyBegin(); it != pendingSaveRequests.keyEnd(); ++it) {
+            saveDataToCache(*it);
+        }
+        pendingSaveRequests.clear();
+
+        // Do pending remove requests...
+        if (!pendingRemoveRequests.isEmpty()) {
+            removeDataFromCache(pendingRemoveRequests);
+            pendingRemoveRequests.clear();
+        }
+    } else {
+        // Delete the wallet if opening the wallet failed or we were unable
+        // to change to the folder we wanted to change to.
+        delete wallet.take();
+    }
+}
+
+void WebEngineWallet::WebEngineWalletPrivate::_k_walletClosed()
+{
+    if (wallet) {
+        wallet.take()->deleteLater();
+    }
+
+    emit q->walletClosed();
+}
+

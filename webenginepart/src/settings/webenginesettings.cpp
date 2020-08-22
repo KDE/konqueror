@@ -35,6 +35,18 @@
 #include <QFontDatabase>
 #include <QFileInfo>
 
+QDataStream & operator<<(QDataStream& ds, const WebEngineSettings::WebFormInfo& info)
+{
+    ds << info.name<< info.framePath << info.fields;
+    return ds;
+}
+
+QDataStream & operator>>(QDataStream& ds, WebEngineSettings::WebFormInfo& info)
+{
+    ds >> info.name >> info.framePath >> info.fields;
+    return ds;
+}
+
 /**
  * @internal
  * Contains all settings which are both available globally and per-domain
@@ -131,6 +143,7 @@ public:
     QList< QPair< QString, QChar > > m_fallbackAccessKeysAssignments;
 
     KSharedConfig::Ptr nonPasswordStorableSites;
+    KSharedConfig::Ptr sitesWithCustomForms;
     bool m_internalPdfViewer;
 };
 
@@ -1185,27 +1198,25 @@ bool WebEngineSettings::acceptCrossDomainCookies() const
     return d->m_acceptCrossDomainCookies;
 }
 
-
 // Password storage...
-static KConfigGroup nonPasswordStorableSitesCg(KSharedConfig::Ptr& configPtr)
+KConfigGroup WebEngineSettings::nonPasswordStorableSitesCg() const
 {
-    if (!configPtr) {
-        configPtr = KSharedConfig::openConfig(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("khtml/formcompletions")), KConfig::NoGlobals);
+    if (!d->nonPasswordStorableSites) {
+        d->nonPasswordStorableSites = KSharedConfig::openConfig(QString(), KConfig::NoGlobals);
     }
-
-    return KConfigGroup(configPtr, "NonPasswordStorableSites");
+    return KConfigGroup(d->nonPasswordStorableSites, "NonPasswordStorableSites");
 }
 
 bool WebEngineSettings::isNonPasswordStorableSite(const QString &host) const
 {
-    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
+    KConfigGroup cg = nonPasswordStorableSitesCg();
     const QStringList sites = cg.readEntry("Sites", QStringList());
     return sites.contains(host);
 }
 
 void WebEngineSettings::addNonPasswordStorableSite(const QString &host)
 {
-    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
+    KConfigGroup cg = nonPasswordStorableSitesCg();
     QStringList sites = cg.readEntry("Sites", QStringList());
     sites.append(host);
     cg.writeEntry("Sites", sites);
@@ -1214,11 +1225,55 @@ void WebEngineSettings::addNonPasswordStorableSite(const QString &host)
 
 void WebEngineSettings::removeNonPasswordStorableSite(const QString &host)
 {
-    KConfigGroup cg = nonPasswordStorableSitesCg(d->nonPasswordStorableSites);
+    KConfigGroup cg = nonPasswordStorableSitesCg();
     QStringList sites = cg.readEntry("Sites", QStringList());
     sites.removeOne(host);
     cg.writeEntry("Sites", sites);
     cg.sync();
+}
+
+KConfigGroup WebEngineSettings::pagesWithCustomizedCacheableFieldsCg() const
+{
+    if (!d->sitesWithCustomForms) {
+        d->sitesWithCustomForms = KSharedConfig::openConfig(QString(), KConfig::NoGlobals); 
+    }
+    return KConfigGroup(d->sitesWithCustomForms, "PagesWithCustomizedCacheableFields");
+}
+
+void WebEngineSettings::setCustomizedCacheableFieldsForPage(const QString& url, const WebFormInfoList& forms)
+{
+    KConfigGroup cg = pagesWithCustomizedCacheableFieldsCg();
+    QByteArray data;
+    QDataStream ds(&data, QIODevice::WriteOnly);
+    ds << forms;
+    cg.writeEntry(url, data);
+    cg.sync();
+}
+
+bool WebEngineSettings::hasPageCustomizedCacheableFields(const QString& url) const
+{
+    KConfigGroup cg = pagesWithCustomizedCacheableFieldsCg();
+    return cg.hasKey(url);
+}
+
+void WebEngineSettings::removeCacheableFieldsCustomizationForPage(const QString& url)
+{
+    KConfigGroup cg = pagesWithCustomizedCacheableFieldsCg();
+    cg.deleteEntry(url);
+    cg.sync();
+}
+
+WebEngineSettings::WebFormInfoList WebEngineSettings::customizedCacheableFieldsForPage(const QString& url)
+{
+    KConfigGroup cg = pagesWithCustomizedCacheableFieldsCg();
+    QByteArray data = cg.readEntry(url, QByteArray());
+    if (data.isEmpty()) {
+        return {};
+    }
+    QDataStream ds(data);
+    WebFormInfoList res;
+    ds >> res;
+    return res;
 }
 
 bool WebEngineSettings::askToSaveSitePassword() const
@@ -1283,6 +1338,14 @@ WebEngineSettings* WebEngineSettings::self()
 {
     static WebEngineSettings s_webEngineSettings;
     return &s_webEngineSettings;
+}
+
+QDebug operator<<(QDebug dbg, const WebEngineSettings::WebFormInfo& info)
+{
+    QDebugStateSaver state(dbg);
+    dbg.nospace() << "CustomWebFormInfo{";
+    dbg << info.name << ", " << info.framePath << ", " << info.fields << "}";
+    return dbg;
 }
 
 #include "webenginesettings.moc"

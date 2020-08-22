@@ -146,10 +146,14 @@ private Q_SLOTS:
     void slotWindowCloseRequested();
     void slotSaveFormDataRequested(const QString &, const QUrl &);
     void slotSaveFormDataDone();
+    void slotWalletSavedForms(const QUrl &url, bool success);
     void slotFillFormRequestCompleted(bool);
 
     void slotFeaturePermissionGranted(QWebEnginePage::Feature);
     void slotFeaturePermissionDenied(QWebEnginePage::Feature);
+
+    void addWalletStatusBarIcon();
+    void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);
 
 private:
     WebEnginePage* page();
@@ -160,10 +164,15 @@ private:
 
     void initActions();
     void updateActions();
-    void addWalletStatusBarIcon();
 
     bool m_emitOpenUrlNotify;
-    bool m_hasCachedFormData;
+
+    struct WalletData{
+        bool hasForms;
+        bool hasAutoFillableForms;
+        bool hasCachedData;
+    };
+    WalletData m_walletData;
     bool m_doLoadFinishedActions;
     KUrlLabel* m_statusBarWalletLabel;
     SearchBar* m_searchBar;

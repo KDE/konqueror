@@ -26,6 +26,9 @@ class KConfigGroup;
 #include <QColor>
 #include <QStringList>
 #include <QPair>
+#include <QDataStream>
+#include <QDebug>
+#include <QVector>
 
 #include <KParts/HtmlExtension>
 #include <KParts/HtmlSettingsInterface>
@@ -52,6 +55,16 @@ public:
         KSmoothScrollingEnabled
     };
 
+    /**
+     * Contains information about which forms to save in KWallet
+     */
+    struct WebFormInfo {
+        QString name;
+        QString framePath;
+        QStringList fields;
+    };
+    typedef QVector<WebFormInfo> WebFormInfoList;
+    
     /**
      * Called by constructor and reparseConfiguration
      */
@@ -120,6 +133,11 @@ public:
     void addNonPasswordStorableSite(const QString &host);
     void removeNonPasswordStorableSite(const QString &host);
     bool askToSaveSitePassword() const;
+    
+    void setCustomizedCacheableFieldsForPage(const QString &url, const QVector<WebFormInfo> &forms);
+    void removeCacheableFieldsCustomizationForPage(const QString &url);
+    bool hasPageCustomizedCacheableFields(const QString &url) const;
+    QVector<WebFormInfo> customizedCacheableFieldsForPage(const QString &url);
 
     // Mixed content
     bool alowActiveMixedContent() const;
@@ -149,6 +167,9 @@ private:
     KAnimationAdvice showAnimations() const;
     KSmoothScrollingMode smoothScrolling() const;
     bool zoomTextOnly() const;
+
+    KConfigGroup pagesWithCustomizedCacheableFieldsCg() const;
+    KConfigGroup nonPasswordStorableSitesCg() const;
 
     // Font settings
     QString stdFontName() const;
@@ -215,5 +236,10 @@ private:
 
     WebEngineSettingsPrivate* const d;
 };
+
+QDataStream& operator<<(QDataStream &ds, const WebEngineSettings::WebFormInfo &info);
+QDataStream& operator>>(QDataStream &ds, WebEngineSettings::WebFormInfo &info);
+
+QDebug operator<<(QDebug dbg, const WebEngineSettings::WebFormInfo &info);
 
 #endif

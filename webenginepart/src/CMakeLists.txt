@@ -27,7 +27,12 @@ set(kwebenginepartlib_LIB_SRCS
     ui/passwordbar.cpp
     ui/featurepermissionbar.cpp
     about/konq_aboutpage.cpp
+    webenginecustomizecacheablefieldsdlg.cpp
 )
+
+ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui)
+
+qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
 if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.12.0")
   add_definitions(-DUSE_QWEBENGINE_URL_SCHEME)
@@ -85,5 +90,7 @@ install(FILES webenginepart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginepart)
 
 install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
+
+install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_KCONFUPDATEDIR})
 
 add_subdirectory(about)

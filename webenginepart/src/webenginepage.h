@@ -87,6 +87,8 @@ Q_SIGNALS:
      * request.
      */
     void loadAborted(const QUrl &url);
+    
+    void leavingPage(QWebEnginePage::NavigationType type);
 
 #ifndef DOWNLOADITEM_KNOWS_PAGE
     void navigationRequested(WebEnginePage* page, const QUrl& url);
