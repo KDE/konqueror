@@ -142,9 +142,6 @@ void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
 
     auto callback = [this, url, page](const WebFormList &forms) {
         emit formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
-        if (!forms.isEmpty()) {
-            emit displayWalletStatusBarIconRequest();
-        }
         if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
             fillFormData(page, cacheableForms(url, forms, CacheOperation::Fill));
         }
@@ -167,6 +164,8 @@ void WebEngineWallet::fillFormData(WebEnginePage *page, const WebFormList &allFo
             d->pendingFillRequests.insert(url, data);
             urlList << url;
         }
+    } else {
+        emit fillFormRequestCompleted(false);
     }
     if (!urlList.isEmpty()) {
         fillFormDataFromCache(urlList);

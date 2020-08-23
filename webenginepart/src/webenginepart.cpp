@@ -377,8 +377,7 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
                 this, &WebEnginePart::slotSaveFormDataRequested);
         disconnect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
                 this, &WebEnginePart::slotFillFormRequestCompleted);
-        disconnect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
-        disconnect(m_wallet, &WebEngineWallet::displayWalletStatusBarIconRequest, this, &WebEnginePart::addWalletStatusBarIcon);
+        disconnect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::resetWallet);
         disconnect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
         disconnect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
     }
@@ -388,8 +387,7 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
                 this, &WebEnginePart::slotSaveFormDataRequested);
         connect(m_wallet, &WebEngineWallet::fillFormRequestCompleted,
                 this, &WebEnginePart::slotFillFormRequestCompleted);
-        connect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::slotWalletClosed);
-        connect(m_wallet, &WebEngineWallet::displayWalletStatusBarIconRequest, this, &WebEnginePart::addWalletStatusBarIcon);
+        connect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::resetWallet);
         connect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
         connect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
     }
@@ -518,7 +516,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
     if (!ok || !m_doLoadFinishedActions)
         return;
 
-    slotWalletClosed();
+    resetWallet();
     m_doLoadFinishedActions = false;
 
     // If the document contains no <title> tag, then set it to the current url.
@@ -793,14 +791,19 @@ void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, con
     emit m_browserExtension->openUrlRequest(selectedUrl);
 }
 
-void WebEnginePart::slotWalletClosed()
+void WebEnginePart::deleteStatusBarWalletLabel()
 {
-    if (!m_statusBarWalletLabel)
+    if (!m_statusBarWalletLabel) {
        return;
-
+    }
     m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
     delete m_statusBarWalletLabel;
     m_statusBarWalletLabel = nullptr;
+}
+
+void WebEnginePart::resetWallet()
+{
+    deleteStatusBarWalletLabel();
     m_walletData = {false, false, false};
 }
 
@@ -829,7 +832,7 @@ void WebEnginePart::slotShowWalletMenu()
     }
     
     menu->addSeparator();
-    menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::slotWalletClosed);
+    menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::resetWallet);
 
     KAcceleratorManager::manage(menu);
     menu->popup(QCursor::pos());
@@ -985,22 +988,28 @@ void WebEnginePart::slotSaveFormDataDone()
 
 void WebEnginePart::addWalletStatusBarIcon ()
 {
-    if (m_statusBarWalletLabel) {
-        m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
-    } else {
-        m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
-        m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
-        m_statusBarWalletLabel->setUseCursor(false);
-        m_statusBarWalletLabel->setPixmap(QIcon::fromTheme(QStringLiteral("wallet-open")).pixmap(QSize(16,16)));
-        connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::leftClickedUrl), this, &WebEnginePart::slotLaunchWalletManager);
-        connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::rightClickedUrl), this, &WebEnginePart::slotShowWalletMenu);
+    if (m_walletData.hasForms) {
+        if (m_statusBarWalletLabel) {
+            m_statusBarExtension->removeStatusBarItem(m_statusBarWalletLabel);
+        } else {
+            m_statusBarWalletLabel = new KUrlLabel(m_statusBarExtension->statusBar());
+            m_statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+            m_statusBarWalletLabel->setUseCursor(false);
+            connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::leftClickedUrl), this, &WebEnginePart::slotLaunchWalletManager);
+            connect(m_statusBarWalletLabel, QOverload<>::of(&KUrlLabel::rightClickedUrl), this, &WebEnginePart::slotShowWalletMenu);
+        }
+        QIcon icon = QIcon::fromTheme(m_walletData.hasCachedData ? QStringLiteral("wallet-open") : QStringLiteral("wallet-closed"));
+        m_statusBarWalletLabel->setPixmap(icon.pixmap(QSize(16,16)));
+        m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
+    } else if (m_statusBarWalletLabel) {
+        deleteStatusBarWalletLabel();
     }
-    m_statusBarExtension->addStatusBarItem(m_statusBarWalletLabel, 0, false);
 }
 
 void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
     m_walletData.hasCachedData = ok;
+    addWalletStatusBarIcon();
 }
 
 void WebEnginePart::exitFullScreen()
@@ -1020,5 +1029,6 @@ void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
 {
     if (success && url == this->url()) {
         m_walletData.hasCachedData = true;
+        addWalletStatusBarIcon();
     }
 }

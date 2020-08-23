@@ -366,11 +366,6 @@ Q_SIGNALS:
      */
     void walletClosed();
 
-    /**
-     * Signal emitted to ask to display the wallet status bar icon.
-     */
-    void displayWalletStatusBarIconRequest();
-
 protected:
     /**
      * @brief Returns a list of forms for @p url that are waiting to be filled.

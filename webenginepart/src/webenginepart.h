@@ -136,7 +136,7 @@ private Q_SLOTS:
     void slotSelectionClipboardUrlPasted(const QUrl&, const QString&);
 
     void slotUrlChanged(const QUrl &);
-    void slotWalletClosed();
+    void resetWallet();
     void slotShowWalletMenu();
     void slotLaunchWalletManager();
     void slotDeleteNonPasswordStorableSite();
@@ -159,6 +159,7 @@ private:
     WebEnginePage* page();
     const WebEnginePage* page() const;
     static void initWebEngineUrlSchemes();
+    void deleteStatusBarWalletLabel();
 
     void attemptInstallKIOSchemeHandler(const QUrl &url);
 
