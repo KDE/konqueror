@@ -811,8 +811,13 @@ void WebEnginePart::slotShowWalletMenu()
 {
     QMenu *menu = new QMenu(nullptr);
     bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
-    if ((m_wallet && m_walletData.hasAutoFillableForms) || hasCustomForms) {
-        menu->addAction(i18n("Memorize passwords in this page &now"), [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
+    if (m_wallet) {
+        if (m_walletData.hasCachedData) {
+            menu->addAction(i18nc("Fill the forms with data from KWallet", "&Fill forms now"), [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
+        }
+        if (m_walletData.hasAutoFillableForms || hasCustomForms) {
+            menu->addAction(i18n("Memorize passwords in this page &now"), [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
+        }
     }
     if (m_wallet && (m_walletData.hasForms ||hasCustomForms)) {
         menu->addSeparator();
@@ -832,6 +837,7 @@ void WebEnginePart::slotShowWalletMenu()
     }
     
     menu->addSeparator();
+    menu->addAction(i18nc("Launch the wallet manager from the popup menu", "Launch wallet manager"), this, [this]{slotLaunchWalletManager();});
     menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::resetWallet);
 
     KAcceleratorManager::manage(menu);
