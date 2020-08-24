@@ -139,7 +139,7 @@ private Q_SLOTS:
     void resetWallet();
     void slotShowWalletMenu();
     void slotLaunchWalletManager();
-    void slotDeleteNonPasswordStorableSite();
+    void togglePasswordStorableState(bool on);
     void slotRemoveCachedPasswords();
     void slotSetTextEncoding(QTextCodec*);
     void slotSetStatusBarText(const QString& text);
@@ -152,8 +152,9 @@ private Q_SLOTS:
     void slotFeaturePermissionGranted(QWebEnginePage::Feature);
     void slotFeaturePermissionDenied(QWebEnginePage::Feature);
 
-    void addWalletStatusBarIcon();
+    void updateWalletStatusBarIcon();
     void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);
+    void updateWalletActions();
 
 private:
     WebEnginePage* page();
@@ -161,18 +162,24 @@ private:
     static void initWebEngineUrlSchemes();
     void deleteStatusBarWalletLabel();
 
-    void attemptInstallKIOSchemeHandler(const QUrl &url);
-
-    void initActions();
-    void updateActions();
-
-    bool m_emitOpenUrlNotify;
-
     struct WalletData{
+        enum Member{HasForms, HasAutofillableForms, HasCachedData};
         bool hasForms;
         bool hasAutoFillableForms;
         bool hasCachedData;
     };
+    //Always use the following functions to change the values of m_walletData, as they automatically update the UI
+    void updateWalletData(WalletData::Member which, bool status);
+    void updateWalletData(std::initializer_list<bool> data);
+
+    void attemptInstallKIOSchemeHandler(const QUrl &url);
+
+    void initActions();
+    void createWalletActions();
+    void updateActions();
+
+    bool m_emitOpenUrlNotify;
+
     WalletData m_walletData;
     bool m_doLoadFinishedActions;
     KUrlLabel* m_statusBarWalletLabel;

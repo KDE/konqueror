@@ -102,9 +102,6 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     WebEnginePartDownloadManager::instance()->addPage(this);
 
     m_wallet = new WebEngineWallet(this, parent ? parent->window()->winId() : 0);
-    if (m_wallet) {
-        connect(this, &QWebEnginePage::loadFinished, m_wallet, [this](bool ok){if (ok){m_wallet->detectAndFillPageForms(this);}});
-    }
 }
 
 WebEnginePage::~WebEnginePage()

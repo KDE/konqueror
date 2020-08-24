@@ -131,6 +131,11 @@ WebEngineWallet::~WebEngineWallet()
     delete d;
 }
 
+bool WebEngineWallet::isOpen() const
+{
+    return d->wallet && d->wallet->isOpen();
+}
+
 void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
 {
     QUrl url = page->url();

@@ -315,6 +315,8 @@ void WebEnginePart::initActions()
                                      &WebEnginePart::slotShowSearchBar, actionCollection());
     action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
+
+    createWalletActions();
 }
 
 void WebEnginePart::updateActions()
@@ -380,6 +382,7 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         disconnect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::resetWallet);
         disconnect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
         disconnect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
+        disconnect(m_wallet, &WebEngineWallet::walletOpened, this, &WebEnginePart::updateWalletActions);
     }
     m_wallet = wallet;
     if (m_wallet) {
@@ -390,6 +393,7 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         connect(m_wallet, &WebEngineWallet::walletClosed, this, &WebEnginePart::resetWallet);
         connect(m_wallet, &WebEngineWallet::formDetectionDone, this, &WebEnginePart::walletFinishedFormDetection);
         connect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
+        connect(m_wallet, &WebEngineWallet::walletOpened, this, &WebEnginePart::updateWalletActions);
     }
 }
 
@@ -531,6 +535,10 @@ void WebEnginePart::slotLoadFinished (bool ok)
         // work around here for pages that do not contain it, such as text
         // documents...
         slotUrlChanged(url);
+    }
+
+    if (m_wallet) {
+        m_wallet->detectAndFillPageForms(page());
     }
 
     bool pending = false;
@@ -804,41 +812,32 @@ void WebEnginePart::deleteStatusBarWalletLabel()
 void WebEnginePart::resetWallet()
 {
     deleteStatusBarWalletLabel();
-    m_walletData = {false, false, false};
+    updateWalletData({false, false, false});
+    updateWalletActions();
 }
 
 void WebEnginePart::slotShowWalletMenu()
 {
     QMenu *menu = new QMenu(nullptr);
-    bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
-    if (m_wallet) {
-        if (m_walletData.hasCachedData) {
-            menu->addAction(i18nc("Fill the forms with data from KWallet", "&Fill forms now"), [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
+    auto addAction = [this, menu](const QString &name) {
+        QAction *a = actionCollection()->action(name);
+        if (a->isEnabled()) {
+            menu->addAction(a);
         }
-        if (m_walletData.hasAutoFillableForms || hasCustomForms) {
-            menu->addAction(i18n("Memorize passwords in this page &now"), [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
-        }
-    }
-    if (m_wallet && (m_walletData.hasForms ||hasCustomForms)) {
-        menu->addSeparator();
-        if (m_walletData.hasForms) {
-            menu->addAction(i18n("&Customize fields to memorize for this page..."), this, [this](){if (m_wallet){m_wallet->customizeFieldsToCache(page(), view());}});
-        }
-        if (hasCustomForms) {
-            menu->addAction(i18n("Remove customized memorization settings for this page"), m_wallet, [this](){m_wallet->removeCustomizationForPage(url());});
-        }
-    }
+    };
+    addAction("walletFillFormsNow");
+    addAction("walletCacheFormsNow");
+
+    addAction("walletCustomizeFields");
+    addAction("walletRemoveCustomization");
     menu->addSeparator();
-    if (m_webView && WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host())) {
-        menu->addAction(i18n("&Allow password caching for this site"), this, &WebEnginePart::slotDeleteNonPasswordStorableSite);
-    }
-    if (m_walletData.hasCachedData) {
-        menu->addAction(i18n("Remove all memorized passwords for this site"), this, &WebEnginePart::slotRemoveCachedPasswords);
-    }
-    
+
+    addAction("walletDisablePasswordCaching");
+    addAction("walletRemoveCachedData");
     menu->addSeparator();
-    menu->addAction(i18nc("Launch the wallet manager from the popup menu", "Launch wallet manager"), this, [this]{slotLaunchWalletManager();});
-    menu->addAction(i18n("&Close Wallet"), this, &WebEnginePart::resetWallet);
+
+    addAction("walletShowManager");
+    addAction("walletCloseWallet");
 
     KAcceleratorManager::manage(menu);
     menu->popup(QCursor::pos());
@@ -851,19 +850,29 @@ void WebEnginePart::slotLaunchWalletManager()
     job->start();
 }
 
-void WebEnginePart::slotDeleteNonPasswordStorableSite()
+void WebEnginePart::togglePasswordStorableState(bool on)
 {
-    if (m_webView)
-        WebEngineSettings::self()->removeNonPasswordStorableSite(m_webView->url().host());
+    if (!m_webView) {
+        return;
+    }
+    QString host = m_webView->url().host();
+    if (on) {
+        WebEngineSettings::self()->removeNonPasswordStorableSite(host);
+    } else {
+        WebEngineSettings::self()->addNonPasswordStorableSite(host);
+    }
+    updateWalletActions();
+    updateWalletStatusBarIcon();
 }
 
 void WebEnginePart::slotRemoveCachedPasswords()
 {
-    if (!page() || !page()->wallet())
+    if (!page() || !page()->wallet()) {
         return;
+    }
 
     page()->wallet()->removeFormData(page());
-    m_walletData.hasCachedData = false;
+    updateWalletData(WalletData::HasCachedData, false);
 }
 
 void WebEnginePart::slotSetTextEncoding(QTextCodec * codec)
@@ -992,7 +1001,7 @@ void WebEnginePart::slotSaveFormDataDone()
         lay->removeWidget(m_passwordBar);
 }
 
-void WebEnginePart::addWalletStatusBarIcon ()
+void WebEnginePart::updateWalletStatusBarIcon ()
 {
     if (m_walletData.hasForms) {
         if (m_statusBarWalletLabel) {
@@ -1014,8 +1023,7 @@ void WebEnginePart::addWalletStatusBarIcon ()
 
 void WebEnginePart::slotFillFormRequestCompleted (bool ok)
 {
-    m_walletData.hasCachedData = ok;
-    addWalletStatusBarIcon();
+    updateWalletData(WalletData::HasCachedData, ok);
 }
 
 void WebEnginePart::exitFullScreen()
@@ -1026,15 +1034,101 @@ void WebEnginePart::exitFullScreen()
 void WebEnginePart::walletFinishedFormDetection(const QUrl& url, bool found, bool autoFillableFound)
 {
     if (page() && page()->url() == url) {
-        m_walletData.hasForms = found;
-        m_walletData.hasAutoFillableForms = autoFillableFound;
+        updateWalletData({found, autoFillableFound});
+        updateWalletActions();
+        updateWalletStatusBarIcon();
     }
 }
 
 void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
 {
     if (success && url == this->url()) {
-        m_walletData.hasCachedData = true;
-        addWalletStatusBarIcon();
+        updateWalletData(WalletData::HasCachedData, true);
     }
+}
+
+void WebEnginePart::createWalletActions()
+{
+    QAction *a = new QAction(i18nc("Fill the forms with data from KWallet", "&Fill forms now"), this);
+    a->setShortcut(QKeySequence("Ctrl+Shift+V"));
+    actionCollection()->addAction("walletFillFormsNow", a);
+    connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
+
+    a = new QAction(i18n("&Memorize passwords in this page now"), this);
+    actionCollection()->addAction("walletCacheFormsNow", a);
+    connect(a, &QAction::triggered, this, [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
+
+    a = new QAction(i18n("&Customize fields to memorize for this page..."), this);
+    actionCollection()->addAction("walletCustomizeFields", a);
+    connect(a, &QAction::triggered, this, [this](){if (m_wallet){m_wallet->customizeFieldsToCache(page(), view());}});
+
+    a = new QAction(i18n("Remove customized memorization settings for this page"), this);
+    actionCollection()->addAction("walletRemoveCustomization", a);
+    connect(a, &QAction::triggered, this, [this](){m_wallet->removeCustomizationForPage(url());});
+
+    KToggleAction *ta = new KToggleAction (i18n("&Allow password caching for this site"), this);
+    actionCollection()->addAction("walletDisablePasswordCaching", ta);
+    connect(ta, &QAction::triggered, this, &WebEnginePart::togglePasswordStorableState);
+
+    a = new QAction(i18n("Remove all memorized passwords for this site"), this);
+    actionCollection()->addAction("walletRemoveCachedData", a);
+    connect(a, &QAction::triggered, this, &WebEnginePart::slotRemoveCachedPasswords);
+
+    a = new QAction(i18n("&Launch wallet manager"), this);
+    actionCollection()->addAction("walletShowManager", a);
+    connect(a, &QAction::triggered, this, &WebEnginePart::slotLaunchWalletManager);
+
+    a = new QAction(i18n("&Close Wallet"), this);
+    actionCollection()->addAction("walletCloseWallet", a);
+    connect(a, &QAction::triggered, this, &WebEnginePart::resetWallet);
+
+    updateWalletActions();
+}
+
+void WebEnginePart::updateWalletActions()
+{
+    bool enableCaching = m_webView && !WebEngineSettings::self()->isNonPasswordStorableSite(m_webView->url().host());
+    bool hasCustomForms = m_wallet && m_wallet->hasCustomizedCacheableForms(url());
+    actionCollection()->action("walletFillFormsNow")->setEnabled(enableCaching && m_wallet && m_walletData.hasCachedData);
+    actionCollection()->action("walletCacheFormsNow")->setEnabled(enableCaching && m_wallet && (m_walletData.hasAutoFillableForms || hasCustomForms));
+    actionCollection()->action("walletCustomizeFields")->setEnabled(enableCaching && m_walletData.hasForms);
+    actionCollection()->action("walletRemoveCustomization")->setEnabled(hasCustomForms);
+    QAction *a = actionCollection()->action("walletDisablePasswordCaching");
+    a->setChecked(enableCaching);
+    a->setEnabled(m_walletData.hasForms);
+    actionCollection()->action("walletRemoveCachedData")->setEnabled(m_walletData.hasCachedData);
+    actionCollection()->action("walletCloseWallet")->setEnabled(m_wallet && m_wallet->isOpen());
+}
+
+void WebEnginePart::updateWalletData(WebEnginePart::WalletData::Member which, bool status)
+{
+    switch (which) {
+        case WalletData::HasForms:
+            m_walletData.hasForms = status;
+            break;
+        case WalletData::HasAutofillableForms:
+            m_walletData.hasAutoFillableForms = status;
+            break;
+        case WalletData::HasCachedData:
+            m_walletData.hasCachedData = status;
+            break;
+    }
+    updateWalletActions();
+    updateWalletStatusBarIcon();
+}
+
+void WebEnginePart::updateWalletData(std::initializer_list<bool> data)
+{
+    Q_ASSERT(data.size() > 0 && data.size() < 4);
+    int size = data.size();
+    auto it = data.begin();
+    m_walletData.hasForms = it[0];
+    if (size > 1) {
+        m_walletData.hasAutoFillableForms = it[1];
+    }
+    if (size > 2) {
+        m_walletData.hasAutoFillableForms = it[2];
+    }
+    updateWalletActions();
+    updateWalletStatusBarIcon();
 }

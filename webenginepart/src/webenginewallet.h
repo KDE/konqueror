@@ -189,6 +189,12 @@ public:
     ~WebEngineWallet() override;
 
     /**
+     * @brief Whether the wallet is open or not
+     * @return @b true if the wallet is open and @b false otherwise
+     */
+    bool isOpen() const;
+
+    /**
      * @brief Attempts to save the form data from @p page and its children frames.
      *
      * You must connect to the @ref saveFormDataRequested signal and call either
@@ -365,6 +371,11 @@ Q_SIGNALS:
      * @brief This signal is emitted whenever the current wallet is closed.
      */
     void walletClosed();
+
+    /**
+     * @brief Signal emitted when the wallet is opened
+     */
+    void walletOpened();
 
 protected:
     /**

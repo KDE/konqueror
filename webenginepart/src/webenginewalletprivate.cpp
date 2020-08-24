@@ -321,6 +321,8 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
              wallet->createFolder(KWallet::Wallet::FormDataFolder())) &&
             wallet->setFolder(KWallet::Wallet::FormDataFolder())) {
 
+        emit q->walletOpened();
+
         // Do pending fill requests...
         if (!pendingFillRequests.isEmpty()) {
             QMutableHashIterator<QUrl, FormsData> requestIt(pendingFillRequests);
