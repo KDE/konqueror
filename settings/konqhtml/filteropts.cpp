@@ -191,7 +191,7 @@ KCMFilter::~KCMFilter()
 void KCMFilter::slotInfoLinkActivated(const QString &url)
 {
     if (url == QLatin1String("filterhelp")) {
-        QWhatsThis::showText(QCursor::pos(), mString->whatsThis());
+        QWhatsThis::showText(QCursor::pos(), mString->toolTip());
     } else if (url == QLatin1String("importhelp"))
         QWhatsThis::showText(QCursor::pos(), i18n("<qt><p>The filter import format is a plain text file. "
                              "Blank lines, comment lines starting with '<tt>!</tt>' "
