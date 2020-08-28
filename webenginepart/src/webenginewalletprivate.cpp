@@ -2,7 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2020 Dawit Alemayehu <adawit@kde.org> Stefano Crocco <stefano.crocco@alice.it>
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
  * License as published by the Free Software Foundation; either
@@ -56,7 +56,21 @@ public:
     bool hasAutoFillableFields(const WebFormList &forms) const;
 
     void fillDataFromCache(WebEngineWallet::WebFormList &formList, bool custom);
-    void saveDataToCache(const QString &key);
+
+    /**
+     * @brief Saves form data to the wallet
+     *
+     * If the wallet already contains data for this key, the data won't be saved immediately. Instead, the
+     * WebEngineWallet::saveFormDataRequested signal will be emitted, which will cause the WebEnginePart to
+     * ask the user what to do. In this case, this function will do nothing after emitting the signal.
+     *
+     * @note Callers of this function @b must remove the key from #pendingRemoveRequests if this function returns @b true.
+     *
+     * @param key the key corresponding to the data to save in #pendingRemoveRequests
+     * @return @b true if the data was saved immediately and @a key must be removed from #pendingRemoveRequests and @b false
+     * otherwise
+     */
+    bool saveDataToCache(const QString &key);
     void removeDataFromCache(const WebFormList &formList);
     void openWallet();
 
@@ -118,7 +132,7 @@ WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::parseFormD
            field.type = WebForm::fieldTypeFromTypeName(elementMap[QL1S("type")].toString().toLower());
            if (field.type == WebForm::WebFieldType::Other) {
                continue;
-           } 
+           }
            field.id = elementMap[QL1S("id")].toString();
            field.name = elementMap[QL1S("name")].toString();
            field.readOnly = elementMap[QL1S("readonly")].toBool();
@@ -203,16 +217,16 @@ void WebEngineWallet::WebEngineWalletPrivate::fillDataFromCache(WebEngineWallet:
     }
 }
 
-void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key)
+bool WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key)
 {
     // Make sure the specified keys exists before acting on it. See BR# 270209.
     if (!pendingSaveRequests.contains(key)) {
-        return;
+        return false;
     }
 
     if (!wallet) {
         qCWarning(WEBENGINEPART_LOG) << "NULL Wallet instance!";
-        return;
+        return false;
     }
 
     bool success = false;
@@ -236,7 +250,7 @@ void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
                     };
                     if (std::any_of(form.fields.constBegin(), form.fields.constEnd(), fieldChanged)) {
                         emit q->saveFormDataRequested(key, url);
-                        return;
+                        return false;
                     }
                     // If we got here it means the new credential is exactly
                     // the same as the one already cached ; so skip the
@@ -264,6 +278,7 @@ void WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
     }
 
     emit q->saveFormDataCompleted(url, success);
+    return true;
 }
 
 void WebEngineWallet::WebEngineWalletPrivate::openWallet()
@@ -320,10 +335,17 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
         }
 
         // Do pending save requests...
-        for (QHash<QString, WebFormList>::key_iterator it = pendingSaveRequests.keyBegin(); it != pendingSaveRequests.keyEnd(); ++it) {
-            saveDataToCache(*it);
+        //NOTE: don't increment the iterator inside the for because it's done inside the cycle, depending on the value returned
+        //by saveDataToCache
+        for (QHash<QString, WebFormList>::iterator it = pendingSaveRequests.begin(); it != pendingSaveRequests.end();) {
+            bool removeEntry = saveDataToCache(it.key());
+            //Only remove the entry if it could be saved without user confirmation
+            if (removeEntry) {
+                it = pendingSaveRequests.erase(it);
+            } else {
+                ++it;
+            }
         }
-        pendingSaveRequests.clear();
 
         // Do pending remove requests...
         if (!pendingRemoveRequests.isEmpty()) {

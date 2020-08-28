@@ -343,8 +343,10 @@ void WebEngineWallet::fillFormDataFromCache(const QList<QUrl> &urlList)
 void WebEngineWallet::saveFormDataToCache(const QString &key)
 {
     if (d->wallet) {
-        d->saveDataToCache(key);
-        d->pendingSaveRequests.remove(key);
+        bool remove = d->saveDataToCache(key);
+        if (remove) {
+            d->pendingSaveRequests.remove(key);
+        }
         return;
     }
     d->openWallet();
