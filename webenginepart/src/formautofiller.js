@@ -48,20 +48,10 @@ function findFormsRecursive(wnd, existingList, path, findLabels){
               formObject.index = String(i);
               formObject.elements = new Array;
               for (var j = 0; j < inputList.length; ++j) {
-                  if (inputList[j].type != 'text' && inputList[j].type != 'email' && inputList[j].type != 'password') {
-                      continue;
+                  var element = objectFromElement(inputList[j]);
+                  if (element == null) {
+                    continue;
                   }
-                  var element = new Object;
-                  element.id = String(inputList[j].id);
-                  element.name = inputList[j].name;
-                  if (typeof(element.name) != 'string' ) {
-                      element.name = element.id;
-                  }
-                  element.value = String(inputList[j].value);
-                  element.type = String(inputList[j].type);
-                  element.readonly = Boolean(inputList[j].readOnly);
-                  element.disabled = Boolean(inputList[j].disabled);
-                  element.autocompleteAllowed = inputList[j].autocomplete != 'off';
                   if (findLabels && element.id) {
                     var l = labelsForIds[element.id];
                     if (l != '') {
@@ -82,6 +72,41 @@ function findFormsInWindow(findLabels){
     var forms = new Array;
     findFormsRecursive(window, forms, [], findLabels);
     return forms;
+}
+
+//Creates an object with information about the given input element
+//
+// This function returns null in the following cases:
+// - the element is not an input element
+// - the element has neither a name nor an id
+//
+//The returned object has the following entries:
+//- id: the id of the element
+//- name: the name of the element or its id if the name is undefined
+//- type: the type of the input element
+//- value: the value of the element
+//- readonly: whether the element is read-only or not
+//- disabled: whether the element is disabled or not
+//- autocompleteAllowed: whether autocomplete is allowed for the element
+function objectFromElement(el) {
+    if (el.type != 'text' && el.type != 'email' && el.type != 'password') {
+      return null;
+    }
+    var obj = new Object;
+    obj.id = String(el.id);
+    obj.name = el.name;
+    if (typeof(obj.name) != 'string') {
+        obj.name = obj.id;
+    }
+    if (obj.name.length == 0) {
+        return null;
+    }
+    obj.type = el.type;
+    obj.value = String(el.value);
+    obj.readonly = Boolean(el.readOnly);
+    obj.disabled = Boolean(el.disabled);
+    obj.autocompleteAllowed = el.autocomplete != 'off';
+    return obj;
 }
 
 //Fills a single element in a form
