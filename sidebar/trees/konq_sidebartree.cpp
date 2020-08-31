@@ -539,7 +539,7 @@ void KonqSidebarTree::slotMouseButtonClicked(int _button, Q3ListViewItem *_item,
         case Qt::LeftButton:
             slotExecuted(item);
             break;
-        case Qt::MidButton:
+        case Qt::MiddleButton:
             item->middleButtonClicked();
             break;
         }

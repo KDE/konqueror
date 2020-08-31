@@ -56,7 +56,7 @@ void KonqSideBarPlacesModule::slotPlaceUrlChanged(const QUrl &url)
     const Qt::MouseButtons buttons = QGuiApplication::mouseButtons();
     const Qt::KeyboardModifiers modifiers = QGuiApplication::keyboardModifiers();
 
-    if ((buttons & Qt::MidButton) != 0 || (modifiers & Qt::ControlModifier) != 0) {
+    if ((buttons & Qt::MiddleButton) != 0 || (modifiers & Qt::ControlModifier) != 0) {
         emit createNewWindow(url);
     } else {
         emit openUrlRequest(url);

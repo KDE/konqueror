@@ -241,7 +241,7 @@ bool KHTMLSideBar::urlSelected(const QString &url, int button,
         }
         return true;
     }
-    if (button == Qt::MidButton) {
+    if (button == Qt::MiddleButton) {
         emit openUrlNewWindow(completeURL(url).url(),
                               args);
         return true;

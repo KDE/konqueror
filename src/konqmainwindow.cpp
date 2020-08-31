@@ -2765,7 +2765,7 @@ void KonqMainWindow::slotUp()
     const QUrl &url = m_currentView->upUrl();
     if (goKeyboardState & Qt::ControlModifier) {
         openFilteredUrl(url.url(), req);
-    } else if (goMouseState & Qt::MidButton) {
+    } else if (goMouseState & Qt::MiddleButton) {
         if (KonqSettings::mmbOpensTab()) {
             openFilteredUrl(url.url(), req);
         } else {
@@ -2811,7 +2811,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
         if (newView && inFront) {
             m_pViewManager->showTab(newView);
         }
-    } else if (m_goMouseState & Qt::MidButton) {
+    } else if (m_goMouseState & Qt::MiddleButton) {
         if (mmbOpensTab) {
             KonqView *newView = m_pViewManager->addTabFromHistory(m_currentView, m_goBuffer, openAfterCurrentPage);
             if (newView && inFront) {
@@ -3904,7 +3904,7 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButto
 
     if (km & Qt::ControlModifier) {  // Ctrl Left/MMB
         m_pKonqMainWindow->openFilteredUrl(url, req);
-    } else if (mb & Qt::MidButton) {
+    } else if (mb & Qt::MiddleButton) {
         if (KonqSettings::mmbOpensTab()) {
             m_pKonqMainWindow->openFilteredUrl(url, req);
         } else {

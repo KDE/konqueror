@@ -622,7 +622,7 @@ bool KonqFrameTabs::eventFilter(QObject *watched, QEvent *event)
                 (event->type() == QEvent::MouseButtonPress ||
                  event->type() == QEvent::MouseButtonRelease)) {
             QMouseEvent *e = static_cast<QMouseEvent *>(event);
-            if (e->button() == Qt::MidButton) {
+            if (e->button() == Qt::MiddleButton) {
                 if (event->type() == QEvent::MouseButtonRelease) {
                     const int index = bar->tabAt(e->pos());
                     slotCloseRequest(index);

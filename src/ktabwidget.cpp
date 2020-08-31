@@ -434,7 +434,7 @@ void KTabWidget::mousePressEvent(QMouseEvent *event)
 
 void KTabWidget::mouseReleaseEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::MidButton) {
+    if (event->button() == Qt::MiddleButton) {
         if (d->isEmptyTabbarSpace(event->pos())) {
             emit(mouseMiddleClick());
             return;

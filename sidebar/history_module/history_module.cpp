@@ -67,7 +67,7 @@ void KonqSidebarHistoryModule::slotCurViewUrlChanged(const QUrl& url)
 // LMB activation (single or double click) handling
 void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
 {
-    if (m_lastPressedButtons == Qt::MidButton) { // already handled by slotClicked
+    if (m_lastPressedButtons == Qt::MiddleButton) { // already handled by slotClicked
         return;
     }
     const QUrl url = m_historyView->urlForIndex(index);
@@ -100,7 +100,7 @@ void KonqSidebarHistoryModule::slotPressed(const QModelIndex &index)
 // MMB handling
 void KonqSidebarHistoryModule::slotClicked(const QModelIndex &index)
 {
-    if (m_lastPressedButtons & Qt::MidButton) {
+    if (m_lastPressedButtons & Qt::MiddleButton) {
         const QUrl url = m_historyView->urlForIndex(index);
         if (url.isValid()) {
             createNewWindow(url);
