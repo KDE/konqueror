@@ -95,7 +95,7 @@ function objectFromElement(el) {
     var obj = new Object;
     obj.id = String(el.id);
     obj.name = el.name;
-    if (typeof(obj.name) != 'string') {
+    if (typeof(obj.name) != 'string' || obj.name.length == 0) {
         obj.name = obj.id;
     }
     if (obj.name.length == 0) {
