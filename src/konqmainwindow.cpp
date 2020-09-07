@@ -810,6 +810,14 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     }
 
     QString serviceName = req.serviceName; // default: none provided
+
+    //Force use of WebEnginePart when opening a konq: URL. If the user chose a different
+    //default HTML engine, they would get an error because they don't know how to handle
+    //such scheme. As a workaround, in this case we force the use of WebEnginePart
+    if (KonqUrl::hasKonqScheme(url)) {
+        serviceName = "webenginepart";
+    }
+
     const QString urlStr = url.url();
     if (KonqUrl::isValidNotBlank(urlStr)) {
         mimeType = QStringLiteral("text/html");
