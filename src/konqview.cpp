@@ -37,7 +37,6 @@
 #include <kcursor.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>
-#include <krandom.h>
 #include <ktoggleaction.h>
 #include <kjobuidelegate.h>
 #include <KUrlMimeData>
@@ -89,8 +88,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_pMainWindow = mainWindow;
     m_pRun = nullptr;
     m_pPart = nullptr;
-
-    m_randID = KRandom::random();
 
     m_service = service;
     m_partServiceOffers = partServiceOffers;

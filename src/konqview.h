@@ -656,7 +656,6 @@ private:
     QString m_caption;
     QString m_tempFile;
     QString m_dbusObjectPath;
-    int m_randID;
 
 #ifdef KActivities_FOUND
     KActivities::ResourceInstance *m_activityResourceInstance;
