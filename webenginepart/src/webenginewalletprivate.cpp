@@ -76,6 +76,7 @@ public:
 
     static bool containsCustomForms(const QMap<QString, QString>& map);
     static void detectFormsInPage(WebEnginePage *page, WebWalletCallback callback, bool findLabels=false);
+    static bool shouldFieldBeIgnored(const QString &name);
 
     // Private slots...
     void _k_openWalletDone(bool);
@@ -89,7 +90,14 @@ public:
     QHash<QString, WebFormList> pendingSaveRequests;
     QSet<QUrl> confirmSaveRequestOverwrites;
 
-    static QString customFieldsKey;
+    ///@brief A list of field names which the user is unlikely to want stored (such as search fields)
+    static const char* s_fieldNamesToIgnore[];
+};
+
+const char* WebEngineWallet::WebEngineWalletPrivate::s_fieldNamesToIgnore[] = {
+    "q", //The search field in Google and DuckDuckGo
+    "search", "search_bar", //Other possible names for a search field
+    "amount" //A field corresponding to a quantity
 };
 
 /**
@@ -114,6 +122,17 @@ WebEngineWallet::WebEngineWalletPrivate::WebEngineWalletPrivate(WebEngineWallet 
 {
 }
 
+bool WebEngineWallet::WebEngineWalletPrivate::shouldFieldBeIgnored(const QString& name)
+{
+    QString lowerName = name.toLower();
+    for (uint i = 0; i < sizeof(s_fieldNamesToIgnore)/sizeof(char*); ++i){
+        if (lowerName == s_fieldNamesToIgnore[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
 WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::parseFormDetectionResult(const QVariant& jsForms, const QUrl& pageUrl)
 {
     const QVariantList variantForms(jsForms.toList());
@@ -133,8 +152,12 @@ WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::parseFormD
            if (field.type == WebForm::WebFieldType::Other) {
                continue;
            }
-           field.id = elementMap[QL1S("id")].toString();
            field.name = elementMap[QL1S("name")].toString();
+           if (shouldFieldBeIgnored(field.name)) {
+               continue;
+           }
+
+           field.id = elementMap[QL1S("id")].toString();
            field.readOnly = elementMap[QL1S("readonly")].toBool();
            field.disabled = elementMap[QL1S("disabled")].toBool();
            field.autocompleteAllowed = elementMap[QL1S("autocompleteAllowed")].toBool();
