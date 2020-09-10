@@ -90,7 +90,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QTableView" name="fields"/>
+       <widget class="WebFieldsDataView" name="fields"/>
       </item>
      </layout>
     </widget>
@@ -117,6 +117,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>WebFieldsDataView</class>
+   <extends>QTableView</extends>
+   <header>webfieldsdataview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

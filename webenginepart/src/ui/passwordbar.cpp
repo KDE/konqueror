@@ -29,10 +29,12 @@
 #include <QCoreApplication>
 #include <QAction>
 #include <QPalette>
+#include <QToolButton>
+#include <QTimer>
 
+#include <algorithm>
 
-PasswordBar::PasswordBar(QWidget *parent)
-            :KMessageWidget(parent)
+PasswordBar::PasswordBar(QWidget *parent) :KMessageWidget(parent), m_detailsVisible(false), m_detailsWidget(new CredentialsDetailsWidget(parent))
 {
     setCloseButtonVisible(false);
     setMessageType(KMessageWidget::Information);
@@ -48,6 +50,11 @@ PasswordBar::PasswordBar(QWidget *parent)
     action = new QAction(i18nc("@action:not now", "N&ot now"), this);
     connect(action, &QAction::triggered, this, &PasswordBar::onNotNowButtonClicked);
     addAction(action);
+
+    m_detailsAction = new QAction(i18nc("@action:display details about credentials to store", "&Show details"), this);
+    m_detailsAction->setObjectName("detailsAction");
+    connect(m_detailsAction, &QAction::triggered, this, &PasswordBar::onDetailsButtonClicked);
+    addAction(m_detailsAction);
 }
 
 PasswordBar::~PasswordBar()
@@ -100,4 +107,44 @@ void PasswordBar::clear()
 {
     m_requestKey.clear();
     m_url.clear();
+}
+
+void PasswordBar::resizeEvent(QResizeEvent* event)
+{
+    KMessageWidget::resizeEvent(event);
+    if (m_detailsVisible && m_detailsWidget) {
+        m_detailsWidget->move(computeDetailsWidgetPosition());
+    }
+}
+
+void PasswordBar::onDetailsButtonClicked()
+{
+    m_detailsVisible = !m_detailsVisible;
+    if (m_detailsVisible) {
+        m_detailsAction->setText(i18nc("@action:hide details about credentials to store", "&Hide details"));
+    } else {
+        m_detailsAction->setText(i18nc("@action:display details about credentials to store", "&Show details"));
+    }
+    if (m_detailsWidget) {
+        m_detailsWidget->setVisible(m_detailsVisible);
+        if (m_detailsVisible) {
+            m_detailsWidget->resize(m_detailsWidget->sizeHint());
+            m_detailsWidget->move(computeDetailsWidgetPosition());
+        }
+    }
+}
+
+void PasswordBar::setForms(const WebEngineWallet::WebFormList& forms)
+{
+    if (m_detailsWidget) {
+        m_detailsWidget->setForms(forms);
+    }
+}
+
+QPoint PasswordBar::computeDetailsWidgetPosition() const
+{
+    if (!m_detailsWidget) {
+        return QPoint();
+    }
+    return mapTo(parentWidget(), {width() - m_detailsWidget->width(), height()});
 }

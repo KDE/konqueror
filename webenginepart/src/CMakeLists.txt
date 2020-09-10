@@ -28,9 +28,11 @@ set(kwebenginepartlib_LIB_SRCS
     ui/featurepermissionbar.cpp
     about/konq_aboutpage.cpp
     webenginecustomizecacheablefieldsdlg.cpp
+    webfieldsdataview.cpp
+    ui/credentialsdetailswidget.cpp
 )
 
-ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui)
+ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui)
 
 qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 

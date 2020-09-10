@@ -24,80 +24,14 @@
 #define WEBENGINECUSTOMIZECACHEABLEFIELDSDLG_H
 
 #include <QDialog>
-#include <QStyledItemDelegate>
 
 #include "webenginewallet.h"
 
-class QDialogButtonBox;
-class QCheckBox;
-class QTableView;
-class QStandardItemModel;
-class QStandardItem;
+class WebFieldsDataViewPasswordDelegate;
+class WebFieldsDataModel;
 
 namespace Ui {
     class WebEngineCustomizeCacheableFieldsDlg;
-};
-
-/**
- * @brief Helper class to display passwords in WebEngineCustomizeCacheableFieldsDlg
- */
-
-class WebEnginePartPasswordDelegate : public QStyledItemDelegate {
-    Q_OBJECT
-
-public:
-
-    /**
-     * @brief Default constructor
-     *
-     * @param parent the parent object
-     */
-    explicit WebEnginePartPasswordDelegate(QObject *parent=nullptr);
-    ~WebEnginePartPasswordDelegate(){}
-
-    /**
-     * @brief Override of <a href="https://doc.qt.io/qt-5/qstyleditemdelegate.html#paint">QStyledItemDelegate::paint()</a>
-     *
-     * It displays the text replacing each character with a special character according to QStyle::StyleHint::SH_LineEdit_PasswordCharacter,
-     * but only if the data contained in the index represents a password, according to WebEngineCustomizeCacheableFieldsDlg::PasswordRole
-     *
-     * @param painter the painter
-     * @param option the option
-     * @param index the index to paint
-     */
-    void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const override;
-
-    /**
-     * @brief Override of <a href="https://doc.qt.io/qt-5/qstyleditemdelegate.html#sizeHint">QStyledItemDelegate::sizeHint()</a>
-     *
-     * @param option the option
-     * @param index the index whose size hint should be returned
-     * @return the size hint for @p index
-     */
-    QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const override;
-
-private:
-
-    /**
-     * @brief Whether the given index represents a password
-     *
-     * This function uses the value of the WebEngineCustomizeCacheableFieldsDlg::PasswordRole to determine if @p idx represents or not a password
-     * @param idx the index
-     * @return @b true if @p idx represents and index and @b false otherwise
-     */
-    static bool isPassword(const QModelIndex &idx);
-
-    /**
-     * @brief The string to display in place of a password
-     *
-     * It returns a string with the same length as the Qt::DisplayRole of @p index all made by the character returned by <tt>QStyle::styleHint</tt>
-     * called with argument QStyle::StyleHint::SH_LineEdit_PasswordCharacter.
-     *
-     * @param option the option to pass to QStyle::styleHint
-     * @param index the index containing the password
-     * @return a string suitable to be displayed instead of the display role of @p index
-     */
-    static QString passwordReplacement(const QStyleOptionViewItem &option, const QModelIndex &index);
 };
 
 /**
@@ -116,6 +50,8 @@ class WebEngineCustomizeCacheableFieldsDlg : public QDialog
     Q_OBJECT
 
 public:
+
+    typedef QMap<QString, QStringList> OldCustomizationData;
     /**
      * @brief Constructor
      *
@@ -124,21 +60,12 @@ public:
      * the chosen fields in that form. This is used to decide which fields should be initially checked. If the map is empty, the initially selected fields will be decided automatically
      * @param parent the parent widget
      */
-    WebEngineCustomizeCacheableFieldsDlg(const WebEngineWallet::WebFormList &forms, const QMap<QString, QStringList> &oldCustomization,  QWidget* parent = nullptr);
+    WebEngineCustomizeCacheableFieldsDlg(const WebEngineWallet::WebFormList &forms, const OldCustomizationData &oldCustomization,  QWidget* parent = nullptr);
 
     /**
      * @brief Destructor
      */
     ~WebEngineCustomizeCacheableFieldsDlg(){}
-
-    /**
-     * @brief Enum for special roles used by the table which displays the fields
-     */
-    enum Roles {
-        PasswordRole = Qt::UserRole+1, ///< Role which tells whether an index corresponds to a password or not
-        FormRole, ///< Role which contains the index of the form a field belongs to inside m_fields
-        FieldRole ///< Role which contains the index of the field in the form it belongs to
-    };
 
     /**
      * @brief The list of fields chosen by the user
@@ -156,74 +83,12 @@ public:
      */
     bool immediatelyCacheData() const;
 
-private slots:
-
-    /**
-     * @brief Slot which toggles displaying of passwords on or off
-     *
-     * @param show whether passwords should be displayed (@b true) or obfuscated (@b false) using WebEnginePartPasswordDelegate
-     *
-     * @see WebEnginePartPasswordDelegate
-     */
-    void toggleShowPasswords(bool show);
-
-    /**
-     * @brief Shows or hides the columns displaying details about fields
-     *
-     * When details are hidden, the only visible information about fields are name and value; when details are visible, instead, also the type and
-     * characteristics such as being read-only, enabled and having autocomplete on or off are shown
-     *
-     * @param show whether to show or hide details about fields
-     */
-    void toggleDetails(bool show);
-
-private:
-    ///@brief enum to reference the various columns of the table
-    enum Columns {
-        ChosenCol = 0,  ///< The column where the user can select the fields
-        LabelCol, ///< The field name column
-        ValueCol, ///< The field value column
-        InternalNameCol, ///< The internal name column
-        TypeCol, ///< The field type column
-        IdCol, ///< The ID field type column
-        DetailsCol ///< The field details column
-    };
-
-    /**
-     * @brief Fills the table with the fields information
-     *
-     * @param oldCustomization as in WebEngineCustomizeCacheableFieldsDlg()
-     */
-    void fillFieldTable(const QMap<QString, QStringList> &oldCustomization);
-
-    /**
-     * @brief Create a list of <a href="https://doc.qt.io/qt-5/qstandarditem.html">`QStandardItem`</a> representing the row with the information about a field
-     *
-     * @param field the field to describe in the row
-     * @return a row containing information about @p field
-     * @note This function doesn't set the FormRole and FieldRole for the newly created row and it doesn't check the first element. Callers of this function must do all of this themselves
-     */
-    QList<QStandardItem*> createRowForField(const WebEngineWallet::WebForm::WebField &field);
-
-    /**
-     * @brief A string to use as tool tip for the given field
-     *
-     * The tool tip contains information about all the field characteristics which aren't shown by default (internal name, id, type, read-only, enabled, autocomplete enabled).
-     * @param field the field
-     * @return a string with the tool tip
-     */
-    static QString toolTipForField(const WebEngineWallet::WebForm::WebField &field);
-
 private:
 
-    ///@brief A list of all the forms displayed in the dialog
-    WebEngineWallet::WebFormList m_forms;
+    void addChecksToPreviouslyChosenItems(const WebEngineWallet::WebFormList &forms, const OldCustomizationData &data);
 
     ///@brief The model used by the table
-    QStandardItemModel *m_model;
-
-    ///@brief The delegate used to display obfuscated passwords
-    WebEnginePartPasswordDelegate *m_passwordDelegate;
+    WebFieldsDataModel *m_model;
 
     ///@brief The ui object
     Ui::WebEngineCustomizeCacheableFieldsDlg *m_ui;

@@ -218,7 +218,7 @@ void WebEngineWallet::saveFormsInPage(WebEnginePage* page)
     if (!page) {
         return;
     }
-    WebEngineWalletPrivate::detectFormsInPage(page, [this, page](const WebFormList &forms){saveFormData(page, forms);});
+    WebEngineWalletPrivate::detectFormsInPage(page, [this, page](const WebFormList &forms){saveFormData(page, forms);}, true);
 }
 
 void WebEngineWallet::saveFormData(WebEnginePage *page, const WebFormList &allForms, bool force)
@@ -348,8 +348,8 @@ void WebEngineWallet::fillFormDataFromCache(const QList<QUrl> &urlList)
 void WebEngineWallet::saveFormDataToCache(const QString &key)
 {
     if (d->wallet) {
-        bool remove = d->saveDataToCache(key);
-        if (remove) {
+        bool removeEntry = d->saveDataToCache(key);
+        if (removeEntry){
             d->pendingSaveRequests.remove(key);
         }
         return;
@@ -404,6 +404,11 @@ void WebEngineWallet::customizeFieldsToCache(WebEnginePage* page, QWidget* widge
 void WebEngineWallet::removeCustomizationForPage(const QUrl& url)
 {
     WebEngineSettings::self()->removeCacheableFieldsCustomizationForPage(customFormsKey(url));
+}
+
+WebEngineWallet::WebFormList WebEngineWallet::pendingSaveData(const QString& key)
+{
+    return d->pendingSaveRequests.value(key);
 }
 
 QDebug operator<< (QDebug dbg, const WebEngineWallet::WebForm::WebFieldType type)

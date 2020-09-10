@@ -46,6 +46,7 @@
 #include "ui/passwordbar.h"
 #include "ui/featurepermissionbar.h"
 #include "settings/webenginesettings.h"
+#include "ui/credentialsdetailswidget.h"
 
 #include <KCodecAction>
 #include <KIO/Global>
@@ -955,6 +956,7 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
             qCWarning(WEBENGINEPART_LOG) << "No m_wallet instance found! This should never happen!";
             return;
         }
+        m_passwordBar->setForms(m_wallet->pendingSaveData(key));
         connect(m_passwordBar, &PasswordBar::saveFormDataAccepted,
                 m_wallet, &WebEngineWallet::acceptSaveFormDataRequest);
         connect(m_passwordBar, &PasswordBar::saveFormDataRejected,
@@ -972,8 +974,9 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
                                 url.host()));
 
     QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
-    if (lay)
+    if (lay) {
         lay->insertWidget(0, m_passwordBar);
+    }
 
     m_passwordBar->animatedShow();
 }

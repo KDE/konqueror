@@ -242,6 +242,14 @@ public:
      * @see formsWithCachedData
      */
     void removeFormData(const WebFormList &forms);
+    
+    /**
+     * @brief the forms to save for the given key
+     *
+     * @param key the key associated with the page whose forms should be returned. It's the same key passed by the saveFormDataRequested() signal
+     * @return the forms associated with the page corresponding to the given key
+     */
+    WebFormList pendingSaveData(const QString &key);
 
     /**
      * @brief Whether the user has customized which forms should be cached for the given URL

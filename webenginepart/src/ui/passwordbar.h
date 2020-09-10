@@ -25,7 +25,10 @@
 #include <KMessageWidget>
 
 #include <QUrl>
+#include <QPointer>
 
+#include "webenginewallet.h"
+#include "credentialsdetailswidget.h"
 
 class PasswordBar : public KMessageWidget
 {
@@ -40,21 +43,33 @@ public:
     void setUrl(const QUrl&);
     void setRequestKey(const QString&);
 
+    void setForms(const WebEngineWallet::WebFormList &forms);
+
 Q_SIGNALS:
     void saveFormDataRejected(const QString &key);
     void saveFormDataAccepted(const QString &key);
     void done();
+    void toggleDetailsRequested(const QUrl &url, bool visible);
+    void moved();
 
 private Q_SLOTS:
     void onNotNowButtonClicked();
     void onNeverButtonClicked();
     void onRememberButtonClicked();
+    void onDetailsButtonClicked();
+
+protected:
+    void resizeEvent(QResizeEvent * event) override;
 
 private:
     void clear();
+    QPoint computeDetailsWidgetPosition() const;
 
     QUrl m_url;
     QString m_requestKey;
+    bool m_detailsVisible;
+    QAction *m_detailsAction;
+    QPointer<CredentialsDetailsWidget> m_detailsWidget;
 };
 
 #endif // PASSWORDBAR_H
