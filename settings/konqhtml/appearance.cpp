@@ -206,9 +206,13 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList &)
 
     m_pEncoding->setToolTip(i18n("Select the default encoding to be used; normally, you will be fine with 'Use language encoding' "
                                  "and should not have to change this."));
-
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
+    connect(m_pEncoding, QOverload<int>::of(&QComboBox::activated), this, [this](int n){slotEncoding(m_pEncoding->itemText(n));});
+    connect(m_pEncoding, QOverload<int>::of(&QComboBox::activated), this, &KAppearanceOptions::markAsChanged);
+#else
     connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::slotEncoding);
     connect(m_pEncoding, &QComboBox::textActivated, this, &KAppearanceOptions::markAsChanged);
+#endif
 
     lay->addStretch(5);
 }

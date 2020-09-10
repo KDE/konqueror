@@ -39,6 +39,10 @@ if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.13.0")
   add_definitions(-DWEBENGINE_PDF_VIEWER)
 endif()
 
+if(Qt5WebEngineWidgets_VERSION VERSION_LESS "5.14.0")
+  add_definitions(-DWEBENGINEDOWNLOADITEM_USE_PATH)
+endif()
+
 find_package(X11)
 set(KONQ_HAVE_X11 ${X11_FOUND})
 
