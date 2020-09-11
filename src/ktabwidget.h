@@ -47,7 +47,7 @@ public:
      * @param parent The parent widgets.
      * @param flags The Qt window flags @see QWidget.
      */
-    explicit KTabWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+    explicit KTabWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = {});
 
     /**
      * Destroys the tab widget.

@@ -92,7 +92,7 @@ static const QList<KConfigGroup> windowConfigGroups(/*NOT const, we'll use write
 }
 
 SessionRestoreDialog::SessionRestoreDialog(const QStringList &sessionFilePaths, QWidget *parent)
-    : QDialog(parent, nullptr)
+    : QDialog(parent)
     , m_sessionItemsCount(0)
     , m_dontShowChecked(false)
 {
