@@ -61,6 +61,7 @@ KonqSideBarTreeModule::KonqSideBarTreeModule(QWidget *parent,
     treeView->setHeaderHidden(true);
     treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     treeView->setTextElideMode(Qt::ElideMiddle);
+    treeView->setDragEnabled(true);
 
     model = new KDirModel(this);
     sorted_model = new KDirSortFilterProxyModel(this);
