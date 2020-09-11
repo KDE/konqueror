@@ -154,6 +154,14 @@ void ModuleManager::setModuleIcon(const QString &fileName, const QString &icon)
     ksc.sync();
 }
 
+void ModuleManager::setShowHiddenFolders(const QString &fileName, const bool &newState)
+{
+    KConfig desktopFile(m_localPath + fileName, KConfig::SimpleConfig);
+    KConfigGroup ksc(&desktopFile, "Desktop Entry");
+    ksc.writeEntry("ShowHiddenFolders", newState);
+    ksc.sync();
+}
+
 void ModuleManager::removeModule(const QString &fileName)
 {
     // Remove the local file (if it exists)

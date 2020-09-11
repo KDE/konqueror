@@ -52,6 +52,7 @@ public:
 
 private slots:
     void slotSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
+    void slotUpdateColWidth();
     void slotKDirExpand_setRootIndex();
     void slotKDirExpand_setSelection(const QModelIndex &index);
     void customEvent(QEvent *ev) override;
@@ -61,7 +62,7 @@ private:
     void setSelectionIndex(const QModelIndex &index);
     QUrl getUrlFromIndex(const QModelIndex &index);
     QModelIndex resolveIndex(const QModelIndex &index);
-    const QModelIndex getIndexFromUrl(const QUrl &url);
+    QModelIndex getIndexFromUrl(const QUrl &url) const;
     QUrl cleanupURL(const QUrl &url);
 
     QTreeView *treeView;

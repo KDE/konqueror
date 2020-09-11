@@ -21,8 +21,14 @@
 /*
 
 TODO:
+-sidepanel not triggering changes in session properly
+-"Configure sidebar" > "Add new" has no option to actually add anything there
 -places panel does not respond to view location changes 
 -detect icon size for places panel
+-doubleclick on image (to open kuickview) causes sidebar to deselect
+
+-"View mode" to "sidebar" causes crash and ruins session -- cannot undo
+
 
 BUGS:
 -(konq bug) sftp cannot save file being edited, because: "A file named sftp://hostname/path/to/file already exists."
@@ -53,14 +59,15 @@ KonqSideBarTreeModule::KonqSideBarTreeModule(QWidget *parent,
     m_initURL = cleanupURL(QUrl(configGroup.readPathEntry("URL", QString()))); // because the .desktop file url might be "~"
     treeView = new QTreeView(parent);
     treeView->setHeaderHidden(true);
-    treeView->header()->setStretchLastSection(false);
-    treeView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    treeView->setTextElideMode(Qt::ElideMiddle);
 
     model = new KDirModel(this);
     sorted_model = new KDirSortFilterProxyModel(this);
     sorted_model->setSortFoldersFirst(true);
     sorted_model->setSourceModel(model); 
     model->dirLister()->setDirOnlyMode(true);
+    model->dirLister()->setShowingDotFiles(configGroup.readEntry("ShowHiddenFolders", false));
 
     model->openUrl(m_initURL, KDirModel::ShowRoot);
 
@@ -69,6 +76,11 @@ KonqSideBarTreeModule::KonqSideBarTreeModule(QWidget *parent,
     for (int i = 1; i <= 6; i++) {
         treeView->setColumnHidden(i, true);
     }
+
+    connect(treeView, &QTreeView::expanded,
+            this, &KonqSideBarTreeModule::slotUpdateColWidth);
+    connect(treeView, &QTreeView::collapsed,
+            this, &KonqSideBarTreeModule::slotUpdateColWidth);
 
     model->expandToUrl(m_initURL); // KDirModel is async, we'll just have to wait for slotKDirCompleted()
     connect(model, &KDirModel::expand,
@@ -167,8 +179,14 @@ void KonqSideBarTreeModule::slotSelectionChanged(const QItemSelection &selected,
     if (index.isValid() && m_lastURL != urlFromIndex) {
         emit openUrlRequest(urlFromIndex);
     }
+    slotUpdateColWidth();
 }
 
+// needed because when there is only one column, QTreeView does not trigger resize
+void KonqSideBarTreeModule::slotUpdateColWidth()
+{
+    treeView->resizeColumnToContents(0);
+}
 
 // needed because KDirModel is async
 void KonqSideBarTreeModule::slotKDirExpand_setRootIndex()
@@ -190,6 +208,7 @@ void KonqSideBarTreeModule::slotKDirExpand_setSelection(const QModelIndex &index
             this, &KonqSideBarTreeModule::slotKDirExpand_setSelection);
         setSelection(m_lastURL, false);
     }
+    slotUpdateColWidth();
 }
 
 
@@ -217,7 +236,7 @@ QUrl KonqSideBarTreeModule::getUrlFromIndex(const QModelIndex &index)
     return resolvedUrl;
 }
 
-const QModelIndex KonqSideBarTreeModule::getIndexFromUrl(const QUrl &url)
+QModelIndex KonqSideBarTreeModule::getIndexFromUrl(const QUrl &url) const
 {
     return sorted_model->mapFromSource(model->indexForUrl(url));
 }

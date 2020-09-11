@@ -328,6 +328,15 @@ void Sidebar_Widget::slotRemove()
     }
 }
 
+void Sidebar_Widget::slotToggleShowHiddenFolders()
+{
+    Q_ASSERT(currentButtonInfo().canToggleShowHiddenFolders);
+    bool newToggleState = !currentButtonInfo().showHiddenFolders;
+    m_moduleManager.setShowHiddenFolders(currentButtonInfo().file, newToggleState);
+    // TODO: update THAT button only.
+    QTimer::singleShot(0, this, SLOT(updateButtons()));
+}
+
 void Sidebar_Widget::slotMultipleViews()
 {
     m_singleWidgetMode = !m_singleWidgetMode;
@@ -402,7 +411,6 @@ void Sidebar_Widget::updateButtons()
             delete button.dock;
         }
         m_buttonBar->removeTab(i);
-
     }
     m_buttons.clear();
 
@@ -531,6 +539,8 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
         m_buttonBar->appendTab(QIcon::fromTheme(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, cleanupURL(url), lib, name, icon);
         buttonInfo.configOpen = configGroup.readEntry("Open", false);
+        buttonInfo.canToggleShowHiddenFolders = (configGroup.readEntry("X-KDE-KonqSidebarModule", QString()) == "konqsidebar_tree");
+        buttonInfo.showHiddenFolders = configGroup.readEntry("ShowHiddenFolders", false);
         m_buttons.insert(lastbtn, buttonInfo);
         KMultiTabBarTab *tab = m_buttonBar->tab(lastbtn);
         tab->installEventFilter(this);
@@ -565,6 +575,11 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
                 buttonPopup->addAction(QIcon::fromTheme("edit-rename"), i18n("Set Name..."), this, &Sidebar_Widget::slotSetName); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
                 buttonPopup->addAction(QIcon::fromTheme("internet-web-browser"), i18n("Set URL..."), this, &Sidebar_Widget::slotSetURL);
                 buttonPopup->addAction(QIcon::fromTheme("preferences-desktop-icons"), i18n("Set Icon..."), this, &Sidebar_Widget::slotSetIcon);
+                if (currentButtonInfo().canToggleShowHiddenFolders) {
+                    QAction *toggleShowHiddenFolders = buttonPopup->addAction(i18n("Show Hidden Folders..."), this, &Sidebar_Widget::slotToggleShowHiddenFolders);
+                    toggleShowHiddenFolders->setCheckable(true);
+                    toggleShowHiddenFolders->setChecked(currentButtonInfo().showHiddenFolders);
+                }
                 buttonPopup->addSeparator();
                 buttonPopup->addAction(QIcon::fromTheme("edit-delete"), i18n("Remove"), this, &Sidebar_Widget::slotRemove);
                 buttonPopup->addSeparator();
