@@ -182,7 +182,7 @@ void WebEngineWallet::WebEngineWalletPrivate::detectFormsInPage(WebEnginePage* p
         WebFormList forms = parseFormDetectionResult(jsForms, url);
         callback(forms);
     };
-    page->runJavaScript(QL1S("findFormsInWindow(%1)").arg(findLabels ? "true" : ""), QWebEngineScript::ApplicationWorld, realCallBack);
+    page->runJavaScript(QStringLiteral("findFormsInWindow(%1)").arg(findLabels ? "true" : ""), QWebEngineScript::ApplicationWorld, realCallBack);
 }
 
 WebEngineWallet::WebFormList WebEngineWallet::WebEngineWalletPrivate::formsToFill(const WebFormList &allForms) const

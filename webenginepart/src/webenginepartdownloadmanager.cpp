@@ -148,7 +148,12 @@ void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEngin
 {
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
-    QString fileName = generateBlobTempFileName(it->suggestedFileName(), type.preferredSuffix());
+#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
+    QString suggestedName = it->path();
+#else
+    QString suggestedName = it->suggestedFileName();
+#endif
+    QString fileName = generateBlobTempFileName(suggestedName, type.preferredSuffix());
 #ifdef WEBENGINEDOWNLOADITEM_USE_PATH
     it->setPath(m_tempDownloadDir.filePath(fileName));
 #else
@@ -253,9 +258,14 @@ void WebEngineBlobDownloadJob::startDownloading()
 {
     if (m_downloadItem) {
         m_startTime = QDateTime::currentDateTime();
+#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
+        QString name = QFileInfo(m_downloadItem->path()).filePath();
+#else
+        QString name = m_downloadItem->downloadFileName();
+#endif
         emit description(this, i18nc("Notification about downloading a file", "Downloading"),
                         QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
-                        QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), m_downloadItem->downloadFileName()));
+                        QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), name));
         m_downloadItem->resume();
     }
 }
