@@ -59,6 +59,9 @@ PasswordBar::PasswordBar(QWidget *parent) :KMessageWidget(parent), m_detailsVisi
 
 PasswordBar::~PasswordBar()
 {
+    if (m_detailsWidget) {
+        m_detailsWidget->deleteLater();
+    }
 }
 
 QUrl PasswordBar::url() const
