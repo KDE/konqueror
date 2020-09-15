@@ -6,7 +6,7 @@ function labelsForIdsInFrame(frm) {
     if (l.htmlFor != '') {
       var obj = frm.document.getElementById(l.htmlFor);
       if (obj) {
-        res[obj.id] = l.innerHTML;
+        res[obj.id] = l.textContent;
       }
     }
   }
