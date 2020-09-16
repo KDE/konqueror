@@ -43,3 +43,7 @@ void CredentialsDetailsWidget::setForms(const WebEngineWallet::WebFormList& form
     m_model->setForms(forms);
 }
 
+void CredentialsDetailsWidget::clear()
+{
+    m_model->clearForms();
+}

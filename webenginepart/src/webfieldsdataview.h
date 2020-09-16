@@ -161,6 +161,11 @@ public:
      */
     bool areItemsCheckable() const {return m_checkableItems;}
 
+    /**
+     * @brief Remove the contents from the model
+     */
+    void clearForms();
+
 private:
 
     /**

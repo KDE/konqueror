@@ -40,6 +40,7 @@ public:
     ~CredentialsDetailsWidget() override;
 
     void setForms(const WebEngineWallet::WebFormList &forms);
+    void clear();
 
 private:
     QScopedPointer<Ui::CredentialsDetailsWidget> m_ui;

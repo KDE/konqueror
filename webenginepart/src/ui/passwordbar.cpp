@@ -110,6 +110,10 @@ void PasswordBar::clear()
 {
     m_requestKey.clear();
     m_url.clear();
+    if (m_detailsWidget) {
+        m_detailsWidget->clear();
+        m_detailsWidget->hide();
+    }
 }
 
 void PasswordBar::resizeEvent(QResizeEvent* event)

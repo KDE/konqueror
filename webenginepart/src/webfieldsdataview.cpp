@@ -87,6 +87,7 @@ WebFieldsDataModel::~WebFieldsDataModel()
 void WebFieldsDataModel::setForms(const WebEngineWallet::WebFormList &forms)
 {
     m_forms = forms;
+    removeRows(0, rowCount());
     for (int i = 0; i < m_forms.size(); ++i) {
         const WebForm &form = m_forms.at(i);
         for (int j = 0; j < form.fields.size(); ++j) {
@@ -94,6 +95,12 @@ void WebFieldsDataModel::setForms(const WebEngineWallet::WebFormList &forms)
             appendRow(createRowForField(field, i, j));
         }
     }
+}
+
+void WebFieldsDataModel::clearForms()
+{
+    m_forms.clear();
+    removeRows(0, rowCount());
 }
 
 WebEngineWallet::WebFormList WebFieldsDataModel::checkedFields() const
