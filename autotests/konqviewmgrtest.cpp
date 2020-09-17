@@ -319,7 +319,7 @@ void ViewMgrTest::testSplitView()
     QVERIFY(!frame2->isHidden());
 
     // Check container
-    QVERIFY(view->frame()->parentContainer()->frameType() == KonqFrameBase::Container);
+    QCOMPARE(view->frame()->parentContainer()->frameType(), KonqFrameBase::Container);
     KonqFrameContainer *container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
     QVERIFY(container);
     QCOMPARE(container->count(), 2);
@@ -400,8 +400,8 @@ void ViewMgrTest::testSplitMainContainer()
     QVERIFY(!frame2->isHidden());
 
     // Check container
-    QVERIFY(view->frame()->parentContainer()->frameType() == KonqFrameBase::Tabs);
-    QVERIFY(view2->frame()->parentContainer()->frameType() == KonqFrameBase::Container);
+    QCOMPARE(view->frame()->parentContainer()->frameType(), KonqFrameBase::Tabs);
+    QCOMPARE(view2->frame()->parentContainer()->frameType(), KonqFrameBase::Container);
     KonqFrameContainer *container = static_cast<KonqFrameContainer *>(view2->frame()->parentContainer());
     QVERIFY(container);
     QCOMPARE(container->count(), 2);
@@ -684,7 +684,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 
     KonqFrameContainer *container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
     QVERIFY(container);
-    QVERIFY(container->parentContainer()->frameType() == KonqFrameBase::Tabs);
+    QCOMPARE(container->parentContainer()->frameType(), KonqFrameBase::Tabs);
 
     viewManager->duplicateTab(0); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)]."));   // mainWindow, tab widget, two tabs
