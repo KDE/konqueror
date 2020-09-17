@@ -30,7 +30,6 @@
 #include <KJob>
 
 class WebEnginePage;
-class QFile;
 
 class WebEnginePartDownloadManager : public QObject
 {

@@ -38,7 +38,6 @@ class QAuthenticator;
 class QUrl;
 class WebSslInfo;
 class WebEnginePart;
-class QWebEngineDownloadItem;
 class KPasswdServerClient;
 class WebEngineWallet;
 class QWebEngineFullScreenRequest;

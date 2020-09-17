@@ -27,7 +27,6 @@
 
 #include "webenginewallet.h"
 
-class WebFieldsDataViewPasswordDelegate;
 class WebFieldsDataModel;
 
 namespace Ui {

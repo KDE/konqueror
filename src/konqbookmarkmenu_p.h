@@ -28,7 +28,6 @@
 class QString;
 class QMenu;
 class KBookmark;
-class KBookmarkGroup;
 class KBookmarkOwner;
 
 namespace Konqueror { // to avoid clashes with KF5::Bookmarks classes

@@ -3,7 +3,6 @@
 
 #include <QWebEngineUrlSchemeHandler>
 
-class QUrl;
 
 class KonqAboutPageSingleton
 {
