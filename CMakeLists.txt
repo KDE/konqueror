@@ -50,7 +50,9 @@ if (X11_FOUND)
   find_package(Qt5 REQUIRED X11Extras)
 endif(X11_FOUND)
 
-add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(
+    -DQT_USE_QSTRINGBUILDER
+)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 include (CheckSymbolExists)

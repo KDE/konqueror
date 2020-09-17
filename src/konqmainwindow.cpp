@@ -4120,7 +4120,7 @@ void KonqMainWindow::connectExtension(KParts::BrowserExtension *ext)
         //qCDebug(KONQUEROR_LOG) << it.key();
         if (act) {
             // Does the extension have a slot with the name of this action ?
-            if (ext->metaObject()->indexOfSlot(it.key() + "()") != -1) {
+            if (ext->metaObject()->indexOfSlot(QByteArray(it.key() + "()").constData()) != -1) {
                 connect(act, SIGNAL(triggered()), ext, it.value() /* SLOT(slot name) */);
                 act->setEnabled(ext->isActionEnabled(it.key()));
                 const QString text = ext->actionText(it.key());
@@ -4149,7 +4149,7 @@ void KonqMainWindow::disconnectExtension(KParts::BrowserExtension *ext)
     for (; it != itEnd; ++it) {
         QAction *act = actionCollection()->action(it.key().data());
         //qCDebug(KONQUEROR_LOG) << it.key();
-        if (act && ext->metaObject()->indexOfSlot(it.key() + "()") != -1) {
+        if (act && ext->metaObject()->indexOfSlot(QByteArray(it.key() + "()").constData()) != -1) {
             //qCDebug(KONQUEROR_LOG) << act << act->name();
             act->disconnect(ext);
         }

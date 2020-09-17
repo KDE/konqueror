@@ -600,7 +600,7 @@ static void openTabWithTitle(KonqMainWindow &mainWindow, const QString &title, K
     // correct since it's a subclass of text/html, khtml can display it
     QVERIFY(view->supportsMimeType("application/x-netscape-bookmarks"));
     // Tab caption test
-    view->openUrl(QUrl("data:text/html, <title>" + title.toUtf8() + "</title>"), QStringLiteral("http://loc.bar.url"));
+    view->openUrl(QUrl(QStringLiteral("data:text/html, <title>") + title + QStringLiteral("</title>")), QStringLiteral("http://loc.bar.url"));
     QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
     QVERIFY(spyCompleted.wait(10000));
     QCOMPARE(view->caption(), title);
