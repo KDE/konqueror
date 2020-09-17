@@ -42,7 +42,7 @@ AkregatorMenu::AkregatorMenu(QObject *parent, const QVariantList &args)
     Q_UNUSED(args);
 
 #if 0
-    if (QByteArray(kapp->name()) == "kdesktop" && !KAuthorized::authorizeKAction("editable_desktop_icons")) {
+    if (QByteArray(kapp->name()) == "kdesktop" && !KAuthorized::authorizeAction("editable_desktop_icons")) {
         return;
     }
 #endif
