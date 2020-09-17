@@ -301,7 +301,11 @@ void UAChangerPlugin::slotDefault()
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
                                                      Qt::SkipEmptyParts);
 #else
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                                                      QString::SkipEmptyParts);
+#else
+                                                     Qt::SkipEmptyParts);
+#endif
 #endif
     if (!partList.isEmpty()) {
         partList.removeFirst();

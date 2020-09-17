@@ -187,8 +187,16 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     if (u1.scheme() != u2.scheme())
         return false;
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
+#else
+    QStringList u1List = u1.host().split(QL1C('.'), Qt::SkipEmptyParts);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
+#else
+    QStringList u2List = u2.host().split(QL1C('.'), Qt::SkipEmptyParts);
+#endif
 
     if (qMin(u1List.count(), u2List.count()) < 2)
         return false;  // better safe than sorry...
