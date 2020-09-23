@@ -89,6 +89,6 @@ void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
     m_error = job->error() == 0 ? QWebEngineUrlRequestJob::NoError : QWebEngineUrlRequestJob::RequestFailed;
     m_errorMessage = isSuccessful() ? job->errorString() : QString();
     m_data = job->data();
-    m_mimeType = QMimeDatabase().mimeTypeForData(m_data);
+    m_mimeType = QMimeDatabase().mimeTypeForName(job->mimetype());
     processSlaveOutput();
 }

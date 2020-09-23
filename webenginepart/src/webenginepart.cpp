@@ -90,7 +90,7 @@ void WebEnginePart::initWebEngineUrlSchemes()
     static bool needToInitUrlSchemes = true;
     if (needToInitUrlSchemes) {
         needToInitUrlSchemes = false;
-        QVector<QByteArray> localSchemes = {"error", "konq"};
+        QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
         const QStringList protocols = KProtocolInfo::protocols();
         for(const QString &prot : protocols){
             if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
@@ -123,6 +123,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
         prof->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(prof));
         prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
+        prof->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(prof));
     }
     static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
