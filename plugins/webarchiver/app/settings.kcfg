@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+
+  <group name="Options">
+
+    <entry name="WaitTime" type="UInt">
+      <label>Wait time:</label>
+      <tooltip>The wait time between item requests, to reduce web server load</tooltip>
+      <min>0</min>
+      <max>60</max>
+      <default>1</default>
+    </entry>
+
+    <entry name="NoProxy" type="Bool">
+      <label>Do not use proxy</label>
+      <tooltip>Do not use the system proxy settings to fetch the web page</tooltip>
+      <default>false</default>
+    </entry>
+
+    <entry name="RandomWait" type="Bool">
+      <label>Randomise wait time</label>
+      <tooltip>Vary the wait time between requests, to confuse server log analysis</tooltip>
+      <default>false</default>
+    </entry>
+
+    <entry name="FixExtensions" type="Bool">
+      <label>Save in standard web archive format</label>
+      <tooltip>&lt;p&gt;Save downloaded files all in a single directory, with file name extensions suitable for local browsing.
+                        For example, the main HTML page will always be called "index.html" and a remote .php page will be saved with the standard .html extension.&lt;/p&gt;
+               &lt;p&gt;Leave this option turned on to produce a standard web archive (.war) file.&lt;/p&gt;
+               &lt;p&gt;If this option is turned off, then the files will be saved exactly as downloaded.
+                        This means that they may be in subdirectories reflecting the structure of the original web site, and extensions will not be adjusted.
+                        Note that the download may not work correctly if the original URL refers to a directory but does not end with a slash.&lt;/p&gt;
+      </tooltip>
+      <default>true</default>
+    </entry>
+
+    <entry name="RunInTerminal" type="Bool">
+      <label>Run in terminal</label>
+      <tooltip>&lt;p&gt;Run the download process in a terminal window. Close the terminal window when the download has finished.&lt;/p&gt;
+               &lt;p&gt;If this option is turned off then the download will run in the background. Its progress output should appear in the session log file.&lt;/p&gt;
+      </tooltip>
+      <default>false</default>
+    </entry>
+
+    <entry name="CloseWhenFinished" type="Bool">
+      <label>Close when finished</label>
+      <tooltip>Close this window when the download has finished successfully</tooltip>
+      <default>false</default>
+    </entry>
+
+    <entry name="ArchiveType" type="String">
+      <label>Archive &amp;type:</label>
+      <tooltip>The type of web archive to save</tooltip>
+      <default>application/x-webarchive</default>
+    </entry>
+
+  </group>
+</kcfg>

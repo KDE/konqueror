@@ -1,0 +1,11 @@
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui name="webarchiver" library="webarchiverplugin" version="2" translationDomain="webarchiver">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Action name="archivepage"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="archivepage"/>
+</ToolBar>
+</gui>
