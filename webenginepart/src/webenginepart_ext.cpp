@@ -18,6 +18,24 @@
  *
  */
 
+/*
+ * The code for the function slotPrintPreview was adapted from the PrintMe Qt example
+ * and is distributed under the BSD license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *   * Neither the name of The Qt Company Ltd nor the names of its
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ */
+
 #include "webenginepart_ext.h"
 #include <QtWebEngine/QtWebEngineVersion>
 
@@ -54,6 +72,7 @@
 #include <QPrintPreviewDialog>
 #include <QWebEngineHistory>
 #include <QMimeData>
+#include <QPrinterInfo>
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
@@ -800,14 +819,16 @@ void WebEngineBrowserExtension::saveHistory()
 
 void WebEngineBrowserExtension::slotPrintPreview()
 {
-#if 0
-    // Make it non-modal, in case a redirection deletes the part
-    QPointer<QPrintPreviewDialog> dlg (new QPrintPreviewDialog(view()));
-    connect(dlg.data(), SIGNAL(paintRequested(QPrinter*)),
-            view()->page()->currentFrame(), SLOT(print(QPrinter*)));
-    dlg->exec();
-    delete dlg;
-#endif
+    QPrinter printer;
+    QPrintPreviewDialog dlg(&printer, view());
+    auto printPreview = [this](QPrinter *p){
+        QEventLoop loop;
+        auto preview = [&](bool) {loop.quit();};
+        m_view->page()->print(p, preview);
+        loop.exec();
+    };
+    connect(&dlg, &QPrintPreviewDialog::paintRequested, this, printPreview);
+    dlg.exec();
 }
 
 void WebEngineBrowserExtension::slotOpenSelection()
