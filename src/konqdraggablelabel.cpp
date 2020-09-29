@@ -59,7 +59,8 @@ void KonqDraggableLabel::mouseMoveEvent(QMouseEvent *ev)
             drag->setMimeData(md);
             QString iconName = KIO::iconNameForUrl(lst.first());
 
-            drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
+            const QIcon icon = QIcon::fromTheme(iconName, QIcon::fromTheme(QStringLiteral("application-octet-stream")));
+            drag->setPixmap(icon.pixmap(KIconLoader::SizeSmall));
 
             drag->exec();
         }

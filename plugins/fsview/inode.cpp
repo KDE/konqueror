@@ -404,7 +404,8 @@ QPixmap Inode::pixmap(int i) const
 
     if (!_mimePixmapSet) {
         QUrl u = QUrl::fromLocalFile(path());
-        _mimePixmap = KIconLoader::global()->loadMimeTypeIcon(KIO::iconNameForUrl(u), KIconLoader::Small);
+        const QIcon icon = QIcon::fromTheme(KIO::iconNameForUrl(u), QIcon::fromTheme(QStringLiteral("application-octet-stream")));
+        _mimePixmap = icon.pixmap(KIconLoader::SizeSmall);
         _mimePixmapSet = true;
     }
     return _mimePixmap;
