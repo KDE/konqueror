@@ -273,7 +273,10 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
 #ifdef THUMBNAIL_USE_WEBKIT
     page->setVisibilityState(QWebPage::VisibilityStateHidden);
 #else // THUMBNAIL_USE_WEBKIT
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     page->setLifecycleState(QWebEnginePage::LifecycleState::Discarded);
+#endif // QT_VERSION
 #endif // THUMBNAIL_USE_WEBKIT
 
     img = pix.toImage();				// return the rendered thumbnail
