@@ -40,7 +40,7 @@ KonqSideBarPlacesModule::KonqSideBarPlacesModule(QWidget *parent,
     
     m_placesView->setAutoResizeItemsEnabled(false);
     // m_placesView->setResizeMode(QListView::Fixed);
-    // m_placesView->setIconSize(QSize(16,16));
+    m_placesView->setIconSize(QSize(16,16));
     m_placesView->style()->pixelMetric(QStyle::PM_SmallIconSize); // this would best be done by detecting the size of icons for other widgets
         
     connect(m_placesView, &KFilePlacesView::urlChanged, this, &KonqSideBarPlacesModule::slotPlaceUrlChanged);
