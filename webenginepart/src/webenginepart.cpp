@@ -1039,32 +1039,32 @@ void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
 
 void WebEnginePart::createWalletActions()
 {
-    QAction *a = new QAction(i18nc("Fill the forms with data from KWallet", "&Fill forms now"), this);
+    QAction *a = new QAction(i18nc("Fill the Forms with Data from KWallet", "&Fill forms now"), this);
     a->setShortcut(QKeySequence("Ctrl+Shift+V"));
     actionCollection()->addAction("walletFillFormsNow", a);
     connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
 
-    a = new QAction(i18n("&Memorize passwords in this page now"), this);
+    a = new QAction(i18n("&Memorize Passwords in This Page Now"), this);
     actionCollection()->addAction("walletCacheFormsNow", a);
     connect(a, &QAction::triggered, this, [this]{if (page() && m_wallet){m_wallet->savePageDataNow(page());}});
 
-    a = new QAction(i18n("&Customize fields to memorize for this page..."), this);
+    a = new QAction(i18n("&Customize Fields to Memorize for This Page..."), this);
     actionCollection()->addAction("walletCustomizeFields", a);
     connect(a, &QAction::triggered, this, [this](){if (m_wallet){m_wallet->customizeFieldsToCache(page(), view());}});
 
-    a = new QAction(i18n("Remove customized memorization settings for this page"), this);
+    a = new QAction(i18n("Remove Customized Memorization Settings for This Page"), this);
     actionCollection()->addAction("walletRemoveCustomization", a);
     connect(a, &QAction::triggered, this, [this](){m_wallet->removeCustomizationForPage(url());});
 
-    KToggleAction *ta = new KToggleAction (i18n("&Allow password caching for this site"), this);
+    KToggleAction *ta = new KToggleAction (i18n("&Allow Password Caching for This Site"), this);
     actionCollection()->addAction("walletDisablePasswordCaching", ta);
     connect(ta, &QAction::triggered, this, &WebEnginePart::togglePasswordStorableState);
 
-    a = new QAction(i18n("Remove all memorized passwords for this site"), this);
+    a = new QAction(i18n("Remove All Memorized Passwords for This Site"), this);
     actionCollection()->addAction("walletRemoveCachedData", a);
     connect(a, &QAction::triggered, this, &WebEnginePart::slotRemoveCachedPasswords);
 
-    a = new QAction(i18n("&Launch wallet manager"), this);
+    a = new QAction(i18n("&Launch Wallet Manager"), this);
     actionCollection()->addAction("walletShowManager", a);
     connect(a, &QAction::triggered, this, &WebEnginePart::slotLaunchWalletManager);
 
