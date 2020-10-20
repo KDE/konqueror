@@ -112,6 +112,20 @@ QString ModuleManager::moduleFullPath(const QString &fileName) const
     return QStandardPaths::locate(QStandardPaths::GenericDataLocation, moduleDataPath(fileName));
 }
 
+void ModuleManager::saveOpenViews(const QStringList &fileName)
+{
+    // TODO: this would be best stored per-window, in the session file
+
+    m_config->writeEntry("OpenViews", fileName);
+    m_config->sync();
+}
+
+void ModuleManager::restoreDeletedButtons()
+{
+    m_config->writeEntry("DeletedModules", QStringList());
+    m_config->sync();
+}
+
 void ModuleManager::rollbackToDefault()
 {
     const QString loc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/konqsidebartng/";
@@ -126,6 +140,7 @@ void ModuleManager::rollbackToDefault()
     }
     m_config->writeEntry("DeletedModules", QStringList());
     m_config->writeEntry("AddedModules", QStringList());
+    m_config->sync();
 }
 
 void ModuleManager::setModuleName(const QString &fileName, const QString &moduleName)
@@ -162,6 +177,30 @@ void ModuleManager::setShowHiddenFolders(const QString &fileName, const bool &ne
     ksc.sync();
 }
 
+int ModuleManager::getMaxKDEWeight()
+{
+    int curMax = 1; // 0 is reserved for the treeModule
+    for (const QString &fileName : modules()) {
+        const QString path = moduleDataPath(fileName);
+        if (! QStandardPaths::locate(QStandardPaths::GenericDataLocation, path).isEmpty()) {
+            KSharedConfig::Ptr config = KSharedConfig::openConfig(path,
+                                        KConfig::NoGlobals,
+                                        QStandardPaths::GenericDataLocation);
+            KConfigGroup configGroup(config, "Desktop Entry");
+            const int weight = configGroup.readEntry("X-KDE-Weight", 0);
+            if (curMax < weight) {
+                curMax = weight;
+            }
+        }
+    }
+    return curMax;
+}
+
+int ModuleManager::getNextAvailableKDEWeight()
+{
+    return getMaxKDEWeight() + 1;
+}
+
 void ModuleManager::removeModule(const QString &fileName)
 {
     // Remove the local file (if it exists)
@@ -171,12 +210,14 @@ void ModuleManager::removeModule(const QString &fileName)
     // Mark module as deleted (so that we skip global file, if there's one)
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
-    if (!deletedModules.contains(fileName)) {
+    if ( !addedModules.contains(fileName) && !deletedModules.contains(fileName)) { // only add it to the "deletedModules" list if it is a global module
         deletedModules.append(fileName);
     }
+
     addedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
+    m_config->sync();
 }
 
 void ModuleManager::moduleAdded(const QString &fileName)
@@ -190,6 +231,7 @@ void ModuleManager::moduleAdded(const QString &fileName)
     deletedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
+    m_config->sync();
 }
 
 QString ModuleManager::addModuleFromTemplate(QString &templ)

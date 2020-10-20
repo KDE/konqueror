@@ -56,12 +56,16 @@ public:
     /// Returns the full path for a given module. TEMP HACK, TO BE REMOVED
     QString moduleFullPath(const QString &fileName) const;
 
+    void saveOpenViews(const QStringList &fileName);
+    void restoreDeletedButtons();
     void rollbackToDefault();
 
     void setModuleName(const QString &fileName, const QString &moduleName);
     void setModuleUrl(const QString &fileName, const QUrl &url);
     void setModuleIcon(const QString &fileName, const QString &icon);
     void setShowHiddenFolders(const QString &fileName, const bool &newState);
+    int getMaxKDEWeight();
+    int getNextAvailableKDEWeight();
 
     /// Find a unique filename for a new module, based on a template name
     /// like "dirtree%1.desktop".

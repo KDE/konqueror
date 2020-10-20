@@ -103,6 +103,7 @@ protected Q_SLOTS:
     void showHidePage(int value);
     void createButtons();
     void updateButtons();
+    void slotRestoreDeletedButtons();
     void slotRollback();
     void aboutToShowConfigMenu();
     void saveConfig();

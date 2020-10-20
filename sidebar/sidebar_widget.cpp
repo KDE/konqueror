@@ -94,6 +94,7 @@ void Sidebar_Widget::aboutToShowAddMenu()
         }
     }
     m_addMenu->addSeparator();
+    m_addMenu->addAction(KStandardGuiItem::defaults().icon(), i18n("Restore All Removed Default Buttons"), this, &Sidebar_Widget::slotRestoreDeletedButtons);
     m_addMenu->addAction(KStandardGuiItem::defaults().icon(), i18n("Rollback to System Default"), this, &Sidebar_Widget::slotRollback);
 }
 
@@ -115,6 +116,7 @@ void Sidebar_Widget::triggeredAddMenu(QAction *action)
     qCDebug(SIDEBAR_LOG) << myFile << "filename=" << templ;
     KDesktopFile df(myFile);
     KConfigGroup configGroup = df.desktopGroup();
+    configGroup.writeEntry("X-KDE-Weight", m_moduleManager.getNextAvailableKDEWeight());
     const bool ok = plugin->createNewModule(action->data(), configGroup, this, QVariant());
     df.sync();
     if (ok) {
@@ -199,6 +201,8 @@ bool Sidebar_Widget::createDirectModule(const QString &templ,
         if (!treeModule.isEmpty()) {
             scf.writeEntry("X-KDE-TreeModule", treeModule);
         }
+        int maxKDEWeight = m_moduleManager.getNextAvailableKDEWeight();
+        scf.writeEntry("X-KDE-Weight", maxKDEWeight); // because modules with same weight as an already displayed module are inaccessible.
         scf.sync();
         m_moduleManager.moduleAdded(filename);
         QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
@@ -223,6 +227,12 @@ void Sidebar_Widget::addWebSideBar(const QUrl &url, const QString &name)
     }
 
     createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
+}
+
+void Sidebar_Widget::slotRestoreDeletedButtons()
+{
+    m_moduleManager.restoreDeletedButtons();
+    QTimer::singleShot(0, this, &Sidebar_Widget::updateButtons);
 }
 
 void Sidebar_Widget::slotRollback()
@@ -648,6 +658,7 @@ void Sidebar_Widget::showHidePage(int page)
         openUrl(m_storedCurViewUrl); // also runs the buttonInfo.module->openUrl()
         m_visibleViews << buttonInfo.file;
         m_latestViewed = page;
+        m_moduleManager.saveOpenViews(m_visibleViews); // TODO: this would be best stored per-window, in the session file
     };
 
     if (!buttonInfo.dock) {
