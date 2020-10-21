@@ -691,6 +691,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
                             setLocationBarURL(oldLocationBarURL);   // Revert to previous locationbar URL
                             KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
                             job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                            job->setShowOpenOrExecuteDialog(true);
                             job->start();
                         } else {
                             // If offer is null, it means the user clicked on "Open With..." button.
