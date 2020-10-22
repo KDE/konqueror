@@ -116,7 +116,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_statusBarWalletLabel(nullptr),
              m_searchBar(nullptr),
              m_passwordBar(nullptr),
-             m_featurePermissionBar(nullptr),
              m_wallet(nullptr)
 {
     initWebEngineUrlSchemes();
@@ -899,44 +898,32 @@ void WebEnginePart::slotWindowCloseRequested()
     this->deleteLater();
 }
 
-void WebEnginePart::slotShowFeaturePermissionBar(QWebEnginePage::Feature feature)
+void WebEnginePart::slotShowFeaturePermissionBar(const QUrl &origin, QWebEnginePage::Feature feature)
 {
-    // FIXME: Allow multiple concurrent feature permission requests.
-    if (m_featurePermissionBar && m_featurePermissionBar->isVisible())
-        return;
-
-    if (!m_featurePermissionBar) {
-        m_featurePermissionBar = new FeaturePermissionBar(widget());
-
-        connect(m_featurePermissionBar, &FeaturePermissionBar::permissionGranted,
-                this, &WebEnginePart::slotFeaturePermissionGranted);
-        connect(m_featurePermissionBar, &FeaturePermissionBar::permissionDenied,
-                this, &WebEnginePart::slotFeaturePermissionDenied);
-        connect(m_passwordBar, &PasswordBar::done,
-                this, &WebEnginePart::slotSaveFormDataDone);
-        QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
-        if (lay)
-            lay->insertWidget(0, m_featurePermissionBar);
+    FeaturePermissionBar *bar = new FeaturePermissionBar(widget());
+    auto policyLambda = [this, bar](QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy) {
+        slotFeaturePolicyChosen(bar, feature, policy);
+    };
+    connect(bar, &FeaturePermissionBar::permissionPolicyChosen, this, policyLambda);
+    connect(bar, &FeaturePermissionBar::done, this, [this, bar](){deleteFeaturePermissionBar(bar);});
+    QBoxLayout* lay = qobject_cast<QBoxLayout*>(widget()->layout());
+    if (lay) {
+        lay->insertWidget(0, bar);
     }
-    m_featurePermissionBar->setFeature(feature);
-//     m_featurePermissionBar->setText(i18n("<html>Do you want to grant the site <b>%1</b> "
-//                                     "access to information about your current physical location?",
-//                                     url.host()));
-    m_featurePermissionBar->setText(i18n("<html>Do you want to grant the site "
-                                    "access to information about your current physical location?"));
-    m_featurePermissionBar->animatedShow();
+    bar->setUrl(origin);
+    bar->setFeature(feature);
+    bar->animatedShow();
 }
 
-void WebEnginePart::slotFeaturePermissionGranted(QWebEnginePage::Feature feature)
+void WebEnginePart::slotFeaturePolicyChosen(FeaturePermissionBar* bar, QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy)
 {
-    Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
-    page()->setFeaturePermission(page()->url(), feature, QWebEnginePage::PermissionGrantedByUser);
+    Q_ASSERT(bar && bar->feature() == feature);
+    page()->setFeaturePermission(bar->url(), feature, policy);
 }
 
-void WebEnginePart::slotFeaturePermissionDenied(QWebEnginePage::Feature feature)
+void WebEnginePart::deleteFeaturePermissionBar(FeaturePermissionBar *bar)
 {
-    Q_ASSERT(m_featurePermissionBar && m_featurePermissionBar->feature() == feature);
-    page()->setFeaturePermission(page()->url(), feature, QWebEnginePage::PermissionDeniedByUser);
+    bar->deleteLater();
 }
 
 void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& url)

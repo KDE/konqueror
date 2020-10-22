@@ -489,8 +489,11 @@ void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
 }
 void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
 {
-    if (url == this->url()) {
-        part()->slotShowFeaturePermissionBar(feature);
+    //url.path() is always / (meaning that permissions should be granted site-wide and not per page)
+    QUrl thisUrl(this->url());
+    thisUrl.setPath("/");
+    if (url == thisUrl) {
+        part()->slotShowFeaturePermissionBar(url, feature);
         return;
     }
     switch(feature) {

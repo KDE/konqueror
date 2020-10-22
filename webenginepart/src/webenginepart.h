@@ -98,7 +98,7 @@ public:
      */
     void connectWebEnginePageSignals(WebEnginePage* page);
 
-    void slotShowFeaturePermissionBar(QWebEnginePage::Feature);
+    void slotShowFeaturePermissionBar(const QUrl &origin, QWebEnginePage::Feature);
 
     void setWallet(WebEngineWallet* wallet);
 
@@ -148,8 +148,8 @@ private Q_SLOTS:
     void slotWalletSavedForms(const QUrl &url, bool success);
     void slotFillFormRequestCompleted(bool);
 
-    void slotFeaturePermissionGranted(QWebEnginePage::Feature);
-    void slotFeaturePermissionDenied(QWebEnginePage::Feature);
+    void slotFeaturePolicyChosen(FeaturePermissionBar *bar, QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy);
+    void deleteFeaturePermissionBar(FeaturePermissionBar *bar);
 
     void updateWalletStatusBarIcon();
     void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);
@@ -184,7 +184,6 @@ private:
     KUrlLabel* m_statusBarWalletLabel;
     SearchBar* m_searchBar;
     PasswordBar* m_passwordBar;
-    FeaturePermissionBar* m_featurePermissionBar;
     WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;

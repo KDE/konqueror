@@ -53,21 +53,54 @@ QWebEnginePage::Feature FeaturePermissionBar::feature() const
     return m_feature;
 }
 
+QUrl FeaturePermissionBar::url() const
+{
+    return m_url;
+}
+
+void FeaturePermissionBar::setUrl(const QUrl& url)
+{
+    m_url = url;
+}
+
+QString FeaturePermissionBar::labelForFeature(QWebEnginePage::Feature feature)
+{
+    switch (feature) {
+        case QWebEnginePage::Notifications:
+            return i18n("<html>Do you want to allow the site to send you notifications?");
+        case QWebEnginePage::Geolocation:
+            return i18n("<html>Do you want to grant the site access to information about your current physical location?");
+        case QWebEnginePage::MediaAudioCapture:
+            return i18n("<html>Do you want to allow the site to access your microphone and other audio capture devices?");
+        case QWebEnginePage::MediaVideoCapture:
+            return i18n("<html>Do you want to allow the site to access your camera and other video capture devices?");
+        case QWebEnginePage::MediaAudioVideoCapture:
+            return i18n("<html>Do you want to allow the site to access to your microphone, camera and other audio and video capture devices?");
+        case QWebEnginePage::MouseLock:
+            return i18n("<html>Do you want to allow the site to lock your mouse inside the web page?");
+        case QWebEnginePage::DesktopVideoCapture:
+            return i18n("<html>Do you want to allow the site to record your screen?");
+        case QWebEnginePage::DesktopAudioVideoCapture:
+            return i18n("<html>Do you want to allow the site to record your screen and your audio?");
+    }
+}
+
 void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
 {
     m_feature = feature;
+    setText(labelForFeature(feature));
 }
 
 void FeaturePermissionBar::onDeniedButtonClicked()
 {
     animatedHide();
-    emit permissionDenied(m_feature);
+    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionDeniedByUser);
     emit done();
 }
 
 void FeaturePermissionBar::onGrantedButtonClicked()
 {
     animatedHide();
-    emit permissionGranted(m_feature);
+    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionGrantedByUser);
     emit done();
 }
