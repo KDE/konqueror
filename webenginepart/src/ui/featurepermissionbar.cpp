@@ -82,6 +82,8 @@ QString FeaturePermissionBar::labelForFeature(QWebEnginePage::Feature feature)
             return i18n("<html>Do you want to allow the site to record your screen?");
         case QWebEnginePage::DesktopAudioVideoCapture:
             return i18n("<html>Do you want to allow the site to record your screen and your audio?");
+        default:
+            return QString();
     }
 }
 
