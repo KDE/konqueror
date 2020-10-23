@@ -23,7 +23,6 @@
 #include "policies.h"
 
 // KDE
-#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // == class Policies ==

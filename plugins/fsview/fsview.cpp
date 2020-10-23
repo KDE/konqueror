@@ -33,7 +33,6 @@
 
 #include <kio/job.h>
 #include <kauthorized.h>
-#include <kconfiggroup.h>
 #include <kurlauthorized.h>
 
 #include "fsviewdebug.h"

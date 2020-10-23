@@ -23,9 +23,7 @@
 #include <webenginepart_debug.h>
 
 #include <QWebEngineProfile>
-#include <QWebEngineCookieStore>
 #include <QStringList>
-#include <QDBusInterface>
 #include <QDBusReply>
 #include <QDebug>
 #include <QWidget>

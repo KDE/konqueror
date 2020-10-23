@@ -19,7 +19,6 @@
 
 #include <QApplication>
 
-#include <kparts/part.h>
 #include <konq_events.h>
 #include <kacceleratormanager.h>
 #include <KLocalizedString>

@@ -29,7 +29,6 @@
 // KDE
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <KSharedConfig>
 #include <kurlrequester.h>
 #include <KLocalizedString>
 #include <kparts/htmlextension.h>

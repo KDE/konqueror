@@ -22,7 +22,6 @@
 
 #include <kconfiggroup.h>
 #include <QWidget>
-#include "konqsidebarplugin.h"
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>

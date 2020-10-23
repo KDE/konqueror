@@ -51,7 +51,6 @@
 #include <KJobUiDelegate>
 #include <KJobWidgets>
 #include <QStandardPaths>
-#include <KSharedConfig>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {

@@ -73,7 +73,6 @@
 #include <KParts/BrowserInterface>
 #include <KIO/ApplicationLauncherJob>
 
-#include <QUrl>
 #include <QFile>
 #include <QTextCodec>
 #include <QCoreApplication>

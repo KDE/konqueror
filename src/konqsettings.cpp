@@ -19,7 +19,6 @@
 
 #include "konqsettings.h"
 #include <kprotocolmanager.h>
-#include <ksharedconfig.h>
 
 #include <kdesktopfile.h>
 #include "konqdebug.h"

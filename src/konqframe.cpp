@@ -30,7 +30,6 @@
 
 // Qt
 #include <QApplication>
-#include <QEvent>
 #include <QVBoxLayout>
 #include <QUrl>
 

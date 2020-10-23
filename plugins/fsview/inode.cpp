@@ -26,9 +26,7 @@
 #include <KLocalizedString>
 
 #include <QMimeDatabase>
-#include <QMimeType>
 
-#include "scan.h"
 #include "fsview.h"
 #include "fsviewdebug.h"
 

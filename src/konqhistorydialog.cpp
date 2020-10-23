@@ -19,7 +19,6 @@
 
 #include "konqhistorydialog.h"
 #include "konqhistoryview.h"
-#include "konqhistorysettings.h"
 
 #include "konqhistory.h"
 #include "konqmainwindow.h"

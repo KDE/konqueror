@@ -24,7 +24,6 @@
 
 #include <kfileitemlistproperties.h>
 #include <kactioncollection.h>
-#include <konq_operations.h>
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
 #include <kio/paste.h>

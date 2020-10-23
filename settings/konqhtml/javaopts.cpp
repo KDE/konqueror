@@ -34,7 +34,6 @@
 #include <QHBoxLayout>
 #include <kparts/htmlextension.h>
 #include <kparts/htmlsettingsinterface.h>
-#include <KSharedConfig>
 #include <kconfiggroup.h>
 #include <kpluralhandlingspinbox.h>
 

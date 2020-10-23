@@ -4,7 +4,6 @@
 
 // Qt
 #include <QFile>
-#include <QTextStream>
 
 bool CSSTemplate::expandToFile(const QString &outputFilename, const QMap<QString, QString> &dict)
 {

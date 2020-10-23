@@ -22,7 +22,6 @@
 
 #include "featurepermissionbar.h"
 
-#include <KLocalizedString>
 
 #include <QAction>
 

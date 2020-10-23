@@ -24,7 +24,6 @@
 
 #include "konqfeedicon.h"
 
-#include "feeddetector.h"
 #include "pluginutil.h"
 #include "akregatorplugindebug.h"
 

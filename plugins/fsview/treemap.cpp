@@ -30,19 +30,13 @@
 #include <QPainter>
 #include <QRegExp>
 #include <QStyle>
-#include <QPixmap>
-#include <QPaintEvent>
-#include <QKeyEvent>
 #include <QShowEvent>
-#include <QContextMenuEvent>
-#include <QMouseEvent>
 #include <QToolTip>
 #include <QStylePainter>
 #include <QStyleOptionFocusRect>
 
 #include <KLocalizedString>
 #include <kconfig.h>
-#include <kconfiggroup.h>
 
 #include "fsviewdebug.h"
 

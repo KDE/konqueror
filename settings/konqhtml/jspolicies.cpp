@@ -32,7 +32,6 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <KLocalizedString>
-#include <KSharedConfig>
 
 // == class JSPolicies ==
 

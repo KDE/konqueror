@@ -21,7 +21,6 @@
 #include "webenginepartkiohandler.h"
 
 #include <QMimeDatabase>
-#include <QWebEngineUrlRequestJob>
 #include <QBuffer>
 #include <QtWebEngine/QtWebEngineVersion>
 

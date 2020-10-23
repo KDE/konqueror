@@ -20,7 +20,6 @@
 #include "konq_sidebartreemodule.h"
 #include <kdirnotify.h>
 #include <kio/paste.h>
-#include <konq_operations.h>
 #include <kprotocolinfo.h>
 #include <k3urldrag.h>
 #include <kconfiggroup.h>

@@ -20,7 +20,6 @@ Boston, MA 02110-1301, USA.
 
 #include "imgalleryplugin.h"
 
-#include <QDir>
 #include <QTextStream>
 #include <QFile>
 #include <QDateTime>

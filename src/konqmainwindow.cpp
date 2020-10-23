@@ -88,7 +88,6 @@
 #include <QEvent>
 #include <QKeyEvent>
 #include <QByteRef>
-#include <QList>
 #include <QPixmap>
 #include <QLineEdit>
 #include <QNetworkProxy>

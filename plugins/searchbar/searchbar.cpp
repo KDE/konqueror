@@ -47,7 +47,6 @@
 #include <QTimer>
 #include <QMenu>
 #include <QStyle>
-#include <QPixmap>
 #include <QPainter>
 #include <QMouseEvent>
 #include <QDBusConnection>

@@ -30,7 +30,6 @@
 #include <qdialogbuttonbox.h>
 #include <qtemporarydir.h>
 #include <qtemporaryfile.h>
-#include <qprocess.h>
 #include <qstandardpaths.h>
 #include <qgroupbox.h>
 #include <qdesktopservices.h>
@@ -40,7 +39,6 @@
 #include <klocalizedstring.h>
 #include <kurlrequester.h>
 #include <kmessagebox.h>
-#include <kmessagewidget.h>
 #include <ktar.h>
 #include <kzip.h>
 #include <krecentdirs.h>

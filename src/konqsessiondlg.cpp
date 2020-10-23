@@ -44,7 +44,6 @@
 #include <kconfig.h>
 #include <kseparator.h>
 #include <kmessagebox.h>
-#include <QDialog>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <KGuiItem>

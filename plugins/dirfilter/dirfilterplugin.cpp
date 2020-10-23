@@ -27,7 +27,6 @@
 #include <QShowEvent>
 #include <QGlobalStatic>
 
-#include <QMenu>
 
 #include <KLocalizedString>
 #include <kfileitem.h>

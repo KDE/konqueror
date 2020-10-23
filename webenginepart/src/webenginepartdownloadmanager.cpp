@@ -23,7 +23,6 @@
 #include "webenginepage.h"
 #include <webenginepart_debug.h>
 
-#include <QWebEngineDownloadItem>
 #include <QWebEngineView>
 #include <QWebEngineProfile>
 #include <QFileDialog>

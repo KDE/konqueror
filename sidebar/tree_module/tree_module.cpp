@@ -47,7 +47,6 @@ BUGS:
 
 #include <QAction>
 #include <QKeyEvent>
-#include <QDir>
 
 #include <QHeaderView>
 

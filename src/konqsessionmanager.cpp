@@ -29,7 +29,6 @@
 #include "konqdebug.h"
 #include <kio/deletejob.h>
 #include <KLocalizedString>
-#include <QDialog>
 #include <QUrl>
 #include <QIcon>
 #include <ksqueezedtextlabel.h>

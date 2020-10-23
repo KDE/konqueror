@@ -29,7 +29,6 @@
 #include <QTreeWidget>
 
 // KDE
-#include <kconfig.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KSharedConfig>

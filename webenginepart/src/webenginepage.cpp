@@ -23,7 +23,6 @@
 #include "webenginepage.h"
 
 #include "webenginepart.h"
-#include "websslinfo.h"
 #include "webengineview.h"
 #include "settings/webenginesettings.h"
 #include "webenginepartdownloadmanager.h"

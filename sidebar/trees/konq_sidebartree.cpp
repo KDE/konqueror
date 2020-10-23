@@ -29,9 +29,6 @@
 #include <QMenu>
 #include <QTimer>
 #include <QApplication>
-#include <QPixmap>
-#include <QKeyEvent>
-#include <QEvent>
 
 #include <QAction>
 #include <kactioncollection.h>

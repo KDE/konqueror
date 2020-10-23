@@ -24,7 +24,6 @@
 #include "webenginewallet.h"
 #include "webenginepage.h"
 #include "utils.h"
-#include "settings/webenginesettings.h"
 #include "webenginecustomizecacheablefieldsdlg.h"
 
 #include <webenginepart_debug.h>

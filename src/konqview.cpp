@@ -43,9 +43,7 @@
 
 #include <QApplication>
 #include <QArgument>
-#include <QObject>
 #include <QByteRef>
-#include <QEvent>
 #include <QFile>
 #include <QDropEvent>
 #include <QDBusConnection>
@@ -64,7 +62,6 @@
 #include <KParts/BrowserExtension>
 #include <KParts/WindowArgs>
 #include <QMimeDatabase>
-#include <QMimeType>
 
 //#define DEBUG_HISTORY
 

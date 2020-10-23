@@ -26,7 +26,6 @@
 #include <QIcon>
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <kactioncollection.h>
 #include <kservicetypetrader.h>
 
 // Local

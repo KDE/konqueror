@@ -21,7 +21,6 @@
 #include "konqbookmarkmenu.h"
 #include "kbookmarkowner.h"
 #include "kbookmarkaction.h"
-#include "kbookmarkcontextmenu.h"
 
 #include <QMenu>
 #include <QFile>
