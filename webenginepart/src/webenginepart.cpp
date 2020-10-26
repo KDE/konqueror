@@ -899,7 +899,15 @@ void WebEnginePart::slotWindowCloseRequested()
 
 void WebEnginePart::slotShowFeaturePermissionBar(const QUrl &origin, QWebEnginePage::Feature feature)
 {
+    auto findExistingBar = [origin, feature](FeaturePermissionBar *bar) {
+        return bar->url() == origin && bar->feature() == feature;
+    };
+    auto found = std::find_if(m_permissionBars.constBegin(), m_permissionBars.constEnd(), findExistingBar);
+    if (found != m_permissionBars.constEnd()) {
+        return;
+    }
     FeaturePermissionBar *bar = new FeaturePermissionBar(widget());
+    m_permissionBars.append(bar);
     auto policyLambda = [this, bar](QWebEnginePage::Feature feature, QWebEnginePage::PermissionPolicy policy) {
         slotFeaturePolicyChosen(bar, feature, policy);
     };
@@ -922,6 +930,7 @@ void WebEnginePart::slotFeaturePolicyChosen(FeaturePermissionBar* bar, QWebEngin
 
 void WebEnginePart::deleteFeaturePermissionBar(FeaturePermissionBar *bar)
 {
+    m_permissionBars.removeOne(bar);
     bar->deleteLater();
 }
 

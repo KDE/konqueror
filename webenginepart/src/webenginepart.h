@@ -184,6 +184,7 @@ private:
     KUrlLabel* m_statusBarWalletLabel;
     SearchBar* m_searchBar;
     PasswordBar* m_passwordBar;
+    QVector<FeaturePermissionBar*> m_permissionBars;
     WebEngineBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     WebEngineView* m_webView;
