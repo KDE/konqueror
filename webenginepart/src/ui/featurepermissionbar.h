@@ -51,7 +51,7 @@ private Q_SLOTS:
     void onGrantedButtonClicked();
 
 private:
-    static QString labelForFeature(QWebEnginePage::Feature feature);
+    QString labelText() const;
 
 private:
     QWebEnginePage::Feature m_feature;

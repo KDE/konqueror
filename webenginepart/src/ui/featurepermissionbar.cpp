@@ -62,25 +62,26 @@ void FeaturePermissionBar::setUrl(const QUrl& url)
     m_url = url;
 }
 
-QString FeaturePermissionBar::labelForFeature(QWebEnginePage::Feature feature)
+QString FeaturePermissionBar::labelText() const
 {
-    switch (feature) {
+    QString origin = m_url.toDisplayString();
+    switch (m_feature) {
         case QWebEnginePage::Notifications:
-            return i18n("<html>Do you want to allow the site to send you notifications?");
+            return i18n("<html>Do you want to allow <b>%1</b> to send you notifications?", origin);
         case QWebEnginePage::Geolocation:
-            return i18n("<html>Do you want to grant the site access to information about your current physical location?");
+            return i18n("<html>Do you want to grant <b>%1</b> access to information about your current physical location?", origin);
         case QWebEnginePage::MediaAudioCapture:
-            return i18n("<html>Do you want to allow the site to access your microphone and other audio capture devices?");
+            return i18n("<html>Do you want to allow <b>%1</b> to access your microphone and other audio capture devices?", origin);
         case QWebEnginePage::MediaVideoCapture:
-            return i18n("<html>Do you want to allow the site to access your camera and other video capture devices?");
+            return i18n("<html>Do you want to allow <b>%1</b> to access your camera and other video capture devices?", origin);
         case QWebEnginePage::MediaAudioVideoCapture:
-            return i18n("<html>Do you want to allow the site to access to your microphone, camera and other audio and video capture devices?");
+            return i18n("<html>Do you want to allow <b>%1</b> to access to your microphone, camera and other audio and video capture devices?", origin);
         case QWebEnginePage::MouseLock:
-            return i18n("<html>Do you want to allow the site to lock your mouse inside the web page?");
+            return i18n("<html>Do you want to allow <b>%1</b> to lock your mouse inside the web page?", origin);
         case QWebEnginePage::DesktopVideoCapture:
-            return i18n("<html>Do you want to allow the site to record your screen?");
+            return i18n("<html>Do you want to allow <b>%1</b> to record your screen?", origin);
         case QWebEnginePage::DesktopAudioVideoCapture:
-            return i18n("<html>Do you want to allow the site to record your screen and your audio?");
+            return i18n("<html>Do you want to allow <b>%1</b> to record your screen and your audio?", origin);
         default:
             return QString();
     }
@@ -89,7 +90,7 @@ QString FeaturePermissionBar::labelForFeature(QWebEnginePage::Feature feature)
 void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
 {
     m_feature = feature;
-    setText(labelForFeature(feature));
+    setText(labelText());
 }
 
 void FeaturePermissionBar::onDeniedButtonClicked()
