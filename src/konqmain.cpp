@@ -51,7 +51,7 @@
 
 static void listSessions()
 {
-    const QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
+    const QString dir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + "sessions/";
     QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
     while (it.hasNext()) {
         QFileInfo fileInfo(it.next());
@@ -72,7 +72,7 @@ static KonqMainWindow* handleCommandLine(QCommandLineParser &parser, const QStri
         const QString session = parser.value("open-session");
         QString sessionPath = session;
         if (!session.startsWith('/')) {
-            sessionPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/" + session;
+            sessionPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + "sessions/" + session;
         }
 
         QDirIterator it(sessionPath, QDir::Readable | QDir::Files);

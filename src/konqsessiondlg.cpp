@@ -80,7 +80,7 @@ KonqSessionDlg::KonqSessionDlg(KonqViewManager *manager, QWidget *parent)
     d->m_pDeleteButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     d->m_pNewButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
-    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/");
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/sessions/");
     QDir().mkpath(dir);
 
     d->m_pModel = new KDirModel(d->m_pListView);
@@ -187,7 +187,7 @@ void KonqSessionDlg::slotRename(QUrl dirpathTo)
         if (dir.exists()) {
             slotRename(dirpathTo);
         } else {
-            QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/"));
+            QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/sessions/"));
             dir.rename(dirpathFrom.fileName(), dlg.newDestUrl().fileName());
         }
     }
@@ -255,7 +255,7 @@ KonqNewSessionDlg::KonqNewSessionDlg(QWidget *parent, KonqMainWindow *mainWindow
 
 void KonqNewSessionDlg::slotAddSession()
 {
-    QString dirpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/sessions/") + KIO::encodeFileName(d->m_pSessionName->text());
+    QString dirpath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/sessions/") + KIO::encodeFileName(d->m_pSessionName->text());
 
     QDir dir(dirpath);
     if (dir.exists()) {

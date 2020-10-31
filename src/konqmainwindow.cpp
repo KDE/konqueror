@@ -2887,7 +2887,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     connect(manageSessionsAction, &QAction::triggered, this, &KonqMainWindow::manageSessions);
     popup->addSeparator();
 
-    QString dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "sessions/";
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + "sessions/";
     QDirIterator it(dir, QDir::Readable | QDir::NoDotAndDotDot | QDir::Dirs);
 
     while (it.hasNext()) {

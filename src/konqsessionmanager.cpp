@@ -356,7 +356,7 @@ bool SessionRestoreDialog::shouldBeShown(const QString &dontShowAgainName, int *
 }
 
 KonqSessionManager::KonqSessionManager()
-    : m_autosaveDir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + "autosave")
+    : m_autosaveDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + "autosave")
     , m_autosaveEnabled(false) // so that enableAutosave works
     , m_createdOwnedByDir(false)
     , m_sessionConfig(nullptr)
@@ -423,7 +423,7 @@ void KonqSessionManager::enableAutosave()
 
     // Create the config file for autosaving current session
     QString filename = QLatin1String("autosave/") + m_baseService;
-    const QString filePath = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
+    const QString filePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + filename;
 
     delete m_sessionConfig;
     m_sessionConfig = new KConfig(filePath, KConfig::SimpleConfig);

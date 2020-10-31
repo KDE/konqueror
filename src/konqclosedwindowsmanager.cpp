@@ -359,7 +359,7 @@ void KonqClosedWindowsManager::saveConfig()
 
     // Create / overwrite the saved closed windows list
     QString filename = QStringLiteral("closeditems_saved");
-    QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
+    QString file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + filename;
     QFile::remove(file);
 
     KConfig *config = new KConfig(file, KConfig::SimpleConfig);
@@ -394,7 +394,7 @@ void KonqClosedWindowsManager ::readConfig()
     }
 
     QString filename = QStringLiteral("closeditems_saved");
-    QString file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1Char('/') + filename;
+    QString file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1Char('/') + filename;
 
     m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);
 
