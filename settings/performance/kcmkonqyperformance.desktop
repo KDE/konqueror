@@ -2,11 +2,8 @@
 Icon=preferences-system-performance
 Type=Service
 X-KDE-ServiceTypes=KCModule
-Exec=kcmshell5 kcmkonqyperformance
-
 X-KDE-Library=kcm_performance
 X-KDE-PluginKeyword=konqueror
-#X-KDE-ParentApp=kcontrol
 X-DocPath=kcontrol/performance/index.html
 
 Name=Performance
