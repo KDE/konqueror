@@ -192,14 +192,12 @@ void KonqPopupMenuPrivate::populate()
 
     //check if url is current directory
     if (lstItems.count() == 1) {
-        KFileItem firstPopupItem(lstItems.first());
+        const KFileItem firstPopupItem = lstItems.constFirst();
         if (firstPopupItem.isLink()) {
             isSymLink = true;
             isSymLinkInSameDir = !firstPopupItem.linkDest().contains(QLatin1Char('/'));
         }
-        QUrl firstPopupURL(firstPopupItem.url().adjusted(QUrl::NormalizePathSegments));
-        //qCDebug(LIBKONQ_LOG) << "View path is " << url.url();
-        //qCDebug(LIBKONQ_LOG) << "First popup path is " << firstPopupURL.url();
+        const QUrl firstPopupURL(firstPopupItem.url().adjusted(QUrl::NormalizePathSegments));
         currentDir = (firstPopupURL.matches(url, QUrl::StripTrailingSlash));
         if (firstPopupItem.isDesktopFile()) {
             KDesktopFile desktopFile(firstPopupItem.localPath());
@@ -218,25 +216,12 @@ void KonqPopupMenuPrivate::populate()
     }
 
     const bool isIntoTrash = (url.scheme() == QLatin1String("trash")) && !isCurrentTrash; // trashed file, not trash:/ itself
-
     const bool bIsLink  = (m_popupFlags & KonqPopupMenu::IsLink);
-
-    //qCDebug(LIBKONQ_LOG) << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
-
-    //////////////////////////////////////////////////////////////////////////
 
     addGroup(KonqPopupMenu::TopActions); // used e.g. for ShowMenuBar. includes a separator at the end
 
     QAction *act;
-
     QAction *actNewWindow = nullptr;
-
-#if 0 // TODO in the desktop code itself.
-    if ((flags & KonqPopupMenu::ShowProperties) && isOnDesktop &&
-            !KAuthorized::authorizeAction("editable_desktop_icons")) {
-        flags &= ~KonqPopupMenu::ShowProperties; // remove flag
-    }
-#endif
 
     // Either 'newview' is in the actions we're given (probably in the tabhandling group)
     // or we need to insert it ourselves (e.g. for the desktop).
@@ -458,7 +443,6 @@ void KonqPopupMenuPrivate::populate()
 KonqPopupMenu::~KonqPopupMenu()
 {
     delete d;
-    //qCDebug(LIBKONQ_LOG) << "~KonqPopupMenu leave";
 }
 
 void KonqPopupMenu::setNewFileMenu(KNewFileMenu *newMenu)
