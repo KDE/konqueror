@@ -44,12 +44,14 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>
 #include <KIO/CommandLauncherJob>
+#include <kio_version.h>
 #include <KIO/OpenUrlJob>
 #include <KFileCopyToMenu>
 #include <KJobWidgets>
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
+#include <KToolInvocation>
 
 #include <QIcon>
 #include <QFileInfo>
@@ -396,7 +398,19 @@ void KonqPopupMenuPrivate::populate()
     }
 
     // Second block, builtin + user
+#if KIO_VERSION < QT_VERSION_CHECK(5, 77, 0)
     m_menuActions.addServiceActionsTo(q);
+#else
+    QList<QAction *> additionalActions;
+    if (isDirectory && m_popupItemProperties.items().count() == 1) {
+        QAction *openTerminalHere = new QAction(QIcon::fromTheme("utilities-terminal"), i18n("Open Terminal Here"), m_parentWidget);
+        QObject::connect(openTerminalHere, &QAction::triggered, q, [this]() {
+            KToolInvocation::invokeTerminal(QString(),  m_popupItemProperties.urlList().constFirst().toLocalFile());
+        });
+        additionalActions << openTerminalHere;
+    }
+    m_menuActions.addServiceActionsTo(q, additionalActions);
+#endif
 
     q->addSeparator();
 
