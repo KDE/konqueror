@@ -221,7 +221,7 @@ void SearchBarPlugin::startSearch(const QString &search)
     if (m_searchMode == FindInThisPage) {
         KParts::TextExtension *textExt = KParts::TextExtension::childObject(m_part);
         if (textExt) {
-            textExt->findText(search, nullptr);
+            textExt->findText(search, KFind::SearchOptions());
         }
     } else if (m_searchMode == UseSearchProvider) {
         m_urlEnterLock = true;
