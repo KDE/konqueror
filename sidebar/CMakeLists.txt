@@ -37,10 +37,11 @@ set(konq_sidebar_PART_SRCS
 )
 
 add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS} ${sidebar_DEBUG_SRCS})
+kcoreaddons_desktop_to_json(konq_sidebar konq_sidebartng.desktop)
 
 target_link_libraries(konq_sidebar KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::IconThemes)
 
-install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 ########### install files ###############
 

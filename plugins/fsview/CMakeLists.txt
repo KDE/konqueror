@@ -36,10 +36,11 @@ install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
 add_library(fsviewpart MODULE ${fsviewpart_PART_SRCS})
+kcoreaddons_desktop_to_json(fsviewpart fsview_part.desktop)
 
 target_link_libraries(fsviewpart KF5::Parts KF5::IconThemes)
 
-install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+install(TARGETS fsviewpart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 
 ########### install files ###############

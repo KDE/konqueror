@@ -55,7 +55,7 @@
 
 #include "fsviewdebug.h"
 
-K_PLUGIN_FACTORY(FSViewPartFactory, registerPlugin<FSViewPart>();)
+K_PLUGIN_CLASS_WITH_JSON(FSViewPart, "fsview_part.json")
 
 // FSJob, for progress
 

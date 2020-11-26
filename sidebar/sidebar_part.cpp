@@ -23,9 +23,7 @@
 #include <kacceleratormanager.h>
 #include <KLocalizedString>
 
-K_PLUGIN_FACTORY(KonqSidebarFactory,
-                 registerPlugin<KonqSidebarPart>();
-                )
+K_PLUGIN_CLASS_WITH_JSON(KonqSidebarPart, "konq_sidebartng.json")
 
 KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList &)
     : KParts::ReadOnlyPart(parent)
