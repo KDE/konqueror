@@ -137,9 +137,9 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
 {
     m_somethingVisible = false;
     m_noUpdate = false;
-    m_layout = 0;
+    m_layout = nullptr;
     m_currentButtonIndex = -1;
-    m_activeModule = 0;
+    m_activeModule = nullptr;
     //m_userMovedSplitter = false;
     m_latestViewed = -1;
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
@@ -616,7 +616,7 @@ KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &de
     const KConfigGroup configGroup = config->group("Desktop Entry");
     KonqSidebarPlugin *plugin = buttonInfo.plugin(this);
     if (!plugin) {
-        return 0;
+        return nullptr;
     }
 
     return plugin->createModule(parent, configGroup, desktopName, QVariant());
@@ -629,10 +629,10 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
 
 bool Sidebar_Widget::createView(ButtonInfo &buttonInfo)
 {
-    buttonInfo.dock = 0;
+    buttonInfo.dock = nullptr;
     buttonInfo.module = loadModule(m_area, buttonInfo.file, buttonInfo, buttonInfo.configFile);
 
-    if (buttonInfo.module == 0) {
+    if (buttonInfo.module == nullptr) {
         return false;
     }
 
@@ -858,12 +858,12 @@ KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
         KPluginFactory *factory = loader.factory();
         if (!factory) {
             qCWarning(SIDEBAR_LOG) << "error loading" << libName << loader.errorString();
-            return 0;
+            return nullptr;
         }
         KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(parent);
         if (!plugin) {
             qCWarning(SIDEBAR_LOG) << "error creating object from" << libName;
-            return 0;
+            return nullptr;
         }
         m_plugin = plugin;
     }

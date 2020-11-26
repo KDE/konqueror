@@ -51,7 +51,7 @@ K_PLUGIN_FACTORY(UAChangerPluginFactory, registerPlugin<UAChangerPlugin>();)
 UAChangerPlugin::UAChangerPlugin(QObject *parent,
                                  const QVariantList &)
     : KParts::Plugin(parent),
-      m_bSettingsLoaded(false), m_part(0L), m_config(0L)
+      m_bSettingsLoaded(false), m_part(nullptr), m_config(nullptr)
 {
     m_pUAMenu = new KActionMenu(QIcon::fromTheme("preferences-web-browser-identification"),
                                 i18n("Change Browser Identification"),
@@ -81,7 +81,7 @@ UAChangerPlugin::~UAChangerPlugin()
 void UAChangerPlugin::slotReloadDescriptions()
 {
     delete m_config;
-    m_config = 0L;
+    m_config = nullptr;
 }
 
 void UAChangerPlugin::parseDescFiles()
