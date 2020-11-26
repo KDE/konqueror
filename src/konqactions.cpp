@@ -24,6 +24,9 @@
 #include "konqpixmapprovider.h"
 
 #include "konqdebug.h"
+
+#include <kwidgetsaddons_version.h>
+
 #include <QIcon>
 #include <QMenu>
 #include <QAction>
@@ -85,7 +88,11 @@ KonqMostOftenURLSAction::KonqMostOftenURLSAction(const QString &text,
     : KActionMenu(QIcon::fromTheme(QStringLiteral("go-jump")), text, parent),
       m_parsingDone(false)
 {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    setPopupMode(QToolButton::InstantPopup);
+#else
     setDelayed(false);
+#endif
 
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
     connect(menu(), SIGNAL(triggered(QAction*)), SLOT(slotActivated(QAction*)));
@@ -216,7 +223,11 @@ void KonqMostOftenURLSAction::slotActivated(QAction *action)
 KonqHistoryAction::KonqHistoryAction(const QString &text, QObject *parent)
     : KActionMenu(QIcon::fromTheme(QStringLiteral("go-jump")), text, parent)
 {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    setPopupMode(QToolButton::InstantPopup);
+#else
     setDelayed(false);
+#endif
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
     connect(menu(), SIGNAL(triggered(QAction*)), SLOT(slotActivated(QAction*)));
     setEnabled(!KonqHistoryManager::kself()->entries().isEmpty());

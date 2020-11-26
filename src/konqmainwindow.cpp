@@ -55,6 +55,8 @@
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
+
+#include <kwidgetsaddons_version.h>
 #include <kbookmarkmanager.h>
 #include <klineedit.h>
 #include <kzip.h>
@@ -3791,7 +3793,11 @@ void KonqMainWindow::initActions()
     m_pamBookmarks = new KBookmarkActionMenu(s_bookmarkManager->root(),
             i18n("&Bookmarks"), this);
     actionCollection()->addAction(QStringLiteral("bookmarks"), m_pamBookmarks);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    m_pamBookmarks->setPopupMode(QToolButton::InstantPopup);
+#else
     m_pamBookmarks->setDelayed(false);
+#endif
 
     // The actual menu needs a different action collection, so that the bookmarks
     // don't appear in kedittoolbar

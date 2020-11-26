@@ -19,7 +19,7 @@
 
 #include "settingsplugin.h"
 
-
+#include <kwidgetsaddons_version.h>
 #include <kconfig.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
@@ -52,7 +52,11 @@ SettingsPlugin::SettingsPlugin(QObject *parent,
     setComponentData(KAboutData(QStringLiteral("khtmlsettingsplugin"), i18n("HTML Settings"), QStringLiteral("1.0")));
     KActionMenu *menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("configure")), i18n("HTML Settings"), actionCollection());
     actionCollection()->addAction(QStringLiteral("action menu"), menu);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    menu->setPopupMode(QToolButton::InstantPopup);
+#else
     menu->setDelayed(false);
+#endif
 
     KToggleAction *action = actionCollection()->add<KToggleAction>(QStringLiteral("javascript"));
     action->setText(i18n("Java&Script"));
