@@ -43,7 +43,7 @@ public:
      * Default constructor
      */
     KonqBrowserInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part);
-    ~KonqBrowserInterface(){}
+    ~KonqBrowserInterface() override {}
 
 public slots:
     void toggleCompleteFullScreen(bool on);

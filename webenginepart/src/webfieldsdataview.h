@@ -45,7 +45,7 @@ public:
     explicit WebFieldsDataViewPasswordDelegate(QObject *parent = nullptr);
 
     ///@brief Destructor
-    ~WebFieldsDataViewPasswordDelegate(){}
+    ~WebFieldsDataViewPasswordDelegate() override{}
 
     /**
      * @brief Override of <a href="https://doc.qt.io/qt-5/qstyleditemdelegate.html#paint">QStyledItemDelegate::paint()</a>
@@ -118,7 +118,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~WebFieldsDataModel();
+    ~WebFieldsDataModel() override;
 
     ///@brief enum to reference the various columns of the table
     enum Columns {
@@ -218,7 +218,7 @@ public:
     WebFieldsDataView( QWidget *parent = nullptr);
 
     ///@brief Destructor
-    ~WebFieldsDataView();
+    ~WebFieldsDataView() override;
 
     /**
      * @brief Override of `QTableView::setModel()`

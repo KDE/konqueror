@@ -29,7 +29,7 @@ class KonqSidebarBrowserExtension : public KParts::BrowserExtension
     Q_OBJECT
 public:
     KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget);
-    ~KonqSidebarBrowserExtension() {}
+    ~KonqSidebarBrowserExtension() override {}
 
 protected:
     QPointer<Sidebar_Widget> widget;
@@ -83,18 +83,18 @@ public:
     /**
      * Destructor
      */
-    virtual ~KonqSidebarPart();
+    ~KonqSidebarPart() override;
 
-    virtual bool openUrl(const QUrl &url) override;
+    bool openUrl(const QUrl &url) override;
 
 protected:
     /**
      * This must be implemented by each part
      */
     KonqSidebarBrowserExtension *m_extension;
-    virtual bool openFile() override;
+    bool openFile() override;
 
-    virtual void customEvent(QEvent *ev) override;
+    void customEvent(QEvent *ev) override;
 
 private:
     Sidebar_Widget *m_widget;

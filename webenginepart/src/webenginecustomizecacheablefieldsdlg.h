@@ -64,7 +64,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~WebEngineCustomizeCacheableFieldsDlg(){}
+    ~WebEngineCustomizeCacheableFieldsDlg() override{}
 
     /**
      * @brief The list of fields chosen by the user

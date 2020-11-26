@@ -66,7 +66,7 @@ class WebEngineBlobDownloadJob : public KJob
 
 public:
     WebEngineBlobDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
-    ~WebEngineBlobDownloadJob(){}
+    ~WebEngineBlobDownloadJob() override{}
 
     void start() override;
 

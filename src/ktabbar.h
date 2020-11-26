@@ -43,7 +43,7 @@ public:
     /**
      * Destroys the tab bar.
      */
-    virtual ~KTabBar();
+    ~KTabBar() override;
 
 Q_SIGNALS:
     /**

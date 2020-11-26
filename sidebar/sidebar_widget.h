@@ -83,12 +83,12 @@ public:
 public:
     Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
                    const QString &currentProfile);
-    ~Sidebar_Widget();
+    ~Sidebar_Widget() override;
     bool openUrl(const QUrl &url);
     void stdAction(const char *handlestd);
 
     KParts::BrowserExtension *getExtension();
-    virtual QSize sizeHint() const override;
+    QSize sizeHint() const override;
 
 public Q_SLOTS:
     void addWebSideBar(const QUrl &url, const QString &name);
@@ -96,8 +96,8 @@ public Q_SLOTS:
 protected:
     void customEvent(QEvent *ev) override;
     //void resizeEvent(QResizeEvent* ev);
-    virtual bool eventFilter(QObject *, QEvent *) override;
-    virtual void mousePressEvent(QMouseEvent *) override;
+    bool eventFilter(QObject *, QEvent *) override;
+    void mousePressEvent(QMouseEvent *) override;
 
 protected Q_SLOTS:
     void showHidePage(int value);

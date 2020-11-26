@@ -54,7 +54,7 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarModule : public QObject
 public:
     KonqSidebarModule(QObject *parent,
                       const KConfigGroup &configGroup);
-    ~KonqSidebarModule();
+    ~KonqSidebarModule() override;
 
     virtual QWidget *getWidget() = 0;
     KConfigGroup configGroup();
@@ -150,7 +150,7 @@ public:
     {
         Q_UNUSED(args);
     }
-    virtual ~KonqSidebarPlugin() {}
+    ~KonqSidebarPlugin() override {}
 
     /**
      * Create new module for the sidebar.

@@ -68,9 +68,9 @@ class KonqSidebarPlacesPlugin : public KonqSidebarPlugin
 public:
     KonqSidebarPlacesPlugin(QObject *parent, const QVariantList &args)
         : KonqSidebarPlugin(parent, args) {}
-    virtual ~KonqSidebarPlacesPlugin() {}
+    ~KonqSidebarPlacesPlugin() override {}
 
-    virtual KonqSidebarModule *createModule(QWidget *parent,
+    KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,
                                             const QString &desktopname,
                                             const QVariant &unused) override
@@ -80,7 +80,7 @@ public:
         return new KonqSideBarPlacesModule(parent, configGroup);
     }
 
-    virtual QList<QAction *> addNewActions(QObject *parent,
+    QList<QAction *> addNewActions(QObject *parent,
                                            const QList<KConfigGroup> &existingModules,
                                            const QVariant &unused) override
     {
@@ -92,7 +92,7 @@ public:
         return QList<QAction *>() << action;
     }
 
-    virtual QString templateNameForNewModule(const QVariant &actionData,
+    QString templateNameForNewModule(const QVariant &actionData,
             const QVariant &unused) const override
     {
         Q_UNUSED(actionData);
@@ -100,7 +100,7 @@ public:
         return QString::fromLatin1("placessidebarplugin%1.desktop");
     }
 
-    virtual bool createNewModule(const QVariant &actionData,
+    bool createNewModule(const QVariant &actionData,
                                  KConfigGroup &configGroup,
                                  QWidget *parentWidget,
                                  const QVariant &unused) override

@@ -43,7 +43,7 @@ class UAChangerPlugin : public KParts::Plugin
 
 public:
     explicit UAChangerPlugin(QObject *parent, const QVariantList &args);
-    virtual ~UAChangerPlugin();
+    ~UAChangerPlugin() override;
 
 protected slots:
     void slotDefault();

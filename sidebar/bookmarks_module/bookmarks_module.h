@@ -33,9 +33,9 @@ class KonqSideBarBookmarksModule : public KonqSidebarModule
 public:
     KonqSideBarBookmarksModule(QWidget *parent,
                             const KConfigGroup &configGroup);
-    virtual ~KonqSideBarBookmarksModule();
+    ~KonqSideBarBookmarksModule() override;
 
-    virtual QWidget *getWidget() override;
+    QWidget *getWidget() override;
     void handleURL(const QUrl &hand_url) override;
 	
 private slots:

@@ -45,9 +45,9 @@ class KonqSideBarTreeModule : public KonqSidebarModule
 public:
     KonqSideBarTreeModule(QWidget *parent,
                             const KConfigGroup &configGroup);
-    virtual ~KonqSideBarTreeModule();
+    ~KonqSideBarTreeModule() override;
 
-    virtual QWidget *getWidget() override;
+    QWidget *getWidget() override;
     void handleURL(const QUrl &hand_url) override;
 
 private slots:

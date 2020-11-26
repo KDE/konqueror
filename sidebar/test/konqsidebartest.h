@@ -30,14 +30,14 @@ public:
         Q_UNUSED(desktopName);
         widget = new QLabel("Init Value", parent);
     }
-    ~SidebarTest() {}
-    virtual QWidget *getWidget()
+    ~SidebarTest() override {}
+    QWidget *getWidget() override
     {
         return widget;
     }
 protected:
     QLabel *widget;
-    virtual void handleURL(const QUrl &url)
+    void handleURL(const QUrl &url) override
     {
         widget->setText(url.url());
     }

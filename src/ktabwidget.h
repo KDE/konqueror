@@ -52,7 +52,7 @@ public:
     /**
      * Destroys the tab widget.
      */
-    virtual ~KTabWidget();
+    ~KTabWidget() override;
 
     /**
      * Returns true if calling setTitle() will resize tabs

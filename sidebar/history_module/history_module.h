@@ -32,8 +32,8 @@ class KonqSidebarHistoryModule : public KonqSidebarModule
     Q_OBJECT
 public:
     KonqSidebarHistoryModule(QWidget *parent, const KConfigGroup &configGroup);
-    virtual ~KonqSidebarHistoryModule();
-    virtual QWidget *getWidget() override;
+    ~KonqSidebarHistoryModule() override;
+    QWidget *getWidget() override;
 
 public Q_SLOTS:
     void slotCurViewUrlChanged(const QUrl& url) override;

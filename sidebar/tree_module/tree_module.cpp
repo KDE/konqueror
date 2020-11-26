@@ -247,7 +247,7 @@ class KonqSidebarTreePlugin : public KonqSidebarPlugin
 public:
     KonqSidebarTreePlugin(QObject *parent, const QVariantList &args)
         : KonqSidebarPlugin(parent, args) {}
-    virtual ~KonqSidebarTreePlugin() {}
+    ~KonqSidebarTreePlugin() override {}
 
     KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,

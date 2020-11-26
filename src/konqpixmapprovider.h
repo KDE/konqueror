@@ -35,7 +35,7 @@ class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public QObject
 public:
     static KonqPixmapProvider *self();
 
-    ~KonqPixmapProvider();
+    ~KonqPixmapProvider() override;
 
     /**
      * Trigger a download of a default favicon

@@ -101,7 +101,7 @@ class KonqSidebarBookmarksPlugin : public KonqSidebarPlugin
 public:
     KonqSidebarBookmarksPlugin(QObject *parent, const QVariantList &args)
         : KonqSidebarPlugin(parent, args) {}
-    virtual ~KonqSidebarBookmarksPlugin() {}
+    ~KonqSidebarBookmarksPlugin() override {}
 
     KonqSidebarModule *createModule(QWidget *parent,
                                             const KConfigGroup &configGroup,

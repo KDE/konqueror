@@ -33,9 +33,9 @@ class KonqSideBarPlacesModule : public KonqSidebarModule
 public:
     KonqSideBarPlacesModule(QWidget *parent,
                             const KConfigGroup &configGroup);
-    virtual ~KonqSideBarPlacesModule() = default;
+    ~KonqSideBarPlacesModule() override = default;
 
-    virtual QWidget *getWidget() override;
+    QWidget *getWidget() override;
 
 private slots:
     void slotPlaceUrlChanged(const QUrl &url);
