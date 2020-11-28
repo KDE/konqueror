@@ -409,7 +409,7 @@ void KonqPopupMenuPrivate::populate()
         });
         additionalActions << openTerminalHere;
     }
-    m_menuActions.addServiceActionsTo(q, additionalActions);
+    m_menuActions.addActionsTo(q, KFileItemActions::MenuActionSource::Services, additionalActions);
 #endif
 
     q->addSeparator();
