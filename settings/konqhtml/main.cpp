@@ -35,7 +35,6 @@
 // KDE
 #include <kaboutdata.h>
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KSharedConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>

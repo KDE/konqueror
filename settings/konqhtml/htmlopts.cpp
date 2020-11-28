@@ -23,7 +23,6 @@
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KSharedConfig>
 
 //-----------------------------------------------------------------------------

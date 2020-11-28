@@ -40,7 +40,6 @@
 #include <kconfig.h>
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
 #include <kpluralhandlingspinbox.h>

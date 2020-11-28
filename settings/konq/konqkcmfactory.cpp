@@ -20,7 +20,6 @@
 #include "konqkcmfactory.h"
 #include "behaviour.h"
 
-#include <KPluginLoader>
 
 K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
                             registerPlugin<KBehaviourOptions>("behavior");
