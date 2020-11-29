@@ -42,6 +42,8 @@ private:
     QLineEdit *homeURL;
     QLineEdit *startURL;
     QComboBox *m_webEngineCombo;
+    QComboBox *m_splitBehaviour;
+
     Ui_advancedTabOptions *tabOptions;
 };
 

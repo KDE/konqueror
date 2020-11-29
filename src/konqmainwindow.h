@@ -528,7 +528,6 @@ private:
         void switchToState(FullScreenState newState);
     };
 
-
 private Q_SLOTS:
     void slotUndoTextChanged(const QString &newText);
 
@@ -593,6 +592,8 @@ private:
 
     void plugViewModeActions();
     void unplugViewModeActions();
+
+    void splitCurrentView(Qt::Orientation orientation);
 
     QObject *lastFrame(KonqView *view);
 

@@ -52,6 +52,7 @@
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 #include "konqurl.h"
+#include "konqsettingsxt.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -2328,34 +2329,44 @@ void KonqMainWindow::slotURLEntered(const QString &text, Qt::KeyboardModifiers m
     m_bURLEnterLock = false;
 }
 
-void KonqMainWindow::slotSplitViewHorizontal()
+void KonqMainWindow::splitCurrentView(Qt::Orientation orientation)
 {
     if (!m_currentView) {
         return;
     }
     KonqView *oldView = m_currentView;
-    KonqView *newView = m_pViewManager->splitView(m_currentView, Qt::Horizontal);
+    KonqView *newView = m_pViewManager->splitView(m_currentView, orientation);
     if (newView == nullptr) {
         return;
     }
     KonqOpenURLRequest req;
     req.forceAutoEmbed = true;
-    openView(oldView->serviceType(), oldView->url(), newView, req);
+
+    QString mime = oldView->serviceType();
+    QUrl url = oldView->url();
+    KSharedConfig::Ptr cfg = KSharedConfig::openConfig("konquerorrc");
+    const bool alwaysDuplicateView = cfg->group("UserSettings").readEntry("AlwaysDuplicatePageWhenSplittingView", true);
+    if (!alwaysDuplicateView && !url.isLocalFile()) {
+        url = QUrl(KonqSettings::startURL());
+        if (url.isLocalFile()) {
+            QMimeDatabase db;
+            mime = db.mimeTypeForUrl(url).name();
+        } else {
+            //We can't know the mimetype
+            mime = "text/html";
+        }
+    }
+    openView(mime, url, newView, req);
+}
+
+void KonqMainWindow::slotSplitViewHorizontal()
+{
+    splitCurrentView(Qt::Horizontal);
 }
 
 void KonqMainWindow::slotSplitViewVertical()
 {
-    if (!m_currentView) {
-        return;
-    }
-    KonqView *oldView = m_currentView;
-    KonqView *newView = m_pViewManager->splitView(m_currentView, Qt::Vertical);
-    if (newView == nullptr) {
-        return;
-    }
-    KonqOpenURLRequest req;
-    req.forceAutoEmbed = true;
-    openView(oldView->serviceType(), oldView->url(), newView, req);
+    splitCurrentView(Qt::Vertical);
 }
 
 void KonqMainWindow::slotAddTab()

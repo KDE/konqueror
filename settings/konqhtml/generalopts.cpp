@@ -131,6 +131,17 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     formLayout->addRow(webLabel, m_webEngineCombo);
     webLabel->setBuddy(m_webEngineCombo);
     connect(m_webEngineCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
+
+    QLabel *splitLabel = new QLabel(i18n("When splitting a view"));
+    m_splitBehaviour = new QComboBox(this);
+    //Keep items order in sync with KonqMainWindow::SplitBehaviour
+    m_splitBehaviour->addItems({
+        i18n("Always duplicate current view"),
+        i18n("Duplicate current view only for local files")
+    });
+    splitLabel->setBuddy(m_splitBehaviour);
+    formLayout->addRow(splitLabel, m_splitBehaviour);
+    connect(m_splitBehaviour, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
@@ -179,6 +190,9 @@ void KKonqGeneralOptions::load()
     Q_ASSERT(startComboIndex != -1);
     m_startCombo->setCurrentIndex(startComboIndex);
 
+    const bool alwaysDuplicateWhenSplitting = userSettings.readEntry("AlwaysDuplicatePageWhenSplittingView", true);
+    m_splitBehaviour->setCurrentIndex(alwaysDuplicateWhenSplitting ? 0 : 1);
+
     m_webEngineCombo->clear();
     // ## Well, the problem with using the trader to find the available parts, is that if a user
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
@@ -215,6 +229,7 @@ void KKonqGeneralOptions::defaults()
 {
     homeURL->setText(QUrl(DEFAULT_HOMEPAGE).toString());
     startURL->setText(QUrl(DEFAULT_STARTPAGE).toString());
+    m_splitBehaviour->setCurrentIndex(0);
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
@@ -232,6 +247,7 @@ void KKonqGeneralOptions::save()
         startUrl = startURL->text();
     userSettings.writeEntry("StartURL", startUrl);
     userSettings.writeEntry("HomeURL", homeURL->text());
+    userSettings.writeEntry("AlwaysDuplicatePageWhenSplittingView", m_splitBehaviour->currentIndex() == 0);
 
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.
