@@ -29,6 +29,10 @@ install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### konq_sidebar plugin: contains the KParts used by konqueror ###############
 
+set(konq_sidebar_VERSION 0.2)
+
+configure_file(konq_sidebartng.desktop ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
+
 set(konq_sidebar_PART_SRCS 
  sidebar_part.cpp
  sidebar_widget.cpp
@@ -37,7 +41,7 @@ set(konq_sidebar_PART_SRCS
 )
 
 add_library(konq_sidebar MODULE ${konq_sidebar_PART_SRCS} ${sidebar_DEBUG_SRCS})
-kcoreaddons_desktop_to_json(konq_sidebar konq_sidebartng.desktop)
+kcoreaddons_desktop_to_json(konq_sidebar ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
 
 target_link_libraries(konq_sidebar KF5::Parts KF5::Konq konqsidebarplugin KF5::KCMUtils KF5::IconThemes)
 
@@ -45,6 +49,6 @@ install(TARGETS konq_sidebar DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 ########### install files ###############
 
-install( FILES konq_sidebartng.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR})
 install( FILES konqsidebartngrc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
 install( FILES konqsidebarplugin.h DESTINATION ${KDE_INSTALL_INCLUDEDIR} COMPONENT Devel )

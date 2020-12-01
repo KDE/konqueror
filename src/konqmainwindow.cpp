@@ -58,6 +58,7 @@
 #include <konqsettings.h>
 
 #include <kwidgetsaddons_version.h>
+#include <kparts_version.h>
 #include <kbookmarkmanager.h>
 #include <klineedit.h>
 #include <kzip.h>
@@ -95,6 +96,9 @@
 #include <QLineEdit>
 #include <QNetworkProxy>
 
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include <KPluginMetaData>
+#endif
 #include <kaboutdata.h>
 #include <ktoolbar.h>
 #include <konqbookmarkmenu.h>
@@ -218,7 +222,12 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
             Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
 
     // This has to be called before any action is created for this mainwindow
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    const KAboutData applicationData = KAboutData::applicationData();
+    setComponentName(applicationData.componentName(), applicationData.displayName());
+#else
     setComponentData(KAboutData::applicationData(), false /*don't load plugins yet*/);
+#endif
 
     m_pViewManager = new KonqViewManager(this);
 
@@ -1975,7 +1984,11 @@ void KonqMainWindow::slotViewCompleted(KonqView *view)
 
 void KonqMainWindow::slotPartActivated(KParts::Part *part)
 {
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    qCDebug(KONQUEROR_LOG) << part << (part ? part->metaData().pluginId() : QString());
+#else
     qCDebug(KONQUEROR_LOG) << part << (part ? part->componentData().componentName() : QLatin1String(""));
+#endif
 
     KonqView *newView = nullptr;
     KonqView *oldView = m_currentView;

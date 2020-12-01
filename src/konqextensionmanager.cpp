@@ -27,7 +27,12 @@
 #include <kxmlguifactory.h>
 #include <kconfig.h>
 #include "konqdebug.h"
+#include <kparts_version.h>
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include <KPluginMetaData>
+#else
 #include <KAboutData>
+#endif
 #include <KLocalizedString>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>
@@ -74,9 +79,13 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 
     d->pluginSelector->addPlugins(QStringLiteral("konqueror"), i18n("Extensions"), QStringLiteral("Extensions"), KSharedConfig::openConfig());
     if (activePart) {
-        KAboutData componentData = activePart->componentData();
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), QStringLiteral("Tools"));
-        d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), QStringLiteral("Statusbar"));
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+        const QString pluginId = activePart->metaData().pluginId();
+#else
+        const QString pluginId = activePart->componentData().componentName();
+#endif
+        d->pluginSelector->addPlugins(pluginId, i18n("Extensions"), QStringLiteral("Tools"));
+        d->pluginSelector->addPlugins(pluginId, i18n("Extensions"), QStringLiteral("Statusbar"));
     }
 
     d->buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Apply);

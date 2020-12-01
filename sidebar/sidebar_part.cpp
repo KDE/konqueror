@@ -15,7 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 #include "sidebar_part.h"
+
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include <KPluginMetaData>
+#else
 #include <kaboutdata.h>
+#endif
 
 #include <QApplication>
 
@@ -25,14 +30,22 @@
 
 K_PLUGIN_CLASS_WITH_JSON(KonqSidebarPart, "konq_sidebartng.json")
 
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const KPluginMetaData& metaData, const QVariantList &)
+#else
 KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList &)
+#endif
     : KParts::ReadOnlyPart(parent)
 {
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    setMetaData(metaData);
+#else
     KAboutData aboutData("konqsidebartng", i18n("Extended Sidebar"), "0.2");
     aboutData.addAuthor(i18n("Joseph Wenninger"), "", "jowenn@kde.org");
     aboutData.addAuthor(i18n("David Faure"), "", "faure@kde.org");
     aboutData.addAuthor(i18n("Raphael Rosch"), "", "kde-dev@insaner.com");
     setComponentData(aboutData);
+#endif
 
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
     if (currentProfile.isEmpty()) {

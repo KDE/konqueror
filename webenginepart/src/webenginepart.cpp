@@ -52,7 +52,11 @@
 #include <KIO/Global>
 
 #include <KActionCollection>
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include <KPluginMetaData>
+#else
 #include <KAboutData>
+#endif
 #include <KUrlLabel>
 #include <KMessageBox>
 #include <KStringHandler>
@@ -107,6 +111,9 @@ void WebEnginePart::initWebEngineUrlSchemes()
 }
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+                         const KPluginMetaData& metaData,
+#endif
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
@@ -126,6 +133,9 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         prof->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(prof));
     }
     static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    setMetaData(metaData);
+#else
     KAboutData about = KAboutData(QStringLiteral("webenginepart"),
                                   i18nc("Program Name", "WebEnginePart"),
                                   /*version*/ QStringLiteral("1.3.0"),
@@ -144,6 +154,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     about.setProductName("webenginepart/general");
 //    KComponentData componentData(&about);
     setComponentData(about, false /*don't load plugins yet*/);
+#endif
 
 #if 0
     // NOTE: If the application does not set its version number, we automatically

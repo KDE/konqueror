@@ -34,8 +34,10 @@
 #include <KIO/AccessManager>
 #include <KUriFilter>
 #include <KLineEdit>
+#include <KPluginMetaData>
 #include <webenginepart.h>
 
+#include <QJsonDocument>
 #include <QInputDialog>
 
 //#include <QUiLoader>
@@ -74,7 +76,18 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(const QString& url = QString()): currentZoom(100) {
-        view = new WebEnginePart(this);
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+        QJsonObject jo = QJsonDocument::fromJson(
+            "{ \"KPlugin\": {\n"
+            " \"Id\": \"webenginepart\",\n"
+            " \"Name\": \"WebEngine\",\n"
+            " \"Version\": \"0.1\"\n"
+            "}\n}").object();
+        KPluginMetaData metaData(jo, QString());
+        view = new WebEnginePart(this, nullptr, metaData);
+#else
+        view = new WebEnginePart(this, nullptr);
+#endif
         setCentralWidget(view->widget());
 
         connect(view->view(), &QWebEngineView::loadFinished,

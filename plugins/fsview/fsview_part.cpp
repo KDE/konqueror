@@ -30,7 +30,11 @@
 
 #include <kfileitem.h>
 #include <kpluginfactory.h>
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include <KPluginMetaData>
+#else
 #include <kaboutdata.h>
+#endif
 
 #include <kprotocolmanager.h>
 #include <kio/copyjob.h>
@@ -89,14 +93,21 @@ void FSJob::progressSlot(int percent, int dirs, const QString &cDir)
 
 FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+                       const KPluginMetaData& metaData,
+#endif
                        const QList<QVariant> & /* args */)
     : KParts::ReadOnlyPart(parent)
 {
+#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+    setMetaData(metaData);
+#else
     KAboutData aboutData(QStringLiteral("fsview"), i18n("FSView"), QStringLiteral("0.1"),
                          i18n("Filesystem Viewer"),
                          KAboutLicense::GPL,
                          i18n("(c) 2002, Josef Weidendorfer"));
     setComponentData(aboutData);
+#endif
 
     _view = new FSView(new Inode(), parentWidget);
     _view->setWhatsThis(i18n("<p>This is the FSView plugin, a graphical "
@@ -200,6 +211,16 @@ FSViewPart::~FSViewPart()
 
     delete _job;
     _view->saveFSOptions();
+}
+
+QString FSViewPart::componentName() const
+{
+    // also the part ui.rc file is in the program folder
+    // TODO: change the component name to "fsviewpart" by removing this method and
+    // adapting the folder where the file is placed.
+    // Needs a way to also move any potential custom user ui.rc files
+    // from fsview/fsview_part.rc to fsviewpart/fsview_part.rc
+    return QStringLiteral("fsview");
 }
 
 void FSViewPart::showInfo()
