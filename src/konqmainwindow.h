@@ -74,7 +74,6 @@ class QLineEdit;
 namespace KParts
 {
 class BrowserExtension;
-class BrowserHostExtension;
 class ReadOnlyPart;
 class OpenUrlArguments;
 struct BrowserArguments;
@@ -162,7 +161,7 @@ public:
     void removeChildView(KonqView *childView);
 
     KonqView *childView(KParts::ReadOnlyPart *view);
-    KonqView *childView(KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part);
+    KonqView *childView(KParts::ReadOnlyPart *callingPart, const QString &name, KParts::ReadOnlyPart **part);
 
     // Total number of views
     int viewCount() const

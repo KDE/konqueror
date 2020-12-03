@@ -57,7 +57,6 @@
 #include <KParts/ReadOnlyPart>
 #include <KParts/BrowserArguments>
 #include <KParts/OpenUrlEvent>
-#include <KParts/BrowserHostExtension>
 #include <KParts/OpenUrlArguments>
 #include <KParts/BrowserExtension>
 #include <KParts/WindowArgs>
@@ -998,56 +997,6 @@ void KonqView::setPartMimeType()
     KParts::OpenUrlArguments args(m_pPart->arguments());
     args.setMimeType(m_serviceType);
     m_pPart->setArguments(args);
-}
-
-QStringList KonqView::frameNames() const
-{
-    return childFrameNames(m_pPart);
-}
-
-QStringList KonqView::childFrameNames(KParts::ReadOnlyPart *part)
-{
-    QStringList res;
-
-    KParts::BrowserHostExtension *hostExtension = KParts::BrowserHostExtension::childObject(part);
-
-    if (!hostExtension) {
-        return res;
-    }
-
-    res += hostExtension->frameNames();
-
-    const QList<KParts::ReadOnlyPart *> children = hostExtension->frames();
-    QListIterator<KParts::ReadOnlyPart *> i(children);
-    while (i.hasNext()) {
-        res += childFrameNames(i.next());
-    }
-
-    return res;
-}
-
-KParts::BrowserHostExtension *KonqView::hostExtension(KParts::ReadOnlyPart *part, const QString &name)
-{
-    KParts::BrowserHostExtension *ext = KParts::BrowserHostExtension::childObject(part);
-
-    if (!ext) {
-        return nullptr;
-    }
-
-    if (ext->frameNames().contains(name)) {
-        return ext;
-    }
-
-    const QList<KParts::ReadOnlyPart *> children = ext->frames();
-    QListIterator<KParts::ReadOnlyPart *> i(children);
-    while (i.hasNext()) {
-        KParts::BrowserHostExtension *childHost = hostExtension(i.next(), name);
-        if (childHost) {
-            return childHost;
-        }
-    }
-
-    return nullptr;
 }
 
 bool KonqView::callExtensionMethod(const char *methodName)

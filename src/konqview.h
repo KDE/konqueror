@@ -469,8 +469,6 @@ public:
 
     void disableScrolling();
 
-    QStringList frameNames() const;
-
     QString dbusObjectPath();
     QString partObjectPath();
 
@@ -501,10 +499,6 @@ public:
      */
     void saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options);
     void loadHistoryConfig(const KConfigGroup &config, const QString &prefix);
-
-    static QStringList childFrameNames(KParts::ReadOnlyPart *part);
-
-    static KParts::BrowserHostExtension *hostExtension(KParts::ReadOnlyPart *part, const QString &name);
 
 Q_SIGNALS:
 
