@@ -12,7 +12,7 @@ configure_file(khtmlsettingsplugin.desktop ${CMAKE_CURRENT_BINARY_DIR}/khtmlsett
 set(khtmlsettingsplugin_PART_SRCS settingsplugin.cpp )
 
 add_library(khtmlsettingsplugin MODULE ${khtmlsettingsplugin_PART_SRCS})
-kcoreaddons_desktop_to_json(khtmlsettingsplugin khtmlsettingsplugin.desktop)
+kcoreaddons_desktop_to_json(khtmlsettingsplugin ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop)
 
 
 target_link_libraries(khtmlsettingsplugin  KF5::Parts)
