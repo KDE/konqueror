@@ -35,7 +35,7 @@ install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### next target ###############
 
-configure_file(fsview_part.desktop ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.desktop)
+configure_file(fsview_part.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/fsview_part.desktop)
 
 set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 

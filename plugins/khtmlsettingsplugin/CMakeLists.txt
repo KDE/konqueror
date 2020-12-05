@@ -7,7 +7,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"khtmlsettingsplugin\")
 
 set(khtmlsetting_VERSION 3.3)
 
-configure_file(khtmlsettingsplugin.desktop ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop)
+configure_file(khtmlsettingsplugin.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop)
 
 set(khtmlsettingsplugin_PART_SRCS settingsplugin.cpp )
 

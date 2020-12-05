@@ -31,7 +31,7 @@ install(TARGETS konqsidebarplugin ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 set(konq_sidebar_VERSION 0.2)
 
-configure_file(konq_sidebartng.desktop ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
+configure_file(konq_sidebartng.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/konq_sidebartng.desktop)
 
 set(konq_sidebar_PART_SRCS 
  sidebar_part.cpp
