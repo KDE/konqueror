@@ -88,7 +88,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 
     QAction *a = actionCollection()->addAction(QStringLiteral("focus_search_bar"));
     a->setText(i18n("Focus Searchbar"));
-    actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_S));
+    actionCollection()->setDefaultShortcut(a, QKeySequence(Qt::CTRL | Qt::ALT | Qt::Key_S));
     connect(a, &QAction::triggered, this, &SearchBarPlugin::focusSearchbar);
     m_searchProvidersDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kde5/services/searchproviders/";
     QDir().mkpath(m_searchProvidersDir);

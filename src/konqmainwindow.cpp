@@ -3182,7 +3182,7 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
             // TODO: decide if the delete-character behaviour of QLineEdit
             // really is useful enough to warrant this workaround
             QAction *duplicate = actionCollection()->action(QStringLiteral("duplicatecurrenttab"));
-            if (duplicate->shortcuts().contains(QKeySequence(Qt::CTRL + Qt::Key_D))) {
+            if (duplicate->shortcuts().contains(QKeySequence(Qt::CTRL | Qt::Key_D))) {
                 duplicate->setEnabled(false);
             }
 
@@ -3205,7 +3205,7 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
             // see above in FocusIn for explanation
             // action is reenabled if a view exists
             QAction *duplicate = actionCollection()->action(QStringLiteral("duplicatecurrenttab"));
-            if (duplicate->shortcuts().contains(QKeySequence(Qt::CTRL + Qt::Key_D))) {
+            if (duplicate->shortcuts().contains(QKeySequence(Qt::CTRL | Qt::Key_D))) {
                 duplicate->setEnabled(currentView() && currentView()->frame());
             }
 
@@ -3688,7 +3688,7 @@ void KonqMainWindow::initActions()
     connect(m_ptaFullScreen, &KToggleFullScreenAction::toggled, this, &KonqMainWindow::slotUpdateFullScreen);
 
     QList<QKeySequence> reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
-    QKeySequence reloadAlternate(Qt::CTRL + Qt::Key_R);
+    QKeySequence reloadAlternate(Qt::CTRL | Qt::Key_R);
     if (!reloadShortcut.contains(reloadAlternate)) {
         reloadShortcut.append(reloadAlternate);
     }

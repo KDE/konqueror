@@ -239,7 +239,7 @@ DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
         QAction *action = actionCollection()->addAction(QStringLiteral("filterdir"), this, SLOT(slotShowFilterBar()));
         action->setText(i18nc("@action:inmenu Tools", "Show Filter Bar"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("view-filter")));
-        actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_I));
+        actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_I));
     }
 }
 

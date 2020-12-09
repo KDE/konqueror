@@ -302,7 +302,7 @@ void WebEnginePart::initActions()
 
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
-    actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_U));
+    actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::Key_U));
     connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotViewDocumentSource);
 
     action = new QAction(i18nc("Secure Sockets Layer", "SSL"), this);
