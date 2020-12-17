@@ -100,7 +100,7 @@ bool KonqFeedIcon::feedFound()
 {
     // Ensure that it is safe to use the URL, before doing anything else with it
     const QUrl partUrl(m_part->url());
-    if (!partUrl.isValid()) {
+    if (!partUrl.isValid() || partUrl.scheme().isEmpty()) {
         return false;
     }
     // Since attempting to determine feed info for about:blank crashes khtml,
