@@ -113,7 +113,11 @@ SettingsPlugin::SettingsPlugin(QObject *parent,
     policies += i18n("&Use Cache if Possible");
     policies += i18n("&Offline Browsing Mode");
     sAction->setItems(policies);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 78, 0)
+    connect(sAction, &KSelectAction::indexTriggered, this, &SettingsPlugin::cachePolicyChanged);
+#else
     connect(sAction, SIGNAL(triggered(int)), SLOT(cachePolicyChanged(int)));
+#endif
 
     menu->addAction(sAction);
 
