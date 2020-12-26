@@ -48,6 +48,7 @@
 #include "settings/webenginesettings.h"
 #include "ui/credentialsdetailswidget.h"
 
+#include <kconfigwidgets_version.h>
 #include <KCodecAction>
 #include <KIO/Global>
 
@@ -298,7 +299,11 @@ void WebEnginePart::initActions()
 
     KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme(QStringLiteral("character-set")), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( QStringLiteral("setEncoding"), codecAction );
+#if KCONFIGWIDGETS_VERSION >= QT_VERSION_CHECK(5, 78, 0)
+    connect(codecAction, &KCodecAction::codecTriggered, this, &WebEnginePart::slotSetTextEncoding);
+#else
     connect(codecAction, QOverload<QTextCodec *>::of(&KCodecAction::triggered), this, &WebEnginePart::slotSetTextEncoding);
+#endif
 
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
