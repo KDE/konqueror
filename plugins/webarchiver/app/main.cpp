@@ -32,6 +32,8 @@
 
 int main(int argc,char *argv[])
 {
+    QApplication app(argc, argv);
+
     KAboutData aboutData("kcreatwebearchive",		// componentName
                          i18n("Web Archiver"),		// displayName
                          i18n("0.0.1"),			// version
@@ -46,7 +48,6 @@ int main(int argc,char *argv[])
                         "jjm@keelhaul.me.uk",
                         "http://www.keelhaul.me.uk");
 
-    QApplication app(argc, argv);
     KAboutData::setApplicationData(aboutData);
     app.setWindowIcon(QIcon::fromTheme("webarchiver"));
     KCrash::setDrKonqiEnabled(true);
