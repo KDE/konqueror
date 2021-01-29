@@ -20,5 +20,5 @@ target_link_libraries(kcreatewebarchive
 
 ########### install files ###############
 
-install(TARGETS kcreatewebarchive ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kcreatewebarchive ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES settings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} RENAME kcreatewebarchive.kcfg)
