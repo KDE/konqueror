@@ -39,6 +39,7 @@
 #include "kbookmarkimporter.h"
 #include "kbookmarkaction.h"
 #include "kbookmarkdombuilder.h"
+#include "konqpixmapprovider.h"
 
 class KBookmarkBarPrivate
 {
@@ -180,11 +181,17 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
                     m_toolBar->addSeparator();
                 }
             } else {
+                auto host = bm.url().adjusted(QUrl::RemovePath | QUrl::RemoveQuery);
+                bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
                 QAction *action = new KBookmarkAction(bm, m_pOwner, nullptr);
                 if (m_toolBar) {
                     m_toolBar->addAction(action);
                 }
                 d->m_actions.append(action);
+                connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
+                    action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+                });
+                KonqPixmapProvider::self()->downloadHostIcon(host);
             }
         } else {
             KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, nullptr);
