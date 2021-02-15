@@ -414,7 +414,7 @@ void KonqViewManager::removeTab(KonqFrameBase *currentFrame, bool emitAboutToRem
     }
 
     if (emitAboutToRemoveSignal) {
-        emit aboutToRemoveTab(currentFrame);
+        Q_EMIT aboutToRemoveTab(currentFrame);
     }
 
     if (currentFrame->asQWidget() == m_tabContainer->currentWidget()) {

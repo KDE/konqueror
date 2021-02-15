@@ -211,7 +211,7 @@ void FilterBar::keyReleaseEvent(QKeyEvent *event)
     QWidget::keyReleaseEvent(event);
     if (event->key() == Qt::Key_Escape) {
         if (m_filterInput->text().isEmpty()) {
-            emit closeRequest();
+            Q_EMIT closeRequest();
         } else {
             m_filterInput->clear();
         }

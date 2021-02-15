@@ -129,7 +129,7 @@ void KJavaScriptOptions::load()
     reportErrorsCB->setChecked(cg.readEntry("ReportJavaScriptErrors", false));
     jsDebugWindow->setChecked(cg.readEntry("EnableJavaScriptDebug", false));
 //    js_popup->setButton( m_pConfig->readUnsignedNumEntry("WindowOpenPolicy", 0) );
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KJavaScriptOptions::defaults()
@@ -139,7 +139,7 @@ void KJavaScriptOptions::defaults()
         js_global_policies.isFeatureEnabled());
     reportErrorsCB->setChecked(false);
     jsDebugWindow->setChecked(false);
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KJavaScriptOptions::save()
@@ -158,7 +158,7 @@ void KJavaScriptOptions::save()
 
     // sync moved to KJSParts::save
 //    cg.sync();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KJavaScriptOptions::slotChangeJSEnabled()

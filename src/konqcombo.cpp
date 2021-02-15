@@ -583,7 +583,7 @@ void KonqCombo::mousePressEvent(QMouseEvent *e)
     optCombo.initFrom(this);
     if (e->button() == Qt::LeftButton && m_pageSecurity != KonqMainWindow::NotCrypted &&
             style()->subElementRect(QStyle::SE_ComboBoxFocusRect, &optCombo, this).contains(e->pos())) {
-        emit showPageSecurity();
+        Q_EMIT showPageSecurity();
     }
 
     KComboBox::mousePressEvent(e);
@@ -619,7 +619,7 @@ void KonqCombo::slotActivated(const QString &text)
 {
     applyPermanent();
     m_returnPressed = true;
-    emit activated(text, qApp->keyboardModifiers());
+    Q_EMIT activated(text, qApp->keyboardModifiers());
 }
 
 void KonqCombo::setConfig(KConfig *kc)

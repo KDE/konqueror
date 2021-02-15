@@ -385,11 +385,11 @@ void KonqHistoryModel::slotEntryAdded(const KonqHistoryEntry &entry)
         }
         item->update(entry);
         const QModelIndex index = indexFor(item);
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
     // update the parent item, so the sorting by date is updated accordingly
     const QModelIndex groupIndex = indexFor(group);
-    emit dataChanged(groupIndex, groupIndex);
+    Q_EMIT dataChanged(groupIndex, groupIndex);
 }
 
 void KonqHistoryModel::slotEntryRemoved(const KonqHistoryEntry &entry)

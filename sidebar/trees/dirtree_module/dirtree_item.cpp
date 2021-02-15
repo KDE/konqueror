@@ -201,7 +201,7 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
         qCDebug(SIDEBAR_LOG) << "Emitting createNewWindow";
         KParts::OpenUrlArguments args;
         args.setMimeType(m_fileItem.mimetype());
-        emit tree()->createNewWindow(m_fileItem.url(), args);
+        Q_EMIT tree()->createNewWindow(m_fileItem.url(), args);
     } else {
         m_fileItem.run();
     }
@@ -265,7 +265,7 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
 
     actionGroups.insert("editactions", editActions);
 
-    emit tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
+    Q_EMIT tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
             KParts::OpenUrlArguments(), KParts::BrowserArguments(),
             popupFlags, actionGroups);
 }

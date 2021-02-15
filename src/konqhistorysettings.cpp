@@ -105,12 +105,12 @@ void KonqHistorySettings::applySettings()
     config.writeEntry("SortHistory", m_sortsByName ? "byName" : "byDate");
 
     // notify konqueror instances about the new configuration
-    emit notifySettingsChanged();
+    Q_EMIT notifySettingsChanged();
 }
 
 void KonqHistorySettings::slotSettingsChanged()
 {
     readSettings(true /*reparse*/);
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 

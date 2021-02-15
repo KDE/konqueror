@@ -145,7 +145,7 @@ void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
     }
 
     auto callback = [this, url, page](const WebFormList &forms) {
-        emit formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
+        Q_EMIT formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
         if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
             fillFormData(page, cacheableForms(url, forms, CacheOperation::Fill));
         }
@@ -169,7 +169,7 @@ void WebEngineWallet::fillFormData(WebEnginePage *page, const WebFormList &allFo
             urlList << url;
         }
     } else {
-        emit fillFormRequestCompleted(false);
+        Q_EMIT fillFormRequestCompleted(false);
     }
     if (!urlList.isEmpty()) {
         fillFormDataFromCache(urlList);
@@ -247,7 +247,7 @@ void WebEngineWallet::saveFormData(WebEnginePage *page, const WebFormList &allFo
         d->confirmSaveRequestOverwrites.insert(url);
         saveFormDataToCache(key);
     } else {
-        emit saveFormDataRequested(key, url);
+        Q_EMIT saveFormDataRequested(key, url);
     }
 }
 
@@ -394,7 +394,7 @@ void WebEngineWallet::customizeFieldsToCache(WebEnginePage* page, QWidget* widge
             //Pass only the selected fields to saveFormData instead of all the forms in the page, since
             //we already know they're the ones to be cached.
             saveFormData(page, selected, true);
-            emit fillFormRequestCompleted(true);
+            Q_EMIT fillFormRequestCompleted(true);
         }
     };
     WebEngineWalletPrivate::detectFormsInPage(page, callback, true);

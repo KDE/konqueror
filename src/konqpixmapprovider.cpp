@@ -71,7 +71,7 @@ void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
             }
         }
         if (modified) {
-            emit changed();
+            Q_EMIT changed();
         }
     });
 }
@@ -95,7 +95,7 @@ void KonqPixmapProvider::setIconForUrl(const QUrl &hostUrl, const QUrl &iconUrl)
             }
         }
         if (modified) {
-            emit changed();
+            Q_EMIT changed();
         }
     });
 }

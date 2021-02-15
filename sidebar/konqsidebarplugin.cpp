@@ -69,19 +69,19 @@ KConfigGroup KonqSidebarModule::configGroup()
 void KonqSidebarModule::enableCopy(bool enabled)
 {
     d->m_copy = enabled;
-    emit enableAction(this, "copy", enabled);
+    Q_EMIT enableAction(this, "copy", enabled);
 }
 
 void KonqSidebarModule::enableCut(bool enabled)
 {
     d->m_cut = enabled;
-    emit enableAction(this, "cut", enabled);
+    Q_EMIT enableAction(this, "cut", enabled);
 }
 
 void KonqSidebarModule::enablePaste(bool enabled)
 {
     d->m_paste = enabled;
-    emit enableAction(this, "paste", enabled);
+    Q_EMIT enableAction(this, "paste", enabled);
 }
 
 bool KonqSidebarModule::isCopyEnabled() const
@@ -105,5 +105,5 @@ void KonqSidebarModule::showPopupMenu(const QPoint &global, const KFileItemList 
                                       KParts::BrowserExtension::PopupFlags flags,
                                       const KParts::BrowserExtension::ActionGroupMap &actionGroups)
 {
-    emit popupMenu(this, global, items, args, browserArgs, flags, actionGroups);
+    Q_EMIT popupMenu(this, global, items, args, browserArgs, flags, actionGroups);
 }

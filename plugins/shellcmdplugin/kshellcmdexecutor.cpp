@@ -148,6 +148,6 @@ void KShellCommandExecutor::slotFinished()
     };
     delete m_shellProcess;
     m_shellProcess = nullptr;
-    emit finished();
+    Q_EMIT finished();
 }
 

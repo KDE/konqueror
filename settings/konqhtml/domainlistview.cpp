@@ -121,7 +121,7 @@ void DomainListView::addPressed()
         pol->setDomain(pDlg.domain());
         domainPolicies.insert(index, pol);
         domainSpecificLV->setCurrentItem(index);
-        emit changed(true);
+        Q_EMIT changed(true);
     } else {
         delete pol;
     }
@@ -150,7 +150,7 @@ void DomainListView::changePressed()
         pol_copy = pol;
         index->setText(0, pDlg.domain());
         index->setText(1, pDlg.featureEnabledPolicyText());
-        emit changed(true);
+        Q_EMIT changed(true);
     }
     delete pol_copy;
 }
@@ -168,7 +168,7 @@ void DomainListView::deletePressed()
         delete it.value();
         domainPolicies.erase(it);
         delete index;
-        emit changed(true);
+        Q_EMIT changed(true);
     }
     updateButton();
 }

@@ -2143,7 +2143,7 @@ void KonqMainWindow::insertChildView(KonqView *childView)
     connect(childView, SIGNAL(viewCompleted(KonqView*)),
             this, SLOT(slotViewCompleted(KonqView*)));
 
-    emit viewAdded(childView);
+    Q_EMIT viewAdded(childView);
 }
 
 // Called by KonqViewManager, internal
@@ -2180,7 +2180,7 @@ void KonqMainWindow::removeChildView(KonqView *childView)
 
     m_mapViews.erase(it);
 
-    emit viewRemoved(childView);
+    Q_EMIT viewRemoved(childView);
 
 #ifndef NDEBUG
     //dumpViewList();
@@ -4672,7 +4672,7 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
     QListIterator<KFileItem> it(items);
     while (it.hasNext()) {
         if (m_popupItems.contains(it.next())) {
-            emit popupItemsDisturbed();
+            Q_EMIT popupItemsDisturbed();
             return;
         }
     }
@@ -5149,7 +5149,7 @@ void KonqMainWindow::slotAddWebSideBar(const QUrl &url, const QString &name)
             if (view) {
                 KService::Ptr svc = view->service();
                 if (svc->desktopEntryName() == QLatin1String("konq_sidebartng")) {
-                    emit view->browserExtension()->addWebSideBar(url, name);
+                    Q_EMIT view->browserExtension()->addWebSideBar(url, name);
                     break;
                 }
             }

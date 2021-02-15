@@ -82,7 +82,7 @@ void SearchBar::setVisible (bool visible)
         m_ui.searchComboBox->lineEdit()->selectAll();
     } else {
         m_ui.searchComboBox->setPalette(QPalette());
-        emit searchTextChanged(QString());
+        Q_EMIT searchTextChanged(QString());
     }
 
     QWidget::setVisible(visible);
@@ -133,7 +133,7 @@ void SearchBar::findNext()
         m_ui.searchComboBox->addItem(text);
     }
 
-    emit searchTextChanged(text);
+    Q_EMIT searchTextChanged(text);
 }
 
 void SearchBar::findPrevious()
@@ -146,7 +146,7 @@ void SearchBar::findPrevious()
         m_ui.searchComboBox->addItem(text);
     }
 
-    emit searchTextChanged(m_ui.searchComboBox->currentText(), true);
+    Q_EMIT searchTextChanged(m_ui.searchComboBox->currentText(), true);
 }
 
 void SearchBar::textChanged(const QString &text)
@@ -161,7 +161,7 @@ void SearchBar::textChanged(const QString &text)
     }
 
     if (m_ui.actionSearchAutomatically->isChecked()) {
-        emit searchTextChanged(m_ui.searchComboBox->currentText());
+        Q_EMIT searchTextChanged(m_ui.searchComboBox->currentText());
     }
 }
 

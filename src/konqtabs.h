@@ -184,7 +184,7 @@ protected:
     void dragEnterEvent(QDragEnterEvent *event) override
     {
         bool accept = false;
-        emit testCanDecode(event, accept);
+        Q_EMIT testCanDecode(event, accept);
         if (accept) {
             event->acceptProposedAction();
         }
@@ -192,7 +192,7 @@ protected:
 
     void dropEvent(QDropEvent *event) override
     {
-        emit receivedDropEvent(event);
+        Q_EMIT receivedDropEvent(event);
         event->acceptProposedAction();
     }
 };

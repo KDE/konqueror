@@ -98,10 +98,10 @@ WebEngineBrowserExtension::WebEngineBrowserExtension(WebEnginePart *parent, cons
                         m_part(parent),
                         mCurrentPrinter(nullptr)
 {
-    emit enableAction("cut", false);
-    emit enableAction("copy", false);
-    emit enableAction("paste", false);
-    emit enableAction("print", true);
+    Q_EMIT enableAction("cut", false);
+    Q_EMIT enableAction("copy", false);
+    Q_EMIT enableAction("paste", false);
+    Q_EMIT enableAction("print", true);
 
     if (cachedHistoryData.isEmpty()) {
         return;
@@ -257,13 +257,13 @@ void WebEngineBrowserExtension::paste()
 void WebEngineBrowserExtension::slotSaveDocument()
 {
     if (view())
-        emit saveUrl(view()->url());
+        Q_EMIT saveUrl(view()->url());
 }
 
 void WebEngineBrowserExtension::slotSaveFrame()
 {
     if (view())
-        emit saveUrl(view()->page()->url()); // TODO lol
+        Q_EMIT saveUrl(view()->page()->url()); // TODO lol
 }
 
 void WebEngineBrowserExtension::print()
@@ -295,16 +295,16 @@ void WebEngineBrowserExtension::updateEditActions()
     if (!view())
         return;
 
-    emit enableAction("cut", view()->pageAction(QWebEnginePage::Cut)->isEnabled());
-    emit enableAction("copy", view()->pageAction(QWebEnginePage::Copy)->isEnabled());
-    emit enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
+    Q_EMIT enableAction("cut", view()->pageAction(QWebEnginePage::Cut)->isEnabled());
+    Q_EMIT enableAction("copy", view()->pageAction(QWebEnginePage::Copy)->isEnabled());
+    Q_EMIT enableAction("paste", view()->pageAction(QWebEnginePage::Paste)->isEnabled());
 }
 
 void WebEngineBrowserExtension::updateActions()
 {
     const QString protocol (m_part->url().scheme());
     const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
-    emit enableAction("print", isValidDocument);
+    Q_EMIT enableAction("print", isValidDocument);
 }
 
 void WebEngineBrowserExtension::searchProvider()
@@ -330,7 +330,7 @@ void WebEngineBrowserExtension::searchProvider()
 
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_blank");
-    emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+    Q_EMIT openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
 }
 
 void WebEngineBrowserExtension::reparseConfiguration()
@@ -478,7 +478,7 @@ void WebEngineBrowserExtension::slotCopyImage()
 void WebEngineBrowserExtension::slotViewImage()
 {
     if (view()) {
-        emit createNewWindow(view()->contextMenuResult().mediaUrl());
+        Q_EMIT createNewWindow(view()->contextMenuResult().mediaUrl());
     }
 }
 
@@ -657,7 +657,7 @@ void WebEngineBrowserExtension::slotSaveMedia()
     QWebEngineContextMenuData data =  view()->contextMenuResult();
     if (!isMultimediaElement( data.mediaType()))
         return;
-    emit saveUrl(data.mediaUrl());
+    Q_EMIT saveUrl(data.mediaUrl());
 }
 
 void WebEngineBrowserExtension::slotCopyMedia()
@@ -809,7 +809,7 @@ void WebEngineBrowserExtension::saveHistory()
         QWidget* mainWidget = m_part ? m_part->widget() : nullptr;
         QWidget* frameWidget = mainWidget ? mainWidget->parentWidget() : nullptr;
         if (frameWidget) {
-            emit saveHistory(frameWidget, m_historyData);
+            Q_EMIT saveHistory(frameWidget, m_historyData);
             // qCDebug(WEBENGINEPART_LOG) << "# of items:" << history->count() << "current item:" << history->currentItemIndex() << "url:" << history->currentItem().url();
         }
     } else {
@@ -837,7 +837,7 @@ void WebEngineBrowserExtension::slotOpenSelection()
     if (action) {
         KParts::BrowserArguments browserArgs;
         browserArgs.frameName = QStringLiteral("_blank");
-        emit openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
+        Q_EMIT openUrlRequest(QUrl(action->data().toUrl()), KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
@@ -855,7 +855,7 @@ void WebEngineBrowserExtension::slotLinkInTop()
 
     const QUrl url(view()->contextMenuResult().linkUrl());
 
-    emit openUrlRequest(url, uargs, bargs);
+    Q_EMIT openUrlRequest(url, uargs, bargs);
 }
 
 ////

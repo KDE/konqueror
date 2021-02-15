@@ -1823,9 +1823,9 @@ void TreeMapWidget::setSelected(TreeMapItem *item, bool selected)
 
     _selection = _tmpSelection;
     if (_selectionMode == Single) {
-        emit selectionChanged(item);
+        Q_EMIT selectionChanged(item);
     }
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
     redraw(changed);
 
     if (0) qCDebug(FSVIEWLOG) << (selected ? "S" : "Des") << "elected Item "
@@ -1917,7 +1917,7 @@ bool TreeMapWidget::clearSelection(TreeMapItem *parent)
     if (changed) {
         _tmpSelection = _selection;
         changed->redraw();
-        emit selectionChanged();
+        Q_EMIT selectionChanged();
     }
     return (changed != nullptr);
 }
@@ -1971,7 +1971,7 @@ void TreeMapWidget::setCurrent(TreeMapItem *i, bool kbd)
 
     //qCDebug(FSVIEWLOG) << "Current Item " << (i ? i->path().ascii() : "(null)");
 
-    emit currentChanged(i, kbd);
+    Q_EMIT currentChanged(i, kbd);
 }
 
 void TreeMapWidget::setRangeSelection(TreeMapItem *i1,
@@ -1988,9 +1988,9 @@ void TreeMapWidget::setRangeSelection(TreeMapItem *i1,
 
     _selection = _tmpSelection;
     if (_selectionMode == Single) {
-        emit selectionChanged(i2);
+        Q_EMIT selectionChanged(i2);
     }
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
     redraw(changed);
 }
 
@@ -2063,10 +2063,10 @@ void TreeMapWidget::contextMenuEvent(QContextMenuEvent *e)
     if (e->reason() == QContextMenuEvent::Keyboard) {
         QRect r = (_current) ? _current->itemRect() : _base->itemRect();
         QPoint p = QPoint(r.left() + r.width() / 2, r.top() + r.height() / 2);
-        emit contextMenuRequested(_current, p);
+        Q_EMIT contextMenuRequested(_current, p);
     } else {
         TreeMapItem *i = item(e->x(), e->y());
-        emit contextMenuRequested(i, e->pos());
+        Q_EMIT contextMenuRequested(i, e->pos());
     }
 }
 
@@ -2131,13 +2131,13 @@ void TreeMapWidget::mousePressEvent(QMouseEvent *e)
         if (!(_tmpSelection == _selection)) {
             _selection = _tmpSelection;
             if (_selectionMode == Single) {
-                emit selectionChanged(_lastOver);
+                Q_EMIT selectionChanged(_lastOver);
             }
-            emit selectionChanged();
+            Q_EMIT selectionChanged();
         }
         _pressed = nullptr;
         _lastOver = nullptr;
-        emit rightButtonPressed(i, e->pos());
+        Q_EMIT rightButtonPressed(i, e->pos());
     }
 }
 
@@ -2209,12 +2209,12 @@ void TreeMapWidget::mouseReleaseEvent(QMouseEvent *)
         if (!(_tmpSelection == _selection)) {
             _selection = _tmpSelection;
             if (_selectionMode == Single) {
-                emit selectionChanged(_lastOver);
+                Q_EMIT selectionChanged(_lastOver);
             }
-            emit selectionChanged();
+            Q_EMIT selectionChanged();
         }
         if (!_inControlDrag && !_inShiftDrag && (_pressed == _lastOver)) {
-            emit clicked(_lastOver);
+            Q_EMIT clicked(_lastOver);
         }
     }
 
@@ -2226,7 +2226,7 @@ void TreeMapWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
     TreeMapItem *over = item(e->x(), e->y());
 
-    emit doubleClicked(over);
+    Q_EMIT doubleClicked(over);
 }
 
 /* returns -1 if nothing visible found */
@@ -2318,7 +2318,7 @@ void TreeMapWidget::keyPressEvent(QKeyEvent *e)
         }
 
         if (_current && (e->key() == Qt::Key_Return)) {
-            emit returnPressed(_current);
+            Q_EMIT returnPressed(_current);
         }
 
         return;

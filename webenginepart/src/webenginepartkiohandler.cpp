@@ -76,12 +76,12 @@ void WebEnginePartKIOHandler::processNextRequest()
 void WebEnginePartKIOHandler::embedderFinished(const QString& html)
 {
     m_data = html.toUtf8();
-    emit ready();
+    Q_EMIT ready();
 }
 
 void WebEnginePartKIOHandler::processSlaveOutput()
 {
-    emit ready();
+    Q_EMIT ready();
 }
 
 void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)

@@ -185,7 +185,7 @@ void WebEngineView::contextMenuEvent(QContextMenuEvent* e)
         args.setMimeType(mimeType);
         bargs.setForcesNewWindow(forcesNewWindow);
         e->accept();
-        emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
+        Q_EMIT m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, static_cast<mode_t>(-1), args, bargs, flags, mapAction);
         return;
     }
 

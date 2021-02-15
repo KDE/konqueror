@@ -382,30 +382,30 @@ void JSPoliciesFrame::refresh()
 void JSPoliciesFrame::setWindowOpenPolicy(int id)
 {
     policies->window_open = id;
-    emit changed();
+    Q_EMIT changed();
 }
 
 void JSPoliciesFrame::setWindowResizePolicy(int id)
 {
     policies->window_resize = id;
-    emit changed();
+    Q_EMIT changed();
 }
 
 void JSPoliciesFrame::setWindowMovePolicy(int id)
 {
     policies->window_move = id;
-    emit changed();
+    Q_EMIT changed();
 }
 
 void JSPoliciesFrame::setWindowFocusPolicy(int id)
 {
     policies->window_focus = id;
-    emit changed();
+    Q_EMIT changed();
 }
 
 void JSPoliciesFrame::setWindowStatusPolicy(int id)
 {
     policies->window_status = id;
-    emit changed();
+    Q_EMIT changed();
 }
 

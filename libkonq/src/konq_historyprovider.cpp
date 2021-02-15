@@ -223,12 +223,12 @@ void KonqHistoryProvider::emitAddToHistory(const KonqHistoryEntry &entry)
     if (data.size() > 4096) {
         return;
     }
-    emit d->notifyHistoryEntry(data);
+    Q_EMIT d->notifyHistoryEntry(data);
 }
 
 void KonqHistoryProvider::emitRemoveFromHistory(const QUrl &url)
 {
-    emit d->notifyRemove(url.url());
+    Q_EMIT d->notifyRemove(url.url());
 }
 
 void KonqHistoryProvider::emitRemoveListFromHistory(const QList<QUrl> &urls)
@@ -237,22 +237,22 @@ void KonqHistoryProvider::emitRemoveListFromHistory(const QList<QUrl> &urls)
     foreach (const QUrl &url, urls) {
         result << url.url();
     }
-    emit d->notifyRemoveList(result);
+    Q_EMIT d->notifyRemoveList(result);
 }
 
 void KonqHistoryProvider::emitClear()
 {
-    emit d->notifyClear();
+    Q_EMIT d->notifyClear();
 }
 
 void KonqHistoryProvider::emitSetMaxCount(int count)
 {
-    emit d->notifyMaxCount(count);
+    Q_EMIT d->notifyMaxCount(count);
 }
 
 void KonqHistoryProvider::emitSetMaxAge(int days)
 {
-    emit d->notifyMaxAge(days);
+    Q_EMIT d->notifyMaxAge(days);
 }
 
 /**
@@ -309,7 +309,7 @@ void KonqHistoryProviderPrivate::slotNotifyHistoryEntry(const QByteArray &data)
 
     q->finishAddingEntry(entry, isSenderOfSignal(message()));
 
-    emit q->entryAdded(entry);
+    Q_EMIT q->entryAdded(entry);
 }
 
 void KonqHistoryProviderPrivate::slotNotifyMaxCount(int count)
@@ -392,7 +392,7 @@ void KonqHistoryProvider::removeEntry(KonqHistoryList::iterator existingEntry)
     KParts::HistoryProvider::remove(urlString);
 
     d->m_history.erase(existingEntry);
-    emit entryRemoved(entry);
+    Q_EMIT entryRemoved(entry);
 }
 
 int KonqHistoryProvider::maxCount() const

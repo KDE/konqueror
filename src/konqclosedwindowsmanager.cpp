@@ -109,7 +109,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
             KonqSettings::maxNumClosedItems()) {
         KonqClosedWindowItem *last = m_closedWindowItemList.last();
 
-        emit removeWindowInOtherInstances(nullptr, last);
+        Q_EMIT removeWindowInOtherInstances(nullptr, last);
         emitNotifyRemove(last);
 
         m_closedWindowItemList.removeLast();
@@ -118,7 +118,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
 
     if (!m_blockClosedItems) {
         m_numUndoClosedItems++;
-        emit addWindowInOtherInstances(real_sender, closedWindowItem);
+        Q_EMIT addWindowInOtherInstances(real_sender, closedWindowItem);
     }
 
     // The prepend goes after emit addWindowInOtherInstances() because otherwise
@@ -150,7 +150,7 @@ void KonqClosedWindowsManager::removeClosedWindowItem(KonqUndoManager
         m_closedWindowItemList.erase(it);
         m_numUndoClosedItems--;
     }
-    emit removeWindowInOtherInstances(real_sender, closedWindowItem);
+    Q_EMIT removeWindowInOtherInstances(real_sender, closedWindowItem);
 
     if (propagate) {
         emitNotifyRemove(closedWindowItem);
@@ -189,7 +189,7 @@ bool isSenderOfSignal(const QString &service)
 void KonqClosedWindowsManager::emitNotifyClosedWindowItem(
     const KonqClosedWindowItem *closedWindowItem)
 {
-    emit notifyClosedWindowItem(closedWindowItem->title(),
+    Q_EMIT notifyClosedWindowItem(closedWindowItem->title(),
                                 closedWindowItem->numTabs(),
                                 m_konqClosedItemsStore->name(),
                                 closedWindowItem->configGroup().name());
@@ -205,10 +205,10 @@ void KonqClosedWindowsManager::emitNotifyRemove(
     // a remote window item, and it would be error prone to be so, because
     // it could give us a null pointer and konqueror would crash
     if (closedRemoteWindowItem)
-        emit notifyRemove(closedRemoteWindowItem->remoteConfigFileName(),
+        Q_EMIT notifyRemove(closedRemoteWindowItem->remoteConfigFileName(),
                           closedRemoteWindowItem->remoteGroupName());
     else
-        emit notifyRemove(closedWindowItem->configGroup().config()->name(),
+        Q_EMIT notifyRemove(closedWindowItem->configGroup().config()->name(),
                           closedWindowItem->configGroup().name());
 }
 

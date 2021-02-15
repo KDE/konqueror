@@ -240,11 +240,11 @@ void SearchBarPlugin::startSearch(const QString &search)
             KParts::BrowserArguments browserArguments;
             browserArguments.setNewTab(true);
             if (ext) {
-                emit ext->createNewWindow(data.uri(), arguments, browserArguments);
+                Q_EMIT ext->createNewWindow(data.uri(), arguments, browserArguments);
             }
         } else {
             if (ext) {
-                emit ext->openUrlRequest(data.uri());
+                Q_EMIT ext->openUrlRequest(data.uri());
                 if (!m_part.isNull()) {
                     m_part->widget()->setFocus();    // #152923
                 }
@@ -648,7 +648,7 @@ void SearchBarCombo::mousePressEvent(QMouseEvent *e)
     int x0 = QStyle::visualRect(layoutDirection(), style()->subControlRect(QStyle::CC_ComboBox, &opt, QStyle::SC_ComboBoxEditField, this), rect()).x();
 
     if (e->x() > x0 + 2 && e->x() < lineEdit()->x()) {
-        emit iconClicked();
+        Q_EMIT iconClicked();
         e->accept();
     } else {
         KHistoryComboBox::mousePressEvent(e);

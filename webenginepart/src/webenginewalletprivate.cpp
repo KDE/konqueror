@@ -272,7 +272,7 @@ bool WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
                         return storedValues.contains(field.name) && storedValues.value(field.name) != field.value;
                     };
                     if (std::any_of(form.fields.constBegin(), form.fields.constEnd(), fieldChanged)) {
-                        emit q->saveFormDataRequested(key, url);
+                        Q_EMIT q->saveFormDataRequested(key, url);
                         return false;
                     }
                     // If we got here it means the new credential is exactly
@@ -300,7 +300,7 @@ bool WebEngineWallet::WebEngineWalletPrivate::saveDataToCache(const QString &key
         success = true;
     }
 
-    emit q->saveFormDataCompleted(url, success);
+    Q_EMIT q->saveFormDataCompleted(url, success);
     return true;
 }
 
@@ -344,7 +344,7 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_openWalletDone(bool ok)
              wallet->createFolder(KWallet::Wallet::FormDataFolder())) &&
             wallet->setFolder(KWallet::Wallet::FormDataFolder())) {
 
-        emit q->walletOpened();
+        Q_EMIT q->walletOpened();
 
         // Do pending fill requests...
         if (!pendingFillRequests.isEmpty()) {
@@ -390,6 +390,6 @@ void WebEngineWallet::WebEngineWalletPrivate::_k_walletClosed()
         wallet.take()->deleteLater();
     }
 
-    emit q->walletClosed();
+    Q_EMIT q->walletClosed();
 }
 

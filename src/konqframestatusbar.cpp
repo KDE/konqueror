@@ -148,7 +148,7 @@ void KonqFrameStatusBar::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
     if (!m_pParentKonqFrame->childView()->isPassiveMode()) {
-        emit clicked();
+        Q_EMIT clicked();
         update();
     }
 
@@ -186,7 +186,7 @@ void KonqFrameStatusBar::splitFrameMenu()
 bool KonqFrameStatusBar::eventFilter(QObject *o, QEvent *e)
 {
     if (o == m_pStatusLabel && e->type() == QEvent::MouseButtonPress) {
-        emit clicked();
+        Q_EMIT clicked();
         update();
         if (static_cast<QMouseEvent *>(e)->button() == Qt::RightButton) {
             splitFrameMenu();

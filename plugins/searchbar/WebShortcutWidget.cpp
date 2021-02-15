@@ -90,7 +90,7 @@ void WebShortcutWidget::show(const QString &openSearchName, const QString &fileN
 void WebShortcutWidget::okClicked()
 {
     hide();
-    emit webShortcutSet(m_nameLineEdit->text(), m_wsLineEdit->text(), m_fileName);
+    Q_EMIT webShortcutSet(m_nameLineEdit->text(), m_wsLineEdit->text(), m_fileName);
 }
 
 void WebShortcutWidget::cancelClicked()

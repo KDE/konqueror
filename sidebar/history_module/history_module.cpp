@@ -87,7 +87,7 @@ void KonqSidebarHistoryModule::slotActivated(const QModelIndex &index)
     } else if (m_defaultAction == KonqHistorySettings::Action::Auto && !(m_currentUrl.isEmpty() || m_currentUrl.scheme() == "konq")) {
         bargs.setNewTab(true);
     }
-    emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
+    Q_EMIT openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
 }
 
 // Needed for MMB handling; no convenient API in QAbstractItemView

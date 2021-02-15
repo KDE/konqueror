@@ -47,7 +47,7 @@ bool DelayedInitializer::eventFilter(QObject *receiver, QEvent *event)
 
 void DelayedInitializer::slotInitialize()
 {
-    emit initialize();
+    Q_EMIT initialize();
     deleteLater();
 }
 

@@ -223,7 +223,7 @@ void KJavaOptions::load()
     serverTimeoutSB->setValue(serverTimeout);
 
     toggleJavaControls();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KJavaOptions::defaults()
@@ -237,7 +237,7 @@ void KJavaOptions::defaults()
     enableShutdownCB->setChecked(true);
     serverTimeoutSB->setValue(60);
     toggleJavaControls();
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KJavaOptions::save()
@@ -259,12 +259,12 @@ void KJavaOptions::save()
 
     // sync moved to KJSParts::save
 //    m_pConfig->sync();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KJavaOptions::slotChanged()
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KJavaOptions::toggleJavaControls()

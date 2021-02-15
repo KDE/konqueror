@@ -41,7 +41,7 @@ bool KonqSidebarBookmarkItem::populateMimeData(QMimeData *mimeData, bool move)
 
 void KonqSidebarBookmarkItem::middleButtonClicked()
 {
-    emit tree()->createNewWindow(externalURL());
+    Q_EMIT tree()->createNewWindow(externalURL());
 }
 
 void KonqSidebarBookmarkItem::rightButtonPressed()

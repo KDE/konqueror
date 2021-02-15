@@ -56,12 +56,12 @@ protected:
 protected Q_SLOTS:
     void loadPage()
     {
-        emit openUrlRequest(completeURL(_lastUrl).url());
+        Q_EMIT openUrlRequest(completeURL(_lastUrl).url());
     }
 
     void loadNewWindow()
     {
-        emit openUrlNewWindow(completeURL(_lastUrl).url());
+        Q_EMIT openUrlNewWindow(completeURL(_lastUrl).url());
     }
 
     void showMenu(const QString &url, const QPoint &pos)
@@ -96,7 +96,7 @@ protected Q_SLOTS:
         // Some sites seem to use empty targets to send to the
         // main frame.
         if (t == "_content") {
-            emit submitFormRequest(action, u, formData,
+            Q_EMIT submitFormRequest(action, u, formData,
                                    target, contentType, boundary);
         } else if (t.isEmpty() || t == "_self") {
             setFormNotification(KHTMLPart::NoNotification);

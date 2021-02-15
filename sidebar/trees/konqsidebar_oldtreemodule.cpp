@@ -71,9 +71,9 @@ QWidget *KonqSidebarOldTreeModule::getWidget()
 
 void KonqSidebarOldTreeModule::handleURL(const QUrl &url)
 {
-    emit started(0);
+    Q_EMIT started(0);
     tree->followURL(url);
-    emit completed();
+    Q_EMIT completed();
 }
 
 void KonqSidebarOldTreeModule::cut()

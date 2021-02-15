@@ -167,12 +167,12 @@ void KonqSideBarWebModule::handleURL(const QUrl &)
 
 void KonqSideBarWebModule::urlNewWindow(const QString &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs, const KParts::WindowArgs &windowArgs)
 {
-    emit createNewWindow(QUrl(url), args, browserArgs, windowArgs);
+    Q_EMIT createNewWindow(QUrl(url), args, browserArgs, windowArgs);
 }
 
 void KonqSideBarWebModule::urlClicked(const QString &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
 {
-    emit openUrlRequest(QUrl(url), args, browserArgs);
+    Q_EMIT openUrlRequest(QUrl(url), args, browserArgs);
 }
 
 void KonqSideBarWebModule::formClicked(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
@@ -195,7 +195,7 @@ void KonqSideBarWebModule::loadFavicon()
         return;
     }
 
-    emit setIcon(icon);
+    Q_EMIT setIcon(icon);
 
     if (icon != configGroup().readEntry("Icon", QString())) {
         configGroup().writeEntry("Icon", icon);
@@ -211,7 +211,7 @@ void KonqSideBarWebModule::setTitle(const QString &title)
 {
     qCDebug(SIDEBAR_LOG) << title;
     if (!title.isEmpty()) {
-        emit setCaption(title);
+        Q_EMIT setCaption(title);
 
         if (title != configGroup().readEntry("Name", QString())) {
             configGroup().writeEntry("Name", title);
@@ -235,14 +235,14 @@ bool KHTMLSideBar::urlSelected(const QString &url, int button,
         if (_target.toLower() == "_self") {
             openUrl(completeURL(url));
         } else if (_target.toLower() == "_blank") {
-            emit openUrlNewWindow(completeURL(url).url(), args);
+            Q_EMIT openUrlNewWindow(completeURL(url).url(), args);
         } else { // isEmpty goes here too
-            emit openUrlRequest(completeURL(url).url(), args);
+            Q_EMIT openUrlRequest(completeURL(url).url(), args);
         }
         return true;
     }
     if (button == Qt::MiddleButton) {
-        emit openUrlNewWindow(completeURL(url).url(),
+        Q_EMIT openUrlNewWindow(completeURL(url).url(),
                               args);
         return true;
     }

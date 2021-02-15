@@ -370,7 +370,7 @@ void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)
     connect(page, &QWebEnginePage::iconUrlChanged, [page, this](const QUrl& url) {
         if (WebEngineSettings::self()->favIconsEnabled()
             && !page->profile()->isOffTheRecord()){
-                emit m_browserExtension->setIconUrl(url);
+                Q_EMIT m_browserExtension->setIconUrl(url);
         }
     });
 }
@@ -481,7 +481,7 @@ bool WebEnginePart::isModified() const
 void WebEnginePart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {
     if (event && event->activated() && m_webView) {
-        emit setWindowCaption(m_webView->title());
+        Q_EMIT setWindowCaption(m_webView->title());
     }
 }
 
@@ -498,7 +498,7 @@ void WebEnginePart::slotLoadStarted()
 {
     if(!Utils::isBlankUrl(url()) && url() != QUrl("konq:konqueror"))
     {
-        emit started(nullptr);
+        Q_EMIT started(nullptr);
     }
     updateActions();
 
@@ -511,7 +511,7 @@ void WebEnginePart::slotLoadStarted()
         setProperty("NoEmitOpenUrlNotification", QVariant());
     } else {
         if (m_emitOpenUrlNotify) {
-            emit m_browserExtension->openUrlNotify();
+            Q_EMIT m_browserExtension->openUrlNotify();
         }
     }
     // Unless we go via openUrl again, the next time we are here we emit (e.g. after clicking on a link)
@@ -531,7 +531,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
         // If the document title is empty, then set it to the current url
         const QUrl url (m_webView->url());
         const QString caption (url.toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
-        emit setWindowCaption(caption);
+        Q_EMIT setWindowCaption(caption);
 
         // The urlChanged signal is emitted if and only if the main frame
         // receives the title of the page so we manually invoke the slot as a
@@ -555,7 +555,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
        //         frame->page()->triggerAction(QWebEnginePage::Stop);
        //     }
        // }
-    emit completed ((ok && pending));
+    Q_EMIT completed ((ok && pending));
 
     updateActions();
 }
@@ -565,7 +565,7 @@ void WebEnginePart::slotLoadAborted(const QUrl & url)
     closeUrl();
     m_doLoadFinishedActions = false;
     if (url.isValid())
-        emit m_browserExtension->openUrlRequest(url);
+        Q_EMIT m_browserExtension->openUrlRequest(url);
     else
         setUrl(m_webView->url());
 }
@@ -592,7 +592,7 @@ void WebEnginePart::slotUrlChanged(const QUrl& url)
     // Do not update the location bar with about:blank
     if (!Utils::isBlankUrl(url)) {
         //qCDebug(WEBENGINEPART_LOG) << "Setting location bar to" << u.prettyUrl() << "current URL:" << this->url();
-        emit m_browserExtension->setLocationBarUrl(u.toDisplayString());
+        Q_EMIT m_browserExtension->setLocationBarUrl(u.toDisplayString());
     }
 }
 
@@ -674,7 +674,7 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
 
     if (_link.isEmpty()) {
         message = QL1S("");
-        emit m_browserExtension->mouseOverInfo(KFileItem());
+        Q_EMIT m_browserExtension->mouseOverInfo(KFileItem());
     } else {
         QUrl linkUrl (_link);
         const QString scheme = linkUrl.scheme();
@@ -737,11 +737,11 @@ void WebEnginePart::slotLinkHovered(const QString& _link)
             }
 #endif
             KFileItem item (linkUrl, QString(), KFileItem::Unknown);
-            emit m_browserExtension->mouseOverInfo(item);
+            Q_EMIT m_browserExtension->mouseOverInfo(item);
         }
     }
 
-    emit setStatusBarText(message);
+    Q_EMIT setStatusBarText(message);
 }
 
 void WebEnginePart::slotSearchForText(const QString &text, bool backward)
@@ -784,7 +784,7 @@ void WebEnginePart::slotShowSearchBar()
 
 void WebEnginePart::slotLinkMiddleOrCtrlClicked(const QUrl& linkUrl)
 {
-    emit m_browserExtension->createNewWindow(linkUrl);
+    Q_EMIT m_browserExtension->createNewWindow(linkUrl);
 }
 
 void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, const QString& searchText)
@@ -799,7 +799,7 @@ void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, con
                                    KStandardGuiItem::cancel(), QStringLiteral("MiddleClickSearch")) != KMessageBox::Yes)
         return;
 
-    emit m_browserExtension->openUrlRequest(selectedUrl);
+    Q_EMIT m_browserExtension->openUrlRequest(selectedUrl);
 }
 
 void WebEnginePart::deleteStatusBarWalletLabel()
@@ -898,12 +898,12 @@ void WebEnginePart::slotSetStatusBarText(const QString& text)
 {
     const QString host (page() ? page()->url().host() : QString());
     if (WebEngineSettings::self()->windowStatusPolicy(host) == KParts::HtmlSettingsInterface::JSWindowStatusAllow)
-        emit setStatusBarText(text);
+        Q_EMIT setStatusBarText(text);
 }
 
 void WebEnginePart::slotWindowCloseRequested()
 {
-    emit m_browserExtension->requestFocus(this);
+    Q_EMIT m_browserExtension->requestFocus(this);
 #if 0
     if (KMessageBox::questionYesNo(m_webView,
                                    i18n("Close window?"), i18n("Confirmation Required"),

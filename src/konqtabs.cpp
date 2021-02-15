@@ -354,7 +354,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 void KonqFrameTabs::slotCloseRequest(int idx)
 {
     m_pViewManager->mainWindow()->setWorkingTab(idx);
-    emit removeTabPopup();
+    Q_EMIT removeTabPopup();
 }
 
 void KonqFrameTabs::slotSubPopupMenuTabActivated(QAction *action)
@@ -414,7 +414,7 @@ void KonqFrameTabs::slotReceivedDropEvent(QWidget *w, QDropEvent *e)
     if (lstDragURLs.count() && frame) {
         const QUrl dragUrl = lstDragURLs.first();
         if (dragUrl != frame->activeChildView()->url()) {
-            emit openUrl(frame->activeChildView(), dragUrl);
+            Q_EMIT openUrl(frame->activeChildView(), dragUrl);
         }
     }
 }

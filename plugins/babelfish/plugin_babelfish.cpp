@@ -423,7 +423,7 @@ which may fetch the insecure version of the page."),
     }
 
     // Connect to the fish
-    emit ext->openUrlRequest(result);
+    Q_EMIT ext->openUrlRequest(result);
 }
 
 #include <plugin_babelfish.moc>

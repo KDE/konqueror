@@ -67,7 +67,7 @@ void KonqSideBarBookmarksModule::slotSelectionChanged(const QItemSelection &sele
     QUrl urlFromIndex = model->itemFromIndex(index)->data().toUrl();
 
     if (urlFromIndex != m_lastURL && urlFromIndex == m_initURL) {
-        emit openUrlRequest(m_initURL);
+        Q_EMIT openUrlRequest(m_initURL);
     }
     m_lastURL = urlFromIndex;
 }

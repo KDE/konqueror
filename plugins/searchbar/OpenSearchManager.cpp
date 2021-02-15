@@ -127,7 +127,7 @@ void OpenSearchManager::jobFinished(KJob *job)
         const QStringList suggestionsList = m_activeEngine->parseSuggestion(m_jobData);
         qCDebug(SEARCHBAR_LOG) << "Received suggestion from " << m_activeEngine->name() << ": " << suggestionsList;
 
-        emit suggestionReceived(suggestionsList);
+        Q_EMIT suggestionReceived(suggestionsList);
     } else if (m_state == REQ_DESCRIPTION) {
         OpenSearchReader reader;
         OpenSearchEngine *engine = reader.read(m_jobData);
@@ -140,7 +140,7 @@ void OpenSearchManager::jobFinished(KJob *job)
             writer.write(&file, engine);
 
             QString searchUrl = OpenSearchEngine::parseTemplate(QStringLiteral("\\{@}"), engine->searchUrlTemplate());
-            emit openSearchEngineAdded(engine->name(), searchUrl, fileName);
+            Q_EMIT openSearchEngineAdded(engine->name(), searchUrl, fileName);
         } else {
             qCCritical(SEARCHBAR_LOG) << "Error while adding new open search engine";
         }

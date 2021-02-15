@@ -246,7 +246,7 @@ void FSViewPart::startedSlot()
 {
     _job = new FSJob(_view);
     _job->setUiDelegate(new KIO::JobUiDelegate());
-    emit started(_job);
+    Q_EMIT started(_job);
 }
 
 void FSViewPart::completedSlot(int dirs)
@@ -260,7 +260,7 @@ void FSViewPart::completedSlot(int dirs)
     KConfigGroup cconfig = _view->config()->group("MetricCache");
     _view->saveMetric(&cconfig);
 
-    emit completed();
+    Q_EMIT completed();
 }
 
 void FSViewPart::slotShowVisMenu()
@@ -307,7 +307,7 @@ bool FSViewPart::openUrl(const QUrl &url)
     }
 
     setUrl(url);
-    emit setWindowCaption(this->url().toDisplayString(QUrl::PreferLocalFile));
+    Q_EMIT setWindowCaption(this->url().toDisplayString(QUrl::PreferLocalFile));
 
     _view->setPath(this->url().path());
 
@@ -347,8 +347,8 @@ void FSViewPart::updateActions()
     }
 
     // Standard KBrowserExtension actions.
-    emit _ext->enableAction("copy", canCopy > 0);
-    emit _ext->enableAction("cut", canMove > 0);
+    Q_EMIT _ext->enableAction("copy", canCopy > 0);
+    Q_EMIT _ext->enableAction("cut", canMove > 0);
     // Custom actions.
     //setNonStandardActionEnabled("rename", canMove > 0 ); // FIXME
     setNonStandardActionEnabled("move_to_trash", (canDel > 0 && canMove > 0));
@@ -356,7 +356,7 @@ void FSViewPart::updateActions()
     setNonStandardActionEnabled("editMimeType", _view->selection().count() == 1);
     setNonStandardActionEnabled("properties", _view->selection().count() == 1);
 
-    emit _ext->selectionInfo(urls);
+    Q_EMIT _ext->selectionInfo(urls);
 
     if (canCopy > 0) {
         stateChanged(QStringLiteral("has_selection"));
@@ -426,7 +426,7 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
     actionGroups.insert(QStringLiteral("editactions"), editActions);
 
     if (items.count() > 0)
-        emit _ext->popupMenu(_view->mapToGlobal(p), items,
+        Q_EMIT _ext->popupMenu(_view->mapToGlobal(p), items,
                              KParts::OpenUrlArguments(),
                              KParts::BrowserArguments(),
                              flags,
@@ -551,7 +551,7 @@ void FSViewBrowserExtension::selected(TreeMapItem *i)
     }
 
     QUrl url = QUrl::fromLocalFile(((Inode *)i)->path());
-    emit openUrlRequest(url);
+    Q_EMIT openUrlRequest(url);
 }
 
 #include "fsview_part.moc"

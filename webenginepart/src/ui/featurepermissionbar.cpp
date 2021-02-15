@@ -96,13 +96,13 @@ void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
 void FeaturePermissionBar::onDeniedButtonClicked()
 {
     animatedHide();
-    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionDeniedByUser);
-    emit done();
+    Q_EMIT permissionPolicyChosen(m_feature, QWebEnginePage::PermissionDeniedByUser);
+    Q_EMIT done();
 }
 
 void FeaturePermissionBar::onGrantedButtonClicked()
 {
     animatedHide();
-    emit permissionPolicyChosen(m_feature, QWebEnginePage::PermissionGrantedByUser);
-    emit done();
+    Q_EMIT permissionPolicyChosen(m_feature, QWebEnginePage::PermissionGrantedByUser);
+    Q_EMIT done();
 }

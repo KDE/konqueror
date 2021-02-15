@@ -80,7 +80,7 @@ void KonqUndoManager::populate()
 
 void KonqUndoManager::slotFileUndoAvailable(bool)
 {
-    emit undoAvailable(this->undoAvailable());
+    Q_EMIT undoAvailable(this->undoAvailable());
 }
 
 bool KonqUndoManager::undoAvailable() const
@@ -157,9 +157,9 @@ void KonqUndoManager::slotAddClosedWindowItem(KonqUndoManager *real_sender, Konq
     }
 
     m_closedItemList.prepend(closedWindowItem);
-    emit undoTextChanged(i18n("Und&o: Closed Window"));
-    emit undoAvailable(true);
-    emit closedItemsListChanged();
+    Q_EMIT undoTextChanged(i18n("Und&o: Closed Window"));
+    Q_EMIT undoAvailable(true);
+    Q_EMIT closedItemsListChanged();
 }
 
 void KonqUndoManager::addClosedWindowItem(KonqClosedWindowItem *closedWindowItem)
@@ -181,8 +181,8 @@ void KonqUndoManager::slotRemoveClosedWindowItem(KonqUndoManager *real_sender, c
     // If the item was found, remove it from the list
     if (it != m_closedItemList.end()) {
         m_closedItemList.erase(it);
-        emit undoAvailable(this->undoAvailable());
-        emit closedItemsListChanged();
+        Q_EMIT undoAvailable(this->undoAvailable());
+        Q_EMIT closedItemsListChanged();
     }
 }
 
@@ -206,22 +206,22 @@ void KonqUndoManager::undoClosedItem(int index)
     KonqClosedWindowItem *closedWindowItem =
         dynamic_cast<KonqClosedWindowItem *>(closedItem);
     if (closedTabItem) {
-        emit openClosedTab(*closedTabItem);
+        Q_EMIT openClosedTab(*closedTabItem);
     } else if (closedRemoteWindowItem) {
         m_cwManager->removeClosedWindowItem(this, closedRemoteWindowItem);
-        emit openClosedWindow(*closedRemoteWindowItem);
+        Q_EMIT openClosedWindow(*closedRemoteWindowItem);
     } else if (closedWindowItem) {
         m_cwManager->removeClosedWindowItem(this, closedWindowItem);
-        emit openClosedWindow(*closedWindowItem);
+        Q_EMIT openClosedWindow(*closedWindowItem);
         closedWindowItem->configGroup().deleteGroup();
 
         // Save config so that this window won't appear in new konqueror processes
         m_cwManager->saveConfig();
     }
     delete closedItem;
-    emit undoAvailable(this->undoAvailable());
-    emit undoTextChanged(this->undoText());
-    emit closedItemsListChanged();
+    Q_EMIT undoAvailable(this->undoAvailable());
+    Q_EMIT undoTextChanged(this->undoText());
+    Q_EMIT closedItemsListChanged();
 }
 
 void KonqUndoManager::slotClosedItemsActivated(QAction *action)
@@ -237,7 +237,7 @@ void KonqUndoManager::slotFileUndoTextChanged(const QString & /*text*/)
     // there' no more files to undo, the text will be "Und&o" but maybe
     // we want it to be "Und&o: Closed Tab" if we have a closed tab that can be
     // reopened.
-    emit undoTextChanged(undoText());
+    Q_EMIT undoTextChanged(undoText());
 }
 
 quint64 KonqUndoManager::newCommandSerialNumber()
@@ -262,14 +262,14 @@ void KonqUndoManager::addClosedTabItem(KonqClosedTabItem *closedTabItem)
     }
 
     m_closedItemList.prepend(closedTabItem);
-    emit undoTextChanged(i18n("Und&o: Closed Tab"));
-    emit undoAvailable(true);
+    Q_EMIT undoTextChanged(i18n("Und&o: Closed Tab"));
+    Q_EMIT undoAvailable(true);
 }
 
 void KonqUndoManager::updateSupportsFileUndo(bool enable)
 {
     m_supportsFileUndo = enable;
-    emit undoAvailable(this->undoAvailable());
+    Q_EMIT undoAvailable(this->undoAvailable());
 }
 
 void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
@@ -292,8 +292,8 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
         }
     }
 
-    emit closedItemsListChanged();
-    emit undoAvailable(this->undoAvailable());
+    Q_EMIT closedItemsListChanged();
+    Q_EMIT undoAvailable(this->undoAvailable());
 
     // Save config so that this window won't appear in new konqueror processes
     m_cwManager->saveConfig();

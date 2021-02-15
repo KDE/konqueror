@@ -87,8 +87,8 @@ void PasswordBar::setRequestKey (const QString& key)
 void PasswordBar::onNotNowButtonClicked()
 {
     animatedHide();
-    emit saveFormDataRejected (m_requestKey);
-    emit done();
+    Q_EMIT saveFormDataRejected (m_requestKey);
+    Q_EMIT done();
     clear();
 }
 
@@ -101,8 +101,8 @@ void PasswordBar::onNeverButtonClicked()
 void PasswordBar::onRememberButtonClicked()
 {
     animatedHide();
-    emit saveFormDataAccepted(m_requestKey);
-    emit done();
+    Q_EMIT saveFormDataAccepted(m_requestKey);
+    Q_EMIT done();
     clear();
 }
 

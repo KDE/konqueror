@@ -115,7 +115,7 @@ HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &
 
 void HistorySidebarConfig::configChanged()
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void HistorySidebarConfig::load()
@@ -147,7 +147,7 @@ void HistorySidebarConfig::load()
     slotNewerChanged(dialog->spinNewer->value());
     slotOlderChanged(dialog->spinOlder->value());
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void HistorySidebarConfig::save()
@@ -173,7 +173,7 @@ void HistorySidebarConfig::save()
 
     m_settings->applySettings();
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void HistorySidebarConfig::defaults()

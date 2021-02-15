@@ -204,13 +204,13 @@ void KCMFilter::slotInfoLinkActivated(const QString &url)
 
 void KCMFilter::slotKillChecked()
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KCMFilter::slotEnableChecked()
 {
     updateButton();
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KCMFilter::slotItemSelected()
@@ -303,7 +303,7 @@ void KCMFilter::importFilters()
             f.close();
 
             mListBox->addItems(paths);
-            emit changed(true);
+            Q_EMIT changed(true);
         }
     }
 }
@@ -415,7 +415,7 @@ void KCMFilter::insertFilter()
         }
 
         updateButton();
-        emit changed(true);
+        Q_EMIT changed(true);
     }
 }
 
@@ -427,7 +427,7 @@ void KCMFilter::removeFilter()
         }
     }
     mString->clear();
-    emit changed(true);
+    Q_EMIT changed(true);
     updateButton();
 }
 
@@ -437,7 +437,7 @@ void KCMFilter::updateFilter()
         int index = mListBox->currentRow();
         if (index >= 0) {
             mListBox->item(index)->setText(mString->text());
-            emit changed(true);
+            Q_EMIT changed(true);
         }
     }
     updateButton();
@@ -452,7 +452,7 @@ QString KCMFilter::quickHelp() const
 
 void KCMFilter::spinBoxChanged(int)
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 AutomaticFilterModel::AutomaticFilterModel(QObject *parent)
@@ -552,8 +552,8 @@ bool AutomaticFilterModel::setData(const QModelIndex &index, const QVariant &val
 {
     if (role == Qt::CheckStateRole && index.column() == 0 && index.row() < mFilters.count()) {
         mFilters[index.row()].enableFilter = static_cast<Qt::CheckState>(value.toInt()) == Qt::Checked;
-        emit dataChanged(index, index);
-        emit changed(true);
+        Q_EMIT dataChanged(index, index);
+        Q_EMIT changed(true);
         return true;
     }
 

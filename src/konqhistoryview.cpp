@@ -235,7 +235,7 @@ void KonqHistoryView::slotNewWindow()
 {
     const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid()) {
-        emit openUrlInNewWindow(url);
+        Q_EMIT openUrlInNewWindow(url);
     }
 }
 
@@ -243,7 +243,7 @@ void KonqHistoryView::slotNewTab()
 {
     const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid()) {
-        emit openUrlInNewTab(url);
+        Q_EMIT openUrlInNewTab(url);
     }
 }
 
@@ -251,7 +251,7 @@ void KonqHistoryView::slotCurrentTab()
 {
     const QUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid()) {
-        emit openUrlInCurrentTab(url);
+        Q_EMIT openUrlInCurrentTab(url);
     }
 }
 

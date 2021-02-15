@@ -865,7 +865,7 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
     KonqView *view = mainWindow.currentView();
     KParts::BrowserExtension *ext = view->browserExtension();
     QVERIFY(ext);
-    emit ext->openUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
+    Q_EMIT ext->openUrlRequest(QUrl(QStringLiteral("data:text/html, <p>Second tab test</p>")), urlArgs, browserArgs);
     QTest::qWait(5000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(view->url(), QUrl("data:text/html, <p>Hello World</p>"));

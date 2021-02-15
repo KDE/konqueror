@@ -157,7 +157,7 @@ void WebEnginePage::download(const QUrl& url, const QString& mimetype, bool newW
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments urlArgs;
     urlArgs.setMimeType(mimetype);
-    emit part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
+    Q_EMIT part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
 }
 
 void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
@@ -167,7 +167,7 @@ void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &m
     KParts::OpenUrlArguments oArgs;
     oArgs.setMimeType(mimeType);
     oArgs.metaData().insert("konq-temp-file", "1");
-    emit part()->browserExtension()->openUrlRequest(url, oArgs, bArgs);
+    Q_EMIT part()->browserExtension()->openUrlRequest(url, oArgs, bArgs);
 }
 
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
@@ -218,7 +218,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
         //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part 
         //(or whichever part the user has chosen to open directories instead of WebEnginePart
         if (url.isLocalFile()) {
-            emit m_part->browserExtension()->openUrlRequest(url);
+            Q_EMIT m_part->browserExtension()->openUrlRequest(url);
             return false;
         }
     }
@@ -420,19 +420,19 @@ void WebEnginePage::slotLoadFinished(bool ok)
         case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
             //qCDebug(WEBENGINEPART_LOG) << "User aborted request!";
             m_ignoreError = true;
-            emit loadAborted(QUrl());
+            Q_EMIT loadAborted(QUrl());
             return;
         // Handle the user clicking on a link that refers to a directory
         // Since KIO cannot automatically convert a GET request to a LISTDIR one.
         case KIO::ERR_IS_DIRECTORY:
             m_ignoreError = true;
-            emit loadAborted(reply->url());
+            Q_EMIT loadAborted(reply->url());
             return;
         default:
             // Make sure the saveFrameStateRequested signal is emitted so
             // the page can restored properly.
             if (isMainFrameRequest)
-                emit saveFrameStateRequested(frame, 0);
+                Q_EMIT saveFrameStateRequested(frame, 0);
 
             m_ignoreError = (reply->attribute(QNetworkRequest::User).toInt() == QNetworkReply::ContentAccessDenied);
             m_kioErrorCode = errCode;
@@ -442,7 +442,7 @@ void WebEnginePage::slotLoadFinished(bool ok)
 
     if (isMainFrameRequest) {
         const WebEnginePageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
-        emit m_part->browserExtension()->setPageSecurity(security);
+        Q_EMIT m_part->browserExtension()->setPageSecurity(security);
     }
 }
 
@@ -479,7 +479,7 @@ void WebEnginePage::slotUnsupportedContent(QNetworkReply* reply)
         KParts::OpenUrlArguments args;
         args.setMimeType(mimeType);
         args.metaData() = metaData;
-        emit m_part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
+        Q_EMIT m_part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
         return;
     }
 #endif
@@ -531,7 +531,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
     // window will be in maximized mode where moving it will not be possible...
     if (WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
-        emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+        Q_EMIT m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
     const int height = rect.height();
     const int width = rect.width();
@@ -552,7 +552,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
 
     if (WebEngineSettings::self()->windowResizePolicy(host) == KParts::HtmlSettingsInterface::JSWindowResizeAllow) {
         //qCDebug(WEBENGINEPART_LOG) << "resizing to " << width << "x" << height;
-        emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+        Q_EMIT m_part->browserExtension()->resizeTopLevelWidget(width, height);
     }
 
     // If the window is out of the desktop, move it up/left
@@ -566,7 +566,7 @@ void WebEnginePage::slotGeometryChangeRequested(const QRect & rect)
         moveByY = - bottom + sg.bottom(); // always <0
 
     if ((moveByX || moveByY) && WebEngineSettings::self()->windowMovePolicy(host) == KParts::HtmlSettingsInterface::JSWindowMoveAllow)
-        emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
+        Q_EMIT m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
 bool WebEnginePage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
@@ -712,7 +712,7 @@ bool WebEnginePage::handleMailToUrl (const QUrl &url, NavigationType type) const
         }
 
         //qCDebug(WEBENGINEPART_LOG) << "Emitting openUrlRequest with " << mailtoUrl;
-        emit m_part->browserExtension()->openUrlRequest(mailtoUrl);
+        Q_EMIT m_part->browserExtension()->openUrlRequest(mailtoUrl);
         return true;
     }
 
@@ -767,7 +767,7 @@ void WebEnginePage::changeFullScreenMode(QWebEngineFullScreenRequest req)
 void WebEnginePage::setStatusBarText(const QString& text)
 {
     if (m_part) {
-        emit m_part->setStatusBarText(text);
+        Q_EMIT m_part->setStatusBarText(text);
     }
 }
 
@@ -866,7 +866,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         KParts::WindowArgs wargs (m_windowArgs);
 
         KParts::ReadOnlyPart* newWindowPart =nullptr;
-        emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+        Q_EMIT part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
         qCDebug(WEBENGINEPART_LOG) << "Created new window" << newWindowPart;
 
         if (!newWindowPart) {
@@ -962,7 +962,7 @@ void NewWindowPage::slotLoadFinished(bool ok)
     KParts::WindowArgs wargs (m_windowArgs);
 
     KParts::ReadOnlyPart* newWindowPart =nullptr;
-    emit part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
+    Q_EMIT part()->browserExtension()->createNewWindow(QUrl(), uargs, bargs, wargs, &newWindowPart);
 
     qCDebug(WEBENGINEPART_LOG) << "Created new window or tab" << newWindowPart;
 

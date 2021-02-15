@@ -498,7 +498,7 @@ bool Sidebar_Widget::openUrl(const QUrl &url)
 void Sidebar_Widget::setStoredCurViewUrl(const QUrl& url)
 {
     m_storedCurViewUrl = url;
-    emit curViewUrlChanged(url);
+    Q_EMIT curViewUrlChanged(url);
 }
 
 QUrl Sidebar_Widget::cleanupURL(const QString &dirtyURL)
@@ -724,12 +724,12 @@ void Sidebar_Widget::collapseExpandSidebar()
         m_somethingVisible = false;
         parentWidget()->setMaximumWidth(minimumSizeHint().width());
         updateGeometry();
-        emit panelHasBeenExpanded(false);
+        Q_EMIT panelHasBeenExpanded(false);
     } else {
         m_somethingVisible = true;
         parentWidget()->setMaximumWidth(32767);
         updateGeometry();
-        emit panelHasBeenExpanded(true);
+        Q_EMIT panelHasBeenExpanded(true);
     }
 }
 
@@ -754,7 +754,7 @@ void Sidebar_Widget::submitFormRequest(const char *action,
     browserArguments.postData = formData;
     browserArguments.setDoPost(QByteArray(action).toLower() == "post");
     // boundary?
-    emit getExtension()->openUrlRequest(QUrl(url), arguments, browserArguments);
+    Q_EMIT getExtension()->openUrlRequest(QUrl(url), arguments, browserArguments);
 }
 
 void Sidebar_Widget::openUrlRequest(const QUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs)
@@ -775,7 +775,7 @@ void Sidebar_Widget::createNewWindow(const QUrl &url, const KParts::OpenUrlArgum
 void Sidebar_Widget::slotEnableAction(KonqSidebarModule *module, const char *name, bool enabled)
 {
     if (module->getWidget()->isVisible()) {
-        emit getExtension()->enableAction(name, enabled);
+        Q_EMIT getExtension()->enableAction(name, enabled);
     }
 }
 
@@ -820,9 +820,9 @@ Sidebar_Widget::~Sidebar_Widget()
 void Sidebar_Widget::customEvent(QEvent *ev)
 {
     if (KonqFileSelectionEvent::test(ev)) {
-        emit fileSelection(static_cast<KonqFileSelectionEvent *>(ev)->selection());
+        Q_EMIT fileSelection(static_cast<KonqFileSelectionEvent *>(ev)->selection());
     } else if (KonqFileMouseOverEvent::test(ev)) {
-        emit fileMouseOver(static_cast<KonqFileMouseOverEvent *>(ev)->item());
+        Q_EMIT fileMouseOver(static_cast<KonqFileMouseOverEvent *>(ev)->item());
     } else if (KParts::PartActivateEvent::test(ev)) {
         KParts::ReadOnlyPart* rpart = static_cast<KParts::ReadOnlyPart *>( static_cast<KParts::PartActivateEvent *>(ev)->part() );
 	
@@ -879,7 +879,7 @@ void Sidebar_Widget::slotPopupMenu(KonqSidebarModule *module,
 {
     m_activeModule = module;
     doEnableActions();
-    emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
+    Q_EMIT getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
 void Sidebar_Widget::slotUrlsDropped(const QList<QUrl> &urls)

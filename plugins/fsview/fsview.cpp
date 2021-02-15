@@ -230,7 +230,7 @@ void FSView::requestUpdate(Inode *i)
         _progress = 0;
         _dirsFinished = 0;
         _lastDir = nullptr;
-        emit started();
+        Q_EMIT started();
     }
 
     _sm.startScan(peer);
@@ -495,7 +495,7 @@ void FSView::doRedraw()
                                   << "= " << percent << "%, "
                                   << _dirsFinished << " dirs read, in "
                                   << _lastDir->path() << endl;
-        emit progress(percent, _dirsFinished, _lastDir->path());
+        Q_EMIT progress(percent, _dirsFinished, _lastDir->path());
     }
 
     if (_allowRefresh && ((redrawCounter % 4) == 0)) {
@@ -585,7 +585,7 @@ void FSView::doUpdate()
     if (_sm.scanRunning()) {
         QTimer::singleShot(0, this, SLOT(doUpdate()));
     } else {
-        emit completed(_dirsFinished);
+        Q_EMIT completed(_dirsFinished);
     }
 }
 

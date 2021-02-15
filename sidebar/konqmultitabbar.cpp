@@ -47,5 +47,5 @@ void KonqMultiTabBar::dragMoveEvent(QDragMoveEvent *event)
 void KonqMultiTabBar::dropEvent(QDropEvent *event)
 {
     const QList<QUrl> urls = KUrlMimeData::urlsFromMimeData(event->mimeData());
-    emit urlsDropped(urls);
+    Q_EMIT urlsDropped(urls);
 }

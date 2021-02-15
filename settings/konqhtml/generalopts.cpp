@@ -67,7 +67,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
 
     lay->addWidget(tabsGroup);
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
@@ -292,11 +292,11 @@ void KKonqGeneralOptions::save()
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KKonqGeneralOptions::slotChanged()
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 

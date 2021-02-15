@@ -106,7 +106,7 @@ bool KonqSidebarTreeTopLevelItem::populateMimeData(QMimeData *mimeData, bool mov
 void KonqSidebarTreeTopLevelItem::middleButtonClicked()
 {
     if (!m_bTopLevelGroup) {
-        emit tree()->createNewWindow(m_externalURL);
+        Q_EMIT tree()->createNewWindow(m_externalURL);
     }
     // Do nothing for toplevel groups
 }

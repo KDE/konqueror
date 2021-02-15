@@ -151,7 +151,7 @@ void TestWebEnginePartCookieJar::testCookieAddedToStoreAreAddedToKCookieServer()
 //     domain=0, path=1, name=2, host=3, value=4, expirationDate=5, protocolVersion=6, secure=7;
     const QList<int> fields{0,1,2,3,4,5,6,7};
     
-    emit m_store->cookieAdded(cookie);
+    Q_EMIT m_store->cookieAdded(cookie);
     const QDBusReply<QStringList> res = m_server->call(QDBus::Block, "findCookies", QVariant::fromValue(fields), domain, host, cookie.path(), QString(cookie.name()));
     QVERIFY2(!m_server->lastError().isValid(), m_server->lastError().message().toLatin1());
     QStringList resFields = res.value();
@@ -287,7 +287,7 @@ void TestWebEnginePartCookieJar::testCookieRemovedFromStoreAreRemovedFromKCookie
     QVERIFY2(reply.value().contains(name), "Cookie wasn't added to server");
 
     //Emit QWebEngineCookieStore::cookieRemoved signal and check that cookie has indeed been removed
-    emit m_store->cookieRemoved(cookie);
+    Q_EMIT m_store->cookieRemoved(cookie);
 
     //Check that cookie is no longer in KCookieServer
     reply = findCookies();

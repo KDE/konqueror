@@ -257,7 +257,7 @@ void KonqView::switchView(KonqViewFactory &viewFactory)
     // Activate the new part
     if (oldPart) {
         m_pPart->setObjectName(oldPart->objectName());
-        emit sigPartChanged(this, oldPart, m_pPart);
+        Q_EMIT sigPartChanged(this, oldPart, m_pPart);
         delete oldPart;
     }
 
@@ -581,7 +581,7 @@ void KonqView::slotCompleted(bool hasPending)
             KonqHistoryManager::kself()->confirmPending(url(), typedUrl(),
                     currentHistoryEntry()->title);
 
-        emit viewCompleted(this);
+        Q_EMIT viewCompleted(this);
     }
     setLoading(false, hasPending);
 
@@ -1139,7 +1139,7 @@ bool KonqView::eventFilter(QObject *obj, QEvent *e)
         QList<QUrl> lstDragURLs = KUrlMimeData::urlsFromMimeData(mimeData);
         KParts::BrowserExtension *ext = browserExtension();
         if (!lstDragURLs.isEmpty() && ext && lstDragURLs.first().isValid()) {
-            emit ext->openUrlRequest(lstDragURLs.first());    // this will call m_pMainWindow::slotOpenURLRequest delayed
+            Q_EMIT ext->openUrlRequest(lstDragURLs.first());    // this will call m_pMainWindow::slotOpenURLRequest delayed
         }
     }
 

@@ -143,7 +143,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList &)
     lay->addWidget(bgMisc);
     lay->addStretch(5);
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 KMiscHTMLOptions::~KMiscHTMLOptions()
@@ -237,5 +237,5 @@ void KMiscHTMLOptions::save()
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KBookmarkManager/konqueror"), QStringLiteral("org.kde.KIO.KBookmarkManager"), QStringLiteral("bookmarkConfigChanged")));
     sessionBus.send(QDBusMessage::createSignal(QStringLiteral("/KIO/Scheduler"), QStringLiteral("org.kde.KIO.Scheduler"), QStringLiteral("reparseSlaveConfiguration")));
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }

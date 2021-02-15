@@ -94,7 +94,7 @@ void PopupMenuGUIClient::slotOpenEmbedded()
 {
     int idx = sender()->objectName().toInt();
     // This calls KonqMainWindow::slotOpenEmbedded(service) (delayed so that the menu is closed first)
-    emit openEmbedded(m_embeddingServices.at(idx));
+    Q_EMIT openEmbedded(m_embeddingServices.at(idx));
 }
 
 ////

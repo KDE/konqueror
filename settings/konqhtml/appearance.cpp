@@ -346,7 +346,7 @@ void KAppearanceOptions::load()
     cssConfig->load();
 
     updateGUI();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KAppearanceOptions::defaults()
@@ -357,7 +357,7 @@ void KAppearanceOptions::defaults()
     m_pConfig->setReadDefaults(old);
 
     cssConfig->defaults();
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KAppearanceOptions::updateGUI()
@@ -419,6 +419,6 @@ void KAppearanceOptions::save()
         QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
     QDBusConnection::sessionBus().send(message);
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 

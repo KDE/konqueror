@@ -999,7 +999,7 @@ void KonqSidebarTree::slotOpenNewWindow()
     if (!m_currentTopLevelItem) {
         return;
     }
-    emit createNewWindow(m_currentTopLevelItem->externalURL());
+    Q_EMIT createNewWindow(m_currentTopLevelItem->externalURL());
 }
 
 void KonqSidebarTree::slotOpenTab()
@@ -1009,7 +1009,7 @@ void KonqSidebarTree::slotOpenTab()
     }
     KParts::BrowserArguments browserArgs;
     browserArgs.setNewTab(true);
-    emit createNewWindow(m_currentTopLevelItem->externalURL(),
+    Q_EMIT createNewWindow(m_currentTopLevelItem->externalURL(),
                          KParts::OpenUrlArguments(),
                          browserArgs);
 }
@@ -1066,15 +1066,15 @@ bool KonqSidebarTree::overrideShortcut(const QKeyEvent *e)
         return true;
     } else if (KStandardShortcut::copy().contains(key)) {
         qCDebug(SIDEBAR_LOG) << "copy";
-        emit copy();
+        Q_EMIT copy();
         return true;
     } else if (KStandardShortcut::cut().contains(key)) {
         qCDebug(SIDEBAR_LOG) << "cut";
-        emit cut();
+        Q_EMIT cut();
         return true;
     } else if (KStandardShortcut::paste().contains(key)) {
         qCDebug(SIDEBAR_LOG) << "paste";
-        emit paste();
+        Q_EMIT paste();
         return true;
     }
     return false;

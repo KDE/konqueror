@@ -70,7 +70,7 @@ void BookmarksConfigModule::load()
     connect(ui.clearCacheButton, &QAbstractButton::clicked, this, &BookmarksConfigModule::clearCache);
 
     delete c;
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void BookmarksConfigModule::save()
@@ -86,7 +86,7 @@ void BookmarksConfigModule::save()
 
     c->sync();
     delete c;
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void BookmarksConfigModule::defaults()
@@ -107,7 +107,7 @@ QString BookmarksConfigModule::quickHelp() const
 
 void BookmarksConfigModule::configChanged()
 {
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 //

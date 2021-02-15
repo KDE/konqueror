@@ -262,7 +262,7 @@ void WebEngineBlobDownloadJob::startDownloading()
 #else
         QString name = m_downloadItem->downloadFileName();
 #endif
-        emit description(this, i18nc("Notification about downloading a file", "Downloading"),
+        Q_EMIT description(this, i18nc("Notification about downloading a file", "Downloading"),
                         QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
                         QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), name));
         m_downloadItem->resume();
@@ -281,7 +281,7 @@ void WebEngineBlobDownloadJob::downloadFinished()
 #else
             QString filePath = QDir(m_downloadItem->downloadDirectory()).filePath(m_downloadItem->downloadFileName());
 #endif
-            emit page->setStatusBarText(i18nc("Finished saving BLOB URL", "Finished saving %1 as %2", m_downloadItem->url().toString(), filePath));
+            Q_EMIT page->setStatusBarText(i18nc("Finished saving BLOB URL", "Finished saving %1 as %2", m_downloadItem->url().toString(), filePath));
         }
     }
     delete m_downloadItem;

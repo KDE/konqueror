@@ -476,7 +476,7 @@ void KonqSessionManager::autoSaveSession()
 
 void KonqSessionManager::saveCurrentSessions(const QString &path)
 {
-    emit saveCurrentSession(path);
+    Q_EMIT saveCurrentSession(path);
 }
 
 void KonqSessionManager::slotSaveCurrentSession(const QString &path)

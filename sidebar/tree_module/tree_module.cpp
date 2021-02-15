@@ -177,7 +177,7 @@ void KonqSideBarTreeModule::slotSelectionChanged(const QItemSelection &selected,
 
     QUrl urlFromIndex = getUrlFromIndex(index);
     if (index.isValid() && m_lastURL != urlFromIndex) {
-        emit openUrlRequest(urlFromIndex);
+        Q_EMIT openUrlRequest(urlFromIndex);
     }
     slotUpdateColWidth();
 }

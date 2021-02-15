@@ -215,7 +215,7 @@ void KonqMostOftenURLSAction::slotFillMenu()
 
 void KonqMostOftenURLSAction::slotActivated(QAction *action)
 {
-    emit activated(action->data().value<QUrl>());
+    Q_EMIT activated(action->data().value<QUrl>());
 }
 
 ///////////////////////////////
@@ -255,5 +255,5 @@ void KonqHistoryAction::slotFillMenu()
 
 void KonqHistoryAction::slotActivated(QAction *action)
 {
-    emit activated(action->data().value<QUrl>());
+    Q_EMIT activated(action->data().value<QUrl>());
 }
