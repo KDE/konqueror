@@ -3273,7 +3273,8 @@ void KonqMainWindow::slotClearLocationBar()
 void KonqMainWindow::slotForceSaveMainWindowSettings()
 {
     if (autoSaveSettings()) {   // don't do it on e.g. JS window.open windows with no toolbars!
-        saveAutoSaveSettings();
+        KConfigGroup config = KSharedConfig::openConfig()->group("MainWindow");
+        saveMainWindowSettings(config);
     }
 }
 
@@ -4737,6 +4738,26 @@ void KonqMainWindow::readProperties(const KConfigGroup &configGroup)
     m_pViewManager->loadViewConfigFromGroup(configGroup, QString() /*no profile name*/);
     // read window settings
     applyMainWindowSettings(configGroup);
+}
+
+void KonqMainWindow::applyMainWindowSettings(const KConfigGroup &config)
+{
+    KParts::MainWindow::applyMainWindowSettings(config);
+    if (m_currentView) {
+        /// @Note status bar isn't direct child to main window
+        QString entry = config.readEntry("StatusBar", "Enabled");
+        m_currentView->frame()->statusbar()->setVisible(entry != QLatin1String("Disabled"));
+    }
+}
+
+void KonqMainWindow::saveMainWindowSettings(KConfigGroup &config)
+{
+    KParts::MainWindow::saveMainWindowSettings(config);
+    if (m_currentView) {
+        /// @Note status bar isn't direct child to main window
+        config.writeEntry("StatusBar", m_currentView->frame()->statusbar()->isHidden() ? "Disabled" : "Enabled");
+        config.sync();
+    }
 }
 
 void KonqMainWindow::setInitialFrameName(const QString &name)

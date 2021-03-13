@@ -112,6 +112,13 @@ public:
      */
     void openFilteredUrl(const QString &_url, const QString &_mimeType, bool inNewTab, bool tempFile);
 
+    void applyMainWindowSettings(const KConfigGroup &config) override;
+
+    /**
+     * It's not override since KMainWindow variant isn't virtual
+     */
+    void saveMainWindowSettings(KConfigGroup &config);
+
 public Q_SLOTS:
     /**
     * The main openUrl method.

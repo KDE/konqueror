@@ -119,7 +119,7 @@ void KonqFrame::saveConfig(KConfigGroup &config, const QString &prefix, const Ko
     if (m_pView) {
         m_pView->saveConfig(config, prefix, options);
     }
-    //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
+    config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
     if (this == docContainer) {
         config.writeEntry(QStringLiteral("docContainer").prepend(prefix), true);
     }
