@@ -30,6 +30,7 @@ set(kwebenginepartlib_LIB_SRCS
     webenginecustomizecacheablefieldsdlg.cpp
     webfieldsdataview.cpp
     ui/credentialsdetailswidget.cpp
+    webengineurlrequestinterceptor.cpp
 )
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui)

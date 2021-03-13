@@ -387,7 +387,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
               if (filterEnabled && url.isValid()) {
                   /** determine where to cache HTMLFilterList file */
                   QString localFile = cgFilter.readEntry(QStringLiteral("HTMLFilterListLocalFilename-").append(QString::number(id)));
-                  localFile = QStandardPaths::locate(QStandardPaths::ConfigLocation, "khtml/" + localFile);
+                  localFile = QStandardPaths::locate(QStandardPaths::ConfigLocation, "khtml/", QStandardPaths::LocateDirectory) + localFile;
 
                   /** determine existence and age of cache file */
                   QFileInfo fileInfo(localFile);

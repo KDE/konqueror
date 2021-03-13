@@ -41,6 +41,7 @@
 #include "webenginewallet.h"
 #include "webengineparterrorschemehandler.h"
 #include "webenginepartcookiejar.h"
+#include "webengineurlrequestinterceptor.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -133,6 +134,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
         prof->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(prof));
     }
+    prof->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
     static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
 #if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
