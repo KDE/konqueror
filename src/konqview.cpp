@@ -220,7 +220,7 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 
     m_pPart->openUrl(url);
 
-    updateHistoryEntry(false /* don't save location bar URL yet */);
+    updateHistoryEntry(true);
     // add pending history entry
     KonqHistoryManager::kself()->addPending(url, locationBarURL, QString());
 
@@ -572,8 +572,8 @@ void KonqView::slotCompleted(bool hasPending)
     m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
 
     if (! m_bLockHistory) {
-        // Success... update history entry, including location bar URL
-        updateHistoryEntry(true);
+        // Success... update history entry
+        updateHistoryEntry(false);
 
         if (m_bAborted) { // remove the pending entry on error
             KonqHistoryManager::kself()->removePending(url());
@@ -695,8 +695,9 @@ void KonqView::slotOpenURLNotify()
 #ifdef DEBUG_HISTORY
     qCDebug(KONQUEROR_LOG);
 #endif
-    updateHistoryEntry(true);
+    updateHistoryEntry(false);
     createHistoryEntry();
+    updateHistoryEntry(true);
     if (m_pMainWindow->currentView() == this) {
         m_pMainWindow->updateToolBarActions();
     }
@@ -735,7 +736,7 @@ void KonqView::appendHistoryEntry(HistoryEntry *historyEntry)
     m_lstHistory.append(historyEntry);
 }
 
-void KonqView::updateHistoryEntry(bool saveLocationBarURL)
+void KonqView::updateHistoryEntry(bool needsReload)
 {
     Q_ASSERT(!m_bLockHistory);   // should never happen
 
@@ -744,8 +745,12 @@ void KonqView::updateHistoryEntry(bool saveLocationBarURL)
         return;
     }
 
-    current->reload = false; // We have a state for it now.
-    if (browserExtension()) {
+#ifdef DEBUG_HISTORY
+    qCDebug(KONQUEROR_LOG) << "Saving part URL:" << m_pPart->url() << "in history position" << historyIndex();
+#endif
+
+    current->reload = needsReload; // We have a state for it now.
+    if (!needsReload && browserExtension()) {
         current->buffer = QByteArray(); // Start with empty buffer.
         QDataStream stream(&current->buffer, QIODevice::WriteOnly);
 
@@ -757,7 +762,7 @@ void KonqView::updateHistoryEntry(bool saveLocationBarURL)
 #endif
     current->url = m_pPart->url();
 
-    if (saveLocationBarURL) {
+    if (!needsReload) {
 #ifdef DEBUG_HISTORY
         qCDebug(KONQUEROR_LOG) << "Saving location bar URL:" << m_sLocationBarURL << "in history position" << historyIndex();
 #endif
@@ -831,7 +836,7 @@ void KonqView::restoreHistory()
 
     aboutToOpenURL(h.url);
 
-    if (h.reload == false && browserExtension()) {
+    if (h.reload == false && browserExtension() && historyIndex() > 0) {
         //qCDebug(KONQUEROR_LOG) << "Restoring view from stream";
         QDataStream stream(h.buffer);
 
@@ -938,7 +943,7 @@ void KonqView::stop()
         m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
     }
     if (!m_bLockHistory && m_lstHistory.count() > 0) {
-        updateHistoryEntry(true);
+        updateHistoryEntry(false);
     }
 }
 
@@ -1272,9 +1277,6 @@ void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const Kon
     if (options & KonqFrameBase::SaveUrls) {
         config.writePathEntry(QStringLiteral("URL").prepend(prefix), url().url());
     } else if (options & KonqFrameBase::SaveHistoryItems) {
-        if (m_pPart && !m_bLockHistory) {
-            updateHistoryEntry(true);
-        }
         QList<HistoryEntry *>::Iterator it = m_lstHistory.begin();
         for (int i = 0; it != m_lstHistory.end(); ++it, ++i) {
             // In order to not end up with a huge config file, we only save full

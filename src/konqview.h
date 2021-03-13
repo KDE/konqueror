@@ -579,10 +579,10 @@ private:
 
     /**
      * Updates the current entry in the history.
-     * @param saveLocationBarURL whether to save the location bar URL as part of it
+     * @param needsReload whether page is fully loaded
      * (not done in openUrl, to be able to revert if aborting)
      */
-    void updateHistoryEntry(bool saveLocationBarURL);
+    void updateHistoryEntry(bool needsReload);
 
     void aboutToOpenURL(const QUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments());
 
