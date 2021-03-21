@@ -36,6 +36,7 @@
 #include "kbookmarkimporter_ie.h"
 #include "kbookmarkmanager.h"
 #include "konqbookmarkmenu_p.h"
+#include "konqpixmapprovider.h"
 
 using namespace Konqueror;
 
@@ -242,8 +243,10 @@ void KonqBookmarkMenu::refill()
     }
 }
 
-QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &bm)
+QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
 {
+    //We need a non-const copy of it
+    KBookmark bm(_bm);
     if (bm.isGroup()) {
         // qCDebug(KBOOKMARKS_LOG) << "Creating Konq bookmark submenu named " << bm.text();
         KBookmarkActionMenu *actionMenu = new KBookmarkActionMenu(bm, this);
@@ -258,7 +261,13 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &bm)
         return KBookmarkMenu::actionForBookmark(bm);
     } else {
         // qCDebug(KBOOKMARKS_LOG) << "Creating Konq bookmark action named " << bm.text();
+        QUrl host = bm.url().adjusted(QUrl::RemovePath | QUrl::RemoveQuery);
+        bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
         KBookmarkAction *action = new KBookmarkAction(bm, owner(), this);
+        connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
+            action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+        });
+        KonqPixmapProvider::self()->downloadHostIcon(host);
         m_actionCollection->addAction(action->objectName(), action);
         m_actions.append(action);
         return action;
