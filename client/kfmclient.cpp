@@ -30,16 +30,16 @@
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
-#include <KIO/OpenUrlJob>
-#include <KIO/JobUiDelegate>
+#include <KIO/CommandLauncherJob>
+#include <KIO/ApplicationLauncherJob>
 #include <KStartupInfo>
 #include <kurifilter.h>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KJobWidgets>
 #include <KService>
 #include <KAboutData>
 #include <KWindowSystem>
+#include <KShell>
 
 #include <kcoreaddons_version.h>
 
@@ -48,14 +48,10 @@
 #include <QDir>
 #include <QMimeDatabase>
 #include <QUrl>
-#include <QStandardPaths>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QTimer>
 
-#if KONQ_HAVE_X11
-#include <QX11Info>
-#endif
 #ifdef WIN32
 #include <process.h>
 #endif
@@ -181,30 +177,89 @@ bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, con
         KConfig config(QStringLiteral("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
-        if (!browserApp.isEmpty() && !browserApp.startsWith(QLatin1String("!kfmclient"))
-                && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp))) {
-            qCDebug(KFMCLIENT_LOG) << "Using external browser" << browserApp;
-            KStartupInfo::appStarted();
 
-            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
-            //job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, window));
-            job->setDeleteTemporaryFile(tempFile);
-            job->setUiDelegate(nullptr);
-            job->start();
+        if (!browserApp.isEmpty()) {
+            // There is a configured browser application.
+            // See whether it is a literal command (starting with '!')
+            // or a service (no '!').
+            if (browserApp.startsWith('!')) {
+                // A literal command.  Split the string up into a shell
+                // command and arguments.
+                qCDebug(KFMCLIENT_LOG) << "Using external browser command" << browserApp;
+                KStartupInfo::appStarted();
 
-            QObject::connect(job, &KJob::result, this, [this](KJob *job) {
-                if (job->error()) {
-                    qApp->exit(1);
+                QStringList shellArgs = KShell::splitArgs(browserApp.mid(1), KShell::AbortOnMeta);
+                if (!shellArgs.isEmpty()) {
+                    // The command name is the first list item.
+                    QString executable = shellArgs.takeFirst();
+                    // Ensure that we are not calling ourselves recursively;
+                    // that is, the external command is not "kfmclient" or
+                    // any variation of it.  If it is, then fall through to
+                    // open the URL in Konqueror directly.
+                    if (executable.startsWith("kfmclient")) {
+                        goto launchKonq;
+                    }
+
+                    // Append the URL to be opened to the arguments.
+                    shellArgs.append(url.url());
+                    // Then launch the command.  It is not possible to automatically
+                    // delete a temporary file in this case, but no temporary file
+                    // download should have happened anyway.
+                    auto *job = new KIO::CommandLauncherJob(executable, shellArgs);
+                    QObject::connect(job, &KJob::result, this, &ClientApp::slotResult);
+                    job->setUiDelegate(nullptr);
+                    job->start();
+                    return qApp->exec();
                 } else {
-                    ClientApp::delayedQuit();
+                    qCWarning(KFMCLIENT_LOG) << "Parsing browser command failed";
                 }
-            });
-            return qApp->exec();
+            } else {
+                // The configured browser is specified as a service.
+                qCDebug(KFMCLIENT_LOG) << "Using external browser service" << browserApp;
+                // First ensure that we are not calling ourselves recursively;
+                // that is, the service is not "kfmclient" or any variation
+                // of it.  If it is, then fall through to open the URL in Konqueror
+                // directly.
+                if (browserApp.startsWith("kfmclient")) {
+                    goto launchKonq;
+                }
+
+                KService::Ptr service = KService::serviceByStorageId(browserApp);
+                if (service) {
+                    // Launch the service to open the URL.
+                    auto *job = new KIO::ApplicationLauncherJob(service);
+                    QObject::connect(job, &KJob::result, this, &ClientApp::slotResult);
+                    job->setUrls({url});
+                    if (tempFile) {
+                        job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+                    }
+                    job->setUiDelegate(nullptr);
+                    job->start();
+                    return qApp->exec();
+                } else {
+                    qCWarning(KFMCLIENT_LOG) << "External browser service not known";
+                }
+            }
+
+            // Fall through to here if the external browser command or service
+            // could not be found or run.  Do not fall back to the original action
+            // of simply opening the specified URL in its default application,
+            // because if that turns out to be ourselves then there will again
+            // be an infinite recursion.  Just exit with an error.
+            qCWarning(KFMCLIENT_LOG) << "Unable to launch external browser";
+            return false;
+
+launchKonq:
+            // The configured external browser command or service appears to be
+            // trying to call ourselves recursively.  Simply fall through to
+            // launch Konqueror.
+            qCDebug(KFMCLIENT_LOG) << "Recursive external browser command or service detected";
         }
     }
 
     needDBus();
 
+    // Launch Konqueror, or reuse an existing instance if possible.
     KonqClientRequest req;
     req.setUrl(url);
     req.setNewTab(newTab);
@@ -223,7 +278,7 @@ void ClientApp::delayedQuit()
 {
     // Quit in 2 seconds. This leaves time for OpenUrlJob to pop up
     // "app not found" in KProcessRunner, if that was the case.
-    QTimer::singleShot(2000, qApp, SLOT(quit()));
+    QTimer::singleShot(2000, qApp, &QApplication::quit);
 }
 
 static void checkArgumentCount(int count, int min, int max)
@@ -288,13 +343,12 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
     return true;
 }
 
+
 void ClientApp::slotResult(KJob *job)
 {
-    if (job->error() && m_interactive) {
-        KJobWidgets::setWindow(job, nullptr);
-        job->uiDelegate()->showErrorMessage();
+    if (job->error()) {
+        qApp->exit(1);
+    } else {
+        delayedQuit();
     }
-    const bool ok = !job->error();
-    qApp->exit(ok ? 0 : 1);
 }
-

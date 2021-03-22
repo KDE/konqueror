@@ -42,7 +42,9 @@ public:
     bool openProfile(const QString &profile, const QUrl &url, const QString &mimetype = QString());
 
 private Q_SLOTS:
-    void slotResult(KJob *);
+    void slotResult(KJob *job);
+
+private:
     void delayedQuit();
 
 private:
