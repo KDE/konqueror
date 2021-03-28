@@ -109,9 +109,6 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
     Q_ASSERT(m_cancelButton!=nullptr);
     connect(m_cancelButton, &QAbstractButton::clicked, this, &QWidget::close);
 
-    // TODO: verify user entries, enable/disable button
-    //enableButtonOk(false);
-
     QWidget *w = new QWidget(this);			// main widget
     QVBoxLayout *vbl = new QVBoxLayout(w);		// main vertical layout
     KConfigSkeletonItem *ski;				// config for creating widgets
@@ -121,6 +118,8 @@ ArchiveDialog::ArchiveDialog(const QUrl &url, QWidget *parent)
 
     m_pageUrlReq = new KUrlRequester(url, this);
     m_pageUrlReq->setToolTip(i18n("The URL of the page that is to be archived"));
+    slotSourceUrlChanged(m_pageUrlReq->text());
+    connect(m_pageUrlReq, &KUrlRequester::textChanged, this, &ArchiveDialog::slotSourceUrlChanged);
     fl->addRow(i18n("Source &URL:"), m_pageUrlReq);
 
     fl->addRow(QString(), new QWidget(this));
@@ -249,6 +248,12 @@ void ArchiveDialog::cleanup()
         delete m_tempFile;
         m_tempFile = nullptr;
     }
+}
+
+
+void ArchiveDialog::slotSourceUrlChanged(const QString &text)
+{
+    m_archiveButton->setEnabled(QUrl::fromUserInput(text).isValid());
 }
 
 

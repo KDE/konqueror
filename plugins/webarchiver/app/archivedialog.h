@@ -58,6 +58,7 @@ protected:
 
 protected slots:
     void slotArchiveTypeChanged(int idx);
+    void slotSourceUrlChanged(const QString &text);
     void slotMessageLinkActivated(const QString &link);
 
 private slots:
