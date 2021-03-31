@@ -280,7 +280,7 @@ void PluginBabelFish::translateURL(QAction *action)
         if (KMessageBox::warningContinueCancel(part->widget(),
                                                xi18nc("@info", "\
 You are viewing this page over a secure connection.<nl/><nl/>\
-The URL of the page will sent to the online translation service, \
+The URL of the page will sent to the online translation service,<nl/>\
 which may fetch the insecure version of the page."),
                                                i18nc("@title:window", "Security Warning"),
                                                KStandardGuiItem::cont(),
