@@ -372,7 +372,6 @@ void KonqView::connectPart()
     connect(m_pPart, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, QOverload<bool>::of(&KonqView::slotCompleted));
 #else
     connect(m_pPart, &KParts::ReadOnlyPart::completedWithPendingAction, this, [this](){slotCompleted(true);});
-    connect(m_pPart, &KParts::ReadOnlyPart::completed, this, &KonqView::slotCompleted);
 #endif
     connect(m_pPart, SIGNAL(canceled(QString)),
             this, SLOT(slotCanceled(QString)));
