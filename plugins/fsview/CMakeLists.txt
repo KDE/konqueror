@@ -28,7 +28,7 @@ set(fsview_SRCS main.cpp ${libfsview_SRCS} )
 
 add_executable(fsview ${fsview_SRCS})
 
-target_link_libraries(fsview KF5::KIOWidgets KF5::I18n KF5::IconThemes)
+target_link_libraries(fsview KF5::KIOWidgets KF5::I18n KF5::ConfigCore KF5::IconThemes)
 
 install(TARGETS fsview ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

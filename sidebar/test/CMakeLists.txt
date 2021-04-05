@@ -17,6 +17,8 @@ ecm_add_test(
         ../module_manager.cpp
         ../sidebar_debug.cpp
     LINK_LIBRARIES
+        KF5::ConfigCore
+        KF5::Service
         KF5::KIOCore
         Qt5::Core
         Qt5::Test
