@@ -88,6 +88,7 @@
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
 #include <QWebEngineUrlScheme>
+#include <QWebEngineScript>
 #include "utils.h"
 #include <kio_version.h>
 
@@ -110,6 +111,18 @@ void WebEnginePart::initWebEngineUrlSchemes()
             QWebEngineUrlScheme::registerScheme(scheme);
         }
     }
+}
+
+static QWebEngineScript detectRefreshScript() {
+    static QWebEngineScript s_detectRefreshScript;
+    if (s_detectRefreshScript.isNull()) {
+        QFile jsfile(":/hasrefresh.js");
+        jsfile.open(QIODevice::ReadOnly);
+        s_detectRefreshScript.setSourceCode(QString(jsfile.readAll()));
+        s_detectRefreshScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
+        s_detectRefreshScript.setWorldId(QWebEngineScript::ApplicationWorld);
+    }
+    return s_detectRefreshScript;
 }
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
@@ -218,6 +231,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     connect(m_webView, &QWebEngineView::loadFinished,
             this, &WebEnginePart::slotLoadFinished);
 
+    page()->scripts().insert(detectRefreshScript());
     // Connect the signals from the page...
     connectWebEnginePageSignals(page());
 
@@ -546,19 +560,15 @@ void WebEnginePart::slotLoadFinished (bool ok)
         m_wallet->detectAndFillPageForms(page());
     }
 
-    bool pending = false;
-       // QWebFrame* frame = (page() ? page()->currentFrame() : 0);
-       // if (ok &&
-       //     frame == page()->mainFrame() &&
-       //     !frame->findFirstElement(QL1S("head>meta[http-equiv=refresh]")).isNull()) {
-       //     if (WebEngineSettings::self()->autoPageRefresh()) {
-       //         pending = true;
-       //     } else {
-       //         frame->page()->triggerAction(QWebEnginePage::Stop);
-       //     }
-       // }
-    emit completed ((ok && pending));
-
+    auto callback = [this](const QVariant &res) {
+        bool hasRefresh = res.toBool();
+#if KPARTS_VERSION < QT_VERSION_CHECK(5, 81, 0)
+        emit completed(hasRefresh);
+#else
+        emit hasRefresh ? completedWithPendingAction() : completed();
+#endif
+    };
+    page()->runJavaScript("hasRefreshAttribute()", QWebEngineScript::ApplicationWorld, callback);
     updateActions();
 }
 
