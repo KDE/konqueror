@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 
 # KDE Application Version, managed by release script
 set (RELEASE_SERVICE_VERSION_MAJOR "21")
@@ -35,6 +36,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Parts KCMUtils Archive C
 
 find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
+find_package(Hunspell)
+
 if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.13.0")
   add_definitions(-DWEBENGINE_PDF_VIEWER)
 endif()
@@ -61,6 +64,11 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_hblkhd
 # TODO KDE_MALLINFO_FIELD_uordblks
 # TODO KDE_MALLINFO_FIELD_usmblks
+
+if(Hunspell_FOUND)
+set(WEBENGINEPART_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files for WebEnginePart will be put")
+add_compile_definitions(WEBENGINEPART_DICTIONARY_DIR="${WEBENGINEPART_DICTIONARY_DIR}")
+endif()
 
 configure_file (config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 configure_file (konqueror-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/konqueror-version.h)

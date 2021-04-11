@@ -109,6 +109,7 @@ public:
 
 public Q_SLOTS:
     void exitFullScreen();
+    void updateSpellCheckingConfiguration(bool enabled);
 
 protected:
     /**

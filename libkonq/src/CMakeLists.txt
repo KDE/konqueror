@@ -8,6 +8,7 @@ set(konq_LIB_SRCS
    konq_historyentry.cpp
    konq_historyloader.cpp
    konq_historyprovider.cpp   # konqueror and konqueror/sidebar
+   konq_spellcheckingconfigurationdispatcher.cpp #konqueror and webenginepart
 )
 
 ecm_qt_declare_logging_category(konq_LIB_SRCS HEADER libkonq_debug.h IDENTIFIER LIBKONQ_LOG CATEGORY_NAME org.kde.libkonq)

@@ -737,6 +737,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);
+
 }
 
 

@@ -552,6 +552,12 @@ private Q_SLOTS:
     void showPageSecurity();
     
     void toggleCompleteFullScreen(bool on);
+
+    /**
+     * Copies the "checkerEnabledByDefault" setting from the Sonnet configuration file
+     * to Konqueror's own and emits the spellCheckConfigurationChanged signal
+     */
+    void updateSpellCheckConfiguration();
     
 private:
     void updateWindowIcon();

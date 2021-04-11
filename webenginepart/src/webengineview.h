@@ -123,6 +123,7 @@ private:
     qint32 m_horizontalAutoScrollSpeed;
 
     QHash<QString, QChar> m_duplicateLinkElements;
+    QMenu *m_spellCheckMenu;
 };
 
 #endif // WEBENGINEVIEW_H

@@ -17,6 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include <QtGlobal>
+
 #include "konqapplication.h"
 #include "konqsettings.h"
 #include <QDBusConnection>
@@ -41,6 +43,12 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("removeFromCombo"), this,
                  SLOT(slotRemoveFromCombo(QString,QDBusMessage)));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("comboCleared"), this, SLOT(slotComboCleared(QDBusMessage)));
+
+#ifdef WEBENGINEPART_DICTIONARY_DIR
+    if (!qEnvironmentVariableIsSet("QTWEBENGINE_DICTIONARIES_PATH")) {
+        qputenv("QTWEBENGINE_DICTIONARIES_PATH", WEBENGINEPART_DICTIONARY_DIR);
+    }
+#endif
 }
 
 void KonquerorApplication::slotReparseConfiguration()

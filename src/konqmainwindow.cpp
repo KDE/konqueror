@@ -56,6 +56,7 @@
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
 #include <konqsettings.h>
+#include <konq_spellcheckingconfigurationdispatcher.h>
 
 #include <kwidgetsaddons_version.h>
 #include <kparts_version.h>
@@ -1842,12 +1843,26 @@ void KonqMainWindow::slotConfigureDone()
 
 void KonqMainWindow::slotConfigureSpellChecking()
 {
-#pragma message("TODO KF5: Port Sonnet::ConfigDialog usage somehow")
-#if 0 // KF5 TODO
-    Sonnet::ConfigDialog dialog(KSharedConfig::openConfig().data(), this);
+    Sonnet::ConfigDialog dialog(this);
     dialog.setWindowIcon(QIcon::fromTheme("konqueror"));
-    dialog.exec();
-#endif
+    if (dialog.exec() == QDialog::Accepted) {
+        updateSpellCheckConfiguration();
+    }
+}
+
+void KonqMainWindow::updateSpellCheckConfiguration()
+{
+    //HACK: since Sonnet doesn't allow to find out whether the spell checker should be enabled by default
+    //we need to open its config file and read the setting from there. We then store it in our own configuration file
+    //so that it can be read from there
+    KSharedConfig::Ptr cfg = KSharedConfig::openConfig("KDE/Sonnet.conf");
+    KConfigGroup grp = cfg->group("General");
+    bool enabled = grp.readEntry("checkerEnabledByDefault", false);
+    cfg = KSharedConfig::openConfig();
+    grp = cfg->group("General");
+    grp.writeEntry("SpellCheckingEnabled", enabled);
+    cfg->sync();
+    emit KonqSpellCheckingConfigurationDispatcher::self()->spellCheckingConfigurationChanged(enabled);
 }
 
 void KonqMainWindow::slotConfigureToolbars()

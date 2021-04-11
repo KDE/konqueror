@@ -1,5 +1,6 @@
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Notifications )
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Sonnet)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 
@@ -31,6 +32,7 @@ set(kwebenginepartlib_LIB_SRCS
     webfieldsdataview.cpp
     ui/credentialsdetailswidget.cpp
     webengineurlrequestinterceptor.cpp
+    spellcheckermanager.cpp
 )
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui)
@@ -60,10 +62,12 @@ target_link_libraries(kwebenginepartlib
         KF5::Wallet
         KF5::Notifications
     PRIVATE
+        KF5::Konq
         Qt5::PrintSupport
         KF5::SonnetCore
         KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
         KF5::WindowSystem  # for KUserTimestamp
+        KF5::SonnetCore
 )
 
 target_include_directories(kwebenginepartlib PUBLIC
@@ -77,6 +81,7 @@ install(TARGETS kwebenginepartlib ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 add_library(webenginepart MODULE webenginepartfactory.cpp)
 kcoreaddons_desktop_to_json(webenginepart webenginepart.desktop)
 
+
 target_link_libraries(webenginepart kwebenginepartlib)
 
 install(TARGETS webenginepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
@@ -88,5 +93,34 @@ install(FILES webenginepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/webenginep
 install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
 
 install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_KCONFUPDATEDIR})
+
+#COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
+if(${Hunspell_FOUND})
+  find_package(WebEngineDictConverter)
+  if (DictConverter_FOUND)
+    #Iterate on all dictionaries
+    foreach(D ${Hunspell_UNIQUE_DICTIONARIES})
+      get_filename_component(base_name ${D} NAME)
+      #Full name of the file to create
+      set(BDIC_name ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.bdic)
+      #Name of the target to create
+      set(BDIC_target_name ${base_name}.bdic_target)
+      #Check that both .dic and .aff files exist for the given dictionary, otherwise the conversion tool will fail
+      if (EXISTS ${D}.dic AND EXISTS ${D}.aff)
+        add_custom_command(
+          OUTPUT ${BDIC_name}
+          COMMAND ${DictConverter_EXECUTABLE} ${D} ${BDIC_name}
+        )
+        #Install the bdic file
+        install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_DICTIONARY_DIR})
+        #Create a new target which depends on the file
+        add_custom_target(${BDIC_target_name} DEPENDS ${BDIC_name})
+        #Add the new target as dependency to kwebenginepartlib, otherwise the dictionaries won't be built
+        add_dependencies(kwebenginepartlib ${BDIC_target_name})
+      endif()
+    endforeach()
+  endif()
+endif()
+
 
 add_subdirectory(about)

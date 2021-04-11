@@ -42,6 +42,7 @@
 #include "webengineparterrorschemehandler.h"
 #include "webenginepartcookiejar.h"
 #include "webengineurlrequestinterceptor.h"
+#include "spellcheckermanager.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -89,6 +90,8 @@
 #include <QWebEngineScriptCollection>
 #include <QWebEngineUrlScheme>
 #include <QWebEngineScript>
+#include <QDir>
+
 #include "utils.h"
 #include <kio_version.h>
 
@@ -149,6 +152,10 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     }
     prof->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
     static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
+
+    //It's safe calling this multiple times as it does nothing after the first call
+    SpellCheckerManager::self()->setup();
+
 #if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
 #else
@@ -1145,4 +1152,9 @@ void WebEnginePart::updateWalletData(std::initializer_list<bool> data)
     }
     updateWalletActions();
     updateWalletStatusBarIcon();
+}
+
+void WebEnginePart::updateSpellCheckingConfiguration(bool enabled)
+{
+    SpellCheckerManager::self()->updateConfiguration(enabled);
 }

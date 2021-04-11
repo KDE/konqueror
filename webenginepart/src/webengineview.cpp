@@ -27,6 +27,7 @@
 #include "webenginepart_ext.h"
 #include "settings/webenginesettings.h"
 #include "webenginepart_ext.h"
+#include "spellcheckermanager.h"
 
 #include <KIO/Global>
 #include <KAboutData>
@@ -49,6 +50,7 @@
 #include <QCoreApplication>
 #include <QMimeType>
 #include <QMimeDatabase>
+#include <QMenu>
 
 #define QL1S(x)   QLatin1String(x)
 #define QL1C(x)   QLatin1Char(x)
@@ -62,7 +64,8 @@ WebEngineView::WebEngineView(WebEnginePart* part, QWidget* parent)
          m_part(part),
          m_autoScrollTimerId(-1),
          m_verticalAutoScrollSpeed(0),
-         m_horizontalAutoScrollSpeed(0)
+         m_horizontalAutoScrollSpeed(0),
+         m_spellCheckMenu(nullptr)
 {
     setAcceptDrops(true);
 
@@ -296,6 +299,10 @@ void WebEngineView::timerEvent(QTimerEvent* e)
 
 void WebEngineView::editableContentActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
+    if (m_spellCheckMenu) {
+        m_spellCheckMenu->deleteLater();
+        m_spellCheckMenu = nullptr;
+    }
     QList<QAction*> editableContentActions;
 
     QActionGroup* group = new QActionGroup(this);
@@ -327,9 +334,14 @@ void WebEngineView::editableContentActionPopupMenu(KParts::BrowserExtension::Act
     editableContentActions.append(pageAction(QWebEnginePage::SelectAll));
     editableContentActions.append(pageAction(QWebEnginePage::InspectElement));
 
+
+    m_spellCheckMenu = SpellCheckerManager::self()->spellCheckingMenu(page()->contextMenuData().spellCheckerSuggestions(), m_actionCollection, dynamic_cast<WebEnginePage*>(page()));
+    if (m_spellCheckMenu) {
+        editableContentActions.append(m_spellCheckMenu->menuAction());
+    }
+
     partGroupMap.insert(QStringLiteral("editactions") , editableContentActions);
 }
-
 
 void WebEngineView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
