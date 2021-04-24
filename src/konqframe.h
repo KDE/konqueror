@@ -33,7 +33,6 @@
 
 class KonqFrameStatusBar;
 class KonqFrameVisitor;
-class QPixmap;
 class QVBoxLayout;
 class QUrl;
 
@@ -42,7 +41,6 @@ class KonqFrameBase;
 class KonqFrame;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
-class KConfig;
 class KSeparator;
 
 namespace KParts

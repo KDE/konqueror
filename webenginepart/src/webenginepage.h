@@ -35,12 +35,10 @@
 #include <QWebEngineFullScreenRequest>
 
 class QAuthenticator;
-class QUrl;
 class WebSslInfo;
 class WebEnginePart;
 class KPasswdServerClient;
 class WebEngineWallet;
-class QWebEngineFullScreenRequest;
 
 class WebEnginePage : public QWebEnginePage
 {

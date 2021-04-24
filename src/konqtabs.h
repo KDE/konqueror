@@ -30,13 +30,13 @@
 #include <QList>
 
 class QMenu;
-class QToolButton;
 
 class KonqView;
 class KonqViewManager;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KConfig;
+class QToolButton;
 
 class NewTabToolButton;
 
