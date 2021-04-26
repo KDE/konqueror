@@ -6,7 +6,7 @@ set(konq_shellcmdplugin_PART_SRCS kshellcmdexecutor.cpp kshellcmddialog.cpp kshe
 
 add_library(konq_shellcmdplugin MODULE ${konq_shellcmdplugin_PART_SRCS})
 
-target_link_libraries(konq_shellcmdplugin KF5::Parts KF5::Su)
+target_link_libraries(konq_shellcmdplugin KF5::I18n KF5::Parts KF5::Su)
 
 install(TARGETS konq_shellcmdplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

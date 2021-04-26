@@ -63,11 +63,12 @@ target_link_libraries(kwebenginepartlib
         KF5::Notifications
     PRIVATE
         KF5::Konq
+        KF5::I18n
         Qt5::PrintSupport
         KF5::SonnetCore
         KF5::IconThemes #for KIconLoader used by WebEnginePartErrorSchemeHandler
         KF5::WindowSystem  # for KUserTimestamp
-        KF5::SonnetCore
+        KF5::SonnetUi
 )
 
 target_include_directories(kwebenginepartlib PUBLIC

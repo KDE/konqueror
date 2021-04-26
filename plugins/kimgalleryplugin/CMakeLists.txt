@@ -6,7 +6,7 @@ ecm_qt_declare_logging_category(kimgallery_PART_SRCS HEADER imgallery_debug.h ID
 
 add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
-target_link_libraries(kimgallery  KF5::Parts)
+target_link_libraries(kimgallery KF5::I18n KF5::WidgetsAddons KF5::KIOWidgets KF5::Parts)
 
 install(TARGETS kimgallery  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

@@ -26,6 +26,7 @@ ecm_qt_declare_logging_category(konquerorprivate_SRCS HEADER konqdebug.h IDENTIF
 
 add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate
+   KF5::I18n
    KF5::IconThemes
    KF5::Konq
    KF5::Parts
@@ -109,6 +110,7 @@ target_link_libraries(kdeinit_konqueror
    KF5::DBusAddons
    KF5::Crash
    KF5::WindowSystem
+   KF5::SonnetUi
 )
 
 if (X11_FOUND)

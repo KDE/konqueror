@@ -29,7 +29,7 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
 
 add_library(kcm_konqhtml MODULE ${kcm_konqhtml_PART_SRCS})
 
-target_link_libraries(kcm_konqhtml KF5::Parts KF5::ItemViews)
+target_link_libraries(kcm_konqhtml KF5::I18n KF5::ConfigWidgets KF5::TextWidgets KF5::Parts KF5::ItemViews)
 
 install(TARGETS kcm_konqhtml  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
