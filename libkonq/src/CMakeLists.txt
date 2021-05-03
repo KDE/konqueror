@@ -39,7 +39,7 @@ target_include_directories(KF5Konq PRIVATE ${ZLIB_INCLUDE_DIR})
 
 
 set_target_properties(KF5Konq PROPERTIES
-    VERSION ${KONQ_VERSION_STRING}
+    VERSION ${KONQ_VERSION}
     SOVERSION ${KONQ_SOVERSION}
     EXPORT_NAME Konq
 )
