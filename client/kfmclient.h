@@ -45,7 +45,28 @@ private Q_SLOTS:
     void slotResult(KJob *job);
 
 private:
+
+    //Stores the result of parsing the BrowserApplication option
+    struct BrowserApplicationParsingResult {
+        //The string was parsed successfully
+        bool isValid = false;
+        //True if the string represents a command and false if it represents a service
+        bool isCommand = false;
+        //A string describing errors occurred while parsing the option
+        QString error;
+        //The command executable or service name
+        QString commandOrService;
+        //The arguments to pass to command. It's empty if isCommand is false
+        QStringList args;
+    };
+
     void delayedQuit();
+
+    bool launchExternalBrowser(const BrowserApplicationParsingResult& parseResult, const QUrl &url, bool tempFile);
+
+    //Parses the content of the BrowserApplication option
+    static BrowserApplicationParsingResult parseBrowserApplicationString(const QString &str);
+
 
 private:
     bool m_interactive = true;

@@ -169,103 +169,102 @@ ClientApp::ClientApp()
 {
 }
 
+ClientApp::BrowserApplicationParsingResult ClientApp::parseBrowserApplicationString(const QString& str)
+{
+    // There is a configured browser application.
+    // See whether it is a literal command (starting with '!')
+    // or a service (no '!').
+    BrowserApplicationParsingResult res;
+    if (str.isEmpty()) {
+        return res;
+    }
+    res.isCommand = str.startsWith('!');
+    if (res.isCommand) {
+        // A literal command.  Split the string up into a shell
+        // command and arguments.
+        res.args = KShell::splitArgs(str.mid(1), KShell::AbortOnMeta);
+        res.isValid = !res.args.isEmpty();
+        if (res.isValid) {
+            res.commandOrService = res.args.takeFirst();
+        }
+        else {
+            res.error = "Parsing browser command failed";
+        }
+    } else {
+        res.commandOrService = str;
+        res.isValid = true;
+    }
+    // Ensure that we are not calling ourselves recursively;
+    // that is, the external command is not "kfmclient" or
+    // any variation of it.
+    if (res.commandOrService.startsWith("kfmclient")) {
+        res.isValid = false;
+        res.error = "Recursive external browser command or service detected";
+    }
+    return res;
+}
+
+bool ClientApp::launchExternalBrowser(const ClientApp::BrowserApplicationParsingResult& parseResult, const QUrl& url, bool tempFile)
+{
+    KJob *job = nullptr;
+    if (parseResult.isCommand) {
+        QStringList args(parseResult.args);
+        args << url.url();
+        KStartupInfo::appStarted();
+        job =  new KIO::CommandLauncherJob(parseResult.commandOrService, args);
+    } else {
+        KService::Ptr service = KService::serviceByStorageId(parseResult.commandOrService);
+        if (!service) {
+            qCWarning(KFMCLIENT_LOG) << "External browser service not known:" << parseResult.commandOrService;
+            return false;
+        }
+        auto launcherJob = new KIO::ApplicationLauncherJob(service);
+        launcherJob->setUrls({url});
+        if (tempFile) {
+            launcherJob->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+        }
+        job = launcherJob;
+    }
+    QObject::connect(job, &KJob::result, this, &ClientApp::slotResult);
+    job->setUiDelegate(nullptr);
+    job->start();
+    return qApp->exec() == 0;
+}
+
 bool ClientApp::createNewWindow(const QUrl &url, bool newTab, bool tempFile, const QString &mimetype)
 {
     qCDebug(KFMCLIENT_LOG) << url << "mimetype=" << mimetype;
+
+    bool launched = false;
 
     if (url.scheme().startsWith(QLatin1String("http"))) {
         KConfig config(QStringLiteral("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
-
         if (!browserApp.isEmpty()) {
-            // There is a configured browser application.
-            // See whether it is a literal command (starting with '!')
-            // or a service (no '!').
-            if (browserApp.startsWith('!')) {
-                // A literal command.  Split the string up into a shell
-                // command and arguments.
-                qCDebug(KFMCLIENT_LOG) << "Using external browser command" << browserApp;
-                KStartupInfo::appStarted();
-
-                QStringList shellArgs = KShell::splitArgs(browserApp.mid(1), KShell::AbortOnMeta);
-                if (!shellArgs.isEmpty()) {
-                    // The command name is the first list item.
-                    QString executable = shellArgs.takeFirst();
-                    // Ensure that we are not calling ourselves recursively;
-                    // that is, the external command is not "kfmclient" or
-                    // any variation of it.  If it is, then fall through to
-                    // open the URL in Konqueror directly.
-                    if (executable.startsWith("kfmclient")) {
-                        goto launchKonq;
-                    }
-
-                    // Append the URL to be opened to the arguments.
-                    shellArgs.append(url.url());
-                    // Then launch the command.  It is not possible to automatically
-                    // delete a temporary file in this case, but no temporary file
-                    // download should have happened anyway.
-                    auto *job = new KIO::CommandLauncherJob(executable, shellArgs);
-                    QObject::connect(job, &KJob::result, this, &ClientApp::slotResult);
-                    job->setUiDelegate(nullptr);
-                    job->start();
-                    return qApp->exec();
-                } else {
-                    qCWarning(KFMCLIENT_LOG) << "Parsing browser command failed";
-                }
+            //Parse the BrowserApplication string and act accordingly
+            BrowserApplicationParsingResult parseRes = parseBrowserApplicationString(browserApp);
+            qCDebug(KFMCLIENT_LOG) << "Using external browser" << (parseRes.isCommand ? "command" : "service") << browserApp;
+            if (parseRes.isValid) {
+                launched = launchExternalBrowser(parseRes, url, tempFile);
             } else {
-                // The configured browser is specified as a service.
-                qCDebug(KFMCLIENT_LOG) << "Using external browser service" << browserApp;
-                // First ensure that we are not calling ourselves recursively;
-                // that is, the service is not "kfmclient" or any variation
-                // of it.  If it is, then fall through to open the URL in Konqueror
-                // directly.
-                if (browserApp.startsWith("kfmclient")) {
-                    goto launchKonq;
-                }
-
-                KService::Ptr service = KService::serviceByStorageId(browserApp);
-                if (service) {
-                    // Launch the service to open the URL.
-                    auto *job = new KIO::ApplicationLauncherJob(service);
-                    QObject::connect(job, &KJob::result, this, &ClientApp::slotResult);
-                    job->setUrls({url});
-                    if (tempFile) {
-                        job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
-                    }
-                    job->setUiDelegate(nullptr);
-                    job->start();
-                    return qApp->exec();
-                } else {
-                    qCWarning(KFMCLIENT_LOG) << "External browser service not known";
-                }
+                qCWarning(KFMCLIENT_LOG) << parseRes.error;
             }
-
-            // Fall through to here if the external browser command or service
-            // could not be found or run.  Do not fall back to the original action
-            // of simply opening the specified URL in its default application,
-            // because if that turns out to be ourselves then there will again
-            // be an infinite recursion.  Just exit with an error.
-            qCWarning(KFMCLIENT_LOG) << "Unable to launch external browser";
-            return false;
-
-launchKonq:
-            // The configured external browser command or service appears to be
-            // trying to call ourselves recursively.  Simply fall through to
-            // launch Konqueror.
-            qCDebug(KFMCLIENT_LOG) << "Recursive external browser command or service detected";
         }
     }
 
-    needDBus();
+    if (!launched) {
+        needDBus();
+        // Launch Konqueror, or reuse an existing instance if possible.
+        KonqClientRequest req;
+        req.setUrl(url);
+        req.setNewTab(newTab);
+        req.setTempFile(tempFile);
+        req.setMimeType(mimetype);
+        launched = req.openUrl();
+    }
 
-    // Launch Konqueror, or reuse an existing instance if possible.
-    KonqClientRequest req;
-    req.setUrl(url);
-    req.setNewTab(newTab);
-    req.setTempFile(tempFile);
-    req.setMimeType(mimetype);
-    return req.openUrl();
+    return launched;
 }
 
 bool ClientApp::openProfile(const QString &profileName, const QUrl &url, const QString &mimetype)
