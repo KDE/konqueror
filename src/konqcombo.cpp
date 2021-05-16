@@ -143,9 +143,7 @@ KonqCombo::KonqCombo(QWidget *parent)
     edit->setCompletionBox(new KonqComboCompletionBox(edit));
     setLineEdit(edit);
     setItemDelegate(new KonqComboItemDelegate(this));
-
-    connect(edit, SIGNAL(textEdited(QString)),
-            this, SLOT(slotTextEdited(QString)));
+    connect(edit, &QLineEdit::textEdited, this, &KonqCombo::slotTextEdited);
 
     completionBox()->setTabHandling(true); // #167135
     completionBox()->setItemDelegate(new KonqComboItemDelegate(this));
@@ -156,16 +154,18 @@ KonqCombo::KonqCombo(QWidget *parent)
     // Connect to the returnPressed signal when completionMode == CompletionNone. #314736
     slotCompletionModeChanged(completionMode());
 
-    connect(KonqHistoryManager::kself(), SIGNAL(cleared()), SLOT(slotCleared()));
-    connect(this, &KonqCombo::cleared, this, &KonqCombo::slotCleared);
-    connect(this, static_cast<void (KonqCombo::*)(int)>(&KonqCombo::highlighted), this, &KonqCombo::slotSetIcon);
+    connect(KonqHistoryManager::kself(), &KParts::HistoryProvider::cleared, this, &KonqCombo::slotCleared);
+    connect(this, &KHistoryComboBox::cleared, this, &KonqCombo::slotCleared);
+    // The overload resolution is still needed until QComboBox::highlight(QString)
+    // is either removed or hidden.
+    connect(this, QOverload<int>::of(&QComboBox::highlighted), this, &KonqCombo::slotSetIcon);
 
-    // WARNING! has to be the old style connect below, otherwise location bar doesn't work!
-    //connect(this, &KonqCombo::activated, this, &KonqCombo::slotActivated);
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+    connect(this, &QComboBox::textActivated, this, &KonqCombo::slotActivated);
+#else
     connect(this, SIGNAL(activated(QString)), this, SLOT(slotActivated(QString)));
-
-    connect(this, SIGNAL(completionModeChanged(KCompletion::CompletionMode)),
-            this, SLOT(slotCompletionModeChanged(KCompletion::CompletionMode)));
+#endif
+    connect(this, &KComboBox::completionModeChanged, this, &KonqCombo::slotCompletionModeChanged);
 }
 
 KonqCombo::~KonqCombo()
@@ -680,9 +680,9 @@ void KonqCombo::slotReturnPressed()
 void KonqCombo::slotCompletionModeChanged(KCompletion::CompletionMode mode)
 {
     if (mode == KCompletion::CompletionNone) {
-        connect(this, static_cast<void (KonqCombo::*)()>(&KonqCombo::returnPressed), this, &KonqCombo::slotReturnPressed);
+        connect(this, QOverload<const QString &>::of(&KComboBox::returnPressed), this, &KonqCombo::slotReturnPressed);
     } else {
-        disconnect(this, static_cast<void (KonqCombo::*)()>(&KonqCombo::returnPressed), this, &KonqCombo::slotReturnPressed);
+        disconnect(this, QOverload<const QString &>::of(&KComboBox::returnPressed), this, &KonqCombo::slotReturnPressed);
     }
 }
 
