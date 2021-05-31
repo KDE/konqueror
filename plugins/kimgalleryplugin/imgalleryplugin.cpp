@@ -46,6 +46,13 @@ Boston, MA 02110-1301, USA.
 
 K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
 
+// Eliminate lots of deprecation warnings with Qt 5.15.
+// Using a macro to redefine well known symbols is not good practice, but
+// the alternative is lots of QT_VERSION_CHECK conditionals everywhere.
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+#define endl Qt::endl
+#endif
+
 static QString directory(const QUrl &url) {
     return url.adjusted(QUrl::StripTrailingSlash).adjusted(QUrl::RemoveFilename).toLocalFile();
 }
@@ -328,7 +335,7 @@ bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName,
 
     QFile file(url.path());
     qCDebug(IMAGEGALLERY_LOG) << "url.path(): " << url.path() << ", thumb_dir: " << thumb_dir.path()
-                  << ", imageDir: " << imageDir.path() << endl;
+                  << ", imageDir: " << imageDir.path();
 
     if (imageDir.exists() && file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
