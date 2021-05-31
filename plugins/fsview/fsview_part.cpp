@@ -524,7 +524,7 @@ void FSViewBrowserExtension::refresh()
     }
 
     qCDebug(FSVIEWLOG) << "refreshing"
-                       << ((Inode *)commonParent)->path() << endl;
+                       << ((Inode *)commonParent)->path();
 
     _view->requestUpdate((Inode *)commonParent);
 }

@@ -75,7 +75,7 @@ Inode::Inode(ScanFile *f, Inode *parent)
 Inode::~Inode()
 {
     if (0) qCDebug(FSVIEWLOG) << "~Inode [" << path()
-                              << "]" << endl;
+                              << "]";
 
     /* reset Listener of old Peer */
     if (_dirPeer) {
@@ -109,7 +109,7 @@ QString Inode::path() const
 void Inode::init(const QString &path)
 {
     if (0) qCDebug(FSVIEWLOG) << "Inode::init [" << path
-                              << "]" << endl;
+                              << "]";
 
     _info = QFileInfo(path);
 
@@ -144,7 +144,7 @@ void Inode::init(const QString &path)
 void Inode::sizeChanged(ScanDir *d)
 {
     if (0) qCDebug(FSVIEWLOG) << "Inode::sizeChanged [" << path() << "] in "
-                              << d->name() << ": size " << d->size() << endl;
+                              << d->name() << ": size " << d->size();
 
     _resortNeeded = true;
 }
@@ -152,7 +152,7 @@ void Inode::sizeChanged(ScanDir *d)
 void Inode::scanFinished(ScanDir *d)
 {
     if (0) qCDebug(FSVIEWLOG) << "Inode::scanFinished [" << path() << "] in "
-                              << d->name() << ": size " << d->size() << endl;
+                              << d->name() << ": size " << d->size();
 
     _resortNeeded = true;
 

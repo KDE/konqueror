@@ -506,7 +506,7 @@ bool RectDrawing::drawField(QPainter *p, int f, DrawParams *dp)
     QRect r = _rect;
 
     if (0) qCDebug(FSVIEWLOG) << "Rect " << r.x() << "/" << r.y()
-                              << " - " << r.width() << "x" << r.height() << endl;
+                              << " - " << r.width() << "x" << r.height();
 
     int h = _fontHeight;
     bool rotate = dp->rotated();
@@ -687,7 +687,7 @@ bool RectDrawing::drawField(QPainter *p, int f, DrawParams *dp)
     int w = pixW + _fm->horizontalAdvance(name);
 
     if (0) qCDebug(FSVIEWLOG) << "  For '" << name << "': Unused " << unused
-                              << ", StrW " << w << ", Width " << width << endl;
+                              << ", StrW " << w << ", Width " << width;
 
     // if we have limited space at 1st line:
     // use it only if whole name does fit in last line...
@@ -792,7 +792,7 @@ bool RectDrawing::drawField(QPainter *p, int f, DrawParams *dp)
         }
 
         if (0) qCDebug(FSVIEWLOG) << "  Drawing '" << name << "' at "
-                                  << x + pixW << "/" << y << endl;
+                                  << x + pixW << "/" << y;
 
         p->drawText(x + pixW, y,
                     width - pixW, h,
@@ -1212,7 +1212,7 @@ void TreeMapItem::addFreeRect(const QRect &r)
 
     if (0) qCDebug(FSVIEWLOG) << "addFree(" << path(0).join(QStringLiteral("/")) << ", "
                               << r.x() << "/" << r.y() << "-"
-                              << r.width() << "x" << r.height() << ")" << endl;
+                              << r.width() << "x" << r.height() << ")";
 
     if (_freeRects.isEmpty()) {
         _freeRects.append(r);
@@ -1242,7 +1242,7 @@ void TreeMapItem::addFreeRect(const QRect &r)
 
     if (0) qCDebug(FSVIEWLOG) << "  united with last to ("
                               << last.x() << "/" << last.y() << "-"
-                              << last.width() << "x" << last.height() << ")" << endl;
+                              << last.width() << "x" << last.height() << ")";
 }
 
 // TreeMapWidget
@@ -1736,7 +1736,7 @@ TreeMapItem *TreeMapWidget::item(int x, int y) const
                     qCDebug(FSVIEWLOG) << "  Checking " << i->path(0).join(QStringLiteral("/")) << " ("
                                        << i->itemRect().x() << "/" << i->itemRect().y()
                                        << "-" << i->itemRect().width()
-                                       << "x" << i->itemRect().height() << ")" << endl;
+                                       << "x" << i->itemRect().height() << ")";
 
                 if (i->itemRect().contains(x, y)) {
 
@@ -1762,7 +1762,7 @@ TreeMapItem *TreeMapWidget::item(int x, int y) const
                     qCDebug(FSVIEWLOG) << "item(" << x << "," << y << "): Got "
                                        << p->path(0).join(QStringLiteral("/")) << " (Size "
                                        << p->itemRect().width() << "x" << p->itemRect().height()
-                                       << ", Val " << p->value() << ")" << endl;
+                                       << ", Val " << p->value() << ")";
             }
 
             return p;
@@ -1831,7 +1831,7 @@ void TreeMapWidget::setSelected(TreeMapItem *item, bool selected)
     if (0) qCDebug(FSVIEWLOG) << (selected ? "S" : "Des") << "elected Item "
                               << (item ? item->path(0).join(QLatin1String("")) : QStringLiteral("(null)"))
                               << " (depth " << (item ? item->depth() : -1)
-                              << ")" << endl;
+                              << ")";
 }
 
 void TreeMapWidget::setMarked(int markNo, bool redrawWidget)
@@ -1948,7 +1948,7 @@ void TreeMapWidget::setCurrent(TreeMapItem *i, bool kbd)
         _markNo = 0;
 
         if (1) qCDebug(FSVIEWLOG) << "setCurrent(" << i->path(0).join(QStringLiteral("/"))
-                                  << ") - mark removed" << endl;
+                                  << ") - mark removed";
 
         // always complete redraw needed to remove mark
         redraw();
@@ -2572,7 +2572,7 @@ void TreeMapWidget::drawItems(QPainter *p,
                            << item->itemRect().x() << "/" << item->itemRect().y()
                            << "-" << item->itemRect().width() << "x"
                            << item->itemRect().height() << "), Val " << item->value()
-                           << ", Sum " << item->sum() << endl;
+                           << ", Sum " << item->sum();
 
     drawItem(p, item);
     item->clearFreeRects();
@@ -2664,7 +2664,7 @@ void TreeMapWidget::drawItems(QPainter *p,
         child_sum += i->value();
         if (DEBUG_DRAWING)
             qCDebug(FSVIEWLOG) << "  child: " << i->text(0) << ", value "
-                               << i->value() << endl;
+                               << i->value();
     }
 
     QRect orig = r;
@@ -2705,7 +2705,7 @@ void TreeMapWidget::drawItems(QPainter *p,
 
         if (user_sum < child_sum) {
             //qCDebug(FSVIEWLOG) << "TreeMWidget " <<
-            //       item->path() << ": User sum " << user_sum << " < Child Items sum " << child_sum << endl;
+            //       item->path() << ": User sum " << user_sum << " < Child Items sum " << child_sum;
 
             // invalid user supplied sum: ignore and use calculate sum
             user_sum = child_sum;
@@ -2752,7 +2752,7 @@ void TreeMapWidget::drawItems(QPainter *p,
         if (0) qCDebug(FSVIEWLOG) << "Item " << item->path(0).join(QStringLiteral("/")) << ": SelfR "
                                   << sr.x() << "/" << sr.y() << "-" << sr.width()
                                   << "/" << sr.height() << ", self " << self << "/"
-                                  << user_sum << endl;
+                                  << user_sum;
 
         if ((sr.height() >= _fontHeight) && (sr.width() >= _fontHeight)) {
 
@@ -2911,7 +2911,7 @@ void TreeMapWidget::drawFill(TreeMapItem *i, QPainter *p, const QRect &r,
     if (DEBUG_DRAWING)
         qCDebug(FSVIEWLOG) << "  +drawFill(" << r.x() << "/" << r.y()
                            << "-" << r.width() << "x" << r.height()
-                           << ", len " << len << ")" << endl;
+                           << ", len " << len << ")";
 
     p->setBrush(Qt::Dense4Pattern);
     p->setPen(Qt::NoPen);
@@ -2936,7 +2936,7 @@ void TreeMapWidget::drawFill(TreeMapItem *i, QPainter *p, const QRect &r,
     if (DEBUG_DRAWING)
         qCDebug(FSVIEWLOG) << "  -drawFill(" << r.x() << "/" << r.y()
                            << "-" << r.width() << "x" << r.height()
-                           << ", len " << len << ")" << endl;
+                           << ", len " << len << ")";
 }
 
 // returns false if rect gets to small
@@ -2964,7 +2964,7 @@ bool TreeMapWidget::drawItemArray(QPainter *p, TreeMapItem *item,
     if (DEBUG_DRAWING)
         qCDebug(FSVIEWLOG) << " +drawItemArray(" << item->path(0).join(QStringLiteral("/"))
                            << ", " << r.x() << "/" << r.y() << "-" << r.width()
-                           << "x" << r.height() << ")" << endl;
+                           << "x" << r.height() << ")";
 
     if (len > 2 && (item->splitMode() == TreeMapItem::Bisection)) {
 
@@ -3015,7 +3015,7 @@ bool TreeMapWidget::drawItemArray(QPainter *p, TreeMapItem *item,
 
         if (DEBUG_DRAWING)
             qCDebug(FSVIEWLOG) << " -drawItemArray(" << item->path(0).join(QStringLiteral("/"))
-                               << ")" << endl;
+                               << ")";
 
         return drawOn;
     }
@@ -3051,7 +3051,7 @@ bool TreeMapWidget::drawItemArray(QPainter *p, TreeMapItem *item,
             drawFill(item, p, fullRect, list, idx, len, goBack);
             if (DEBUG_DRAWING)
                 qCDebug(FSVIEWLOG) << " -drawItemArray(" << item->path(0).join(QStringLiteral("/"))
-                                   << "): Stop" << endl;
+                                   << "): Stop";
             return false;
         }
 
@@ -3070,7 +3070,7 @@ bool TreeMapWidget::drawItemArray(QPainter *p, TreeMapItem *item,
             drawFill(item, p, fullRect, list, idx, len, goBack);
             if (DEBUG_DRAWING)
                 qCDebug(FSVIEWLOG) << " -drawItemArray(" << item->path(0).join(QStringLiteral("/"))
-                                   << "): Stop" << endl;
+                                   << "): Stop";
             return false;
         }
 
@@ -3133,7 +3133,7 @@ bool TreeMapWidget::drawItemArray(QPainter *p, TreeMapItem *item,
 
     if (DEBUG_DRAWING)
         qCDebug(FSVIEWLOG) << " -drawItemArray(" << item->path(0).join(QStringLiteral("/"))
-                           << "): Continue" << endl;
+                           << "): Continue";
 
     return true;
 }

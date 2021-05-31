@@ -105,7 +105,7 @@ void ScanManager::stopScan()
     }
 
     if (0) qCDebug(FSVIEWLOG) << "ScanManager::stopScan, scanLength "
-                              << _list.count() << endl;
+                              << _list.count();
 
     while (!_list.isEmpty()) {
         ScanItem *si = _list.takeFirst();
@@ -337,7 +337,7 @@ void ScanDir::subScanFinished()
     callSizeChanged();
 
     if (0) qCDebug(FSVIEWLOG) << "ScanDir::subScanFinished [" << path()
-                              << "]: " << _dirsFinished << "/" << _dirs.count() << endl;
+                              << "]: " << _dirsFinished << "/" << _dirs.count();
 
     if (_dirsFinished < _dirs.count()) {
         return;
@@ -387,7 +387,7 @@ void ScanDir::setupChildRescan()
 void ScanDir::callScanStarted()
 {
     if (0) qCDebug(FSVIEWLOG) << "ScanDir:Started [" << path()
-                              << "]: size " << size() << ", files " << fileCount() << endl;
+                              << "]: size " << size() << ", files " << fileCount();
 
     ScanListener *mListener = _manager ? _manager->listener() : nullptr;
 
@@ -402,7 +402,7 @@ void ScanDir::callScanStarted()
 void ScanDir::callSizeChanged()
 {
     if (0) qCDebug(FSVIEWLOG) << ". [" << path()
-                              << "]: size " << size() << ", files " << fileCount() << endl;
+                              << "]: size " << size() << ", files " << fileCount();
 
     _dirty = true;
 
@@ -423,7 +423,7 @@ void ScanDir::callSizeChanged()
 void ScanDir::callScanFinished()
 {
     if (0) qCDebug(FSVIEWLOG) << "ScanDir:Finished [" << path()
-                              << "]: size " << size() << ", files " << fileCount() << endl;
+                              << "]: size " << size() << ", files " << fileCount();
 
     ScanListener *mListener = _manager ? _manager->listener() : nullptr;
 

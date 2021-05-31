@@ -195,14 +195,14 @@ void FSView::setDirMetric(const QString &k,
                           double s, unsigned int f, unsigned int d)
 {
     if (0) qCDebug(FSVIEWLOG) << "setDirMetric '" << k << "': size "
-                              << s << ", files " << f << ", dirs " << d << endl;
+                              << s << ", files " << f << ", dirs " << d;
     _dirMetric.insert(k, MetricEntry(s, f, d));
 }
 
 void FSView::requestUpdate(Inode *i)
 {
     if (0) qCDebug(FSVIEWLOG) << "FSView::requestUpdate(" << i->path()
-                              << ")" << endl;
+                              << ")";
 
     ScanDir *peer = i->dirPeer();
     if (!peer) {
@@ -280,7 +280,7 @@ void FSView::scanFinished(ScanDir *d)
     if (0) qCDebug(FSVIEWLOG) << "FSFiew::scanFinished: " << d->path()
                               << ", Data " << data
                               << ", Progress " << _progress << "/"
-                              << _progressSize << endl;
+                              << _progressSize;
 }
 
 void FSView::selected(TreeMapItem *i)
@@ -494,7 +494,7 @@ void FSView::doRedraw()
                                   << _progress << "/" << _progressSize
                                   << "= " << percent << "%, "
                                   << _dirsFinished << " dirs read, in "
-                                  << _lastDir->path() << endl;
+                                  << _lastDir->path();
         emit progress(percent, _dirsFinished, _lastDir->path());
     }
 
@@ -553,7 +553,7 @@ void FSView::doUpdate()
                 if (1) qCDebug(FSVIEWLOG) << "Phase 3: CSize " << _chunkSize2
                                           << ", Todo " << todo
                                           << ", Progress " << _progress
-                                          << "/" << _progressSize << endl;
+                                          << "/" << _progressSize;
             }
             break;
 
@@ -573,7 +573,7 @@ void FSView::doUpdate()
                 if (1) qCDebug(FSVIEWLOG) << "Phase 4: CSize " << _chunkSize3
                                           << ", Todo " << todo
                                           << ", Progress " << _progress
-                                          << "/" << _progressSize << endl;
+                                          << "/" << _progressSize;
             }
 
         default:
