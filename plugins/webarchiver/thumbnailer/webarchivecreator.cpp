@@ -144,7 +144,7 @@ bool WebArchiveCreator::create(const QString &path, int width, int height, QImag
             return (false);
         }
 
-        qCWarning(WEBARCHIVERPLUGIN_LOG) << "extracting to tempPath" << tempPath;
+        qCDebug(WEBARCHIVERPLUGIN_LOG) << "extracting to tempPath" << tempPath;
         archiveDir->copyTo(tempPath, true);		// recursive extract from archive
         tar.close();					// finished with archive file
 
