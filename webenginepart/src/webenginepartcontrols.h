@@ -20,51 +20,42 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SPELLCHECKERMANAGER_H
-#define SPELLCHECKERMANAGER_H
+#ifndef WEBENGINEPARTCONTROLS_H
+#define WEBENGINEPARTCONTROLS_H
 
 #include <QObject>
-#include <QMap>
-#include <QDateTime>
 
-#include <Sonnet/Speller>
-
-class QMenu;
-class KActionCollection;
-class QWidget;
-class WebEnginePage;
 class QWebEngineProfile;
+class WebEnginePartCookieJar;
+class SpellCheckerManager;
+class WebEnginePartDownloadManager;
 
-class SpellCheckerManager : public QObject
+class WebEnginePartControls : public QObject
 {
     Q_OBJECT
 
 public:
-    SpellCheckerManager(QWebEngineProfile *profile, QObject *parent=nullptr);
-    ~SpellCheckerManager();
 
-    QMenu *spellCheckingMenu(const QStringList &suggestions, KActionCollection *coll, WebEnginePage *page);
+    static WebEnginePartControls *self();
 
-    void setup();
+    ~WebEnginePartControls();
 
-public slots:
-    void updateConfiguration(bool spellCheckingEnabled);
+    bool isReady() const;
 
-private:
-    void removeLanguage(const QString &lang);
-    void addLanguage(const QString &lang);
-    void detectDictionaries();
+    void setup(QWebEngineProfile *profile);
 
-private slots:
-    void spellCheckingToggled(bool on);
+    SpellCheckerManager* spellCheckerManager() const;
+
+    WebEnginePartDownloadManager* downloadManager() const;
 
 private:
-    bool m_setupDone = false;
-    QString m_dictionaryDir;
-    QMap<QString, QString> m_dicts;
-    QStringList m_enabledDicts;
-    Sonnet::Speller m_speller;
+
+    WebEnginePartControls();
+
     QWebEngineProfile *m_profile;
+    WebEnginePartCookieJar *m_cookieJar;
+    SpellCheckerManager *m_spellCheckerManager;
+    WebEnginePartDownloadManager *m_downloadManager;
 };
 
-#endif // SPELLCHECKERMANAGER_H
+#endif // WEBENGINEPARTCONTROLS_H

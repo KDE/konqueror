@@ -33,6 +33,7 @@ set(kwebenginepartlib_LIB_SRCS
     ui/credentialsdetailswidget.cpp
     webengineurlrequestinterceptor.cpp
     spellcheckermanager.cpp
+    webenginepartcontrols.cpp
 )
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui)

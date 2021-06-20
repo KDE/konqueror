@@ -43,6 +43,8 @@
 #include "webenginepartcookiejar.h"
 #include "webengineurlrequestinterceptor.h"
 #include "spellcheckermanager.h"
+#include "webenginepartdownloadmanager.h"
+#include "webenginepartcontrols.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -75,7 +77,6 @@
 #include <KSharedConfig>
 #include <KSslInfoDialog>
 #include <KProtocolManager>
-#include <KProtocolInfo>
 #include <KParts/PartActivateEvent>
 #include <KParts/BrowserInterface>
 #include <KIO/ApplicationLauncherJob>
@@ -88,33 +89,11 @@
 #include <QMenu>
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
-#include <QWebEngineUrlScheme>
 #include <QWebEngineScript>
 #include <QDir>
 
 #include "utils.h"
 #include <kio_version.h>
-
-void WebEnginePart::initWebEngineUrlSchemes()
-{
-    static bool needToInitUrlSchemes = true;
-    if (needToInitUrlSchemes) {
-        needToInitUrlSchemes = false;
-        QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
-        const QStringList protocols = KProtocolInfo::protocols();
-        for(const QString &prot : protocols){
-            if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
-                localSchemes.append(QByteArray(prot.toLatin1()));
-            }
-        }
-        for (const QByteArray &name : qAsConst(localSchemes)){
-            QWebEngineUrlScheme scheme(name);
-            scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
-            scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
-            QWebEngineUrlScheme::registerScheme(scheme);
-        }
-    }
-}
 
 static QWebEngineScript detectRefreshScript() {
     static QWebEngineScript s_detectRefreshScript;
@@ -142,19 +121,9 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
              m_passwordBar(nullptr),
              m_wallet(nullptr)
 {
-    initWebEngineUrlSchemes();
-    QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
-    if (!prof->urlSchemeHandler("error")) {
-        prof->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(prof));
-        prof->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(prof));
-        prof->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(prof));
-        prof->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(prof));
+    if (!WebEnginePartControls::self()->isReady()) {
+        WebEnginePartControls::self()->setup(QWebEngineProfile::defaultProfile());
     }
-    prof->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
-    static WebEnginePartCookieJar s_cookieJar(prof, nullptr);
-
-    //It's safe calling this multiple times as it does nothing after the first call
-    SpellCheckerManager::self()->setup();
 
 #if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
@@ -269,6 +238,16 @@ const WebEnginePage* WebEnginePart::page() const
     if (m_webView)
         return qobject_cast<const WebEnginePage*>(m_webView->page());
     return nullptr;
+}
+
+WebEnginePartDownloadManager * WebEnginePart::downloadManager()
+{
+    return WebEnginePartControls::self()->downloadManager();
+}
+
+SpellCheckerManager * WebEnginePart::spellCheckerManager()
+{
+    return WebEnginePartControls::self()->spellCheckerManager();
 }
 
 void WebEnginePart::initActions()
@@ -1152,9 +1131,4 @@ void WebEnginePart::updateWalletData(std::initializer_list<bool> data)
     }
     updateWalletActions();
     updateWalletStatusBarIcon();
-}
-
-void WebEnginePart::updateSpellCheckingConfiguration(bool enabled)
-{
-    SpellCheckerManager::self()->updateConfiguration(enabled);
 }

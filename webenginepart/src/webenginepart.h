@@ -45,6 +45,7 @@ class KUrlLabel;
 class WebEngineBrowserExtension;
 class WebEngineWallet;
 class KPluginMetaData;
+class WebEnginePartControls;
 
 /**
  * A KPart wrapper for the QtWebEngine's browser rendering engine.
@@ -97,6 +98,10 @@ public:
      */
     bool isModified() const;
 
+    class SpellCheckerManager* spellCheckerManager();
+
+    class WebEnginePartDownloadManager* downloadManager();
+
     /**
      * Connects the appropriate signals from the given page to the slots
      * in this class.
@@ -109,7 +114,6 @@ public:
 
 public Q_SLOTS:
     void exitFullScreen();
-    void updateSpellCheckingConfiguration(bool enabled);
 
 protected:
     /**
@@ -165,6 +169,7 @@ private:
     WebEnginePage* page();
     const WebEnginePage* page() const;
     static void initWebEngineUrlSchemes();
+
     void deleteStatusBarWalletLabel();
 
     struct WalletData{

@@ -335,7 +335,8 @@ void WebEngineView::editableContentActionPopupMenu(KParts::BrowserExtension::Act
     editableContentActions.append(pageAction(QWebEnginePage::InspectElement));
 
 
-    m_spellCheckMenu = SpellCheckerManager::self()->spellCheckingMenu(page()->contextMenuData().spellCheckerSuggestions(), m_actionCollection, dynamic_cast<WebEnginePage*>(page()));
+    SpellCheckerManager *manager = m_part->spellCheckerManager();
+    m_spellCheckMenu = manager->spellCheckingMenu(page()->contextMenuData().spellCheckerSuggestions(), m_actionCollection, dynamic_cast<WebEnginePage*>(page()));
     if (m_spellCheckMenu) {
         editableContentActions.append(m_spellCheckMenu->menuAction());
     }

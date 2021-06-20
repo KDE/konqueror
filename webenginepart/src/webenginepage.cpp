@@ -98,7 +98,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
     }
 
-    WebEnginePartDownloadManager::instance()->addPage(this);
+    m_part->downloadManager()->addPage(this);
 
     m_wallet = new WebEngineWallet(this, parent ? parent->window()->winId() : 0);
 }

@@ -42,7 +42,7 @@
 #endif
 
 
-SpellCheckerManager::SpellCheckerManager(): QObject()
+SpellCheckerManager::SpellCheckerManager(QWebEngineProfile *profile, QObject *parent): QObject(parent), m_profile(profile)
 {
     m_dictionaryDir = QString(WEBENGINEPART_DICTIONARY_DIR);
     connect(KonqSpellCheckingConfigurationDispatcher::self(), &KonqSpellCheckingConfigurationDispatcher::spellCheckingConfigurationChanged,
@@ -51,12 +51,6 @@ SpellCheckerManager::SpellCheckerManager(): QObject()
 
 SpellCheckerManager::~SpellCheckerManager()
 {
-}
-
-SpellCheckerManager * SpellCheckerManager::self()
-{
-    static SpellCheckerManager s_self;
-    return &s_self;
 }
 
 void SpellCheckerManager::detectDictionaries()
@@ -86,9 +80,8 @@ void SpellCheckerManager::detectDictionaries()
 void SpellCheckerManager::updateConfiguration(bool spellCheckingEnabled)
 {
     detectDictionaries();
-    QWebEngineProfile * prof = QWebEngineProfile::defaultProfile();
-    prof->setSpellCheckEnabled(spellCheckingEnabled);
-    prof->setSpellCheckLanguages(m_enabledDicts);
+    m_profile->setSpellCheckEnabled(spellCheckingEnabled);
+    m_profile->setSpellCheckLanguages(m_enabledDicts);
 }
 
 void SpellCheckerManager::setup()
@@ -107,8 +100,7 @@ QMenu * SpellCheckerManager::spellCheckingMenu(const QStringList &suggestions, K
     QMenu *menu = new QMenu();
     menu->setTitle(i18n("Spelling"));
 
-    QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
-    bool spellingEnabled = prof->isSpellCheckEnabled();
+    bool spellingEnabled = m_profile->isSpellCheckEnabled();
 
     QAction *a = new QAction(i18n("Spell Checking Enabled"), coll);
     a->setCheckable(true);
@@ -130,7 +122,7 @@ QMenu * SpellCheckerManager::spellCheckingMenu(const QStringList &suggestions, K
         QMenu *langs = new QMenu(menu);
         langs->setTitle(i18n("&Languages"));
         menu->addMenu(langs);
-        QStringList enabledLangs = prof->spellCheckLanguages();
+        QStringList enabledLangs = m_profile->spellCheckLanguages();
         for (auto it = m_dicts.constBegin(); it != m_dicts.constEnd(); ++it) {
             a = new QAction(it.value(), coll);
             a->setCheckable(true);
@@ -146,23 +138,21 @@ QMenu * SpellCheckerManager::spellCheckingMenu(const QStringList &suggestions, K
 
 void SpellCheckerManager::addLanguage(const QString& lang)
 {
-    QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
-    QStringList langs = prof->spellCheckLanguages();
+    QStringList langs = m_profile->spellCheckLanguages();
     if (!langs.contains(lang)) {
         langs << lang;
-        prof->setSpellCheckLanguages(langs);
+        m_profile->setSpellCheckLanguages(langs);
     }
 }
 
 void SpellCheckerManager::removeLanguage(const QString& lang)
 {
-    QWebEngineProfile *prof = QWebEngineProfile::defaultProfile();
-    QStringList langs = prof->spellCheckLanguages();
+    QStringList langs = m_profile->spellCheckLanguages();
     langs.removeAll(lang);
-    prof->setSpellCheckLanguages(langs);
+    m_profile->setSpellCheckLanguages(langs);
 }
 
 void SpellCheckerManager::spellCheckingToggled(bool on)
 {
-    QWebEngineProfile::defaultProfile()->setSpellCheckEnabled(on);
+    m_profile->setSpellCheckEnabled(on);
 }

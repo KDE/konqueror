@@ -41,20 +41,14 @@
 #include <KFileUtils>
 #include <KIO/JobUiDelegate>
 
-WebEnginePartDownloadManager::WebEnginePartDownloadManager()
-    : QObject(), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
+WebEnginePartDownloadManager::WebEnginePartDownloadManager(QWebEngineProfile *profile, QObject *parent)
+    : QObject(parent), m_tempDownloadDir(QDir(QDir::tempPath()).filePath("WebEnginePartDownloadManager"))
 {
-    connect(QWebEngineProfile::defaultProfile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePartDownloadManager::performDownload);
+    connect(profile, &QWebEngineProfile::downloadRequested, this, &WebEnginePartDownloadManager::performDownload);
 }
 
 WebEnginePartDownloadManager::~WebEnginePartDownloadManager()
 {
-}
-
-WebEnginePartDownloadManager * WebEnginePartDownloadManager::instance()
-{
-    static WebEnginePartDownloadManager inst;
-    return &inst;
 }
 
 void WebEnginePartDownloadManager::addPage(WebEnginePage* page)

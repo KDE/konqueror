@@ -30,18 +30,18 @@
 #include <KJob>
 
 class WebEnginePage;
+class QWebEngineProfile;
 
 class WebEnginePartDownloadManager : public QObject
 {
     Q_OBJECT
 
 public:
-    static WebEnginePartDownloadManager* instance();
-
     ~WebEnginePartDownloadManager() override;
 
+    WebEnginePartDownloadManager(QWebEngineProfile *profile, QObject *parent = nullptr);
+
 private:
-    WebEnginePartDownloadManager();
     void downloadBlob(QWebEngineDownloadItem *it);
     QString generateBlobTempFileName(QString const &suggestedName, const QString &ext) const;
 
@@ -84,7 +84,6 @@ private slots:
     void downloadFinished();
 
 private:
-
     QWebEngineDownloadItem *m_downloadItem;
     QDateTime m_startTime;
 };
