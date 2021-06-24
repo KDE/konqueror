@@ -59,6 +59,7 @@
 #include <konq_spellcheckingconfigurationdispatcher.h>
 
 #include <kwidgetsaddons_version.h>
+#include <kxmlgui_version.h>
 #include <kparts_version.h>
 #include <kbookmarkmanager.h>
 #include <klineedit.h>
@@ -3604,7 +3605,13 @@ void KonqMainWindow::initActions()
         actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
     }
 
+
+#if KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+    KStandardAction::keyBindings(guiFactory(), &KXMLGUIFactory::showConfigureShortcutsDialog, actionCollection());
+#else
     actionCollection()->addAction(KStandardAction::KeyBindings, guiFactory(), SLOT(configureShortcuts()));
+#endif
+
     actionCollection()->addAction(KStandardAction::ConfigureToolbars, this, SLOT(slotConfigureToolbars()));
 
     m_paConfigureExtensions = actionCollection()->addAction(QStringLiteral("options_configure_extensions"));
