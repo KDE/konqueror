@@ -50,8 +50,9 @@ if (Hunspell_FOUND)
   execute_process(COMMAND ${Hunspell_EXECUTABLE} "-D" OUTPUT_VARIABLE Hunspell_OUTPUT ERROR_VARIABLE Hunspell_OUTPUT)
   #Remove useless output
   string(REGEX MATCH "AVAILABLE DICTIONARIES [^\n]*\n(.*)" Hunspell_DICTIONARIES ${Hunspell_OUTPUT})
-  #Convert string into list
-  string(REGEX REPLACE "\n" ";" Hunspell_DICTIONARIES ${CMAKE_MATCH_1})
+  #Convert string into list - CMAKE_MATCH_1 comes from the REGEX MATCH,
+  #although the value has **also** been stored as Hunspell_DICTIONARIES
+  string(REGEX REPLACE "\n" ";" Hunspell_DICTIONARIES "${CMAKE_MATCH_1}")
   set(Hunspell_UNIQUE_DICTIONARIES "")
   set(Hunspell_unique_dict_names "")
 
