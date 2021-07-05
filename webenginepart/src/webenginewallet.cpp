@@ -96,6 +96,10 @@ bool WebEngineWallet::WebForm::hasAutoFillableFields() const
     return std::any_of(fields.constBegin(), fields.constEnd(), [](const WebField &f){return !f.disabled && !f.readOnly && f.autocompleteAllowed;});
 }
 
+bool WebEngineWallet::WebForm::hasFieldsWithWrittenValues() const
+{
+    return std::any_of(fields.constBegin(), fields.constEnd(), [](const WebField &f){return !f.readOnly && !f.value.isEmpty();});
+}
 
 WebEngineWallet::WebForm::WebFieldType WebEngineWallet::WebForm::fieldTypeFromTypeName(const QString& name)
 {
@@ -247,7 +251,9 @@ void WebEngineWallet::saveFormData(WebEnginePage *page, const WebFormList &allFo
         d->confirmSaveRequestOverwrites.insert(url);
         saveFormDataToCache(key);
     } else {
-        emit saveFormDataRequested(key, url);
+        if (std::any_of(formsToSave.constBegin(), formsToSave.constEnd(), [](const WebForm &f){return f.hasFieldsWithWrittenValues();})) {
+            emit saveFormDataRequested(key, url);
+        }
     }
 }
 

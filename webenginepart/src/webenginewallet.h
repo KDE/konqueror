@@ -139,6 +139,13 @@ public:
         bool hasAutoFillableFields() const;
 
         /**
+         * @brief Whether any of the writable fields in the form have non-empty values
+         *
+         * @return @b true if at least one of the #fields is not read-only and has a non-empty value
+         */
+        bool hasFieldsWithWrittenValues() const;
+
+        /**
          * @brief Creates a WebEngineSettings::WebFormInfo from this object
          *
          * @return a WebEngineSettings::WebFormInfo having the same name, frame path and fields names as this object

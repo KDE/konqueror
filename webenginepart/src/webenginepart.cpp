@@ -1050,8 +1050,8 @@ void WebEnginePart::slotWalletSavedForms(const QUrl& url, bool success)
 void WebEnginePart::createWalletActions()
 {
     QAction *a = new QAction(i18nc("Fill the Forms with Data from KWallet", "&Fill forms now"), this);
-    a->setShortcut(QKeySequence("Ctrl+Shift+V"));
     actionCollection()->addAction("walletFillFormsNow", a);
+    actionCollection()->setDefaultShortcut(a, QKeySequence("Ctrl+Shift+V"));
     connect(a, &QAction::triggered, this, [this]{if(page() && m_wallet){m_wallet->detectAndFillPageForms(page());}});
 
     a = new QAction(i18n("&Memorize Passwords in This Page Now"), this);
