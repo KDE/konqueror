@@ -966,7 +966,6 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
             qCWarning(WEBENGINEPART_LOG) << "No m_wallet instance found! This should never happen!";
             return;
         }
-        m_passwordBar->setForms(m_wallet->pendingSaveData(key));
         connect(m_passwordBar, &PasswordBar::saveFormDataAccepted,
                 m_wallet, &WebEngineWallet::acceptSaveFormDataRequest);
         connect(m_passwordBar, &PasswordBar::saveFormDataRejected,
@@ -976,6 +975,7 @@ void WebEnginePart::slotSaveFormDataRequested (const QString& key, const QUrl& u
 
     Q_ASSERT(m_passwordBar);
 
+    m_passwordBar->setForms(m_wallet->pendingSaveData(key));
     m_passwordBar->setUrl(url);
     m_passwordBar->setRequestKey(key);
     m_passwordBar->setText(i18n("<html>Do you want %1 to remember the login "

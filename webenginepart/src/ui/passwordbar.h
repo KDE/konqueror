@@ -63,6 +63,7 @@ protected:
 
 private:
     void clear();
+    void setDetailsWidgetVisibility(bool visible);
     QPoint computeDetailsWidgetPosition() const;
 
     QUrl m_url;

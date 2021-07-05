@@ -112,7 +112,7 @@ void PasswordBar::clear()
     m_url.clear();
     if (m_detailsWidget) {
         m_detailsWidget->clear();
-        m_detailsWidget->hide();
+        setDetailsWidgetVisibility(false);
     }
 }
 
@@ -126,7 +126,12 @@ void PasswordBar::resizeEvent(QResizeEvent* event)
 
 void PasswordBar::onDetailsButtonClicked()
 {
-    m_detailsVisible = !m_detailsVisible;
+    setDetailsWidgetVisibility(!m_detailsVisible);
+}
+
+void PasswordBar::setDetailsWidgetVisibility(bool visible)
+{
+    m_detailsVisible = visible;
     if (m_detailsVisible) {
         m_detailsAction->setText(i18nc("@action:hide details about credentials to store", "&Hide details"));
     } else {
