@@ -32,11 +32,11 @@ FeaturePermissionBar::FeaturePermissionBar(QWidget *parent)
     setCloseButtonVisible(false);
     setMessageType(KMessageWidget::Information);
 
-    QAction* action = new QAction(i18nc("@action:deny access", "&Deny access"), this);
+    QAction *action = new QAction(i18nc("@action:deny permission", "&Deny permission"), this);
     connect(action, &QAction::triggered, this, &FeaturePermissionBar::onDeniedButtonClicked);
     addAction(action);
 
-    action = new QAction(i18nc("@action:grant access", "&Grant access"), this);
+    action = new QAction(i18nc("@action:grant permission", "&Grant permission"), this);
     connect(action, &QAction::triggered, this, &FeaturePermissionBar::onGrantedButtonClicked);
     addAction(action);
 
@@ -62,26 +62,26 @@ void FeaturePermissionBar::setUrl(const QUrl& url)
     m_url = url;
 }
 
-QString FeaturePermissionBar::labelText() const
+QString FeaturePermissionBar::labelText(QWebEnginePage::Feature feature) const
 {
     QString origin = m_url.toDisplayString();
-    switch (m_feature) {
+    switch (feature) {
         case QWebEnginePage::Notifications:
-            return i18n("<html>Do you want to allow <b>%1</b> to send you notifications?", origin);
+            return i18n("<html><b>%1</b> would like to send you notifications", origin);
         case QWebEnginePage::Geolocation:
-            return i18n("<html>Do you want to grant <b>%1</b> access to information about your current physical location?", origin);
+            return i18n("<html><b>%1</b> would like to access information about your current physical location", origin);
         case QWebEnginePage::MediaAudioCapture:
-            return i18n("<html>Do you want to allow <b>%1</b> to access your microphone and other audio capture devices?", origin);
+            return i18n("<html><b>%1</b> would like to access your microphone and other audio capture devices", origin);
         case QWebEnginePage::MediaVideoCapture:
-            return i18n("<html>Do you want to allow <b>%1</b> to access your camera and other video capture devices?", origin);
+            return i18n("<html><b>%1</b> would like to access your camera and other video capture devices", origin);
         case QWebEnginePage::MediaAudioVideoCapture:
-            return i18n("<html>Do you want to allow <b>%1</b> to access to your microphone, camera and other audio and video capture devices?", origin);
+            return i18n("<html><b>%1</b> would like to access to your microphone, camera and other audio and video capture devices", origin);
         case QWebEnginePage::MouseLock:
-            return i18n("<html>Do you want to allow <b>%1</b> to lock your mouse inside the web page?", origin);
+            return i18n("<html><b>%1</b> would like to lock your mouse inside the web page", origin);
         case QWebEnginePage::DesktopVideoCapture:
-            return i18n("<html>Do you want to allow <b>%1</b> to record your screen?", origin);
+            return i18n("<html><b>%1</b> would like to record your screen", origin);
         case QWebEnginePage::DesktopAudioVideoCapture:
-            return i18n("<html>Do you want to allow <b>%1</b> to record your screen and your audio?", origin);
+            return i18n("<html><b>%1</b> would like to record your screen and your audio", origin);
         default:
             return QString();
     }
@@ -90,7 +90,7 @@ QString FeaturePermissionBar::labelText() const
 void FeaturePermissionBar::setFeature (QWebEnginePage::Feature feature)
 {
     m_feature = feature;
-    setText(labelText());
+    setText(labelText(feature));
 }
 
 void FeaturePermissionBar::onDeniedButtonClicked()

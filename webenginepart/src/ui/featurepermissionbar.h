@@ -28,7 +28,6 @@
 #include <QWebEnginePage>
 #include <QUrl>
 
-
 class FeaturePermissionBar : public KMessageWidget
 {
     Q_OBJECT
@@ -51,7 +50,7 @@ private Q_SLOTS:
     void onGrantedButtonClicked();
 
 private:
-    QString labelText() const;
+    QString labelText(QWebEnginePage::Feature feature) const;
 
 private:
     QWebEnginePage::Feature m_feature;
