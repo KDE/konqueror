@@ -4,7 +4,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcmbookmarks\")
 ########### next target ###############
 
 set(kcm_bookmarks_PART_SRCS
-    main.cpp
     bookmarks.cpp)
 
 ki18n_wrap_ui(kcm_bookmarks_PART_SRCS

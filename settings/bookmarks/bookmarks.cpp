@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KConfigGroup>
 #include <kimagecache.h>
 
-K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
+K_PLUGIN_FACTORY(KioConfigFactory, registerPlugin<BookmarksConfigModule>();)
 
 BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList &)
     : KCModule(parent)
@@ -110,4 +110,4 @@ void BookmarksConfigModule::configChanged()
     emit changed(true);
 }
 
-//
+#include "bookmarks.moc"
