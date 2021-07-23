@@ -1,7 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmkonq\")
 set(kcm_konq_PART_SRCS
    behaviour.cpp
-   konqkcmfactory.cpp
 )
 
 add_library(kcm_konq MODULE ${kcm_konq_PART_SRCS})
@@ -15,7 +14,6 @@ install(TARGETS kcm_konq  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 ########### install files ###############
 install( FILES
    filebehavior.desktop
-   #fileappearance.desktop
    DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES overlapping.png onlyone.png  DESTINATION  ${KDE_INSTALL_DATADIR}/kcontrol/pics )
 

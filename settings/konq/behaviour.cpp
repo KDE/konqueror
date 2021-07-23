@@ -32,13 +32,13 @@
 // KDE
 #include <KLocalizedString>
 
+#include <KPluginFactory>
 #include <kurlrequester.h>
 #include <kconfiggroup.h>
 #include <QStandardPaths>
 #include <KSharedConfig>
 
-// Local
-#include "konqkcmfactory.h"
+K_PLUGIN_FACTORY(KBehaviourOptionsFactory, registerPlugin<KBehaviourOptions>();)
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     : KCModule(parent)
@@ -142,3 +142,4 @@ void KBehaviourOptions::updateWinPixmap(bool b)
     }
 }
 
+#include "behaviour.moc"
