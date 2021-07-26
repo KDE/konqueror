@@ -99,7 +99,7 @@ install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_
 #COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
 if(${Hunspell_FOUND})
   find_package(WebEngineDictConverter)
-  if (DictConverter_FOUND)
+  if (WebEngineDictConverter_FOUND)
     #Iterate on all dictionaries
     foreach(D ${Hunspell_UNIQUE_DICTIONARIES})
       get_filename_component(base_name ${D} NAME)
@@ -111,7 +111,7 @@ if(${Hunspell_FOUND})
       if (EXISTS ${D}.dic AND EXISTS ${D}.aff)
         add_custom_command(
           OUTPUT ${BDIC_name}
-          COMMAND ${DictConverter_EXECUTABLE} ${D} ${BDIC_name}
+          COMMAND ${WebEngineDictConverter_EXECUTABLE} ${D} ${BDIC_name}
         )
         #Install the bdic file
         install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_DICTIONARY_DIR})
