@@ -140,6 +140,11 @@ KonqView::~KonqView()
     //qCDebug(KONQUEROR_LOG) << this << "done";
 }
 
+bool KonqView::isWebEngineView() const
+{
+    return m_service->desktopEntryName() == QLatin1String("webenginepart");
+}
+
 void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
                        const QString &nameFilter, bool tempFile)
 {

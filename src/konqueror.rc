@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="71">
+<gui name="Konqueror" version="72">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -51,6 +51,11 @@
   <Action name="closeditems"/>
  </Menu>
  <Action name="bookmarks"/>
+ <Menu name="tools"><text>&amp;Tools</text>
+   <Merge name="tools" />
+   <Action name="inspect_page"/>
+   <Separator />
+ </Menu>
  <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
   <Merge name="StandardToolBarMenuHandler" />
   <Action name="options_show_menubar"/>

@@ -558,6 +558,8 @@ private Q_SLOTS:
      * to Konqueror's own and emits the spellCheckConfigurationChanged signal
      */
     void updateSpellCheckConfiguration();
+
+    void inspectCurrentPage();
     
 private:
     void updateWindowIcon();
@@ -672,6 +674,8 @@ private: // members
     KToggleAction *m_paShowStatusBar;
 
     KToggleFullScreenAction *m_ptaFullScreen;
+
+    QAction *m_paShowDeveloperTools;
 
     bool m_fullyConstructed: 1;
     bool m_bLocationBarConnected: 1;

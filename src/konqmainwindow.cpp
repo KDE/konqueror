@@ -232,7 +232,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 #endif
 
     m_pViewManager = new KonqViewManager(this);
-
     m_viewModeMenu = nullptr;
     m_openWithMenu = nullptr;
     m_paCopyFiles = nullptr;
@@ -2080,6 +2079,8 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
         }
     }
 
+    m_paShowDeveloperTools->setEnabled(m_currentView && m_currentView->isWebEngineView());
+
     createGUI(part);
 
     // View-dependent GUI
@@ -3906,6 +3907,12 @@ void KonqMainWindow::initActions()
 
     m_paLockView->setStatusTip(i18n("A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder"));
     m_paLinkView->setStatusTip(i18n("Sets the view as 'linked'. A linked view follows folder changes made in other linked views."));
+
+    m_paShowDeveloperTools = actionCollection()->addAction("inspect_page", this, &KonqMainWindow::inspectCurrentPage);
+    actionCollection()->setDefaultShortcut(m_paShowDeveloperTools, QKeySequence("Ctrl+Shift+I"));
+    m_paShowDeveloperTools->setText(i18n("&Inspect Current Page"));
+    m_paShowDeveloperTools->setWhatsThis(i18n("<html>Shows the developer tools for the current page<br/><br/>The current view is split in two and the developer tools are displayed in the second half"));
+    m_paShowDeveloperTools->setStatusTip(i18n("Shows the developer tools for the current page"));
 }
 
 void KonqExtendedBookmarkOwner::openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km)
@@ -5721,4 +5728,21 @@ void KonqMainWindow::FullScreenData::switchToState(KonqMainWindow::FullScreenSta
         previousState = currentState;
         currentState = newState;
     }
+}
+
+void KonqMainWindow::inspectCurrentPage()
+{
+    if (!m_currentView || !m_currentView->isWebEngineView()) {
+        return;
+    }
+    KParts::ReadOnlyPart *partToInspect = m_currentView->part();
+    KonqView *devToolsView = m_pViewManager->splitView(m_currentView, Qt::Vertical);
+    if (devToolsView == nullptr) {
+        return;
+    }
+    KonqOpenURLRequest req;
+    req.forceAutoEmbed = true;
+
+    openView("text/html", QUrl(), devToolsView, req);
+    QMetaObject::invokeMethod(devToolsView->part(), "setInspectedPart", Qt::DirectConnection, Q_ARG(KParts::ReadOnlyPart*, partToInspect));
 }

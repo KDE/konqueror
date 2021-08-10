@@ -93,6 +93,16 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::authenticationRequired,
             this, &WebEnginePage::slotAuthenticationRequired);
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
+
+    //If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
+    //I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
+    auto unsetInspectedPageIfNeeded = [this](bool ok) {
+        if (ok && inspectedPage() && url().scheme() != QLatin1String("devtools")) {
+            setInspectedPage(nullptr);
+        }
+    };
+    connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
+
     if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
     {
         this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");

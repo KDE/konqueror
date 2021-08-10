@@ -114,6 +114,7 @@ public:
 
 public Q_SLOTS:
     void exitFullScreen();
+    void setInspectedPart(KParts::ReadOnlyPart *part);
 
 protected:
     /**

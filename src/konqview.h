@@ -103,6 +103,8 @@ public:
 
     ~KonqView() override;
 
+    bool isWebEngineView() const;
+
     /**
      * Displays another URL, but without changing the view mode (caller has to
      * ensure that the call makes sense)

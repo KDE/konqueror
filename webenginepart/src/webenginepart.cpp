@@ -1132,3 +1132,13 @@ void WebEnginePart::updateWalletData(std::initializer_list<bool> data)
     updateWalletActions();
     updateWalletStatusBarIcon();
 }
+
+void WebEnginePart::setInspectedPart(KParts::ReadOnlyPart* part)
+{
+    WebEnginePart *wpart = qobject_cast<WebEnginePart*>(part);
+    if (!wpart) {
+        return;
+    }
+    page()->setInspectedPage(wpart->page());
+    setUrl(page()->url());
+}
