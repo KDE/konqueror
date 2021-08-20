@@ -54,6 +54,10 @@
 #include <QStandardPaths>
 #include <QDesktopWidget>
 #include <QFileDialog>
+#include <QDialogButtonBox>
+#include <QDialog>
+#include <QPushButton>
+#include <QMessageBox>
 
 #include <QFile>
 #include <QAuthenticator>
@@ -361,14 +365,34 @@ static int errorCodeFromReply(QNetworkReply* reply)
 
 bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
 {
-    if (ce.isOverridable()) {
+    if (!ce.isOverridable()) {
+        return false;
+    }
+    int error = static_cast<int>(ce.error());
+    QString url = ce.url().url();
+    KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
+    QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
+    if (exceptionsForUrl.contains(error)) {
+        return true;
+    } else {
         QString translatedDesc = i18n(ce.errorDescription().toUtf8());
         QString text = i18n("<p>The server failed the authenticity check (%1). The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
                             ce.url().host(), translatedDesc);
-        KMessageBox::ButtonCode ans = KMessageBox::questionYesNo(view(), text, i18n("Authentication error"));
-        return ans == KMessageBox::Yes;
-    } else {
-        return false;
+        QDialog *msgBox = new QDialog(view());
+        QDialogButtonBox *btnBox = new QDialogButtonBox(QDialogButtonBox::Yes|QDialogButtonBox::YesToAll|QDialogButtonBox::No, msgBox);
+        btnBox->button(QDialogButtonBox::Yes)->setText(i18nc("Ignore the certificate error for this URL only for now", "Yes, &once"));
+        btnBox->button(QDialogButtonBox::YesToAll)->setText(i18nc("Ignore the certificate error for this URL now and in the future", "Yes, &forever"));
+        QDialogButtonBox::StandardButton ans = KMessageBox::createKMessageBox(msgBox, btnBox, QMessageBox::Warning, text, {}, QString(), nullptr,
+                                                                              KMessageBox::Notify|KMessageBox::AllowLink|KMessageBox::Dangerous);
+        if (ans == QDialogButtonBox::No) {
+            return false;
+        }
+        if (ans == QDialogButtonBox::YesToAll) {
+            exceptionsForUrl.append(error);
+            grp.writeEntry(url, exceptionsForUrl);
+            grp.sync();
+        }
+        return true;
     }
 }
 
