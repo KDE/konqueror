@@ -35,6 +35,7 @@ Boston, MA 02110-1301, USA.
 #include <kconfiggroup.h>
 #include <kguiitem.h>
 #include <kfontchooser.h>
+#include <kwidgetsaddons_version.h>
 
 KIGPDialog::KIGPDialog(QWidget *parent, const QString &path)
     : KPageDialog(parent)
@@ -117,8 +118,14 @@ void KIGPDialog::setupLookPage(const QString &path)
 
     m_fontName = new QComboBox(page);
     m_fontName->setSizePolicy(QSizePolicy::MinimumExpanding, m_fontName->sizePolicy().verticalPolicy());
+
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 86, 0)
+    const QStringList standardFonts = KFontChooser::createFontList(KFontChooser::NoDisplayFlags);
+#else
     QStringList standardFonts;
     KFontChooser::getFontList(standardFonts, 0);
+#endif
+
     m_fontName->addItems(standardFonts);
     m_fontName->setItemText(m_fontName->currentIndex(), look.readEntry("FontName", QFontDatabase::systemFont(QFontDatabase::GeneralFont).family()));
     form->addRow(i18n("Fon&t name:"), m_fontName);

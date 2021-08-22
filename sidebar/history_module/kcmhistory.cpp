@@ -32,7 +32,7 @@
 // KDE
 #include <KConfig>
 #include <KConfigGroup>
-#include <KFontChooser>
+// #include <KFontChooser>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 #include <KPluginFactory>
