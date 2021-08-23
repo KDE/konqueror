@@ -65,8 +65,6 @@ public:
     KonqViewFactory createView(const QString &serviceType,
                                const QString &serviceName = QString(),
                                KService::Ptr *serviceImpl = nullptr,
-                               KService::List *partServiceOffers = nullptr,
-                               KService::List *appServiceOffers = nullptr,
                                bool forceAutoEmbed = false);
 
     static void getOffers(const QString &serviceType,

@@ -57,8 +57,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
                    KonqFrame *viewFrame,
                    KonqMainWindow *mainWindow,
                    const KService::Ptr &service,
-                   const KService::List &partServiceOffers,
-                   const KService::List &appServiceOffers,
                    const QString &serviceType,
                    bool passiveMode
                   )
@@ -75,8 +73,6 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_pPart = nullptr;
 
     m_service = service;
-    m_partServiceOffers = partServiceOffers;
-    m_appServiceOffers = appServiceOffers;
     m_serviceType = serviceType;
 
     m_lstHistoryIndex = -1;
@@ -100,6 +96,8 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
 #endif
 
     switchView(viewFactory);
+
+    KonqFactory::getOffers(serviceType, &m_partServiceOffers, &m_appServiceOffers);
 }
 
 KonqView::~KonqView()
@@ -327,18 +325,16 @@ bool KonqView::changePart(const QString &mimeType,
         return false; // we can't do that if our view mode is locked
     }
 
-    KService::List partServiceOffers, appServiceOffers;
     KService::Ptr service;
     KonqFactory konqFactory;
-    KonqViewFactory viewFactory = konqFactory.createView(mimeType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
+    KonqViewFactory viewFactory = konqFactory.createView(mimeType, serviceName, &service, forceAutoEmbed);
 
     if (viewFactory.isNull()) {
         return false;
     }
 
     m_serviceType = mimeType;
-    m_partServiceOffers = partServiceOffers;
-    m_appServiceOffers = appServiceOffers;
+    KonqFactory::getOffers(mimeType, &m_partServiceOffers, &m_appServiceOffers);
 
     // Check if that's already the kind of part we have -> no need to recreate it
     // Note: we should have an operator== for KService...

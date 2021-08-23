@@ -60,14 +60,13 @@ KonqView *KonqViewManager::createFirstView(const QString &mimeType, const QStrin
 {
     //qCDebug(KONQUEROR_LOG) << serviceName;
     KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
-    KonqViewFactory newViewFactory = createView(mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
+    KonqViewFactory newViewFactory = createView(mimeType, serviceName, service, true /*forceAutoEmbed*/);
     if (newViewFactory.isNull()) {
         qCDebug(KONQUEROR_LOG) << "No suitable factory found.";
         return nullptr;
     }
 
-    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, mimeType, false);
+    KonqView *childView = setupView(tabContainer(), newViewFactory, service, mimeType, false);
 
     setActivePart(childView->part());
 
@@ -94,9 +93,8 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     const QString serviceType = currentView->serviceType();
 
     KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
 
-    KonqViewFactory newViewFactory = createView(serviceType, currentView->service()->desktopEntryName(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
+    KonqViewFactory newViewFactory = createView(serviceType, currentView->service()->desktopEntryName(), service, forceAutoEmbed);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
@@ -118,7 +116,7 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     KonqFrameContainer *newContainer = parentContainer->splitChildFrame(splitFrame, orientation);
 
     //qCDebug(KONQUEROR_LOG) << "Create new child";
-    KonqView *newView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false);
+    KonqView *newView = setupView(newContainer, newViewFactory, service, serviceType, false);
 
 #ifndef DEBUG
     //printSizeInfo( splitFrame, parentContainer, "after child insert" );
@@ -163,9 +161,8 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
     //qCDebug(KONQUEROR_LOG);
 
     KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
 
-    KonqViewFactory newViewFactory = createView(serviceType, serviceName, service, partServiceOffers, appServiceOffers);
+    KonqViewFactory newViewFactory = createView(serviceType, serviceName, service);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
@@ -177,7 +174,7 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
 
     KonqFrameContainer *newContainer = m_pMainWindow->splitChildFrame(mainFrame, orientation);
 
-    KonqView *childView = setupView(newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true);
+    KonqView *childView = setupView(newContainer, newViewFactory, service, serviceType, true);
 
     newContainer->insertWidget(newOneFirst ? 0 : 1, childView->frame());
     if (newOneFirst) {
@@ -207,7 +204,6 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
 #endif
 
     KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
 
     Q_ASSERT(!serviceType.isEmpty());
 
@@ -227,13 +223,13 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
         }
     }
 
-    KonqViewFactory newViewFactory = createView(serviceType, actualServiceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
+    KonqViewFactory newViewFactory = createView(serviceType, actualServiceName, service, true /*forceAutoEmbed*/);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
     }
 
-    KonqView *childView = setupView(tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+    KonqView *childView = setupView(tabContainer(), newViewFactory, service, serviceType, passiveMode, openAfterCurrentPage, pos);
 
 #ifdef DEBUG_VIEWMGR
     m_pMainWindow->dumpViewList();
@@ -779,8 +775,6 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
 KonqViewFactory KonqViewManager::createView(const QString &serviceType,
         const QString &serviceName,
         KService::Ptr &service,
-        KService::List &partServiceOffers,
-        KService::List &appServiceOffers,
         bool forceAutoEmbed)
 {
     KonqViewFactory viewFactory;
@@ -798,12 +792,12 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
 
         KonqFactory konqFactory;
         viewFactory = konqFactory.createView(_serviceType, _serviceName,
-                                             &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
+                                             &service, forceAutoEmbed);
     } else {
         //create view with the given servicetype
         KonqFactory konqFactory;
         viewFactory = konqFactory.createView(serviceType, serviceName,
-                                             &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
+                                             &service, forceAutoEmbed);
     }
 
     return viewFactory;
@@ -812,8 +806,6 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
 KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                      KonqViewFactory &viewFactory,
                                      const KService::Ptr &service,
-                                     const KService::List &partServiceOffers,
-                                     const KService::List &appServiceOffers,
                                      const QString &serviceType,
                                      bool passiveMode,
                                      bool openAfterCurrentPage,
@@ -833,7 +825,7 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
 
     //qCDebug(KONQUEROR_LOG) << "Creating KonqView";
     KonqView *v = new KonqView(viewFactory, newViewFrame,
-                               m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode);
+                               m_pMainWindow, service, sType, passiveMode);
     //qCDebug(KONQUEROR_LOG) << "KonqView created - v=" << v << "v->part()=" << v->part();
 
     QObject::connect(v, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
@@ -1133,10 +1125,9 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
 
         KService::Ptr service;
-        KService::List partServiceOffers, appServiceOffers;
 
         KonqFactory konqFactory;
-        KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);
+        KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, true /*forceAutoEmbed*/);
         if (viewFactory.isNull()) {
             qCWarning(KONQUEROR_LOG) << "Profile Loading Error: View creation failed";
             return; //ugh..
@@ -1148,7 +1139,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         if (parent == m_pMainWindow) {
             parent = tabContainer();
         }
-        KonqView *childView = setupView(parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos);
+        KonqView *childView = setupView(parent, viewFactory, service, serviceType, passiveMode, openAfterCurrentPage, pos);
 
         if (!childView->isFollowActive()) {
             childView->setLinkedView(cfg.readEntry(QStringLiteral("LinkedView").prepend(prefix), false));

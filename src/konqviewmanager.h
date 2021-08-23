@@ -323,8 +323,6 @@ private:
     KonqViewFactory createView(const QString &serviceType,  /* can be servicetype or mimetype */
                                const QString &serviceName,
                                KService::Ptr &service,
-                               KService::List &partServiceOffers,
-                               KService::List &appServiceOffers,
                                bool forceAutoEmbed = false);
 
     /**
@@ -334,8 +332,6 @@ private:
     KonqView *setupView(KonqFrameContainerBase *parentContainer,
                         KonqViewFactory &viewFactory,
                         const KService::Ptr &service,
-                        const KService::List &partServiceOffers,
-                        const KService::List &appServiceOffers,
                         const QString &serviceType,
                         bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
