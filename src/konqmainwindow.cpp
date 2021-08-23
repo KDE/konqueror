@@ -125,6 +125,7 @@
 #include <KIO/FileUndoManager>
 #include <kparts/browseropenorsavequestion.h>
 #include <KParts/OpenUrlEvent>
+#include <KParts/PartLoader>
 #include <KCompletionMatches>
 #include <kacceleratormanager.h>
 #include <kuser.h>
@@ -768,9 +769,9 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     }
     // Do we even have a part to embed? Otherwise don't ask, since we'd ask twice.
     if (!forceAutoEmbed) {
-        KService::List partServiceOffers;
-        KonqFactory::getOffers(mimeType, &partServiceOffers);
-        if (partServiceOffers.isEmpty()) {
+        const auto parts = KParts::PartLoader::partsForMimeType(mimeType);
+
+        if (parts.isEmpty()) {
             qCDebug(KONQUEROR_LOG) << "No part available for" << mimeType;
             return false;
         }
