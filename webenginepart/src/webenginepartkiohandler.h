@@ -258,6 +258,16 @@ private:
      * stores it in #m_currentRequest and starts a `KIO::storedGet` for its URL
      */
     void processNextRequest();
+
+    /**
+     * @brief Creates a reply from the error string of the given job
+     *
+     * The reply is stored in m_data
+     *
+     * This function does nothing if the job didn't report an error or if the error string is empty
+     * @param job the job
+     */
+    void createDataFromErrorString(KIO::StoredTransferJob *job);
     
     using RequestJobPointer = QPointer<QWebEngineUrlRequestJob>;
     

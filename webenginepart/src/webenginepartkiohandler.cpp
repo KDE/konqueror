@@ -49,7 +49,7 @@ void WebEnginePartKIOHandler::sendReply()
             connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater); 
             m_currentRequest->reply(m_mimeType.name().toUtf8(), buf);
         } else {
-            m_currentRequest->fail(QWebEngineUrlRequestJob::UrlInvalid);
+            m_currentRequest->fail(m_error);
         }
         m_currentRequest.clear();
     }
@@ -84,35 +84,30 @@ void WebEnginePartKIOHandler::processSlaveOutput()
     emit ready();
 }
 
+void WebEnginePartKIOHandler::createDataFromErrorString(KIO::StoredTransferJob* job)
+{
+    if (job->error() == KIO::ERR_SLAVE_DEFINED && job->errorString().contains("<html>")) {
+        m_data = job->data();
+    } else if (job->error() != 0 && !job->errorString().isEmpty()) {
+        QString html = QString("<html><body><h1>Error</h1>%1</body></html>").arg(job->errorString());
+        m_data = html.toUtf8();
+    }
+}
+
 void WebEnginePartKIOHandler::kioJobFinished(KIO::StoredTransferJob* job)
 {
-    //Try to get information from the job even in case it reports errors, so that we can avoid using QWebEngineUrlRequestJob::fail.
-    //The reason is that calling fail displays a generic error message provided by QtWebEngine. Using QWebEngineUrlRequestJob::fail can
-    //be avoided in two situations:
-    //- job->errorString() is not empty
-    //- job->data() is not empty and the mimetype is valid
-    //In the first case, the error string will be wrapped inside a minimal html page and it'll be used as reply. If the error code is
-    //KIO::ERR_SLAVE_DEFINED, the string can be rich text: in this case, it won't be wrapped.
-    //In the second case we use job->data() as reply, even if it may contain incomplete data. The reason is that some ioslaves (for example
-    //the `man` ioslave, since the d5f2beb2c13c8b3a202b4979027ad5430f007705 commit) report the error message inside job->data() instead of
-    //job->errorString().
-    m_error = QWebEngineUrlRequestJob::NoError;
     QMimeDatabase db;
-    m_mimeType = db.mimeTypeForName(job->mimetype());
-    m_data = job->data();
-
-    if (job->error() != 0) {
+    //If the job reported an error and job->errorString is not empty, don't report a failure but use the string
+    //as reply. The error string reported by the job will be most likely more informative than the generic error
+    //message produced by QtWebEngine.
+    if (job->error() == 0) {
+        m_error = QWebEngineUrlRequestJob::NoError;
+        m_mimeType = db.mimeTypeForName(job->mimetype());
+        m_data = job->data();
+    } else {
+        createDataFromErrorString(job);
         m_mimeType = db.mimeTypeForName("text/html");
-        if (!job->errorString().isEmpty()) {
-            if (job->error() == KIO::ERR_SLAVE_DEFINED && job->errorString().contains("<html>")) {
-                m_data = job->errorString().toUtf8();
-            } else {
-                QString html = QString("<html><body><h1>Error</h1>%1</body></html>").arg(job->errorString());
-                m_data = html.toUtf8();
-            }
-        } else if (m_data.isEmpty() || !m_mimeType.isValid()) {
-            m_error = QWebEngineUrlRequestJob::RequestFailed;
-        }
+        m_error = m_data.isEmpty() ? QWebEngineUrlRequestJob::RequestFailed : QWebEngineUrlRequestJob::NoError;
     }
     processSlaveOutput();
 }
