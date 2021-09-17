@@ -1,26 +1,14 @@
 /* This file is part of the KDE Project
-   Copyright (C) 2001 Kurt Granroth <granroth@kde.org>
-     Original code: plugin code, connecting to Babelfish and support for selected text
-   Copyright (C) 2003 Rand2342 <rand2342@yahoo.com>
-     Submenus, KConfig file and support for other translation engines
-   Copyright (C) 2008 Montel Laurent <montel@kde.org>
-     Add webkitkde support
-   Copyright (C) 2010 David Faure <faure@kde.org>
-     Ported to KParts::TextExtension
+    SPDX-FileCopyrightText: 2001 Kurt Granroth <granroth@kde.org>
+    Original code: plugin code, connecting to Babelfish and support for selected text
+    SPDX-FileCopyrightText: 2003 Rand 2342 <rand2342@yahoo.com>
+    Submenus, KConfig file and support for other translation engines
+    SPDX-FileCopyrightText: 2008 Montel Laurent <montel@kde.org>
+    Add webkitkde support
+    SPDX-FileCopyrightText: 2010 David Faure <faure@kde.org>
+    Ported to KParts::TextExtension
 
-   This library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Library General Public
-   License version 2 as published by the Free Software Foundation.
-
-   This library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Library General Public License for more details.
-
-   You should have received a copy of the GNU Library General Public License
-   along with this library; see the file COPYING.LIB.  If not, write to
-   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.
+    SPDX-License-Identifier: LGPL-2.0-only
 */
 #include "plugin_babelfish.h"
 

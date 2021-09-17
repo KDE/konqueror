@@ -1,23 +1,23 @@
 /*
- * Copyright (c) Martin R. Jones 1996
- * Copyright (c) Bernd Wuebben 1998
- *
- * Copyright (c) Torben Weis 1998
- *     KControl port & modifications
- *
- * Copyright (c) David Faure 1998
- *     End of the KControl port, added 'kfmclient configure' call.
- *
- * Copyright (C) Kalle Dalheimer 2000
- *     New configuration scheme for JavaScript
- *
- * Copyright (c) Daniel Molkentin 2000
- *     Major cleanup & Java/JS settings split
- *
- * Copyright (c) Leo Savernik 2002-2003
- *     Big changes to accommodate per-domain settings
- *
- */
+    Copyright (c) Martin R. Jones 1996
+    Copyright (c) Bernd Wuebben 1998
+
+    Copyright (c) Torben Weis 1998
+    KControl port & modifications
+
+    Copyright (c) David Faure 1998
+    End of the KControl port, added 'kfmclient configure' call.
+
+    Copyright (C) Kalle Dalheimer 2000
+    New configuration scheme for JavaScript
+
+    Copyright (c) Daniel Molkentin 2000
+    Major cleanup & Java/JS settings split
+
+    Copyright (c) Leo Savernik 2002-2003
+    Big changes to accommodate per-domain settings
+
+*/
 
 // Own
 #include "jsopts.h"

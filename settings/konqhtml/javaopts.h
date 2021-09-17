@@ -1,12 +1,12 @@
 /*
- * Copyright (c) Martin R. Jones 1996
- *     HTML Options
- * Copyright (c) Torben Weis 1998
- *     Port to KControl
- * Copyright (c) Daniel Molkentin 2000
- *     Redesign and cleanup
- *
- */
+    Copyright (c) Martin R. Jones 1996
+    HTML Options
+    Copyright (c) Torben Weis 1998
+    Port to KControl
+    Copyright (c) Daniel Molkentin 2000
+    Redesign and cleanup
+
+*/
 
 #ifndef JAVAOPTS_H
 #define JAVAOPTS_H

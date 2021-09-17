@@ -1,12 +1,12 @@
 /*
- * Add here all general options - those that apply to both web browsing and filemanagement mode
- *
- * Copyright (c) Sven Radej 1998
- * Copyright (c) David Faure 1998
- * Copyright (c) 2001 Waldo Bastian <bastian@kde.org>
- * Copyright (c) 2007 Nick Shaforostoff <shafff@ukr.net>
- *
- */
+    Add here all general options - those that apply to both web browsing and filemanagement mode
+
+    Copyright (c) Sven Radej 1998
+    Copyright (c) David Faure 1998
+    SPDX-FileCopyrightText: 2001 Waldo Bastian <bastian@kde.org>
+    SPDX-FileCopyrightText: 2007 Nick Shaforostoff <shafff@ukr.net>
+
+*/
 
 // Own
 #include "generalopts.h"

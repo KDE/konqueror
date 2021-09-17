@@ -1,26 +1,15 @@
 /*
- * This file is part of the KDE project.
- *
- * Copyright (C) 2007 Trolltech ASA
- * Copyright (C) 2008 - 2010 Urs Wolfer <uwolfer @ kde.org>
- * Copyright (C) 2008 Laurent Montel <montel@kde.org>
- * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
- * Copyright (C) 2013 Allan Sandfeld Jensen <sandfeld@kde.org>
- *
- * This library is free software; you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as published by the
- * Free Software Foundation; either version 2.1 of the License, or (at your
- * option) any later version.
- *
- * This library is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
- *
- */
+    This file is part of the KDE project.
+
+    SPDX-FileCopyrightText: 2007 Trolltech ASA
+    SPDX-FileCopyrightText: 2008-2010 Urs Wolfer <uwolfer @ kde.org>
+    SPDX-FileCopyrightText: 2008 Laurent Montel <montel@kde.org>
+    SPDX-FileCopyrightText: 2009 Dawit Alemayehu <adawit@kde.org>
+    SPDX-FileCopyrightText: 2013 Allan Sandfeld Jensen <sandfeld@kde.org>
+
+    SPDX-License-Identifier: LGPL-2.1-or-later
+
+*/
 
 #include "webenginepart.h"
 #include "webenginepartkiohandler.h"

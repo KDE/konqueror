@@ -2,17 +2,14 @@
 
     konq_extensionmanager.h - Extension Manager for Konqueror
 
-    Copyright (c) 2003      by Martijn Klingens      <klingens@kde.org>
-    Copyright (c) 2004      by Arend van Beelen jr.  <arend@auton.nl>
+    SPDX-FileCopyrightText: 2003 Martijn Klingens <klingens@kde.org>
+    SPDX-FileCopyrightText: 2004 Arend van Beelen jr. <arend@auton.nl>
 
-    *************************************************************************
-    *                                                                       *
-    * This program is free software; you can redistribute it and/or modify  *
-    * it under the terms of the GNU General Public License as published by  *
-    * the Free Software Foundation; either version 2 of the License, or     *
-    * (at your option) any later version.                                   *
-    *                                                                       *
-    *************************************************************************
+
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+
+
 */
 
 #ifndef KONQEXTENSIONMANAGER_H

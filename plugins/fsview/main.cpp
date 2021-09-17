@@ -1,8 +1,8 @@
-/*****************************************************
- * FSView, a simple TreeMap application
- *
- * (C) 2002, Josef Weidendorfer
- */
+/*
+    FSView, a simple TreeMap application
+
+    SPDX-FileCopyrightText: 2002 Josef Weidendorfer
+*/
 
 #include <kaboutdata.h>
 #include <kconfig.h>

@@ -1,19 +1,16 @@
-/***************************************************************************
-                               sidebar_widget.cpp
-                             -------------------
+/*
+    sidebar_widget.cpp
+    -------------------
     begin                : Sat June 2 16:25:27 CEST 2001
-    copyright            : (C) 2001 Joseph Wenninger
+    SPDX-FileCopyrightText: 2001 Joseph Wenninger
     email                : jowenn@kde.org
-    Copyright (c) 2009 David Faure <faure@kde.org>
-    Copyright (c) 2019 Raphael Rosch <kde-dev@insaner.com>
-***************************************************************************/
+    SPDX-FileCopyrightText: 2009 David Faure <faure@kde.org>
+    SPDX-FileCopyrightText: 2019 Raphael Rosch <kde-dev@insaner.com>
+*/
 
 /***************************************************************************
  *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
+ *   SPDX-License-Identifier: GPL-2.0-or-later
  *                                                                         *
  ***************************************************************************/
 

@@ -1,9 +1,9 @@
 /* "Misc Options" Tab for KFM configuration
- *
- * Copyright (c) Sven Radej 1998
- * Copyright (c) David Faure 1998
- *
- */
+
+    Copyright (c) Sven Radej 1998
+    Copyright (c) David Faure 1998
+
+*/
 
 #ifndef HTMLOPTS_H
 #define HTMLOPTS_H
