@@ -2,8 +2,8 @@
 
     SPDX-FileCopyrightText: 2004 Gary Cramblitt <garycramblitt@comcast.net>
 
-    Adapted from kdeutils/ark/konqplugin by
-    Georg Robbers <Georg.Robbers@urz.uni-hd.de>
+    Adapted from kdeutils/ark/konqplugin by:
+    SPDX-FileCopyrightText: Georg Robbers <Georg.Robbers@urz.uni-hd.de>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */

@@ -1,7 +1,7 @@
 // -*- c++ -*-
 
 /*
-  SPDX-FileCopyrightText: 2003 Richard J. Moore rich@kde.org
+  SPDX-FileCopyrightText: 2003 Richard J. Moore <rich@kde.org>
 
   This program is free software; you can redistribute it and/or modify it
   under the terms of the GNU General Public License as published by the Free

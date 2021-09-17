@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
     SPDX-FileCopyrightText: 2000 David Faure <faure@kde.org>
-    2002 Michael Brade <brade@kde.org>
+    SPDX-FileCopyrightText: 2002 Michael Brade <brade@kde.org>
     SPDX-FileCopyrightText: 2003 Waldo Bastian <bastian@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-only
