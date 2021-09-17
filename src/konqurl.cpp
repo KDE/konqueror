@@ -4,7 +4,6 @@
     SPDX-FileCopyrightText: 2020 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
-
 */
 
 #include "konqurl.h"

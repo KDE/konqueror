@@ -3,7 +3,6 @@
     SPDX-FileCopyrightText: 2007 Eduardo Robles Elvira <edulix@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef __konq_viewmanager_h__

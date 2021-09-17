@@ -7,7 +7,6 @@
     SPDX-FileCopyrightText: 2009 Dawit Alemayehu <adawit@kde.org>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
-
 */
 #ifndef WEBENGINEVIEW_H
 #define WEBENGINEVIEW_H

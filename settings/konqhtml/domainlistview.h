@@ -4,7 +4,6 @@
     copyrighted to its respective owners.
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef DOMAINLISTVIEW_H

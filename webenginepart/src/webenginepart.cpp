@@ -8,7 +8,6 @@
     SPDX-FileCopyrightText: 2013 Allan Sandfeld Jensen <sandfeld@kde.org>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
-
 */
 
 #include "webenginepart.h"

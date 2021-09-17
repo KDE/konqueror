@@ -5,7 +5,6 @@
     SPDX-FileCopyrightText: 2018 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
-
 */
 #ifndef WEBENGINEWALLET_H
 #define WEBENGINEWALLET_H

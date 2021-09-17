@@ -5,11 +5,7 @@
     SPDX-FileCopyrightText: 2003 Martijn Klingens <klingens@kde.org>
     SPDX-FileCopyrightText: 2004 Arend van Beelen jr. <arend@auton.nl>
 
-
-
     SPDX-License-Identifier: GPL-2.0-or-later
-
-
 */
 
 #ifndef KONQEXTENSIONMANAGER_H

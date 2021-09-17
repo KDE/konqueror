@@ -6,7 +6,6 @@
     SPDX-FileCopyrightText: 2009 Dawit Alemayehu <adawit@kde.org>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
-
 */
 
 #include "webenginepage.h"

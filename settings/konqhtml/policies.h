@@ -4,7 +4,6 @@
     respective owners.
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef __POLICIES_H__

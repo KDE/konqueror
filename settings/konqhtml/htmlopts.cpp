@@ -4,7 +4,6 @@
     Copyright (C) Sven Radej 1998
     Copyright (C) David Faure 1998
     SPDX-FileCopyrightText: 2001 Waldo Bastian <bastian@kde.org>
-
 */
 
 // Own

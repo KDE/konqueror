@@ -4,7 +4,6 @@
     SPDX-FileCopyrightText: 2020 Dawit Alemayehu <adawit@kde.org> Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
-
 */
 
 #include "webenginewallet.h"

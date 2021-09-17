@@ -4,7 +4,6 @@
     SPDX-FileCopyrightText: 1999 Torben Weis <weis@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef __konq_factory_h__

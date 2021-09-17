@@ -5,7 +5,6 @@
     Copyright (c) David Faure 1998
     SPDX-FileCopyrightText: 2001 Waldo Bastian <bastian@kde.org>
     SPDX-FileCopyrightText: 2007 Nick Shaforostoff <shafff@ukr.net>
-
 */
 
 // Own

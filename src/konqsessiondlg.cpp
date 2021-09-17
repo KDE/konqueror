@@ -2,7 +2,6 @@
     SPDX-FileCopyrightText: 2008 Eduardo Robles Elvira <edulix@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #include "konqsessiondlg.h"

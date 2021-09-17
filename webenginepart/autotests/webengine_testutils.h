@@ -1,5 +1,4 @@
 /*
-
     SPDX-FileCopyrightText: 2016 The Qt Company Ltd. <https://www.qt.io/licensing/>
 
     This file is part of the QtWebEngine module of the Qt Toolkit.

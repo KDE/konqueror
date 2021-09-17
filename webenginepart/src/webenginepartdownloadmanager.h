@@ -4,7 +4,6 @@
     SPDX-FileCopyrightText: 2017 Stefano Crocco <posta@stefanocrocco.it>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
-
 */
 
 #ifndef WEBENGINEPARTDOWNLOADMANAGER_H
