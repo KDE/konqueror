@@ -232,6 +232,11 @@ void KonqRun::init()
     }
 
     if (url.scheme().startsWith(QLatin1String("http")) && usingWebEngine()) {
+        //This is a fake mimetype, needed only to ensure that the URL will be handled
+        //by WebEnginePart which will then determine the real mimetype. If it's
+        //a mimetype it can't handle, it'll emit the KParts::BrowserExtension::openUrlRequest
+        //passing the real mimetype. Knowing the mimetype, KonqMainWindow::openUrl will handle
+        //it correctly without needing to use KonqRun again.
         mimeTypeDetermined(QStringLiteral("text/html"));
     } else if (url.isLocalFile()
                && (url.host().isEmpty() || (url.host() == QLatin1String("localhost"))
