@@ -77,7 +77,7 @@ protected:
      * @param error the error code
      * @param stringUrl the string representation of the URL which caused the error
      */
-    void switchToErrorUrl(KIO::Error error, QString stringUrl);
+    void switchToErrorUrl(KIO::Error error, const QString &stringUrl);
 
 protected Q_SLOTS:
     void slotRedirection(KIO::Job *, const QUrl &);
