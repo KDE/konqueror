@@ -3,7 +3,7 @@
     SPDX-FileCopyrightText: 2002-2003 Konqueror Developers <konq-e@kde.org>
     SPDX-FileCopyrightText: 2002-2003 Douglas Hanley <douglash@caltech.edu>
 
-    SPDX-License-Identifier: GPL-2.0-or-later.
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KONQTABS_H
