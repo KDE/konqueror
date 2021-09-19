@@ -1,7 +1,8 @@
 /* This file is part of FSView.
     SPDX-FileCopyrightText: 2002, 2003 Josef Weidendorfer <Josef.Weidendorfer@gmx.de>
-    Some file management code taken from the Dolphin file manager (C) 2006-2009,
-    by Peter Penz <peter.penz19@mail.com>
+
+    Some file management code taken from the Dolphin file manager:
+    SPDX-FileCopyrightText: 2006-2009 Peter Penz <peter.penz19@mail.com>
 
     SPDX-License-Identifier: GPL-2.0-only
 */

@@ -1,8 +1,8 @@
 /*
     "Misc Options" Tab for KFM configuration
 
-    Copyright (C) Sven Radej 1998
-    Copyright (C) David Faure 1998
+    SPDX-FileCopyrightText: Sven Radej 1998
+    SPDX-FileCopyrightText: David Faure 1998
     SPDX-FileCopyrightText: 2001 Waldo Bastian <bastian@kde.org>
 */
 

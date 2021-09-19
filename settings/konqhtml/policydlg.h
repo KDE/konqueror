@@ -1,5 +1,5 @@
 /*
-    Copyright (C) < 2002 to whoever created and edited this file before
+    SPDX-FileCopyrightText: < 2002 to whoever created and edited this file before
     SPDX-FileCopyrightText: 2002 Leo Savernik <l.savernik@aon.at>
     Generalizing the policy dialog
 

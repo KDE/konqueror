@@ -1,9 +1,9 @@
 /*
-    Copyright (c) Martin R. Jones 1996
+    SPDX-FileCopyrightText: Martin R. Jones 1996
     HTML Options
-    Copyright (c) Torben Weis 1998
+    SPDX-FileCopyrightText: Torben Weis 1998
     Port to KControl
-    Copyright (c) Daniel Molkentin 2000
+    SPDX-FileCopyrightText: Daniel Molkentin 2000
     Redesign and cleanup
 
 */

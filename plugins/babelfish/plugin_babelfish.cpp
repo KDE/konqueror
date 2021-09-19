@@ -1,12 +1,15 @@
 /* This file is part of the KDE Project
-    SPDX-FileCopyrightText: 2001 Kurt Granroth <granroth@kde.org>
-    Original code: plugin code, connecting to Babelfish and support for selected text
-    SPDX-FileCopyrightText: 2003 Rand 2342 <rand2342@yahoo.com>
+    Original code: plugin code, connecting to Babelfish and support for selected
+   text SPDX-FileCopyrightText: 2001 Kurt Granroth <granroth@kde.org>
+
     Submenus, KConfig file and support for other translation engines
-    SPDX-FileCopyrightText: 2008 Montel Laurent <montel@kde.org>
+    SPDX-FileCopyrightText: 2003 Rand 2342 <rand2342@yahoo.com>
+
     Add webkitkde support
-    SPDX-FileCopyrightText: 2010 David Faure <faure@kde.org>
+    SPDX-FileCopyrightText: 2008 Montel Laurent <montel@kde.org>
+
     Ported to KParts::TextExtension
+    SPDX-FileCopyrightText: 2010 David Faure <faure@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */

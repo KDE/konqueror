@@ -1,8 +1,8 @@
 /* General options (for both fm and web modes) konqueror options
 
-    Copyright (c) Sven Radej 1998
-    Copyright (c) David Faure 1998
-    Copyright (c) Nick Shaforostoff 2007
+    SPDX-FileCopyrightText: Sven Radej 1998
+    SPDX-FileCopyrightText: David Faure 1998
+    SPDX-FileCopyrightText: Nick Shaforostoff 2007
 
 */
 
