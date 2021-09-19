@@ -1,7 +1,7 @@
 /* This file is part of the KDE project
 
 SPDX-FileCopyrightText: 2001, 2003 Lukas Tinkl <lukas@kde.org>
-Andreas Schlapbach <schlpbch@iam.unibe.ch>
+SPDX-FileCopyrightText: Andreas Schlapbach <schlpbch@iam.unibe.ch>
 
 SPDX-License-Identifier: LGPL-2.0-only
 */
