@@ -2,13 +2,8 @@
     SPDX-FileCopyrightText: 2002 George Russell <george.russell@clara.net>
     SPDX-FileCopyrightText: 2003-2004 Olaf Schmidt <ojschmidt@kde.org>
     SPDX-FileCopyrightText: 2015 Jeremy Whiting <jpwhiting@kde.org>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 #ifndef KHTMLTTS_H
 #define KHTMLTTS_H

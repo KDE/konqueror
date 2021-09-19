@@ -1,18 +1,9 @@
 /*
-    sidebar_widget.cpp
-    -------------------
-    begin                : Sat June 2 16:25:27 CEST 2001
-    SPDX-FileCopyrightText: 2001 Joseph Wenninger
-    email                : jowenn@kde.org
+    SPDX-FileCopyrightText: 2001 Joseph Wenninger <jowenn@kde.org>
     SPDX-FileCopyrightText: 2009 David Faure <faure@kde.org>
     SPDX-FileCopyrightText: 2019 Raphael Rosch <kde-dev@insaner.com>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 
 // Own
 #include "sidebar_widget.h"

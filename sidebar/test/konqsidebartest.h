@@ -1,16 +1,8 @@
 /*
-    konqsidebartest.h
-    -------------------
-    begin                : Sat June 2 16:25:27 CEST 2001
-    SPDX-FileCopyrightText: 2001 Joseph Wenninger
-    email                : jowenn@kde.org
+    SPDX-FileCopyrightText: 2001 Joseph Wenninger <jowenn@kde.org>
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-/***************************************************************************
- *                                                                         *
- *   SPDX-License-Identifier: GPL-2.0-or-later
- *                                                                         *
- ***************************************************************************/
 #ifndef _konq_sidebar_test_h_
 #define _konq_sidebar_test_h_
 #include <konqsidebarplugin.h>
