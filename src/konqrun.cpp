@@ -27,8 +27,17 @@
 #include <kio/job.h>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QHostInfo>
+#include <QFileInfo>
+
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegate>
+#include <KUrlAuthorized>
+#include <KIO/DesktopExecParser>
+#include <KProtocolInfo>
+#include <KProtocolManager>
+#include <KApplicationTrader>
+#include <KJobWidgets>
 
 #include <KService>
 #include <KMimeTypeTrader>
@@ -48,7 +57,7 @@ KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
                          // Don't use inline errors on reloading due to auto-refresh sites, but use them in all other cases
                          // (no reload or user-requested reload)
                          !req.args.reload() || req.userRequestedReload),
-      m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
+      m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req), m_inlineErrors(!req.args.reload() || req.userRequestedReload)
 {
     setEnableExternalBrowser(false);
     //qCDebug(KONQUEROR_LOG) << "KonqRun::KonqRun() " << this;
@@ -189,15 +198,121 @@ void KonqRun::handleError(KJob *job)
     KParts::BrowserRun::handleError(job);
 }
 
+//Code copied from browserrun.cpp
+void KonqRun::switchToErrorUrl(KIO::Error error, QString stringUrl)
+{
+    KRun::setUrl(makeErrorUrl(error, stringUrl, url()));
+    setJob(nullptr);
+    mimeTypeDetermined(QStringLiteral("text/html"));
+}
+
+//Most of the code in this function has been copied copied from krun.cpp and browserrun.cpp
 void KonqRun::init()
 {
-    KParts::BrowserRun::init();
-    // Maybe init went to the "let's try stat'ing" part. Then connect to info messages.
-    // (in case it goes to scanFile, this will be done below)
-    KIO::StatJob *job = dynamic_cast<KIO::StatJob *>(KRun::job());
+    if (!url().isValid() || url().scheme().isEmpty()) {
+        if (m_inlineErrors && !url().isValid()) {
+            switchToErrorUrl(KIO::ERR_MALFORMED_URL, url().toString());
+            return;
+        }
+        const QString error = !url().isValid() ? url().errorString() : url().toString();
+        handleInitError(KIO::ERR_MALFORMED_URL, i18n("Malformed URL\n%1", error));
+        qCWarning(KONQUEROR_LOG) << "Malformed URL:" << error;
+        setError(true);
+        setFinished(true);
+        return;
+    }
+
+    if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("open"), QUrl(), url())) {
+        QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, url().toDisplayString());
+        handleInitError(KIO::ERR_ACCESS_DENIED, msg);
+        setError(true);
+        setFinished(true);
+        return;
+    }
+
+    if (url().scheme().startsWith(QLatin1String("http")) && usingWebEngine()) {
+        mimeTypeDetermined(QStringLiteral("text/html"));
+    } else if (url().isLocalFile()
+               && (url().host().isEmpty() || (url().host() == QLatin1String("localhost"))
+                   || (url().host().compare(QHostInfo::localHostName(), Qt::CaseInsensitive) == 0))) {
+        const QString localPath = url().toLocalFile();
+        if (!QFile::exists(localPath)) {
+            if (m_inlineErrors) {
+                switchToErrorUrl(KIO::ERR_DOES_NOT_EXIST, localPath);
+            } else {
+                handleInitError(KIO::ERR_DOES_NOT_EXIST,
+                                i18n("<qt>Unable to run the command specified. "
+                                    "The file or folder <b>%1</b> does not exist.</qt>",
+                                    localPath.toHtmlEscaped()));
+                setError(true);
+                setFinished(true);
+            }
+            return;
+        }
+
+        QMimeDatabase db;
+        QMimeType mime = db.mimeTypeForUrl(url());
+        if (mime.isDefault() && !QFileInfo(localPath).isReadable()) {
+            // Unknown MIME type because the file is unreadable, no point in showing an open-with dialog (#261002)
+            const QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, localPath);
+            handleInitError(KIO::ERR_ACCESS_DENIED, msg);
+            setError(true);
+            setFinished(true);
+            return;
+        } else {
+            mimeTypeDetermined(mime.name());
+            return;
+        }
+    } else if (KIO::DesktopExecParser::hasSchemeHandler(url()) && !KProtocolInfo::isKnownProtocol(url())) {
+        // looks for an application associated with x-scheme-handler/<protocol>
+        KService::Ptr service = KApplicationTrader::preferredService(QLatin1String("x-scheme-handler/") + url().scheme());
+        if (service) {
+            //  if there's one...
+            if (runApplication(*service, QList<QUrl>() << url(), window(), RunFlags{}, QString(), QByteArray())) {
+                setFinished(true);
+                return;
+            }
+        } else {
+            // fallback, look for associated helper protocol
+            Q_ASSERT(KProtocolInfo::isHelperProtocol(url().scheme()));
+            const auto exec = KProtocolInfo::exec(url().scheme());
+            if (exec.isEmpty()) {
+                // use default MIME type opener for file
+                mimeTypeDetermined(KProtocolManager::defaultMimetype(url()));
+                return;
+            } else {
+                if (run(exec, QList<QUrl>() << url(), window(), QString(), QString(), QByteArray())) {
+                    setFinished(true);
+                    return;
+                }
+            }
+        }
+    }
+
+    // Let's see whether it is a directory
+
+    if (!KProtocolManager::supportsListing(url())) {
+        // No support for listing => it can't be a directory (example: http)
+
+        if (!KProtocolManager::supportsReading(url())) {
+            // No support for reading files either => we can't do anything (example: mailto URL, with no associated app)
+            handleInitError(KIO::ERR_UNSUPPORTED_ACTION, i18n("Could not find any application or handler for %1", url().toDisplayString()));
+            setError(true);
+            setFinished(true);
+            return;
+        }
+        scanFile();
+        return;
+    }
+
+    // It may be a directory or a file, let's stat
+    KIO::JobFlags flags = progressInfo() ? KIO::DefaultFlags : KIO::HideProgressInfo;
+    KIO::StatJob *job = KIO::statDetails(url(), KIO::StatJob::SourceSide, KIO::StatBasic, flags);
+    KJobWidgets::setWindow(job, window());
+    connect(job, &KJob::result, this, &KonqRun::slotStatResult);
+    setJob(job);
     if (job && !job->error() && m_pView) {
-        connect(job, SIGNAL(infoMessage(KJob*,QString,QString)),
-                m_pView, SLOT(slotInfoMessage(KJob*,QString)));
+        connect(job, &KIO::StatJob::infoMessage, m_pView, &KonqView::slotInfoMessage);
     }
 }
 

@@ -26,6 +26,8 @@
 #include "konqopenurlrequest.h"
 #include <QUrl>
 
+#include <KIO/Global>
+
 class KonqMainWindow;
 class KonqView;
 
@@ -69,6 +71,14 @@ protected:
     void init() override;
     void scanFile() override;
 
+    /**
+     * Displays an error page appropriate to the given error code
+     *
+     * @param error the error code
+     * @param stringUrl the string representation of the URL which caused the error
+     */
+    void switchToErrorUrl(KIO::Error error, QString stringUrl);
+
 protected Q_SLOTS:
     void slotRedirection(KIO::Job *, const QUrl &);
 
@@ -81,6 +91,7 @@ private:
     bool m_bFoundMimeType;
     KonqOpenURLRequest m_req;
     QUrl m_mailto;
+    bool m_inlineErrors;
 };
 
 #endif // KONQRUN_H
