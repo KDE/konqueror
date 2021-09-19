@@ -3,26 +3,10 @@
 
     SPDX-FileCopyrightText: 2009 Dawit Alemayehu <adawit@kde.org>
 
-    SPDX-License-Identifier: LGPL-2.1-or-later
+    The code for the function slotPrintPreview was adapted from the PrintMe Qt example
+    and is distributed under the BSD license:
+    SPDX-License-Identifier: LGPL-2.1-or-later AND BSD-3-Clause
 */
-
-/*
- * The code for the function slotPrintPreview was adapted from the PrintMe Qt example
- * and is distributed under the BSD license:
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in
- *     the documentation and/or other materials provided with the
- *     distribution.
- *   * Neither the name of The Qt Company Ltd nor the names of its
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- */
 
 #include "webenginepart_ext.h"
 #include <QtWebEngine/QtWebEngineVersion>
