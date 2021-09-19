@@ -2,7 +2,6 @@
     SPDX-FileCopyrightText: 2006 David Faure <faure@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-    Boston, MA 02110-1301, USA.
 */
 
 #ifndef KONQVIEWMGRTEST_H
