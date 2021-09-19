@@ -50,6 +50,7 @@ KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
                          !req.args.reload() || req.userRequestedReload),
       m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
 {
+    setEnableExternalBrowser(false);
     //qCDebug(KONQUEROR_LOG) << "KonqRun::KonqRun() " << this;
     Q_ASSERT(!m_pMainWindow.isNull());
     if (m_pView) {
