@@ -3,11 +3,7 @@
 
     SPDX-FileCopyrightText: 2004 Teemu Rytilahti <tpr@d5k.net>
 
-    SPDX-License-Identifier: GPL-2.0-or-later
-
-    As a special exception, permission is given to link this program
-    with any edition of Qt, and distribute the resulting executable,
-    without including the source code for Qt in the source distribution.
+    SPDX-License-Identifier: GPL-2.0-or-later WITH LicenseRef-Qt-exception
 */
 
 #include "pluginutil.h"
