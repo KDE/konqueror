@@ -1,7 +1,7 @@
 /* "Misc Options" Tab for KFM configuration
 
-    SPDX-FileCopyrightText: Sven Radej 1998
-    SPDX-FileCopyrightText: David Faure 1998
+    SPDX-FileCopyrightText: 1998 Sven Radej
+    SPDX-FileCopyrightText: 1998 David Faure
 
 */
 

@@ -1,14 +1,14 @@
 /*
-    SPDX-FileCopyrightText: Martin R. Jones 1996
-    SPDX-FileCopyrightText: Bernd Wuebben 1998
+    SPDX-FileCopyrightText: 1996 Martin R. Jones
+    SPDX-FileCopyrightText: 1998 Bernd Wuebben
 
-    SPDX-FileCopyrightText: Torben Weis 1998
+    SPDX-FileCopyrightText: 1998 Torben Weis
     KControl port & modifications
 
-    SPDX-FileCopyrightText: David Faure 1998
+    SPDX-FileCopyrightText: 1998 David Faure
     End of the KControl port, added 'kfmclient configure' call.
 
-    SPDX-FileCopyrightText: Daniel Molkentin 2000
+    SPDX-FileCopyrightText: 2000 Daniel Molkentin
     Cleanup and modifications for KDE 2.1
 
 */

@@ -1,20 +1,20 @@
 /*
-    SPDX-FileCopyrightText: Martin R. Jones 1996
-    SPDX-FileCopyrightText: Bernd Wuebben 1998
+    SPDX-FileCopyrightText: 1996 Martin R. Jones
+    SPDX-FileCopyrightText: 1998 Bernd Wuebben
 
-    SPDX-FileCopyrightText: Torben Weis 1998
+    SPDX-FileCopyrightText: 1998 Torben Weis
     KControl port & modifications
 
-    SPDX-FileCopyrightText: David Faure 1998
+    SPDX-FileCopyrightText: 1998 David Faure
     End of the KControl port, added 'kfmclient configure' call.
 
-    SPDX-FileCopyrightText: Kalle Dalheimer 2000
+    SPDX-FileCopyrightText: 2000 Kalle Dalheimer
     New configuration scheme for Java/JavaScript
 
-    SPDX-FileCopyrightText: Daniel Molkentin 2000
+    SPDX-FileCopyrightText: 2000 Daniel Molkentin
     Redesign and cleanup
 
-    SPDX-FileCopyrightText: Leo Savernik 2002-2003
+    SPDX-FileCopyrightText: 2002-2003 Leo Savernik
     Big changes to accommodate per-domain settings
 
 */
