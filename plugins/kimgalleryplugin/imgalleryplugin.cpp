@@ -456,7 +456,7 @@ bool KImGalleryPlugin::createThumb(const QString &imgName, const QString &source
     int extent = m_configDlg->getThumbnailSize();
 
     // this code is stolen from kdebase/kioslave/thumbnail/imagecreator.cpp
-    // SPDX-FileCopyrightText: 2000 gis and malte
+    // (c) 2000 gis and malte
 
     m_imgWidth = 120; // Setting the size of the images is
     m_imgHeight = 90; // required to generate faster 'loading' pages

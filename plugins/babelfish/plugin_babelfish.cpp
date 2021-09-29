@@ -1,6 +1,6 @@
 /* This file is part of the KDE Project
-    Original code: plugin code, connecting to Babelfish and support for selected
-   text SPDX-FileCopyrightText: 2001 Kurt Granroth <granroth@kde.org>
+    Original code: plugin code, connecting to Babelfish and support for selected text
+    SPDX-FileCopyrightText: 2001 Kurt Granroth <granroth@kde.org>
 
     Submenus, KConfig file and support for other translation engines
     SPDX-FileCopyrightText: 2003 Rand 2342 <rand2342@yahoo.com>
