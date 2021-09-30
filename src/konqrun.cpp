@@ -216,7 +216,7 @@ void KonqRun::init()
             return;
         }
         const QString error = !url.isValid() ? url.errorString() : url.toString();
-        handleInitError(KIO::ERR_MALFORMED_URL, i18n("Malformed URL\n%1", error));
+        KParts::BrowserRun::init();
         qCWarning(KONQUEROR_LOG) << "Malformed URL:" << error;
         setError(true);
         setFinished(true);
@@ -225,7 +225,7 @@ void KonqRun::init()
 
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("open"), QUrl(), url)) {
         QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, url.toDisplayString());
-        handleInitError(KIO::ERR_ACCESS_DENIED, msg);
+        KParts::BrowserRun::init();
         setError(true);
         setFinished(true);
         return;
@@ -246,10 +246,7 @@ void KonqRun::init()
             if (m_inlineErrors) {
                 switchToErrorUrl(KIO::ERR_DOES_NOT_EXIST, localPath);
             } else {
-                handleInitError(KIO::ERR_DOES_NOT_EXIST,
-                                i18n("<qt>Unable to run the command specified. "
-                                    "The file or folder <b>%1</b> does not exist.</qt>",
-                                    localPath.toHtmlEscaped()));
+                KParts::BrowserRun::init();
                 setError(true);
                 setFinished(true);
             }
@@ -261,7 +258,7 @@ void KonqRun::init()
         if (mime.isDefault() && !QFileInfo(localPath).isReadable()) {
             // Unknown MIME type because the file is unreadable, no point in showing an open-with dialog (#261002)
             const QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, localPath);
-            handleInitError(KIO::ERR_ACCESS_DENIED, msg);
+            KParts::BrowserRun::init();
             setError(true);
             setFinished(true);
             return;
@@ -302,7 +299,7 @@ void KonqRun::init()
 
         if (!KProtocolManager::supportsReading(url)) {
             // No support for reading files either => we can't do anything (example: mailto URL, with no associated app)
-            handleInitError(KIO::ERR_UNSUPPORTED_ACTION, i18n("Could not find any application or handler for %1", url.toDisplayString()));
+            KParts::BrowserRun::init();
             setError(true);
             setFinished(true);
             return;
