@@ -21,6 +21,7 @@
 #include <QWebEngineSettings>
 #include <QFontDatabase>
 #include <QFileInfo>
+#include <QDir>
 
 QDataStream & operator<<(QDataStream& ds, const WebEngineSettings::WebFormInfo& info)
 {
@@ -335,7 +336,6 @@ void WebEngineSettings::init( KConfig * config, bool reset )
   }
 
   KConfigGroup cgFilter( config, "Filter Settings" );
-
   if ((reset || cgFilter.exists()) && (d->m_adFilterEnabled = cgFilter.readEntry("Enabled", false)))
   {
       d->m_hideAdsEnabled = cgFilter.readEntry("Shrink", false);
@@ -374,7 +374,9 @@ void WebEngineSettings::init( KConfig * config, bool reset )
               if (filterEnabled && url.isValid()) {
                   /** determine where to cache HTMLFilterList file */
                   QString localFile = cgFilter.readEntry(QStringLiteral("HTMLFilterListLocalFilename-").append(QString::number(id)));
-                  localFile = QStandardPaths::locate(QStandardPaths::ConfigLocation, "khtml/", QStandardPaths::LocateDirectory) + localFile;
+                  QString dirName = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+                  QDir().mkpath(dirName);
+                  localFile =  dirName + '/' + localFile;
 
                   /** determine existence and age of cache file */
                   QFileInfo fileInfo(localFile);
