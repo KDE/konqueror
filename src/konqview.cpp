@@ -584,8 +584,8 @@ void KonqView::slotCompleted(bool hasPending)
 
     if (!m_bGotIconURL && !m_bAborted) {
         if (KonqSettings::enableFavicon() == true) {
-            // Try to get /favicon.ico
-            if (supportsMimeType(QStringLiteral("text/html")) && url().scheme().startsWith(QLatin1String("http"))) {
+            // Try to get /favicon.ico. KonqPixmapProvider::downloadHostIcon does nothing if the URL is not http(s)
+            if (supportsMimeType(QStringLiteral("text/html"))) {
                 KonqPixmapProvider::self()->downloadHostIcon(url());
             }
         }

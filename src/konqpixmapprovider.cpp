@@ -40,6 +40,10 @@ KonqPixmapProvider::~KonqPixmapProvider()
 
 void KonqPixmapProvider::downloadHostIcon(const QUrl &hostUrl)
 {
+    //Only attempt to download icon for http(s) URLs
+    if (!hostUrl.scheme().startsWith(QLatin1String("http"))) {
+        return;
+    }
     KIO::FavIconRequestJob *job = new KIO::FavIconRequestJob(hostUrl);
     connect(job, &KIO::FavIconRequestJob::result, this, [job, this](KJob *) {
         bool modified = false;

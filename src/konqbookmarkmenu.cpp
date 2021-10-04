@@ -249,11 +249,11 @@ QAction *KonqBookmarkMenu::actionForBookmark(const KBookmark &_bm)
     } else {
         // qCDebug(KBOOKMARKS_LOG) << "Creating Konq bookmark action named " << bm.text();
         QUrl host = bm.url().adjusted(QUrl::RemovePath | QUrl::RemoveQuery);
-        bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
+            bm.setIcon(KonqPixmapProvider::self()->iconNameFor(host));
         KBookmarkAction *action = new KBookmarkAction(bm, owner(), this);
-        connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
-            action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
-        });
+            connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
+                action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+            });
         KonqPixmapProvider::self()->downloadHostIcon(host);
         m_actionCollection->addAction(action->objectName(), action);
         m_actions.append(action);

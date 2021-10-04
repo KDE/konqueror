@@ -175,9 +175,9 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
                     m_toolBar->addAction(action);
                 }
                 d->m_actions.append(action);
-                connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
-                    action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
-                });
+                    connect(KonqPixmapProvider::self(), &KonqPixmapProvider::changed, action, [host, action]() {
+                        action->setIcon(KonqPixmapProvider::self()->iconForUrl(host));
+                    });
                 KonqPixmapProvider::self()->downloadHostIcon(host);
             }
         } else {
