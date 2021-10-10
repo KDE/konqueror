@@ -18,7 +18,7 @@
 #include <KConfigGroup>
 #include <kimagecache.h>
 
-K_PLUGIN_FACTORY(KioConfigFactory, registerPlugin<BookmarksConfigModule>();)
+K_PLUGIN_CLASS_WITH_JSON(BookmarksConfigModule, "bookmarks.json")
 
 BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList &)
     : KCModule(parent)

@@ -9,13 +9,6 @@ set(kcm_bookmarks_PART_SRCS
 ki18n_wrap_ui(kcm_bookmarks_PART_SRCS
     bookmarks.ui)
 
-add_library(kcm_bookmarks MODULE ${kcm_bookmarks_PART_SRCS})
-
+kcoreaddons_add_plugin(kcm_bookmarks SOURCES ${kcm_bookmarks_PART_SRCS} INSTALL_NAMESPACE konqueror_kcms)
+kcoreaddons_desktop_to_json(kcm_bookmarks bookmarks.desktop)
 target_link_libraries(kcm_bookmarks KF5::KCMUtils KF5::KIOCore KF5::I18n KF5::GuiAddons)
-
-install(TARGETS kcm_bookmarks  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-########### install files ###############
-
-install( FILES bookmarks.desktop DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
-
