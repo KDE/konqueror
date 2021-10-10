@@ -1786,9 +1786,7 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
                 "kcm_proxy",
                 "konqueror_kcms/kcm_history",
                 "kcm_cookies",
-                "useragent",
                 "konqueror_kcms/khtml_java_js",
-                "khtml_plugins",
             };
             for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i)
                 if (KAuthorized::authorizeControlModule(webModules[i])) {
