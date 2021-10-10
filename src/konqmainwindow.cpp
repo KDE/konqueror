@@ -1743,75 +1743,64 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
         m_configureDialog->setObjectName(QStringLiteral("configureDialog"));
         connect(m_configureDialog, &KCMultiDialog::finished, this, &KonqMainWindow::slotConfigureDone);
 
-        //BEGIN SYNC with initActions()
+        // BEGIN SYNC with initActions()
         const char *const toplevelModules[] = {
-            "khtml_general",
+            "konqueror_kcms/khtml_general",
 #ifndef Q_OS_WIN
-            "kcmkonqyperformance",
+            "konqueror_kcms/kcm_performance",
 #endif
-            "bookmarks"
+            "konqueror_kcms/kcm_bookmarks",
         };
-        for (uint i = 0; i < sizeof(toplevelModules) / sizeof(char *); ++i)
-            if (KAuthorized::authorizeControlModule(toplevelModules[i])) {
-                m_configureDialog->addModule(KCModuleInfo(QString(toplevelModules[i]) + ".desktop"));
+        for (uint i = 0; i < sizeof(toplevelModules) / sizeof(char *); ++i) {
+            const QString kcmName = QString(toplevelModules[i]);
+            if (KAuthorized::authorizeControlModule(kcmName)) {
+                m_configureDialog->addModule(KPluginMetaData(kcmName));
             }
+        }
 
         if (KAuthorized::authorizeControlModule(QStringLiteral("filebehavior"))) {
-            KPageWidgetItem *fileManagementGroup = m_configureDialog->addModule(QStringLiteral("filebehavior"));
-            if (fileManagementGroup) {
-                fileManagementGroup->setName(i18n("File Management"));
-                const char *const fmModules[] = {
-                    "kcmdolphinviewmodes",
-                    "kcmdolphinnavigation",
-                    "kcmdolphinservices",
-                    "kcmdolphingeneral",
-                    "filetypes",
-                    "kcmtrash"
-                };
-                for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i)
-                    if (KAuthorized::authorizeControlModule(fmModules[i])) {
-                        KPageWidgetItem *it = m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i]) + ".desktop"), fileManagementGroup);
-                        if (!startingItem && startingModule == fmModules[i]) {
-                            startingItem = it;
-                        }
+            m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/kcm_konq")));
+            const char *const fmModules[] = {
+                "dolphin/kcms/kcm_dolphinviewmodes",
+                "dolphin/kcms/kcm_dolphinnavigation",
+                "dolphin/kcms/kcm_dolphingeneral",
+                "plasma/kcms/systemsettings_qwidgets/kcm_filetypes",
+                "kcm_trash",
+            };
+            for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i)
+                if (KAuthorized::authorizeControlModule(fmModules[i])) {
+                    KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(fmModules[i])));
+                    if (!startingItem && startingModule == fmModules[i]) {
+                        startingItem = it;
                     }
-            } else {
-                qCWarning(KONQUEROR_LOG) << "Unable to load the \"File Management\" configuration module";
-            }
+                }
         }
 
-        if (KAuthorized::authorizeControlModule(QStringLiteral("khtml_behavior"))) {
-            KPageWidgetItem *webGroup = m_configureDialog->addModule(QStringLiteral("khtml_behavior"));
-            if (webGroup) {
-                webGroup->setName(i18n("Web Browsing"));
+        if (KAuthorized::authorizeControlModule(QStringLiteral("konqueror_kcms/khtml_behavior"))) {
+            m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/khtml_behavior")));
 
-                const char *const webModules[] = {
-                    "khtml_appearance",
-                    "khtml_filter",
-                    "webshortcuts",
-                    "cache",
-                    "proxy",
-                    "kcmhistory",
-                    "cookies",
-                    "useragent",
-                    "khtml_java_js",
-                    "khtml_plugins"
-                };
-                for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i)
-                    if (KAuthorized::authorizeControlModule(webModules[i])) {
-                        KPageWidgetItem *it= m_configureDialog->addModule(KCModuleInfo(QString(webModules[i]) + ".desktop"), webGroup);
-                        if (!startingItem && startingModule == webModules[i]) {
-                            startingItem = it;
-                        }
+            const char *const webModules[] = {
+                "konqueror_kcms/khtml_appearance",
+                "konqueror_kcms/khtml_filter",
+                "kcm_webshortcuts",
+                "kcm_proxy",
+                "konqueror_kcms/kcm_history",
+                "kcm_cookies",
+                "useragent",
+                "konqueror_kcms/khtml_java_js",
+                "khtml_plugins",
+            };
+            for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i)
+                if (KAuthorized::authorizeControlModule(webModules[i])) {
+                    KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
+                    if (!startingItem && startingModule == webModules[i]) {
+                        startingItem = it;
                     }
-            } else {
-                qCWarning(KONQUEROR_LOG) << "Unable to load the \"Web Browsing\" configuration module";
-            }
-
+                }
         }
-        //END SYNC with initActions()
-
     }
+    // END SYNC with initActions()
+
     if (startingItem) {
         m_configureDialog->setCurrentPage(startingItem);
     }
