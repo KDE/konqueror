@@ -16,10 +16,8 @@
 #include "konqueror.h"
 #include "system.h"
 #include <KPluginFactory>
-K_PLUGIN_FACTORY(KCMPerformanceConfigFactory,
-                 registerPlugin<KCMPerformance::Config>("performance");
-                 registerPlugin<KCMPerformance::KonquerorConfig>("konqueror");
-                )
+
+K_PLUGIN_FACTORY_WITH_JSON(KCMPerformanceConfigFactory, "kcmperformance.json", registerPlugin<KCMPerformance::KonquerorConfig>();)
 
 namespace KCMPerformance
 {

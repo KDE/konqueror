@@ -35,14 +35,6 @@
 #include "filteropts.h"
 #include "generalopts.h"
 
-K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
-                 registerPlugin<KJSParts>("khtml_java_js");
-                 registerPlugin<KMiscHTMLOptions>("khtml_behavior");
-                 registerPlugin<KKonqGeneralOptions>("khtml_general");
-                 registerPlugin<KCMFilter>("khtml_filter");
-                 registerPlugin<KAppearanceOptions>("khtml_appearance");
-                )
-
 KJSParts::KJSParts(QWidget *parent, const QVariantList &)
     : KCModule(parent)
 {
@@ -127,6 +119,3 @@ QString KJSParts::quickHelp() const
                 "fine-grained from which hosts you want to execute Java and/or "
                 "JavaScript programs.");
 }
-
-#include "main.moc"
-
