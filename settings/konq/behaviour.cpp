@@ -26,7 +26,7 @@
 #include <QStandardPaths>
 #include <KSharedConfig>
 
-K_PLUGIN_FACTORY(KBehaviourOptionsFactory, registerPlugin<KBehaviourOptions>();)
+K_PLUGIN_CLASS_WITH_JSON(KBehaviourOptions, "filebehavior.json")
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     : KCModule(parent)

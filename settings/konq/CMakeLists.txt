@@ -1,19 +1,9 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmkonq\")
-set(kcm_konq_PART_SRCS
-   behaviour.cpp
-)
 
-add_library(kcm_konq MODULE ${kcm_konq_PART_SRCS})
-
+kcoreaddons_add_plugin(kcm_konq SOURCES behaviour.cpp INSTALL_NAMESPACE konqueror_kcms)
+kcoreaddons_desktop_to_json(kcm_konq filebehavior.desktop)
 
 target_link_libraries(kcm_konq KF5::KCMUtils KF5::KIOCore KF5::I18n KF5::KIOWidgets Qt5::DBus)
 
-install(TARGETS kcm_konq  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-
-########### install files ###############
-install( FILES
-   filebehavior.desktop
-   DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES overlapping.png onlyone.png  DESTINATION  ${KDE_INSTALL_DATADIR}/kcontrol/pics )
 
