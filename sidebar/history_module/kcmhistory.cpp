@@ -31,10 +31,7 @@
 
 // Local
 
-K_PLUGIN_FACTORY(KCMHistoryFactory,
-                 registerPlugin<HistorySidebarConfig>();
-                )
-K_EXPORT_PLUGIN(KCMHistoryFactory("kcmhistory"))
+K_PLUGIN_CLASS_WITH_JSON(HistorySidebarConfig, "kcmhistory.json")
 
 HistorySidebarConfig::HistorySidebarConfig(QWidget *parent, const QVariantList &)
     : KCModule(parent, QVariantList())
