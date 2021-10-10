@@ -1741,6 +1741,7 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
     if (!m_configureDialog) {
         m_configureDialog = new KCMultiDialog(this);
         m_configureDialog->setObjectName(QStringLiteral("configureDialog"));
+        m_configureDialog->setFaceType(KPageDialog::Tree);
         connect(m_configureDialog, &KCMultiDialog::finished, this, &KonqMainWindow::slotConfigureDone);
 
         // BEGIN SYNC with initActions()
