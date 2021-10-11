@@ -321,11 +321,11 @@ void FSViewPart::setNonStandardActionEnabled(const char *actionName, bool enable
 void FSViewPart::updateActions()
 {
     int canDel = 0, canCopy = 0, canMove = 0;
-    QList<QUrl> urls;
 
-    foreach (TreeMapItem *i, _view->selection()) {
-        QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
-        urls.append(u);
+    const auto selectedItems = _view->selection();
+    for (TreeMapItem *item : selectedItems) {
+        Inode *inode = static_cast<Inode *>(item);
+        const QUrl u = QUrl::fromLocalFile(inode->path());
         canCopy++;
         if (KProtocolManager::supportsDeleting(u)) {
             canDel++;
@@ -345,7 +345,8 @@ void FSViewPart::updateActions()
     setNonStandardActionEnabled("editMimeType", _view->selection().count() == 1);
     setNonStandardActionEnabled("properties", _view->selection().count() == 1);
 
-    emit _ext->selectionInfo(urls);
+    const KFileItemList items = selectedFileItems();
+    emit _ext->selectionInfo(items);
 
     if (canCopy > 0) {
         stateChanged(QStringLiteral("has_selection"));
@@ -356,20 +357,33 @@ void FSViewPart::updateActions()
     qCDebug(FSVIEWLOG) << "deletable" << canDel;
 }
 
-void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
+KFileItemList FSViewPart::selectedFileItems() const
 {
-    int canDel = 0, canCopy = 0, canMove = 0;
+    const auto selectedItems = _view->selection();
     KFileItemList items;
-
-    foreach (TreeMapItem *i, _view->selection()) {
-        QUrl u = QUrl::fromLocalFile(((Inode *)i)->path());
-        QString mimetype = ((Inode *)i)->mimeType().name();
-        const QFileInfo &info = ((Inode *)i)->fileInfo();
+    items.reserve(selectedItems.count());
+    for (TreeMapItem *item : selectedItems) {
+        Inode *inode = static_cast<Inode *>(item);
+        const QUrl u = QUrl::fromLocalFile(inode->path());
+        const QString mimetype = inode->mimeType().name();
+        const QFileInfo &info = inode->fileInfo();
         mode_t mode =
             info.isFile() ? S_IFREG :
             info.isDir() ? S_IFDIR :
             info.isSymLink() ? S_IFLNK : (mode_t) - 1;
         items.append(KFileItem(u, mimetype, mode));
+     }
+     return items;
+}
+
+void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
+{
+    int canDel = 0, canCopy = 0, canMove = 0;
+
+    const auto selectedItems = _view->selection();
+    for (TreeMapItem *item : selectedItems) {
+        Inode *inode = static_cast<Inode *>(item);
+        const QUrl u = QUrl::fromLocalFile(inode->path());
 
         canCopy++;
         if (KProtocolManager::supportsDeleting(u)) {
@@ -414,6 +428,7 @@ void FSViewPart::contextMenu(TreeMapItem * /*item*/, const QPoint &p)
 //       editActions.append(actionCollection()->action("rename"));
     actionGroups.insert(QStringLiteral("editactions"), editActions);
 
+    const KFileItemList items = selectedFileItems();
     if (items.count() > 0)
         emit _ext->popupMenu(_view->mapToGlobal(p), items,
                              KParts::OpenUrlArguments(),

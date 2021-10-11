@@ -122,11 +122,13 @@ protected:
     bool closeUrl() override;
 
 private:
+    void setNonStandardActionEnabled(const char *actionName, bool enabled);
+    KFileItemList selectedFileItems() const;
+
     FSView *_view;
     FSJob *_job;
     FSViewBrowserExtension *_ext;
     KActionMenu *_visMenu, *_areaMenu, *_depthMenu, *_colorMenu;
-    void setNonStandardActionEnabled(const char *actionName, bool enabled);
 };
 
 #endif // FSVIEW_PART_H
