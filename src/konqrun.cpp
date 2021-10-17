@@ -317,7 +317,7 @@ bool KonqRun::usingWebEngine() const
     //If the current part can't display html files, it will never be a webengine part, so it doesn't
     //tell anything about user configuration. In this case, always check the preferred part.
     KParts::ReadOnlyPart *part = m_pView ? m_pView->part() : nullptr;
-    if (m_pView->isWebBrowsingPart()) {
+    if (m_pView && m_pView->isWebBrowsingPart()) {
         return part->componentName() == "webenginepart";
     } else {
         QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType("text/html");
