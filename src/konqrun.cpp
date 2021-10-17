@@ -25,6 +25,7 @@
 #include <KProtocolManager>
 #include <KApplicationTrader>
 #include <KJobWidgets>
+#include <KParts/PartLoader>
 
 #include <KService>
 #include <KMimeTypeTrader>
@@ -311,12 +312,16 @@ void KonqRun::init()
 
 bool KonqRun::usingWebEngine() const
 {
-    if (m_pView) {
-        return m_pView->part()->componentName() == "webenginepart";
+    //We need to find out if the user configured Konqueror to use WebEnginePart by default or not.
+    //If the current part can display html files, it could be a WebEnginePart, so we can check it.
+    //If the current part can't display html files, it will never be a webengine part, so it doesn't
+    //tell anything about user configuration. In this case, always check the preferred part.
+    KParts::ReadOnlyPart *part = m_pView ? m_pView->part() : nullptr;
+    if (m_pView->isWebBrowsingPart()) {
+        return part->componentName() == "webenginepart";
     } else {
-        KService::Ptr  service = KMimeTypeTrader::self()->preferredService("text/html", "KParts/ReadOnlyPart");
-        Q_ASSERT(service);
-        return service->desktopEntryName() == "webenginepart";
+        QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType("text/html");
+        return !parts.isEmpty() && parts.at(0).name() == "WebEngine";
     }
 }
 

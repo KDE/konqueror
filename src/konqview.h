@@ -339,6 +339,18 @@ public:
      */
     bool supportsMimeType(const QString &mimeType) const;
 
+    /**
+     * Whether the view in this part is suitable for web browsing.
+     *
+     * @return @b true if the part is suitable for browsing and @b false otherwise
+     *
+     * @warning Unfortunately, as far as I know, there's no way to detect whether a part is
+     * suitable for browsing. This function works by hardcoding the component names of such
+     * parts (currently only khtml, kwebkitpart and webenginepart). If other browsing parts
+     * will be added, the list should be changed or another way must be found.
+     **/
+    bool isWebBrowsingPart() const;
+
     // True if showing a directory
     bool showsDirectory() const;
 

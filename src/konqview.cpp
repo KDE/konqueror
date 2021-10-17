@@ -1216,6 +1216,16 @@ bool KonqView::supportsMimeType(const QString &mimeType) const
     return false;
 }
 
+bool KonqView::isWebBrowsingPart() const
+{
+    if (!m_pPart) {
+        return false;
+    }
+    const QString partName = m_pPart->componentName();
+    return partName == QLatin1String("webenginepart") || partName == QLatin1String("khtml") || partName == QLatin1String("kwebkitpart");
+}
+
+
 void HistoryEntry::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     if (options & KonqFrameBase::SaveUrls) {
