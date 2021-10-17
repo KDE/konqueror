@@ -1756,7 +1756,6 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
         m_configureDialog->setFaceType(KPageDialog::Tree);
         connect(m_configureDialog, &KCMultiDialog::finished, this, &KonqMainWindow::slotConfigureDone);
 
-        // BEGIN SYNC with initActions()
         const char *const toplevelModules[] = {
             "konqueror_kcms/khtml_general",
 #ifndef Q_OS_WIN
@@ -1766,56 +1765,46 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
         };
         for (uint i = 0; i < sizeof(toplevelModules) / sizeof(char *); ++i) {
             const QString kcmName = QString(toplevelModules[i]);
-            if (KAuthorized::authorizeControlModule(kcmName)) {
-                m_configureDialog->addModule(KPluginMetaData(kcmName));
+            m_configureDialog->addModule(KPluginMetaData(kcmName));
+        }
+        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/kcm_konq")));
+        const char *const fmModules[] = {
+            "dolphin/kcms/kcm_dolphinviewmodes",
+            "dolphin/kcms/kcm_dolphinnavigation",
+            "dolphin/kcms/kcm_dolphingeneral",
+            "kcm_trash",
+        };
+        for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i) {
+            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(fmModules[i])));
+            if (!startingItem && startingModule == fmModules[i]) {
+                startingItem = it;
             }
         }
-
-        if (KAuthorized::authorizeControlModule(QStringLiteral("filebehavior"))) {
-            m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/kcm_konq")));
-            const char *const fmModules[] = {
-                "dolphin/kcms/kcm_dolphinviewmodes",
-                "dolphin/kcms/kcm_dolphinnavigation",
-                "dolphin/kcms/kcm_dolphingeneral",
-                "kcm_trash",
-            };
-            for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i)
-                if (KAuthorized::authorizeControlModule(fmModules[i])) {
-                    KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(fmModules[i])));
-                    if (!startingItem && startingModule == fmModules[i]) {
-                        startingItem = it;
-                    }
-                }
-            KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
-            if (!fileTypesData.isValid()) {
-                QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
-                fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
-            }
-            m_configureDialog->addModule(fileTypesData);
+        KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
+        if (!fileTypesData.isValid()) {
+            QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
+            fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
         }
+        m_configureDialog->addModule(fileTypesData);
 
-        if (KAuthorized::authorizeControlModule(QStringLiteral("konqueror_kcms/khtml_behavior"))) {
-            m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/khtml_behavior")));
+        m_configureDialog->addModule(KPluginMetaData(QStringLiteral("konqueror_kcms/khtml_behavior")));
 
-            const char *const webModules[] = {
-                "konqueror_kcms/khtml_appearance",
-                "konqueror_kcms/khtml_filter",
-                "kcm_webshortcuts",
-                "kcm_proxy",
-                "konqueror_kcms/kcm_history",
-                "kcm_cookies",
-                "konqueror_kcms/khtml_java_js",
-            };
-            for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i)
-                if (KAuthorized::authorizeControlModule(webModules[i])) {
-                    KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
-                    if (!startingItem && startingModule == webModules[i]) {
-                        startingItem = it;
-                    }
-                }
+        const char *const webModules[] = {
+            "konqueror_kcms/khtml_appearance",
+            "konqueror_kcms/khtml_filter",
+            "kcm_webshortcuts",
+            "kcm_proxy",
+            "konqueror_kcms/kcm_history",
+            "kcm_cookies",
+            "konqueror_kcms/khtml_java_js",
+        };
+        for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i) {
+            KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
+            if (!startingItem && startingModule == webModules[i]) {
+                startingItem = it;
+            }
         }
     }
-    // END SYNC with initActions()
 
     if (startingItem) {
         m_configureDialog->setCurrentPage(startingItem);
@@ -3582,21 +3571,7 @@ void KonqMainWindow::initActions()
     connect(action, &QAction::triggered, this, &KonqMainWindow::slotGoHistory);
 
     // Settings menu
-
-    // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
-    QStringList configureModules;
-    configureModules << QStringLiteral("khtml_general") << QStringLiteral("bookmarks") <<
-                     QStringLiteral("filebehavior") << QStringLiteral("filetypes") << QStringLiteral("kcmtrash") <<
-                     QStringLiteral("khtml_appearance") << QStringLiteral("khtml_behavior") << QStringLiteral("khtml_java_js") <<
-                     QStringLiteral("khtml_filter") << QStringLiteral("webshortcuts") <<
-                     QStringLiteral("kcmhistory") << QStringLiteral("cookies") <<
-                     QStringLiteral("cache") << QStringLiteral("proxy") <<
-                     QStringLiteral("useragent") << QStringLiteral("khtml_plugins") <<
-                     QStringLiteral("kcmkonqyperformance");
-
-    if (!KAuthorized::authorizeControlModules(configureModules).isEmpty()) {
-        actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
-    }
+    actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
 
 
 #if KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 84, 0)
