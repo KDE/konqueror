@@ -1765,7 +1765,6 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
                 "dolphin/kcms/kcm_dolphinviewmodes",
                 "dolphin/kcms/kcm_dolphinnavigation",
                 "dolphin/kcms/kcm_dolphingeneral",
-                "plasma/kcms/systemsettings_qwidgets/kcm_filetypes",
                 "kcm_trash",
             };
             for (uint i = 0; i < sizeof(fmModules) / sizeof(char *); ++i)
@@ -1775,6 +1774,12 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
                         startingItem = it;
                     }
                 }
+            KPluginMetaData fileTypesData(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_filetypes"));
+            if (!fileTypesData.isValid()) {
+                QString desktopFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/filetypes.desktop"));
+                fileTypesData = KPluginMetaData::fromDesktopFile(desktopFile, {QStringLiteral("kcmodule.desktop")});
+            }
+            m_configureDialog->addModule(fileTypesData);
         }
 
         if (KAuthorized::authorizeControlModule(QStringLiteral("konqueror_kcms/khtml_behavior"))) {
