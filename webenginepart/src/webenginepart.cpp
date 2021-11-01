@@ -407,6 +407,10 @@ bool WebEnginePart::openUrl(const QUrl &_u)
 {
     QUrl u (_u);
 
+    if (property("urlRequestedByApp").toString() == u.url()) {
+        page()->markUrlAsRequestedByApp(u);
+    }
+
     // Ignore empty requests...
     if (u.isEmpty())
         return false;
@@ -445,7 +449,6 @@ bool WebEnginePart::openUrl(const QUrl &_u)
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
     m_doLoadFinishedActions = true;
-    page()->setLoadUrlCalledByPart(u);
     m_webView->loadUrl(u, args, bargs);
     return true;
 }

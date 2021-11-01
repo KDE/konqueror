@@ -27,6 +27,7 @@ class WebSslInfo;
 class WebEnginePart;
 class KPasswdServerClient;
 class WebEngineWallet;
+class WebEnginePartCertificateErrorDlg;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -59,12 +60,12 @@ public:
 
     /**
     * @brief Tells the page that the part has requested to load the given URL
-    * 
+    *
     * @note Calling this function doesn't cause the page to be loaded: you still need to call load() to do so.
-    * @see m_urlLoadedByPart
+    * @see m_urlRequestedByApp
     * @param url the requested URL
     */
-    void setLoadUrlCalledByPart(const QUrl &url){m_urlLoadedByPart = url;}
+    void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
 
 Q_SIGNALS:
     /**
@@ -72,7 +73,7 @@ Q_SIGNALS:
      * request.
      */
     void loadAborted(const QUrl &url);
-    
+
     void leavingPage(QWebEnginePage::NavigationType type);
 
 protected:
@@ -102,22 +103,21 @@ protected:
 
     /**
     * @brief Override of `QWebEnginePage::certificateError`
-    * 
-    * If the error is overridable, asks the user whether to ignore the error or not and returns `true` or `false` accordingly. 
-    * If the error is not overridable, it always returns `false`.
-    * 
+    *
+    * If the error is overridable, it first checks whether the user has already choosen to permanently ignore the error, in which case it returns `true`.
+    * If the user hasn't made such a choice, the error is deferred and a WebEnginePartCertificateErrorDlg is shown. The result is handled by handleCertificateError.
+    *
     * @internal
-    * A problem arises if the certificate error happens while loading a page requested by WebEnginePart::load() (rather than from the
-    * user's interaction with the WebEnginePage itself). The problem is that when WebEnginePart::load() is called, any certificate error
-    * will have already been caught by the `KParts` mechanism and the user will already have been asked about it. so it doesn't make sense
-    * to ask him again. To avoid doing so, this function checks m_urlLoadedByPart: if it is the same url as the one the certificate
-    * refers to, `true` is returned (and m_urlLoadedByPart is reset).
-    * @endinternal
-    * 
-    * @param ce the certificate error
-    * @return `true` if the error can be ignored and `false` otherwise
+    * A problem arises if the certificate error happens while loading a page opened from a part which is not a WebEnginePart (this also includes the case when the
+    * URL is entered in the location bar when the part is active). In this case, the URL is first loaded by KIO, then by WebEnginePart. If there's a certificate error,
+    * it will be reported twice: by KIO and by the WebEnginePart. The old trick of using `m_urlLoadedByPart` doesn't work anymore, because if the current part is
+    * a WebEnginePart, WebEnginePart::openUrl will be called, but everything will be handled by WebEnginePart.
+    *
+    * @param _ce the certificate error
+    * @return @b false if the error is not overridable and @true in all other cases. Note that if @b _ce is deferred, according to the documentation for `QWebEngineCertificateError
+    * the return value is ignored.
     */
-    bool certificateError(const QWebEngineCertificateError &ce) override;
+    bool certificateError(const QWebEngineCertificateError &_ce) override;
 
 protected Q_SLOTS:
     void slotLoadFinished(bool ok);
@@ -133,6 +133,17 @@ private:
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
 
+    /**
+     * @brief Function called in response to the user closing the certificate error dialog
+     *
+     * Depending on the user's choice, this function will instruct the page to ignore the error or not
+     * and, if the user chose to forever ignore the error, it'll record this decision in the configuration
+     * file.
+     *
+     * @param dlg the certificate error dialog
+     */
+    void handleCertificateError(WebEnginePartCertificateErrorDlg *dlg);
+
 private:
     enum WebEnginePageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
 
@@ -146,15 +157,19 @@ private:
     WebEngineWallet *m_wallet;
 
     /**
-    * @brief The last URL that the part requested to be loaded
-    * 
-    * Before calling `load()`, the part needs to call setLoadUrlCalledByPart() passing the URL which will be loaded. This variable
-    * will be reset either the first time acceptNavigationRequest() is called with a different URL or when certificateError() is called.
-    * 
-    * This variable is needed to implement certificateError().
-    * 
+    * @brief The last URL that the application explicitly asked this part to open
+    *
+    * Before calling `load()`, the part needs to call markUrlAsAlreadyProcessedByApp() passing the URL which will be loaded. This variable
+    * will be reset the first time acceptNavigationRequest() is called with a different URL.
+    *
+    * This variable is used by acceptNavigationRequest() to decide how to handle local files: if the argument passed to
+    * acceptNavigationRequest() is the same as m_urlAlreadyProcessedByApp, it means that the application explicitly asked the part to
+    * open the URL, so acceptNavigationRequest() does just that. Otherwise, it'll pass emit the KParts::BrowserExtension::openUrlRequest
+    * signal so that the application can decide how to open the URL.
+    * @note This mechanism is only used for local files.
+    *
     */
-    QUrl m_urlLoadedByPart;
+    QUrl m_urlRequestedByApp;
 };
 
 
@@ -192,7 +207,8 @@ private:
     KParts::WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
-    WebEngineWallet* m_wallet; 
+    WebEngineWallet* m_wallet;
 };
 
 #endif // WEBENGINEPAGE_H
+

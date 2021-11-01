@@ -522,6 +522,10 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     QUrl url(_url);
     QString mimeType(_mimeType);
     KonqOpenURLRequest req(_req);
+    if (m_currentView && url.isLocalFile() && m_currentView->isWebEngineView()) {
+         //The value of the entry doesn't matter: what's important is that the key exists
+        req.args.metaData().insert("urlRequestedByApp", QString()) ;
+    }
 
     if (mimeType.isEmpty()) {
         mimeType = req.args.mimeType();
@@ -641,7 +645,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             }
         }
     }
-
     const bool hasMimeType = (!mimeType.isEmpty() && mimeType != QLatin1String("application/octet-stream"));
     KService::Ptr offer;
     bool associatedAppIsKonqueror = false;

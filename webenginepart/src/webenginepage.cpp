@@ -16,6 +16,7 @@
 #include "webenginepartdownloadmanager.h"
 #include "webenginewallet.h"
 #include <webenginepart_debug.h>
+#include "webenginepartcertificateerrordlg.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -43,9 +44,6 @@
 #include <QDesktopWidget>
 #include <QFileDialog>
 #include <QDialogButtonBox>
-#include <QDialog>
-#include <QPushButton>
-#include <QMessageBox>
 
 #include <QFile>
 #include <QAuthenticator>
@@ -59,7 +57,6 @@
 #include <KToggleFullScreenAction>
 //#include <QWebSecurityOrigin>
 #include "utils.h"
-
 
 WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
         : QWebEnginePage(parent),
@@ -213,8 +210,8 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    if (m_urlLoadedByPart != url) {
-        m_urlLoadedByPart = QUrl();
+    if (m_urlRequestedByApp != url) {
+        m_urlRequestedByApp = QUrl();
         
         //Don't open local files using WebEnginePart except if configured to do so by the user. For example
         //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part 
@@ -351,8 +348,9 @@ static int errorCodeFromReply(QNetworkReply* reply)
 }
 #endif
 
-bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
+bool WebEnginePage::certificateError(const QWebEngineCertificateError& _ce)
 {
+    QWebEngineCertificateError ce(_ce);
     if (!ce.isOverridable()) {
         return false;
     }
@@ -363,24 +361,33 @@ bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
     if (exceptionsForUrl.contains(error)) {
         return true;
     } else {
-        QString translatedDesc = i18n(ce.errorDescription().toUtf8());
-        QString text = i18n("<p>The server failed the authenticity check (%1). The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
-                            ce.url().host(), translatedDesc);
-        QDialog *msgBox = new QDialog(view());
-        QDialogButtonBox *btnBox = new QDialogButtonBox(QDialogButtonBox::Yes|QDialogButtonBox::YesToAll|QDialogButtonBox::No, msgBox);
-        btnBox->button(QDialogButtonBox::Yes)->setText(i18nc("Ignore the certificate error for this URL only for now", "Yes, &once"));
-        btnBox->button(QDialogButtonBox::YesToAll)->setText(i18nc("Ignore the certificate error for this URL now and in the future", "Yes, &forever"));
-        QDialogButtonBox::StandardButton ans = KMessageBox::createKMessageBox(msgBox, btnBox, QMessageBox::Warning, text, {}, QString(), nullptr,
-                                                                              KMessageBox::Notify|KMessageBox::AllowLink|KMessageBox::Dangerous);
-        if (ans == QDialogButtonBox::No) {
-            return false;
-        }
-        if (ans == QDialogButtonBox::YesToAll) {
-            exceptionsForUrl.append(error);
+        ce.defer();
+        WebEnginePartCertificateErrorDlg *dlg = new WebEnginePartCertificateErrorDlg(ce, view());
+        connect(dlg, &WebEnginePartCertificateErrorDlg::finished, this, [this, dlg](int _){handleCertificateError(dlg);});
+        dlg->open();
+        return true;
+    }
+}
+
+void WebEnginePage::handleCertificateError(WebEnginePartCertificateErrorDlg *dlg) {
+    if (!dlg) {
+        return;
+    }
+    QWebEngineCertificateError error = dlg->certificateError();
+    WebEnginePartCertificateErrorDlg::UserChoice choice = dlg->userChoice();
+    dlg->deleteLater();
+    if (choice == WebEnginePartCertificateErrorDlg::UserChoice::DontIgnoreError) {
+        error.rejectCertificate();
+    } else {
+        error.ignoreCertificateError();
+        if (choice == WebEnginePartCertificateErrorDlg::UserChoice::IgnoreErrorForever) {
+            KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
+            QString url = error.url().url();
+            QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
+            exceptionsForUrl.append(error.error());
             grp.writeEntry(url, exceptionsForUrl);
             grp.sync();
         }
-        return true;
     }
 }
 

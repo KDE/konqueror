@@ -34,9 +34,10 @@ set(kwebenginepartlib_LIB_SRCS
     webengineurlrequestinterceptor.cpp
     spellcheckermanager.cpp
     webenginepartcontrols.cpp
+    webenginepartcertificateerrordlg.cpp
 )
 
-ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui)
+ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui webenginepartcertificateerrordlg.ui)
 
 qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
@@ -62,6 +63,7 @@ target_link_libraries(kwebenginepartlib
         KF5::Parts
         KF5::Wallet
         KF5::Notifications
+        KF5::KIOWidgets
     PRIVATE
         KF5::Konq
         KF5::I18n

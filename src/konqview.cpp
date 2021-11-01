@@ -212,6 +212,9 @@ void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
 
     aboutToOpenURL(url, args);
 
+    if (args.metaData().contains("urlRequestedByApp") && isWebEngineView()) {
+        m_pPart->setProperty("urlRequestedByApp", url);
+    }
     m_pPart->openUrl(url);
 
     updateHistoryEntry(true);
