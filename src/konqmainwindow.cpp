@@ -317,6 +317,15 @@ KonqMainWindow::~KonqMainWindow()
         if (s_lstMainWindows->isEmpty()) {
             delete s_lstMainWindows;
             s_lstMainWindows = nullptr;
+        } else if (s_lstMainWindows->length() == 1 && s_lstMainWindows->first()->isPreloaded()) {
+            //If the only remaining window is preloaded, we want to close it. Otherwise,
+            //the application will remain open, even if there are no visible windows.
+            //This can be seen, for example, running Konqueror from a terminal with the
+            //"Always try to have a preloaded instance": even after closing the last
+            //window, Konqueror won't exit (see bug #258124). To avoid this situation,
+            //We close the preloaded window here, so that the application can exit,
+            //and launch another instance of Konqueror from konqmain.
+            s_lstMainWindows->first()->close();
         }
     }
 

@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QDirIterator>
 #include <QStandardPaths>
+#include <QProcess>
 
 #include <KDBusService>
 #include <QCommandLineParser>
@@ -276,7 +277,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         }
     }
 
+    QString programName = QApplication::applicationFilePath();
+
     const int ret = app.exec();
+
+    bool alwaysPreload = KonqSettings::alwaysHavePreloaded();
 
     // Delete all KonqMainWindows, so that we don't have
     // any parts loaded when KLibLoader::cleanUp is called.
@@ -291,6 +296,10 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     KonqSessionManager::self()->deleteOwnedSessions();
 
     KonqClosedWindowsManager::destroy();
+
+    if (alwaysPreload) {
+        QProcess::startDetached(programName, {"--preload"});
+    }
 
     return ret;
 }
