@@ -660,6 +660,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     //qCDebug(KONQUEROR_LOG) << "trying openView for" << url << "( mimeType" << mimeType << ")";
     if (hasMimeType || KonqUrl::isValidNotBlank(url)) {
 
+        req.args.metaData().insert("urlRequestedByApp", QString());
         // Built-in view ?
         if (!openView(mimeType, url, view /* can be 0 */, req)) {
             //qCDebug(KONQUEROR_LOG) << "openView returned false";

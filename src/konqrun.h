@@ -78,7 +78,9 @@ private:
     bool m_bFoundMimeType;
     KonqOpenURLRequest m_req;
     QUrl m_mailto;
-    bool m_inlineErrors;
+    bool m_inlineErrors=true;
+    bool m_alreadyProcessedByWebEngine=false;
+    bool m_automaticallyAssignedToWebEngine=false;
 };
 
 #endif // KONQRUN_H

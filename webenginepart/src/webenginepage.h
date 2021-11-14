@@ -50,7 +50,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void download(const QUrl &url, const QString &mimetype, bool newWindow = false);
+    void download(QWebEngineDownloadItem *it, bool newWindow = false);
 
     void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false);
 
@@ -143,6 +143,29 @@ private:
      * @param dlg the certificate error dialog
      */
     void handleCertificateError(WebEnginePartCertificateErrorDlg *dlg);
+
+    /**
+     * @brief Function called when the part is forced to save an URL to disk.
+     *
+     * This function should never be needed because the URL should be handled by the application itself.
+     * However, there can be cases in which this doesn't happen, in particular
+     * if there's something wrong with the system configuration and the application asks the part to
+     * handle something it can't display. In this case, it would work as follow:
+     * - the application asks the part to display the URL
+     * - the part can't display the URL, so a download is triggered, causing the openUrlRequest signal
+     *   to be emitted
+     * - the application receives the signal and decides that the part should handle the URL
+     * - the part can't display the URL and triggers a download
+     * - endless loop
+     *
+     * To avoid this situation, inside download(), the part checks whether it was asked to handle
+     * the URL by the application. In that case, it doesn't emit the openUrlRequest signal
+     * but calls this function to directly download the file to disk.
+     *
+     * @param it the item describing the download
+     */
+     void saveUrlToDisk(QWebEngineDownloadItem *it);
+     void saveUrlUsingKIO(const QUrl &origUrl, const QUrl &destUrl);
 
 private:
     enum WebEnginePageSecurity { PageUnencrypted, PageEncrypted, PageMixed };

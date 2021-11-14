@@ -39,6 +39,7 @@
 #include <KUserTimestamp>
 #include <KPasswdServerClient>
 #include <KParts/BrowserInterface>
+#include <KJobWidgets>
 
 #include <QStandardPaths>
 #include <QDesktopWidget>
@@ -138,8 +139,9 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebEnginePage::download(const QUrl& url, const QString& mimetype, bool newWindow)
+void WebEnginePage::download(QWebEngineDownloadItem *it, bool newWindow)
 {
+    QUrl url = it->url();
     // Integration with a download manager...
     if (!url.isLocalFile()) {
         QString managerExe;
@@ -155,8 +157,49 @@ void WebEnginePage::download(const QUrl& url, const QString& mimetype, bool newW
     KParts::BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments urlArgs;
-    urlArgs.setMimeType(mimetype);
-    emit part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
+    urlArgs.setMimeType(it->mimeType());
+    urlArgs.metaData().insert("AlreadyProcessedByWebEngine", QString());
+    if (m_urlRequestedByApp != url) {
+        emit part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
+    } else { //Don't ask the application to handle the URL, since the application itself asked the part to display it
+        saveUrlToDisk(it);
+    }
+}
+
+void WebEnginePage::saveUrlToDisk(QWebEngineDownloadItem* it)
+{
+    QUrl url = it->url();
+    QFileDialog *dlg = new QFileDialog(view());
+    dlg->setAcceptMode(QFileDialog::AcceptSave);
+    dlg->setWindowTitle(i18n("Save As"));
+    dlg->setOption(QFileDialog::DontConfirmOverwrite, false);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+    QString suggestedName;
+#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
+    suggestedName = it->suggestedFileName();
+#endif
+    if (suggestedName.isEmpty()) {
+        suggestedName = it->url().fileName();
+    }
+    dlg->selectFile(suggestedName);
+    dlg->setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+    auto savePrc = [this, dlg, url](){
+        QUrl destUrl = dlg->selectedUrls().value(0);
+        if (destUrl.isValid()) {
+            saveUrlUsingKIO(url, destUrl);
+        }
+    };
+    connect(dlg, &QDialog::accepted, dlg, savePrc);
+    dlg->show();
+}
+
+void WebEnginePage::saveUrlUsingKIO(const QUrl& origUrl, const QUrl& destUrl)
+{
+    KIO::FileCopyJob *job = KIO::file_copy(origUrl, destUrl, -1, KIO::Overwrite);
+    job->addMetaData(QStringLiteral("MaxCacheSize"), QStringLiteral("0")); // Don't store in http cache.
+    job->addMetaData(QStringLiteral("cache"), QStringLiteral("cache")); // Use entry from cache if available.
+    KJobWidgets::setWindow(job, view());
+    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 
 void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
@@ -210,17 +253,19 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    if (m_urlRequestedByApp != url) {
+    bool urlRequestedByApp = m_urlRequestedByApp == url;
+    if (!urlRequestedByApp) {
         m_urlRequestedByApp = QUrl();
-        
-        //Don't open local files using WebEnginePart except if configured to do so by the user. For example
-        //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part 
-        //(or whichever part the user has chosen to open directories instead of WebEnginePart
-        if (url.isLocalFile()) {
-            emit m_part->browserExtension()->openUrlRequest(url);
-            return false;
-        }
     }
+        
+    //Don't open local files using WebEnginePart except if configured to do so by the user. For example
+    //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part
+    //(or whichever part the user has chosen to open directories instead of WebEnginePart
+    if (!urlRequestedByApp && url.isLocalFile()) {
+        emit m_part->browserExtension()->openUrlRequest(url);
+        return false;
+    }
+
 //     qCDebug(WEBENGINEPART_LOG) << url << "type=" << type;
     QUrl reqUrl(url);
 

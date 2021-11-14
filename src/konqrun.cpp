@@ -45,7 +45,10 @@ KonqRun::KonqRun(KonqMainWindow *mainWindow, KonqView *_childView,
                          // Don't use inline errors on reloading due to auto-refresh sites, but use them in all other cases
                          // (no reload or user-requested reload)
                          !req.args.reload() || req.userRequestedReload),
-      m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req), m_inlineErrors(!req.args.reload() || req.userRequestedReload)
+                         m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false),
+                         m_req(req), m_inlineErrors(!req.args.reload() || req.userRequestedReload),
+                         m_alreadyProcessedByWebEngine(req.args.metaData().contains("AlreadyProcessedByWebEngine")),
+                         m_automaticallyAssignedToWebEngine(false)
 {
     setEnableExternalBrowser(false);
     //qCDebug(KONQUEROR_LOG) << "KonqRun::KonqRun() " << this;
@@ -85,6 +88,9 @@ void KonqRun::foundMimeType(const QString &_type)
     // Grab the args back from BrowserRun
     m_req.args = arguments();
     m_req.browserArgs = browserArguments();
+    if (!m_automaticallyAssignedToWebEngine) {
+        m_req.args.metaData().insert("urlRequestedByApp", QString());
+    }
 
     bool tryEmbed = true;
     // One case where we shouldn't try to embed, is when the server asks us to save
@@ -219,12 +225,13 @@ void KonqRun::init()
         return;
     }
 
-    if (url.scheme().startsWith(QLatin1String("http")) && usingWebEngine()) {
+    if (url.scheme().startsWith(QLatin1String("http")) && usingWebEngine() && !m_alreadyProcessedByWebEngine) {
         //This is a fake mimetype, needed only to ensure that the URL will be handled
         //by WebEnginePart which will then determine the real mimetype. If it's
         //a mimetype it can't handle, it'll emit the KParts::BrowserExtension::openUrlRequest
         //passing the real mimetype. Knowing the mimetype, KonqMainWindow::openUrl will handle
         //it correctly without needing to use KonqRun again.
+        m_automaticallyAssignedToWebEngine = true;
         mimeTypeDetermined(QStringLiteral("text/html"));
     } else if (url.isLocalFile()
                && (url.host().isEmpty() || (url.host() == QLatin1String("localhost"))
@@ -341,7 +348,8 @@ void KonqRun::scanFile()
     // To avoid this we assume that the creator of the KonqRun has set m_alreadyProcessedByWebEngine if the URL has
     // already been passed to WebEnginePart: it means that it couldn't find a suitable mimetype and we need to do it
     // by ourselves, even if it means doing a double GET request.
-    if (m_req.args.mimeType().isEmpty() && (url().scheme() == "http" || url().scheme() == "https") && usingWebEngine()) {
+    if (m_req.args.mimeType().isEmpty() && url().scheme().startsWith("http") && usingWebEngine() && !m_alreadyProcessedByWebEngine) {
+        m_automaticallyAssignedToWebEngine = true;
         mimeTypeDetermined("text/html");
         return;
     }

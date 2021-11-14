@@ -66,7 +66,7 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
         return;
     }
     if (it->url().scheme() != "blob") {
-        page->download(it->url(), it->mimeType(), forceNew);
+        page->download(it, forceNew);
     } else {
         downloadBlob(it);
     }
