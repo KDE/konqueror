@@ -24,7 +24,7 @@
 
 #include <config-konqueror.h>
 
-class KonqRun;
+class UrlLoader;
 class KonqFrame;
 namespace KParts
 {
@@ -208,14 +208,14 @@ public:
     void copyHistory(KonqView *other);
 
     /**
-     * Set the KonqRun instance that is running something for this view
-     * The main window uses this to store the KonqRun for each child view.
+     * Set the UrlLoader instance that is running something for this view
+     * The main window uses this to store the UrlLoader for each child view.
      */
-    void setRun(KonqRun *run);
+    void setUrlLoader(UrlLoader *loader);
 
-    KonqRun *run() const
+    UrlLoader* urlLoader() const
     {
-        return m_pRun;
+        return m_loader;
     }
 
     /**
@@ -533,7 +533,7 @@ public Q_SLOTS:
     void setPageSecurity(int);
 
     // connected to the KROP's KIO::Job
-    // but also to KonqRun's job
+    // but also to UrlLoader's job
     void slotInfoMessage(KJob *, const QString &msg);
 
 private Q_SLOTS:
@@ -627,7 +627,7 @@ private:
     QString m_pageReferrer;
 
     KonqMainWindow *m_pMainWindow;
-    KonqRun *m_pRun;
+    UrlLoader *m_loader;
     KonqFrame *m_pKonqFrame;
 
     uint m_bLoading: 1;

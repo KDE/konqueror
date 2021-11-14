@@ -62,7 +62,9 @@ public:
     * @see m_urlRequestedByApp
     * @param url the requested URL
     */
-    void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
+//     void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
+
+//     void forceLoadingOfUrl(const QUrl &url){m_forcedUrl = url;}
 
     /**
      * @brief Sets the webengine part to be used by this object.
@@ -129,6 +131,13 @@ private:
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
+    bool askBrowserToOpenUrl(const QUrl &url, const QString &mimetype=QString(), const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(), const KParts::BrowserArguments &bargs = KParts::BrowserArguments());
+//     bool askBrowserToOpenUrlInPart(const QUrl &url, const QString &part);
+
+    //Whether a local URL should be opened by this part or by another part. This takes into account the user preferences
+    //and it's needed to avoid, for example, that the link "Home Folder" in the intro page is displayed in WebEnginePart
+    //and not by the part selected by the user to display directories.
+    bool shouldOpenLocalUrl(const QUrl &url) const;
 
     /**
      * @brief Function called when the part is forced to save an URL to disk.
@@ -163,21 +172,6 @@ private:
     QPointer<WebEnginePart> m_part;
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
-
-    /**
-    * @brief The last URL that the application explicitly asked this part to open
-    *
-    * Before calling `load()`, the part needs to call markUrlAsAlreadyProcessedByApp() passing the URL which will be loaded. This variable
-    * will be reset the first time acceptNavigationRequest() is called with a different URL.
-    *
-    * This variable is used by acceptNavigationRequest() to decide how to handle local files: if the argument passed to
-    * acceptNavigationRequest() is the same as m_urlAlreadyProcessedByApp, it means that the application explicitly asked the part to
-    * open the URL, so acceptNavigationRequest() does just that. Otherwise, it'll pass emit the KParts::BrowserExtension::openUrlRequest
-    * signal so that the application can decide how to open the URL.
-    * @note This mechanism is only used for local files.
-    *
-    */
-    QUrl m_urlRequestedByApp;
 };
 
 

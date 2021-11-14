@@ -21,7 +21,6 @@
 #include "KonqMainWindowAdaptor.h"
 #include "KonquerorAdaptor.h"
 #include "konqview.h"
-#include "konqrun.h"
 #include "konqmisc.h"
 #include "konqviewmanager.h"
 #include "konqframestatusbar.h"
@@ -39,6 +38,8 @@
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 #include "konqurl.h"
+#include "konqbrowserinterface.h"
+#include "urlloader.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -145,6 +146,9 @@
 #include <KSharedConfig>
 
 #include <KProtocolManager>
+
+#include <QMetaObject>
+#include <QMetaMethod>
 
 template class QList<QPixmap *>;
 template class QList<KToggleAction *>;
@@ -522,11 +526,9 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     QUrl url(_url);
     QString mimeType(_mimeType);
     KonqOpenURLRequest req(_req);
-    if (m_currentView && url.isLocalFile() && m_currentView->isWebEngineView()) {
-         //The value of the entry doesn't matter: what's important is that the key exists
-        req.args.metaData().insert("urlRequestedByApp", QString()) ;
-    }
+    qDebug() << "VIEW" << _view;
 
+    //TODO Remove KonqRun: what's the difference between mimeType and req.args.mimeType? which should be used by UrlLoader?
     if (mimeType.isEmpty()) {
         mimeType = req.args.mimeType();
     }
@@ -538,10 +540,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
     } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && !KonqUrl::hasKonqScheme(url) && url.scheme() != QLatin1String("mailto")) {
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
-    }
-
-    if (KonqUrl::isKonqBlank(url) || url.scheme() == QLatin1String("error")) {
-        mimeType = QStringLiteral("text/html");
     }
 
     const QString nameFilter = detectNameFilter(url);
@@ -556,7 +554,65 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     }
 
     KonqView *view = _view;
+    qDebug() << "ORIGINAL VIEW" << view << "VIEW URL" << (view ? view->url() : QUrl());
 
+    UrlLoader *loader = new UrlLoader(this, view, url, mimeType, req, trustedSource, false);
+    connect(loader, &UrlLoader::finished, this, &KonqMainWindow::urlLoaderFinished);
+
+    loader->start();
+
+    // The URL should be opened in a new tab. Let's create the tab right away,
+    // it gives faster user feedback (#163628). For a short while (kde-4.1-beta1)
+    // I removed this entire block so that we wouldn't end up with a useless tab when
+    // launching an external application for this mimetype. But user feedback
+    // in all cases is more important than empty tabs in some cases.
+    if (!loader->isReady() || loader->viewToUse() == UrlLoader::ViewToUse::NewTab) {
+        view = createTabForLoadUrlRequest(loader->url(), loader->request());
+        if (!view) {
+            loader->setNewTab(false);
+        }
+    } else if (loader->viewToUse() == UrlLoader::ViewToUse::CurrentView) {
+        view = m_currentView;
+    }
+
+    const QString oldLocationBarURL = locationBarURL();
+    if (view) {
+        if (view == m_currentView) {
+            //will do all the stuff below plus GUI stuff
+            abortLoading();
+        } else {
+            view->stop();
+            // Don't change location bar if not current view
+        }
+    }
+    loader->setView(view);
+    qDebug() << "VIEW" << loader->view();
+    loader->setOldLocationBarUrl(oldLocationBarURL);
+
+    if (!loader->isReady()) {
+        bool earlySetLocationBarURL = false;
+        if (!view && !m_currentView) { // no view yet, e.g. starting with url as argument
+            earlySetLocationBarURL = true;
+        } else if (view == m_currentView && view->url().isEmpty()) { // opening in current view
+            earlySetLocationBarURL = true;
+        }
+        if (req.browserArgs.newTab()) { // it's going into a new tab anyway
+            earlySetLocationBarURL = false;
+        }
+        if (earlySetLocationBarURL) {
+            // Show it for now in the location bar, but we'll need to store it in the view
+            // later on (can't do it yet since either view == 0 or updateHistoryEntry will be called).
+            qCDebug(KONQUEROR_LOG) << "url=" << url;
+            setLocationBarURL(url);
+        }
+        if (view == m_currentView) {
+            startAnimation();
+        }
+    }
+    loader->goOn();
+
+//Remove KonqRun: replaced by UrlLoader::viewForUrl
+#if 0
     // When clicking a 'follow active' view (e.g. view is the sidebar),
     // open the URL in the active view
     if (view && view->isFollowActive()) {
@@ -592,7 +648,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             req.browserArgs.setNewTab(false);
         }
     }
-
     const QString oldLocationBarURL = locationBarURL();
     if (view) {
         if (view == m_currentView) {
@@ -603,49 +658,14 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             // Don't change location bar if not current view
         }
     }
-
     // Fast mode for local files: do the stat ourselves instead of letting OpenUrlJob do it.
     if (mimeType.isEmpty() && url.isLocalFile()) {
         QMimeDatabase db;
         mimeType = db.mimeTypeForFile(url.toLocalFile()).name();
     }
 
-    if (url.isLocalFile()) {
-        // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
-        // zip:/<path>/ when clicking on a zip file, etc.
-        // The .protocol file specifies the mimetype that the kioslave handles.
-        // Note that we don't use mimetype inheritance since we don't want to
-        // open OpenDocument files as zip folders...
-        // Also note that we do this here and not in openView anymore,
-        // because in the case of foo.bz2 we don't know the final mimetype, we need a konqrun...
-        const QString protocol = KProtocolManager::protocolForArchiveMimetype(mimeType);
-        if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(mimeType)) {
-            url.setScheme(protocol);
-            if (mimeType == QLatin1String("application/x-webarchive")) {
-                url.setPath(url.path() + "/index.html");
-                mimeType = QStringLiteral("text/html");
-            } else {
-                if (KProtocolManager::outputType(url) == KProtocolInfo::T_FILESYSTEM) {
-                    if (!url.path().endsWith('/')) {
-                        url.setPath(url.path() + '/');
-                    }
-                    mimeType = QStringLiteral("inode/directory");
-                } else {
-                    mimeType.clear();
-                }
-            }
-        }
-
-        // Redirect to the url in Type=Link desktop files
-        if (mimeType == QLatin1String("application/x-desktop")) {
-            KDesktopFile df(url.toLocalFile());
-            if (df.hasLinkType()) {
-                url = QUrl(df.readUrl());
-                mimeType.clear(); // to be determined again
-            }
-        }
-    }
     const bool hasMimeType = (!mimeType.isEmpty() && mimeType != QLatin1String("application/octet-stream"));
+
     KService::Ptr offer;
     bool associatedAppIsKonqueror = false;
     if (hasMimeType) {
@@ -656,7 +676,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             req.forceAutoEmbed = true;
         }
     }
-
     //qCDebug(KONQUEROR_LOG) << "trying openView for" << url << "( mimeType" << mimeType << ")";
     if (hasMimeType || KonqUrl::isValidNotBlank(url)) {
 
@@ -664,14 +683,18 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         // Built-in view ?
         if (!openView(mimeType, url, view /* can be 0 */, req)) {
             //qCDebug(KONQUEROR_LOG) << "openView returned false";
+#endif
+//TODO: Remove KonqRun: is this needed?
+#if 0
             // Are we following another view ? Then forget about this URL. Otherwise fire app.
             if (!req.followMode) {
+#endif
+#if 0
                 //qCDebug(KONQUEROR_LOG) << "we were not following. Fire app.";
                 // The logic below is similar to BrowserRun::handleNonEmbeddable(),
                 // but we don't have a BrowserRun instance here, and since it uses
                 // some virtual methods [like save, for KHTMLRun], we can't just
                 // move all the logic to static methods... catch 22...
-
                 if (!url.isLocalFile() && !trustedSource && KonqRun::isTextExecutable(mimeType)) {
                     mimeType = QStringLiteral("text/plain");    // view, don't execute
                 }
@@ -719,6 +742,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             }
         }
     } else { // no known mimeType, use KonqRun
+    const bool hasMimeType = (!mimeType.isEmpty() && mimeType != QLatin1String("application/octet-stream"));
+    if (!hasMimeType) {
         bool earlySetLocationBarURL = false;
         if (!view && !m_currentView) { // no view yet, e.g. starting with url as argument
             earlySetLocationBarURL = true;
@@ -734,6 +759,10 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
             qCDebug(KONQUEROR_LOG) << "url=" << url;
             setLocationBarURL(url);
         }
+        if (view == m_currentView) {
+            startAnimation();
+        }
+    }
 
         qCDebug(KONQUEROR_LOG) << "Creating new konqrun for" << url << "req.typedUrl=" << req.typedUrl;
 
@@ -752,7 +781,84 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
 
         connect(run, &KonqRun::finished, this, &KonqMainWindow::slotRunFinished);
     }
+#endif
 }
+
+void KonqMainWindow::urlLoaderFinished(UrlLoader* loader)
+{
+//TODO Remove KonqRun: see whether this is still necessary
+    /*
+    if (!run->mailtoURL().isEmpty()) {
+        QDesktopServices::openUrl(run->mailtoURL());
+    }
+    */
+
+//TODO Remove KonqRun: see which of the things below only need to be done if loader->isAsync. In the original code,
+//this function (slotRunFinished) was only called when using a KonqRun but now it's always called.
+
+    if (loader->hasError()) {   // we had an error
+        QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("removeFromCombo"));
+        message << loader->url().toDisplayString();
+        QDBusConnection::sessionBus().send(message);
+    }
+
+    KonqView *childView = loader->view();
+    qDebug() << "VIEW" << childView;
+
+    // Check if we found a mimetype _and_ we got no error (example: cancel in openwith dialog)
+    if (!loader->mimeType().isEmpty() && !loader->hasError()) {
+
+        // We do this here and not in the constructor, because
+        // we are waiting for the first view to be set up before doing this...
+        // Note: this is only used when konqueror is started from command line.....
+        if (m_bNeedApplyKonqMainWindowSettings) {
+            m_bNeedApplyKonqMainWindowSettings = false; // only once
+            applyKonqMainWindowSettings();
+        }
+
+        return;
+    }
+
+    // An error happened in UrlLoader - stop wheel etc.
+
+    if (childView) {
+        childView->setLoading(false);
+
+        if (childView == m_currentView) {
+            stopAnimation();
+
+            // Revert to working URL - unless the URL was typed manually
+            if (loader->request().typedUrl.isEmpty() && childView->currentHistoryEntry()) { // not typed
+                childView->setLocationBarURL(childView->currentHistoryEntry()->locationBarURL);
+            }
+        }
+    } else { // No view, e.g. starting up empty
+        stopAnimation();
+    }
+}
+
+KonqView * KonqMainWindow::createTabForLoadUrlRequest(const QUrl& url, const KonqOpenURLRequest& request)
+{
+    KonqView *view = m_pViewManager->addTab(QStringLiteral("text/html"),
+                                    QString(),
+                                    false,
+                                    request.openAfterCurrentPage);
+    if (view) {
+        view->setCaption(i18nc("@title:tab", "Loading..."));
+        view->setLocationBarURL(url);
+        if (!request.browserArgs.frameName.isEmpty()) {
+            view->setViewName(request.browserArgs.frameName);    // #44961
+        }
+
+        if (request.newTabInFront) {
+            m_pViewManager->showTab(view);
+        }
+
+        updateViewActions(); //A new tab created -- we may need to enable the "remove tab" button (#56318)
+    }
+    return view;
+}
+
 
 // When opening a new view, for @p mimeType, prefer the part used in @p currentView, if possible.
 // Testcase: window.open after manually switching to another web engine, and with "open popups in tabs" off.
@@ -764,6 +870,7 @@ static QString preferredService(KonqView *currentView, const QString &mimeType)
     return QString();
 }
 
+//TODO remove KonqRun: some of this becomes redundant, at least when called via UrlLoader. Can this be avoided?
 bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req)
 {
     // Second argument is referring URL
@@ -773,7 +880,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         return true; // Nothing else to do.
     }
 
-    if (KonqRun::isExecutable(mimeType)) {
+    if (UrlLoader::isExecutable(mimeType)) {
         return false;    // execute, don't open
     }
     // Contract: the caller of this method should ensure the view is stopped first.
@@ -826,9 +933,9 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     //Force use of WebEnginePart when opening a konq: URL. If the user chose a different
     //default HTML engine, they would get an error because they don't know how to handle
     //such scheme. As a workaround, in this case we force the use of WebEnginePart
-    if (KonqUrl::hasKonqScheme(url)) {
-        serviceName = "webenginepart";
-    }
+//     if (KonqUrl::hasKonqScheme(url)) {
+//         serviceName = "webenginepart";
+//     }
 
     const QString urlStr = url.url();
     if (KonqUrl::isValidNotBlank(urlStr)) {
@@ -865,16 +972,14 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     // Otherwise the user will get asked 'open or save' in openUrl anyway.
     if (!forceAutoEmbed && !KProtocolManager::supportsWriting(url)) {
         QString suggestedFileName;
-        KonqRun *run = childView ? childView->run() : nullptr;
-        int attachment = 0;
-        if (run) {
-            suggestedFileName = run->suggestedFileName();
-            attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
+        UrlLoader *loader = childView ? childView->urlLoader() : nullptr;
+        if (loader) {
+            suggestedFileName = loader->suggestedFileName();
         }
 
         KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
         dlg.setSuggestedFileName(suggestedFileName);
-        const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave(attachment);
+        const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave();
         if (res == KParts::BrowserOpenOrSaveQuestion::Embed) {
             forceAutoEmbed = true;
         } else if (res == KParts::BrowserOpenOrSaveQuestion::Cancel) {
@@ -1040,6 +1145,7 @@ void KonqMainWindow::openUrlRequestHelper(KonqView *childView, const QUrl &url, 
     if (args.metaData().value("konq-temp-file") == "1") {
         req.tempFile = true;
     }
+    req.suggestedFileName =args.metaData().value("SuggestedFileName");
     req.browserArgs = browserArgs;
     openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }
@@ -1894,54 +2000,6 @@ void KonqMainWindow::slotPartChanged(KonqView *childView, KParts::ReadOnlyPart *
     }
 
     viewsChanged();
-}
-
-void KonqMainWindow::slotRunFinished()
-{
-    const KonqRun *run = static_cast<const KonqRun *>(sender());
-
-    if (!run->mailtoURL().isEmpty()) {
-        QDesktopServices::openUrl(run->mailtoURL());
-    }
-
-    if (run->hasError()) {   // we had an error
-        QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("removeFromCombo"));
-        message << run->url().toDisplayString();
-        QDBusConnection::sessionBus().send(message);
-    }
-
-    KonqView *childView = run->childView();
-
-    // Check if we found a mimetype _and_ we got no error (example: cancel in openwith dialog)
-    if (run->wasMimeTypeFound() && !run->hasError()) {
-
-        // We do this here and not in the constructor, because
-        // we are waiting for the first view to be set up before doing this...
-        // Note: this is only used when konqueror is started from command line.....
-        if (m_bNeedApplyKonqMainWindowSettings) {
-            m_bNeedApplyKonqMainWindowSettings = false; // only once
-            applyKonqMainWindowSettings();
-        }
-
-        return;
-    }
-
-    // An error happened in KonqRun - stop wheel etc.
-
-    if (childView) {
-        childView->setLoading(false);
-
-        if (childView == m_currentView) {
-            stopAnimation();
-
-            // Revert to working URL - unless the URL was typed manually
-            if (run->typedUrl().isEmpty() && childView->currentHistoryEntry()) { // not typed
-                childView->setLocationBarURL(childView->currentHistoryEntry()->locationBarURL);
-            }
-        }
-    } else { // No view, e.g. starting up empty
-        stopAnimation();
-    }
 }
 
 void KonqMainWindow::applyKonqMainWindowSettings()

@@ -29,6 +29,7 @@ target_link_libraries(KF5Konq
     KF5::CoreAddons
     KF5::Service
     KF5::Parts
+    Qt5::WebEngineWidgets
     PRIVATE
     KF5::Bookmarks
     KF5::I18n

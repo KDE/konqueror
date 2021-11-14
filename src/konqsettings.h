@@ -12,6 +12,8 @@
 #include <QString>
 #include <kconfig.h>
 
+#include <libkonq_export.h>
+
 // TODO rename this file to konqfmsettings.h, or rename the class to KonqEmbedSettings in a konqembedsettings.h header
 
 /**
@@ -19,7 +21,7 @@
  *
  * (konquerorrc, group "FMSettings")
  */
-class KonqFMSettings
+class LIBKONQ_EXPORT KonqFMSettings
 {
 public:
 

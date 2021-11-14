@@ -40,6 +40,7 @@
 #include <KPasswdServerClient>
 #include <KParts/BrowserInterface>
 #include <KJobWidgets>
+#include <KPluginMetaData>
 
 #include <QStandardPaths>
 #include <QDesktopWidget>
@@ -154,49 +155,8 @@ void WebEnginePage::download(QWebEngineDownloadItem *it, bool newWindow)
     KParts::BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
     KParts::OpenUrlArguments urlArgs;
-    urlArgs.setMimeType(it->mimeType());
-    urlArgs.metaData().insert("AlreadyProcessedByWebEngine", QString());
-    if (m_urlRequestedByApp != url) {
-        emit part()->browserExtension()->openUrlRequest(url, urlArgs, bArgs);
-    } else { //Don't ask the application to handle the URL, since the application itself asked the part to display it
-        saveUrlToDisk(it);
-    }
-}
-
-void WebEnginePage::saveUrlToDisk(QWebEngineDownloadItem* it)
-{
-    QUrl url = it->url();
-    QFileDialog *dlg = new QFileDialog(view());
-    dlg->setAcceptMode(QFileDialog::AcceptSave);
-    dlg->setWindowTitle(i18n("Save As"));
-    dlg->setOption(QFileDialog::DontConfirmOverwrite, false);
-    dlg->setAttribute(Qt::WA_DeleteOnClose);
-    QString suggestedName;
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-    suggestedName = it->suggestedFileName();
-#endif
-    if (suggestedName.isEmpty()) {
-        suggestedName = it->url().fileName();
-    }
-    dlg->selectFile(suggestedName);
-    dlg->setDirectory(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
-    auto savePrc = [this, dlg, url](){
-        QUrl destUrl = dlg->selectedUrls().value(0);
-        if (destUrl.isValid()) {
-            saveUrlUsingKIO(url, destUrl);
-        }
-    };
-    connect(dlg, &QDialog::accepted, dlg, savePrc);
-    dlg->show();
-}
-
-void WebEnginePage::saveUrlUsingKIO(const QUrl& origUrl, const QUrl& destUrl)
-{
-    KIO::FileCopyJob *job = KIO::file_copy(origUrl, destUrl, -1, KIO::Overwrite);
-    job->addMetaData(QStringLiteral("MaxCacheSize"), QStringLiteral("0")); // Don't store in http cache.
-    job->addMetaData(QStringLiteral("cache"), QStringLiteral("cache")); // Use entry from cache if available.
-    KJobWidgets::setWindow(job, view());
-    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    urlArgs.metaData().insert("SuggestedFileName", it->suggestedFileName());
+    askBrowserToOpenUrl(url, it->mimeType(), urlArgs, bArgs);
 }
 
 void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
@@ -248,22 +208,56 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
+bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype, const KParts::OpenUrlArguments &_args, const KParts::BrowserArguments &bargs)
+{
+    KParts::OpenUrlArguments args(_args);
+    args.setMimeType(mimetype);
+    emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
+    return true;
+//     KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
+//     if (bi) {
+//         QMetaObject::invokeMethod(bi, "openUrl", Q_ARG(QUrl, url), Q_ARG(QString, mimetype));
+//         return false;
+//     } else {
+//         return true;
+//     }
+}
+
+// bool WebEnginePage::askBrowserToOpenUrlInPart(const QUrl& url, const QString& part)
+// {
+//     KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
+//     if (bi) {
+//         bool success = QMetaObject::invokeMethod(bi, "openUrlInpart", Q_ARG(QUrl, url), Q_ARG(QString, part));
+//         return success ? false : true;
+//     } else {
+//         return true;
+//     }
+// }
+
+bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
+{
+    Q_ASSERT(url.isLocalFile());
+    KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
+    if (bi) {
+        QString partToUse;
+        bool success = success = QMetaObject::invokeMethod(bi, "partForLocalFile", Q_RETURN_ARG(QString, partToUse), Q_ARG(QString, url.path()));
+        if (success) {
+            return partToUse == m_part->metaData().pluginId();
+        }
+    }
+    return false;
+}
+
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    bool urlRequestedByApp = m_urlRequestedByApp == url;
-    if (!urlRequestedByApp) {
-        m_urlRequestedByApp = QUrl();
-    }
-        
-    //Don't open local files using WebEnginePart except if configured to do so by the user. For example
-    //for example, this ensures that the "Home" link in the introduction page is opened in Dolphin part
-    //(or whichever part the user has chosen to open directories instead of WebEnginePart
-    if (!urlRequestedByApp && url.isLocalFile()) {
-        emit m_part->browserExtension()->openUrlRequest(url);
-        return false;
+    qDebug() << "ACCEPT NAVIGATION REQUEST for" << url;
+
+    if (isMainFrame && url.isLocalFile()) {
+        if (!shouldOpenLocalUrl(url)) {
+            return askBrowserToOpenUrl(url);
+        }
     }
 
-//     qCDebug(WEBENGINEPART_LOG) << url << "type=" << type;
     QUrl reqUrl(url);
 
     // Handle "mailto:" url here...

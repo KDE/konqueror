@@ -80,6 +80,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments browserArgs;
     QList<QUrl> filesToSelect; // files to select in a konqdirpart
+    QString suggestedFileName;
 
     static KonqOpenURLRequest null;
 };

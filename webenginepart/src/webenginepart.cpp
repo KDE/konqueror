@@ -414,17 +414,29 @@ void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
 
 }
 
-bool WebEnginePart::openUrl(const QUrl &_u)
-{
-    QUrl u (_u);
+// bool WebEnginePart::openUrl(const QUrl &u)
+// {
+//     // Ignore empty requests...
+//     if (u.isEmpty()) {
+//         return false;
+//     }
+//
+//     UrlLoader *urlLoader = new UrlLoader(u, this);
+//     KParts::OpenUrlArguments args (arguments());
+//     qDebug() << "URL:" << u  << args.mimeType();
+//     connect(urlLoader, &UrlLoader::finished, urlLoader, &UrlLoader::deleteLater);
+//
+//     urlLoader->openUrl(args.mimeType(), args.metaData().value("SuggestedFileName"));
+//     return true;
+// }
 
-    if (property("urlRequestedByApp").toString() == u.url()) {
-        page()->markUrlAsRequestedByApp(u);
+bool WebEnginePart::openUrl(const QUrl& _u)
+{
+    if (_u.isEmpty()) {
+        return false;
     }
 
-    // Ignore empty requests...
-    if (u.isEmpty())
-        return false;
+    QUrl u(_u);
 
     // If the URL given is a supported local protocol, e.g. "bookmark" but lacks
     // a path component, we set the path to "/" here so that the security context
@@ -464,6 +476,7 @@ bool WebEnginePart::openUrl(const QUrl &_u)
     return true;
 }
 
+
 bool WebEnginePart::closeUrl()
 {
     m_webView->triggerPageAction(QWebEnginePage::Stop);
@@ -481,6 +494,12 @@ bool WebEnginePart::isModified() const
     //return m_webView->isModified();
     return false;
 }
+
+// QWebEngineProfile * WebEnginePart::profile() const
+// {
+//     return WebEnginePartControls::self()->profile();
+// }
+//
 
 void WebEnginePart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {

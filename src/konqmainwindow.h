@@ -57,6 +57,7 @@ class KConfigGroup;
 class KonqHistoryDialog;
 struct HistoryEntry;
 class QLineEdit;
+class UrlLoader;
 
 namespace KParts
 {
@@ -126,6 +127,8 @@ public:
      */
     bool openView(QString mimeType, const QUrl &url, KonqView *childView,
                   const KonqOpenURLRequest &req = KonqOpenURLRequest::null);
+
+//     bool openView(const QString &mimetype, const QUrl &url, KService::Ptr service);
 
     void abortLoading();
 
@@ -226,6 +229,8 @@ public:
     bool sidebarVisible() const;
 
     bool fullScreenMode() const;
+
+    KonqView* createTabForLoadUrlRequest(const QUrl &url, const KonqOpenURLRequest &request);
 
     /**
     * @return the "link view" action, for checking/unchecking from KonqView
@@ -370,7 +375,7 @@ public Q_SLOTS:
 
     void slotPartChanged(KonqView *childView, KParts::ReadOnlyPart *oldPart, KParts::ReadOnlyPart *newPart);
 
-    void slotRunFinished();
+    void urlLoaderFinished(UrlLoader *loader);
     void slotClearLocationBar();
 
     // reimplement from KParts::MainWindow

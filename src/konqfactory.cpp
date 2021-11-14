@@ -117,16 +117,13 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
 
     // Look for this service
     if (!serviceName.isEmpty()) {
-        KService::List::const_iterator it = offers.constBegin();
-        for (; it != offers.constEnd() && !service; ++it) {
-            if ((*it)->desktopEntryName() == serviceName) {
-                qCDebug(KONQUEROR_LOG) << "Found requested service" << serviceName;
-                service = *it;
-            }
-        }
+        auto it = std::find_if(offers.constBegin(), offers.constEnd(), [serviceName](KService::Ptr s){return s->desktopEntryName() == serviceName;});
+        qCDebug(KONQUEROR_LOG) << "Found requested service" << serviceName;
+        service = *it;
     }
 
     KonqViewFactory viewFactory;
+
     if (service) {
         qCDebug(KONQUEROR_LOG) << "Trying to open lib for requested service " << service->desktopEntryName();
         viewFactory = tryLoadingService(service);
@@ -134,16 +131,17 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         // When looking for konq_sidebartng or konq_aboutpage, we don't want to end up
         // with khtml or another Browser/View part in case of an error...
     } else {
-        KService::List::Iterator it = offers.begin();
-        for (; viewFactory.isNull() /* exit as soon as we get one */ && it != offers.end(); ++it) {
-            service = (*it);
+        for (KService::Ptr offer : offers) {
             // Allowed as default ?
-            QVariant prop = service->property(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"));
-            qCDebug(KONQUEROR_LOG) << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
+            QVariant prop = offer ->property(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"));
+            qCDebug(KONQUEROR_LOG) << offer ->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
             if (!prop.isValid() || prop.toBool()) {   // defaults to true
                 //qCDebug(KONQUEROR_LOG) << "Trying to open lib for service " << service->name();
-                viewFactory = tryLoadingService(service);
-                // If this works, we exit the loop.
+                viewFactory = tryLoadingService(offer);
+                if (!viewFactory.isNull()) {
+                    service = offer;
+                    break;
+                }
             } else {
                 qCDebug(KONQUEROR_LOG) << "Not allowed as default " << service->desktopEntryName();
             }

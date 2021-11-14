@@ -25,6 +25,7 @@ namespace KParts {
 }
 
 class QWebEngineView;
+class QWebEngineProfile;
 class WebEngineView;
 class WebEnginePage;
 class SearchBar;
@@ -65,6 +66,11 @@ public:
      * @see KParts::ReadOnlyPart::openUrl
      */
     bool openUrl(const QUrl &) override;
+
+    /**
+     * Actually loads the URL in the page
+     */
+    void loadUrl(const QUrl & _u);
 
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -116,6 +122,12 @@ public:
      * @param newPage the new page
      */
     void setPage(WebEnginePage *newPage);
+
+    QWebEngineProfile *profile() const;
+
+    bool isWebEnginePart() const {return true;}
+
+    Q_PROPERTY(bool isWebEnginePart READ isWebEnginePart)
 
 public Q_SLOTS:
     void exitFullScreen();

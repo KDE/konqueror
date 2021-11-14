@@ -71,8 +71,13 @@ WebEngineView::~WebEngineView()
     //qCDebug(WEBENGINEPART_LOG);
 }
 
-void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
+void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs, bool force)
 {
+    WebEnginePage *pg = qobject_cast<WebEnginePage*>(page());
+    if (!pg) {
+        return;
+    }
+
     page()->setProperty("NavigationTypeUrlEntered", true);
 
     if (args.reload() && url == this->url()) {
@@ -80,10 +85,10 @@ void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& arg
       return;
     }
 
-    QNetworkRequest request(url);
-    if (args.reload()) {
-        request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
-    }
+//     QNetworkRequest request(url);
+//     if (args.reload()) {
+//         request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
+//     }
 
     if (bargs.postData.isEmpty()) {
         QWebEngineView::load(url);

@@ -10,7 +10,7 @@
 #include "KonqViewAdaptor.h"
 #include "konqsettingsxt.h"
 #include "konqframestatusbar.h"
-#include "konqrun.h"
+#include "urlloader.h"
 #include <konq_events.h>
 #include "konqviewmanager.h"
 #include "konqtabs.h"
@@ -71,7 +71,7 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
     m_bLockHistory = false;
     m_doPost = false;
     m_pMainWindow = mainWindow;
-    m_pRun = nullptr;
+    m_loader = nullptr;
     m_pPart = nullptr;
 
     m_service = service;
@@ -123,7 +123,7 @@ KonqView::~KonqView()
     qDeleteAll(m_lstHistory);
     m_lstHistory.clear();
 
-    setRun(nullptr);
+    setUrlLoader(nullptr);
     //qCDebug(KONQUEROR_LOG) << this << "done";
 }
 
@@ -888,30 +888,30 @@ QUrl KonqView::url() const
 QUrl KonqView::upUrl() const
 {
     QUrl currentURL;
-    if (m_pRun) {
-        currentURL = m_pRun->url();
+    if (m_loader) {
+        currentURL = m_loader->url();
     } else {
         currentURL = QUrl::fromUserInput(m_sLocationBarURL);
     }
     return KIO::upUrl(currentURL);
 }
 
-void KonqView::setRun(KonqRun *run)
+void KonqView::setUrlLoader(UrlLoader *run)
 {
-    if (m_pRun) {
-        // Tell the KonqRun to abort, but don't delete it ourselves.
+    if (m_loader) {
+        // Tell the UrlLoader to abort, but don't delete it ourselves.
         // It could be showing a message box right now. It will delete itself anyway.
-        m_pRun->abort();
+        m_loader->abort();
         // finish() will be emitted later (when back to event loop)
         // and we don't want it to call slotRunFinished (which stops the animation and stop button).
-        m_pRun->disconnect(m_pMainWindow);
+        m_loader->disconnect(m_pMainWindow);
         if (!run) {
             frame()->unsetCursor();
         }
     } else if (run) {
         frame()->setCursor(Qt::BusyCursor);
     }
-    m_pRun = run;
+    m_loader = run;
 }
 
 void KonqView::stop()
@@ -930,16 +930,16 @@ void KonqView::stop()
         m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
         setLoading(false, false);
     }
-    if (m_pRun) {
+    if (m_loader) {
         // Revert to working URL - unless the URL was typed manually
         // This is duplicated with KonqMainWindow::slotRunFinished, but we can't call it
         //   since it relies on sender()...
-        if (currentHistoryEntry() && m_pRun->typedUrl().isEmpty()) {   // not typed
+        if (currentHistoryEntry() && m_loader->request().typedUrl.isEmpty()) {   // not typed
             setLocationBarURL(currentHistoryEntry()->locationBarURL);
             setPageSecurity(currentHistoryEntry()->pageSecurity);
         }
 
-        setRun(nullptr);
+        setUrlLoader(nullptr);
         m_pKonqFrame->statusbar()->slotLoadingProgress(-1);
     }
     if (!m_bLockHistory && m_lstHistory.count() > 0) {

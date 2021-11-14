@@ -33,6 +33,8 @@ public:
 
 public slots:
     void toggleCompleteFullScreen(bool on);
+//     void openUrl(const QUrl &url, const QString &mimetype, const QString &suggestedFileName=QString());
+    QString partForLocalFile(const QString &path);
 
 private:
     KonqMainWindow *m_mainWindow;

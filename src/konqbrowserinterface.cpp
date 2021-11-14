@@ -9,6 +9,8 @@
 
 #include "konqbrowserinterface.h"
 #include "konqmainwindow.h"
+#include "urlloader.h"
+#include "konqview.h"
 
 KonqBrowserInterface::KonqBrowserInterface(KonqMainWindow *mainWindow, KParts::ReadOnlyPart *part):
     KParts::BrowserInterface(mainWindow), m_mainWindow(mainWindow), m_part(part)
@@ -20,3 +22,13 @@ void KonqBrowserInterface::toggleCompleteFullScreen(bool on)
     m_mainWindow->toggleCompleteFullScreen(on);
 }
 
+// void KonqBrowserInterface::openUrl(const QUrl &url, const QString& mimetype, const QString &suggestedFileName)
+// {
+//     KParts::ReadOnlyPart *part = m_mainWindow->m_currentView ? m_mainWindow->m_currentView->part() : nullptr;
+//     m_mainWindow->m_urlLoader->openUrl(part, url, mimetype, suggestedFileName);
+// }
+
+QString KonqBrowserInterface::partForLocalFile(const QString& path)
+{
+    return UrlLoader::partForLocalFile(path);
+}

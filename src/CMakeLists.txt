@@ -50,7 +50,6 @@ set(konqueror_KDEINIT_SRCS
    konqdebug.cpp
    konqguiclients.cpp
    konqbookmarkmenu.cpp
-   konqrun.cpp
    konqview.cpp
    konqviewmanager.cpp
    konqmouseeventfilter.cpp
@@ -73,7 +72,6 @@ set(konqueror_KDEINIT_SRCS
    konqmainwindowfactory.cpp
    konqextensionmanager.cpp
    konqbookmarkbar.cpp
-   konqsettings.cpp
    KonquerorAdaptor.cpp
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp
@@ -85,6 +83,8 @@ set(konqueror_KDEINIT_SRCS
    konqstatusbarmessagelabel.cpp
    konqurl.cpp
    konqbrowserinterface.cpp
+   urlloader.cpp
+   konqsettings.cpp
 )
 
 kconfig_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
