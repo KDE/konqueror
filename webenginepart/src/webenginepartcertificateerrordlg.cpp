@@ -23,7 +23,7 @@
 #include "webenginepartcertificateerrordlg.h"
 #include "ui_webenginepartcertificateerrordlg.h"
 
-#include <KIOWidgets/KSslCertificateBox>
+#include <KSslCertificateBox>
 
 #include <QAbstractButton>
 #include <QPushButton>

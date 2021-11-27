@@ -11,7 +11,7 @@
 #include <QWebEngineUrlRequestJob>
 
 #include <kiconloader.h>
-#include <KI18n/KLocalizedString>
+#include <KLocalizedString>
 
 #include <webenginepart_debug.h>
 
