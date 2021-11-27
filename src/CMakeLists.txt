@@ -33,9 +33,9 @@ target_link_libraries(konquerorprivate
    KF5::KIOGui
 )
 
-if(X11_FOUND)
+if(KONQ_HAVE_X11)
   target_link_libraries(konquerorprivate Qt5::X11Extras)
-endif(X11_FOUND)
+endif()
 
 
 set_target_properties(konquerorprivate PROPERTIES VERSION ${KONQUEROR_LIB_VERSION} SOVERSION "5" )

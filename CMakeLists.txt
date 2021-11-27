@@ -47,8 +47,11 @@ if(Qt5WebEngineWidgets_VERSION VERSION_LESS "5.14.0")
   add_definitions(-DWEBENGINEDOWNLOADITEM_USE_PATH)
 endif()
 
-find_package(Qt5X11Extras)
-set(KONQ_HAVE_X11 ${Qt5X11Extras_FOUND})
+option(WITHOUT_X11 "Build without X11 integration (skips finding Qt5X11Extras)" OFF)
+if(NOT WITHOUT_X11)
+    find_package(Qt5X11Extras)
+    set(KONQ_HAVE_X11 ${Qt5X11Extras_FOUND})
+endif()
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
