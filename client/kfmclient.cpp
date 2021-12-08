@@ -48,7 +48,6 @@
 
 static const char appName[] = "kfmclient";
 static const char programName[] = I18N_NOOP("kfmclient");
-static const char description[] = I18N_NOOP("KDE tool for opening URLs from the command line");
 static const char version[] = "2.0";
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
@@ -56,7 +55,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     QApplication app(argc, argv);
 
     KAboutData aboutData(appName, i18n(programName), QLatin1String(version));
-    aboutData.setShortDescription(i18n(description));
+    aboutData.setShortDescription(i18n("KDE tool for opening URLs from the command line"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
