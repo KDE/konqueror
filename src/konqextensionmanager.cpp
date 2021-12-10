@@ -26,14 +26,16 @@
 #else
 #include <KAboutData>
 #endif
+#include <KConfigGroup>
+#include <KFileUtils>
 #include <KLocalizedString>
+#include <KPluginWidget>
+#include <KSharedConfig>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>
 #include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
-#include <KSharedConfig>
-#include <KConfigGroup>
 
 // Local
 #include "konqview.h"
@@ -42,7 +44,7 @@
 class KonqExtensionManagerPrivate
 {
 public:
-    KPluginSelector *pluginSelector;
+    KPluginWidget *pluginSelector;
     KonqMainWindow *mainWindow;
     KParts::ReadOnlyPart *activePart;
     QDialogButtonBox *buttonBox;
@@ -61,7 +63,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 
     resize(QSize(640, 480)); // FIXME: hard-coded values ?
 
-    d->pluginSelector = new KPluginSelector(this);
+    d->pluginSelector = new KPluginWidget(this);
     mainLayout->addWidget(d->pluginSelector);
     connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));
     connect(d->pluginSelector, SIGNAL(configCommitted(QByteArray)),
@@ -70,15 +72,22 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->mainWindow = mainWindow;
     d->activePart = activePart;
 
-    d->pluginSelector->addPlugins(QStringLiteral("konqueror"), i18n("Extensions"), QStringLiteral("Extensions"), KSharedConfig::openConfig());
+    auto addPluginForId = [this](const QString &pluginId) {
+        const QStringList searchPaths =
+            QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, pluginId + QStringLiteral("/kpartplugins"), QStandardPaths::LocateDirectory);
+        const QStringList files = KFileUtils::findAllUniqueFiles(searchPaths, {QStringLiteral("*.desktop")});
+        QVector<KPluginMetaData> metaDataList;
+        metaDataList.reserve(files.count());
+        for (const QString &file : files) {
+            metaDataList << KPluginMetaData::fromDesktopFile(file);
+        }
+        d->pluginSelector->setConfig(KSharedConfig::openConfig(pluginId + QLatin1String("rc"))->group("KParts Plugins"));
+        d->pluginSelector->addPlugins(metaDataList, i18n("Extensions"));
+    };
     if (activePart) {
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
-        const QString pluginId = activePart->metaData().pluginId();
-#else
-        const QString pluginId = activePart->componentData().componentName();
-#endif
-        d->pluginSelector->addPlugins(pluginId, i18n("Extensions"), QStringLiteral("Tools"));
-        d->pluginSelector->addPlugins(pluginId, i18n("Extensions"), QStringLiteral("Statusbar"));
+        addPluginForId(activePart->metaData().pluginId());
+    } else {
+        addPluginForId(QStringLiteral("konqueror"));
     }
 
     d->buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Apply);
@@ -91,8 +100,6 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     connect(okButton, SIGNAL(clicked()), SLOT(slotOk()));
     connect(d->buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), SLOT(slotApply()));
     connect(d->buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), SLOT(slotDefault()));
-
-    d->pluginSelector->load();
 }
 
 KonqExtensionManager::~KonqExtensionManager()
