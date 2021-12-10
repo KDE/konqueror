@@ -203,7 +203,6 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     initActions();
 
     // Load plugins once we are fully ready
-    loadPlugins();
     setWallet(page()->wallet());
     if (m_wallet) {
         page()->scripts().insert(WebEngineWallet::formDetectorFunctionsScript());

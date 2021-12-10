@@ -10,7 +10,7 @@
 
 #include <KHistoryComboBox>
 #include <KUriFilter>
-#include <KParts/Plugin>
+#include <konq_kpart_plugin.h>
 
 #include <QStringList>
 #include <QItemDelegate>
@@ -123,7 +123,7 @@ private:
  * @author Arend van Beelen jr. <arend@auton.nl>
  * @version $Id$
  */
-class SearchBarPlugin : public KParts::Plugin
+class SearchBarPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 

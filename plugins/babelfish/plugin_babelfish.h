@@ -7,11 +7,11 @@
 #ifndef __plugin_babelfish_h
 #define __plugin_babelfish_h
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 #include <kactionmenu.h>
 #include <QActionGroup>
 
-class PluginBabelFish : public KParts::Plugin
+class PluginBabelFish : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

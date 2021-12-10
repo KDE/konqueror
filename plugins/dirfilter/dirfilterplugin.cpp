@@ -207,7 +207,7 @@ void FilterBar::keyReleaseEvent(QKeyEvent *event)
 }
 
 DirFilterPlugin::DirFilterPlugin(QObject *parent, const QVariantList &)
-    : KParts::Plugin(parent)
+    : KonqParts::Plugin(parent)
     , m_filterBar(nullptr)
     , m_focusWidget(nullptr)
 {

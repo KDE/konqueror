@@ -7,9 +7,9 @@
 #ifndef kshellcmdplugin_h
 #define kshellcmdplugin_h
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 
-class KShellCmdPlugin : public KParts::Plugin
+class KShellCmdPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

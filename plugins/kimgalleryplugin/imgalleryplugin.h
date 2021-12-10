@@ -9,8 +9,9 @@
 #ifndef kimgalleryplugin_h
 #define kimgalleryplugin_h
 
-#include <kparts/plugin.h>
 #include <kparts/readonlypart.h>
+#include <konq_kpart_plugin.h>
+
 #include <QDir>
 
 class QProgressDialog;
@@ -19,7 +20,7 @@ class QTextStream;
 
 typedef QMap<QString, QString> CommentMap;
 
-class KImGalleryPlugin : public KParts::Plugin
+class KImGalleryPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

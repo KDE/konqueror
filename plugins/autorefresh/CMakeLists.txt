@@ -11,7 +11,7 @@ add_library(autorefresh MODULE ${autorefresh_PART_SRCS})
 
 
 
-target_link_libraries(autorefresh KF5::I18n KF5::Parts KF5::IconThemes )
+target_link_libraries(autorefresh KF5::I18n KF5::Parts KF5::IconThemes KF5Konq)
 
 install(TARGETS autorefresh  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

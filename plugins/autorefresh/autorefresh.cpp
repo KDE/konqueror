@@ -19,7 +19,7 @@
 #include <KParts/ReadOnlyPart>
 
 AutoRefresh::AutoRefresh(QObject *parent, const QVariantList & /*args*/)
-    : Plugin(parent)
+    : KonqParts::Plugin(parent)
 {
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &AutoRefresh::slotRefresh);

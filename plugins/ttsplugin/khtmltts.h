@@ -8,12 +8,12 @@
 #ifndef KHTMLTTS_H
 #define KHTMLTTS_H
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 
 /**
  * KHTML KParts Plugin
  */
-class KHTMLPluginTTS : public KParts::Plugin
+class KHTMLPluginTTS : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

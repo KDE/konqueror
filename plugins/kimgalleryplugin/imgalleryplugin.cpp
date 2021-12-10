@@ -46,7 +46,7 @@ static QString directory(const QUrl &url) {
 }
 
 KImGalleryPlugin::KImGalleryPlugin(QObject *parent, const QVariantList &)
-    : KParts::Plugin(parent), m_commentMap(nullptr)
+    : KonqParts::Plugin(parent), m_commentMap(nullptr)
 {
     QAction *a = actionCollection()->addAction(QStringLiteral("create_img_gallery"));
     a->setText(i18n("&Create Image Gallery..."));

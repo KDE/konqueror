@@ -8,11 +8,11 @@
 #define SETTINGS_PLUGIN
 
 #include <kparts_version.h>
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 
 class KConfig;
 
-class SettingsPlugin : public KParts::Plugin
+class SettingsPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

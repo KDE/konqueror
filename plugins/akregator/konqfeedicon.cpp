@@ -42,7 +42,7 @@ static QUrl baseUrl(KParts::ReadOnlyPart *part)
 }
 
 KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
-    : KParts::Plugin(parent),
+    : KonqParts::Plugin(parent),
       m_part(nullptr),
       m_feedIcon(nullptr),
       m_statusBarEx(nullptr),

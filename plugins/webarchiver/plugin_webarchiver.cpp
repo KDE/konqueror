@@ -27,7 +27,7 @@ K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
 
 
 PluginWebArchiver::PluginWebArchiver(QObject *parent, const QVariantList &args)
-    : Plugin(parent)
+    : KonqParts::Plugin(parent)
 {
     QAction *a = actionCollection()->addAction(QStringLiteral("archivepage"));
     a->setText(i18n("Archive Web Page..."));

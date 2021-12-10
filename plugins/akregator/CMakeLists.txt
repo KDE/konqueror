@@ -18,7 +18,7 @@ set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginutil
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
 target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
-target_link_libraries(akregatorkonqfeedicon KF5::I18n KF5::Parts KF5::IconThemes)
+target_link_libraries(akregatorkonqfeedicon KF5::I18n KF5::IconThemes KF5Konq)
 
 install(TARGETS akregatorkonqfeedicon DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

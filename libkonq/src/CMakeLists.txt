@@ -55,6 +55,7 @@ install(FILES
     konq_historyentry.h
     konq_historyprovider.h
     konq_popupmenu.h
+    konq_kpart_plugin.h
     ${LibKonq_BINARY_DIR}/src/libkonq_export.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}

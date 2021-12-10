@@ -20,18 +20,13 @@
 #include <kxmlguifactory.h>
 #include <kconfig.h>
 #include "konqdebug.h"
-#include <kparts_version.h>
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
+#include "konq_kpart_plugin.h"
 #include <KPluginMetaData>
-#else
-#include <KAboutData>
-#endif
 #include <KConfigGroup>
 #include <KFileUtils>
 #include <KLocalizedString>
 #include <KPluginWidget>
 #include <KSharedConfig>
-#include <kparts/plugin.h>
 #include <kplugininfo.h>
 #include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
@@ -66,8 +61,9 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->pluginSelector = new KPluginWidget(this);
     mainLayout->addWidget(d->pluginSelector);
     connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));
-    connect(d->pluginSelector, SIGNAL(configCommitted(QByteArray)),
-            this, SLOT(reparseConfiguration(QByteArray)));
+    connect(d->pluginSelector, &KPluginWidget::pluginConfigSaved, this, [this](const QString &pluginId) {
+        reparseConfiguration(pluginId.toLocal8Bit());
+    });
 
     d->mainWindow = mainWindow;
     d->activePart = activePart;
@@ -125,8 +121,8 @@ void KonqExtensionManager::apply()
         setChanged(false);
 
         if (d->mainWindow) {
-            KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, QStringLiteral("konqueror"));
-            QList<KParts::Plugin *> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
+            //KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, QStringLiteral("konqueror"));
+            QList<KonqParts::Plugin *> plugins = KonqParts::Plugin::pluginObjects(d->mainWindow);
 
             for (int i = 0; i < plugins.size(); ++i) {
                 d->mainWindow->factory()->addClient(plugins.at(i));
@@ -134,8 +130,8 @@ void KonqExtensionManager::apply()
         }
 
         if (d->activePart) {
-            KParts::Plugin::loadPlugins(d->activePart, d->activePart, d->activePart->componentName());
-            QList<KParts::Plugin *> plugins = KParts::Plugin::pluginObjects(d->activePart);
+            KonqParts::Plugin::loadPlugins(d->activePart, d->activePart, d->activePart->componentName());
+            QList<KonqParts::Plugin *> plugins = KonqParts::Plugin::pluginObjects(d->activePart);
 
             for (int i = 0; i < plugins.size(); ++i) {
                 d->activePart->factory()->addClient(plugins.at(i));

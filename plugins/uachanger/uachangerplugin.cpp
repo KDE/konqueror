@@ -36,7 +36,7 @@ K_PLUGIN_FACTORY(UAChangerPluginFactory, registerPlugin<UAChangerPlugin>();)
 
 UAChangerPlugin::UAChangerPlugin(QObject *parent,
                                  const QVariantList &)
-    : KParts::Plugin(parent),
+    : KonqParts::Plugin(parent),
       m_bSettingsLoaded(false), m_part(nullptr), m_config(nullptr)
 {
     m_pUAMenu = new KActionMenu(QIcon::fromTheme("preferences-web-browser-identification"),

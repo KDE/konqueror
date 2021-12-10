@@ -8,6 +8,7 @@
 
 // Own
 #include "konqfactory.h"
+#include <konq_kpart_plugin.h>
 
 // std
 #include <assert.h>
@@ -20,10 +21,11 @@
 // KDE
 #include "konqdebug.h"
 #include <KLocalizedString>
+#include <KParts/ReadOnlyPart>
+#include <KPluginInfo>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kservicetypetrader.h>
-#include <KParts/ReadOnlyPart>
 
 // Local
 #include "konqsettings.h"
@@ -51,6 +53,7 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
     if (!part) {
         qCWarning(KONQUEROR_LOG) << "No KParts::ReadOnlyPart created from" << m_libName;
     } else {
+        KonqParts::Plugin::loadPlugins(part, part, part->componentName());
         QFrame *frame = qobject_cast<QFrame *>(part->widget());
         if (frame) {
             frame->setFrameStyle(QFrame::NoFrame);
@@ -64,6 +67,7 @@ static KonqViewFactory tryLoadingService(KService::Ptr service)
     KPluginLoader pluginLoader(*service);
     pluginLoader.setLoadHints(QLibrary::ExportExternalSymbolsHint); // #110947
     KPluginFactory *factory = pluginLoader.factory();
+    factory->setMetaData(KPluginInfo(service).toMetaData());
     if (!factory) {
         KMessageBox::error(nullptr,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",

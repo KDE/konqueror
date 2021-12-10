@@ -17,7 +17,7 @@
 
 class KPluginMetaData;
 
-namespace KParts
+namespace KonqParts
 {
 class PluginPrivate;
 

@@ -22,7 +22,7 @@
 #include <kpluginfactory.h>
 
 KHTMLPluginTTS::KHTMLPluginTTS(QObject *parent, const QVariantList &)
-    : Plugin(parent)
+    : KonqParts::Plugin(parent)
 {
     KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent);
     if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {

@@ -10,7 +10,7 @@
 #define KONQFEEDICON_H
 
 #include <qpointer.h>
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 #include <QMenu>
 #include "feeddetector.h"
 
@@ -27,7 +27,7 @@ class ReadOnlyPart;
 
 namespace Akregator
 {
-class KonqFeedIcon : public KParts::Plugin
+class KonqFeedIcon : public KonqParts::Plugin
 {
     Q_OBJECT
 

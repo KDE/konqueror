@@ -47,7 +47,7 @@ K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
 
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :
-    KParts::Plugin(parent),
+    KonqParts::Plugin(parent),
     m_popupMenu(nullptr),
     m_addWSWidget(nullptr),
     m_searchMode(UseSearchProvider),
@@ -153,7 +153,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
             }
         }
     }
-    return KParts::Plugin::eventFilter(o, e);
+    return KonqParts::Plugin::eventFilter(o, e);
 }
 
 void SearchBarPlugin::nextSearchEntry()

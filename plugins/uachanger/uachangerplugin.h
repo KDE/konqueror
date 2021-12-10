@@ -11,7 +11,7 @@
 #include <qstringlist.h>
 #include <qurl.h>
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 #include <kparts/readonlypart.h>
 
 class KActionMenu;
@@ -23,7 +23,7 @@ namespace KIO
 {
 }
 
-class UAChangerPlugin : public KParts::Plugin
+class UAChangerPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 

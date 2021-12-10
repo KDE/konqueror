@@ -7,10 +7,9 @@
 #ifndef PLUGIN_WEBARCHIVER_H
 #define PLUGIN_WEBARCHIVER_H
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 
-
-class PluginWebArchiver : public KParts::Plugin
+class PluginWebArchiver : public KonqParts::Plugin
 {
     Q_OBJECT
 

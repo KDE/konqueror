@@ -10,7 +10,7 @@
 #define __plugin_autorefresh_h
 
 #include <QVariant>
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 
 class QTimer;
 class KSelectAction;
@@ -29,7 +29,7 @@ class KSelectAction;
  * "data" (KDEDIR/share/apps usually)+"/instancename/kpartplugins/"
  * where instancename is the name of the part's instance.
  **/
-class AutoRefresh : public KParts::Plugin
+class AutoRefresh : public KonqParts::Plugin
 {
     Q_OBJECT
 public:

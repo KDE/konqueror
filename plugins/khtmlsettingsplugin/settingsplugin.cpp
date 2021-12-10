@@ -41,7 +41,7 @@ SettingsPlugin::SettingsPlugin(QObject *parent,
                                const KPluginMetaData& metaData,
 #endif
                                const QVariantList &)
-    : KParts::Plugin(parent), mConfig(nullptr)
+    : KonqParts::Plugin(parent), mConfig(nullptr)
 {
 #if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);

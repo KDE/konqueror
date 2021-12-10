@@ -15,7 +15,7 @@ add_library(khtmlsettingsplugin MODULE ${khtmlsettingsplugin_PART_SRCS})
 kcoreaddons_desktop_to_json(khtmlsettingsplugin ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop)
 
 
-target_link_libraries(khtmlsettingsplugin KF5::I18n KF5::Parts)
+target_link_libraries(khtmlsettingsplugin KF5::I18n KF5::Parts KF5Konq)
 
 install(TARGETS khtmlsettingsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

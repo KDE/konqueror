@@ -37,7 +37,7 @@ K_PLUGIN_FACTORY(BabelFishFactory, registerPlugin<PluginBabelFish>();)
 
 PluginBabelFish::PluginBabelFish(QObject *parent,
                                  const QVariantList &)
-    : Plugin(parent),
+    : KonqParts::Plugin(parent),
       m_actionGroup(this)
 {
     m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("Translate Web &Page"),

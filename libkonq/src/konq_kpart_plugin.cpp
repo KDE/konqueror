@@ -22,9 +22,10 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 
-using namespace KParts;
+namespace KonqParts
+{
 
-class KParts::PluginPrivate
+class PluginPrivate
 {
 public:
     QString m_parentInstance;
@@ -35,7 +36,6 @@ Plugin::Plugin(QObject *parent)
     : QObject(parent)
     , d(new PluginPrivate())
 {
-    // qDebug() << className();
 }
 
 Plugin::~Plugin() = default;
@@ -157,9 +157,9 @@ Plugin *Plugin::loadPlugin(QObject *parent, const QString &libname, const QStrin
     return plugin;
 }
 
-QList<KParts::Plugin *> Plugin::pluginObjects(QObject *parent)
+QList<KonqParts::Plugin *> Plugin::pluginObjects(QObject *parent)
 {
-    QList<KParts::Plugin *> objects;
+    QList<KonqParts::Plugin *> objects;
 
     if (!parent) {
         return objects;
@@ -271,5 +271,6 @@ void Plugin::loadPlugins(QObject *parent,
             parentGUIClient->insertChildClient(plugin);
         }
     }
+}
 }
 

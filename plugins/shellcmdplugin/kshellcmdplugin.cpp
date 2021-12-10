@@ -21,7 +21,7 @@
 #include <QInputDialog>
 
 KShellCmdPlugin::KShellCmdPlugin(QObject *parent, const QVariantList &)
-    : KParts::Plugin(parent)
+    : KonqParts::Plugin(parent)
 {
     if (!KAuthorized::authorize(QStringLiteral("shell_access"))) {
         return;

@@ -14,7 +14,7 @@
 #include <QMenu>
 #include <QUrl>
 
-#include <kparts/plugin.h>
+#include <konq_kpart_plugin.h>
 #include <KParts/ListingFilterExtension>
 #include <KParts/ListingNotificationExtension>
 
@@ -84,7 +84,7 @@ private:
     QMap<QString, Filters> m_filters;
 };
 
-class DirFilterPlugin : public KParts::Plugin
+class DirFilterPlugin : public KonqParts::Plugin
 {
     Q_OBJECT
 
