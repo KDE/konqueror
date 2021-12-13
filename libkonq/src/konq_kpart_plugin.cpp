@@ -14,6 +14,7 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
+#include <KService>
 #include <KSharedConfig>
 #include <KXMLGUIFactory>
 
@@ -102,6 +103,15 @@ QList<Plugin::PluginInfo> Plugin::pluginInfos(const QString &componentName)
         info.m_document.setContent(doc);
         if (info.m_document.documentElement().isNull()) {
             continue;
+        }
+
+        const QString guessedService = info.m_absXMLFileName.replace(QLatin1String(".rc"), QLatin1String(".desktop"));
+        if (!guessedService.isEmpty() && QFileInfo::exists(guessedService)) {
+            KDesktopFile file(guessedService);
+            const QString tryExec = file.desktopGroup().readEntry("TryExec");
+            if (!tryExec.isEmpty() && QStandardPaths::findExecutable(tryExec).isEmpty()) {
+                continue;
+            }
         }
 
         plugins.append(info);
