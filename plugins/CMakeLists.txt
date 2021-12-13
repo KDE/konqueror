@@ -9,6 +9,7 @@ add_subdirectory( dirfilter )
 add_subdirectory( uachanger )
 add_subdirectory( babelfish )
 add_subdirectory( webarchiver )
+add_subdirectory( kget )
 
 if (Qt5TextToSpeech_FOUND)
    add_subdirectory(ttsplugin)

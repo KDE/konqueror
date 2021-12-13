@@ -1,0 +1,53 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.kget.main">
+    <method name="dropTargetVisible">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="setDropTargetVisible">
+      <arg name="visible" type="b" direction="in"/>
+    </method>
+    <method name="offlineMode">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="setOfflineMode">
+      <arg type="b" direction="in"/>
+    </method>
+    <method name="addTransfer">
+      <arg name="src" type="s" direction="in"/>
+      <arg name="destDir" type="s" direction="in"/>
+      <arg name="start" type="b" direction="in"/>
+      <arg type="as" direction="out"/>
+    </method>
+    <method name="delTransfer">
+      <arg name="dbusObjectPath" type="s" direction="in"/>
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="showNewTransferDialog">
+      <arg name="urls" type="as" direction="in"/>
+    </method>
+    <method name="transfers">
+       <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QVariantMap"/> 
+       <arg name="out" type="a{ss}" direction="out"/>
+    </method>
+    <method name="transfersSpeed">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="importLinks">
+        <arg name="links" type="as" direction="in" />
+    </method>
+    <method name="isSupported">
+      <arg type="b" direction="out"/>
+      <arg name="url" type="s" direction="in"/>
+    </method>
+    <signal name="transfersAdded">
+        <arg name="urls" type="as" direction="out"/>
+        <arg name="dBusObjectPaths" type="as" direction="out"/>
+    </signal>
+    <signal name="transfersRemoved">
+        <arg name="urls" type="as" direction="out"/>
+        <arg name="dBusObjectPaths" type="as" direction="out"/>
+    </signal>
+  </interface>
+</node>

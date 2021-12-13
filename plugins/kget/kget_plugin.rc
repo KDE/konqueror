@@ -1,0 +1,11 @@
+<!DOCTYPE kpartplugin>
+<kpartplugin library="konqueror_kget_browser_integration" name="konqueror_kget_browser_integration" version="5">
+<MenuBar>
+    <Menu name="tools"><text>&amp;Tools</text>
+        <Action name="kget_menu"/>
+    </Menu>
+</MenuBar>
+<ToolBar name="mainToolBar">
+    <Action name="kget_menu"/>
+</ToolBar>
+</kpartplugin>
