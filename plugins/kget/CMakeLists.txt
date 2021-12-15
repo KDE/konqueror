@@ -9,6 +9,7 @@ target_sources(konqueror_kget_browser_integration PRIVATE
 )
 
 target_link_libraries(konqueror_kget_browser_integration KF5::CoreAddons KF5::I18n KF5::IconThemes KF5Konq)
+target_compile_definitions(konqueror_kget_browser_integration PRIVATE TRANSLATION_DOMAIN="kgetplugin")
 
 install(TARGETS konqueror_kget_browser_integration DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
