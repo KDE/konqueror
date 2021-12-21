@@ -10,6 +10,8 @@
 
 #include <konq_kpart_plugin.h>
 
+class QTextToSpeech;
+
 /**
  * KHTML KParts Plugin
  */
@@ -29,6 +31,8 @@ public:
     ~KHTMLPluginTTS() override;
 public Q_SLOTS:
     void slotReadOut();
+private:
+    std::unique_ptr<QTextToSpeech> m_tts;
 };
 
 #endif

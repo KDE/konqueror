@@ -26,6 +26,8 @@ KHTMLPluginTTS::KHTMLPluginTTS(QObject *parent, const QVariantList &)
 {
     KParts::TextExtension *textExt = KParts::TextExtension::childObject(parent);
     if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {
+        m_tts = std::unique_ptr<QTextToSpeech>(new QTextToSpeech);
+
         QAction *action = actionCollection()->addAction(QStringLiteral("tools_tts"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("text-speak")));
         action->setText(i18n("&Speak Text"));
@@ -48,8 +50,7 @@ void KHTMLPluginTTS::slotReadOut()
         query = textExt->completeText(format);
     }
 
-    QTextToSpeech tts;
-    tts.say(query);
+    m_tts->say(query);
 }
 
 K_PLUGIN_FACTORY(KHTMLPluginTTSFactory, registerPlugin<KHTMLPluginTTS>();)
