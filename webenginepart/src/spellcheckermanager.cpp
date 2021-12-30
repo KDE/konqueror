@@ -33,6 +33,9 @@ SpellCheckerManager::SpellCheckerManager(QWebEngineProfile *profile, QObject *pa
     m_dictionaryDir = QString(WEBENGINEPART_DICTIONARY_DIR);
     connect(KonqSpellCheckingConfigurationDispatcher::self(), &KonqSpellCheckingConfigurationDispatcher::spellCheckingConfigurationChanged,
             this, &SpellCheckerManager::updateConfiguration);
+    KSharedConfigPtr cfg = KSharedConfig::openConfig();
+    KConfigGroup grp = cfg->group("General");
+    updateConfiguration(grp.readEntry("SpellCheckingEnabled", false));
 }
 
 SpellCheckerManager::~SpellCheckerManager()
@@ -68,17 +71,6 @@ void SpellCheckerManager::updateConfiguration(bool spellCheckingEnabled)
     detectDictionaries();
     m_profile->setSpellCheckEnabled(spellCheckingEnabled);
     m_profile->setSpellCheckLanguages(m_enabledDicts);
-}
-
-void SpellCheckerManager::setup()
-{
-    if (m_setupDone) {
-        return;
-    }
-    m_setupDone = true;
-    KSharedConfigPtr cfg = KSharedConfig::openConfig();
-    KConfigGroup grp = cfg->group("General");
-    updateConfiguration(grp.readEntry("SpellCheckingEnabled", false));
 }
 
 QMenu * SpellCheckerManager::spellCheckingMenu(const QStringList &suggestions, KActionCollection* coll, WebEnginePage* page)

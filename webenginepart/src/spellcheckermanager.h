@@ -31,8 +31,6 @@ public:
 
     QMenu *spellCheckingMenu(const QStringList &suggestions, KActionCollection *coll, WebEnginePage *page);
 
-    void setup();
-
 public slots:
     void updateConfiguration(bool spellCheckingEnabled);
 
@@ -45,7 +43,6 @@ private slots:
     void spellCheckingToggled(bool on);
 
 private:
-    bool m_setupDone = false;
     QString m_dictionaryDir;
     QMap<QString, QString> m_dicts;
     QStringList m_enabledDicts;
