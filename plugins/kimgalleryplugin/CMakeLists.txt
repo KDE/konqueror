@@ -6,14 +6,11 @@ ecm_qt_declare_logging_category(kimgallery_PART_SRCS HEADER imgallery_debug.h ID
 
 add_library(kimgallery MODULE ${kimgallery_PART_SRCS})
 
+kcoreaddons_desktop_to_json(kimgallery kimgalleryplugin.desktop)
 target_link_libraries(kimgallery KF5::I18n KF5::WidgetsAddons KF5::KIOWidgets KF5::Parts KF5Konq)
 
-install(TARGETS kimgallery  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-########### install files ###############
-
-install( FILES kimgalleryplugin.rc kimgalleryplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/dolphinpart/kpartplugins )
+install(TARGETS kimgallery DESTINATION ${KDE_INSTALL_PLUGINDIR}/dolphinpart/kpartplugins)
+install(FILES kimgallery.rc DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/partsrcfiles)
 
 set(kimagegallery_ICONS 16-actions-imagegallery.png 22-actions-imagegallery.png)
-
 ecm_install_icons(ICONS ${kimagegallery_ICONS} DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)

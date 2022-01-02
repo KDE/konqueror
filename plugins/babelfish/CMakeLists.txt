@@ -6,17 +6,11 @@ set(babelfishplugin_PART_SRCS plugin_babelfish.cpp )
 
 add_library(babelfishplugin MODULE ${babelfishplugin_PART_SRCS})
 
+kcoreaddons_desktop_to_json(babelfishplugin plugin_translator.desktop)
 target_link_libraries(babelfishplugin KF5::I18n KF5::Parts KF5Konq)
 
-install(TARGETS babelfishplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-
-########### install files ###############
-
-install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
-install( FILES translaterc  DESTINATION  ${KDE_INSTALL_CONFDIR} )
-install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
-install( FILES plugin_babelfish.rc plugin_translator.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
+konqueror_install_plugin_in_namespaces(babelfishplugin)
+install(FILES translaterc DESTINATION ${KDE_INSTALL_CONFDIR})
 
 set(babelfish_ICONS 16-actions-babelfish.png 22-actions-babelfish.png)
 

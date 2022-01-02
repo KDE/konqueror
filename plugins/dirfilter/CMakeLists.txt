@@ -4,11 +4,7 @@ set(dirfilterplugin_PART_SRCS dirfilterplugin.cpp )
 
 add_library(dirfilterplugin MODULE ${dirfilterplugin_PART_SRCS})
 
+kcoreaddons_desktop_to_json(dirfilterplugin dirfilterplugin.desktop)
 target_link_libraries(dirfilterplugin KF5::I18n KF5::Parts KF5Konq)
 
-install(TARGETS dirfilterplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-
-########### install files ###############
-
-install( FILES dirfilterplugin.rc dirfilterplugin.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/dolphinpart/kpartplugins )
+konqueror_install_plugin_in_namespaces(dirfilterplugin)

@@ -33,7 +33,7 @@
 #include <QDebug>
 
 static const KAboutData aboutdata(QStringLiteral("babelfish"), i18n("Translate Web Page"), QStringLiteral("1.0"));
-K_PLUGIN_FACTORY(BabelFishFactory, registerPlugin<PluginBabelFish>();)
+K_PLUGIN_CLASS_WITH_JSON(PluginBabelFish, "plugin_translator.json")
 
 PluginBabelFish::PluginBabelFish(QObject *parent,
                                  const QVariantList &)

@@ -89,7 +89,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
     }
 }
 
-K_PLUGIN_FACTORY(KonqShellCmdPluginFactory, registerPlugin<KShellCmdPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(KShellCmdPlugin, "kshellcmdplugin.json")
 
 #include "kshellcmdplugin.moc"
 

@@ -17,20 +17,4 @@ kcoreaddons_desktop_to_json(khtmlsettingsplugin ${CMAKE_CURRENT_BINARY_DIR}/khtm
 
 target_link_libraries(khtmlsettingsplugin KF5::I18n KF5::Parts KF5Konq)
 
-install(TARGETS khtmlsettingsplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-
-########### install files ###############
-
-install(
-    FILES khtmlsettingsplugin.rc ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop
-    DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins
-)
-install(
-    FILES khtmlsettingsplugin.rc ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop
-    DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins
-)
-install(
-    FILES khtmlsettingsplugin.rc ${CMAKE_CURRENT_BINARY_DIR}/khtmlsettingsplugin.desktop
-    DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins
-)
+konqueror_install_plugin_in_namespaces(khtmlsettingsplugin)

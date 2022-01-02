@@ -43,7 +43,7 @@
 
 #define QL1S(x) QLatin1String(x)
 
-K_PLUGIN_FACTORY(KGetPluginFactory, registerPlugin<KGetPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(KGetPlugin, "kget_plugin.json")
 
 static QWidget *partWidget(QObject *obj)
 {

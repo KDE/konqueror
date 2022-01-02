@@ -29,7 +29,7 @@
 
 using namespace Akregator;
 
-K_PLUGIN_FACTORY(KonqFeedIconFactory, registerPlugin<KonqFeedIcon>();)
+K_PLUGIN_CLASS_WITH_JSON(KonqFeedIcon, "akregator_konqfeedicon.json")
 
 static QUrl baseUrl(KParts::ReadOnlyPart *part)
 {
