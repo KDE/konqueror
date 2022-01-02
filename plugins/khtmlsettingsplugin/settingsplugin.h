@@ -7,7 +7,6 @@
 #ifndef SETTINGS_PLUGIN
 #define SETTINGS_PLUGIN
 
-#include <kparts_version.h>
 #include <konq_kpart_plugin.h>
 
 class KConfig;
@@ -17,9 +16,7 @@ class SettingsPlugin : public KonqParts::Plugin
     Q_OBJECT
 public:
     SettingsPlugin(QObject *parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                    const KPluginMetaData& metaData,
-#endif
                    const QVariantList &);
     ~SettingsPlugin() override;
 

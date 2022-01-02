@@ -21,9 +21,6 @@
 #include <KDirSortFilterProxyModel>
 #include <QDirIterator>
 
-#include <kio_version.h>
-
-
 class KonqSideBarTreeModule : public KonqSidebarModule
 {
     Q_OBJECT

@@ -11,7 +11,6 @@
 #ifndef FSVIEW_PART_H
 #define FSVIEW_PART_H
 
-#include <kparts_version.h>
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kio/jobclasses.h>
@@ -79,9 +78,7 @@ class FSViewPart : public KParts::ReadOnlyPart
 public:
     FSViewPart(QWidget *parentWidget,
                QObject *parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                const KPluginMetaData& metaData,
-#endif
                const QList<QVariant> &args);
     ~FSViewPart() override;
 

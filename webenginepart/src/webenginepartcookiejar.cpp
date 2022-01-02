@@ -18,7 +18,6 @@
 #include <QDateTime>
 #include <QTimeZone>
 #include <QApplication>
-#include <kio_version.h>
 
 const QVariant WebEnginePartCookieJar::s_findCookieFields = QVariant::fromValue(QList<int>{
         static_cast<int>(CookieDetails::domain),

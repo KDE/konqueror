@@ -57,11 +57,7 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
 {
     m_searchCombo = new SearchBarCombo(nullptr);
     m_searchCombo->lineEdit()->installEventFilter(this);
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    connect(m_searchCombo, QOverload<int>::of(&QComboBox::activated), this, [this](int n){startSearch(m_searchCombo->itemText(n));});
-#else
     connect(m_searchCombo, &QComboBox::textActivated, this, &SearchBarPlugin::startSearch);
-#endif
     connect(m_searchCombo, &SearchBarCombo::iconClicked, this, &SearchBarPlugin::showSelectionMenu);
     m_searchCombo->setWhatsThis(i18n("Search Bar<p>"
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));

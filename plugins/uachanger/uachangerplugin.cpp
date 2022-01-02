@@ -11,7 +11,6 @@
 #include <QMenu>
 #include <QRegExp>
 
-#include <kwidgetsaddons_version.h>
 #include <kactionmenu.h>
 #include <kservicetypetrader.h>
 #include <klocalizedstring.h>
@@ -43,11 +42,7 @@ UAChangerPlugin::UAChangerPlugin(QObject *parent,
                                 i18n("Change Browser Identification"),
                                 actionCollection());
     actionCollection()->addAction("changeuseragent", m_pUAMenu);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     m_pUAMenu->setPopupMode(QToolButton::InstantPopup);
-#else
-    m_pUAMenu->setDelayed(false);
-#endif
     connect(m_pUAMenu->menu(), &QMenu::aboutToShow, this, &UAChangerPlugin::slotAboutToShow);
 
     if (parent!=nullptr) {
@@ -288,16 +283,7 @@ void UAChangerPlugin::slotDefault()
     }
     // We have no choice but delete all higher domain level settings here since it
     // affects what will be matched.
-    QStringList partList = m_currentURL.host().split(QLatin1Char(' '),
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-                                                     Qt::SkipEmptyParts);
-#else
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-                                                     QString::SkipEmptyParts);
-#else
-                                                     Qt::SkipEmptyParts);
-#endif
-#endif
+    QStringList partList = m_currentURL.host().split(QLatin1Char(' '), Qt::SkipEmptyParts);
     if (!partList.isEmpty()) {
         partList.removeFirst();
 

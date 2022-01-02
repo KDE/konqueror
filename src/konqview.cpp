@@ -36,10 +36,6 @@
 #include <QDBusConnection>
 #include <QMimeData>
 
-#ifdef KActivities_FOUND
-#endif
-#include <kparts_version.h>
-
 #include <KJobWidgets>
 #include <KParts/Part>
 #include <KParts/StatusBarExtension>
@@ -363,11 +359,7 @@ void KonqView::connectPart()
             this, SLOT(slotStarted(KIO::Job*)));
     connect(m_pPart, SIGNAL(completed()),
             this, SLOT(slotCompleted()));
-#if KPARTS_VERSION < QT_VERSION_CHECK(5, 81, 0)
-    connect(m_pPart, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, QOverload<bool>::of(&KonqView::slotCompleted));
-#else
     connect(m_pPart, &KParts::ReadOnlyPart::completedWithPendingAction, this, [this](){slotCompleted(true);});
-#endif
     connect(m_pPart, SIGNAL(canceled(QString)),
             this, SLOT(slotCanceled(QString)));
     connect(m_pPart, SIGNAL(setWindowCaption(QString)),

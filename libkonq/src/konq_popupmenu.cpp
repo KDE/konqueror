@@ -31,11 +31,8 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/RestoreJob>
 #include <KIO/CommandLauncherJob>
-#include <kio_version.h>
 #include <KIO/OpenUrlJob>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 84, 0)
 #include <KTerminalLauncherJob>
-#endif
 #include <KFileCopyToMenu>
 #include <KJobWidgets>
 #include <KJobUiDelegate>
@@ -388,27 +385,18 @@ void KonqPopupMenuPrivate::populate()
     }
 
     // Second block, builtin + user
-#if KIO_VERSION < QT_VERSION_CHECK(5, 77, 0)
-    m_menuActions.addServiceActionsTo(q);
-#else
     QList<QAction *> additionalActions;
     if (isDirectory && m_popupItemProperties.items().count() == 1) {
         QAction *openTerminalHere = new QAction(QIcon::fromTheme("utilities-terminal"), i18n("Open Terminal Here"), m_parentWidget);
         QObject::connect(openTerminalHere, &QAction::triggered, q, [this]() {
-                const QString localPath = m_popupItemProperties.urlList().constFirst().toLocalFile();
-                // 5.84 because the header wasn't usable in 5.83
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 84, 0)
-              auto *job = new KTerminalLauncherJob(QString{});
-              job->setWorkingDirectory(localPath);
-              job->start();
-#else
-              KToolInvocation::invokeTerminal(QString(), localPath);
-#endif
+            const QString localPath = m_popupItemProperties.urlList().constFirst().toLocalFile();
+            auto *job = new KTerminalLauncherJob(QString{});
+            job->setWorkingDirectory(localPath);
+            job->start();
         });
         additionalActions << openTerminalHere;
     }
     m_menuActions.addActionsTo(q, KFileItemActions::MenuActionSource::Services, additionalActions);
-#endif
 
     q->addSeparator();
 

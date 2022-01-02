@@ -13,7 +13,6 @@
 #include <QEvent>
 #include <QMenu>
 
-#include <kwidgetsaddons_version.h>
 #include <ktoolbar.h>
 #include <kactionmenu.h>
 #include <kconfig.h>
@@ -182,11 +181,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
             }
         } else {
             KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, nullptr);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
             action->setPopupMode(QToolButton::InstantPopup);
-#else
-            action->setDelayed(false);
-#endif
             if (m_toolBar) {
                 m_toolBar->addAction(action);
             }

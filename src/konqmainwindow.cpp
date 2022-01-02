@@ -45,9 +45,6 @@
 #include <konqsettings.h>
 #include <konq_spellcheckingconfigurationdispatcher.h>
 
-#include <kwidgetsaddons_version.h>
-#include <kxmlgui_version.h>
-#include <kparts_version.h>
 #include <kbookmarkmanager.h>
 #include <klineedit.h>
 #include <kzip.h>
@@ -85,9 +82,7 @@
 #include <QLineEdit>
 #include <QNetworkProxy>
 
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
 #include <KPluginMetaData>
-#endif
 #include <kaboutdata.h>
 #include <ktoolbar.h>
 #include <konqbookmarkmenu.h>
@@ -211,12 +206,8 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
             Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
 
     // This has to be called before any action is created for this mainwindow
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     const KAboutData applicationData = KAboutData::applicationData();
     setComponentName(applicationData.componentName(), applicationData.displayName());
-#else
-    setComponentData(KAboutData::applicationData(), false /*don't load plugins yet*/);
-#endif
 
     m_pViewManager = new KonqViewManager(this);
     m_viewModeMenu = nullptr;
@@ -1981,11 +1972,7 @@ void KonqMainWindow::slotViewCompleted(KonqView *view)
 
 void KonqMainWindow::slotPartActivated(KParts::Part *part)
 {
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     qCDebug(KONQUEROR_LOG) << part << (part ? part->metaData().pluginId() : QString());
-#else
-    qCDebug(KONQUEROR_LOG) << part << (part ? part->componentData().componentName() : QLatin1String(""));
-#endif
 
     KonqView *newView = nullptr;
     KonqView *oldView = m_currentView;
@@ -3575,11 +3562,7 @@ void KonqMainWindow::initActions()
     actionCollection()->addAction(KStandardAction::Preferences, this, SLOT(slotConfigure()));
 
 
-#if KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 84, 0)
     KStandardAction::keyBindings(guiFactory(), &KXMLGUIFactory::showConfigureShortcutsDialog, actionCollection());
-#else
-    actionCollection()->addAction(KStandardAction::KeyBindings, guiFactory(), SLOT(configureShortcuts()));
-#endif
 
     actionCollection()->addAction(KStandardAction::ConfigureToolbars, this, SLOT(slotConfigureToolbars()));
 
@@ -3769,11 +3752,7 @@ void KonqMainWindow::initActions()
     m_pamBookmarks = new KBookmarkActionMenu(s_bookmarkManager->root(),
             i18n("&Bookmarks"), this);
     actionCollection()->addAction(QStringLiteral("bookmarks"), m_pamBookmarks);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     m_pamBookmarks->setPopupMode(QToolButton::InstantPopup);
-#else
-    m_pamBookmarks->setDelayed(false);
-#endif
 
     // The actual menu needs a different action collection, so that the bookmarks
     // don't appear in kedittoolbar

@@ -13,7 +13,6 @@
 #include "kbookmarkcontextmenu.h"
 
 #include <KActionCollection>
-#include <kbookmarks_version.h>
 
 namespace Konqueror { // to avoid clashing with KF5::Bookmarks which had a KonqBookmarkMenu class. Remove once using KF6.
 
@@ -49,10 +48,6 @@ public:
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
     {
-//KBookmarkMenu doesn't create an action collection only in version 5.69.0
-#if KBOOKMARKS_VERSION == QT_VERSION_CHECK(5, 69, 0)
-        m_actionCollection = new KActionCollection(this);
-#endif
     }
 
 protected:

@@ -11,7 +11,6 @@
 
 #include "konqdebug.h"
 #include <kstartupinfo.h>
-#include <kwindowsystem_version.h>
 
 KonqMainWindowAdaptor::KonqMainWindowAdaptor(KonqMainWindow *mainWindow)
     : QDBusAbstractAdaptor(mainWindow), m_pMainWindow(mainWindow)
@@ -34,23 +33,15 @@ void KonqMainWindowAdaptor::newTab(const QString &url, bool tempFile)
 
 void KonqMainWindowAdaptor::newTabASN(const QString &url, const QByteArray &startup_id, bool tempFile)
 {
-#if KWINDOWSYSTEM_VERSION >= QT_VERSION_CHECK(5,62,0)
     m_pMainWindow->setAttribute(Qt::WA_NativeWindow, true);
     KStartupInfo::setNewStartupId(m_pMainWindow->windowHandle(), startup_id);
-#else
-    KStartupInfo::setNewStartupId(m_pMainWindow, startup_id);
-#endif
     m_pMainWindow->openFilteredUrl(url, true, tempFile);
 }
 
 void KonqMainWindowAdaptor::newTabASNWithMimeType(const QString &url, const QString &mimetype, const QByteArray &startup_id, bool tempFile)
 {
-#if KWINDOWSYSTEM_VERSION >= QT_VERSION_CHECK(5,62,0)
     m_pMainWindow->setAttribute(Qt::WA_NativeWindow, true);
     KStartupInfo::setNewStartupId(m_pMainWindow->windowHandle(), startup_id);
-#else
-    KStartupInfo::setNewStartupId(m_pMainWindow, startup_id);
-#endif
     m_pMainWindow->openFilteredUrl(url, mimetype, true, tempFile);
 }
 

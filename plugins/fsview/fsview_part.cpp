@@ -19,11 +19,7 @@
 
 #include <kfileitem.h>
 #include <kpluginfactory.h>
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
 #include <KPluginMetaData>
-#else
-#include <kaboutdata.h>
-#endif
 
 #include <kprotocolmanager.h>
 #include <kio/copyjob.h>
@@ -82,21 +78,11 @@ void FSJob::progressSlot(int percent, int dirs, const QString &cDir)
 
 FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                        const KPluginMetaData& metaData,
-#endif
                        const QList<QVariant> & /* args */)
     : KParts::ReadOnlyPart(parent)
 {
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
-#else
-    KAboutData aboutData(QStringLiteral("fsview"), i18n("FSView"), QStringLiteral("0.1"),
-                         i18n("Filesystem Viewer"),
-                         KAboutLicense::GPL,
-                         i18n("(c) 2002, Josef Weidendorfer"));
-    setComponentData(aboutData);
-#endif
 
     _view = new FSView(new Inode(), parentWidget);
     _view->setWhatsThis(i18n("<p>This is the FSView plugin, a graphical "

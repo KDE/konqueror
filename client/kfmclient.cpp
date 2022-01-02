@@ -14,6 +14,7 @@
 #include <kprocess.h>
 #include <config-konqueror.h>
 
+#include <kcoreaddons_version.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kservice.h>
@@ -27,8 +28,6 @@
 #include <KAboutData>
 #include <KWindowSystem>
 #include <KShell>
-
-#include <kcoreaddons_version.h>
 
 #include <QApplication>
 #include <QDBusConnection>

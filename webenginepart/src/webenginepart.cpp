@@ -40,16 +40,11 @@
 #include "settings/webenginesettings.h"
 #include "ui/credentialsdetailswidget.h"
 
-#include <kconfigwidgets_version.h>
 #include <KCodecAction>
 #include <KIO/Global>
 
 #include <KActionCollection>
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
 #include <KPluginMetaData>
-#else
-#include <KAboutData>
-#endif
 #include <KUrlLabel>
 #include <KMessageBox>
 #include <KStringHandler>
@@ -81,7 +76,6 @@
 #include <QDir>
 
 #include "utils.h"
-#include <kio_version.h>
 
 static QWebEngineScript detectRefreshScript() {
     static QWebEngineScript s_detectRefreshScript;
@@ -96,9 +90,7 @@ static QWebEngineScript detectRefreshScript() {
 }
 
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                          const KPluginMetaData& metaData,
-#endif
                          const QByteArray& cachedHistory, const QStringList& /*args*/)
             :KParts::ReadOnlyPart(parent),
              m_emitOpenUrlNotify(true),
@@ -113,28 +105,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         WebEnginePartControls::self()->setup(QWebEngineProfile::defaultProfile());
     }
 
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
-#else
-    KAboutData about = KAboutData(QStringLiteral("webenginepart"),
-                                  i18nc("Program Name", "WebEnginePart"),
-                                  /*version*/ QStringLiteral("1.3.0"),
-                                  i18nc("Short Description", "QtWebEngine Browser Engine Component"),
-                                  KAboutLicense::LGPL,
-                                  i18n("(C) 2009-2010 Dawit Alemayehu\n"
-                                        "(C) 2008-2010 Urs Wolfer\n"
-                                        "(C) 2007 Trolltech ASA"));
-
-    about.addAuthor(i18n("Sune Vuorela"), i18n("Maintainer, Developer"), QStringLiteral("sune@kde.org"));
-    about.addAuthor(i18n("Dawit Alemayehu"), i18n("Developer"), QStringLiteral("adawit@kde.org"));
-    about.addAuthor(i18n("Urs Wolfer"), i18n("Maintainer, Developer"), QStringLiteral("uwolfer@kde.org"));
-    about.addAuthor(i18n("Michael Howell"), i18n("Developer"), QStringLiteral("mhowell123@gmail.com"));
-    about.addAuthor(i18n("Laurent Montel"), i18n("Developer"), QStringLiteral("montel@kde.org"));
-    about.addAuthor(i18n("Dirk Mueller"), i18n("Developer"), QStringLiteral("mueller@kde.org"));
-    about.setProductName("webenginepart/general");
-//    KComponentData componentData(&about);
-    setComponentData(about, false /*don't load plugins yet*/);
-#endif
 
 #if 0
     // NOTE: If the application does not set its version number, we automatically
@@ -288,11 +259,7 @@ void WebEnginePart::initActions()
 
     KCodecAction *codecAction = new KCodecAction( QIcon::fromTheme(QStringLiteral("character-set")), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( QStringLiteral("setEncoding"), codecAction );
-#if KCONFIGWIDGETS_VERSION >= QT_VERSION_CHECK(5, 78, 0)
     connect(codecAction, &KCodecAction::codecTriggered, this, &WebEnginePart::slotSetTextEncoding);
-#else
-    connect(codecAction, QOverload<QTextCodec *>::of(&KCodecAction::triggered), this, &WebEnginePart::slotSetTextEncoding);
-#endif
 
     action = new QAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction(QStringLiteral("viewDocumentSource"), action);
@@ -538,11 +505,7 @@ void WebEnginePart::slotLoadFinished (bool ok)
 
     auto callback = [this](const QVariant &res) {
         bool hasRefresh = res.toBool();
-#if KPARTS_VERSION < QT_VERSION_CHECK(5, 81, 0)
-        emit completed(hasRefresh);
-#else
         emit hasRefresh ? completedWithPendingAction() : completed();
-#endif
     };
     page()->runJavaScript("hasRefreshAttribute()", QWebEngineScript::ApplicationWorld, callback);
     updateActions();

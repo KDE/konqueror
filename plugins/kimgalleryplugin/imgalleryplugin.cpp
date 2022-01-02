@@ -37,9 +37,7 @@ K_PLUGIN_CLASS_WITH_JSON(KImGalleryPlugin, "kimgalleryplugin.json")
 // Eliminate lots of deprecation warnings with Qt 5.15.
 // Using a macro to redefine well known symbols is not good practice, but
 // the alternative is lots of QT_VERSION_CHECK conditionals everywhere.
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
 #define endl Qt::endl
-#endif
 
 static QString directory(const QUrl &url) {
     return url.adjusted(QUrl::StripTrailingSlash).adjusted(QUrl::RemoveFilename).toLocalFile();
