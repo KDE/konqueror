@@ -32,7 +32,7 @@
 #include "imgallerydialog.h"
 #include "imgallery_debug.h"
 
-K_PLUGIN_FACTORY(KImGalleryPluginFactory, registerPlugin<KImGalleryPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(KImGalleryPlugin, "kimgalleryplugin.json")
 
 // Eliminate lots of deprecation warnings with Qt 5.15.
 // Using a macro to redefine well known symbols is not good practice, but

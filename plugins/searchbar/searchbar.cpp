@@ -43,7 +43,7 @@
 
 #include "searchbar_debug.h"
 
-K_PLUGIN_FACTORY(SearchBarPluginFactory, registerPlugin<SearchBarPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(SearchBarPlugin, "searchbar.json")
 
 SearchBarPlugin::SearchBarPlugin(QObject *parent,
                                  const QVariantList &) :

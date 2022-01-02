@@ -22,9 +22,7 @@
 
 #include "webarchiverdebug.h"
 
-
-K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
-
+K_PLUGIN_CLASS_WITH_JSON(PluginWebArchiver, "plugin_webarchiver.json")
 
 PluginWebArchiver::PluginWebArchiver(QObject *parent, const QVariantList &args)
     : KonqParts::Plugin(parent)

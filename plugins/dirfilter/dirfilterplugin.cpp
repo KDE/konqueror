@@ -532,6 +532,6 @@ void DirFilterPlugin::setFilterBar()
     }
 }
 
-K_PLUGIN_FACTORY(DirFilterFactory, registerPlugin<DirFilterPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(DirFilterPlugin, "dirfilterplugin.json")
 
 #include "dirfilterplugin.moc"

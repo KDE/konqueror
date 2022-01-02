@@ -53,6 +53,6 @@ void KHTMLPluginTTS::slotReadOut()
     m_tts->say(query);
 }
 
-K_PLUGIN_FACTORY(KHTMLPluginTTSFactory, registerPlugin<KHTMLPluginTTS>();)
+K_PLUGIN_CLASS_WITH_JSON(KHTMLPluginTTS, "khtmltts.json")
 
 #include "khtmltts.moc"

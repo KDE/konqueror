@@ -108,7 +108,7 @@ void AutoRefresh::slotRefresh()
     }
 }
 
-K_PLUGIN_FACTORY(AutoRefreshFactory, registerPlugin< AutoRefresh >();)
+K_PLUGIN_CLASS_WITH_JSON(AutoRefresh, "autorefresh.json")
 
 #include "autorefresh.moc"
 

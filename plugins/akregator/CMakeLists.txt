@@ -17,17 +17,13 @@ set(akregatorkonqfeedicon_PART_SRCS konqfeedicon.cpp feeddetector.cpp pluginutil
 
 add_library(akregatorkonqfeedicon MODULE ${akregatorkonqfeedicon_PART_SRCS} ${akregatorplugin_DEBUG_SRCS})
 
+kcoreaddons_desktop_to_json(akregatorkonqfeedicon akregator_konqfeedicon.desktop)
 target_compile_definitions(akregatorkonqfeedicon PRIVATE TRANSLATION_DOMAIN="akregator_konqplugin")
 target_link_libraries(akregatorkonqfeedicon KF5::I18n KF5::IconThemes KF5Konq)
 
-install(TARGETS akregatorkonqfeedicon DESTINATION ${KDE_INSTALL_PLUGINDIR} )
+konqueror_install_plugin_in_namespaces(akregatorkonqfeedicon)
 
 ########### install files ###############
-
-install( FILES akregator_konqplugin.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
-install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/khtml/kpartplugins )
-install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins )
-install( FILES akregator_konqfeedicon.desktop akregator_konqfeedicon.rc  DESTINATION  ${KDE_INSTALL_DATADIR}/webenginepart/kpartplugins )
 
 install( FILES feed.png DESTINATION ${KDE_INSTALL_DATADIR}/akregator/pics )
 

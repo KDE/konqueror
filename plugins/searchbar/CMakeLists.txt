@@ -19,11 +19,8 @@ ecm_qt_declare_logging_category(searchbarplugin_PART_SRCS HEADER searchbar_debug
 
 add_library(searchbarplugin MODULE ${searchbarplugin_PART_SRCS})
 
+kcoreaddons_desktop_to_json(searchbarplugin searchbar.desktop)
 target_link_libraries(searchbarplugin KF5::I18n KF5::TextWidgets KF5::Parts Qt5::Script KF5Konq)
 
-install(TARGETS searchbarplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
-
-########### install files ###############
-
-install( FILES searchbar.rc searchbar.desktop  DESTINATION  ${KDE_INSTALL_DATADIR}/konqueror/kpartplugins )
-
+install(TARGETS searchbarplugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/konqueror/kpartplugins)
+install(FILES searchbar.rc DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/partsrccfiles)

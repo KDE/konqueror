@@ -7,14 +7,9 @@ target_sources(konqueror_kget_browser_integration PRIVATE
    kget_plugin.cpp
    ${kget_browser_integration_dbus_SRCS}
 )
+kcoreaddons_desktop_to_json(konqueror_kget_browser_integration kget_plugin.desktop)
 
 target_link_libraries(konqueror_kget_browser_integration KF5::CoreAddons KF5::I18n KF5::IconThemes KF5Konq)
 target_compile_definitions(konqueror_kget_browser_integration PRIVATE TRANSLATION_DOMAIN="kgetplugin")
 
-install(TARGETS konqueror_kget_browser_integration DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-########### install files ###############
-install(FILES kget_plugin.rc kget_plugin.desktop DESTINATION ${KDE_INSTALL_DATADIR}/khtml/kpartplugins)
-install(FILES kget_plugin.rc kget_plugin.desktop DESTINATION ${KDE_INSTALL_DATADIR}/dolphinpart/kpartplugins)
-install(FILES kget_plugin.rc kget_plugin.desktop DESTINATION ${KDE_INSTALL_DATADIR}/kwebkitpart/kpartplugins)
-
+konqueror_install_plugin_in_namespaces(konqueror_kget_browser_integration)

@@ -10,6 +10,7 @@
 
 #include <libkonq_export.h>
 
+#include <KPluginMetaData>
 #include <KXMLGUIClient>
 #include <QDomElement>
 #include <QObject>
@@ -45,9 +46,8 @@ class LIBKONQ_EXPORT Plugin : public QObject, virtual public KXMLGUIClient
     Q_OBJECT
 public:
     struct PluginInfo {
-        QString m_relXMLFileName; // relative filename, i.e. kpartplugins/name
+        KPluginMetaData m_metaData;
         QString m_absXMLFileName; // full path of most recent filename matching the relative
-        // filename
         QDomDocument m_document;
     };
 
@@ -71,24 +71,6 @@ public:
     QString localXMLFile() const override;
 
     /**
-     * Load the plugin libraries from the directories appropriate
-     * to @p instance and make the Plugin objects children of @p parent.
-     *
-     * It is recommended to use the last loadPlugins method instead,
-     * to support enabling and disabling of plugins.
-     */
-    static void loadPlugins(QObject *parent, const QString &instance);
-
-    /**
-     * Load the plugin libraries specified by the list @p docs and make the
-     * Plugin objects children of @p parent .
-     *
-     * It is recommended to use the last loadPlugins method instead,
-     * to support enabling and disabling of plugins.
-     */
-    static void loadPlugins(QObject *parent, const QList<PluginInfo> &pluginInfos);
-
-    /**
      * Load the plugin libraries specified by the list @p pluginInfos, make the
      * Plugin objects children of @p parent, and use the given @p instance.
      *
@@ -103,20 +85,9 @@ public:
      * of @p parentGUIClient.
      *
      * This method uses the KConfig object of the given instance, to find out which
-     * plugins are enabled and which are disabled. What happens by default (i.e.
-     * for new plugins that are not in that config file) is controlled by
-     * @p enableNewPluginsByDefault. It can be overridden by the plugin if it
-     * sets the X-KDE-PluginInfo-EnabledByDefault key in the .desktop file
-     * (with the same name as the .rc file)
-     *
+     * plugins are enabled and which are disabled.
      * If a disabled plugin is already loaded it will be removed from the GUI
      * factory and deleted.
-     *
-     * If you change the binary interface offered by your part, you can avoid crashes
-     * from old plugins lying around by setting X-KDE-InterfaceVersion=2 in the
-     * .desktop files of the plugins, and passing 2 to @p interfaceVersionRequired, so that
-     * the old plugins are not loaded. Increase both numbers every time a
-     * binary incompatible change in the application's plugin interface is made.
      *
      *
      * This method is automatically called by KParts::Part and by KParts::MainWindow.
@@ -134,11 +105,7 @@ public:
      * }
      * \endcode
      */
-    static void loadPlugins(QObject *parent,
-                            KXMLGUIClient *parentGUIClient,
-                            const QString &instance,
-                            bool enableNewPluginsByDefault = true,
-                            int interfaceVersionRequired = 0);
+    static void loadPlugins(QObject *parent, KXMLGUIClient *parentGUIClient, const QString &instance);
 
     /**
      * Returns a list of plugin objects loaded for @p parent. This
@@ -165,10 +132,10 @@ private:
      * @internal
      * @return The plugin created from the library @p libname
      */
-    static Plugin *loadPlugin(QObject *parent, const QString &libname, const QString &keyword = QString());
+    static Plugin *loadPlugin(QObject *parent, const KPluginMetaData &data);
 
 private:
-    static bool hasPlugin(QObject *parent, const QString &library);
+    static bool hasPlugin(QObject *parent, const QString &pluginId);
     std::unique_ptr<PluginPrivate> const d;
 };
 

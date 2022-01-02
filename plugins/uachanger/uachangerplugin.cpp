@@ -29,7 +29,7 @@
 #include <kio/job.h>
 #include <kio/scheduler.h>
 
-K_PLUGIN_FACTORY(UAChangerPluginFactory, registerPlugin<UAChangerPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(UAChangerPlugin, "uachangerplugin.json")
 
 #define UA_PTOS(x) (*it)->property(x).toString()
 #define QFL1(x) QLatin1String(x)

@@ -18,7 +18,6 @@
 
 // KDE
 #include <kxmlguifactory.h>
-#include <kconfig.h>
 #include "konqdebug.h"
 #include "konq_kpart_plugin.h"
 #include <KPluginMetaData>
@@ -27,8 +26,6 @@
 #include <KLocalizedString>
 #include <KPluginWidget>
 #include <KSharedConfig>
-#include <kplugininfo.h>
-#include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
 
@@ -69,14 +66,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->activePart = activePart;
 
     auto addPluginForId = [this](const QString &pluginId) {
-        const QStringList searchPaths =
-            QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, pluginId + QStringLiteral("/kpartplugins"), QStandardPaths::LocateDirectory);
-        const QStringList files = KFileUtils::findAllUniqueFiles(searchPaths, {QStringLiteral("*.desktop")});
-        QVector<KPluginMetaData> metaDataList;
-        metaDataList.reserve(files.count());
-        for (const QString &file : files) {
-            metaDataList << KPluginMetaData::fromDesktopFile(file);
-        }
+        QVector<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(pluginId + QStringLiteral("/kpartplugins"));
         d->pluginSelector->setConfig(KSharedConfig::openConfig(pluginId + QLatin1String("rc"))->group("KParts Plugins"));
         d->pluginSelector->addPlugins(metaDataList, i18n("Extensions"));
     };
@@ -121,7 +111,6 @@ void KonqExtensionManager::apply()
         setChanged(false);
 
         if (d->mainWindow) {
-            //KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, QStringLiteral("konqueror"));
             QList<KonqParts::Plugin *> plugins = KonqParts::Plugin::pluginObjects(d->mainWindow);
 
             for (int i = 0; i < plugins.size(); ++i) {
