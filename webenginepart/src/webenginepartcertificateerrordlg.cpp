@@ -23,12 +23,16 @@
 #include "webenginepartcertificateerrordlg.h"
 #include "ui_webenginepartcertificateerrordlg.h"
 
+#include "webenginepage.h"
+
 #include <KSslCertificateBox>
 
 #include <QAbstractButton>
 #include <QPushButton>
 
-WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError &error, QWidget* parent):
+using namespace KonqWebEnginePart;
+
+WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEngineCertificateError &error, WebEnginePage *page, QWidget* parent):
     QDialog(parent),
     m_ui(new Ui::WebEnginePartCertificateErrorDlg), m_error(error), m_choice(UserChoice::DontIgnoreError)
 {
@@ -43,12 +47,14 @@ WebEnginePartCertificateErrorDlg::WebEnginePartCertificateErrorDlg(const QWebEng
     m_ui->details->hide();
 
     QString translatedDesc = i18n(m_error.errorDescription().toUtf8());
-    QString text = i18n("<p>The server failed the authenticity check (%1). The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
+    qDebug() << "URL" << page->url();
+    QString text = i18n("<p>The server <tt>%1</tt> failed the authenticity check. The error is:</p><p><tt>%2</tt></p>Do you want to ignore this error?",
                         m_error.url().host(), translatedDesc);
     m_ui->label->setText(text);
     for (const QSslCertificate &cert : m_error.certificateChain()) {
         m_ui->certificateChain->addItem(cert.subjectDisplayName());
     }
+    setWindowTitle(i18nc("title of a dialog asking what to do about a SSL certificate error", "Certificate error"));
 }
 
 WebEnginePartCertificateErrorDlg::~WebEnginePartCertificateErrorDlg()

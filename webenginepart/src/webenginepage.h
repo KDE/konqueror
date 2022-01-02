@@ -27,7 +27,6 @@ class WebSslInfo;
 class WebEnginePart;
 class KPasswdServerClient;
 class WebEngineWallet;
-class WebEnginePartCertificateErrorDlg;
 
 class WebEnginePage : public QWebEnginePage
 {
@@ -132,17 +131,6 @@ private:
     bool checkFormData(const QUrl& url) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
     void setPageJScriptPolicy(const QUrl& url);
-
-    /**
-     * @brief Function called in response to the user closing the certificate error dialog
-     *
-     * Depending on the user's choice, this function will instruct the page to ignore the error or not
-     * and, if the user chose to forever ignore the error, it'll record this decision in the configuration
-     * file.
-     *
-     * @param dlg the certificate error dialog
-     */
-    void handleCertificateError(WebEnginePartCertificateErrorDlg *dlg);
 
     /**
      * @brief Function called when the part is forced to save an URL to disk.

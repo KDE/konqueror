@@ -15,6 +15,7 @@
 #include "webenginepartcookiejar.h"
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
+#include "certificateerrordialogmanager.h"
 
 #include <KProtocolInfo>
 
@@ -22,7 +23,8 @@
 #include <QWebEngineUrlScheme>
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
-    m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr)
+    m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
+    m_certificateErrorDialogManager(new KonqWebEnginePart::CertificateErrorDialogManager(this))
 {
         QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
         const QStringList protocols = KProtocolInfo::protocols();
@@ -81,4 +83,9 @@ WebEnginePartDownloadManager* WebEnginePartControls::downloadManager() const
 SpellCheckerManager* WebEnginePartControls::spellCheckerManager() const
 {
     return m_spellCheckerManager;
+}
+
+bool WebEnginePartControls::handleCertificateError(const QWebEngineCertificateError& ce, WebEnginePage* page)
+{
+    return m_certificateErrorDialogManager->handleCertificateError(ce, page);
 }

@@ -16,7 +16,7 @@
 #include "webenginepartdownloadmanager.h"
 #include "webenginewallet.h"
 #include <webenginepart_debug.h>
-#include "webenginepartcertificateerrordlg.h"
+#include "webenginepartcontrols.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -393,47 +393,9 @@ static int errorCodeFromReply(QNetworkReply* reply)
 }
 #endif
 
-bool WebEnginePage::certificateError(const QWebEngineCertificateError& _ce)
+bool WebEnginePage::certificateError(const QWebEngineCertificateError& ce)
 {
-    QWebEngineCertificateError ce(_ce);
-    if (!ce.isOverridable()) {
-        return false;
-    }
-    int error = static_cast<int>(ce.error());
-    QString url = ce.url().url();
-    KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
-    QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
-    if (exceptionsForUrl.contains(error)) {
-        return true;
-    } else {
-        ce.defer();
-        WebEnginePartCertificateErrorDlg *dlg = new WebEnginePartCertificateErrorDlg(ce, view());
-        connect(dlg, &WebEnginePartCertificateErrorDlg::finished, this, [this, dlg](int _){handleCertificateError(dlg);});
-        dlg->open();
-        return true;
-    }
-}
-
-void WebEnginePage::handleCertificateError(WebEnginePartCertificateErrorDlg *dlg) {
-    if (!dlg) {
-        return;
-    }
-    QWebEngineCertificateError error = dlg->certificateError();
-    WebEnginePartCertificateErrorDlg::UserChoice choice = dlg->userChoice();
-    dlg->deleteLater();
-    if (choice == WebEnginePartCertificateErrorDlg::UserChoice::DontIgnoreError) {
-        error.rejectCertificate();
-    } else {
-        error.ignoreCertificateError();
-        if (choice == WebEnginePartCertificateErrorDlg::UserChoice::IgnoreErrorForever) {
-            KConfigGroup grp(KSharedConfig::openConfig(), "CertificateExceptions");
-            QString url = error.url().url();
-            QList<int> exceptionsForUrl = grp.readEntry(url, QList<int>{});
-            exceptionsForUrl.append(error.error());
-            grp.writeEntry(url, exceptionsForUrl);
-            grp.sync();
-        }
-    }
+    return WebEnginePartControls::self()->handleCertificateError(ce, this);
 }
 
 WebEnginePart* WebEnginePage::part() const
