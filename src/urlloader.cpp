@@ -160,7 +160,6 @@ void UrlLoader::decideEmbedOrSave()
             m_request.serviceName = m_service->desktopEntryName();
         }
     }
-    qDebug() << m_service->name();
     m_ready = m_service || m_action != OpenUrlAction::Embed;
 }
 
