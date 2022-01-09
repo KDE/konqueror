@@ -417,7 +417,7 @@ QString UrlLoader::partForLocalFile(const QString& path)
     QString mimetype = db.mimeTypeForFile(path).name();
     //TODO Remove KonqRun: replace the following two lines with the commented out lines below them as soon as I can find out how to create a service from a KPluginMetaData
     KService::Ptr service = KMimeTypeTrader::self()->preferredService(mimetype, QStringLiteral("KParts/ReadOnlyPart"));
-    return service ? service->storageId() : QString();
+    return service ? service->name() : QString();
 //     KPluginMetaData md = KParts::PartLoader::partsForMimeType(mimetype).first();
 //     return md.pluginId();
 }
