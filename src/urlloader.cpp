@@ -215,11 +215,20 @@ void UrlLoader::performAction()
             save();
             break;
         case OpenUrlAction::DoNothing:
+            done();
             break;
+    }
+}
+
+void UrlLoader::done(KJob *job)
+{
+    if (job) {
+        jobFinished(job);
     }
     emit finished(this);
     deleteLater();
 }
+
 
 bool UrlLoader::serviceIsKonqueror(KService::Ptr service)
 {
@@ -334,7 +343,9 @@ bool UrlLoader::shouldEmbedThis() const
 void UrlLoader::embed()
 {
     bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request);
-    if (!embedded) {
+    if (embedded) {
+        done();
+    } else {
         decideOpenOrSave();
         performAction();
     }
@@ -367,6 +378,8 @@ void UrlLoader::saveUrlUsingKIO(const QUrl& orig, const QUrl& dest)
     job->addMetaData(QStringLiteral("cache"), QStringLiteral("cache")); // Use entry from cache if available.
     KJobWidgets::setWindow(job, m_mainWindow);
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    connect(job, &KJob::finished, this, [this, job](){done(job);});
+    job->start();
 }
 
 void UrlLoader::open()
@@ -384,6 +397,7 @@ void UrlLoader::open()
     if (m_request.tempFile) {
         job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
     }
+    connect(job, &KJob::finished, this, [this, job](){done(job);});
     job->start();
 }
 
@@ -392,6 +406,8 @@ void UrlLoader::execute()
     if (!m_openUrlJob) {
         launchOpenUrlJob(false);
     } else {
+        disconnect(m_openUrlJob, &KJob::finished, this, nullptr); //Otherwise, jobFinished will be called twice
+        connect(m_openUrlJob, &KJob::finished, this, [this](){done(m_openUrlJob);});
         m_openUrlJob->resume();
     }
 }

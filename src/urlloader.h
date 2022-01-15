@@ -79,6 +79,7 @@ private slots:
 
     void mimetypeDeterminedByJob(const QString &mimeType);
     void jobFinished(KJob* job);
+    void done(KJob *job=nullptr);
 
 private:
 
