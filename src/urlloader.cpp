@@ -253,6 +253,7 @@ void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
     m_openUrlJob->setRunExecutables(true);
     m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
+    m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
     if (pauseOnMimeTypeDetermined) {
         //TODO Remove KonqRun: sometimes, this signal is emitted with mimetype application/octet-stream, even when the mimetype
         //should be known (and, indeed, clicking again on the link gives the correct mimetype).
