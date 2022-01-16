@@ -33,17 +33,20 @@
 #include <QWebEngineProfile>
 #include <QFileDialog>
 
-bool UrlLoader::shouldAskEmbedOrSave(const QString &mimeType)
+bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
 {
     static QStringList s_mimeTypes;
     if (s_mimeTypes.isEmpty()) {
-        KService::Ptr s = KService::serviceByDesktopName("kfmclient_html");
-        s_mimeTypes = s->mimeTypes();
+        QStringList names{QStringLiteral("kfmclient_html"), QStringLiteral("kfmclient_dir"), QStringLiteral("kfmclient_war")};
+        for (const QString &name : names) {
+            KService::Ptr s = KService::serviceByDesktopName(name);
+            s_mimeTypes.append(s->mimeTypes());
+        }
         //The user may want to save xml files rather than embedding them
         //TODO: is there a better way to do this?
         s_mimeTypes.removeOne(QStringLiteral("application/xml"));
     }
-    return !s_mimeTypes.contains(mimeType);
+    return s_mimeTypes.contains(mimeType);
 }
 
 bool UrlLoader::isExecutable(const QString& mimeType)
@@ -139,8 +142,6 @@ void UrlLoader::goOn()
 
 void UrlLoader::decideEmbedOrSave()
 {
-    m_action = OpenUrlAction::Embed;
-
     //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
     //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
     //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
@@ -154,22 +155,22 @@ void UrlLoader::decideEmbedOrSave()
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
     //- there's no part to open it: always save
-    if (shouldAskEmbedOrSave(m_mimeType)) {
-        if (m_service && m_service->isValid()) {
-            KParts::BrowserOpenOrSaveQuestion::Result answer = askSaveOrOpen(OpenEmbedMode::Embed).first;
-            if (answer == KParts::BrowserOpenOrSaveQuestion::Cancel) {
-                m_action = OpenUrlAction::DoNothing;
-            } else if (answer == KParts::BrowserOpenOrSaveQuestion::Save) {
-                m_action = OpenUrlAction::Save;
-            } //Since m_action was set to Embed at the beginning of this function, there's nothing to do if the user chose to embed
+    if (m_service && m_service->isValid()) {
+        if (embedWithoutAskingToSave(m_mimeType)) {
+            m_action = OpenUrlAction::Embed;
         } else {
-            m_action = OpenUrlAction::Save;
+            m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
+            qDebug() << "ACTION" << m_action;
         }
+    } else {
+        m_action = OpenUrlAction::Save;
     }
 
-    if (m_action == OpenUrlAction::Embed && m_service) {
+    if (m_action == OpenUrlAction::Embed) {
+        //Given that m_action is Embed, m_service must be valid
         m_request.serviceName = m_service->desktopEntryName();
     }
+    qDebug() << m_action;
 
     m_ready = m_service || m_action != OpenUrlAction::Embed;
 }
@@ -177,33 +178,35 @@ void UrlLoader::decideEmbedOrSave()
 void UrlLoader::decideOpenOrSave()
 {
     m_ready = true;
-    m_action = OpenUrlAction::Open;
+    OpenSaveAnswer answerWithService = askOpenExecuteSave();
 
-    QString protClass = KProtocolInfo::protocolClass(m_url.scheme());
-    bool alwaysOpen = m_url.isLocalFile() || protClass == QLatin1String(":local") || KProtocolInfo::isHelperProtocol(m_url);
-    if (!alwaysOpen) {
-        OpenSaveAnswer answerWithService = askSaveOrOpen(OpenEmbedMode::Open);
-        KParts::BrowserOpenOrSaveQuestion::Result answer = answerWithService.first;
-        qDebug() << "ANSWER" << answer;
-        if (answer == KParts::BrowserOpenOrSaveQuestion::Open) {
-            m_service = answerWithService.second;
-        } else if (answer == KParts::BrowserOpenOrSaveQuestion::Save) {
-            m_action = OpenUrlAction::Save;
-        } else {
-            m_action = OpenUrlAction::DoNothing;
-        }
-    } else {
+    m_action = answerWithService.first;
+    m_service = answerWithService.second;
+    if (m_action == OpenUrlAction::Open && !m_service) {
         m_service = KApplicationTrader::preferredService(m_mimeType);
     }
-    if (m_action == OpenUrlAction::Open) {
-        const bool allowExecution = m_trustedSource || KParts::BrowserRun::allowExecution(m_mimeType, m_url);
-        if (allowExecution) {
-            if (KParts::BrowserRun::isExecutable(m_mimeType)) {
-                m_action = OpenUrlAction::Execute;
-            }
-        } else {
-            m_action = OpenUrlAction::DoNothing;
+}
+
+UrlLoader::OpenSaveAnswer UrlLoader::askOpenExecuteSave() const
+{
+    QString protClass = KProtocolInfo::protocolClass(m_url.scheme());
+    bool isLocal = m_url.isLocalFile();
+    bool alwaysOpen = isLocal || protClass == QLatin1String(":local") || KProtocolInfo::isHelperProtocol(m_url);
+    bool isExecutable = KRun::isExecutable(m_mimeType) && isLocal;
+    if (isExecutable) {
+        KMessageBox::ButtonCode code = KMessageBox::questionYesNoCancel(m_mainWindow, i18n("Do you want to open %1?", m_url.path()),
+                                                                        QString(), KGuiItem(i18nc("Execute file", "Execute"), QStringLiteral("system-run")),
+                                                                        KGuiItem(i18nc("Don't execute file", "Don't execute")));
+        if (code == KMessageBox::Yes) {
+            return qMakePair(OpenUrlAction::Execute, nullptr);
+        } else if (code == KMessageBox::Cancel) {
+            return qMakePair(OpenUrlAction::DoNothing, nullptr);
         }
+    }
+    if (!alwaysOpen) {
+        return askSaveOrOpen(OpenEmbedMode::Open);
+    } else {
+        return qMakePair(OpenUrlAction::Open, nullptr);
     }
 }
 
@@ -381,8 +384,6 @@ void UrlLoader::save()
 void UrlLoader::saveUrlUsingKIO(const QUrl& orig, const QUrl& dest)
 {
     KIO::FileCopyJob *job = KIO::file_copy(orig, dest, -1, KIO::Overwrite);
-    job->addMetaData(QStringLiteral("MaxCacheSize"), QStringLiteral("0")); // Don't store in http cache.
-    job->addMetaData(QStringLiteral("cache"), QStringLiteral("cache")); // Use entry from cache if available.
     KJobWidgets::setWindow(job, m_mainWindow);
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
     connect(job, &KJob::finished, this, [this, job](){done(job);});
@@ -432,7 +433,21 @@ UrlLoader::OpenSaveAnswer UrlLoader::askSaveOrOpen(OpenEmbedMode mode) const
     dlg.setSuggestedFileName(m_request.suggestedFileName);
     dlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
     KParts::BrowserOpenOrSaveQuestion::Result ans = mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave();
-    return qMakePair(ans, dlg.selectedService());
+    OpenUrlAction action;
+    switch (ans) {
+        case KParts::BrowserOpenOrSaveQuestion::Save:
+            action = OpenUrlAction::Save;
+            break;
+        case KParts::BrowserOpenOrSaveQuestion::Open:
+            action = OpenUrlAction::Open;
+            break;
+        case KParts::BrowserOpenOrSaveQuestion::Embed:
+            action = OpenUrlAction::Embed;
+            break;
+        default:
+            action = OpenUrlAction::DoNothing;
+    }
+    return qMakePair(action, dlg.selectedService());
 }
 
 QString UrlLoader::partForLocalFile(const QString& path)

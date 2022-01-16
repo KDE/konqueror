@@ -100,12 +100,13 @@ private:
     static bool isMimeTypeKnown(const QString &mimeType);
     void decideEmbedOrSave();
     void decideOpenOrSave();
-    bool shouldAskEmbedOrSave(const QString &mimeType);
+    bool embedWithoutAskingToSave(const QString &mimeType);
 
-    typedef QPair<KParts::BrowserOpenOrSaveQuestion::Result, KService::Ptr> OpenSaveAnswer;
+    typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 
     enum class OpenEmbedMode{Open, Embed};
     OpenSaveAnswer askSaveOrOpen(OpenEmbedMode mode) const;
+    OpenSaveAnswer askOpenExecuteSave() const;
 
 private:
     QPointer<KonqMainWindow> m_mainWindow;
