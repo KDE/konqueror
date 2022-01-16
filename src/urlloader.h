@@ -100,6 +100,7 @@ private:
     static bool isMimeTypeKnown(const QString &mimeType);
     void decideEmbedOrSave();
     void decideOpenOrSave();
+    bool shouldAskEmbedOrSave(const QString &mimeType);
 
     typedef QPair<KParts::BrowserOpenOrSaveQuestion::Result, KService::Ptr> OpenSaveAnswer;
 

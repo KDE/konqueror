@@ -33,6 +33,19 @@
 #include <QWebEngineProfile>
 #include <QFileDialog>
 
+bool UrlLoader::shouldAskEmbedOrSave(const QString &mimeType)
+{
+    static QStringList s_mimeTypes;
+    if (s_mimeTypes.isEmpty()) {
+        KService::Ptr s = KService::serviceByDesktopName("kfmclient_html");
+        s_mimeTypes = s->mimeTypes();
+        //The user may want to save xml files rather than embedding them
+        //TODO: is there a better way to do this?
+        s_mimeTypes.removeOne(QStringLiteral("application/xml"));
+    }
+    return !s_mimeTypes.contains(mimeType);
+}
+
 bool UrlLoader::isExecutable(const QString& mimeType)
 {
     return KParts::BrowserRun::isExecutable(mimeType);
@@ -142,16 +155,14 @@ void UrlLoader::decideEmbedOrSave()
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
     //- there's no part to open it: always save
-    //NOTE: action is set to Embed on creation, so there's no need to change it when embedding
-    //TODO Remove KonqRun: is there a way to do this without hardcoding mimetypes?
-    if (m_mimeType != QLatin1String("text/html") && m_mimeType != QLatin1String("application/xhtml+xml")) {
+    if (shouldAskEmbedOrSave(m_mimeType)) {
         if (m_service && m_service->isValid()) {
             KParts::BrowserOpenOrSaveQuestion::Result answer = askSaveOrOpen(OpenEmbedMode::Embed).first;
             if (answer == KParts::BrowserOpenOrSaveQuestion::Cancel) {
                 m_action = OpenUrlAction::DoNothing;
             } else if (answer == KParts::BrowserOpenOrSaveQuestion::Save) {
                 m_action = OpenUrlAction::Save;
-            }
+            } //Since m_action was set to Embed at the beginning of this function, there's nothing to do if the user chose to embed
         } else {
             m_action = OpenUrlAction::Save;
         }
