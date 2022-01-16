@@ -239,7 +239,6 @@ void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
 {
     m_openUrlJob = new KIO::OpenUrlJob(m_url, m_mimeType, this);
     m_openUrlJob->setEnableExternalBrowser(false);
-    m_openUrlJob->setShowOpenOrExecuteDialog(true);
     m_openUrlJob->setRunExecutables(true);
     m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
@@ -403,8 +402,10 @@ void UrlLoader::open()
 
 void UrlLoader::execute()
 {
+    //Since only local files can be executed, m_openUrlJob should always be nullptr. However, keep this check, just in case
     if (!m_openUrlJob) {
         launchOpenUrlJob(false);
+        connect(m_openUrlJob, &KJob::finished, this, [this](){done(m_openUrlJob);});
     } else {
         disconnect(m_openUrlJob, &KJob::finished, this, nullptr); //Otherwise, jobFinished will be called twice
         connect(m_openUrlJob, &KJob::finished, this, [this](){done(m_openUrlJob);});
