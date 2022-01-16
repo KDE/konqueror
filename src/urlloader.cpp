@@ -82,9 +82,8 @@ void UrlLoader::setOldLocationBarUrl(const QString& old)
 
 void UrlLoader::setNewTab(bool newTab)
 {
-    m_request.browserArgs.setNewTab(false);
+    m_request.browserArgs.setNewTab(newTab);
 }
-
 
 void UrlLoader::start()
 {
