@@ -127,8 +127,17 @@ void UrlLoader::goOn()
 
 void UrlLoader::decideEmbedOrSave()
 {
-    KPluginMetaData md = KParts::PartLoader::partsForMimeType(m_mimeType).first();
     m_action = OpenUrlAction::Embed;
+
+    //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
+    //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
+    //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
+    //the Kate part because it can handle html files.
+    if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
+        m_service = m_view->service();
+    } else {
+        m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+    }
 
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
@@ -136,7 +145,7 @@ void UrlLoader::decideEmbedOrSave()
     //NOTE: action is set to Embed on creation, so there's no need to change it when embedding
     //TODO Remove KonqRun: is there a way to do this without hardcoding mimetypes?
     if (m_mimeType != QLatin1String("text/html") && m_mimeType != QLatin1String("application/xhtml+xml")) {
-        if (md.isValid()) {
+        if (m_service && m_service->isValid()) {
             KParts::BrowserOpenOrSaveQuestion::Result answer = askSaveOrOpen(OpenEmbedMode::Embed).first;
             if (answer == KParts::BrowserOpenOrSaveQuestion::Cancel) {
                 m_action = OpenUrlAction::DoNothing;
@@ -148,18 +157,10 @@ void UrlLoader::decideEmbedOrSave()
         }
     }
 
-    if (m_action == OpenUrlAction::Embed) {
-        if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
-            m_service = m_view->service();
-        } else {
-            //TODO Remove KonqRun: replace the following line with the commented out line below it as soon as I can find out how to create a service from a KPluginMetaData
-            m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
-            //service = KService::serviceByStorageId(md.pluginId());
-        }
-        if (m_service) {
-            m_request.serviceName = m_service->desktopEntryName();
-        }
+    if (m_action == OpenUrlAction::Embed && m_service) {
+        m_request.serviceName = m_service->desktopEntryName();
     }
+
     m_ready = m_service || m_action != OpenUrlAction::Embed;
 }
 
@@ -194,9 +195,6 @@ void UrlLoader::decideOpenOrSave()
             m_action = OpenUrlAction::DoNothing;
         }
     }
-//     if (m_openUrlJob && m_action != OpenUrlAction::Execute) {
-//         m_openUrlJob->kill();
-//     }
 }
 
 void UrlLoader::performAction()
@@ -434,8 +432,6 @@ QString UrlLoader::partForLocalFile(const QString& path)
     //TODO Remove KonqRun: replace the following two lines with the commented out lines below them as soon as I can find out how to create a service from a KPluginMetaData
     KService::Ptr service = KMimeTypeTrader::self()->preferredService(mimetype, QStringLiteral("KParts/ReadOnlyPart"));
     return service ? service->name() : QString();
-//     KPluginMetaData md = KParts::PartLoader::partsForMimeType(mimetype).first();
-//     return md.pluginId();
 }
 
 UrlLoader::ViewToUse UrlLoader::viewToUse() const
