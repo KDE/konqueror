@@ -397,7 +397,6 @@ void UrlLoader::open()
         // is konqueror/kfmclient, then we'll loop forever.
         return;
     }
-    qDebug() << "Launching" << m_url << "with" << m_service;
     KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(m_service);
     job->setUrls({m_url});
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
@@ -432,14 +431,14 @@ UrlLoader::OpenSaveAnswer UrlLoader::askSaveOrOpen(OpenEmbedMode mode) const
     KParts::BrowserOpenOrSaveQuestion dlg(m_mainWindow, m_url, m_mimeType);
     dlg.setSuggestedFileName(m_request.suggestedFileName);
     dlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
-    return qMakePair((mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave()), dlg.selectedService());
+    KParts::BrowserOpenOrSaveQuestion::Result ans = mode == OpenEmbedMode::Open ? dlg.askOpenOrSave() : dlg.askEmbedOrSave();
+    return qMakePair(ans, dlg.selectedService());
 }
 
 QString UrlLoader::partForLocalFile(const QString& path)
 {
     QMimeDatabase db;
     QString mimetype = db.mimeTypeForFile(path).name();
-    //TODO Remove KonqRun: replace the following two lines with the commented out lines below them as soon as I can find out how to create a service from a KPluginMetaData
     KService::Ptr service = KMimeTypeTrader::self()->preferredService(mimetype, QStringLiteral("KParts/ReadOnlyPart"));
     return service ? service->name() : QString();
 }
