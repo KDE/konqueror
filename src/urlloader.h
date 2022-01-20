@@ -106,7 +106,7 @@ private:
 
     enum class OpenEmbedMode{Open, Embed};
     OpenSaveAnswer askSaveOrOpen(OpenEmbedMode mode) const;
-    OpenSaveAnswer askOpenExecuteSave() const;
+    bool decideExecute() const;
 
 private:
     QPointer<KonqMainWindow> m_mainWindow;

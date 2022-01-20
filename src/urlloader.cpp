@@ -105,14 +105,19 @@ void UrlLoader::start()
     }
 
     qDebug() << "Should embed" << m_url << "?" << shouldEmbedThis();
-    qDebug() << "Is mimetype for" << m_url << "kown?" << isMimeTypeKnown(m_mimeType);
+    qDebug() << "Is mimetype for" << m_url << "known?" << isMimeTypeKnown(m_mimeType);
 
     if (isMimeTypeKnown(m_mimeType)) {
-        if (shouldEmbedThis()) {
-            decideEmbedOrSave();
+        if (decideExecute()) {
+            m_action = OpenUrlAction::Execute;
+            m_ready = true;
         } else {
-            qDebug() << "Calling decideOpenOrSave for" << m_url;
-            decideOpenOrSave();
+            if (shouldEmbedThis()) {
+                decideEmbedOrSave();
+            } else {
+                qDebug() << "Calling decideOpenOrSave for" << m_url;
+                decideOpenOrSave();
+            }
         }
     } else {
         m_isAsync = true;
@@ -178,7 +183,15 @@ void UrlLoader::decideEmbedOrSave()
 void UrlLoader::decideOpenOrSave()
 {
     m_ready = true;
-    OpenSaveAnswer answerWithService = askOpenExecuteSave();
+    QString protClass = KProtocolInfo::protocolClass(m_url.scheme());
+    bool isLocal = m_url.isLocalFile();
+    bool alwaysOpen = isLocal || protClass == QLatin1String(":local") || KProtocolInfo::isHelperProtocol(m_url);
+    OpenSaveAnswer answerWithService;
+    if (!alwaysOpen) {
+        answerWithService = askSaveOrOpen(OpenEmbedMode::Open);
+    } else {
+        answerWithService = qMakePair(OpenUrlAction::Open, nullptr);
+    }
 
     m_action = answerWithService.first;
     m_service = answerWithService.second;
@@ -187,27 +200,12 @@ void UrlLoader::decideOpenOrSave()
     }
 }
 
-UrlLoader::OpenSaveAnswer UrlLoader::askOpenExecuteSave() const
-{
-    QString protClass = KProtocolInfo::protocolClass(m_url.scheme());
-    bool isLocal = m_url.isLocalFile();
-    bool alwaysOpen = isLocal || protClass == QLatin1String(":local") || KProtocolInfo::isHelperProtocol(m_url);
-    bool isExecutable = KRun::isExecutable(m_mimeType) && isLocal;
-    if (isExecutable) {
-        KMessageBox::ButtonCode code = KMessageBox::questionYesNoCancel(m_mainWindow, i18n("Do you want to open %1?", m_url.path()),
-                                                                        QString(), KGuiItem(i18nc("Execute file", "Execute"), QStringLiteral("system-run")),
-                                                                        KGuiItem(i18nc("Don't execute file", "Don't execute")));
-        if (code == KMessageBox::Yes) {
-            return qMakePair(OpenUrlAction::Execute, nullptr);
-        } else if (code == KMessageBox::Cancel) {
-            return qMakePair(OpenUrlAction::DoNothing, nullptr);
-        }
+bool UrlLoader::decideExecute() const {
+    if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
+        return false;
     }
-    if (!alwaysOpen) {
-        return askSaveOrOpen(OpenEmbedMode::Open);
-    } else {
-        return qMakePair(OpenUrlAction::Open, nullptr);
-    }
+    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18n("Do you want to execute %1?", m_url.path()), QString());
+    return code == KMessageBox::Yes;
 }
 
 void UrlLoader::performAction()
