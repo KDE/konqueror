@@ -159,9 +159,10 @@ void UrlLoader::decideEmbedOrSave()
 
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
+    //- it's a local file: always embed
     //- there's no part to open it: always save
     if (m_service && m_service->isValid()) {
-        if (embedWithoutAskingToSave(m_mimeType)) {
+        if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile()) {
             m_action = OpenUrlAction::Embed;
         } else {
             m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
