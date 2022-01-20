@@ -870,7 +870,7 @@ static QString preferredService(KonqView *currentView, const QString &mimeType)
     return QString();
 }
 
-//TODO remove KonqRun: some of this becomes redundant, at least when called via UrlLoader. Can this be avoided?
+//TODO Remove KonqRun: some of this becomes redundant, at least when called via UrlLoader. Can this be avoided?
 bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *childView, const KonqOpenURLRequest &req)
 {
     // Second argument is referring URL
@@ -880,9 +880,16 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
         return true; // Nothing else to do.
     }
 
-    if (UrlLoader::isExecutable(mimeType)) {
-        return false;    // execute, don't open
-    }
+//TODO Remove KonqRun: the following lines prevent embedding script files. If the user chose, from UrlLoader, not to
+//execute a script but to open it, it should be embedded or opened in a separate viewer according to the user
+//preferences. With the check below, instead, it'll always been opened in the external application.
+//Are there situations when this check is needed? When this function is called by UrlLoader, it's not necessary
+//because UrlLoader only calls it if the user chose to embed the URL. The only other caller of this function
+//seems to be KonqViewManager::loadItem, which uses it when restoring or duplicating a view. Since a view can't
+//contain an executed program, I think we can assume that the file should be embedded.
+//     if (UrlLoader::isExecutable(mimeType)) {
+//         return false;    // execute, don't open
+//     }
     // Contract: the caller of this method should ensure the view is stopped first.
 
 #ifndef NDEBUG
