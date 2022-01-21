@@ -205,7 +205,7 @@ bool UrlLoader::decideExecute() const {
     if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
         return false;
     }
-    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18n("Do you want to execute %1?", m_url.path()), QString());
+    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not", "Do you want to execute %1?", m_url.path()), QString());
     return code == KMessageBox::Yes;
 }
 
