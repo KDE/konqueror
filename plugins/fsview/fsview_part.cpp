@@ -225,7 +225,7 @@ void FSViewPart::showInfo()
 
 void FSViewPart::showHelp()
 {
-    const KService::Ptr helpCenter = KService::serviceByDesktopName(QStringLiteral("org.kde.help"));
+    const KService::Ptr helpCenter = KService::serviceByDesktopName(QStringLiteral("org.kde.khelpcenter"));
     auto job = new KIO::ApplicationLauncherJob(helpCenter);
     job->setUrls({QUrl(QStringLiteral("help:/konqueror/index.html#fsview"))});
     job->start();
