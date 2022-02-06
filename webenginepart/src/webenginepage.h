@@ -66,6 +66,12 @@ public:
     */
     void markUrlAsRequestedByApp(const QUrl &url){m_urlRequestedByApp = url;}
 
+    /**
+     * @brief Sets the webengine part to be used by this object.
+     * @param part the part
+     */
+    void setPart(WebEnginePart *part);
+
 Q_SIGNALS:
     /**
      * This signal is emitted whenever a user cancels/aborts a load resource
@@ -81,12 +87,6 @@ protected:
      * @internal
      */
     WebEnginePart* part() const;
-
-    /**
-     * Sets the webengine part to be used by this object.
-     * @internal
-     */
-    void setPart(WebEnginePart*);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.

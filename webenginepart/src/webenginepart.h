@@ -100,6 +100,18 @@ public:
 
     void setWallet(WebEngineWallet* wallet);
 
+    /**
+     * @brief Changes the page object associated with the part
+     *
+     * This currently includes:
+     * - calling WebEngineView::setPage
+     * - making the part a child of the view
+     * - connecting signals between part and page
+     * - injecting scripts into the page
+     * @param page the new page
+     */
+    void setPage(WebEnginePage *page);
+
 public Q_SLOTS:
     void exitFullScreen();
     void setInspectedPart(KParts::ReadOnlyPart *part);

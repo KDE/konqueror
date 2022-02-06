@@ -195,22 +195,33 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     connect(m_webView, &QWebEngineView::loadFinished,
             this, &WebEnginePart::slotLoadFinished);
 
-    page()->scripts().insert(detectRefreshScript());
-    // Connect the signals from the page...
-    connectWebEnginePageSignals(page());
-
     // Init the QAction we are going to use...
     initActions();
 
     // Load plugins once we are fully ready
     setWallet(page()->wallet());
-    if (m_wallet) {
-        page()->scripts().insert(WebEngineWallet::formDetectorFunctionsScript());
-    }
+
+    setPage(page());
 }
 
 WebEnginePart::~WebEnginePart()
 {
+}
+
+void WebEnginePart::setPage(WebEnginePage* page)
+{
+    if (m_webView) {
+        m_webView->setPage(page);
+        page->setParent(m_webView);
+    }
+    page->setPart(this);
+    page->scripts().insert(detectRefreshScript());
+    // Connect the signals from the page...
+    connectWebEnginePageSignals(page);
+    if (m_wallet) {
+        page->scripts().insert(WebEngineWallet::formDetectorFunctionsScript());
+    } else {
+    }
 }
 
 WebEnginePage* WebEnginePart::page()

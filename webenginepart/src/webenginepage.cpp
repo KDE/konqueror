@@ -926,14 +926,7 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
             this->deleteLater();
             return false;
         }
-        // Reparent this page to the new webview to prevent memory leaks.
-        setParent(webView);
-        // Replace the webpage of the new webview with this one. Nice trick...
-        webView->setPage(this);
-        // Set the new part as the one this page will use going forward.
-        setPart(webenginePart);
-        // Connect all the signals from this page to the slots in the new part.
-        webenginePart->connectWebEnginePageSignals(this);
+        webenginePart->setPage(this);
         //Set the create new window flag to false...
         m_createNewWindow = false;
 
