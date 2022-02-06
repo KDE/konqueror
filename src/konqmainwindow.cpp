@@ -566,7 +566,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     // I removed this entire block so that we wouldn't end up with a useless tab when
     // launching an external application for this mimetype. But user feedback
     // in all cases is more important than empty tabs in some cases.
-    if (!loader->isReady() || loader->viewToUse() == UrlLoader::ViewToUse::NewTab) {
+    if (loader->viewToUse() == UrlLoader::ViewToUse::NewTab) {
         view = createTabForLoadUrlRequest(loader->url(), loader->request());
         if (!view) {
             loader->setNewTab(false);
