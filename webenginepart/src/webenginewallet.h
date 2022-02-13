@@ -23,6 +23,7 @@
 #include "settings/webenginesettings.h"
 
 class WebEnginePage;
+class WebEnginePart;
 class QWebEngineScript;
 
 /**
@@ -174,7 +175,7 @@ public:
      * @param wid     the window ID of the window the web page will be
      *                embedded in
      */
-    explicit WebEngineWallet(WebEnginePage *parent = nullptr, WId wid = 0);
+    explicit WebEngineWallet(WebEnginePart *parent = nullptr, WId wid = 0);
 
     /**
      * @brief Destructor

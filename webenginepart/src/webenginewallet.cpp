@@ -11,6 +11,7 @@
 #include "webenginepage.h"
 #include "utils.h"
 #include "webenginecustomizecacheablefieldsdlg.h"
+#include "webenginepart.h"
 
 #include <webenginepart_debug.h>
 
@@ -109,7 +110,7 @@ QString WebEngineWallet::WebForm::fieldNameFromType(WebEngineWallet::WebForm::We
     return QString();
 }
 
-WebEngineWallet::WebEngineWallet(WebEnginePage *parent, WId wid)
+WebEngineWallet::WebEngineWallet(WebEnginePart *parent, WId wid)
     : QObject(parent), d(new WebEngineWalletPrivate(this))
 {
     d->wid = wid;
@@ -135,7 +136,6 @@ void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
     }
 
     auto callback = [this, url, page](const WebFormList &forms) {
-        emit formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
         if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
             fillFormData(page, cacheableForms(url, forms, CacheOperation::Fill));
         }

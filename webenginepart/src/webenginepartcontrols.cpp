@@ -16,12 +16,15 @@
 #include "spellcheckermanager.h"
 #include "webenginepartdownloadmanager.h"
 #include "certificateerrordialogmanager.h"
+#include "webenginewallet.h"
+#include "webenginepart.h"
 
 #include <KProtocolInfo>
 
 #include <QWebEngineProfile>
 #include <QWebEngineUrlScheme>
 #include <QWebEngineSettings>
+#include <QWebEngineScriptCollection>
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -63,6 +66,8 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
         return;
     }
     m_profile = profile;
+
+    m_profile->scripts()->insert({WebEngineWallet::formDetectorFunctionsScript(), WebEnginePart::detectRefreshScript()});
 
     m_profile->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(m_profile));
     m_profile->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(m_profile));

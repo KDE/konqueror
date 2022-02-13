@@ -17,6 +17,7 @@
 #include <kparts_version.h>
 #include <KParts/ReadOnlyPart>
 #include <QUrl>
+#include <QWebEngineScript>
 
 namespace KParts {
   class BrowserExtension;
@@ -100,6 +101,10 @@ public:
 
     void setWallet(WebEngineWallet* wallet);
 
+    WebEngineWallet* wallet() const;
+
+    static QWebEngineScript detectRefreshScript();
+
     /**
      * @brief Changes the page object associated with the part
      *
@@ -108,9 +113,9 @@ public:
      * - making the part a child of the view
      * - connecting signals between part and page
      * - injecting scripts into the page
-     * @param page the new page
+     * @param newPage the new page
      */
-    void setPage(WebEnginePage *page);
+    void setPage(WebEnginePage *newPage);
 
 public Q_SLOTS:
     void exitFullScreen();

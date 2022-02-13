@@ -83,7 +83,7 @@
 #include "utils.h"
 #include <kio_version.h>
 
-static QWebEngineScript detectRefreshScript() {
+QWebEngineScript WebEnginePart::detectRefreshScript() {
     static QWebEngineScript s_detectRefreshScript;
     if (s_detectRefreshScript.isNull()) {
         QFile jsfile(":/hasrefresh.js");
@@ -199,7 +199,7 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
     initActions();
 
     // Load plugins once we are fully ready
-    setWallet(page()->wallet());
+    setWallet(new WebEngineWallet(this, parentWidget ? parentWidget->window()->winId() : 0));
 
     setPage(page());
 }
@@ -208,20 +208,16 @@ WebEnginePart::~WebEnginePart()
 {
 }
 
-void WebEnginePart::setPage(WebEnginePage* page)
+void WebEnginePart::setPage(WebEnginePage* newPage)
 {
-    if (m_webView) {
-        m_webView->setPage(page);
-        page->setParent(m_webView);
+    WebEnginePage *oldPage = page();
+    if (oldPage && oldPage != newPage) {
+        m_webView->setPage(newPage);
+        newPage->setParent(m_webView);
     }
-    page->setPart(this);
-    page->scripts().insert(detectRefreshScript());
+    newPage->setPart(this);
     // Connect the signals from the page...
-    connectWebEnginePageSignals(page);
-    if (m_wallet) {
-        page->scripts().insert(WebEngineWallet::formDetectorFunctionsScript());
-    } else {
-    }
+    connectWebEnginePageSignals(newPage);
 }
 
 WebEnginePage* WebEnginePart::page()
@@ -398,6 +394,11 @@ void WebEnginePart::setWallet(WebEngineWallet* wallet)
         connect(m_wallet, &WebEngineWallet::saveFormDataCompleted, this, &WebEnginePart::slotWalletSavedForms);
         connect(m_wallet, &WebEngineWallet::walletOpened, this, &WebEnginePart::updateWalletActions);
     }
+}
+
+WebEngineWallet* WebEnginePart::wallet() const
+{
+    return m_wallet;
 }
 
 void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
@@ -869,11 +870,11 @@ void WebEnginePart::togglePasswordStorableState(bool on)
 
 void WebEnginePart::slotRemoveCachedPasswords()
 {
-    if (!page() || !page()->wallet()) {
+    if (!m_wallet) {
         return;
     }
 
-    page()->wallet()->removeFormData(page());
+    m_wallet->removeFormData(page());
     updateWalletData(WalletData::HasCachedData, false);
 }
 

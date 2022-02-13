@@ -55,8 +55,6 @@ public:
 
     void setStatusBarText(const QString &text);
 
-    WebEngineWallet* wallet() const {return m_wallet;}
-
     /**
     * @brief Tells the page that the part has requested to load the given URL
     *
@@ -165,7 +163,6 @@ private:
     QPointer<WebEnginePart> m_part;
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
-    WebEngineWallet *m_wallet;
 
     /**
     * @brief The last URL that the application explicitly asked this part to open
@@ -218,7 +215,6 @@ private:
     KParts::WindowArgs m_windowArgs;
     WebWindowType m_type;
     bool m_createNewWindow;
-    WebEngineWallet* m_wallet;
 };
 
 #endif // WEBENGINEPAGE_H

@@ -64,8 +64,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_part(part),
-         m_passwdServerClient(new KPasswdServerClient),
-         m_wallet(nullptr)
+         m_passwdServerClient(new KPasswdServerClient)
 {
     if (view())
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -99,8 +98,6 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     }
 
     m_part->downloadManager()->addPage(this);
-
-    m_wallet = new WebEngineWallet(this, parent ? parent->window()->winId() : 0);
 }
 
 WebEnginePage::~WebEnginePage()
@@ -290,8 +287,8 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
         case QWebEnginePage::NavigationTypeFormSubmitted:
             if (!checkFormData(url))
                return false;
-            if (m_wallet) {
-                m_wallet->saveFormsInPage(this);
+            if (part() && part()->wallet()) {
+                part()->wallet()->saveFormsInPage(this);
             }
 
             break;
