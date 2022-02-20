@@ -527,6 +527,8 @@ void WebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePa
     //url.path() is always / (meaning that permissions should be granted site-wide and not per page)
     QUrl thisUrl(this->url());
     thisUrl.setPath("/");
+    thisUrl.setQuery(QString());
+    thisUrl.setFragment(QString());
     if (url == thisUrl) {
         part()->slotShowFeaturePermissionBar(url, feature);
         return;
