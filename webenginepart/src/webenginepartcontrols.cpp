@@ -21,6 +21,7 @@
 
 #include <QWebEngineProfile>
 #include <QWebEngineUrlScheme>
+#include <QWebEngineSettings>
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -73,6 +74,7 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     m_cookieJar = new WebEnginePartCookieJar(profile, this);
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
+    m_profile->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, true);
 }
 
 WebEnginePartDownloadManager* WebEnginePartControls::downloadManager() const
