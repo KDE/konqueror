@@ -24,8 +24,6 @@
 
 #include <algorithm>
 
-#include <QtWebEngineWidgets/QWebEngineScriptCollection>
-
 class WebEngineWallet::WebEngineWalletPrivate
 {
 public:
