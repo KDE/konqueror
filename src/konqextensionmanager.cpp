@@ -67,14 +67,15 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 
     auto addPluginForId = [this](const QString &pluginId) {
         QVector<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(pluginId + QStringLiteral("/kpartplugins"));
-        d->pluginSelector->setConfig(KSharedConfig::openConfig(pluginId + QLatin1String("rc"))->group("KParts Plugins"));
         d->pluginSelector->addPlugins(metaDataList, i18n("Extensions"));
     };
     if (activePart) {
+        d->pluginSelector->setConfig(KSharedConfig::openConfig(activePart->metaData().pluginId() + QLatin1String("rc"))->group("KParts Plugins"));
         addPluginForId(activePart->metaData().pluginId());
     } else {
-        addPluginForId(QStringLiteral("konqueror"));
+        d->pluginSelector->setConfig(KSharedConfig::openConfig(QStringLiteral("konquerorrc"))->group("KParts Plugins"));
     }
+    addPluginForId(QStringLiteral("konqueror")); // Always add the plugins from the konqueror namespace
 
     d->buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Apply);
     QPushButton *okButton = d->buttonBox->button(QDialogButtonBox::Ok);
