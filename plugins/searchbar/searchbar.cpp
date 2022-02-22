@@ -112,7 +112,7 @@ SearchBarPlugin::~SearchBarPlugin()
 
 bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
 {
-    if (qobject_cast<KMainWindow *>(o) && KParts::PartActivateEvent::test(e)) {
+    if (KParts::PartActivateEvent::test(e)) {
         KParts::PartActivateEvent *partEvent = static_cast<KParts::PartActivateEvent *>(e);
         KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(partEvent->part());
         //qCDebug(SEARCHBAR_LOG) << "Embedded part changed to " << part;

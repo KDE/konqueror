@@ -160,7 +160,7 @@ void Plugin::setMetaData(const KPluginMetaData &metaData)
 void Plugin::loadPlugins(QObject *parent, KXMLGUIClient *parentGUIClient, const QString &componentName)
 {
     KConfigGroup cfgGroup(KSharedConfig::openConfig(componentName + QLatin1String("rc")), "KParts Plugins");
-    const QList<PluginInfo> plugins = pluginInfos(componentName);
+    const QList<PluginInfo> plugins = pluginInfos(componentName) << pluginInfos("konqueror");
     for (const auto &pluginInfo : plugins) {
         QDomElement docElem = pluginInfo.m_document.documentElement();
 
