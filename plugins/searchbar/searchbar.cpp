@@ -7,7 +7,6 @@
 
 #include "searchbar.h"
 
-#include "OpenSearchManager.h"
 #include "WebShortcutWidget.h"
 
 #include <KBuildSycocaProgressDialog>
@@ -27,6 +26,7 @@
 #include <KParts/SelectorInterface>
 #include <KParts/PartActivateEvent>
 #include <KLocalizedString>
+#include <KIO/Job>
 
 #include <QLineEdit>
 #include <QApplication>
@@ -52,7 +52,6 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     m_addWSWidget(nullptr),
     m_searchMode(UseSearchProvider),
     m_urlEnterLock(false),
-    m_openSearchManager(new OpenSearchManager(this)),
     m_reloadConfiguration(false)
 {
     m_searchCombo = new SearchBarCombo(nullptr);
@@ -65,7 +64,6 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     connect(m_searchCombo, &SearchBarCombo::iconClicked, this, &SearchBarPlugin::showSelectionMenu);
     m_searchCombo->setWhatsThis(i18n("Search Bar<p>"
                                      "Enter a search term. Click on the icon to change search mode or provider.</p>"));
-    connect(m_searchCombo, &SearchBarCombo::suggestionEnabled, this, &SearchBarPlugin::enableSuggestion);
 
     m_searchComboAction = new QWidgetAction(actionCollection());
     actionCollection()->addAction(QStringLiteral("toolbar_search_bar"), m_searchComboAction);
@@ -81,19 +79,11 @@ SearchBarPlugin::SearchBarPlugin(QObject *parent,
     QDir().mkpath(m_searchProvidersDir);
     configurationChanged();
 
-    m_timer = new QTimer(this);
-    m_timer->setSingleShot(true);
-    connect(m_timer, &QTimer::timeout, this, &SearchBarPlugin::requestSuggestion);
-
     // parent is the KonqMainWindow and we want to listen to PartActivateEvent events.
     parent->installEventFilter(this);
 
     connect(m_searchCombo->lineEdit(), &QLineEdit::textEdited,
             this, &SearchBarPlugin::searchTextChanged);
-    connect(m_openSearchManager, &OpenSearchManager::suggestionReceived,
-            this, &SearchBarPlugin::addSearchSuggestion);
-    connect(m_openSearchManager, &OpenSearchManager::openSearchEngineAdded,
-            this, &SearchBarPlugin::openSearchEngineAdded);
 
     QDBusConnection::sessionBus().connect(QString(), QString(), QStringLiteral("org.kde.KUriFilterPlugin"),
                                           QStringLiteral("configure"), this, SLOT(reloadConfiguration()));
@@ -104,7 +94,6 @@ SearchBarPlugin::~SearchBarPlugin()
     KConfigGroup config(KSharedConfig::openConfig(), "SearchBar");
     config.writeEntry("Mode", (int) m_searchMode);
     config.writeEntry("CurrentEngine", m_currentEngine);
-    config.writeEntry("SuggestionEnabled", m_suggestionEnabled);
 
     delete m_searchCombo;
     m_searchCombo = nullptr;
@@ -202,7 +191,6 @@ void SearchBarPlugin::startSearch(const QString &search)
     if (m_urlEnterLock || search.isEmpty() || m_part.isNull()) {
         return;
     }
-    m_timer->stop();
     m_lastSearch = search;
 
     if (m_searchMode == FindInThisPage) {
@@ -345,7 +333,6 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
         m_searchMode = UseSearchProvider;
         m_currentEngine = m_searchEngines.at(id);
         setIcon();
-        m_openSearchManager->setSearchProvider(m_currentEngine);
         m_searchCombo->lineEdit()->selectAll();
         return;
     }
@@ -366,8 +353,6 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
         } else {
             url = QUrl(openSearchHref);
         }
-        //qCDebug(SEARCHBAR_LOG) << "Adding open search Engine: " << openSearchTitle << " : " << openSearchHref;
-        m_openSearchManager->addOpenSearchEngine(url, openSearchTitle);
     }
 }
 
@@ -406,10 +391,6 @@ void SearchBarPlugin::configurationChanged()
     m_searchMode = (SearchModes) config.readEntry("Mode", static_cast<int>(UseSearchProvider));
     const QString defaultSearchEngine((m_searchEngines.isEmpty() ?  QStringLiteral("google") : m_searchEngines.first()));
     m_currentEngine = config.readEntry("CurrentEngine", defaultSearchEngine);
-    m_suggestionEnabled = config.readEntry("SuggestionEnabled", true);
-
-    m_searchCombo->setSuggestionEnabled(m_suggestionEnabled);
-    m_openSearchManager->setSearchProvider(m_currentEngine);
 
     m_reloadConfiguration = false;
     setIcon();
@@ -452,25 +433,6 @@ void SearchBarPlugin::searchTextChanged(const QString &text)
     if (qApp->mouseButtons()) {
         return;
     }
-
-    // 400 ms delay before requesting for suggestions, so we don't flood the provider with suggestion request
-    m_timer->start(400);
-}
-
-void SearchBarPlugin::requestSuggestion()
-{
-    m_searchCombo->clearSuggestions();
-
-    if (m_suggestionEnabled && m_searchMode != FindInThisPage &&
-            m_openSearchManager->isSuggestionAvailable() &&
-            !m_searchCombo->lineEdit()->text().isEmpty()) {
-        m_openSearchManager->requestSuggestion(m_searchCombo->lineEdit()->text());
-    }
-}
-
-void SearchBarPlugin::enableSuggestion(bool enable)
-{
-    m_suggestionEnabled = enable;
 }
 
 void SearchBarPlugin::HTMLDocLoaded()
@@ -573,12 +535,6 @@ SearchBarCombo::SearchBarCombo(QWidget *parent)
     setHistoryItems(list, true);
     Q_ASSERT(currentText().isEmpty()); // KHistoryComboBox calls clearEditText
 
-    m_enableAction = new QAction(i18n("Enable Suggestion"), this);
-    m_enableAction->setCheckable(true);
-    connect(m_enableAction, &QAction::toggled, this, &SearchBarCombo::suggestionEnabled);
-
-    connect(this, &KComboBox::aboutToShowContextMenu, this, &SearchBarCombo::addEnableMenuItem);
-
     // use our own item delegate to display our fancy stuff :D
     KCompletionBox *box = completionBox();
     box->setItemDelegate(new SearchBarItemDelegate(this));
@@ -591,7 +547,6 @@ SearchBarCombo::~SearchBarCombo()
     config.writeEntry("History list", historyItems());
     const int mode = completionMode();
     config.writeEntry("CompletionMode", mode);
-    delete m_enableAction;
 }
 
 const QPixmap &SearchBarCombo::icon() const
@@ -611,11 +566,6 @@ void SearchBarCombo::setIcon(const QPixmap &icon)
         }
     }
     setEditText(editText);
-}
-
-void SearchBarCombo::setSuggestionEnabled(bool enable)
-{
-    m_enableAction->setChecked(enable);
 }
 
 int SearchBarCombo::findHistoryItem(const QString &searchText)
@@ -681,13 +631,6 @@ void SearchBarCombo::clearSuggestions()
     }
     m_suggestions.clear();
     lineEdit()->blockSignals(oldBlock);
-}
-
-void SearchBarCombo::addEnableMenuItem(QMenu *menu)
-{
-    if (menu) {
-        menu->addAction(m_enableAction);
-    }
 }
 
 SearchBarItemDelegate::SearchBarItemDelegate(QObject *parent)

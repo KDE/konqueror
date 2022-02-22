@@ -23,7 +23,6 @@ class Part;
 class ReadOnlyPart;
 }
 
-class OpenSearchManager;
 class WebShortcutWidget;
 
 class QAction;
@@ -60,11 +59,6 @@ public:
     void setIcon(const QPixmap &icon);
 
     /**
-     * Check/uncheck the menu entry for setting suggestion according to enable
-     */
-    void setSuggestionEnabled(bool enable);
-
-    /**
      * Finds a history item by its text.
      * @return The item number, or -1 if the item is not found.
      */
@@ -93,11 +87,6 @@ Q_SIGNALS:
      */
     void iconClicked();
 
-    /**
-     * Emitted when the suggestion enable state is changed via the popup menu
-     */
-    void suggestionEnabled(bool enable);
-
 protected:
     /**
      * Captures mouse clicks and emits iconClicked() if the icon
@@ -107,11 +96,9 @@ protected:
 
 private Q_SLOTS:
     void historyCleared();
-    void addEnableMenuItem(QMenu *menu);
 
 private:
     QPixmap m_icon;
-    QAction *m_enableAction;
     QStringList m_suggestions;
 };
 
@@ -172,10 +159,6 @@ private Q_SLOTS:
 
     void addSearchSuggestion(const QStringList &suggestion);
 
-    void requestSuggestion();
-
-    void enableSuggestion(bool enable);
-
     void HTMLLoadingStarted();
 
     void HTMLDocLoaded();
@@ -204,9 +187,6 @@ private:
     QStringList m_searchEngines;
     QMap<QString, KUriFilterSearchProvider> m_searchProviders;
     QChar m_delimiter;
-    OpenSearchManager *m_openSearchManager;
-    QTimer *m_timer;
-    bool m_suggestionEnabled;
     QMap<QString, QString> m_openSearchDescs;
     bool m_reloadConfiguration;
     QString m_searchProvidersDir;
