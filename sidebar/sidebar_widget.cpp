@@ -59,25 +59,21 @@ void Sidebar_Widget::aboutToShowAddMenu()
         if (!service->isValid()) {
             continue;
         }
-        KPluginLoader loader(*service);
-        KPluginFactory *factory = loader.factory();
-        if (!factory) {
-            qCWarning(SIDEBAR_LOG) << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
+        auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(KPluginMetaData(service->library()), this);
+        if (pluginResult) {
+          KonqSidebarPlugin *plugin = pluginResult.plugin;
+          const QList<QAction *> actions = plugin->addNewActions(&m_addMenuActionGroup,
+                                                                 existingGroups,
+                                                                 QVariant());
+          // Remember which plugin the action came from.
+          // We can't use QAction::setData for that, because we let plugins use
+          // that already.
+          Q_FOREACH (QAction *action, actions) {
+            m_pluginForAction.insert(action, plugin);
+          }
+          m_addMenu->addActions(actions);
         } else {
-            KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(this);
-            if (!plugin) {
-                qCWarning(SIDEBAR_LOG) << "Error creating KonqSidebarPlugin from" << service->desktopEntryName();
-            } else {
-                const QList<QAction *> actions = plugin->addNewActions(&m_addMenuActionGroup,
-                                                 existingGroups,
-                                                 QVariant());
-                // Remember which plugin the action came from.
-                // We can't use QAction::setData for that, because we let plugins use that already.
-                Q_FOREACH (QAction *action, actions) {
-                    m_pluginForAction.insert(action, plugin);
-                }
-                m_addMenu->addActions(actions);
-            }
+          qCWarning(SIDEBAR_LOG) << "Error loading plugin" << pluginResult.errorText;
         }
     }
     m_addMenu->addSeparator();
@@ -842,18 +838,12 @@ void Sidebar_Widget::customEvent(QEvent *ev)
 KonqSidebarPlugin *ButtonInfo::plugin(QObject *parent)
 {
     if (!m_plugin) {
-        KPluginLoader loader(libName);
-        KPluginFactory *factory = loader.factory();
-        if (!factory) {
-            qCWarning(SIDEBAR_LOG) << "error loading" << libName << loader.errorString();
-            return nullptr;
-        }
-        KonqSidebarPlugin *plugin = factory->create<KonqSidebarPlugin>(parent);
-        if (!plugin) {
-            qCWarning(SIDEBAR_LOG) << "error creating object from" << libName;
-            return nullptr;
-        }
-        m_plugin = plugin;
+      auto pluginResult = KPluginFactory::instantiatePlugin<KonqSidebarPlugin>(KPluginMetaData(libName), parent);
+      if (pluginResult) {
+        m_plugin = pluginResult.plugin;
+      } else {
+        qCWarning(SIDEBAR_LOG) << "error loading sidebar plugin" << pluginResult.errorText;
+      }
     }
     return m_plugin;
 }

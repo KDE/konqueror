@@ -64,17 +64,13 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
 
 static KonqViewFactory tryLoadingService(KService::Ptr service)
 {
-    KPluginLoader pluginLoader(*service);
-    pluginLoader.setLoadHints(QLibrary::ExportExternalSymbolsHint); // #110947
-    KPluginFactory *factory = pluginLoader.factory();
-    factory->setMetaData(KPluginInfo(service).toMetaData());
-    if (!factory) {
+    if (auto factoryResult = KPluginFactory::loadFactory(KPluginInfo(service).toMetaData())) {
+        return KonqViewFactory(service->library(), factoryResult.plugin);
+    } else {
         KMessageBox::error(nullptr,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",
-                                service->name(), pluginLoader.errorString()));
+                                service->name(), factoryResult.errorString));
         return KonqViewFactory();
-    } else {
-        return KonqViewFactory(service->library(), factory);
     }
 }
 
