@@ -36,6 +36,10 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
         qputenv("QTWEBENGINE_DICTIONARIES_PATH", WEBENGINEPART_DICTIONARY_DIR);
     }
 #endif
+
+#ifdef WEBENGINEPART_RTC_PIPEWIRE_CAPTURER
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--enable-features=WebRTCPipeWireCapturer");
+#endif
 }
 
 void KonquerorApplication::slotReparseConfiguration()
