@@ -54,7 +54,6 @@ void WebEnginePartDownloadManager::removePage(QObject* page)
 
 void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 {
-    qDebug() << "DOWLOADING" << it->url();
     WebEnginePage *page = qobject_cast<WebEnginePage*>(it->page());
     bool forceNew = false;
     //According to the documentation, QWebEngineDownloadItem::page() can return nullptr "if the download was not triggered by content in a page"

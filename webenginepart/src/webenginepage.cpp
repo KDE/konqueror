@@ -214,25 +214,7 @@ bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype
     args.setMimeType(mimetype);
     emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
     return true;
-//     KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
-//     if (bi) {
-//         QMetaObject::invokeMethod(bi, "openUrl", Q_ARG(QUrl, url), Q_ARG(QString, mimetype));
-//         return false;
-//     } else {
-//         return true;
-//     }
 }
-
-// bool WebEnginePage::askBrowserToOpenUrlInPart(const QUrl& url, const QString& part)
-// {
-//     KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
-//     if (bi) {
-//         bool success = QMetaObject::invokeMethod(bi, "openUrlInpart", Q_ARG(QUrl, url), Q_ARG(QString, part));
-//         return success ? false : true;
-//     } else {
-//         return true;
-//     }
-// }
 
 bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 {
@@ -250,8 +232,6 @@ bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)
 {
-    qDebug() << "ACCEPT NAVIGATION REQUEST for" << url;
-
     if (isMainFrame && url.isLocalFile()) {
         if (!shouldOpenLocalUrl(url)) {
             return askBrowserToOpenUrl(url);

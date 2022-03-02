@@ -95,7 +95,6 @@ void UrlLoader::start()
     } else {
         detectSettingsForRemoteFiles();
     }
-    qDebug()<< m_url << m_mimeType;
 
     if (!m_mimeType.isEmpty()) {
         KService::Ptr preferredService = KApplicationTrader::preferredService(m_mimeType);
@@ -103,9 +102,6 @@ void UrlLoader::start()
             m_request.forceAutoEmbed = true;
         }
     }
-
-    qDebug() << "Should embed" << m_url << "?" << shouldEmbedThis();
-    qDebug() << "Is mimetype for" << m_url << "known?" << isMimeTypeKnown(m_mimeType);
 
     if (isMimeTypeKnown(m_mimeType)) {
         if (decideExecute()) {
@@ -115,7 +111,6 @@ void UrlLoader::start()
             if (shouldEmbedThis()) {
                 decideEmbedOrSave();
             } else {
-                qDebug() << "Calling decideOpenOrSave for" << m_url;
                 decideOpenOrSave();
             }
         }
@@ -166,7 +161,6 @@ void UrlLoader::decideEmbedOrSave()
             m_action = OpenUrlAction::Embed;
         } else {
             m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
-            qDebug() << "ACTION" << m_action;
         }
     } else {
         m_action = OpenUrlAction::Save;
@@ -176,7 +170,6 @@ void UrlLoader::decideEmbedOrSave()
         //Given that m_action is Embed, m_service must be valid
         m_request.serviceName = m_service->desktopEntryName();
     }
-    qDebug() << m_action;
 
     m_ready = m_service || m_action != OpenUrlAction::Embed;
 }
@@ -232,6 +225,8 @@ void UrlLoader::performAction()
 
 void UrlLoader::done(KJob *job)
 {
+    //Ensure that m_mimeType and m_request.args.mimeType are equal, since it's not clear what will be used
+    m_request.args.setMimeType(m_mimeType);
     if (job) {
         jobFinished(job);
     }
@@ -255,7 +250,8 @@ void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
     m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
     if (pauseOnMimeTypeDetermined) {
         //TODO Remove KonqRun: sometimes, this signal is emitted with mimetype application/octet-stream, even when the mimetype
-        //should be known (and, indeed, clicking again on the link gives the correct mimetype).
+        //should be known. It seems to happen randomly and clicking again on the URL usually gives the correct mimetype.
+        //Example: clicking on any of the downloads at https://www.gentoo.org/downloads
         connect(m_openUrlJob, &KIO::OpenUrlJob::mimeTypeFound, this, &UrlLoader::mimetypeDeterminedByJob);
     }
     connect(m_openUrlJob, &KJob::finished, this, &UrlLoader::jobFinished);
@@ -284,8 +280,7 @@ void UrlLoader::detectSettingsForRemoteFiles()
         return;
     }
 
-    //TODO Remove KonqRun: determine this dynamically
-    const QVector<QString> webengineSchemes = {"error", "konq", "tar"};
+    const QVector<QString> webengineSchemes = {"error", "konq"};
 
     if (m_mimeType.isEmpty() && (m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme()))) {
         m_mimeType = QLatin1String("text/html");
@@ -340,8 +335,6 @@ void UrlLoader::detectSettingsForLocalFiles()
         QMimeDatabase db;
         m_mimeType = db.mimeTypeForFile(m_url.path()).name();
     }
-    //TODO Remove KonqRun: what's the difference between m_mimeType and m_request.args.mimeType()?
-    //   m_request.args.setMimeType(m_mimeType);
 }
 
 
@@ -392,10 +385,9 @@ void UrlLoader::saveUrlUsingKIO(const QUrl& orig, const QUrl& dest)
 
 void UrlLoader::open()
 {
+    // Prevention against user stupidity : if the associated app for this mimetype
+    // is konqueror/kfmclient, then we'll loop forever.
     if (m_service && serviceIsKonqueror(m_service) && m_mainWindow->refuseExecutingKonqueror(m_mimeType)) {
-        qDebug() << "REFUSING EXECUTING";
-        // Prevention against user stupidity : if the associated app for this mimetype
-        // is konqueror/kfmclient, then we'll loop forever.
         return;
     }
     KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(m_service);

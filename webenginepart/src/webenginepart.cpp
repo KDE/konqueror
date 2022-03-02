@@ -414,22 +414,6 @@ void WebEnginePart::attemptInstallKIOSchemeHandler(const QUrl& url)
 
 }
 
-// bool WebEnginePart::openUrl(const QUrl &u)
-// {
-//     // Ignore empty requests...
-//     if (u.isEmpty()) {
-//         return false;
-//     }
-//
-//     UrlLoader *urlLoader = new UrlLoader(u, this);
-//     KParts::OpenUrlArguments args (arguments());
-//     qDebug() << "URL:" << u  << args.mimeType();
-//     connect(urlLoader, &UrlLoader::finished, urlLoader, &UrlLoader::deleteLater);
-//
-//     urlLoader->openUrl(args.mimeType(), args.metaData().value("SuggestedFileName"));
-//     return true;
-// }
-
 bool WebEnginePart::openUrl(const QUrl& _u)
 {
     if (_u.isEmpty()) {
