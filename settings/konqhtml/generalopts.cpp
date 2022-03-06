@@ -27,6 +27,7 @@
 #include <kservice.h>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KMessageWidget>
 
 // Local
 #include "ui_advancedTabOptions.h"
@@ -40,7 +41,7 @@ enum StartPage { ShowAboutPage, ShowStartUrlPage, ShowBlankPage, ShowBookmarksPa
 //-----------------------------------------------------------------------------
 
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList &)
-    : KCModule(parent)
+    : KCModule(parent), m_emptyStartUrlWarning(new KMessageWidget(this))
 {
     m_pConfig = KSharedConfig::openConfig(QStringLiteral("konquerorrc"), KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -74,6 +75,12 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     QFormLayout *formLayout = new QFormLayout;
     lay->addLayout(formLayout);
 
+    m_emptyStartUrlWarning->setText(i18nc("The user chose to use a custom start page but left the corresponding field empty", "Please, insert the custom start page"));
+    m_emptyStartUrlWarning->setMessageType(KMessageWidget::Warning);
+    m_emptyStartUrlWarning->setIcon(QIcon::fromTheme("dialog-warning"));
+    m_emptyStartUrlWarning->hide();
+    formLayout->addRow(m_emptyStartUrlWarning);
+
     QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
 
     QWidget *containerWidget = new QWidget(this);
@@ -94,15 +101,16 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     startURL = new QLineEdit(this);
     startURL->setWindowTitle(i18nc("@title:window", "Select Start Page"));
     hboxLayout->addWidget(startURL);
-    connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::slotChanged);
+    connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded);
 
     QString startstr = i18n("This is the URL of the web page "
                            "Konqueror will show when starting.");
     startURL->setToolTip(startstr);
     connect(m_startCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int idx) {
-            startURL->setEnabled(idx == ShowStartUrlPage);
+            startURL->setVisible(idx == ShowStartUrlPage);
+            displayEmpytStartPageWarningIfNeeded();
             });
-    startURL->setEnabled(false);
+    startURL->hide();
 
     ////
 
@@ -146,6 +154,16 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
     delete tabOptions;
+}
+
+void KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded()
+{
+    qDebug() << "displayEmpytStartPageWarningIfNeeded: startUrl visible?" << startURL->isVisible() << "text is empty?" << startURL->text().isEmpty();
+    if (startURL->isVisible() && startURL->text().isEmpty()) {
+        m_emptyStartUrlWarning->animatedShow();
+    } else if (m_emptyStartUrlWarning->isVisible()) {
+        m_emptyStartUrlWarning->animatedHide();
+    }
 }
 
 static StartPage urlToStartPageEnum(const QString &startUrl)
@@ -240,10 +258,11 @@ void KKonqGeneralOptions::save()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
     const int startComboIndex = m_startCombo->currentIndex();
-    const int choice = m_startCombo->itemData(startComboIndex).toInt();
+    const StartPage choice = static_cast<StartPage>(m_startCombo->itemData(startComboIndex).toInt());
     QString startUrl(startPageEnumToUrl(static_cast<StartPage>(choice)));
-    if (startUrl.isEmpty())
+    if (startUrl.isEmpty()) {
         startUrl = startURL->text();
+    }
     userSettings.writeEntry("StartURL", startUrl);
     userSettings.writeEntry("HomeURL", homeURL->text());
     userSettings.writeEntry("AlwaysDuplicatePageWhenSplittingView", m_splitBehaviour->currentIndex() == 0);

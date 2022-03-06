@@ -18,6 +18,7 @@ class QComboBox;
 class QLineEdit;
 class Ui_advancedTabOptions;
 class QVBoxLayout;
+class KMessageWidget;
 
 class KKonqGeneralOptions : public KCModule
 {
@@ -32,6 +33,7 @@ public:
 
 private Q_SLOTS:
     void slotChanged();
+    void displayEmpytStartPageWarningIfNeeded();
 
 private:
     void addHomeUrlWidgets(QVBoxLayout *);
@@ -43,6 +45,7 @@ private:
     QLineEdit *startURL;
     QComboBox *m_webEngineCombo;
     QComboBox *m_splitBehaviour;
+    KMessageWidget *m_emptyStartUrlWarning;
 
     Ui_advancedTabOptions *tabOptions;
 };
