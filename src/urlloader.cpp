@@ -198,7 +198,9 @@ bool UrlLoader::decideExecute() const {
     if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
         return false;
     }
-    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not", "Do you want to execute %1?", m_url.path()), QString());
+    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
+                                                                                  "%1 is a script file. Do you want to execute it or to display it?", m_url.path()),
+                                                              QString(), KGuiItem(i18nc("Execute a script file", "Execute it")), KGuiItem(i18nc("Display a script file", "Display it")), QLatin1String("AskExecuting")+m_mimeType);
     return code == KMessageBox::Yes;
 }
 
