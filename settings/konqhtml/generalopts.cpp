@@ -158,7 +158,6 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 
 void KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded()
 {
-    qDebug() << "displayEmpytStartPageWarningIfNeeded: startUrl visible?" << startURL->isVisible() << "text is empty?" << startURL->text().isEmpty();
     if (startURL->isVisible() && startURL->text().isEmpty()) {
         m_emptyStartUrlWarning->animatedShow();
     } else if (m_emptyStartUrlWarning->isVisible()) {
