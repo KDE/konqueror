@@ -65,13 +65,6 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_uordblks
 # TODO KDE_MALLINFO_FIELD_usmblks
 
-set(WEBENGINEPART_RTC_PIPEWIRE_CAPTURER false CACHE BOOL "Enable rtc pipewire catpure for WebEnginePart")
-mark_as_advanced(WEBENGINEPART_RTC_PIPEWIRE_CAPTURER)
-
-if(${WEBENGINEPART_RTC_PIPEWIRE_CAPTURER})
-  add_compile_definitions(WEBENGINEPART_RTC_PIPEWIRE_CAPTURER=1)
-endif()
-
 if(Hunspell_FOUND)
 set(WEBENGINEPART_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files for WebEnginePart will be put")
 add_compile_definitions(WEBENGINEPART_DICTIONARY_DIR="${WEBENGINEPART_DICTIONARY_DIR}")
