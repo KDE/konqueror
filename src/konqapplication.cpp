@@ -38,7 +38,9 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
 #endif
 
 #ifdef WEBENGINEPART_RTC_PIPEWIRE_CAPTURER
-    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--enable-features=WebRTCPipeWireCapturer");
+    QByteArray flags = qgetenv("QTWEBENGINE_CHROMIUM_FLAGS");
+    flags.append(" --enable-features=WebRTCPipeWireCapturer");
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags);
 #endif
 }
 
