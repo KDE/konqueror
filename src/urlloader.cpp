@@ -96,7 +96,7 @@ void UrlLoader::start()
         detectSettingsForRemoteFiles();
     }
 
-    if (!m_mimeType.isEmpty()) {
+    if (isMimeTypeKnown(m_mimeType)) {
         KService::Ptr preferredService = KApplicationTrader::preferredService(m_mimeType);
         if (serviceIsKonqueror(preferredService)) {
             m_request.forceAutoEmbed = true;
@@ -244,7 +244,8 @@ bool UrlLoader::serviceIsKonqueror(KService::Ptr service)
 
 void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
 {
-    m_openUrlJob = new KIO::OpenUrlJob(m_url, m_mimeType, this);
+    QString mimeType = isMimeTypeKnown(m_mimeType) ? m_mimeType : QString();
+    m_openUrlJob = new KIO::OpenUrlJob(m_url, mimeType, this);
     m_openUrlJob->setEnableExternalBrowser(false);
     m_openUrlJob->setRunExecutables(true);
     m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
@@ -284,6 +285,12 @@ void UrlLoader::detectSettingsForRemoteFiles()
 
     const QVector<QString> webengineSchemes = {"error", "konq"};
 
+    //WARNING: the use of m_mimeType.isEmpty() and not of isMimeTypeKnown(m_mimeType) in the first check
+    //is *intentional* and *must not* be changed. The reason is that we need
+    //to distinguish whether the URL loading was triggered by a download requested by WebEnginePart or not.
+    //In the first case, m_mimeType will never be empty, but can be unknown (application/octet-stream).
+    //If the loading was triggered by WebEnginePart, we can't set mimetype to text/html, because otherwise
+    //it would be passed back to WebEnginePart, which would lead to an endless loop
     if (m_mimeType.isEmpty() && (m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme()))) {
         m_mimeType = QLatin1String("text/html");
         m_request.args.setMimeType(QStringLiteral("text/html"));
