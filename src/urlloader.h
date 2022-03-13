@@ -101,6 +101,7 @@ private:
     void decideEmbedOrSave();
     void decideOpenOrSave();
     bool embedWithoutAskingToSave(const QString &mimeType);
+    bool shouldUseDefaultHttpMimeype() const;
 
     typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 
@@ -124,6 +125,7 @@ private:
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
     QString m_oldLocationBarUrl;
     bool m_jobHadError;
+    bool m_dontPassToWebEnginePart;
 };
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);

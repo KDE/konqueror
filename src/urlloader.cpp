@@ -57,6 +57,7 @@ bool UrlLoader::isExecutable(const QString& mimeType)
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool dontEmbed):
     QObject(mainWindow), m_mainWindow(mainWindow), m_url(url), m_mimeType(mimeType), m_request(req), m_view(view), m_trustedSource(trustedSource), m_dontEmbed(dontEmbed)
 {
+    m_dontPassToWebEnginePart = m_request.args.metaData().contains("RequestedByWebEnginePart");
 }
 
 UrlLoader::~UrlLoader()
@@ -252,9 +253,6 @@ void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
     m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
     m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
     if (pauseOnMimeTypeDetermined) {
-        //TODO Remove KonqRun: sometimes, this signal is emitted with mimetype application/octet-stream, even when the mimetype
-        //should be known. It seems to happen randomly and clicking again on the URL usually gives the correct mimetype.
-        //Example: clicking on any of the downloads at https://www.gentoo.org/downloads
         connect(m_openUrlJob, &KIO::OpenUrlJob::mimeTypeFound, this, &UrlLoader::mimetypeDeterminedByJob);
     }
     connect(m_openUrlJob, &KJob::finished, this, &UrlLoader::jobFinished);
@@ -277,21 +275,24 @@ void UrlLoader::mimetypeDeterminedByJob(const QString &mimeType)
     performAction();
 }
 
+bool UrlLoader::shouldUseDefaultHttpMimeype() const
+{
+    const QVector<QString> webengineSchemes = {"error", "konq"};
+    if (m_dontPassToWebEnginePart || isMimeTypeKnown(m_mimeType)) {
+        return false;
+    } else if (m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme())) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 void UrlLoader::detectSettingsForRemoteFiles()
 {
     if (m_url.isLocalFile()) {
         return;
     }
-
-    const QVector<QString> webengineSchemes = {"error", "konq"};
-
-    //WARNING: the use of m_mimeType.isEmpty() and not of isMimeTypeKnown(m_mimeType) in the first check
-    //is *intentional* and *must not* be changed. The reason is that we need
-    //to distinguish whether the URL loading was triggered by a download requested by WebEnginePart or not.
-    //In the first case, m_mimeType will never be empty, but can be unknown (application/octet-stream).
-    //If the loading was triggered by WebEnginePart, we can't set mimetype to text/html, because otherwise
-    //it would be passed back to WebEnginePart, which would lead to an endless loop
-    if (m_mimeType.isEmpty() && (m_url.scheme().startsWith(QStringLiteral("http")) || webengineSchemes.contains(m_url.scheme()))) {
+    if (shouldUseDefaultHttpMimeype()) {
         m_mimeType = QLatin1String("text/html");
         m_request.args.setMimeType(QStringLiteral("text/html"));
     } else if (!m_trustedSource && isTextExecutable(m_mimeType)) {

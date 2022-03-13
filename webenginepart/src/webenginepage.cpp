@@ -212,6 +212,7 @@ bool WebEnginePage::askBrowserToOpenUrl(const QUrl& url, const QString& mimetype
 {
     KParts::OpenUrlArguments args(_args);
     args.setMimeType(mimetype);
+    args.metaData().insert("RequestedByWebEnginePart", "");
     emit m_part->browserExtension()->openUrlRequest(url, args, bargs);
     return true;
 }
