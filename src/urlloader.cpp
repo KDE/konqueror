@@ -105,18 +105,25 @@ void UrlLoader::start()
     }
 
     if (isMimeTypeKnown(m_mimeType)) {
-        if (decideExecute()) {
-            m_action = OpenUrlAction::Execute;
-            m_ready = true;
-        } else {
-            if (shouldEmbedThis()) {
-                decideEmbedOrSave();
-            } else {
-                decideOpenOrSave();
-            }
-        }
+        decideAction();
     } else {
         m_isAsync = true;
+    }
+}
+
+void UrlLoader::decideAction()
+{
+    if (decideExecute()) {
+        m_action = OpenUrlAction::Execute;
+        m_ready = true;
+    } else {
+        if (shouldEmbedThis()) {
+            bool success = decideEmbedOrSave();
+            if (success) {
+                return;
+            }
+        }
+        decideOpenOrSave();
     }
 }
 
@@ -141,7 +148,7 @@ void UrlLoader::goOn()
     }
 }
 
-void UrlLoader::decideEmbedOrSave()
+bool UrlLoader::decideEmbedOrSave()
 {
     //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
     //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
@@ -153,26 +160,43 @@ void UrlLoader::decideEmbedOrSave()
         m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
     }
 
+    /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
+     * OpenUrlJob determines a mimetype supported by WebEnginePart (for example application/xml):
+     * if the preferred part is webenginepart, we'd get an endless loop because webenginepart will
+     * call again this. To avoid this, if the preferred service is webenginepart and m_dontPassToWebEnginePart
+     * is true, use the second preferred service (if any); otherwise return false. This will offer the user
+     * the option to open or save, instead.
+     */
+    if (m_dontPassToWebEnginePart && m_service->desktopEntryName() == QLatin1String("webenginepart")) {
+        KService::List services = KMimeTypeTrader::self()->query(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+        if (services.length() >= 2) {
+            m_service = services.at(1);
+        } else {
+            m_service = nullptr;
+        }
+    }
+
+    //If we can't find a service, return false, so that the caller can use decideOpenOrSave to allow the
+    //user the possibility of opening the file, since embedding wasn't possibile
+    if (!m_service || !m_service->isValid()) {
+        return false;
+    }
+
     //Ask whether to save or embed, except in the following cases:
     //- it's a web page: always embed
     //- it's a local file: always embed
-    //- there's no part to open it: always save
-    if (m_service && m_service->isValid()) {
-        if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile()) {
-            m_action = OpenUrlAction::Embed;
-        } else {
-            m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
-        }
+    if (embedWithoutAskingToSave(m_mimeType) || m_url.isLocalFile()) {
+        m_action = OpenUrlAction::Embed;
     } else {
-        m_action = OpenUrlAction::Save;
+        m_action = askSaveOrOpen(OpenEmbedMode::Embed).first;
     }
 
     if (m_action == OpenUrlAction::Embed) {
-        //Given that m_action is Embed, m_service must be valid
         m_request.serviceName = m_service->desktopEntryName();
     }
 
     m_ready = m_service || m_action != OpenUrlAction::Embed;
+    return true;
 }
 
 void UrlLoader::decideOpenOrSave()
@@ -262,15 +286,10 @@ void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
 void UrlLoader::mimetypeDeterminedByJob(const QString &mimeType)
 {
     m_mimeType=mimeType;
-    if (shouldEmbedThis()) {
+    m_openUrlJob->suspend();
+    decideAction();
+    if (m_action != OpenUrlAction::Execute) {
         m_openUrlJob->kill();
-        decideEmbedOrSave();
-    } else {
-        m_openUrlJob->suspend();
-        decideOpenOrSave();
-        if (m_action != OpenUrlAction::Execute) {
-            m_openUrlJob->kill();
-        }
     }
     performAction();
 }

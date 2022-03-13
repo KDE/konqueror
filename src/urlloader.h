@@ -98,10 +98,11 @@ private:
     void killOpenUrlJob();
     static bool serviceIsKonqueror(KService::Ptr service);
     static bool isMimeTypeKnown(const QString &mimeType);
-    void decideEmbedOrSave();
+    bool decideEmbedOrSave();
     void decideOpenOrSave();
     bool embedWithoutAskingToSave(const QString &mimeType);
     bool shouldUseDefaultHttpMimeype() const;
+    void decideAction();
 
     typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 
