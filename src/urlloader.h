@@ -103,6 +103,7 @@ private:
     bool embedWithoutAskingToSave(const QString &mimeType);
     bool shouldUseDefaultHttpMimeype() const;
     void decideAction();
+    bool isViewLocked() const;
 
     typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 

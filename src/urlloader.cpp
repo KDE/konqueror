@@ -111,13 +111,18 @@ void UrlLoader::start()
     }
 }
 
+bool UrlLoader::isViewLocked() const
+{
+    return m_view && m_view->isLockedLocation();
+}
+
 void UrlLoader::decideAction()
 {
     if (decideExecute()) {
         m_action = OpenUrlAction::Execute;
         m_ready = true;
     } else {
-        if (shouldEmbedThis()) {
+        if (isViewLocked() || shouldEmbedThis()) {
             bool success = decideEmbedOrSave();
             if (success) {
                 return;
