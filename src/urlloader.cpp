@@ -10,6 +10,7 @@
 #include "konqsettings.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
+#include "konqurl.h"
 
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
@@ -155,14 +156,19 @@ void UrlLoader::goOn()
 
 bool UrlLoader::decideEmbedOrSave()
 {
-    //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
-    //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
-    //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
-    //the Kate part because it can handle html files.
-    if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
-        m_service = m_view->service();
+    //Use WebEnginePart for konq: URLs even if it's not the default html engine
+    if (KonqUrl::hasKonqScheme(m_url)) {
+        m_service = KService::serviceByDesktopName("webenginepart");
     } else {
-        m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+        //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
+        //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
+        //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
+        //the Kate part because it can handle html files.
+        if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
+            m_service = m_view->service();
+        } else {
+            m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+        }
     }
 
     /* Corner case: webenginepart can't determine mimetype (gives application/octet-stream) but
