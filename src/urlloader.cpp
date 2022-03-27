@@ -57,7 +57,7 @@ bool UrlLoader::isExecutable(const QString& mimeType)
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool dontEmbed):
     QObject(mainWindow), m_mainWindow(mainWindow), m_url(url), m_mimeType(mimeType), m_request(req), m_view(view), m_trustedSource(trustedSource), m_dontEmbed(dontEmbed)
 {
-    m_dontPassToWebEnginePart = m_request.args.metaData().contains("RequestedByWebEnginePart");
+    m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
 }
 
 UrlLoader::~UrlLoader()
