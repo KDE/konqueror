@@ -108,11 +108,7 @@ QString KonqPixmapProvider::iconNameFor(const QUrl &url)
 
     if (url.url().isEmpty()) {
         // Use the folder icon for the empty URL
-        QMimeDatabase db;
-        const QMimeType directoryType = db.mimeTypeForName(QStringLiteral("inode/directory"));
-        icon = directoryType.iconName();
         icon = "konqueror";
-        Q_ASSERT(!icon.isEmpty());
     } else {
         icon = KIO::iconNameForUrl(url);
         Q_ASSERT(!icon.isEmpty());
