@@ -610,10 +610,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
 
 void KonqMainWindow::urlLoaderFinished(UrlLoader* loader)
 {
-
-//TODO Remove KonqRun: see which of the things below only need to be done if loader->isAsync. In the original code,
-//this function (slotRunFinished) was only called when using a KonqRun but now it's always called.
-
     if (loader->hasError()) {   // we had an error
         QDBusMessage message = QDBusMessage::createSignal(KONQ_MAIN_PATH, QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("removeFromCombo"));
         message << loader->url().toDisplayString();
