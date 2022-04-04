@@ -101,6 +101,9 @@ install(FILES org.kde.konqueror.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODI
 # Make sure kfmclient can find konqueror.desktop even if people remove it from the K menu (#62242)
 # This is why konqueror.desktop is installed into services.
 install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+# On Wayland the icon to use for the main window is read from the desktop file, which needs
+# to be in the applications directory, so it needs to be installed there, too (bug #452149)
+install( FILES org.kde.konqueror.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 
 install(FILES konqy_preload.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 
