@@ -30,9 +30,6 @@ namespace KIO {
 class KonqMainWindow;
 class KonqView;
 
-/**
- * @todo write docs
- */
 class UrlLoader : public QObject
 {
     Q_OBJECT
@@ -46,8 +43,22 @@ public:
     UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool forceOpen=false);
     ~UrlLoader();
 
-    enum class OpenUrlAction{DoNothing, Save, Embed, Open, Execute};
-    enum class ViewToUse{View, CurrentView, NewTab};
+    /** @brief Enum describing the possible actions to be taken*/
+    enum class OpenUrlAction{
+        UnknwonAction, /**< The action hasn't been decided yet */
+        DoNothing, /**< No action should be taken */
+        Save, /**< Save the URL */
+        Embed, /**< Display the URL in an embedded viewer */
+        Open, /**< Display the URL in a separate viewer*/
+        Execute /**< Execute the URL */
+    };
+
+    /** @brief Enum describing the view to use to embed an URL*/
+    enum class ViewToUse{
+        View, /**< Use the view passed as argument to the constructor */
+        CurrentView, /**< Use the current view */
+        NewTab /**< Create a new tab and use its view */
+    };
 
     void start();
     void performAction();
@@ -109,7 +120,7 @@ private:
 
     enum class OpenEmbedMode{Open, Embed};
     OpenSaveAnswer askSaveOrOpen(OpenEmbedMode mode) const;
-    bool decideExecute() const;
+    OpenUrlAction decideExecute() const;
 
 private:
     QPointer<KonqMainWindow> m_mainWindow;
@@ -121,7 +132,7 @@ private:
     bool m_dontEmbed;
     bool m_ready = false;
     bool m_isAsync = false;
-    OpenUrlAction m_action = OpenUrlAction::DoNothing;
+    OpenUrlAction m_action = OpenUrlAction::UnknwonAction;
     KService::Ptr m_service;
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;

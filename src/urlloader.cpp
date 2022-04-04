@@ -119,17 +119,22 @@ bool UrlLoader::isViewLocked() const
 
 void UrlLoader::decideAction()
 {
-    if (decideExecute()) {
-        m_action = OpenUrlAction::Execute;
-        m_ready = true;
-    } else {
-        if (isViewLocked() || shouldEmbedThis()) {
-            bool success = decideEmbedOrSave();
-            if (success) {
-                return;
+    m_action = decideExecute();
+    switch (m_action) {
+        case OpenUrlAction::Execute:
+            m_ready = true;
+            break;
+        case OpenUrlAction::DoNothing:
+            m_ready = true;
+            return;
+        default:
+            if (isViewLocked() || shouldEmbedThis()) {
+                bool success = decideEmbedOrSave();
+                if (success) {
+                    return;
+                }
             }
-        }
-        decideOpenOrSave();
+            decideOpenOrSave();
     }
 }
 
@@ -230,14 +235,26 @@ void UrlLoader::decideOpenOrSave()
     }
 }
 
-bool UrlLoader::decideExecute() const {
+UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
     if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
-        return false;
+        return OpenUrlAction::UnknwonAction;
     }
-    KMessageBox::ButtonCode code = KMessageBox::questionYesNo(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
-                                                                                  "%1 is a script file. Do you want to execute it or to display it?", m_url.path()),
-                                                              QString(), KGuiItem(i18nc("Execute a script file", "Execute it")), KGuiItem(i18nc("Display a script file", "Display it")), QLatin1String("AskExecuting")+m_mimeType);
-    return code == KMessageBox::Yes;
+    KMessageBox::ButtonCode code = KMessageBox::questionYesNoCancel(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
+                                                                                        "%1 is a script file. Do you want to execute it or to display it?", m_url.path()),
+                                                                    QString(), KGuiItem(i18nc("Execute a script file", "Execute it")),
+                                                                    KGuiItem(i18nc("Display a script file", "Display it")),
+                                                                    KStandardGuiItem::cancel(),
+                                                                    QLatin1String("AskExecuting")+m_mimeType, KMessageBox::Dangerous);
+    switch (code) {
+        case KMessageBox::Yes:
+            return OpenUrlAction::Execute;
+        case KMessageBox::Cancel:
+            return OpenUrlAction::DoNothing;
+        case KMessageBox::No:
+            return OpenUrlAction::UnknwonAction;
+        default: //This is here only to avoid a compiler warning
+            return OpenUrlAction::UnknwonAction;
+    }
 }
 
 void UrlLoader::performAction()
@@ -256,6 +273,7 @@ void UrlLoader::performAction()
             save();
             break;
         case OpenUrlAction::DoNothing:
+        case OpenUrlAction::UnknwonAction: //This should never happen
             done();
             break;
     }
@@ -514,6 +532,9 @@ QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action)
     QDebugStateSaver saver(dbg);
     dbg.resetFormat();
     switch (action) {
+        case UrlLoader::OpenUrlAction::UnknwonAction:
+            dbg << "UnknownAction";
+            break;
         case UrlLoader::OpenUrlAction::DoNothing:
             dbg << "DoNothing";
             break;
