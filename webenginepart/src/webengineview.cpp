@@ -28,6 +28,7 @@
 #include <KStringHandler>
 #include <KLocalizedString>
 #include <KIO/CommandLauncherJob>
+#include <KParts/BrowserInterface>
 
 #include <QTimer>
 #include <QMimeData>
@@ -611,4 +612,39 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
             selectActions.append(providerList);
         }
     }
+}
+
+void WebEngineView::acceptDragMoveEventIfPossible(QDragMoveEvent* e)
+{
+    if (!e->isAccepted() && e->mimeData()->hasUrls()) {
+        e->acceptProposedAction();
+        m_dragAndDropHandledBySuperclass = false;
+    } else {
+        m_dragAndDropHandledBySuperclass = true;
+    }
+}
+
+void WebEngineView::dropEvent(QDropEvent* e)
+{
+    QWebEngineView::dropEvent(e);
+    //Unlike in acceptProposedDragEventIfPossible, we don't check !e->isAccepted because it seems that it's always true
+    //(if the move event was accepted, this is accepted automatically; if the move event was rejected, this function
+    //isn't called at all)
+    if (!m_dragAndDropHandledBySuperclass && e->mimeData()->hasUrls()) {
+        m_dragAndDropHandledBySuperclass = true;
+        emit m_part->browserExtension()->openUrlRequest(e->mimeData()->urls().first());
+        e->acceptProposedAction();
+    }
+}
+
+void WebEngineView::dragEnterEvent(QDragEnterEvent* e)
+{
+    QWebEngineView::dragEnterEvent(e);
+    acceptDragMoveEventIfPossible(e);
+}
+
+void WebEngineView::dragMoveEvent(QDragMoveEvent* e)
+{
+    QWebEngineView::dragMoveEvent(e);
+    acceptDragMoveEventIfPossible(e);
 }

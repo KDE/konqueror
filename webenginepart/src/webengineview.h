@@ -50,6 +50,12 @@ protected:
      */
     void contextMenuEvent(QContextMenuEvent*) override;
 
+    void dropEvent(QDropEvent *e) override;
+
+    void dragEnterEvent(QDragEnterEvent *e) override;
+
+    void dragMoveEvent(QDragMoveEvent *e) override;
+
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
@@ -102,6 +108,19 @@ private:
     void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void addSearchActions(QList<QAction*>& selectActions, QWebEngineView*);
 
+    /**
+     * @brief Whether a drop enter or move event should be accepted even if the superclass wants to reject it
+     *
+     * If the event hasn't already been accepted, it contains urls and Konqueror has been configured to allow opening
+     * remote URLs by drag & drop, the event is accepted and #m_dragAndDropHandledBySuperclass is set to @c true;
+     * otherwise the variable is set to @c false
+     * @note This function should only be called from dragEnterEvent() or dragMoveEvent()
+     *
+     * @param e the event, which should have already been passed to `QWebEngineView::dragEnterEvent` or
+     * `QWebEngineView::dragMoveEvent`, according to which method called this.
+     */
+    void acceptDragMoveEventIfPossible(QDragMoveEvent *e);
+
     KActionCollection* m_actionCollection;
     QWebEngineContextMenuData m_result;
     QPointer<WebEnginePart> m_part;
@@ -112,6 +131,17 @@ private:
 
     QHash<QString, QChar> m_duplicateLinkElements;
     QMenu *m_spellCheckMenu;
+
+    /**
+     * @brief Whether a drop action should be handled by `QWebEngineView` or not
+     *
+     * `QWebEngineView` rejects drop actions except for some cases, in particular local URLs. However,
+     * since its documentation doesn't explicitly tell what it accepts and what it rejects, a way to keep
+     * trace of whether WebEngineView should handle the drop action itself or not must be used. This is
+     * the scope of this variable: if the drop action was rejected by `QWebEngine` but accepted by
+     * acceptDragMoveEventIfPossible, this variable is set to @c false; otherwise it's set to @c true.
+     */
+    bool m_dragAndDropHandledBySuperclass = true;
 };
 
 #endif // WEBENGINEVIEW_H
