@@ -161,9 +161,11 @@ void UrlLoader::goOn()
 
 bool UrlLoader::decideEmbedOrSave()
 {
+    const QLatin1String webEngineName("webenginepart");
+
     //Use WebEnginePart for konq: URLs even if it's not the default html engine
     if (KonqUrl::hasKonqScheme(m_url)) {
-        m_service = KService::serviceByDesktopName("webenginepart");
+        m_service = KService::serviceByDesktopName(webEngineName);
     } else {
         //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
         //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
@@ -183,10 +185,12 @@ bool UrlLoader::decideEmbedOrSave()
      * is true, use the second preferred service (if any); otherwise return false. This will offer the user
      * the option to open or save, instead.
      */
-    if (m_dontPassToWebEnginePart && m_service->desktopEntryName() == QLatin1String("webenginepart")) {
+    if (m_dontPassToWebEnginePart && m_service->desktopEntryName() == webEngineName) {
         KService::List services = KMimeTypeTrader::self()->query(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
-        if (services.length() >= 2) {
-            m_service = services.at(1);
+        auto findService = [webEngineName](KService::Ptr s){return s->desktopEntryName() != webEngineName;};
+        QList<KService::Ptr>::const_iterator serviceToUse = std::find_if(services.constBegin(), services.constEnd(), findService);
+        if (serviceToUse != services.constEnd()) {
+            m_service = *serviceToUse;
         } else {
             m_service = nullptr;
         }
