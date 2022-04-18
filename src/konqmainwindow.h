@@ -604,6 +604,10 @@ private:
     QObject *lastFrame(KonqView *view);
 
     QLineEdit *comboEdit();
+
+    void saveGlobalProperties(KConfig * sessionConfig) override;
+
+    void readGlobalProperties(KConfig * sessionConfig) override;
     
 private: // members
     KonqUndoManager *m_pUndoManager;

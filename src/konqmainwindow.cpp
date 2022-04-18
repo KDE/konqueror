@@ -5571,3 +5571,26 @@ void KonqMainWindow::inspectCurrentPage()
     openView("text/html", QUrl(), devToolsView, req);
     QMetaObject::invokeMethod(devToolsView->part(), "setInspectedPart", Qt::DirectConnection, Q_ARG(KParts::ReadOnlyPart*, partToInspect));
 }
+
+void KonqMainWindow::saveGlobalProperties(KConfig* sessionConfig)
+{
+    QList<int> preloadedNumbers;
+    const QList<KMainWindow*> windows = KMainWindow::memberList();
+    for (int i = 0; i < windows.length(); ++i) {
+        KonqMainWindow *kw = qobject_cast<KonqMainWindow*>(windows.at(i));
+        if (kw && kw->isPreloaded()) {
+            preloadedNumbers << (i+1); //KMainWindow::restore numbers windows from 1
+        }
+    }
+
+    KConfigGroup cg = sessionConfig->group(QStringLiteral("PreloadedWindows"));
+    cg.writeEntry(QStringLiteral("PreloadedWindowsNumber"), preloadedNumbers);
+    cg.sync();
+}
+
+void KonqMainWindow::readGlobalProperties(KConfig* sessionConfig)
+{
+    KConfigGroup cg = sessionConfig->group(QStringLiteral("PreloadedWindows"));
+    QList<int> preloadedNumbers = cg.readEntry(QStringLiteral("PreloadedWindowsNumber"), QList<int>{});
+    KonqSessionManager::self()->setPreloadedWindowsNumber(preloadedNumbers);
+}
