@@ -24,6 +24,8 @@ namespace KonqMainWindowFactory
  */
 KonqMainWindow *createEmptyWindow();
 
+KonqMainWindow *createPreloadWindow();
+
 /**
  * Create a new window for @p url using @p args and @p req.
  * This layer on top of the KonqMainWindow constructor allows to reuse preloaded windows,
@@ -32,6 +34,9 @@ KonqMainWindow *createEmptyWindow();
  */
 KONQ_TESTS_EXPORT KonqMainWindow *createNewWindow(const QUrl &url = QUrl(),
         const KonqOpenURLRequest &req = KonqOpenURLRequest());
+
+KonqMainWindow *findPreloadedWindow();
+
 };
 
 #endif // KONQMAINWINDOWFACTORY_H

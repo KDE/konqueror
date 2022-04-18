@@ -35,8 +35,18 @@ static void abortFullScreenMode()
 static void ensurePreloadedWindow()
 {
     if (KonqSettings::alwaysHavePreloaded()) {
-        QTimer::singleShot(500, nullptr, []() { new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank)); });
+        QTimer::singleShot(500, nullptr, []() {return KonqMainWindowFactory::createPreloadWindow();});
     }
+}
+
+KonqMainWindow* KonqMainWindowFactory::findPreloadedWindow()
+{
+    QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
+    if (!mainWindowList) {
+        return nullptr;
+    }
+    auto it = std::find_if(mainWindowList->constBegin(), mainWindowList->constEnd(), [](KonqMainWindow* w){return w->isPreloaded();});
+    return it != mainWindowList->constEnd() ? *it : nullptr;
 }
 
 KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
@@ -44,19 +54,21 @@ KonqMainWindow *KonqMainWindowFactory::createEmptyWindow()
     abortFullScreenMode();
 
     // Let's see if we can reuse a preloaded window
-    QList<KonqMainWindow *> *mainWindowList = KonqMainWindow::mainWindowList();
-    if (mainWindowList) {
-        for (KonqMainWindow *win : *mainWindowList) {
-            if (win->isPreloaded()) {
-                qCDebug(KONQUEROR_LOG) << "Reusing preloaded window" << win;
-                KStartupInfo::setWindowStartupId(win->winId(), KStartupInfo::startupId());
-                ensurePreloadedWindow();
-                return win;
-            }
-        }
+    KonqMainWindow *win = findPreloadedWindow();
+    if (win) {
+        qCDebug(KONQUEROR_LOG) << "Reusing preloaded window" << win;
+        KStartupInfo::setWindowStartupId(win->winId(), KStartupInfo::startupId());
+    } else {
+        win = new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank));
     }
     ensurePreloadedWindow();
-    return new KonqMainWindow;
+    return win;
+}
+
+KonqMainWindow * KonqMainWindowFactory::createPreloadWindow()
+{
+    KonqMainWindow *mw = new KonqMainWindow(KonqUrl::url(KonqUrl::Type::Blank));
+    return mw;
 }
 
 KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,

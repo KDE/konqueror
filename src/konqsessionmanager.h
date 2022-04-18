@@ -89,6 +89,8 @@ public:
 
     static KonqSessionManager *self();
 
+    void restoreSessionSavedAtLogout();
+
     /**
      * Restore saved session(s).
      *
@@ -154,6 +156,8 @@ public:
      */
     QString autosaveDirectory() const;
 
+    void setPreloadedWindowsNumber(const QList<int> &numbers);
+
 public Q_SLOTS:
     /**
      * Ask the user with a dialog if session should be restored
@@ -206,6 +210,7 @@ private:
     bool m_autosaveEnabled;
     bool m_createdOwnedByDir;
     KConfig *m_sessionConfig;
+    QList<int> m_preloadedWindowsNumber;
 
 Q_SIGNALS: // DBUS signals
     /**
