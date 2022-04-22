@@ -99,7 +99,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
     // Use kfmclient from the session KDE version
     if ((args.at(0) == QLatin1String("openURL") || args.at(0) == QLatin1String("newTab"))
             && qEnvironmentVariableIsSet("KDE_FULL_SESSION")) {
-        const int version = atoi(getenv("KDE_SESSION_VERSION"));
+        const int version = qEnvironmentVariableIntValue("KDE_SESSION_VERSION");
         if (version != 0 && version != KCOREADDONS_VERSION_MAJOR) {
             qCDebug(KFMCLIENT_LOG) << "Forwarding to kfmclient from KDE version " << version;
             char wrapper[ 10 ];
