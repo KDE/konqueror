@@ -174,7 +174,14 @@ bool UrlLoader::decideEmbedOrSave()
         if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
             m_service = m_view->service();
         } else {
-            m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+            if (!m_request.serviceName.isEmpty()) {
+                // If the service name has been set by the "--part" command line argument
+                // (detected in handleCommandLine() in konqmain.cpp), then use it as is.
+                m_service = KService::serviceByStorageId(m_request.serviceName);
+            } else {
+                // Otherwise, use the preferred service for the MIME type.
+                m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+            }
         }
     }
 
