@@ -174,8 +174,7 @@ void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *
         page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType());
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
-        QWidget *w = page->view();
-        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, w ? w->window() : nullptr));
+        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         j->start();
     }
 }
