@@ -242,13 +242,8 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
         KonqMainWindow *mainWindow = handleCommandLine(parser, workingDirectory, &ret);
         if (mainWindow) {
             // terminate startup notification and activate the mainwindow:
-#if KWINDOWSYSTEM_VERSION >= QT_VERSION_CHECK(5,62,0)
-            mainWindow->setAttribute(Qt::WA_NativeWindow, true);
-            KStartupInfo::setNewStartupId(mainWindow->windowHandle(), KStartupInfo::startupId());
-#else
-            KStartupInfo::setNewStartupId(mainWindow, KStartupInfo::startupId());
-#endif
-            KWindowSystem::forceActiveWindow(mainWindow->winId());
+            KWindowSystem::updateStartupId(mainWindow->windowHandle());
+            KWindowSystem::activateWindow(mainWindow->windowHandle());
         }
     });
 
