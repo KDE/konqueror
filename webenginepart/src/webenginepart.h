@@ -181,6 +181,7 @@ private Q_SLOTS:
     void updateWalletStatusBarIcon();
     void walletFinishedFormDetection(const QUrl &url, bool found, bool autoFillableFound);
     void updateWalletActions();
+    void reloadAfterUAChange(const QString &);
 
 private:
     static void initWebEngineUrlSchemes();

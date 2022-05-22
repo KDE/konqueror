@@ -1713,6 +1713,7 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
             "kcm_cookies",
 #endif
             "konqueror_kcms/khtml_java_js",
+            "konqueror_kcms/khtml_useragent"
         };
         for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i) {
             KPageWidgetItem *it = m_configureDialog->addModule(KPluginMetaData(QString(webModules[i])));
