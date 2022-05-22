@@ -341,7 +341,6 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     if (!args.isEmpty()) {
         //KonqSessionManager::restoreSessionSavedAtExit only returns true if there's at least one main window,
         //so there's no need to check whether the list is empty
-        qDebug() << "SESSION RESTORED?" << sessionRestored;
         result = createWindowsForUrlArguments(args, workingDirectory, sessionRestored ? KonqMainWindow::mainWindows().at(0) : nullptr);
     } else if (sessionRestored){
         result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};

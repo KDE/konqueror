@@ -23,6 +23,10 @@ namespace KActivities {
 class KonqMainWindow;
 class QDBusMessage;
 
+namespace KParts {
+    class Part;
+}
+
 class KONQ_TESTS_EXPORT KonquerorApplication : public QApplication
 {
     Q_OBJECT

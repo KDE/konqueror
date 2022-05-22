@@ -133,6 +133,9 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
         return;
     }
     m_profile = profile;
+    m_defaultUserAgent = m_profile->httpUserAgent() + QLatin1String(" Konqueror (WebEngine)");
+    //This property is used to communicate the default user agent to the UserAgent settings widget
+    m_profile->setProperty("defaultUserAgent",m_defaultUserAgent);
 
     registerScripts();
 
@@ -210,16 +213,40 @@ void WebEnginePartControls::reparseConfiguration()
         return;
     }
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
-    KConfigGroup grp = cfg->group("Cache");
-    if (grp.readEntry("CacheEnabled", true)) {
-        QWebEngineProfile::HttpCacheType type = grp.readEntry("MemoryCache", false) ? QWebEngineProfile::MemoryHttpCache : QWebEngineProfile::DiskHttpCache;
+    KConfigGroup grp = cfg->group(QStringLiteral("Cache"));
+    if (grp.readEntry(QStringLiteral("CacheEnabled"), true)) {
+        QWebEngineProfile::HttpCacheType type = grp.readEntry(QStringLiteral("MemoryCache"), false) ? QWebEngineProfile::MemoryHttpCache : QWebEngineProfile::DiskHttpCache;
         m_profile->setHttpCacheType(type);
-        m_profile->setHttpCacheMaximumSize(grp.readEntry("MaximumCacheSize", 0));
+        m_profile->setHttpCacheMaximumSize(grp.readEntry(QStringLiteral("MaximumCacheSize"), 0));
         //NOTE: According to the documentation, setCachePath resets the cache path to its default value if the argument is a null QString
         //it doesn't specify what it does if the string is empty but not null. Experimenting, it seems the behavior is the same
-        m_profile->setCachePath(grp.readEntry("CustomCacheDir", QString()));
+        m_profile->setCachePath(grp.readEntry(QStringLiteral("CustomCacheDir"), QString()));
 
     } else {
         m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
     }
+
+    grp = KSharedConfig::openConfig(QString(), KConfig::NoGlobals)->group(QStringLiteral("UserAgent"));
+    bool useCustomUserAgent = grp.readEntry(QStringLiteral("UseCustomUserAgent"), false);
+    QString userAgent = useCustomUserAgent ? grp.readEntry(QStringLiteral("CustomUserAgent"), m_defaultUserAgent) : m_defaultUserAgent;
+    setHttpUserAgent(userAgent);
+}
+
+QString WebEnginePartControls::httpUserAgent() const
+{
+    return m_profile ? m_profile->httpUserAgent() : QString();
+}
+
+void WebEnginePartControls::setHttpUserAgent(const QString& uaString)
+{
+    if (!m_profile || m_profile->httpUserAgent() == uaString) {
+        return;
+    }
+    m_profile->setHttpUserAgent(uaString);
+    emit userAgentChanged(uaString);
+}
+
+QString WebEnginePartControls::defaultHttpUserAgent() const
+{
+    return m_defaultUserAgent;
 }

@@ -20,6 +20,7 @@ set(kcm_konqhtml_PART_SRCS
    css/template.cpp
    css/kcmcss.cpp
    cache/cache.cpp
+   useragent/useragent.cpp
    )
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
@@ -27,10 +28,11 @@ ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     css/csscustom.ui
     css/cssconfig.ui
     cache/cache.ui
+    useragent/useragent.ui
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
-target_link_libraries(kcm_konqhtml_static KF5::I18n KF5::ConfigWidgets KF5::TextWidgets KF5::Parts KF5::ItemViews)
+target_link_libraries(kcm_konqhtml_static KF5::I18n KF5::ConfigWidgets KF5::TextWidgets KF5::Parts KF5::ItemViews Qt5::WebEngineWidgets)
 
 kcoreaddons_add_plugin(khtml_general SOURCES plugins/khtml_general.cpp INSTALL_NAMESPACE konqueror_kcms)
 kcoreaddons_desktop_to_json(khtml_general khtml_general.desktop)
@@ -56,4 +58,9 @@ kcoreaddons_add_plugin(khtml_cache SOURCES plugins/khtml_cache.cpp INSTALL_NAMES
 kcoreaddons_desktop_to_json(khtml_cache cache/khtml_cache.desktop)
 target_link_libraries(khtml_cache kcm_konqhtml_static)
 
+kcoreaddons_add_plugin(khtml_useragent SOURCES plugins/khtml_useragent.cpp INSTALL_NAMESPACE konqueror_kcms)
+kcoreaddons_desktop_to_json(khtml_useragent useragent/khtml_useragent.desktop)
+target_link_libraries(khtml_useragent kcm_konqhtml_static)
+
 install( FILES css/template.css  DESTINATION  ${KDE_INSTALL_DATADIR}/kcmcss )
+install(FILES useragent/useragenttemplatesrc DESTINATION ${KDE_INSTALL_CONFDIR})

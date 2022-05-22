@@ -12,6 +12,8 @@
 #include <QObject>
 #include <QWebEngineCertificateError>
 
+#include <kwebenginepartlib_export.h>
+
 class QWebEngineProfile;
 class QWebEngineScript;
 
@@ -25,7 +27,7 @@ namespace KonqWebEnginePart {
     class CertificateErrorDialogManager;
 }
 
-class WebEnginePartControls : public QObject
+class KWEBENGINEPARTLIB_EXPORT WebEnginePartControls : public QObject
 {
     Q_OBJECT
 
@@ -47,8 +49,17 @@ public:
 
     bool handleCertificateError(const QWebEngineCertificateError &ce, WebEnginePage *page);
 
+    QString httpUserAgent() const;
+
+    QString defaultHttpUserAgent() const;
+
+    void setHttpUserAgent(const QString &uaString);
+
 private slots:
     void reparseConfiguration();
+
+signals:
+    void userAgentChanged(const QString &uaString);
 
 private:
 
@@ -118,6 +129,7 @@ private:
     WebEnginePartDownloadManager *m_downloadManager;
     KonqWebEnginePart::CertificateErrorDialogManager *m_certificateErrorDialogManager;
     NavigationRecorder *m_navigationRecorder;
+    QString m_defaultUserAgent;
 };
 
 #endif // WEBENGINEPARTCONTROLS_H

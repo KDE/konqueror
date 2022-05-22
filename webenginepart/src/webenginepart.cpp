@@ -94,6 +94,8 @@ WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
         WebEnginePartControls::self()->setup(QWebEngineProfile::defaultProfile());
     }
 
+    connect(WebEnginePartControls::self(), &WebEnginePartControls::userAgentChanged, this, &WebEnginePart::reloadAfterUAChange);
+
     setMetaData(metaData);
 
 #if 0
@@ -1098,4 +1100,15 @@ void WebEnginePart::setInspectedPart(KParts::ReadOnlyPart* part)
     }
     page()->setInspectedPage(wpart->page());
     setUrl(page()->url());
+}
+
+void WebEnginePart::reloadAfterUAChange(const QString &)
+{
+    if (!page()) {
+        return;
+    }
+    //NOTE: usually local files won't be affected by this, so don't automatically reload them
+    if (!url().isLocalFile() && !url().isEmpty() && url().scheme() != "konq") {
+        m_webView->triggerPageAction(QWebEnginePage::Reload);
+    }
 }
