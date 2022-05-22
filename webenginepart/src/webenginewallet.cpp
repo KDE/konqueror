@@ -136,6 +136,7 @@ void WebEngineWallet::detectAndFillPageForms(WebEnginePage *page)
     }
 
     auto callback = [this, url, page](const WebFormList &forms) {
+        emit formDetectionDone(url, !forms.isEmpty(), d->hasAutoFillableFields(forms));
         if (!WebEngineSettings::self()->isNonPasswordStorableSite(url.host())) {
             fillFormData(page, cacheableForms(url, forms, CacheOperation::Fill));
         }
