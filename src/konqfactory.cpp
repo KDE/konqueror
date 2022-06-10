@@ -6,9 +6,11 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-// Own
 #include "konqfactory.h"
 #include <konq_kpart_plugin.h>
+#include "konqdebug.h"
+#include "konqsettings.h"
+#include "konqmainwindow.h"
 
 // std
 #include <assert.h>
@@ -19,21 +21,15 @@
 #include <QCoreApplication>
 
 // KDE
-#include "konqdebug.h"
 #include <KLocalizedString>
 #include <KParts/ReadOnlyPart>
 #include <KPluginInfo>
-#include <kmessagebox.h>
-#include <kmimetypetrader.h>
-#include <kservicetypetrader.h>
+#include <KMessageBox>
+#include <KApplicationTrader>
+#include <KParts/PartLoader>
 
-// Local
-#include "konqsettings.h"
-#include "konqmainwindow.h"
-
-KonqViewFactory::KonqViewFactory(const QString &libName, KPluginFactory *factory)
-    : m_libName(libName), m_factory(factory),
-      m_args()
+KonqViewFactory::KonqViewFactory(const KPluginMetaData &data, KPluginFactory *factory)
+    : m_metaData(data), m_factory(factory), m_args()
 {
 }
 
@@ -48,10 +44,10 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
         return nullptr;
     }
 
-    KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, QString(), m_args);
+    KParts::ReadOnlyPart *part = m_factory->create<KParts::ReadOnlyPart>(parentWidget, parent, m_args);
 
     if (!part) {
-        qCWarning(KONQUEROR_LOG) << "No KParts::ReadOnlyPart created from" << m_libName;
+        qCWarning(KONQUEROR_LOG) << "No KParts::ReadOnlyPart created from" << m_metaData.name();
     } else {
         KonqParts::Plugin::loadPlugins(part, part, part->componentName());
         QFrame *frame = qobject_cast<QFrame *>(part->widget());
@@ -62,31 +58,34 @@ KParts::ReadOnlyPart *KonqViewFactory::create(QWidget *parentWidget, QObject *pa
     return part;
 }
 
-static KonqViewFactory tryLoadingService(KService::Ptr service)
+static KonqViewFactory tryLoadingService(const KPluginMetaData &data)
 {
-    if (auto factoryResult = KPluginFactory::loadFactory(KPluginInfo(service).toMetaData())) {
-        return KonqViewFactory(service->library(), factoryResult.plugin);
+    if (auto factoryResult = KPluginFactory::loadFactory(data)) {
+        return KonqViewFactory(data, factoryResult.plugin);
     } else {
         KMessageBox::error(nullptr,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",
-                                service->name(), factoryResult.errorString));
+                                data.name(), factoryResult.errorString));
         return KonqViewFactory();
     }
 }
 
+//TODO port away from query: check whether this output type arguments can be replaced by something else
 KonqViewFactory KonqFactory::createView(const QString &serviceType,
                                         const QString &serviceName,
-                                        KService::Ptr *serviceImpl,
-                                        KService::List *partServiceOffers,
+                                        KPluginMetaData *serviceImpl,
+                                        PluginMetaDataVector *partServiceOffers,
                                         KService::List *appServiceOffers,
                                         bool forceAutoEmbed)
 {
+    //TODO port away from query: check whether service name can be empty
     qCDebug(KONQUEROR_LOG) << "Trying to create view for" << serviceType << serviceName;
 
     // We need to get those in any case
-    KService::List offers, appOffers;
+    PluginMetaDataVector offers;
+    KService::List appOffers;
 
-    // Query the trader
+    // Query the plugins
     getOffers(serviceType, &offers, &appOffers);
 
     if (partServiceOffers) {
@@ -113,37 +112,35 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         }
     }
 
-    KService::Ptr service;
+    KPluginMetaData service;
 
     // Look for this service
     if (!serviceName.isEmpty()) {
-        auto it = std::find_if(offers.constBegin(), offers.constEnd(), [serviceName](KService::Ptr s){return s->desktopEntryName() == serviceName;});
-        qCDebug(KONQUEROR_LOG) << "Found requested service" << serviceName;
-        service = *it;
+        auto it = std::find_if(offers.constBegin(), offers.constEnd(), [serviceName](const KPluginMetaData &md){return md.pluginId() == serviceName;});
+        if (it != offers.constEnd()) {
+            service = *it;
+        }
     }
 
     KonqViewFactory viewFactory;
 
-    if (service) {
-        qCDebug(KONQUEROR_LOG) << "Trying to open lib for requested service " << service->desktopEntryName();
+    if (service.isValid()) {
+        qCDebug(KONQUEROR_LOG) << "Trying to open lib for requested service " << service.name();
         viewFactory = tryLoadingService(service);
         // If this fails, then return an error.
         // When looking for konq_sidebartng or konq_aboutpage, we don't want to end up
         // with khtml or another Browser/View part in case of an error...
     } else {
-        for (KService::Ptr offer : offers) {
+        for (const KPluginMetaData &md : offers) {
             // Allowed as default ?
-            QVariant prop = offer ->property(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"));
-            qCDebug(KONQUEROR_LOG) << offer ->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
-            if (!prop.isValid() || prop.toBool()) {   // defaults to true
-                //qCDebug(KONQUEROR_LOG) << "Trying to open lib for service " << service->name();
-                viewFactory = tryLoadingService(offer);
+            if (!md.value(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"), true)) {
+                viewFactory = tryLoadingService(md);
                 if (!viewFactory.isNull()) {
-                    service = offer;
+                    service = md;
                     break;
                 }
             } else {
-                qCDebug(KONQUEROR_LOG) << "Not allowed as default " << service->desktopEntryName();
+                qCDebug(KONQUEROR_LOG) << "Not allowed as default " << service.name();
             }
         }
     }
@@ -162,14 +159,11 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     }
 
     QVariantList args;
-    const QVariant prop = service->property(QStringLiteral("X-KDE-BrowserView-Args"));
-    if (prop.isValid()) {
-        Q_FOREACH (const QString &str, prop.toString().split(' ')) {
-            args << QVariant(str);
-        }
+    for (const QString &str : service.value(QStringLiteral("X-KDE-BrowserView-Args"), QStringList())) {
+        args << QVariant(str);
     }
 
-    if (service->serviceTypes().contains(QStringLiteral("Browser/View"))) {
+    if (service.serviceTypes().contains(QStringLiteral("Browser/View"))) {
         args << QLatin1String("Browser/View");
     }
 
@@ -177,25 +171,22 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     return viewFactory;
 }
 
-void KonqFactory::getOffers(const QString &serviceType,
-                            KService::List *partServiceOffers,
-                            KService::List *appServiceOffers)
+void KonqFactory::getOffers(const QString &serviceType, PluginMetaDataVector *partServiceOffers, KService::List *appServiceOffers)
 {
 #ifdef __GNUC__
 #warning Temporary hack -- must separate mimetypes and servicetypes better
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
-        *partServiceOffers = KServiceTypeTrader::self()->query(serviceType,
-                             QStringLiteral("DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'"));
+        //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
+        qDebug() << KPluginMetaData::findPlugins(QString(), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
+        *partServiceOffers = KPluginMetaData::findPlugins(QString(), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
         return;
-
-    }
-    if (appServiceOffers) {
-        *appServiceOffers = KMimeTypeTrader::self()->query(serviceType, QStringLiteral("Application"),
-                            QStringLiteral("DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'"));
     }
 
     if (partServiceOffers) {
-        *partServiceOffers = KMimeTypeTrader::self()->query(serviceType, QStringLiteral("KParts/ReadOnlyPart"));
+        *partServiceOffers = KParts::PartLoader::partsForMimeType(serviceType);
+    }
+    if (appServiceOffers) {
+        *appServiceOffers = KApplicationTrader::queryByMimeType(serviceType, [](const KService::Ptr &s){return !s->desktopEntryName().startsWith("kfmclient");});
     }
 }

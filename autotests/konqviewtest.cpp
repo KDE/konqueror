@@ -34,15 +34,15 @@ private Q_SLOTS:
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(10000));
         QCOMPARE(view->serviceType(), QString("text/plain"));
-        const QString firstService = view->service()->entryPath();
+        const QString firstService = view->service().pluginId();
         qDebug() << firstService;
         QVERIFY(view->supportsMimeType("text/html")); // it does, since that's a mimetype subclass
 
         // Now open HTML, as if we typed a URL in the location bar.
         KonqOpenURLRequest req2; req2.typedUrl = QStringLiteral("http://www.kde.org");
         mainWindow.openUrl(nullptr, QUrl(QStringLiteral("data:text/html, <p>Hello World</p>")), QStringLiteral("text/html"), req2);
-        qDebug() << view->service()->entryPath();
-        QVERIFY(view->service()->entryPath() != firstService);
+        qDebug() << view->service().pluginId();
+        QVERIFY(view->service().pluginId() != firstService);
     }
 
 };

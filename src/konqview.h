@@ -83,8 +83,8 @@ public:
     KonqView(KonqViewFactory &viewFactory,
              KonqFrame *viewFrame,
              KonqMainWindow *mainWindow,
-             const KService::Ptr &service,
-             const KService::List &partServiceOffers,
+             const KPluginMetaData &service,
+             const PluginMetaDataVector &partServiceOffers,
              const KService::List &appServiceOffers,
              const QString &serviceType,
              bool passiveMode);
@@ -330,7 +330,7 @@ public:
      */
     QStringList serviceTypes() const
     {
-        return m_service->serviceTypes();
+        return m_service.serviceTypes();
     }
 
     /**
@@ -423,7 +423,7 @@ public:
      */
     void setInternalViewMode(const QString &viewMode);
 
-    KService::Ptr service()
+    KPluginMetaData service() const
     {
         return m_service;
     }
@@ -433,7 +433,7 @@ public:
         return m_caption;
     }
 
-    KService::List partServiceOffers()
+    PluginMetaDataVector partServiceOffers()
     {
         return m_partServiceOffers;
     }
@@ -645,9 +645,9 @@ private:
     uint m_bURLDropHandling: 1;
     uint m_bDisableScrolling: 1;
     uint m_bErrorURL: 1;
-    KService::List m_partServiceOffers;
+    PluginMetaDataVector m_partServiceOffers;
     KService::List m_appServiceOffers;
-    KService::Ptr m_service;
+    KPluginMetaData m_service;
     QString m_serviceType;
     QString m_caption;
     QString m_tempFile;

@@ -10,8 +10,10 @@
 #define __konq_factory_h__
 
 #include "konqprivate_export.h"
+#include "pluginmetadatautils.h"
 
-#include <kservice.h>
+#include <KService>
+#include <KPluginMetaData>
 
 class KPluginFactory;
 namespace KParts
@@ -27,7 +29,7 @@ public:
      */
     KonqViewFactory() : m_factory(nullptr), m_args() {}
 
-    KonqViewFactory(const QString &libName, KPluginFactory *factory);
+    KonqViewFactory(const KPluginMetaData &data, KPluginFactory *factory);
 
     // The default copy ctor and operator= can be used, this is a value class.
 
@@ -41,7 +43,7 @@ public:
     }
 
 private:
-    QString m_libName;
+    KPluginMetaData m_metaData;
     KPluginFactory *m_factory;
     QVariantList m_args;
 };
@@ -64,14 +66,12 @@ public:
      */
     KonqViewFactory createView(const QString &serviceType,
                                const QString &serviceName = QString(),
-                               KService::Ptr *serviceImpl = nullptr,
-                               KService::List *partServiceOffers = nullptr,
+                               KPluginMetaData *serviceImpl = nullptr,
+                               PluginMetaDataVector *partServiceOffers = nullptr,
                                KService::List *appServiceOffers = nullptr,
                                bool forceAutoEmbed = false);
 
-    static void getOffers(const QString &serviceType,
-                          KService::List *partServiceOffers = nullptr,
-                          KService::List *appServiceOffers = nullptr);
+    static void getOffers(const QString& serviceType, PluginMetaDataVector *partServiceOffers = nullptr, KService::List* appServiceOffers = nullptr);
 };
 
 #endif

@@ -426,7 +426,7 @@ private Q_SLOTS:
 
     void slotDumpDebugInfo();
 
-    void slotOpenEmbedded(KService::Ptr);
+    void slotOpenEmbedded(const KPluginMetaData &part);
 
     // Connected to KGlobalSettings
     void slotReconfigure();

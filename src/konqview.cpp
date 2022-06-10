@@ -56,8 +56,8 @@
 KonqView::KonqView(KonqViewFactory &viewFactory,
                    KonqFrame *viewFrame,
                    KonqMainWindow *mainWindow,
-                   const KService::Ptr &service,
-                   const KService::List &partServiceOffers,
+                   const KPluginMetaData &service,
+                   const PluginMetaDataVector &partServiceOffers,
                    const KService::List &appServiceOffers,
                    const QString &serviceType,
                    bool passiveMode
@@ -129,7 +129,7 @@ KonqView::~KonqView()
 
 bool KonqView::isWebEngineView() const
 {
-    return m_service->desktopEntryName() == QLatin1String("webenginepart");
+    return m_service.pluginId() == QLatin1String("webenginepart");
 }
 
 void KonqView::openUrl(const QUrl &url, const QString &locationBarURL,
@@ -260,28 +260,22 @@ void KonqView::switchView(KonqViewFactory &viewFactory)
 
     connectPart();
 
-    QVariant prop;
-
-    prop = m_service->property(QStringLiteral("X-KDE-BrowserView-FollowActive"));
-    if (prop.isValid() && prop.toBool()) {
+    if (m_service.value(QStringLiteral("X-KDE-BrowserView-FollowActive"), false)) {
         //qCDebug(KONQUEROR_LOG) << "X-KDE-BrowserView-FollowActive -> setFollowActive";
         setFollowActive(true);
     }
 
-    prop = m_service->property(QStringLiteral("X-KDE-BrowserView-Built-Into"));
-    m_bBuiltinView = (prop.isValid() && prop.toString() == QLatin1String("konqueror"));
+    m_bBuiltinView = m_service.value(QStringLiteral("X-KDE-BrowserView-Built-Into"), QString()) == QLatin1String("konqueror");
 
     if (!m_pMainWindow->viewManager()->isLoadingProfile()) {
         // Honor "non-removable passive mode" (like the dirtree)
-        prop = m_service->property(QStringLiteral("X-KDE-BrowserView-PassiveMode"));
-        if (prop.isValid() && prop.toBool()) {
+        if (m_service.value(QStringLiteral("X-KDE-BrowserView-PassiveMode"), false)) {
             qCDebug(KONQUEROR_LOG) << "X-KDE-BrowserView-PassiveMode -> setPassiveMode";
             setPassiveMode(true);   // set as passive
         }
 
         // Honor "linked view"
-        prop = m_service->property(QStringLiteral("X-KDE-BrowserView-LinkedView"));
-        if (prop.isValid() && prop.toBool()) {
+        if (m_service.value(QStringLiteral("X-KDE-BrowserView-LinkedView"), false)) {
             setLinkedView(true);   // set as linked
             // Two views : link both
             if (m_pMainWindow->viewCount() <= 2) { // '1' can happen if this view is not yet in the map
@@ -317,7 +311,7 @@ bool KonqView::changePart(const QString &mimeType,
     //             << "requested serviceName=" << serviceName
     //             << "current service name=" << m_service->desktopEntryName();
 
-    if (serviceName == m_service->desktopEntryName()) {
+    if (serviceName == m_service.pluginId()) {
         m_serviceType = mimeType;
         return true;
     }
@@ -327,8 +321,9 @@ bool KonqView::changePart(const QString &mimeType,
         return false; // we can't do that if our view mode is locked
     }
 
-    KService::List partServiceOffers, appServiceOffers;
-    KService::Ptr service;
+    PluginMetaDataVector partServiceOffers;
+    KService::List appServiceOffers;
+    KPluginMetaData service;
     KonqFactory konqFactory;
     KonqViewFactory viewFactory = konqFactory.createView(mimeType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
 
@@ -342,7 +337,7 @@ bool KonqView::changePart(const QString &mimeType,
 
     // Check if that's already the kind of part we have -> no need to recreate it
     // Note: we should have an operator== for KService...
-    if (m_service && m_service->entryPath() == service->entryPath()) {
+    if (m_service.isValid() && m_service.pluginId() == service.pluginId()) {
         qCDebug(KONQUEROR_LOG) << "Reusing service. Service type set to" << m_serviceType;
         if (m_pMainWindow->currentView() == this) {
             m_pMainWindow->updateViewModeActions();
@@ -431,14 +426,11 @@ void KonqView::connectPart()
         connect(ext, SIGNAL(requestFocus(KParts::ReadOnlyPart*)),
                 this, SLOT(slotRequestFocus(KParts::ReadOnlyPart*)));
 
-        if (service()->desktopEntryName() != QLatin1String("konq_sidebartng")) {
-            connect(ext, SIGNAL(infoMessage(QString)),
-                    m_pKonqFrame->statusbar(), SLOT(message(QString)));
+        if (service().pluginId() != QLatin1String("konq_sidebartng")) {
+            connect(ext, &KParts::BrowserExtension::infoMessage, m_pKonqFrame->statusbar(), &KonqFrameStatusBar::message);
 
-            connect(ext,
-                    SIGNAL(addWebSideBar(QUrl,QString)),
-                    m_pMainWindow,
-                    SLOT(slotAddWebSideBar(QUrl,QString)));
+            //Must use this form of connect because slotAddWebSideBar is private
+            connect(ext, SIGNAL(addWebSideBar(QUrl,QString)), m_pMainWindow, SLOT(slotAddWebSideBar(QUrl,QString)));
         }
     }
 
@@ -770,7 +762,7 @@ void KonqView::updateHistoryEntry(bool needsReload)
 #endif
     current->title = m_caption;
     current->strServiceType = m_serviceType;
-    current->strServiceName = m_service->desktopEntryName();
+    current->strServiceName = m_service.pluginId();
 
     current->doPost = m_doPost;
     current->postData = m_doPost ? m_postData : QByteArray();
@@ -1206,13 +1198,9 @@ bool KonqView::supportsMimeType(const QString &mimeType) const
     if (!mime.isValid()) {
         return false;
     }
-    const QStringList lst = serviceTypes();
-    for (QStringList::ConstIterator it = lst.begin(); it != lst.end(); ++it) {
-        if (mime.inherits(*it)) { // same as mime == *it, but also respect inheritance, mimeType can be a subclass
-            return true;
-        }
-    }
-    return false;
+    const QStringList lst = m_service.mimeTypes();
+    QStringList::const_iterator found = std::find_if(lst.constBegin(), lst.constEnd(), [mime](const QString &name){return mime.inherits(name);});
+    return found != lst.constEnd();
 }
 
 bool KonqView::isWebBrowsingPart() const
@@ -1274,7 +1262,7 @@ void HistoryEntry::loadItem(const KConfigGroup &config, const QString &prefix, c
 void KonqView::saveConfig(KConfigGroup &config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     config.writeEntry(QStringLiteral("ServiceType").prepend(prefix), serviceType());
-    config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), service()->desktopEntryName());
+    config.writeEntry(QStringLiteral("ServiceName").prepend(prefix), service().pluginId());
     config.writeEntry(QStringLiteral("PassiveMode").prepend(prefix), isPassiveMode());
     config.writeEntry(QStringLiteral("LinkedView").prepend(prefix), isLinkedView());
     config.writeEntry(QStringLiteral("ToggleView").prepend(prefix), isToggleView());

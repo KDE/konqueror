@@ -23,7 +23,7 @@
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
 
-PopupMenuGUIClient::PopupMenuGUIClient(const KService::List &embeddingServices,
+PopupMenuGUIClient::PopupMenuGUIClient(const PluginMetaDataVector &embeddingServices,
                                        KonqPopupMenu::ActionGroupMap &actionGroups,
                                        QAction *showMenuBar, QAction *stopFullScreen)
     : m_actionCollection(this),
@@ -47,15 +47,15 @@ PopupMenuGUIClient::PopupMenuGUIClient(const KService::List &embeddingServices,
     if (!embeddingServices.isEmpty()) {
         QList<QAction *> previewActions;
         if (embeddingServices.count() == 1) {
-            KService::Ptr service = embeddingServices.first();
-            QAction *act = addEmbeddingService(0, i18n("Preview &in %1", service->name()), service);
+            KPluginMetaData service = embeddingServices.first();
+            QAction *act = addEmbeddingService(0, i18n("Preview &in %1", service.name()), service);
             previewActions.append(act);
         } else if (embeddingServices.count() > 1) {
-            KService::List::ConstIterator it = embeddingServices.begin();
-            const KService::List::ConstIterator end = embeddingServices.end();
+            PluginMetaDataVector::ConstIterator it = embeddingServices.begin();
+            const PluginMetaDataVector::ConstIterator end = embeddingServices.end();
             int idx = 0;
             for (; it != end; ++it, ++idx) {
-                QAction *act = addEmbeddingService(idx, (*it)->name(), *it);
+                QAction *act = addEmbeddingService(idx, (*it).name(), *it);
                 previewActions.append(act);
             }
         }
@@ -68,11 +68,11 @@ PopupMenuGUIClient::~PopupMenuGUIClient()
 {
 }
 
-QAction *PopupMenuGUIClient::addEmbeddingService(int idx, const QString &name, const KService::Ptr &service)
+QAction *PopupMenuGUIClient::addEmbeddingService(int idx, const QString &name, const KPluginMetaData &service)
 {
     QAction *act = m_actionCollection.addAction(QByteArray::number(idx));
     act->setText(name);
-    act->setIcon(QIcon::fromTheme(service->icon()));
+    act->setIcon(QIcon::fromTheme(service.iconName()));
     QObject::connect(act, &QAction::triggered, this, &PopupMenuGUIClient::slotOpenEmbedded);
     return act;
 }
@@ -211,7 +211,7 @@ void ToggleViewGUIClient::slotToggleView(bool toggle)
     } else {
         const QList<KonqView *> viewList = KonqViewCollector::collect(m_mainWindow);
         foreach (KonqView *view, viewList) {
-            if (view->service() && view->service()->desktopEntryName() == serviceName)
+            if (view->service().pluginId() == serviceName)
                 // takes care of choosing the new active view, and also calls slotViewRemoved
             {
                 viewManager->removeView(view);
@@ -240,7 +240,7 @@ void ToggleViewGUIClient::saveConfig(bool add, const QString &serviceName)
 
 void ToggleViewGUIClient::slotViewAdded(KonqView *view)
 {
-    QString name = view->service()->desktopEntryName();
+    QString name = view->service().pluginId();
 
     QAction *action = m_actions.value(name);
 
@@ -272,7 +272,7 @@ void ToggleViewGUIClient::slotViewAdded(KonqView *view)
 
 void ToggleViewGUIClient::slotViewRemoved(KonqView *view)
 {
-    QString name = view->service()->desktopEntryName();
+    QString name = view->service().pluginId();
 
     QAction *action = m_actions.value(name);
 

@@ -185,6 +185,7 @@ private:
     bool m_ready = false;
     bool m_isAsync = false;
     OpenUrlAction m_action = OpenUrlAction::UnknwonAction;
+    KPluginMetaData m_part;
     KService::Ptr m_service;
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;

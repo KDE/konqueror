@@ -145,6 +145,8 @@
 #include <KSharedConfig>
 
 #include <KProtocolManager>
+#include <KParts/PartLoader>
+#include <KApplicationTrader>
 
 #include <QMetaObject>
 #include <QMetaMethod>
@@ -673,7 +675,7 @@ KonqView * KonqMainWindow::createTabForLoadUrlRequest(const QUrl& url, const Kon
 static QString preferredService(KonqView *currentView, const QString &mimeType)
 {
     if (currentView && !mimeType.isEmpty() && currentView->supportsMimeType(mimeType)) {
-        return currentView->service()->desktopEntryName();
+        return currentView->service().pluginId();
     }
     return QString();
 }
@@ -768,7 +770,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     }
     // Do we even have a part to embed? Otherwise don't ask, since we'd ask twice.
     if (!forceAutoEmbed) {
-        KService::List partServiceOffers;
+        PluginMetaDataVector partServiceOffers;
         KonqFactory::getOffers(mimeType, &partServiceOffers);
         if (partServiceOffers.isEmpty()) {
             qCDebug(KONQUEROR_LOG) << "No part available for" << mimeType;
@@ -1500,13 +1502,14 @@ void KonqMainWindow::slotViewModeTriggered(QAction *action)
         return;
     }
 
+    //TODO port away from query: check that plugin id actually respect these rules
     // Gather data from the action, since the action will be deleted by changePart
     QString modeName = action->objectName();
     Q_ASSERT(modeName.endsWith("-viewmode"));
     modeName.chop(9);
     const QString internalViewMode = action->data().toString();
 
-    if (m_currentView->service()->desktopEntryName() != modeName) {
+    if (m_currentView->service().pluginId() != modeName) {
         m_currentView->stop();
         m_currentView->lockHistory();
 
@@ -4369,20 +4372,16 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
                                        !isIntoTrash && !devicesFile &&
                                        (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
 
-    KService::List embeddingServices;
+    PluginMetaDataVector embeddingServices;
     if (showEmbeddingServices) {
-        const QString currentServiceName = currentView->service()->desktopEntryName();
+        const QString currentServiceName = currentView->service().pluginId();
 
         // List of services for the "Preview In" submenu.
-        embeddingServices = KMimeTypeTrader::self()->query(
-                                m_popupMimeType,
-                                QStringLiteral("KParts/ReadOnlyPart"),
-                                // Obey "HideFromMenus". It defaults to false so we want "absent or true"
-                                // (wow, testing for 'true' if absent doesn't work, so order matters)
-                                "(not exist [X-KDE-BrowserView-HideFromMenus] or not [X-KDE-BrowserView-HideFromMenus]) "
-                                "and DesktopEntryName != '" +currentServiceName + "' "
-                                // I had an old local dirtree.desktop without lib, no need for invalid entries
-                                "and exist [Library]");
+        PluginMetaDataVector allEmbeddingServices = KParts::PartLoader::partsForMimeType(m_popupMimeType);
+        auto filter = [currentServiceName](const KPluginMetaData &md) {
+            return md.value(QLatin1String("X-KDE-BrowserView-HideFromMenus"),false) && md.pluginId() != currentServiceName;
+        };
+        std::copy_if(allEmbeddingServices.begin(), allEmbeddingServices.end(), std::back_inserter(embeddingServices), filter);
     }
 
     // TODO: get rid of KParts::BrowserExtension::PopupFlags
@@ -4395,9 +4394,10 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
             !menuBar()->isVisible() ? m_paShowMenuBar : nullptr,
             fullScreenMode() ? m_ptaFullScreen : nullptr
                                                                 );
-    qRegisterMetaType<KService::Ptr>("KService::Ptr");
-    connect(konqyMenuClient, SIGNAL(openEmbedded(KService::Ptr)),
-            this, SLOT(slotOpenEmbedded(KService::Ptr)), Qt::QueuedConnection);
+//     qRegisterMetaType<KService::Ptr>("KService::Ptr");
+//     connect(konqyMenuClient, SIGNAL(openEmbedded(KService::Ptr)),
+//             this, SLOT(slotOpenEmbedded(KService::Ptr)), Qt::QueuedConnection);
+    connect(konqyMenuClient, &PopupMenuGUIClient::openEmbedded, this, &KonqMainWindow::slotOpenEmbedded, Qt::QueuedConnection);
 
     // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
     QList<QAction *> tabHandlingActions;
@@ -4535,7 +4535,7 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
     }
 }
 
-void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
+void KonqMainWindow::slotOpenEmbedded(const KPluginMetaData &part)
 {
     if (!m_currentView) {
         return;
@@ -4545,7 +4545,7 @@ void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
     if (m_currentView->changePart(m_popupMimeType,
-                                  service->desktopEntryName(), true)) {
+                                  part.pluginId(), true)) {
         m_currentView->openUrl(m_popupUrl, m_popupUrl.toDisplayString(QUrl::PreferLocalFile));
     }
 }
@@ -4692,11 +4692,14 @@ void KonqMainWindow::updateViewModeActions()
     delete m_viewModeMenu;
     m_viewModeMenu = nullptr;
 
-    const KService::List services = m_currentView->partServiceOffers();
+    const PluginMetaDataVector services = m_currentView->partServiceOffers();
     if (services.count() <= 1) {
         return;
     }
 
+//TODO port away from query: find out how to replace all of this, since I don't think that KPluginMetaData provides
+//something like KService::actions
+#if 0
     m_viewModeMenu = new KActionMenu(i18nc("@action:inmenu View", "&View Mode"), this);
     //actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
@@ -4754,6 +4757,7 @@ void KonqMainWindow::updateViewModeActions()
             && m_viewModeMenu) {
         plugViewModeActions();
     }
+#endif
 }
 
 void KonqMainWindow::slotInternalViewModeChanged()
@@ -4761,7 +4765,7 @@ void KonqMainWindow::slotInternalViewModeChanged()
     KParts::ReadOnlyPart *part = static_cast<KParts::ReadOnlyPart *>(sender());
     KonqView *view = m_mapViews.value(part);
     if (view) {
-        const QString actionName = view->service()->desktopEntryName();
+        const QString actionName = view->service().pluginId();
         const QString actionData = view->internalViewMode();
         Q_FOREACH (QAction *action, m_viewModesGroup->actions()) {
             if (action->objectName() == actionName + QLatin1String("-viewmode") &&
@@ -5024,8 +5028,8 @@ void KonqMainWindow::slotAddWebSideBar(const QUrl &url, const QString &name)
         for (it = viewMap().constBegin(); it != viewMap().constEnd(); ++it) {
             KonqView *view = it.value();
             if (view) {
-                KService::Ptr svc = view->service();
-                if (svc->desktopEntryName() == QLatin1String("konq_sidebartng")) {
+                KPluginMetaData svc = view->service();
+                if (svc.pluginId() == QLatin1String("konq_sidebartng")) {
                     emit view->browserExtension()->addWebSideBar(url, name);
                     break;
                 }
@@ -5343,7 +5347,7 @@ void KonqMainWindow::setWorkingTab(int index)
 
 bool KonqMainWindow::isMimeTypeAssociatedWithSelf(const QString &mimeType)
 {
-    return isMimeTypeAssociatedWithSelf(mimeType, KMimeTypeTrader::self()->preferredService(mimeType, QStringLiteral("Application")));
+    return isMimeTypeAssociatedWithSelf(mimeType, KApplicationTrader::preferredService(mimeType));
 }
 
 bool KonqMainWindow::isMimeTypeAssociatedWithSelf(const QString &/*mimeType*/, const KService::Ptr &offer)
@@ -5431,9 +5435,10 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         KProtocolManager::reparseConfiguration();
     }
 
-    KService::Ptr service = KMimeTypeTrader::self()->preferredService("text/html", "KParts/ReadOnlyPart");
-    Q_ASSERT(service);
-    const bool webengineIsDefault = service->desktopEntryName() == "webenginepart";
+    PluginMetaDataVector parts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
+    KPluginMetaData part = !parts.isEmpty() ? parts.first() : KPluginMetaData();
+    Q_ASSERT(part.isValid());
+    const bool webengineIsDefault = part.pluginId() == QStringLiteral("webenginepart");
     if (!webengineIsDefault) {
         return;
     }

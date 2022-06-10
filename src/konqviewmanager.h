@@ -11,16 +11,16 @@
 #include "konqprivate_export.h"
 #include "konqfactory.h"
 #include "konqframe.h"
+#include "konqopenurlrequest.h"
 
 #include <QMap>
 #include <QPointer>
 #include <QUrl>
 
 #include <KService>
-
-#include <kparts/partmanager.h>
-#include "konqopenurlrequest.h"
-#include <ksharedconfig.h>
+#include <KParts/PartManager>
+#include <KSharedConfig>
+#include <KPluginMetaData>
 
 class KonqFrameTabs;
 class QString;
@@ -322,8 +322,8 @@ private:
      */
     KonqViewFactory createView(const QString &serviceType,  /* can be servicetype or mimetype */
                                const QString &serviceName,
-                               KService::Ptr &service,
-                               KService::List &partServiceOffers,
+                               KPluginMetaData &service,
+                               PluginMetaDataVector &partServiceOffers,
                                KService::List &appServiceOffers,
                                bool forceAutoEmbed = false);
 
@@ -333,8 +333,8 @@ private:
      */
     KonqView *setupView(KonqFrameContainerBase *parentContainer,
                         KonqViewFactory &viewFactory,
-                        const KService::Ptr &service,
-                        const KService::List &partServiceOffers,
+                        const KPluginMetaData &service,
+                        const PluginMetaDataVector &partServiceOffers,
                         const KService::List &appServiceOffers,
                         const QString &serviceType,
                         bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);

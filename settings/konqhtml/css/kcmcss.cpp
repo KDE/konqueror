@@ -9,13 +9,13 @@
 #include <QStandardPaths>
 
 // KDE
-#include <kcolorbutton.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kurlrequester.h>
-#include <kmimetypetrader.h>
-#include <kparts/part.h>
-#include <kparts/openurlarguments.h>
+#include <KColorButton>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KUrlRequester>
+#include <KParts/Part>
+#include <KParts/OpenUrlArguments>
+#include <KParts/PartLoader>
 
 // Local
 #include "template.h"
@@ -309,7 +309,7 @@ CSSCustomDialog::CSSCustomDialog(QWidget *parent)
     //QStringList fonts;
     //KFontChooser::getFontList(fonts, 0);
     //fontFamily->addItems(fonts);
-    part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(QStringLiteral("text/html"), parent, this);
+    part = KParts::PartLoader::createPartInstanceForMimeType<KParts::ReadOnlyPart>(QStringLiteral("text/html"));
     QVBoxLayout *l = new QVBoxLayout(previewBox);
     l->addWidget(part->widget());
 }

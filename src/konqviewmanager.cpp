@@ -59,8 +59,9 @@ KonqViewManager::KonqViewManager(KonqMainWindow *mainWindow)
 KonqView *KonqViewManager::createFirstView(const QString &mimeType, const QString &serviceName)
 {
     //qCDebug(KONQUEROR_LOG) << serviceName;
-    KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
+    KPluginMetaData service;
+    PluginMetaDataVector partServiceOffers;
+    KService::List appServiceOffers;
     KonqViewFactory newViewFactory = createView(mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
     if (newViewFactory.isNull()) {
         qCDebug(KONQUEROR_LOG) << "No suitable factory found.";
@@ -93,10 +94,11 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     KonqFrame *splitFrame = currentView->frame();
     const QString serviceType = currentView->serviceType();
 
-    KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
+    KPluginMetaData service;
+    PluginMetaDataVector partServiceOffers;
+    KService::List appServiceOffers;
 
-    KonqViewFactory newViewFactory = createView(serviceType, currentView->service()->desktopEntryName(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
+    KonqViewFactory newViewFactory = createView(serviceType, currentView->service().pluginId(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
 
     if (newViewFactory.isNull()) {
         return nullptr;    //do not split at all if we can't create the new view
@@ -162,8 +164,9 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
 {
     //qCDebug(KONQUEROR_LOG);
 
-    KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
+    KPluginMetaData service;
+    PluginMetaDataVector partServiceOffers;
+    KService::List appServiceOffers;
 
     KonqViewFactory newViewFactory = createView(serviceType, serviceName, service, partServiceOffers, appServiceOffers);
 
@@ -206,8 +209,9 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
     printFullHierarchy();
 #endif
 
-    KService::Ptr service;
-    KService::List partServiceOffers, appServiceOffers;
+    KPluginMetaData service;
+    PluginMetaDataVector partServiceOffers;
+    KService::List appServiceOffers;
 
     Q_ASSERT(!serviceType.isEmpty());
 
@@ -222,7 +226,7 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
         if (currentView) {
             QMimeType mime = currentView->mimeType();
             if (mime.isValid() && mime.inherits(serviceType)) {
-                actualServiceName = currentView->service()->desktopEntryName();
+                actualServiceName = currentView->service().pluginId();
             }
         }
     }
@@ -778,41 +782,38 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
 
 KonqViewFactory KonqViewManager::createView(const QString &serviceType,
         const QString &serviceName,
-        KService::Ptr &service,
-        KService::List &partServiceOffers,
+        KPluginMetaData &service,
+        PluginMetaDataVector &partServiceOffers,
         KService::List &appServiceOffers,
         bool forceAutoEmbed)
 {
     KonqViewFactory viewFactory;
 
+    QString _serviceType(serviceType);
+    QString _serviceName(serviceName);
+
     if (serviceType.isEmpty() && m_pMainWindow->currentView()) {
         //clone current view
         KonqView *cv = m_pMainWindow->currentView();
-        QString _serviceType, _serviceName;
-        if (cv->service()->desktopEntryName() == QLatin1String("konq_sidebartng")) {
+        if (cv->service().pluginId() == QLatin1String("konq_sidebartng")) {
             _serviceType = QStringLiteral("text/html");
+            _serviceName.clear();
         } else {
             _serviceType = cv->serviceType();
-            _serviceName = cv->service()->desktopEntryName();
+            _serviceName = cv->service().pluginId();
         }
-
-        KonqFactory konqFactory;
-        viewFactory = konqFactory.createView(_serviceType, _serviceName,
-                                             &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
-    } else {
-        //create view with the given servicetype
-        KonqFactory konqFactory;
-        viewFactory = konqFactory.createView(serviceType, serviceName,
-                                             &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
     }
+
+    KonqFactory konqFactory;
+    viewFactory = konqFactory.createView(_serviceType, _serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed);
 
     return viewFactory;
 }
 
 KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                      KonqViewFactory &viewFactory,
-                                     const KService::Ptr &service,
-                                     const KService::List &partServiceOffers,
+                                     const KPluginMetaData &service,
+                                     const PluginMetaDataVector &partServiceOffers,
                                      const KService::List &appServiceOffers,
                                      const QString &serviceType,
                                      bool passiveMode,
@@ -836,8 +837,9 @@ KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode);
     //qCDebug(KONQUEROR_LOG) << "KonqView created - v=" << v << "v->part()=" << v->part();
 
-    QObject::connect(v, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
-                     m_pMainWindow, SLOT(slotPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
+    connect(v, &KonqView::sigPartChanged, m_pMainWindow, &KonqMainWindow::slotPartChanged);
+//     QObject::connect(v, SIGNAL(sigPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)),
+//                      m_pMainWindow, SLOT(slotPartChanged(KonqView*,KParts::ReadOnlyPart*,KParts::ReadOnlyPart*)));
 
     m_pMainWindow->insertChildView(v);
 
@@ -1132,8 +1134,9 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         }
         //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
 
-        KService::Ptr service;
-        KService::List partServiceOffers, appServiceOffers;
+        KPluginMetaData service;
+        PluginMetaDataVector partServiceOffers;
+        KService::List appServiceOffers;
 
         KonqFactory konqFactory;
         KonqViewFactory viewFactory = konqFactory.createView(serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/);

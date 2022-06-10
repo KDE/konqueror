@@ -14,7 +14,6 @@
 
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
-#include <KMimeTypeTrader>
 #include <KMessageBox>
 #include <KParts/ReadOnlyPart>
 #include <KParts/BrowserInterface>
@@ -25,6 +24,7 @@
 #include <KProtocolManager>
 #include <KDesktopFile>
 #include <KApplicationTrader>
+#include <KParts/PartLoader>
 
 #include <QDebug>
 #include <QArgument>
@@ -33,14 +33,23 @@
 #include <QWebEngineProfile>
 #include <QFileDialog>
 
+static KPluginMetaData preferredPart(const QString &mimeType) {
+    PluginMetaDataVector plugins = KParts::PartLoader::partsForMimeType(mimeType);
+    if (!plugins.isEmpty()) {
+        return plugins.first();
+    } else {
+        return KPluginMetaData();
+    }
+}
+
 bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
 {
     static QStringList s_mimeTypes;
     if (s_mimeTypes.isEmpty()) {
         QStringList names{QStringLiteral("kfmclient_html"), QStringLiteral("kfmclient_dir"), QStringLiteral("kfmclient_war")};
         for (const QString &name : names) {
-            KService::Ptr s = KService::serviceByDesktopName(name);
-            s_mimeTypes.append(s->mimeTypes());
+            KPluginMetaData md = findPartById(name);
+            s_mimeTypes.append(md.mimeTypes());
         }
         //The user may want to save xml files rather than embedding them
         //TODO: is there a better way to do this?
@@ -164,22 +173,22 @@ bool UrlLoader::decideEmbedOrSave()
 
     //Use WebEnginePart for konq: URLs even if it's not the default html engine
     if (KonqUrl::hasKonqScheme(m_url)) {
-        m_service = KService::serviceByDesktopName(webEngineName);
+        m_part = findPartById(webEngineName);
     } else {
         //Check whether the view can display the mimetype, but only if the URL hasn't been explicitly
         //typed by the user: in this case, use the preferred service. This is needed to avoid the situation
         //where m_view is a Kate part, the user enters the URL of a web page and the page is opened within
         //the Kate part because it can handle html files.
         if (m_view && m_request.typedUrl.isEmpty() && m_view->supportsMimeType(m_mimeType)) {
-            m_service = m_view->service();
+            m_part = m_view->service();
         } else {
             if (!m_request.serviceName.isEmpty()) {
                 // If the service name has been set by the "--part" command line argument
                 // (detected in handleCommandLine() in konqmain.cpp), then use it as is.
-                m_service = KService::serviceByStorageId(m_request.serviceName);
+                m_part = findPartById(m_request.serviceName);
             } else {
                 // Otherwise, use the preferred service for the MIME type.
-                m_service = KMimeTypeTrader::self()->preferredService(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
+                m_part = preferredPart(m_mimeType);
             }
         }
     }
@@ -191,20 +200,20 @@ bool UrlLoader::decideEmbedOrSave()
      * is true, use the second preferred service (if any); otherwise return false. This will offer the user
      * the option to open or save, instead.
      */
-    if (m_dontPassToWebEnginePart && m_service->desktopEntryName() == webEngineName) {
-        KService::List services = KMimeTypeTrader::self()->query(m_mimeType, QStringLiteral("KParts/ReadOnlyPart"));
-        auto findService = [webEngineName](KService::Ptr s){return s->desktopEntryName() != webEngineName;};
-        QList<KService::Ptr>::const_iterator serviceToUse = std::find_if(services.constBegin(), services.constEnd(), findService);
-        if (serviceToUse != services.constEnd()) {
-            m_service = *serviceToUse;
+    if (m_dontPassToWebEnginePart && m_part.pluginId() == webEngineName) {
+        PluginMetaDataVector parts = KParts::PartLoader::partsForMimeType(m_mimeType);
+        auto findPart = [webEngineName](const KPluginMetaData &md){return md.pluginId() != webEngineName;};
+        PluginMetaDataVector::const_iterator partToUse = std::find_if(parts.constBegin(), parts.constEnd(), findPart);
+        if (partToUse != parts.constEnd()) {
+            m_part = *partToUse;
         } else {
-            m_service = nullptr;
+            m_part = KPluginMetaData();
         }
     }
 
     //If we can't find a service, return false, so that the caller can use decideOpenOrSave to allow the
     //user the possibility of opening the file, since embedding wasn't possibile
-    if (!m_service || !m_service->isValid()) {
+    if (!m_part.isValid()) {
         return false;
     }
 
@@ -218,10 +227,10 @@ bool UrlLoader::decideEmbedOrSave()
     }
 
     if (m_action == OpenUrlAction::Embed) {
-        m_request.serviceName = m_service->desktopEntryName();
+        m_request.serviceName = m_part.pluginId();
     }
 
-    m_ready = m_service || m_action != OpenUrlAction::Embed;
+    m_ready = m_part.isValid() || m_action != OpenUrlAction::Embed;
     return true;
 }
 
@@ -241,7 +250,7 @@ void UrlLoader::decideOpenOrSave()
     m_action = answerWithService.first;
     m_service = answerWithService.second;
     if (m_action == OpenUrlAction::Open && !m_service) {
-        m_service = KApplicationTrader::preferredService(m_mimeType);
+        m_service= KApplicationTrader::preferredService(m_mimeType);
     }
 }
 
@@ -249,7 +258,7 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
     if (!m_url.isLocalFile() || !KRun::isExecutable(m_mimeType)) {
         return OpenUrlAction::UnknwonAction;
     }
-    bool canDisplay = !KMimeTypeTrader::self()->query(m_mimeType).isEmpty();
+    bool canDisplay = !KParts::PartLoader::partsForMimeType(m_mimeType).isEmpty();
 
     KMessageBox::ButtonCode code;
     KGuiItem executeGuiItem(i18nc("Execute an executable file", "Execute it"));
@@ -525,8 +534,9 @@ QString UrlLoader::partForLocalFile(const QString& path)
 {
     QMimeDatabase db;
     QString mimetype = db.mimeTypeForFile(path).name();
-    KService::Ptr service = KMimeTypeTrader::self()->preferredService(mimetype, QStringLiteral("KParts/ReadOnlyPart"));
-    return service ? service->name() : QString();
+
+    KPluginMetaData plugin = preferredPart(mimetype);
+    return plugin.pluginId();
 }
 
 UrlLoader::ViewToUse UrlLoader::viewToUse() const

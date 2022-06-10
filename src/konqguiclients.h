@@ -7,13 +7,15 @@
 #ifndef __konq_guiclients_h__
 #define __konq_guiclients_h__
 
-#include <kactioncollection.h>
-#include <konq_popupmenu.h>
+#include "pluginmetadatautils.h"
+#include "konq_popupmenu.h"
+
+#include <KActionCollection>
+#include <KXMLGUIClient>
+#include <KPluginMetaData>
+
 #include <QObject>
 #include <QHash>
-
-#include <kxmlguiclient.h>
-#include <kservice.h>
 
 class QAction;
 class KonqMainWindow;
@@ -28,7 +30,7 @@ class PopupMenuGUIClient : public QObject
     Q_OBJECT
 public:
     // The action groups are inserted into @p actionGroups
-    PopupMenuGUIClient(const KService::List &embeddingServices,
+    PopupMenuGUIClient(const PluginMetaDataVector &embeddingServices,
                        KonqPopupMenu::ActionGroupMap &actionGroups,
                        QAction *showMenuBar, QAction *stopFullScreen);
     ~PopupMenuGUIClient() override;
@@ -39,16 +41,16 @@ public:
     }
 
 signals:
-    void openEmbedded(KService::Ptr service);
+    void openEmbedded(const KPluginMetaData &part);
 
 private slots:
     void slotOpenEmbedded();
 
 private:
-    QAction *addEmbeddingService(int idx, const QString &name, const KService::Ptr &service);
+    QAction *addEmbeddingService(int idx, const QString &name, const KPluginMetaData &service);
 
     KActionCollection m_actionCollection;
-    KService::List m_embeddingServices;
+    PluginMetaDataVector  m_embeddingServices;
 };
 
 class ToggleViewGUIClient : public QObject

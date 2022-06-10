@@ -23,11 +23,12 @@
 
 // KDE
 #include <kbuildsycocaprogressdialog.h>
-#include <kmimetypetrader.h>
-#include <kservice.h>
+// #include <kmimetypetrader.h>
+// #include <kservice.h>
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KMessageWidget>
+#include <KParts/PartLoader>
 
 // Local
 #include "ui_advancedTabOptions.h"
@@ -212,15 +213,20 @@ void KKonqGeneralOptions::load()
     m_webEngineCombo->clear();
     // ## Well, the problem with using the trader to find the available parts, is that if a user
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
-    const KService::List partOfferList = KMimeTypeTrader::self()->query(QStringLiteral("text/html"), QStringLiteral("KParts/ReadOnlyPart"), QStringLiteral("not ('KParts/ReadWritePart' in ServiceTypes)"));
-    // Sorted list, so the first one is the preferred one, no need for a setCurrentIndex.
-    Q_FOREACH (const KService::Ptr partService, partOfferList) {
-        // We want only the HTML-capable parts, not any text/plain part (via inheritance)
-        // This is a small "private inheritance" hack, pending a more general solution
-        if (!partService->hasMimeType(QStringLiteral("text/plain"))) {
-            m_webEngineCombo->addItem(QIcon::fromTheme(partService->icon()), partService->name(),
-                                      QVariant(partService->storageId()));
-        }
+    QVector<KPluginMetaData> allParts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
+    QVector<KPluginMetaData> partOfferList;
+    auto filter = [](const KPluginMetaData &md){
+        return !md.serviceTypes().contains(QStringLiteral("KParts/ReadWritePart")) && !md.mimeTypes().contains(QStringLiteral("text/plain"));
+    };
+    std::copy_if(allParts.constBegin(), allParts.constEnd(), std::back_inserter(partOfferList), filter);
+
+    //Remove duplicate entries
+    //TODO port away from query: are the following 3 lines really needed? Is it correct that the vector returned by partsForMimeType contains the same part several times?
+    std::sort(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
+    auto unique = std::unique(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
+    partOfferList.erase(unique, partOfferList.end());
+    for (const KPluginMetaData &md : partOfferList) {
+        m_webEngineCombo->addItem(QIcon::fromTheme(md.iconName()), md.name(), md.pluginId());
     }
 
     KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
