@@ -94,6 +94,20 @@ protected:
      */
     void mousePressEvent(QMouseEvent *e) override;
 
+    /**
+     * Captures context menu requests and ignores any over the icon.
+     */
+    void contextMenuEvent(QContextMenuEvent *e) override;
+
+private:
+    /**
+     * See whether a mouse click is over the search engine icon.
+     *
+     * @param x X coordinate of mouse event
+     * @return @c true if the click was over the icon
+     */
+    bool overIcon(int x);
+
 private Q_SLOTS:
     void historyCleared();
 

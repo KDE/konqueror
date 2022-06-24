@@ -579,12 +579,29 @@ int SearchBarCombo::findHistoryItem(const QString &searchText)
     return -1;
 }
 
-void SearchBarCombo::mousePressEvent(QMouseEvent *e)
+bool SearchBarCombo::overIcon(int x)
 {
     QStyleOptionComplex opt;
-    int x0 = QStyle::visualRect(layoutDirection(), style()->subControlRect(QStyle::CC_ComboBox, &opt, QStyle::SC_ComboBoxEditField, this), rect()).x();
+    const int x0 = QStyle::visualRect(layoutDirection(), style()->subControlRect(QStyle::CC_ComboBox, &opt, QStyle::SC_ComboBoxEditField, this), rect()).x();
+    return (x > x0 + 2 && x < lineEdit()->x());
+}
 
-    if (e->x() > x0 + 2 && e->x() < lineEdit()->x()) {
+void SearchBarCombo::contextMenuEvent(QContextMenuEvent *e)
+{
+    if (overIcon(e->x())) {
+        // Do not pass on the event, so that the combo box context menu
+        // does not pop up over the search engine selection menu.  That
+        // menu will have been triggered by the iconClicked() signal emitted
+        // in mousePressEvent() below.
+        e->accept();
+    } else {
+        KHistoryComboBox::contextMenuEvent(e);
+    }
+}
+
+void SearchBarCombo::mousePressEvent(QMouseEvent *e)
+{
+    if (overIcon(e->x())) {
         emit iconClicked();
         e->accept();
     } else {
