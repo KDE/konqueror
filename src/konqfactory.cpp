@@ -132,15 +132,15 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
         // with khtml or another Browser/View part in case of an error...
     } else {
         for (const KPluginMetaData &md : offers) {
-            // Allowed as default ?
-            if (!md.value(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"), true)) {
+            // Allowed as default? Assume it is, unless explicitly stated otherwise
+            if (md.value(QStringLiteral("X-KDE-BrowserView-AllowAsDefault"), true)) {
                 viewFactory = tryLoadingService(md);
                 if (!viewFactory.isNull()) {
                     service = md;
                     break;
                 }
             } else {
-                qCDebug(KONQUEROR_LOG) << "Not allowed as default " << service.name();
+                qCDebug(KONQUEROR_LOG) << "Not allowed as default " << md.name();
             }
         }
     }
