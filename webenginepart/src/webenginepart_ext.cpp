@@ -21,7 +21,6 @@
 
 #include <KDesktopFile>
 #include <KConfigGroup>
-#include <KToolInvocation>
 #include <KSharedConfig>
 #include <KProtocolInfo>
 #include <QInputDialog>
@@ -33,6 +32,7 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KParts/BrowserRun>
+#include <KEMailClientLauncherJob>
 
 #include <QBuffer>
 #include <QVariant>
@@ -392,13 +392,13 @@ void WebEngineBrowserExtension::slotSendImage()
         return;
     }
 
-    QStringList urls;
-    urls.append(view()->contextMenuResult().mediaUrl().path());
+    QList<QUrl> urls = {view()->contextMenuResult().mediaUrl()};
     const QString subject = view()->contextMenuResult().mediaUrl().path();
-    KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
-                                  QString(), //body
-                                  QString(),
-                                  urls); // attachments
+
+    auto *job = new KEMailClientLauncherJob;
+    job->setSubject(subject);
+    job->setAttachments(urls);
+    job->start();
 }
 
 void WebEngineBrowserExtension::slotCopyImageURL()

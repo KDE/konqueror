@@ -6,7 +6,6 @@
 
 #include "kfmclient.h"
 
-#include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 
