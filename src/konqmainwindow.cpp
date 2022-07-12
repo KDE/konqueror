@@ -4682,8 +4682,8 @@ void KonqMainWindow::updateOpenWithActions()
 void KonqMainWindow::updateViewModeActions()
 {
     unplugViewModeActions();
-    Q_FOREACH (QAction *action, m_viewModesGroup->actions()) {
-        Q_FOREACH (QWidget *w, action->associatedWidgets()) {
+    for (QAction *action : m_viewModesGroup->actions()) {
+        for (QWidget *w : action->associatedWidgets()) {
             w->removeAction(action);
         }
         delete action;
@@ -4699,54 +4699,51 @@ void KonqMainWindow::updateViewModeActions()
 
 //TODO port away from query: find out how to replace all of this, since I don't think that KPluginMetaData provides
 //something like KService::actions
-#if 0
     m_viewModeMenu = new KActionMenu(i18nc("@action:inmenu View", "&View Mode"), this);
-    //actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
+    actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
-    KService::List::ConstIterator it = services.constBegin();
-    const KService::List::ConstIterator end = services.constEnd();
-    for (; it != end; ++it) {
-        const KService::Ptr service = *it;
+    for (const KPluginMetaData & md : services) {
+        const QString id = md.pluginId();
+        bool isCurrentView = id == m_currentView->service().pluginId();
 
-        const QString desktopEntryName = service->desktopEntryName();
-        bool bIsCurrentView = desktopEntryName == m_currentView->service()->desktopEntryName();
+        //TODO port away from query: assume that the "actionsFile" entry in the KPluginMetaData contains the path of a .desktop file
+        //containing the actions specification, as the old part .desktop file did
+        QString actionDesktopFile = md.value("actionsFile", QString());
 
-        const QList<KServiceAction> actions = service->actions();
-        if (!actions.isEmpty()) {
+        if (!actionDesktopFile.isEmpty()) {
+            //TODO port away from query: decide how to find the desktop file
+            KDesktopFile df(QStandardPaths::DataLocation, actionDesktopFile);
+            QStringList actionNames = df.readActions();
 
-            // The service provides several view modes, like DolphinPart
-            // -> create one action per view mode
-            Q_FOREACH (const KServiceAction &serviceAction, actions) {
-                // Create a KToggleAction for each view mode, and plug it into the menu
-                KToggleAction *action = new KToggleAction(QIcon::fromTheme(serviceAction.icon()), serviceAction.text(), this);
-                //actionCollection()->addAction(desktopEntryName /*not unique!*/, action);
-                action->setObjectName(desktopEntryName + QLatin1String("-viewmode"));
-                action->setData(QVariant(serviceAction.name()));
+            for (const QString &name : actionNames) {
+                KConfigGroup grp = df.actionGroup(name);
+                QString text = grp.readEntry("Name", QString());
+                QString exec = grp.readEntry("Exec", QString());
+                if (name.isEmpty()) {
+                    qCDebug(KONQUEROR_LOG) << "File" << df.fileName() << "doesn't contain a \"name\" entry";
+                    continue;
+                }
+                KToggleAction *action = new KToggleAction(QIcon::fromTheme(grp.readEntry("Icon", QString())), text, this);
+//                 actionCollection()->addAction(id /*not unique!*/, action);
+                action->setObjectName(id + QLatin1String("-viewmode"));
+                action->setData(name);
                 action->setActionGroup(m_viewModesGroup);
                 m_viewModeMenu->menu()->addAction(action);
-                if (bIsCurrentView && m_currentView->internalViewMode() == serviceAction.name()) {
+                if (isCurrentView && m_currentView->internalViewMode() == name) {
                     action->setChecked(true);
                 }
             }
-
         } else {
-            // The service only provides one view mode (common case)
-
-            QString serviceText = service->genericName();
-            if (serviceText.isEmpty()) {
-                serviceText = service->name();
-            }
-
-            // Create a KToggleAction for this view mode, and plug it into the menu
-            KToggleAction *action = new KToggleAction(QIcon::fromTheme(service->icon()), serviceText, this);
-            // NOTE: "-viewmode" is appended to desktopEntryName to avoid overwritting existing
+            //TODO port away from query: is there a replacement for KService::genericName?
+            QString text = md.name();
+            KToggleAction *action = new KToggleAction(QIcon::fromTheme(md.iconName()), text, this);
+            // NOTE: "-viewmode" is appended to id to avoid overwriting existing
             // action, e.g. konsolepart added through ToggleViewGUIClient in the ctor will be
             // overwritten by the view mode konsolepart action added here.  #266517.
-            actionCollection()->addAction(desktopEntryName + QLatin1String("-viewmode"), action);
+            actionCollection()->addAction(id + QLatin1String("-viewmode"), action);
             action->setActionGroup(m_viewModesGroup);
             m_viewModeMenu->menu()->addAction(action);
-
-            action->setChecked(bIsCurrentView);
+            action->setChecked(isCurrentView);
         }
     }
 
@@ -4757,7 +4754,6 @@ void KonqMainWindow::updateViewModeActions()
             && m_viewModeMenu) {
         plugViewModeActions();
     }
-#endif
 }
 
 void KonqMainWindow::slotInternalViewModeChanged()
