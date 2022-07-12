@@ -17,8 +17,6 @@
 #include <QWebEngineView>
 #include <QJsonDocument>
 
-
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
 namespace {
 KPluginMetaData dummyMetaData()
 {
@@ -31,7 +29,6 @@ KPluginMetaData dummyMetaData()
     return KPluginMetaData(jo, QString());
 }
 }
-#endif
 
 class WebEnginePartApiTest : public QObject
 {
@@ -53,11 +50,7 @@ void WebEnginePartApiTest::initTestCase()
 void WebEnginePartApiTest::shouldHaveBrowserExtension()
 {
     // GIVEN
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
-#else
-    WebEnginePart part;
-#endif
 
     // WHEN
     KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
@@ -69,11 +62,7 @@ void WebEnginePartApiTest::shouldHaveBrowserExtension()
 void WebEnginePartApiTest::shouldEmitStartedAndCompleted()
 {
     // GIVEN
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
-#else
-    WebEnginePart part;
-#endif
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
@@ -96,11 +85,7 @@ void WebEnginePartApiTest::shouldEmitStartedAndCompleted()
 void WebEnginePartApiTest::shouldEmitSetWindowCaption()
 {
     // GIVEN
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
-#else
-    WebEnginePart part;
-#endif
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
@@ -119,11 +104,7 @@ void WebEnginePartApiTest::shouldEmitSetWindowCaption()
 void WebEnginePartApiTest::shouldEmitOpenUrlNotifyOnClick()
 {
     // GIVEN
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
-#else
-    WebEnginePart part;
-#endif
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
     QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);

@@ -43,11 +43,7 @@ UAChangerPlugin::UAChangerPlugin(QObject *parent,
                                 i18n("Change Browser Identification"),
                                 actionCollection());
     actionCollection()->addAction("changeuseragent", m_pUAMenu);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     m_pUAMenu->setPopupMode(QToolButton::InstantPopup);
-#else
-    m_pUAMenu->setDelayed(false);
-#endif
     connect(m_pUAMenu->menu(), &QMenu::aboutToShow, this, &UAChangerPlugin::slotAboutToShow);
 
     if (parent!=nullptr) {

@@ -49,10 +49,6 @@ public:
     KonqBookmarkMenu(KBookmarkManager *mgr, KBookmarkOwner *owner, KBookmarkActionMenu *parentMenu, QString parentAddress)
         : KBookmarkMenu(mgr, owner, parentMenu->menu(), parentAddress)
     {
-//KBookmarkMenu doesn't create an action collection only in version 5.69.0
-#if KBOOKMARKS_VERSION == QT_VERSION_CHECK(5, 69, 0)
-        m_actionCollection = new KActionCollection(this);
-#endif
     }
 
 protected:

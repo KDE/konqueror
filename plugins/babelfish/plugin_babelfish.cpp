@@ -43,11 +43,7 @@ PluginBabelFish::PluginBabelFish(QObject *parent,
     m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("babelfish")), i18n("Translate Web &Page"),
                              actionCollection());
     actionCollection()->addAction(QStringLiteral("translatewebpage"), m_menu);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     m_menu->setPopupMode(QToolButton::InstantPopup);
-#else
-    m_menu->setDelayed(false);
-#endif
     connect(m_menu->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShow()));
 

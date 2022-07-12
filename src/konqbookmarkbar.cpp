@@ -182,11 +182,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup &parent)
             }
         } else {
             KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, nullptr);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
             action->setPopupMode(QToolButton::InstantPopup);
-#else
-            action->setDelayed(false);
-#endif
             if (m_toolBar) {
                 m_toolBar->addAction(action);
             }

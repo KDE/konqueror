@@ -13,11 +13,7 @@
 #include <QMenu>
 #include <kprotocolmanager.h>
 #include <kpluginfactory.h>
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
 #include <KPluginMetaData>
-#else
-#include <kaboutdata.h>
-#endif
 #include <ktoggleaction.h>
 #include <kactioncollection.h>
 #include <kselectaction.h>
@@ -37,24 +33,14 @@
 K_PLUGIN_CLASS_WITH_JSON(SettingsPlugin, "khtmlsettingsplugin.json")
 
 SettingsPlugin::SettingsPlugin(QObject *parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                                const KPluginMetaData& metaData,
-#endif
                                const QVariantList &)
     : KonqParts::Plugin(parent), mConfig(nullptr)
 {
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setMetaData(metaData);
-#else
-    setComponentData(KAboutData(QStringLiteral("khtmlsettingsplugin"), i18n("HTML Settings"), QStringLiteral("1.0")));
-#endif
     KActionMenu *menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("configure")), i18n("HTML Settings"), actionCollection());
     actionCollection()->addAction(QStringLiteral("action menu"), menu);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     menu->setPopupMode(QToolButton::InstantPopup);
-#else
-    menu->setDelayed(false);
-#endif
 
     KToggleAction *action = actionCollection()->add<KToggleAction>(QStringLiteral("javascript"));
     action->setText(i18n("Java&Script"));
@@ -100,11 +86,7 @@ SettingsPlugin::SettingsPlugin(QObject *parent,
     policies += i18n("&Use Cache if Possible");
     policies += i18n("&Offline Browsing Mode");
     sAction->setItems(policies);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 78, 0)
     connect(sAction, &KSelectAction::indexTriggered, this, &SettingsPlugin::cachePolicyChanged);
-#else
-    connect(sAction, SIGNAL(triggered(int)), SLOT(cachePolicyChanged(int)));
-#endif
 
     menu->addAction(sAction);
 

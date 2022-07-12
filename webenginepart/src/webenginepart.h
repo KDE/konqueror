@@ -53,9 +53,7 @@ class KWEBENGINEPARTLIB_EXPORT WebEnginePart : public KParts::ReadOnlyPart
     Q_PROPERTY( bool modified READ isModified )
 public:
     explicit WebEnginePart(QWidget* parentWidget, QObject* parent,
-#if KPARTS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
                          const KPluginMetaData& metaData,
-#endif
                          const QByteArray& cachedHistory = QByteArray(),
                          const QStringList& = QStringList());
     ~WebEnginePart() override;

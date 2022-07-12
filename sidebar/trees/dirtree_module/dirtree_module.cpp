@@ -31,12 +31,7 @@ KonqSidebarDirTreeModule::~KonqSidebarDirTreeModule()
 {
     // KDirLister may still emit canceled while being deleted.
     if (m_dirLister) {
-#if KIO_VERSION < QT_VERSION_CHECK(5, 79, 0)
-        disconnect(m_dirLister, SIGNAL(canceled(QUrl)),
-                   this, SLOT(slotListingStopped(QUrl)));
-#else
         disconnect(m_dirLister, &KCoreDirLister::listingDirCanceled, this, &KonqSidebarDirTreeModule::slotListingStopped);
-#endif
         delete m_dirLister;
     }
 }
@@ -291,15 +286,8 @@ void KonqSidebarDirTreeModule::openSubFolder(KonqSidebarTreeItem *item)
         connect(m_dirLister, SIGNAL(deleteItem(KFileItem)),
                 this, SLOT(slotDeleteItem(KFileItem)));
 
-#if KIO_VERSION < QT_VERSION_CHECK(5, 79, 0)
-        connect(m_dirLister, SIGNAL(completed(QUrl)),
-                this, SLOT(slotListingStopped(QUrl)));
-        connect(m_dirLister, SIGNAL(canceled(QUrl)),
-                this, SLOT(slotListingStopped(QUrl)));
-#else
         connect(m_dirLister, &KCoreDirLister::listingDirCompleted, this, &KonqSidebarDirTreeModule::slotListingStopped);
         connect(m_dirLister, &KCoreDirLister::listingDirCanceled, this, &KonqSidebarDirTreeModule::slotListingStopped);
-#endif
 
         connect(m_dirLister, SIGNAL(redirection(QUrl,QUrl)),
                 this, SLOT(slotRedirection(QUrl,QUrl)));
