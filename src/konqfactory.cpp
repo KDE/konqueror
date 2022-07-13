@@ -178,13 +178,28 @@ void KonqFactory::getOffers(const QString &serviceType, PluginMetaDataVector *pa
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
         //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
-        qDebug() << KPluginMetaData::findPlugins(QString(), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
         *partServiceOffers = KPluginMetaData::findPlugins(QString(), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
         return;
     }
 
     if (partServiceOffers) {
-        *partServiceOffers = KParts::PartLoader::partsForMimeType(serviceType);
+        PluginMetaDataVector offers = KParts::PartLoader::partsForMimeType(serviceType);
+
+        //If a part has both JSON metadata and a .desktop file, partsForMimeType return the plugin twice. To avoid this, we remove the duplicate entries
+        //We can't use std::unique because it requires the vector to be sorted but we can't do that because the entries are sorted according to user
+        //preferences (we only keep the first entry for each plugin).
+        //TODO: remove when .desktop files for parts aren't supported anymore (KF6)
+        PluginMetaDataVector uniqueOffers;
+        for (const KPluginMetaData &md : offers) {
+            if (!std::any_of(uniqueOffers.constBegin(), uniqueOffers.constEnd(), [md](const KPluginMetaData &md2){return md.pluginId() == md2.pluginId();})) {
+                uniqueOffers.append(md);
+            }
+        }
+
+        *partServiceOffers = uniqueOffers;
+        for (auto md : *partServiceOffers) {
+            qDebug() << md.pluginId();
+        }
     }
     if (appServiceOffers) {
         *appServiceOffers = KApplicationTrader::queryByMimeType(serviceType, [](const KService::Ptr &s){return !s->desktopEntryName().startsWith("kfmclient");});
