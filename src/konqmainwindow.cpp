@@ -134,6 +134,7 @@
 #include <sonnet/configdialog.h>
 #include <kwindowsystem.h>
 #include <netwm.h>
+#include <kio_version.h>
 
 #include <kauthorized.h>
 #include <QDBusConnection>
@@ -1716,7 +1717,12 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
             "kcm_webshortcuts",
             "kcm_proxy",
             "konqueror_kcms/kcm_history",
+#if KIO_VERSION >= QT_VERSION_CHECK(5,95,0)
+
+            "plasma/kcms/systemsettings_qwidgets/kcm_cookies",
+#else
             "kcm_cookies",
+#endif
             "konqueror_kcms/khtml_java_js",
         };
         for (uint i = 0; i < sizeof(webModules) / sizeof(char *); ++i) {
