@@ -195,11 +195,7 @@ void KonqFactory::getOffers(const QString &serviceType, PluginMetaDataVector *pa
                 uniqueOffers.append(md);
             }
         }
-
         *partServiceOffers = uniqueOffers;
-        for (auto md : *partServiceOffers) {
-            qDebug() << md.pluginId();
-        }
     }
     if (appServiceOffers) {
         *appServiceOffers = KApplicationTrader::queryByMimeType(serviceType, [](const KService::Ptr &s){return !s->desktopEntryName().startsWith("kfmclient");});

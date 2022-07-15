@@ -4697,8 +4697,6 @@ void KonqMainWindow::updateViewModeActions()
         return;
     }
 
-//TODO port away from query: find out how to replace all of this, since I don't think that KPluginMetaData provides
-//something like KService::actions
     m_viewModeMenu = new KActionMenu(i18nc("@action:inmenu View", "&View Mode"), this);
     actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
@@ -4708,10 +4706,9 @@ void KonqMainWindow::updateViewModeActions()
 
         //TODO port away from query: assume that the "actionsFile" entry in the KPluginMetaData contains the path of a .desktop file
         //containing the actions specification, as the old part .desktop file did
-        QString actionDesktopFile = md.value("actionsFile", QString());
+        QString actionDesktopFile = md.value("X-Konqueror-Actions-File", QString());
 
         if (!actionDesktopFile.isEmpty()) {
-            //TODO port away from query: decide how to find the desktop file
             KDesktopFile df(QStandardPaths::DataLocation, actionDesktopFile);
             QStringList actionNames = df.readActions();
 
