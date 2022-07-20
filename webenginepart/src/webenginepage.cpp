@@ -894,6 +894,10 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
         webenginePart->setPage(this);
         //Set the create new window flag to false...
         m_createNewWindow = false;
+        if (webenginePart) {
+            QTimer::singleShot(0, [webenginePart, url](){emit webenginePart->browserExtension()->openUrlRequest(url);});
+            return false;
+        }
 
     }
 
