@@ -262,8 +262,13 @@ void SearchBarPlugin::setIcon()
     m_searchCombo->setIcon(m_searchIcon);
 
     // Set the placeholder text to be the search engine name...
-    if (m_searchProviders.contains(m_currentEngine)) {
-        m_searchCombo->lineEdit()->setPlaceholderText(m_searchProviders.value(m_currentEngine).name());
+
+    if (m_searchMode == FindInThisPage) {
+        m_searchCombo->lineEdit()->setPlaceholderText(i18n("Find in Page..."));
+    } else {
+        if (m_searchProviders.contains(m_currentEngine)) {
+            m_searchCombo->lineEdit()->setPlaceholderText(m_searchProviders.value(m_currentEngine).name());
+        }
     }
 }
 
