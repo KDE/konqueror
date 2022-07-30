@@ -38,11 +38,8 @@
 #include <KPluginFactory>
 #include <KProtocolInfo>
 #include <KToggleAction>
-<<<<<<< Updated upstream
 #include <konq_kpart_plugin.h>
-=======
 #include <KToolInvocation>
->>>>>>> Stashed changes
 
 #define QL1S(x) QLatin1String(x)
 
