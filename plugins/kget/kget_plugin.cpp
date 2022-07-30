@@ -38,7 +38,11 @@
 #include <KPluginFactory>
 #include <KProtocolInfo>
 #include <KToggleAction>
+<<<<<<< Updated upstream
 #include <konq_kpart_plugin.h>
+=======
+#include <KToolInvocation>
+>>>>>>> Stashed changes
 
 #define QL1S(x) QLatin1String(x)
 
@@ -167,7 +171,7 @@ void KGetPlugin::slotShowSelectedLinks()
 void KGetPlugin::slotImportLinks()
 {
     if (m_linkList.isEmpty()) {
-        KMessageBox::sorry(partWidget(parent()), i18n("No downloadable links were found."), i18n("No Links"));
+        KMessageBox::error(partWidget(parent()), i18n("No downloadable links were found."), i18n("No Links"));
         return;
     }
 

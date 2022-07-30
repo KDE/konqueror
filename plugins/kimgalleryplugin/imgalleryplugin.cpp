@@ -59,13 +59,13 @@ void KImGalleryPlugin::slotExecute()
 {
     m_progressDlg = nullptr;
     if (!parent()) {
-        KMessageBox::sorry(nullptr, i18n("Could not create the plugin, please report a bug."));
+        KMessageBox::error(nullptr, i18n("Could not create the plugin, please report a bug."));
         return;
     }
     m_part = qobject_cast<KParts::ReadOnlyPart *>(parent());
 
     if (!m_part || !m_part->url().isLocalFile()) {  //TODO support remote URLs too?
-        KMessageBox::sorry(m_part->widget(), i18n("Creating an image gallery works only on local folders."));
+        KMessageBox::error(m_part->widget(), i18n("Creating an image gallery works only on local folders."));
         return;
     }
 
@@ -108,7 +108,7 @@ bool KImGalleryPlugin::createDirectory(const QDir &dir, const QString &imgGaller
     if (!thumb_dir.exists()) {
         thumb_dir.setPath(imgGalleryDir);
         if (!(thumb_dir.mkdir(dirName/*, false*/))) {
-            KMessageBox::sorry(m_part->widget(), i18n("Could not create folder: %1", thumb_dir.path()));
+            KMessageBox::error(m_part->widget(), i18n("Could not create folder: %1", thumb_dir.path()));
             return false;
         } else {
             thumb_dir.setPath(imgGalleryDir + '/' + dirName + '/');
@@ -272,7 +272,7 @@ bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName,
             if (!subDir.exists()) {
                 subDir.setPath(directory(url));
                 if (!(subDir.mkdir(currentDir/*, false*/))) {
-                    KMessageBox::sorry(m_part->widget(), i18n("Could not create folder: %1", subDir.path()));
+                    KMessageBox::error(m_part->widget(), i18n("Could not create folder: %1", subDir.path()));
                     continue;
                 } else {
                     subDir.setPath(directory(url) + '/' + currentDir);
@@ -341,7 +341,7 @@ bool KImGalleryPlugin::createHtml(const QUrl &url, const QString &sourceDirName,
         if (!path.endsWith("/")) {
             path += '/';
         }
-        KMessageBox::sorry(m_part->widget(), i18n("Could not open file: %1", path));
+        KMessageBox::error(m_part->widget(), i18n("Could not open file: %1", path));
         return false;
     }
 }
@@ -436,7 +436,7 @@ void KImGalleryPlugin::loadCommentFile()
         qCDebug(IMAGEGALLERY_LOG) << "File closed.";
         delete m_textStream;
     } else {
-        KMessageBox::sorry(m_part->widget(), i18n("Could not open file: %1", m_configDlg->getCommentFile()));
+        KMessageBox::error(m_part->widget(), i18n("Could not open file: %1", m_configDlg->getCommentFile()));
         m_useCommentFile = false;
     }
 }

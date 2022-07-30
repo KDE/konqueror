@@ -13,7 +13,6 @@
 
 #include <algorithm>
 
-#include <QWebEngineCertificateError>
 
 #include <KSharedConfig>
 #include <KConfigGroup>

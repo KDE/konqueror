@@ -73,7 +73,6 @@
 #include <QMenu>
 #include <QStatusBar>
 #include <QWebEngineScriptCollection>
-#include <QWebEngineScript>
 #include <QDir>
 
 #include "utils.h"

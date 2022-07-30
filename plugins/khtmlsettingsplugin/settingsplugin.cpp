@@ -176,7 +176,7 @@ void SettingsPlugin::toggleCookies(bool checked)
         QDBusReply<void> reply = kded.call(QStringLiteral("setDomainAdvice"), part->url().url(), advice);
 
         if (!reply.isValid())
-            KMessageBox::sorry(part->widget(),
+            KMessageBox::error(part->widget(),
                                i18n("The cookie setting could not be changed, because the "
                                     "cookie daemon could not be contacted."),
                                i18nc("@title:window", "Cookie Settings Unavailable"));

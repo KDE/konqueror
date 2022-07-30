@@ -23,7 +23,6 @@
 #include "webenginepartcertificateerrordlg.h"
 #include "ui_webenginepartcertificateerrordlg.h"
 
-#include "webenginepage.h"
 
 #include <KSslCertificateBox>
 

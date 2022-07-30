@@ -38,7 +38,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
 {
     KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(parent());
     if (!part)  {
-        KMessageBox::sorry(nullptr, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
+        KMessageBox::error(nullptr, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
         return;
     }
 
@@ -48,7 +48,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
         url = statJob->mostLocalUrl();
     }
     if (!url.isLocalFile()) {
-        KMessageBox::sorry(part->widget(), i18n("Executing shell commands works only on local directories."));
+        KMessageBox::error(part->widget(), i18n("Executing shell commands works only on local directories."));
         return;
     }
 

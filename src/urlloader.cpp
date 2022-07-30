@@ -20,7 +20,6 @@
 #include <KParts/BrowserInterface>
 #include <KParts/BrowserExtension>
 #include <KParts/PartLoader>
-#include <KParts/BrowserOpenOrSaveQuestion>
 #include <KIO/FileCopyJob>
 #include <KJobWidgets>
 #include <KProtocolManager>

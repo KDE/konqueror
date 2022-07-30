@@ -133,7 +133,7 @@ void FSView::setPath(const QString &p)
     QUrl u = QUrl::fromLocalFile(_path);
     if (!KUrlAuthorized::authorizeUrlAction(QStringLiteral("list"), QUrl(), u)) {
         QString msg = KIO::buildErrorString(KIO::ERR_ACCESS_DENIED, u.toDisplayString());
-        KMessageBox::sorry(this, msg);
+        KMessageBox::error(this, msg);
     }
 
     ScanDir *d = _sm.setTop(_path);
