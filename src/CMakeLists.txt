@@ -113,10 +113,6 @@ target_link_libraries(kdeinit_konqueror
    KF5::SonnetUi
 )
 
-if (X11_FOUND)
-  target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
-endif ()
-
 if (KActivities_FOUND)
   target_link_libraries(kdeinit_konqueror KF5::Activities)
 endif (KActivities_FOUND)
