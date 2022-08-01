@@ -8,7 +8,6 @@
 
 #ifndef PLUGINMETADATAUTILS_H
 #define PLUGINMETADATAUTILS_H
-#endif //PLUGINMETADATAUTILS_H
 
 #include <KPluginMetaData>
 
@@ -19,3 +18,5 @@ KPluginMetaData findPartById(const QString &id);
 QDebug operator<<(QDebug debug, const KPluginMetaData &md);
 
 QDebug operator<<(QDebug debug, const QVector<KPluginMetaData> &vec);
+
+#endif //PLUGINMETADATAUTILS_H
