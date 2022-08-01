@@ -22,10 +22,10 @@ QDebug operator<<(QDebug debug, const KPluginMetaData& md)
     return debug;
 }
 
-QDebug operator<<(QDebug debug, const PluginMetaDataVector& vec)
+QDebug operator<<(QDebug debug, const QVector<KPluginMetaData>& vec)
 {
     QDebugStateSaver saver(debug);
-    debug.nospace() << "PluginMetaDataVector {\n";
+    debug.nospace() << "QVector<KPluginMetaData> {\n";
     for (const KPluginMetaData &md : vec) {
         debug << '\t' << md << ",\n";
     }

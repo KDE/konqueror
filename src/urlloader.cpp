@@ -34,7 +34,7 @@
 #include <QFileDialog>
 
 static KPluginMetaData preferredPart(const QString &mimeType) {
-    PluginMetaDataVector plugins = KParts::PartLoader::partsForMimeType(mimeType);
+    QVector<KPluginMetaData> plugins = KParts::PartLoader::partsForMimeType(mimeType);
     if (!plugins.isEmpty()) {
         return plugins.first();
     } else {
@@ -201,9 +201,9 @@ bool UrlLoader::decideEmbedOrSave()
      * the option to open or save, instead.
      */
     if (m_dontPassToWebEnginePart && m_part.pluginId() == webEngineName) {
-        PluginMetaDataVector parts = KParts::PartLoader::partsForMimeType(m_mimeType);
+        QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType);
         auto findPart = [webEngineName](const KPluginMetaData &md){return md.pluginId() != webEngineName;};
-        PluginMetaDataVector::const_iterator partToUse = std::find_if(parts.constBegin(), parts.constEnd(), findPart);
+        QVector<KPluginMetaData>::const_iterator partToUse = std::find_if(parts.constBegin(), parts.constEnd(), findPart);
         if (partToUse != parts.constEnd()) {
             m_part = *partToUse;
         } else {

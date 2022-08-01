@@ -66,7 +66,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->activePart = activePart;
 
     auto addPluginForId = [this](const QString &pluginId) {
-        PluginMetaDataVector metaDataList = KPluginMetaData::findPlugins(pluginId + QStringLiteral("/kpartplugins"));
+        QVector<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(pluginId + QStringLiteral("/kpartplugins"));
         d->pluginSelector->addPlugins(metaDataList, i18n("Extensions"));
     };
     if (activePart) {

@@ -67,11 +67,11 @@ public:
     KonqViewFactory createView(const QString &serviceType,
                                const QString &serviceName = QString(),
                                KPluginMetaData *serviceImpl = nullptr,
-                               PluginMetaDataVector *partServiceOffers = nullptr,
+                               QVector<KPluginMetaData> *partServiceOffers = nullptr,
                                KService::List *appServiceOffers = nullptr,
                                bool forceAutoEmbed = false);
 
-    static void getOffers(const QString& serviceType, PluginMetaDataVector *partServiceOffers = nullptr, KService::List* appServiceOffers = nullptr);
+    static void getOffers(const QString& serviceType, QVector<KPluginMetaData> *partServiceOffers = nullptr, KService::List* appServiceOffers = nullptr);
 };
 
 #endif

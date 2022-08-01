@@ -60,7 +60,7 @@ KonqView *KonqViewManager::createFirstView(const QString &mimeType, const QStrin
 {
     //qCDebug(KONQUEROR_LOG) << serviceName;
     KPluginMetaData service;
-    PluginMetaDataVector partServiceOffers;
+    QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
     KonqViewFactory newViewFactory = createView(mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/);
     if (newViewFactory.isNull()) {
@@ -95,7 +95,7 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     const QString serviceType = currentView->serviceType();
 
     KPluginMetaData service;
-    PluginMetaDataVector partServiceOffers;
+    QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
     KonqViewFactory newViewFactory = createView(serviceType, currentView->service().pluginId(), service, partServiceOffers, appServiceOffers, forceAutoEmbed);
@@ -165,7 +165,7 @@ KonqView *KonqViewManager::splitMainContainer(KonqView *currentView,
     //qCDebug(KONQUEROR_LOG);
 
     KPluginMetaData service;
-    PluginMetaDataVector partServiceOffers;
+    QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
     KonqViewFactory newViewFactory = createView(serviceType, serviceName, service, partServiceOffers, appServiceOffers);
@@ -210,7 +210,7 @@ KonqView *KonqViewManager::addTab(const QString &serviceType, const QString &ser
 #endif
 
     KPluginMetaData service;
-    PluginMetaDataVector partServiceOffers;
+    QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
 
     Q_ASSERT(!serviceType.isEmpty());
@@ -783,7 +783,7 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
 KonqViewFactory KonqViewManager::createView(const QString &serviceType,
         const QString &serviceName,
         KPluginMetaData &service,
-        PluginMetaDataVector &partServiceOffers,
+        QVector<KPluginMetaData> &partServiceOffers,
         KService::List &appServiceOffers,
         bool forceAutoEmbed)
 {
@@ -813,7 +813,7 @@ KonqViewFactory KonqViewManager::createView(const QString &serviceType,
 KonqView *KonqViewManager::setupView(KonqFrameContainerBase *parentContainer,
                                      KonqViewFactory &viewFactory,
                                      const KPluginMetaData &service,
-                                     const PluginMetaDataVector &partServiceOffers,
+                                     const QVector<KPluginMetaData> &partServiceOffers,
                                      const KService::List &appServiceOffers,
                                      const QString &serviceType,
                                      bool passiveMode,
@@ -1135,7 +1135,7 @@ void KonqViewManager::loadItem(const KConfigGroup &cfg, KonqFrameContainerBase *
         //qCDebug(KONQUEROR_LOG) << "serviceType" << serviceType << serviceName;
 
         KPluginMetaData service;
-        PluginMetaDataVector partServiceOffers;
+        QVector<KPluginMetaData> partServiceOffers;
         KService::List appServiceOffers;
 
         KonqFactory konqFactory;

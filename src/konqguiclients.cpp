@@ -23,7 +23,7 @@
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
 
-PopupMenuGUIClient::PopupMenuGUIClient(const PluginMetaDataVector &embeddingServices,
+PopupMenuGUIClient::PopupMenuGUIClient(const QVector<KPluginMetaData> &embeddingServices,
                                        KonqPopupMenu::ActionGroupMap &actionGroups,
                                        QAction *showMenuBar, QAction *stopFullScreen)
     : m_actionCollection(this),
@@ -51,8 +51,8 @@ PopupMenuGUIClient::PopupMenuGUIClient(const PluginMetaDataVector &embeddingServ
             QAction *act = addEmbeddingService(0, i18n("Preview &in %1", service.name()), service);
             previewActions.append(act);
         } else if (embeddingServices.count() > 1) {
-            PluginMetaDataVector::ConstIterator it = embeddingServices.begin();
-            const PluginMetaDataVector::ConstIterator end = embeddingServices.end();
+            QVector<KPluginMetaData>::ConstIterator it = embeddingServices.begin();
+            const QVector<KPluginMetaData>::ConstIterator end = embeddingServices.end();
             int idx = 0;
             for (; it != end; ++it, ++idx) {
                 QAction *act = addEmbeddingService(idx, (*it).name(), *it);

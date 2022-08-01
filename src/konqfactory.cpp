@@ -74,7 +74,7 @@ static KonqViewFactory tryLoadingService(const KPluginMetaData &data)
 KonqViewFactory KonqFactory::createView(const QString &serviceType,
                                         const QString &serviceName,
                                         KPluginMetaData *serviceImpl,
-                                        PluginMetaDataVector *partServiceOffers,
+                                        QVector<KPluginMetaData> *partServiceOffers,
                                         KService::List *appServiceOffers,
                                         bool forceAutoEmbed)
 {
@@ -82,7 +82,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     qCDebug(KONQUEROR_LOG) << "Trying to create view for" << serviceType << serviceName;
 
     // We need to get those in any case
-    PluginMetaDataVector offers;
+    QVector<KPluginMetaData> offers;
     KService::List appOffers;
 
     // Query the plugins
@@ -171,7 +171,7 @@ KonqViewFactory KonqFactory::createView(const QString &serviceType,
     return viewFactory;
 }
 
-void KonqFactory::getOffers(const QString &serviceType, PluginMetaDataVector *partServiceOffers, KService::List *appServiceOffers)
+void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData> *partServiceOffers, KService::List *appServiceOffers)
 {
 #ifdef __GNUC__
 #warning Temporary hack -- must separate mimetypes and servicetypes better
@@ -183,13 +183,13 @@ void KonqFactory::getOffers(const QString &serviceType, PluginMetaDataVector *pa
     }
 
     if (partServiceOffers) {
-        PluginMetaDataVector offers = KParts::PartLoader::partsForMimeType(serviceType);
+        QVector<KPluginMetaData> offers = KParts::PartLoader::partsForMimeType(serviceType);
 
         //If a part has both JSON metadata and a .desktop file, partsForMimeType return the plugin twice. To avoid this, we remove the duplicate entries
         //We can't use std::unique because it requires the vector to be sorted but we can't do that because the entries are sorted according to user
         //preferences (we only keep the first entry for each plugin).
         //TODO: remove when .desktop files for parts aren't supported anymore (KF6)
-        PluginMetaDataVector uniqueOffers;
+        QVector<KPluginMetaData> uniqueOffers;
         for (const KPluginMetaData &md : offers) {
             if (!std::any_of(uniqueOffers.constBegin(), uniqueOffers.constEnd(), [md](const KPluginMetaData &md2){return md.pluginId() == md2.pluginId();})) {
                 uniqueOffers.append(md);

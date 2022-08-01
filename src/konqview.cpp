@@ -57,7 +57,7 @@ KonqView::KonqView(KonqViewFactory &viewFactory,
                    KonqFrame *viewFrame,
                    KonqMainWindow *mainWindow,
                    const KPluginMetaData &service,
-                   const PluginMetaDataVector &partServiceOffers,
+                   const QVector<KPluginMetaData> &partServiceOffers,
                    const KService::List &appServiceOffers,
                    const QString &serviceType,
                    bool passiveMode
@@ -321,7 +321,7 @@ bool KonqView::changePart(const QString &mimeType,
         return false; // we can't do that if our view mode is locked
     }
 
-    PluginMetaDataVector partServiceOffers;
+    QVector<KPluginMetaData> partServiceOffers;
     KService::List appServiceOffers;
     KPluginMetaData service;
     KonqFactory konqFactory;

@@ -14,10 +14,8 @@
 
 #include <QDebug>
 
-using PluginMetaDataVector = QVector<KPluginMetaData>;
-
 KPluginMetaData findPartById(const QString &id);
 
 QDebug operator<<(QDebug debug, const KPluginMetaData &md);
 
-QDebug operator<<(QDebug debug, const PluginMetaDataVector &vec);
+QDebug operator<<(QDebug debug, const QVector<KPluginMetaData> &vec);

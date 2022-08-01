@@ -323,7 +323,7 @@ private:
     KonqViewFactory createView(const QString &serviceType,  /* can be servicetype or mimetype */
                                const QString &serviceName,
                                KPluginMetaData &service,
-                               PluginMetaDataVector &partServiceOffers,
+                               QVector<KPluginMetaData> &partServiceOffers,
                                KService::List &appServiceOffers,
                                bool forceAutoEmbed = false);
 
@@ -334,7 +334,7 @@ private:
     KonqView *setupView(KonqFrameContainerBase *parentContainer,
                         KonqViewFactory &viewFactory,
                         const KPluginMetaData &service,
-                        const PluginMetaDataVector &partServiceOffers,
+                        const QVector<KPluginMetaData> &partServiceOffers,
                         const KService::List &appServiceOffers,
                         const QString &serviceType,
                         bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);

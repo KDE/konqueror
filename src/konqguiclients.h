@@ -30,7 +30,7 @@ class PopupMenuGUIClient : public QObject
     Q_OBJECT
 public:
     // The action groups are inserted into @p actionGroups
-    PopupMenuGUIClient(const PluginMetaDataVector &embeddingServices,
+    PopupMenuGUIClient(const QVector<KPluginMetaData> &embeddingServices,
                        KonqPopupMenu::ActionGroupMap &actionGroups,
                        QAction *showMenuBar, QAction *stopFullScreen);
     ~PopupMenuGUIClient() override;
@@ -50,7 +50,7 @@ private:
     QAction *addEmbeddingService(int idx, const QString &name, const KPluginMetaData &service);
 
     KActionCollection m_actionCollection;
-    PluginMetaDataVector  m_embeddingServices;
+    QVector<KPluginMetaData>  m_embeddingServices;
 };
 
 class ToggleViewGUIClient : public QObject

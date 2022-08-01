@@ -770,7 +770,7 @@ bool KonqMainWindow::openView(QString mimeType, const QUrl &_url, KonqView *chil
     }
     // Do we even have a part to embed? Otherwise don't ask, since we'd ask twice.
     if (!forceAutoEmbed) {
-        PluginMetaDataVector partServiceOffers;
+        QVector<KPluginMetaData> partServiceOffers;
         KonqFactory::getOffers(mimeType, &partServiceOffers);
         if (partServiceOffers.isEmpty()) {
             qCDebug(KONQUEROR_LOG) << "No part available for" << mimeType;
@@ -4372,12 +4372,12 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
                                        !isIntoTrash && !devicesFile &&
                                        (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
 
-    PluginMetaDataVector embeddingServices;
+    QVector<KPluginMetaData> embeddingServices;
     if (showEmbeddingServices) {
         const QString currentServiceName = currentView->service().pluginId();
 
         // List of services for the "Preview In" submenu.
-        PluginMetaDataVector allEmbeddingServices = KParts::PartLoader::partsForMimeType(m_popupMimeType);
+        QVector<KPluginMetaData> allEmbeddingServices = KParts::PartLoader::partsForMimeType(m_popupMimeType);
         auto filter = [currentServiceName](const KPluginMetaData &md) {
             return md.value(QLatin1String("X-KDE-BrowserView-HideFromMenus"),false) && md.pluginId() != currentServiceName;
         };
@@ -4689,7 +4689,7 @@ void KonqMainWindow::updateViewModeActions()
     delete m_viewModeMenu;
     m_viewModeMenu = nullptr;
 
-    const PluginMetaDataVector services = m_currentView->partServiceOffers();
+    const QVector<KPluginMetaData> services = m_currentView->partServiceOffers();
     if (services.count() <= 1) {
         return;
     }
@@ -5426,7 +5426,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         KProtocolManager::reparseConfiguration();
     }
 
-    PluginMetaDataVector parts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
+    QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
     KPluginMetaData part = !parts.isEmpty() ? parts.first() : KPluginMetaData();
     Q_ASSERT(part.isValid());
     const bool webengineIsDefault = part.pluginId() == QStringLiteral("webenginepart");

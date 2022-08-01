@@ -84,7 +84,7 @@ public:
              KonqFrame *viewFrame,
              KonqMainWindow *mainWindow,
              const KPluginMetaData &service,
-             const PluginMetaDataVector &partServiceOffers,
+             const QVector<KPluginMetaData> &partServiceOffers,
              const KService::List &appServiceOffers,
              const QString &serviceType,
              bool passiveMode);
@@ -433,7 +433,7 @@ public:
         return m_caption;
     }
 
-    PluginMetaDataVector partServiceOffers()
+    QVector<KPluginMetaData> partServiceOffers()
     {
         return m_partServiceOffers;
     }
@@ -645,7 +645,7 @@ private:
     uint m_bURLDropHandling: 1;
     uint m_bDisableScrolling: 1;
     uint m_bErrorURL: 1;
-    PluginMetaDataVector m_partServiceOffers;
+    QVector<KPluginMetaData> m_partServiceOffers;
     KService::List m_appServiceOffers;
     KPluginMetaData m_service;
     QString m_serviceType;
