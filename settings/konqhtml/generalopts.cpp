@@ -220,8 +220,8 @@ void KKonqGeneralOptions::load()
     };
     std::copy_if(allParts.constBegin(), allParts.constEnd(), std::back_inserter(partOfferList), filter);
 
-    //Remove duplicate entries
-    //TODO port away from query: are the following 3 lines really needed? Is it correct that the vector returned by partsForMimeType contains the same part several times?
+    //We need to remove duplicates caused by having parts with both plugin metadata and .desktop files being returned twice by KParts::PartLoader::partsForMimeType
+    //TODO: remove this when this doesn't happen anymore (KF6?)
     std::sort(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
     auto unique = std::unique(partOfferList.begin(), partOfferList.end(), [](const KPluginMetaData &md1, const KPluginMetaData &md2){return md1.pluginId() == md2.pluginId();});
     partOfferList.erase(unique, partOfferList.end());

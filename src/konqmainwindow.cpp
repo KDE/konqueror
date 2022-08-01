@@ -4394,9 +4394,6 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
             !menuBar()->isVisible() ? m_paShowMenuBar : nullptr,
             fullScreenMode() ? m_ptaFullScreen : nullptr
                                                                 );
-//     qRegisterMetaType<KService::Ptr>("KService::Ptr");
-//     connect(konqyMenuClient, SIGNAL(openEmbedded(KService::Ptr)),
-//             this, SLOT(slotOpenEmbedded(KService::Ptr)), Qt::QueuedConnection);
     connect(konqyMenuClient, &PopupMenuGUIClient::openEmbedded, this, &KonqMainWindow::slotOpenEmbedded, Qt::QueuedConnection);
 
     // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
