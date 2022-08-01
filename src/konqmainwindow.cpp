@@ -4704,8 +4704,9 @@ void KonqMainWindow::updateViewModeActions()
         const QString id = md.pluginId();
         bool isCurrentView = id == m_currentView->service().pluginId();
 
-        //TODO port away from query: assume that the "actionsFile" entry in the KPluginMetaData contains the path of a .desktop file
-        //containing the actions specification, as the old part .desktop file did
+        //If a view provide several actions, its metadata contains an X-Konqueror-Actions-File entry
+        //with the path of a .desktop file where the actions are described. The contents of this file
+        //are the same as the action-related part of the old part .desktop file
         QString actionDesktopFile = md.value("X-Konqueror-Actions-File", QString());
 
         if (!actionDesktopFile.isEmpty()) {
