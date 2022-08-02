@@ -4705,7 +4705,7 @@ void KonqMainWindow::updateViewModeActions()
         //If a view provide several actions, its metadata contains an X-Konqueror-Actions-File entry
         //with the path of a .desktop file where the actions are described. The contents of this file
         //are the same as the action-related part of the old part .desktop file
-        QString actionDesktopFile = md.value("X-Konqueror-Actions-File");
+        const QString actionDesktopFile = md.value("X-Konqueror-Actions-File");
 
         if (!actionDesktopFile.isEmpty()) {
             KDesktopFile df(QStandardPaths::DataLocation, actionDesktopFile);
