@@ -220,7 +220,7 @@ bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
         QString partToUse;
         bool success = success = QMetaObject::invokeMethod(bi, "partForLocalFile", Q_RETURN_ARG(QString, partToUse), Q_ARG(QString, url.path()));
         if (success) {
-            return partToUse == m_part->metaData().name();
+            return partToUse == m_part->metaData().pluginId();
         }
     }
     return false;
