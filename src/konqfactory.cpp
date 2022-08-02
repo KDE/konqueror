@@ -183,7 +183,7 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
     }
 
     if (partServiceOffers) {
-        QVector<KPluginMetaData> offers = KParts::PartLoader::partsForMimeType(serviceType);
+        const QVector<KPluginMetaData> offers = KParts::PartLoader::partsForMimeType(serviceType);
 
         //If a part has both JSON metadata and a .desktop file, partsForMimeType return the plugin twice. To avoid this, we remove the duplicate entries
         //We can't use std::unique because it requires the vector to be sorted but we can't do that because the entries are sorted according to user
@@ -191,7 +191,10 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
         //TODO: remove when .desktop files for parts aren't supported anymore (KF6)
         QVector<KPluginMetaData> uniqueOffers;
         for (const KPluginMetaData &md : offers) {
-            if (!std::any_of(uniqueOffers.constBegin(), uniqueOffers.constEnd(), [md](const KPluginMetaData &md2){return md.pluginId() == md2.pluginId();})) {
+            auto comparison = [md](const KPluginMetaData &md2){
+                return md.pluginId() == md2.pluginId();
+            };
+            if (!std::any_of(uniqueOffers.constBegin(), uniqueOffers.constEnd(), comparison)) {
                 uniqueOffers.append(md);
             }
         }

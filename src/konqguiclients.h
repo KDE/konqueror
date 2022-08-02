@@ -47,7 +47,7 @@ private slots:
     void slotOpenEmbedded();
 
 private:
-    QAction *addEmbeddingService(int idx, const QString &name, const KPluginMetaData &service);
+    QAction *addEmbeddingPlugin(int idx, const QString &name, const KPluginMetaData &plugin);
 
     KActionCollection m_actionCollection;
     QVector<KPluginMetaData>  m_embeddingServices;

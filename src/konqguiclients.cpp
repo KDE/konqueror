@@ -48,14 +48,14 @@ PopupMenuGUIClient::PopupMenuGUIClient(const QVector<KPluginMetaData> &embedding
         QList<QAction *> previewActions;
         if (embeddingServices.count() == 1) {
             KPluginMetaData service = embeddingServices.first();
-            QAction *act = addEmbeddingService(0, i18n("Preview &in %1", service.name()), service);
+            QAction *act = addEmbeddingPlugin(0, i18n("Preview &in %1", service.name()), service);
             previewActions.append(act);
         } else if (embeddingServices.count() > 1) {
             QVector<KPluginMetaData>::ConstIterator it = embeddingServices.begin();
             const QVector<KPluginMetaData>::ConstIterator end = embeddingServices.end();
             int idx = 0;
             for (; it != end; ++it, ++idx) {
-                QAction *act = addEmbeddingService(idx, (*it).name(), *it);
+                QAction *act = addEmbeddingPlugin(idx, (*it).name(), *it);
                 previewActions.append(act);
             }
         }
@@ -68,11 +68,11 @@ PopupMenuGUIClient::~PopupMenuGUIClient()
 {
 }
 
-QAction *PopupMenuGUIClient::addEmbeddingService(int idx, const QString &name, const KPluginMetaData &service)
+QAction *PopupMenuGUIClient::addEmbeddingPlugin(int idx, const QString &name, const KPluginMetaData &plugin)
 {
     QAction *act = m_actionCollection.addAction(QByteArray::number(idx));
     act->setText(name);
-    act->setIcon(QIcon::fromTheme(service.iconName()));
+    act->setIcon(QIcon::fromTheme(plugin.iconName()));
     QObject::connect(act, &QAction::triggered, this, &PopupMenuGUIClient::slotOpenEmbedded);
     return act;
 }

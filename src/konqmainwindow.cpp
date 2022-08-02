@@ -40,6 +40,7 @@
 #include "konqurl.h"
 #include "konqbrowserinterface.h"
 #include "urlloader.h"
+#include "pluginmetadatautils.h"
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -4704,7 +4705,7 @@ void KonqMainWindow::updateViewModeActions()
         //If a view provide several actions, its metadata contains an X-Konqueror-Actions-File entry
         //with the path of a .desktop file where the actions are described. The contents of this file
         //are the same as the action-related part of the old part .desktop file
-        QString actionDesktopFile = md.value("X-Konqueror-Actions-File", QString());
+        QString actionDesktopFile = md.value("X-Konqueror-Actions-File");
 
         if (!actionDesktopFile.isEmpty()) {
             KDesktopFile df(QStandardPaths::DataLocation, actionDesktopFile);
@@ -4714,7 +4715,7 @@ void KonqMainWindow::updateViewModeActions()
                 KConfigGroup grp = df.actionGroup(name);
                 QString text = grp.readEntry("Name", QString());
                 QString exec = grp.readEntry("Exec", QString());
-                if (name.isEmpty()) {
+                if (text.isEmpty()) {
                     qCDebug(KONQUEROR_LOG) << "File" << df.fileName() << "doesn't contain a \"name\" entry";
                     continue;
                 }
@@ -5426,10 +5427,9 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
         KProtocolManager::reparseConfiguration();
     }
 
-    QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
-    KPluginMetaData part = !parts.isEmpty() ? parts.first() : KPluginMetaData();
-    Q_ASSERT(part.isValid());
-    const bool webengineIsDefault = part.pluginId() == QStringLiteral("webenginepart");
+    KPluginMetaData part = preferredPart(QStringLiteral("text/html"));
+    Q_ASSERT(!part.isValid());
+    const bool webengineIsDefault = part.pluginId() == QLatin1String("webenginepart");
     if (!webengineIsDefault) {
         return;
     }

@@ -65,6 +65,7 @@ public:
     UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool forceOpen=false);
     ~UrlLoader();
 
+
     /** @brief Enum describing the possible actions to be taken*/
     enum class OpenUrlAction{
         UnknwonAction, /**< The action hasn't been decided yet */
