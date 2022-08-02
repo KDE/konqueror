@@ -134,6 +134,13 @@ public:
     static bool isExecutable(const QString &mimeType);
     QString suggestedFileName() const {return m_request.suggestedFileName;}
 
+    /**
+     * @brief The @c ID of the part to use to open a local file
+     *
+     * @param path the file path
+     * @return the plugin id for the preferred part for @p file (as returned by @c KPluginMetaData::pluginId() or
+     * an empty string if no part could be found
+     */
     static QString partForLocalFile(const QString &path);
 
 signals:

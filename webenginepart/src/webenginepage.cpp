@@ -216,14 +216,12 @@ bool WebEnginePage::shouldOpenLocalUrl(const QUrl& url) const
 {
     Q_ASSERT(url.isLocalFile());
     KParts::BrowserInterface *bi = m_part->browserExtension()->browserInterface();
-    if (bi) {
-        QString partToUse;
-        bool success = success = QMetaObject::invokeMethod(bi, "partForLocalFile", Q_RETURN_ARG(QString, partToUse), Q_ARG(QString, url.path()));
-        if (success) {
-            return partToUse == m_part->metaData().pluginId();
-        }
-    }
-    return false;
+    bool useThisPart = false;
+    //We don't check whether bi is valid, as invokeMethod will fail if it's nullptr
+    //If invokeMethod fails, useThisPart will keep its default value (false) which is what we need to return, so there's no
+    //need to check the return value of invokeMethod
+    QMetaObject::invokeMethod(bi, "isCorrectPartForLocalFile", Q_RETURN_ARG(bool, useThisPart), Q_ARG(KParts::ReadOnlyPart*, part()), Q_ARG(QString, url.path()));
+    return useThisPart;
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type, bool isMainFrame)

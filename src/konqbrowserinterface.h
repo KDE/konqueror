@@ -33,8 +33,17 @@ public:
 
 public slots:
     void toggleCompleteFullScreen(bool on);
-//     void openUrl(const QUrl &url, const QString &mimetype, const QString &suggestedFileName=QString());
-    QString partForLocalFile(const QString &path);
+
+    /**
+     * @brief Whether the given part is the correct one to use to open a local file
+     *
+     * This use @c KPluginMetadata::pluginId() to compare parts.
+     *
+     * @param part the part to test
+     * @param path the file path
+     * @return @e true if @p part is the correct part to use and @e false otherwise
+     */
+    bool isCorrectPartForLocalFile(KParts::ReadOnlyPart *part, const QString &path);
 
 private:
     KonqMainWindow *m_mainWindow;

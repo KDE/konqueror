@@ -22,13 +22,7 @@ void KonqBrowserInterface::toggleCompleteFullScreen(bool on)
     m_mainWindow->toggleCompleteFullScreen(on);
 }
 
-// void KonqBrowserInterface::openUrl(const QUrl &url, const QString& mimetype, const QString &suggestedFileName)
-// {
-//     KParts::ReadOnlyPart *part = m_mainWindow->m_currentView ? m_mainWindow->m_currentView->part() : nullptr;
-//     m_mainWindow->m_urlLoader->openUrl(part, url, mimetype, suggestedFileName);
-// }
-
-QString KonqBrowserInterface::partForLocalFile(const QString& path)
+bool KonqBrowserInterface::isCorrectPartForLocalFile(KParts::ReadOnlyPart *part, const QString &path)
 {
-    return UrlLoader::partForLocalFile(path);
+    return part->metaData().pluginId() == UrlLoader::partForLocalFile(path);
 }
