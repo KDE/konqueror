@@ -5428,7 +5428,7 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
     }
 
     KPluginMetaData part = preferredPart(QStringLiteral("text/html"));
-    Q_ASSERT(!part.isValid());
+    Q_ASSERT(part.isValid());
     const bool webengineIsDefault = part.pluginId() == QLatin1String("webenginepart");
     if (!webengineIsDefault) {
         return;
