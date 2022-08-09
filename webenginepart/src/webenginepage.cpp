@@ -93,11 +93,6 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     };
     connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
 
-    if(!this->profile()->httpUserAgent().contains(QLatin1String("Konqueror")))
-    {
-        this->profile()->setHttpUserAgent(this->profile()->httpUserAgent() + " Konqueror (WebEnginePart)");
-    }
-
     m_part->downloadManager()->addPage(this);
 }
 
