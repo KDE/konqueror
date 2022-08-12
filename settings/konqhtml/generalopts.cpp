@@ -216,7 +216,7 @@ void KKonqGeneralOptions::load()
     QVector<KPluginMetaData> allParts = KParts::PartLoader::partsForMimeType(QStringLiteral("text/html"));
     QVector<KPluginMetaData> partOfferList;
     auto filter = [](const KPluginMetaData &md){
-        return !md.serviceTypes().contains(QStringLiteral("KParts/ReadWritePart")) && !md.mimeTypes().contains(QStringLiteral("text/plain"));
+        return !md.mimeTypes().contains(QStringLiteral("text/plain"));
     };
     std::copy_if(allParts.constBegin(), allParts.constEnd(), std::back_inserter(partOfferList), filter);
 
