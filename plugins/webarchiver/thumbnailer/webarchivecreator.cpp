@@ -312,12 +312,6 @@ void WebArchiveCreator::slotRenderTimer()
 }
 
 
-ThumbCreator::Flags WebArchiveCreator::flags() const
-{
-    return (ThumbCreator::DrawFrame);
-}
-
-
 #ifdef THUMBNAIL_USE_WEBKIT
 
 // WebArchiveCreatorCookieJar

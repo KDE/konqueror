@@ -28,7 +28,6 @@ public:
     ~WebArchiveCreator() override;
 
     bool create(const QString &path, int width, int height, QImage &img) override;
-    ThumbCreator::Flags flags() const override;
 
 private slots:
     void slotLoadFinished(bool ok);
