@@ -39,7 +39,6 @@
 #include <KJobUiDelegate>
 #include <KMimeTypeEditor>
 #include <KPluginMetaData>
-#include <KToolInvocation>
 
 #include <QIcon>
 #include <QFileInfo>

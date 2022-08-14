@@ -39,7 +39,6 @@
 #include <KProtocolInfo>
 #include <KToggleAction>
 #include <konq_kpart_plugin.h>
-#include <KToolInvocation>
 
 #define QL1S(x) QLatin1String(x)
 
