@@ -1710,6 +1710,7 @@ void KonqMainWindow::slotConfigure(const QString startingModule)
         const char *const webModules[] = {
             "konqueror_kcms/khtml_appearance",
             "konqueror_kcms/khtml_filter",
+            "konqueror_kcms/khtml_cache",
             "kcm_webshortcuts",
             "kcm_proxy",
             "konqueror_kcms/kcm_history",

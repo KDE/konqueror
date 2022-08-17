@@ -38,19 +38,21 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_certificateErrorDialogManager(new KonqWebEnginePart::CertificateErrorDialogManager(this)),
     m_navigationRecorder(new NavigationRecorder(this))
 {
-        QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
-        const QStringList protocols = KProtocolInfo::protocols();
-        for(const QString &prot : protocols){
-            if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
-                localSchemes.append(QByteArray(prot.toLatin1()));
-            }
+    QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
+    const QStringList protocols = KProtocolInfo::protocols();
+    for(const QString &prot : protocols){
+        if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
+            localSchemes.append(QByteArray(prot.toLatin1()));
         }
-        for (const QByteArray &name : qAsConst(localSchemes)){
-            QWebEngineUrlScheme scheme(name);
-            scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
-            scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
-            QWebEngineUrlScheme::registerScheme(scheme);
-        }
+    }
+    for (const QByteArray &name : qAsConst(localSchemes)){
+        QWebEngineUrlScheme scheme(name);
+        scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
+        scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+        QWebEngineUrlScheme::registerScheme(scheme);
+    }
+
+    connect(QApplication::instance(), SIGNAL(configurationChanged()), this, SLOT(reparseConfiguration()));
 }
 
 WebEnginePartControls::~WebEnginePartControls()
@@ -92,6 +94,8 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     if (!langHeader.isEmpty()) {
         m_profile->setHttpAcceptLanguage(langHeader);
     }
+
+    reparseConfiguration();
 }
 
 WebEnginePartDownloadManager* WebEnginePartControls::downloadManager() const
@@ -140,4 +144,24 @@ QString WebEnginePartControls::determineHttpAcceptLanguageHeader() const
 NavigationRecorder * WebEnginePartControls::navigationRecorder() const
 {
     return m_navigationRecorder;
+}
+
+void WebEnginePartControls::reparseConfiguration()
+{
+    if (!m_profile) {
+        return;
+    }
+    KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
+    KConfigGroup grp = cfg->group("Cache");
+    if (grp.readEntry("CacheEnabled", true)) {
+        QWebEngineProfile::HttpCacheType type = grp.readEntry("MemoryCache", false) ? QWebEngineProfile::MemoryHttpCache : QWebEngineProfile::DiskHttpCache;
+        m_profile->setHttpCacheType(type);
+        m_profile->setHttpCacheMaximumSize(grp.readEntry("MaximumCacheSize", 0));
+        //NOTE: According to the documentation, setCachePath resets the cache path to its default value if the argument is a null QString
+        //it doesn't specify what it does if the string is empty but not null. Experimenting, it seems the behavior is the same
+        m_profile->setCachePath(grp.readEntry("CustomCacheDir", QString()));
+
+    } else {
+        m_profile->setHttpCacheType(QWebEngineProfile::NoCache);
+    }
 }

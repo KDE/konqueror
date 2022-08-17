@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Cache</class>
+ <widget class="QWidget" name="Cache">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>575</width>
+    <height>206</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="cacheEnabled">
+     <property name="title">
+      <string>&amp;Enable cache</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="memoryCache">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Don't store the cache on disk but only in memory.&lt;/p&gt;&lt;p&gt;Turning this on means means that the cache will be cleared when exiting Konqueror&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Keep cache in &amp;memory</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>&amp;Cache size</string>
+          </property>
+          <property name="buddy">
+           <cstring>cacheSize</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="cacheSize">
+          <property name="toolTip">
+           <string>The maximum space on disk or memory the cache can use. When this threshold is reached, old pages will be removed to make space for new ones</string>
+          </property>
+          <property name="specialValueText">
+           <string>Auto</string>
+          </property>
+          <property name="suffix">
+           <string> MB</string>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="useCustomCacheDir">
+        <property name="toolTip">
+         <string>Use a custom directory to keep the cache</string>
+        </property>
+        <property name="title">
+         <string>&amp;Custom cache directory</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="customCachePathLabel">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Cache &amp;Directory</string>
+           </property>
+           <property name="buddy">
+            <cstring>customCacheDir</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KUrlRequester" name="customCacheDir">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>The custom directory to store cache</string>
+           </property>
+           <property name="mode">
+            <set>KFile::Directory|KFile::ExistingOnly|KFile::LocalOnly</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QWidget</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

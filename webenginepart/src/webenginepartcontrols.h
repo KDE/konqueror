@@ -45,6 +45,9 @@ public:
 
     bool handleCertificateError(const QWebEngineCertificateError &ce, WebEnginePage *page);
 
+private slots:
+    void reparseConfiguration();
+
 private:
 
     WebEnginePartControls();

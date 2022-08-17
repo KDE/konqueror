@@ -104,6 +104,7 @@ void KonquerorApplication::slotReparseConfiguration()
             window->reparseConfiguration();
         }
     }
+    emit configurationChanged();
 }
 
 void KonquerorApplication::slotAddToCombo(const QString &url, const QDBusMessage &msg)

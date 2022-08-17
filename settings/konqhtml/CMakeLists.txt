@@ -19,12 +19,14 @@ set(kcm_konqhtml_PART_SRCS
    filteropts.cpp
    css/template.cpp
    css/kcmcss.cpp
+   cache/cache.cpp
    )
 
 ki18n_wrap_ui(kcm_konqhtml_PART_SRCS
     advancedTabOptions.ui
     css/csscustom.ui
     css/cssconfig.ui
+    cache/cache.ui
     )
 
 add_library(kcm_konqhtml_static STATIC ${kcm_konqhtml_PART_SRCS})
@@ -49,5 +51,9 @@ target_link_libraries(khtml_appearance kcm_konqhtml_static)
 kcoreaddons_add_plugin(khtml_filter SOURCES plugins/khtml_filter.cpp INSTALL_NAMESPACE konqueror_kcms)
 kcoreaddons_desktop_to_json(khtml_filter khtml_filter.desktop)
 target_link_libraries(khtml_filter kcm_konqhtml_static)
+
+kcoreaddons_add_plugin(khtml_cache SOURCES plugins/khtml_cache.cpp INSTALL_NAMESPACE konqueror_kcms)
+kcoreaddons_desktop_to_json(khtml_cache cache/khtml_cache.desktop)
+target_link_libraries(khtml_cache kcm_konqhtml_static)
 
 install( FILES css/template.css  DESTINATION  ${KDE_INSTALL_DATADIR}/kcmcss )
