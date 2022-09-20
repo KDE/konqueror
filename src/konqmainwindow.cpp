@@ -583,7 +583,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
     loader->setView(view);
     loader->setOldLocationBarUrl(oldLocationBarURL);
 
-    if (!loader->isReady()) {
+    if (loader->isAsync()) {
         bool earlySetLocationBarURL = false;
         if (!view && !m_currentView) { // no view yet, e.g. starting with url as argument
             earlySetLocationBarURL = true;
