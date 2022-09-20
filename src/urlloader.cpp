@@ -105,11 +105,7 @@ void UrlLoader::start()
         }
     }
 
-    if (isMimeTypeKnown(m_mimeType)) {
-        decideAction();
-    } else {
-        m_isAsync = true;
-    }
+    m_isAsync = !isMimeTypeKnown(m_mimeType);
 }
 
 bool UrlLoader::isViewLocked() const
@@ -152,10 +148,12 @@ void UrlLoader::abort()
 
 void UrlLoader::goOn()
 {
-    if (m_ready) {
-        performAction();
-    } else {
+    if (m_isAsync) {
         launchOpenUrlJob(true);
+    } else {
+        decideAction();
+        m_ready = true;
+        performAction();
     }
 }
 
