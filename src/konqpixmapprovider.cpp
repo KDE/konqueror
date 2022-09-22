@@ -107,7 +107,7 @@ QString KonqPixmapProvider::iconNameFor(const QUrl &url)
     }
 
     if (url.url().isEmpty()) {
-        // Use the folder icon for the empty URL
+        // Use the Konqueror icon for the empty URL
         icon = "konqueror";
     } else {
         icon = KIO::iconNameForUrl(url);
